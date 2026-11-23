@@ -1,0 +1,1547 @@
+{
+ "_rule": "Basis in order: a C-ID prefix that belongs to the discipline; a local code colleges already use; four letters minted from the name. Each is four capital letters, unused in the Common Subjects Reference, no C-ID prefix belonging elsewhere, and proposed once.",
+ "_what": "Proposed common subject codes for the MQ disciplines with none. Written by kb/_csr_propose_codes.py; nothing here is a decision until a person confirms a code on the Common Subjects Reference.",
+ "assigned": 95,
+ "by_basis": {
+  "cid": 2,
+  "college": 18,
+  "minted": 75
+ },
+ "changed_by_a_person": [
+  {
+   "assigned": "ESTI",
+   "discipline": "Estimating",
+   "now": "ESTG"
+  }
+ ],
+ "count": 95,
+ "problems": [],
+ "rows": [
+  {
+   "assign": true,
+   "basis": "cid",
+   "code": "ACCT",
+   "confidence": 0.97,
+   "discipline": "Accounting",
+   "key": "Accounting",
+   "level": "Confident",
+   "local_code_now": {
+    "called": "BUSI",
+    "colleges": 50,
+    "courses": 639,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "C-ID's ACCT descriptors (ACCT 110, 120); ACCT is the local code at 50 colleges and ACCTG at 18"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "DSAC",
+   "confidence": 0.82,
+   "discipline": "Adapted Computer Technology: Disabled Students Programs and Services",
+   "key": "Adapted Computer Technology: Disabled Students Programs and Services",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Adapted Computer"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "ADST",
+   "confidence": 0.85,
+   "discipline": "Addiction Paraprofessional Training",
+   "key": "Addiction Paraprofessional Training",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "COUN",
+    "colleges": 2,
+    "courses": 36,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "C-ID's ADS (Addiction Studies) in four letters, as CRIM holds C-ID's AJ; ADST is the code at 2 colleges, ADDICST at 5 and AODS at 2"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "AERO",
+   "confidence": 0.86,
+   "discipline": "Aeronautics",
+   "key": "Aeronautics (Airframe and power plant, aircraft mechanics, aeronautical engineering technician, avionics)",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "AVIA",
+    "colleges": 7,
+    "courses": 117,
+    "filed": false
+   },
+   "note": "AERO also prefixes nine Air Force ROTC M-IDs with no discipline (AS100 Heritage and Values); they belong with Military Studies (MILS).",
+   "types": [
+    "any"
+   ],
+   "words": "AERO is the local code at 7 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "AGEN",
+   "confidence": 0.82,
+   "discipline": "Agricultural Engineering",
+   "key": "Agricultural Engineering (Equipment and machinery, farm mechanics)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Agricultural Engineering"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "ANTM",
+   "confidence": 0.82,
+   "discipline": "Animal Training and Management",
+   "key": "Animal Training and Management (Exotic Animal Training)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Animal Training and Management"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "APLR",
+   "confidence": 0.82,
+   "discipline": "Appliance Repair",
+   "key": "Appliance Repair (Vending Machines)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Appliance Repair; APPL is a local code our call reads as CNST"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "ARCT",
+   "confidence": 0.82,
+   "discipline": "Archaeological Technology",
+   "key": "Archaeological Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Archaeological Technology"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "ATTR",
+   "confidence": 0.82,
+   "discipline": "Athletic Training",
+   "key": "Athletic Training",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Athletic Training"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "FINA",
+   "confidence": 0.8,
+   "discipline": "Banking and Finance",
+   "key": "Banking and Finance",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "the first four letters of FINANCE, the code at 9 colleges; FIN at 5 and BANK at 2"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "BICY",
+   "confidence": 0.82,
+   "discipline": "Bicycle Repair",
+   "key": "Bicycle Repair",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Bicycle"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "BOOK",
+   "confidence": 0.82,
+   "discipline": "Bookbinding",
+   "key": "Bookbinding",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Bookbinding"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "BREW",
+   "confidence": 0.82,
+   "discipline": "Brewing,Fermentation and Distillery Sciences",
+   "key": "Brewing,Fermentation and Distillery Sciences",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "specific"
+   ],
+   "words": "Brewing"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "BLDM",
+   "confidence": 0.82,
+   "discipline": "Building Maintenance",
+   "key": "Building Maintenance",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Building Maintenance"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "BUSE",
+   "confidence": 0.78,
+   "discipline": "Business Education",
+   "key": "Business Education",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "BUSI",
+    "colleges": 3,
+    "courses": 64,
+    "filed": false
+   },
+   "note": "BUSE's three colleges use it for general business courses (Introduction to Business, Business Law), not for business teacher preparation.",
+   "types": [
+    "masters"
+   ],
+   "words": "BUSE is the local code at 3 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "BMTC",
+   "confidence": 0.82,
+   "discipline": "Business Machine Technology",
+   "key": "Business Machine Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Business Machine Technology"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "CVTC",
+   "confidence": 0.82,
+   "discipline": "Cardiovascular Technology",
+   "key": "Cardiovascular Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Cardiovascular Technology; CVT at 2 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "CRMT",
+   "confidence": 0.82,
+   "discipline": "Ceramic Technology",
+   "key": "Ceramic Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Ceramic Technology; CERT would read as certificate"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "CLAS",
+   "confidence": 0.8,
+   "discipline": "Classics",
+   "key": "Classics",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "ENGL",
+    "colleges": 1,
+    "courses": 1,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "CLAS is the local code at 1 college"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "COAC",
+   "confidence": 0.82,
+   "discipline": "Coaching",
+   "key": "Coaching",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Coaching"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "DSCS",
+   "confidence": 0.82,
+   "discipline": "Community College Counselor of Students with Disabilities",
+   "key": "Community College Counselor of Students with Disabilities",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Counselor of Students; DSCO would read as disco"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "CSRV",
+   "confidence": 0.82,
+   "discipline": "Computer Service Technology",
+   "key": "Computer Service Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Computer Service"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "EOPS",
+   "confidence": 0.95,
+   "discipline": "Counseling: Extended Opportunity Programs and Services",
+   "key": "Counseling: Extended Opportunity Programs and Services (EOPS)",
+   "level": "Confident",
+   "local_code_now": {
+    "called": "ESOL",
+    "colleges": 1,
+    "courses": 2,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "EOPS is the program's own name, and the local code at 1 college"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "CNMH",
+   "confidence": 0.82,
+   "discipline": "Counseling: Mental Health",
+   "key": "Counseling: Mental Health",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "Counseling, Mental Health"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "CINT",
+   "confidence": 0.82,
+   "discipline": "Court Interpreting",
+   "key": "Court Interpreting",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Court Interpreting; INTR at 3 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "DSDH",
+   "confidence": 0.82,
+   "discipline": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+   "key": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Deaf and Hearing Impaired"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "DSDD",
+   "confidence": 0.82,
+   "discipline": "Developmental Disabilities: Disabled Students Programs and Services",
+   "key": "Developmental Disabilities: Disabled Students Programs and Services",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Developmental Disabilities"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "DIET",
+   "confidence": 0.8,
+   "discipline": "Dietetic Technician",
+   "key": "Dietetic Technician",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "CULN",
+    "colleges": 1,
+    "courses": 9,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "DIET is the local code at 1 college"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "ECOL",
+   "confidence": 0.6,
+   "discipline": "Ecology",
+   "key": "Ecology",
+   "level": "Leaning",
+   "local_code_now": {
+    "called": "OLAD",
+    "colleges": 6,
+    "courses": 35,
+    "filed": false
+   },
+   "note": "ECOL's six colleges put Human Ecology beside Music Appreciation, Choral Ensemble and Creative Writing for Seniors, so the local code reads as an older-adults catch-all there.",
+   "types": [
+    "masters"
+   ],
+   "words": "ECOL is the local code at 6 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "EMIC",
+   "confidence": 0.82,
+   "discipline": "Electromicroscopy",
+   "key": "Electromicroscopy",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Electromicroscopy"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "EPLT",
+   "confidence": 0.82,
+   "discipline": "Electroplating",
+   "key": "Electroplating",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Electroplating"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "ENSP",
+   "confidence": 0.82,
+   "discipline": "Engineering Support",
+   "key": "Engineering Support (Surveying, engineering aides)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Engineering Support; ENGSUP at 1 college"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "ESTI",
+   "confidence": 0.82,
+   "discipline": "Estimating",
+   "key": "Estimating",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "COSM",
+    "colleges": 2,
+    "courses": 10,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Estimating; ESTM is one college's code for solar and clean energy courses"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "FABC",
+   "confidence": 0.82,
+   "discipline": "Fabric Care",
+   "key": "Fabric Care (Laundry and dry cleaning)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Fabric Care"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "FLTR",
+   "confidence": 0.82,
+   "discipline": "Flight Attendant Training",
+   "key": "Flight Attendant Training",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Flight Attendant Training; Sam's pick of 2026-11-23 over FATR (\"flight attendants don't want to be called fatter\"); FLAT reads as a word and FLTA is the Foreign Languages code for Filipino"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "FLMT",
+   "confidence": 0.82,
+   "discipline": "Fluid Mechanics Technology",
+   "key": "Fluid Mechanics Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Fluid Mechanics Technology"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "FDNC",
+   "confidence": 0.82,
+   "discipline": "Folk Dance",
+   "key": "Folk Dance",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Folk Dance"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "HSDR",
+   "confidence": 0.82,
+   "discipline": "Health Services Director/Health Services Coordinator/College Nurse",
+   "key": "Health Services Director/Health Services Coordinator/College Nurse",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "Health Services Director"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "HSEC",
+   "confidence": 0.85,
+   "discipline": "Homeland Security",
+   "key": "Homeland Security",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "CRIM",
+    "colleges": 2,
+    "courses": 5,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "HSEC is the local code at 2 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "cid",
+   "code": "HOSP",
+   "confidence": 0.65,
+   "discipline": "Hotel and Motel Services",
+   "key": "Hotel and Motel Services",
+   "level": "Leaning",
+   "local_code_now": {
+    "called": "CULN",
+    "colleges": 20,
+    "courses": 205,
+    "filed": false
+   },
+   "note": "C-ID's HOSP descriptors sit with Culinary Arts/Food Technology by majority (20 M-IDs, against 3 under Hotel and Motel Services and 3 under Restaurant Management), and HOSP is Culinary's primary C-ID chip. HOSP moves to Hotel and Motel Services as its code; Culinary keeps CULN.",
+   "types": [
+    "any"
+   ],
+   "words": "C-ID's HOSP descriptors; HOSP is the local code at 20 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "INDD",
+   "confidence": 0.82,
+   "discipline": "Industrial Design",
+   "key": "Industrial Design",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Industrial Design"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "INSR",
+   "confidence": 0.82,
+   "discipline": "Insurance",
+   "key": "Insurance",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Insurance; INSUR at 1 college"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "JANI",
+   "confidence": 0.82,
+   "discipline": "Janitorial Services",
+   "key": "Janitorial Services",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Janitorial"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "JEWL",
+   "confidence": 0.82,
+   "discipline": "Jewelry",
+   "key": "Jewelry",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Jewelry"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "LBRL",
+   "confidence": 0.82,
+   "discipline": "Labor Relations",
+   "key": "Labor Relations",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Labor Relations; LABR is Industrial Relations' code"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "DSLD",
+   "confidence": 0.82,
+   "discipline": "Learning Disabilities: Disabled Student Programs and Services",
+   "key": "Learning Disabilities: Disabled Student Programs and Services",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Learning Disabilities"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "DSLS",
+   "confidence": 0.82,
+   "discipline": "Learning Disabilities: Specialist",
+   "key": "Learning Disabilities: Specialist",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS: Learning Disabilities Specialist"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "LING",
+   "confidence": 0.95,
+   "discipline": "Linguistics",
+   "key": "Linguistics",
+   "level": "Confident",
+   "local_code_now": {
+    "called": "ANTH",
+    "colleges": 24,
+    "courses": 70,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "LING is the local code at 24 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "LOCK",
+   "confidence": 0.82,
+   "discipline": "Locksmithing",
+   "key": "Locksmithing",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Locksmithing"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "MDVT",
+   "confidence": 0.82,
+   "discipline": "Marine Diving Technology",
+   "key": "Marine Diving Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Marine Diving Technology; MDIV would read as Master of Divinity"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "MENG",
+   "confidence": 0.82,
+   "discipline": "Marine Engine Technology",
+   "key": "Marine Engine Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Marine Engine"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "MRTL",
+   "confidence": 0.82,
+   "discipline": "Martial Arts/Self-Defense",
+   "key": "Martial Arts/Self-Defense",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Martial Arts; MART is a 47-course local code our call reads as ARTS"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "MCOM",
+   "confidence": 0.86,
+   "discipline": "Mass Communication",
+   "key": "Mass Communication",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "JOUR",
+    "colleges": 4,
+    "courses": 69,
+    "filed": false
+   },
+   "note": "MCOM's four colleges use it for journalism and public relations courses, which Mass Communication covers.",
+   "types": [
+    "masters"
+   ],
+   "words": "MCOM is the local code at 4 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "MTST",
+   "confidence": 0.82,
+   "discipline": "Materials Testing Technology",
+   "key": "Materials Testing Technology (Destructive testing or nondestructive examination)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Materials Testing"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "MTHN",
+   "confidence": 0.82,
+   "discipline": "Mathematics-Basic Skills: Noncredit",
+   "key": "Mathematics-Basic Skills: Noncredit",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "specific"
+   ],
+   "words": "Mathematics, noncredit (as ESLN, HLSN)"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "MIRP",
+   "confidence": 0.82,
+   "discipline": "Medical Instrument Repair",
+   "key": "Medical Instrument Repair",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Medical Instrument Repair"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "MILS",
+   "confidence": 0.82,
+   "discipline": "Military Studies",
+   "key": "Military Studies (Military Science)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Military Studies"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "MINE",
+   "confidence": 0.82,
+   "discipline": "Mining and Metallurgy",
+   "key": "Mining and Metallurgy (Oil field operations)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Mining"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "MOTO",
+   "confidence": 0.8,
+   "discipline": "Motorcycle Repair",
+   "key": "Motorcycle Repair",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "AUTO",
+    "colleges": 1,
+    "courses": 7,
+    "filed": false
+   },
+   "note": "MOTO's one college mixes motorcycle courses with bicycle and custom metal work.",
+   "types": [
+    "any"
+   ],
+   "words": "MOTO is the local code at 1 college"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "MUSM",
+   "confidence": 0.9,
+   "discipline": "Music Management",
+   "key": "Music Management",
+   "level": "Confident",
+   "local_code_now": {
+    "called": "MUSC",
+    "colleges": 4,
+    "courses": 68,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "MUSM is the local code at 4 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "MUSD",
+   "confidence": 0.82,
+   "discipline": "Music Merchandising",
+   "key": "Music Merchandising",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Music Merchandising"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "MUIR",
+   "confidence": 0.82,
+   "discipline": "Musical Instrument Repair",
+   "key": "Musical Instrument Repair",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Musical Instrument Repair"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "NANO",
+   "confidence": 0.82,
+   "discipline": "Nanotechnology",
+   "key": "Nanotechnology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "Nanotechnology"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "NRSC",
+   "confidence": 0.82,
+   "discipline": "Nursing Science/Clinical Practice",
+   "key": "Nursing Science/Clinical Practice",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Nursing Science"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "PCST",
+   "confidence": 0.82,
+   "discipline": "Peace Studies",
+   "key": "Peace Studies",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "Peace Studies"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "PHTC",
+   "confidence": 0.9,
+   "discipline": "Photographic Technology/ Commercial Photography",
+   "key": "Photographic Technology/ Commercial Photography",
+   "level": "Confident",
+   "local_code_now": {
+    "called": "PHOT",
+    "colleges": 3,
+    "courses": 27,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "PHTC is the local code at 3 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "DSPD",
+   "confidence": 0.82,
+   "discipline": "Physical Disabilities: Disabled Student Programs and Services",
+   "key": "Physical Disabilities: Disabled Student Programs and Services",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Physical Disabilities"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "PIAN",
+   "confidence": 0.82,
+   "discipline": "Piano Tuning and Repair",
+   "key": "Piano Tuning and Repair",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Piano"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "PLAS",
+   "confidence": 0.82,
+   "discipline": "Plastics",
+   "key": "Plastics",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Plastics"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "PRNT",
+   "confidence": 0.9,
+   "discipline": "Printing Technology",
+   "key": "Printing Technology (Typography, composition, printing)",
+   "level": "Confident",
+   "local_code_now": {
+    "called": "CDEV",
+    "colleges": 3,
+    "courses": 41,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "PRNT is the local code at 3 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "PSEC",
+   "confidence": 0.82,
+   "discipline": "Private Security",
+   "key": "Private Security (Security management, safety/ accident control, hazardous substance management crime prevention)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Private Security"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "PROS",
+   "confidence": 0.82,
+   "discipline": "Prosthetics and Orthotics",
+   "key": "Prosthetics and Orthotics",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Prosthetics"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "PREL",
+   "confidence": 0.82,
+   "discipline": "Public Relations",
+   "key": "Public Relations",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Public Relations; PUBREL at 4 colleges"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "RTHR",
+   "confidence": 0.82,
+   "discipline": "Radiation Therapy",
+   "key": "Radiation Therapy",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Radiation Therapy"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "RDGN",
+   "confidence": 0.82,
+   "discipline": "Reading-Basic Skills: Noncredit",
+   "key": "Reading-Basic Skills: Noncredit",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "specific"
+   ],
+   "words": "Reading, noncredit (as ESLN, HLSN)"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "RBTC",
+   "confidence": 0.82,
+   "discipline": "Registered Behavior Technician",
+   "key": "Registered Behavior Technician",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "Registered Behavior Technician"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "REHB",
+   "confidence": 0.82,
+   "discipline": "Rehabilitation Technician",
+   "key": "Rehabilitation Technician",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Rehabilitation"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "RLST",
+   "confidence": 0.95,
+   "discipline": "Religious Studies",
+   "key": "Religious Studies",
+   "level": "Confident",
+   "local_code_now": {
+    "called": "REAL",
+    "colleges": 5,
+    "courses": 36,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "RLST is the local code at 5 colleges (RELS and RELG at 4 each)"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "RSPC",
+   "confidence": 0.8,
+   "discipline": "Respiratory Technician",
+   "key": "Respiratory Technician",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "RSPT",
+    "colleges": 1,
+    "courses": 27,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "RSPC is the code at 1 college; a trailing N would read as noncredit, as ESLN and MTHN"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "RETL",
+   "confidence": 0.82,
+   "discipline": "Retailing",
+   "key": "Retailing (Purchasing, merchandising, sales)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Retailing"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "SANI",
+   "confidence": 0.82,
+   "discipline": "Sanitation and Public Health Technology",
+   "key": "Sanitation and Public Health Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Sanitation; SANT would read as saint"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "SRCH",
+   "confidence": 0.82,
+   "discipline": "Search and Rescue",
+   "key": "Search and Rescue",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Search and Rescue"
+  },
+  {
+   "assign": true,
+   "basis": "college",
+   "code": "SHME",
+   "confidence": 0.8,
+   "discipline": "Sheet Metal",
+   "key": "Sheet Metal",
+   "level": "Likely",
+   "local_code_now": {
+    "called": "WELD",
+    "colleges": 1,
+    "courses": 14,
+    "filed": false
+   },
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "SHME is the local code at 1 college"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "SHIP",
+   "confidence": 0.82,
+   "discipline": "Ship and Boat Building and Repair",
+   "key": "Ship and Boat Building and Repair",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Ship and Boat Building"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "SHOE",
+   "confidence": 0.82,
+   "discipline": "Shoe Rebuilding",
+   "key": "Shoe Rebuilding",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Shoe Rebuilding"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "SENG",
+   "confidence": 0.82,
+   "discipline": "Small Engine Mechanics",
+   "key": "Small Engine Mechanics",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Small Engine"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "DSVN",
+   "confidence": 0.82,
+   "discipline": "Specialized Instruction (Disabled Student Programs and Services): Vocational Noncredit",
+   "key": "Specialized Instruction (Disabled Student Programs and Services): Vocational Noncredit",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters",
+    "specific"
+   ],
+   "words": "DSPS: vocational noncredit (beside DSPN)"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "DSSL",
+   "confidence": 0.82,
+   "discipline": "Speech Language Pathology: Disabled Student Programs and Services",
+   "key": "Speech Language Pathology: Disabled Student Programs and Services",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Speech Language Pathology"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "SCMT",
+   "confidence": 0.82,
+   "discipline": "Supply Chain Technology",
+   "key": "Supply Chain Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "specific"
+   ],
+   "words": "Supply Chain"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "TELC",
+   "confidence": 0.82,
+   "discipline": "Telecommunication Technology",
+   "key": "Telecommunication Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Telecommunication"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "TRVL",
+   "confidence": 0.82,
+   "discipline": "Travel Services",
+   "key": "Travel Services (Dispatching)",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Travel"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "UASY",
+   "confidence": 0.65,
+   "discipline": "Uncrewed Aircraft System (UAS) Technology",
+   "key": "Uncrewed Aircraft System (UAS) Technology",
+   "level": "Leaning",
+   "local_code_now": null,
+   "note": "Colleges file drone courses under DRON, DRONE and UAS (one college each); the MQ says Uncrewed Aircraft System. UASY follows the MQ's words; DRON would follow the colleges and the common word.",
+   "types": [
+    "specific"
+   ],
+   "words": "Uncrewed Aircraft Systems; UAS at 1 college"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "VISN",
+   "confidence": 0.82,
+   "discipline": "Vision Care Technology",
+   "key": "Vision Care Technology",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Vision Care"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "WTCH",
+   "confidence": 0.82,
+   "discipline": "Watch and Clock Repair",
+   "key": "Watch and Clock Repair",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "any"
+   ],
+   "words": "Watch and Clock"
+  },
+  {
+   "assign": true,
+   "basis": "minted",
+   "code": "WRTN",
+   "confidence": 0.82,
+   "discipline": "Writing-Basic Skills: Noncredit",
+   "key": "Writing-Basic Skills: Noncredit",
+   "level": "Likely",
+   "local_code_now": null,
+   "note": "",
+   "types": [
+    "specific"
+   ],
+   "words": "Writing, noncredit (as ESLN, HLSN)"
+  }
+ ]
+}

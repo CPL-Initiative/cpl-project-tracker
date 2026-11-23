@@ -1,0 +1,2921 @@
+{
+ "_source": {
+  "edition": 20,
+  "index_pages_pdf": "12-23",
+  "page_rule": "printed page = PDF page - 6",
+  "sha256": "cd41c0cbbbaab592c5b008d1c9cea19c0943b96fe84a400b2f9fa49719b0263f",
+  "url": "https://www.cccco.edu/wp-content/uploads/2026/11/20th-edition-minimum-qualifications-final-a11y.pdf"
+ },
+ "_what": "The 20th-edition Minimum Qualifications handbook's disciplines, each with its list type or types and the Title 5 provisions that bear on it. Written by kb/_mq_handbook_parse.py from the PDF; the provisions are read by hand from printed pages 56-67.",
+ "count": 251,
+ "disciplines": {
+  "Accounting": {
+   "areas": "",
+   "code": "CCR 53410.1",
+   "name": "Accounting",
+   "noncredit": false,
+   "pages": "19",
+   "provisions": [
+    "license_53410_1"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Adapted Computer Technology: Disabled Students Programs and Services": {
+   "areas": "",
+   "code": "CCR 53414(d) (1)(2)",
+   "name": "Adapted Computer Technology: Disabled Students Programs and Services",
+   "noncredit": false,
+   "pages": "19",
+   "provisions": [
+    "dsps_53414"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Addiction Paraprofessional Training": {
+   "areas": "",
+   "code": "",
+   "name": "Addiction Paraprofessional Training",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Administration of Justice (Police science, corrections, law enforcement)": {
+   "areas": "Police science, corrections, law enforcement",
+   "code": "",
+   "name": "Administration of Justice",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Aeronautics (Airframe and power plant, aircraft mechanics, aeronautical engineering technician, avionics)": {
+   "areas": "Airframe and power plant, aircraft mechanics, aeronautical engineering technician, avionics",
+   "code": "",
+   "name": "Aeronautics",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "African American Studies": {
+   "areas": "",
+   "code": "",
+   "name": "African American Studies",
+   "noncredit": false,
+   "pages": "19",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Agricultural Business and Related Services (Inspection, pest control, food processing/ meat cutting)": {
+   "areas": "Inspection, pest control, food processing/ meat cutting",
+   "code": "",
+   "name": "Agricultural Business and Related Services",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Agricultural Engineering (Equipment and machinery, farm mechanics)": {
+   "areas": "Equipment and machinery, farm mechanics",
+   "code": "",
+   "name": "Agricultural Engineering",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Agricultural Production (Animal science, plant science, beekeeping, aquaculture)": {
+   "areas": "Animal science, plant science, beekeeping, aquaculture",
+   "code": "",
+   "name": "Agricultural Production",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Agriculture": {
+   "areas": "",
+   "code": "",
+   "name": "Agriculture",
+   "noncredit": false,
+   "pages": "19",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Air Conditioning, Refrigeration, Heating (Solar energy technician)": {
+   "areas": "Solar energy technician",
+   "code": "",
+   "name": "Air Conditioning, Refrigeration, Heating",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Animal Training and Management (Exotic Animal Training)": {
+   "areas": "Exotic Animal Training",
+   "code": "",
+   "name": "Animal Training and Management",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Anthropology": {
+   "areas": "",
+   "code": "",
+   "name": "Anthropology",
+   "noncredit": false,
+   "pages": "20",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Appliance Repair (Vending Machines)": {
+   "areas": "Vending Machines",
+   "code": "",
+   "name": "Appliance Repair",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Archaeological Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Archaeological Technology",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Architecture": {
+   "areas": "",
+   "code": "",
+   "name": "Architecture",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Art": {
+   "areas": "",
+   "code": "",
+   "name": "Art",
+   "noncredit": false,
+   "pages": "20",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Art History": {
+   "areas": "",
+   "code": "",
+   "name": "Art History",
+   "noncredit": false,
+   "pages": "20",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Artificial Intelligence (AI)": {
+   "areas": "AI",
+   "code": "",
+   "name": "Artificial Intelligence",
+   "noncredit": false,
+   "pages": "20",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Asian American Studies": {
+   "areas": "",
+   "code": "",
+   "name": "Asian American Studies",
+   "noncredit": false,
+   "pages": "21",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Astronomy": {
+   "areas": "",
+   "code": "",
+   "name": "Astronomy",
+   "noncredit": false,
+   "pages": "37",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Athletic Training": {
+   "areas": "",
+   "code": "",
+   "name": "Athletic Training",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Auto Body Technology (Antique and classic auto restoration)": {
+   "areas": "Antique and classic auto restoration",
+   "code": "",
+   "name": "Auto Body Technology",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Automotive Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Automotive Technology",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Aviation (Flight, navigation, ground school, air traffic control)": {
+   "areas": "Flight, navigation, ground school, air traffic control",
+   "code": "",
+   "name": "Aviation",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Banking and Finance": {
+   "areas": "",
+   "code": "",
+   "name": "Banking and Finance",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Barbering": {
+   "areas": "",
+   "code": "",
+   "name": "Barbering",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Bicycle Repair": {
+   "areas": "",
+   "code": "",
+   "name": "Bicycle Repair",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Biological Sciences": {
+   "areas": "",
+   "code": "",
+   "name": "Biological Sciences",
+   "noncredit": false,
+   "pages": "21",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Biotechnology": {
+   "areas": "",
+   "code": "",
+   "name": "Biotechnology",
+   "noncredit": false,
+   "pages": "43",
+   "provisions": [],
+   "types": [
+    "specific"
+   ]
+  },
+  "Bookbinding": {
+   "areas": "",
+   "code": "",
+   "name": "Bookbinding",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Brewing,Fermentation and Distillery Sciences": {
+   "areas": "",
+   "code": "",
+   "name": "Brewing,Fermentation and Distillery Sciences",
+   "noncredit": false,
+   "pages": "43",
+   "provisions": [],
+   "types": [
+    "specific"
+   ]
+  },
+  "Broadcasting Technology (Film making/video, media production, radio/TV)": {
+   "areas": "Film making/video, media production, radio/TV",
+   "code": "",
+   "name": "Broadcasting Technology",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Building Codes and Regulations (Inspecting of construction, building codes, contractor training)": {
+   "areas": "Inspecting of construction, building codes, contractor training",
+   "code": "",
+   "name": "Building Codes and Regulations",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Building Maintenance": {
+   "areas": "",
+   "code": "",
+   "name": "Building Maintenance",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Business": {
+   "areas": "",
+   "code": "",
+   "name": "Business",
+   "noncredit": false,
+   "pages": "21",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Business Education": {
+   "areas": "",
+   "code": "",
+   "name": "Business Education",
+   "noncredit": false,
+   "pages": "22",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Business Machine Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Business Machine Technology",
+   "noncredit": false,
+   "pages": "47",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Cabinet Making": {
+   "areas": "",
+   "code": "",
+   "name": "Cabinet Making",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Cardiovascular Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Cardiovascular Technology",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Carpentry": {
+   "areas": "",
+   "code": "",
+   "name": "Carpentry",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Ceramic Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Ceramic Technology",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Chemistry": {
+   "areas": "",
+   "code": "",
+   "name": "Chemistry",
+   "noncredit": false,
+   "pages": "22",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Chicano Studies": {
+   "areas": "",
+   "code": "",
+   "name": "Chicano Studies",
+   "noncredit": false,
+   "pages": "22",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Child Development/Early Childhood Education": {
+   "areas": "",
+   "code": "",
+   "name": "Child Development/Early Childhood Education",
+   "noncredit": false,
+   "pages": "22",
+   "provisions": [],
+   "types": [
+    "masters",
+    "specific"
+   ]
+  },
+  "Citizenship: Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(d)",
+   "name": "Citizenship: Noncredit",
+   "noncredit": true,
+   "pages": "43",
+   "provisions": [
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Classics": {
+   "areas": "",
+   "code": "",
+   "name": "Classics",
+   "noncredit": false,
+   "pages": "23",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Coaching": {
+   "areas": "",
+   "code": "",
+   "name": "Coaching",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Commercial Art (Sign making, lettering, packaging, rendering)": {
+   "areas": "Sign making, lettering, packaging, rendering",
+   "code": "",
+   "name": "Commercial Art",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Commercial Music": {
+   "areas": "",
+   "code": "",
+   "name": "Commercial Music",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Communication Studies (Speech Communication)": {
+   "areas": "Speech Communication",
+   "code": "",
+   "name": "Communication Studies",
+   "noncredit": false,
+   "pages": "23",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Community College Counselor of Students with Disabilities": {
+   "areas": "",
+   "code": "CCR 53414(a)",
+   "name": "Community College Counselor of Students with Disabilities",
+   "noncredit": false,
+   "pages": "23",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Computer Information Systems (Computer network installation, microcomputer technology, computer applications)": {
+   "areas": "Computer network installation, microcomputer technology, computer applications",
+   "code": "",
+   "name": "Computer Information Systems",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Computer Science": {
+   "areas": "",
+   "code": "",
+   "name": "Computer Science",
+   "noncredit": false,
+   "pages": "24",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Computer Service Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Computer Service Technology",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Construction Management": {
+   "areas": "",
+   "code": "",
+   "name": "Construction Management",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Construction Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Construction Technology",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Cosmetology": {
+   "areas": "",
+   "code": "",
+   "name": "Cosmetology",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Counseling": {
+   "areas": "",
+   "code": "CCR 53410.1",
+   "name": "Counseling",
+   "noncredit": false,
+   "pages": "24",
+   "provisions": [
+    "license_53410_1"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Counseling: Extended Opportunity Programs and Services (EOPS)": {
+   "areas": "EOPS",
+   "code": "CCR 56264 (a-c)",
+   "name": "Counseling: Extended Opportunity Programs and Services",
+   "noncredit": false,
+   "pages": "25",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Counseling: Mental Health": {
+   "areas": "",
+   "code": "",
+   "name": "Counseling: Mental Health",
+   "noncredit": false,
+   "pages": "",
+   "provisions": [
+    "credential_required"
+   ],
+   "types": [
+    "masters"
+   ],
+   "why": "New in 2026 (summary of changes, printed page 3) and printed in the master's list; the Disciplines Index omits it."
+  },
+  "Court Interpreting": {
+   "areas": "",
+   "code": "",
+   "name": "Court Interpreting",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Court Reporting": {
+   "areas": "",
+   "code": "",
+   "name": "Court Reporting",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Culinary Arts/Food Technology (Food service, meat cutting, baking, waiter/ waitressing, bartending)": {
+   "areas": "Food service, meat cutting, baking, waiter/ waitressing, bartending",
+   "code": "",
+   "name": "Culinary Arts/Food Technology",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Dance": {
+   "areas": "",
+   "code": "",
+   "name": "Dance",
+   "noncredit": false,
+   "pages": "26",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Deaf and Hearing Impaired: Disabled Students Programs and Services": {
+   "areas": "",
+   "code": "CCR 53414(d) (1)(2)(C)",
+   "name": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+   "noncredit": false,
+   "pages": "26",
+   "provisions": [
+    "dsps_53414"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Dental Technology (Dental assisting, dental hygiene)": {
+   "areas": "Dental assisting, dental hygiene",
+   "code": "",
+   "name": "Dental Technology",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Developmental Disabilities: Disabled Students Programs and Services": {
+   "areas": "",
+   "code": "CCR 53414(d) (1)(2)(B)",
+   "name": "Developmental Disabilities: Disabled Students Programs and Services",
+   "noncredit": false,
+   "pages": "26",
+   "provisions": [
+    "dsps_53414"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Diagnostic Medical Technology (Diagnostic medical sonography, neurodiagnostic technology, polysonographic technology)": {
+   "areas": "Diagnostic medical sonography, neurodiagnostic technology, polysonographic technology",
+   "code": "",
+   "name": "Diagnostic Medical Technology",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Diesel Mechanics": {
+   "areas": "",
+   "code": "",
+   "name": "Diesel Mechanics",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Dietetic Technician": {
+   "areas": "",
+   "code": "",
+   "name": "Dietetic Technician",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Dietetics/Nutritional Science": {
+   "areas": "",
+   "code": "",
+   "name": "Dietetics/Nutritional Science",
+   "noncredit": false,
+   "pages": "26",
+   "provisions": [],
+   "types": [
+    "masters",
+    "any"
+   ]
+  },
+  "Digital Fabrication Technician": {
+   "areas": "",
+   "code": "",
+   "name": "Digital Fabrication Technician",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Disabled Student Programs and Services (DSPS)": {
+   "areas": "",
+   "code": "CCR 53414(d) (1)(2)(e) (1-3)(f)",
+   "name": "Disabled Student Programs and Services (DSPS)",
+   "noncredit": false,
+   "pages": "26,43,48",
+   "provisions": [
+    "dsps_53414"
+   ],
+   "types": [
+    "masters",
+    "specific",
+    "any"
+   ]
+  },
+  "Drafting/CADD (Computer Aided Drafting/Design), CAD (Computer Aided Design), CAD (Computer Aided Drafting)": {
+   "areas": "Computer Aided Drafting",
+   "code": "",
+   "name": "Drafting/CADD (Computer Aided Drafting/Design), CAD (Computer Aided Design), CAD",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Drama/Theater Arts": {
+   "areas": "",
+   "code": "",
+   "name": "Drama/Theater Arts",
+   "noncredit": false,
+   "pages": "27",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Earth Science": {
+   "areas": "",
+   "code": "",
+   "name": "Earth Science",
+   "noncredit": false,
+   "pages": "27",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Ecology": {
+   "areas": "",
+   "code": "",
+   "name": "Ecology",
+   "noncredit": false,
+   "pages": "27",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Economics": {
+   "areas": "",
+   "code": "",
+   "name": "Economics",
+   "noncredit": false,
+   "pages": "27",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Education": {
+   "areas": "",
+   "code": "",
+   "name": "Education",
+   "noncredit": false,
+   "pages": "27",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Electricity (Electrical power distribution)": {
+   "areas": "Electrical power distribution",
+   "code": "",
+   "name": "Electricity",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Electromechanical Technology (Industrial mechanical technology)": {
+   "areas": "Industrial mechanical technology",
+   "code": "",
+   "name": "Electromechanical Technology",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Electromicroscopy": {
+   "areas": "",
+   "code": "",
+   "name": "Electromicroscopy",
+   "noncredit": false,
+   "pages": "48",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Electronic Technology (Radio, television, computer repair, avionics)": {
+   "areas": "Radio, television, computer repair, avionics",
+   "code": "",
+   "name": "Electronic Technology",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Electronics": {
+   "areas": "",
+   "code": "",
+   "name": "Electronics",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Electroplating": {
+   "areas": "",
+   "code": "",
+   "name": "Electroplating",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Emergency Medical Technologies": {
+   "areas": "",
+   "code": "",
+   "name": "Emergency Medical Technologies",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Engineering": {
+   "areas": "",
+   "code": "CCR 53410.1",
+   "name": "Engineering",
+   "noncredit": false,
+   "pages": "28",
+   "provisions": [
+    "license_53410_1"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Engineering Support (Surveying, engineering aides)": {
+   "areas": "Surveying, engineering aides",
+   "code": "",
+   "name": "Engineering Support",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Engineering Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Engineering Technology",
+   "noncredit": false,
+   "pages": "28",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "English": {
+   "areas": "",
+   "code": "",
+   "name": "English",
+   "noncredit": false,
+   "pages": "28",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "English as a Second Language (ESL)": {
+   "areas": "",
+   "code": "",
+   "name": "English as a Second Language (ESL)",
+   "noncredit": false,
+   "pages": "29",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "English as a Second Language (ESL): Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(e)",
+   "name": "English as a Second Language (ESL): Noncredit",
+   "noncredit": true,
+   "pages": "43",
+   "provisions": [
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Environmental Technologies (Environmental hazardous material technology, hazardous material abatement, environmentally conscious manufacturing, waste water pretreatment, air pollution control technology, integrated waste management, water treatment, sewage treatment)": {
+   "areas": "Environmental hazardous material technology, hazardous material abatement, environmentally conscious manufacturing, waste water pretreatment, air pollution control technology, integrated waste management, water treatment, sewage treatment",
+   "code": "",
+   "name": "Environmental Technologies",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Equine Science (Equine training, equitation, farrier science, pack horse management)": {
+   "areas": "Equine training, equitation, farrier science, pack horse management",
+   "code": "",
+   "name": "Equine Science",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Estimating": {
+   "areas": "",
+   "code": "",
+   "name": "Estimating",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Ethnic Studies": {
+   "areas": "",
+   "code": "",
+   "name": "Ethnic Studies",
+   "noncredit": false,
+   "pages": "29",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Fabric Care (Laundry and dry cleaning)": {
+   "areas": "Laundry and dry cleaning",
+   "code": "",
+   "name": "Fabric Care",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Family and Consumer Studies/ Home Economics": {
+   "areas": "",
+   "code": "",
+   "name": "Family and Consumer Studies/ Home Economics",
+   "noncredit": false,
+   "pages": "29",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Fashion and Related Technologies (Merchandising, design, production)": {
+   "areas": "Merchandising, design, production",
+   "code": "",
+   "name": "Fashion and Related Technologies",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Film and Media Studies": {
+   "areas": "",
+   "code": "",
+   "name": "Film and Media Studies",
+   "noncredit": false,
+   "pages": "29",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Fire Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Fire Technology",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Flight Attendant Training": {
+   "areas": "",
+   "code": "",
+   "name": "Flight Attendant Training",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Fluid Mechanics Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Fluid Mechanics Technology",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Folk Dance": {
+   "areas": "",
+   "code": "",
+   "name": "Folk Dance",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Foreign Languages": {
+   "areas": "",
+   "code": "",
+   "name": "Foreign Languages",
+   "noncredit": false,
+   "pages": "30",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Forestry/Natural Resources (Range management; soil, air and water resources; fish/wildlife management; parks and recreation)": {
+   "areas": "Range management; soil, air and water resources; fish/wildlife management; parks and recreation",
+   "code": "",
+   "name": "Forestry/Natural Resources",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Furniture Making": {
+   "areas": "",
+   "code": "",
+   "name": "Furniture Making",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Geography": {
+   "areas": "",
+   "code": "",
+   "name": "Geography",
+   "noncredit": false,
+   "pages": "30",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Gerontology": {
+   "areas": "",
+   "code": "",
+   "name": "Gerontology",
+   "noncredit": false,
+   "pages": "30",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Graphic Arts (Desktop publishing)": {
+   "areas": "Desktop publishing",
+   "code": "",
+   "name": "Graphic Arts",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Gunsmithing": {
+   "areas": "",
+   "code": "",
+   "name": "Gunsmithing",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Health": {
+   "areas": "",
+   "code": "",
+   "name": "Health",
+   "noncredit": false,
+   "pages": "30",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Health Care Ancillaries (Medical assisting, hospice worker, home care aide, certified nurse aide, health aide, ward clerk, central service technology, childbirth educator, primary care associate, massage therapy)": {
+   "areas": "Medical assisting, hospice worker, home care aide, certified nurse aide, health aide, ward clerk, central service technology, childbirth educator, primary care associate, massage therapy",
+   "code": "",
+   "name": "Health Care Ancillaries",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Health Information Technology (Medical record technology)": {
+   "areas": "Medical record technology",
+   "code": "",
+   "name": "Health Information Technology",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Health Services Director/Health Services Coordinator/College Nurse": {
+   "areas": "",
+   "code": "CCR 53411",
+   "name": "Health Services Director/Health Services Coordinator/College Nurse",
+   "noncredit": false,
+   "pages": "31",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Health and Safety: Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(f)",
+   "name": "Health and Safety: Noncredit",
+   "noncredit": true,
+   "pages": "44",
+   "provisions": [
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Heavy Duty Equipment Mechanics": {
+   "areas": "",
+   "code": "",
+   "name": "Heavy Duty Equipment Mechanics",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "History": {
+   "areas": "",
+   "code": "",
+   "name": "History",
+   "noncredit": false,
+   "pages": "31",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Home Economics: Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(g)",
+   "name": "Home Economics: Noncredit",
+   "noncredit": true,
+   "pages": "44",
+   "provisions": [
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Homeland Security": {
+   "areas": "",
+   "code": "",
+   "name": "Homeland Security",
+   "noncredit": false,
+   "pages": "31",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Hotel and Motel Services": {
+   "areas": "",
+   "code": "",
+   "name": "Hotel and Motel Services",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Humanities": {
+   "areas": "",
+   "code": "",
+   "name": "Humanities",
+   "noncredit": false,
+   "pages": "31",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Industrial Design": {
+   "areas": "",
+   "code": "",
+   "name": "Industrial Design",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Industrial Maintenance": {
+   "areas": "",
+   "code": "",
+   "name": "Industrial Maintenance",
+   "noncredit": false,
+   "pages": "49",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Industrial Relations": {
+   "areas": "",
+   "code": "",
+   "name": "Industrial Relations",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Industrial Safety": {
+   "areas": "",
+   "code": "",
+   "name": "Industrial Safety",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Industrial Technology (Foundry occupations)": {
+   "areas": "Foundry occupations",
+   "code": "",
+   "name": "Industrial Technology",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Instructional Design/Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Instructional Design/Technology",
+   "noncredit": false,
+   "pages": "31",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Insurance": {
+   "areas": "",
+   "code": "",
+   "name": "Insurance",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Interdisciplinary Studies": {
+   "areas": "",
+   "code": "",
+   "name": "Interdisciplinary Studies",
+   "noncredit": false,
+   "pages": "32",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Interdisciplinary-Basic Skills: Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(a)",
+   "name": "Interdisciplinary-Basic Skills: Noncredit",
+   "noncredit": true,
+   "pages": "44",
+   "provisions": [
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Interior Design": {
+   "areas": "",
+   "code": "",
+   "name": "Interior Design",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Janitorial Services": {
+   "areas": "",
+   "code": "",
+   "name": "Janitorial Services",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Jewelry": {
+   "areas": "",
+   "code": "",
+   "name": "Jewelry",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Journalism": {
+   "areas": "",
+   "code": "",
+   "name": "Journalism",
+   "noncredit": false,
+   "pages": "32",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Kinesiology": {
+   "areas": "",
+   "code": "",
+   "name": "Kinesiology",
+   "noncredit": false,
+   "pages": "32",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Labor Relations": {
+   "areas": "",
+   "code": "",
+   "name": "Labor Relations",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Law": {
+   "areas": "",
+   "code": "CCR 53415",
+   "name": "Law",
+   "noncredit": false,
+   "pages": "32",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Learning Assistance or Learning Skills Coordinators or Instructors, and Tutoring Coordinators": {
+   "areas": "",
+   "code": "",
+   "name": "Learning Assistance or Learning Skills Coordinators or Instructors, and Tutoring Coordinators",
+   "noncredit": false,
+   "pages": "33",
+   "provisions": [
+    "learning_assistance_53415"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Learning Disabilities: Disabled Student Programs and Services": {
+   "areas": "",
+   "code": "CCR 53414(d) (1)(2)",
+   "name": "Learning Disabilities: Disabled Student Programs and Services",
+   "noncredit": false,
+   "pages": "33",
+   "provisions": [
+    "dsps_53414"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Learning Disabilities: Specialist": {
+   "areas": "",
+   "code": "CCR 53414(f)",
+   "name": "Learning Disabilities: Specialist",
+   "noncredit": false,
+   "pages": "33",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Legal Assisting (Paralegal)": {
+   "areas": "Paralegal",
+   "code": "",
+   "name": "Legal Assisting",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Library Science": {
+   "areas": "",
+   "code": "",
+   "name": "Library Science",
+   "noncredit": false,
+   "pages": "33",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Library Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Library Technology",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Licensed Vocational Nursing": {
+   "areas": "",
+   "code": "",
+   "name": "Licensed Vocational Nursing",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Linguistics": {
+   "areas": "",
+   "code": "",
+   "name": "Linguistics",
+   "noncredit": false,
+   "pages": "33",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Locksmithing": {
+   "areas": "",
+   "code": "",
+   "name": "Locksmithing",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Machine Tool Technology (Tool and die making)": {
+   "areas": "Tool and die making",
+   "code": "",
+   "name": "Machine Tool Technology",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Management": {
+   "areas": "",
+   "code": "",
+   "name": "Management",
+   "noncredit": false,
+   "pages": "34",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Manufacturing Technology (Quality control, process control)": {
+   "areas": "Quality control, process control",
+   "code": "",
+   "name": "Manufacturing Technology",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Marine Diving Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Marine Diving Technology",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Marine Engine Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Marine Engine Technology",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Marketing": {
+   "areas": "",
+   "code": "",
+   "name": "Marketing",
+   "noncredit": false,
+   "pages": "34",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Martial Arts/Self-Defense": {
+   "areas": "",
+   "code": "",
+   "name": "Martial Arts/Self-Defense",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Masonry (Concrete, cement work, bricklaying)": {
+   "areas": "Concrete, cement work, bricklaying",
+   "code": "",
+   "name": "Masonry",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Mass Communication": {
+   "areas": "",
+   "code": "",
+   "name": "Mass Communication",
+   "noncredit": false,
+   "pages": "23",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Materials Testing Technology (Destructive testing or nondestructive examination)": {
+   "areas": "Destructive testing or nondestructive examination",
+   "code": "",
+   "name": "Materials Testing Technology",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Mathematics": {
+   "areas": "",
+   "code": "",
+   "name": "Mathematics",
+   "noncredit": false,
+   "pages": "34",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Mathematics-Basic Skills: Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(b)",
+   "name": "Mathematics-Basic Skills: Noncredit",
+   "noncredit": true,
+   "pages": "44",
+   "provisions": [
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Media Production (Broadcasting Technology)": {
+   "areas": "Broadcasting Technology",
+   "code": "",
+   "name": "Media Production",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Medical Instrument Repair": {
+   "areas": "",
+   "code": "",
+   "name": "Medical Instrument Repair",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Military Studies (Military Science)": {
+   "areas": "Military Science",
+   "code": "",
+   "name": "Military Studies",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Mining and Metallurgy (Oil field operations)": {
+   "areas": "Oil field operations",
+   "code": "",
+   "name": "Mining and Metallurgy",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Mortuary Science": {
+   "areas": "",
+   "code": "",
+   "name": "Mortuary Science",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Motorcycle Repair": {
+   "areas": "",
+   "code": "",
+   "name": "Motorcycle Repair",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Multimedia": {
+   "areas": "",
+   "code": "",
+   "name": "Multimedia",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Music": {
+   "areas": "",
+   "code": "",
+   "name": "Music",
+   "noncredit": false,
+   "pages": "35",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Music Management": {
+   "areas": "",
+   "code": "",
+   "name": "Music Management",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Music Merchandising": {
+   "areas": "",
+   "code": "",
+   "name": "Music Merchandising",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Musical Instrument Repair": {
+   "areas": "",
+   "code": "",
+   "name": "Musical Instrument Repair",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Nanotechnology": {
+   "areas": "",
+   "code": "",
+   "name": "Nanotechnology",
+   "noncredit": false,
+   "pages": "35",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Native American/American Indian Studies": {
+   "areas": "",
+   "code": "",
+   "name": "Native American/American Indian Studies",
+   "noncredit": false,
+   "pages": "35",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Nursing": {
+   "areas": "",
+   "code": "",
+   "name": "Nursing",
+   "noncredit": false,
+   "pages": "35",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Nursing Science/Clinical Practice": {
+   "areas": "",
+   "code": "",
+   "name": "Nursing Science/Clinical Practice",
+   "noncredit": false,
+   "pages": "50",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Nutritional Science/Dietetics": {
+   "areas": "",
+   "code": "CCR 53410.1",
+   "name": "Nutritional Science/Dietetics",
+   "noncredit": false,
+   "pages": "36",
+   "provisions": [
+    "license_53410_1"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Occupational Therapy Assisting": {
+   "areas": "",
+   "code": "",
+   "name": "Occupational Therapy Assisting",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Office Technologies (Secretarial skills, office systems, word processing, computer applications, automated office training)": {
+   "areas": "Secretarial skills, office systems, word processing, computer applications, automated office training",
+   "code": "",
+   "name": "Office Technologies",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Older Adults: Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(h)",
+   "name": "Older Adults: Noncredit",
+   "noncredit": true,
+   "pages": "44",
+   "provisions": [
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Ornamental Horticulture (Landscape horticulture, design, maintenance, landscape architecture, floristry, floral design)": {
+   "areas": "Landscape horticulture, design, maintenance, landscape architecture, floristry, floral design",
+   "code": "",
+   "name": "Ornamental Horticulture",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Parent Education: Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(i)",
+   "name": "Parent Education: Noncredit",
+   "noncredit": true,
+   "pages": "44",
+   "provisions": [
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Peace Studies": {
+   "areas": "",
+   "code": "",
+   "name": "Peace Studies",
+   "noncredit": false,
+   "pages": "36",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Pharmacy Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Pharmacy Technology",
+   "noncredit": false,
+   "pages": "44",
+   "provisions": [],
+   "types": [
+    "specific"
+   ]
+  },
+  "Philosophy": {
+   "areas": "",
+   "code": "",
+   "name": "Philosophy",
+   "noncredit": false,
+   "pages": "36",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Photographic Technology/ Commercial Photography": {
+   "areas": "",
+   "code": "",
+   "name": "Photographic Technology/ Commercial Photography",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Photography": {
+   "areas": "",
+   "code": "",
+   "name": "Photography",
+   "noncredit": false,
+   "pages": "36",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Physical Disabilities: Disabled Student Programs and Services": {
+   "areas": "",
+   "code": "CCR 53414(d)",
+   "name": "Physical Disabilities: Disabled Student Programs and Services",
+   "noncredit": false,
+   "pages": "36",
+   "provisions": [
+    "dsps_53414"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Physical Education": {
+   "areas": "",
+   "code": "",
+   "name": "Physical Education",
+   "noncredit": false,
+   "pages": "37",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Physical Education (Adapted): Disabled Student Programs and Services": {
+   "areas": "",
+   "code": "CCR 53414(b)",
+   "name": "Physical Education (Adapted): Disabled Student Programs and Services",
+   "noncredit": false,
+   "pages": "37",
+   "provisions": [
+    "dsps_53414"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Physical Sciences": {
+   "areas": "",
+   "code": "",
+   "name": "Physical Sciences",
+   "noncredit": false,
+   "pages": "37",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Physical Therapy Assisting": {
+   "areas": "",
+   "code": "",
+   "name": "Physical Therapy Assisting",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Physics/Astronomy": {
+   "areas": "",
+   "code": "",
+   "name": "Physics/Astronomy",
+   "noncredit": false,
+   "pages": "37",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Piano Tuning and Repair": {
+   "areas": "",
+   "code": "",
+   "name": "Piano Tuning and Repair",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Plastics": {
+   "areas": "",
+   "code": "",
+   "name": "Plastics",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Plumbing": {
+   "areas": "",
+   "code": "",
+   "name": "Plumbing",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Political Science": {
+   "areas": "",
+   "code": "",
+   "name": "Political Science",
+   "noncredit": false,
+   "pages": "38",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Printing Technology (Typography, composition, printing)": {
+   "areas": "Typography, composition, printing",
+   "code": "",
+   "name": "Printing Technology",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Private Security (Security management, safety/ accident control, hazardous substance management crime prevention)": {
+   "areas": "Security management, safety/ accident control, hazardous substance management crime prevention",
+   "code": "",
+   "name": "Private Security",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Prosthetics and Orthotics": {
+   "areas": "",
+   "code": "",
+   "name": "Prosthetics and Orthotics",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Psychiatric Technician": {
+   "areas": "",
+   "code": "",
+   "name": "Psychiatric Technician",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Psychology": {
+   "areas": "",
+   "code": "",
+   "name": "Psychology",
+   "noncredit": false,
+   "pages": "38",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Public Relations": {
+   "areas": "",
+   "code": "",
+   "name": "Public Relations",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Public Safety": {
+   "areas": "",
+   "code": "",
+   "name": "Public Safety",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Radiation Therapy": {
+   "areas": "",
+   "code": "",
+   "name": "Radiation Therapy",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Radiological Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Radiological Technology",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Reading": {
+   "areas": "",
+   "code": "",
+   "name": "Reading",
+   "noncredit": false,
+   "pages": "38",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Reading-Basic Skills: Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(c)",
+   "name": "Reading-Basic Skills: Noncredit",
+   "noncredit": true,
+   "pages": "44",
+   "provisions": [
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Real Estate": {
+   "areas": "",
+   "code": "",
+   "name": "Real Estate",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Recreation Administration": {
+   "areas": "",
+   "code": "",
+   "name": "Recreation Administration",
+   "noncredit": false,
+   "pages": "38",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Registered Behavior Technician": {
+   "areas": "",
+   "code": "",
+   "name": "Registered Behavior Technician",
+   "noncredit": false,
+   "pages": "39",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Registered Veterinary Technician": {
+   "areas": "",
+   "code": "",
+   "name": "Registered Veterinary Technician",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Rehabilitation Technician": {
+   "areas": "",
+   "code": "",
+   "name": "Rehabilitation Technician",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Religious Studies": {
+   "areas": "",
+   "code": "",
+   "name": "Religious Studies",
+   "noncredit": false,
+   "pages": "39",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Respiratory Technician": {
+   "areas": "",
+   "code": "",
+   "name": "Respiratory Technician",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Respiratory Technologies": {
+   "areas": "",
+   "code": "",
+   "name": "Respiratory Technologies",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Restaurant Management": {
+   "areas": "",
+   "code": "",
+   "name": "Restaurant Management",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Retailing (Purchasing, merchandising, sales)": {
+   "areas": "Purchasing, merchandising, sales",
+   "code": "",
+   "name": "Retailing",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Robotics (Computer integrated manufacturing)": {
+   "areas": "Computer integrated manufacturing",
+   "code": "",
+   "name": "Robotics",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Sanitation and Public Health Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Sanitation and Public Health Technology",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Search and Rescue": {
+   "areas": "",
+   "code": "",
+   "name": "Search and Rescue",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Sheet Metal": {
+   "areas": "",
+   "code": "",
+   "name": "Sheet Metal",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Ship and Boat Building and Repair": {
+   "areas": "",
+   "code": "",
+   "name": "Ship and Boat Building and Repair",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Shoe Rebuilding": {
+   "areas": "",
+   "code": "",
+   "name": "Shoe Rebuilding",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Sign Language, American": {
+   "areas": "",
+   "code": "",
+   "name": "Sign Language, American",
+   "noncredit": false,
+   "pages": "51",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Sign Language/ English Interpreting": {
+   "areas": "",
+   "code": "",
+   "name": "Sign Language/ English Interpreting",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Small Business Development (Entrepreneurship)": {
+   "areas": "Entrepreneurship",
+   "code": "",
+   "name": "Small Business Development",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Small Engine Mechanics": {
+   "areas": "",
+   "code": "",
+   "name": "Small Engine Mechanics",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Social Science": {
+   "areas": "",
+   "code": "",
+   "name": "Social Science",
+   "noncredit": false,
+   "pages": "39",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Sociology": {
+   "areas": "",
+   "code": "",
+   "name": "Sociology",
+   "noncredit": false,
+   "pages": "39",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Specialized Instruction (Disabled Student Programs and Services): Noncredit": {
+   "areas": "",
+   "code": "CCR 53414(e) (3)",
+   "name": "Specialized Instruction (Disabled Student Programs and Services): Noncredit",
+   "noncredit": true,
+   "pages": "39, 45",
+   "provisions": [
+    "dsps_53414"
+   ],
+   "types": [
+    "masters",
+    "specific"
+   ]
+  },
+  "Specialized Instruction (Disabled Student Programs and Services): Vocational Noncredit": {
+   "areas": "",
+   "code": "CCR 53414(e) (3)",
+   "name": "Specialized Instruction (Disabled Student Programs and Services): Vocational Noncredit",
+   "noncredit": true,
+   "pages": "40, 45",
+   "provisions": [
+    "dsps_53414"
+   ],
+   "types": [
+    "masters",
+    "specific"
+   ]
+  },
+  "Speech Communication (Communication Studies)": {
+   "areas": "Communication Studies",
+   "code": "",
+   "name": "Speech Communication",
+   "noncredit": false,
+   "pages": "40",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Speech Language Pathology": {
+   "areas": "",
+   "code": "",
+   "name": "Speech Language Pathology",
+   "noncredit": false,
+   "pages": "40",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Speech Language Pathology: Disabled Student Programs and Services": {
+   "areas": "",
+   "code": "CCR 53414(c)",
+   "name": "Speech Language Pathology: Disabled Student Programs and Services",
+   "noncredit": false,
+   "pages": "40",
+   "provisions": [
+    "dsps_53414"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Stagecraft": {
+   "areas": "",
+   "code": "",
+   "name": "Stagecraft",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Steamfitting": {
+   "areas": "",
+   "code": "",
+   "name": "Steamfitting",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Supply Chain Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Supply Chain Technology",
+   "noncredit": false,
+   "pages": "45",
+   "provisions": [],
+   "types": [
+    "specific"
+   ]
+  },
+  "Surgical Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Surgical Technology",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Telecommunication Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Telecommunication Technology",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Theater Arts": {
+   "areas": "",
+   "code": "",
+   "name": "Theater Arts",
+   "noncredit": false,
+   "pages": "40",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Transportation": {
+   "areas": "",
+   "code": "",
+   "name": "Transportation",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Travel Services (Dispatching)": {
+   "areas": "Dispatching",
+   "code": "",
+   "name": "Travel Services",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Uncrewed Aircraft System (UAS) Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Uncrewed Aircraft System (UAS) Technology",
+   "noncredit": false,
+   "pages": "40",
+   "provisions": [
+    "credential_required"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Upholstering": {
+   "areas": "",
+   "code": "",
+   "name": "Upholstering",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Vision Care Technology": {
+   "areas": "",
+   "code": "",
+   "name": "Vision Care Technology",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Vocational (short-term): Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(j)",
+   "name": "Vocational (short-term): Noncredit",
+   "noncredit": true,
+   "pages": "45",
+   "provisions": [
+    "apprenticeship_53413",
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  },
+  "Watch and Clock Repair": {
+   "areas": "",
+   "code": "",
+   "name": "Watch and Clock Repair",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Welding": {
+   "areas": "",
+   "code": "",
+   "name": "Welding",
+   "noncredit": false,
+   "pages": "52",
+   "provisions": [],
+   "types": [
+    "any"
+   ]
+  },
+  "Women’s Studies": {
+   "areas": "",
+   "code": "",
+   "name": "Women’s Studies",
+   "noncredit": false,
+   "pages": "40",
+   "provisions": [],
+   "types": [
+    "masters"
+   ]
+  },
+  "Work Experience Instructors or Coordinators": {
+   "areas": "",
+   "code": "CCR 53416",
+   "name": "Work Experience Instructors or Coordinators",
+   "noncredit": false,
+   "pages": "41",
+   "provisions": [
+    "work_experience_53416"
+   ],
+   "types": [
+    "masters"
+   ]
+  },
+  "Writing-Basic Skills: Noncredit": {
+   "areas": "",
+   "code": "CCR 53412(c)",
+   "name": "Writing-Basic Skills: Noncredit",
+   "noncredit": true,
+   "pages": "44",
+   "provisions": [
+    "noncredit_53412"
+   ],
+   "types": [
+    "specific"
+   ]
+  }
+ },
+ "provisions": {
+  "apprenticeship_53413": {
+   "disciplines": {
+    "Vocational (short-term): Noncredit": "53412(j)(4): for an occupation the district offers or has offered apprenticeship in, the noncredit apprenticeship qualifications"
+   },
+   "printed_page": 62,
+   "section": "CCR 53413",
+   "words": "Apprenticeship instructors of credit and noncredit courses in a program the Division of Apprenticeship Standards approves. A course and program attribute, not a discipline. Credit: an associate degree and four years in the trade; or six years, a journeyman's certificate and twelve units; or six years and ten years as a DAS apprenticeship instructor; or a district's urgency policy. Noncredit: the credit qualifications, or a high school diploma, six years in the occupation (two at journey level) and sixty hours of instruction methods."
+  },
+  "credential_required": {
+   "disciplines": {
+    "Counseling: Mental Health": "License from the California Board of Psychology or Board of Behavioral Sciences (or their minimum qualifications)",
+    "Uncrewed Aircraft System (UAS) Technology": "FAA Remote Pilot (Part 107) Certificate"
+   },
+   "printed_page": 3,
+   "section": "Discipline text (2026 summary of changes)",
+   "words": "The discipline's own minimum qualification requires a license or certificate."
+  },
+  "dsps_53414": {
+   "disciplines": {},
+   "printed_page": 63,
+   "section": "CCR 53414",
+   "words": "Disabled Students Programs and Services: counselors, adapted physical education, speech and language, credit specialized instruction (a master's in the area and fifteen units), noncredit specialized instruction (53414(e), noncredit vocational courses under (e)(4)), and Learning Disabilities Specialists."
+  },
+  "learning_assistance_53415": {
+   "disciplines": {
+    "Learning Assistance or Learning Skills Coordinators or Instructors, and Tutoring Coordinators": "53415"
+   },
+   "printed_page": 65,
+   "section": "CCR 53415",
+   "words": "Learning assistance instructors: any master's discipline in which assistance is given at the college, or a master's in education or adult learning; none applies where no apportionment is claimed."
+  },
+  "license_53410_1": {
+   "disciplines": {
+    "Accounting": "Certified Public Accountant",
+    "Counseling": "Marriage and Family Therapist",
+    "Engineering": "Professional Engineer",
+    "Nutritional Science/Dietetics": "Registered Dietitian"
+   },
+   "printed_page": 59,
+   "section": "CCR 53410.1",
+   "words": "Professional license as an alternative: a bachelor's in the discipline plus a valid California license substitutes for the 53410 qualifications."
+  },
+  "licensed_occupations_53417": {
+   "disciplines": {},
+   "printed_page": 66,
+   "section": "CCR 53417",
+   "words": "Any credit or noncredit course: a current California license or certificate wherever program or course approval requires one, or local hiring judges it essential. Applies course by course, never to a discipline as a whole."
+  },
+  "noncredit_53412": {
+   "disciplines": {
+    "Citizenship: Noncredit": "53412(d)",
+    "English as a Second Language (ESL): Noncredit": "53412(e)",
+    "Health and Safety: Noncredit": "53412(f)",
+    "Home Economics: Noncredit": "53412(g)",
+    "Interdisciplinary-Basic Skills: Noncredit": "53412(a)",
+    "Mathematics-Basic Skills: Noncredit": "53412(b)",
+    "Older Adults: Noncredit": "53412(h)",
+    "Parent Education: Noncredit": "53412(i)",
+    "Reading-Basic Skills: Noncredit": "53412(c)",
+    "Vocational (short-term): Noncredit": "53412(j)",
+    "Writing-Basic Skills: Noncredit": "53412(c)"
+   },
+   "printed_page": 60,
+   "section": "CCR 53412",
+   "words": "Noncredit instructors: the credit discipline's qualifications, or the subsection named for the course's kind. A noncredit course with no subsection of its own (COCI's Workforce Preparation, for one) takes its credit discipline's qualifications."
+  },
+  "work_experience_53416": {
+   "disciplines": {
+    "Work Experience Instructors or Coordinators": "53416"
+   },
+   "printed_page": 65,
+   "section": "CCR 53416",
+   "words": "Work experience instructors and coordinators: the qualifications of any discipline in which work experience may be given at the college."
+  }
+ },
+ "types": {
+  "any": "Master's not generally expected; any bachelor's or associate degree plus experience (CCR 53410(d))",
+  "masters": "Disciplines requiring a master's degree (CCR 53410(a)-(b))",
+  "specific": "Master's not generally expected; a bachelor's or associate degree in the discipline plus experience (CCR 53410(c))"
+ }
+}

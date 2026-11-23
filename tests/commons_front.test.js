@@ -98,7 +98,11 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
     && txt(d.querySelector('.cmf-card[data-key="programs"] .cmf-more-body')).indexOf("leaves about " + fmt(left)) >= 0);
   check("no link opens #credentials, which is no route", !d.querySelector('a[href="#credentials"]') && d.querySelector('.cmf-card[data-key="credentials"] .cmf-links a[href="#exhibits/list"]'));
   check("the Data Collection line says program records set its date", /^Set by program records:/.test(txt(d.querySelector(".cmf-date .cmf-date-n"))));
-  check("the curator owner trails the held titles' line, never a paragraph of its own", !Array.from(d.querySelectorAll(".cmf-need p")).some((p) => txt(p) === "· a curator") && /held for a person.*· a curator$/.test(txt(Array.from(d.querySelectorAll(".cmf-need p")).find((p) => /held for a person/.test(txt(p))))));
+  /* The held line draws only while titles are held (the 2026-11-23 CER run held none, and the line left the card), so the
+     check reads the line where it is and asks only for no lone owner line where it is not. */
+  const heldLine = Array.from(d.querySelectorAll(".cmf-need p")).find((p) => /held for a person/.test(txt(p)));
+  check("the curator owner trails the held titles' line, never a paragraph of its own", !Array.from(d.querySelectorAll(".cmf-need p")).some((p) => txt(p) === "· a curator")
+    && (!heldLine || /held for a person.*· a curator$/.test(txt(heldLine))));
   check("no card carries a fixed tall minimum in the CSS", !/\.cmf-card \{[^}]*min-height:\s*44rem/.test(SRC));
   check("the Data Curation line reads an estimated date or TBA, never Not dated yet", /^(\w+ \d+, \d{4} estimated|TBA)$/.test(txt(d.querySelectorAll(".cmf-date-v")[1])) && !/Not dated yet/.test(txt(d.querySelector(".cmf-eta"))));
 

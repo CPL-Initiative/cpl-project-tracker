@@ -1,0 +1,674 @@
+{
+ "_what": "The common subject codes kb/_csr_assign_codes.py added to kb/discipline_canonical_subj4.json; git revert of the commit removes them.",
+ "at": "2026-11-23T19:55:10+00:00",
+ "by": "SkyGannet (S717)",
+ "rule": "r-confidence-not-person-settled-sam-2026-11-23; Sam, 2026-11-23, no confirmation unless confidence is low",
+ "added": [
+  {
+   "key": "Accounting",
+   "code": "ACCT",
+   "confidence": 0.97,
+   "level": "Confident",
+   "basis": "cid"
+  },
+  {
+   "key": "Adapted Computer Technology: Disabled Students Programs and Services",
+   "code": "DSAC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Addiction Paraprofessional Training",
+   "code": "ADST",
+   "confidence": 0.85,
+   "level": "Likely",
+   "basis": "college"
+  },
+  {
+   "key": "Aeronautics",
+   "code": "AERO",
+   "confidence": 0.86,
+   "level": "Confident",
+   "basis": "college"
+  },
+  {
+   "key": "Agricultural Engineering",
+   "code": "AGEN",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Animal Training and Management",
+   "code": "ANTM",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Appliance Repair",
+   "code": "APLR",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Archaeological Technology",
+   "code": "ARCT",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Athletic Training",
+   "code": "ATTR",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Banking and Finance",
+   "code": "FINA",
+   "confidence": 0.8,
+   "level": "Likely",
+   "basis": "college"
+  },
+  {
+   "key": "Bicycle Repair",
+   "code": "BICY",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Bookbinding",
+   "code": "BOOK",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Brewing,Fermentation and Distillery Sciences",
+   "code": "BREW",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Building Maintenance",
+   "code": "BLDM",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Business Education",
+   "code": "BUSE",
+   "confidence": 0.78,
+   "level": "Likely",
+   "basis": "college"
+  },
+  {
+   "key": "Business Machine Technology",
+   "code": "BMTC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Cardiovascular Technology",
+   "code": "CVTC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Ceramic Technology",
+   "code": "CRMT",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Classics",
+   "code": "CLAS",
+   "confidence": 0.8,
+   "level": "Likely",
+   "basis": "college"
+  },
+  {
+   "key": "Coaching",
+   "code": "COAC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Community College Counselor of Students with Disabilities",
+   "code": "DSCS",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Computer Service Technology",
+   "code": "CSRV",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Counseling: Extended Opportunity",
+   "code": "EOPS",
+   "confidence": 0.95,
+   "level": "Confident",
+   "basis": "college"
+  },
+  {
+   "key": "Counseling: Mental Health",
+   "code": "CNMH",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Court Interpreting",
+   "code": "CINT",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+   "code": "DSDH",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Developmental Disabilities: Disabled Students Programs and Services",
+   "code": "DSDD",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Dietetic Technician",
+   "code": "DIET",
+   "confidence": 0.8,
+   "level": "Likely",
+   "basis": "college"
+  },
+  {
+   "key": "Ecology",
+   "code": "ECOL",
+   "confidence": 0.6,
+   "level": "Leaning",
+   "basis": "college"
+  },
+  {
+   "key": "Electromicroscopy",
+   "code": "EMIC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Electroplating",
+   "code": "EPLT",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Engineering Support",
+   "code": "ENSP",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Estimating",
+   "code": "ESTI",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Fabric Care",
+   "code": "FABC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Flight Attendant Training",
+   "code": "FLTR",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Fluid Mechanics Technology",
+   "code": "FLMT",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Folk Dance",
+   "code": "FDNC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Health Services Director/Health",
+   "code": "HSDR",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Homeland Security",
+   "code": "HSEC",
+   "confidence": 0.85,
+   "level": "Likely",
+   "basis": "college"
+  },
+  {
+   "key": "Hotel and Motel Services",
+   "code": "HOSP",
+   "confidence": 0.65,
+   "level": "Leaning",
+   "basis": "cid"
+  },
+  {
+   "key": "Industrial Design",
+   "code": "INDD",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Insurance",
+   "code": "INSR",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Janitorial Services",
+   "code": "JANI",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Jewelry",
+   "code": "JEWL",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Labor Relations",
+   "code": "LBRL",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Learning Disabilities: Disabled Student Programs and Services",
+   "code": "DSLD",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Learning Disabilities: Specialist",
+   "code": "DSLS",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Linguistics",
+   "code": "LING",
+   "confidence": 0.95,
+   "level": "Confident",
+   "basis": "college"
+  },
+  {
+   "key": "Locksmithing",
+   "code": "LOCK",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Marine Diving Technology",
+   "code": "MDVT",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Marine Engine Technology",
+   "code": "MENG",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Martial Arts/Self-Defense",
+   "code": "MRTL",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Mass Communication",
+   "code": "MCOM",
+   "confidence": 0.86,
+   "level": "Likely",
+   "basis": "college"
+  },
+  {
+   "key": "Materials Testing Technology",
+   "code": "MTST",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Mathematics-Basic Skills: Noncredit",
+   "code": "MTHN",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Medical Instrument Repair",
+   "code": "MIRP",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Military Studies",
+   "code": "MILS",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Mining and Metallurgy",
+   "code": "MINE",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Motorcycle Repair",
+   "code": "MOTO",
+   "confidence": 0.8,
+   "level": "Likely",
+   "basis": "college"
+  },
+  {
+   "key": "Music Management",
+   "code": "MUSM",
+   "confidence": 0.9,
+   "level": "Confident",
+   "basis": "college"
+  },
+  {
+   "key": "Music Merchandising",
+   "code": "MUSD",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Musical Instrument Repair",
+   "code": "MUIR",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Nanotechnology",
+   "code": "NANO",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Nursing Science/Clinical Practice",
+   "code": "NRSC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Peace Studies",
+   "code": "PCST",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Photographic Technology/ Commercial Photography",
+   "code": "PHTC",
+   "confidence": 0.9,
+   "level": "Confident",
+   "basis": "college"
+  },
+  {
+   "key": "Physical Disabilities: Disabled Student Programs and Services",
+   "code": "DSPD",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Piano Tuning and Repair",
+   "code": "PIAN",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Plastics",
+   "code": "PLAS",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Printing Technology",
+   "code": "PRNT",
+   "confidence": 0.9,
+   "level": "Confident",
+   "basis": "college"
+  },
+  {
+   "key": "Private Security",
+   "code": "PSEC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Prosthetics and Orthotics",
+   "code": "PROS",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Public Relations",
+   "code": "PREL",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Radiation Therapy",
+   "code": "RTHR",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Reading-Basic Skills: Noncredit",
+   "code": "RDGN",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Registered Behavior Technician",
+   "code": "RBTC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Rehabilitation Technician",
+   "code": "REHB",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Religious Studies",
+   "code": "RLST",
+   "confidence": 0.95,
+   "level": "Confident",
+   "basis": "college"
+  },
+  {
+   "key": "Respiratory Technician",
+   "code": "RSPC",
+   "confidence": 0.8,
+   "level": "Likely",
+   "basis": "college"
+  },
+  {
+   "key": "Retailing",
+   "code": "RETL",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Sanitation and Public Health Technology",
+   "code": "SANI",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Search and Rescue",
+   "code": "SRCH",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Sheet Metal",
+   "code": "SHME",
+   "confidence": 0.8,
+   "level": "Likely",
+   "basis": "college"
+  },
+  {
+   "key": "Ship and Boat Building and Repair",
+   "code": "SHIP",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Shoe Rebuilding",
+   "code": "SHOE",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Small Engine Mechanics",
+   "code": "SENG",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Specialized Instruction: Vocational Noncredit",
+   "code": "DSVN",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Speech Language Pathology: Disabled Student Programs and Services",
+   "code": "DSSL",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Supply Chain Technology",
+   "code": "SCMT",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Telecommunication Technology",
+   "code": "TELC",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Travel Services",
+   "code": "TRVL",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Uncrewed Aircraft System (UAS) Technology",
+   "code": "UASY",
+   "confidence": 0.65,
+   "level": "Leaning",
+   "basis": "minted"
+  },
+  {
+   "key": "Vision Care Technology",
+   "code": "VISN",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Watch and Clock Repair",
+   "code": "WTCH",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  },
+  {
+   "key": "Writing-Basic Skills: Noncredit",
+   "code": "WRTN",
+   "confidence": 0.82,
+   "level": "Likely",
+   "basis": "minted"
+  }
+ ],
+ "held": []
+}
