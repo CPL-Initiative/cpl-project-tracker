@@ -658,6 +658,25 @@ OPTION_ALTERNATIVE_SUFFIX = re.compile(r"\s*\([^()]*\)\s*$")
 OPTION_PARTS_ON = True
 
 
+OPTION_NAME_FIGURE = re.compile(r"\b(\d+(?:\.\d+)?|%s)\s+(?:semester\s+)?units?\b" % "|".join(
+    "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen "
+    "seventeen eighteen nineteen twenty".split()), re.I)
+
+
+def _same_figure(blocks: list) -> bool:
+    """Whether every block's name prints one unit figure and the figures are all the same."""
+    figs = []
+    for b in blocks:
+        found = OPTION_NAME_FIGURE.findall(str(b.get("name") or ""))
+        if len(found) != 1:
+            return False
+        f = found[0].lower()
+        figs.append(float(f) if f[0].isdigit() else float(
+            "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen "
+            "seventeen eighteen nineteen twenty".split().index(f)))
+    return len(set(figs)) == 1
+
+
 def option_parts(record: dict) -> dict:
     """{block index: (option group, option key)} for the blocks of a group the reading split one option over."""
     if not OPTION_PARTS_ON:
@@ -680,6 +699,12 @@ def option_parts(record: dict) -> dict:
         names = [(k, OPTION_ALTERNATIVE_SUFFIX.sub("", str(blocks[i].get("name") or "")).strip().lower())
                  for i, k in ix.items()]
         if len(set(names)) < len(names):
+            continue
+        # Blocks of one option that each print the same unit figure are its alternatives too ("Option 1: Chinese -
+        # 16 units", "Option 1: French - 16 units"; #3714's second reader): a part names its own share, and two
+        # parts printing the whole option's figure each would sum past it.
+        if any(_same_figure([blocks[i] for i, kk in ix.items() if kk == k]) for k in set(keys)
+               if keys.count(k) > 1):
             continue
         out.update({i: (g, k) for i, k in ix.items()})
     return out
@@ -784,7 +809,10 @@ def repeated(record: dict) -> list[str]:
         seen: dict[str, int] = {}
         for c in b.get("courses") or []:
             for entry in [c] + alternatives(c):
-                k = norm_code(entry.get("code"))
+                # A code the aliases renamed counts as printed: a cross-listed course the page prints under each of
+                # its prefixes (City College of San Francisco's LALS 9 and LGBT 9, both the file's LALS/LGBT 9; S714)
+                # is one row of the file, printed twice, never one course placed twice.
+                k = norm_code(entry.get("printed_code") or entry.get("code"))
                 if k:
                     seen[k] = seen.get(k, 0) + 1
         out += ["%s in '%s'" % (k, b.get("name")) for k, n in seen.items() if n > 1]

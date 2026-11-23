@@ -14,7 +14,9 @@ readings and a precision count before its second read (p-self-recall-reads-rule-
   * every planned record's committed score is the scorer's own; with option_parts off 42228 reads as its row held it;
   * the precision count against the hand reading of all 29 records with a record file (right 29: 8 pass, 21 none),
     the claim checks on the reader's notes (none against), the boundary readings (wrong 0), the named gaps' recall
-    (wrong 0), and the blast radius elsewhere (13 records, none moved from passing, none written);
+    (wrong 0), and the blast radius elsewhere against each record's own state list (15 records, 10 verdicts to passing,
+    none from passing, none written), with the second reader's held answer for each of the 21 records it fires on;
+  * a cross-listed course printed under both prefixes is looked for under both and is never read as repeated;
   * the plan: 8 rows, each a census member, named exactly by the receipt and the three SQL files; the confirm guard;
     a second run plans none.
 
@@ -101,6 +103,43 @@ check(not sc["coverage"]["missing"] and not sc["invented"]["codes"],
 sc = S.score(rec, listed + [{"code": "LGBT 9", "units": 3}], None, "A.A. Degree", R.prefix_aliases(COLLEGE))
 check("LALS/LGBT9" in sc["coverage"]["missing"], "where the file lists LGBT 9 too, the code stays as printed")
 
+# #3714's second reader, finding 3: the capture looks for both printed forms, and a fresh score reads no repeat.
+cr = R.course_renumbers(COLLEGE)
+check(cr.get("LALS/LGBT9") == ["LALS 9", "LGBT 9"] and cr.get("CNIT133L") == "CNIT 133I",
+      "the capture looks for LALS 9 and LGBT 9 for the one listed row: %r" % cr)
+import _program_requirements_college as PC  # noqa: E402
+progs = PC.with_renumbers([{"closed_list": [{"code": "LALS/LGBT 9", "units": 3}]}], cr)
+check(progs[0]["closed_list"][0].get("printed") == "LALS 9"
+      and progs[0]["closed_list"][0].get("printed_also") == ["LGBT 9"], "with_renumbers files both printed forms")
+both = {"program": {"total_units": {"min": 3, "max": 3}},
+        "blocks": [{"name": "Choose one", "rule": "choose_courses", "minimum": 1,
+                    "courses": [{"code": "LALS 9", "units": 3, "alternatives": [{"code": "LGBT 9", "units": 3}]}]}]}
+sc = S.score(both, [{"code": "LALS/LGBT 9", "units": 3}], None, "A.A. Degree", R.prefix_aliases(COLLEGE))
+check(sc["repeated"]["pass"] and not sc["invented"]["codes"], "LALS 9 or LGBT 9 is one choice, never a repeat: %r"
+      % sc["repeated"])
+twice = copy.deepcopy(both)
+twice["blocks"][0]["courses"][0]["alternatives"] = [{"code": "LALS 9", "units": 3}]
+check(not S.score(twice, [{"code": "LALS/LGBT 9", "units": 3}], None, "A.A. Degree",
+                  R.prefix_aliases(COLLEGE))["repeated"]["pass"], "the same printed code twice is still a repeat")
+for cn in ("30897", "35690"):
+    fs = C.fresh_score(C._load(cn))
+    check(fs["repeated"]["pass"] and fs["coverage"]["pass"] and fs["invented"]["pass"],
+          "%s: a fresh score against the state list reads clean" % cn)
+
+# Finding 4: alternatives that each print the option's whole figure are never its parts.
+apart = {"program": {"total_units": {"min": 26, "max": 42}},
+         "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "A 1", "units": 10}]},
+                    {"name": "Option 1: Chinese - 16 units", "rule": "all", "option_group": "O",
+                     "courses": [{"code": "C 1", "units": 16}]},
+                    {"name": "Option 1: French - 16 units", "rule": "all", "option_group": "O",
+                     "courses": [{"code": "F 1", "units": 16}]},
+                    {"name": "Option 2", "rule": "all", "option_group": "O", "courses": [{"code": "G 1", "units": 32}]}]}
+check(not S.option_parts(apart) and S.score(apart, [], None, "A.A. Degree")["arithmetic"]["computed"] == [26.0, 42.0],
+      "'Option 1: Chinese - 16 units' and 'Option 1: French - 16 units' are alternatives (26-42)")
+shares = copy.deepcopy(apart)
+shares["blocks"][2]["name"] = "Option 1: French - 6 units"
+check(S.option_parts(shares) != {}, "parts printing different figures are still parts")
+
 # ── every committed record against the scorer ──
 with open(RECEIPT, encoding="utf-8") as fh:
     receipt = json.load(fh)
@@ -112,9 +151,42 @@ check(not [r for r in ch["here"] if r["moves"] != ["arithmetic"] or r["passes_af
       "no committed record at the college moves to passing on a second rescore: %r" % ch["here"])
 check(not any(e["arith_before"][1] and not e["arith_after"][1] for e in receipt["changes"]["elsewhere"]),
       "option_parts moves no record elsewhere from passing")
-check(len(receipt["changes"]["elsewhere"]) == 13
-      and sum(1 for e in receipt["changes"]["elsewhere"] if e["arith_after"][1] and not e["arith_before"][1]) == 9,
-      "at the plan, option_parts reached 13 records elsewhere, 9 to a passing arithmetic, none written")
+# #3714's second reader: the reach is measured against each record's own state list, never an empty one.
+TO_PASSING = {("Foothill College", "06047"), ("Glendale Community College", "24042"), ("Golden West College", "18423"),
+              ("MiraCosta College", "18345"), ("Monterey Peninsula College", "03653"),
+              ("Monterey Peninsula College", "22098"), ("Reedley College", "01773"), ("Reedley College", "18990"),
+              ("Reedley College", "46449"), ("Santa Barbara City College", "05934")}
+ARITH_ONLY = {("Foothill College", "36328"), ("Napa Valley College", "36251"), ("Evergreen Valley College", "45025"),
+              ("Santa Monica College", "03272"), ("Solano Community College", "20981")}
+el = receipt["changes"]["elsewhere"]
+check({(e["college"], e["control_number"]) for e in el} == TO_PASSING | ARITH_ONLY,
+      "the receipt's reach elsewhere is the 15 records the reader measured: %r" % [(e["college"], e["control_number"])
+                                                                                  for e in el])
+check(all(e["verdict_after"] and not e["verdict_before"] for e in el
+          if (e["college"], e["control_number"]) in TO_PASSING - {("Foothill College", "06047")})
+      and not any(e["verdict_before"] and not e["verdict_after"] for e in el),
+      "against the scorer with the reading off, nine verdicts move to passing and none from it (06047 passes both ways"
+      " and fails as filed)")
+ch_el = {(e["college"], e["control_number"]): e for e in ch["elsewhere"]}
+check(set(ch_el) == TO_PASSING | ARITH_ONLY, "a second measure reaches the same 15 records elsewhere")
+# The second reader's answer for each of the 21 records option_parts fires on, read from their notes (21 right): the
+# verdict with the reading on, every other check as filed.
+HELD_21 = {k: "passes" for k in TO_PASSING | {
+    ("City College of San Francisco", "42228"), ("City College of San Francisco", "09191"),
+    ("City College of San Francisco", "09195"), ("City College of San Francisco", "22727"),
+    ("Solano Community College", "20981")}}
+HELD_21.update({k: "none" for k in {
+    ("Foothill College", "36328"), ("Napa Valley College", "36251"), ("Evergreen Valley College", "45025"),
+    ("Santa Monica College", "03272"), ("City College of San Francisco", "33208"),
+    ("City College of San Francisco", "39727")}})
+check(len(HELD_21) == 21 and HELD_21 == C.OPTION_PARTS_HELD, "the script holds the reader's 21 answers as pinned here")
+reach = C.option_parts_reach(every)
+check(reach["fires"] == 21 and reach["right"] == 21 and not reach["wrong"] and not reach["not_held"],
+      "option_parts fires on 21 records and reads each as the reader did: %r" % reach)
+check({tuple(k) for k in reach["moves"]} == TO_PASSING | {("City College of San Francisco", "42228")}
+      and not reach["from_passing"], "it moves 11 verdicts to passing (10 elsewhere and 42228), none from passing")
+check(receipt["option_parts_reach"]["right"] == 21 and not receipt["option_parts_reach"]["from_passing"]
+      and "agrees" in receipt["claim_check_reads"], "the corrected receipt carries the reach and the capture finding")
 check({r["control_number"] for r in receipt["rescored_not_planned"]} == {"33208", "39727"}
       and not any(r["passes_after"] for r in receipt["rescored_not_planned"]),
       "33208 and 39727 are rescored and still fail")

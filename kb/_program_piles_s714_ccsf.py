@@ -129,12 +129,33 @@ def parts_off():
         S.OPTION_PARTS_ON = saved
 
 
+_CLOSED: dict = {}
+
+
+def closed_list(college: str, cn: str) -> list[dict]:
+    """The state's course list for one program, as the coci_program_courses table is built (the second reader of
+    #3714: a list with no units of its own takes the file's, so the reach is measured against each record's own
+    list, never an empty one)."""
+    if not _CLOSED:
+        import _course_id_route_census as CR
+        _CLOSED.update(CR.closed_lists())
+        _CLOSED["_loaded"] = True
+    return _CLOSED.get((college, str(cn))) or []
+
+
+def fresh_score(filed: dict) -> dict:
+    """The record scored against its own state list and its college's renumbers and aliases, with no page text."""
+    college = filed.get("college")
+    return S.score(filed.get("record") or {}, closed_list(college, filed.get("control_number")), None,
+                   filed.get("award"), R.prefix_aliases(college, year=filed.get("catalog_year")),
+                   R.packed_codes(college))
+
+
 def arithmetic(filed: dict) -> tuple[dict, dict]:
-    """(the arithmetic with option_parts off, the arithmetic with it on), from the record alone."""
-    rec, award = filed.get("record") or {}, filed.get("award")
+    """(the arithmetic with option_parts off, the arithmetic with it on), against the record's own state list."""
     with parts_off():
-        before = S.score(rec, [], None, award)["arithmetic"]
-    return before, S.score(rec, [], None, award)["arithmetic"]
+        before = fresh_score(filed)["arithmetic"]
+    return before, fresh_score(filed)["arithmetic"]
 
 
 def renumbers(college: str = COLLEGE) -> dict:
@@ -299,7 +320,7 @@ def _with_total(filed: dict, lo: float, hi: float) -> dict:
 
 
 def _passes_arith(filed: dict) -> bool:
-    return bool(S.score(filed["record"], [], None, filed.get("award"))["arithmetic"].get("pass"))
+    return bool(fresh_score(filed)["arithmetic"].get("pass"))
 
 
 def boundaries(census_path: str = CENSUS) -> dict:
@@ -381,14 +402,67 @@ def changes(every: list[dict]) -> dict:
                        "passes_before": S.passes_live(f["score"]), "passes_after": S.passes_live(rs["score"])}
                 (not_exact if rs["not_exact"] else here).append(dict(row, not_exact=rs["not_exact"]))
             continue
+        if not S.option_parts(f.get("record") or {}):
+            continue
         before, after = arithmetic(f)
         if before != after:
             elsewhere.append({"college": f["college"], "control_number": str(f["control_number"]),
                               "exact": before == f["score"].get("arithmetic"),
                               "arith_before": [before.get("computed"), bool(before.get("pass"))],
                               "arith_after": [after.get("computed"), bool(after.get("pass"))],
+                              "verdict_before": verdict(f, before), "verdict_after": verdict(f, after),
                               "stated": after.get("stated")})
     return {"here": here, "elsewhere": elsewhere, "not_exact": not_exact}
+
+
+def verdict(filed: dict, arith: dict) -> bool:
+    """The record's verdict with this arithmetic in place of the filed one, every other check as filed."""
+    return S.passes_live(dict(filed.get("score") or {}, arithmetic=arith))
+
+
+# The second reader of #3714 read every record option_parts fires on from its notes (21 right, 0 wrong): the verdict
+# each holds with the reading on, every other check as filed.
+OPTION_PARTS_HELD = {
+    ("City College of San Francisco", "42228"): "passes",
+    ("Foothill College", "06047"): "passes", ("Glendale Community College", "24042"): "passes",
+    ("Golden West College", "18423"): "passes", ("MiraCosta College", "18345"): "passes",
+    ("Monterey Peninsula College", "03653"): "passes", ("Monterey Peninsula College", "22098"): "passes",
+    ("Reedley College", "01773"): "passes", ("Reedley College", "18990"): "passes",
+    ("Reedley College", "46449"): "passes", ("Santa Barbara City College", "05934"): "passes",
+    ("City College of San Francisco", "09191"): "passes", ("City College of San Francisco", "09195"): "passes",
+    ("City College of San Francisco", "22727"): "passes", ("Solano Community College", "20981"): "passes",
+    ("Foothill College", "36328"): "none", ("Napa Valley College", "36251"): "none",
+    ("Evergreen Valley College", "45025"): "none", ("Santa Monica College", "03272"): "none",
+    ("City College of San Francisco", "33208"): "none", ("City College of San Francisco", "39727"): "none",
+}
+
+
+def option_parts_reach(every: list[dict]) -> dict:
+    """option_parts on every committed record it fires on, against the held answers: the verdict with it on, and
+    whether the verdict moves."""
+    out = {"fires": 0, "right": 0, "wrong": [], "not_held": [], "moves": [], "from_passing": []}
+    every = [f for f in every if isinstance(f.get("record"), dict)]
+    for f in every:
+        if not S.option_parts(f.get("record") or {}):
+            continue
+        key = (f.get("college"), str(f.get("control_number")))
+        out["fires"] += 1
+        before, after = arithmetic(f)
+        got = "passes" if verdict(f, after) else "none"
+        # Elsewhere, the move is read from the filed verdict, which the next rescore replaces; at the college, from
+        # the scorer with the reading off (42228's filed score is this plan's own write).
+        was = verdict(f, before) if f.get("college") == COLLEGE else S.passes_live(f.get("score"))
+        if verdict(f, after) != was:
+            out["moves"].append(list(key))
+            if was:
+                out["from_passing"].append(list(key))
+        if key not in OPTION_PARTS_HELD:
+            out["not_held"].append(list(key))
+        elif OPTION_PARTS_HELD[key] == got:
+            out["right"] += 1
+        else:
+            out["wrong"].append(list(key) + [got])
+    return out
 
 
 def recall_all(every: list[dict]) -> dict:
@@ -484,7 +558,8 @@ CLAIM_CHECK_READS = (
     "The claim checks read the record's notes: the reader's own words from the read behind the record "
     "(extracted_run). The page text of that read stays in its run's artifact, which a session cannot read, and "
     "sources.json describes the college's latest capture, another read that commits no page text "
-    "(p-claim-check-reads-current-capture-s713); no claim check here reads it.")
+    "(p-claim-check-reads-current-capture-s713); no claim check here reads it. #3714's second reader read today's "
+    "capture beside the notes and found it agrees with every claim the checks stand on.")
 
 
 def stop_reasons(pr: dict, cc: dict, bd: dict, rc: dict, ch: dict) -> list[str]:
@@ -526,6 +601,12 @@ def main(argv=None) -> int:
         len(ch["elsewhere"]), sum(1 for e in ch["elsewhere"] if e["arith_after"][1] and not e["arith_before"][1]),
         sum(1 for e in ch["elsewhere"] if e["arith_before"][1] and not e["arith_after"][1]), len(ch["not_exact"])))
     stop = stop_reasons(pr, cc, bd, rc, ch)
+    reach = option_parts_reach(every)
+    print("option_parts fires on %d records: right %d, wrong %d, not held %d; verdicts move %d, from passing %d"
+          % (reach["fires"], reach["right"], len(reach["wrong"]), len(reach["not_held"]), len(reach["moves"]),
+             len(reach["from_passing"])))
+    if reach["wrong"] or reach["not_held"] or reach["from_passing"]:
+        stop.append("option_parts reach")
     if stop:
         raise SystemExit("the self-recall reads a wrong answer (%s): no plan is written" % ", ".join(stop))
     res = plan(write=not a.dry_run)
@@ -544,6 +625,7 @@ def main(argv=None) -> int:
                        "with_s713_held": ["17954"] + sorted(NO_RECORD)},
             "moved": len(rows), "by": res["by"], "precision": pr, "claim_checks": cc, "boundaries": bd,
             "recall": {k: v for k, v in rc.items() if k != "wrong_keys"}, "changes": ch,
+            "option_parts_reach": reach,
             "held": res["held"], "records": rows,
             "representation": ("checks.arithmetic as the scorer reads one option over several blocks; "
                                "checks.coverage and checks.invented as it reads the college's three renumbers; the "
