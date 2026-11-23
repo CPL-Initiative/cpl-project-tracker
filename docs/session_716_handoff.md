@@ -150,6 +150,14 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   changed no record and newly pass 9 with live rows; a Sonnet reader checks those before their reread. The
   rescore dropped 16 records' `ge_units_not_read` gaps (a reader bug, for the follow-up; `rios` restored the 49
   unchanged and 07319). Sacramento City's load 45198701869 (14:52Z): 18 of 18 live, unchecked.
+- 15:00Z: Cosumnes River's load 45199218981: 16 of 16 live; Folsom Lake's: 3 of 3 live, all unchecked. The 9
+  rescored records are held, never reread: a Sonnet reader found 8 pass only through main's program-level fill
+  rule (`electives_fill_degree`, no degree total, `hi <= stated`, and "elective" anywhere in the text), while each
+  record's notes say its table starts mid-page with rows cut off, so their failing verdicts stand; `rios` put all
+  9 files back to main's (#3715 `597cfd85`). FINDING `f-elective-fill-passes-cut-off-windows-s714`: the same rule may
+  pass truncated windows statewide; measure it before the next reconcile at any college. Sam's plain session S715
+  (SkyAlbatross) opened #3717 and #3718 on the Subjects page beside this run. Fullerton rides #3719 with the
+  optparts 9.
 
 ## Conductor settings
 
@@ -168,10 +176,10 @@ by Opus 5.5.
 |---|---|---|
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
 | #3714 (`claude/s714-piles-ccsf`, `piles`) | merged `f0d84966`; applied by migrate 45176130201 | none |
-| `claude/s714-piles-optparts` (`land`) | applied by migrate 45188487600, 9 rows live | main's merge, its PR, the merge |
-| `claude/s714-piles-fullerton` (`land`) | applied by migrate 45191999745, 11 rows live | the PE 248 F drop, main's merge, its PR, the merge |
+| #3719 (`claude/s714-piles-optparts`, `land`) | applied by migrate 45188487600, 9 rows live; Fullerton joins it | `test`, the merge |
+| `claude/s714-piles-fullerton` (`land`) | applied by migrate 45191999745, 11 rows live | the PE 248 F drop, then into #3719 |
 | `claude/s714-piles-sequoias` (`piles`) | started | its plan |
 | #3716 (`claude/s714-piles-ela`, `piles2`) | merged `890eb465`; applied by migrate 45186909162 | none |
-| #3715 (`claude/s714-rios`, `rios`) | three paid reads dispatched | the fixes, the filings, reconcile, the reread, merge |
+| #3715 (`claude/s714-rios`, `rios`) | 37 records loaded (loads 45198701869, 45199218981 and Folsom Lake's); the 9 rereads held | `test`, the merge |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
 | #3383 | dependabot's | waits |
