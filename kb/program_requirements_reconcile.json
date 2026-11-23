@@ -1598,7 +1598,7 @@
      "kind": "set",
      "field": "electives_fill_words",
      "value": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
-     "before": "\\Z",
+     "before": "\\(\\s*Academic\\s+Plan\\s+[A-Z]?\\d|\\Z",
      "awards": "transfer",
      "pattern": "(?i)ADDITIONAL\\s+CSU\\s+UNITS,?\\s+IF\\s+NEEDED,?\\s+TO\\s+REACH\\s+60\\s+CSU\\s+TRANSFERABLE\\s+UNITS",
      "source_words": "ELAC transfer pages: 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' (the readings of 32154, 32980, 33382, 37923, 42672, 45935, notes)"
@@ -1607,7 +1607,7 @@
      "kind": "set",
      "field": "electives_fill_words",
      "value": "ADDITIONAL CSU UNITS TO REACH 60 CSU TRANSFERABLE UNITS",
-     "before": "\\Z",
+     "before": "\\(\\s*Academic\\s+Plan\\s+[A-Z]?\\d|\\Z",
      "awards": "transfer",
      "pattern": "(?i)ADDITIONAL\\s+CSU\\s+UNITS\\s+TO\\s+REACH\\s+60\\s+CSU\\s+TRANSFERABLE\\s+UNITS",
      "source_words": "ELAC transfer pages: 'COMPLETE ADDITIONAL CSU UNITS TO REACH 60 CSU TRANSFERABLE UNITS' (a reading's note, the same sentence without 'if needed')"
@@ -1616,7 +1616,7 @@
      "kind": "set",
      "field": "electives_fill_words",
      "value": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
-     "before": "\\Z",
+     "before": "\\(\\s*Academic\\s+Plan\\s+[A-Z]?\\d|\\Z",
      "awards": "local",
      "pattern": "(?i)ADDITIONAL\\s+DEGREE[-\\s]+APPLICABLE\\s+UNITS,?\\s+IF\\s+NEEDED,?\\s+TO\\s+REACH\\s+60\\s+UNITS",
      "hold": {

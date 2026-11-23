@@ -130,6 +130,45 @@ def own_plan_line_at(text, start, at):
     return not text[start:at].strip() and bool(PLAN_LINE_AT.match(text, at))
 
 
+NEXT_PLAN_LINE = re.compile(r"\(\s*Academic\s+Plan\s+[A-Z]?\d{5,6}[A-Z]{0,2}\s*\)")
+
+
+def own_section_end(text, start):
+    """Where the program's own section ends: at the next program's plan line after `start` (the plan line printed
+    right under this program's heading is its own and is passed over), or the end of the text where none follows.
+    Only East Los Angeles's PDF prints plan lines, so every other text runs to its end as before (S714 second reader:
+    a later program's electives sentence is never this one's)."""
+    m = NEXT_PLAN_LINE.search(text, start)
+    if m and own_plan_line_at(text, start, m.start()):
+        m = NEXT_PLAN_LINE.search(text, m.end())
+    return m.start() if m else len(text)
+
+
+PLAN_LINE_CN = re.compile(r"\(\s*Academic\s+Plan\s+[A-Z]0?(\d{5})[A-Z]{0,2}\s*\)\s*$")
+
+
+def norm_control_number(cn) -> str | None:
+    """A control number as the files key it: five digits as a string (2430 and '2430' read as '02430')."""
+    if cn is None:
+        return None
+    s = str(cn).strip()
+    return s.zfill(5) if s.isdigit() else (s or None)
+
+
+def held_by_step(st: dict, control_number, prog: dict) -> bool:
+    """Whether a step's hold names this record: by its control number, normalized (an integer 2430 is '02430'), or,
+    where the caller passes none, by the control number in its heading's plan line (East Los Angeles's
+    '(Academic Plan E002430C)')."""
+    hold = st.get("hold") or {}
+    if not hold:
+        return False
+    cn = norm_control_number(control_number)
+    if cn is None:
+        m = PLAN_LINE_CN.search((prog or {}).get("section_heading") or "")
+        cn = m.group(1) if m else None
+    return cn is not None and cn in {norm_control_number(k) for k in hold}
+
+
 def _span_of(v):
     if isinstance(v, dict):
         return (v.get("min"), v.get("max") if v.get("max") is not None else v.get("min"))
@@ -1362,7 +1401,7 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             # A record the step holds by name (S680, Lassen: 31297, the legacy number of 42300's "2.0" section,
             # and the overlap pair 35106 and 41912), {"<control number>": "<why>"}, as statewide_cal_getc's hold
             # is: the run itself leaves it alone, so no rebuilt apply plan or reconcile run applies it again.
-            if control_number and str(control_number) in (st.get("hold") or {}):
+            if held_by_step(st, control_number, prog):
                 continue
             if st.get("only_without") and not _empty(prog.get(st["only_without"])):
                 continue

@@ -108,8 +108,10 @@ HAND_HELD = {
     "38168": ("held: the last list's heading prints 'COMPLETE FOUR UNITS FROM THE FOLLOWING' over the figure 2-3, a "
               "misprint the reader's note names; the lists add to 17-19 as read against 19-20: for a person"),
     "37510": ("held: ESL NC 045 renames to the file's ESL NC 45CE (course_renumbers), so coverage and invented "
-              "pass, but the arithmetic reads 'unstated' (the page prints 0 units for each noncredit course and no "
-              "hours), which the live count does not pass: an hours read"),
+              "pass; the arithmetic reads 'unstated' (the page prints 0 units for each noncredit course and no "
+              "hours). program_record_machine_pass and the Commons count 'unstated' as passing, so the committed "
+              "record passes there once posted; this plan's verdict is S.passes_live (arithmetic 'equal'), which it "
+              "does not reach, so it takes no row here and the college's next reread posts its committed record"),
 }
 # Records the reconcile run restamped with no reading (its fresh score re-laid a ruling-1 rescore: the program check
 # first and the degree nested, where Sam's 2026-11-17 local-overlap rescore wrote the degree first with the major
@@ -233,6 +235,20 @@ def held_by_name() -> dict:
     return out
 
 
+def plan_line_anchor() -> dict:
+    """For each plan-line row, whether its section prints the reader's heading whole (main's _heading_end finds it,
+    so main's code reads the sentence too) or only its plan line (own_heading_end's anchor is what moves it)."""
+    out = {}
+    for cn, w in HAND_HELD.items():
+        if w != ELEC:
+            continue
+        f, t = at_base(cn), sections()[cn]["text"]
+        h = f["record"]["program"].get("section_heading")
+        out[cn] = "heading prints whole (main passes it too)" if R._heading_end(t, h) is not None \
+            else "plan line only (the anchor moves it)"
+    return out
+
+
 # ── the claim checks: the reader's notes, apart from the fields the readings read ──
 CLAIMS = {
     "plan_line": re.compile(r"additional\s+(?:CSU|degree[-\s]+applicable)\s+(?:transferable\s+)?units|"
@@ -312,6 +328,10 @@ def boundaries(census_path: str = CENSUS) -> dict:
             sent = _first(t, r"ADDITIONAL\s+(?:CSU|DEGREE[-\s]+APPLICABLE)\s+UNITS,?\s+IF\s+NEEDED,?\s+TO\s+REACH\s+60"
                              r"(?:\s+CSU\s+TRANSFERABLE)?\s+UNITS")
             tally("sentence cut from the section", read(f, t[:sent.start()] + t[sent.end():])["answer"], "none", cn)
+            # The S714 second reader's case: the record's own sentence cut, and a later program's plan line and the
+            # same sentence after it. The later program's words are never this one's (own_section_end).
+            later = t[:sent.start()] + t[sent.end():] + "\n(Academic Plan E099999C)\n" + sent.group(0) + "\n"
+            tally("a later program's sentence", read(f, later)["answer"], "none", cn)
         if reading == "ge_overlap":
             note = _first(t, r"double[-\s]+counted\s+(?:in|towards?)")
             t2 = t[:note.start()] + note.group(0).split()[0] + " counted for" + t[note.end():]

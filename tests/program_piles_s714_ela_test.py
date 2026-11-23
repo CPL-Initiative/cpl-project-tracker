@@ -57,6 +57,7 @@ check(all(E.read(E.at_base(cn), secs[cn]["text"])["answer"] == "none" for cn in 
 bd = E.boundaries()
 check(not bd["wrong"], "every boundary reads its expected answer: %s" % bd["wrong"])
 want = {"plan line one digit off right": 6, "sentence cut from the section right": 6,
+        "a later program's sentence right": 6,
         "verb 'double counted for' right": 4, "note under the next plan line right": 4,
         "'may choose to waive either' right": 2, "ge_units 26, not the plan's 27 right": 2,
         "heading 'ONCE' right": 1, "course 3 against the stated 4 right": 1,
@@ -68,6 +69,31 @@ check(bd["counts"] == want, "the boundary counts: %s" % bd["counts"])
 cc = E.claim_checks()
 check(not cc["not_standing"] and sum(sum(v.values()) for v in cc["by_reading"].values()) == 15,
       "the reader's notes stand behind all 15 readings: %s" % cc)
+
+# ── the hold names its records however the control number arrives (the S714 second reader, minor 5) ──
+for cn in ("02430", "08252"):
+    f, t = E.at_base(cn), secs[cn]["text"]
+    for given in (cn, int(cn), None):
+        new, notes = R.reconcile(f["record"], t, E.COLLEGE, f.get("award"), control_number=given)
+        check("electives_fill_words" not in [n["field"] for n in notes],
+              "%s is held from the sentence with its control number given as %r" % (cn, given))
+check(R.norm_control_number(2430) == "02430" and R.norm_control_number("02430") == "02430"
+      and R.norm_control_number(None) is None, "control numbers normalize to five digits")
+# ...and a record the hold does not name still takes the sentence with its number as an integer or not at all.
+f, t = E.at_base("32980"), secs["32980"]["text"]
+check(all("electives_fill_words" in [n["field"] for n in R.reconcile(f["record"], t, E.COLLEGE, f.get("award"),
+                                                                       control_number=g)[1]]
+          for g in ("32980", 32980, None)), "32980 takes the sentence however its number arrives")
+
+# ── the electives guard ends at the next program's plan line ──
+prog_e = {"section_heading": "(Academic Plan E011111C)", "electives_fill_words": "ADDITIONAL CSU UNITS TO REACH 60"}
+check(E.S.electives_named(prog_e, "(Academic Plan E011111C)\nCOMPLETE ADDITIONAL CSU UNITS TO REACH 60\n")
+      and not E.S.electives_named(prog_e, "(Academic Plan E011111C)\nnone\n(Academic Plan E022222C)\n"
+                                          "COMPLETE ADDITIONAL CSU UNITS TO REACH 60\n"),
+      "the guard reads its own section's sentence, never the next program's")
+check(E.S.electives_named({"section_heading": "Title", "electives_fill_words": "TO REACH 60 UNITS"},
+                          "Title\nnone here\nlater words TO REACH 60 UNITS"),
+      "a text with no plan lines runs to its end as before")
 
 # ── the shared helpers at their edges ──
 t = "Associate in Arts in\nJournalism for Transfer\n(Academic Plan E032980G)\nText"
