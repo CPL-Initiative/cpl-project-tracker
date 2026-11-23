@@ -80,6 +80,12 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   Folsom Lake 3 given their own pages; six named gaps; free estimates $2.15, $1.76 and $0.33. American River's 5 are
   blocked: its host now serves a file whose sha256 differs from the hand-filed record. A second reader is on the
   reader change before the paid reads (the S652 rule for changed shared reader code).
+- 12:38Z: #3714's second reader: FIX THEN APPLY, the 8 rows and the SQL stand (proved on a local Postgres 16: the
+  apply writes 8, aborts on a rerun, a matching confirm or a changed record, skips a checked row; the rollback
+  restores the before state exactly). Two majors are in the reach count and the test, not the apply: with each
+  record's own state list `option_parts` moves 10 more records to passing at seven other colleges, and the test
+  pins all 21 hand answers. Applied first, fixed forward (`d-apply-before-reach-fix-s714`): pre-read 8 of 8
+  before-images, 0 checked, 0 matching confirms; `.apply` pushed at 12:37Z (`4dbb40c9`).
 
 ## Conductor settings
 
