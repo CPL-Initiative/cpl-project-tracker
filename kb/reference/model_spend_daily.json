@@ -1062,6 +1062,26 @@
    "college": "college_of_marin",
    "usd": 0.0,
    "day": "2026-11-23"
+  },
+  "45176404274": {
+   "college": "east_los_angeles",
+   "usd": 0.0,
+   "day": "2026-11-23"
+  },
+  "45184748331": {
+   "college": "sacramento_city",
+   "usd": 0.0,
+   "day": "2026-11-23"
+  },
+  "45185759855": {
+   "college": "cosumnes_river",
+   "usd": 0.0,
+   "day": "2026-11-23"
+  },
+  "45187906040": {
+   "college": "folsom_lake",
+   "usd": 0.0,
+   "day": "2026-11-23"
   }
  },
  "runner_since": "2026-11-17",
