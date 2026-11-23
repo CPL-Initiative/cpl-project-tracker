@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1157,
+  "file_datasets": 1167,
   "external_services": 199,
-  "consumers": 655,
+  "consumers": 658,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -990,7 +990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4935,
+     "line": 4956,
      "tabs": [
       "exhibits"
      ]
@@ -4915,6 +4915,19 @@
     "workflow:receipt-slim.yml"
    ]
   },
+  "file:/<slug>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_mid_readiness.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 263
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:/tmp/metrics_status": {
    "consumers": [
     {
@@ -6332,7 +6345,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1436,
+     "line": 1456,
      "tabs": [
       "exhibits"
      ]
@@ -6722,7 +6735,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4189,
+     "line": 4210,
      "tabs": [
       "exhibits"
      ]
@@ -6990,7 +7003,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4927,
+     "line": 4948,
      "tabs": [
       "exhibits"
      ]
@@ -7083,7 +7096,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5449,
+     "line": 5470,
      "tabs": [
       "exhibits"
      ]
@@ -7874,7 +7887,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 64
     }
    ],
    "served": true,
@@ -9003,7 +9016,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5738,
+     "line": 5759,
      "tabs": [
       "exhibits"
      ]
@@ -11185,6 +11198,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_mid_readiness.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_model_run_gate.py": {
    "consumers": [
     {
@@ -11237,6 +11263,19 @@
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_outline_hunt.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -13689,6 +13728,13 @@
      "line": 232
     },
     {
+     "id": "script:kb/_outline_hunt.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 44
+    },
+    {
      "id": "script:kb/_overmerge_apply.py",
      "kind": "script",
      "direction": "read",
@@ -14238,6 +14284,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1432
+    },
+    {
+     "id": "script:kb/_scope_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 166
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -15520,7 +15573,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3967,
+     "line": 3988,
      "tabs": [
       "exhibits"
      ]
@@ -15707,7 +15760,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1575,
+     "line": 1595,
      "tabs": [
       "exhibits"
      ]
@@ -16839,6 +16892,13 @@
      "line": 559
     },
     {
+     "id": "script:kb/_scope_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 51
+    },
+    {
      "id": "script:kb/_seed_authority_codes.py",
      "kind": "script",
      "direction": "read",
@@ -16913,7 +16973,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 45
+     "line": 53
     }
    ],
    "producers": [
@@ -17335,7 +17395,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4959,
+     "line": 4980,
      "tabs": [
       "exhibits"
      ]
@@ -17493,7 +17553,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4955,
+     "line": 4976,
      "tabs": [
       "exhibits"
      ]
@@ -17603,7 +17663,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3962,
+     "line": 3983,
      "tabs": [
       "exhibits"
      ]
@@ -17805,7 +17865,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4376,
+     "line": 4397,
      "tabs": [
       "exhibits"
      ]
@@ -17908,7 +17968,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 381
+     "line": 386
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -21322,7 +21382,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 459
+     "line": 464
+    },
+    {
+     "id": "script:kb/_mid_readiness.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
     },
     {
      "id": "script:kb/_mq_title5_rename.py",
@@ -22171,6 +22238,34 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/status/mid_readiness.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_mid_readiness.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 58
+    },
+    {
+     "id": "script:kb/_scope_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:kb/status/noncredit_categories.json": {
    "consumers": [
     {
@@ -22199,7 +22294,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 54
+     "line": 63
     }
    ],
    "served": true,
@@ -22230,6 +22325,37 @@
      "direction": "read",
      "how": "literal",
      "line": 46
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/status/outline_hunt.json": {
+   "consumers": [
+    {
+     "id": "module:commons_data.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1445,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
+     "id": "script:kb/_outline_hunt.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 43
     }
    ],
    "producers": [
@@ -22368,7 +22494,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
+     "line": 52
     }
    ],
    "producers": [
@@ -24147,6 +24273,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:mid_outcomes_compare_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_mid_readiness.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:mission_control.js": {
@@ -26334,7 +26473,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2720,
+     "line": 2740,
      "tabs": [
       "exhibits"
      ]
@@ -29067,6 +29206,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/mid_readiness_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/mid_short_code_gate_test.py": {
    "consumers": [
     {
@@ -29211,6 +29363,19 @@
    "main_committers": []
   },
   "file:tests/orphan_parent_worklist_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/outline_hunt_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29997,6 +30162,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/scope_remint_dryrun_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/second_reader_test.py": {
    "consumers": [
     {
@@ -30167,6 +30345,19 @@
    "main_committers": []
   },
   "file:tests/stop_hook_git_check_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subject_course_moves_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30990,7 +31181,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 406
+     "line": 411
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -31343,7 +31534,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 370
+     "line": 375
     },
     {
      "id": "script:kb/_reclustering_s649.py",
@@ -31434,7 +31625,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 357
+     "line": 362
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -31487,7 +31678,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2721,
+     "line": 2741,
      "tabs": [
       "exhibits"
      ]
@@ -31640,7 +31831,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 356
+     "line": 361
     },
     {
      "id": "script:kb/_pile_mint_dryrun.py",
@@ -33912,7 +34103,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 269
+     "line": 274
     }
    ],
    "main_committers": []
@@ -35552,7 +35743,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 87
+     "line": 89
     }
    ],
    "main_committers": []
@@ -38038,6 +38229,8 @@
     "kb/_build_subject_courses.py",
     "kb/_build_noncredit_subject_titles.py",
     "kb/_build_local_subject_recommendations.py",
+    "kb/_mid_readiness.py",
+    "kb/_outline_hunt.py",
     "kb/_row_audit.py",
     "kb/_row_audit_prune.py",
     "kb/_audit_exhibits.py",
@@ -38105,6 +38298,8 @@
     "kb/status/local_subject_recommendations.json",
     "kb/status/subject_courses",
     "kb/status/noncredit_subject_titles.json",
+    "kb/status/mid_readiness.json",
+    "kb/status/outline_hunt.json",
     "cpl_pathways_membership_data.js",
     "kb/discipline_canonical_subj4.json",
     "kb/cid_claim_audit.json",
@@ -38365,6 +38560,8 @@
     "tests/held_subject_codes_test.py",
     "tests/subject_decisions_honored_test.py",
     "tests/subject_decisions_noncredit_test.py",
+    "tests/subject_course_moves_test.py",
+    "tests/outline_hunt_test.py",
     "tests/subjects_daily_build_test.py",
     "tests/closest_mid_links_test.py",
     "tests/apply_curation_rulings_test.py",
@@ -38419,6 +38616,8 @@
     "tests/program_requirements_pdf_numbers_after_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
+    "tests/mid_readiness_test.py",
+    "tests/scope_remint_dryrun_test.py",
     "tests/mq_title5_rename_test.py",
     "tests/csr_quarterly_probe_test.py",
     "tests/ctdl_exchange_seed_test.py",
