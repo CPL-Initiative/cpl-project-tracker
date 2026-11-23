@@ -48,3 +48,13 @@ writer there and wait for a later run.
 
 **Held to a later slot:** Mt. San Antonio's credit-catalog program pages wait for `levers`, since #3686 holds that
 college until it merges.
+
+## Progress (refreshed at least every half hour so another firing reads this run as live)
+
+- 06:23Z: today's daily update landed on `main` (`a588fc77`).
+- 06:34Z: Peralta's dry run (3,738 rows) carried label lines (SCANS framework lines, bare "Part N" headings, stray
+  colons, "None" blocks). The fix went ahead of the load (`d-peralta-load-cleans-labels-first-s713`): a load-time clean
+  at the `lan` folder only, on #3684 (`51bee0ca`), 3,731 rows and 7 placeholder skips after it. A second reader checks
+  it before `.load` is pushed.
+- 06:47Z: #3686 brought up from `main` (`9332ac1d`, main's side of four Commons files, both builders rerun); its `test`
+  is running.
