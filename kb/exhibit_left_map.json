@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "built_from": {
-  "audit": "2026-11-22T06:20:53+00:00",
-  "unified_titles": 6215
+  "audit": "2026-11-23T06:22:23+00:00",
+  "unified_titles": 6252
  },
  "rule": {
   "graded": [
@@ -9689,7 +9689,7 @@
    "used": false,
    "where": [],
    "twin": {
-    "title": "Portfolio Evidence for MKTG 50",
+    "title": "High School Articulation ( Tri Valley ROP)- Integrated Marketing Communications",
     "how": "already under the same title"
    },
    "reviewed": false,
@@ -12634,6 +12634,10 @@
    "type": "CPL type not recorded",
    "group": ""
   },
+  "CAL FIRE Basic Firefighter Training (219-hour)": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "CAL FIRE Ethical Leadership in the Classroom": {
    "type": "Industry Certification",
    "group": "cert"
@@ -13986,6 +13990,14 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Criminal Justice Academy Fire Service Conditioning & Physical Agility Development": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Criminal Justice Academy Police Ethics and Leadership": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Criminal Justice Report Writing": {
    "type": "Industry Certification",
    "group": "cert"
@@ -14278,6 +14290,10 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
+  "Dance 3": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Dance Rehearsal and Performance": {
    "type": "Portfolio Review",
    "group": "graded"
@@ -14379,6 +14395,10 @@
    "group": "graded"
   },
   "Developmental Psychology of Children 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Developmental Psychology of Children 2": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -14646,11 +14666,11 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "ESL - Comprehensive I": {
+  "ESL - Comprehensive 1": {
    "type": "CPL type not recorded",
    "group": ""
   },
-  "ESL - Comprehensive V": {
+  "ESL - Comprehensive 5": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -14699,6 +14719,10 @@
    "group": "graded"
   },
   "Early Childhood Principles and Practices": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Economics of Business Ownership": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -16290,6 +16314,18 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Guts and Butts Workout 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Guts and Butts Workout 2": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Guts and Butts Workout 3": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "H&R Block Income Tax Preparation Certificate": {
    "type": "Industry Certification",
    "group": "cert"
@@ -17059,6 +17095,10 @@
    "group": ""
   },
   "Intro to Addiction Studies: Addiction and the Community": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Intro to Athletic Training and Sports Medicine": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -17934,6 +17974,10 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
+  "Investigative Report Writing for the Public Safety Professional": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "IoT Fundamentals": {
    "type": "CPL type not recorded",
    "group": ""
@@ -18658,7 +18702,7 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Mechanical Design I": {
+  "Mechanical Design 1": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -18711,6 +18755,10 @@
    "group": "graded"
   },
   "Medical Insurance Billing and Coding": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Medical Occupations": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -19154,10 +19202,6 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Music Theory I": {
-   "type": "CPL type not recorded",
-   "group": ""
-  },
   "Music Theory and Musicianship 1": {
    "type": "CPL type not recorded",
    "group": ""
@@ -19375,6 +19419,10 @@
    "group": ""
   },
   "News Production 4": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "News Reporting and Editing for Publication": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -19611,6 +19659,10 @@
    "group": ""
   },
   "Orientation to Health Care": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Orientation to Health Careers": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -20083,10 +20135,6 @@
    "group": ""
   },
   "Practical PC & Career Technologies": {
-   "type": "CPL type not recorded",
-   "group": ""
-  },
-  "Practical PC and Career Technologies": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -21899,6 +21947,10 @@
    "group": "graded"
   },
   "United States History since 1865": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "United States History to 1877": {
    "type": "CPL type not recorded",
    "group": ""
   },

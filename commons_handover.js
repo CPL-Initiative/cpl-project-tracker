@@ -588,9 +588,13 @@
     drawHave(SUMMARY.rows);
     summary().then(function (rows) { if (P.list[P.at] === c) drawHave(rows); });
     var carry = P.carry; P.carry = "";
+    /* The top row, Close and Previous and Next with it, stays at the top while the body scrolls, and the panel resizes
+       from its left edge (Sam, 2026-11-22, r-sidebars-resize-and-frozen-top-sam-2026-11-22: "a rule to apply to all
+       side bars"). */
     var inner = el("div", { cls: "cho-panel-in" }, [
-      el("div", { cls: "cho-panel-top" }, [el("p", { cls: "cho-eyebrow", text: c.answered ? "Answered by a person" : "Course outline needed" }), close]),
-      el("p", { cls: "cho-words cho-pos" }, [el("span", { id: "cho-pos", text: "Course " + (P.at + 1) + " of " + P.list.length }), prev, next]),
+      el("div", { cls: "cho-panel-head", id: "cho-panel-head" }, [
+        el("div", { cls: "cho-panel-top" }, [el("p", { cls: "cho-eyebrow", text: c.answered ? "Answered by a person" : "Course outline needed" }), close]),
+        el("p", { cls: "cho-words cho-pos" }, [el("span", { id: "cho-pos", text: "Course " + (P.at + 1) + " of " + P.list.length }), prev, next])]),
       el("h3", { id: "cho-panel-h", tabindex: "-1", text: c.course + (c.title ? ", " + c.title : "") }),
       el("p", { cls: "cho-muted", text: c.college + "." + (c.mid_card ? " M-ID card " + c.mid_card + "." : "") }),
       have,
@@ -604,7 +608,45 @@
         el("a", { href: collegeHref(c.college), "data-college-panel": c.college_slug, text: "open " + c.college }), "."]),
       el("p", { cls: "cho-muted" }, [(c.mid_card ? "M-ID card " + c.mid_card : "This course's M-ID card") + " keeps its other controls in ", el("a", { href: "#coci-lookup/courses", text: "Courses" }), "."])
     ]);
+    box_.appendChild(panelGrip(box_));
     box_.appendChild(inner);
+  }
+  /* The panel's width: dragged from its left edge, or set on the grip from the keyboard (Left widens, Right narrows,
+     Home returns its own width). The width lasts the visit; nothing is stored. */
+  var PW = { min: 360, start: 476, step: 40 };
+  function pwMax() { return Math.max(PW.min, (window.innerWidth || 1280) - 24); }
+  function pwSet(box_, w) {
+    P.w = w == null ? null : Math.max(PW.min, Math.min(pwMax(), Math.round(w)));
+    box_.style.width = P.w ? P.w + "px" : "";
+    /* The page beside the panel keeps its list in view at the panel's width. */
+    if (P.host) { if (P.w) P.host.style.setProperty("--cho-pw", P.w + "px"); else P.host.style.removeProperty("--cho-pw"); }
+    var g = box_.querySelector(".cho-grip");
+    if (g) { var v = P.w || PW.start; g.setAttribute("aria-valuenow", String(v)); g.setAttribute("aria-valuetext", v + " pixels wide"); }
+  }
+  function panelGrip(box_) {
+    var now = function () { return P.w || Math.round(box_.getBoundingClientRect().width) || PW.start; };
+    var v = P.w || PW.start;
+    var g = el("div", { cls: "cho-grip", id: "cho-grip", role: "separator", tabindex: "0", "aria-orientation": "vertical", "aria-label": "Resize the panel",
+      "aria-valuemin": String(PW.min), "aria-valuemax": String(pwMax()), "aria-valuenow": String(v), "aria-valuetext": v + " pixels wide" });
+    if (P.w) box_.style.width = P.w + "px";
+    g.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") pwSet(box_, now() + PW.step);
+      else if (e.key === "ArrowRight") pwSet(box_, now() - PW.step);
+      else if (e.key === "Home") pwSet(box_, null);
+      else return;
+      e.preventDefault(); e.stopPropagation();
+    });
+    g.addEventListener("pointerdown", function (e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      e.preventDefault();
+      var x0 = e.clientX, w0 = now();
+      try { g.setPointerCapture(e.pointerId); } catch (er) { /* an older engine */ }
+      /* The grip sits on the left edge, so a drag to the left widens the panel. */
+      function move(ev) { pwSet(box_, w0 - (ev.clientX - x0)); }
+      function up() { g.removeEventListener("pointermove", move); g.removeEventListener("pointerup", up); g.removeEventListener("pointercancel", up); }
+      g.addEventListener("pointermove", move); g.addEventListener("pointerup", up); g.addEventListener("pointercancel", up);
+    });
+    return g;
   }
   function panelOpen(key, from) {
     var i = -1;
@@ -719,7 +761,13 @@
     ".cho-pane { display:grid; gap:12px; }",
     ".cho-panel { position:fixed; top:0; right:0; bottom:0; z-index:1000; display:flex; width:min(476px, calc(100vw - 24px)); background:var(--cmn-dialog, var(--cmn-surface)); border-left:1px solid var(--cmn-line); box-shadow:-12px 0 32px color-mix(in srgb, var(--cmn-heading) 16%, transparent); color:var(--cmn-ink); }",
     ".cho-panel[hidden] { display:none; }",
-    ".cho-panel-in { flex:1 1 auto; min-width:0; overflow-y:auto; display:grid; gap:12px; align-content:start; padding:calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 24px 18px; }",
+    ".cho-panel-in { flex:1 1 auto; min-width:0; overflow-y:auto; overscroll-behavior:contain; display:grid; gap:12px; align-content:start; padding:0 max(18px, env(safe-area-inset-right, 0px)) 24px 4px; }",
+    ".cho-panel-head { position:sticky; top:0; z-index:2; display:grid; gap:6px; margin:0 calc(-1 * max(18px, env(safe-area-inset-right, 0px))) 0 -4px; padding:calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 10px 4px; background:var(--cmn-dialog, var(--cmn-surface)); border-bottom:1px solid var(--cmn-line); }",
+    ".cho-grip { flex:0 0 14px; align-self:stretch; cursor:col-resize; touch-action:none; display:flex; align-items:center; justify-content:center; }",
+    ".cho-grip::after { content:\"\"; width:4px; height:48px; border-radius:4px; background:var(--cmn-line); }",
+    ".cho-grip:hover::after, .cho-grip:focus-visible::after { background:var(--cmn-accent); }",
+    ".cho-grip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:-2px; }",
+    "@media (max-width: 560px) { .cho-panel { width:calc(100vw - 12px) !important; } .cho-grip { display:none; } .cho-panel-in { padding-left:16px; } .cho-panel-head { margin-left:-16px; padding-left:16px; } }",
     ".cho-panel-top { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
     ".cho-eyebrow { margin:0; font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--cmn-muted); }",
     ".cho-panel h3 { margin:0; font-family:var(--cmn-serif); font-size:clamp(1.15rem, 1rem + .6vw, 1.4rem); color:var(--cmn-title); overflow-wrap:anywhere; }",
@@ -729,7 +777,7 @@
     ".cho-pos { font-size:.9rem; color:var(--cmn-ink-2); }",
     ".cho-standing { color:var(--cmn-muted); font-size:.86rem; }",
     /* Beside the panel the page keeps its list in view on a wide screen; on a narrow one the panel covers it. */
-    "@media (min-width: 1100px) { #tab-commons.cho-open .cmf-page { padding-right:500px; } }",
+    "@media (min-width: 1100px) { #tab-commons.cho-open .cmf-page { padding-right:calc(var(--cho-pw, 476px) + 24px); } }",
     "@media (prefers-reduced-motion: no-preference) { .cho-drop { transition:background-color .12s ease; } }"
   ].join("\n");
   function ensureCss() {

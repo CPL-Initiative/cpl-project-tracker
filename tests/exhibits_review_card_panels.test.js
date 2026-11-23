@@ -221,7 +221,10 @@ function chipsOf(d) { return Array.from(d.querySelectorAll(".exh-card .exh-chipr
   const right = yes.filter(function (p) { return P(p[0], p[1]); }).length + no.filter(function (p) { return !P(p[0], p[1]); }).length;
   check("(8) self-recall: " + right + " of " + (yes.length + no.length) + " held pairs read right", right === yes.length + no.length);
   // On the shipped reference: every flagged pair names one agency two ways, and Sam's example is among them.
+  // Sam's title rides on its card's proposal, so a nightly CER run that clears the proposal drops it from the
+  // reference (ac670dd0, 2026-11-22). It is put back here so his pair is still read against the shipped neighbors.
   const REL = JSON.parse(fs.readFileSync("kb/exhibits_related.json", "utf8")).titles.map(function (r) { return r[0]; });
+  if (REL.indexOf(CFBF.title) < 0) REL.push(CFBF.title);
   let flagged = [];
   for (let i = 0; i < REL.length; i++) if (/CDF|Cal\s?Fire|Department of Forestry/i.test(REL[i]))
     for (let j = 0; j < REL.length; j++) if (j !== i && P(REL[i], REL[j])) flagged.push(REL[i] + " ~ " + REL[j]);

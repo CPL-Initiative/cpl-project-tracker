@@ -171,7 +171,7 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
   const box = t.d.getElementById("exh-title");
   box.value = "Brakes (ASE A5)"; box.dispatchEvent(new t.w.Event("input")); await settle();
   check("the panel follows the title as it is edited", panelTitles(t.d)[0] === "ASE A5 — Brakes" && !!byText(t.d, ".exh-rel-tier", "The same test, ASE A5"));
-  byText(t.d, ".exh-acts button", "Skip").click(); await settle();
+  byText(t.d, ".exh-acts button", "Next").click(); await settle();
   names = panelTitles(t.d);
   check("a card outside ASE lists titles with its issuer and words in common, the nearest first",
     names[0] === "CompTIA Security+" && names.indexOf("CompTIA Network+") >= 0 && names.indexOf("ASE A5 — Brakes") < 0);

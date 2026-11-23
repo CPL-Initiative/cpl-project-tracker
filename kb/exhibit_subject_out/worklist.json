@@ -2,20 +2,20 @@
  "schema": 1,
  "_about": "Credentials with no Common SUBJ after the subject fill (kb/_exhibit_subject_fill.py), each with why, and a suggested subject from its title words where one exists. A suggestion is never a decision: title words were wrong on ASE MIL7 (Sam, 2026-11-11). The Commons' Exhibit card counts `no_subject`.",
  "rule": "A credential with no Common SUBJ takes the subject of the courses colleges credit for it (over half of them, several colleges first, then one), else its issuer family's; title words, TOP and CIP never decide; a family or certification link that names another subject holds it for a person; a subject already on the title always wins.",
- "written_at": "2026-11-21T15:42:57Z",
+ "written_at": "2026-11-22T15:44:11Z",
  "mode": "preview",
  "live_read": true,
  "by_rung": {
-  "courses, several colleges": 4,
-  "courses, one college": 201,
+  "courses, several colleges": 5,
+  "courses, one college": 211,
   "issuer family": 0
  },
  "written": 0,
- "not_yet_written": 205,
- "no_subject": 574,
- "left": 369,
- "left_exhibits": 467,
- "suggested": 69,
+ "not_yet_written": 216,
+ "no_subject": 584,
+ "left": 368,
+ "left_exhibits": 449,
+ "suggested": 68,
  "not_held": [
   "Theater Arts"
  ],
@@ -1510,33 +1510,6 @@
    ]
   },
   {
-   "title": "IB Mathematics: Applications and Interpretation HL",
-   "why": "credited to a GE area",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "exhibits": [
-    "MAPSAH-IMHA-1-001",
-    "MAPSAS-I:MA1-1-001",
-    "MAPSAS-IM(A1-1-001",
-    "MAPSAS-IMA&1-1-001",
-    "MAPSAS-IMA&4-1-001",
-    "MAPSAS-IMAA1-1-001",
-    "MAPSAS-IMAA11-1-001",
-    "MAPSAS-IMAA13-1-001",
-    "MAPSAS-IMAA14-1-001",
-    "MAPSAS-IMAA16-1-001",
-    "MAPSAS-IMAA19-1-001",
-    "MAPSAS-IMAA21-1-001",
-    "MAPSAS-IMAA3-1-001",
-    "MAPSAS-IMAA5-1-001",
-    "MAPSAS-IMAA7-1-001",
-    "MAPSAS-IMAA9-1-001",
-    "MAPSAS-IMHA1-1-001",
-    "MAPSAS-IMHA3-1-001"
-   ],
-   "suggested": "MATH",
-   "suggested_from": "title words (a suggestion, never a decision)"
-  },
-  {
    "title": "IB Philosophy HL",
    "why": "no signal",
    "issuer": "International Baccalaureate Organization (IBO)",
@@ -1545,14 +1518,6 @@
    ],
    "suggested": "PHIL",
    "suggested_from": "title words (a suggestion, never a decision)"
-  },
-  {
-   "title": "IB Social and Cultural Anthropology HL",
-   "why": "no signal",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "exhibits": [
-    "MAPSAS-ISAC-1-001"
-   ]
   },
   {
    "title": "IB World Religions SL",
@@ -2253,6 +2218,14 @@
    "issuer": "Riverside Unified School District",
    "exhibits": [
     "MAPCxH-POEH-1-001"
+   ]
+  },
+  {
+   "title": "Mechanical Design I",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-D2MD-1-001"
    ]
   },
   {

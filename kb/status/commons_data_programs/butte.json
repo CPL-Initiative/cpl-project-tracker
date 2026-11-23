@@ -1,4 +1,4 @@
-{"schema":1,"college":"Butte College","slug":"butte","basis":"live","census_at":"2026-11-21 22:26Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Butte College","slug":"butte","basis":"live","census_at":"2026-11-22 22:50Z","correction_rules":true,"programs":[
 {"cn":"11137","title":"Agriculture and Natural Resources","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"01301","title":"Agriculture Business","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"19042","title":"Communication Studies","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -26,7 +26,6 @@
 {"cn":"44891","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"16226","title":"Child Development","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"30774","title":"Noncredit Certificate of Competency in ESL","award":null,"cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"39882","title":"Advanced Manufacturing Level I","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://butte.curriqunet.com/catalog/iq/25398/28144/28374"},
 {"cn":"14583","title":"Registered Nursing","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/28156/28380","units":{"sum":[0.0,0.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"07269","title":"Administration of Justice","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/28070/28204","units":{"sum":[61.0,61.0],"printed":[60.0,66.0],"status":"unequal","measure":"units","against":"degree"}},
 {"cn":"31042","title":"Administration of Justice","award":"A.S. T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/28070/28206","units":{"sum":[61.0,62.0],"printed":[60.0,69.0],"status":"unequal","measure":"units","against":"degree"}},

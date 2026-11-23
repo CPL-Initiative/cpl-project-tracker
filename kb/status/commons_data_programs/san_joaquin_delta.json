@@ -1,4 +1,4 @@
-{"schema":1,"college":"San Joaquin Delta College","slug":"san_joaquin_delta","basis":"live","census_at":"2026-11-21 22:26Z","correction_rules":true,"programs":[
+{"schema":1,"college":"San Joaquin Delta College","slug":"san_joaquin_delta","basis":"live","census_at":"2026-11-22 22:50Z","correction_rules":true,"programs":[
 {"cn":"33038","title":"Art History","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"19689","title":"Business","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"17714","title":"Computer Networking - Essentials","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -28,12 +28,6 @@
 {"cn":"45193","title":"Control Systems Technician","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"43492","title":"Digital Imaging","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"43462","title":"Digital Media Content Entrepreneurship","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"37611","title":"Electrical Technology: Apprenticeship","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355&print"},
-{"cn":"14595","title":"Electrical Technology: Apprenticeship Option","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3327&print"},
-{"cn":"14597","title":"Industrial Technology: Electrical Apprenticeship Option","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286&print"},
-{"cn":"14594","title":"Industrial Technology: Maintenance Apprenticeship Option","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285&print"},
-{"cn":"14598","title":"Industrial Technology: Mechanical Apprenticeship Option","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3284&print"},
-{"cn":"14599","title":"Industrial Technology: Operations Apprenticeship Option","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3283&print"},
 {"cn":"14773","title":"Mental Health Specialist","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"45195","title":"Nurse Assistant and Home Health Aide","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"10257","title":"Psychiatric Technician","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},

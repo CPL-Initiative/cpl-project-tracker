@@ -659,6 +659,10 @@ file.
 - **A figure card opens what it counts (Sam, 2026-11-05: *"this should be a rule for all visuals"*).** The figure is
   the link, to the one place on the page or site that holds those items; a figure summed from many places stays plain
   rather than pointing somewhere arbitrary. First built on ELL IET Version 5's top cards.
+- **Every sidebar resizes, and its top row stays frozen (Sam, 2026-11-22: *"this is a rule to apply to all side
+  bars"*).** A side panel resizes from its inner edge (drag, or the arrow keys on the grip), and its top row, Close
+  included, stays at the top while the body scrolls inside one scroller. First built on the Subjects panel
+  (`commons_subjects.js`); each other panel converts at its UI pass (`r-sidebars-resize-and-frozen-top-sam-2026-11-22`).
 - **Controls are underlined words (Sam, 2026-10-09).** No border and no fill,
   underlined at rest, 24px tall, a `<button>` where it acts; each view converts
   at its UI pass. Spec: [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).

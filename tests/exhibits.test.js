@@ -194,7 +194,7 @@ function load(opts) {
     calls.push({ url: url, method: init.method || "GET", body: init.body ? JSON.parse(init.body) : null, headers: init.headers || {} });
     function ok(obj) { return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(JSON.parse(JSON.stringify(obj))); } }); }
     function bad(status) { return Promise.resolve({ ok: false, status: status, json: function () { return Promise.resolve({}); } }); }
-    if (url === "kb/exhibits_review.json") return opts.noData ? bad(404) : ok(REVIEW);
+    if (url === "kb/exhibits_review.json") return opts.noData ? bad(404) : ok(opts.review || REVIEW);
     if (url === "kb/exhibits_review_courses.json") return ok(COURSES);
     if (url === "kb/exhibits_adoption.json") return opts.noAdoption ? bad(404) : ok(ADOPTION);
     if (/\/rest\/v1\/rpc\/exhibit_title_students$/.test(url)) {
@@ -283,9 +283,9 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
     && !!Array.from(t.d.querySelectorAll(".exh-card button")).find(function (b) { return txt(b) === "MAPCXS-A2-J-1-001"; }));
 
   // saving signed out
-  byText(t.d, ".exh-acts button", "Skip").click(); await settle();
+  byText(t.d, ".exh-acts button", "Next").click(); await settle();
   check("Skip moves to the next title", current(t.d) === DM);
-  byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
+  t.d.getElementById("exh-change").click(); await settle();
   check("signed out, a save asks for a sign-in and writes nothing", /Sign in as a reviewer to save/.test(txt(t.d.querySelector(".exh-status")))
     && !t.calls.some(function (c) { return /kb_curation/.test(c.url) && c.method !== "GET"; }));
 
@@ -359,10 +359,10 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("most students first: 442 leads", current(t.d) === DM && /442 students have credit on this exhibit/.test(txt(t.d.querySelector(".exh-why"))));
   check("the Students waiting tile reads the whole set", /Students waiting840/.test(txt(Array.from(t.d.querySelectorAll(".exh-tile"))[2])));
   check("the footer says most students first", /most students first/.test(txt(t.d.querySelector(".exh-foot"))));
-  byText(t.d, ".exh-acts button", "Skip").click(); await settle();
-  byText(t.d, ".exh-acts button", "Skip").click(); await settle();
+  byText(t.d, ".exh-acts button", "Next").click(); await settle();
+  byText(t.d, ".exh-acts button", "Next").click(); await settle();
   check("a cell under ten reads Too few students to show, ahead of none", current(t.d) === JUV && /Too few students to show/.test(txt(t.d.querySelector(".exh-why"))));
-  byText(t.d, ".exh-acts button", "Skip").click(); await settle();
+  byText(t.d, ".exh-acts button", "Next").click(); await settle();
   check("zero reads No students with credit yet", current(t.d) === WELD && /No students with credit yet/.test(txt(t.d.querySelector(".exh-why"))));
 
   // the conflict's buttons (Sam, 2026-10-31, at a conflict that would not save): Change and Keep write the
@@ -380,19 +380,19 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
     /over the reviewed title “Juvenile Law and Procedures”/.test(txt(t.d.querySelector(".exh-status"))) && /still stands/.test(txt(t.d.querySelector(".exh-status"))));
   // The step is empty once its one card is decided; Back sits on any card and returns there.
   stepTile(t.d, "All held").click(); await settle();
-  byText(t.d, ".exh-acts button", "Back").click(); await settle();
+  byText(t.d, ".exh-acts button", "Previous").click(); await settle();
   check("Back returns to the conflict card", current(t.d) === JUV);
   title(t.d).value = "Something Else"; title(t.d).dispatchEvent(new t.w.Event("input"));
-  byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
+  t.d.getElementById("exh-change").click(); await settle();
   revRows = [].concat.apply([], curPosts().slice(1).map(function (c) { return c.body; }));
   check("an edited title on a conflict saves it with the reviewed title it replaces",
     revRows.some(function (r) { return r.field === "unified_title_assignment" && r.value === "Something Else"; })
     && revRows.some(function (r) { return r.field === "unified_title_supersedes" && r.value === "Juvenile Law and Procedures"; }));
   stepTile(t.d, "All held").click(); await settle();
-  byText(t.d, ".exh-acts button", "Back").click(); await settle();
+  byText(t.d, ".exh-acts button", "Previous").click(); await settle();
   stepTile(t.d, "Conflict with the reference").click(); await settle();
   title(t.d).value = "Juvenile Law and Procedures"; title(t.d).dispatchEvent(new t.w.Event("input"));
-  byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
+  t.d.getElementById("exh-change").click(); await settle();
   const del = t.calls.find(function (c) { return /kb_curation/.test(c.url) && c.method === "DELETE"; });
   check("the reference's title on a conflict clears the saved assignment", del
     && del.url.indexOf("course_id=eq." + encodeURIComponent("_UNCLASSIFIED::" + JUV)) !== -1);
@@ -404,7 +404,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   stepTile(t.d, "All held").click(); await settle();
   title(t.d).value = "Introduction to Digital Art"; title(t.d).dispatchEvent(new t.w.Event("input"));
   t.d.getElementById("exh-issuer").value = "Cabrillo High School"; t.d.getElementById("exh-issuer").dispatchEvent(new t.w.Event("input"));
-  byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
+  t.d.getElementById("exh-change").click(); await settle();
   const posts = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).slice(nPosts);
   check("Change to Proposed Title writes the CER's two rows", posts.length === 2
     && posts.every(function (p) { return p.body.course_id === "_UNCLASSIFIED::" + DM && p.body.reviewer_email === "reviewer@example.org"; })
@@ -420,14 +420,15 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("Change to Proposed Title is the first word, Keep Current Title beside it",
     txt(firstAct) === "Change to Proposed Title" && txt(firstAct.nextElementSibling) === "Keep Current Title");
   check("the local title being decided is in bold", !!t.d.querySelector(".exh-now strong"));
-  byText(t.d, ".exh-acts button", "Back").click(); await settle();
-  check("Back returns the last card decided, with what was saved for it", current(t.d) === AP
-    && new RegExp("You saved “" + AP.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "”; a new choice replaces it").test(txt(t.d.querySelector(".exh-status"))));
-  byText(t.d, ".exh-acts button", "Back").click(); await settle();
+  byText(t.d, ".exh-acts button", "Previous").click(); await settle();
+  check("Previous returns the last card decided, its box holding what was saved for it, and saves nothing", current(t.d) === AP
+    && /Saved this visit or earlier as “AP Computer Science A - Score of 3 or higher”; nothing changes unless you save again/.test(txt(t.d.querySelector(".exh-status")))
+    && title(t.d).value === AP);
+  byText(t.d, ".exh-acts button", "Previous").click(); await settle();
   check("Back again reaches the card before it, its save named on the card", current(t.d) === DM
     && /Saved earlier as “Introduction to Digital Art”/.test(txt(t.d.querySelector(".exh-card"))));
   title(t.d).value = "Digital Art"; title(t.d).dispatchEvent(new t.w.Event("input"));
-  byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
+  t.d.getElementById("exh-change").click(); await settle();
   const again = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).slice(-2);
   check("a new choice after Back writes the same keys again, so it replaces the first save",
     again.some(function (p) { return p.body.course_id === "_UNCLASSIFIED::" + DM && p.body.field === "unified_title_assignment" && p.body.value === "Digital Art"; })
@@ -456,7 +457,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   // a save that fails
   t = load({ signedIn: true, saveFails: true });
   await t.M.boot(); await settle();
-  byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
+  t.d.getElementById("exh-change").click(); await settle();
   check("a failed save says nothing changed and keeps the title", /did not reach the reference \(HTTP 500\/500\)/.test(txt(t.d.querySelector(".exh-status"))) && current(t.d) === DM);
 
   // a sign-in that is not a reviewer's
@@ -496,7 +497,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("a click fills the box and closes the list", iss.value === "Cabrillo High School" && opts.hidden);
   title(t.d).value = "ASE A6 — Electrical/Electronic Systems"; title(t.d).dispatchEvent(new t.w.Event("input"));
   check("a picked issuer stays when the title changes", iss.value === "Cabrillo High School");
-  byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
+  t.d.getElementById("exh-change").click(); await settle();
   const picked = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; });
   check("Change saves the picked issuer", picked.some(function (p) { return p.body.field === "issuing_agency_assignment" && p.body.value === "Cabrillo High School"; }));
   t.M._state.drafts[AP] = { title: "ASE A5 — Brakes" };
@@ -656,10 +657,26 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   // the Review card links the List's panel for a credential already in the reference
   t = load({ overlay: OVERLAY });
   await t.M.boot(); await settle();
-  const setIt = byText(t.d, ".exh-read button", "Set them in the List");
-  check("the card's training site links the List", setIt);
+  // Sam, 2026-11-22: "The See them in the List link takes me out of exhibits ... It should instead open another sidebar".
+  const setIt = t.d.getElementById("exh-edit-sites");
+  // S709: closed, it says it opens a dialog and names no panel (axe aria-valid-attr-value: aria-controls must name an
+  // element on the page); open, it names the panel.
+  check("the card's training site opens a side panel, and says so", setIt && txt(setIt) === "Edit training sites"
+    && setIt.getAttribute("aria-haspopup") === "dialog" && !setIt.hasAttribute("aria-controls"));
   setIt.click(); await settle();
-  check("the link opens the credential the title joins, its sites and their colleges", txt(t.d.getElementById("exh-l-panel-t")) === "Exhibit: " + JLP
+  const cpan = t.d.getElementById("exh-credpanel");
+  check("open, the button names the panel it controls", t.d.getElementById("exh-edit-sites").getAttribute("aria-controls") === "exh-credpanel");
+  check("⭐ the side panel holds the credential the title joins, its sites and their colleges, over the card it came from",
+    cpan && txt(t.d.getElementById("exh-cp-h")) === JLP && t.d.getElementById("exh-cp-site-0").value === "Regional Academy North"
+    && t.d.getElementById("exh-cp-col-0").value === "Norco College" && !!t.d.getElementById("exh-title") && current(t.d) === JUV);
+  check("⭐ its top row, Close included, is frozen while its body scrolls, and it resizes from its left edge",
+    t.d.querySelector("#exh-credpanel .exh-cp-head").contains(t.d.getElementById("exh-cp-close"))
+    && /\.exh-cp-head \{ position:sticky; top:0;/.test(t.w.document.getElementById("exh-css") ? t.w.document.getElementById("exh-css").textContent : src)
+    && t.d.getElementById("exh-cp-grip").getAttribute("role") === "separator");
+  t.d.getElementById("exh-cp-close").click(); await settle();
+  check("Close returns to the card", !t.d.getElementById("exh-credpanel") && current(t.d) === JUV);
+  await t.M.openCredential(JLP); await settle();
+  check("the List still opens the credential the title joins", txt(t.d.getElementById("exh-l-panel-t")) === "Exhibit: " + JLP
     && t.d.getElementById("exh-pn-site-0").value === "Regional Academy North" && t.d.getElementById("exh-pn-col-0").value === "Norco College");
   t.d.getElementById("exh-pn-issuer").value = "Draft issuer"; t.d.getElementById("exh-pn-issuer").dispatchEvent(new t.w.Event("input"));
   viewBtn(t.d, "Review").click(); await settle();
@@ -727,6 +744,97 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("resolveSites: the list stands when the trainer matches or is older",
     M._resolveSites({ sites: '[{"site":"A"}]', sitesAt: "1", trainer: "A", trainerAt: "2" }).length === 1
     && M._resolveSites({ sites: '[{"site":"A"}]', sitesAt: "2", trainer: "B", trainerAt: "1" }).length === 1);
+
+  // ── S705: Sam's seven asks of 2026-11-22 on the Review card ──
+  {
+    let r = load({ signedIn: true, overlay: OVERLAY });
+    await r.M.boot(); await settle();
+    const posts = function () { return r.calls.filter(function (c) { return /kb_curation/.test(c.url) && c.method !== "GET"; }); };
+    // (1) the MAP id: the side panel where it is drawn, else MAP in a new tab
+    let opened = null; r.w.open = function (u) { opened = u; return {}; };
+    const srcW = r.d.querySelector("button[data-exh-src]");
+    const mapBox = r.d.getElementById("exh-cdsum-map");
+    if (mapBox) mapBox.parentNode.removeChild(mapBox);
+    srcW.click();
+    check("(S705 1) ⭐ a source id with no side panel drawn opens the exhibit in MAP in a new tab", opened && /Exhibit=/.test(opened) && opened.indexOf(encodeURIComponent(srcW.getAttribute("data-exh-src"))) !== -1 || (opened && opened.indexOf(srcW.getAttribute("data-exh-src")) !== -1), opened);
+    // (3) the line says what each word saves, and the word follows an edit
+    const first = current(r.d), proposal = title(r.d).value;
+    check("(S705 3) ⭐ the line under the words names the title Change saves and the one Keep saves",
+      r.d.getElementById("exh-change").textContent === "Change to Proposed Title" && new RegExp("Change to Proposed Title saves “" + proposal.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "”").test(txt(r.d.getElementById("exh-saves")))
+      && /Keep Current Title saves “/.test(txt(r.d.getElementById("exh-saves"))), txt(r.d.getElementById("exh-saves")));
+    title(r.d).value = "My Edited Title"; title(r.d).dispatchEvent(new r.w.Event("input"));
+    check("(S705 3) ⭐ once the box is edited the word reads Change to Edited Title and the line names the edit",
+      r.d.getElementById("exh-change").textContent === "Change to Edited Title" && /saves your edit, “My Edited Title”/.test(txt(r.d.getElementById("exh-saves")))
+      && new RegExp("The proposal was “").test(txt(r.d.getElementById("exh-saves"))));
+    // (2) Previous and Next write nothing
+    const nBefore = posts().length;
+    r.d.getElementById("exh-next").click(); await settle();
+    const second = current(r.d);
+    r.d.getElementById("exh-prev").click(); await settle();
+    check("(S705 2) ⭐ Next and Previous move between cards and write nothing", second !== first && current(r.d) === first && posts().length === nBefore);
+    r.d.getElementById("exh-next").click(); await settle();
+    check("(S705 2) Next after Previous returns to the card Previous stepped back over", current(r.d) === second && posts().length === nBefore);
+    r.d.getElementById("exh-prev").click(); await settle();
+    // (4) the session list, and (2) Undo clears a fresh save
+    title(r.d).value = "A Consistent Title"; title(r.d).dispatchEvent(new r.w.Event("input"));
+    r.d.getElementById("exh-change").click(); await settle();
+    const log = r.d.getElementById("exh-log");
+    check("(S705 4) ⭐ a save joins Changes this visit with its before and after", log && /Changes this visit \(1\)/.test(txt(log))
+      && /A Consistent Title/.test(txt(log)) && /Changed to edited title/.test(txt(log)) && new RegExp(first.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(txt(log)), txt(log));
+    const undoW = r.d.getElementById("exh-undo");
+    check("(S705 2) Undo names the save it clears and is apart from Previous", undoW && /Undo the last save/.test(txt(undoW)) && /A Consistent Title/.test(undoW.getAttribute("aria-label")));
+    const nSaved = posts().length;
+    undoW.click(); await settle();
+    const del = posts().slice(nSaved)[0];
+    check("(S705 2) ⭐ Undo clears the save's rows and the card returns as it was built", del && del.method === "DELETE" && current(r.d) === first
+      && title(r.d).value === proposal && /Undone/.test(txt(r.d.querySelector(".exh-status"))));
+    check("(S705 4) an undone save stays listed, marked undone", /\(undone\)/.test(txt(r.d.getElementById("exh-log"))));
+    // (5) move the issuer to the training sites
+    r.d.getElementById("exh-issuer").value = "Mission Valley Regional Occupational Program"; r.d.getElementById("exh-issuer").dispatchEvent(new r.w.Event("input"));
+    r.d.getElementById("exh-move-issuer").click(); await settle();
+    check("(S705 5) ⭐ Move the issuer to training sites carries it down and empties the issuer for the one that awards the credit",
+      /Mission Valley Regional Occupational Program \(moved from the issuer, saved with your choice\)/.test(txt(r.d.getElementById("exh-sites-now")))
+      && r.d.getElementById("exh-issuer").value === "" && !!r.d.getElementById("exh-move-back"));
+    r.d.getElementById("exh-move-back").click(); await settle();
+    check("(S705 5) Put it back returns the name to the issuer", r.d.getElementById("exh-issuer").value === "Mission Valley Regional Occupational Program" && !/moved from the issuer/.test(txt(r.d.getElementById("exh-sites-now"))));
+  }
+  {
+    // (5) the moved site saves with the choice, to the credential the saved title names (JUV joins JLP)
+    let r = load({ signedIn: true, overlay: OVERLAY });
+    await r.M.boot(); await settle();
+    stepTile(r.d, "Conflict with the reference").click(); await settle();
+    r.d.getElementById("exh-issuer").value = "Valley High School"; r.d.getElementById("exh-issuer").dispatchEvent(new r.w.Event("input"));
+    r.d.getElementById("exh-move-issuer").click(); await settle();
+    r.d.getElementById("exh-issuer").value = "California Community Colleges"; r.d.getElementById("exh-issuer").dispatchEvent(new r.w.Event("input"));
+    title(r.d).value = JLP; title(r.d).dispatchEvent(new r.w.Event("input"));
+    const n0 = r.calls.length;
+    r.d.getElementById("exh-change").click(); await settle(); await settle();
+    const sitesPost = r.calls.slice(n0).filter(function (c) { return c.method === "POST" && c.body && !Array.isArray(c.body) && c.body.field === "training_sites_override"; })[0];
+    check("(S705 5) ⭐ the moved site saves to the credential beside its sites, with the choice", sitesPost && sitesPost.body.course_id === "_CREDENTIAL_REVIEW::" + JLP
+      && /Valley High School/.test(sitesPost.body.value) && /Regional Academy North/.test(sitesPost.body.value), sitesPost ? JSON.stringify(sitesPost.body) : txt(r.d.querySelector(".exh-status")) + " | " + r.calls.slice(n0).map(function (c) { return c.method + " " + c.url.slice(0, 60); }).join(" ; "));
+  }
+
+  {
+    // Articulated with (Sam, 2026-11-22): the college course and its credit recommendation on the card; none is flagged.
+    const R2 = JSON.parse(JSON.stringify(REVIEW));
+    const dm = R2.held.find(function (x) { return x.raw === DM; }), ap = R2.held.find(function (x) { return x.raw === AP; });
+    dm.local_courses = [[C("Cabrillo College"), "DM 1", "Intro to Digital Media", 3, "CCC1", "3 hours in Digital Media", ""]];
+    dm.credit_recs = [["DM 1", "3 hours in Digital Media"], ["DM 9", "1 hour in Studio Practice"]];
+    ap.credit_recs = [];
+    R2.held.forEach(function (x) { if (x !== dm && x !== ap) delete x.credit_recs; });
+    let r = load({ review: R2 });
+    await r.M.boot(); await settle();
+    stepTile(r.d, "Proposed").click(); await settle();
+    const aw = r.d.getElementById("exh-artwith");
+    check("(S705 8) ⭐ the card names the college course and its credit recommendation", aw && /Articulated with/.test(txt(aw)) && /DM 1 Intro to Digital Media, 3 units\. Credit recommendation: 3 hours in Digital Media\./.test(txt(aw))
+      && /DM 9\. Credit recommendation: 1 hour in Studio Practice\. This course is not in the articulating college's course list on file\./.test(txt(aw)), aw && txt(aw));
+    stepTile(r.d, "Wording check").click(); await settle();
+    const flag = r.d.getElementById("exh-nocr");
+    check("(S705 8) ⭐ an exhibit with no credit recommendation is flagged in words as not valid, for MAP team follow-up", current(r.d) === AP && flag
+      && /No credit recommendation is on this exhibit\./.test(txt(flag)) && /not a valid exhibit/.test(txt(flag)) && /MAP team follow-up/.test(txt(flag)), flag && txt(flag));
+    r.d.getElementById("exh-next").click(); await settle();
+    check("(S705 8) a card built before the file named its credit recommendations is never flagged", current(r.d) === WELD && !r.d.getElementById("exh-nocr"));
+  }
 
   const failed = results.filter(function (r) { return !r[1]; });
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])); });

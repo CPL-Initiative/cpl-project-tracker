@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-11-22T06:18:23Z",
+  "_generated_at": "2026-11-22T21:48:16Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
@@ -8,116 +8,256 @@
   "apply_safe": true,
   "clean": [
     {
-      "raw": "CA Specialized Training Institute First Responder Operations and Decon",
-      "assigned": "Hazardous Materials First Responder Operational — Decontamination",
-      "issuer": "California Specialized Training Institute (CSTI)",
+      "raw": "Cal Fire Basic Firefighter (219 hour) Training",
+      "assigned": "CAL FIRE Basic Firefighter Training (219-hour)",
+      "issuer": "California Department of Forestry and Fire Protection (CAL FIRE)",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-21T13:08:08.069166+00:00"
+      "reviewed_at": "2026-11-22T15:16:04.956806+00:00"
     },
     {
-      "raw": "DRAFT 21: Mechanical Design I CX",
-      "assigned": "Mechanical Design I",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
-    },
-    {
-      "raw": "ESLN 309A",
+      "raw": "Completion of ESLN 310C",
       "assigned": "ESL - Foundations",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:18:06.616611+00:00"
     },
     {
-      "raw": "ESLN 310A",
-      "assigned": "ESL - Comprehensive I",
+      "raw": "Credit by Exam HISTC1001-United States History Since 1877",
+      "assigned": "United States History to 1877",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:18:19.545181+00:00"
     },
     {
-      "raw": "ESLN 310E",
-      "assigned": "ESL - Comprehensive V",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children I",
+      "assigned": "Developmental Psychology of Children 1",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:19:07.54981+00:00"
     },
     {
-      "raw": "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX",
-      "assigned": "Principles of Caregiving: Older Adults and Their Care",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children II",
+      "assigned": "Developmental Psychology of Children 2",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:23:14.832599+00:00"
     },
     {
-      "raw": "GERO 455: Resources and Services for Older Adults CX",
-      "assigned": "Resources and Services for Older Adults",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation ( Tri Valley ROP)- Economics of Business Ownership",
+      "assigned": "Economics of Business Ownership",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:23:41.824689+00:00"
     },
     {
-      "raw": "High School Articulation (Benicia High School)- Dance 1",
-      "assigned": "Introduction to Dance",
+      "raw": "High School Articulation ( Tri Valley ROP)- Emergency Medical Response",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:23:49.076928+00:00"
+    },
+    {
+      "raw": "High School Articulation ( Tri Valley ROP)- Integrated Marketing Communications",
+      "assigned": "Introduction to Marketing",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:23:52.076474+00:00"
+    },
+    {
+      "raw": "High School Articulation ( Tri Valley ROP)- Introduction to Athletic Training",
+      "assigned": "Intro to Athletic Training and Sports Medicine",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:24:10.742561+00:00"
+    },
+    {
+      "raw": "High School Articulation ( Tri Valley ROP)- Introduction to Health Careers",
+      "assigned": "Orientation to Health Careers",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:05.281939+00:00"
+    },
+    {
+      "raw": "High School Articulation ( Tri Valley ROP)- Medical Occupations",
+      "assigned": "Medical Terminology",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:09.396921+00:00"
+    },
+    {
+      "raw": "High School Articulation ( Tri Valley ROP)- Nursing Careers",
+      "assigned": "Nursing Careers",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:13.47526+00:00"
+    },
+    {
+      "raw": "High School Articulation ( Tri Valley ROP)- Sports and Entertainment Marketing",
+      "assigned": "Introduction to Marketing",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:18.645654+00:00"
+    },
+    {
+      "raw": "High School Articulation (Benicia High School)- Dance 3",
+      "assigned": "Dance 3",
       "issuer": "Benicia High School",
-      "reviewed_by": "cer-procedure-high-school-rop@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:33.551574+00:00"
     },
     {
-      "raw": "High School Articulation (Benicia High School)- Dance 2",
-      "assigned": "Beginning/Intermediate Jazz Dance",
-      "issuer": "Benicia High School",
-      "reviewed_by": "cer-procedure-high-school-rop@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation (Livermore)- Developmental Psychology of Children II",
+      "assigned": "Developmental Psychology of Children 2",
+      "issuer": "Livermore High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:56.708862+00:00"
     },
     {
-      "raw": "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
-      "assigned": "Music Theory I",
-      "issuer": "Monte Vista High School",
-      "reviewed_by": "cer-procedure-high-school-rop@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation (Livermore)- Emergency Medical Response",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "Livermore High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:58.852927+00:00"
     },
     {
-      "raw": "IB Exam - Economics",
-      "assigned": "IB Economics HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation (Livermore)- Introduction to Athletic Training",
+      "assigned": "Introduction to Athletic Training and Sports Medicine",
+      "issuer": "Livermore High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:21.406303+00:00"
     },
     {
-      "raw": "IB Exam - Mathematics: Analysis & Approaches",
-      "assigned": "IB Mathematics: Analysis and Approaches HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation (Livermore)- Introduction to Health Careers",
+      "assigned": "Orientation to Health Careers",
+      "issuer": "Livermore High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:32.125278+00:00"
     },
     {
-      "raw": "IB Exam - Psychology",
-      "assigned": "IB Psychology HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation (Livermore)- Medical Occupations",
+      "assigned": "Medical Terminology",
+      "issuer": "Livermore High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:34.18141+00:00"
     },
     {
-      "raw": "IB Exam: Mathematics: Applications and Interpretations",
-      "assigned": "IB Mathematics: Applications and Interpretation HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation (Livermore)- Nursing Careers",
+      "assigned": "Nursing Careers",
+      "issuer": "Livermore High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:36.696746+00:00"
     },
     {
-      "raw": "IB Exam: Social and Cultural Anthropology",
-      "assigned": "IB Social and Cultural Anthropology HL",
-      "issuer": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation (Livermore)- Principles of Engineering",
+      "assigned": "Introduction to Engineering",
+      "issuer": "Livermore High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:48.807318+00:00"
     },
     {
-      "raw": "PHOTO 7: Beginning Digital Photography (CX)",
-      "assigned": "Digital Photography Beginning",
+      "raw": "High School Articulation (Mission Valley ROP)- Emergency Medical Responder",
+      "assigned": "Emergency Medical Responder",
+      "issuer": "Mission Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:52.427014+00:00"
+    },
+    {
+      "raw": "High School Articulation (Mission Valley ROP)- Fire Technology 1",
+      "assigned": "Fire Prevention Technology",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:43:43.021189+00:00"
+    },
+    {
+      "raw": "High School Articulation (Mission Valley ROP)- Medical Occupations",
+      "assigned": "Medical Occupations",
+      "issuer": "Mission Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:43:55.613672+00:00"
+    },
+    {
+      "raw": "High School Articulation (Mission Valley ROP)- Principles of Engineering",
+      "assigned": "Introduction to Engineering",
+      "issuer": "Mission Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:44:47.094502+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 54)",
+      "assigned": "Investigative Report Writing for the Public Safety Professional",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:45:28.983992+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 60)",
+      "assigned": "Concepts of Criminal Law",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:46:06.824663+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 68)",
+      "assigned": "Criminal Justice Academy Police Ethics and Leadership",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:48:49.967293+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 70)",
+      "assigned": "Community and the Justice System",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:46:19.54959+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (FST 7)",
+      "assigned": "Criminal Justice Academy Fire Service Conditioning & Physical Agility Development",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:49:58.697143+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 1)",
+      "assigned": "Guts and Butts Workout 1",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:51:16.501445+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 2)",
+      "assigned": "Guts and Butts Workout 2",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:51:26.482503+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 3)",
+      "assigned": "Guts and Butts Workout 3",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:51:45.661322+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice/CSI",
+      "assigned": "Criminal Investigation",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:46:40.298173+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice/Crime Scene Investigation",
+      "assigned": "Introduction to Criminal Justice",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:46:35.617823+00:00"
+    },
+    {
+      "raw": "Portfolio Review JOURNAL101-Journalism 101: Collecting & Writing News",
+      "assigned": "News Reporting and Editing for Publication",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T21:00:37.330891+00:00"
     }
   ],
   "skip": [
@@ -7514,6 +7654,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "CA Specialized Training Institute First Responder Operations and Decon",
+      "assigned": "Hazardous Materials First Responder Operational — Decontamination",
+      "issuer": "California Specialized Training Institute (CSTI)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-21T13:08:08.069166+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "CAD Drawing and Modeling - Credit by Exam (ARCH 119 )",
       "assigned": "CAD Drawing and Modeling",
       "issuer": "California Community Colleges",
@@ -12442,6 +12590,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "ESLN 309A",
+      "assigned": "ESL - Foundations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "ESRI Technical Certification - GEOG 025",
       "assigned": "ESRI Technical Certification",
       "issuer": "Esri (Environmental Systems Research Institute)",
@@ -13874,6 +14030,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX",
+      "assigned": "Principles of Caregiving: Older Adults and Their Care",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "GERO 455: Resources and Services for Older Adults CX",
+      "assigned": "Resources and Services for Older Adults",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "GISCI GISP Certification - GEOG 025",
       "assigned": "GIS Professional (GISP) Certification",
       "issuer": "GIS Certification Institute (GISCI)",
@@ -14359,6 +14531,22 @@
       "issuer": "Amador Valley High School",
       "reviewed_by": "cer-procedure-high-school-rop@bot",
       "reviewed_at": "2026-11-18T16:47:32.11346+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "High School Articulation (Benicia High School)- Dance 1",
+      "assigned": "Introduction to Dance",
+      "issuer": "Benicia High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "High School Articulation (Benicia High School)- Dance 2",
+      "assigned": "Beginning/Intermediate Jazz Dance",
+      "issuer": "Benicia High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -14943,6 +15131,46 @@
       "issuer": "International Baccalaureate Organization (IBO)",
       "reviewed_by": "cer-ib-fold-skyinkberry@bot",
       "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IB Exam - Economics",
+      "assigned": "IB Economics HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IB Exam - Mathematics: Analysis & Approaches",
+      "assigned": "IB Mathematics: Analysis and Approaches HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IB Exam - Psychology",
+      "assigned": "IB Psychology HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IB Exam: Mathematics: Applications and Interpretations",
+      "assigned": "IB Mathematics: Applications and Interpretation HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IB Exam: Social and Cultural Anthropology",
+      "assigned": "IB Social and Cultural Anthropology HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -20642,6 +20870,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "PHOTO 7: Beginning Digital Photography (CX)",
+      "assigned": "Digital Photography Beginning",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "PLNT SC 714 - Principles of Horticulture",
       "assigned": "Principles of Horticulture",
       "issuer": "",
@@ -21607,14 +21843,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Portfolio Review CIS100-Practical PC & Career Technologies",
-      "assigned": "Practical PC and Career Technologies",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -23603,9 +23831,186 @@
     }
   ],
   "supersede": [],
-  "revise": [],
-  "credential_moves": [],
-  "credential_retires": [],
+  "revise": [
+    {
+      "raw": "DRAFT 21: Mechanical Design I CX",
+      "assigned": "Mechanical Design 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:28:39.167+00:00",
+      "spellings": [
+        "DRAFT 21: Mechanical Design I CX"
+      ],
+      "disagreeing": [
+        "DRAFT 21: Mechanical Design I CX"
+      ],
+      "displaced": [
+        "Mechanical Design I"
+      ],
+      "supersedes": "Mechanical Design I"
+    },
+    {
+      "raw": "ESLN 310A",
+      "assigned": "ESL - Comprehensive 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:28:34.495+00:00",
+      "spellings": [
+        "ESLN 310A"
+      ],
+      "disagreeing": [
+        "ESLN 310A"
+      ],
+      "displaced": [
+        "ESL - Comprehensive I"
+      ],
+      "supersedes": "ESL - Comprehensive I"
+    },
+    {
+      "raw": "ESLN 310E",
+      "assigned": "ESL - Comprehensive 5",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:28:37.367+00:00",
+      "spellings": [
+        "ESLN 310E"
+      ],
+      "disagreeing": [
+        "ESLN 310E"
+      ],
+      "displaced": [
+        "ESL - Comprehensive V"
+      ],
+      "supersedes": "ESL - Comprehensive V"
+    },
+    {
+      "raw": "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
+      "assigned": "Music Theory 1",
+      "issuer": "Monte Vista High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:28:40.639+00:00",
+      "spellings": [
+        "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance"
+      ],
+      "disagreeing": [
+        "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance"
+      ],
+      "displaced": [
+        "Music Theory I"
+      ],
+      "supersedes": "Music Theory I"
+    },
+    {
+      "raw": "Portfolio Review CIS100-Practical PC & Career Technologies",
+      "assigned": "Practical PC & Career Technologies",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:28:47.639+00:00",
+      "spellings": [
+        "Portfolio Review CIS100-Practical PC & Career Technologies"
+      ],
+      "disagreeing": [
+        "Portfolio Review CIS100-Practical PC & Career Technologies"
+      ],
+      "displaced": [
+        "Practical PC and Career Technologies"
+      ],
+      "supersedes": "Practical PC and Career Technologies"
+    }
+  ],
+  "credential_moves": [
+    {
+      "title": "ESL - Comprehensive I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-22",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "ESL - Comprehensive 1"
+    },
+    {
+      "title": "ESL - Comprehensive V",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-22",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "ESL - Comprehensive 5"
+    },
+    {
+      "title": "Mechanical Design I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-22",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Mechanical Design 1"
+    }
+  ],
+  "credential_retires": [
+    {
+      "title": "Music Theory I",
+      "records": [
+        {
+          "issuing_agency": "Monte Vista High School",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-22",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+          "reviewed_by": "cer-procedure-high-school-rop@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Music Theory 1"
+      ]
+    },
+    {
+      "title": "Practical PC and Career Technologies",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-20",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Practical PC & Career Technologies"
+      ]
+    }
+  ],
   "stale": [
     {
       "raw": "AP English Language Composition",
@@ -24284,84 +24689,231 @@
   "held": [],
   "credential_adds": [
     {
-      "raw": "DRAFT 21: Mechanical Design I CX",
-      "assigned": "Mechanical Design I",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "Cal Fire Basic Firefighter (219 hour) Training",
+      "assigned": "CAL FIRE Basic Firefighter Training (219-hour)",
+      "issuer": "California Department of Forestry and Fire Protection (CAL FIRE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:16:04.956806+00:00"
     },
     {
-      "raw": "ESLN 309A",
-      "assigned": "ESL - Foundations",
+      "raw": "Credit by Exam HISTC1001-United States History Since 1877",
+      "assigned": "United States History to 1877",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:18:19.545181+00:00"
     },
     {
-      "raw": "ESLN 310A",
-      "assigned": "ESL - Comprehensive I",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children II",
+      "assigned": "Developmental Psychology of Children 2",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:23:14.832599+00:00"
     },
     {
-      "raw": "ESLN 310E",
-      "assigned": "ESL - Comprehensive V",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation ( Tri Valley ROP)- Economics of Business Ownership",
+      "assigned": "Economics of Business Ownership",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:23:41.824689+00:00"
     },
     {
-      "raw": "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX",
-      "assigned": "Principles of Caregiving: Older Adults and Their Care",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation ( Tri Valley ROP)- Introduction to Athletic Training",
+      "assigned": "Intro to Athletic Training and Sports Medicine",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:24:10.742561+00:00"
     },
     {
-      "raw": "GERO 455: Resources and Services for Older Adults CX",
-      "assigned": "Resources and Services for Older Adults",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation ( Tri Valley ROP)- Introduction to Health Careers",
+      "assigned": "Orientation to Health Careers",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:05.281939+00:00"
     },
     {
-      "raw": "High School Articulation (Benicia High School)- Dance 1",
-      "assigned": "Introduction to Dance",
+      "raw": "High School Articulation (Benicia High School)- Dance 3",
+      "assigned": "Dance 3",
       "issuer": "Benicia High School",
-      "reviewed_by": "cer-procedure-high-school-rop@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:33.551574+00:00"
     },
     {
-      "raw": "High School Articulation (Benicia High School)- Dance 2",
-      "assigned": "Beginning/Intermediate Jazz Dance",
-      "issuer": "Benicia High School",
-      "reviewed_by": "cer-procedure-high-school-rop@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation (Mission Valley ROP)- Medical Occupations",
+      "assigned": "Medical Occupations",
+      "issuer": "Mission Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:43:55.613672+00:00"
     },
     {
-      "raw": "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
-      "assigned": "Music Theory I",
-      "issuer": "Monte Vista High School",
-      "reviewed_by": "cer-procedure-high-school-rop@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 54)",
+      "assigned": "Investigative Report Writing for the Public Safety Professional",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:45:28.983992+00:00"
     },
     {
-      "raw": "PHOTO 7: Beginning Digital Photography (CX)",
-      "assigned": "Digital Photography Beginning",
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 68)",
+      "assigned": "Criminal Justice Academy Police Ethics and Leadership",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:48:49.967293+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (FST 7)",
+      "assigned": "Criminal Justice Academy Fire Service Conditioning & Physical Agility Development",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:49:58.697143+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 1)",
+      "assigned": "Guts and Butts Workout 1",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:51:16.501445+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 2)",
+      "assigned": "Guts and Butts Workout 2",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:51:26.482503+00:00"
+    },
+    {
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 3)",
+      "assigned": "Guts and Butts Workout 3",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T20:51:45.661322+00:00"
+    },
+    {
+      "raw": "Portfolio Review JOURNAL101-Journalism 101: Collecting & Writing News",
+      "assigned": "News Reporting and Editing for Publication",
       "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T21:00:37.330891+00:00"
     }
   ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [
     {
-      "title": "Hazardous Materials First Responder Operational — Decontamination",
-      "issuer": "California Specialized Training Institute (CSTI)",
-      "raw": "CA Specialized Training Institute First Responder Operations and Decon",
+      "title": "Developmental Psychology of Children 1",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "raw": "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children I",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-21T13:08:08.069166+00:00"
+      "reviewed_at": "2026-11-22T15:19:07.54981+00:00"
+    },
+    {
+      "title": "Emergency Medical Responder",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "raw": "High School Articulation ( Tri Valley ROP)- Emergency Medical Response",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:23:49.076928+00:00"
+    },
+    {
+      "title": "Introduction to Marketing",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "raw": "High School Articulation ( Tri Valley ROP)- Integrated Marketing Communications",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:23:52.076474+00:00"
+    },
+    {
+      "title": "Medical Terminology",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "raw": "High School Articulation ( Tri Valley ROP)- Medical Occupations",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:09.396921+00:00"
+    },
+    {
+      "title": "Nursing Careers",
+      "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+      "raw": "High School Articulation ( Tri Valley ROP)- Nursing Careers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:13.47526+00:00"
+    },
+    {
+      "title": "Emergency Medical Responder",
+      "issuer": "Livermore High School",
+      "raw": "High School Articulation (Livermore)- Emergency Medical Response",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:58.852927+00:00"
+    },
+    {
+      "title": "Introduction to Athletic Training and Sports Medicine",
+      "issuer": "Livermore High School",
+      "raw": "High School Articulation (Livermore)- Introduction to Athletic Training",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:21.406303+00:00"
+    },
+    {
+      "title": "Medical Terminology",
+      "issuer": "Livermore High School",
+      "raw": "High School Articulation (Livermore)- Medical Occupations",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:34.18141+00:00"
+    },
+    {
+      "title": "Nursing Careers",
+      "issuer": "Livermore High School",
+      "raw": "High School Articulation (Livermore)- Nursing Careers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:36.696746+00:00"
+    },
+    {
+      "title": "Introduction to Engineering",
+      "issuer": "Livermore High School",
+      "raw": "High School Articulation (Livermore)- Principles of Engineering",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:48.807318+00:00"
+    },
+    {
+      "title": "Emergency Medical Responder",
+      "issuer": "Mission Valley Regional Occupational Program",
+      "raw": "High School Articulation (Mission Valley ROP)- Emergency Medical Responder",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:52.427014+00:00"
+    },
+    {
+      "title": "Introduction to Engineering",
+      "issuer": "Mission Valley Regional Occupational Program",
+      "raw": "High School Articulation (Mission Valley ROP)- Principles of Engineering",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:44:47.094502+00:00"
+    },
+    {
+      "title": "Concepts of Criminal Law",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 60)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:46:06.824663+00:00"
+    },
+    {
+      "title": "Community and the Justice System",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 70)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:46:19.54959+00:00"
+    },
+    {
+      "title": "Criminal Investigation",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice/CSI",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:46:40.298173+00:00"
+    },
+    {
+      "title": "Introduction to Criminal Justice",
+      "issuer": "Tri-Valley Regional Occupational Program",
+      "raw": "High School Articulation (Tri Valley ROP)- Criminal Justice/Crime Scene Investigation",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:46:35.617823+00:00"
+    },
+    {
+      "title": "Music Theory 1",
+      "issuer": "Monte Vista High School",
+      "raw": "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:28:40.639+00:00"
     }
   ],
   "credential_prunes": [],

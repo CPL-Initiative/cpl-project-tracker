@@ -366,6 +366,16 @@ jobs:
       # refused and listed; the sync accepts credit, whole and nc:<a listed slug>. Pure stdlib.
       - name: Subject decisions, noncredit (kb/subject_decisions.py nc:<category>)
         run: python3 tests/subject_decisions_noncredit_test.py
+      # A person's course moves reach the re-mint's gate (#3655): the sync reads CRS: rows into `courses`, lists an
+      # unreadable one, commits no email; the reader refuses a non-canonical code and the nightly mint never reads a
+      # move; kb/_mid_readiness.py settles the moved course alone, ahead of its code's save. Pure stdlib.
+      - name: Subject course moves (kb/_sync_subject_decisions.py courses, kb/_mid_readiness.py)
+        run: python3 tests/subject_course_moves_test.py
+      # The course outlines to find by hand (kb/_outline_hunt.py, S711): M-IDs only, CTE, credit, no shell titles, short
+      # of two districts with outcome text; each pick outside the districts with text, a read college first; ranked by
+      # districts per outline needed; the committed file reruns to the same bytes. Pure stdlib.
+      - name: Outline hunt (kb/_outline_hunt.py)
+        run: python3 tests/outline_hunt_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)
@@ -603,6 +613,14 @@ jobs:
       # reason for a split. Reads the fixture only; writes nothing. Pure-stdlib python.
       - name: MID outcomes compare (split, confirm, the standing rules)
         run: python3 tests/mid_outcomes_compare_test.py
+      # The re-mint readiness count (S709, #3655) by the draft gate d-remint-ready-gate-draft-s707: the subject map
+      # alone settles nothing, a stale compare holds every M-ID, a strong or partial split holds. Pure-stdlib python.
+      - name: Re-mint readiness (the draft gate)
+        run: python3 tests/mid_readiness_test.py
+      # The scope re-mint dry run (S710, #3655): a ready M-ID takes its settled code and that code's discipline,
+      # never onto a vacated or SkyView-drawn slot; a cross-listed pair stays; a split across courses is held.
+      - name: Scope re-mint dry run (the ready M-IDs)
+        run: python3 tests/scope_remint_dryrun_test.py
       # The nine MQ names in the handbook's spelling (S430, Sam's Sheet 99 card 6):
       # no store holds an old spelling, and the rename touches whole strings only.
       # Pure-stdlib python.

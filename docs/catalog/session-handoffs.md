@@ -15,10 +15,17 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-662 document(s).
+669 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 712 | [Session 712 handoff (from SkyRazorbill, S711, Sam's plain session of 2026-11-23: course moves reach the re-mint gate, the 50 outlines to find)](../session_712_handoff.md) | 2026-11-23 |
+| 711 | [Session 711 handoff (from SkyGuillemot, S710, Sam's plain session of 2026-11-22: the AED scope's re-mint dry run)](../session_711_handoff.md) | 2026-11-22 |
+| 710 | [Session 710 handoff (from SkyMurrelet, S709, Sam's plain session of 2026-11-22: the re-mint readiness count, AED scope first)](../session_710_handoff.md) | 2026-11-22 |
+| 709 | [Session 709 handoff (from SkyNoddy, S708, Ashley's side session of 2026-11-22: the MAP team worklist of exhibits with no credit recommendation, statewide)](../session_709_handoff.md) | 2026-11-22 |
+| 708 | [Session 708 handoff (from SkyPrion, S707, Sam's plain session of 2026-11-22: main green again, AED unmapped, subjects before re-mints)](../session_708_handoff.md) | 2026-11-22 |
+| 706 | [Session 706 handoff (from SkyTystie, S705, Sam's plain session of 2026-11-22: one Save settles a code at every college; the queue kept running beside it)](../session_706_handoff.md) | 2026-11-22 |
+| 704 | [Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's collection run of 2026-11-22)](../session_704_handoff.md) | 2026-11-22 |
 | 703 | [Session 703 handoff (from SkyRazorbill, S702, Sam's plain session of 2026-11-22: Subjects Edit, panel and counts from every surface, full width; the queue kept running beside it)](../session_703_handoff.md) | 2026-11-22 |
 | 702 | [Session 702 handoff (from SkyMurre, S701, Sam's plain session of 2026-11-22: Subjects Edit and Save, the noncredit hold lifted, two credit catalogs, the build honors saves)](../session_702_handoff.md) | 2026-11-22 |
 | 701 | [Session 701 handoff (from SkyGuillemot, S700, Sam's plain session of 2026-11-21 to 22: Subjects recommendations, the course panel, the noncredit catalogs and the draft noncredit title list)](../session_701_handoff.md) | 2026-11-22 |

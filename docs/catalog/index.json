@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 601,
+   "count": 602,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4940,7 +4940,7 @@
      ],
      "title": "A test must not take its own rule as the truth",
      "type": "methodology",
-     "updated": "2026-11-20"
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-08-25",
@@ -6585,7 +6585,7 @@
      ],
      "title": "Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate",
      "type": "methodology",
-     "updated": ""
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-08-10",
@@ -10738,6 +10738,26 @@
      "updated": ""
     },
     {
+     "created": "2026-11-22",
+     "governs": [
+      "kb/_build_local_subject_titles.py",
+      "kb/reference/college_department_lists/",
+      "kb/status/local_subject_titles.json"
+     ],
+     "path": "docs/kb-notes/playbook-local-subject-title-sources.md",
+     "status": "internal",
+     "tags": [
+      "playbook",
+      "commons",
+      "subjects",
+      "catalogs",
+      "local-subject-titles"
+     ],
+     "title": "Playbook \u2014 where a college's local subject title comes from",
+     "type": "playbook",
+     "updated": "2026-11-22"
+    },
+    {
      "created": "2026-06-12",
      "governs": [
       "kb/_auto_merge_worklist.py",
@@ -11287,7 +11307,7 @@
      ],
      "title": "Hand it over in place: the hand-over box, where it writes, and the reader's pickup",
      "type": "reference",
-     "updated": "2026-11-20"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-07-07",
@@ -14259,7 +14279,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 108,
+   "count": 109,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15492,6 +15512,21 @@
      "title": "Program requirements harvest lessons \u2014 archive 7 (S655 onward)",
      "type": null,
      "updated": "2026-11-21"
+    },
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_8.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 8 (S687 onward)",
+     "type": null,
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-11-12",
@@ -16775,7 +16810,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-21"
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-08-28",
@@ -16917,7 +16952,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-22"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-08-28",
@@ -17030,7 +17065,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-21"
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-08-29",
@@ -17443,8 +17478,106 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 662,
+   "count": 669,
    "docs": [
+    {
+     "created": "2026-11-23",
+     "governs": [],
+     "n": 712,
+     "path": "docs/session_712_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 712 handoff (from SkyRazorbill, S711, Sam's plain session of 2026-11-23: course moves reach the re-mint gate, the 50 outlines to find)",
+     "type": null,
+     "updated": "2026-11-23"
+    },
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 711,
+     "path": "docs/session_711_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 711 handoff (from SkyGuillemot, S710, Sam's plain session of 2026-11-22: the AED scope's re-mint dry run)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 710,
+     "path": "docs/session_710_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 710 handoff (from SkyMurrelet, S709, Sam's plain session of 2026-11-22: the re-mint readiness count, AED scope first)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 709,
+     "path": "docs/session_709_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 709 handoff (from SkyNoddy, S708, Ashley's side session of 2026-11-22: the MAP team worklist of exhibits with no credit recommendation, statewide)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 708,
+     "path": "docs/session_708_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 708 handoff (from SkyPrion, S707, Sam's plain session of 2026-11-22: main green again, AED unmapped, subjects before re-mints)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 706,
+     "path": "docs/session_706_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 706 handoff (from SkyTystie, S705, Sam's plain session of 2026-11-22: one Save settles a code at every college; the queue kept running beside it)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 704,
+     "path": "docs/session_704_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's collection run of 2026-11-22)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
     {
      "created": "2026-11-22",
      "governs": [],
@@ -28485,5 +28618,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1549
+ "total": 1558
 }

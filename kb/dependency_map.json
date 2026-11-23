@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1149,
+  "file_datasets": 1167,
   "external_services": 199,
-  "consumers": 653,
+  "consumers": 658,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -990,7 +990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4722,
+     "line": 4956,
      "tabs": [
       "exhibits"
      ]
@@ -1224,7 +1224,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1791
+     "line": 1805
     },
     {
      "id": "module:admin.js",
@@ -1685,6 +1685,16 @@
      ]
     },
     {
+     "id": "module:map_team_queue.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 657,
+     "tabs": [
+      "map-queue"
+     ]
+    },
+    {
      "id": "script:chatbox/scrape_landing_pages.py",
      "kind": "script",
      "direction": "read",
@@ -1956,7 +1966,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2444
+     "line": 2465
     }
    ],
    "main_committers": []
@@ -2627,7 +2637,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1401
+     "line": 1415
     }
    ],
    "main_committers": []
@@ -2646,7 +2656,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1746
+     "line": 1760
     },
     {
      "id": "module:college_briefing.js",
@@ -3355,7 +3365,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1802
+     "line": 1816
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4726,7 +4736,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2108
+     "line": 2129
     }
    ],
    "main_committers": []
@@ -4904,6 +4914,19 @@
    "main_committers": [
     "workflow:receipt-slim.yml"
    ]
+  },
+  "file:/<slug>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_mid_readiness.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 263
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:/tmp/metrics_status": {
    "consumers": [
@@ -5975,7 +5998,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1999
+     "line": 2013
     },
     {
      "id": "module:admin.js",
@@ -6151,14 +6174,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 70
+     "line": 74
     },
     {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 46
+     "line": 47
     },
     {
      "id": "script:kb/_build_not_applicable.py",
@@ -6193,7 +6216,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 31
+     "line": 36
     },
     {
      "id": "script:kb/_closest_mid.py",
@@ -6228,7 +6251,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 970
+     "line": 1039
     },
     {
      "id": "script:kb/_prefix_alias_census.py",
@@ -6299,7 +6322,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 973
+     "line": 1042
     }
    ],
    "served": false,
@@ -6322,7 +6345,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1405,
+     "line": 1456,
      "tabs": [
       "exhibits"
      ]
@@ -6712,7 +6735,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3976,
+     "line": 4210,
      "tabs": [
       "exhibits"
      ]
@@ -6980,7 +7003,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4714,
+     "line": 4948,
      "tabs": [
       "exhibits"
      ]
@@ -7073,7 +7096,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5236,
+     "line": 5470,
      "tabs": [
       "exhibits"
      ]
@@ -7333,7 +7356,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2383
+     "line": 2404
     },
     {
      "id": "module:college_briefing.js",
@@ -7546,7 +7569,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1461
+     "line": 1475
     },
     {
      "id": "module:cpl_funding.js",
@@ -7857,7 +7880,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 921
+     "line": 946
+    },
+    {
+     "id": "script:kb/_sync_subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     }
    ],
    "served": true,
@@ -8416,7 +8446,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1132
+     "line": 1134
     }
    ],
    "served": false,
@@ -8986,7 +9016,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5525,
+     "line": 5759,
      "tabs": [
       "exhibits"
      ]
@@ -11168,6 +11198,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_mid_readiness.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_model_run_gate.py": {
    "consumers": [
     {
@@ -11220,6 +11263,19 @@
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_outline_hunt.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -11728,6 +11784,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_sync_subject_decisions.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_test_workplan_current_hybrid.py": {
    "consumers": [
     {
@@ -12165,7 +12234,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1010
+     "line": 1035
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -12750,7 +12819,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 980
+     "line": 1049
     }
    ],
    "producers": [
@@ -13659,6 +13728,13 @@
      "line": 232
     },
     {
+     "id": "script:kb/_outline_hunt.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 44
+    },
+    {
      "id": "script:kb/_overmerge_apply.py",
      "kind": "script",
      "direction": "read",
@@ -13677,7 +13753,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 90
+     "line": 103
     },
     {
      "id": "script:kb/_pols_remint.py",
@@ -14151,7 +14227,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 90
+     "line": 103
     },
     {
      "id": "script:kb/_pols_remint.py",
@@ -14208,6 +14284,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1432
+    },
+    {
+     "id": "script:kb/_scope_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 166
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -14625,7 +14708,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 90
+     "line": 103
     },
     {
      "id": "script:kb/_pols_remint.py",
@@ -14843,7 +14926,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 983
+     "line": 1052
     }
    ],
    "producers": [
@@ -15477,7 +15560,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1225
+     "line": 1231
     }
    ],
    "served": false,
@@ -15490,7 +15573,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3754,
+     "line": 3988,
      "tabs": [
       "exhibits"
      ]
@@ -15677,7 +15760,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1544,
+     "line": 1595,
      "tabs": [
       "exhibits"
      ]
@@ -15900,7 +15983,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1020
+     "line": 1046
     },
     {
      "id": "script:kb/_build_sheet181_rename_plan.py",
@@ -16067,7 +16150,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1018
+     "line": 1044
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -16701,14 +16784,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 71
+     "line": 75
     },
     {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 48
+     "line": 49
     },
     {
      "id": "script:kb/_ccr_confidence_apply.py",
@@ -16809,6 +16892,13 @@
      "line": 559
     },
     {
+     "id": "script:kb/_scope_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 51
+    },
+    {
      "id": "script:kb/_seed_authority_codes.py",
      "kind": "script",
      "direction": "read",
@@ -16877,6 +16967,13 @@
      "direction": "read",
      "how": "literal",
      "line": 66
+    },
+    {
+     "id": "script:kb/subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
     }
    ],
    "producers": [
@@ -17298,7 +17395,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4746,
+     "line": 4980,
      "tabs": [
       "exhibits"
      ]
@@ -17322,7 +17419,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1022
+     "line": 1048
     },
     {
      "id": "script:kb/_build_left_map.py",
@@ -17456,7 +17553,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4742,
+     "line": 4976,
      "tabs": [
       "exhibits"
      ]
@@ -17566,7 +17663,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3749,
+     "line": 3983,
      "tabs": [
       "exhibits"
      ]
@@ -17768,7 +17865,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4163,
+     "line": 4397,
      "tabs": [
       "exhibits"
      ]
@@ -17871,7 +17968,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 381
+     "line": 386
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -18868,7 +18965,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1047
+     "line": 1117
     }
    ],
    "served": false,
@@ -19329,7 +19426,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 685
+     "line": 1596
     },
     {
      "id": "script:kb/_program_requirements_cheap_piles_s683.py",
@@ -19360,7 +19457,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 371
+     "line": 388
     }
    ],
    "served": false,
@@ -19373,7 +19470,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 339
+     "line": 356
     }
    ],
    "served": false,
@@ -20402,7 +20499,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 23
+     "line": 24
     },
     {
      "id": "script:kb/_build_program_course_graph.py",
@@ -20410,6 +20507,13 @@
      "direction": "read",
      "how": "literal",
      "line": 44
+    },
+    {
+     "id": "script:kb/_build_subject_courses.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 39
     },
     {
      "id": "script:kb/_crossdisc_dryrun.py",
@@ -20854,7 +20958,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 622
+     "line": 647
     }
    ],
    "served": true,
@@ -20905,6 +21009,13 @@
      "direction": "read",
      "how": "literal",
      "line": 423
+    },
+    {
+     "id": "script:kb/_build_exhibits_review.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1039
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -21083,7 +21194,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 183
+     "line": 184
     },
     {
      "id": "script:kb/_verify_top_division_inference.py",
@@ -21201,7 +21312,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 47
+     "line": 48
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -21257,7 +21368,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 357
+     "line": 390
     },
     {
      "id": "script:kb/_jev_next_steps.py",
@@ -21271,7 +21382,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 459
+     "line": 464
+    },
+    {
+     "id": "script:kb/_mid_readiness.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
     },
     {
      "id": "script:kb/_mq_title5_rename.py",
@@ -21319,7 +21437,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 73
+     "line": 77
     }
    ],
    "served": false,
@@ -21732,7 +21850,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1627,
+     "line": 1632,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -21875,6 +21993,13 @@
      "direction": "read",
      "how": "literal",
      "line": 55
+    },
+    {
+     "id": "script:kb/_program_named_gaps.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1454
     }
    ],
    "producers": [
@@ -21971,7 +22096,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 107,
+     "line": 110,
      "tabs": [
       "commons"
      ]
@@ -21981,7 +22106,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 68
     }
    ],
    "producers": [
@@ -22002,7 +22127,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 87,
+     "line": 90,
      "tabs": [
       "commons"
      ]
@@ -22012,7 +22137,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 75
+     "line": 79
     }
    ],
    "producers": [
@@ -22033,7 +22158,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 34,
+     "line": 37,
      "tabs": [
       "commons"
      ]
@@ -22043,14 +22168,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 69
+     "line": 73
     },
     {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 49
+     "line": 50
     },
     {
      "id": "script:kb/_file_subject_decisions.py",
@@ -22064,7 +22189,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 69
     }
    ],
    "producers": [
@@ -22113,6 +22238,34 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/status/mid_readiness.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_mid_readiness.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 58
+    },
+    {
+     "id": "script:kb/_scope_remint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:kb/status/noncredit_categories.json": {
    "consumers": [
     {
@@ -22120,14 +22273,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 72
     },
     {
      "id": "script:kb/_build_noncredit_categories.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 24
+     "line": 25
     },
     {
      "id": "script:kb/_build_noncredit_subject_titles.py",
@@ -22135,6 +22288,13 @@
      "direction": "read",
      "how": "literal",
      "line": 45
+    },
+    {
+     "id": "script:kb/subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 63
     }
    ],
    "served": true,
@@ -22147,7 +22307,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 113,
+     "line": 116,
      "tabs": [
       "commons"
      ]
@@ -22157,7 +22317,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 76
+     "line": 80
     },
     {
      "id": "script:kb/_build_noncredit_subject_titles.py",
@@ -22165,6 +22325,37 @@
      "direction": "read",
      "how": "literal",
      "line": 46
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/status/outline_hunt.json": {
+   "consumers": [
+    {
+     "id": "module:commons_data.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1445,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
+     "id": "script:kb/_outline_hunt.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 43
     }
    ],
    "producers": [
@@ -22278,6 +22469,34 @@
   },
   "file:kb/status/subject_courses": {
    "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/status/subject_decisions.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_held_subject_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 391
+    },
+    {
+     "id": "script:kb/subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
+    }
+   ],
    "producers": [
     {
      "by": "workflow:daily-dashboard.yml",
@@ -22812,7 +23031,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1023
+     "line": 1049
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -22939,7 +23158,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1011
+     "line": 1036
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -23054,7 +23273,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1017
+     "line": 1043
     },
     {
      "id": "script:kb/_build_left_map.py",
@@ -24024,7 +24243,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 543,
+     "line": 588,
      "tabs": [
       "map-queue"
      ]
@@ -24054,6 +24273,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:mid_outcomes_compare_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_mid_readiness.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:mission_control.js": {
@@ -24174,7 +24406,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 89
+     "line": 102
     }
    ],
    "served": false,
@@ -24265,7 +24497,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 695
+     "line": 1606
     }
    ],
    "served": false,
@@ -25150,7 +25382,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 139
+     "line": 184
     }
    ],
    "served": false,
@@ -26241,7 +26473,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2598,
+     "line": 2740,
      "tabs": [
       "exhibits"
      ]
@@ -26317,7 +26549,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1013
+     "line": 1038
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -26470,7 +26702,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1015
+     "line": 1041
     }
    ],
    "producers": [
@@ -26495,7 +26727,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 72
+     "line": 76
     }
    ],
    "served": false,
@@ -28974,6 +29206,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/mid_readiness_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/mid_short_code_gate_test.py": {
    "consumers": [
     {
@@ -29130,6 +29375,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/outline_hunt_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/pages_allowlist.test.js": {
    "consumers": [
     {
@@ -29274,6 +29532,45 @@
    "main_committers": []
   },
   "file:tests/program_discontinued_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_ge_units_not_read_s703_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_hours_gaps_s703_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_lists_past_figure_s703_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29469,6 +29766,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_pilot_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_pins_s703_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29852,6 +30162,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/scope_remint_dryrun_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/second_reader_test.py": {
    "consumers": [
     {
@@ -30034,6 +30357,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/subject_course_moves_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/subject_courses_test.py": {
    "consumers": [
     {
@@ -30048,6 +30384,32 @@
    "main_committers": []
   },
   "file:tests/subject_decisions_filing_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subject_decisions_honored_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subject_decisions_noncredit_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30819,7 +31181,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 406
+     "line": 411
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -30927,7 +31289,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1057
+     "line": 1083
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -31172,7 +31534,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 370
+     "line": 375
     },
     {
      "id": "script:kb/_reclustering_s649.py",
@@ -31263,7 +31625,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 357
+     "line": 362
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -31316,7 +31678,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2599,
+     "line": 2741,
      "tabs": [
       "exhibits"
      ]
@@ -31385,7 +31747,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1014
+     "line": 1040
     },
     {
      "id": "script:kb/_build_inactive_cards.py",
@@ -31469,14 +31831,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 356
+     "line": 361
     },
     {
      "id": "script:kb/_pile_mint_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 971
+     "line": 1040
     },
     {
      "id": "script:kb/_program_requirements_units_rules.py",
@@ -32395,7 +32757,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 701,
+     "line": 707,
      "tabs": [
       "exhibits"
      ]
@@ -32425,7 +32787,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 587,
+     "line": 593,
      "tabs": [
       "exhibits"
      ]
@@ -33741,7 +34103,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 269
+     "line": 274
     }
    ],
    "main_committers": []
@@ -34449,7 +34811,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 677,
+     "line": 683,
      "tabs": [
       "exhibits"
      ]
@@ -34464,7 +34826,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 700,
+     "line": 706,
      "tabs": [
       "exhibits"
      ]
@@ -34679,7 +35041,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 516,
+     "line": 560,
      "tabs": [
       "map-queue"
      ]
@@ -35034,7 +35396,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 184,
+     "line": 254,
      "tabs": [
       "commons"
      ]
@@ -35044,7 +35406,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 207,
+     "line": 277,
      "tabs": [
       "commons"
      ]
@@ -35094,7 +35456,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 492,
+     "line": 498,
      "tabs": [
       "exhibits"
      ]
@@ -35104,7 +35466,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 835,
+     "line": 841,
      "tabs": [
       "exhibits"
      ]
@@ -35220,7 +35582,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 937
+     "line": 962
     },
     {
      "id": "script:kb/_cer_decision_apply.py",
@@ -35375,6 +35737,13 @@
      "direction": "write",
      "how": "literal",
      "line": 82
+    },
+    {
+     "id": "script:kb/_sync_subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 89
     }
    ],
    "main_committers": []
@@ -35814,7 +36183,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 517,
+     "line": 561,
      "tabs": [
       "map-queue"
      ]
@@ -35992,7 +36361,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 510,
+     "line": 554,
      "tabs": [
       "map-queue"
      ]
@@ -36083,7 +36452,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 518,
+     "line": 562,
      "tabs": [
       "map-queue"
      ]
@@ -36278,7 +36647,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 522,
+     "line": 567,
      "tabs": [
       "map-queue"
      ]
@@ -36667,7 +37036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 514,
+     "line": 558,
      "tabs": [
       "map-queue"
      ]
@@ -37854,11 +38223,14 @@
     "kb/_build_inactive_cards.py",
     "kb/_build_not_applicable.py",
     "kb/_closest_mid.py",
+    "kb/_sync_subject_decisions.py",
     "kb/_build_local_subject_titles.py",
     "kb/_held_subject_codes.py",
     "kb/_build_subject_courses.py",
     "kb/_build_noncredit_subject_titles.py",
     "kb/_build_local_subject_recommendations.py",
+    "kb/_mid_readiness.py",
+    "kb/_outline_hunt.py",
     "kb/_row_audit.py",
     "kb/_row_audit_prune.py",
     "kb/_audit_exhibits.py",
@@ -37922,9 +38294,12 @@
     "kb/coci_closest_mid.json",
     "kb/status/local_subject_titles.json",
     "kb/status/held_subject_codes.json",
+    "kb/status/subject_decisions.json",
     "kb/status/local_subject_recommendations.json",
     "kb/status/subject_courses",
     "kb/status/noncredit_subject_titles.json",
+    "kb/status/mid_readiness.json",
+    "kb/status/outline_hunt.json",
     "cpl_pathways_membership_data.js",
     "kb/discipline_canonical_subj4.json",
     "kb/cid_claim_audit.json",
@@ -38183,6 +38558,10 @@
     "tests/subject_courses_test.py",
     "tests/noncredit_subject_titles_test.py",
     "tests/held_subject_codes_test.py",
+    "tests/subject_decisions_honored_test.py",
+    "tests/subject_decisions_noncredit_test.py",
+    "tests/subject_course_moves_test.py",
+    "tests/outline_hunt_test.py",
     "tests/subjects_daily_build_test.py",
     "tests/closest_mid_links_test.py",
     "tests/apply_curation_rulings_test.py",
@@ -38213,6 +38592,7 @@
     "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_reader_fixes_s697_test.py",
     "tests/program_requirements_follow_up_s697_test.py",
+    "tests/program_requirements_pins_s703_test.py",
     "tests/program_requirements_same_page_recall_s697_test.py",
     "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
@@ -38220,8 +38600,11 @@
     "tests/model_run_gates_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/program_named_gaps_test.py",
+    "tests/program_ge_units_not_read_s703_test.py",
     "tests/program_requirements_units_rules_test.py",
+    "tests/program_hours_gaps_s703_test.py",
     "tests/program_requirements_cheap_piles_s683_test.py",
+    "tests/program_lists_past_figure_s703_test.py",
     "tests/program_discontinued_test.py",
     "tests/reader_page_checks_test.py",
     "tests/reader_page_checks_recall_test.py",
@@ -38233,6 +38616,8 @@
     "tests/program_requirements_pdf_numbers_after_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
+    "tests/mid_readiness_test.py",
+    "tests/scope_remint_dryrun_test.py",
     "tests/mq_title5_rename_test.py",
     "tests/csr_quarterly_probe_test.py",
     "tests/ctdl_exchange_seed_test.py",
@@ -39376,6 +39761,7 @@
   "kb/reference/*.xlsx",
   "kb/reference/blocked_catalog_hunt.json",
   "kb/reference/coci_program_*.csv",
+  "kb/reference/college_department_lists",
   "kb/reference/cos_certifications.json",
   "kb/reference/moc_crosswalk.json",
   "kb/reference/restricted_table_access.json",
@@ -39388,6 +39774,7 @@
   "kb/status/mid_outcomes_compare_*",
   "kb/status/program_discontinued.json",
   "kb/status/program_named_gaps.json",
+  "kb/status/subject_decisions.json",
   "kb/subj4_*",
   "kb/supabase_*.sql",
   "map",

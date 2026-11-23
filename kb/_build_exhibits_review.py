@@ -349,6 +349,27 @@ def exhibits_by_raw(statewide, raws):
     return out
 
 
+def exhibits_without_recs(statewide, verified):
+    """Every exhibit in MAP's statewide data whose records carry no credit recommendation, one row per MAP id, for the
+    MAP team's worklist (Sam, 2026-11-22, S705: an exhibit with no credit recommendation "would not be a valid exhibit
+    and would need map team follow up"; "yes, add the MAP team worklist for flagged exhibits"). The college is the one
+    MAP's exhibit list names as the exhibit's owner (kb/reference/map_cpl_opportunities_verified.json `found`), blank
+    when that read predates the exhibit. Sorted by college, a blank college last, then title and id."""
+    found = (verified or {}).get("found") or {}
+    rows = []
+    for x in statewide.get("exhibits") or []:
+        if any((r.get("course") or "").strip() or (r.get("credit") or "").strip() for r in x.get("credit_recs") or []):
+            continue
+        ids = x.get("exhibit_ids") or [i for i in (x.get("exhibit_id") or "").split("|") if i]
+        titles = {(r.get("id") or ""): (r.get("title") or "").strip() for r in x.get("exhibit_records") or []}
+        for i in ids:
+            owner = found.get(i) or found.get(i.upper()) or {}
+            rows.append({"id": i, "title": titles.get(i) or (x.get("raw_titles") or [x.get("title") or ""])[0],
+                         "type": x.get("cpl_type") or "", "college": owner.get("college") or ""})
+    rows.sort(key=lambda r: (not r["college"], r["college"].lower(), r["title"].lower(), r["id"]))
+    return rows
+
+
 def teaching_colleges(prescriptive, title):
     """college name -> [[code, "", units]] for the courses a college already teaches that map to the
     credential's M-ID identity (statewide_prescriptive.js), in the courses file's row shape."""
@@ -475,6 +496,10 @@ def course_index(members):
 # "TOP nnnn". The tab ranks the list against the card; the file ranks nothing and applies nothing.
 TOP_DSRC = {"top_code", "top_division"}
 SUBJECT_ROW_CAP = 600   # titles kept per subject; the file says how many in all
+# Every other discipline, so a reviewer can look in another subject (Sam, 2026-11-22: "looking at this course under
+# business, but I suspect it should be under CIS. Need to be able to change the Subject in the Course Sidebar so I can
+# see if there is a common Introduction to Computers course to use"). Each holds its most widely taught titles.
+OTHER_SUBJECT_CAP = 250
 
 
 def _prefix(ident):
@@ -516,7 +541,7 @@ def _units(r):
     return lo, hi
 
 
-def subject_rows(key, sidx):
+def subject_rows(key, sidx, cap=SUBJECT_ROW_CAP):
     """{disc, rows: [[id, title, colleges, units low, units high, system]], total} for one subject key, the most
     colleges first."""
     if key.startswith("TOP "):
@@ -539,7 +564,7 @@ def subject_rows(key, sidx):
         lo, hi = _units(r)
         out.append([r["id"], r["title"].strip(), sidx["colleges"].get(r["id"], 0), lo, hi, r.get("id_system") or "M-ID"])
     out.sort(key=lambda x: (-x[2], x[1].lower(), x[0]))
-    return {"disc": disc, "total": len(out), "rows": out[:SUBJECT_ROW_CAP]}
+    return {"disc": disc, "total": len(out), "rows": out[:cap]}
 
 
 def main_course(courses):
@@ -1011,6 +1036,7 @@ def build(root, live=None):
     sugg = load_json(root, "kb/unclassified_suggestions.json", {}) or {}
     aligned_all = sugg.get("aligned") or {}
     statewide = load_js(os.path.join(root, "statewide_data.js"))
+    verified = load_json(root, "kb/reference/map_cpl_opportunities_verified.json", {}) or {}
     members = load_js(os.path.join(root, "unified_courses_members.js"))
     pres_path = os.path.join(root, "statewide_prescriptive.js")
     prescriptive = load_js(pres_path) if os.path.exists(pres_path) else {}
@@ -1130,6 +1156,11 @@ def build(root, live=None):
         }
         if key:
             rec["courses_key"] = key
+        # The credit recommendations the card's exhibits carry, [course, credit] (Sam, 2026-11-22: "need to clearly see
+        # what college course this is articulated with (the credit recommendation)... if there is no cr on the exhibit
+        # that should be flagged clearly and would not be a valid exhibit and would need map team follow up"). An empty
+        # list is the flag; the tab says it in words.
+        rec["credit_recs"] = (ex.get("recs") or [])[:12]
         if mine:
             rec["local_courses"] = mine
             at_main = main_course(mine)
@@ -1199,12 +1230,17 @@ def build(root, live=None):
     course_file = {"schema": SCHEMA, "colleges": names,
                    "courses": {i: {str(at[c]): rows for c, rows in sorted(by.items())}
                                for i, by in sorted(courses.items())}}
+    # Every discipline the identities map names, beside the cards' own subjects, at OTHER_SUBJECT_CAP titles each.
+    for p, dname in sorted(sidx["disc"].items()):
+        if dname and dname not in subjects:
+            subjects[dname] = subject_rows(p, sidx, OTHER_SUBJECT_CAP)
     subject_file = {"schema": SCHEMA,
                     "_about": "The Same subject list beside each Review card (kb/_build_exhibits_review.py): every C-ID, "
                               "CCN and M-ID title in the subject of the card's main local course, as [id, title, colleges, "
                               "units low, units high, system], the most colleges first, keyed by the discipline's name (or the SUBJ4, or "
                               "\"TOP nnnn\" when only the course's TOP code places it). A card names its key in `subject` and "
-                              "the course it came from in `subject_course`.",
+                              "the course it came from in `subject_course`. Every other discipline the identities map names is listed "
+                              "too, at its 250 most widely taught titles, so a reviewer can look in another subject.",
                     "subjects": {k: v for k, v in sorted(subjects.items()) if v["rows"]}}
     review = credential_aliases.review_list(root)
     titled = sum(1 for c in cards if c.get("unified_title"))
@@ -1243,6 +1279,10 @@ def build(root, live=None):
         "sites": sorted(set(name_list(creds, "training_agency"))
                         | {(s.get("site") or "").strip() for ss in site_lists.values() for s in ss
                            if isinstance(s, dict)} - {""}, key=str.lower),
+        # The MAP team's worklist of exhibits with no credit recommendation, statewide (exhibits_without_recs).
+        "no_cr": {"of": len(statewide.get("exhibits") or []),
+                  "owners_read": (verified or {}).get("checked_at"),
+                  "rows": exhibits_without_recs(statewide, verified)},
         "held": items,
     }, course_file, adoption, subject_file
 

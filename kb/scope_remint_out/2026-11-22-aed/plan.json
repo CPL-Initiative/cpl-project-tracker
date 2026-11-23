@@ -1,0 +1,860 @@
+{
+ "scope": "aed",
+ "college": "Cerritos College",
+ "code": "AED",
+ "ready": 34,
+ "moves": {
+  "ELEC M9055": {
+   "old_id": "ELEC M9055",
+   "source": "minted",
+   "title": "IW Architectural 3",
+   "members": 2,
+   "codes": {
+    "VOCE": 2
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M9100",
+   "how": "gap-filled"
+  },
+  "ELEC M9060": {
+   "old_id": "ELEC M9060",
+   "source": "minted",
+   "title": "Detailing for Reinforcing Iron",
+   "members": 2,
+   "codes": {
+    "VOCE": 2
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M9101",
+   "how": "gap-filled"
+  },
+  "ELEC M9063": {
+   "old_id": "ELEC M9063",
+   "source": "minted",
+   "title": "IW Lead Hazard - Structural",
+   "members": 3,
+   "codes": {
+    "VOCE": 3
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M9102",
+   "how": "gap-filled"
+  },
+  "ELEC M90AP": {
+   "old_id": "ELEC M90AP",
+   "source": "singleton",
+   "title": "Ect Adv Theory & Applications",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90RT",
+   "how": "gap-filled"
+  },
+  "ELEC M90AS": {
+   "old_id": "ELEC M90AS",
+   "source": "singleton",
+   "title": "Iw-First Aid Multimedia",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90RU",
+   "how": "gap-filled"
+  },
+  "ELEC M90AW": {
+   "old_id": "ELEC M90AW",
+   "source": "singleton",
+   "title": "Elec Theory & Application",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90RV",
+   "how": "gap-filled"
+  },
+  "ELEC M90BF": {
+   "old_id": "ELEC M90BF",
+   "source": "singleton",
+   "title": "Introduction to Automotive Tools and Equipment",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90RW",
+   "how": "gap-filled"
+  },
+  "ELEC M90BL": {
+   "old_id": "ELEC M90BL",
+   "source": "singleton",
+   "title": "Introduction to Basic Welding for the Building Trades and Construction",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90RX",
+   "how": "gap-filled"
+  },
+  "ELEC M90BT": {
+   "old_id": "ELEC M90BT",
+   "source": "singleton",
+   "title": "Math Building Trades Const",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90RY",
+   "how": "gap-filled"
+  },
+  "ELEC M90BU": {
+   "old_id": "ELEC M90BU",
+   "source": "singleton",
+   "title": "Metal Building Erection 1",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90RZ",
+   "how": "gap-filled"
+  },
+  "ELEC M90BV": {
+   "old_id": "ELEC M90BV",
+   "source": "singleton",
+   "title": "Introduction to Small Business Finances",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SA",
+   "how": "gap-filled"
+  },
+  "ELEC M90BW": {
+   "old_id": "ELEC M90BW",
+   "source": "singleton",
+   "title": "Introduction to Small Business Finances (Spanish)",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SB",
+   "how": "gap-filled"
+  },
+  "ELEC M90BX": {
+   "old_id": "ELEC M90BX",
+   "source": "singleton",
+   "title": "Growing a Small Business",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SC",
+   "how": "gap-filled"
+  },
+  "ELEC M90BY": {
+   "old_id": "ELEC M90BY",
+   "source": "singleton",
+   "title": "Growing a Small Business (Spanish)",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SD",
+   "how": "gap-filled"
+  },
+  "ELEC M90CA": {
+   "old_id": "ELEC M90CA",
+   "source": "singleton",
+   "title": "Social Media for Small Business Owners",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SE",
+   "how": "gap-filled"
+  },
+  "ELEC M90CB": {
+   "old_id": "ELEC M90CB",
+   "source": "singleton",
+   "title": "Social Media for Small Business Owners (Spanish)",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SF",
+   "how": "gap-filled"
+  },
+  "ELEC M90CE": {
+   "old_id": "ELEC M90CE",
+   "source": "singleton",
+   "title": "Electrical Calculations and Installation",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SG",
+   "how": "gap-filled"
+  },
+  "ELEC M90CM": {
+   "old_id": "ELEC M90CM",
+   "source": "singleton",
+   "title": "Introduction to Paints, Coatings, Sealants, Repairs and Fillers, and Surface Conditions",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SH",
+   "how": "gap-filled"
+  },
+  "ELEC M90CV": {
+   "old_id": "ELEC M90CV",
+   "source": "singleton",
+   "title": "IW Precast Concrete - Structural",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SI",
+   "how": "gap-filled"
+  },
+  "ELEC M90CY": {
+   "old_id": "ELEC M90CY",
+   "source": "singleton",
+   "title": "Intro to Construction",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SJ",
+   "how": "gap-filled"
+  },
+  "ELEC M90DF": {
+   "old_id": "ELEC M90DF",
+   "source": "singleton",
+   "title": "IW - Foreman-Scaffold Erector Dismantler-Forklift",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SK",
+   "how": "gap-filled"
+  },
+  "ELEC M90DI": {
+   "old_id": "ELEC M90DI",
+   "source": "singleton",
+   "title": "Ect Ind Light Load & Theory",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SL",
+   "how": "gap-filled"
+  },
+  "ELEC M90DL": {
+   "old_id": "ELEC M90DL",
+   "source": "singleton",
+   "title": "Electrical Lighting, Motors and HVAC Systems",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SM",
+   "how": "gap-filled"
+  },
+  "ELEC M90DM": {
+   "old_id": "ELEC M90DM",
+   "source": "singleton",
+   "title": "Introduction to Electrical Trade",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SN",
+   "how": "gap-filled"
+  },
+  "ELEC M90DY": {
+   "old_id": "ELEC M90DY",
+   "source": "singleton",
+   "title": "General Rigging-Reinforcing",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SO",
+   "how": "gap-filled"
+  },
+  "ELEC M90ED": {
+   "old_id": "ELEC M90ED",
+   "source": "singleton",
+   "title": "Post-Tension 1",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SP",
+   "how": "gap-filled"
+  },
+  "ELEC M90EG": {
+   "old_id": "ELEC M90EG",
+   "source": "singleton",
+   "title": "Post-Tension 2",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SQ",
+   "how": "gap-filled"
+  },
+  "ELEC M90EJ": {
+   "old_id": "ELEC M90EJ",
+   "source": "singleton",
+   "title": "Post-Tension 3",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SR",
+   "how": "gap-filled"
+  },
+  "ELEC M90EK": {
+   "old_id": "ELEC M90EK",
+   "source": "singleton",
+   "title": "Welding 3 - Reinforcing",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SS",
+   "how": "gap-filled"
+  },
+  "ELEC M90EL": {
+   "old_id": "ELEC M90EL",
+   "source": "singleton",
+   "title": "Structural 3",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90ST",
+   "how": "gap-filled"
+  },
+  "ELEC M90EO": {
+   "old_id": "ELEC M90EO",
+   "source": "singleton",
+   "title": "Professionalism in the Painting Trades/Job Planning and Surfaces",
+   "members": 1,
+   "codes": {
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "route": "VOCE",
+   "discipline": "Vocational",
+   "merged_into": null,
+   "new_id": "VOCE M90SU",
+   "how": "gap-filled"
+  }
+ },
+ "alias": {
+  "ELEC M9055": "VOCE M9100",
+  "ELEC M9060": "VOCE M9101",
+  "ELEC M9063": "VOCE M9102",
+  "ELEC M90AP": "VOCE M90RT",
+  "ELEC M90AS": "VOCE M90RU",
+  "ELEC M90AW": "VOCE M90RV",
+  "ELEC M90BF": "VOCE M90RW",
+  "ELEC M90BL": "VOCE M90RX",
+  "ELEC M90BT": "VOCE M90RY",
+  "ELEC M90BU": "VOCE M90RZ",
+  "ELEC M90BV": "VOCE M90SA",
+  "ELEC M90BW": "VOCE M90SB",
+  "ELEC M90BX": "VOCE M90SC",
+  "ELEC M90BY": "VOCE M90SD",
+  "ELEC M90CA": "VOCE M90SE",
+  "ELEC M90CB": "VOCE M90SF",
+  "ELEC M90CE": "VOCE M90SG",
+  "ELEC M90CM": "VOCE M90SH",
+  "ELEC M90CV": "VOCE M90SI",
+  "ELEC M90CY": "VOCE M90SJ",
+  "ELEC M90DF": "VOCE M90SK",
+  "ELEC M90DI": "VOCE M90SL",
+  "ELEC M90DL": "VOCE M90SM",
+  "ELEC M90DM": "VOCE M90SN",
+  "ELEC M90DY": "VOCE M90SO",
+  "ELEC M90ED": "VOCE M90SP",
+  "ELEC M90EG": "VOCE M90SQ",
+  "ELEC M90EJ": "VOCE M90SR",
+  "ELEC M90EK": "VOCE M90SS",
+  "ELEC M90EL": "VOCE M90ST",
+  "ELEC M90EO": "VOCE M90SU"
+ },
+ "stays": {
+  "ELEC M1018": {
+   "old_id": "ELEC M1018",
+   "source": "minted",
+   "title": "Cerritos Student Orientation Motivation Education and Training (COMET)",
+   "members": 2,
+   "codes": {
+    "ELEC": 1,
+    "VOCE": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "why": "cross-listed: one college's one course under AED and ELAP; one identity, it stays (d-crosslisted-split-keeps-its-identity-s710)"
+  },
+  "ELEC M9044": {
+   "old_id": "ELEC M9044",
+   "source": "minted",
+   "title": "Solar Energy",
+   "members": 2,
+   "codes": {
+    "VOCE": 1,
+    "ELEC": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "why": "cross-listed: one college's one course under AED and ELAP; one identity, it stays (d-crosslisted-split-keeps-its-identity-s710)"
+  },
+  "ELEC M9051": {
+   "old_id": "ELEC M9051",
+   "source": "minted",
+   "title": "Solar Panel Installation",
+   "members": 2,
+   "codes": {
+    "VOCE": 1,
+    "ELEC": 1
+   },
+   "colleges": [
+    "Cerritos College"
+   ],
+   "from_discipline": "Electricity",
+   "why": "cross-listed: one college's one course under AED and ELAP; one identity, it stays (d-crosslisted-split-keeps-its-identity-s710)"
+  }
+ },
+ "held": {},
+ "merge_pointers_into_moved": [
+  "ELEC M90BA",
+  "ELEC M90BB",
+  "ELEC M90DB",
+  "ELEC M90DZ",
+  "ELEC M90EB",
+  "ELEC M90EF",
+  "ELEC M90EI"
+ ],
+ "gapfilled": [
+  {
+   "old_id": "ELEC M9055",
+   "wanted": "VOCE M9055",
+   "new_id": "VOCE M9100",
+   "why": "ELEC M9055 -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M9060",
+   "wanted": "VOCE M9060",
+   "new_id": "VOCE M9101",
+   "why": "ELEC M9060 -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M9063",
+   "wanted": "VOCE M9063",
+   "new_id": "VOCE M9102",
+   "why": "ELEC M9063 -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90AP",
+   "wanted": "VOCE M90AP",
+   "new_id": "VOCE M90RT",
+   "why": "ELEC M90AP -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90AS",
+   "wanted": "VOCE M90AS",
+   "new_id": "VOCE M90RU",
+   "why": "ELEC M90AS -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90AW",
+   "wanted": "VOCE M90AW",
+   "new_id": "VOCE M90RV",
+   "why": "ELEC M90AW -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90BF",
+   "wanted": "VOCE M90BF",
+   "new_id": "VOCE M90RW",
+   "why": "ELEC M90BF -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90BL",
+   "wanted": "VOCE M90BL",
+   "new_id": "VOCE M90RX",
+   "why": "ELEC M90BL -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90BT",
+   "wanted": "VOCE M90BT",
+   "new_id": "VOCE M90RY",
+   "why": "ELEC M90BT -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90BU",
+   "wanted": "VOCE M90BU",
+   "new_id": "VOCE M90RZ",
+   "why": "ELEC M90BU -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90BV",
+   "wanted": "VOCE M90BV",
+   "new_id": "VOCE M90SA",
+   "why": "ELEC M90BV -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90BW",
+   "wanted": "VOCE M90BW",
+   "new_id": "VOCE M90SB",
+   "why": "ELEC M90BW -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90BX",
+   "wanted": "VOCE M90BX",
+   "new_id": "VOCE M90SC",
+   "why": "ELEC M90BX -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90BY",
+   "wanted": "VOCE M90BY",
+   "new_id": "VOCE M90SD",
+   "why": "ELEC M90BY -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90CA",
+   "wanted": "VOCE M90CA",
+   "new_id": "VOCE M90SE",
+   "why": "ELEC M90CA -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90CB",
+   "wanted": "VOCE M90CB",
+   "new_id": "VOCE M90SF",
+   "why": "ELEC M90CB -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90CE",
+   "wanted": "VOCE M90CE",
+   "new_id": "VOCE M90SG",
+   "why": "ELEC M90CE -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90CM",
+   "wanted": "VOCE M90CM",
+   "new_id": "VOCE M90SH",
+   "why": "ELEC M90CM -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90CV",
+   "wanted": "VOCE M90CV",
+   "new_id": "VOCE M90SI",
+   "why": "ELEC M90CV -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90CY",
+   "wanted": "VOCE M90CY",
+   "new_id": "VOCE M90SJ",
+   "why": "ELEC M90CY -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90DF",
+   "wanted": "VOCE M90DF",
+   "new_id": "VOCE M90SK",
+   "why": "ELEC M90DF -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90DI",
+   "wanted": "VOCE M90DI",
+   "new_id": "VOCE M90SL",
+   "why": "ELEC M90DI -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90DL",
+   "wanted": "VOCE M90DL",
+   "new_id": "VOCE M90SM",
+   "why": "ELEC M90DL -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90DM",
+   "wanted": "VOCE M90DM",
+   "new_id": "VOCE M90SN",
+   "why": "ELEC M90DM -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90DY",
+   "wanted": "VOCE M90DY",
+   "new_id": "VOCE M90SO",
+   "why": "ELEC M90DY -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90ED",
+   "wanted": "VOCE M90ED",
+   "new_id": "VOCE M90SP",
+   "why": "ELEC M90ED -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90EG",
+   "wanted": "VOCE M90EG",
+   "new_id": "VOCE M90SQ",
+   "why": "ELEC M90EG -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90EJ",
+   "wanted": "VOCE M90EJ",
+   "new_id": "VOCE M90SR",
+   "why": "ELEC M90EJ -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90EK",
+   "wanted": "VOCE M90EK",
+   "new_id": "VOCE M90SS",
+   "why": "ELEC M90EK -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90EL",
+   "wanted": "VOCE M90EL",
+   "new_id": "VOCE M90ST",
+   "why": "ELEC M90EL -> VOCE (scope aed)"
+  },
+  {
+   "old_id": "ELEC M90EO",
+   "wanted": "VOCE M90EO",
+   "new_id": "VOCE M90SU",
+   "why": "ELEC M90EO -> VOCE (scope aed)"
+  }
+ ],
+ "validation": {
+  "V0_every_ready_mid_has_a_record": {
+   "pass": true,
+   "missing": []
+  },
+  "V2_new_ids_unique_and_free": {
+   "pass": true,
+   "unplaced": []
+  },
+  "V3_prefix_is_the_settled_code": {
+   "pass": true
+  },
+  "V4_every_ready_mid_accounted_for": {
+   "pass": true
+  }
+ }
+}

@@ -172,5 +172,29 @@ check("a parenthetical that repeats a code of the college is dropped; one that d
       lst.without_code("Biology (BIOLOGY)", {"BIOLOGY"}) == "Biology" and lst.without_code("History (Hist/History)", {"HIST", "HISTORY"}) == "History"
       and lst.without_code("English (CCN) (Engl)", {"ENGL"}) == "English" and lst.without_code("Basic Skills (Noncredit)", {"BSICSKL"}) == "Basic Skills (Noncredit)")
 check("a heading that was only its code is no heading", lst.without_code("(THEATER)", {"THEATER"}) is None)
+# ── S705: a college's department list (Cerritos's schedule; r-college-department-list-is-a-title-source-sam-2026-11-22) ──
+root = tempfile.mkdtemp()
+try:
+    fixture(root)
+    dd = os.path.join(root, "kb", "reference", "college_department_lists")
+    os.makedirs(dd)
+    json.dump({"college": "Alpha College", "slug": "alpha", "source_url": "https://example.edu/schedule",
+               "codes": {"MATH": "MATHEMATICS", "ZZZ": "Welding Technology", "WELD": "Welding", "ENGL": "English Language"}},
+              open(os.path.join(dd, "alpha.json"), "w"))
+    out = lst.build(root)
+    cols = out["columns"]
+    A = {r[0]: dict(zip(cols, r)) for c in out["colleges"] if c["slug"] == "alpha" for r in c["rows"]}
+    check("(8) ⭐ the department list titles a code the catalog gives none, in Title Case, and names itself as the source",
+          A["MATH"]["printed_name"] == "Mathematics" and A["MATH"]["title_source"] == lst.DEPARTMENT_TITLE and A["MATH"]["title_state"] == "catalog")
+    check("(8) ⭐ where the catalog's name is another code's department title, the code's own department title wins",
+          A["WELD"]["printed_name"] == "Welding" and A["WELD"]["title_source"] == lst.DEPARTMENT_TITLE)
+    check("(8) ⭐ the catalog's own heading stays where it is no other code's title",
+          A["ENGL"]["printed_name"] == "English" and A["ENGL"]["title_source"] == "course pages" and A["ZZZ"]["printed_name"] == "Catalog Only")
+    check("(8) the file names the department lists among its sources", out["_sources"]["department_lists"] == "kb/reference/college_department_lists")
+finally:
+    shutil.rmtree(root)
+check("(8) the Cerritos list is filed with its address and Sam's words", (lambda d: d["source_url"] == "https://secure.cerritos.edu/schedule/index.cgi"
+      and d["_provenance"]["by"] == "Sam" and d["codes"]["AED"] == "Adult Education" and len(d["codes"]) == 92)(
+      json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "kb", "reference", "college_department_lists", "cerritos.json")))))
 print(("FAILED " + str(len(FAILS))) if FAILS else "all passed")
 sys.exit(1 if FAILS else 0)

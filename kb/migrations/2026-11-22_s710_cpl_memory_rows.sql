@@ -1,0 +1,13 @@
+-- cpl_memory rows for SkyGuillemot (S710), 2026-11-22. Applied with execute_sql.
+-- ROLLBACK: delete from public.cpl_memory_log where memory_id in (select id from public.cpl_memory where author = 'SkyGuillemot (S710)');
+--           delete from public.cpl_memory where author = 'SkyGuillemot (S710)';
+insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('d-crosslisted-split-keeps-its-identity-s710','decision','A re-mint keeps one identity for one course listed under two local codes','S710, Sam''s to revise: when a ready M-ID''s members split along code but are one college''s one course (same number and title under two codes, Cerritos ELAP 90.08 and AED 90.08, Solar Energy), the dry run keeps the M-ID where it is. ELEC M1018, M9044 and M9051 stay. Any other split is held for a person.',array['commons','m-id','remint'],'proposed','S710 session, kb/_scope_remint_dryrun.py',null,null,'SkyGuillemot (S710)','2026-11-22'),
+('f-aed-dryrun-31-move-to-voce-s710','fact','The AED scope dry run: 31 of the 34 ready M-IDs move ELEC to VOCE','S710: kb/_scope_remint_dryrun.py on the 2026-11-22 readiness file plans 31 ELEC M-IDs to VOCE (discipline Electricity to Vocational), all gap-filled (VOCE M9100-M9102, M90RT-M90SU), none on a vacated or SkyView-drawn slot; 3 cross-listed stay. An apply would re-key 3 curation keys and 7 merge_into pointers. Nothing applied.',array['commons','m-id','remint'],'proposed','kb/scope_remint_out/2026-11-22-aed/report.md',null,null,'SkyGuillemot (S710)','2026-11-22'),
+('f-category-save-moves-electrical-to-voce-s710','fact','One category save sends six electrical courses to Vocational in the AED dry run','S710: the 31 moves follow one reviewer save, Cerritos AED Short-term Vocational to VOCE (2026-11-22 14:22Z). Six titles read as Electricity (ECT Adv Theory, Elec Theory, Electrical Calculations, ECT Ind Light Load, Electrical Lighting, Intro to Electrical Trade) and six as small business. A course move (CRS:) before the apply keeps them in their field.',array['commons','m-id','remint','subjects'],'proposed','kb/scope_remint_out/2026-11-22-aed/report.md',null,null,'SkyGuillemot (S710)','2026-11-22')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyGuillemot (S710)', 'create', 'S710 (2026-11-22)', to_jsonb(m)
+from public.cpl_memory m where m.author = 'SkyGuillemot (S710)'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+select slug, status, length(summary) from public.cpl_memory where author = 'SkyGuillemot (S710)' order by slug;

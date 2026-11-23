@@ -1,6 +1,7 @@
 ---
 title: "Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate"
 created: 2026-07-13
+updated: 2026-11-22
 kb-status: published
 tags: [methodology, discipline, auditor, mis-mint, curation, ccr]
 artifacts:
@@ -86,6 +87,16 @@ into Supabase under a dedicated reviewer with an INSERT-only receipt
 - Not a bulk auto-apply tool. The flags are curation candidates; apply only the
   tightest (two strong signals) under the Rule-9 write discipline, human-review
   the rest.
+
+## The blind spot: a code one college owns (2026-11-22)
+
+A cohort test needs a cohort. When one college alone uses a subject code, its courses are the whole cohort, so a
+wrong lexicon entry for that code agrees with itself and the outlier rule never fires. Cerritos's AED (Adult
+Education) was mapped to Electricity; as the modal subject of 46 M-IDs it gave them an ELEC prefix, and 45 of them hold
+other colleges' courses (High School English, Spanish, US History, GED prep under ELEC M90xx). Before a code joins the
+lexicon, count the colleges that use it: a code at one college is a local name, and its discipline comes from that
+college's own record (a department list, a person's save), never from the lexicon. A noncredit bucket code is mixed
+by construction and stays unmapped. S707, `f-aed-electricity-gave-elec-m90-s707`.
 
 ## See also
 

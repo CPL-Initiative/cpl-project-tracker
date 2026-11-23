@@ -359,6 +359,18 @@ step "Build the Subjects recommendations" <<'STEP'
 python3 kb/_build_local_subject_recommendations.py || { git checkout -- kb/status/local_subject_recommendations.json 2>/dev/null || true; echo "::warning title=Subject recommendations not rebuilt::kb/_build_local_subject_recommendations.py failed; the Subjects page reads yesterday's kb/status/local_subject_recommendations.json."; }
 STEP
 
+# kb/status/mid_readiness.json (#3655, S709): which M-IDs in a re-mint's scope pass the draft readiness gate
+# (d-remint-ready-gate-draft-s707) and why each of the rest is held, for the Subjects page and the re-mint dry run.
+# After the subject files above and the pipeline (unified_courses_members.js). It does not rerun the outcomes
+# comparison: when the reads have grown past the newest kb/status/mid_outcomes_compare_<date>.json, every M-ID holds
+# on test 3 until a session reruns kb/_mid_outcomes_compare.py. Display only, so a failure warns.
+step "Build the re-mint readiness count" <<'STEP'
+python3 kb/_mid_readiness.py || { git checkout -- kb/status/mid_readiness.json 2>/dev/null || true; echo "::warning title=Re-mint readiness not rebuilt::kb/_mid_readiness.py failed; kb/status/mid_readiness.json is yesterday's."; }
+# The course outlines to find by hand (kb/_outline_hunt.py, S711): it reads the members this build just wrote and the
+# newest outcomes comparison, so it reruns here or the Commons SLOs view lists yesterday's courses.
+python3 kb/_outline_hunt.py || { git checkout -- kb/status/outline_hunt.json 2>/dev/null || true; echo "::warning title=Outline hunt not rebuilt::kb/_outline_hunt.py failed; kb/status/outline_hunt.json is yesterday's."; }
+STEP
+
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
 # Read-only over kb/coci_*.json; writes kb/row_audit/{latest.json,
 # <date>.md} that the UCL "⚠ hinky" badge consumes. See CLAUDE.md §11.

@@ -128,7 +128,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(9) ⭐ picking it opens the panel and the address names the college and the code", panel && panel.getAttribute("role") === "dialog" && z.w.location.hash === "#commons/subjects/alpha/MATH");
   const bandsSeen = Array.from(panel.querySelectorAll(".csb-band")).map(txt);
   check("(9) ⭐ credit and noncredit courses are listed apart, each counted; a catalog-only course says its band is not known",
-    bandsSeen.length === 3 && bandsSeen[0] === "Credit courses (2)" && bandsSeen[1] === "Noncredit courses (1)" && /^In the catalog only .* \(1\)$/.test(bandsSeen[2]));
+    bandsSeen.length === 3 && bandsSeen[0] === "Credit courses (2)" && bandsSeen[1] === "Noncredit, no category in COCI’s export (1)" && /^In the catalog only .* \(1\)$/.test(bandsSeen[2]), bandsSeen.join(" | "));
   const crs1 = panel.querySelector('.csb-courses tr[data-number="1"]');
   check("(9) a course shows its number, title, where it is listed and its C-ID, CCN and M-ID", crs1 && txt(crs1.children[1]) === "Algebra" && txt(crs1.children[2]) === "Both"
     && txt(crs1.children[3]) === "C-ID MATH 151; M-ID MATH M1001" && /CCN STAT C1000/.test(txt(panel.querySelector('.csb-courses tr[data-number="2"]'))));
@@ -243,8 +243,10 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   x = load("#commons/subjects/alpha/MATH", { "kb/status/subject_courses/alpha.json": E });
   await x.M.boot(); await settle();
   const eb = Array.from(x.d.querySelectorAll("#csb-panel .csb-band")).map(txt);
-  check("(12) ⭐ the course panel's noncredit group splits into Noncredit and Noncredit enhanced", eb.indexOf("Noncredit courses (1)") >= 0 && eb.indexOf("Noncredit enhanced courses (2)") >= 0
-    && eb.indexOf("Noncredit courses (1)") < eb.indexOf("Noncredit enhanced courses (2)"));
+  /* S705: the noncredit courses stand under their COCI noncredit category (a category's save touches that category's
+     courses only), and an enhanced course says so on its row. */
+  check("(12) ⭐ the course panel's noncredit courses keep N and E apart: an enhanced course says so on its row", eb.indexOf("Noncredit, no category in COCI’s export (3)") >= 0
+    && /COCI, enhanced/.test(txt(x.d.querySelector('#csb-panel tr[data-number="301"]'))) && !/enhanced/.test(txt(x.d.querySelector('#csb-panel tr[data-band="N"]'))), eb.join(" | "));
 
   x = load("#commons/subjects/nowhere");
   await x.M.boot(); await settle();

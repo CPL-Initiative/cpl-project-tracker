@@ -236,6 +236,12 @@
     done: {}, decidedHere: {}, reviewReadErr: "", reviewReading: false, reviewSettled: {}, note: "", courses: null, coursesErr: false, drafts: {}, teachDraft: "",
     // Back (Sam, 2026-10-31): the cards decided or skipped this visit, newest last, as {raw, saved}.
     history: [], bulkAsk: false, bulkBusy: false,
+    // Previous and Next move through the cards without writing anything (Sam, 2026-11-22: "a navigation method to advance
+    // forward and back without changing any data"): fwd holds the cards Previous stepped back over, newest last.
+    fwd: [],
+    // Changes this visit (Sam, 2026-11-22: "show a simple list of all session before and after changes at the bottom of
+    // the view"), oldest first: {raw, proposed, saved, issuer, choice, sites, at, undone}. A visit's, never stored.
+    log: [], credPanel: null, siteMoves: {},
     teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false,
     view: "review",
     // Rules sent to the routine: the request rows grouped by request, and the procedures store.
@@ -1153,8 +1159,50 @@
       if (!ss.error) loadSubjects().then(redraw);
       return sec;
     }
-    var subj = ss.data[h.subject];
+    /* Look in another subject (Sam, 2026-11-22: "looking at this course under business, but I suspect it should be under
+       CIS. Need to be able to change the Subject in the Course Sidebar so I can see if there is a common Introduction to
+       Computers course to use"). The pick changes what this panel lists, for the visit; nothing is written until the card
+       is saved, and Use this title fills the box as before. */
+    var picks = ss.pick || (ss.pick = {}), picked = picks[o.key] && ss.data[picks[o.key]] ? picks[o.key] : h.subject;
+    var names = Object.keys(ss.data).filter(function (k) { return k !== h.subject && (ss.data[k].rows || []).length; }).sort(lowerCmp);
+    var sel = el("select", { id: "exh-ss-pick", "aria-describedby": "exh-ss-pick-note exh-ss-find-count" });
+    /* Find a subject (Sam, 2026-11-22: "the change subjects filter is too limited. I need to see subjects with
+       'computer' and 'information tech'"). Every typed word must start a word of the name, so "information tech" finds
+       Computer Information Systems and Health Information Technology; this course's subject and the one picked stay. */
+    var find = el("input", { id: "exh-ss-find", type: "search", autocomplete: "off", value: ss.find || "",
+      "aria-describedby": "exh-ss-find-count", "aria-controls": "exh-ss-pick" });
+    var count = el("span", { cls: "exh-muted", id: "exh-ss-find-count", role: "status" });
+    function fill() {
+      var words = String(ss.find || "").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+      var shown = names.filter(function (k) {
+        if (k === picked) return true;
+        var parts = k.toLowerCase().split(/[^a-z0-9]+/);
+        return words.every(function (w) { return parts.some(function (p) { return p.indexOf(w) === 0; }); });
+      });
+      while (sel.firstChild) sel.removeChild(sel.firstChild);
+      [h.subject].concat(shown).forEach(function (k) {
+        var op = el("option", { value: k, text: k + (k === h.subject ? " (this course's subject)" : "") });
+        if (k === picked) op.selected = true;
+        sel.appendChild(op);
+      });
+      var n = shown.length;
+      count.textContent = words.length ? fmt(n) + " of " + fmt(names.length) + " other subjects match" : fmt(names.length) + " other subjects";
+    }
+    fill();
+    find.addEventListener("input", function () { ss.find = find.value; fill(); });
+    sel.addEventListener("change", function () { picks[o.key] = sel.value === h.subject ? null : sel.value; ss.all = null; redraw();
+      var f = document.getElementById("exh-ss-pick"); if (f) f.focus(); });
+    var pickRow = el("p", { cls: "exh-small exh-ss-pickrow" }, [el("label", { "for": "exh-ss-find", text: "Find a subject " }), find,
+      el("label", { "for": "exh-ss-pick", text: "Look in the subject " }), sel, count]);
+    var pickNote = null;
+    if (picked !== h.subject) {
+      sec.firstChild.textContent = "Subject: " + picked;
+      pickNote = el("p", { cls: "exh-small", id: "exh-ss-pick-note", role: "status", text: "Looking in " + picked + ", beside this course's subject, "
+        + h.subject + ". The titles below are ranked against this course; nothing changes until you save the card." });
+    }
+    var subj = ss.data[picked];
     if (!subj || !(subj.rows || []).length) {
+      sec.appendChild(pickRow);
       sec.appendChild(el("p", { cls: "exh-empty exh-small", text: "No C-ID, CCN or M-ID title is on file for this subject yet." }));
       return sec;
     }
@@ -1164,6 +1212,8 @@
       ? "Placed by the TOP code of " : "From ") + (from || "the card's course") + (c[0] != null && college(c[0]) ? " at " + college(c[0]) : "")
       + ". Likeliest first: the course's title, COCI description and units, then the credit recommendation, then the card's title."
       + (/^TOP /.test(h.subject) ? " A TOP code is a search aid only." : "") }));
+    sec.appendChild(pickRow);
+    if (pickNote) sec.appendChild(pickNote);
     var ranked = ssRanked(h, subj.rows, o.title.value.trim());
     var showAll = ss.all === o.key, list = showAll ? ranked : ranked.slice(0, SS_MAX);
     var ul = el("ol", { cls: "exh-ss-list", id: "exh-ss-list" });
@@ -1185,6 +1235,7 @@
     }
     if (total > subj.rows.length) sec.appendChild(el("p", { cls: "exh-muted exh-small",
       text: "The list holds the " + fmt(subj.rows.length) + " titles most colleges hold, of " + fmt(total) + " in this subject." }));
+    if (names.length < 20) sec.appendChild(el("p", { cls: "exh-muted exh-small", text: "The subjects listed are the ones held cards name today; every other subject joins the list at tonight's rebuild." }));
     return sec;
   }
   /* The side panel. o.title and o.issuer are the card's boxes; o.use(row) fills them. The list follows the title as
@@ -2115,8 +2166,13 @@
   }
 
   /* ── the actions ── */
-  function decided(h, note, saved) {
-    state.history.push({ raw: h.raw, saved: saved == null ? null : saved });
+  function decided(h, note, saved, info) {
+    info = info || {};
+    var prev = h.saved || null;
+    state.history.push({ raw: h.raw, saved: saved == null ? null : saved, prev: prev, fresh: true });
+    state.fwd = [];
+    state.log.push({ raw: h.raw, proposed: h.title || "", saved: saved == null ? "" : saved, issuer: info.issuer || "", choice: info.choice || "",
+      sites: info.sites || "", prev: prev, at: new Date().toISOString(), undone: false });
     h.saved = saved || h.saved;
     state.done[h.raw] = true; state.decidedHere[h.raw] = true;
     delete state.drafts[h.raw];
@@ -2139,12 +2195,14 @@
     if (h.step === CONFLICT) {
       var kept = h.saved || h.raw.trim();
       saveRevision(h.raw, kept, issuer, h.title)
-        .then(function () { decided(h, "Saved “" + kept + "” over the reviewed title “" + h.title + "”. The nightly run moves it while that title still stands.", kept); })
+        .then(function () { return movedSites(h, kept); })
+        .then(function (sites) { decided(h, "Saved “" + kept + "” over the reviewed title “" + h.title + "”. The nightly run moves it while that title still stands." + sitesNote(sites), kept, { issuer: issuer, choice: "Kept current title", sites: sites }); })
         .catch(failed);
       return;
     }
     saveAssignment(h.raw, h.raw.trim(), issuer)
-      .then(function () { decided(h, "Saved “" + h.raw.trim() + "” as its own title. The nightly run adds it to the reference.", h.raw.trim()); })
+      .then(function () { return movedSites(h, h.raw.trim()); })
+      .then(function (sites) { decided(h, "Saved “" + h.raw.trim() + "” as its own title. The nightly run adds it to the reference." + sitesNote(sites), h.raw.trim(), { issuer: issuer, choice: "Kept current title", sites: sites }); })
       .catch(failed);
   }
   function changeToProposed(h, box, issuer) {
@@ -2154,18 +2212,53 @@
     if (h.step === CONFLICT) {
       if (title !== h.title) {
         saveRevision(h.raw, title, issuer, h.title)
-          .then(function () { decided(h, "Saved “" + title + "” over the reviewed title “" + h.title + "”. The nightly run moves it while that title still stands.", title); })
+          .then(function () { return movedSites(h, title); })
+          .then(function (sites) { decided(h, "Saved “" + title + "” over the reviewed title “" + h.title + "”. The nightly run moves it while that title still stands." + sitesNote(sites), title, { issuer: issuer, choice: "Changed to edited title", sites: sites }); })
           .catch(failed);
         return;
       }
       clearAssignment(h.raw)
-        .then(function () { decided(h, "Cleared the saved assignment; the reference's title “" + title + "” stands.", title); })
+        .then(function () { return movedSites(h, title); })
+        .then(function (sites) { decided(h, "Cleared the saved assignment; the reference's title “" + title + "” stands." + sitesNote(sites), title, { issuer: issuer, choice: "Cleared the saved assignment", sites: sites }); })
         .catch(failed);
       return;
     }
     saveAssignment(h.raw, title, issuer)
-      .then(function () { decided(h, "Saved “" + title + "”. The nightly run adds it to the reference.", title); })
+      .then(function () { return movedSites(h, title); })
+      .then(function (sites) { decided(h, "Saved “" + title + "”. The nightly run adds it to the reference." + sitesNote(sites), title,
+        { issuer: issuer, choice: title === (h.title || "") ? "Changed to proposed title" : "Changed to edited title", sites: sites }); })
       .catch(failed);
+  }
+  /* The credential a card's title names in the reference, once the credentials are read; null otherwise. */
+  function credOf(ut) {
+    ut = String(ut || "").trim();
+    return ((state.cs && state.cs.rows) || []).filter(function (r) { return r.ut === ut; })[0] || null;
+  }
+  /* Training sites moved down from the issuer on a card (Sam, 2026-11-22: "I wanted to copy the Issuer down to the
+     Training Site and change the Issuer to CCC"): saved with the card's choice, to the credential its saved title names,
+     beside the sites it already holds. Resolves to the sites it saved, joined, or "" where none moved. */
+  function movedSites(h, savedTitle) {
+    var mv = state.siteMoves[h.raw];
+    if (!mv || !mv.sites.length) return Promise.resolve("");
+    if (!state.cs.rows) return loadCredentials().then(function () { return movedSites(h, savedTitle); }, function () { return "(not saved: the reference could not be read)"; });
+    var r = credOf(savedTitle);
+    if (!r) { delete state.siteMoves[h.raw]; return Promise.resolve("(not saved: “" + savedTitle + "” is not in the reference yet)"); }
+    var cur = credCurrent(r).sites, have = cur.map(function (x) { return x.site.toLowerCase(); });
+    var sites = cur.concat(mv.sites.filter(function (x) { return have.indexOf(x.toLowerCase()) === -1; }).map(function (x) { return { site: x }; }));
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return Promise.all([saveCredRow(sess, r.ut, FIELD_CRED_SITES, JSON.stringify(sites)), saveCredRow(sess, r.ut, FIELD_CRED_TRAINER, joinSites(sites))]);
+    }).then(function (rs) {
+      if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
+      var o = state.cs.overlay[r.ut] = state.cs.overlay[r.ut] || {}, now = new Date().toISOString();
+      o.sites = JSON.stringify(sites); o.sitesAt = now; o.trainer = joinSites(sites); o.trainerAt = now;
+      delete state.siteMoves[h.raw];
+      return joinSites(sites);
+    }, function (e) { return "(not saved: " + (e && e.message || "no answer") + ")"; });
+  }
+  function sitesNote(sites) {
+    if (!sites) return "";
+    return /^\(not saved/.test(sites) ? " The training sites were " + sites.slice(1, -1) + "; set them under Training sites." : " Training sites saved: " + sites + ".";
   }
   function resetCard() {
     state.teach = false; state.openCollege = null; state.teachDraft = ""; state.bulkAsk = false;
@@ -2178,25 +2271,74 @@
     resetCard();
     render();
   }
-  /* Back (Sam, 2026-10-31: "need a back button ... to go to a few previous items"): the last card
-     decided or skipped this visit returns to the queue where it was, with what was saved for it; a new
-     choice replaces that save (kb_curation's key is the title and the field). */
-  function back() {
-    var last = state.history.pop();
-    if (!last) return;
-    var h = state.data.held.filter(function (x) { return x.raw === last.raw; })[0];
-    if (!h) { render(); return; }
+  /* Previous and Next (Sam, 2026-11-22: "The Back button seems to be an Undo button--when I go back it resets the
+     recommended title. It's good to have an Undo button but should not be confused with Back. Related to this I need a
+     navigation method to advance forward and back without changing any data"). Previous returns to the last card decided
+     or skipped this visit, its box holding what was saved for it; Next goes forward again over the cards Previous stepped
+     back over, then on to the next card. Neither writes anything: a saved card stays saved until a new choice replaces it.
+     Undo (below) is the one that clears a save. */
+  function openCard(raw, words) {
+    var h = state.data.held.filter(function (x) { return x.raw === raw; })[0];
+    if (!h) return null;
     delete state.done[h.raw]; delete state.decidedHere[h.raw];
-    if (last.saved) h.saved = last.saved;
     var list = shown();
     if (list.indexOf(h) < 0) { state.filter = ""; list = shown(); }
     state.cur = Math.max(0, list.indexOf(h));
-    state.note = "Back to “" + h.raw + "”." + (last.saved
-      ? " You saved “" + last.saved + "”; a new choice replaces it." : "");
+    if (h.saved && !state.drafts[h.raw]) state.drafts[h.raw] = { title: h.saved };
+    state.note = words;
     resetCard();
-    render();
-    var t = document.getElementById("exh-title");
-    if (t) t.focus();
+    return h;
+  }
+  function focusTitle() { var t = document.getElementById("exh-title"); if (t) t.focus(); }
+  /* A card Previous reopened that holds a save goes back to the done pile when Next moves on from it, as it was. */
+  function leaveCard(list) {
+    var h = list[state.cur];
+    if (!h) return null;
+    if (h.saved && state.history.concat(state.fwd).some(function (e) { return e.raw === h.raw && e.saved; })) { state.done[h.raw] = true; delete state.drafts[h.raw]; }
+    return h;
+  }
+  function prevCard() {
+    var last = state.history.pop();
+    if (!last) return;
+    var here = leaveCard(shown());
+    if (here) state.fwd.push({ raw: here.raw, saved: here.saved || null, nav: true });
+    var h = openCard(last.raw, "");
+    if (!h) { render(); return; }
+    if (last.saved) h.saved = last.saved;
+    state.note = "Previous: “" + h.raw + "”." + (h.saved ? " Saved this visit or earlier as “" + h.saved + "”; nothing changes unless you save again." : " Nothing was saved for it.");
+    render(); focusTitle();
+  }
+  function nextCard(list) {
+    var ahead = state.fwd.pop();
+    if (!ahead) { skip(list); return; }
+    var here = leaveCard(list);
+    if (here) state.history.push({ raw: here.raw, saved: here.saved || null, nav: true });
+    var h = openCard(ahead.raw, "");
+    if (!h) { render(); return; }
+    state.note = "Next: “" + h.raw + "”." + (h.saved ? " Saved as “" + h.saved + "”; nothing changes unless you save again." : "");
+    render(); focusTitle();
+  }
+  /* Undo the last save made this visit, where the card held no save before it: its rows are cleared and the card returns
+     to the queue as it was built. A save that replaced an earlier one is changed by choosing again, never cleared. */
+  function lastUndoable() {
+    for (var i = state.log.length - 1; i >= 0; i--) { var e = state.log[i]; if (!e.undone && e.saved && !e.prev && e.choice !== "Cleared the saved assignment") return e; }
+    return null;
+  }
+  function undo() {
+    var e = lastUndoable();
+    if (!e) return;
+    if (reviewSaveOff()) { state.note = reviewSaveOff(); render(); return; }
+    clearAssignment(e.raw).then(function () {
+      e.undone = true;
+      state.history = state.history.filter(function (x) { return x.raw !== e.raw; });
+      state.fwd = state.fwd.filter(function (x) { return x.raw !== e.raw; });
+      var h = state.data.held.filter(function (x) { return x.raw === e.raw; })[0];
+      if (h) { h.saved = null; delete state.drafts[h.raw]; }
+      openCard(e.raw, "");
+      state.note = "Undone: the save of “" + e.saved + "” for “" + e.raw + "” is cleared, and the card is back as it was built."
+        + (e.sites ? " The training sites saved with it stay; change them under Training sites." : "");
+      render(); focusTitle();
+    }).catch(failed);
   }
   /* ── Another look's actions ── */
   function swDecided(c, kind, title, note) {
@@ -2684,6 +2826,37 @@
     return fmt(s.students) + " students have credit on " + many;
   }
 
+  /* Articulated with: the college course each exhibit credits and its credit recommendation, on the card (Sam,
+     2026-11-22: "need to clearly see what college course this is articulated with (the credit recommendation) but don't
+     see it. if there is no cr on the exhibit that should be flagged clearly and would not be a valid exhibit and would
+     need map team follow up"). h.credit_recs is the exhibits' [course, credit] lines (kb/_build_exhibits_review.py); a
+     file built before it named them says nothing, rather than flag a card it cannot judge. */
+  function codeNorm(x) { return String(x || "").toUpperCase().replace(/\s+/g, ""); }
+  function articulatedWith(h) {
+    var lc = h.local_courses || [], crs = Array.isArray(h.credit_recs) ? h.credit_recs : null;
+    if (!lc.length && !crs) return null;
+    var box = el("div", { cls: "exh-artwith", id: "exh-artwith" }, [el("span", { cls: "exh-cl", text: "Articulated with" })]);
+    if (!lc.length && crs && !crs.length) {
+      box.appendChild(el("p", { cls: "exh-flag", id: "exh-nocr", role: "note" }, [el("strong", { text: "No credit recommendation is on this exhibit. " }),
+        "Without one it does not name the college course a student earns, so it is not a valid exhibit. It needs MAP team follow-up with "
+        + (shortList(whoBuilt(h)) || "the college") + " before a title is settled."]));
+      return box;
+    }
+    var ul = el("ul", { cls: "exh-artlist" }), have = {};
+    lc.forEach(function (r) {
+      have[codeNorm(r[1])] = true;
+      var units = r[3] ? r[3] + (r[3] === 1 ? " unit" : " units") : "noncredit";
+      ul.appendChild(el("li", null, [el("strong", { text: [shortName(college(r[0])), r[1]].filter(Boolean).join(" ") }), " " + (r[2] || "") + ", " + units + ". ",
+        r[5] ? "Credit recommendation: " + r[5] + "." : el("span", { cls: "exh-flag-word", text: "No credit recommendation is on file for this course." })]));
+    });
+    (crs || []).forEach(function (p) {
+      if (have[codeNorm(p[0])]) return;
+      ul.appendChild(el("li", null, [el("strong", { text: p[0] || "A course not named" }), ". " + (p[1] ? "Credit recommendation: " + p[1] + ". " : ""),
+        el("span", { cls: "exh-muted", text: "This course is not in the articulating college's course list on file." })]));
+    });
+    box.appendChild(ul);
+    return box;
+  }
   function card(h, list) {
     var c = el("section", { cls: "exh-card", "aria-label": "Review one title" });
     var chip = el("span", { cls: "exh-chip", id: "exh-chip-step", role: "note", tabindex: "0", "data-tip": TIPS[h.step] || "",
@@ -2763,12 +2936,41 @@
     canon.appendChild(suggest(issuer, "issuers", function () { issuerTyped = true; keepDraft(); showAse(); }));
     showAse();
     canon.appendChild(aseNote);
-    var sites = (h.trainers || []).join("; ");
-    // The List's side panel sets training sites; a title new to the reference gets them once the nightly run adds it.
-    canon.appendChild(el("div", { cls: "exh-inbox exh-read" }, [el("span", { cls: "exh-pre", text: "Training site:" }),
-      el("span", { cls: "exh-grow", text: sites || "None named" }),
-      h.exists ? word("Set them in the List", function () { openCredential(h.title); }, { cls: "exh-w exh-small" })
-        : el("span", { cls: "exh-muted exh-small", text: "set once it joins the reference" })]));
+    /* Training sites, edited on the card (Sam, 2026-11-22: "I wanted to copy the Issuer down to the Training Site and
+       change the Issuer to CCC...but not possible from this view. I need to be able to edit directly on the view", and
+       "Set them in the List" stranded him in another view: "It should instead open another sidebar"). Move to training
+       sites carries the issuer down and empties the issuer for the one that awards the credit; the move is saved with the
+       card's choice, to the credential the saved title names. Edit opens the credential's issuer and sites in a side
+       panel over this view. */
+    // The credentials file is read only when a person asks for it here (Edit, or a save that carries moved sites).
+    var cr = credOf(title.value) || (h.exists ? credOf(h.title) : null);
+    var canEdit = !!cr || (!state.cs.rows && h.exists);
+    var curSites = cr ? credCurrent(cr).sites.map(function (x) { return x.site; }) : (h.trainers || []);
+    var mv = state.siteMoves[h.raw];
+    var moved = mv && mv.sites.length ? mv.sites : [];
+    var siteText = el("span", { cls: "exh-grow", id: "exh-sites-now" }, [curSites.length ? curSites.join("; ") + (moved.length ? "; " : "") : (moved.length ? "" : "None named"),
+      moved.length ? el("strong", { text: moved.join("; ") + " (moved from the issuer, saved with your choice)" }) : null]);
+    var moveW = word("Move the issuer to training sites", function () {
+      var name = issuer.value.trim();
+      if (!name) { state.note = "The issuer box is empty, so there is nothing to move."; render(); return; }
+      var m2 = state.siteMoves[h.raw] = state.siteMoves[h.raw] || { sites: [] };
+      if (m2.sites.indexOf(name) === -1) m2.sites.push(name);
+      issuerTyped = true; state.drafts[h.raw] = { title: title.value, issuer: "" };
+      state.note = "Moved “" + name + "” to the training sites. Name the issuer that awards the credit, then choose a title; the sites save with it.";
+      render();
+      var ni = document.getElementById("exh-issuer"); if (ni) ni.focus();
+    }, { cls: "exh-w exh-small", id: "exh-move-issuer" });
+    var editW = word("Edit training sites", function () {
+      var want = (cr && cr.ut) || (credOf(title.value) ? title.value.trim() : h.title);
+      state.credPanel = want; render();
+      (state.cs.rows ? Promise.resolve() : loadCredentials()).then(function () { render(); var pt = document.getElementById("exh-cp-h"); if (pt) pt.focus(); }, function () { render(); });
+    }, state.credPanel ? { cls: "exh-w exh-small", id: "exh-edit-sites", "aria-controls": "exh-credpanel", "aria-haspopup": "dialog" }
+      : { cls: "exh-w exh-small", id: "exh-edit-sites", "aria-haspopup": "dialog" });   // aria-controls only names a panel on the page (axe aria-valid-attr-value)
+    var undoMove = mv && mv.sites.length ? word("Put it back", function () { var back = mv.sites.pop(); if (!mv.sites.length) delete state.siteMoves[h.raw];
+      state.drafts[h.raw] = { title: title.value, issuer: back }; state.note = ""; render(); }, { cls: "exh-w exh-small", id: "exh-move-back" }) : null;
+    canon.appendChild(el("div", { cls: "exh-inbox exh-read exh-sitesline" }, [el("span", { cls: "exh-pre", text: "Training site:" }), siteText,
+      el("span", { cls: "exh-sitewords" }, [moveW, undoMove ? " " : null, undoMove, " ", canEdit ? editW
+        : el("span", { cls: "exh-muted exh-small", text: state.cs.rows ? "the side panel opens once the title joins the reference" : "reading the reference…" })])]));
     var exists = el("p", { cls: "exh-muted exh-small" },
       [h.exists ? "Joins the credential already in the reference under this title." : "A new credential in the reference."]);
     /* The lines about the proposed title (it joins the reference; where its name comes from) show only while the box
@@ -2829,6 +3031,8 @@
     }
     typed.appendChild(under);
     c.appendChild(typed);
+    var aw = articulatedWith(h);
+    if (aw) c.appendChild(aw);
 
     var cc = el("div", { cls: "exh-colleges" });
     cc.appendChild(el("div", { cls: "exh-ccrow" }, [
@@ -2853,8 +3057,13 @@
       h.ids.slice(0, 3).forEach(function (id, k) {
         if (k) src.appendChild(document.createTextNode(", "));
         // Sam, 2026-11-13 (#3223): the id opens its summary in the side panel; Open in MAP there leaves the tab.
-        src.appendChild(word(id, function () { var m = document.getElementById("exh-cdsum-map"); if (m) m.focus(); },
-          { cls: "exh-w exh-small", "aria-controls": "exh-cdsum-map", "aria-label": id + ", shown in the side panel" }));
+        /* Sam, 2026-11-22: "Source (MAP ID link) doesn't work". It focused the Course details panel's In MAP box, which
+           is not drawn on every card; where it is not, the id opens the exhibit in MAP in a new tab. */
+        src.appendChild(word(id, function () {
+          var m = document.getElementById("exh-cdsum-map");
+          if (m) { if (m.scrollIntoView) m.scrollIntoView({ block: "center" }); m.focus(); return; }
+          window.open(mapUrl(id), "_blank", "noopener");
+        }, { cls: "exh-w exh-small", "data-exh-src": id, "aria-controls": "exh-cdsum-map", "aria-label": id + ": shown in the side panel where it is open, else opened in MAP in a new tab" }));
       });
       if (h.ids.length > 3) src.appendChild(document.createTextNode(" and " + (h.ids.length - 3) + " more"));
       // Course details and Exhibits both show beside the card, so the line carries no switch (Sam, 2026-11-21).
@@ -2877,12 +3086,37 @@
     var acts = el("div", { cls: "exh-acts" });
     // Change to Proposed Title first (Sam, 2026-10-31: "to the left of keep current title").
     var saveOff = reviewSaveOff(), offAttr = saveOff ? { disabled: "disabled", "aria-describedby": "exh-save-off" } : null;
-    acts.appendChild(word("Change to Proposed Title", function () { changeToProposed(h, title.value, issuer.value.trim()); }, offAttr));
-    acts.appendChild(word("Keep Current Title", function () { keepCurrent(h, title.value, issuer.value.trim()); }, offAttr));
+    /* Which title a press saves, said before the press (Sam, 2026-11-22: "When I change the recommended title in it's box,
+       it's not clear that when I click Change to Proposed Title that it will save my edited title or the original
+       recommended title"): the word reads Change to Edited Title once the box differs from the proposal, and the line
+       under the words names exactly what each one saves. */
+    var changeW = word("Change to Proposed Title", function () { changeToProposed(h, title.value, issuer.value.trim()); }, Object.assign({ id: "exh-change" }, offAttr || {}));
+    acts.appendChild(changeW);
+    acts.appendChild(word("Keep Current Title", function () { keepCurrent(h, title.value, issuer.value.trim()); }, Object.assign({ id: "exh-keep" }, offAttr || {})));
     acts.appendChild(word("Teach a rule", function () { state.teach = !state.teach; render(); }, { "aria-expanded": state.teach ? "true" : "false", "aria-controls": "exh-teach" }));
-    if (state.history.length) acts.appendChild(word("Back", back, { "aria-label": "Back to the previous title, " + state.history[state.history.length - 1].raw }));
-    acts.appendChild(word("Skip", function () { skip(list); }));
+    var saves = el("p", { cls: "exh-small exh-saves", id: "exh-saves", "aria-live": "polite" });
+    function drawSaves() {
+      var t = title.value.trim(), edited = t !== (h.title || ""), iss = issuer.value.trim();
+      changeW.textContent = edited ? "Change to Edited Title" : "Change to Proposed Title";
+      while (saves.firstChild) saves.removeChild(saves.firstChild);
+      saves.appendChild(document.createTextNode((edited ? "Change to Edited Title saves your edit, " : "Change to Proposed Title saves ")));
+      saves.appendChild(el("strong", { text: "“" + (t || "(the box is empty)") + "”" }));
+      saves.appendChild(document.createTextNode((iss ? ", issuer " + iss : ", no issuer") + ". Keep Current Title saves "));
+      saves.appendChild(el("strong", { text: "“" + (h.step === CONFLICT ? (h.saved || h.raw.trim()) : h.raw.trim()) + "”" }));
+      saves.appendChild(document.createTextNode(". " + (edited ? "The proposal was “" + (h.title || "") + "”." : "")));
+    }
+    title.addEventListener("input", drawSaves);
+    issuer.addEventListener("input", drawSaves);
+    drawSaves();
     c.appendChild(acts);
+    c.appendChild(saves);
+    var nav = el("div", { cls: "exh-acts exh-nav", role: "group", "aria-label": "Move between cards without saving" });
+    nav.appendChild(el("span", { cls: "exh-muted exh-small", text: "Move without saving:" }));
+    if (state.history.length) nav.appendChild(word("Previous", prevCard, { id: "exh-prev", "aria-label": "Previous card, " + state.history[state.history.length - 1].raw + ". Nothing is saved or cleared." }));
+    nav.appendChild(word("Next", function () { nextCard(list); }, { id: "exh-next", "aria-label": (state.fwd.length ? "Next card, " + state.fwd[state.fwd.length - 1].raw : "Next card") + ". Nothing is saved." }));
+    var un = lastUndoable();
+    if (un) nav.appendChild(word("Undo the last save", undo, { id: "exh-undo", "aria-label": "Undo the save of " + un.saved + " for " + un.raw + ": clears it" }));
+    c.appendChild(nav);
     if (saveOff) c.appendChild(el("p", { cls: "exh-small exh-muted", id: "exh-save-off", text: saveOff }));
     var many = saveOff ? [] : bulkItems(list), noName = bulkNoName(list);
     var noNameWords = noName ? "The " + fmt(noName) + " whose official name is not on file stay for a card." : "";
@@ -5787,11 +6021,113 @@
       return;
     }
     wrap.appendChild(card(list[state.cur], list));
+    if (state.credPanel) wrap.appendChild(credPanel(state.credPanel));
+    var lg = sessionLog();
+    if (lg) wrap.appendChild(lg);
+  }
+  /* The credential's issuer and training sites, in a side panel over the Review card (Sam, 2026-11-22: "The See them in
+     the List link takes me out of exhibits and drops me in another view and I get stranded with no easy way back to take
+     any action. It should instead open another sidebar"). The List's own editor (credEditor), its top row frozen and the
+     panel resizable from its left edge (r-sidebars-resize-and-frozen-top-sam-2026-11-22). */
+  var CP_KEY = "cplExhCredPanelW", cpMem;
+  function cpW() { if (cpMem === undefined) { try { cpMem = parseInt(window.localStorage.getItem(CP_KEY), 10) || null; } catch (e) { cpMem = null; } } return cpMem; }
+  function cpSetW(w) { cpMem = w || null; try { if (cpMem) window.localStorage.setItem(CP_KEY, String(cpMem)); else window.localStorage.removeItem(CP_KEY); } catch (e) { /* storage blocked */ } }
+  function credPanel(ut) {
+    var r = credOf(ut);
+    function close() { state.credPanel = null; render(); var b = document.getElementById("exh-edit-sites"); if (b) b.focus(); }
+    var body = el("div", { cls: "exh-cp-body" });
+    if (!r) body.appendChild(el("p", { cls: "exh-muted exh-small", text: state.cs.rows ? "“" + ut + "” is not in the reference yet; its sites are set once the nightly run adds it." : "Reading the reference…" }));
+    else {
+      var notes = state.cpNotes || (state.cpNotes = {});
+      var ui = { pf: "exh-cp-", note: notes[r.ut] || "",
+        redraw: function (fid) { render(); var n = fid && document.getElementById(fid); if (n) n.focus(); },
+        setNote: function (t) { notes[r.ut] = t; },
+        changed: function () { var cur = credCurrent(r); state.log.push({ raw: "", proposed: "", saved: r.ut, issuer: cur.issuer, choice: "Edited the credential's issuer and training sites",
+          sites: cur.sites.map(function (x) { return x.site; }).join("; "), prev: null, at: new Date().toISOString(), undone: false }); } };
+      credEditor(r, ui).forEach(function (n) { body.appendChild(n); });
+    }
+    var grip = el("span", { cls: "exh-cp-grip", id: "exh-cp-grip", role: "separator", tabindex: "0", "aria-orientation": "vertical", "aria-label": "Resize the panel",
+      "aria-valuemin": "360", "aria-valuemax": String(Math.max(360, (window.innerWidth || 1280) - 24)) });
+    var panel = el("aside", { cls: "exh-cp", id: "exh-credpanel", role: "dialog", "aria-labelledby": "exh-cp-h" }, [grip,
+      el("div", { cls: "exh-cp-in" }, [
+        el("div", { cls: "exh-cp-head" }, [
+          el("div", { cls: "exh-cp-top" }, [el("p", { cls: "exh-muted exh-small exh-cp-eyebrow", text: "Issuer and training sites" }), word("Close", close, { id: "exh-cp-close" })]),
+          el("h3", { cls: "exh-q", id: "exh-cp-h", tabindex: "-1", text: r ? r.ut : ut })]),
+        body])]);
+    function size() { var w = cpW(); panel.style.width = w ? Math.min(w, Math.max(360, (window.innerWidth || 1280) - 24)) + "px" : ""; grip.setAttribute("aria-valuenow", String(w || 560)); }
+    function set(w) { cpSetW(Math.max(360, Math.round(w))); size(); }
+    grip.addEventListener("keydown", function (e) {
+      var now = cpW() || Math.round(panel.getBoundingClientRect().width) || 560;
+      if (e.key === "ArrowLeft") set(now + 40); else if (e.key === "ArrowRight") set(now - 40); else if (e.key === "Home") { cpSetW(null); size(); } else return;
+      e.preventDefault(); e.stopPropagation();
+    });
+    grip.addEventListener("pointerdown", function (e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      e.preventDefault();
+      var x0 = e.clientX, w0 = cpW() || Math.round(panel.getBoundingClientRect().width) || 560;
+      try { grip.setPointerCapture(e.pointerId); } catch (err) { /* an older engine */ }
+      function move(ev) { if (ev.pointerId === e.pointerId) set(w0 - (ev.clientX - x0)); }
+      function up() { document.removeEventListener("pointermove", move); document.removeEventListener("pointerup", up); grip.removeEventListener("pointermove", move); }
+      grip.addEventListener("pointermove", move); document.addEventListener("pointermove", move); document.addEventListener("pointerup", up);
+    });
+    panel.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); close(); } });
+    size();
+    return panel;
+  }
+  /* Changes this visit, oldest first (Sam, 2026-11-22: "As changes are made, show a simple list of all session before and
+     after changes at the bottom of the view--this will be a nice confirmation of what the user intended ... where I can see
+     if I applied the changes inconsistently"). A visit's list, never stored; an undone save stays listed, marked undone. */
+  function sessionLog() {
+    if (!state.log.length) return null;
+    var rows = state.log.map(function (e, i) {
+      var tm = ""; try { tm = new Date(e.at).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" }); } catch (x) { tm = ""; }
+      return el("tr", { "data-undone": e.undone ? "yes" : null }, [
+        el("td", { text: String(i + 1) }),
+        el("th", { scope: "row", text: e.raw || "(a credential)" }),
+        el("td", { text: e.raw ? (e.prev ? "Saved earlier as “" + e.prev + "”" : "Proposed “" + (e.proposed || "none") + "”") : "" }),
+        el("td", null, [e.undone ? el("s", { text: e.saved }) : e.saved, e.undone ? " (undone)" : ""]),
+        el("td", { text: e.issuer || "None named" }),
+        el("td", { text: e.sites || "" }),
+        el("td", { text: e.choice + (tm ? ", " + tm : "") })]);
+    });
+    var cols = el("colgroup", null, ["4%", "26%", "18%", "18%", "12%", "10%", "12%"].map(function (w) { var c = el("col"); c.style.width = w; return c; }));
+    return el("section", { cls: "exh-card exh-log", id: "exh-log", "aria-labelledby": "exh-log-h" }, [
+      el("h3", { cls: "exh-q", id: "exh-log-h", text: "Changes this visit (" + fmt(state.log.length) + ")" }),
+      el("p", { cls: "exh-muted exh-small", text: "Before and after, oldest first, so a choice made one way on one card and another way on the next shows side by side. The list lasts this visit." }),
+      el("div", { cls: "exh-rb-scroll", role: "region", tabindex: "0", "aria-label": "Changes this visit" }, [
+        el("table", { cls: "exh-rb-table exh-log-table" }, [cols,
+          el("thead", null, [el("tr", null, ["#", "Local title, as the college entered it", "Before", "After", "Issuer", "Training sites", "Choice"].map(function (t) { return el("th", { scope: "col", text: t }); }))]),
+          el("tbody", null, rows)])])]);
   }
 
   /* ── the look: First Light tokens only ── */
   var CSS = [
     ".exh-wrap { display:grid; gap:16px; min-width:0; }",
+    ".exh-ss-pickrow { display:flex; flex-wrap:wrap; gap:4px 8px; align-items:center; min-width:0; margin:4px 0; }",
+    ".exh-ss-pickrow select, .exh-ss-pickrow input { min-height:28px; max-width:100%; min-width:0; font:inherit; }",
+    ".exh-ss-pickrow input { width:16ch; }",
+    ".exh-saves { margin:4px 0 0; color:var(--text-muted); overflow-wrap:anywhere; }",
+    ".exh-artwith { display:grid; gap:4px; min-width:0; }",
+    ".exh-artlist { margin:0; padding-left:18px; display:grid; gap:2px; overflow-wrap:anywhere; }",
+    ".exh-flag { margin:0; padding:8px 12px; border-left:4px solid var(--red-alert); background:var(--surface-opaque); color:var(--text-strong); overflow-wrap:anywhere; }",
+    ".exh-flag-word { font-weight:600; color:var(--text-strong); }",
+    ".exh-saves strong { color:var(--text-strong); }",
+    ".exh-nav { align-items:baseline; }",
+    ".exh-sitesline { flex-wrap:wrap; }",
+    ".exh-sitewords { display:inline-flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }",
+    ".exh-log-table td, .exh-log-table th { overflow-wrap:anywhere; }",
+    ".exh-log-table tr[data-undone='yes'] td, .exh-log-table tr[data-undone='yes'] th { color:var(--text-muted); }",
+    ".exh-cp { position:fixed; top:0; right:0; bottom:0; z-index:1000; display:flex; width:min(560px, calc(100vw - 24px)); background:var(--surface-opaque); border-left:1px solid var(--border-strong); box-shadow:-12px 0 32px color-mix(in srgb, var(--text-strong) 16%, transparent); color:var(--text-strong); }",
+    ".exh-cp-grip { flex:0 0 12px; align-self:stretch; cursor:col-resize; touch-action:none; }",
+    ".exh-cp-grip:hover, .exh-cp-grip:focus-visible { background:var(--border-strong); }",
+    ".exh-cp-grip:focus-visible { outline:2px solid var(--seal-blue); outline-offset:-2px; }",
+    ".exh-cp-in { flex:1 1 auto; min-width:0; overflow-y:auto; overscroll-behavior:contain; display:grid; gap:10px; align-content:start; padding:0 16px 20px 12px; }",
+    ".exh-cp-head { position:sticky; top:0; z-index:2; display:grid; gap:4px; margin:0 -16px 0 -12px; padding:calc(12px + env(safe-area-inset-top, 0px)) 16px 8px 12px; background:var(--surface-opaque); border-bottom:1px solid var(--border); }",
+    ".exh-cp-top { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
+    ".exh-cp-eyebrow { margin:0; }",
+    ".exh-cp h3:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-cp-body { display:grid; gap:8px; min-width:0; }",
+    "@media (max-width: 560px) { .exh-cp { width:calc(100vw - 12px) !important; } .exh-cp-grip { display:none; } }",
     ".exh-titlebar { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 18px; }",
     ".exh-h { margin:0; font-family:var(--f-display, Georgia, serif); color:var(--seal-blue-text); font-size:clamp(1.5rem, 3vw, 2rem); }",
     ".exh-q { margin:0; font-family:var(--f-display, Georgia, serif); color:var(--seal-blue-text); font-size:1.05rem; font-weight:600; }",

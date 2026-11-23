@@ -94,7 +94,7 @@ GROUPS = {
     "Education": ["EDUC", "EDU"],
     "Electronic Technology": ["EET"],
     "Electronics": ["ELEC", "ELECT"],
-    "Electricity": ["AED"],
+    # "Electricity": ["AED"] removed S707 (2026-11-22): AED is Cerritos Adult Education, a mixed noncredit bucket.
     "Air Conditioning, Refrigeration, Heating": ["ACR", "HVACR"],
     "Engineering": ["ENGR", "ENGIN"],
     "Engineering Technology": ["ETEC", "ENGT"],
@@ -159,6 +159,7 @@ GROUPS = {
 
 # Notable subjects we deliberately leave unmapped (kept for reviewer context).
 DELIBERATELY_UNMAPPED = {
+    "AED": "Adult Education at Cerritos, a mixed noncredit bucket (electrical apprenticeship, ESL, basic skills, older adults) — S707",
     "NC": "generic noncredit bucket — not a discipline",
     "BA": "Business Admin code but sampled titles are MS-Office apps — ambiguous",
     "CA": "sampled titles span Windows Server admin AND baking — mixed",

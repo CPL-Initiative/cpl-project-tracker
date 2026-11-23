@@ -1463,11 +1463,13 @@ def census_keys(causes: tuple, path: str = CENSUS) -> frozenset:
     return frozenset((c, cn) for c, m in by.items() for cn, v in m.items() if v in set(causes))
 
 
-def run(write: bool, skip: tuple = (), gaps: tuple = (), census_causes: tuple = ()) -> dict:
+def run(write: bool, skip: tuple = (), gaps: tuple = (), census_causes: tuple = (), census_path: str = CENSUS) -> dict:
     """gaps: when given, only records whose gap is one of these move (S697: total_not_printed applied alone, so the
     pass writes no other lane's records); the recall still reads every record. census_causes: when given, only
     records the committed census lists under one of these causes move (S703)."""
-    in_census = census_keys(census_causes) if census_causes else None
+    # census_path: a test pins the census its plan was built from (S703: a later census reads the planned programs
+    # collected and would move the test).
+    in_census = census_keys(census_causes, census_path) if census_causes else None
     moved, files, hits, every = [], [], [], []
     # A college the harvest parks (the census's PARKED) takes no gap from this lane either.
     import _harvest_gap_census as G
@@ -1520,11 +1522,11 @@ def run(write: bool, skip: tuple = (), gaps: tuple = (), census_causes: tuple = 
     labs = labels(skip=skip)
     return {"moved": moved, "labels": labs, "recall": recall(every), "matcher_recall": matcher_recall(files),
             "hours_recall": hours_recall(every),
-            "hours_precision": hours_precision(files, census_keys(census_causes) if census_causes else None),
+            "hours_precision": hours_precision(files, in_census),
             "ge_units_recall": ge_units_recall(every),
-            "ge_units_precision": ge_units_precision(files, census_keys(census_causes) if census_causes else None),
+            "ge_units_precision": ge_units_precision(files, in_census),
             "lists_recall": lists_recall(every),
-            "lists_precision": lists_precision(files, census_keys(census_causes) if census_causes else None),
+            "lists_precision": lists_precision(files, in_census),
             "by_gap": dict(collections.Counter(m["gap"] for m in moved)),
             "labels_by_gap": dict(collections.Counter(x["gap"] for x in labs))}
 
