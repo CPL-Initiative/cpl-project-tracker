@@ -137,6 +137,12 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   records to passing on coverage alone; 13 held with reasons; the claim check reads free page read 45188452002.
   18747's state list still names THEA 142 F and 149 F, printed now as THEA 148 F and 153 F ("formerly"). A
   Sonnet reader is on it; `piles` takes College of the Sequoias on `claude/s714-piles-sequoias`.
+- 14:17Z: Fullerton's Sonnet reader: APPLY for the 11 rows (Postgres 16 as before); before the merge, drop the
+  `PE 248 F` renumber (the state file holds two PE 248 courses and the printed form matches the other one; it moves
+  none of the 11 but rewrote 18166's score). Pre-read 11 of 11; migrate 45191999745 (14:15Z), 11 of 11 live; `.apply`
+  back at main's value (`c4b8cf1e`). #3716 merged on a green `test` (`890eb465`, confirmed on `origin/main`). A
+  `land` worker brings the optparts and Fullerton branches up from main and opens the optparts PR; East Los
+  Angeles's worktree was removed.
 
 ## Conductor settings
 
@@ -155,10 +161,10 @@ by Opus 5.5.
 |---|---|---|
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
 | #3714 (`claude/s714-piles-ccsf`, `piles`) | merged `f0d84966`; applied by migrate 45176130201 | none |
-| `claude/s714-piles-optparts` (`piles`) | applied by migrate 45188487600, 9 rows live | its PR when a slot frees, the merge |
-| `claude/s714-piles-fullerton` (`piles`) | plan filed, 11 rows | a Sonnet reader, the pre-read, the apply, a PR |
+| `claude/s714-piles-optparts` (`land`) | applied by migrate 45188487600, 9 rows live | main's merge, its PR, the merge |
+| `claude/s714-piles-fullerton` (`land`) | applied by migrate 45191999745, 11 rows live | the PE 248 F drop, main's merge, its PR, the merge |
 | `claude/s714-piles-sequoias` (`piles`) | started | its plan |
-| #3716 (`claude/s714-piles-ela`, `piles2`) | applied by migrate 45186909162; round 2 MERGE | `test`, the merge |
+| #3716 (`claude/s714-piles-ela`, `piles2`) | merged `890eb465`; applied by migrate 45186909162 | none |
 | #3715 (`claude/s714-rios`, `rios`) | three paid reads dispatched | the fixes, the filings, reconcile, the reread, merge |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
 | #3383 | dependabot's | waits |
