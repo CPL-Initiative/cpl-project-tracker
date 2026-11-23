@@ -1,5 +1,5 @@
 ---
-title: "Session 712 handoff (from SkyRazorbill, S711, Sam's plain session of 2026-11-23: course moves reach the re-mint gate)"
+title: "Session 712 handoff (from SkyRazorbill, S711, Sam's plain session of 2026-11-23: course moves reach the re-mint gate, the 50 outlines to find)"
 created: 2026-11-23
 updated: 2026-11-23
 tags: [handoff, session]
@@ -41,6 +41,8 @@ belong to the routine.
 ## Decisions the session made (each Sam's to revise)
 
 - `d-course-move-settles-first-s711`, above.
+- `d-outline-hunt-ranking-s711`: the outline list's rule (CTE credit M-IDs, never C-ID or CCN; districts per outline
+  needed; a pick outside the districts with text, a read college first).
 
 ## Open work
 
@@ -50,11 +52,14 @@ belong to the routine.
    `daily-dashboard.yml` (the sync, then `kb/_mid_readiness.py`) and rerun `python3 kb/_scope_remint_dryrun.py`; expect
    19 to VOCE, 6 to ENTR, 9 staying. He accepted the draft gate on that path ("we're fine"): record it as his ruling
    when the re-mint starts, then the apply under the playbook (`docs/coursecontrolnumber_remint.md`).
-2. **`commons`, from its NEXT line:** (1) Cerritos AED's saves under Elementary and Secondary Basic Skills and the
+2. **The 50 outlines Sam will drop** (`#collect/slos`, the new list under the SLO table; `kb/status/outline_hunt.json`).
+   Load each one into `course_outcomes` under its college as the readers do, then rerun `kb/_mid_outcomes_compare.py` and
+   `kb/_outline_hunt.py`; a course whose outline now prints text drops off the list.
+3. **`commons`, from its NEXT line:** (1) Cerritos AED's saves under Elementary and Secondary Basic Skills and the
    uncategorized band (a person's); (2) statewide defaults by the DR-25 route; (3) a store for answering outcomes
    splits; (5) the apply; (6) the rest of the list. The held-codes list (`kb/_held_subject_codes.py`) does not read
    course moves yet; it counts codes, so it has not needed to.
-3. **`cer-procedures`** (compact it below 20,000 bytes at the next full checkpoint), **`repo-size`** and
+4. **`cer-procedures`** (compact it below 20,000 bytes at the next full checkpoint), **`repo-size`** and
    **`my-college-action-page`**, as their lanes list them. **`program-requirements-harvest`** is the routine's. The
    commons lane is 19,520 bytes and close to its budget: compact it at the next full checkpoint.
 
