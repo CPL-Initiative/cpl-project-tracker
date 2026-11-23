@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-22T15:44:08Z",
+ "_generated_at": "2026-11-23T19:33:03Z",
  "procedures_hash": "75e72fb99f8c",
- "queue": 37,
+ "queue": 0,
  "saved_not_folded": 0,
- "waiting": 37,
- "proposed": 36,
- "needs_you_count": 37,
+ "waiting": 0,
+ "proposed": 0,
+ "needs_you_count": 0,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -22,7 +22,7 @@
     "skill": "Rule 5d"
    },
    "settled": 0,
-   "held": 2,
+   "held": 0,
    "sample": []
   },
   {
@@ -112,7 +112,7 @@
     "skill": "Rule 5c"
    },
    "settled": 0,
-   "held": 4,
+   "held": 0,
    "sample": []
   },
   {
@@ -127,7 +127,7 @@
     "skill": "Rule 5c, Rule 5f"
    },
    "settled": 0,
-   "held": 32,
+   "held": 0,
    "sample": []
   },
   {
@@ -143,7 +143,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 1,
+   "held": 0,
    "sample": []
   },
   {
@@ -158,7 +158,7 @@
     "skill": "Rule 5f"
    },
    "settled": 0,
-   "held": 13,
+   "held": 0,
    "sample": []
   },
   {
@@ -203,7 +203,7 @@
     "skill": "Rule 5h"
    },
    "settled": 0,
-   "held": 5,
+   "held": 0,
    "sample": []
   },
   {
@@ -248,7 +248,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 2,
+   "held": 0,
    "sample": []
   },
   {
@@ -262,492 +262,10 @@
     "words": "have you classify and complete common exhibit titles"
    },
    "settled": 0,
-   "held": 18,
+   "held": 0,
    "sample": []
   }
  ],
  "classifier_run": null,
- "needs_you": [
-  {
-   "raw_title": "Cal Fire Basic Firefighter (219 hour) Training",
-   "why": "the classifier is unsure (0.80)",
-   "proposal": {
-    "title": "CAL FIRE Basic Firefighter Training (219-hour)",
-    "issuer": "California Department of Forestry and Fire Protection (CAL FIRE)",
-    "confidence": 0.8,
-    "note": "New title. This is CAL FIRE's 219-hour basic firefighter training for seasonal firefighters, which is distinct from the Fire CDF Academy family; the hour count is kept because it identifies the course."
-   },
-   "colleges": [
-    "City College of San Francisco"
-   ]
-  },
-  {
-   "raw_title": "Completion of ESLN 310C",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "English as a Second Language (ESLN 310C)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.6,
-    "note": "Code-only noncredit ESL course at College of the Desert; the ESLN 310C course title was not looked up, so the title falls back to <Discipline> (<code>). The issuer is the CCC system because no outside trainer is named, though the Standardized Assessment type is unusual for a course exhibit."
-   },
-   "colleges": [
-    "College of the Desert"
-   ]
-  },
-  {
-   "raw_title": "Credit by Exam HISTC1001-United States History Since 1877",
-   "why": "the classifier is unsure (0.75)",
-   "proposal": {
-    "title": "United States History to 1877",
-    "issuer": "California Community Colleges",
-    "confidence": 0.75,
-    "note": "Title anchored to CCN HIST C1001 (United States History to 1877). The raw title's 'Since 1877' looks like an entry error; review it."
-   },
-   "colleges": [
-    "Los Angeles Southwest College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children I",
-   "why": "the classifier is unsure (0.80)",
-   "proposal": {
-    "title": "Developmental Psychology of Children 1",
-    "issuer": "Tri-Valley Regional Occupational Program (ROP)",
-    "confidence": 0.8,
-    "note": "Set aside the cx hint, which kept the school and used CCC as issuer. Stripped the ROP name and joined the existing house title, whose Amador Valley and Dublin issuers are Tri-Valley schools. The ROP becomes issuer and trainer."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children II",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has Emerald High School, Foothill High School, Granada High School, Local High School)",
-   "proposal": {
-    "title": "Principles & Practices of Teaching Young Children",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation ( Tri Valley ROP)- Economics of Business Ownership",
-   "why": "the classifier is unsure (0.75)",
-   "proposal": {
-    "title": "Economics of Business Ownership",
-    "issuer": "Tri-Valley Regional Occupational Program (ROP)",
-    "confidence": 0.75,
-    "note": "Set aside the cx hint. Stripped the ROP name; the aligned Las Positas course title is unverified, so the title is the ROP course content. The ROP is issuer and trainer."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation ( Tri Valley ROP)- Emergency Medical Response",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has Amador Valley High School, Baldy View Regional Occupational Program, California Community Colleges, Dublin High School, Emerald High School, Fontana High School, Foothill High School, Granada High School, National Registry of Emergency Medical Technicians)",
-   "proposal": {
-    "title": "Emergency Medical Responder",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation ( Tri Valley ROP)- Integrated Marketing Communications",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has California Community Colleges)",
-   "proposal": {
-    "title": "Introduction to Marketing",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (MKTG 50 at Las Positas College) names it, M-ID BUSI M1370; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation ( Tri Valley ROP)- Introduction to Athletic Training",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has Amador Valley High School, Dublin High School, Emerald High School)",
-   "proposal": {
-    "title": "Introduction to Athletic Training and Sports Medicine",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (KIN 17 at Las Positas College) names it, the college's own title for KIN 17; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation ( Tri Valley ROP)- Introduction to Health Careers",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has Amador Valley High School, Dublin High School, Emerald High School, Foothill High School, Granada High School)",
-   "proposal": {
-    "title": "Orientation to Health Care",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation ( Tri Valley ROP)- Medical Occupations",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has Amador Valley High School, California Board of Vocational Nursing and Psychiatric Technicians (BVNPT), California Community Colleges, Dublin High School, Emerald High School, Foothill High School, Granada High School, Hanford West High School, Local High School, Long Beach Unified School District)",
-   "proposal": {
-    "title": "Medical Terminology",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation ( Tri Valley ROP)- Nursing Careers",
-   "why": "the classifier is unsure (0.80)",
-   "proposal": {
-    "title": "Nursing Careers",
-    "issuer": "Tri-Valley Regional Occupational Program (ROP)",
-    "confidence": 0.8,
-    "note": "Set aside the cx hint. Joined the existing Nursing Careers house title held by Emerald and Foothill HS, both Tri-Valley schools. The ROP is issuer and trainer."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation ( Tri Valley ROP)- Sports and Entertainment Marketing",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has California Community Colleges)",
-   "proposal": {
-    "title": "Introduction to Marketing",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (MKTG 50 at Las Positas College) names it, M-ID BUSI M1370; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Benicia High School)- Dance 3",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "Dance 3",
-    "issuer": "Benicia High School",
-    "confidence": 0.7,
-    "note": "Set aside the cx hint. Stripped the school name; the aligned Las Positas dance course title is unverified."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Livermore)- Developmental Psychology of Children II",
-   "why": "a merge would join two issuers (Livermore High School; the reference has Emerald High School, Foothill High School, Granada High School, Local High School)",
-   "proposal": {
-    "title": "Principles & Practices of Teaching Young Children",
-    "issuer": "Livermore High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Livermore)- Emergency Medical Response",
-   "why": "a merge would join two issuers (Livermore High School; the reference has Amador Valley High School, Baldy View Regional Occupational Program, California Community Colleges, Dublin High School, Emerald High School, Fontana High School, Foothill High School, Granada High School, National Registry of Emergency Medical Technicians)",
-   "proposal": {
-    "title": "Emergency Medical Responder",
-    "issuer": "Livermore High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Livermore)- Introduction to Athletic Training",
-   "why": "a merge would join two issuers (Livermore High School; the reference has Amador Valley High School, Dublin High School, Emerald High School)",
-   "proposal": {
-    "title": "Introduction to Athletic Training and Sports Medicine",
-    "issuer": "Livermore High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (KIN 17 at Las Positas College) names it, the college's own title for KIN 17; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Livermore)- Introduction to Health Careers",
-   "why": "a merge would join two issuers (Livermore High School; the reference has Amador Valley High School, Dublin High School, Emerald High School, Foothill High School, Granada High School)",
-   "proposal": {
-    "title": "Orientation to Health Care",
-    "issuer": "Livermore High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Livermore)- Medical Occupations",
-   "why": "a merge would join two issuers (Livermore High School; the reference has Amador Valley High School, California Board of Vocational Nursing and Psychiatric Technicians (BVNPT), California Community Colleges, Dublin High School, Emerald High School, Foothill High School, Granada High School, Hanford West High School, Local High School, Long Beach Unified School District)",
-   "proposal": {
-    "title": "Medical Terminology",
-    "issuer": "Livermore High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Livermore)- Nursing Careers",
-   "why": "the classifier is unsure (0.80)",
-   "proposal": {
-    "title": "Nursing Careers",
-    "issuer": "Livermore High School",
-    "confidence": 0.8,
-    "note": "Joined the existing 'Nursing Careers' title (Emerald HS), with Livermore HS as the issuer that discriminates; the cx hint was set aside."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Livermore)- Principles of Engineering",
-   "why": "a merge would join two issuers (Livermore High School; the reference has Amador Valley High School, California Community Colleges, Dublin High School, Emerald High School, Foothill High School, Long Beach Unified School District)",
-   "proposal": {
-    "title": "Introduction to Engineering",
-    "issuer": "Livermore High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (ENGR 1 at Las Positas College) names it, C-ID ENGR 110; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Mission Valley ROP)- Emergency Medical Responder",
-   "why": "a merge would join two issuers (Mission Valley Regional Occupational Program; the reference has Amador Valley High School, Baldy View Regional Occupational Program, California Community Colleges, Dublin High School, Emerald High School, Fontana High School, Foothill High School, Granada High School, National Registry of Emergency Medical Technicians)",
-   "proposal": {
-    "title": "Emergency Medical Responder",
-    "issuer": "Mission Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Mission Valley ROP)- Fire Technology 1",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "Fire Technology",
-    "issuer": "Mission Valley Regional Occupational Program (ROP)",
-    "confidence": 0.7,
-    "note": "The ROP is stripped and becomes the agency. The title joins the existing Fire Technology family, which another ROP also uses. The trailing '1' may mark a course level, so a reviewer should check whether it should be kept."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Mission Valley ROP)- Medical Occupations",
-   "why": "the classifier is unsure (0.75)",
-   "proposal": {
-    "title": "Medical Occupations",
-    "issuer": "Mission Valley Regional Occupational Program (ROP)",
-    "confidence": 0.75,
-    "note": "The ROP is stripped and becomes the agency. No house family or aligned college course was identified, so this is a new title held for review."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Mission Valley ROP)- Principles of Engineering",
-   "why": "a merge would join two issuers (Mission Valley Regional Occupational Program; the reference has Amador Valley High School, California Community Colleges, Dublin High School, Emerald High School, Foothill High School, Long Beach Unified School District)",
-   "proposal": {
-    "title": "Introduction to Engineering",
-    "issuer": "Mission Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (ENGR 1 at Las Positas College) names it, C-ID ENGR 110; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 54)",
-   "why": "the classifier is unsure (0.45)",
-   "proposal": {
-    "title": "Administration of Justice (AJ 54)",
-    "issuer": "Tri-Valley Regional Occupational Program (ROP)",
-    "confidence": 0.45,
-    "note": "Hint set aside because it kept the school name, the mechanism and the code. The ROP is the issuer and trainer. The title is the code fallback until a lookup in the COCI course list finds the Las Positas AJ 54 course title (CCN, then C-ID, then local title)."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 60)",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has American Council on Education (ACE), California Commission on Peace Officer Standards and Training (POST), California Community Colleges)",
-   "proposal": {
-    "title": "Concepts of Criminal Law",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (AJ 60 at Las Positas College) names it, C-ID AJ 120; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 68)",
-   "why": "the classifier is unsure (0.45)",
-   "proposal": {
-    "title": "Administration of Justice (AJ 68)",
-    "issuer": "Tri-Valley Regional Occupational Program (ROP)",
-    "confidence": 0.45,
-    "note": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas AJ 68 course."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 70)",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has California Commission on Peace Officer Standards and Training (POST), California Community Colleges)",
-   "proposal": {
-    "title": "Community and the Justice System",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (AJ 70 at Las Positas College) names it, C-ID AJ 160; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (FST 7)",
-   "why": "the classifier is unsure (0.40)",
-   "proposal": {
-    "title": "Fire Service Technology (FST 7)",
-    "issuer": "Tri-Valley Regional Occupational Program (ROP)",
-    "confidence": 0.4,
-    "note": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas FST 7 course aligned to the Criminal Justice Academy."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 1)",
-   "why": "the classifier is unsure (0.40)",
-   "proposal": {
-    "title": "Kinesiology (KIN GBW 1)",
-    "issuer": "Tri-Valley Regional Occupational Program (ROP)",
-    "confidence": 0.4,
-    "note": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas KIN GBW 1 course title (likely a fitness or body-weight course)."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 2)",
-   "why": "the classifier is unsure (0.40)",
-   "proposal": {
-    "title": "Kinesiology (KIN GBW 2)",
-    "issuer": "Tri-Valley Regional Occupational Program (ROP)",
-    "confidence": 0.4,
-    "note": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas KIN GBW 2 course."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 3)",
-   "why": "the classifier is unsure (0.40)",
-   "proposal": {
-    "title": "Kinesiology (KIN GBW 3)",
-    "issuer": "Tri-Valley Regional Occupational Program (ROP)",
-    "confidence": 0.4,
-    "note": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas KIN GBW 3 course."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice/CSI",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has California Commission on Peace Officer Standards and Training (POST), California Community Colleges, Colton-Redlands-Yucaipa ROP, Dublin High School, Emerald High School, Foothill High School)",
-   "proposal": {
-    "title": "Criminal Investigation",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (AJ 63 at Las Positas College) names it, C-ID AJ 140; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice/Crime Scene Investigation",
-   "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has Amador Valley High School, California Community Colleges, Dublin High School, Emerald High School, Foothill High School, Granada High School, Kimball High School, Livermore High School, Local High School)",
-   "proposal": {
-    "title": "Introduction to Criminal Justice",
-    "issuer": "Tri-Valley Regional Occupational Program",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio Review CIS101-Introduction to Computers and Their Uses",
-   "why": "a merge would join two issuers (California Community Colleges; the reference has Birmingham Community Charter High School)",
-   "proposal": {
-    "title": "Introduction to Computers and Their Uses",
-    "issuer": "California Community Colleges",
-    "confidence": 0.9,
-    "note": "The title joins the existing family, which is held by a high school issuer. This college portfolio row is issued by California Community Colleges, with the issuer as the discriminator."
-   },
-   "colleges": [
-    "Los Angeles Southwest College"
-   ]
-  },
-  {
-   "raw_title": "Portfolio Review JOURNAL101-Journalism 101: Collecting & Writing News",
-   "why": "the classifier is unsure (0.72)",
-   "proposal": {
-    "title": "Collecting and Writing News",
-    "issuer": "California Community Colleges",
-    "confidence": 0.72,
-    "note": "The mechanism, course code and 'Journalism 101' prefix are stripped. The course may align to C-ID JOUR 110 (newswriting and reporting); if so, the title should be re-keyed."
-   },
-   "colleges": [
-    "Los Angeles Southwest College"
-   ]
-  }
- ]
+ "needs_you": []
 }
