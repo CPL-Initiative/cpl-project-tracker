@@ -63,8 +63,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     63.0,
     67.0
@@ -78,9 +78,8 @@
     27.0,
     27.0
    ],
-   "why": [
-    "the blocks and general education sum to 63.0-67.0; the catalog prints 60.0-63.0 for the degree"
-   ]
+   "why": [],
+   "overlap": true
   },
   "repeated": {
    "codes": [],
@@ -90,11 +89,15 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Apply principles of visual art, design, and spatial representation to produce effective two- and three-dimensional content for animation, visual effects, and interactive entertainment work."
+   ],
+   "why": [
+    "not in the catalog text as printed: Apply principles of visual art, design, and spatial representation to produce ef"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -137,7 +140,8 @@
     "Integrate creative and technical processes in the planning and production of animation, visual effects, or interactive entertainment projects."
    ],
    "careers": [],
-   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -539,14 +543,14 @@
    "ART 204 appears as a required course in Options 2 and 3 and as an alternative to ANIMATN 118 in Options 1 and 4."
   ]
  },
- "extracted_run": 43357061643,
+ "extracted_run": 45176404274,
  "reconciled": [
   {
-   "field": "electives_fill_words",
+   "field": "ge_overlap",
    "was": null,
-   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
-   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+   "now": true,
+   "words": "double counted in GE"
   }
  ],
- "read_run": "39063389278"
+ "read_run": 43357061643
 }

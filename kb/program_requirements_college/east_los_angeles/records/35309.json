@@ -65,8 +65,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     61.0,
     61.0
@@ -80,10 +80,8 @@
     27.0,
     27.0
    ],
-   "why": [
-    "the blocks and general education come to 61.0-61.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
-   "fill": null
+   "why": [],
+   "overlap": true
   },
   "repeated": {
    "codes": [],
@@ -107,7 +105,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -137,7 +135,8 @@
     "Investigate the relationship between human society the environment from an economical, philosophical, historical, and legal perspective."
    ],
    "careers": [],
-   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -259,14 +258,14 @@
    "No careers are named in this program's section."
   ]
  },
- "extracted_run": 43357061643,
+ "extracted_run": 45176404274,
  "reconciled": [
   {
-   "field": "electives_fill_words",
+   "field": "ge_overlap",
    "was": null,
-   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
-   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+   "now": true,
+   "words": "double counted in \nLACCD General Education"
   }
  ],
- "read_run": "39063389278"
+ "read_run": 43357061643
 }

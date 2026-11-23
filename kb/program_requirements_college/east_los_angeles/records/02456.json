@@ -84,8 +84,8 @@
     "the blocks sum to 45.0-45.0; the catalog states 48.0-50.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "unequal",
+    "pass": true,
+    "status": "equal",
     "computed": [
      72.0,
      72.0
@@ -99,9 +99,8 @@
      27.0,
      27.0
     ],
-    "why": [
-     "the blocks and general education sum to 72.0-72.0; the catalog prints 63.0-65.0 for the degree"
-    ]
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -161,7 +160,8 @@
    ],
    "careers": [
     "medical assistant"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -285,5 +285,14 @@
    "Careers: only 'medical assistant' is named as the profession in the description; settings (clinics, hospitals, physician offices) were not recorded as careers."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 45176404274,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "double counted in LACCD GE"
+  }
+ ],
+ "read_run": "39063389278"
 }
