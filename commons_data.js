@@ -1831,7 +1831,9 @@
       acts.push(el("a", { cls: "cdd-newtab", href: nt, target: "_blank", rel: "noopener noreferrer", "data-newtab": "true", text: "Open in a new tab" }));
       top.push(el("p", { cls: "cdd-paneacts" }, acts));
     }
-    var inner = el("div", { cls: "cdd-panel-in" }, top.concat([el("p", { cls: "cdd-src" }, [pv ? pv.basis || "" : "From the committed files, built " + (day(M.written) || "on a date the file does not give") + ".",
+    /* The top row, Close and the pane's own words with it, stays at the top while the body scrolls (Sam, 2026-11-22,
+       r-sidebars-resize-and-frozen-top-sam-2026-11-22: "a rule to apply to all side bars"). */
+    var inner = el("div", { cls: "cdd-panel-in" }, [el("div", { cls: "cdd-panel-head", id: "cdd-panel-head" }, top)].concat([el("p", { cls: "cdd-src" }, [pv ? pv.basis || "" : "From the committed files, built " + (day(M.written) || "on a date the file does not give") + ".",
       el("span", { cls: "cdd-gripnote", text: " Drag the edge or use the arrow keys on it to change the width; double-click it to reset." })])])
       .concat(pv ? pv.kids : panelBody(M, c, now || VIEW.now)));
     box.appendChild(grip);
@@ -2569,7 +2571,8 @@
     ".cdd-grip:hover::after { background:var(--cmn-accent); }",
     ".cdd-grip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:-2px; }",
     ".cdd-grip:focus-visible::after { background:var(--cmn-accent); }",
-    ".cdd-panel-in { flex:1 1 auto; min-width:0; overflow-y:auto; display:grid; gap:14px; align-content:start; padding:calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 24px 4px; }",
+    ".cdd-panel-in { flex:1 1 auto; min-width:0; overflow-y:auto; overscroll-behavior:contain; display:grid; gap:14px; align-content:start; padding:0 max(18px, env(safe-area-inset-right, 0px)) 24px 4px; }",
+    ".cdd-panel-head { position:sticky; top:0; z-index:2; display:grid; gap:8px; margin:0 calc(-1 * max(18px, env(safe-area-inset-right, 0px))) 0 -4px; padding:calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 10px 4px; background:var(--cmn-dialog, var(--cmn-surface)); border-bottom:1px solid var(--cmn-line); }",
     ".cdd-panel-top { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
     ".cdd-panel-top h2 { margin:0; font-family:var(--cmn-serif); font-size:clamp(1.15rem, 1rem + .6vw, 1.4rem); color:var(--cmn-title); }",
     ".cdd-panel-top h2:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:3px; border-radius:2px; }",
@@ -2620,7 +2623,8 @@
     "  .cdd-entry dl.cdd-dl { grid-template-columns:minmax(0, 1fr); } .cdd-entry dl.cdd-dl dd { margin-bottom:6px; }",
     "  .cdd-panel { width:100vw; border-left:0; }",
     "  .cdd-grip, .cdd-gripnote { display:none; }",
-    "  .cdd-panel-in { padding:calc(14px + env(safe-area-inset-top, 0px)) 16px 24px; }",
+    "  .cdd-panel-in { padding:0 16px 24px; }",
+    "  .cdd-panel-head { margin:0 -16px; padding:calc(14px + env(safe-area-inset-top, 0px)) 16px 10px; }",
     "}"
   ].join("\n");
   function ensureCss() {
