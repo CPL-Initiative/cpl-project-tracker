@@ -122,6 +122,14 @@
      subject_discipline_confirm, the MQ discipline as plain text; DR-25), which the daily sync reads for every college. */
   var SW = "statewide", SW_FILE = "kb/status/statewide_subject_codes.json", SW_FIELD = "subject_discipline_confirm", SW_PREFIX = "_SUBJ_DISC::";
   var NC_FILE = "kb/status/noncredit_subject_titles.json";
+  /* Colleges by source (S717; the Subjects card mock's Colleges artboard, Sam's ask of 2026-11-23): every college, its
+     catalog platform, its codes and titled codes, a status word for each way to look for its subject titles in the
+     ladder's order (d-subject-title-sources-ladder-s712), and the next step. Read from kb/status/subject_sources.json
+     (kb/_subject_sources.py) when the view opens; a college with a catalog on file counts its titled codes live. */
+  var SRC = "sources", SRC_FILE = "kb/status/subject_sources.json";
+  var SRC_PICKS = [["needed", "Titles needed", function (r) { return !r.catalog_on_file; }],
+    ["titled", "Titled", function (r) { return r.catalog_on_file; }], ["all", "All", function () { return true; }]];
+  var SRCS = { pick: "needed" };
 
   /* ── Edit and Save (S701): a person's decision as one kb_curation row ── */
   var REST = (window.CPL_SUPABASE_URL || "https://hvuwhnbuahrtptokpqfh.supabase.co") + "/rest/v1";
@@ -938,6 +946,63 @@
     cell.push(el("span", { cls: "csw-change" }, [pick, " ", other]));
     return cell;
   }
+  var srcCache = null;
+  function loadSources() {
+    srcCache = srcCache || fetch(SRC_FILE, { cache: "no-cache" }).then(function (r) {
+      if (!r || !r.ok) throw new Error(SRC_FILE + " answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(null, function (e) { srcCache = null; throw e; });
+    return srcCache;
+  }
+  /* A status word, plain text: Read carries weight, the ways with nothing to do are muted, so it reads the same without color. */
+  function srcCell(R, w) {
+    var st = w || { status: "to_try" }, word = (R.status_words || {})[st.status] || st.status;
+    var quiet = st.status === "to_try" || st.status === "not_needed" || st.status === "no_system";
+    var title = [st.note, st.date ? "(" + st.date + ")" : ""].filter(Boolean).join(" ");
+    return el("td", { cls: quiet ? "csb-tba" : st.status === "read" ? "csb-src-read" : "csb-src-on", title: title || null }, [word]);
+  }
+  function sourcesView(R, F) {
+    var box = el("div", { cls: "csb-src" });
+    var ways = R.ways || [], T = R.totals || {}, BW = T.by_way || {};
+    var line = ways.map(function (w) {
+      var b = BW[w[0]] || {}, bits = [];
+      ["read", "probing", "blocked", "to_try"].forEach(function (k) { if (b[k]) bits.push((R.status_words[k] || k).toLowerCase() + " " + fmt(b[k])); });
+      return w[1] + " " + (bits.join(", ") || "none");
+    }).join(" · ");
+    box.appendChild(el("p", { cls: "csb-note", id: "csb-src-sum" }, ["Each college’s own subject titles, and each way we look for them, in the order we try them. ",
+      el("strong", { text: fmt(T.titled) + " of " + fmt(T.colleges) }), " colleges have a catalog read; " + fmt(T.titles_needed) + " still need titles. " + line
+      + ". COCI and the MIS reports carry no subject names, so neither is a way to look."]));
+    var chips = el("p", { cls: "csb-bands", role: "group", "aria-label": "Show" }, SRC_PICKS.map(function (f) {
+      var n = (R.colleges || []).filter(f[2]).length;
+      var b = el("button", { type: "button", cls: "csb-word", id: "csb-src-f-" + f[0], "aria-pressed": SRCS.pick === f[0] ? "true" : "false", text: f[1] + " (" + fmt(n) + ")" });
+      b.addEventListener("click", function () {
+        SRCS.pick = f[0];
+        render(VIEW.root, VIEW.M, SRC);
+        var on = VIEW.root.querySelector("#csb-src-f-" + f[0]); if (on && on.focus) on.focus();
+      });
+      return b;
+    }));
+    box.appendChild(chips);
+    var pick = SRC_PICKS.filter(function (f) { return f[0] === SRCS.pick; })[0] || SRC_PICKS[2];
+    var list = (R.colleges || []).filter(pick[2]);
+    var tbl = el("table", { cls: "csb-table" }, [
+      el("colgroup", null, [el("col", { cls: "csb-src-c-college" }), el("col", { cls: "csb-src-c-plat" }), el("col", { cls: "csb-src-c-n" }), el("col", { cls: "csb-src-c-n" })]
+        .concat(ways.map(function () { return el("col", { cls: "csb-src-c-way" }); })).concat([el("col", { cls: "csb-src-c-next" })])),
+      el("thead", null, [el("tr", null, ["College", "Catalog platform", "Codes", "Titled"].concat(ways.map(function (w) { return w[1]; })).concat(["Next"])
+        .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
+      el("tbody", null, list.length ? list.map(function (r) {
+        var on = VIEW.M && VIEW.M.by[r.slug];
+        var titled = on ? ((F.by[r.slug] || {}).named || 0) : r.titled;   /* live saves on top, as the college's own view counts */
+        return el("tr", { "data-college": r.slug }, [el("th", { scope: "row" }, [on ? go("#commons/subjects/" + r.slug, r.college) : r.college]),
+          el("td", { text: r.platform_words }), el("td", { text: fmt(r.codes) }), el("td", { text: fmt(titled) })]
+          .concat(ways.map(function (w) { return srcCell(R, (r.ways || {})[w[0]]); }))
+          .concat([el("td", { text: r.next })]));
+      }) : [el("tr", null, [el("td", { colspan: String(5 + ways.length), text: "No college in this list." })])])]);
+    box.appendChild(gridify(el("div", { cls: "csb-wrap", role: "region", "aria-label": "Colleges by source", tabindex: "0" }, [tbl]), "sources"));
+    box.appendChild(el("p", { cls: "csb-note", text: "A college with a catalog on file opens its codes, each with its title and common code. A status word’s note and date show when you point at it. "
+      + "Each attempt the catalog read cannot show, such as a probe sent, a way blocked or a read by hand, is recorded with its date." }));
+    return box;
+  }
   function statewideView(W) {
     var T = W.totals, signed = !!reviewer();
     var box = el("div", { cls: "csw" });
@@ -1649,7 +1714,7 @@
     /* <college slug>/<local code> opens that college with the code's course panel; a code may hold a slash (ES/A). */
     var seg = view.split("/"), code = "", at = "";
     view = seg[0] === ALL && seg.length >= 3 ? "" : seg[0];
-    var special = view === DISAGREE || view === HELD || view === NC || view === SW;
+    var special = view === DISAGREE || view === HELD || view === NC || view === SW || view === SRC;
     if (seg.length >= 3 && (special || seg[0] === ALL)) { at = seg[1]; code = seg.slice(2).join("/"); }
     else if (seg.length >= 2 && !special && seg[0] !== ALL) code = seg.slice(1).join("/");
     var c = view && !special ? M.by[view] : null;
@@ -1664,9 +1729,9 @@
     M.list.forEach(function (x) { all = all.concat(x.rows); });
     var untitled = F.untitled, nSaved = F.saved;   /* counted as the lists they open count, the live saves on top */
     var wrap = el("div", { cls: "cmn-wrap csb" });
-    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : ""));
+    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : S.view === SRC ? "Colleges by source" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : "Subjects" }),
+      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
       el("p", { cls: "cmn-lede", text: "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading. A curator settles the codes the catalog and the state course list disagree on." })
     ]));
@@ -1678,7 +1743,8 @@
       count(F.withCommon, "", "common", fmt(F.withCommon) + " codes with a common subject code. Show them."), " codes have a common subject code, from the subject map or a person’s save. ",
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
-      go("#commons/subjects/" + NC, "Noncredit subject titles"), ".",
+      go("#commons/subjects/" + NC, "Noncredit subject titles"), ". ",
+      go("#commons/subjects/" + SRC, "Colleges by source"), ".",
       nSaved ? " " : null, nSaved ? count(nSaved, "", "saved", fmt(nSaved) + " codes settled by a person’s save. Show them.") : null,
       nSaved ? (nSaved === 1 ? " code is" : " codes are") + " settled by a person’s save." : ""]));
     if (SAVE_ERR) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-save-err", role: "status", text: "The saves people made could not be read (" + SAVE_ERR + "). The list below is drawn from the files alone, with the saves the daily build carried." }));
@@ -1690,6 +1756,9 @@
       wrap.appendChild(bandBar(c.rows));
       var pl = pickLine(c.rows); if (pl) wrap.appendChild(pl);
       wrap.appendChild(codeTable(c.rows.filter(inPick).filter(function (r) { return inBand(r, S.band); }), "Subject codes at " + c.college));
+    } else if (S.view === SRC) {
+      if (!VIEW.R) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.srcError ? "The colleges by source could not be read (" + VIEW.srcError + "). Reload the tab to try again." : "Reading the colleges by source…" }));
+      else wrap.appendChild(sourcesView(VIEW.R, F));
     } else if (S.view === SW) {
       if (!VIEW.W) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.swError ? "The statewide list could not be read (" + VIEW.swError + "). Reload the tab to try again." : "Reading the statewide list…" }));
       else wrap.appendChild(statewideView(VIEW.W));
@@ -1770,6 +1839,10 @@
   /* A pick: draw it and put it in the address, which is the only place it lives. */
   /* The held view reads its own file the first time it opens, then draws again. */
   function withHeld(view) {
+    if (String(view || "") === SRC && !VIEW.R) {
+      return loadSources().then(function (R) { VIEW.R = R; VIEW.srcError = ""; }, function (e) { VIEW.srcError = e && e.message ? e.message : String(e); })
+        .then(function () { if (VIEW.root && VIEW.M && S.view === SRC) render(VIEW.root, VIEW.M, SRC); });
+    }
     if (String(view || "") === SW && !VIEW.W) {
       return loadStatewide().then(function (W) { VIEW.W = W; VIEW.swError = ""; }, function (e) { VIEW.swError = e && e.message ? e.message : String(e); })
         .then(function () { if (VIEW.root && VIEW.M && S.view === SW) render(VIEW.root, VIEW.M, SW); });
@@ -1787,6 +1860,7 @@
     /* A count's filter lasts while its surface is open; a move to another surface drops it. */
     var first = String(view || "").split("/")[0];
     if (!keep && (first === ALL ? "" : first) !== S.view) S.pick = "";
+    if (first !== SRC) SRCS.pick = "needed";   /* a pick lasts the visit (Sam, 2026-10-21) */
     render(VIEW.root, VIEW.M, view || "");
     withHeld(view);
     var h = "#" + address();
@@ -1900,6 +1974,11 @@
     ".csb-sub { display:block; font-weight:400; color:var(--cmn-muted); font-size:.85rem; }",
     ".csb-ev p { margin:0 0 4px; } .csb-ev strong { color:var(--cmn-heading); font-weight:600; }",
     ".csb-tba { color:var(--cmn-muted); }",
+    ".csb-src-c-college { width:15%; } .csb-src-c-plat { width:10%; } .csb-src-c-n { width:7%; } .csb-src-c-way { width:11.5%; } .csb-src-c-next { width:15%; }",
+    ".csb-src .csb-table th, .csb-src .csb-table td, .csb-src .csb-sort { overflow-wrap:normal; word-break:normal; }",
+    ".csb-src .csb-table th, .csb-src .csb-table td { padding-left:8px; } .csb-src .csb-table thead th.csb-th { padding-right:14px; }",
+    ".csb-src-read { font-weight:700; color:var(--cmn-heading); }",
+    ".csb-src-on { font-weight:600; color:var(--cmn-ink-2); }",
     ".csb-rec { color:var(--cmn-ink-2); margin-top:4px; } .csb-rec strong { color:var(--cmn-heading); font-weight:600; }",
     ".csb-chip { display:inline-block; font-size:.78rem; font-weight:600; color:var(--cmn-ink-2); border:1px solid var(--cmn-line); border-radius:999px; padding:1px 9px; background:var(--cmn-surface); white-space:nowrap; cursor:help; }",
     ".csb-chip[data-state='not_in_catalog'] { color:var(--cmn-heading); border-color:var(--cmn-accent); }",
