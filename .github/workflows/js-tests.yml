@@ -391,6 +391,11 @@ jobs:
       # and the committed file is what a build writes. Pure stdlib.
       - name: Subject sources (kb/_subject_sources.py)
         run: python3 tests/subject_sources_test.py
+      # A code the catalog index leaves out, read at its code's address (S718; Sam found Cerritos's INST page by a web
+      # search): a heading is filed only when the page names the code, a 404 or another code's page files nothing, a
+      # breadcrumb ahead of the heading is passed over. Pure stdlib.
+      - name: Subject code-address read (kb/_subject_code_address_probe.py)
+        run: python3 tests/subject_code_address_probe_test.py
       # The MQ view (kb/_mq_view.py, S717): the 20th-edition handbook keeps the three list types apart, every noncredit
       # discipline and the Title 5 provisions sit on their disciplines, our codes join through the alias table, and the
       # committed view is what a build writes. Pure stdlib.
