@@ -7,13 +7,7 @@
   "college": 18,
   "minted": 75
  },
- "changed_by_a_person": [
-  {
-   "assigned": "ESTI",
-   "discipline": "Estimating",
-   "now": "ESTG"
-  }
- ],
+ "changed_by_a_person": [],
  "count": 95,
  "problems": [],
  "rows": [
@@ -540,22 +534,17 @@
   {
    "assign": true,
    "basis": "minted",
-   "code": "ESTI",
+   "code": "ESTG",
    "confidence": 0.82,
    "discipline": "Estimating",
    "key": "Estimating",
    "level": "Likely",
-   "local_code_now": {
-    "called": "COSM",
-    "colleges": 2,
-    "courses": 10,
-    "filed": false
-   },
+   "local_code_now": null,
    "note": "",
    "types": [
     "any"
    ],
-   "words": "Estimating; ESTM is one college's code for solar and clean energy courses"
+   "words": "Estimating; ESTI is the local Esthetics code at 4 cosmetology and barbering colleges, and ESTM one college's code for solar and clean energy courses"
   },
   {
    "assign": true,
