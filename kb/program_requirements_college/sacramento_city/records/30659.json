@@ -46,28 +46,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 16,
    "listed": 17,
-   "share": 0.824,
+   "share": 0.941,
    "missing": [
-    "COMM321",
-    "COMM374",
-    "ENGWR384"
+    "COMM374"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM321",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL384",
+     "listed": "ENGWR384",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "COMMC1004",
-    "ENGL384"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "ENGL384"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -379,5 +383,6 @@
    "The page also prints the A.A. in Communication section, which was not used for this record."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45184748331,
+ "read_run": "39047070975"
 }

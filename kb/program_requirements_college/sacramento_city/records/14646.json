@@ -46,25 +46,29 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 32,
    "listed": 33,
-   "share": 0.939,
+   "share": 0.97,
    "missing": [
-    "ENGWR303",
-    "ENGWR488"
+    "ENGWR303"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL488",
+     "listed": "ENGWR488",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ENGL488",
     "ENGLC1003"
    ],
    "flagged": [
-    "ENGL488",
     "ENGLC1003"
    ],
    "pass": true
@@ -422,5 +426,6 @@
    "Degree statement: required program plus Local GE or Cal-GETC plus sufficient electives for at least 60 units; no degree total or GE units printed for this award, so degree_total and ge_units are null and electives_fill_degree is true."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45184748331,
+ "read_run": "39047070975"
 }

@@ -2,23 +2,34 @@
  "college": "Sacramento City College",
  "programs": 227,
  "with_closed_list": 207,
- "found": 202,
+ "found": 201,
  "extracted": 204,
  "errors": 0,
- "passed_machine_checks": 167,
+ "passed_machine_checks": 170,
  "failed": {
   "coverage": 7,
   "invented": 3,
-  "arithmetic": 35,
+  "arithmetic": 31,
   "repeated": 0,
-  "outcomes": 0
+  "outcomes": 1
  },
- "cost_usd_run": 1.35,
+ "cost_usd_run": 0.0,
  "cost_usd_filed": 18.53,
  "cost_per_program": 0.0908,
- "extract_calls": 18,
+ "extract_calls": null,
  "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "30620",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=104",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
   {
    "control_number": "40117",
    "title": "iOS App Developer",
@@ -68,5 +79,5 @@
    "status": "Active"
   }
  ],
- "run": "45181973475"
+ "run": "45184748331"
 }

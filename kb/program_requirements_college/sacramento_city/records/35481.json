@@ -46,27 +46,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 8,
    "listed": 8,
-   "share": 0.75,
-   "missing": [
-    "BIOL308",
-    "BIOL309"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOLC1001",
+     "listed": "BIOL308",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1001L",
+     "listed": "BIOL309",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "BIOLC1001",
-    "BIOLC1001L",
     "PSYC480"
    ],
    "flagged": [
-    "BIOLC1001",
-    "BIOLC1001L",
     "PSYC480"
    ],
    "pass": true
@@ -237,5 +242,6 @@
    "Career entry taken from Career Information: 'designed for students transferring into Child Development with the goal of teaching in the elementary schools of California.'"
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45184748331,
+ "read_run": "39047070975"
 }

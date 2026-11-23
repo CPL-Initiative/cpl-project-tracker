@@ -46,29 +46,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 21,
    "listed": 23,
-   "share": 0.87,
+   "share": 0.913,
    "missing": [
-    "ENGWR488",
     "HIST483",
     "HIST484"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL488",
+     "listed": "ENGWR488",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
-    "ENGL488",
     "ENGLT481",
     "HISTC1001H",
     "HISTC1002H",
     "MUFHL481"
    ],
    "flagged": [
-    "ENGL488",
     "ENGLT481",
     "HISTC1001H",
     "HISTC1002H",
@@ -358,5 +362,6 @@
    "No careers are named in the section."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45184748331,
+ "read_run": "39047070975"
 }

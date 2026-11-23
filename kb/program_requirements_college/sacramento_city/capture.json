@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 227,
  "with_closed_list": 207,
- "started": "2026-11-23T13:15:35Z",
+ "started": "2026-11-23T13:37:43Z",
  "pdf": {
   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -117,12 +117,6 @@
     "bound": true,
     "through": 188,
     "until_page": 188
-   },
-   "30620": {
-    "page": 515,
-    "bound": true,
-    "through": 516,
-    "until_page": 516
    },
    "32661": {
     "page": 434,
@@ -1802,20 +1796,6 @@
     "opens": "[page 630] A.A.-T. in Sociology A.A. in Intercultural Studies A.A. in Social Work and Community Studies A.A. in Sociology Social Work and Community Studies Certificate Interim Dean: Jeff Moran Department Chair: S"
    },
    {
-    "control_number": "30620",
-    "pages": [
-     515,
-     516
-    ],
-    "named": true,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 515] A.S.-T. in Mathematics 2.0 The mathematics program provides students the opportunity to complete the lower-division coursework required for four-year programs in mathematics. This program is for students wh",
-    "pinned": true
-   },
-   {
     "control_number": "30659",
     "pages": [
      247,
@@ -3063,8 +3043,8 @@
    }
   ],
   "page_checks": {
-   "read": 2,
-   "own_page": 0,
+   "read": 3,
+   "own_page": 1,
    "no_own_page": 2,
    "not_printed": 0
   },
@@ -3073,12 +3053,12 @@
  "loads": 0,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 561.2,
- "found": 202,
+ "seconds": 304.3,
+ "found": 201,
  "by_method": {
   "no_closed_list": 20,
-  "not_found": 5,
-  "pdf_pages": 202
+  "not_found": 6,
+  "pdf_pages": 201
  },
  "shared_pages": {
   "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=220": [
@@ -3212,7 +3192,6 @@
   ],
   "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=515": [
    "30479",
-   "30620",
    "46304"
   ],
   "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=234": [
@@ -3263,6 +3242,17 @@
   ]
  },
  "not_found": [
+  {
+   "control_number": "30620",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=104",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
   {
    "control_number": "40117",
    "title": "iOS App Developer",
@@ -3317,262 +3307,14 @@
  "coverage_bands": {
   "0.5-0.8": 8,
   "0.8-1.0": 44,
-  "1.0": 150
+  "1.0": 149
  },
  "would_extract": {
   "against": "kb/program_requirements_college/sacramento_city",
-  "kept": 146,
+  "kept": 164,
   "kept_moved": 0,
-  "programs": 18,
+  "programs": 32,
   "list": [
-   {
-    "control_number": "04670",
-    "title": "Mechanical Systems Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=526",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=529",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "07334",
-    "title": "Management Information Science",
-    "award": "A.S. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=265",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=274",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "07345",
-    "title": "Mechanical-Electrical Technology",
-    "award": "A.S. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=525",
-    "coverage": 0.944,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=531",
-    "was_coverage": 0.611,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15498",
-    "title": "Sociology",
-    "award": "A.A. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=633",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=630",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15573",
-    "title": "Cybersecurity and Information Assurance",
-    "award": "A.S. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=263",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=271",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "23005",
-    "title": "Information Processing Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=272",
-    "coverage": 0.933,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=265",
-    "was_coverage": 0.933,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "23019",
-    "title": "Mechanical-Electrical Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=527",
-    "coverage": 0.895,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=531",
-    "was_coverage": 0.579,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "23027",
-    "title": "Commercial Music, Audio Production Emphasis",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=543",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=536",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "23035",
-    "title": "School-Age Care and Education Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=334",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=328",
-    "was_coverage": 0.846,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30361",
-    "title": "Art and Science of Nail Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=296",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=200",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30407",
-    "title": "Surveying (Geomatics)",
-    "award": "A.S. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=646",
-    "coverage": 0.75,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=647",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30409",
-    "title": "Architectural/Structural Design",
-    "award": "A.S. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=362",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=363",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30412",
-    "title": "Electric (Power-Lighting Systems)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=367",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=363",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30519",
-    "title": "Aircraft Dispatcher",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=186",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=182",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30520",
-    "title": "Flight Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=187",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=182",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32661",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=434",
-    "coverage": 0.892,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=95",
-    "was_coverage": 0.865,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40211",
-    "title": "Computer Information Security Essentials",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=269",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=267",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42462",
-    "title": "Professional and Workplace Communication",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=254",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=247",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   }
-  ],
-  "held_worse_window": [
-   {
-    "control_number": "12756",
-    "title": "Family Child Care",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=328",
-    "coverage": 0.917,
-    "was_coverage": 1.0
-   }
-  ],
-  "held_no_gain": [
-   {
-    "control_number": "23008",
-    "title": "Cybersecurity and Information Assurance",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=262",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "23032",
-    "title": "Dental Assisting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=306",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "41059",
-    "title": "Optical Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=582",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   }
-  ],
-  "held_opens_on_list": [
-   {
-    "control_number": "41435",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=122",
-    "coverage": 0.921,
-    "was_coverage": 0.889
-   }
-  ],
-  "only": [
-   "04670",
-   "07334",
-   "07345",
-   "15498",
-   "15573",
-   "23005",
-   "23019",
-   "23027",
-   "23035",
-   "30361",
-   "30407",
-   "30409",
-   "30412",
-   "30519",
-   "30520",
-   "32661",
-   "40211",
-   "42462"
-  ],
-  "not_named": [
    {
     "control_number": "04662",
     "title": "Journalism",
@@ -3754,16 +3496,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "30620",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=515",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=516",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "30659",
     "title": "Communication Studies",
     "award": "A.A- T Degree",
@@ -3904,6 +3636,43 @@
     "was_method": "pdf_pages"
    }
   ],
+  "held_worse_window": [
+   {
+    "control_number": "12756",
+    "title": "Family Child Care",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=328",
+    "coverage": 0.917,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_no_gain": [
+   {
+    "control_number": "23008",
+    "title": "Cybersecurity and Information Assurance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=262",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "23032",
+    "title": "Dental Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=306",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41059",
+    "title": "Optical Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=582",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -4360,10 +4129,6 @@
    "sha256": "9e9acfdff97361cad9579da9d09afbe8f7c506ce410b39683157ea3e88232058",
    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=630"
   },
-  "30620": {
-   "sha256": "604c7820eafcf360c7faa2512bd84a773a63355040c927f222a666c2ef34f14e",
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=515"
-  },
   "30659": {
    "sha256": "f4626acc25549bb92870886502a3b5d6135bbacbabc4a99a87814318f7279c98",
    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=247"
@@ -4717,5 +4482,5 @@
    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=515"
   }
  },
- "run": "45181973475"
+ "run": "45184748331"
 }

@@ -105,8 +105,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     8.0,
     8.0
@@ -116,8 +116,10 @@
     26.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 8.0-8.0; the catalog states 26.0-26.0"
+   "why": [],
+   "fill": [
+    18.0,
+    18.0
    ]
   },
   "repeated": {
@@ -145,7 +147,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -605,5 +607,6 @@
    "DEAF 310-316 appear in the language list; DEAF courses are American Sign Language."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45184748331,
+ "read_run": "39047070975"
 }

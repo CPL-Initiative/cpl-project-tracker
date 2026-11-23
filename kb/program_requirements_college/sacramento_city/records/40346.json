@@ -46,31 +46,34 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 21,
    "listed": 21,
-   "share": 0.952,
-   "missing": [
-    "ENGWR488"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL488",
+     "listed": "ENGWR488",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
     "CHEM306",
     "CHEMT301",
     "CHEMT429",
-    "CISC310",
-    "ENGL488"
+    "CISC310"
    ],
    "flagged": [
     "CHEM306",
     "CHEMT301",
     "CHEMT429",
-    "CISC310",
-    "ENGL488"
+    "CISC310"
    ],
    "pass": true
   },
@@ -398,5 +401,6 @@
    "Page 237 also has an empty 'Course Code Course Title Units' header after Pathway 2 before 'Total Units: 10 - 11'."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45184748331,
+ "read_run": "39047070975"
 }

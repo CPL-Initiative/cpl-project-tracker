@@ -46,36 +46,44 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 181,
+   "placed": 183,
    "listed": 188,
-   "share": 0.963,
+   "share": 0.973,
    "missing": [
-    "ART49923746",
     "ENG49523697",
     "ENGL494",
-    "ENGWR301",
     "ENGWR303",
     "HUM352",
     "MUIV31544940"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTH499",
+     "listed": "ART49923746",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL301",
+     "listed": "ENGWR301",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 17,
+   "count": 15,
    "codes": [
     "ART300",
     "ART302",
     "ART304",
     "ART305",
     "ARTH494",
-    "ARTH499",
     "DEAF310",
     "DEAF312",
     "DEAF314",
     "DEAF316",
-    "ENGL301",
     "ENGLC1003",
     "ENGLT301",
     "ENGLT334",
@@ -89,12 +97,10 @@
     "ART304",
     "ART305",
     "ARTH494",
-    "ARTH499",
     "DEAF310",
     "DEAF312",
     "DEAF314",
     "DEAF316",
-    "ENGL301",
     "ENGLC1003",
     "ENGLT301",
     "ENGLT334",
@@ -157,21 +163,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "ge_units_not_read",
-    "label": "The degree names a general education pattern, and no units for it were read, so the degree's units cannot be added. Its major adds up to the printed major total.",
-    "words": "the degree names the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern and no units were read for it; its major adds to the printed 18"
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 50,
-   "course_list_match": 96,
-   "ge_pattern": 50,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": false
  },
  "record": {
   "program": {
@@ -1646,5 +1638,6 @@
    "Art section outcomes and career information on page 162 belong to the preceding Art program and were not used."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45184748331,
+ "read_run": "39047070975"
 }
