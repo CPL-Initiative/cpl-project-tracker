@@ -505,6 +505,18 @@ jobs:
       # words, read from the pinned page in capture_pdf, and hold what the filed page lacked. Pure stdlib.
       - name: Program requirements own-page pins (Clovis, Cosumnes River)
         run: python3 tests/program_requirements_pins_s703_test.py
+      # S703 (census lever 6): Ohlone's two own-page pins bind on the pages the free read printed and read from the
+      # pinned page in capture_pdf; the other 34 not_found programs are filed as named gaps, once each. Pure stdlib.
+      - name: Program requirements own-page pins and named gaps (Ohlone)
+        run: python3 tests/program_requirements_ohlone_pins_s703_test.py
+      # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
+      # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
+      - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)
+        run: python3 tests/program_requirements_sjdelta_aliases_s703_test.py
+      # S703 (census levers 6, 7, 9, 10, 13): the five colleges' named gaps each name a program the filed capture
+      # reads with no page, once, with a defined reason and no record file. Pure stdlib.
+      - name: Program requirements page-not-found named gaps (five colleges)
+        run: python3 tests/program_requirements_named_gaps_s703_test.py
       # S697: the same-page calls over every committed folder, frozen in a fixture: 320 newly kept (Butte 163,
       # Cuyamaca 155, College of the Canyons 2), none one page off, and one edition pair. Pure stdlib.
       - name: Program requirements same-page recall over the committed folders

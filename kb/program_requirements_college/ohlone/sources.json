@@ -2967,12 +2967,41 @@
   "title": "Information Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET105",
+   "CNET108",
+   "CNET135",
+   "CNET137",
+   "CNET142",
+   "CNET146",
+   "CNET155A",
+   "CNET162",
+   "CNET170",
+   "CNET173",
+   "CNET174",
+   "CNET175"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=46",
+   "title": "INFORMATION TECHNOLOGY",
+   "h1": "INFORMATION TECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    46,
+    47,
+    48,
+    49
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "357ef87a5cb93118"
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "33320",
@@ -6099,12 +6128,29 @@
   "title": "Esports Entrepreneurship and Live Production - Game Design",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "DAID922",
+   "DAID925"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=96",
+   "title": "ESPORTS ENTREPRENEURSHIP AND",
+   "h1": "ESPORTS ENTREPRENEURSHIP AND",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "2560452f0f300d2b"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 7652
  },
  {
   "control_number": "46103",

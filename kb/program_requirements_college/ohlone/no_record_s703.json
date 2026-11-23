@@ -1,0 +1,369 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 6 (Ohlone, page not found, 36). Of the 36 programs capture 44515665022 read as not_found, two have their own heading in the 2026-2027 chapter 7 guide and are pinned (Information Technology 33319 to p.46, Esports Entrepreneurship and Live Production - Game Design 46035 to p.96; the college's reconcile entry). The other 34 are filed here as named gaps, each with one of two reasons. Free page reads 45024779831 (pp.45-47, 65-67 and the whole noncredit section, pp.93-100, A to V) and 45025066542 (pp.84-92 and every page in pp.1-92 naming a credit target's title, the interest-area index on pp.3-4 among them) print no heading for any of them; each near-miss page holds other programs. This agrees with S451 (15 credit programs the guide no longer prints under the state's lists) and S593 (18 noncredit certificates the college's noncredit pages do not name; 38975 answers 403). No model call, no Supabase write: no row exists for these programs, and the capture holds no text for them. They are the college's to settle in COCI.",
+ "college": "Ohlone College",
+ "written": "2026-11-22T13:03:50Z",
+ "capture": "44515665022",
+ "page_reads": [
+  "45024779831",
+  "45025066542"
+ ],
+ "reasons": {
+  "credit_not_in_guide": "A credit program the 2026-2027 guide prints under no heading: neither its interest-area index nor any page names its title with its award.",
+  "noncredit_not_in_guide": "A noncredit program the guide's noncredit section (pp.93-100, alphabetical) does not print, and the college's noncredit pages do not name (S593)."
+ },
+ "programs": [
+  {
+   "control_number": "01245",
+   "title": "Business Supervision/Management",
+   "award": "A.A. Degree",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 89,
+    "coverage": 0.2,
+    "holds": "the Music Theory, Network Administrator, Office Support and Oracle Database Operations Certificates of Accomplishment (run 45025066542)"
+   }
+  },
+  {
+   "control_number": "01250",
+   "title": "Journalism",
+   "award": "A.A. Degree",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "rule": "A",
+    "why": "rule A: no page prints the program's title with its award"
+   }
+  },
+  {
+   "control_number": "01254",
+   "title": "Computer Studies",
+   "award": "A.A. Degree",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 22,
+    "coverage": 0.25,
+    "holds": "another program's section, the Computer Science A.S. (lessons S451)"
+   }
+  },
+  {
+   "control_number": "01265",
+   "title": "Interior Design",
+   "award": "A.A. Degree",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 10,
+    "coverage": 0.182,
+    "holds": "another program's section (lessons S451, page reads 39850460662 and 39853324740)"
+   }
+  },
+  {
+   "control_number": "01285",
+   "title": "Administration of Justice",
+   "award": "A.A. Degree",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "rule": "A",
+    "why": "rule A: no page prints the program's title with its award"
+   }
+  },
+  {
+   "control_number": "16631",
+   "title": "Kinesiology: Athletic Training",
+   "award": "A.S. Degree",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 88,
+    "coverage": 0.4,
+    "holds": "the Kinesiology: Sports Medicine, Media Literacy and Rhetoric and Molecular Biology Certificates of Accomplishment (run 45025066542)"
+   }
+  },
+  {
+   "control_number": "16763",
+   "title": "Administrative Assistant with Supervisory Focus",
+   "award": "A.A. Degree",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 5,
+    "coverage": 0.182,
+    "holds": "Accounting and Acting certificates and the Administration of Justice AS-T (run 45025066542)"
+   }
+  },
+  {
+   "control_number": "22192",
+   "title": "Administrative Assistant with Supervisory Focus",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 89,
+    "coverage": 0.333,
+    "holds": "the Music Theory, Network Administrator, Office Support and Oracle Database Operations Certificates of Accomplishment (run 45025066542)"
+   }
+  },
+  {
+   "control_number": "22193",
+   "title": "Business Supervision/Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 89,
+    "coverage": 0.2,
+    "holds": "the Music Theory, Network Administrator, Office Support and Oracle Database Operations Certificates of Accomplishment (run 45025066542)"
+   }
+  },
+  {
+   "control_number": "22198",
+   "title": "Computer Studies",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 22,
+    "coverage": 0.25,
+    "holds": "another program's section, the Computer Science A.S. (lessons S451)"
+   }
+  },
+  {
+   "control_number": "22199",
+   "title": "UNIX/Linux Systems Administrator",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "rule": "A",
+    "why": "rule A: no page prints the program's title with its award"
+   }
+  },
+  {
+   "control_number": "22204",
+   "title": "Technical Support Specialist",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 24,
+    "coverage": 0.333,
+    "holds": "the Database Administration A.S. and the Deaf Education certificate (run 45025066542)"
+   }
+  },
+  {
+   "control_number": "22214",
+   "title": "Interior Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 10,
+    "coverage": 0.182,
+    "holds": "another program's section (lessons S451, page reads 39850460662 and 39853324740)"
+   }
+  },
+  {
+   "control_number": "35797",
+   "title": "Bioengineering",
+   "award": "A.S. Degree",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "rule": "A",
+    "why": "rule A: no page prints the program's title with its award"
+   }
+  },
+  {
+   "control_number": "36533",
+   "title": "Journalism",
+   "award": "A.A- T Degree",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 87,
+    "coverage": 0.444,
+    "holds": "the Health Information Technology, IT Program Management, IT Service and Support Technician and Journalism Certificates of Accomplishment (run 45025066542)"
+   }
+  },
+  {
+   "control_number": "37259",
+   "title": "Customer Service Academy",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "37260",
+   "title": "Customer Service: Team Building",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "37261",
+   "title": "Customer Service: Communication and Writing",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "37490",
+   "title": "Computer Fundamentals",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "37491",
+   "title": "Beginning Technology Skills",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "38226",
+   "title": "Entrepreneurial Business Basics",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "38441",
+   "title": "Math Applications",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": "A",
+    "why": "rule A: no page prints the program's title with its award"
+   }
+  },
+  {
+   "control_number": "38496",
+   "title": "Business Support Specialist I",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "38497",
+   "title": "Math Foundations",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "38660",
+   "title": "Effective Job Search Skills",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "38834",
+   "title": "Business Support Specialist II",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "38975",
+   "title": "Computer Aided Design Skills: AutoCAD and SolidWorks",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "40371",
+   "title": "DRE Exam Preparation",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "40405",
+   "title": "Entrepreneurial Business Advanced Food Services (EBB)",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "40609",
+   "title": "Green Business Entrepreneurs",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "41938",
+   "title": "Marketing for Entrepreneurs",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "page": 96,
+    "coverage": 0.25,
+    "holds": "the Digital Media Essential Skills, English as a Second Language and Esports Entrepreneurship noncredit certificates (run 45024779831)"
+   }
+  },
+  {
+   "control_number": "42090",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_guide",
+   "near_miss": {
+    "page": 66,
+    "coverage": 0.25,
+    "holds": "the Real Estate Sales Agent/Broker A.A. and certificate (run 45024779831)"
+   }
+  },
+  {
+   "control_number": "42325",
+   "title": "Fundamentals of Entrepreneurial Financing",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  },
+  {
+   "control_number": "42776",
+   "title": "Community Mental Health Preparation",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_guide",
+   "near_miss": {
+    "rule": null,
+    "why": null
+   }
+  }
+ ]
+}

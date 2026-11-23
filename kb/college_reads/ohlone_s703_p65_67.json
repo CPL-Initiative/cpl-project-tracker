@@ -1,0 +1,24 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 6 (Ohlone, page not found, 36). The 2026-2027 chapter 7 curriculum guides PDF (capture 44515665022, pypdf). Entrepreneurship 42090 (Certificate of Achievement) near-missed p.66 at coverage 0.25. This plan prints PDF pp.65-67 whole, line for line, so a pdf_pages pin can name the page and the words a program opens on there. One load and robots.txt, no model call, nothing written.",
+ "college": "Ohlone College",
+ "questions": {
+  "own_page": "Where each named program's own section opens (its heading and the first line of its requirement list), which course codes it prints, and where its list ends (its total)."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf"
+  }
+ ],
+ "pdf_span": [
+  65,
+  67
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
+}
