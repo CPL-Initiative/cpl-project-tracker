@@ -15,7 +15,7 @@ rule's held answer comes from apart from its own fields. Pinned here:
   * the precision count against the hand reading of all 53 census records at the two colleges (right 53, wrong 0),
     the boundary readings (at the total, one past, one short; an unlisted common number) wrong 0, the claim check
     against the pages the read held (none falls), and kb/_program_named_gaps.py's recall wrong 0;
-  * the plan: 17 rows (5 passing, 12 with the gap), all at Santa Rosa Junior, each a census member under the lever;
+  * the plan: 15 rows (5 passing, 10 with the gap; 06566 and 32298 held on #3705's second read), all at Santa Rosa Junior, each a census member under the lever;
     the receipt and the three SQL files name exactly those rows; a second run plans none; no record at another
     college carries section_cut_off.
 
@@ -49,7 +49,8 @@ def check(cond, msg):
 listed = {"PSYCC1000": 3.0, "ECONC2001": 3.0, "BIO10": 4.0}
 for code, want in (("PSYC 1000 (PSYC C1000)", "PSYCC1000"), ("ECON 2001 (ECON C2001)", "ECONC2001"),
                    ("STAT 1000 (STAT C1000)", "STAT1000(STATC1000)"), ("BIO 10 (formerly BIO 1)", "BIO10(FORMERLYBIO1)"),
-                   ("MATH 4 (4)", "MATH4(4)"), ("BIO 10", "BIO10"), ("PSYC C1000", "PSYCC1000")):
+                   ("MATH 4 (4)", "MATH4(4)"), ("BIO 10", "BIO10"), ("PSYC C1000", "PSYCC1000"),
+                   ("MUSC 1 (MUSC 101)", "MUSC1(MUSC101)"), ("ARTH 1100 (ANTH C1100)", "ARTH1100(ANTHC1100)")):
     check(S._listed_key(code, listed) == want, "%r keys as %s (got %s)" % (code, want, S._listed_key(code, listed)))
 check(S.common_number_in_parens("ARTH 1200(ARTH C1200)") == "ARTHC1200",
       "a common number printed with no space before its parenthesis")
@@ -115,10 +116,14 @@ check(NG.confidence(rec([CUT_NOTE]), "section_cut_off")["course_list_match"] == 
 pr = P.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 53 and pr["right"] == 53 and pr["wrong"] == 0 and pr["not_hand_held"] == 0,
       "precision against the hand reading: read %(read)d, right %(right)d, wrong %(wrong)d" % pr)
-check(pr["by_answer"] == {"none": 36, "passes": 5, "section_cut_off": 12}, "the hand answers: %r" % pr["by_answer"])
+check(pr["by_answer"] == {"none": 38, "passes": 5, "section_cut_off": 10}, "the hand answers: %r" % pr["by_answer"])
+check(not NG.section_cut_off(rec([CUT_NOTE], comp=(20.0, 20.0), st=(None, None), status="incomplete")),
+      "an incomplete read with no printed total: no gap (06566)")
+check(not NG.section_cut_off(rec([CUT_NOTE], comp=(33.5, 34.0), st=(33.5, 33.5), status="incomplete")),
+      "an incomplete read whose sum reaches the total: no gap (32298)")
 bd = P.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and bd["counts"].get("one short right") == 11 and bd["counts"].get("at total right") == 11
-      and bd["counts"].get("one past right") == 11, "the boundary readings: %r" % bd)
+check(not bd["wrong"] and bd["counts"].get("one short right") == 10 and bd["counts"].get("at total right") == 10
+      and bd["counts"].get("one past right") == 10, "the boundary readings: %r" % bd)
 cc = P.claim_checks(CENSUS_AT_PLAN)
 check(not cc["section_cut_off_falls"], "no cut-off sentence names only pages the read held in its middle")
 check(receipt["claim_checks"]["common_numbers"].get("against", 0) == 0
@@ -130,7 +135,25 @@ check(rc["wrong"] == 0, "the named gaps' recall with section_cut_off: wrong %d" 
 # ── the plan ──
 members = P.census_members(CENSUS_AT_PLAN)
 keys = {(r["college"], r["control_number"]) for r in rows}
-check(len(rows) == 17 and receipt["by"] == {"passes": 5, "section_cut_off": 12}, "17 rows: 5 passing, 12 with the gap")
+check(len(rows) == 15 and receipt["by"] == {"passes": 5, "section_cut_off": 10}, "15 rows: 5 passing, 10 with the gap")
+check(not keys & {("Santa Rosa Junior College", "06566"), ("Santa Rosa Junior College", "32298")},
+      "06566 and 32298 are held")
+for x in receipt["rescored_not_planned"]:
+    with open(os.path.join(ROOT, "kb", "program_requirements_college", "santa_rosa_junior", "records",
+                           x["control_number"] + ".json"), encoding="utf-8") as fh:
+        f = json.load(fh)
+    check(P.rescore_common_numbers(f) is None and not S.passes_live(f["score"]) and f["score"].get("common_numbers"),
+          "%s: rescored on disk, still failing, no plan row" % x["control_number"])
+check(sorted(x["control_number"] for x in receipt["rescored_not_planned"]) == ["32301", "35429"],
+      "the receipt lists 32301 and 35429 as rescored and not planned")
+with open(os.path.join(ROOT, "kb", "migrations", "2026-11-23_s713_prreq_piles_apply.sql"), encoding="utf-8") as fh:
+    apply_sql = fh.read()
+with open(os.path.join(ROOT, "kb", "migrations", "2026-11-23_s713_prreq_piles_preread.sql"), encoding="utf-8") as fh:
+    pre_sql = fh.read()
+check("when f.n > 0" in apply_sql and "program_record_fp(r.record)" in apply_sql and "from s, c, e, f;" in apply_sql,
+      "the apply aborts on a row whose latest confirm verdict matches its fingerprint")
+check("'confirm_matches'" in pre_sql and "program_record_verdicts" in pre_sql, "the pre-read counts those rows")
+check("e(expect) as (values (15))" in apply_sql, "the apply expects 15 rows")
 check({c for c, _ in keys} == {"Santa Rosa Junior College"}, "every row is at Santa Rosa Junior")
 check(all(cn in members[c] for c, cn in keys), "every row is a census member under the lever")
 for part in ("apply", "preread", "rollback"):

@@ -939,9 +939,10 @@ CUT_PAGE_NUMBER = re.compile(r"\bpages?\s+(\d{1,4})\b", re.I)
 # no wrong call; kb/_program_piles_s713.py counts the records the ungated rule would name elsewhere, unwritten.
 CUT_OFF_COLLEGES = ("Santa Rosa Junior College", "Santa Monica College")
 # The S713 second read, by hand, of every failing record at the two colleges: the twelve whose section runs onto a
-# page the read did not hold. Every other failing record there holds no such gap.
+# page the read did not hold. Every other failing record there holds no such gap (06566 and 32298 lost no countable
+# course: #3705's second reader).
 HAND_HELD_CUT_OFF = frozenset(("Santa Rosa Junior College", cn) for cn in (
-    "06566", "06602", "15461", "15463", "30750", "32298", "32300", "32330", "32357", "33166", "45477", "45558"))
+    "06602", "15461", "15463", "30750", "32300", "32330", "32357", "33166", "45477", "45558"))
 
 
 def _claim_sentences(filed: dict) -> list[str]:
@@ -986,15 +987,15 @@ def cut_off_claim_stands(filed: dict, src: dict | None) -> bool | None:
 
 
 def _short_or_unread(filed: dict) -> bool:
-    """The arithmetic fails short of the printed total, or cannot be added: a section the read lost courses from
-    adds up to less, never more. A sum past the printed total is another gap."""
+    """The arithmetic fails with the sum read short of the printed total: a section the read lost courses from adds
+    up to less, never more. "Incomplete" counts only where a partial sum and a printed total are both read and the
+    sum falls short of it (#3705's second reader: Natural Resources 06566 prints its total in a table the reader
+    left unset, and Elementary Teacher Education 32298 already reaches its 33.5; neither lost a countable course)."""
     a = (filed.get("score") or {}).get("arithmetic") or {}
     if a.get("pass") or a.get("status") not in ("incomplete", "unequal"):
         return False
     comp, st = _pair(a.get("computed")), _pair(a.get("stated"))
-    if comp and st and comp[0] > st[1] + FIG_EPS:
-        return False
-    return a.get("status") == "incomplete" or bool(comp and st and comp[0] < st[0] - FIG_EPS)
+    return bool(comp and st and comp[0] < st[0] - FIG_EPS)
 
 
 def section_cut_off_ungated(filed: dict) -> str | None:

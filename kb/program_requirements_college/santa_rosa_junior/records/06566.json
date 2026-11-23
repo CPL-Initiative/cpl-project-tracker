@@ -113,21 +113,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "section_cut_off",
-    "label": "The program's section runs onto a page the read did not hold, so part of its requirements is missing from the record and its units cannot be checked against the printed total.",
-    "words": "the reader's note says the section continues past the pages read: \"The excerpt begins mid-section on page 345; the program heading, description, and any earlier requirement tables for the Natural Resources A.S. are on the preceding page and not included.\""
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 20,
-   "course_list_match": 50,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": false
  },
  "record": {
   "program": {

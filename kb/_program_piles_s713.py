@@ -61,8 +61,12 @@ CUT = "section_cut_off: the section runs onto a page the read did not hold"
 HAND_HELD = {
     "Santa Rosa Junior College": {
         "15243": PASSES, "16965": PASSES, "21729": PASSES, "30840": PASSES, "40890": PASSES,
-        "06566": CUT, "06602": CUT, "15461": CUT, "15463": CUT, "30750": CUT, "32298": CUT, "32300": CUT,
+        "06602": CUT, "15461": CUT, "15463": CUT, "30750": CUT, "32300": CUT,
         "32330": CUT, "32357": CUT, "33166": CUT, "45477": CUT, "45558": CUT,
+        "06566": "held: sibling 21718 reads the same page and 20-course table in the same run, records 'Total "
+                 "Hours/Units 20' and passes; the reader left total_units unset, and nothing countable is cut off",
+        "32298": "held: sibling 46305 holds p. 145 and fails the same way (33.5-34 against 33.5; List C names no "
+                 "minimum); the sum already reaches the total",
         "19599": "held: the concentration lists print no units beside courses the state's file does not list",
         "19600": "held: the concentration lists print no units beside courses the state's file does not list",
         "35738": "held: the concentration lists print no units beside courses the state's file does not list",
@@ -276,6 +280,29 @@ def plan(write: bool, census_path: str = CENSUS) -> dict:
                 json.dump(filed, fh, ensure_ascii=False, indent=1)
                 fh.write("\n")
         rows.append(row)
+    # Every other record at the two colleges whose filed score rule 1 changes is rescored on disk too, so a committed
+    # file never disagrees with the scorer (#3705's second reader: 35429 and 32301). The hand reading keeps them
+    # failing, so they take no plan row; the receipt lists them.
+    planned = {(f["college"], str(f["control_number"])) for _, f, _, _, _ in hits}
+    rescored = []
+    for college, slug in COLLEGES.items():
+        for p in sorted(glob.glob(os.path.join(COLLEGE_DIR, slug, "records", "*.json"))):
+            with open(p, encoding="utf-8") as fh:
+                filed = json.load(fh)
+            if not isinstance(filed.get("score"), dict) or (college, str(filed.get("control_number"))) in planned:
+                continue
+            rs = rescore_common_numbers(filed)
+            if not rs or not rs["exact"]:
+                continue
+            rescored.append({"college": college, "control_number": str(filed["control_number"]),
+                             "passes_after": S.passes_live(rs["score"]), "renamed": rs["renamed"],
+                             "why": HAND_HELD.get(college, {}).get(str(filed["control_number"]),
+                                                                  "outside the census lever; still failing")})
+            if write:
+                filed["score"] = rs["score"]
+                with open(p, "w", encoding="utf-8") as fh:
+                    json.dump(filed, fh, ensure_ascii=False, indent=1)
+                    fh.write("\n")
     if write:
         after = NG._load_images({r["college"] for r in rows})
         for r in rows:
@@ -285,7 +312,66 @@ def plan(write: bool, census_path: str = CENSUS) -> dict:
             r["after_image"] = {"checks": img["checks"]}
     for i, r in enumerate(rows, 1):
         r["i"] = i
-    return {"rows": rows, "held": held, "not_exact": not_exact, "by": dict(by), "members": members}
+    return {"rows": rows, "held": held, "not_exact": not_exact, "by": dict(by), "members": members,
+            "rescored_not_planned": rescored}
+
+
+# ── the follow_verdict guard (#3705's second reader, finding 2) ──────────
+# The trigger program_requirement_records_follow_verdict (chatbox/supabase_program_record_verdicts.sql) marks a row
+# checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. A
+# checks-only UPDATE keeps the record, so a confirm given earlier on a failing row would check it at the apply, and
+# the rollback (which never writes a checked row) would then skip it. The pre-read counts those rows, and the apply
+# aborts, writing nothing, unless the count is 0.
+CONFIRM_CTE = (
+    "f as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n"
+    "        from v join public.program_requirement_records r\n"
+    "          on r.college = v.college and r.control_number = v.control_number\n"
+    "        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n"
+    "                       where pv.college = v.college and pv.control_number = v.control_number\n"
+    "                       order by pv.id desc limit 1) lv on true\n"
+    "       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record))")
+
+
+def confirm_guarded_apply(rows: list[dict], tag: str) -> str:
+    sql = NG.update_sql(rows, tag)
+    head = "e(expect) as (values (%d)),\n" % len(rows)
+    tail = "select case when s.n = e.expect - c.n\n"
+    if sql.count(head) != 1 or sql.count(tail) != 1 or sql.count("  from s, c, e;") != 1:
+        raise SystemExit("the guarded UPDATE's shape moved: the confirm guard cannot be placed")
+    sql = sql.replace(head, CONFIRM_CTE + ",\n" + head)
+    sql = sql.replace(tail, "select case when f.n > 0\n"
+                            "            then ('%s confirm guard: ' || f.n || ' rows hold a matching confirm verdict "
+                            "' || f.keys::text)::int::text::json\n"
+                            "            when s.n = e.expect - c.n\n" % tag)
+    return sql.replace("  from s, c, e;", "  from s, c, e, f;")
+
+
+def confirm_pre_read(rows: list[dict]) -> str:
+    sql = NG.pre_read_sql(rows)
+    key = "  'checked_now', count(*) filter (where r.checked))\n"
+    if sql.count(key) != 1:
+        raise SystemExit("the pre-read's shape moved: the confirm count cannot be placed")
+    return sql.replace(key, "  'checked_now', count(*) filter (where r.checked),\n"
+                            "  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n"
+                            "                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n"
+                       ).replace("    on r.college = v.college and r.control_number = v.control_number;",
+                                 "    on r.college = v.college and r.control_number = v.control_number\n"
+                                 "  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n"
+                                 "                      where pv.college = v.college and pv.control_number = v.control_number\n"
+                                 "                      order by pv.id desc limit 1) lv on true;")
+
+
+CLAIM_CHECK_READS = (
+    "Rule 2's claim check reads the pages kb/program_requirements_college/<slug>/sources.json lists, which is the "
+    "college's latest capture, not the read behind the record (32357's record names #page=169; its sources entry holds "
+    "164 to 167). It can contradict a sentence that names a page the capture held in its middle; it cannot fail a "
+    "one- or two-page read, a sentence that names no page, or a record whose read used other pages than today's "
+    "capture. It is a check against the capture, never against the text the reader saw.")
+FOLLOW_VERDICT = (
+    "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches "
+    "the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves "
+    "to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows "
+    "(confirm_matches); the apply aborts, writing nothing, unless the count is 0.")
 
 
 # ── the self-recall ───────────────────────────────────────────────────────
@@ -468,7 +554,9 @@ def main(argv=None) -> int:
             "representation": ("checks.coverage and checks.invented as the scorer reads the common numbers (rule 1); "
                                "checks.gaps and checks.confidence for section_cut_off (rule 2); checks.arithmetic "
                                "and the record unchanged"),
-            "pre_read": NG.pre_read_sql(rows), "apply": NG.update_sql(rows, a.tag + " piles"),
+            "rescored_not_planned": res["rescored_not_planned"],
+            "claim_check_reads": CLAIM_CHECK_READS, "follow_verdict": FOLLOW_VERDICT,
+            "pre_read": confirm_pre_read(rows), "apply": confirm_guarded_apply(rows, a.tag + " piles"),
             "rollback": NG.rollback_sql(rows, a.tag + " piles rollback")}
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(body, fh, ensure_ascii=False, indent=1)

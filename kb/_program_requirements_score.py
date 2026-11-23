@@ -221,13 +221,19 @@ def listed_key(code: str | None, listed: dict, packed: bool = False) -> str:
 # A course printed with its common course number in parentheses after the local one (Santa Rosa Junior's
 # 2026-2027 PDF: "PSYC 1000 (PSYC C1000)", "ECON 2001 (ECON C2001)"; S713). The state's file lists the common
 # number alone (PSYCC1000), so the code as written read as one course missing and another invented.
-COMMON_NUMBER_IN_PARENS = re.compile(r"\(\s*([A-Z&][A-Z&/ ]{0,7}?\s*C\s?\d{3,4}[A-Z]{0,2})\s*\)\s*$")
+# The common number is the subject, a space, C and four digits, and its subject is the local code's own (#3705's
+# second reader: "(MUSC 101)" is no common number, and the catalog's typo "ARTH 1100 (ANTH C1100)" names another
+# subject, so either stays as written).
+COMMON_NUMBER_IN_PARENS = re.compile(
+    r"^\s*([A-Z&][A-Z&/]{0,7})\s*[0-9][0-9A-Z.]*\s*\(\s*([A-Z&][A-Z&/]{0,7})\s+(C\d{4}[A-Z]{0,2})\s*\)\s*$")
 
 
 def common_number_in_parens(code: str | None) -> str | None:
-    """The normal form of a common course number printed in parentheses at the end of a code, or None."""
-    m = COMMON_NUMBER_IN_PARENS.search((code or "").upper())
-    return norm_code(m.group(1)) if m else None
+    """The normal form of a common course number printed in parentheses after a code of the same subject, or None."""
+    m = COMMON_NUMBER_IN_PARENS.match((code or "").upper())
+    if not m or m.group(1) != m.group(2):
+        return None
+    return norm_code(m.group(2) + " " + m.group(3))
 
 
 def _listed_key(code: str | None, listed: dict) -> str:
