@@ -44,7 +44,8 @@ move) and 9 (the UI pass is its own queue item).
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
 3. **Merge order at this writing (15:09Z):** #3715 (Los Rios), then #3719 (the `option_parts` 9 with Fullerton's
-   11), then College of the Sequoias' PR once its reader and apply land; this checkpoint, #3713, at sign-off. Each
+   11), then College of the Sequoias' #3721 (applied; merges once `main` is merged in and `test` is green; if it is
+   still open at the next start, it merges first); this checkpoint, #3713, at sign-off. Each
    records PR merges `main` once right before its merge, takes `main`'s side of a conflicted Commons file and reruns
    both builders. Dependabot's #3383 waits.
 
@@ -124,12 +125,16 @@ outline fills first, program records second. The outline queue was empty, so bot
   load 45199758327), 35 passing (Sacramento City 07334 short of its GE units; Cosumnes River 35364 on outcomes), all
   unchecked; 7 named gaps filed (Sacramento City 4, Cosumnes River 3).
 
-**Pending:** College of the Sequoias' 14 (`claude/s714-piles-sequoias` `51528086`; the page's own double-count
-figure), under its second reader.
+**College of the Sequoias, #3721:** 13 records pass where each local degree page prints, under its TOTAL, how many
+units may count toward both the major and general education; the fill stores the figure in `ge_overlap` as a range
+and the scorer reads it as a cap. Its reader's two rounds held 06770 (two CONCENTRATION A blocks read as
+alternatives), decided the cap on the award (`awards_match`, so "Not for Transfer" no longer reads as a transfer
+degree) and bounded the fill to the program's own heading. Pre-read 13 of 13 before-images, 0 confirms; migrate
+45212444064 (16:06Z), 13 of 13 live; `.apply` back at main's value (`a4de5b00`). 8 more held, 36073 among them.
 
 **The census on `main`:** run 45209484531 (15:53Z, `f0ffa503`, after #3719): of 20,282 active programs, 15,454 pass and 4,508 have no passing record (4,586 at S713's census, 78 fewer); 320 are collected with a named gap (319). Largest causes: no closed list 1,747; page not found 1,097; units unequal 903 (918); units incomplete 288; places none 196 (233); coverage fails 156 (175). At about 215 a day, the 4,508 take about 21 days.
 
-**Tonight's count:** 80 records applied or loaded and live: 77 passing, 1 named gap, 2 failing new records; $4.13 of
+**Tonight's count:** 93 records applied or loaded and live: 90 passing, 1 named gap, 2 failing new records; $4.13 of
 paid reads; 7 named gaps filed at Los Rios; 0 outline rows.
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
@@ -147,8 +152,8 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
      held wait for the fix (NEXT (2)).
    - Lane 1: the reader-page lever at San Bernardino Valley 15, Los Angeles Southwest 9, Mendocino 6 and Santiago
      Canyon 6; American River's 5 after a checked filing of the file its host serves (NEXT (5)).
-   - Lane 2: College of the Sequoias' 14 through its reader and apply, then the next cheap piles from the census, and
-     the holds by key (NEXT (6)).
+   - Lane 2: #3721 merged (or merge it first), then the next cheap piles from the census, and the holds by key
+     (NEXT (6)).
    - Step 11: the outline queue is empty until a census, a capture or a verdict row changes (NEXT (1)).
    - After the waves, the one follow-up: S713's minors, COBIx's `f-cobix-minors-s713` and `f-cobix-minors-s714`, and
      East Los Angeles's free reconcile (`extract=0`) before its next text run (NEXT (3)).
@@ -184,7 +189,7 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
 | East Los Angeles's 9 held: 02430, 08252, 21157, 02456, 31017, 41231, 38168, 37510; 33013 (its own figures disagree) | Sky (8), a person (1) | 2026-11-23 (S714) |
 | City College of San Francisco's 26 held by key (#3714's receipt): 20 of tonight's 28 (the six CNIT options 17614 to 17619, an own-option step; 16990, 16991, 38267, a wrapper-fill step; 33208, 37781 cut off; 9 others) and S713's six (17954, its record unloaded; 09178, 17952, 31602, 36964, 42318) | Sky, lane 2 | 2026-11-23 (S713, S714) |
 | Fullerton's 13 held: 03853, 03866, 08420, 08422, 18163, 18166, 18749, 33680, 35174, 36798, 36863, 42143, 42394 | Sky, lane 2 | 2026-11-23 (S714) |
-| College of the Sequoias: 14 planned and under the second reader; 8 held, 36073 among them (its page lacks "above") | Sky | 2026-11-23 (S714) |
+| College of the Sequoias: 06770 (a misread sum) and 8 more held, 36073 among them (its page lacks "above") | Sky | 2026-11-23 (S714) |
 | Santa Barbara City 05934: today's capture finds 31 of its option's 33 courses (ENVS 112, ENVS 115) | Sky, a read | 2026-11-23 (S714) |
 | The 30-day artifact `course-outcomes-45026998155-part1` holds trial pages that print a staff name: delete it | a person | 2026-11-22 (S703) |
 | Antelope Valley 43028 (CSU and IGETC figures on a Cal-GETC degree) and De Anza 45499 (a 180-unit bachelor's) | a person | 2026-11-23 (S713) |
