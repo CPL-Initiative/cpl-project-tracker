@@ -103,6 +103,30 @@
   },
   "Clovis Community College": {
    "why": "S703 (worker pins for SkyDovekie), the harvest lane's NEXT (4), f-clovis-19-left-s697: no reconcile step; the entry names three programs' own pages (pdf_pages).",
+   "course_renumbers": {
+    "SOC1B": "SOCI 1B",
+    "ANTHRO2": "ANTH 2"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "SOC1B",
+     "file": "SOCI 1B",
+     "title": "Critical Thinking about Social Problems",
+     "units": 3,
+     "session": "S713",
+     "date": "2026-11-23",
+     "evidence": "The 2026-2027 catalog prints SOC 1B in Liberal Studies 33486, where the state's file lists SOCI 1B Critical Thinking about Social Problems; the college's course record keeps SOC 1B Critical Thinking About Social Problems at control number CCC000563158 (kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json, Clovis's held SOC-for-SOCI entry, one number, so the prefix stays unaliased and the course alone is renumbered). The record's note: 'the closed list stores SOCI1B with the same title'."
+    },
+    {
+     "printed": "ANTHRO2",
+     "file": "ANTH 2",
+     "title": "Cultural Anthropology",
+     "units": 3,
+     "session": "S713",
+     "date": "2026-11-23",
+     "evidence": "The 2026-2027 catalog prints ANTHRO 2 Cultural Anthropology in Law, Public Policy, and Society 45957, where the state's file lists ANTH 2 Cultural Anthropology; the college's course record keeps ANTHRO 2 CULTURAL ANTHROPOLOGY at control number CCC000563415 (the same plan's held ANTHRO-for-ANTH entry, one number). The record's note: 'treated as the closed list's ANTH2 (same title)'."
+    }
+   ],
    "steps": [],
    "pdf_pages": {
     "33433": {
@@ -1025,8 +1049,20 @@
    "course_renumbers": {
     "ENGL101": "ENGL C1000",
     "ENGL104": "ENGL C1001",
-    "POLS101": "POL S C1000"
+    "POLS101": "POL S C1000",
+    "PSYC104": "PSYCH 104"
    },
+   "course_renumbers_cited": [
+    {
+     "printed": "PSYC104",
+     "file": "PSYCH 104",
+     "title": "Social Psychology",
+     "units": 3,
+     "session": "S713",
+     "date": "2026-11-23",
+     "evidence": "The state's file keeps one Glendale row under the old prefix, PSYCH 104 Social Psychology, where the college's course list keeps PSYC 104 Social Psychology at control number CCC000628530 (kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json, Glendale's held PSYC-for-PSYCH entry: one title agreeing, three counterexamples, so the prefix stays unaliased and the course alone is renumbered). The 2025-2026 description prints '104 \u00b7 SOCIAL PSYCHOLOGY \u00b7 3.0 Units \u00b7 PSYC 104 explores' (kb/program_requirements_units/glendale_community.json). The 2026-2027 pages print PSYC 104 in Liberal Arts: Social and Behavioral Sciences 18640, Sociology A.A-T 30813 and Cal-GETC 45068, and each record's notes match it to the file's PSYCH 104."
+    }
+   ],
    "steps": [
     {
      "kind": "course_units",

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T09:20:04Z",
+ "written_at": "2026-11-23T10:05:51Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16973,
-  "gap": 5362,
+  "passing": 16992,
+  "gap": 5343,
   "with_gap": 118,
   "cost_usd": 1340.28,
   "passed_at_read": 16249,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16652,
-  "gap": 5362,
+  "passing": 16671,
+  "gap": 5343,
   "collected_with_gaps": 321,
   "discontinued": 0
  },
@@ -1884,13 +1884,13 @@
    "harvested": true,
    "slug": "clovis_community",
    "programs": 129,
-   "passing": 90,
-   "gap": 39,
+   "passing": 96,
+   "gap": 33,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 12,
     "places_none": 2,
-    "unknown_without_live": 17
+    "unknown_without_live": 11
    },
    "census_causes": {
     "course_added": 1,
@@ -1946,8 +1946,8 @@
    "read_seconds": 50.2,
    "run": "45033577888",
    "levers": {
-    "reconcile_steps": 17,
     "reader_page_search": 12,
+    "reconcile_steps": 11,
     "program_course_file_check": 8,
     "reader_page_assignment": 2
    },
@@ -5150,12 +5150,12 @@
    "harvested": true,
    "slug": "glendale_community",
    "programs": 317,
-   "passing": 223,
-   "gap": 94,
+   "passing": 236,
+   "gap": 81,
    "causes": {
     "no_closed_list": 50,
     "page_not_found": 25,
-    "unknown_without_live": 19
+    "unknown_without_live": 6
    },
    "census_causes": {
     "course_added": 1,
@@ -5220,7 +5220,7 @@
    "levers": {
     "program_course_file_check": 50,
     "reader_page_search": 25,
-    "reconcile_steps": 17,
+    "reconcile_steps": 4,
     "scorer_noncredit_hours": 2
    },
    "collection": {

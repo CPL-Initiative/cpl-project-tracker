@@ -46,31 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 47,
+   "placed": 48,
    "listed": 51,
-   "share": 0.922,
+   "share": 0.941,
    "missing": [
     "HIST117",
     "HIST118",
-    "HIST118H",
-    "PSYCH104"
+    "HIST118H"
    ],
-   "unexplained": [
-    "PSYCH104"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 6,
    "codes": [
     "GEOG106",
     "HISTC1001",
     "HISTC1002",
     "HISTC1002H",
     "POLS115",
-    "POLSC1000H",
-    "PSYC104"
+    "POLSC1000H"
    ],
    "flagged": [
     "GEOG106",
@@ -80,7 +76,7 @@
     "POLS115",
     "POLSC1000H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -140,7 +136,14 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "PSYC 104",
+    "listed": "PSYCH104",
+    "block": "LIST A - CHOOSE TWO OF THE FOLLOWING"
+   }
+  ]
  },
  "record": {
   "program": {

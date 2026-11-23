@@ -61,19 +61,43 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    9.0,
-    9.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "'CHOOSE ADDITIONAL UNITS TO COMPLETE A MINIMUM TOTAL OF EIGHTEEN' chooses units but names no minimum"
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "minimum": true,
+    "fill": [
+     42.0,
+     42.0
+    ]
+   },
+   "heading_figures": [
+    {
+     "block": "CHOOSE ADDITIONAL UNITS TO COMPLETE A MINIMUM TOTAL OF EIGHTEEN",
+     "figure": 18.0
+    }
    ]
   },
   "repeated": {
@@ -98,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

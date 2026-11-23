@@ -116,10 +116,13 @@ HAND_HELD = {
 
 
 # ── rule 1: the common number in parentheses, rescored from the filed score ──
-def rescore_common_numbers(filed: dict) -> dict | None:
+def rescore_common_numbers(filed: dict, name_of=None, key: str = "common_numbers") -> dict | None:
     """The filed score with every code that prints its common number in parentheses keyed by that number where the
     state's file lists it, read from the filed score's own lists. Returns {"score", "renamed", "exact"}, or None when
-    no code changes key."""
+    no code changes key. name_of (a code as printed to the listed code it names, or None) and key (the score's field
+    naming the renames) let another rename of the same shape share it: S713's Glendale course renumber
+    (kb/_program_piles_s713_glendale.py)."""
+    name_of = name_of or S.common_number_in_parens
     sc = filed.get("score") or {}
     cov, inv = sc.get("coverage") or {}, sc.get("invented") or {}
     missing, invented = list(cov.get("missing") or []), list(inv.get("codes") or [])
@@ -135,7 +138,7 @@ def rescore_common_numbers(filed: dict) -> dict | None:
                 entries.append((e, b, k))
     renamed, exact = [], True
     for e, b, k in entries:
-        cn = S.common_number_in_parens(e.get("code"))
+        cn = name_of(e.get("code"))
         if not cn or k not in invented:
             continue
         if cn not in missing and cn not in placed_listed:
@@ -149,7 +152,7 @@ def rescore_common_numbers(filed: dict) -> dict | None:
     new_keys = {r["listed"] for r in renamed}
     gone = {S.norm_code(r["printed"]) for r in renamed}
     # A code as written leaves invented only when no entry keeps it unrenamed.
-    still = {k for e, b, k in entries if k in gone and not (S.common_number_in_parens(e.get("code")) in new_keys)}
+    still = {k for e, b, k in entries if k in gone and not (name_of(e.get("code")) in new_keys)}
     miss = [k for k in missing if k not in new_keys]
     unexpl = [k for k in cov.get("unexplained") or [] if k not in new_keys]
     n = cov.get("listed") or 0
@@ -161,7 +164,7 @@ def rescore_common_numbers(filed: dict) -> dict | None:
                            **{"pass": not unexpl and not none_placed})
     out["invented"] = dict(inv, count=len(inv_codes), codes=inv_codes, flagged=[k for k in flagged if k in inv_codes],
                            **{"pass": not unflagged})
-    out["common_numbers"] = renamed
+    out[key] = renamed
     a = out.get("arithmetic") or {}
     out["pass"] = bool(out["coverage"]["pass"] and out["invented"]["pass"] and a.get("pass")
                        and (out.get("repeated") or {}).get("pass", True) and (out.get("outcomes") or {}).get("pass", True))
