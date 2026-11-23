@@ -262,6 +262,8 @@ Memory rows: `kb/migrations/2026-11-23_s714_cpl_memory_rows.sql` (15 rows, rollb
 
 ## Safety patterns to honor
 
+**New at the end of S714:** a test must never read the live census for its members: once a plan's records pass, the next census drops them and the test breaks every PR's CI and `main` (`tests/program_piles_s714_ela_test.py` did, fixed in #3721); pin the members in a fixture, as the City College of San Francisco test does (`p-test-pins-census-members-s714`).
+
 All of handoff 714's. New tonight: one dispatch at a time per branch; a fresh worker per branch; no reconcile at any
 college before the fill is measured and the dropped gaps are fixed; the claim check reads today's capture and can hold
 a row (`d-optparts-holds-05934-claim-check-s714`). Each apply put `.apply` back to `main`'s value after its run, so no
@@ -286,11 +288,13 @@ by Opus 5.5.
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration and this checkpoint | merges at sign-off |
 | #3714 (`claude/s714-piles-ccsf`) | merged `f0d84966`; applied by migrate 45176130201 | none |
 | #3716 (`claude/s714-piles-ela`) | merged `890eb465`; applied by migrate 45186909162 | none |
-| #3719 (`claude/s714-piles-optparts`, with `claude/s714-piles-fullerton` merged in) | applied by migrates 45188487600 (9) and 45191999745 (11); head `9a4faf9e`, `main` merged | `test`, the merge |
-| #3715 (`claude/s714-rios`) | 37 records loaded (45198701869, 45199218981, 45199758327); 7 named gaps; the 9 rescored held; head `597cfd85` | `test`, the merge |
-| `claude/s714-piles-sequoias` (`piles`) | plan `51528086`, 14 rows, under its second reader | the apply, then its PR |
+| #3719 (`claude/s714-piles-optparts`, with `claude/s714-piles-fullerton` merged in) | merged `5b4c057a`; applied by migrates 45188487600 (9) and 45191999745 (11) | none |
+| #3715 (`claude/s714-rios`) | merged `a72f9516`; 37 records loaded (45198701869, 45199218981, 45199758327); 7 named gaps; the 9 rescored held | none |
+| #3721 (`claude/s714-piles-sequoias`) | applied by migrate 45212444064, 13 rows live; carries the East Los Angeles test's census fixture | `test`, the merge (first at the next start if still open) |
+| samueltlee/CPLBrain#855 (the vault note) | merged `98ead375` | none |
+| Harvest gap census 45209484531 on `main` | `f0ffa503` | none |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
-| #3717 and #3718 (S715 SkyAlbatross, Sam's plain session) | #3717 merged `0ce26631`; #3718 open | S715's |
+| #3717 and #3718 (S715 SkyAlbatross, Sam's plain session) | merged `0ce26631` and `c7ef1587` | none |
 | #3383 | dependabot's | waits |
 
 ## Let go
@@ -299,8 +303,8 @@ The ledger names no PR subscription, scheduled check-in or artifact watch: the r
 watcher stopped at 12:58Z on Sam's word. Workers end with the session; each branch is pushed. The local Postgres 16
 used for the apply proofs stops at sign-off.
 
-SPEND_LINE
+Spend: about $275 (an estimate from the session's and its agents' token counts at list prices, `kb/_spend_meter.py`'s rates: Opus 5.5 about $268, Sonnet $5, Haiku $0.21; the conductor about $33, six workers about $165, eight second-reader rounds about $66, the checkpoint documents $13), all collection; 2026-11-23T11:32Z to about 16:30Z. Every message ran on Opus 5.5, Sonnet or Haiku (the form names Fable 5.2). The three paid reads' own cost, $4.13 on their estimates (Sacramento City $2.04, Cosumnes River $1.76, Folsom Lake $0.33), is listed apart. Stop rules: none fired (93 new records, about $3 each; no outline rows; no rollback). With S713's $219 the day stands near $495 before Sam's plain sessions.
 
 Opening line: *Greetings, you are SkyPetrel (Session 716), see SkyFulmar's (S714) handoff — `docs/session_716_handoff.md` — let's keep rolling with our queue.* (If a plain session has taken 716 by then, take the next free number and say so.)
 
-FINAL_LINE
+This session's cost: about $275 at list prices (no `get_session` in this session; estimated from the session's and its agents' token counts) plus $4.13 of paid reads. Records collected: 93 (90 passing, 1 named gap, 2 failing new records), and 7 more programs filed as named gaps. Outline rows added: 0. Substantive PRs merged: PRCOUNT.
