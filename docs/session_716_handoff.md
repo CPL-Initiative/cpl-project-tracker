@@ -94,6 +94,11 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   ins for now"*; this run stopped its COBIx watcher at once and reads each PR's thread before a merge.
   `piles` pushed the six fixes (#3714 head `8e461a7d`, 92 of 92); the second reader has round 2 of 2 on them, because
   the same-figure guard is new shared scorer code.
+- 13:14Z: #3714's round 2: MERGE (the same-figure guard fires on no committed record, no false pass); its one minor,
+  true parts that print one figure read as alternatives, goes to COBIx's list. `piles2` filed East Los Angeles's
+  plan on `claude/s714-piles-ela` (`6f5c93ef`, no PR under the cap): 14 to passing and 45602 a named gap
+  (`total_differs`), 9 held; it changes shared reconcile and scorer code (`own_heading_end`, `own_plan_line_at`,
+  `set` with `was` and `hold`), so a second reader is on it before the apply.
 
 ## Conductor settings
 
@@ -112,7 +117,7 @@ by Opus 5.5.
 |---|---|---|
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
 | #3714 (`claude/s714-piles-ccsf`, `piles`) | applied by migrate 45176130201, 8 rows live | the reach-count and test fixes, then the merge |
-| `claude/s714-piles-ela` (`piles2`) | started | its plan |
+| `claude/s714-piles-ela` (`piles2`) | plan filed, 15 rows | the second reader, its PR, the pre-read, the apply, the merge |
 | #3715 (`claude/s714-rios`, `rios`) | reader change and 38 pins filed | the second reader, three paid reads, reconcile, reread, merge |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
 | #3383 | dependabot's | waits |
