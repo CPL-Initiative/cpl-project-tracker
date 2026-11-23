@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-22T15:13:06Z",
+  "written_at": "2026-11-23T10:21:49Z",
   "session": 713,
   "moniker": "SkyKittiwake",
   "run": "the CPL Queue routine",
@@ -918,15 +918,21 @@
       "active": 20282,
       "complete": 15349,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-23",
+      "active": 20282,
+      "complete": 15377,
+      "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-20T06:12:00Z"
+    "at": "2026-11-23T11:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-22",
+    "day": "2026-11-23",
     "gaps": 3407,
     "parts": {
       "links": {
@@ -939,7 +945,7 @@
           118
         ],
         "ppm": [
-          112,
+          111,
           118
         ]
       },
@@ -953,7 +959,7 @@
       ],
       "outcomes": {
         "slo": [
-          22978,
+          23947,
           88736
         ],
         "plo": [
