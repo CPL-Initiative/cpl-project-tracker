@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1573,
-    "bytes": 17097213,
+    "bytes": 17097482,
     "over_budget": 5,
     "handoff_max": 715,
     "always_loaded_files": 1,
@@ -46,25 +46,23 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 543023,
+        "bytes": 543022,
         "over": 1
       },
       "handoff": {
         "files": 670,
-        "bytes": 4952444,
+        "bytes": 4952714,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 5,
       "kb_note_dialect": 1,
-      "american_spelling": 1,
-      "vault_heavy_path": 79,
-      "handoff_drops_active_lane": 1
+      "vault_heavy_path": 79
     },
     "vault": {
       "files": 29582,
-      "bytes": 1584410104,
+      "bytes": 1584410373,
       "heavy_bytes": 1220724319,
       "heavy_share": 0.77,
       "ignore_filters": [
@@ -226,21 +224,6 @@
       },
       "message": "21,633 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cer-procedures.md"
-    },
-    {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 1,
-        "forms": {
-          "labelled": {
-            "n": 1,
-            "prefer": "labeled"
-          }
-        }
-      },
-      "message": "1 British form — labelled→labeled",
-      "path": "docs/reference/lanes/commons.md"
     },
     {
       "rule": "vault_heavy_path",
@@ -1031,21 +1014,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "handoff_drops_active_lane",
-      "fixable": false,
-      "path": "docs/session_715_handoff.md",
-      "detail": {
-        "lanes": [
-          "cer-procedures",
-          "my-college-action-page",
-          "program-requirements-harvest",
-          "repo-size"
-        ],
-        "days": 7
-      },
-      "message": "`docs/session_715_handoff.md` never names 4 lane(s) worked in the last 7 days that still carry a NEXT: cer-procedures, my-college-action-page, program-requirements-harvest, repo-size. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

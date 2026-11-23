@@ -14,8 +14,8 @@
   "confident_from": 0.9,
   "state_list": "coci_lookup_data.js (band and category where a catalog is not filed)",
   "outcomes_compare": "kb/status/mid_outcomes_compare_2026-11-23.json.gz",
-  "outcomes_compare_rows": 49404,
-  "outcomes_reads_rows": 49404,
+  "outcomes_compare_rows": 49407,
+  "outcomes_reads_rows": 49407,
   "outcomes_current": true
  },
  "scopes": {

@@ -2,7 +2,7 @@
 
 Issue #2962, COBIx's operational brief of 2026-11-12, Sam's go relayed by COBIx ("yes, let's roll!", cpl_memory sam-mid-reclustering-step-1-go-2026-11-12). A no-write comparison: nothing here changes an M-ID, a table or a generated file. Built by `kb/_mid_outcomes_compare.py`; every M-ID's result is in the JSON beside this file.
 
-Source of the outcomes text: the committed reads under `kb/course_outcomes/` (source: files; 27 hosts, 49404 rows). Membership: `unified_courses_members.js` (generated 2026-11-23 06:20), descriptions `unified_courses_member_desc.js`, titles `unified_courses_index.js`, exhibit reach `unified_courses_aligned.js` and `kb/exhibits_review.json`, districts `kb/college_identity/2026-11-10/crosswalk.json`, subjects `kb/reference/subject_discipline_map.json`.
+Source of the outcomes text: the committed reads under `kb/course_outcomes/` (source: files; 27 hosts, 49407 rows). Membership: `unified_courses_members.js` (generated 2026-11-23 06:20), descriptions `unified_courses_member_desc.js`, titles `unified_courses_index.js`, exhibit reach `unified_courses_aligned.js` and `kb/exhibits_review.json`, districts `kb/college_identity/2026-11-10/crosswalk.json`, subjects `kb/reference/subject_discipline_map.json`.
 
 This report replaces the first run of this date (#3165, `41eeb44a`). COBIx read it and gave four findings (#2962, comment 6829696579), taken as given: the district guard now covers splits and merges, every case carries its exhibit reach, the cases for Sam are chosen by that reach, and a structural check reads subject codes. The first run's six cases stay below as examples, re-rated.
 
@@ -12,12 +12,12 @@ Course outcomes live in one table, `course_outcomes` on Supabase, and every row 
 
 | Source | Rows | Courses | Colleges |
 |---|---|---|---|
-| SLOs | 28949 | 28870 | 39 |
+| SLOs | 28952 | 28873 | 39 |
 | Course objectives | 20455 | 20443 | 29 |
 | PLOs | 0 | 0 | 0 |
-| Descriptions (COCI) | one per member | 81013 members in the M-IDs read here | statewide |
+| Descriptions (COCI) | one per member | 81021 members in the M-IDs read here | statewide |
 
-Of 29326 courses with outcomes text, 27759 match a member of an M-ID (college and code). 12891 M-IDs hold at least one member with text; 3544 hold two or more (the scope of this pass), and 2181 of those are same-college suites, two or more members from one college. That is 7.2% of the 49564 M-IDs.
+Of 29329 courses with outcomes text, 27762 match a member of an M-ID (college and code). 12893 M-IDs hold at least one member with text; 3545 hold two or more (the scope of this pass), and 2182 of those are same-college suites, two or more members from one college. That is 7.2% of the 49564 M-IDs.
 
 ## Method
 
@@ -25,7 +25,7 @@ Each course's outcome and objective statements become word stems, with the lead-
 
 Thresholds: agree at 0.30; strong confirmation at a mean of 0.50 with a second signal; merge candidate at 0.55 across two M-IDs of one Common SUBJ; descriptions agree at 0.30; titles agree at a stem overlap of 0.50, and a strong merge of two titles that each name something the other lacks needs descriptions at 0.50. A course with fewer than 12 stems after stripping is thin and treated as having no text; 3427 statements printed word for word by 4 or more courses were dropped as outline boilerplate.
 
-Where the data is strong, the method agrees with the M-IDs: 30566 pairs of same-titled courses at two colleges inside one M-ID score a median of 0.293, and 48% of them reach the agree line. 801 sampled pairs of differently titled courses in different M-IDs of one Common SUBJ score a median of 0.053, and 2% of them reach it (95th percentile 0.221).
+Where the data is strong, the method agrees with the M-IDs: 30566 pairs of same-titled courses at two colleges inside one M-ID score a median of 0.293, and 48% of them reach the agree line. 817 sampled pairs of differently titled courses in different M-IDs of one Common SUBJ score a median of 0.054, and 2% of them reach it (95th percentile 0.226).
 
 Confidence uses Sam's three match levels (Open Asks Sheet 181, 2026-11-11): strong, partial and limited. A split the outcomes alone propose is limited, a flag for a person, since an SLO never overrides on its own. A member with no text joins no group and is never the reason for a split. TOP and units are shown and read by nothing.
 
@@ -33,12 +33,12 @@ Blind spots. Word overlap misses a paraphrase: two colleges can teach the same c
 
 One district is one voice. District outlines printed once for several colleges (RCCD, SDCCD, LACCD) agree by construction, so a pair of colleges inside one district counts as one voice everywhere: it never makes a confirmation strong or partial, a merge pair inside one district is limited, and a split is strong only when a group holds outlines from two or more districts. The district is the committed college identity crosswalk's (`kb/_college_identity_latest.py`); a college it does not name is its own voice. The calibration above counts only same-titled pairs from two districts.
 
-## Counts by class and confidence (the 3544 M-IDs in scope)
+## Counts by class and confidence (the 3545 M-IDs in scope)
 
 | Class | Strong | Partial | Limited | All | First run (no district guard) |
 |---|---|---|---|---|---|
 | Confirmed | 100 | 546 | 924 | 1570 | 557 (221 strong) |
-| Split | 18 | 800 | 719 | 1537 | 760 (19 strong) |
+| Split | 18 | 801 | 719 | 1538 | 760 (19 strong) |
 | Merge candidate | 62 | 220 | 0 | 282 | 221 (63 strong) |
 | Not enough text | 0 | 0 | 0 | 155 | 319 |
 
@@ -65,7 +65,7 @@ educational opportunities in agriculture at Merced College and beyond. Students 
 
 ## Cases for Sam, by exhibit reach
 
-Sam's rule of 2026-11-12, relayed by COBIx (6829696579 point 2): order a batch by student blast radius, how many students or members of the public a correct call would help. The cases below come from the strong and partial splits and merges, ordered by exhibit reach first and strength second. Reach is the credit-by-exam credentials whose title comes from the M-ID, since a split or a rename retitles them; certifications keep their official names (Sam, 2026-11-12) and are shown, never counted (the two columns agreed on #3111, 6827702046). Of the 3544 M-IDs in scope, 230 carry credit-by-exam reach and 192 carry certifications; 31 strong or partial splits and 141 strong or partial merge pairs reach any credit-by-exam credential.
+Sam's rule of 2026-11-12, relayed by COBIx (6829696579 point 2): order a batch by student blast radius, how many students or members of the public a correct call would help. The cases below come from the strong and partial splits and merges, ordered by exhibit reach first and strength second. Reach is the credit-by-exam credentials whose title comes from the M-ID, since a split or a rename retitles them; certifications keep their official names (Sam, 2026-11-12) and are shown, never counted (the two columns agreed on #3111, 6827702046). Of the 3545 M-IDs in scope, 230 carry credit-by-exam reach and 192 carry certifications; 31 strong or partial splits and 141 strong or partial merge pairs reach any credit-by-exam credential.
 
 Potential-CPL blast radius. The repo holds no committed per-M-ID measure of the students or members of the public a call would reach: `prototype/ccr_cpl.json` and `unified_courses_aligned.js` count credentials and colleges, structural counts only, and students per title (`exhibit_title_students`) are a reviewer-only read in Supabase. So this report shows no such column and orders by credit-by-exam reach, the nearest committed measure; the earning colleges behind each credential are shown beside it.
 
@@ -344,5 +344,5 @@ What a good call needs: outlines from the colleges that hold most of these cours
 
 ## Partial or whole
 
-This report reads the committed reads under `kb/course_outcomes/` (source: files; 27 hosts, 49404 rows). The committed reads hold every row the load receipts record, so this pass covers the outcomes the table held at the last load (18 colleges). A dispatch of `mid-outcomes-compare.yml` reads the table itself and rewrites this report, which matters once a load lands that was not filed here first.
+This report reads the committed reads under `kb/course_outcomes/` (source: files; 27 hosts, 49407 rows). The committed reads hold every row the load receipts record, so this pass covers the outcomes the table held at the last load (18 colleges). A dispatch of `mid-outcomes-compare.yml` reads the table itself and rewrites this report, which matters once a load lands that was not filed here first.
 
