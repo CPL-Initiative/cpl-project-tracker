@@ -86,6 +86,8 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   record's own state list `option_parts` moves 10 more records to passing at seven other colleges, and the test
   pins all 21 hand answers. Applied first, fixed forward (`d-apply-before-reach-fix-s714`): pre-read 8 of 8
   before-images, 0 checked, 0 matching confirms; `.apply` pushed at 12:37Z (`4dbb40c9`).
+- 12:40Z: City College of San Francisco's 8 records live: migrate 45176130201 (12:39Z), 8 of 8 at their after-images,
+  none checked; `.apply` back at main's value (`9b917c3a`). `piles` fixes the reach count and the test on #3714.
 
 ## Conductor settings
 
@@ -103,7 +105,7 @@ by Opus 5.5.
 | PR or branch | State | Next |
 |---|---|---|
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
-| #3714 (`claude/s714-piles-ccsf`, `piles`) | plan filed, 8 rows | the second reader, the pre-read, the apply, the merge |
+| #3714 (`claude/s714-piles-ccsf`, `piles`) | applied by migrate 45176130201, 8 rows live | the reach-count and test fixes, then the merge |
 | `claude/s714-piles-ela` (`piles2`) | started | its plan |
 | #3715 (`claude/s714-rios`, `rios`) | reader change and 38 pins filed | the second reader, three paid reads, reconcile, reread, merge |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
