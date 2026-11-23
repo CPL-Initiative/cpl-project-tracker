@@ -71,8 +71,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     73.0,
     80.0
@@ -86,9 +86,8 @@
     30.0,
     30.0
    ],
-   "why": [
-    "the blocks and general education sum to 73.0-80.0; the catalog prints 67.0-74.0 for the degree"
-   ]
+   "why": [],
+   "double_count": 6.0
   },
   "repeated": {
    "codes": [],
@@ -112,7 +111,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,7 +146,11 @@
     "mechanical engineering",
     "electrical engineering",
     "computer engineering"
-   ]
+   ],
+   "ge_overlap": {
+    "min": 6,
+    "max": 6
+   }
   },
   "blocks": [
    {
@@ -364,5 +367,17 @@
    "Careers taken from 'public or private practice in civil engineering, mechanical engineering, electrical engineering and computer engineering' (with a baccalaureate degree)."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": {
+    "min": 6,
+    "max": 6
+   },
+   "words": "6 units may double count above in COS-GE"
+  }
+ ],
+ "read_run": "38748848139"
 }

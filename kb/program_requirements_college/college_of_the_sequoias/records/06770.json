@@ -72,8 +72,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     66.0,
     73.0
@@ -87,9 +87,8 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the blocks and general education sum to 66.0-73.0; the catalog prints 60.0-60.0 for the degree"
-   ]
+   "why": [],
+   "double_count": 13.0
   },
   "repeated": {
    "codes": [],
@@ -113,7 +112,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -154,7 +153,11 @@
     "personal fitness trainer",
     "sports nutrition",
     "massage therapy"
-   ]
+   ],
+   "ge_overlap": {
+    "min": 13,
+    "max": 13
+   }
   },
   "blocks": [
    {
@@ -615,5 +618,17 @@
    "Page text describes the degree as an 'Associate of Science Degree for Transfer' in its closing paragraph although the heading is AS; reviewer may check."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": {
+    "min": 13,
+    "max": 13
+   },
+   "words": "13 units may be double counted above in Cal-GETC"
+  }
+ ],
+ "read_run": "38748848139"
 }

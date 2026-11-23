@@ -60,8 +60,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     64.0,
     64.0
@@ -75,9 +75,8 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the blocks and general education sum to 64.0-64.0; the catalog prints 61.0-61.0 for the degree"
-   ]
+   "why": [],
+   "double_count": 3.0
   },
   "repeated": {
    "codes": [],
@@ -101,7 +100,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -150,7 +149,11 @@
     "sculptor",
     "ceramic design",
     "art materials sales associate"
-   ]
+   ],
+   "ge_overlap": {
+    "min": 3,
+    "max": 3
+   }
   },
   "blocks": [
    {
@@ -536,5 +539,17 @@
    "Closing paragraph refers to 'The Associate in Science Degree for Transfer' and a '60 unit program', which conflicts with this AA degree and its printed TOTAL 61; likely boilerplate. The source URL slug also says 'transfer-aa' though the section is the Associate of Arts in Art (AA)."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": {
+    "min": 3,
+    "max": 3
+   },
+   "words": "3 units may be double counted above in Cal-GETC"
+  }
+ ],
+ "read_run": "38748848139"
 }

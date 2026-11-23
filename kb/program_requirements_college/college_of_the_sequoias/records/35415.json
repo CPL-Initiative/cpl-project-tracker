@@ -171,7 +171,11 @@
    "outcomes": [
     "Demonstrate an understanding of science and mathematical concepts relevant to inquiry at the university level by being prepared for transfer into a STEM program."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": {
+    "min": 6,
+    "max": 9
+   }
   },
   "blocks": [
    {
@@ -555,6 +559,18 @@
    "Closing text refers to 'Associate of Arts Degree for Transfer' although this is a local AA; likely boilerplate."
   ]
  },
- "extracted_run": "44688217584",
- "catalog_year": "2026-2027"
+ "extracted_run": 45194676517,
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": {
+    "min": 6,
+    "max": 9
+   },
+   "words": "6-9 units may be double counted above in Cal-GETC"
+  }
+ ],
+ "read_run": "44688217584"
 }

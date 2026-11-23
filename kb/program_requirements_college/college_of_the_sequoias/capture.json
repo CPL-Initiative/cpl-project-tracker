@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 137,
  "with_closed_list": 137,
- "started": "2026-11-20T06:55:02Z",
+ "started": "2026-11-23T14:30:08Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.cos.edu/sitemap.xml",
@@ -49,18 +49,20 @@
   "yield_unjudged": 0,
   "yield_refused_passing": 0
  },
- "loads": 184,
- "seconds": 916.0,
+ "loads": 178,
+ "seconds": 893.4,
  "found": 126,
  "by_method": {
-  "link_search": 6,
   "not_found": 3,
   "page_claimed": 8,
-  "sitemap_page": 120
+  "sitemap_page": 126
  },
  "shared_pages": {
-  "https://catalog.cos.edu/areas-study/education/elementary-teacher-education/": [
+  "https://catalog.cos.edu//transfer-information-requirements/": [
    "35434",
+   "36805",
+   "38674",
+   "44216",
    "45818"
   ]
  },
@@ -115,7 +117,8 @@
      "content": 5333,
      "tabs": 0
     },
-    "tab_panels": []
+    "tab_panels": [],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -227,109 +230,68 @@
  ],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 7,
-  "0.8-1.0": 34,
-  "1.0": 85
+  "0.5-0.8": 10,
+  "0.8-1.0": 33,
+  "1.0": 83
  },
  "would_extract": {
   "against": "kb/program_requirements_college/college_of_the_sequoias",
-  "kept": 117,
+  "kept": 120,
   "kept_moved": 0,
-  "programs": 9,
-  "list": [
-   {
-    "control_number": "32649",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/administration-justice/associate-science-administration-justice-transfer-as-t/",
-    "coverage": 0.95,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "35415",
-    "title": "University Studies - Pathway to Math and Science",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/",
-    "coverage": 0.881,
-    "was_url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/",
-    "was_coverage": 0.857,
-    "was_method": "sitemap_page"
-   },
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [
    {
     "control_number": "35434",
     "title": "Elementary Teacher Education",
     "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu/areas-study/education/elementary-teacher-education/",
-    "coverage": 0.895,
-    "was_url": "https://catalog.cos.edu//transfer-information-requirements/",
-    "was_coverage": 0.579,
-    "was_method": "sitemap_page"
+    "url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "coverage": 0.579,
+    "was_coverage": 0.895
    },
    {
     "control_number": "35456",
     "title": "Kinesiology",
     "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu/areas-study/physical-education/kinesiology/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.cos.edu//associate-degree-requirements/",
-    "was_coverage": 0.944,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "36805",
-    "title": "Social Justice Studies - Chicano Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu/areas-study/ethnic-studies/associate-arts-social-justice-chicano-studies/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.cos.edu//transfer-information-requirements/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
+    "url": "https://catalog.cos.edu//associate-degree-requirements/",
+    "coverage": 0.944,
+    "was_coverage": 1.0
    },
    {
     "control_number": "38674",
     "title": "Nutrition and Dietetics",
     "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu/areas-study/culinary-nutrition/associate-science-nutrition-dietetics/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.cos.edu//transfer-information-requirements/",
-    "was_coverage": 0.857,
-    "was_method": "sitemap_page"
+    "url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "coverage": 0.857,
+    "was_coverage": 1.0
    },
    {
     "control_number": "44216",
     "title": "Public Health",
     "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu/areas-study/physical-education/public-health/",
-    "coverage": 0.933,
-    "was_url": "https://catalog.cos.edu//transfer-information-requirements/",
-    "was_coverage": 0.533,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45498",
-    "title": "Modern Policing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/administration-justice/associate-science-modern-policing-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "coverage": 0.533,
+    "was_coverage": 0.933
    },
    {
     "control_number": "45818",
     "title": "Elementary Teacher Education: Integrated Programs",
     "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu/areas-study/education/elementary-teacher-education/",
-    "coverage": 0.895,
-    "was_url": "https://catalog.cos.edu//transfer-information-requirements/",
-    "was_coverage": 0.579,
-    "was_method": "sitemap_page"
+    "url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "coverage": 0.579,
+    "was_coverage": 0.895
    }
   ],
-  "held_worse_window": [],
-  "held_no_gain": [],
+  "held_no_gain": [
+   {
+    "control_number": "36805",
+    "title": "Social Justice Studies - Chicano Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
   "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
@@ -672,12 +634,12 @@
    "url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/"
   },
   "35434": {
-   "sha256": "cd2fde36a88d70366f6f09e8bab0ee66fe0852ec7eee126c26911dddde5b019e",
-   "url": "https://catalog.cos.edu/areas-study/education/elementary-teacher-education/"
+   "sha256": "efd7060c3b140dc1a5d4880466f8190c347d3c82f8ea86bfa3d41db591057b88",
+   "url": "https://catalog.cos.edu//transfer-information-requirements/"
   },
   "35456": {
-   "sha256": "7244ab4d0338e75768d932515cdcf960f8c866fbc601032fcf26a2e59aaa9675",
-   "url": "https://catalog.cos.edu/areas-study/physical-education/kinesiology/"
+   "sha256": "9ece20129ce73745cdcf79e95002d50ac55c565ad58adeffcd11f28f11f3af87",
+   "url": "https://catalog.cos.edu//associate-degree-requirements/"
   },
   "35527": {
    "sha256": "c11926633f6f79a738be1892a2c51a665c7eeb28b4782df751a9fdc1196da79a",
@@ -720,8 +682,8 @@
    "url": "https://catalog.cos.edu//areas-study/information-communications-technology/associate-science-information-communication-technology-as/"
   },
   "36805": {
-   "sha256": "6750d5e8de45c4885431540a02b6437e4027e3f1adae66e4ec31afc72094d190",
-   "url": "https://catalog.cos.edu/areas-study/ethnic-studies/associate-arts-social-justice-chicano-studies/"
+   "sha256": "be41a2aeb5063e4b5f8906bf1a666547c8b83933e36b43632c33061259402658",
+   "url": "https://catalog.cos.edu//transfer-information-requirements/"
   },
   "37092": {
    "sha256": "bd139a9e17ef05501d1f56fff68d6fedaca263040b96bd7f7b0ca01227947bb3",
@@ -748,8 +710,8 @@
    "url": "https://catalog.cos.edu//areas-study/pharmacy-technician/certificate-achievement-pharmacy-technician/"
   },
   "38674": {
-   "sha256": "ec8a3e1dcbb8ed6e33b569de007c6809aed3c30c9a62755c47c719bc0ea36356",
-   "url": "https://catalog.cos.edu/areas-study/culinary-nutrition/associate-science-nutrition-dietetics/"
+   "sha256": "4ff6931a30138acc8f96b97bd83cdcdcb94e3abdc2f4fb82a16567fa0f9f5593",
+   "url": "https://catalog.cos.edu//transfer-information-requirements/"
   },
   "38742": {
    "sha256": "f5f3bf4ba5c2f04ea58cce6061e0ec942ff27926906fec585b83682f097b0f77",
@@ -808,8 +770,8 @@
    "url": "https://catalog.cos.edu//areas-study/communication/associate-arts-communication-studies-transfer-aa-t/"
   },
   "44216": {
-   "sha256": "b92cdbc950114f27ef10372346a69256d8196a8ce6b6b23aff890caa6123b3eb",
-   "url": "https://catalog.cos.edu/areas-study/physical-education/public-health/"
+   "sha256": "4ff6931a30138acc8f96b97bd83cdcdcb94e3abdc2f4fb82a16567fa0f9f5593",
+   "url": "https://catalog.cos.edu//transfer-information-requirements/"
   },
   "44314": {
    "sha256": "aea7b41c59aa2d458291d9de1724ce5a7db72cbdaf071a1e1d2461829bf708d8",
@@ -836,9 +798,9 @@
    "url": "https://catalog.cos.edu//areas-study/administration-justice/associate-science-modern-policing-as/"
   },
   "45818": {
-   "sha256": "cd2fde36a88d70366f6f09e8bab0ee66fe0852ec7eee126c26911dddde5b019e",
-   "url": "https://catalog.cos.edu/areas-study/education/elementary-teacher-education/"
+   "sha256": "efd7060c3b140dc1a5d4880466f8190c347d3c82f8ea86bfa3d41db591057b88",
+   "url": "https://catalog.cos.edu//transfer-information-requirements/"
   }
  },
- "run": "44688217584"
+ "run": "45194676517"
 }

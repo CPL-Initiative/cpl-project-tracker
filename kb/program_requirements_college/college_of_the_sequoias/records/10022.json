@@ -63,7 +63,7 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    59.0,
+    60.0,
     60.0
    ],
    "stated": [
@@ -75,8 +75,7 @@
     25.0,
     25.0
    ],
-   "why": [],
-   "within": true
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -311,5 +310,6 @@
    "Restricted electives block states 9 units for three courses, but ASCI 224 is 2 units, so three courses could total 8 units; reviewer should check."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "read_run": "38748848139"
 }

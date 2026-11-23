@@ -79,9 +79,7 @@
     34.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 34.0-36.0; the catalog states 34.0-34.0"
-   ],
+   "why": [],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -367,5 +365,6 @@
    "Required block stated as 28 units; with WEXP 193HS at 2-4 units the listed minimums sum to 28. Certificate total printed as 34."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "read_run": "38748848139"
 }

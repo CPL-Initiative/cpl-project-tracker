@@ -63,34 +63,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    63.0,
-    63.0
+    24.0,
+    24.0
    ],
    "stated": [
-    60.0,
-    60.0
+    24.0,
+    24.0
    ],
-   "against": "degree",
-   "ge": [
-    25.0,
-    25.0
-   ],
+   "against": "program",
    "why": [],
-   "major": {
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     24.0,
-     24.0
+     63.0,
+     63.0
     ],
     "stated": [
-     24.0,
-     24.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     25.0,
+     25.0
+    ],
+    "why": [],
+    "overlap": true
    },
-   "overlap": true,
    "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
@@ -236,7 +236,7 @@
    "Breakdown printed: GE 25 + major 24 + electives 14 = 60 total degree units (the sum is 63; the gap is presumably due to the 3 double-counted units of AGMT 001)."
   ]
  },
- "extracted_run": "38748848139",
+ "extracted_run": 45194676517,
  "reconciled": [
   {
    "field": "ge_overlap",
@@ -245,5 +245,6 @@
    "words": "the major sums to 24, the major total the catalog prints; the major and general education sum to 63 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
    "statewide": "local_degree_ge_overlap"
   }
- ]
+ ],
+ "read_run": "38748848139"
 }
