@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-22",
+  "generated": "2026-11-23",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1570,
-    "bytes": 17073376,
+    "files": 1571,
+    "bytes": 17078678,
     "over_budget": 5,
-    "handoff_max": 710,
+    "handoff_max": 711,
     "always_loaded_files": 1,
     "always_loaded_bytes": 63086,
     "superseded_files": 0,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 166,
-        "bytes": 5716597,
+        "bytes": 5716763,
         "over": 1
       },
       "index": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 545348,
+        "bytes": 545572,
         "over": 1
       },
       "handoff": {
-        "files": 667,
-        "bytes": 4934114,
+        "files": 668,
+        "bytes": 4939026,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 78
     },
     "vault": {
-      "files": 29456,
-      "bytes": 1569228179,
-      "heavy_bytes": 1216221688,
+      "files": 29459,
+      "bytes": 1569249064,
+      "heavy_bytes": 1216229339,
       "heavy_share": 0.775,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -249,10 +249,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 84562717,
+        "bytes": 84563157,
         "kind": "dir"
       },
-      "message": "directory totals 84,562,717 B inside the vault"
+      "message": "directory totals 84,563,157 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -309,10 +309,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 16021655,
+        "bytes": 16028866,
         "kind": "dir"
       },
-      "message": "directory totals 16,021,655 B inside the vault"
+      "message": "directory totals 16,028,866 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
