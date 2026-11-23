@@ -1137,7 +1137,13 @@
     var status = el("p", { cls: "csb-ed-msg", id: pre + "-status", role: "status", tabindex: "-1", text: said });
     var save = el("button", { type: "button", cls: "csb-word", id: pre + "-save", text: "Move the checked courses" });
     function checked() { return Array.prototype.slice.call(body.querySelectorAll("input.csb-move:checked:not([disabled])")); }
-    function count() { var k = checked().length; n.textContent = k ? fmt(k) + (k === 1 ? " course is checked." : " courses are checked.") : "No course is checked."; }
+    /* Once a course is checked the bar pins to the panel's foot, so the save is in reach however far down the course is
+       (Sam, 2026-11-23, on Cerritos AED's construction courses: "I don't see a way to fix them from here"). */
+    function count() {
+      var k = checked().length;
+      n.textContent = k ? fmt(k) + (k === 1 ? " course is checked." : " courses are checked.") : "No course is checked.";
+      if (node.classList) node.classList.toggle("csb-move-live", k > 0);
+    }
     save.addEventListener("click", function () {
       var k = String(co.value || "").trim().toUpperCase(), boxes = checked();
       cmsg.textContent = ""; status.textContent = "";
@@ -1167,11 +1173,12 @@
         if (VIEW.root && VIEW.M) render(VIEW.root, VIEW.M, viewPath());
       });
     });
-    return { node: el("section", { cls: "csb-edit", id: pre, "aria-labelledby": pre + "-h" }, [
+    var node = el("section", { cls: "csb-edit csb-move-bar", id: pre, "aria-labelledby": pre + "-h" }, [
       el("h4", { cls: "csb-edit-head", id: pre + "-h", text: "Move courses to another common subject code" }),
-      el("p", { cls: "csb-note", text: "For the course that belongs under a different code than the rest of " + code + ": check it, or a group, type the common subject code it belongs under, and save. The code’s own common subject code, settled above, moves the rest at the next re-mint. Each move is saved under your sign-in and shows on its course. A course another person moved keeps that move." }),
+      el("p", { cls: "csb-note csb-move-help", text: "For the course that belongs under a different code than the rest of " + code + ": check it, or a group, type the common subject code it belongs under, and save. The code’s own common subject code, settled above, moves the rest at the next re-mint. Each move is saved under your sign-in and shows on its course. A course another person moved keeps that move." }),
       n, el("div", { cls: "csb-ed-field" }, [el("label", { "for": pre + "-code", text: "Common subject code for the checked courses" }), co, cmsg]),
-      el("p", { cls: "csb-ed-row" }, [save]), status]), count: count };
+      el("p", { cls: "csb-ed-row" }, [save]), status]);
+    return { node: node, count: count };
   }
   /* Edit and Save, above the course tables: the local title and the common subject code a person settles. A code's
      credit courses take one form (band credit, or whole where COCI lists no course); its noncredit courses take one
@@ -1592,6 +1599,7 @@
       var mn = mintNote(row, rows, code, c.college);
       if (mn) body.appendChild(mn);
       var can = !!reviewer() && String(code).indexOf("|") < 0, bar = can ? moveBar(slug, code, body) : null, nT = 0;
+      if (bar) body.appendChild(el("p", { cls: "csb-note", id: "csb-move-how", text: "To move a course that sits under the wrong code: check its box in the tables below, then type the common subject code it belongs under in the move box, which stays at the foot of this panel once a course is checked." }));
       var ctxOf = function (common) { return { slug: slug, code: code, can: can, n: nT++, onCheck: bar ? bar.count : null, common: common }; };
       var rowCommon = (row && savedOf(row) && savedOf(row).common) || (row && row.common) || "";
       function bandTable(b) {
@@ -1913,6 +1921,8 @@
     ".csb-panel h3:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:3px; border-radius:2px; }",
     ".csb-band { margin:6px 0 0; font-size:1rem; color:var(--cmn-heading); }",
     "#csb-panel-body { display:grid; gap:10px; min-width:0; }",
+    ".csb-move-bar.csb-move-live { position:sticky; bottom:0; z-index:2; background:var(--cmn-dialog, var(--cmn-surface)); box-shadow:0 -8px 20px color-mix(in srgb, var(--cmn-heading) 14%, transparent); }",
+    ".csb-move-bar.csb-move-live .csb-move-help { display:none; }",
     ".csb-wrap-in { max-height:none; }",
     ".csb-courses { font-size:.88rem; } .csb-courses .csb-c-num { width:16%; } .csb-courses .csb-c-code { width:16%; } .csb-courses .csb-c-mid { width:30%; }",
     ".csb-nc-cat th { background:var(--cmn-surface-2, var(--cmn-surface)); color:var(--cmn-heading); font-weight:700; }",

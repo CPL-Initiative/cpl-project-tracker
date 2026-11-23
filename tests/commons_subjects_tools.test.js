@@ -117,10 +117,14 @@ const posts = (x) => x.calls.filter((c) => c.method !== "GET");
   const boxes = Array.from(x.d.querySelectorAll("#csb-panel input.csb-move"));
   check("(3) signed in, each course carries a labelled checkbox and the table one for all", boxes.length === 4 && boxes.every((b) => /^Move /.test(b.getAttribute("aria-label")))
     && !!x.d.querySelector("#csb-panel input.csb-move-all") && !!x.d.getElementById("csb-move-save"));
+  check("(3) ⭐ the panel says how to move a course before its tables, and the move box rests unpinned while nothing is checked",
+    /check its box in the tables below/.test(txt(x.d.getElementById("csb-move-how"))) && !x.d.getElementById("csb-move").classList.contains("csb-move-live"));
   const held = boxes.find((b) => b.getAttribute("data-move-number") === "30");
   check("(3) ⭐ a course another person moved is held, and says so", held && held.disabled && /Moved to KINE Kinesiology by a person/.test(txt(held.closest("tr"))), held && (held.disabled + " " + txt(held.closest("tr"))));
   x.d.querySelector("#csb-panel input.csb-move-all").checked = true;
   x.d.querySelector("#csb-panel input.csb-move-all").dispatchEvent(new x.w.Event("change", { bubbles: true }));
+  check("(3) ⭐ once a course is checked the move box pins to the panel's foot (Sam, 2026-11-23: \"I don't see a way to fix them from here\")",
+    x.d.getElementById("csb-move").classList.contains("csb-move-live"));
   check("(3) the all box checks every course it may move", boxes.filter((b) => b.checked).length === 3 && !held.checked && /3 courses are checked/.test(txt(x.d.getElementById("csb-move-n"))));
   x.d.getElementById("csb-move-code").value = "zz"; x.d.getElementById("csb-move-save").click(); await settle();
   check("(3) an unknown code makes no request", posts(x).length === 0 && /ZZ is not a common subject code/.test(txt(x.d.getElementById("csb-move-code-msg"))));
