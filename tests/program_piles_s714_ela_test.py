@@ -26,13 +26,16 @@ def check(cond, msg):
         failures.append(msg)
 
 
+# The census as it stood at the plan (tests/fixtures/harvest_gap_census_s714_ela.json): the nightly census moves the
+# applied records out of the lever, so the live file reads none of them (S715, as the CCSF test reads its own).
+CENSUS_AT_PLAN = os.path.join(HERE, "fixtures", "harvest_gap_census_s714_ela.json")
 secs = E.sections()
-members = E.census_members()
+members = E.census_members(CENSUS_AT_PLAN)
 check(len(members) == 24 and set(members) == set(E.HAND_HELD) and set(members) <= set(secs),
       "the census's 24 East Los Angeles reconcile_steps members are each hand-held and each has its section")
 
 # ── the self-recall, per reading: right and wrong against the hand ──
-pr = E.precision()
+pr = E.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 24 and pr["right"] == 24 and pr["wrong"] == 0,
       "the readings answer the hand on all 24: %s" % pr["wrong_keys"])
 check(pr["by_answer"] == {"passes": 14, "gap": 1, "none": 9}, "14 pass, 1 named gap, 9 held: %s" % pr["by_answer"])
@@ -54,7 +57,7 @@ held = [cn for cn in members if E.hand_answer(cn) == "none"]
 check(all(E.read(E.at_base(cn), secs[cn]["text"])["answer"] == "none" for cn in held), "the 9 held stay held")
 
 # ── the boundaries: each reading across each edge ──
-bd = E.boundaries()
+bd = E.boundaries(CENSUS_AT_PLAN)
 check(not bd["wrong"], "every boundary reads its expected answer: %s" % bd["wrong"])
 want = {"plan line one digit off right": 6, "sentence cut from the section right": 6,
         "a later program's sentence right": 6,
@@ -66,7 +69,7 @@ want = {"plan line one digit off right": 6, "sentence cut from the section right
 check(bd["counts"] == want, "the boundary counts: %s" % bd["counts"])
 
 # ── the claim checks: every reading the notes support ──
-cc = E.claim_checks()
+cc = E.claim_checks(CENSUS_AT_PLAN)
 check(not cc["not_standing"] and sum(sum(v.values()) for v in cc["by_reading"].values()) == 15,
       "the reader's notes stand behind all 15 readings: %s" % cc)
 

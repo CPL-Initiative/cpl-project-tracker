@@ -1,0 +1,41 @@
+{
+ "_what": "S714 (lane 2, Fullerton): the reconcile_steps lever of the committed census (written_at 2026-11-23 11:07Z, run 45161770730) at the college, frozen: kb/_program_piles_s714_fullerton.py planned from it.",
+ "written_at": "2026-11-23 11:07Z",
+ "levers": [
+  {
+   "lever": "reconcile_steps",
+   "scope": "Fullerton College",
+   "programs": 24,
+   "kind": "free",
+   "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+   "estimate_usd": null,
+   "over_college_limit": false,
+   "members": [
+    "03816",
+    "03839",
+    "03853",
+    "03866",
+    "08420",
+    "08422",
+    "08438",
+    "11690",
+    "18163",
+    "18166",
+    "18747",
+    "18749",
+    "21252",
+    "21266",
+    "21271",
+    "33680",
+    "35174",
+    "36790",
+    "36798",
+    "36863",
+    "42143",
+    "42394",
+    "45320",
+    "45378"
+   ]
+  }
+ ]
+}

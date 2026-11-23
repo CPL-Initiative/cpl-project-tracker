@@ -119,6 +119,11 @@ withhold kb/program_total_differs.json
 # Standing pattern for a dated file automation adds (the course-outcomes compare); no page reads one, and the
 # ones already committed stay published by their own lines.
 withhold kb/status/mid_outcomes_compare_*
+# Each college's program requirements read (S715, 2026-11-23): captures, sources, summaries and 22,000-odd record
+# files, 193 MB. The builders and the routine read them from the repository; no page fetches one (commons_data.js
+# names the folder as a source in plain text). Published, they took the site to 1,010 MB, over GitHub Pages' 1 GB
+# limit, and every deploy failed from 13:21Z (runs 45183062258 to 45209456728).
+withhold kb/program_requirements_college
 
 # Internal paths no page reads (#3104 follow-up; COBIx on #3278; review findings 8 and 10). Each was searched
 # for in every published .html/.js/.css (fetches, hrefs, script src, built-up paths): no reader found.
@@ -390,7 +395,6 @@ publish kb/pathway_feeder_fields.json
 publish kb/phrase_gated_tables.json
 publish kb/prefix_fold_rulings_2026-09-04.json
 publish kb/program_requirements_calgetc_34_plan.json
-publish kb/program_requirements_college
 publish kb/program_requirements_maps_sample.json
 publish kb/program_requirements_pilot
 publish kb/program_requirements_pilot_sample.json

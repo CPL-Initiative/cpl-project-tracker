@@ -45,28 +45,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 12,
    "listed": 12,
-   "share": 0.917,
-   "missing": [
-    "CSTR42"
-   ],
-   "unexplained": [
-    "CSTR42"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "CSTR42F",
     "CSTR7F"
    ],
    "flagged": [
     "CSTR7F"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -107,7 +102,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "CSTR 042 F",
+    "listed": "CSTR42",
+    "block": "Required Courses (24-27 units)"
+   }
+  ]
  },
  "record": {
   "program": {
