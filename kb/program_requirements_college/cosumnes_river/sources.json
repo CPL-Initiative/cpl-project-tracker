@@ -449,7 +449,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "cdc27321e873d9c0"
   },
   "listed": 12,
   "text_chars": 16000
@@ -634,7 +635,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "0629d1d3e4f1fdff"
   },
   "listed": 31,
   "text_chars": 14475
@@ -1809,16 +1811,16 @@
    "NUTRI300"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=282",
-   "title": "Culinary Services Certificate, the Cooking and Supervision",
-   "h1": "Culinary Services Certificate, the Cooking and Supervision",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=281",
+   "title": "Cooking and Supervision Certificate, which are embedded within",
+   "h1": "Cooking and Supervision Certificate, which are embedded within",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    281,
     282,
     283,
-    284,
-    285
+    284
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -1826,10 +1828,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "1202b0cac74c1a4f"
   },
   "listed": 10,
-  "text_chars": 15551
+  "text_chars": 12072
  },
  {
   "control_number": "07320",
@@ -5365,16 +5368,14 @@
    "PHYS431"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=540",
-   "title": "(2) Obtainment of a minimum grade point average of 2.0.",
-   "h1": "(2) Obtainment of a minimum grade point average of 2.0.",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=433",
+   "title": "as the Biology, Geography, Geology, Math, or Physics AS-T rather",
+   "h1": "as the Biology, Geography, Geology, Math, or Physics AS-T rather",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    540,
-    541,
-    542,
-    543
+    433,
+    434
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -5382,10 +5383,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "acdc07d5191c6568"
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 5827
  },
  {
   "control_number": "31311",
@@ -6373,7 +6375,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "c2ccd3204f30f9cf"
   },
   "listed": 13,
   "text_chars": 15740
@@ -8406,43 +8409,48 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.632,
+  "coverage": 0.842,
   "codes_found": [
-   "MUFHL300",
    "MUFHL310",
    "MUFHL311",
    "MUFHL400",
    "MUFHL404",
    "MUFHL412",
    "MUFHL414",
+   "MUIVI321",
+   "MUIVI351",
+   "MUIVI371",
+   "MUIVI410",
    "MUP310",
+   "MUP321",
    "MUP330",
    "MUP357",
    "MUP360",
-   "MUSM498"
+   "MUSM370"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=502",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=498",
+   "title": "Entrepreneurial Arts: Independent Music Instructor Certificate",
+   "h1": "Entrepreneurial Arts: Independent Music Instructor Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    502,
-    503,
-    504,
-    505
+    498,
+    499,
+    500,
+    501
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "81ac4ba82dc4f84a"
   },
   "listed": 19,
-  "text_chars": 14446
+  "text_chars": 12928
  },
  {
   "control_number": "38021",
