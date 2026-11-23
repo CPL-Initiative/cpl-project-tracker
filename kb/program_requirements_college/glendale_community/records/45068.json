@@ -22,9 +22,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 188,
+   "placed": 189,
    "listed": 259,
-   "share": 0.726,
+   "share": 0.73,
    "missing": [
     "ANTHR101",
     "ANTHR111",
@@ -89,7 +89,6 @@
     "PHY110",
     "PSYC103",
     "PSYC203",
-    "PSYCH104",
     "PSYCH109",
     "SOCS101",
     "SOCS105",
@@ -98,14 +97,12 @@
     "SOCS127",
     "SOCS130"
    ],
-   "unexplained": [
-    "PSYCH104"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 18,
+   "count": 17,
    "codes": [
     "ARTHC1100",
     "ARTHC1100H",
@@ -123,7 +120,6 @@
     "HISTC1002H",
     "HLTH105",
     "ITAL130",
-    "PSYC104",
     "SOC101"
    ],
    "flagged": [
@@ -143,7 +139,6 @@
     "HISTC1002H",
     "HLTH105",
     "ITAL130",
-    "PSYC104",
     "SOC101"
    ],
    "pass": true
@@ -186,7 +181,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "course_renumbers": [
+   {
+    "printed": "PSYC104",
+    "listed": "PSYCH104",
+    "block": "Area 4: Social and Behavioral Sciences"
+   }
+  ]
  },
  "record": {
   "program": {
