@@ -142,6 +142,9 @@ real_mc = m.mid_subject_codes(real_reg)
 # Codes minted on a person's word before any M-ID sits under them (S705: Sam's four noncredit MQ codes of 2026-11-22,
 # r-noncredit-four-mq-codes-sam-2026-11-22) join this count at their first mint; until then each is named here.
 UNMINTED_ON_WORD = {"CTZN", "HLSN", "HMEN", "DSPN"}
+# Codes assigned to MQ disciplines before any M-ID (S717; Sam, 2026-11-23: "we don't need a course to reach this table
+# to assign a 4-character code to them"): each joins the count at its first mint.
+UNMINTED_ON_WORD |= {e.get("canonical_subj4") for e in real_reg.values() if e.get("source") == "assigned"}
 real_canon = {e.get("canonical_subj4") for e in real_reg.values()}
 check(real_mc["canonical"] == len(real_canon - UNMINTED_ON_WORD) + len(UNMINTED_ON_WORD & set(real_mc.get("codes_seen", []) or [])),
       "every canonical code carries at least one identity, less the ones minted on a person's word with none yet")

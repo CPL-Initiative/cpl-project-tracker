@@ -190,6 +190,9 @@ jobs:
             git add kb/status/statewide_subject_codes.json 2>/dev/null || true
             # Every college's subject titles by source (kb/_subject_sources.py, S717).
             git add kb/status/subject_sources.json 2>/dev/null || true
+            # The MQ view (kb/_mq_view.py, S717).
+            git add kb/status/mq_view.json 2>/dev/null || true
+            git add kb/status/csr_proposed_codes.json 2>/dev/null || true
             # CPL Pathways AUTHORITATIVE membership view (StarMora) — the program→
             # course join artifact the cards read; regenerated in Step 4a1b above.
             git add cpl_pathways_membership_data.js 2>/dev/null || true

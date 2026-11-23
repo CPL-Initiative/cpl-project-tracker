@@ -203,26 +203,26 @@
   },
   "rows_the_subject_map_settles": {
    "own_courses": {
-    "right": 169,
-    "asked": 186
+    "right": 156,
+    "asked": 173
    },
    "same_code_statewide": {
-    "right": 38,
-    "asked": 48
+    "right": 36,
+    "asked": 46
    },
    "title": {
     "right": 477,
-    "asked": 491
+    "asked": 506
    }
   }
  },
  "web_searches_filed": 108,
  "totals": {
-  "common_high": 180,
+  "common_high": 197,
   "common_low": 171,
-  "common_medium": 447,
+  "common_medium": 434,
   "common_no_code_yet": 6,
-  "common_none": 182,
+  "common_none": 178,
   "no_common": 986,
   "no_title": 309,
   "noncredit_common": 142,
@@ -475,11 +475,11 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -845,11 +845,11 @@
     {
      "code": "ENG SUP",
      "common": {
-      "code": "INDT",
-      "discipline": "Industrial Technology",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "7 of 9 of its courses with an M-ID sit under INDT."
+      "code": "ENSP",
+      "discipline": "Engineering Support",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Engineering Support."
      }
     },
     {
@@ -1026,11 +1026,11 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -1176,6 +1176,16 @@
        "result_url": "https://elac.edu/academics/aos/psychology",
        "where": "college site"
       }
+     }
+    },
+    {
+     "code": "PUB REL",
+     "common": {
+      "code": "PREL",
+      "discipline": "Public Relations",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Public Relations."
      }
     },
     {
@@ -1670,11 +1680,11 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -2363,11 +2373,11 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "2 of 3 of its courses with an M-ID sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -2818,11 +2828,11 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -2915,6 +2925,16 @@
       "level": "High",
       "from": "title",
       "why": "The title names the discipline Political Science."
+     }
+    },
+    {
+     "code": "PUB REL",
+     "common": {
+      "code": "PREL",
+      "discipline": "Public Relations",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Public Relations."
      }
     },
     {
@@ -3451,6 +3471,16 @@
      }
     },
     {
+     "code": "PUB REL",
+     "common": {
+      "code": "PREL",
+      "discipline": "Public Relations",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Public Relations."
+     }
+    },
+    {
      "code": "SUPV",
      "common": {
       "code": "MGMT",
@@ -3802,11 +3832,11 @@
       "also": []
      },
      "common": {
-      "code": "INDT",
-      "discipline": "Industrial Technology",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "4 of 6 of its courses with an M-ID sit under INDT."
+      "code": "ENSP",
+      "discipline": "Engineering Support",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Engineering Support."
      }
     },
     {
@@ -3983,11 +4013,11 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -4645,11 +4675,11 @@
     {
      "code": "INSUR",
      "common": {
-      "code": "BUSI",
-      "discipline": "Business",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under BUSI."
+      "code": "INSR",
+      "discipline": "Insurance",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Insurance."
      }
     },
     {
@@ -4871,6 +4901,16 @@
       "level": "High",
       "from": "title",
       "why": "The title names the discipline Political Science."
+     }
+    },
+    {
+     "code": "PUB REL",
+     "common": {
+      "code": "PREL",
+      "discipline": "Public Relations",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Public Relations."
      }
     },
     {
@@ -7525,11 +7565,11 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "from": "same_code_statewide",
-      "why": "47 of 61 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -8067,11 +8107,11 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "from": "same_code_statewide",
-      "why": "43 of 53 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -8596,11 +8636,11 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "6 of 6 of its courses with an M-ID sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -8616,11 +8656,11 @@
     {
      "code": "MENT",
      "common": {
-      "code": "NURP",
-      "discipline": "Psychiatric Technician",
+      "code": "CNMH",
+      "discipline": "Counseling: Mental Health",
       "level": "High",
       "from": "title",
-      "why": "The title names the discipline Psychiatric Technician."
+      "why": "The title names the discipline Counseling: Mental Health."
      }
     },
     {
@@ -10378,11 +10418,11 @@
     {
      "code": "INS",
      "common": {
-      "code": "BUSI",
-      "discipline": "Business",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "4 of 4 of its courses with an M-ID sit under BUSI."
+      "code": "INSR",
+      "discipline": "Insurance",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Insurance."
      }
     },
     {
