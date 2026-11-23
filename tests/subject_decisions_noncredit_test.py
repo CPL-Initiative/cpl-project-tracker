@@ -136,7 +136,7 @@ NC_DECS = [dec("SUBJ:los_angeles_pierce|OLD|nc:courses-for-older-adults", "OLAD"
            dec("SUBJ:el_camino|ESL|nc:english-as-a-second-language-esl", "ESLN"),
            dec("SUBJ:el_camino|ESL|nc:parenting", "PARN"),
            dec("SUBJ:el_camino|ESL|nc:bogus", "ESLN"),
-           dec("SUBJ:el_camino|ESL|nc:health-and-safety", "ESLN")]
+           dec("SUBJ:el_camino|ESL|nc:workforce-preparation", "ESLN")]
 committed = json.load(open(os.path.join(ROOT, sd.STATUS), encoding="utf-8"))
 real_read = lst.SD.read_status
 lst.SD.read_status = lambda root=None, path=None: dict(committed, decisions=(committed.get("decisions") or []) + NC_DECS)
@@ -159,8 +159,12 @@ check("(3) ⭐ a code with credit courses keeps its credit row: its title, its c
       and [(d["category"], d["holds"]) for d in ESL["noncredit_decisions"]] == [("English as a Second Language (ESL)", True), ("Parenting", False)])
 changed = sorted(k for k in after if [x for i, x in enumerate(after[k]) if i != NCD] != [x for i, x in enumerate(before.get(k, [])) if i != NCD])
 listed = sorted(k for k in after if after[k][NCD])
+# The rows that already list a person's noncredit decision in the committed file (live saves the daily sync carries,
+# such as Sam's Cerritos AED of 2026-11-22) list it here too; only the injected rows may be added beside them.
+real = sorted({(d["college"], d["code"]) for d in committed.get("decisions") or [] if str(d.get("band", "")).startswith("nc:")})
 check("(3) ⭐ nothing else moves: no other row at any college, and no other row lists a noncredit decision",
-      changed == [("los_angeles_pierce", "OLD")] and listed == [("el_camino", "ESL"), ("los_angeles_pierce", "OLD")], json.dumps(changed[:6]))
+      changed == [("los_angeles_pierce", "OLD")] and listed == sorted(set([("el_camino", "ESL"), ("los_angeles_pierce", "OLD")] + real)),
+      json.dumps(changed[:6]) + " " + json.dumps(listed))
 na = {r["key"]: r["why"] for r in out["decisions"]["not_applied"]}
 check("(3) ⭐ applied counts only what a built column takes: the noncredit-only row's decision, never a credit-and-"
       "noncredit code's category (no per-course reader takes it yet), each other one listed with why",
@@ -168,7 +172,7 @@ check("(3) ⭐ applied counts only what a built column takes: the noncredit-only
       and sorted(na) == ["SUBJ:el_camino|ESL|nc:english-as-a-second-language-esl", "SUBJ:el_camino|ESL|nc:parenting"]
       and "waiting on the per-course reader" in na["SUBJ:el_camino|ESL|nc:english-as-a-second-language-esl"]
       and "lists no noncredit course" in na["SUBJ:el_camino|ESL|nc:parenting"], json.dumps(na))
-check("(3) the bad ones are refused", {"SUBJ:el_camino|ESL|nc:bogus", "SUBJ:el_camino|ESL|nc:health-and-safety"} <= {r["key"] for r in out["decisions"]["refused"]})
+check("(3) the bad ones are refused", {"SUBJ:el_camino|ESL|nc:bogus", "SUBJ:el_camino|ESL|nc:workforce-preparation"} <= {r["key"] for r in out["decisions"]["refused"]})
 NC2 = [dec("SUBJ:los_angeles_pierce|OLD|nc:courses-for-older-adults", "OLAD"),
        dec("SUBJ:cerritos|AED|nc:elementary-and-secondary-basic-skills", "BSKL")]
 lst.SD.read_status = lambda root=None, path=None: dict(committed, decisions=(committed.get("decisions") or []) + NC2)

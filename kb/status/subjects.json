@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 702,
-  "moniker": "SkyRazorbill",
+  "session": 707,
+  "moniker": "SkyPrion",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_703_handoff.md",
+  "handoff": "docs/session_708_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -31,6 +31,11 @@
       "view": {
         "href": "#commons/subjects/held",
         "text": "The held subject codes"
+      },
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-22",
+        "words": "I'm thinking it would be best to finish the common subject and local subject titles before reminting MIDs."
       }
     },
     {
@@ -57,13 +62,33 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-22T11:32:07Z",
+  "written_at": "2026-11-22T17:16:37Z",
   "project": "subjects",
   "next_step": {
-    "title": "One Save for a code at every college using it",
-    "text": "Edit, the course panel and the counts now open from every Subjects surface, at the window's width. Next is one Save that settles a code at every college using it, where today the panel lists the colleges and each opens its own form; then the per-course reader for noncredit saves and the 8 catalog pages a web search found."
+    "title": "A readiness count per M-ID, AED scope first",
+    "text": "Sam set the order: settle the subject codes before any re-mint. Next, each M-ID in the Cerritos AED scope gets a readiness count by the draft gate (every member's code settled, one code or a clean split, outcomes compared), then statewide defaults for the codes that read the same at every college."
   },
   "changes": [
+    {
+      "at": "2026-11-22T17:20:00Z",
+      "text": "The subject map leaves AED unmapped: Cerritos's Adult Education is a mixed noncredit bucket, and its Electricity entry gave 45 shared M-IDs an ELEC prefix. Nothing re-mints until the scope's codes are settled."
+    },
+    {
+      "at": "2026-11-22T16:15:00Z",
+      "text": "The four noncredit MQ disciplines take common codes: Citizenship CTZN, Health and Safety HLSN, Home Economics HMEN, DSPS Noncredit DSPN. Only Workforce Preparation keeps no code."
+    },
+    {
+      "at": "2026-11-22T16:15:00Z",
+      "text": "Exhibits with no credit recommendation go on the MAP Team Queue tab as a worklist."
+    },
+    {
+      "at": "2026-11-22T15:20:00Z",
+      "text": "Sam's four asks: Cerritos's department list titles its codes (AED Adult Education, STAT Statistics) and a decision carries a source link; the panel resizes and keeps its top row frozen; a course or a group moves to another common subject code from the panel; every Subjects table sorts and resizes (#3687)."
+    },
+    {
+      "at": "2026-11-22T14:30:00Z",
+      "text": "Settle a code at every college: one common subject code and one Save write a kb_curation row per college at its credit form's key, under the reviewer's own email; a college a person or filing settled keeps it, a noncredit-only code keeps its category forms (#3687)."
+    },
     {
       "at": "2026-11-22T11:31:00Z",
       "text": "Edit on every code row and the course panel over every Subjects surface; every count opens the rows it counts; the surfaces take the window's width; Local titles reads 88 of 101 codes at Los Angeles Pierce"

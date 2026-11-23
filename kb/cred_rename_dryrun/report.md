@@ -1,6 +1,6 @@
-# Credential Rename Dry-Run — 2026-11-22
+# Credential Rename Dry-Run — 2026-11-23
 
-Generated: `2026-11-22T06:21:14Z`
+Generated: `2026-11-23T06:22:34Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -61,6 +61,10 @@ _None._ A queued collision becomes a confirmed merge when the curator clicks **�
 - `Engine Performance 2 (ASE A8 Engine Performance)` (rename) into `Engine Performance 2 (ASE A8 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
 - `Heating and Air Conditioning` (merge) into `Heating and Air Conditioning (ASE A7 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
 
+## Ruled on a decision sheet (kb/cred_rename_plans/)
+
+- `Beginning/Intermediate Jazz Dance` (rename) into `Beginning and Intermediate Jazz Dance`, plan slash-to-and-2026-11-18
+
 ## Issuer of each folded title (preview, kb/fold_issuer.py)
 
 _No folds._
@@ -70,6 +74,7 @@ _No folds._
 | Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
 |---|---|---|---:|---:|---|
 | `ASE Bundle — A6 or T6 + L3` | → | `ASE Certificate Bundles: A6 or T6 + L3` | 1 | 2 | ✓ |
+| `Beginning/Intermediate Jazz Dance` | → | `Beginning and Intermediate Jazz Dance` | 1 | 0 | ✓ |
 
 ## Collisions (queued, non-blocking — curator decision required)
 

@@ -1,0 +1,138 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 13 (Orange Coast College, page not found, 27). Capture 44747523200 read them as not_found or page_claimed. This read prints each not_found program's near-miss page and each page_claimed program's first candidate page, so a session can tell whether each is the program's own page, which codes it prints and in what form, and whether a per-college entry binds it. 19 loads and robots.txt, no model call, nothing written. No page was named for 38181, 38587. One index page lists the links that might name those programs.",
+ "college": "Orange Coast College",
+ "questions": {
+  "own_page": "Whether the page is the program's own (title and award), and the course codes it prints, as printed.",
+  "claimed": "Which program the page is, and the course codes it prints.",
+  "index": "Whether the pathways index links a page for Speaking about Reading 38181 or Integrative Health Coach 38587."
+ },
+ "keywords": [
+  "[A-Z]{2,6}[- ]?\\d{1,3}[A-Z]?\\b",
+  "Total",
+  "Units",
+  "Hours"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-styling-visual-display-as-degree/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/environmental-science/environmental-science-associate-arts-degree/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/business-employee-associate-arts-degree/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/early-childhood-education-ast/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/public-health/public-health-coa/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/hotel-management-associate-science-degree/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/automation-fundamentals-certificate-achievement/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/embedded-systems-technician-certificate-achievement/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/professional-mariner/professional-mariner-certificate-achievement/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-styling-visual-display-coa/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/industrial-plc-technician-coa/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/human-resource-management-certificate-achievement/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/airline-travel-management-certificate-achievement/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/food-beverage-management/food-beverage-management-advanced-coa/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/business-taxation-competency-coa/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/athletics/athletics-certificate-achievement/"
+  },
+  {
+   "answers": [
+    "index"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/",
+   "links": "speaking|reading|integrative|health-coach|noncredit"
+  }
+ ]
+}

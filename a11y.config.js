@@ -2078,10 +2078,16 @@ async function seedMapQueue(page, theme) {
     ];
     const OWNERS = [{ register_id: "DR-01", owner: "Seed Owner" }];
     const LOADS = [{ table_name: "map_student_credit", loaded_at: ago(4) }];
+    // S708: the statewide list of exhibits with no credit recommendation, so a college line's in-place list paints.
+    const REVIEW = { written_at: ago(1), colleges: [], held: [], no_cr: { of: 3085, owners_read: "2026-10-26T23:35Z", rows: [
+      { id: "MAPSEED-1-001", title: "Seed Portrait Photography", type: "Credit By Exam", college: "Seed Valley College" },
+      { id: "MAPSEED-2-001", title: "Seed Creative Careers Dance", type: "Portfolio Review", college: "Seed Valley College" },
+      { id: "MAPSEED-3-001", title: "Seed Website Design", type: "Credit By Exam", college: "" }] } };
     const real = window.fetch;
     window.fetch = function (url) {
       const u = String(url);
-      const body = /\/map_contact_gaps\?/.test(u) ? GAPS : /\/sierra_feedback\?/.test(u) ? FEEDBACK
+      const body = /kb\/exhibits_review\.json/.test(u) ? REVIEW
+        : /\/map_contact_gaps\?/.test(u) ? GAPS : /\/sierra_feedback\?/.test(u) ? FEEDBACK
         : /\/governance_owners\?/.test(u) ? OWNERS : /\/map_college_nudges\?/.test(u) ? []
         : /\/map_data_loads\?/.test(u) ? LOADS : null;
       if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
@@ -2092,6 +2098,7 @@ async function seedMapQueue(page, theme) {
     window.CPL_MAP_QUEUE.activate();
   });
   await page.waitForFunction(() => !!document.querySelector("#map-queue-root .mtq-item"), null, { timeout: 20000 });
+  await page.evaluate(() => { const d = document.querySelector("#map-queue-root details.mtq-col:not([data-mtq-college])"); if (d) d.open = true; });
   await page.waitForTimeout(300);
 }
 
@@ -4101,6 +4108,25 @@ module.exports = {
     file: "index.html",
     title: "CPL Commons: the data dashboard, colleges with collected SLOs, dark",
     routes: [{ hash: "collect/slos", name: "data-slos-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "dark", "slos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* S712: one course of the outlines to find by hand, its hand-over pane open beside the SLOs view. The route names
+     the list's first course as kb/status/outline_hunt.json stood on 2026-11-23; a nightly rebuild that drops it
+     repairs the address to the view, which is then checked without the pane. */
+  "commons-data-outline": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, a course outline to find, its hand-over pane",
+    routes: [{ hash: "collect/slos/outline/antelope-valley-college-aj-207", name: "data-outline" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "slos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-outline-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, a course outline to find, its hand-over pane, dark",
+    routes: [{ hash: "collect/slos/outline/antelope-valley-college-aj-207", name: "data-outline-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "slos"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],

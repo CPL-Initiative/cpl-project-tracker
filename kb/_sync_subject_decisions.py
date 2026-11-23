@@ -9,9 +9,10 @@ kb/_build_local_subject_titles.py, kb/_held_subject_codes.py and the pile mint d
 THE READ. PostgREST with the public anon key the page ships (cpl_session.js; SUPABASE_ANON_KEY overrides), asking
 course_id, value, reviewed_at and reviewer_label, never reviewer_email (anon cannot read it:
 kb/migrations/2026-11-09_kb_curation_hide_reviewer_email.sql). Range-paginated (Rule 10 b), each read checked complete
-against the first page's exact count. Two reads:
+against the first page's exact count. Three reads:
   subject_decision            course_id like SUBJ:*         the page's saves
   subject_discipline_confirm  course_id like _SUBJ_DISC::*  the List's statewide filings
+  course_subject_decision     course_id like CRS:*          the Subjects panel's course moves (one course each)
 
 A KEY'S BAND is credit, whole or nc:<slug>, the slug one that kb/status/noncredit_categories.json lists (slugs); any
 other band is listed as unreadable with its reason.
@@ -49,7 +50,8 @@ OUT = os.path.join(ROOT, sd.STATUS)
 URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 PAGE = 1000
 COLUMNS = "course_id,field,value,reviewed_at,reviewer_label"
-READS = ((sd.FIELD, sd.PREFIX), (sd.STATEWIDE_FIELD, sd.STATEWIDE_PREFIX))
+READS = ((sd.FIELD, sd.PREFIX), (sd.STATEWIDE_FIELD, sd.STATEWIDE_PREFIX), (sd.COURSE_FIELD, sd.COURSE_PREFIX))
+PARTS = ("decisions", "statewide", "courses")
 EMAIL_RE = re.compile(r"[^\s@]+@[^\s@]+\.[^\s@]+")
 PERSON = "a reviewer"
 
@@ -151,7 +153,7 @@ def shape(rows, statewide_read=True, slugs=None):
     """The committed document from PostgREST rows of both fields. Unreadable rows are listed, never dropped quietly.
     slugs: {slug: category}, the one list of noncredit category slugs (kb/status/noncredit_categories.json)."""
     slugs = sd.read_slugs(ROOT) if slugs is None else slugs
-    decisions, statewide, unreadable = [], [], []
+    decisions, statewide, courses, unreadable = [], [], [], []
     for r in rows:
         cid, field = str(r.get("course_id") or ""), r.get("field")
         if field == sd.FIELD and cid.startswith(sd.PREFIX):
@@ -180,8 +182,31 @@ def shape(rows, statewide_read=True, slugs=None):
             statewide.append({"key": cid, "code": sd.map_key(cid[len(sd.STATEWIDE_PREFIX):]), "discipline": disc or None,
                               "who": safe_who(r.get("reviewer_label")),
                               "at": str(r.get("reviewed_at") or "")[:20] or None})
+        elif field == sd.COURSE_FIELD and cid.startswith(sd.COURSE_PREFIX):
+            v = value_of(r)
+            k = sd.parse_course_key(cid)
+            if v is None or not k:
+                unreadable.append({"key": cid, "why": "the key or the value does not read"})
+                continue
+            bad = [f for f in ("common_code", "from_mid", "title", "band", "decided_by")
+                   if v.get(f) is not None and not isinstance(v[f], str)]
+            if bad:
+                unreadable.append({"key": cid, "why": "%s is not text" % " and ".join(bad)})
+                continue
+            if not (v.get("common_code") or "").strip():
+                unreadable.append({"key": cid, "why": "the move names no common subject code"})
+                continue
+            courses.append({
+                "key": cid, "college": k[0], "code": k[1], "number": k[2],
+                "common_code": v["common_code"].strip().upper(),
+                "from_mid": (v.get("from_mid") or "").strip() or None,
+                "title": (v.get("title") or "").strip() or None,
+                "band": (v.get("band") or "").strip() or None,
+                "who": safe_who(v.get("decided_by") or r.get("reviewer_label")),
+                "at": str(v.get("decided_at") or r.get("reviewed_at") or "")[:20] or None})
     decisions.sort(key=lambda d: d["key"])
     statewide.sort(key=lambda d: d["key"])
+    courses.sort(key=lambda d: d["key"])
     by_band = {}
     for d in decisions:
         by_band[d["band"]] = by_band.get(d["band"], 0) + 1
@@ -191,6 +216,9 @@ def shape(rows, statewide_read=True, slugs=None):
                   "(SUBJ:<college>|<code>|<band>, subject_decision; band credit, whole or nc:<noncredit category "
                   "slug>). statewide: the Local subjects List's filings "
                   "(_SUBJ_DISC::<CODE>, subject_discipline_confirm), the MQ discipline a person filed a code under. "
+                  "courses: the Subjects panel's course moves (CRS:<college>|<code>|<course number>, "
+                  "course_subject_decision), one person's common code for one course, read by the re-mint's gate "
+                  "(kb/_mid_readiness.py) and never by a nightly mint. "
                   "who is the person a filing names, a procedure's cohort id, or 'a reviewer'; no email is kept."),
         "_rule": ("A person's save wins over the catalog, the subject map and any recommendation "
                   "(r-subject-save-path-kb-curation-sam-2026-11-22). Precedence for a college's code and band: its "
@@ -200,9 +228,10 @@ def shape(rows, statewide_read=True, slugs=None):
         "statewide_read": bool(statewide_read),
         "totals": {"decisions": len(decisions), "by_band": dict(sorted(by_band.items())),
                    "colleges": len({d["college"] for d in decisions}), "statewide": len(statewide),
-                   "unreadable": len(unreadable)},
+                   "courses": len(courses), "unreadable": len(unreadable)},
         "decisions": decisions,
         "statewide": statewide,
+        "courses": courses,
         "unreadable": unreadable,
     }
 
@@ -224,7 +253,7 @@ def empty_guard(doc, was, expect_empty=False, definite=()):
     count to say the empty answer is true. A section in `definite` came from a read with an exact count."""
     if expect_empty or not was:
         return None
-    for part in ("decisions", "statewide"):
+    for part in PARTS:
         if part in definite:
             continue
         if was.get(part) and not doc.get(part) and (part != "statewide" or was.get("statewide_read")):
@@ -277,7 +306,7 @@ def main(argv=None):
         else:
             key = anon_key()
             rows = [r for field, prefix in READS for r in fetch(field, prefix, key)]
-            definite = ("decisions", "statewide")    # fetch raised unless each read carried its exact count
+            definite = PARTS    # fetch raised unless each read carried its exact count
     except (OSError, ValueError) as e:
         print("[subject_decisions] the read failed (%s: %s); %s keeps the committed decisions"
               % (type(e).__name__, e, sd.STATUS), file=sys.stderr)
@@ -286,15 +315,18 @@ def main(argv=None):
     if not statewide_read and was and was.get("statewide_read"):
         doc["statewide"], doc["statewide_read"] = was.get("statewide") or [], True
         doc["totals"]["statewide"] = len(doc["statewide"])
+    if a.seed_filed and was and was.get("courses"):
+        doc["courses"] = was["courses"]
+        doc["totals"]["courses"] = len(doc["courses"])
     warn = empty_guard(doc, was, a.expect_empty, definite)
     if warn:
         print("[subject_decisions] REFUSED: " + warn, file=sys.stderr)
         return 1
     changed = write(doc, a.out)
     t = doc["totals"]
-    print("[subject_decisions] %d decisions at %d colleges %s, %d statewide filings%s; %s"
+    print("[subject_decisions] %d decisions at %d colleges %s, %d statewide filings%s, %d course moves; %s"
           % (t["decisions"], t["colleges"], json.dumps(t["by_band"]), t["statewide"],
-             "" if doc["statewide_read"] else " (not read yet)", "written" if changed else "unchanged"))
+             "" if doc["statewide_read"] else " (not read yet)", t["courses"], "written" if changed else "unchanged"))
     return 0
 
 

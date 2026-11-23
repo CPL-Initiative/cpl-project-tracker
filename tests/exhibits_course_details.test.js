@@ -125,7 +125,7 @@ function esc(w, target) { target.dispatchEvent(new w.KeyboardEvent("keydown", { 
     && !t.d.querySelector("aside.exh-cdsum .exh-det"));
 
   // A card the Review file names no course for.
-  Array.from(t.d.querySelectorAll(".exh-acts button")).find(function (b) { return txt(b) === "Skip"; }).click(); await settle();
+  Array.from(t.d.querySelectorAll(".exh-acts button")).find(function (b) { return txt(b) === "Next"; }).click(); await settle();
   check("the next card is the welding one", t.d.getElementById("exh-title").value === "Welding 1");
   check("a card with no course on file says so in plain words, and still names its MAP exhibit",
     /No local course is on file for this exhibit/.test(txt(t.d.querySelector("aside.exh-cdsum")))

@@ -1,8 +1,8 @@
 # Harvest heading agreement
 
-A dated snapshot of main at commit 80d9b0b8f6d9 (2026-11-21; the newest capture it reads started 2026-11-21), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
+A dated snapshot of main at commit 2552336dbe28 (2026-11-22; the newest capture it reads started 2026-11-22), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
 
-All colleges: 18958 records, 15409 agree, 276 disagree (168 of them pass on the committed files), 3273 cannot tell (279 say the heading is not in their text; 76 name an award and none of the program's title words, 70 of them passing, set aside).
+All colleges: 18958 records, 15413 agree, 276 disagree (168 of them pass on the committed files), 3269 cannot tell (278 say the heading is not in their text; 76 name an award and none of the program's title words, 70 of them passing, set aside).
 
 The heading check (a heading that names another award type and some of the program's title) would fail 136 records that pass on the committed files (passes_live), 31 of them a transfer degree and a local degree crossed. It is in no pass rule.
 
@@ -25,14 +25,14 @@ A suspect record has a heading that disagrees with its program, or was read from
 | Los Angeles Pierce College | main | 187 | 111 | 1 | 0 | 75 | 2 (2) | 3 (2) | State Code 129 | unclear |
 | Los Angeles Southwest College | main | 94 | 77 | 3 | 0 | 14 | 0 (0) | 3 (0) | none seen | no number line |
 | City College of San Francisco | main | 316 | 266 | 2 | 2 | 48 | 0 (0) | 2 (2) | none seen | no number line |
-| Clovis Community College | main | 109 | 88 | 2 | 1 | 19 | 0 (0) | 2 (1) | none seen | no number line |
+| Clovis Community College | main | 109 | 91 | 2 | 1 | 16 | 0 (0) | 2 (1) | none seen | no number line |
 | Los Angeles Trade Technical College | main | 168 | 134 | 2 | 1 | 32 | 0 (0) | 2 (1) | none seen | no number line |
 | Ohlone College | main | 143 | 121 | 2 | 2 | 20 | 0 (0) | 2 (2) | none seen | no number line |
 | Porterville College | main | 79 | 45 | 2 | 1 | 32 | 0 (0) | 2 (1) | none seen | no number line |
 | Santa Monica College | main | 231 | 211 | 2 | 0 | 18 | 0 (0) | 2 (0) | none seen | no number line |
 | American River College | main | 358 | 347 | 1 | 0 | 10 | 0 (0) | 1 (0) | none seen | no number line |
 | Calbright College Credit | main | 12 | 0 | 1 | 0 | 11 | 0 (0) | 1 (0) | none seen | no openings kept |
-| Cosumnes River College | main | 217 | 188 | 1 | 0 | 28 | 0 (0) | 1 (0) | none seen | no number line |
+| Cosumnes River College | main | 217 | 189 | 1 | 0 | 27 | 0 (0) | 1 (0) | none seen | no number line |
 | Los Angeles Valley College | main | 223 | 114 | 1 | 0 | 108 | 0 (0) | 1 (0) | State Code 130 | under_heading |
 | Solano Community College | main | 156 | 137 | 1 | 1 | 18 | 0 (0) | 1 (1) | none seen | no number line |
 | Barstow Community College | main | 68 | 63 | 0 | 0 | 5 | 0 (0) | 0 (0) | none seen | no number line |

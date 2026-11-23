@@ -13,6 +13,9 @@ THE FILE. kb/status/subject_decisions.json, written by kb/_sync_subject_decision
              kb/status/noncredit_categories.json carries (slugs, written by kb/_build_noncredit_categories.py).
   statewide  the Local subjects List's filings (csr_local_subjects.js): course_id _SUBJ_DISC::<CODE>, field
              subject_discipline_confirm, value the MQ discipline a person filed the code under, at every college.
+  courses    the Subjects panel's course moves (r-subjects-move-courses-sam-2026-11-22, d-course-move-field-crs-key-s705):
+             course_id CRS:<college slug>|<local code>|<course number>, field course_subject_decision, value JSON with
+             common_code, from_mid, title and band. One person's decision for one course.
 
 PRECEDENCE for one college's code and band (resolve): the college-keyed decision, then a person's statewide filing,
 then the subject map, then a recommendation (the last two are the callers' own). A credit decision never touches the
@@ -31,6 +34,11 @@ nc:<a listed slug>, a value with neither a title nor a code, a common code kb/di
 hold, a common code on a noncredit category that has none, and a statewide filing whose discipline has no canonical
 SUBJ.
 
+A COURSE MOVE is the most specific decision a person makes, so it settles its one course ahead of the code's decision,
+a filing and the map (for_course_move). The re-mint's readiness gate and dry run read it (kb/_mid_readiness.py); the
+nightly builders do not, because an M-ID moves only at a re-mint (docs/coursecontrolnumber_remint.md), never in a
+nightly build. A move whose common code the canonical file does not hold is refused and listed.
+
 THE MINT reads the college-keyed credit and whole decisions alone (for_course). A noncredit decision is kept apart
 (Decisions.noncredit), so it never routes a mint. A statewide filing proposes a change to the subject map, which the
 M-ID generator reads; the map changes through DR-25 with its ripple check (csr_local_subjects.js), so the filing shows
@@ -45,6 +53,7 @@ STATUS = os.path.join("kb", "status", "subject_decisions.json")
 CANONICAL = os.path.join("kb", "discipline_canonical_subj4.json")
 PREFIX, FIELD = "SUBJ:", "subject_decision"
 STATEWIDE_PREFIX, STATEWIDE_FIELD = "_SUBJ_DISC::", "subject_discipline_confirm"
+COURSE_PREFIX, COURSE_FIELD = "CRS:", "course_subject_decision"
 BANDS = ("credit", "whole")
 OTHER_BAND = {"credit": "whole", "whole": "credit"}
 CREDIT = "C"      # the state list's credit mark (kb/_build_coci_lookup.py credit_char)
@@ -80,6 +89,24 @@ def parse_key(course_id):
         return None
     code = "|".join(parts[1:-1])
     return (parts[0], code, parts[-1]) if code else None
+
+
+def course_number_key(s):
+    """A course number as the Subjects page and kb/_mid_readiness.py key it: trimmed, upper case."""
+    return str(s or "").strip().upper()
+
+
+def parse_course_key(course_id):
+    """(slug, code, number) for CRS:<slug>|<code>|<number>, or None. The page never saves a number holding a bar, so
+    the number is the last part and a code may hold one."""
+    s = str(course_id or "")
+    if not s.startswith(COURSE_PREFIX):
+        return None
+    parts = s[len(COURSE_PREFIX):].split("|")
+    if len(parts) < 3 or not parts[0] or not parts[-1].strip():
+        return None
+    code = "|".join(parts[1:-1])
+    return (parts[0], code, parts[-1]) if code.strip() else None
 
 
 def nc_band(category_slug):
@@ -136,6 +163,7 @@ class Decisions:
         self.nc_slugs, self.nc_codes = dict(nc_slugs or {}), dict(nc_codes or {})
         self.slug_of = {v: k for k, v in self.nc_slugs.items()}
         self.college, self.noncredit, self.statewide, self.refused = {}, {}, {}, []
+        self.course = {}
         for d in self.doc.get("decisions") or []:
             why = None
             k = parse_key(d.get("key"))
@@ -178,6 +206,24 @@ class Decisions:
             self.statewide[code] = {"key": s.get("key"), "code": code, "common_code": common, "discipline": disc,
                                     "local_title": None, "who": s.get("who"), "at": s.get("at"),
                                     "from": "local_subjects_list"}
+        for c in self.doc.get("courses") or []:
+            k = parse_course_key(c.get("key"))
+            common = (c.get("common_code") or "").strip().upper() or None
+            why = None
+            if not k:
+                why = "the key does not read as CRS:<college>|<code>|<course number>"
+            elif not common:
+                why = "the move names no common subject code"
+            elif common not in self.by_code:
+                why = "the common subject code %s is not a canonical SUBJ in %s" % (common, CANONICAL.replace(os.sep, "/"))
+            if why:
+                self.refused.append({"key": c.get("key"), "why": why})
+                continue
+            self.course[(k[0], code_key(k[1]), course_number_key(k[2]))] = {
+                "key": c["key"], "slug": k[0], "code": code_key(k[1]), "number": course_number_key(k[2]),
+                "common_code": common, "discipline": self.by_code.get(common), "from_mid": c.get("from_mid"),
+                "title": c.get("title"), "band": c.get("band"), "who": c.get("who"), "at": c.get("at"),
+                "from": "course_subject_decision"}
 
     def for_row(self, slug, code, band):
         """The college-keyed decision for a Subjects row under its band (credit, whole or noncredit), the other of
@@ -216,6 +262,13 @@ class Decisions:
         rest = sorted((r for c, r in mine.items() if c != holder and r.get("local_title")),
                       key=lambda r: (str(r.get("at") or ""), r["key"]), reverse=True)
         return dict(rest[0], moved=True) if rest else None
+
+    def for_course_move(self, slug, code, number):
+        """A person's move of one course (CRS:<slug>|<code>|<number>) to a common code, credit or noncredit alike, or
+        None. Read by the re-mint's gate and dry run only; the nightly mint never reads it (for_course)."""
+        if not slug:
+            return None
+        return self.course.get((slug, code_key(code), course_number_key(number)))
 
     def statewide_for(self, code):
         return self.statewide.get(map_key(code))

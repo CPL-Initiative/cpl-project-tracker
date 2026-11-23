@@ -67115,12 +67115,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Portfolio Review CIS100-Practical PC & Career Technologies": {
-    "unified_title": "Practical PC and Career Technologies",
+    "unified_title": "Practical PC & Career Technologies",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-20",
+    "classified_at": "2026-11-22",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-22T15:28:47.639+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Practical PC and Career Technologies",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Practical PC and Career Technologies' on 2026-11-22."
   },
   "Portfolio Review CIS104-Microcomputer Application Software": {
     "unified_title": "Microcomputer Application Software",
@@ -67139,12 +67142,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "DRAFT 21: Mechanical Design I CX": {
-    "unified_title": "Mechanical Design I",
+    "unified_title": "Mechanical Design 1",
     "confidence_title": 1.0,
     "classified_at": "2026-11-22",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-22T15:28:39.167+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Mechanical Design I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Mechanical Design I' on 2026-11-22."
   },
   "ESLN 309A": {
     "unified_title": "ESL - Foundations",
@@ -67155,20 +67161,26 @@
     "reviewed_by": "cer-procedure-course-identity@bot"
   },
   "ESLN 310A": {
-    "unified_title": "ESL - Comprehensive I",
+    "unified_title": "ESL - Comprehensive 1",
     "confidence_title": 1.0,
     "classified_at": "2026-11-22",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-22T15:28:34.495+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "ESL - Comprehensive I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'ESL - Comprehensive I' on 2026-11-22."
   },
   "ESLN 310E": {
-    "unified_title": "ESL - Comprehensive V",
+    "unified_title": "ESL - Comprehensive 5",
     "confidence_title": 1.0,
     "classified_at": "2026-11-22",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-22T15:28:37.367+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "ESL - Comprehensive V",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'ESL - Comprehensive V' on 2026-11-22."
   },
   "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX": {
     "unified_title": "Principles of Caregiving: Older Adults and Their Care",
@@ -67203,12 +67215,15 @@
     "reviewed_by": "cer-procedure-high-school-rop@bot"
   },
   "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance": {
-    "unified_title": "Music Theory I",
+    "unified_title": "Music Theory 1",
     "confidence_title": 1.0,
     "classified_at": "2026-11-22",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
-    "reviewed_by": "cer-procedure-high-school-rop@bot"
+    "reviewed_at": "2026-11-22T15:28:40.639+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Music Theory I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Music Theory I' on 2026-11-22."
   },
   "IB Exam - Economics": {
     "unified_title": "IB Economics HL",
@@ -67257,5 +67272,301 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
     "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Cal Fire Basic Firefighter (219 hour) Training": {
+    "unified_title": "CAL FIRE Basic Firefighter Training (219-hour)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:16:04.956806+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Completion of ESLN 310C": {
+    "unified_title": "ESL - Foundations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:18:06.616611+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Credit by Exam HISTC1001-United States History Since 1877": {
+    "unified_title": "United States History to 1877",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:18:19.545181+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children I": {
+    "unified_title": "Developmental Psychology of Children 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:19:07.54981+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children II": {
+    "unified_title": "Developmental Psychology of Children 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:23:14.832599+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation ( Tri Valley ROP)- Economics of Business Ownership": {
+    "unified_title": "Economics of Business Ownership",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:23:41.824689+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation ( Tri Valley ROP)- Emergency Medical Response": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:23:49.076928+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation ( Tri Valley ROP)- Integrated Marketing Communications": {
+    "unified_title": "Introduction to Marketing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:23:52.076474+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation ( Tri Valley ROP)- Introduction to Athletic Training": {
+    "unified_title": "Intro to Athletic Training and Sports Medicine",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:24:10.742561+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation ( Tri Valley ROP)- Introduction to Health Careers": {
+    "unified_title": "Orientation to Health Careers",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:26:05.281939+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation ( Tri Valley ROP)- Medical Occupations": {
+    "unified_title": "Medical Terminology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:26:09.396921+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation ( Tri Valley ROP)- Nursing Careers": {
+    "unified_title": "Nursing Careers",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:26:13.47526+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation ( Tri Valley ROP)- Sports and Entertainment Marketing": {
+    "unified_title": "Introduction to Marketing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:26:18.645654+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Benicia High School)- Dance 3": {
+    "unified_title": "Dance 3",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:26:33.551574+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Livermore)- Developmental Psychology of Children II": {
+    "unified_title": "Developmental Psychology of Children 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:26:56.708862+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Livermore)- Emergency Medical Response": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:26:58.852927+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Livermore)- Introduction to Athletic Training": {
+    "unified_title": "Introduction to Athletic Training and Sports Medicine",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:27:21.406303+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Livermore)- Introduction to Health Careers": {
+    "unified_title": "Orientation to Health Careers",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:27:32.125278+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Livermore)- Medical Occupations": {
+    "unified_title": "Medical Terminology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:27:34.18141+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Livermore)- Nursing Careers": {
+    "unified_title": "Nursing Careers",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:27:36.696746+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Livermore)- Principles of Engineering": {
+    "unified_title": "Introduction to Engineering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:27:48.807318+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Mission Valley ROP)- Emergency Medical Responder": {
+    "unified_title": "Emergency Medical Responder",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:27:52.427014+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Mission Valley ROP)- Fire Technology 1": {
+    "unified_title": "Fire Prevention Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T20:43:43.021189+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Mission Valley ROP)- Medical Occupations": {
+    "unified_title": "Medical Occupations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T20:43:55.613672+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Mission Valley ROP)- Principles of Engineering": {
+    "unified_title": "Introduction to Engineering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:44:47.094502+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 54)": {
+    "unified_title": "Investigative Report Writing for the Public Safety Professional",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T20:45:28.983992+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 60)": {
+    "unified_title": "Concepts of Criminal Law",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:46:06.824663+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 68)": {
+    "unified_title": "Criminal Justice Academy Police Ethics and Leadership",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T20:48:49.967293+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 70)": {
+    "unified_title": "Community and the Justice System",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:46:19.54959+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (FST 7)": {
+    "unified_title": "Criminal Justice Academy Fire Service Conditioning & Physical Agility Development",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T20:49:58.697143+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 1)": {
+    "unified_title": "Guts and Butts Workout 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T20:51:16.501445+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 2)": {
+    "unified_title": "Guts and Butts Workout 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T20:51:26.482503+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 3)": {
+    "unified_title": "Guts and Butts Workout 3",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T20:51:45.661322+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice/CSI": {
+    "unified_title": "Criminal Investigation",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:46:40.298173+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice/Crime Scene Investigation": {
+    "unified_title": "Introduction to Criminal Justice",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T15:46:35.617823+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Portfolio Review JOURNAL101-Journalism 101: Collecting & Writing News": {
+    "unified_title": "News Reporting and Editing for Publication",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-22",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-22T21:00:37.330891+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Portfolio Review CIS101-Introduction to Computers and Their Uses": {
+    "unified_title": "Computer Literacy",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-23T00:13:34.866152+00:00",
+    "reviewed_by": "slee@cccco.edu"
   }
 }

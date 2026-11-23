@@ -912,6 +912,8 @@ PRESENTATION_DOCTRINE = {
     "a figure card opens what it counts": (r"opens what it counts",),
     # Sam, 2026-11-11 (#3107): design principles v3.
     "a screen leads with the job": (r"leads with the job", r"built to scale"),
+    # Sam, 2026-11-22 (S705): "this is a rule to apply to all side bars".
+    "every sidebar resizes and keeps its top row": (r"every sidebar resizes", r"top row stays frozen"),
 }
 
 

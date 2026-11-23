@@ -182,6 +182,10 @@ jobs:
             git add kb/status/subject_courses 2>/dev/null || true
             # The noncredit subject title list (kb/_build_noncredit_subject_titles.py, S700, #3655).
             git add kb/status/noncredit_subject_titles.json 2>/dev/null || true
+            # The re-mint readiness count by the draft gate (kb/_mid_readiness.py, S709, #3655).
+            git add kb/status/mid_readiness.json 2>/dev/null || true
+            # The course outlines to find by hand (kb/_outline_hunt.py, S711).
+            git add kb/status/outline_hunt.json 2>/dev/null || true
             # CPL Pathways AUTHORITATIVE membership view (StarMora) — the program→
             # course join artifact the cards read; regenerated in Step 4a1b above.
             git add cpl_pathways_membership_data.js 2>/dev/null || true

@@ -366,6 +366,16 @@ jobs:
       # refused and listed; the sync accepts credit, whole and nc:<a listed slug>. Pure stdlib.
       - name: Subject decisions, noncredit (kb/subject_decisions.py nc:<category>)
         run: python3 tests/subject_decisions_noncredit_test.py
+      # A person's course moves reach the re-mint's gate (#3655): the sync reads CRS: rows into `courses`, lists an
+      # unreadable one, commits no email; the reader refuses a non-canonical code and the nightly mint never reads a
+      # move; kb/_mid_readiness.py settles the moved course alone, ahead of its code's save. Pure stdlib.
+      - name: Subject course moves (kb/_sync_subject_decisions.py courses, kb/_mid_readiness.py)
+        run: python3 tests/subject_course_moves_test.py
+      # The course outlines to find by hand (kb/_outline_hunt.py, S711): M-IDs only, CTE, credit, no shell titles, short
+      # of two districts with outcome text; each pick outside the districts with text, a read college first; ranked by
+      # districts per outline needed; the committed file reruns to the same bytes. Pure stdlib.
+      - name: Outline hunt (kb/_outline_hunt.py)
+        run: python3 tests/outline_hunt_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)
@@ -499,6 +509,18 @@ jobs:
       # words, read from the pinned page in capture_pdf, and hold what the filed page lacked. Pure stdlib.
       - name: Program requirements own-page pins (Clovis, Cosumnes River)
         run: python3 tests/program_requirements_pins_s703_test.py
+      # S703 (census lever 6): Ohlone's two own-page pins bind on the pages the free read printed and read from the
+      # pinned page in capture_pdf; the other 34 not_found programs are filed as named gaps, once each. Pure stdlib.
+      - name: Program requirements own-page pins and named gaps (Ohlone)
+        run: python3 tests/program_requirements_ohlone_pins_s703_test.py
+      # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
+      # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
+      - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)
+        run: python3 tests/program_requirements_sjdelta_aliases_s703_test.py
+      # S703 (census levers 6, 7, 9, 10, 13): the five colleges' named gaps each name a program the filed capture
+      # reads with no page, once, with a defined reason and no record file. Pure stdlib.
+      - name: Program requirements page-not-found named gaps (five colleges)
+        run: python3 tests/program_requirements_named_gaps_s703_test.py
       # S697: the same-page calls over every committed folder, frozen in a fixture: 320 newly kept (Butte 163,
       # Cuyamaca 155, College of the Canyons 2), none one page off, and one edition pair. Pure stdlib.
       - name: Program requirements same-page recall over the committed folders
@@ -546,6 +568,10 @@ jobs:
       # each of the 33 held-out records names a committed record and a gap from GAPS or none. Pure stdlib.
       - name: Cheap piles S683 (A5's misses by cause, the 33 held-out records)
         run: python3 tests/program_requirements_cheap_piles_s683_test.py
+      # S703, the catalog-wording lever: lists_past_their_figure, its self-recall with boundary readings, the claim
+      # check's precision counts, and tonight's held colleges untouched.
+      - name: Named gap lists_past_their_figure (self-recall, claim check, the plan, the held colleges)
+        run: python3 tests/program_lists_past_figure_s703_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)
@@ -591,6 +617,14 @@ jobs:
       # reason for a split. Reads the fixture only; writes nothing. Pure-stdlib python.
       - name: MID outcomes compare (split, confirm, the standing rules)
         run: python3 tests/mid_outcomes_compare_test.py
+      # The re-mint readiness count (S709, #3655) by the draft gate d-remint-ready-gate-draft-s707: the subject map
+      # alone settles nothing, a stale compare holds every M-ID, a strong or partial split holds. Pure-stdlib python.
+      - name: Re-mint readiness (the draft gate)
+        run: python3 tests/mid_readiness_test.py
+      # The scope re-mint dry run (S710, #3655): a ready M-ID takes its settled code and that code's discipline,
+      # never onto a vacated or SkyView-drawn slot; a cross-listed pair stays; a split across courses is held.
+      - name: Scope re-mint dry run (the ready M-IDs)
+        run: python3 tests/scope_remint_dryrun_test.py
       # The nine MQ names in the handbook's spelling (S430, Sam's Sheet 99 card 6):
       # no store holds an old spelling, and the rename touches whole strings only.
       # Pure-stdlib python.

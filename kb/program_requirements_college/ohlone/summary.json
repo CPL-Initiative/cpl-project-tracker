@@ -2,21 +2,21 @@
  "college": "Ohlone College",
  "programs": 204,
  "with_closed_list": 179,
- "found": 143,
- "extracted": 143,
+ "found": 145,
+ "extracted": 145,
  "errors": 0,
- "passed_machine_checks": 125,
+ "passed_machine_checks": 127,
  "failed": {
-  "coverage": 4,
+  "coverage": 3,
   "invented": 1,
   "arithmetic": 9,
   "repeated": 0,
   "outcomes": 8
  },
- "cost_usd_run": 0.78,
- "cost_usd_filed": 10.02,
+ "cost_usd_run": 0.14,
+ "cost_usd_filed": 10.15,
  "cost_per_program": 0.07,
- "extract_calls": 9,
+ "extract_calls": 2,
  "extract_failed": [],
  "not_found": [
   {
@@ -36,7 +36,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -67,7 +68,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -128,7 +130,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -153,24 +156,14 @@
    "status": "Active"
   },
   {
-   "control_number": "33319",
-   "title": "Information Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
-    "rule": "A",
-    "refused_b": 1
-   },
-   "status": "Active"
-  },
-  {
    "control_number": "35797",
    "title": "Bioengineering",
    "award": "A.S. Degree",
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -233,7 +226,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -326,18 +320,7 @@
    "award": "Noncredit program",
    "near_miss": null,
    "status": "Active"
-  },
-  {
-   "control_number": "46035",
-   "title": "Esports Entrepreneurship and Live Production - Game Design",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
   }
  ],
- "run": "44515665022"
+ "run": "45025966614"
 }

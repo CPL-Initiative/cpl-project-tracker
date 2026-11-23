@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-601 document(s).
+602 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -269,7 +269,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A target at exactly the minimum size fails at fractional zoom](../kb-notes/methodology-a-target-at-exactly-the-minimum-fails-at-fractional-zoom.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
-| [A test must not take its own rule as the truth](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md) | methodology | published | 2026-11-14 | 2026-11-20 |
+| [A test must not take its own rule as the truth](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md) | methodology | published | 2026-11-14 | 2026-11-22 |
 | [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-11-12 |
@@ -353,7 +353,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Crowd consensus beats a single-item signal (the two-signals-agree gate, via the crowd)](../kb-notes/methodology-crowd-consensus-beats-single-item-signal.md) | methodology | published | 2026-07-17 |  |
 | [Derive a listing from the things it lists](../kb-notes/methodology-derive-a-listing-from-the-things-it-lists.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [Derive theme tokens from brand seeds with a contrast script — the mock is the spec](../kb-notes/methodology-derived-aa-token-palette.md) | methodology | published | 2026-06-12 | 2026-06-12 |
-| [Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate](../kb-notes/methodology-subject-cohort-discipline-outlier.md) | methodology | published | 2026-07-13 |  |
+| [Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate](../kb-notes/methodology-subject-cohort-discipline-outlier.md) | methodology | published | 2026-07-13 | 2026-11-22 |
 | [Emit the threshold with the label it prints](../kb-notes/methodology-emit-the-threshold-with-the-label-it-prints.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [Every id-keyed artifact class belongs in the post-apply chain](../kb-notes/methodology-every-id-keyed-artifact-class-belongs-in-the-post-apply-chain.md) | methodology | published | 2026-09-04 | 2026-09-27 |
 | [Every live database function needs a committed schema-of-record file](../kb-notes/methodology-live-db-functions-need-committed-schema.md) | methodology | published | 2026-07-02 | 2026-07-02 |
@@ -562,6 +562,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Playbook — redeploying a shared, live Supabase Edge Function safely](../kb-notes/playbook-deploy-shared-supabase-edge-function.md) | playbook | published | 2026-06-01 | 2026-08-22 |
 | [Playbook — running an NC integration (notes and artifacts → the curated register)](../kb-notes/playbook-nc-integration-run.md) | playbook | published | 2026-08-06 | 2026-08-06 |
 | [Playbook — Trail Crew 🥾: the method + magic audit (deterministic scanner → AI adjudication → adversarial verify → fire-able staged plan)](../kb-notes/playbook-trail-crew-method-magic-audit.md) | playbook | published | 2026-07-10 |  |
+| [Playbook — where a college's local subject title comes from](../kb-notes/playbook-local-subject-title-sources.md) | playbook | internal | 2026-11-22 | 2026-11-22 |
 | [Playbook: gated bulk auto-curation (dry-run → md5-pinned server-side apply)](../kb-notes/playbook-gated-bulk-autocuration.md) | playbook | published | 2026-06-12 |  |
 | [Playbook: unattended news aggregation into a live dashboard tab](../kb-notes/playbook-cpl-news-aggregation.md) | playbook | published | 2026-06-21 |  |
 | [Re-keying a shared DB from a committed re-mint alias map](../kb-notes/playbook-rekey-shared-db-from-alias-map.md) | playbook | published | 2026-06-15 | 2026-06-15 |
@@ -587,7 +588,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Excel dependency audit — what still touches CPL_Initiative_Project_List_v3.xlsx, and the fix queue](../kb-notes/excel-dependency-audit.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Exhibit CRs Catalog — all 27 fields, measured](../kb-notes/reference-exhibit-crs-catalog-field-census.md) | reference | published | 2026-08-14 | 2026-08-14 |
 | [For "which colleges offer X", start at the course file, not the program file](../kb-notes/reference-course-level-mis-beats-program-level-coci.md) | reference | published | 2026-08-12 | 2026-08-12 |
-| [Hand it over in place: the hand-over box, where it writes, and the reader's pickup](../kb-notes/reference-commons-hand-over.md) | reference | internal | 2026-11-20 | 2026-11-20 |
+| [Hand it over in place: the hand-over box, where it writes, and the reader's pickup](../kb-notes/reference-commons-hand-over.md) | reference | internal | 2026-11-20 | 2026-11-23 |
 | [Issuing-agency authority sources for CER exhibit canonicalization](../kb-notes/reference-issuing-agency-authority-sources.md) | reference | published | 2026-07-07 |  |
 | [Postgres full-text search pitfalls on freehand credential titles](../kb-notes/reference-postgres-fts-pitfalls-for-credential-titles.md) | reference | published | 2026-08-06 | 2026-08-06 |
 | [Public-domain art sourcing for the dashboard (Adams, plein air, and the traps)](../kb-notes/reference-public-domain-art-sourcing.md) | reference | published | 2026-06-12 | 2026-06-12 |

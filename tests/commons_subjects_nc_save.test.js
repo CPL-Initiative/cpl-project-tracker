@@ -36,7 +36,7 @@ const NC = (cats, extra) => Object.assign({ printed_name: null, catalog_courses:
 const SLASH = "Arts/Crafts & Design";        /* a fixture category; tests/subject_decisions_noncredit_test.py checks its slug */
 const FIX = {
   _rule: "rule", totals: { colleges: 1, named: 1, colleges_named: 1 }, columns: C,
-  common_codes: { BSKL: "Interdisciplinary-Basic Skills: Noncredit", ESLN: "English as a Second Language (ESL): Noncredit", ENGL: "English", VOCE: "Vocational", KINE: "Kinesiology" },
+  common_codes: { BSKL: "Interdisciplinary-Basic Skills: Noncredit", ESLN: "English as a Second Language (ESL): Noncredit", ENGL: "English", VOCE: "Vocational", KINE: "Kinesiology", HLSN: "Health and Safety: Noncredit" },
   title_case: LIVE.title_case, noncredit_mq: LIVE.noncredit_mq,
   noncredit_slugs: Object.assign({}, LIVE.noncredit_slugs, { [SLASH]: "arts-crafts-and-design" }),
   colleges: [{ slug: "alpha", college: "Alpha College", catalog_year: "2026-2027", read_at: "2026-11-20T10:00:00Z", rows: [
@@ -145,9 +145,9 @@ const save = (key, v, email) => ({ course_id: key, value: JSON.stringify(v), rev
   check("(2) ⭐ the title field is on the dominant category's form only", x.d.querySelectorAll('#csb-panel input[id$="-title"]').length === 1 && !!g(x, VOC + "-title")
     && g(x, VOC + "-title").value === "Electrical Apprenticeship" && /the local title and the common subject code/.test(txt(g(x, VOC + "-rec"))));
   check("(2) the other category with a code takes a code only", !g(x, BSK + "-title") && g(x, BSK + "-code").value === "BSKL" && !!g(x, BSK + "-save"));
-  check("(2) a category with no code and no title to hold takes no save and says so", !g(x, WP + "-save") && !g(x, WP + "-code")
+  check("(2) a category with no code and no title to hold takes no save and says so; Health and Safety takes HLSN since S705", !g(x, WP + "-save") && !g(x, WP + "-code")
     && /takes no save: its title is the code’s, and it has no common subject code yet/.test(txt(g(x, WP + "-code-none")))
-    && !g(x, "csb-nc-health-and-safety-save") && !g(x, "csb-nc-uncategorized-save")
+    && !!g(x, "csb-nc-health-and-safety-save") && g(x, "csb-nc-health-and-safety-code").value === "HLSN" && !g(x, "csb-nc-uncategorized-save")
     && /COCI names no noncredit category for these courses/.test(txt(g(x, "csb-nc-uncategorized-mq"))));
   typeIn(x, VOC + "-code", "voce");
   g(x, VOC + "-save").click(); await settle();
@@ -275,6 +275,30 @@ const save = (key, v, email) => ({ course_id: key, value: JSON.stringify(v), rev
   x = load("#commons/subjects/alpha/AED", { sess: ME, files: { "kb/status/local_subject_titles.json": BUILT } });
   await x.M.boot(); await settle();
   check("(8) where the live read holds no such save, the form reads the files again", !!g(x, BSK + "-rec") && !g(x, BSK + "-others"));
+
+  /* (9) S705, Sam: "the appearance makes it seem like I am changing all the listed courses to AED, even though I maybe
+     be just moving the AED out and associating them with the common subject VOCE". The panel's noncredit courses stand
+     under their COCI category, each heading saying the code its form's save sets and that the local subject stays. */
+  const COURSES = { college: "Alpha College", slug: "alpha", columns: ["number", "title", "band", "listed", "units", "cid", "ccn", "mid", "category"],
+    codes: { AED: [["10.07", "Fitness for Older Adults", "N", "COCI", 0, "", "", "ELEC M9008", "Courses for Older Adults"],
+      ["36.02", "Intro to Construction", "E", "COCI", 0, "", "", "ELEC M90CY", "Short-term Vocational"],
+      ["39.01", "Painting Trades", "N", "COCI", 0, "", "", "ELEC M90CK", "Short-term Vocational"],
+      ["42.03A", "ESL Conversation A", "N", "COCI", 0, "", "", "ELEC M90CZ", "English as a Second Language (ESL)"],
+      ["50.1", "Old Course", "N", "COCI", 0, "", "", "ELEC M90ZZ", ""]] } };
+  x = load("#commons/subjects/alpha/AED", { sess: ME, saves: [save("SUBJ:alpha|AED|nc:short-term-vocational", { local_title: "Adult Education", common_code: "VOCE" })],
+    files: { "kb/status/subject_courses/alpha.json": COURSES } });
+  await x.M.boot(); await settle();
+  const heads = Array.from(x.d.querySelectorAll("#csb-panel .csb-band")).map((h) => txt(h));
+  check("(9) ⭐ the noncredit courses stand under their category, the most courses first, the uncategorized last",
+    JSON.stringify(heads) === JSON.stringify(["Noncredit, Short-term Vocational (2)", "Noncredit, Courses for Older Adults (1)", "Noncredit, English as a Second Language (ESL) (1)", "Noncredit, no category in COCI’s export (1)"]), heads.join(" | "));
+  const lines = Array.from(x.d.querySelectorAll("#csb-panel .csb-cat-code")).map((p) => txt(p));
+  check("(9) ⭐ the saved category says its code applies to its own courses only and the local subject stays",
+    /^Common subject code VOCE, from a person’s save on the Short-term Vocational form\. It applies to these 2 courses only: their local subject stays AED, and their M-IDs move to VOCE at the next re-mint\.$/.test(lines[0]), lines[0]);
+  check("(9) ⭐ an unsaved category names its MQ code and says a Save on its form applies it to its courses only",
+    /^Not settled yet\. Courses for Older Adults’s noncredit MQ discipline, Older Adults: Noncredit, has the common subject code OLAD; a Save on that form above applies it to this course only\. The local subject stays AED\.$/.test(lines[1]), lines[1]);
+  check("(9) the uncategorized courses say no category's save reaches them", /no category’s save reaches it\. Move it/.test(lines[3]));
+  check("(9) an M-ID minted under another code than its category's says so; an enhanced course says so",
+    /M-ID ELEC M90CY \(minted under ELEC\)/.test(txt(x.d.querySelector('#csb-panel tr[data-number="36.02"]'))) && /COCI, enhanced/.test(txt(x.d.querySelector('#csb-panel tr[data-number="36.02"]'))));
 
   let pass = 0;
   results.forEach(([n, ok, why]) => { if (ok) pass++; else console.log("FAIL", n, why ? "\n     " + String(why).slice(0, 400) : ""); });

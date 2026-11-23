@@ -925,6 +925,37 @@ check("the main course is the one with the most units, the first on a tie",
       B.main_course([[0, "ECE 95", "Work Experience", 1], [0, "ECE 64", "Play", 3], [0, "ECE 65", "Art", 3]]) == 1)
 check("the build returns the subjects file", isinstance(subjects, dict) and "subjects" in subjects, subjects)
 
+# ── S708: the MAP team's worklist of exhibits with no credit recommendation, statewide (Sam, 2026-11-22, S705: "yes,
+# add the MAP team worklist for flagged exhibits"). One row per MAP id, every exhibit in MAP's statewide data, with
+# the college MAP's exhibit list names as the owner; an exhibit whose recommendation line has a course or a credit is
+# not on it. ──
+NC_SW = {"exhibits": [
+    {"exhibit_id": "MAPA-1|MAPA-2", "exhibit_ids": ["MAPA-1", "MAPA-2"], "raw_titles": ["Portrait Photography"],
+     "cpl_type": "Credit By Exam", "credit_recs": [],
+     "exhibit_records": [{"id": "MAPA-1", "title": "Portrait Photography"}, {"id": "MAPA-2", "title": "Portrait Photo II"}]},
+    {"exhibit_id": "MAPB-1", "raw_titles": ["Welding 1"], "cpl_type": "Industry Certification",
+     "credit_recs": [{"course": "", "credit": "3 units"}]},
+    {"exhibit_id": "MAPC-1", "raw_titles": ["Basic Electronics"], "cpl_type": "Industry Certification",
+     "credit_recs": [{"course": " ", "credit": ""}]},
+    {"exhibit_id": "MAPD-1", "raw_titles": ["Dance"], "cpl_type": "Portfolio Review"}]}
+NC_VER = {"checked_at": "2026-10-26T23:35Z", "found": {"MAPA-1": {"college": "Santa Ana College"},
+                                                       "MAPA-2": {"college": "Cabrillo College"},
+                                                       "MAPC-1": {"college": "Cabrillo College"}}}
+nc = B.exhibits_without_recs(NC_SW, NC_VER)
+check("⭐ S708: every MAP id with no credit recommendation is listed, one row each, with its owner college",
+      [(r["id"], r["college"]) for r in nc] == [("MAPC-1", "Cabrillo College"), ("MAPA-2", "Cabrillo College"),
+                                                ("MAPA-1", "Santa Ana College"), ("MAPD-1", "")], nc)
+check("S708: an exhibit whose recommendation names a credit is not listed, and a blank course and credit is",
+      "MAPB-1" not in [r["id"] for r in nc] and "MAPC-1" in [r["id"] for r in nc], nc)
+check("S708: a row carries the record's own title and the CPL type",
+      [r for r in nc if r["id"] == "MAPA-2"][0]["title"] == "Portrait Photo II"
+      and [r for r in nc if r["id"] == "MAPD-1"][0]["type"] == "Portfolio Review", nc)
+check("S708: an exhibit MAP's owner read predates sorts last with a blank college", nc[-1]["college"] == "", nc)
+check("S708: the built review file carries the statewide list, its total and the owner read's date",
+      isinstance(data.get("no_cr"), dict) and isinstance(data["no_cr"].get("rows"), list)
+      and "of" in data["no_cr"] and "owners_read" in data["no_cr"], data.get("no_cr"))
+check("S708: the list names no student", all(set(r) == {"id", "title", "type", "college"} for r in nc), nc)
+
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))
 sys.exit(1 if failed else 0)

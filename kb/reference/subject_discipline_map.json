@@ -5,7 +5,7 @@
   "_generated_by": "kb/_seed_subject_discipline_map.py",
   "_generated_at": "2026-05-20",
   "_classified_by": "claude-opus-4-7 (subject->discipline draft)",
-  "count": 320,
+  "count": 319,
   "map": {
     "AB": "Auto Body Technology",
     "ACC": "Business",
@@ -22,7 +22,6 @@
     "ADMJ": "Administration of Justice",
     "ADMJUS": "Administration of Justice",
     "ADN": "Nursing",
-    "AED": "Electricity",
     "AERO": "Aviation",
     "AFRAM": "Ethnic Studies",
     "AG": "Agriculture",
@@ -346,7 +345,8 @@
     "BSICSKL": "21st-century employability/basic-skills bucket",
     "ABE": "Adult Basic Education bucket",
     "VOC ED is mapped (VOCED)": "note: VOCED/VOC/VOCE -> Vocational; bare 'NC' is not",
-    "HOSP": "hospitality — sampled titles are mixed: its 8 disciplined identities split four ways (Hotel and Motel Services, Travel Services, Family and Consumer Studies/ Home Economics, Culinary Arts/Food Technology) and its 5 blanks span Hospitality Law and Introduction to Baking. Sam's ruling of 2026-09-08 (sheet item 6): leave it out, send it to the curation worklist."
+    "HOSP": "hospitality — sampled titles are mixed: its 8 disciplined identities split four ways (Hotel and Motel Services, Travel Services, Family and Consumer Studies/ Home Economics, Culinary Arts/Food Technology) and its 5 blanks span Hospitality Law and Introduction to Baking. Sam's ruling of 2026-09-08 (sheet item 6): leave it out, send it to the curation worklist.",
+    "AED": "Adult Education at Cerritos (its department list), a noncredit bucket: electrical apprenticeship, ESL, basic skills, older adults and painting trades sit under it. Its common code is set per COCI noncredit category on the Subjects page (S707, 2026-11-22)"
   },
   "_updated_at": "2026-09-08",
   "_updated_by": "Sam's rulings of 2026-09-08 — the subject-discipline edge sheet (items 1-7) and the hard-ones sheet (items 1, 6, 7)"
