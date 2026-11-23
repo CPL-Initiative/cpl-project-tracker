@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1167,
+  "file_datasets": 1180,
   "external_services": 199,
-  "consumers": 658,
+  "consumers": 659,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -535,7 +535,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 466
+     "line": 572
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -869,7 +869,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 490
+     "line": 596
     }
    ],
    "main_committers": []
@@ -1224,7 +1224,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1805
+     "line": 1816
     },
     {
      "id": "module:admin.js",
@@ -1966,7 +1966,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2465
+     "line": 2476
     }
    ],
    "main_committers": []
@@ -2637,7 +2637,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1415
+     "line": 1426
     }
    ],
    "main_committers": []
@@ -2656,7 +2656,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1760
+     "line": 1771
     },
     {
      "id": "module:college_briefing.js",
@@ -3365,7 +3365,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1816
+     "line": 1827
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4225,7 +4225,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 513
+     "line": 619
     }
    ],
    "main_committers": []
@@ -4736,7 +4736,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2129
+     "line": 2140
     }
    ],
    "main_committers": []
@@ -5998,7 +5998,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2013
+     "line": 2024
     },
     {
      "id": "module:admin.js",
@@ -6947,7 +6947,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1258,
+     "line": 1263,
      "tabs": [
       "commons"
      ]
@@ -7356,7 +7356,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2404
+     "line": 2415
     },
     {
      "id": "module:college_briefing.js",
@@ -7569,7 +7569,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1475
+     "line": 1486
     },
     {
      "id": "module:cpl_funding.js",
@@ -9080,7 +9080,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7024
+     "line": 7058
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -9100,7 +9100,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7100
+     "line": 7134
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -11601,6 +11601,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_statewide_subject_codes.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_subj4_apply.py": {
    "consumers": [
     {
@@ -13854,6 +13867,13 @@
      "line": 95
     },
     {
+     "id": "script:kb/_statewide_subject_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 67
+    },
+    {
      "id": "script:kb/_subj4_apply.py",
      "kind": "script",
      "direction": "read",
@@ -15460,7 +15480,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 910
+     "line": 1073
     }
    ],
    "served": true,
@@ -15473,7 +15493,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 913
+     "line": 1076
     }
    ],
    "served": true,
@@ -15486,7 +15506,20 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 515
+     "line": 621
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/course_outcomes/peralta_recall.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1081
     }
    ],
    "served": true,
@@ -15512,7 +15545,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 911
+     "line": 1074
     }
    ],
    "served": true,
@@ -15525,7 +15558,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 912
+     "line": 1075
     }
    ],
    "served": true,
@@ -15560,7 +15593,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1231
+     "line": 1428
     }
    ],
    "served": false,
@@ -19158,7 +19191,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7874
+     "line": 7947
     }
    ],
    "served": true,
@@ -19426,7 +19459,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1596
+     "line": 1706
     },
     {
      "id": "script:kb/_program_requirements_cheap_piles_s683.py",
@@ -19457,7 +19490,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 388
+     "line": 394
     }
    ],
    "served": false,
@@ -19470,7 +19503,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 356
+     "line": 362
     }
    ],
    "served": false,
@@ -21999,7 +22032,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1454
+     "line": 1564
     }
    ],
    "producers": [
@@ -22096,7 +22129,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 110,
+     "line": 112,
      "tabs": [
       "commons"
      ]
@@ -22127,7 +22160,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 90,
+     "line": 92,
      "tabs": [
       "commons"
      ]
@@ -22158,7 +22191,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 37,
+     "line": 39,
      "tabs": [
       "commons"
      ]
@@ -22190,6 +22223,13 @@
      "direction": "read",
      "how": "literal",
      "line": 69
+    },
+    {
+     "id": "script:kb/_statewide_subject_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
     }
    ],
    "producers": [
@@ -22307,7 +22347,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 116,
+     "line": 124,
      "tabs": [
       "commons"
      ]
@@ -22345,7 +22385,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1445,
+     "line": 1451,
      "tabs": [
       "commons"
      ]
@@ -22467,6 +22507,27 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/status/statewide_subject_codes.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_statewide_subject_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:kb/status/subject_courses": {
    "consumers": [],
    "producers": [
@@ -22488,6 +22549,13 @@
      "direction": "read",
      "how": "literal",
      "line": 391
+    },
+    {
+     "id": "script:kb/_statewide_subject_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 401
     },
     {
      "id": "script:kb/subject_decisions.py",
@@ -23664,7 +23732,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7507
+     "line": 7560
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -23684,7 +23752,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6436
+     "line": 6470
     }
    ],
    "served": false,
@@ -24347,7 +24415,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7744
+     "line": 7815
     }
    ],
    "served": false,
@@ -24360,7 +24428,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7062
+     "line": 7096
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -24497,7 +24565,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1606
+     "line": 1716
     }
    ],
    "served": false,
@@ -25382,7 +25450,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 184
+     "line": 264
     }
    ],
    "served": false,
@@ -28671,6 +28739,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/glendale_stv_alias_s703_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/glyph_sweep_test.py": {
    "consumers": [
     {
@@ -29544,6 +29625,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_ge_steps_s713_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_ge_units_not_read_s703_test.py": {
    "consumers": [
     {
@@ -29597,6 +29691,45 @@
    "main_committers": []
   },
   "file:tests/program_named_gaps_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s713_clovis_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s713_glendale_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_piles_s713_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29726,6 +29859,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_follow_up_s703_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_requirements_fragment_path_test.py": {
    "consumers": [
     {
@@ -29740,6 +29886,32 @@
    "main_committers": []
   },
   "file:tests/program_requirements_heading_agreement_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_named_gaps_s703_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_ohlone_pins_s703_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29844,6 +30016,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_same_page_recall_s697_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_sjdelta_aliases_s703_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30332,6 +30517,19 @@
    "main_committers": []
   },
   "file:tests/statewide_recs_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/statewide_subject_codes_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -31862,6 +32060,13 @@
      "line": 1456
     },
     {
+     "id": "script:kb/_statewide_subject_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 399
+    },
+    {
      "id": "script:kb/_subjects_list_recode.py",
      "kind": "script",
      "direction": "read",
@@ -33189,7 +33394,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7848
+     "line": 7921
     }
    ],
    "main_committers": []
@@ -33201,7 +33406,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7965
+     "line": 8038
     }
    ],
    "main_committers": []
@@ -34052,7 +34257,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1008,
+     "line": 1010,
      "tabs": [
       "commons"
      ]
@@ -35396,7 +35601,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 254,
+     "line": 262,
      "tabs": [
       "commons"
      ]
@@ -35406,7 +35611,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 277,
+     "line": 285,
      "tabs": [
       "commons"
      ]
@@ -38231,6 +38436,7 @@
     "kb/_build_local_subject_recommendations.py",
     "kb/_mid_readiness.py",
     "kb/_outline_hunt.py",
+    "kb/_statewide_subject_codes.py",
     "kb/_row_audit.py",
     "kb/_row_audit_prune.py",
     "kb/_audit_exhibits.py",
@@ -38300,6 +38506,7 @@
     "kb/status/noncredit_subject_titles.json",
     "kb/status/mid_readiness.json",
     "kb/status/outline_hunt.json",
+    "kb/status/statewide_subject_codes.json",
     "cpl_pathways_membership_data.js",
     "kb/discipline_canonical_subj4.json",
     "kb/cid_claim_audit.json",
@@ -38562,6 +38769,7 @@
     "tests/subject_decisions_noncredit_test.py",
     "tests/subject_course_moves_test.py",
     "tests/outline_hunt_test.py",
+    "tests/statewide_subject_codes_test.py",
     "tests/subjects_daily_build_test.py",
     "tests/closest_mid_links_test.py",
     "tests/apply_curation_rulings_test.py",
@@ -38581,6 +38789,7 @@
     "tests/library_check_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
+    "tests/glendale_stv_alias_s703_test.py",
     "tests/course_id_route_test.py",
     "tests/reconcile_window_fill_test.py",
     "tests/program_requirements_reconcile_test.py",
@@ -38592,7 +38801,11 @@
     "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_reader_fixes_s697_test.py",
     "tests/program_requirements_follow_up_s697_test.py",
+    "tests/program_requirements_follow_up_s703_test.py",
     "tests/program_requirements_pins_s703_test.py",
+    "tests/program_requirements_ohlone_pins_s703_test.py",
+    "tests/program_requirements_sjdelta_aliases_s703_test.py",
+    "tests/program_requirements_named_gaps_s703_test.py",
     "tests/program_requirements_same_page_recall_s697_test.py",
     "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
@@ -38605,6 +38818,10 @@
     "tests/program_hours_gaps_s703_test.py",
     "tests/program_requirements_cheap_piles_s683_test.py",
     "tests/program_lists_past_figure_s703_test.py",
+    "tests/program_piles_s713_test.py",
+    "tests/program_piles_s713_glendale_test.py",
+    "tests/program_ge_steps_s713_test.py",
+    "tests/program_piles_s713_clovis_test.py",
     "tests/program_discontinued_test.py",
     "tests/reader_page_checks_test.py",
     "tests/reader_page_checks_recall_test.py",
