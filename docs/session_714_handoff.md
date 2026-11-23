@@ -67,3 +67,11 @@ college until it merges.
   College of San Francisco as its one writer (the outline read, then the 53 page-finding programs).
 - Lane 2: #3705 (draft) moves 17 Santa Rosa Junior records (5 pass, 12 as `section_cut_off`); a second reader is on it.
   Santa Monica's 26 stay held (6 wait on runner page text, 17 need a reread, 3 a page read or a person).
+- 07:24Z: #3675 merged (`706c0154`). The page read its merge push started (45128802291, rereading #3686's 11 plans)
+  was cancelled as redundant.
+- 07:30Z: #3705's 15-row plan applied (migrate 45131380266; second reader round two: apply), confirmed live: 15 rows at
+  the after-state, 10 carrying `section_cut_off`. Santa Rosa Junior 06566 and 32298 held (the reader found the wrong
+  cause). The pre-read ran as md5 hashes of the plan's before-values made on the local Postgres 16, 2 KB in place of
+  72 KB, and matched 15 of 15.
+- 07:38Z: #3684 brought up from `main` and marked ready (`0177b35a`); its `test` is running. #3705 and #3683 follow it,
+  one at a time.
