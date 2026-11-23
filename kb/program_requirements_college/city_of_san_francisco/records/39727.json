@@ -64,8 +64,8 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    3.0,
-    12.0
+    14.0,
+    18.0
    ],
    "stated": [
     16.0,
@@ -73,7 +73,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 3.0-12.0; the catalog states 16.0-18.0"
+    "the blocks sum to 14.0-18.0; the catalog states 16.0-18.0"
    ]
   },
   "repeated": {
