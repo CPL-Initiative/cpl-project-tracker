@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 204,
  "with_closed_list": 201,
- "started": "2026-11-10T20:10:35Z",
+ "started": "2026-11-23T06:59:40Z",
  "curriqunet": {
   "catalog": 164,
   "view_prefix": "https://laspositas.curriqunet.com/catalog/iq/",
@@ -22,12 +22,91 @@
   "entries": 201,
   "stopped_at_cap": false,
   "same_title_entries": 0,
-  "entries_read": 201
+  "entries_read": 201,
+  "twin_ids": {},
+  "failed_calls": 0
  },
  "pages_read": 201,
+ "pages_listed": 201,
+ "pages_answered": 201,
+ "listing_failed": 0,
  "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 193,
+   "hits": 173,
+   "recall": 0.896,
+   "false": 1,
+   "false_off_own": 1,
+   "false_no_claims": 1,
+   "shared": 2,
+   "false_matches": [
+    {
+     "control_number": "39074",
+     "title": "Occupational Safety",
+     "page": "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2023"
+    },
+    {
+     "control_number": "39074",
+     "title": "Occupational Safety",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "page": "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2023",
+     "h1": "Occupational Safety, Certificate of Achievement (CA)"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "39074",
+     "title": "Occupational Safety",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "page": "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2023",
+     "h1": "Occupational Safety, Certificate of Achievement (CA)"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 3,
+  "by_result": {
+   "not_searched": 2,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "38875",
+    "title": "Actors Conservatory",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 173 of 193 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "44894",
+    "title": "Lesbian, Gay, Bisexual, Transgender, and Queer Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 173 of 193 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "45027",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
  "loads": 526,
- "seconds": 2650.7,
+ "seconds": 2599.9,
  "found": 195,
  "by_method": {
   "no_closed_list": 3,
@@ -48,7 +127,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43734",
@@ -56,7 +136,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45080",
@@ -82,7 +163,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -96,7 +178,8 @@
     "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1396",
     "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1397",
     "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1399"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "30354",
@@ -104,7 +187,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2021"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "30408",
@@ -114,19 +198,830 @@
     "https://laspositas.curriqunet.com/catalog/iq/102/105/147/1795/1798",
     "https://laspositas.curriqunet.com/catalog/iq/102/105/168/2008/2011",
     "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 4,
-  "0.8-1.0": 27,
-  "1.0": 164
+  "0.8-1.0": 25,
+  "1.0": 166
  },
  "would_extract": {
   "against": "kb/program_requirements_college/las_positas",
-  "kept": 195,
-  "programs": 0,
-  "list": []
+  "kept": 193,
+  "kept_moved": 0,
+  "programs": 2,
+  "list": [
+   {
+    "control_number": "39143",
+    "title": "Automotive Master",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1399",
+    "coverage": 1.0,
+    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1399",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45725",
+    "title": "AAG Automotive Emissions Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2174",
+    "coverage": 1.0,
+    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2174",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "42892238131"
+ "fingerprints": {
+  "01000": {
+   "sha256": "45cd42aa19f40f4073aa92b87ddf141a2a0a2bf19301285561202ecf9830c202",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1483"
+  },
+  "01001": {
+   "sha256": "2366fa7bccc2b41e14b65fdfade9db8f12f1064ebac65ad3305140ac0b236526",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/741"
+  },
+  "01004": {
+   "sha256": "4b8c7eb80dfb4612aa8a48964182969f6394f641e91db15bbbdfbbd07c69f982",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/125/1270/1272"
+  },
+  "01005": {
+   "sha256": "0b33e2cc9395135ea524f6d085c810f3cc7e2127de0b38c4416ba275944f4878",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1396"
+  },
+  "01006": {
+   "sha256": "728fdf815d17d4a1144faaeb4d35544ae7d57048c793fbbab95c430f19531d19",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1446"
+  },
+  "01008": {
+   "sha256": "3c4d4badf227003ce9cd0b34eaef3c01694759358679e1a27f7a8ff252beaa3a",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/129/1524/1527"
+  },
+  "01010": {
+   "sha256": "5e21c3f0284b0a355fd129ade381296fd7dd2adf32f461903b4fa65184b35b06",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1552"
+  },
+  "01011": {
+   "sha256": "4e34dc77350fc2d57085e82135909481df4f41bf127a6df462622148cdc6bf2e",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1557"
+  },
+  "01023": {
+   "sha256": "a447a8f389e2a34f2114055375633a798006fb32df5becd9dc15fdabf96692ed",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1746"
+  },
+  "01032": {
+   "sha256": "023100822f728ad5fd673e4d5c974120778190ca9c0a39cb243ccefad9862d05",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/150/1820/1825"
+  },
+  "01036": {
+   "sha256": "b07a8072baff30fee270c166edee9f9777dfef6563d9364f3bb23edbe73b5485",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/151/1833/1837"
+  },
+  "01037": {
+   "sha256": "4d3396055969d8c420351b803642fd6c16dbbefe323ce36f00e09841077a8cf4",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1891"
+  },
+  "01038": {
+   "sha256": "1f5389c9032ce1a5a9e3b33692a1a6809409bea657f8c742511cbd94073e1b63",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1487"
+  },
+  "01041": {
+   "sha256": "5d8e8b6ee73037903d6b821ebc4d767d690e8abdd488a25489234385a0848ddc",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2021"
+  },
+  "01044": {
+   "sha256": "9332881f810af43356b53e4f9a88b1ffbda65bd329eaebffec0a2776d01c8f87",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/173/2042/2045"
+  },
+  "01057": {
+   "sha256": "cc2f4ee55ac728e33203ae4bbd04b026a6595cc1985c3a5e477107b4dac7d155",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/181/2132/2136"
+  },
+  "09211": {
+   "sha256": "e4a7c483bf558596cf066d472a09a4e489a6859483ee84d45639158345c990c0",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1485"
+  },
+  "09212": {
+   "sha256": "886994fe40d9609b4405588579dc30fd1a180643f5d8cd428076a33e255bf6c0",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1893"
+  },
+  "09214": {
+   "sha256": "4c997dd89bf67a511153f39782f0390cb7b19dd55cc001853cbedac2f53e6cec",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1628"
+  },
+  "09227": {
+   "sha256": "5cde871a1579347ccdc5f656e8a25a60298908e6e74502309f8d643bb3700d0d",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1643"
+  },
+  "10961": {
+   "sha256": "b64c6185fe7a89ca273cc58526ffc61da362be57acc9d983884a863755b5c311",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1395"
+  },
+  "12241": {
+   "sha256": "742e94f8c906c4c79539f173c6d9fc5e8aff5f0a55f7239ba3bbcae1d92daee9",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1490"
+  },
+  "12882": {
+   "sha256": "2e52dc253b6acdfe5b1a3c5171e1a069627442eb1dfbd7c1fa487d29f9e62d18",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1641"
+  },
+  "12885": {
+   "sha256": "db0683c7dc45d8152795f830ac7df8fa32b2349235039d5d672bb885cd4a0eef",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1491"
+  },
+  "15321": {
+   "sha256": "d7060c2ddca6d4345b989228e580e02e6028b48199af652282fe5090e0481e7c",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/152/1845/1849"
+  },
+  "15504": {
+   "sha256": "01879e1de10302f428e1b4114113a54887949aaf68e6fd02e020561e8a071a3a",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1599"
+  },
+  "15505": {
+   "sha256": "d0b571930ea9318340b99f1686d6985dbfd34505a21781723393de16537469c8",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1602"
+  },
+  "16367": {
+   "sha256": "e717a0d869e5df89f1cca6180089d1d65bbbf1c04d9a0e92ecb0df401e41d425",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2127"
+  },
+  "16368": {
+   "sha256": "3eee65f02721a824674fdd991264cf7616ffce5127b801825bab2b1c43e54240",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2125"
+  },
+  "17764": {
+   "sha256": "f55683da143ae9d3776c0b44b897ef5ef0bcabff949768068abc0d808b3bf3b3",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/137/1672/1676"
+  },
+  "18813": {
+   "sha256": "090bbe0ac01f3a8ddab9f3f8246f9e9e60128f4ba9b0ebe1db792c9a999819b2",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1646"
+  },
+  "18814": {
+   "sha256": "28132b6940740c1a2e959cf182301afc11fe869a9d94130c9e647da916bc8a31",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1647"
+  },
+  "18906": {
+   "sha256": "f2182f3f7dbe83c3681f39e138db495e9e8d1825662e86ec0a43e67aa047d267",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1554"
+  },
+  "21574": {
+   "sha256": "8c34e23fc5b3dad7d610dab03760799537a99ff27d472570d04ecec899f44af1",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2126"
+  },
+  "21576": {
+   "sha256": "26124d5e47db103a818c2f437e140e79571ffb5ba63c0a5fca1e1f33414ea198",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2128"
+  },
+  "21577": {
+   "sha256": "602526a8b7662c3036f08a519e558dd24b8894a5c3b3d0ebd5be151257dc1f3b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1488"
+  },
+  "21579": {
+   "sha256": "1592b772e80c79f604ef5a30657727e075f752fbdfc6ddfca891869596e1dde8",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1553"
+  },
+  "21581": {
+   "sha256": "f57af30e9d908104a7a779260332566504fcf48acbc8afcfea805b67367b870c",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1626"
+  },
+  "21582": {
+   "sha256": "888cafa949a77a5a8ba6c3701bfbaf58a8b3d5f4939793fc2619c929d1976dbc",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1627"
+  },
+  "21588": {
+   "sha256": "483a7d27bc7a233585a571da90ecd0df6f7cd1b8f540629aa6262277f148d7be",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/181/2132/2137"
+  },
+  "21590": {
+   "sha256": "039800e8465d9488cec72968c1ee1150016a082ffc16404f5e20e10c41216f05",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/151/1833/1838"
+  },
+  "21591": {
+   "sha256": "dde1340f073a7ba81a3ee73a2838c51b5d6d9a97f51c30b20450358706e5f9e6",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1644"
+  },
+  "21592": {
+   "sha256": "4dddad14c7c0dd2202d7cf1b17698a9eb98d71d379c0c08ba9207c4d0e40dea8",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1747"
+  },
+  "30415": {
+   "sha256": "151140079e986665e013a51c4c6c70b8ae149f302847149891d1c3c2feebf357",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/140/1720/1724"
+  },
+  "30547": {
+   "sha256": "8bfc3b784fe6a5fc612e19c2f0899fec3ba231c413331e0fc8f4569bce7f755d",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/152/1845/1850"
+  },
+  "30691": {
+   "sha256": "eee6a7c29c25139a68a2fc24f462755a0c976d427af73634a348e7a658a4744b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/139/1713/1716"
+  },
+  "30815": {
+   "sha256": "0b62aeb9fb5a4584f7fdd985a3ab7df725ad4ffc3157fd50edbd43c4b6b50179",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/176/2071/2084"
+  },
+  "30866": {
+   "sha256": "40ebd2e52c63d4087bf5f5af0dd95d86c173e0cb9159afb2951cb7c32c9435b9",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/136/1659/1667"
+  },
+  "30969": {
+   "sha256": "64dd1f71b88ad686cc3670da8e58ecc2e192eca469cf6693952b112bed2818bb",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/136/1659/1665"
+  },
+  "31047": {
+   "sha256": "6171a10499216f59fed6d1b66efe54fed6ce34f1cafc8d5413b18b69a5ca7b13",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/129/1524/1528"
+  },
+  "31613": {
+   "sha256": "f70418ef56abd946c3a0ffd096d1e720b46b17cadc06b56fecdfd54611c23c76",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1645"
+  },
+  "31658": {
+   "sha256": "9db4f9826aa0eac1843bae8e249bda217eec9c1f63858ea25deb54a2ba636d9f",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/175/2057/2060"
+  },
+  "31901": {
+   "sha256": "c675dba991e3dfea9efa4e6798e831258b77c9e8dcd3acd78897da4c060fedcb",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/145/1765/1770"
+  },
+  "32180": {
+   "sha256": "c490926b65f46cd6f2a0876473b60e47b7ac2eab7247fa29c18a7c6401b7a1c5",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/171/2026/2029"
+  },
+  "32182": {
+   "sha256": "5023dde10b683004c4e3dcaca5ae8467b50fe8376d1d17b7cf7f1b45de54b775",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/137/1672/1677"
+  },
+  "32229": {
+   "sha256": "3084862fe029ec752d2c2d47894765c648107be86a0b9a3fbf0a93f094a092cb",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/144/1759/1762"
+  },
+  "32501": {
+   "sha256": "a745e147fd01c199cb2c57a2a0598e247e01d6aa91578b889d5dede5366e756f",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/148/1801/1805"
+  },
+  "32508": {
+   "sha256": "5191e4aac2060b9ebc344616596b82ca0055ab3c30268d42a66c379419c49b07",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/120/1230/1232"
+  },
+  "33219": {
+   "sha256": "721217fd88d2ffabd5538ac404c13b9ac2e4fc451bf17e295f05fd58bb64dc58",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2107"
+  },
+  "33372": {
+   "sha256": "002bc3815b1c3512703cdb8cd37eac97b9af6e7508702f3553bb33c3cf22bc6d",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/152/1845/1848"
+  },
+  "33397": {
+   "sha256": "7cb95704fa1cd768eda56c9a94d904b8647f835090c29411f2ea89491a6efc77",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/125/1270/1273"
+  },
+  "33428": {
+   "sha256": "0a6e24ee52f5159e10a6075ec423d060ce3b4c5a939dd90eb45022a880aac996",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1699"
+  },
+  "33589": {
+   "sha256": "15a36ddb044ceee36e0256ac4686ac0385a2a28eb5e56f5158c96a1f2b37c3f9",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/742"
+  },
+  "33707": {
+   "sha256": "6f1555af4914d9a0fb90f68ab752baf82b7ead16b5fc98d4145f665ecdfa0f51",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1861"
+  },
+  "33900": {
+   "sha256": "aabb87909cf9937eeffa5969db885388c5dc28682f2596b67af8ca9c521ea404",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1558"
+  },
+  "33907": {
+   "sha256": "16679e19b9e5308352cab2b4ba063844bce0ef1e11f3632332ae8bec22c97889",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2105"
+  },
+  "35245": {
+   "sha256": "c57991d54314455c489f6c5e80801f45e7e53e4b937b5f606bc852a7ae947ee6",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1447"
+  },
+  "35917": {
+   "sha256": "8150315196b1b43e0fc37c39f038fd56c6f5e9395d0ab29f6d16010d077af30b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/168/2008/2011"
+  },
+  "35928": {
+   "sha256": "c5e1a4063c32f64899f114a773b009849e4b967537e7c07651b73c20d518e843",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1916"
+  },
+  "35992": {
+   "sha256": "3699abd1988f4d49f15082e85a75daad9ffe6fd0bddc07d2c0860e2d85860b8f",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1915"
+  },
+  "36227": {
+   "sha256": "a7fbdba6286244f87177a185765405af1df6ecfbbb65d1a8934feea2895b1cd6",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/135/1651/1656"
+  },
+  "36234": {
+   "sha256": "b9a7ff755a2040689e26d31a8379cbbd8837acef4b7ab63afd65a69cc44c9fbc",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1908"
+  },
+  "36235": {
+   "sha256": "beee67da700ff06c4b128d1eb1b1116e1c7b4c02381db80d860061e438c8487d",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2106"
+  },
+  "36291": {
+   "sha256": "258cf3ba2ef2e43e823c7b30e001104427bbc08b6383f1571d298a922b478191",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1817"
+  },
+  "36292": {
+   "sha256": "be9714b01f5acfda535727bc8f8e007b0843760946361951c9d583b3e447222e",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1791"
+  },
+  "36334": {
+   "sha256": "60f77df84d555140928205e0ca1e5db9265bb74b638d4246db998367c8157694",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1788"
+  },
+  "36335": {
+   "sha256": "e002767674c537b1b458b1ab65bd8e6681c4c92e0bcfaf210800c97af142c635",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/145/1765/1771"
+  },
+  "36341": {
+   "sha256": "31dcc0860676d28404bb4abb1e9b18007643acdb3cb0e8e2190de47855634ee3",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
+  },
+  "36349": {
+   "sha256": "d3ffa802b92a907f97046f3773408fa8589997160272a017cceb6fdb744856df",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1913"
+  },
+  "36350": {
+   "sha256": "619375777551b3a358c1be3e88b7eab4e155a0bcdfe8563eaace860c03590faf",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1912"
+  },
+  "36351": {
+   "sha256": "3c1172a7c6c919b9f4ddde4a2594de4b8681977fc7c162969564fce6641cc518",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1789"
+  },
+  "36361": {
+   "sha256": "07b4cef5443815838f738fe1b89c22f5dedc14c3d535c39702af2b8faef2c49f",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
+  },
+  "36362": {
+   "sha256": "061d2a20684a69558b3a562d923e910bc9dbd39f8b2fd7baf60e9b4515c29313",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878"
+  },
+  "36363": {
+   "sha256": "cef2d9021583a283def57aaa0fe10b1af8d7fded44de01c133cd8b0cc98c3892",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
+  },
+  "36431": {
+   "sha256": "eea75678f3636887e01652e2b80f8927ba21172d745758bcb590e1a9cfa4b42c",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
+  },
+  "36445": {
+   "sha256": "0caed191b528b83d7e0656b875c47ce203bc1690b5906b80b05ecb0034b74613",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1790"
+  },
+  "36449": {
+   "sha256": "04218e4d589a9c2c8a49f94a07860ed7352ff5e27e46d0e42539ad42a1bb0c43",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1858"
+  },
+  "36471": {
+   "sha256": "e80ce50d19146fca5c04d6fbf4393c4297de27189e886b251e9be3170719021b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1813"
+  },
+  "36472": {
+   "sha256": "45888e07f37d535c6a49cd9b20645f0e7aac39844727b88da3e4423a2f739f45",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1814"
+  },
+  "36477": {
+   "sha256": "7c9d7b0cde63b5a4344ad9abd010e9157db53f3b0a7ad088fd4136a40967adff",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1815"
+  },
+  "36479": {
+   "sha256": "658a14c389856feee740b4f94f406c3837fd790cdb28bc9a6a03cfbfc0cf90f3",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
+  },
+  "36494": {
+   "sha256": "ebd78066e2bec40ca6ac1eb2bcff165ed17f1e1e0a04096385efde5818404849",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1556"
+  },
+  "36750": {
+   "sha256": "9c436470b06724321e5a8263282fd237c14b023e60e980815a73b64d58085d71",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1816"
+  },
+  "36791": {
+   "sha256": "d7d14d4d6486a0f371379a7cf8000f830a10a6ceeb1c346abd4581f5c636789e",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/174/2050/2053"
+  },
+  "36797": {
+   "sha256": "f0a5f3fa6c4a4ab5668aec969c06f6830a7b883b1a438111e32b36e94ca40e7b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/146/1775/1778"
+  },
+  "36853": {
+   "sha256": "b38b52508701bd0e7d39fbfb73171809f65860996d530f31e2d9df21013fe1b3",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/136/1659/1666"
+  },
+  "36948": {
+   "sha256": "b18bfd52f9619eb9b13dd4cb50418a64628a530175a7de44f122bca8bcb41c3b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1451"
+  },
+  "36953": {
+   "sha256": "b121db1043b0377eff9fd16ad6967368838c7dccef81bb3bbf958589551e0b4e",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1452"
+  },
+  "37017": {
+   "sha256": "eea3fd43d92b189219fe00edc5bef538d21c78a8b6ac96baef63744df927bbfb",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1859"
+  },
+  "37127": {
+   "sha256": "43d9f44f65c5ff206c381542169ddc01db5ebaca1fefdf8d772e2fb755c719c6",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/170/2065/2068"
+  },
+  "37454": {
+   "sha256": "dce82c6e3811fe2788e57eb48a30e7623cef3898cd60cc9c427e614cacaa5cfe",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1642"
+  },
+  "37458": {
+   "sha256": "7044e2088362d46ba41f284c9f3941869a1a61a536ac00ed4c3da72eb44befc1",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/124/1285/1288"
+  },
+  "37486": {
+   "sha256": "24185a83f0e674bd85c5fa7c1c83f0d2ed6f72943d63241cdb6c489fbae0479c",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/166/1987/1990"
+  },
+  "37487": {
+   "sha256": "dbb7df3ebeebe86589a409687fa0264ccd935467de7d4d87f441f6ecb9275625",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/166/1987/1991"
+  },
+  "37504": {
+   "sha256": "5cd2020535b5e5cda29784e4b8d010b26836a1693cbfd3f96df0530ebaa1051e",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1973"
+  },
+  "37506": {
+   "sha256": "7f96114352308790c23f07f134fafeaeef0fa6991223c7ad9a2d5826d55c9078",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1972"
+  },
+  "37520": {
+   "sha256": "fb0cebf54dc0ea6cd31c530869ecf6ef9e44c6c70997759696912a3470737447",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1600"
+  },
+  "37521": {
+   "sha256": "12e035c3b3dea860442e6392db3dd279aad1f522e71326f5e185bf1d539f725c",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1911"
+  },
+  "37522": {
+   "sha256": "c33b04f1d119e29c524c77186122ea4cf47efe8efae3465b081d90f8ae4039b5",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/137/1672/1675"
+  },
+  "37523": {
+   "sha256": "d2adc6f9f51ec74ccb8eb396f5f027145d1bf712fb803dcbc594360ea6ee21d6",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1743"
+  },
+  "37524": {
+   "sha256": "30acd6db6e58dce9e64db831eb0d9dbfff9cd6a316d3cdfde5734a825f984d2f",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1745"
+  },
+  "37525": {
+   "sha256": "6ce8a71c2bb014232475d69feccf0b65b93a93d83717469dcc5e22370e04cbe3",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/145/1765/1772"
+  },
+  "37526": {
+   "sha256": "a22fb689bd60063fed6d21b0a64e0cb10da0b4be6b3e2e7bdbbd1ad98e9de555",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/150/1820/1826"
+  },
+  "37527": {
+   "sha256": "cb6578a9dcc6667881c2b8910adac645844a47bcf76d8950f904d786fa163ab1",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1601"
+  },
+  "37528": {
+   "sha256": "aec769ca0fc59a5435989e9c56eb3f82ba9abb09e0c55b35aa33b7b043820a0e",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1914"
+  },
+  "37529": {
+   "sha256": "0c468182cb2920f2c7e59beb1ef80c0f7e90284a5c1ee4db9017e54abc12d799",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/172/2034/2037"
+  },
+  "37530": {
+   "sha256": "c3ae6b7e35f15355623aefd75dd104cd283f986aac1274654f2fdbbfebc1a22b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/172/2034/2038"
+  },
+  "37531": {
+   "sha256": "7e78b7ed66db683649c44101f8031fae87237bacf6d4ab345a8fa8a13cef316c",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2129"
+  },
+  "37535": {
+   "sha256": "2d0480c341c7562f1a6ea89b73dc541ae84d37f62aafd955b34b626910cf962f",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1909"
+  },
+  "38187": {
+   "sha256": "dacef095376507990dda8e2a2b55e4d323563cd47c4e151823cd3733e2153620",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2102"
+  },
+  "38194": {
+   "sha256": "cb40be1098c9dc5687a2599ac86a472d752db9f881b6019dc3d84e262b3414d3",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/141/1729/1733"
+  },
+  "38195": {
+   "sha256": "29aa2427f21c6f817accb37a4e1505bb6576aaa30682ad0465cf972aaf67d6ee",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/141/1729/1732"
+  },
+  "38196": {
+   "sha256": "f6db56729a5f3abdc5037655775b6b92d291f103f4dbc15d404c7440b9fb2091",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2104"
+  },
+  "38240": {
+   "sha256": "713ec184198ac19724d3030073c49ffa65969487e7e0b2c080ba7b20337f3978",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/162/1948/1951"
+  },
+  "38244": {
+   "sha256": "4c319a9f9ffc5007350840de612f0c23b5a3ed96fceb6ea844f3cdb3c5d44318",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/162/1948/1953"
+  },
+  "38873": {
+   "sha256": "edca2ff784a263f7eecc27d06d8c98ebc4afe8c28295bb46370cb312982b6fb4",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/177/2091/2095"
+  },
+  "38878": {
+   "sha256": "21ce4eae3fdc1bb1c7a6e8c3440ea21a21c223a04796ef06917f2165ecfe12a5",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1450"
+  },
+  "38879": {
+   "sha256": "324c64cdb305700fcf690cefd9982f0f9ebb29718b5a7a8a94f40900b22eaedc",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1449"
+  },
+  "38884": {
+   "sha256": "ceff07158b8962c8aacea6321ba1c495f706c6b466d559423a42850dde3b9829",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1691"
+  },
+  "38885": {
+   "sha256": "2f5da55b90d6674d875b43219c358c084bbeca6e1876f47a757665400ef1b6d3",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1692"
+  },
+  "38886": {
+   "sha256": "580dd112e8a5bc5254a1face2cc21fac2ce7174bf4e19d98b031175c10f6a8dc",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1693"
+  },
+  "38887": {
+   "sha256": "375fed555c31d5fee8e9e232feaa936669d8c4df0181875495d6d33d042e6aa6",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1694"
+  },
+  "38888": {
+   "sha256": "823d539bb6b52b869668bf3954dead617bc3b07c4ed1a49b44be5aed53937315",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1696"
+  },
+  "38889": {
+   "sha256": "1d64c2abdb305049e4acd9986034860feb894a02d2a078ac7f3f8f1e407d7f96",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1695"
+  },
+  "38890": {
+   "sha256": "a094c9b5764bf354d04c28efca723f68d5eee9bd43e777a6d5dd8dbc1057676b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1698"
+  },
+  "38892": {
+   "sha256": "db15575a9b2d1b0e534985a9fa7dc44d14307885460df4c5abe2287fe8bc36a1",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1697"
+  },
+  "38893": {
+   "sha256": "1640b94651869f24c2802ceea49091a43f254759d8f8e63f8c2a97c7988ecd40",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1701"
+  },
+  "38894": {
+   "sha256": "a522c36ceb838e3d08eb290efa3137ee5f33d06a2f4ec9a65afc4e0107166717",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1702"
+  },
+  "38895": {
+   "sha256": "c1f5211dd4d721a3340f17a8166fc6abb11e0c1edf01074b63c7f4401b7a5d8e",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1703"
+  },
+  "38896": {
+   "sha256": "ed981ed4e05457cb436d08e1ae0a25f02396efe5f72e791afbc3f8744b19e879",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1704"
+  },
+  "38922": {
+   "sha256": "863ebac8aacfe09a57f41e8ea19e5b8263d6816e9634b09c35fde6bda3e01a54",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/177/2091/2094"
+  },
+  "38956": {
+   "sha256": "a059a666fb474f9debabd8f7479372bbd6366e8e73146ce16d0aa778494354c8",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1393"
+  },
+  "39063": {
+   "sha256": "b76168315b107b71bae46c91b8cf3ec392dcf544c30ee257c77585c7cd88a713",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1484"
+  },
+  "39064": {
+   "sha256": "619b27387e42413970c9b6ad26ccf38c16f8a1073ae72e2a24fc57ac76a87e25",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1489"
+  },
+  "39065": {
+   "sha256": "a46544fdbd487fe62cdc13c34172e0801a6d24f6b81f91ec724206d3273f45fa",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1555"
+  },
+  "39066": {
+   "sha256": "888be74caeeb1d842f90403248a9f43cb79f2112d54cca8ac233ffb181db6188",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1910"
+  },
+  "39070": {
+   "sha256": "f480e34d62d6db0dc0bbf6f1df1fb502485407527abee9366f058fede4aa9989",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1700"
+  },
+  "39071": {
+   "sha256": "f8c6d8ea1da175f1782eb50a5450c3cd11d12f65547400e2e2652c3111aefdca",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1561"
+  },
+  "39073": {
+   "sha256": "0db3c59525c656d6e02308b22bbdffc89b10b9cebd370245a65a5d36ea96e7a9",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1560"
+  },
+  "39074": {
+   "sha256": "e0fdcd8c762c03096aeed2f2c7026a412e591b80b2cc02e0c1133eb68e054e6a",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2022"
+  },
+  "39076": {
+   "sha256": "72c10699258b316f68c3dc81e0c8a7f94e5c19eb2f748c4f9d7399d4dbd08a6f",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1398"
+  },
+  "39077": {
+   "sha256": "a985bbbfa11c76b8a0a2ac0a3bd440882b582c94fd91ae78290aac8ae1ddadf2",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1400"
+  },
+  "39143": {
+   "sha256": "9486206239c6aaa49c85cd1338567581b94021172e74622a50228ecca5798a7d",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1399"
+  },
+  "39144": {
+   "sha256": "783a462cc5c09c286e20541196180ebd0f17253bb440c6d14ee90877f3287e6a",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1397"
+  },
+  "39145": {
+   "sha256": "e8c8236474c7b53204158b69f80fa7ff42b71e66c3dfc23c9278eb7e5a1ff220",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1392"
+  },
+  "39878": {
+   "sha256": "9bdb74302c3873d2e10dcfd6908ccefb9defe576cea01336c7f59f76f40c5e90",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/165/1982/1984"
+  },
+  "40063": {
+   "sha256": "0254e1c18a9c2a855d28ceddd480a63ffa27674afd1139817d5bf861285ae194",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/154/1865/1869"
+  },
+  "40461": {
+   "sha256": "9f889b94ccf0121c12f3955d916f3485835a9f08218bb23209a36199ccc9311b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1559"
+  },
+  "40478": {
+   "sha256": "de8519e4195b84ef5b4a405997ace5cad26cd571d900e374753f2ed3cab671fb",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1630"
+  },
+  "40479": {
+   "sha256": "de7e38a78207ec31e5afe64dc6386c278c7a6f44694ae80822fb7c6663a4aded",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1625"
+  },
+  "40480": {
+   "sha256": "8a9a44a7672d9fea78de0e6eeea083eb657cb20c795de9b9276588115611d53e",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1629"
+  },
+  "41923": {
+   "sha256": "ac4840aa5c525831ac155ce2cc7b558ba8651ab9cba6f79377a08601d9e92deb",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/744"
+  },
+  "41926": {
+   "sha256": "f4c50f8ee22f5bea7e7a422753c3269d459f35074e35bb3bf37f495bee285900",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/160/1935/1939"
+  },
+  "41934": {
+   "sha256": "f2d71dddf922dde41a4b4366dc822bb2cb1df58d142657b1fefdba11c42b504f",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/123/1259/1261"
+  },
+  "41980": {
+   "sha256": "37b90331de64b376c4c9540da54906141949ffc1cbc4fd8640a307b8ed51c466",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/182/2143/2146"
+  },
+  "41984": {
+   "sha256": "5404f14fcdf062a402449b1f5d4875235c718bfd3b52ceee5bacb13687345ea8",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1486"
+  },
+  "42086": {
+   "sha256": "19dfeed2a43c194932c80778b7c1c32a03f5543113f009771164567dbb556794",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/123/1259/1262"
+  },
+  "42162": {
+   "sha256": "cc351e597f5e1ae0ca063721e0d6c06c49645a466d0e6fb043b55b80d651d146",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1892"
+  },
+  "42948": {
+   "sha256": "38fb2a5edbddcc7734936805b5fd45ba3819e183332e166bf821a70143a75b6f",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/131/1537/1541"
+  },
+  "43046": {
+   "sha256": "eb801cadab15ca4681bbbf0644d23248a0b52d7771a46284e35138a4984cc07b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/121/1240/1244"
+  },
+  "43047": {
+   "sha256": "5a052ac1993b325e0a37218cda9e99f8810aad7a50fa5b9ba7132500f402005d",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/121/1240/1243"
+  },
+  "43048": {
+   "sha256": "fa10419d768c14c9ec4dd4dd1ecfa58d0b3dc502ba5f6a643e76a65b43ec756f",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/121/1240/1242"
+  },
+  "43330": {
+   "sha256": "aeb8d40e75550f6469eaeeff001d610ef7a6a5543fc60da4370ebc860b432bbe",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1976"
+  },
+  "43437": {
+   "sha256": "f3633d4933b7babb8196191ac6b230da2993b9f5ca3b85eb6a588fc94e21125e",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/161/1941/1944"
+  },
+  "43735": {
+   "sha256": "ba2699742a293b0d4a992f046328aa15b68441a64f71270eb390dbeeaa9df068",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1974"
+  },
+  "43835": {
+   "sha256": "a0f715e7a5a365a615e9c89af63c1da41b892df6f080ea8b5a46f33883e1e504",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1975"
+  },
+  "43915": {
+   "sha256": "9bd47dea689386202e69c4c5607d355fc61379801f04bfa9fbe849ddb5eca26e",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1917"
+  },
+  "43917": {
+   "sha256": "0e69ba5e1738498dc4b80bac359ea38633c944eed0828de577406d54d20d5217",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/147/1795/1798"
+  },
+  "43927": {
+   "sha256": "326e66ecf8fce0c23ebf26f02801bddd0cec57c2edef78a558956c2a5dab7d47",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/181/2132/2135"
+  },
+  "43953": {
+   "sha256": "35c3c2a7cfc30caf3b0c633a0e095dee08c5a9399ba99b87da923bf24046b883",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/163/1956/1960"
+  },
+  "44793": {
+   "sha256": "b12f0373330bbf7f9da89cf8d11e45ba98cae5baf2193c14e26791b954284dea",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/743"
+  },
+  "45316": {
+   "sha256": "9f22408edd4b34e33454bdf5860174d097807496c6d705598c9c4a042a654703",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1860"
+  },
+  "45474": {
+   "sha256": "d2a041867e18b0bd1b966af53fc7b273830faebb78241cb6510c8ed37e65de95",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/162/1948/1952"
+  },
+  "45574": {
+   "sha256": "6dbd55fc353844cb8e04a1d84139c6d40366cdfff87d221d9ad308eea83d0ed6",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2172"
+  },
+  "45724": {
+   "sha256": "d3d8c92d38e17a1a0764346b4a1504c84accbf212ea6b17fb015b4cab72dd462",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2175"
+  },
+  "45725": {
+   "sha256": "dc45b83a08bc6f2b365e76527aa8e864d212fe83306fa0e485496dc006bb561b",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2174"
+  },
+  "45734": {
+   "sha256": "c37fae5e736818fb11481f1427af66f5b7494cd15499019a26c1f396551e5026",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2173"
+  },
+  "45735": {
+   "sha256": "c37fae5e736818fb11481f1427af66f5b7494cd15499019a26c1f396551e5026",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2173"
+  },
+  "45954": {
+   "sha256": "f5febb94929d82d64952a4c13d58eb6b6b5a489e1700deb0dc2c5195fced572d",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2156/2158/2161"
+  },
+  "45955": {
+   "sha256": "4c62c36a5e15daf6c58bacb9cff7b576892a9c81651627822d91b9bff1a220d9",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/2204"
+  },
+  "45993": {
+   "sha256": "d4834e1e4e91f3f582396c41bfc98f6d9239ae2836dc2b74ea8fcffc47a291ac",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/159/1922/1929"
+  },
+  "45994": {
+   "sha256": "1e0bbd109d070dd078f2ef1664cf7a0d805c92d4293cc7f63425031631f1f3f9",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/159/1922/1930"
+  },
+  "46194": {
+   "sha256": "f96ffee048d846deb5b6a42c0d55113b3f8a5183a97f0c6db9b51656b470f220",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/2154"
+  },
+  "46334": {
+   "sha256": "3985766a2ad8e828729493440b8504973348b5066ddb1544ca201f4ed937dfac",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1648"
+  },
+  "46336": {
+   "sha256": "62d718126f4f0d3bcc9feb5c3bf6a0f7e2287e3acc488541a082f66ae21b3bb6",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/156/1899/1902"
+  }
+ },
+ "run": "45127792228"
 }

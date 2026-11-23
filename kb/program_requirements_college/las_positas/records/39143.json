@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 17,
-   "share": 0.941,
-   "missing": [
-    "AUTOL1L2"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "AUTOSMOG",
+     "listed": "AUTOL1L2",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "AUTOSMOG"
-   ],
-   "flagged": [
-    "AUTOSMOG"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -311,7 +312,7 @@
    "Closed-list titles for AUTO INT/INTL differ slightly from the catalog titles ('Introduction to Automotive')."
   ]
  },
- "extracted_run": 42892238131,
+ "extracted_run": 45127792228,
  "reconciled": [
   {
    "field": "ge_units",
@@ -338,5 +339,5 @@
    "words": "Elective units must be degree applicable"
   }
  ],
- "read_run": "38984747530"
+ "read_run": 42892238131
 }
