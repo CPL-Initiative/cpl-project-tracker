@@ -132,6 +132,11 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   the next run: the bound is not yet measured on capture text, and a free reconcile at East Los Angeles
   (`extract=0`) should run before its next text run; 41097 (a department-name heading) may lose its pass, and
   36345, 37924, 43632 and 45935 might.
+- 14:10Z: `piles` filed Fullerton's plan (`claude/s714-piles-fullerton`, `775c154d`): nine `course_renumbers` for the
+  state file's campus-letter forms (`F HORT002` for the page's `HORT 002 F`, `CSTR 42` for `CSTR 042 F`) move 11
+  records to passing on coverage alone; 13 held with reasons; the claim check reads free page read 45188452002.
+  18747's state list still names THEA 142 F and 149 F, printed now as THEA 148 F and 153 F ("formerly"). A
+  Sonnet reader is on it; `piles` takes College of the Sequoias on `claude/s714-piles-sequoias`.
 
 ## Conductor settings
 
@@ -151,7 +156,8 @@ by Opus 5.5.
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
 | #3714 (`claude/s714-piles-ccsf`, `piles`) | merged `f0d84966`; applied by migrate 45176130201 | none |
 | `claude/s714-piles-optparts` (`piles`) | applied by migrate 45188487600, 9 rows live | its PR when a slot frees, the merge |
-| `claude/s714-piles-fullerton` (`piles`) | started | its plan |
+| `claude/s714-piles-fullerton` (`piles`) | plan filed, 11 rows | a Sonnet reader, the pre-read, the apply, a PR |
+| `claude/s714-piles-sequoias` (`piles`) | started | its plan |
 | #3716 (`claude/s714-piles-ela`, `piles2`) | applied by migrate 45186909162; round 2 MERGE | `test`, the merge |
 | #3715 (`claude/s714-rios`, `rios`) | three paid reads dispatched | the fixes, the filings, reconcile, the reread, merge |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
