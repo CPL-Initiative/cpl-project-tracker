@@ -53,10 +53,30 @@ spec2 = importlib.util.spec_from_file_location("pc", os.path.join(ROOT, "kb", "_
 pc = importlib.util.module_from_spec(spec2)
 spec2.loader.exec_module(pc)
 P = pc.build()
-check("(6) every discipline with no common code has one proposal, each four letters, unused, never another discipline's C-ID prefix",
-      P["problems"] == [] and P["count"] == V["totals"]["without_code"], P["problems"][:5])
-check("(6) ACCT is proposed for Accounting from C-ID, and the view shows a proposal beside the gap",
-      R["Accounting"]["proposed"] == {"code": "ACCT", "basis": "cid", "words": pc.PROPOSALS["Accounting"][2]} and any("proposed ACCT" in g for g in R["Accounting"]["gaps"]))
+check("(6) every assigned code has its record of how it was chosen, each four letters, proposed once, never another discipline's C-ID prefix",
+      P["problems"] == [] and P["count"] == V["totals"]["assigned"], P["problems"][:5])
+check("(6) every MQ discipline carries a common subject code, the 95 assigned ones each with a confidence and a level",
+      V["totals"]["without_code"] == 0 and V["totals"]["assigned"] == 95
+      and all(r["confidence"] is not None and r["level"] for r in V["rows"] if r["code_source"] == "assigned"))
+check("(6) ACCT is Accounting's code from C-ID, Confident, and the view flags C-ID's ACCT still attributed to Business",
+      R["Accounting"]["code"] == "ACCT" and R["Accounting"]["level"] == "Confident"
+      and any("attributed to Business" in g for g in R["Accounting"]["gaps"]), R["Accounting"])
+spec3 = importlib.util.spec_from_file_location("ac", os.path.join(ROOT, "kb", "_csr_assign_codes.py"))
+ac = importlib.util.module_from_spec(spec3)
+spec3.loader.exec_module(ac)
+canon = json.load(open(os.path.join(ROOT, "kb/discipline_canonical_subj4.json"), encoding="utf-8"))["disciplines"]
+codes = [e["canonical_subj4"] for e in canon.values() if e.get("canonical_subj4")]
+check("(7) no two disciplines in the Common Subjects Reference share a code", len(codes) == len(set(codes)))
+check("(7) the assign step adds nothing a second time, and leaves every existing entry as it was",
+      all(k in canon for k in (x["key"] for x in json.load(open(os.path.join(ROOT, ac.RECEIPT), encoding="utf-8"))["added"])))
+# The collision check on a changed code: a code put on a second discipline is flagged on both.
+hb2 = json.load(open(os.path.join(ROOT, "kb/reference/mq_handbook_20th.json"), encoding="utf-8"))
+canon2 = json.load(open(os.path.join(ROOT, "kb/discipline_canonical_subj4.json"), encoding="utf-8"))
+canon2["disciplines"]["Locksmithing"]["canonical_subj4"] = "WELD"
+V2 = mqv.build(hb2, canon2, {"courses": []}, {"codes": []}, {}, {"disciplines": {}}, None)
+lk = [r for r in V2["rows"] if r["name"] == "Locksmithing"][0]
+check("(7) ⭐ a code changed onto one already in use is flagged (Sam, 2026-11-23: check I haven't stepped on an existing code)",
+      any("WELD is also the common subject code of Welding" in g for g in lk["gaps"]), lk["gaps"])
 check("(5) the committed view is what a build writes", mqv.main(["--check"]) == 0)
 print(f"\n{len(fails)} FAILED" if fails else "\nall checks passed")
 sys.exit(1 if fails else 0)

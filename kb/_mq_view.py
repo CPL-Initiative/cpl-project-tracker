@@ -42,14 +42,16 @@ CANON_ALIAS = {
     "Learning Assistance or Learning Skills Coordinators or Instructors, and Tutoring Coordinators": "Learning Assistance or Learning Skills",
     "Physical Education (Adapted): Disabled Student Programs and Services": "Physical Education Disabled Students",
     "Vocational (short-term): Noncredit": "Vocational", "Work Experience Instructors or Coordinators": "Work Experience Instructors",
+    "Counseling: Extended Opportunity Programs and Services (EOPS)": "Counseling: Extended Opportunity",
+    "Health Services Director/Health Services Coordinator/College Nurse": "Health Services Director/Health",
+    "Specialized Instruction (Disabled Student Programs and Services): Vocational Noncredit": "Specialized Instruction: Vocational Noncredit",
 }
 # One discipline printed under two names in the index: the second points to the first.
 SAME_AS = {"Theater Arts": "Drama/Theater Arts", "Speech Communication": "Communication Studies",
            "Media Production": "Broadcasting Technology", "Dietetics/Nutritional Science": "Nutritional Science/Dietetics"}
-# The proposed codes for disciplines with none (kb/_csr_propose_codes.py); a proposal decides nothing.
-sys.path.insert(0, os.path.join(ROOT, "kb"))
-from _csr_propose_codes import PROPOSALS as PROPOSED  # noqa: E402
-BASIS_WORDS = {"cid": "C-ID's prefix", "college": "the code colleges use", "minted": "minted"}
+# A code's confidence: an assigned code carries its own (kb/_csr_assign_codes.py); a person's pick or an authority's
+# code is Confident at 100% (r-confidence-not-person-settled-sam-2026-11-23: a person is one way to raise confidence).
+LEVELS = ((0.90, "Confident"), (0.75, "Likely"), (0.50, "Leaning"), (0.0, "Unsure"))
 TYPE_WORDS = {"masters": "Master's", "specific": "Specific degree", "any": "Any degree"}
 
 
@@ -120,10 +122,9 @@ def build(hb, canon, minted, sw, titles, sec19, aliases=None):
         voc = round(m["voc"] / m["voc_known"], 2) if m["voc_known"] else None
         lc = codes.get(code) if code else None
         gaps = []
-        prop = None if code or same else PROPOSED.get(name)
+        conf = c.get("confidence") if c.get("source") == "assigned" else (1.0 if code else None)
         if not code:
-            gaps.append("No common subject code" + (f"; the index's other name for {same}" if same else "")
-                        + (f"; proposed {prop[0]} ({BASIS_WORDS[prop[1]]})" if prop else ""))
+            gaps.append("No common subject code" + (f"; the index's other name for {same}" if same else ""))
         if ck and norm(ck) != norm(name) and norm(ck) != norm(key):
             gaps.append(f"Our name is {ck}")
         if norm(name) not in old19 and norm(key) not in old19 and not any(norm(key).startswith(o) for o in old19 if len(o) > 5):
@@ -142,17 +143,40 @@ def build(hb, canon, minted, sw, titles, sec19, aliases=None):
                      "noncredit": d.get("noncredit", False), "provisions": d.get("provisions") or [],
                      "cite": d.get("code") or "", "pages": d.get("pages") or "",
                      "code": code, "our_name": ck or "", "same_as": same or "",
-                     "proposed": ({"code": prop[0], "basis": prop[1], "words": prop[2]} if prop else None),
+                     "confidence": conf, "level": (next(w for t, w in LEVELS if conf >= t) if conf is not None else None),
+                     "code_source": ("assigned" if c.get("source") == "assigned" else "a person's pick" if code else None),
+                     "code_note": c.get("_notes") if c.get("source") == "assigned" else (c.get("_notes") or ""),
                      "mids_credit": m["credit"], "mids_noncredit": m["noncredit"], "vocational_share": voc,
                      "local_codes": ({k: v for k, v in lc.items()} if lc else None),
                      "noncredit_categories": nc_cat.get(code, []) if code else [], "gaps": gaps})
+    # The check on a changed code (Sam, 2026-11-23: "a small process for you to check that I haven't stepped on an
+    # existing code"): one code on two disciplines, unless the index prints one discipline under two names or an
+    # umbrella holds it; a code that is another discipline's C-ID or CCN prefix.
+    owners = defaultdict(set)
+    for r in rows:
+        if r["code"] and not r["same_as"]:
+            owners[r["code"]].add(r["our_name"] or r["name"])
+    attributed = {}
+    for k, e in cd.items():
+        for x in (e.get("cid_subject_codes") or []) + ([e["ccn_subject_code"]] if e.get("ccn_subject_code") else []):
+            attributed.setdefault(x, set()).add(k)
+    for r in rows:
+        if not r["code"] or r["same_as"]:
+            continue
+        mine = r["our_name"] or r["name"]
+        others = sorted(owners[r["code"]] - {mine})
+        if others:
+            r["gaps"].append(f"{r['code']} is also the common subject code of {', '.join(others)}")
+        elsewhere = sorted(attributed.get(r["code"], set()) - {mine})
+        if elsewhere:
+            r["gaps"].append(f"{r['code']} is a C-ID or CCN subject code attributed to {', '.join(elsewhere)}")
     rows.sort(key=lambda r: r["name"].lower())
     t = Counter()
     for r in rows:
         for x in r["types"]:
             t[x] += 1
     totals = {"disciplines": len(rows), "by_type": dict(t), "with_code": sum(1 for r in rows if r["code"]),
-              "without_code": sum(1 for r in rows if not r["code"] and not r["same_as"]), "proposed": sum(1 for r in rows if r.get("proposed")), "noncredit": sum(1 for r in rows if r["noncredit"]),
+              "without_code": sum(1 for r in rows if not r["code"] and not r["same_as"]), "assigned": sum(1 for r in rows if r.get("code_source") == "assigned"), "noncredit": sum(1 for r in rows if r["noncredit"]),
               "with_gaps": sum(1 for r in rows if r["gaps"])}
     return {"_what": "Every Minimum Qualifications discipline (20th edition) with its list type, Title 5 provisions, common subject code and what our data holds under it. Written by kb/_mq_view.py; nothing here is a decision.",
             "_sources": {"handbook": HANDBOOK, "codes": CANON, "mids": MINTED, "local_codes": STATEWIDE, "noncredit_categories": TITLES},
