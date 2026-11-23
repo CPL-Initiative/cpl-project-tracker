@@ -143,6 +143,13 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   back at main's value (`c4b8cf1e`). #3716 merged on a green `test` (`890eb465`, confirmed on `origin/main`). A
   `land` worker brings the optparts and Fullerton branches up from main and opens the optparts PR; East Los
   Angeles's worktree was removed.
+- 14:54Z: `rios`: all fixes pushed (#3715 `97c70d84`, `test` and `lints` green; 30620 a named gap,
+  `teach_out_successor_printed`); the three paid reads filed 37 records, 35 passing (Sacramento City 17 of 18,
+  07334 short of its GE units; Cosumnes River 15 of 16, 35364 on outcomes; Folsom Lake 3 of 3). None of the 37
+  had a live row, so each loads; the load skips any record that places none of its courses. The free reconciles
+  changed no record and newly pass 9 with live rows; a Sonnet reader checks those before their reread. The
+  rescore dropped 16 records' `ge_units_not_read` gaps (a reader bug, for the follow-up; `rios` restored the 49
+  unchanged and 07319). Sacramento City's load 45198701869 (14:52Z): 18 of 18 live, unchecked.
 
 ## Conductor settings
 
