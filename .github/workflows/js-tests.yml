@@ -599,6 +599,10 @@ jobs:
       # two courses renumbered; the self-recall, the blast radius at every college and the plan's 6 rows.
       - name: Cheap piles S713 at Clovis (lab pairs, earlier lists' courses, renumbers, the plan)
         run: python3 tests/program_piles_s713_clovis_test.py
+      # S714 at East Los Angeles: the plan line, double counting, the high-unit waiver, a course taken twice, two
+      # printed codes and one named gap, each on the catalog's own sections; the self-recall and the plan's rows.
+      - name: Cheap piles S714 at East Los Angeles (plan line, overlap, waiver, repeat, renumbers, the plan)
+        run: python3 tests/program_piles_s714_ela_test.py
       # S714 at City College of San Francisco: a cross-listed course and a misread code renamed to the file's rows,
       # one option the reading split over several blocks; the self-recall, the blast radius and the plan's 8 rows.
       - name: Cheap piles S714 at City College of San Francisco (renumbers, option parts, the plan)

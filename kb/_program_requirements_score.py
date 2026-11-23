@@ -1000,12 +1000,15 @@ def electives_named(prog: dict, text: str) -> bool:
         return False
     # The sentence counts only from the record's own heading onward, and not at all where the text prints
     # no heading: a capture window can open on the program before it (East Los Angeles, review of #3193).
-    # The files name no next program's heading, so the scope runs to the end of the text.
-    from _program_requirements_reconcile import _heading_end
-    start = _heading_end(text, prog.get("section_heading"))
+    # The files name no next program's heading, so the scope runs to the end of the text, except where the page
+    # prints each program's plan line (East Los Angeles, S714): there it ends at the next program's plan line
+    # (own_section_end), so a later program's sentence never counts. A heading the reader completed from the
+    # description reads from the plan line the page prints under it (own_heading_end, S714).
+    from _program_requirements_reconcile import own_heading_end, own_section_end
+    start = own_heading_end(text, prog.get("section_heading"))
     if start is None:
         return False
-    return " %s " % _words(words) in " %s " % _words(text[start:])
+    return " %s " % _words(words) in " %s " % _words(text[start:own_section_end(text, start)])
 
 
 def _words(s: str) -> str:

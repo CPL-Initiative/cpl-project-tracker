@@ -2,21 +2,21 @@
  "college": "East Los Angeles College",
  "programs": 234,
  "with_closed_list": 147,
- "found": 134,
+ "found": 136,
  "extracted": 134,
  "errors": 0,
- "passed_machine_checks": 101,
+ "passed_machine_checks": 115,
  "failed": {
-  "coverage": 3,
-  "invented": 2,
-  "arithmetic": 30,
+  "coverage": 1,
+  "invented": 0,
+  "arithmetic": 17,
   "repeated": 0,
-  "outcomes": 1
+  "outcomes": 2
  },
- "cost_usd_run": 0.15,
+ "cost_usd_run": 0.0,
  "cost_usd_filed": 10.49,
  "cost_per_program": 0.0783,
- "extract_calls": 2,
+ "extract_calls": null,
  "extract_failed": [],
  "not_found": [
   {
@@ -79,16 +79,6 @@
    "status": "Active"
   },
   {
-   "control_number": "38332",
-   "title": "Geo-Spatial Engineering and Technologies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=25",
-    "coverage": 0.0
-   },
-   "status": "Active"
-  },
-  {
    "control_number": "38340",
    "title": "Custodial Technician Training",
    "award": "Noncredit program",
@@ -102,7 +92,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -155,17 +146,7 @@
     "coverage": 0.333
    },
    "status": "Active"
-  },
-  {
-   "control_number": "45540",
-   "title": "Respiratory Therapy",
-   "award": "Baccalaureate of Science (B.S.) Degree.",
-   "near_miss": {
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=346",
-    "coverage": 0.375
-   },
-   "status": "Active"
   }
  ],
- "run": "44475516022"
+ "run": "45176404274"
 }
