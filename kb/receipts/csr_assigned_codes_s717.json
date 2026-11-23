@@ -230,7 +230,8 @@
   },
   {
    "key": "Estimating",
-   "code": "ESTI",
+   "code": "ESTG",
+   "_corrected": "S718: written as ESTG; ESTI is the local Esthetics code at 4 colleges",
    "confidence": 0.82,
    "level": "Likely",
    "basis": "minted"

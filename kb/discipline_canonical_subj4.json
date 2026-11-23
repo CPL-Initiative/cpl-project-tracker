@@ -5667,7 +5667,7 @@
       "confidence": 0.82,
       "confidence_level": "Likely",
       "basis": "minted",
-      "basis_words": "Estimating; ESTM is one college's code for solar and clean energy courses",
+      "basis_words": "Estimating; ESTI is the local Esthetics code at 4 cosmetology and barbering colleges, and ESTM one college's code for solar and clean energy courses",
       "data_modal": null,
       "data_modal_is_4letter": false,
       "data_modal_share": null,
@@ -5694,13 +5694,13 @@
       "reviewed_by": "csr-s717@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "Assigned at Likely (82%): four letters minted from the discipline's name. Estimating; ESTM is one college's code for solar and clean energy courses. No M-ID is minted under it yet.",
+      "_notes": "Assigned at Likely (82%): four letters minted from the discipline's name. Estimating; ESTI is the local Esthetics code at 4 cosmetology and barbering colleges, and ESTM one college's code for solar and clean energy courses. No M-ID is minted under it yet.",
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ ESTI is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ ESTG is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
     },
     "Ethnic Studies": {
       "canonical_subj4": "ETHS",
