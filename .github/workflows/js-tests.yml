@@ -391,6 +391,11 @@ jobs:
       # and the committed file is what a build writes. Pure stdlib.
       - name: Subject sources (kb/_subject_sources.py)
         run: python3 tests/subject_sources_test.py
+      # The MQ view (kb/_mq_view.py, S717): the 20th-edition handbook keeps the three list types apart, every noncredit
+      # discipline and the Title 5 provisions sit on their disciplines, our codes join through the alias table, and the
+      # committed view is what a build writes. Pure stdlib.
+      - name: MQ view (kb/_mq_view.py, kb/reference/mq_handbook_20th.json)
+        run: python3 tests/mq_view_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)
