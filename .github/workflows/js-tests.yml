@@ -572,6 +572,10 @@ jobs:
       # check's precision counts, and tonight's held colleges untouched.
       - name: Named gap lists_past_their_figure (self-recall, claim check, the plan, the held colleges)
         run: python3 tests/program_lists_past_figure_s703_test.py
+      # S713, lane 2's cheap piles: the common number in parentheses, the named gap section_cut_off, their precision
+      # against the hand reading, boundary readings and claim checks, and the plan's 17 rows at Santa Rosa Junior.
+      - name: Cheap piles S713 (common numbers, section_cut_off, the plan)
+        run: python3 tests/program_piles_s713_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

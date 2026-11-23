@@ -218,15 +218,41 @@ def listed_key(code: str | None, listed: dict, packed: bool = False) -> str:
     return k
 
 
+# A course printed with its common course number in parentheses after the local one (Santa Rosa Junior's
+# 2026-2027 PDF: "PSYC 1000 (PSYC C1000)", "ECON 2001 (ECON C2001)"; S713). The state's file lists the common
+# number alone (PSYCC1000), so the code as written read as one course missing and another invented.
+# The common number is the subject, a space, C and four digits, and its subject is the local code's own (#3705's
+# second reader: "(MUSC 101)" is no common number, and the catalog's typo "ARTH 1100 (ANTH C1100)" names another
+# subject, so either stays as written).
+COMMON_NUMBER_IN_PARENS = re.compile(
+    r"^\s*([A-Z&][A-Z&/]{0,7})\s*[0-9][0-9A-Z.]*\s*\(\s*([A-Z&][A-Z&/]{0,7})\s+(C\d{4}[A-Z]{0,2})\s*\)\s*$")
+
+
+def common_number_in_parens(code: str | None) -> str | None:
+    """The normal form of a common course number printed in parentheses after a code of the same subject, or None."""
+    m = COMMON_NUMBER_IN_PARENS.match((code or "").upper())
+    if not m or m.group(1) != m.group(2):
+        return None
+    return norm_code(m.group(2) + " " + m.group(3))
+
+
 def _listed_key(code: str | None, listed: dict) -> str:
     """A placed code's key in the closed list: its normal form, or the listed code it
     names once a subject's slash is set aside. The state's file stores some slashed
     subjects without the slash (Crafton Hills' CNAN633, which its page prints CNA/N 633,
     S413), and the two would read as one course missing and another invented. Others
     it stores with the letters after the slash dropped (THART124X2 for the page's
-    THART/S 124X2, S414); that reading is tried only when the first finds none."""
+    THART/S 124X2, S414); that reading is tried only when the first finds none. A code
+    that prints its common course number in parentheses after the local one ("PSYC 1000
+    (PSYC C1000)") is the listed common number, only where the list holds it and not the
+    code as written (S713)."""
     k = norm_code(code)
-    if k in listed or "/" not in k:
+    if k in listed:
+        return k
+    cn = common_number_in_parens(code)
+    if cn and cn in listed:
+        return cn
+    if "/" not in k:
         return k
     bare = k.replace("/", "")
     for lk in listed:
