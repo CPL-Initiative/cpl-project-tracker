@@ -5,23 +5,27 @@
  "found": 107,
  "extracted": 107,
  "errors": 0,
- "passed_machine_checks": 83,
+ "passed_machine_checks": 90,
  "failed": {
-  "coverage": 3,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 23,
+  "arithmetic": 16,
   "repeated": 0,
   "outcomes": 1
  },
- "cost_usd": 9.43,
- "cost_per_program": 0.0881,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 9.4,
+ "cost_per_program": 0.0879,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "36574",
    "title": "Vascular-Interventional Radiography",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   }
  ],
- "run": "39046850071"
+ "run": "45187906040"
 }

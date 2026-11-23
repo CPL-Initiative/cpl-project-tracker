@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "CIS - Web Developer",
  "award": "A.S. Degree",
- "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=255",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=249",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8789,
+  "input_tokens": 7216,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8789,
-    "output_tokens": 1295,
+    "input_tokens": 7216,
+    "output_tokens": 2156,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,81 +30,72 @@
     "model": null
    }
   ],
-  "output_tokens": 1295,
+  "output_tokens": 2156,
   "output_tokens_details": {
-   "thinking_tokens": 295
+   "thinking_tokens": 587
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06106,
- "ms": 11581,
- "seconds": 11.9,
+ "cost_usd": 0.07198,
+ "ms": 16492,
+ "seconds": 17.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 14,
    "listed": 15,
-   "share": 0.0,
+   "share": 0.933,
    "missing": [
-    "CISC323",
-    "CISC324",
-    "CISP350",
-    "CISP353",
-    "CISW300",
-    "CISW304",
-    "CISW308",
-    "CISW310",
-    "CISW321",
-    "CISW350",
-    "CISW355",
-    "CISW400",
-    "CISW402",
-    "CISW410",
-    "CISW440"
+    "CISW321"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "CISW375"
+   ],
+   "flagged": [
+    "CISW375"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    28.0,
+    28.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 9,
    "courses": 0,
-   "count": 0,
+   "count": 9,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 9,
    "not_verbatim": [],
    "pass": true
   },
@@ -114,22 +105,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "A.S. in Web Developer",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 28
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": null,
     "max": null
@@ -138,79 +129,193 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Manage a multi-level Web site hosted on a Web server.",
+    "Utilize multiple programs simultaneously in order to develop Web sites.",
+    "Recommend Web scripting language, current markup language or Web authoring software, and cascading style sheets to develop complex Web sites that are uploaded via File Transfer Protocol (FTP) to a Web server.",
+    "Research and implement current, valid World Wide Web Consortium (W3C) standards including technical recommendations for markup languages, and other recommendations as they are introduced.",
+    "Plan a structured approach to Web site development that identifies the information dissemination needs of a client and organizes the content effectively and efficiently in order to communicate to an identified audience; then develop and implement an appropriate Web solution.",
+    "Utilize client-side scripting in order to manipulate interactive objects like navigation bars, forms, rollovers, other event handling, and the control of windows, frames, and/or layers.",
+    "Develop Web solutions that include form validation and processing, server-side programming, and database-driven Web development.",
+    "Demonstrate proficiency in the process of Web project management on a real-world Web site including design specification, research, production, modification, time estimation, and presentation.",
+    "Write code in a currently used Web scripting language."
+   ],
+   "careers": [
+    "Web Developer",
+    "Webmaster",
+    "Systems Analyst",
+    "Web Systems Analyst",
+    "IT Analyst",
+    "ICT Analyst",
+    "Web Database Administrator",
+    "Back-end Developer",
+    "Web Programmer"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISW 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 304",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 323",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISP 353",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 350",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 375",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CISW 400",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 410",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 440",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 5 units from the following",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CISC 324",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 308",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 355",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 402",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISP 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "CISC 323",
-    "why": "Web Developer A.S. section not in the text; appears only in other certificates' sections"
-   },
-   {
-    "code": "CISC 324",
-    "why": "Web Developer A.S. section not in the text; appears only in the Web Programming Certificate"
-   },
-   {
-    "code": "CISP 350",
-    "why": "Web Developer A.S. section not in the text; appears only in the Web Programming Certificate"
-   },
-   {
-    "code": "CISP 353",
-    "why": "not in the text"
-   },
-   {
-    "code": "CISW 300",
-    "why": "Web Developer A.S. section not in the text; appears only in other certificates' sections"
-   },
-   {
-    "code": "CISW 304",
-    "why": "Web Developer A.S. section not in the text; appears only in other certificates' sections"
-   },
-   {
-    "code": "CISW 308",
-    "why": "Web Developer A.S. section not in the text; appears only in other certificates' sections"
-   },
-   {
-    "code": "CISW 310",
-    "why": "Web Developer A.S. section not in the text; appears only in the Web Publishing Certificate"
-   },
-   {
     "code": "CISW 321",
-    "why": "Web Developer A.S. section not in the text; appears only in the Web Publishing Certificate"
-   },
-   {
-    "code": "CISW 350",
-    "why": "Web Developer A.S. section not in the text; appears only in the Web Publishing Certificate"
-   },
-   {
-    "code": "CISW 355",
-    "why": "Web Developer A.S. section not in the text; appears only in the Web Publishing Certificate"
-   },
-   {
-    "code": "CISW 400",
-    "why": "Web Developer A.S. section not in the text; appears only in other certificates' sections"
-   },
-   {
-    "code": "CISW 402",
-    "why": "Web Developer A.S. section not in the text; appears only in the Web Programming Certificate"
-   },
-   {
-    "code": "CISW 410",
-    "why": "Web Developer A.S. section not in the text; appears only in other certificates' sections"
-   },
-   {
-    "code": "CISW 440",
-    "why": "Web Developer A.S. section not in the text; appears only in the Web Programming Certificate"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The supplied text (catalog pages 255-256) has no section for the CIS - Web Developer A.S. Degree. It prints the CIS - Web Programming Certificate, the CIS - Web Publishing Certificate, the Computer Science Certificate, and the tail of a preceding program ('Career Information' at the top of page 255).",
-   "No requirements, totals, outcomes or careers were recorded, because none of these sections belongs to the named award. The A.S. degree is probably on an adjacent catalog page that should be retrieved and reviewed.",
-   "The CIS - Web Programming Certificate (Total Units: 31) shares many closed-list courses with the named award, but its requirements were not used, since it is a different award."
+   "CISW 375 Security for Web Development is required in the catalog but not in the closed list; recorded as catalog addition.",
+   "CISW 410 is titled 'Database-Driven Web Applications' in the catalog vs 'Middleware Web Scripting' in the state file.",
+   "The page says the degree requires the program plus GE and 'sufficient electives for a total of at least 60 units'; read as electives filling the degree (electives_fill_degree true) rather than a printed degree total, so degree_total left null. Reviewer may consider 60 as degree_total.",
+   "Outcomes list spans pages 249-250."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": "45184653221",
+ "catalog_year": "2026-2027",
+ "source_sha": "d50839452c0fc31f",
+ "source_codes": [
+  "CISC323",
+  "CISC324",
+  "CISP350",
+  "CISP353",
+  "CISW300",
+  "CISW304",
+  "CISW308",
+  "CISW310",
+  "CISW350",
+  "CISW355",
+  "CISW400",
+  "CISW402",
+  "CISW410",
+  "CISW440"
+ ],
+ "source_coverage": 0.933
 }

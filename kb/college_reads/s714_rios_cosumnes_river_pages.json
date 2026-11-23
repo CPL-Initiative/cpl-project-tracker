@@ -1,0 +1,24 @@
+{
+ "_readme": "S714 rios (lane 1, the gap census's reader_page_assignment lever): Cosumnes River College's 19 programs whose extraction placed none of the state's listed courses were handed a sibling award's section or the course descriptions. This plan prints every page of the hand-filed 2026-27 catalog (kb/hand_filed_catalogs/cosumnes_river.json, the file every record was extracted from), line for line, so a session downloads the whole log (gh run view --log), finds each program's own section and names its pdf_pages pin. One load, no model call, nothing written.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "own_page": "Where each program's own section opens (its heading and the first line of its requirement list) and where its list ends (its total), so a pdf_pages pin can name the page, the words it opens on and the page it runs through."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  1,
+  653
+ ],
+ "pdf_page_cap": 1000,
+ "pdf_unfolded": true
+}

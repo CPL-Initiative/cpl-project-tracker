@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Aircraft Dispatcher",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=182",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=186",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10910,
+  "input_tokens": 7727,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10910,
-    "output_tokens": 1359,
+    "input_tokens": 7727,
+    "output_tokens": 1290,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,90 +30,87 @@
     "model": null
    }
   ],
-  "output_tokens": 1359,
+  "output_tokens": 1290,
   "output_tokens_details": {
-   "thinking_tokens": 884
+   "thinking_tokens": 224
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07082,
- "ms": 12576,
- "seconds": 12.9,
+ "cost_usd": 0.05671,
+ "ms": 10222,
+ "seconds": 10.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "ATCAD309",
-    "FLTEC302",
-    "FLTEC304",
-    "FLTEC306",
-    "FLTEC310",
-    "FLTEC312",
-    "FLTEC314",
-    "FLTEC321",
-    "FLTEC330"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ATCAD310",
+    "FLTEC320"
+   ],
+   "flagged": [
+    "ATCAD310",
+    "FLTEC320"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    37.0,
+    37.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Aircraft Dispatcher Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 37,
+    "max": 37
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,50 +127,129 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "perform the required duties of an Aircraft Dispatcher, as outlined by the Federal Aviation Administration.",
+    "demonstrate a readiness to take the oral and practical examinations for the Federal Aviation Administration's aircraft dispatcher certificate.",
+    "apply concepts learned such as weather analysis, large aircraft systems, regulations, and human factors to practical Aircraft Dispatcher problems."
+   ],
+   "careers": [
+    "Aircraft Dispatchers",
+    "Flight Operations Officer"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ATCAD 309",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "FLTEC 302",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "FLTEC 304",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "FLTEC 306",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "FLTEC 310",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "FLTEC 312",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "FLTEC 314",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "FLTEC 321",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "FLTEC 330",
-    "why": "named only in the A.S. section; certificate section not in the text"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 37,
+     "max": 37
+    },
+    "courses": [
+     {
+      "code": "FLTEC 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLTEC 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 314",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATCAD 309",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATCAD 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "FLTEC 320 and ATCAD 310 are listed as required in the certificate table but are not in the closed list; recorded as catalog additions.",
+   "The enrollment eligibility section also names completion of FLTEC 320 as one of three alternative eligibility criteria (alternatives: private pilot certificate or documented aviation experience), yet FLTEC 320 appears in the required course table summing to 37 units; reviewer may check whether FLTEC 320 is truly required for students entering via other eligibility routes.",
+   "The 'Total Units: 37' is printed as a total line under the single requirements table; recorded both as total_units and as the block's stated total.",
+   "The description mentions a two-year degree program as well; only the certificate section is printed here."
+  ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": "45181973475",
+ "catalog_year": "2026-2027",
+ "source_sha": "fe8679682a37fa16",
+ "source_codes": [
+  "ATCAD309",
+  "FLTEC302",
+  "FLTEC304",
+  "FLTEC306",
+  "FLTEC310",
+  "FLTEC312",
+  "FLTEC314",
+  "FLTEC321",
+  "FLTEC330"
+ ],
+ "source_coverage": 1.0
 }
