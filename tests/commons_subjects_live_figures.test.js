@@ -10,7 +10,8 @@
 //   (4) ⭐ the held codes subtract the held courses a fresh save releases by the mint's rule: ordinary titles only,
 //       a shell title stays held; a save the build already carried subtracts nothing;
 //   (5) ⭐ the statewide view's level counts raise the saved college-and-code pair to Confident;
-//   (6) ⭐ the Commons front's Subjects card reads the same live figures as the tab.
+//   (6) ⭐ the Commons front's Subjects card reads the same live figures as the tab, its headline (the share of courses
+//       under a Confident common code) included.
 // Run from repo root: `npm test` (or `node tests/commons_subjects_live_figures.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -153,8 +154,12 @@ async function listed(x, pick) {
   await x.M.boot(); await settle();
   const fm = x.d.querySelector("#cmf-subj-titles"), fh = x.d.querySelector("#cmf-subj-held");
   check("(6) ⭐ the Commons front's Subjects card shows the live counts",
-    fm && /^Step b, local subject title: 4 local titles at 1 of 2 colleges/.test(txt(fm)) && /2 codes with no title/.test(txt(fm))
+    fm && /^4 local titles at 1 of 2 colleges/.test(txt(fm)) && /2 codes with no title/.test(txt(fm))
     && fh && /^7 courses the M-ID mint holds wait on 2 local subject codes/.test(txt(fh)), txt(fm) + " | " + txt(fh));
+  const card = x.d.querySelector('.cmf-card[data-key="subjects"]');
+  check("(6) ⭐ the card's headline and level line read the live levels: the saved pair is Confident",
+    txt(card.querySelector(".cmf-big")) === "60%" && /of courses sit under a local code with a Confident common code/.test(txt(card.querySelector(".cmf-rest")))
+    && txt(x.d.getElementById("cmf-subj-levels")) === "Confident 1 · Likely 0 · Leaning 0 · Unsure 1", txt(card.querySelector(".cmf-headline")) + " | " + txt(x.d.getElementById("cmf-subj-levels")));
 
   /* (3) Take it back */
   x = load("#commons/subjects/alpha/MATH", { sess: ME });
