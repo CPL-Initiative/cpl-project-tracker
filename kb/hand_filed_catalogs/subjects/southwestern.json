@@ -1125,5 +1125,112 @@
    "label": "Vocational Nursing (VN)",
    "address": "https://catalog.swccd.edu/course-descriptions/vn/"
   }
+ ],
+ "code_address_tried": [
+  {
+   "code": "AMR",
+   "address": "https://catalog.swccd.edu/course-descriptions/amr/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "CT",
+   "address": "https://catalog.swccd.edu/course-descriptions/ct/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "FCS",
+   "address": "https://catalog.swccd.edu/course-descriptions/fcs/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "IDNM",
+   "address": "https://catalog.swccd.edu/course-descriptions/idnm/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "IE",
+   "address": "https://catalog.swccd.edu/course-descriptions/ie/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "MET",
+   "address": "https://catalog.swccd.edu/course-descriptions/met/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "PE/A",
+   "address": "https://catalog.swccd.edu/course-descriptions/pea/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "PE/D",
+   "address": "https://catalog.swccd.edu/course-descriptions/ped/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "PE/I",
+   "address": "https://catalog.swccd.edu/course-descriptions/pei/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "PE/L",
+   "address": "https://catalog.swccd.edu/course-descriptions/pel/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "PE/T",
+   "address": "https://catalog.swccd.edu/course-descriptions/pet/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "PIL",
+   "address": "https://catalog.swccd.edu/course-descriptions/pil/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "QET",
+   "address": "https://catalog.swccd.edu/course-descriptions/qet/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "SLA",
+   "address": "https://catalog.swccd.edu/course-descriptions/sla/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "SPCH",
+   "address": "https://catalog.swccd.edu/course-descriptions/spch/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  }
  ]
 }

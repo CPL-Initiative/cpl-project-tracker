@@ -126,13 +126,16 @@ HEAD = re.compile(r"^\s*(.+?)\s*\(([A-Z0-9/&,\s]+)\)\s*$")
 
 
 def heading_for(page, code):
-    """The page's heading when it names `code` in parentheses; else None."""
-    first = " ".join(page.get("text") or []).split(" · ")[0].strip()
-    m = HEAD.match(first)
-    if not m:
-        return None, first[:80]
-    codes = [code_key(x) for x in re.split(r"[&,]", m.group(2)) if x.strip()]
-    return (m.group(1), first) if code_key(code) in codes else (None, first[:80])
+    """The page's heading when it names `code` in parentheses; else None. A page may open with its breadcrumb or the
+    site's menu (Long Beach City: "Home› · Course Descriptions› · Creative Arts (CART)"), so the first segments that
+    read "Name (CODE)" are searched, and the first that names this code wins."""
+    segs = [x.strip().rstrip("›").strip() for x in " ".join(page.get("text") or []).split(" · ")][:40]
+    for seg in segs:
+        m = HEAD.match(seg)
+        if m and code_key(code) in [code_key(x) for x in re.split(r"[&,]", m.group(2)) if x.strip()]:
+            return m.group(1), seg
+    named = next((x for x in segs if HEAD.match(x)), None)
+    return None, (named or (segs[0] if segs else ""))[:80]
 
 
 def file_log(text, run, write):
