@@ -77,7 +77,7 @@ def _passes(img: dict) -> bool:
 
 
 def plan(base: str) -> dict:
-    rows, restamped, counts_only = [], [], []
+    rows, restamped, counts_only, same_verdict = [], [], [], []
     for college in RUNS:
         before, after = images_at(base, college), images_now(college)
         for cn in sorted(after):
@@ -92,13 +92,20 @@ def plan(base: str) -> dict:
                 elif b["extracted_run"] != a["extracted_run"]:
                     restamped.append([college, cn])
                 continue
+            if _passes(b) == _passes(a):
+                # The conductor (S713): the plan writes only what changes a verdict. A step wrote the record (09227
+                # and 39295 took their general education units) and it still fails, so the live row keeps its old
+                # record until the college's next reread posts the committed one.
+                same_verdict.append([college, cn, _passes(a), (a.get("checks") or {}).get("arithmetic")])
+                continue
             rows.append({"college": college, "control_number": cn, "award": a.get("award"),
                          "passes_before": _passes(b), "passes_after": _passes(a),
                          "target": cn in G.TARGETS.get(college, {}),
                          "before_image": {k: b[k] for k in KEYS}, "after_image": {k: a[k] for k in KEYS}})
     for i, r in enumerate(rows, 1):
         r["i"] = i
-    return {"rows": rows, "restamped_not_planned": restamped, "counts_only_not_planned": counts_only}
+    return {"rows": rows, "restamped_not_planned": restamped, "counts_only_not_planned": counts_only,
+            "record_written_verdict_same_not_planned": same_verdict}
 
 
 def _q(s) -> str:
@@ -203,7 +210,9 @@ def main(argv=None) -> int:
             "held_for_person": [list(k) + [v] for k, v in G.HELD_FOR_PERSON.items()],
             "measured_before_the_runs": measured, "by": by, "rows": len(rows),
             "restamped_not_planned": res["restamped_not_planned"],
-            "counts_only_not_planned": res["counts_only_not_planned"], "records": rows,
+            "counts_only_not_planned": res["counts_only_not_planned"],
+            "record_written_verdict_same_not_planned": res["record_written_verdict_same_not_planned"],
+            "records": rows,
             "follow_verdict": ("The record changes, so a confirm given on the old record no longer matches. The apply "
                                "aborts, writing nothing, if any row's latest verdict is a confirm matching the new "
                                "record's fingerprint; the pre-read counts them (confirm_matches_after)."),

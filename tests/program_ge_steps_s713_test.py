@@ -86,8 +86,12 @@ for r in rows:
     check(str(filed.get("extracted_run")) == str(r["after_image"]["extracted_run"])
           and filed["record"]["program"].get("ge_units", {}).get("min") is not None,
           "%s %s: the committed record carries the run and its units" % k)
-check(len(rows) == 11 and sum(r["passes_after"] for r in rows) == 9, "11 rows, 9 of them passing")
-check({k for k, v in predicted.items() if k[0] != MARIN} == keys, "every predicted mover outside Marin has a row")
+check(len(rows) == 9 and all(r["passes_after"] and not r["passes_before"] for r in rows),
+      "9 rows, each moving a failing record to passing")
+check({k for k, v in predicted.items() if v and k[0] != MARIN} == keys, "every predicted pass has a row")
+check(sorted([c, cn] for c, cn, *_ in receipt["record_written_verdict_same_not_planned"])
+      == [["Antelope Valley College", "39295"], ["Las Positas College", "09227"]],
+      "09227 and 39295 took their units, still fail, and take no row (the plan writes only what changes a verdict)")
 check(not any(c == MARIN for c, _ in keys), "Marin has no row: its run read no page of its own")
 for part in ("apply", "preread", "rollback"):
     with open(os.path.join(ROOT, "kb", "migrations", "2026-11-23_s713ge_prreq_ge_steps_%s.sql" % part),
@@ -96,7 +100,7 @@ for part in ("apply", "preread", "rollback"):
     check(set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", sql, re.M)) == keys,
           "the %s names exactly the plan's rows" % part)
     if part == "apply":
-        check("e(expect) as (values (11))" in sql and "when f.n > 0" in sql
+        check("e(expect) as (values (9))" in sql and "when f.n > 0" in sql
               and "program_record_fp(v.after_record)" in sql, "the apply's count guard and confirm guard")
     if part == "preread":
         check("'confirm_matches_after'" in sql, "the pre-read counts confirms matching the new record")
