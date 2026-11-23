@@ -154,7 +154,7 @@ college until it merges.
   Migrate 45152118403 (10:01Z), 6 of 6 live. `lab_pairs` also passes 12 records at other colleges at their next loads,
   each a pair its notes say is taken together.
 
-**The census on `main`:** CENSUS_LINE
+**The census on `main`:** run 45161770730 on `main` (11:07Z, `f164f21e`): of 20,282 active programs, 15,377 pass and 4,586 have no passing record (4,624 at the brief, 38 fewer); 319 are collected with a named gap (309 at the brief). Largest causes: no closed list 1,747; page not found 1,099; units unequal 918; places none 233; coverage fails 175. At about 215 a day, the 4,586 take about 21 days.
 
 **Tonight's count:** 42 records applied and live (Santa Rosa Junior 15, Las Positas 4, Antelope Valley 4, Glendale 13,
 Clovis 6); 47 programs filed as named gaps at City College of San Francisco; 3,734 outline rows (Peralta 3,731, City
@@ -299,7 +299,7 @@ The ledger names no PR subscription, scheduled check-in or artifact watch: the r
 watcher stopped at its two-hour limit shortly after 08:10Z; single polls after. Workers end with the session; every
 branch is pushed and merged. The local Postgres 16 started for the compact pre-reads is stopped at sign-off.
 
-Spend: about $219 (estimate from the session's and its agents' token counts at Opus 5.5 list prices, `kb/_spend_meter.py`'s table: the conductor $40, five workers $118, five second readers $48, the checkpoint documents $13); collection $206, infrastructure $13; 2026-11-23T06:12Z to 11:40Z. Every message ran on Opus 5.5 (the form names Fable 5.2; this run was served by Opus 5.5). The paid extraction run's own cost, $0.17 (City College of San Francisco 17954, run 45132633405), is listed apart. Stop rules: none fired (42 new records, about $5.21 each; outline rows far under $0.50; no rollback).
+Spend: about $219 (estimate from the session's and its agents' token counts at Opus 5.5 list prices, `kb/_spend_meter.py`'s table: the conductor $40, five workers $118, five second readers $48, the checkpoint documents $13); collection $206, infrastructure $13; 2026-11-23T06:12Z to 11:09Z. Every message ran on Opus 5.5 (the form names Fable 5.2; this run was served by Opus 5.5). The paid extraction run's own cost, $0.17 (City College of San Francisco 17954, run 45132633405), is listed apart. Stop rules: none fired (42 new records, about $5.21 each; outline rows far under $0.50; no rollback).
 
 Opening line: *Greetings, you are SkyFulmar (Session 714), see SkyKittiwake's (S713) handoff — `docs/session_714_handoff.md` — let's keep rolling with our queue.* (If a plain session has taken 714 by then, take the next free number and say so.)
 
