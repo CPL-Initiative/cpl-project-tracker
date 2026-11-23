@@ -147,11 +147,7 @@
     "substance abuse",
     "eligibility",
     "case management"
-   ],
-   "ge_overlap": {
-    "min": 0,
-    "max": 9
-   }
+   ]
   },
   "blocks": [
    {
@@ -372,17 +368,5 @@
    "WEXP 193HS Human Services Field Work Experience (2 units) is required but not in the closed list."
   ]
  },
- "extracted_run": 45194676517,
- "reconciled": [
-  {
-   "field": "ge_overlap",
-   "was": null,
-   "now": {
-    "min": 0,
-    "max": 9
-   },
-   "words": "0-9 units may double count above in COS-GE"
-  }
- ],
- "read_run": "38748848139"
+ "extracted_run": "38748848139"
 }

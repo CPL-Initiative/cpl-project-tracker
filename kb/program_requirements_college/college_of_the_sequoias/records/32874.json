@@ -73,7 +73,7 @@
    "status": "equal",
    "computed": [
     66.0,
-    68.0
+    67.0
    ],
    "stated": [
     60.0,
@@ -259,6 +259,5 @@
    "MATH 065 and PHYS 055 are marked as meeting General Education; 7 units may be double counted for Cal-GETC."
   ]
  },
- "extracted_run": 45194676517,
- "read_run": "38748848139"
+ "extracted_run": "38748848139"
 }

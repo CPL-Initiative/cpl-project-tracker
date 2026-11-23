@@ -56,8 +56,10 @@ RUN = None   # set from the run's filing (main reads it from the records)
 DC = "passes: the page prints the units that may double count, and the printed TOTAL lies between the sum less them " \
      "and the sum"
 HAND_HELD = {cn: DC for cn in ("06715", "06718", "06720", "06728", "06732", "06740", "06742", "06748", "06751",
-                               "06770", "10027", "11572", "19755", "36073", "37613")}
+                               "06770", "10027", "11572", "19755", "37613")}
 HAND_HELD.update({
+    "36073": "held: the reader quotes '6 units may double count in COS-GE' with no 'above', and run 45194676517's "
+             "fill step did not match the page; the step's pattern widened and a second free run take it",
     "10045": "held: the sum (64) less the 3 units the page lets count twice is 61, past the printed 60; the catalog's "
              "own figures differ (15 + 6 + 17 + 25 = 63 as printed), for a person",
     "06764": "held: the sum runs short at its low end (56 against 60-64): electives fill it, and no double count closes "

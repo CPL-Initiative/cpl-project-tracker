@@ -64,7 +64,7 @@
    "status": "equal",
    "computed": [
     60.0,
-    66.0
+    60.0
    ],
    "stated": [
     60.0,
@@ -75,8 +75,7 @@
     34.0,
     34.0
    ],
-   "why": [],
-   "within": true
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -305,6 +304,5 @@
    "ARTH C1100 is marked as meeting GE; 3 units may be double counted in Cal-GETC."
   ]
  },
- "extracted_run": 45194676517,
- "read_run": "38748848139"
+ "extracted_run": "38748848139"
 }

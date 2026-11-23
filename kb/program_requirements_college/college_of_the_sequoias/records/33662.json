@@ -149,11 +149,7 @@
     "Audio Technician",
     "Recording Engineer",
     "Audio Designer"
-   ],
-   "ge_overlap": {
-    "min": 3,
-    "max": 3
-   }
+   ]
   },
   "blocks": [
    {
@@ -344,17 +340,5 @@
    "'Media Composer/Arranger' is printed twice in the careers list; recorded once."
   ]
  },
- "extracted_run": 45194676517,
- "reconciled": [
-  {
-   "field": "ge_overlap",
-   "was": null,
-   "now": {
-    "min": 3,
-    "max": 3
-   },
-   "words": "3 units may be double counted above in Cal-GETC"
-  }
- ],
- "read_run": "38748848139"
+ "extracted_run": "38748848139"
 }

@@ -76,13 +76,13 @@ check(not arith(deg([10, 10], (60, 60), {"min": 6, "max": 6}))["pass"], "a sum s
 
 # ── the self-recall, on the run's filed records ──
 pr = Q.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 22 and pr["right"] == 22 and not pr["wrong"] and pr["by_answer"] == {"passes": 15, "none": 7},
+check(pr["read"] == 22 and pr["right"] == 22 and not pr["wrong"] and pr["by_answer"] == {"passes": 14, "none": 8},
       "precision: %r" % pr)
 cc = Q.claim_checks(CENSUS_AT_PLAN)
-check(not cc["not_standing"] and "against" not in cc["notes"] and cc["capture"] == {"stands": 15},
+check(not cc["not_standing"] and "against" not in cc["notes"] and cc["capture"] == {"stands": 14},
       "the claim checks: %r" % cc)
 bd = Q.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and bd["counts"].get("total's top one past the sum right") == 15, "boundaries: %r" % bd)
+check(not bd["wrong"] and bd["counts"].get("total's top one past the sum right") == 14, "boundaries: %r" % bd)
 
 # ── the plan ──
 receipts = sorted(glob.glob(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_sequoias_*.json")))

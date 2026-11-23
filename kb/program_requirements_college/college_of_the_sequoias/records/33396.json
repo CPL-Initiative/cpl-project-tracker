@@ -73,7 +73,7 @@
    "status": "equal",
    "computed": [
     75.0,
-    76.0
+    75.0
    ],
    "stated": [
     60.0,
@@ -305,6 +305,5 @@
    "The single Program Outcome is printed for the AA-T page itself."
   ]
  },
- "extracted_run": 45194676517,
- "read_run": "38748848139"
+ "extracted_run": "38748848139"
 }
