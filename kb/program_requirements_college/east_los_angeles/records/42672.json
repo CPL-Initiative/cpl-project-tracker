@@ -69,8 +69,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     52.0,
     52.0
@@ -84,8 +84,10 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "why": [],
+   "fill": [
+    8.0,
+    8.0
    ]
   },
   "repeated": {
@@ -110,7 +112,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -139,7 +141,8 @@
     "Produce effective oral presentations in delivery of speeches, arguments, or group projects.",
     "Research and analyze data, ideas, and concepts of human communication."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -316,6 +319,14 @@
    "JOURNAL 202 and ENGLISH 102 are marked with an asterisk (prerequisite). ENGLISH 102 is printed with title 'Academic Writing and Literature' and an OR to ENGL C1001."
   ]
  },
- "extracted_run": 43357061643,
- "read_run": "39063389278"
+ "extracted_run": 45176404274,
+ "read_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
+  }
+ ]
 }

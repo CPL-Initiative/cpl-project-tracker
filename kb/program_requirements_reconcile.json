@@ -5,7 +5,7 @@
   "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
   "order": "steps run in order: a clear runs before the fills that depend on it",
   "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE); 'noncredit': a noncredit program by the state file's award (S644: the no-colon hours total's flag, San Bernardino Valley and Coalinga)",
-  "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without names a field that must be empty, only_with one that must be set (Los Angeles City, S639: a heading's 'Minimum of 60' is a floor only where the record holds that total; Victor Valley's Cal-GETC, only_with degree_total). A set of electives_fill_words files the catalog's own sentence that electives fill the total, where the page never prints the word elective (Grossmont, East Los Angeles, S644): the scorer's electives guard reads it, and only where the text prints it",
+  "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without names a field that must be empty, only_with one that must be set (Los Angeles City, S639: a heading's 'Minimum of 60' is a floor only where the record holds that total; Victor Valley's Cal-GETC, only_with degree_total). A set of electives_fill_words files the catalog's own sentence that electives fill the total, where the page never prints the word elective (Grossmont, East Los Angeles, S644): the scorer's electives guard reads it, and only where the text prints it. A step with was replaces a field holding exactly that figure (East Los Angeles, S714: a high-unit major's waived general education areas take the LACCD plan's 27 to 21); hold names records the step leaves alone, with why",
   "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed). prefix_aliases_cited names each pair's evidence and source where a census wrote it (S652, kb/_prefix_alias_census.py: at least three courses of the same number and title at that college, and no number naming two different courses)",
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
   "course_units": "a course the record lists without units takes the units the page's own course data names (the vendor call the page made as it loaded, kept by the reader as the source's course_units): never a course the reading gave units, and the note names the call",
@@ -1864,14 +1864,13 @@
    ]
   },
   "East Los Angeles College": {
-   "why": "S644, the harvest's NEXT 5. East Los Angeles's degrees say electives fill the degree without the word elective, so the scorer's electives guard fails them: transfer pages print 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' (quoted by the readings of 32154, 32980, 33382, 37923, 42672 and 45935; 31017 and 35720 quote it in mixed case), local pages 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.' (43649, 37956; 35309 and 41132 quote 'Complete additional degree applicable units, if needed, to reach 60 units'). Diagnosis docs/harvest_wave3_diagnoses_s639.md, East Los Angeles causes 1 and 3. The first three steps file the sentence as electives_fill_words, which the guard (electives_named) accepts where the text prints it. They read only from the record's own heading onward (before: end of text, so the heading scope of kb/_program_requirements_reconcile.py applies, as Glendale's steps use it): a capture is a page window that can hold the program before it, whose sentence is not this record's (review of #3193; 32170 reads pages 359-360 after Social Work's section). A record whose heading the window does not print takes no sentence. The fourth gives a transfer degree that names Cal-GETC and no units the 34 the ADT paragraph of the same section prints, 'Cal-GETC ... (34 semester/45 quarter units)' (quoted by the readings of 31017, 32154, 32170, 33013, 33382, 41231 and 43632; 41097's reading saw it on page 130 and left ge_units empty), only where the record names the pattern and the degree total (only_with ge_pattern and degree_total), so a record that passes without a pattern, or holds its major alone, is never given units. Measured on the filed records by kb/_program_requirements_readings_measure.py: 20 records fail on the guard and 19 pass once it is answered (the readings of 10 quote a sentence word for word, the rest paraphrase it; the 9 that do not quote it move only if the reconcile run finds the sentence after their own heading); with the fourth step, and its guard answered, 41097 passes as overlap and 35720 stays unequal (59-65 against 60). No passing record moves. Session decision for Sam to revise (d-electives-fill-words-s644); reversible by deleting this entry.",
-   "awards": "associate",
+   "why": "S644, the harvest's NEXT 5. East Los Angeles's degrees say electives fill the degree without the word elective, so the scorer's electives guard fails them: transfer pages print 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' (quoted by the readings of 32154, 32980, 33382, 37923, 42672 and 45935; 31017 and 35720 quote it in mixed case), local pages 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.' (43649, 37956; 35309 and 41132 quote 'Complete additional degree applicable units, if needed, to reach 60 units'). Diagnosis docs/harvest_wave3_diagnoses_s639.md, East Los Angeles causes 1 and 3. The first three steps file the sentence as electives_fill_words, which the guard (electives_named) accepts where the text prints it. They read only from the record's own heading onward (before: end of text, so the heading scope of kb/_program_requirements_reconcile.py applies, as Glendale's steps use it): a capture is a page window that can hold the program before it, whose sentence is not this record's (review of #3193; 32170 reads pages 359-360 after Social Work's section). A record whose heading the window does not print takes no sentence. The fourth gives a transfer degree that names Cal-GETC and no units the 34 the ADT paragraph of the same section prints, 'Cal-GETC ... (34 semester/45 quarter units)' (quoted by the readings of 31017, 32154, 32170, 33013, 33382, 41231 and 43632; 41097's reading saw it on page 130 and left ge_units empty), only where the record names the pattern and the degree total (only_with ge_pattern and degree_total), so a record that passes without a pattern, or holds its major alone, is never given units. Measured on the filed records by kb/_program_requirements_readings_measure.py: 20 records fail on the guard and 19 pass once it is answered (the readings of 10 quote a sentence word for word, the rest paraphrase it; the 9 that do not quote it move only if the reconcile run finds the sentence after their own heading); with the fourth step, and its guard answered, 41097 passes as overlap and 35720 stays unequal (59-65 against 60). No passing record moves. Session decision for Sam to revise (d-electives-fill-words-s644); reversible by deleting this entry. S714 (lane 2's cheap piles, page reads 45173124249 and 45173349853): the steps read from the record's plan line where the reader completed its heading from the description (own_heading_end: the page prints 'Associate in Arts in · Journalism for Transfer · (Academic Plan E032980G)', the reading 'Associate in Arts in Journalism for Transfer Degree (Academic Plan E032980G)'); two local degrees are held from the sentence by name; a local degree's own double-counting note files ge_overlap, its own high-unit waiver takes the waived 6 units off its 27 of general education; a course printed to be completed twice counts twice; two printed codes are renamed to the file's rows. The college-wide 'associate' gate moved onto each step, so the repeat step also reads certificates.",
    "steps": [
     {
      "kind": "set",
      "field": "electives_fill_words",
      "value": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
-     "before": "\\Z",
+     "before": "\\(\\s*Academic\\s+Plan\\s+[A-Z]?\\d|\\Z",
      "awards": "transfer",
      "pattern": "(?i)ADDITIONAL\\s+CSU\\s+UNITS,?\\s+IF\\s+NEEDED,?\\s+TO\\s+REACH\\s+60\\s+CSU\\s+TRANSFERABLE\\s+UNITS",
      "source_words": "ELAC transfer pages: 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' (the readings of 32154, 32980, 33382, 37923, 42672, 45935, notes)"
@@ -1880,7 +1879,7 @@
      "kind": "set",
      "field": "electives_fill_words",
      "value": "ADDITIONAL CSU UNITS TO REACH 60 CSU TRANSFERABLE UNITS",
-     "before": "\\Z",
+     "before": "\\(\\s*Academic\\s+Plan\\s+[A-Z]?\\d|\\Z",
      "awards": "transfer",
      "pattern": "(?i)ADDITIONAL\\s+CSU\\s+UNITS\\s+TO\\s+REACH\\s+60\\s+CSU\\s+TRANSFERABLE\\s+UNITS",
      "source_words": "ELAC transfer pages: 'COMPLETE ADDITIONAL CSU UNITS TO REACH 60 CSU TRANSFERABLE UNITS' (a reading's note, the same sentence without 'if needed')"
@@ -1889,9 +1888,13 @@
      "kind": "set",
      "field": "electives_fill_words",
      "value": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
-     "before": "\\Z",
+     "before": "\\(\\s*Academic\\s+Plan\\s+[A-Z]?\\d|\\Z",
      "awards": "local",
      "pattern": "(?i)ADDITIONAL\\s+DEGREE[-\\s]+APPLICABLE\\s+UNITS,?\\s+IF\\s+NEEDED,?\\s+TO\\s+REACH\\s+60\\s+UNITS",
+     "hold": {
+      "02430": "S714 (page read 45173124249, pdf page 102): the major prints 'Certificate of Achievement in Architectural Design . . 21', which includes the 'Skills Certificate in Architectural Design . .12' printed in the certificate's own section; the record holds the certificate's 9 additional units and none of the skills certificate's 12, so electives would fill the 12 the record lost. Held until the record carries the certificate's line.",
+      "08252": "S714 (page read 45173124249, pdf page 103): the major prints 'Certificate of Achievement in Architectural Technology . . . 22' as one line with no courses, which the record leaves out (its blocks add to 12 against a 61 total with 27 units of general education), so electives would fill the 22 the record lost. Held until the record carries the certificate's line."
+     },
      "source_words": "ELAC local pages: 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.' (the readings of 43649 and 37956; 35309 and 41132 quote 'Complete additional degree applicable units, if needed, to reach 60 units')"
     },
     {
@@ -1908,6 +1911,69 @@
      ],
      "pattern": "\\(\\s*34\\s+semester\\s*/\\s*45\\s+quarter\\s+units\\s*\\)",
      "source_words": "ELAC ADT paragraph: 'Completion of ... (Cal-GETC) course requirements ... (34 semester/45 quarter units)' (the readings of 31017, 32154, 32170, 33013, 33382, 41231 and 43632, notes; ELAC General Catalog 2026-2027, e.g. #page=130)"
+    },
+    {
+     "kind": "set",
+     "field": "ge_overlap",
+     "value": true,
+     "before": "\\(\\s*Academic\\s+Plan\\s+[A-Z]?\\d|\\Z",
+     "awards": "local",
+     "only_with": [
+      "ge_units",
+      "degree_total"
+     ],
+     "pattern": "(?i)\\bdouble[-\\s]+counted\\s+(?:in|towards?)\\s+(?:the\\s+)?(?:LACCD\\s+)?(?:GE|General\\s+Education)\\b",
+     "why": "S714 (lane 2's cheap piles): a local degree's own section, from its plan line to the next program's, prints the note that its major courses count toward general education too ('Note: 9 units of major courses may be double counted in LACCD General Education Areas 3, 4b, and 5', Environmental Studies: Biology 35309; 'Note: 3 units from ART 201 may be double counted in GE Area C', Animation 46461; page read 45173124249), the double counting College of the Redwoods, Las Positas and Hartnell file the same way (ge_overlap). A note under the next program's plan line is that program's (Engineering Graphics and Design Technology 21174 prints none; the note after it is Advanced Manufacturing's)."
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "was": {
+      "min": 27,
+      "max": 27
+     },
+     "value": {
+      "min": 21,
+      "max": 21
+     },
+     "before": "\\(\\s*Academic\\s+Plan\\s+[A-Z]?\\d|\\Z",
+     "awards": "local",
+     "only_with": [
+      "ge_pattern",
+      "degree_total"
+     ],
+     "only_without": "ge_overlap",
+     "pattern": "(?i)following\\s+LACCD\\s+GE\\s+areas?\\s+4a\\s*\\(\\s*3\\s+units\\s*\\)\\s+and\\s+(?:area\\s+)?7\\s*\\(\\s*3\\s+units\\s*\\)\\s+are\\s+waived\\s+for\\s+this\\s+degree",
+     "why": "S714 (lane 2's cheap piles): a local degree's own section prints 'Note: Per AP 4100, this degree is considered a high unit major with major requirements that exceed 37 units. The following LACCD GE Area 4a (3 units) and Area 7 (3 units) are waived for this degree.' (Engineering Graphics and Design Technology 21174 and Technology & Logistics 32193, page read 45173124249, pdf pages 177 and 198): the degree's 27 units of LACCD general education come to 21, and its printed total is the major plus 21 (22 + 17 + 21 = 60). The step replaces ge_units only where it holds the plan's 27 (was). 'Student may choose to waive either LACCD GE Area 4a (3 units) or Area 7 (3 units)' (Architectural Design 02430, Architectural Technology 08252) is a choice, never this step. Only where the section prints no double counting (only_without ge_overlap): the scorer reads one of the two, and with both the overlap reading passes a sum past the total as it did before."
+    },
+    {
+     "kind": "repeat",
+     "name_pattern": "(?i)COMPLETE\\s+THE\\s+FOLLOWING\\s+COURSE\\s+(?P<n>TWICE)",
+     "why": "S714 (lane 2's cheap piles): Stage Management and Production 14869 prints 'COMPLETE THE FOLLOWING COURSE TWICE  4' over 'TECTHTR 348# Stage Management Practicum ....2' and '#This course is repeatable and must be taken twice to complete the certificate' (page read 45173349853, pdf page 374): the course counts twice, 4 units, and the list adds to the printed 23."
+    }
+   ],
+   "course_renumbers": {
+    "BRDSCTG 15": "BRDCSTG 15",
+    "ESL NC 45": "ESL NC 45CE"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "BRDSCTG 15",
+     "file": "BRDCSTG 15",
+     "title": "Radio and Television Production",
+     "units": 3,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The 2026-2027 catalog prints 'BRDSCTG 015 Radio and Television Production ....3' in Digital Film Production 44624 (page read 45173349853, pdf page 275), a transposed prefix: the college's broadcasting courses print as BRDCSTG (BRDCSTG 001, BRDCSTG 300 on pdf page 373), and the state's file lists BRDCSTG 15 at the college and no BRDSCTG course. The reader's note on 44624 says the same."
+    },
+    {
+     "printed": "ESL NC 45",
+     "file": "ESL NC 45CE",
+     "title": "Workplace English",
+     "units": 0,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The 2026-2027 catalog prints 'ESL  NC 045 Workplace English ....0' in Automotive Fundamentals 37510 (page read 45173349853, pdf page 386), beside ACAD PR 014CE and ACAD PR 005CE, which keep the noncredit CE ending; the state's file lists ESL NC 45CE Workplace English at the college and no ESL NC 45."
     }
    ]
   },

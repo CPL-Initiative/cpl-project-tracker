@@ -63,37 +63,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    52.0,
-    52.0
+    25.0,
+    25.0
    ],
    "stated": [
-    60.0,
-    60.0
+    25.0,
+    25.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    27.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     25.0,
-     25.0
+     52.0,
+     52.0
     ],
     "stated": [
-     25.0,
-     25.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     27.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -118,7 +120,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -158,7 +160,9 @@
     "quality control technician",
     "research technician",
     "water quality technician"
-   ]
+   ],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -224,5 +228,20 @@
    "All core courses are marked as having a prerequisite."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 45176404274,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "double-counted in \nLACCD GE"
+  }
+ ],
+ "read_run": "39063389278"
 }

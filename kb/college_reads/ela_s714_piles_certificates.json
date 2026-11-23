@@ -1,0 +1,24 @@
+{
+ "_readme": "S714 piles2 (lane 2 of SkyFulmar), East Los Angeles College's reconcile_steps lever (24 in census run 45161770730). Second of two reads: the 8 records whose own lists or totals fail. Each keyword is a program's own plan line, '(Academic Plan E0<control number>...)'; the read prints that page and the next, so a session reads the catalog's own wording behind each filed record (its heading, its totals, the sentence on additional units and the notes on general education areas). One PDF load and robots.txt, no model call, nothing written.",
+ "college": "East Los Angeles College",
+ "questions": {
+  "own_page": "The program's section as printed: heading, requirement lists, totals, the sentence on additional units and the notes on general education areas."
+ },
+ "keywords": [
+  "Academic\\W+Plan\\W+E0(?:14869|21157|33013|38168|41231|44624|45602|37510)"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf"
+  }
+ ],
+ "pdf_span": [
+  60,
+  400
+ ],
+ "pdf_after": 1,
+ "pdf_page_cap": 40
+}
