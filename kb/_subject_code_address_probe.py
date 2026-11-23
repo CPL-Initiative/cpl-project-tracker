@@ -106,11 +106,12 @@ def add_search_pages(out, by):
         if x.get("title") or not x.get("result_url") or x.get("college") not in by:
             continue
         slug, code, url = x["college"], x["local_code"], x["result_url"]
+        url = re.sub(r"^http://", "https://", url)    # a plan reads https only (tests/college_page_read_test.py)
         path = os.path.join(ROOT, SUBJECTS, slug + ".json")
         d = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
         done = {(code_key(t.get("code")), t.get("address")) for t in (d.get("code_address_tried") or [])}
         done |= {(code_key(r.get("code")), r.get("address")) for r in (d.get("rows") or [])}
-        if (code_key(code), url) in done:
+        if (code_key(code), url) in done or (code_key(code), re.sub(r"^https://", "http://", url)) in done:
             continue
         p = out.setdefault(slug, {
             "_readme": "S718 (SkyPetrel), 2026-11-23: pages for %s read by kb/_subject_code_address_probe.py. A heading "
