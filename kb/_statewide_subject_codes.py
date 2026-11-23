@@ -403,6 +403,7 @@ def build(root=ROOT):
                    "courses": sum(c["courses"] for c in out_codes), "one_college": sum(1 for c in out_codes if len(c["colleges"]) == 1),
                    "by_class": {k: by_cls[k] for k in ("settled", "noncredit", "confirm", "draft_differs", "draft_broad", "peers", "peers_split", "named_code", "titles", "look")},
                    "course_votes": len(vote_of), "no_vote": dict(why_no)},
+        "common_codes": sorted([[c, d] for d, c in by_disc.items() if c], key=lambda t: t[1]),
         "calibration": {"title_temperature": temp, "draft_rate": draft_rate, "labelled_codes": len(labelled)},
         "self_recall": self_recall,
         "codes": out_codes,
