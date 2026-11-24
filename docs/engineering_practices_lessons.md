@@ -1,7 +1,7 @@
 ---
 title: Engineering Practices — Decisions & Lessons (dev infra, testing, design system)
 date: 2026-06-04
-last_updated: 2026-11-18
+last_updated: 2026-11-24
 session: 32 (Busy Feynman) — established from the Session-32 retrospective
 status: ACTIVE — committed test harness + CI + stop-hook fix shipped; design-system tokens established; CLAUDE.md trim + bulk CSS migration STAGED
 tags: [engineering, dev-infra, testing, jsdom, ci, design-system, process]
@@ -246,3 +246,26 @@ Full note: [`methodology-a-guard-on-generated-output-cannot-see-its-source`](kb-
   the work; the issue names the branch and the next step.
 - **A daytime session takes the night's number with a label** and appends a dated section to the newest handoff;
   `kb/_build_session_spend.py` reads that section's own `Spend:` line as session N daytime.
+
+## 2026-11-24 — S718 (SkyPetrel, Sam's plain session): why stale-head CI wakes recur
+
+- **The stale head is a symptom; the cause is a push that fails CI.** Sam, 2026-11-23 ~23:55Z: *"seems like a
+  recurring thing in sessions that we have to go back out on CIs then they are for an older head--I don't understand
+  why it happens, but it happens most times. am I doing something wrong or is there something we can change in our
+  process?"* He was doing nothing wrong. Each failed round leads to a fix push, and the failed round's wake arrives
+  naming the head that came before it. Fewer failed rounds, fewer stale wakes. The standing rule stays: a CI wake that
+  names an older head means read the current head's checks and say nothing.
+- **What failed the rounds this session:** `check_generated.sh` named 4 of the 31 `kb/status/*.json` files, so
+  `statewide_subject_codes.json` and `subject_sources.json` went stale behind a rebuilt `local_subject_titles.json`
+  while the script read clean; a new test not registered with the runner (`every_test_runs`); an `http` plan address
+  (`college_page_read_test`); a stacked PR whose squash conflicted with its base (CLAUDE.md now forbids opening one);
+  and a filer that re-sorted rows a check compared in order.
+- **The fix that holds (#3737):** `tests/check_generated_covers_status_test.py` fails any status file that has neither
+  a check line in the script nor a reason in `NOT_CHECKED`; 20 are checked and 11 excused. Coverage now grows with each
+  new file. Distilled:
+  [`methodology-a-hand-listed-checklist-drifts-a-guard-on-the-unlisted-item-does-not`](kb-notes/methodology-a-hand-listed-checklist-drifts-a-guard-on-the-unlisted-item-does-not.md).
+- **A test that reads live committed data breaks when the daily sync brings a person's save.** The 2026-11-24 daily run
+  synced three (the Clovis ANTHRO title, El Camino's ESL credit filing, Cerritos AED as noncredit), and two tests that
+  asserted on those rows failed. Person saves win, so the tests were relaxed. A test should judge only what it injects;
+  the sweep of tests that assert on live rows is the next hardening.
+- **Timing:** every `lints` Python check run locally takes about 10 minutes; `check_generated.sh` about 33 seconds.
