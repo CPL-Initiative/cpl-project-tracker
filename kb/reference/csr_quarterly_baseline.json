@@ -1,13 +1,14 @@
 {
   "_what": "What each CSR quarterly source served when last read and accepted. kb/_csr_quarterly_probe.py --compare reads a source today against this file; a session updates it only after a change has been ruled on.",
-  "_source": "csr-quarterly.yml run 39374671352 (job 118470014692), 2026-10-20 05:24Z, read by S433 from the job log; cid_data from csr-quarterly.yml runs 39428759620 and 39429169362 (2026-10-20 13:16Z, 13:18Z), read by S437 from the job logs",
+  "_source": "csr-quarterly.yml run 39374671352 (job 118470014692), 2026-10-20 05:24Z, read by S433 from the job log; cid_data from csr-quarterly.yml runs 39428759620 and 39429169362 (2026-10-20 13:16Z, 13:18Z), read by S437 from the job logs; mq_page re-baselined on the 20th edition by S719 (2026-11-24) from kb/reference/mq_handbook_20th.json's _source",
   "mq_page": {
     "routine": "mq_list",
-    "edition": 19,
-    "document_sha256": "d578d90459420aad82d55428e1d1ee89ba5b2bba0cfeaca21e1c0b3ffd4061c0",
-    "document_bytes": 5057943,
-    "document_final_url": "https://www.cccco.edu/wp-content/uploads/2025/05/19th-edition-minimum-qualifications-2-a11y1.pdf",
-    "read_at": "2026-10-20"
+    "edition": 20,
+    "document_sha256": "cd41c0cbbbaab592c5b008d1c9cea19c0943b96fe84a400b2f9fa49719b0263f",
+    "document_bytes": null,
+    "document_final_url": "https://www.cccco.edu/wp-content/uploads/2026/11/20th-edition-minimum-qualifications-final-a11y.pdf",
+    "read_at": "2026-11-24",
+    "note": "Re-baselined on the 20th edition (S719), the handbook kb/reference/mq_handbook_20th.json was read from (#3726); the dispatch on this branch confirms the runner reads the same hash."
   },
   "cid_home": {
     "routine": "authority_tables",
