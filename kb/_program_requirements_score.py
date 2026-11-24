@@ -1011,6 +1011,125 @@ def electives_named(prog: dict, text: str) -> bool:
     return " %s " % _words(words) in " %s " % _words(text[start:own_section_end(text, start)])
 
 
+# ── A fill never closes a window the reader cut off (S720, f-elective-fill-passes-cut-off-windows-s714) ──
+# A short sum has two causes the arithmetic cannot tell apart: units the catalog leaves to the student, and rows the
+# reader never saw. The electives fills (the program total's here in score(), the degree total's in degree_check)
+# claim the first, so each one first asks the record's own words whether the second is the case: a note saying the
+# text opens mid-table, a note saying the requirements (a table, list, core, block, rows or courses) are cut off, on
+# the previous page or not in the text, or a missing course's own reason placing it outside the window ("likely on
+# page 428", "start of table not included"). S714's eight Los Rios records ("begins mid-table", "cut off", "not
+# supplied") and S655's American River 07206 are the cases; methodology-a-fill-must-check-what-it-fills.
+# The words say what was lost, so a lost heading, description, outcomes or career list, a course-description list or
+# a summary table is not this, nor a note saying the requirements are complete, nor a note with no missing course
+# behind it. Measured over every committed record at S720, after the second reader: 185 of 18,960 records match, and
+# a hand read of 40 drawn at random found 38 saying requirement rows sit outside the text (the two others: another
+# program's content not included, Mt. San Antonio 03081; a course named only in the cut-off descriptions, Long Beach
+# City 20915); of the 15 passes the guard takes away, all 15 read so by hand.
+_CUT_PAGE_AT = r"(?:\s+(?:on|at)\s+(?:the\s+top\s+of\s+)?page\s+\d{1,4})?"
+# A requirements noun, never a tab's, a heading's, a label's or a text's name ("the Requirements tab", "'Program
+# Requirements' heading"), nor the verb "lists".
+_CUT_REQ = (r"\b(?:requirements?|required|core|tables?|rows?|blocks?|list"
+            r"|lists(?!\s+(?:a|an|the|only|both|all|each|its|their)\b)|courses?)\b"
+            r"(?!['’]?[-\s]+(?:(?:list|section)\s+)?(?:tab|text|heading|label|sequence|descriptions?|itself)\b)")
+_CUT_REQ_RE = re.compile(_CUT_REQ, re.I)
+# The text opening inside the requirements: "begins mid-table on page 221", "starts mid-list", "opens partway
+# through a program's requirements"; not a list of prerequisites, outcomes, careers or other awards.
+_CUT_OPENS = re.compile(
+    r"\b(?:begins?|starts?|opens?|picks?\s+up)" + _CUT_PAGE_AT +
+    r"\s+(?:mid[-\s]?(?:table|list|requirements?|block)\b"
+    r"(?!\s+(?:of|with)\s+(?:\w+\s+){0,2}(?:admission|prerequisites?|outcomes?|careers?|other|awards?|GE|Cal-?GETC)\b)"
+    r"|(?:partway|part[-\s]way|in\s+the\s+middle)\s+(?:through|of|into)\b[^.;]{0,40}?" + _CUT_REQ + r")", re.I)
+_CUT_OPENS_OTHER = re.compile(r"\b(?:prerequisites?|outcomes?|careers?|descriptions?|Cal-?GETC|general\s+education|GE)\b",
+                              re.I)
+_CUT_NAMES_REQ = re.compile(r"\b(?:requirements?|required|core)\b", re.I)
+# The loss, said after the requirements noun in the same clause.
+_CUT_LOSS = re.compile(
+    r"[^.;:]{0,80}?\b(?:cut[-\s]off|truncated"
+    r"|not\s+(?:supplied|extracted|provided|included)(?!\s+in\s+(?:the\s+)?(?:\d|total|sum|count))"
+    r"|(?:on|from)\s+(?:the\s+|an\s+)?(?:previous|preceding|prior|earlier)\s+page"
+    r"|missing\s+from\s+the\s+(?:text|extraction|excerpt|page|window)"
+    r"|(?:(?:may|might)\s+be|is|are)\s+missing(?!\s+from\s+the\s+catalog)"
+    r"|not\s+(?:in|within)\s+the\s+(?:supplied\s+|provided\s+|extracted\s+|given\s+|visible\s+)?(?:text|excerpt|window))",
+    re.I)
+# A list or table of something else, just before the noun ("the Program Outcomes list", "the awards table").
+_CUT_OTHER_LIST = re.compile(
+    r"\b(?:outcomes?|PSLOs?|SLOs?|careers?|occupations?|jobs?|descriptions?|admission|summary|opportunities|employment"
+    r"|headings?|associate\s+degree|awards?|titles?|honors|index|XML|columns?|header|application|prerequisites?"
+    r"|general|generic|ADT|AA-T|AS-T|GE|Cal-?GETC|area\s+\d\w?)\b[^.;:,]{0,25}$|\bheading\s+of\s+(?:the|that|this|its)\s+$",
+    re.I)
+# A heading, title, cell, note, outcome, career or description between the noun and the loss: the loss is its.
+_CUT_BETWEEN = re.compile(r"\b(?:headings?|titles?|cells?|notes?|outcomes?|careers?|descriptions?)\b", re.I)
+# A sentence saying the loss leaves the requirements whole, or lies in another program or another list.
+_CUT_NOT_REQ = re.compile(
+    r"\bdoes\s+not\s+affect\b|\b(?:different|another|other|separate)\s+(?:program|degree|certificate|award)\b"
+    r"|\bcourse\s+list\s+at\s+the\s+end\b|\bno\s+requirements?\s+(?:\w+\s+){0,3}lost\b|\bfootnotes?\b|\bcourse\s+index\b"
+    r"|\bXML\b|\bcolumn\s+header|\bawards?\s+table\b|\bnavigation\b"
+    r"|\bbelong(?:s|ing)?\s+to\s+(?:a|an|the)\s+(?:preceding|previous|different|other|another|separate)\b"
+    r"|\b(?:appears?|is|are|itself)\s+(?:\w+\s+)?complete\b|\bnot\s+used\s+for\b|\bclosed[-\s]list\b"
+    r"|\bstate(?:'s)?\s+(?:file|list)\b"
+    # The reader saying nothing was lost ("no courses appear to be cut off", Folsom Lake 33791).
+    r"|\bno\s+(?:\w+\s+){0,3}(?:appears?|seems?|is|are|was|were)\s+(?:to\s+be\s+)?(?:cut|missing|lost|truncated)\b",
+    re.I)
+_CUT_OTHER_SUBJECT = re.compile(r"\b(?:outcomes?|careers?|goals|objectives|awards?\s+table|program\s+table|other\s+awards)\b",
+                                re.I)
+_CUT_NAMES_COURSES = re.compile(r"\b(?:requirements?|required|core|courses?)\b(?!['’]?\s+(?:tab|text|heading)\b)", re.I)
+# A missing course's own reason, placing it outside the text the record was read from.
+_CUT_WHY = re.compile(
+    r"\bstart\s+of\s+(?:the\s+)?(?:requirements\s+)?table\b|\btable\s+start\b|\bcut[-\s]off\b|\btruncat\w*"
+    r"|\b(?:likely|possibly|probably|presumably)\b[^.;()]{0,40}?\bon\s+(?:the\s+)?"
+    r"(?:page\s+\d{1,4}|(?:previous|prior|preceding|earlier)\s+page)"
+    r"|\b(?:previous|prior|preceding|earlier)\s+page\b"
+    r"|\bpage\s+\d{1,4}\b[^.;]{0,30}\bnot\s+(?:in\s+the\s+text|supplied|provided|included|extracted)\b"
+    r"|\bnot\s+(?:supplied|extracted)\b", re.I)
+
+
+def _cut_clause(clause: str) -> bool:
+    """A requirements noun in the clause, not a list of something else, with the loss said of it."""
+    for m in _CUT_REQ_RE.finditer(clause):
+        if _CUT_OTHER_LIST.search(clause[max(0, m.start() - 40):m.start()]):
+            continue
+        hit = _CUT_LOSS.match(clause, m.end())
+        if hit and not _CUT_BETWEEN.search(clause[m.end():hit.end()]):
+            return True
+    return False
+
+
+def window_cut(record: dict) -> str | None:
+    """The reader's words saying the record's requirements run outside the text it was read from, or None: a note's
+    sentence, else a missing course's reason. A fill never closes such a window: the record fails with the gap named
+    (fill_refused, which kb/_program_named_gaps.py files as section_cut_off).
+    A cut counts only where the record explains a listed course as missing (missing_explained): a window that lost
+    rows loses the state file's courses with them, and a note with no missing course behind it is a hedge ("a 4-unit
+    course may be missing from the list", Cypress 37246; "a reviewer should check whether a required course is
+    missing", Riverside 43896; S720's second reader). The sentence that says nothing was lost is read first, before
+    the opening words ("the program section itself appears complete", Cerritos 20493)."""
+    if not any(m.get("code") and m.get("why") for m in (record or {}).get("missing_explained") or []
+               if isinstance(m, dict)):
+        return None
+    for n in (record or {}).get("notes") or []:
+        for s in re.split(r"(?<=[a-z0-9)'\"][.!?])\s+(?=[A-Z])", str(n)):
+            if not s:
+                continue
+            if _CUT_NOT_REQ.search(s):
+                continue
+            if _CUT_OPENS.search(s) and not (_CUT_OPENS_OTHER.search(s) and not _CUT_NAMES_REQ.search(s)):
+                return s.strip()
+            if _CUT_OTHER_SUBJECT.search(s) and not _CUT_NAMES_COURSES.search(s):
+                continue
+            if any(_cut_clause(c) for c in re.split(r";\s+|:\s+", s)):
+                return s.strip()
+    for m in (record or {}).get("missing_explained") or []:
+        w = str(m.get("why") or "")
+        if _CUT_WHY.search(w):
+            return "%s: %s" % (m.get("code"), w.strip())
+    return None
+
+
+def refused_fill(words: str) -> dict:
+    """The arithmetic's note that a fill was refused over a cut-off window."""
+    return {"gap": "section_cut_off", "words": words[:300]}
+
+
 def _words(s: str) -> str:
     """The words of a text in order, lower case, punctuation and spacing dropped."""
     return " ".join(re.findall(r"[a-z0-9]+", (s or "").lower()))
@@ -1047,9 +1166,23 @@ def transfer_degree(award: str | None, prog: dict) -> bool:
 
 
 def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float,
-                   award: str | None = None) -> dict:
+                   award: str | None = None, cut: str | None = None) -> dict:
     """How a sum of the blocks, open electives and general education (lo-hi)
-    meets the degree total the page prints: pass, status, and how it passed."""
+    meets the degree total the page prints: pass, status, and how it passed. cut is the
+    reader's words saying the requirements run outside the text read (window_cut): a pass
+    that fills units (electives, a transfer degree's 60, a printed floor) is refused over it
+    (S720), and every other reading stands."""
+    v = _degree_verdict(prog, degree, lo, hi, award)
+    if cut and v.get("pass") and v.get("fill") and max(v["fill"]) > TOL:
+        return {"pass": False, "status": "unequal", "fill_refused": refused_fill(cut),
+                "why": ["the blocks and general education come to %s-%s against the %s-%s the catalog prints for "
+                        "the degree; electives would fill the rest, but the reader's note says the requirements "
+                        "run outside the text read" % (lo, hi, degree[0], degree[1])]}
+    return v
+
+
+def _degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float,
+                    award: str | None = None) -> dict:
     dc = _span(prog.get("ge_overlap")) if isinstance(prog.get("ge_overlap"), dict) else None
     from _program_requirements_reconcile import awards_match
     # The cap is decided on the state file's award, never the heading (S714's second reader: TRANSFER matches a
@@ -1257,7 +1390,7 @@ def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: floa
 
 
 def degree_check(prog: dict, degree: tuple[float, float], lo: float, hi: float,
-                 reasons: list[str], text: str | None, award: str | None = None) -> dict:
+                 reasons: list[str], text: str | None, award: str | None = None, cut: str | None = None) -> dict:
     """The blocks, the open electives and the general education units against
     the degree total the page prints (record shape 5). A degree that names a
     general education pattern and no units for it cannot be added up."""
@@ -1275,7 +1408,7 @@ def degree_check(prog: dict, degree: tuple[float, float], lo: float, hi: float,
     if prog.get("electives_fill_degree") and text is not None and not electives_named(prog, text):
         out["why"] = ["the record says electives fill the degree total, but the catalog text names no electives"]
         return out
-    out.update(degree_verdict(prog, degree, lo, hi, award))
+    out.update(degree_verdict(prog, degree, lo, hi, award, cut))
     return out
 
 
@@ -1456,7 +1589,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
     degree = _span(prog.get("degree_total"))
     de = _span(prog.get("degree_elective_units")) or (0.0, 0.0)
     if stated is None and degree is not None:
-        arith = degree_check(prog, degree, lo + de[0], hi + de[1], reasons, text, award)
+        arith = degree_check(prog, degree, lo + de[0], hi + de[1], reasons, text, award, window_cut(record))
     elif stated is None and not has_figure(record) and not any(listed.values()):
         figures = [m.group(0) for m in FIGURE.finditer(text or "")]
         ok = text is not None and not figures
@@ -1489,15 +1622,24 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         # certificate", electives_fill_degree on a record with no degree total): a sum short of
         # the total passes with the fill named, as degree_verdict reads a degree's. The same
         # guard: a text naming no electives keeps the record failing.
-        fill = None
+        fill = refused = None
         if (not ok and not ge_included and degree is None and prog.get("electives_fill_degree")
                 and hi <= stated[0] + TOL and (text is None or electives_named(prog, text))):
-            fill = [round(stated[0] - hi, 2), round(stated[1] - lo, 2)]
+            # The fill claims the short sum is electives; the record's own words may say rows were cut off (S720).
+            cut = window_cut(record)
+            if cut:
+                refused = refused_fill(cut)
+            else:
+                fill = [round(stated[0] - hi, 2), round(stated[1] - lo, 2)]
         ok = ok or ge_included or fill is not None
         arith = {"pass": ok, "status": "equal" if ok else "unequal",
                  "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated), "against": "program",
                  "why": [] if ok else ["the blocks sum to %s-%s; the catalog states %s-%s"
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
+        if refused:
+            arith["fill_refused"] = refused
+            arith["why"].append("electives would fill the rest, but the reader's note says the requirements run "
+                                "outside the text read")
         if pv.get("minimum"):
             arith["minimum"] = True
         if pv.get("meets"):
@@ -1514,7 +1656,9 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         if degree is not None:
             # Record shape 6: a page printing the major's total and the degree's checks both,
             # and the record names the one it misses (the major first).
-            deg = degree_check(prog, degree, lo + de[0], hi + de[1], [], text, award)
+            # A major that adds up to its printed total is complete, so electives filling the degree after it are
+            # the fill's own case: the cut guard reads only a degree whose major does not add up (S720).
+            deg = degree_check(prog, degree, lo + de[0], hi + de[1], [], text, award, None if ok else window_cut(record))
             arith = dict(arith, degree=deg) if not ok or deg["pass"] else dict(deg, major=arith)
     arith = dict(arith, **arithmetic_note(record, award, arith))
     # The readings program_units made from a heading (S713), named so a reader of the check sees them.

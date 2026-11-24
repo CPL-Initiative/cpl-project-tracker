@@ -1,0 +1,2424 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S720: Fullerton's 13 S714 held, collected with their gaps named (no reread)",
+ "at": "2026-11-24T07:06:04Z",
+ "college": "Fullerton College",
+ "census": {
+  "file": "kb/status/harvest_gap_census.json",
+  "lever": "reconcile_steps",
+  "members": [
+   "03853",
+   "03866",
+   "08420",
+   "08422",
+   "18163",
+   "18166",
+   "18749",
+   "33680",
+   "35174",
+   "36798",
+   "36863",
+   "42143",
+   "42394"
+  ]
+ },
+ "gaps": {
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "noted_unit_floor": "The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.",
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "no_own_page_total": "The record was read from another award's page, which prints this program's courses inside its own requirements and prints no total for this program."
+ },
+ "moved": 6,
+ "by": {
+  "lists_not_closed": 2,
+  "noted_figures_differ": 1,
+  "no_own_page_total": 1,
+  "pool_figure_not_read": 1,
+  "noted_unit_floor": 1
+ },
+ "precision": {
+  "read": 13,
+  "right": 13,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "lists_not_closed": 2,
+   "noted_figures_differ": 1,
+   "no_own_page_total": 1,
+   "pool_figure_not_read": 1,
+   "none": 7,
+   "noted_unit_floor": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 6,
+   "the capture's page is not the program's own": 2
+  },
+  "not_standing": [
+   [
+    "35174",
+    "the capture's page is not the program's own"
+   ],
+   [
+    "36798",
+    "the capture's page is not the program's own"
+   ]
+  ]
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 8,
+   "the stated total one unit off right": 8,
+   "coverage failing right": 8,
+   "the floor's course one unit off right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "18166",
+   "why": "held: coverage fails (BUS 101 F, WELL 230 F, CISG 100 F and F PE248 not placed): the Category C list is cut off after PE 144 F (MAY_CONTINUE_REVIEWED); the census counts a gap only where coverage passes",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "18749",
+   "why": "held: coverage fails: the state's file lists THEA 231 F, which the page does not print; a retired-course reading needs the course catalog's own page, not in the committed files",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "33680",
+   "why": "held: today's scorer passes it on its record (22-26, equal; the ESC lecture-lab pair); a closed-list rescore, never a gap",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "35174",
+   "why": "held: capture.json's shared_pages puts it on the Chemistry Associate in Science Degree for UC Transfer page with 36798, and its own note cites program 2S41936 (the state's UCTP Chemistry, 41936); a page-finding step (reader_page_assignment), never a gap",
+   "claim": "the capture's page is not the program's own"
+  },
+  {
+   "control_number": "36798",
+   "why": "held: today's capture reads it from the Chemistry Associate in Science Degree for UC Transfer page, not its own A.S.-T page; a page-finding step (reader_page_assignment), never a gap",
+   "claim": "the capture's page is not the program's own"
+  },
+  {
+   "control_number": "36863",
+   "why": "held: coverage fails: the state's file lists PE 108 F, which the page does not print; as 18749",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "42143",
+   "why": "held: today's scorer passes it on its record (18-19, equal); a closed-list rescore, never a gap",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Fullerton College",
+   "control_number": "03853",
+   "award": "A.A. Degree",
+   "extracted_run": "38675136988",
+   "moves_to": "lists_not_closed",
+   "words": "Restricted Electives or Substitution Courses are used only by students placed above 101 F (or native Spanish speakers following SPAN 201 F-SPAN 204 F) to reach the 18-22 unit total; no unit minimum is printed for the block, so minimum is null.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 96,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/fullerton/records/03853.json",
+   "before_image": {
+    "program_title": "Foreign Language",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/foreign-language/foreign-language-associate-arts-degree/",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 22,
+    "record": {
+     "program": {
+      "section_heading": "Foreign Language Associate in Arts Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 22
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Refine target language oral and written production in response to discourse related to self, family, social situations, school, work and societal issues.",
+       "Refine target language oral and written production in response to written materials in the target language.",
+       "Interpret similarities and differences between the cultural practices and perspectives of the target language and those of other cultures."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Chinese Language Option",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Language Option",
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "CHIN 101 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHIN 102 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHIN 203 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHIN 204 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "French Language Option",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Language Option",
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "FREN 101 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FREN 102 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FREN 203 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FREN 204 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "German Language Option",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Language Option",
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "GERM 101 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GERM 102 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GERM 203 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GERM 204 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Italian Language Option",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Language Option",
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "ITAL 101 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITAL 102 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITAL 203 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ITAL 204 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Japanese Language Option",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Language Option",
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "JAPN 101 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPN 102 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPN 203 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "JAPN 204 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Korean Language Option",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Language Option",
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "KOR 101 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KOR 102 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KOR 203 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "KOR 201 F",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "KOR 204 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Spanish Language Option",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Language Option",
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "SPAN 101 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 101HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 102 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 102HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 203 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN 201 F",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 204 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Restricted Electives or Substitution Courses",
+       "rule": "choose_units",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1002H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 225 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 225HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "FREN 200 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GERM 200 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 110 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST 110HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 154 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 100 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHIL 100HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 105 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHIL 105HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PORT 101 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PORT 102 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 200 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 205 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTH 105 F",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "ANTH 105HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 206 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 52,
+     "listed": 54
+    },
+    "extracted_run": "38675136988"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 52,
+     "listed": 54,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 96,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "03866",
+   "award": "A.A. Degree",
+   "extracted_run": "38675136988",
+   "moves_to": "lists_not_closed",
+   "words": "List C minimum depends on the core option: 3 units (one course) for Option 1, 6 units for Option 2 (printed as 'Select one course (6 units)', likely meaning two courses). Recorded minimum 3 with stated 3-6; reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/fullerton/records/03866.json",
+   "before_image": {
+    "program_title": "English",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/english/english-associate-arts-degree/",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "English Associate in Arts Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Explain how context contributes to a text’s meaning.",
+       "Analyze the rhetorical and stylistic elements of a text.",
+       "Write ethically and clearly in a variety of rhetorical situations."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Option 1: Select two courses (7 units).",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Required Core",
+       "stated": {
+        "min": 7,
+        "max": 7
+       },
+       "courses": [
+        {
+         "code": "ENGL C1002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1002H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1001H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Option 2: Select one course (4 units):",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Required Core",
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "ENGL C1003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Part 1: Select one course from the following (3 units).",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ENGL 211 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 211HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 221 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 221HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 224 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 224HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Part 2: Select one course from the following (3 units).",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ENGL 212 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 212HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 222 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 222HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 225 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 225HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B: Select one course from the following (3 units):",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ENGL 249 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 250 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 251 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 253 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 256 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List C: (3-6 units)",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "ENGL 105 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 203 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 204 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 207 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 208 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 209 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 210 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 234 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 234HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 239 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 240 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 243 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL 243HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 245 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 246 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 248 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL 280 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 205 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 206 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 41,
+     "listed": 41
+    },
+    "extracted_run": "38675136988"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 41,
+     "listed": 41,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "08420",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38675136988",
+   "moves_to": "noted_figures_differ",
+   "words": "Conflicting totals: the description states 27 units of required courses and restricted electives (consistent with the headings 'Required Courses (25 units)' + 'Restricted Electives (2 units)' and the sum of listed courses), but the table prints 'Total Units 31-32'. total_units recorded as 27; reviewer should verify.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/fullerton/records/08420.json",
+   "before_image": {
+    "program_title": "Music Recording and Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/music/music-recording-production-certificate/",
+    "measure": "units",
+    "total_min": 27,
+    "total_max": 27,
+    "record": {
+     "program": {
+      "section_heading": "Music Recording and Production Certificate",
+      "measure": "units",
+      "total_units": {
+       "min": 27,
+       "max": 27
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Articulate and produce original music using Digital Audio Workstations and portable audio interfaces.",
+       "Compose and produce music in a variety of musical genres. Students are able to record individual components of their compositions as needed."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 25,
+        "max": 25
+       },
+       "courses": [
+        {
+         "code": "MUS 108 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 110 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 112 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 116 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MUS 119 F",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 124 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 224 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 226 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 291 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 292 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Restricted Electives",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 7
+       },
+       "courses": [
+        {
+         "code": "MUS 122 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 208 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 12,
+     "listed": 12
+    },
+    "extracted_run": "38675136988"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 12,
+     "listed": 12,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "08422",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38675136988",
+   "moves_to": "no_own_page_total",
+   "words": "The source text is the Musical Theatre Level 2 Certificate page (program code 2C46182), not the Level 1 Certificate page. No section for the Level 1 Certificate itself appears in the text.",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 50
+   },
+   "path": "kb/program_requirements_college/fullerton/records/08422.json",
+   "before_image": {
+    "program_title": "Musical Theatre Level 1",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/musical-theatre-level-2-certificate/",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Musical Theatre Level 2 Certificate",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Level 1 Core Courses (13 units):",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 13,
+        "max": 13
+       },
+       "courses": [
+        {
+         "code": "THEA 105 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 184 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 185 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 191 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 291 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Level 1 Theatre Arts Courses (3.5-6 units):",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 3.5,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "THEA 153 F",
+         "units": 0.5,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 180 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Restricted Level 1 Dance Electives (3 units):",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "DANC 113 F",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 140 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 188 F",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 189 F",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Restricted Level 1 Performance Electives (1-3 units):",
+       "rule": "choose_units",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 1,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "THEA 130 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 134 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 139 F",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "THEA 178 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 15,
+     "listed": 15
+    },
+    "extracted_run": "38675136988"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 15,
+     "listed": 15,
+     "gaps": [
+      "no_own_page_total"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 50
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "18163",
+   "award": "A.A. Degree",
+   "extracted_run": "38675136988",
+   "moves_to": "pool_figure_not_read",
+   "words": "Rule: select at least one course from each category (A and B), then complete additional courses in A and/or B for a combined total of 18-22 units. Each block is recorded as choose_courses minimum 1; the 18-22 unit total applies to A and B together and is recorded in total_units.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 99,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/fullerton/records/18163.json",
+   "before_image": {
+    "program_title": "Interdisciplinary Studies: Emphasis in Science and Mathematics",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interdisciplinary-studies/interdisciplinary-studies-emphasis-science-mathematics-associate-arts-degree/",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 22,
+    "record": {
+     "program": {
+      "section_heading": "Interdisciplinary Studies: Emphasis in Science and Mathematics Associate in Arts Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 22
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate an understanding of the methodologies of science as investigative tools to evaluate information, and form conclusions to solve problems.",
+       "Develop mathematical and quantitative reasoning skills to evaluate issues related to the physical and biological sciences from an evidence-based perspective to understand its impact on society, environment, and daily life."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "A) Sciences",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANAT 231 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANAT 240 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 101 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTH 101HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 101LF",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 100 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 101 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BIOL 101HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 102 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 102LF",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 104 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 108 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 109 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 141 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 170 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 190 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 190LF",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 222 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 272 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 274 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 100 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 101 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 103 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 107 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 111AF",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 111BF",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 100 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ESC 100LF",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ESC 101 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 101LF",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 103 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 104 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 105 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 105LF",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 106 F",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 107 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 110 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 116 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ESC 116HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 116LF",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ESC 120 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 130 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ESC 130HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 130LF",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ESC 190 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENVS 105 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENVS 105LF",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 102 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GEOG 102HF",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 102LF",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HED 140 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HORT 152 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HORT 205 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HORT 207 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MICR 220 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MICR 262 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NUTR 210 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "NUTR 210HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 120 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 130 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 205 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 206 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 210 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 211 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 221 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 222 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 223 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "B) Mathematics",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BUS 101 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 151 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 100 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT C1000H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000E",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 129 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 130 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 131 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 141 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH 141HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 142 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 143 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 144 F",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 151 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH 151HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 152 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH 152HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 170 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 171 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 172 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 251 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 252 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 255 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 260 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSY 161 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSY 161HF",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOSC 120 F",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 87,
+     "listed": 88
+    },
+    "extracted_run": "38675136988"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 87,
+     "listed": 88,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 99,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "42394",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38675136988",
+   "moves_to": "noted_unit_floor",
+   "words": "The description states the certificate requires a total of 16 units and the block heading says 16 units, but the table's Total Units line prints 14-16. A footnote requires 4 units of NUTR 295 F (printed 2-4), so 16 was recorded as the total. A reviewer should confirm.",
+   "confidence": {
+    "unit_arithmetic": 70,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/fullerton/records/42394.json",
+   "before_image": {
+    "program_title": "Dietary Manager",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/foods-nutrition/dietary-manager-certificate/",
+    "measure": "units",
+    "total_min": 16,
+    "total_max": 16,
+    "record": {
+     "program": {
+      "section_heading": "Dietary Manager Certificate",
+      "measure": "units",
+      "total_units": {
+       "min": 16,
+       "max": 16
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Develop and implement evidence-based plans to provide quality nutrition care.",
+       "Apply supervisory skills for the effective operation of a food service department in accordance with organizational standards and state/federal regulations.",
+       "Maintain proper food safety and sanitation practices for the delivery of quality, nutritious meals."
+      ],
+      "careers": [
+       "dietary managers"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses (16 Units)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 16,
+        "max": 16
+       },
+       "courses": [
+        {
+         "code": "NUTR 210 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "NUTR 210HF",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "NUTR 230 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NUTR 295 F",
+         "units": 2,
+         "units_max": 4,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FOOD 110 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FOOD 120 F",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 6,
+     "listed": 6
+    },
+    "extracted_run": "38675136988"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 6,
+     "listed": 6,
+     "gaps": [
+      "noted_unit_floor"
+     ],
+     "confidence": {
+      "unit_arithmetic": 70,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 6
+  }
+ ],
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score; checks.arithmetic, coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): the page's h1 names the record's own award (another award's for no_own_page_total), and every course an entry names is among the codes it found. The capture keeps no page text, so the note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Fullerton College', '03853', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Chinese Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"French Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"German Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Italian Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Japanese Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KOR 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KOR 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"KOR 201 F\",\"units\":null}],\"catalog_addition\":false,\"code\":\"KOR 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KOR 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Korean Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 101HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 102HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 201 F\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Spanish Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 225HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 225 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 200 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 200 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 110HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 154 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 100HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHIL 100 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 105HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHIL 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PORT 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PORT 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 200 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 105 F\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ANTH 105HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 205 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 206 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Restricted Electives or Substitution Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Refine target language oral and written production in response to discourse related to self, family, social situations, school, work and societal issues.\",\"Refine target language oral and written production in response to written materials in the target language.\",\"Interpret similarities and differences between the cultural practices and perspectives of the target language and those of other cultures.\"],\"section_heading\":\"Foreign Language Associate in Arts Degree\",\"total_units\":{\"max\":22,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":54,\"placed\":52}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":96,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":54,\"placed\":52}'::jsonb),\n  (2, 'Fullerton College', '03866', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1: Select two courses (7 units).\",\"option_group\":\"Required Core\",\"rule\":\"all\",\"stated\":{\"max\":7,\"min\":7}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2: Select one course (4 units):\",\"option_group\":\"Required Core\",\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 211HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 211 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 221HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 221 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 224HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 224 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Part 1: Select one course from the following (3 units).\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 212HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 212 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 222HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 222 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 225HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 225 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Part 2: Select one course from the following (3 units).\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 249 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 250 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 251 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 253 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 256 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Select one course from the following (3 units):\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 203 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 204 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 207 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 208 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 209 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 210 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 234HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 234 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 239 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 240 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 243HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 243 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 245 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 246 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 248 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 280 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 205 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 206 F\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List C: (3-6 units)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Explain how context contributes to a text’s meaning.\",\"Analyze the rhetorical and stylistic elements of a text.\",\"Write ethically and clearly in a variety of rhetorical situations.\"],\"section_heading\":\"English Associate in Arts Degree\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":41,\"placed\":41}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":41,\"placed\":41}'::jsonb),\n  (3, 'Fullerton College', '08420', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 108 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 112 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 119 F\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 116 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 124 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 224 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 226 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 291 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 292 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":25,\"min\":25}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 122 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 208 F\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":7,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Articulate and produce original music using Digital Audio Workstations and portable audio interfaces.\",\"Compose and produce music in a variety of musical genres. Students are able to record individual components of their compositions as needed.\"],\"section_heading\":\"Music Recording and Production Certificate\",\"total_units\":{\"max\":27,\"min\":27}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb),\n  (4, 'Fullerton College', '08422', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 184 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 185 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 191 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 291 F\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 1 Core Courses (13 units):\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":13,\"min\":13}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 153 F\",\"units\":0.5,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 180 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 1 Theatre Arts Courses (3.5-6 units):\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":3.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 113 F\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 140 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 188 F\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 189 F\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"Restricted Level 1 Dance Electives (3 units):\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 130 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 134 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 139 F\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 178 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Restricted Level 1 Performance Electives (1-3 units):\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":1}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Musical Theatre Level 2 Certificate\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":50,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"no_own_page_total\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (5, 'Fullerton College', '18163', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANAT 231 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANAT 240 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 101HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH 101 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 101LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 100 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BIOL 101HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"BIOL 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 102 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 102LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 104 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 108 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 109 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 141 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 170 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 190 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 190LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 222 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 272 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 274 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 100 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 103 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 107 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 111AF\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 111BF\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESC 100 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESC 100LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 101 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 101LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 103 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 104 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 105LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 106 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 107 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESC 116HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ESC 116 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESC 116LF\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 120 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESC 130HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ESC 130 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 130LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 190 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENVS 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENVS 105LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"GEOG 102HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG 102 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 102LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HED 140 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HORT 152 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HORT 205 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HORT 207 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MICR 220 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MICR 262 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"NUTR 210HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"NUTR 210 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 120 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 130 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 205 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 206 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 210 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 211 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 221 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 222 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 223 F\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"A) Sciences\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 101 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 151 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 100 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 129 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 130 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 131 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 141HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 141 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 142 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 143 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 144 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 151HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 151 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 152HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 152 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 170 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 171 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 172 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 251 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 252 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 255 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 260 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSY 161HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSY 161 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOSC 120 F\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"B) Mathematics\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate an understanding of the methodologies of science as investigative tools to evaluate information, and form conclusions to solve problems.\",\"Develop mathematical and quantitative reasoning skills to evaluate issues related to the physical and biological sciences from an evidence-based perspective to understand its impact on society, environment, and daily life.\"],\"section_heading\":\"Interdisciplinary Studies: Emphasis in Science and Mathematics Associate in Arts Degree\",\"total_units\":{\"max\":22,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":88,\"placed\":87}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":99,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":88,\"placed\":87}'::jsonb),\n  (6, 'Fullerton College', '42394', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"NUTR 210HF\",\"units\":3}],\"catalog_addition\":false,\"code\":\"NUTR 210 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 230 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 295 F\",\"units\":2,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FOOD 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FOOD 120 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses (16 Units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}}],\"program\":{\"careers\":[\"dietary managers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop and implement evidence-based plans to provide quality nutrition care.\",\"Apply supervisory skills for the effective operation of a food service department in accordance with organizational standards and state/federal regulations.\",\"Maintain proper food safety and sanitation practices for the delivery of quality, nutritious meals.\"],\"section_heading\":\"Dietary Manager Certificate\",\"total_units\":{\"max\":16,\"min\":16}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Fullerton College', '03853', 38675136988, '661521d12f43c32dc8471dad067083ee', '112b34833862251951c68159fd59e607', '2f5924cdd8b4ed1df63fea365bed4a76'),\n  (2, 'Fullerton College', '03866', 38675136988, 'a3063eb0cbf38475313e5ef7aeddd7eb', '2162fd293221ee16cb456fedc91fc3b1', '5de58829ba322943552299e3eceebe8d'),\n  (3, 'Fullerton College', '08420', 38675136988, '70edb5b70fc45b74817bb6bc9686a432', '87e5fe088d44991cdab6e95d09f28b7b', 'ac3a79b326c7bdf95d845a3a184f6724'),\n  (4, 'Fullerton College', '08422', 38675136988, 'c30f03559a19a1bf732238fd58ba2407', 'ff0824422e219dcfb156c2b1d7038ba8', 'fd3b6bae67a837eb5c21fe5dcc313f22'),\n  (5, 'Fullerton College', '18163', 38675136988, '69f8d5609c1a254dda97c759979a3467', '66379397ba3b1e0fdbee9f6b10baf724', '8ddd9665179bf0976ae896606692e37b'),\n  (6, 'Fullerton College', '42394', 38675136988, '0869daa42000e8c90d71448c884e3f25', 'c34a5582e6c0a6741c6da26def4a4775', 'ace814ce7721211fa68bc55dec0f93a2'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Fullerton College', '03853', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Chinese Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"French Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"German Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Italian Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Japanese Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KOR 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KOR 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"KOR 201 F\",\"units\":null}],\"catalog_addition\":false,\"code\":\"KOR 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KOR 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Korean Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 101HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 102HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 201 F\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Spanish Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 225HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 225 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 200 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 200 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 110HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 154 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 100HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHIL 100 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 105HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHIL 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PORT 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PORT 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 200 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 105 F\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ANTH 105HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 205 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 206 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Restricted Electives or Substitution Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Refine target language oral and written production in response to discourse related to self, family, social situations, school, work and societal issues.\",\"Refine target language oral and written production in response to written materials in the target language.\",\"Interpret similarities and differences between the cultural practices and perspectives of the target language and those of other cultures.\"],\"section_heading\":\"Foreign Language Associate in Arts Degree\",\"total_units\":{\"max\":22,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":54,\"placed\":52}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":96,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":54,\"placed\":52}'::jsonb),\n  (2, 'Fullerton College', '03866', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1: Select two courses (7 units).\",\"option_group\":\"Required Core\",\"rule\":\"all\",\"stated\":{\"max\":7,\"min\":7}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2: Select one course (4 units):\",\"option_group\":\"Required Core\",\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 211HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 211 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 221HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 221 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 224HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 224 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Part 1: Select one course from the following (3 units).\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 212HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 212 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 222HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 222 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 225HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 225 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Part 2: Select one course from the following (3 units).\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 249 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 250 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 251 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 253 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 256 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Select one course from the following (3 units):\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 203 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 204 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 207 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 208 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 209 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 210 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 234HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 234 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 239 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 240 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 243HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 243 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 245 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 246 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 248 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 280 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 205 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 206 F\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List C: (3-6 units)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Explain how context contributes to a text’s meaning.\",\"Analyze the rhetorical and stylistic elements of a text.\",\"Write ethically and clearly in a variety of rhetorical situations.\"],\"section_heading\":\"English Associate in Arts Degree\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":41,\"placed\":41}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":41,\"placed\":41}'::jsonb),\n  (3, 'Fullerton College', '08420', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 108 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 112 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 119 F\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 116 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 124 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 224 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 226 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 291 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 292 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":25,\"min\":25}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 122 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 208 F\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":7,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Articulate and produce original music using Digital Audio Workstations and portable audio interfaces.\",\"Compose and produce music in a variety of musical genres. Students are able to record individual components of their compositions as needed.\"],\"section_heading\":\"Music Recording and Production Certificate\",\"total_units\":{\"max\":27,\"min\":27}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb),\n  (4, 'Fullerton College', '08422', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 184 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 185 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 191 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 291 F\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 1 Core Courses (13 units):\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":13,\"min\":13}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 153 F\",\"units\":0.5,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 180 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 1 Theatre Arts Courses (3.5-6 units):\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":3.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 113 F\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 140 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 188 F\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 189 F\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"Restricted Level 1 Dance Electives (3 units):\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 130 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 134 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 139 F\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 178 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Restricted Level 1 Performance Electives (1-3 units):\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":1}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Musical Theatre Level 2 Certificate\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":50,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"no_own_page_total\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (5, 'Fullerton College', '18163', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANAT 231 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANAT 240 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 101HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH 101 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 101LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 100 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BIOL 101HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"BIOL 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 102 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 102LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 104 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 108 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 109 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 141 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 170 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 190 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 190LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 222 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 272 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 274 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 100 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 103 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 107 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 111AF\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 111BF\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESC 100 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESC 100LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 101 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 101LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 103 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 104 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 105LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 106 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 107 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESC 116HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ESC 116 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESC 116LF\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 120 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESC 130HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ESC 130 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 130LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 190 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENVS 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENVS 105LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"GEOG 102HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG 102 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 102LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HED 140 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HORT 152 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HORT 205 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HORT 207 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MICR 220 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MICR 262 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"NUTR 210HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"NUTR 210 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 120 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 130 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 205 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 206 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 210 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 211 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 221 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 222 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 223 F\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"A) Sciences\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 101 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 151 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 100 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 129 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 130 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 131 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 141HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 141 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 142 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 143 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 144 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 151HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 151 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 152HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 152 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 170 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 171 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 172 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 251 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 252 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 255 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 260 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSY 161HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSY 161 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOSC 120 F\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"B) Mathematics\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate an understanding of the methodologies of science as investigative tools to evaluate information, and form conclusions to solve problems.\",\"Develop mathematical and quantitative reasoning skills to evaluate issues related to the physical and biological sciences from an evidence-based perspective to understand its impact on society, environment, and daily life.\"],\"section_heading\":\"Interdisciplinary Studies: Emphasis in Science and Mathematics Associate in Arts Degree\",\"total_units\":{\"max\":22,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":88,\"placed\":87}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":99,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":88,\"placed\":87}'::jsonb),\n  (6, 'Fullerton College', '42394', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"NUTR 210HF\",\"units\":3}],\"catalog_addition\":false,\"code\":\"NUTR 210 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 230 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 295 F\",\"units\":2,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FOOD 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FOOD 120 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses (16 Units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}}],\"program\":{\"careers\":[\"dietary managers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop and implement evidence-based plans to provide quality nutrition care.\",\"Apply supervisory skills for the effective operation of a food service department in accordance with organizational standards and state/federal regulations.\",\"Maintain proper food safety and sanitation practices for the delivery of quality, nutritious meals.\"],\"section_heading\":\"Dietary Manager Certificate\",\"total_units\":{\"max\":16,\"min\":16}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (6)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s720f piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s720f piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Fullerton College', '03853', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHIN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Chinese Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"French Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"German Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ITAL 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Italian Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"JAPN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Japanese Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KOR 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KOR 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"KOR 201 F\",\"units\":null}],\"catalog_addition\":false,\"code\":\"KOR 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KOR 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Korean Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 101HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 102HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN 201 F\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 203 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 204 F\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Spanish Language Option\",\"option_group\":\"Language Option\",\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 225HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 225 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FREN 200 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GERM 200 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST 110HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"HIST 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 154 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 100HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHIL 100 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 105HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHIL 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PORT 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PORT 102 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 200 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 105 F\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ANTH 105HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN 205 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 206 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Restricted Electives or Substitution Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Refine target language oral and written production in response to discourse related to self, family, social situations, school, work and societal issues.\",\"Refine target language oral and written production in response to written materials in the target language.\",\"Interpret similarities and differences between the cultural practices and perspectives of the target language and those of other cultures.\"],\"section_heading\":\"Foreign Language Associate in Arts Degree\",\"total_units\":{\"max\":22,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":54,\"placed\":52}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":96,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":54,\"placed\":52}'::jsonb),\n  (2, 'Fullerton College', '03866', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1: Select two courses (7 units).\",\"option_group\":\"Required Core\",\"rule\":\"all\",\"stated\":{\"max\":7,\"min\":7}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2: Select one course (4 units):\",\"option_group\":\"Required Core\",\"rule\":\"all\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 211HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 211 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 221HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 221 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 224HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 224 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Part 1: Select one course from the following (3 units).\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 212HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 212 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 222HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 222 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 225HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 225 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Part 2: Select one course from the following (3 units).\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 249 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 250 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 251 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 253 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 256 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Select one course from the following (3 units):\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 203 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 204 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 207 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 208 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 209 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 210 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 234HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 234 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 239 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 240 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL 243HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL 243 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 245 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 246 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 248 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL 280 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 205 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 206 F\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List C: (3-6 units)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Explain how context contributes to a text’s meaning.\",\"Analyze the rhetorical and stylistic elements of a text.\",\"Write ethically and clearly in a variety of rhetorical situations.\"],\"section_heading\":\"English Associate in Arts Degree\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":41,\"placed\":41}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":41,\"placed\":41}'::jsonb),\n  (3, 'Fullerton College', '08420', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 108 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 112 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 119 F\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MUS 116 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 124 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 224 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 226 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 291 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 292 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":25,\"min\":25}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 122 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 208 F\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"Restricted Electives\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":7,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Articulate and produce original music using Digital Audio Workstations and portable audio interfaces.\",\"Compose and produce music in a variety of musical genres. Students are able to record individual components of their compositions as needed.\"],\"section_heading\":\"Music Recording and Production Certificate\",\"total_units\":{\"max\":27,\"min\":27}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb),\n  (4, 'Fullerton College', '08422', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 184 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 185 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 191 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 291 F\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 1 Core Courses (13 units):\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":13,\"min\":13}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 153 F\",\"units\":0.5,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 180 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 1 Theatre Arts Courses (3.5-6 units):\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":3.5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 113 F\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 140 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 188 F\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 189 F\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"Restricted Level 1 Dance Electives (3 units):\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 130 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 134 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 139 F\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"THEA 178 F\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Restricted Level 1 Performance Electives (1-3 units):\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":1}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Musical Theatre Level 2 Certificate\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":50,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"no_own_page_total\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (5, 'Fullerton College', '18163', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANAT 231 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANAT 240 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 101HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ANTH 101 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 101LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 100 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BIOL 101HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"BIOL 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 102 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 102LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 104 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 108 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 109 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 141 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 170 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 190 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 190LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 222 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 272 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 274 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 100 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 101 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 103 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 107 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 111AF\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 111BF\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESC 100 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESC 100LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 101 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 101LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 103 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 104 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 105LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 106 F\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 107 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESC 116HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ESC 116 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ESC 116LF\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 120 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESC 130HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ESC 130 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 130LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ESC 190 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENVS 105 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENVS 105LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"GEOG 102HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"GEOG 102 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 102LF\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HED 140 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HORT 152 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HORT 205 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HORT 207 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MICR 220 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MICR 262 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"NUTR 210HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"NUTR 210 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 120 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 130 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 205 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 206 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 210 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 211 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 221 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 222 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 223 F\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"A) Sciences\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 101 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 151 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 100 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 129 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 130 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 131 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 141HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 141 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 142 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 143 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 144 F\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 151HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 151 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 152HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH 152 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 170 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 171 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 172 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 251 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 252 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 255 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 260 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSY 161HF\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSY 161 F\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOSC 120 F\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"B) Mathematics\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate an understanding of the methodologies of science as investigative tools to evaluate information, and form conclusions to solve problems.\",\"Develop mathematical and quantitative reasoning skills to evaluate issues related to the physical and biological sciences from an evidence-based perspective to understand its impact on society, environment, and daily life.\"],\"section_heading\":\"Interdisciplinary Studies: Emphasis in Science and Mathematics Associate in Arts Degree\",\"total_units\":{\"max\":22,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":88,\"placed\":87}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":99,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":88,\"placed\":87}'::jsonb),\n  (6, 'Fullerton College', '42394', 38675136988, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"NUTR 210HF\",\"units\":3}],\"catalog_addition\":false,\"code\":\"NUTR 210 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 230 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR 295 F\",\"units\":2,\"units_max\":4},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FOOD 110 F\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FOOD 120 F\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses (16 Units)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}}],\"program\":{\"careers\":[\"dietary managers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop and implement evidence-based plans to provide quality nutrition care.\",\"Apply supervisory skills for the effective operation of a food service department in accordance with organizational standards and state/federal regulations.\",\"Maintain proper food safety and sanitation practices for the delivery of quality, nutritious meals.\"],\"section_heading\":\"Dietary Manager Certificate\",\"total_units\":{\"max\":16,\"min\":16}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"noted_unit_floor\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (6)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s720f piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

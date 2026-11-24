@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-24T00:04:31.906882+00:00",
+  "scraped_at": "2026-11-24T06:20:51.488281+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 32692,
+    "jst": 32693,
     "star_colleges": 71
   },
   "computed_star_colleges": 71,
@@ -177,7 +177,7 @@
     },
     "College of the Canyons": {
       "vets": 413,
-      "jst": 534,
+      "jst": 535,
       "star": true
     },
     "San Joaquin Delta College": {

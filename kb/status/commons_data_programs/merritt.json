@@ -1,4 +1,4 @@
-{"schema":1,"college":"Merritt College","slug":"merritt","basis":"live","census_at":"2026-11-24 03:32Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Merritt College","slug":"merritt","basis":"live","census_at":"2026-11-24 07:08Z","correction_rules":false,"programs":[
 {"cn":"09043","title":"Business Administration","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"33054","title":"Psychology","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"41238","title":"Clinical Medical Assisting","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/48798","units":{"sum":[18.0,21.0],"printed":[20.0,20.0],"status":"unequal","measure":"units","against":"program"}},

@@ -1,0 +1,330 @@
+{
+ "college": "Folsom Lake College",
+ "control_number": "42612",
+ "shape": "degree",
+ "title": "Manufacturing and Industrial Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=359",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11887,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11887,
+    "output_tokens": 2685,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2685,
+  "output_tokens_details": {
+   "thinking_tokens": 876
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10125,
+ "ms": 22291,
+ "seconds": 22.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 23,
+   "share": 0.783,
+   "missing": [
+    "BUS310",
+    "CHEM305",
+    "CHEM400",
+    "ENGR312",
+    "MAKR110"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    24.0,
+    28.0
+   ],
+   "stated": [
+    44.0,
+    48.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 24.0-28.0; the catalog states 44.0-48.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Manufacturing and Industrial Technology Associate in Science (A.S.) degree",
+   "measure": "units",
+   "total_units": {
+    "min": 44,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "evaluate engineering principles behind the manufacture of products and related industrial processes and recommend process improvements.",
+    "design product concepts in CAD software.",
+    "assemble a product from components to demonstrate technical skills for the manufacture of products.",
+    "assess a given product design and develop an inspection plan applying quality control concepts.",
+    "evaluate manufacturing process plans and formulate a plan that applies optimization theory.",
+    "analyze a given product design and develop plans for Industrial and manufacturing processes."
+   ],
+   "careers": [
+    "Industrial Engineering Technician",
+    "Manufacturing Engineering Technician",
+    "Manufacturing Engineer",
+    "Industrial Engineer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements (visible portion)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MGMT 372",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MITECH 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 350",
+      "units": 4,
+      "units_max": 8,
+      "alternatives": [
+       {
+        "code": "PHYS 411",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 431",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 360",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYS 421",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MITECH 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MITECH 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MITECH 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MITECH 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MITECH 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MITECH 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MITECH 313",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MITECH 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MITECH 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MITECH 322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 310",
+    "why": "degree table start cut off (page 358 not supplied); named only in the Production Planning Certificate section"
+   },
+   {
+    "code": "CHEM 305",
+    "why": "not in the text; likely on the cut-off first part of the degree table"
+   },
+   {
+    "code": "CHEM 400",
+    "why": "not in the text; likely on the cut-off first part of the degree table"
+   },
+   {
+    "code": "ENGR 312",
+    "why": "degree table start cut off; named only in certificate sections"
+   },
+   {
+    "code": "MAKR 110",
+    "why": "degree table start cut off; named only in certificate sections"
+   }
+  ],
+  "notes": [
+   "The supplied text begins mid-table on page 359; the degree's heading, description and the first rows of its requirements table (likely on page 358) are missing. Closed-list courses BUS 310, CHEM 305, CHEM 400, ENGR 312, MAKR 110 may belong to the missing rows; reviewer should check page 358.",
+   "Section heading is not printed in the supplied text; taken from the sentence naming the Manufacturing and Industrial Technology Associate in Science (A.S.) degree.",
+   "PHYS 350 (4) may be replaced by the pair PHYS 411 and PHYS 431 together (bracketed, 8 units); the row prints 4 - 8 units. PHYS 411 and PHYS 431 are recorded as alternatives but both must be taken.",
+   "Total Units: 44 - 48 recorded as the major total. The page says the degree requires the program plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; recorded as electives_fill_degree true, degree_total left null since 60 is stated as a minimum rather than a printed award total.",
+   "Certificates (CAD/CAM Programming, Manufacturing and Industrial Technology Certificate, Production Planning, Quality Technician) were not recorded."
+  ]
+ },
+ "extracted_run": "39046850071"
+}
