@@ -332,7 +332,8 @@
     if (!t) return false;
     if (typeof t._unfold === "function") t._unfold();
     if (t.scrollIntoView) t.scrollIntoView({ block: "start" });
-    var h = t.querySelector("h3, h4") || t;
+    /* A check takes the focus itself: its own heading is a line, and a check may hold a subheading of its own. */
+    var h = t.classList && t.classList.contains("cmf-check") ? t : t.querySelector("h3, h4") || t;
     h.setAttribute("tabindex", "-1");
     if (h.focus) h.focus();
     return true;
@@ -837,17 +838,19 @@
   var LEVEL_WORDS = ["Confident", "Likely", "Leaning", "Unsure"];
   function share(n, of) { return of ? Math.round(n / of * 100) : 0; }
   function stage(name) { return el("h4", { cls: "cmf-stage", text: name }); }
-  /* The Subjects card opens on its top section, with Collect, Curate and Connect folded (Sam, 2026-11-23: "With the
+  /* Every card of checks opens on its top section, with Collect, Curate and Connect folded (Sam, 2026-11-23: "With the
      addition of the top action links, we can default display the cards collapsed all but the tops sections"). A stage
      opens from its word, or from a quick link that points into it; what is open lasts the visit, across the live
-     redraws, and is never stored (a fold, not a filter). */
-  var SUBJ_OPEN = {};
-  function stageFold(name, kids) {
-    var id = "cmf-subj-stage-" + name.toLowerCase(), open = !!SUBJ_OPEN[name];
+     redraws, and is never stored (a fold, not a filter). One open map per card, under the card's key: the Subjects
+     card's key is "subj", so its ids stay cmf-subj-stage-collect, cmf-subj-check-1 and cmf-subj-quick. */
+  var OPEN = {};
+  function stageFold(key, name, kids) {
+    var seen = OPEN[key] || (OPEN[key] = {});
+    var id = "cmf-" + key + "-stage-" + name.toLowerCase(), open = !!seen[name];
     var box = el("div", { cls: "cmf-stage-x", id: id }, kids.filter(Boolean));
     var b = el("button", { type: "button", cls: "cmf-stage-b", "aria-expanded": open ? "true" : "false", "aria-controls": id, text: name });
     function set(v) {
-      SUBJ_OPEN[name] = v;
+      seen[name] = v;
       b.setAttribute("aria-expanded", v ? "true" : "false");
       if (v) box.removeAttribute("hidden"); else box.setAttribute("hidden", "");
     }
@@ -856,21 +859,27 @@
     Array.prototype.forEach.call(box.querySelectorAll(".cmf-check"), function (c) { c._unfold = function () { set(true); }; });
     return [el("h4", { cls: "cmf-stage" }, [b]), box];
   }
-  function checkBox(n, kids) { return el("div", { cls: "cmf-check", id: "cmf-subj-check-" + n }, kids.filter(Boolean)); }
+  function checkBox(key, n, kids) { return el("div", { cls: "cmf-check", id: "cmf-" + key + "-check-" + n }, kids.filter(Boolean)); }
   /* The quick links under the headline (Sam, 2026-11-23: "add a short bulleted set of quick links to prioritized action
      needed--the links can shoot down to links on the lower sections so user can get oriented and then one more click to
      the action view"): what most needs action first, each with its live count; each opens its check's stage, scrolls to
-     the check and its Where to act line, and focuses it. A figure not read yet, or at zero, is left out. */
+     the check and its Where to act line, and focuses it. A figure not read yet, or at zero, is left out. Each item is
+     { check, n, text } or { check, n, one, many }, in the order of what most needs action; at most five show. */
+  function quickLinks(key, items) {
+    var shown = items.filter(function (i) { return i && i.check != null && typeof i.n === "number" && i.n > 0; }).slice(0, 5);
+    if (!shown.length) return null;
+    return el("div", { cls: "cmf-quick", id: "cmf-" + key + "-quick" }, [el("p", { cls: "cmf-sub", text: "Needs action first:" }),
+      el("ul", { cls: "cmf-list" }, shown.map(function (i) {
+        return el("li", { "data-check": String(i.check) }, [onPage("cmf-" + key + "-check-" + i.check, fmt(i.n) + " " + (i.text || (i.n === 1 ? i.one : i.many)))]);
+      }))]);
+  }
   function subjQuick(L, LT, HC, R, all) {
-    var items = [];
-    if (L && L.codes && L.codes.Unsure) items.push(["2", fmt(L.codes.Unsure) + " local codes with an Unsure common code"]);
-    if (LT && LT.untitled) items.push(["1", fmt(LT.untitled) + " codes with no title"]);
-    if (HC && HC.held) items.push(["3", fmt(HC.held) + " courses the M-ID mint holds"]);
-    if (LT && all && all - LT.collegesNamed > 0) items.push(["1", fmt(all - LT.collegesNamed) + " colleges with no catalog read yet"]);
-    if (R && R.mids - R.ready > 0) items.push(["4", fmt(R.mids - R.ready) + " " + R.code + " M-IDs not ready to re-mint"]);
-    if (!items.length) return null;
-    return el("div", { cls: "cmf-quick", id: "cmf-subj-quick" }, [el("p", { cls: "cmf-sub", text: "Needs action first:" }),
-      el("ul", { cls: "cmf-list" }, items.slice(0, 5).map(function (i) { return el("li", { "data-check": i[0] }, [onPage("cmf-subj-check-" + i[0], i[1])]); }))]);
+    return quickLinks("subj", [
+      { check: 2, n: L && L.codes ? L.codes.Unsure : null, text: "local codes with an Unsure common code" },
+      { check: 1, n: LT ? LT.untitled : null, text: "codes with no title" },
+      { check: 3, n: HC ? HC.held : null, text: "courses the M-ID mint holds" },
+      { check: 1, n: LT && all ? all - LT.collegesNamed : null, text: "colleges with no catalog read yet" },
+      { check: 4, n: R ? R.mids - R.ready : null, text: R ? R.code + " M-IDs not ready to re-mint" : "" }]);
   }
   function checkHead(n, name, fig) { return el("p", { cls: "cmf-check-h" }, [el("strong", { text: n + ". " + name }), el("span", { cls: "cmf-check-fig" }, fig)]); }
   function act(links) {
@@ -878,6 +887,37 @@
     links.forEach(function (l) { kids.push(" "); kids.push(a(l[1], l[0])); });
     return el("p", { cls: "cmf-act" }, kids);
   }
+  /* A card of checks (Sam's mock of 2026-11-23, the Subjects card's design carried to every card but the Plan): the
+     headline, Needs action first, the short list (Why, Finished when, Confident where the card reads a measured score,
+     Scale), then Collect, Curate and Connect, folded, each holding numbered checks. A check is { ref, name, fig, meter,
+     line, extra, next, act }: its figure (TBA when unread), a meter where a share exists, one plain line, a Next line
+     where the lane names one, and a Where to act line whose links open the place that holds those items. Checks number
+     in page order; a quick link names its check by ref, so it always lands on a check that exists. A stage with no
+     check is left out. */
+  var STAGES = ["Collect", "Curate", "Connect"];
+  function checksBody(key, o) {
+    var num = {}, n = 0, stages = o.stages || {};
+    STAGES.forEach(function (s) { (stages[s] || []).filter(Boolean).forEach(function (c) { num[c.ref] = ++n; }); });
+    var body = [quickLinks(key, (o.quick || []).map(function (q) { return q && num[q.ref] ? { check: num[q.ref], n: q.n, text: q.text, one: q.one, many: q.many } : null; })),
+      ul((o.defs || []).filter(function (d) { return d && d[1]; }).map(function (d) { return lead(d[0] + ":", d[1]); }))];
+    STAGES.forEach(function (s) {
+      var list = (stages[s] || []).filter(Boolean);
+      if (!list.length) return;
+      body = body.concat(stageFold(key, s, list.map(function (c) {
+        return checkBox(key, num[c.ref], [checkHead(num[c.ref], c.name, c.fig || ["TBA"]), c.meter || null,
+          c.line ? el("p", { cls: "cmf-check-line" }, typeof c.line === "string" ? [c.line] : c.line) : null]
+          .concat(c.extra || [], [c.next ? ul(["Next: " + c.next]) : null, act(c.act)]));
+      })));
+    });
+    return body.filter(Boolean);
+  }
+  function checksCard(o) {
+    return card({ key: o.key, id: o.id, title: o.title, cls: "cmf-checks", pill: o.pill, pillCls: o.pillCls, big: o.big, rest: o.rest,
+      after: o.after, body: checksBody(o.key, o), method: o.method, links: o.links });
+  }
+  function figOf(n, rest) { return n == null ? ["TBA"] : [el("strong", { text: fmt(n) }), rest || ""]; }
+  function share100(n, of) { return of ? n / of * 100 : 0; }
+  function meterOf(n, of, what) { return n == null || !of ? null : meter(share100(n, of), fmt(n) + " of " + fmt(of) + " " + what + ", " + Math.round(share100(n, of)) + " percent"); }
   function ul(items) { return el("ul", { cls: "cmf-list" }, items.filter(Boolean).map(function (i) { return el("li", null, typeof i === "string" ? [i] : i); })); }
   function lead(word, rest) { return [el("strong", { text: word + " " }), rest]; }
   function stack(L) {
@@ -907,7 +947,7 @@
       ul([lead("Why:", "every M-ID starts with a common subject code (ELEC M9012), and each college’s local code (Cerritos AED) must point to the right one."),
         lead("Finished when:", "every college’s local codes carry the college’s own title and a Confident common code."),
         lead("Confident:", "90% or better, from the data or from a person’s confirm."),
-        SW.codes ? lead("Scale:", fmt(SW.colleges) + " colleges, " + fmt(SW.codes) + " local codes, " + fmt(SW.pairs) + " college-and-code pairs, " + fmt(SW.courses) + " active and approved COCI courses.") : null])].concat(stageFold("Collect", [checkBox(1, [
+        SW.codes ? lead("Scale:", fmt(SW.colleges) + " colleges, " + fmt(SW.codes) + " local codes, " + fmt(SW.pairs) + " college-and-code pairs, " + fmt(SW.courses) + " active and approved COCI courses.") : null])].concat(stageFold("subj", "Collect", [checkBox("subj", 1, [
       checkHead(1, "Each college’s own subject titles", LT && all ? [el("strong", { text: fmt(LT.collegesNamed) }), " of " + fmt(all) + " colleges"] : ["TBA"]),
       LT && all ? meter(share(LT.collegesNamed, all), fmt(LT.collegesNamed) + " of " + fmt(all) + " colleges, " + share(LT.collegesNamed, all) + " percent") : null,
       el("p", { id: "cmf-subj-titles" }, subjTitleKids(LT)),
@@ -919,18 +959,18 @@
         "A person’s hand-over, where a site blocks our reader.",
         "COCI and the MIS reports carry no subject names.",
         "Who: Sky, in the nightly data collection."]),
-      act([["The colleges and their titles", "#commons/subjects"], ["Hand over a file or link", "#collect"]])])]), stageFold("Curate", [checkBox(2, [
+      act([["The colleges and their titles", "#commons/subjects"], ["Hand over a file or link", "#collect"]])])]), stageFold("subj", "Curate", [checkBox("subj", 2, [
       checkHead(2, "A Confident common code for every local code", L ? [el("strong", { text: fmt(L.pairs.Confident) }), " of " + fmt(L.totalPairs) + " pairs"] : ["TBA"]),
       L ? stack(L) : null,
       L ? el("p", { cls: "cmf-sub", id: "cmf-subj-levels", text: LEVEL_WORDS.map(function (k) { return k + " " + fmt(L.pairs[k]); }).join(" · ") }) : null,
       ul([L ? "Next: Sky raises the " + fmt(L.codes.Unsure) + " Unsure codes with their titles and a web search." : null,
         sOf ? [S.settled === S.of ? "Done: all " : "", a("#canonical-subj4", fmt(S.settled) + " of " + fmt(S.of) + " disciplines settled"),
           " in the Common Subjects Reference" + (S.settled === S.of ? ", each with its common code." : ". Owner: a curator.")] : "Disciplines with a settled common code: TBA."]),
-      act([["Every local code, statewide", "#commons/subjects/statewide"], ["Noncredit subject titles", "#commons/subjects/noncredit"]])])]), stageFold("Connect", [checkBox(3, [
+      act([["Every local code, statewide", "#commons/subjects/statewide"], ["Noncredit subject titles", "#commons/subjects/noncredit"], ["The MQ disciplines", "#commons/subjects/mq"]])])]), stageFold("subj", "Connect", [checkBox("subj", 3, [
       checkHead(3, "No course held for want of a code", HC ? [el("strong", { text: fmt(HC.held) }), " held"] : ["TBA"]),
       el("p", { id: "cmf-subj-held" }, subjHeldKids(HC)),
       ul(["Next: the mint takes Confident calls, so a course under a Confident code is placed."]),
-      act([["Codes the mint holds on", "#commons/subjects/held"]])]), checkBox(4, [
+      act([["Codes the mint holds on", "#commons/subjects/held"]])]), checkBox("subj", 4, [
       checkHead(4, "Re-mint scopes ready", R ? [el("strong", { text: fmt(R.ready) }), " of " + fmt(R.mids) + " M-IDs (" + R.code + ")"] : ["TBA"]),
       R ? meter(share(R.ready, R.mids), fmt(R.ready) + " of " + fmt(R.mids) + " M-IDs ready, " + share(R.ready, R.mids) + " percent") : null,
       R ? ul(["Members still held: " + Object.keys(R.member_status || {}).filter(function (k) { return k !== "settled" && R.member_status[k]; })
@@ -1000,8 +1040,10 @@
     (o.after || []).forEach(function (n) { x.appendChild(n); });
     x.appendChild(el("div", { cls: "cmf-body" }, o.body));
     if (o.method && o.method.length) {
-      /* A card of checks (the Subjects card) stays open whatever its method line does. */
-      var m = more(o.method, function (open) { if (!art.classList.contains("cmf-checks")) art.classList.toggle("cmf-unclamped", open); });
+      /* A card built unclamped (the Subjects card) stays so whatever its method line does; a card of checks shows its
+         whole body anyway (.cmf-checks), so its method line only marks it unclamped while open. */
+      var keep = art.classList.contains("cmf-unclamped");
+      var m = more(o.method, function (open) { if (!keep) art.classList.toggle("cmf-unclamped", open); });
       x.appendChild(m.button);
       x.appendChild(m.body);
     }
@@ -1040,15 +1082,31 @@
       if (C.moved.length > moved.length) movedKids.push(", and " + fmt(C.moved.length - moved.length) + " more");
     }
     movedKids.push(".");
-    return card({ key: "cdc", title: "College Data Collection", pill: "In progress",
+    var districts = M.colleges && M.colleges.districts > 1 ? ", in " + fmt(M.colleges.districts) + " districts (" + fmt(M.colleges.districts - 1) + " plus Calbright)" : "";
+    /* Needs action first: a college stuck on a person or a fix, then the colleges the one top fix reaches. */
+    return checksCard({ key: "cdc", title: "College Data Collection", pill: "In progress",
       big: fmt(C.catalogs.done) + " of " + fmt(C.all), rest: [" colleges and campuses with every catalog program passing"],
-      after: [p(C.top ? ["Top fix: " + C.top.what + ", reaching ", a("#collect/fix_" + C.top.key, plural(C.top.n, "college", "colleges")), "."] : ["Top fix: TBA."], "cmf-topfix")],
-      body: [el("ul", { cls: "cmf-cdc-lines" }, [
-          line("Catalogs (programs, PLOs, course requirements)", C.catalogs, "catalogs", C.catalogsEta, "the program-records date reads TBA"),
-          line("Course outlines (SLOs, objectives, COCI)", C.outlines, "outlines", null, "no dated pace yet"),
-          el("li", { "data-dataset": "credentials" }, [el("strong", { text: "Credentials (issuer, skills): " }), "TBA, since the College Data Collection file holds no credential count by college. ETA: TBA."])]),
-        stuckLine("Catalogs", C.catalogs), stuckLine("Course outlines", C.outlines),
-        el("h4", { cls: "cmf-sub", text: "Colleges that moved this week" }), p(movedKids)].filter(Boolean),
+      quick: [{ ref: "catalogs", n: C.catalogs.stuck, one: "college whose catalog is stuck", many: "colleges whose catalogs are stuck" },
+        { ref: "outlines", n: C.outlines.stuck, one: "college whose course outlines are stuck", many: "colleges whose course outlines are stuck" },
+        { ref: "catalogs", n: C.top ? C.top.n : null, one: "college the top fix reaches", many: "colleges the top fix reaches" }],
+      defs: [["Why", "the Commons collects each college’s catalogs, course outlines and credentials, and each count here is College Data Collection’s own list, so a count and the list it opens agree."],
+        ["Finished when", "every college and campus is done on all three."],
+        ["Scale", fmt(C.all) + " colleges and continuing-education campuses" + districts + "."]],
+      stages: { Collect: [
+        { ref: "catalogs", name: "Catalogs at every college", fig: figOf(C.catalogs.done, " of " + fmt(C.all) + " done"), meter: meterOf(C.catalogs.done, C.all, "colleges and campuses done"),
+          extra: [el("ul", { cls: "cmf-cdc-lines" }, [line("Catalogs (programs, PLOs, course requirements)", C.catalogs, "catalogs", C.catalogsEta, "the program-records date reads TBA")]),
+            stuckLine("Catalogs", C.catalogs),
+            p(C.top ? ["Top fix: " + C.top.what + ", reaching ", a("#collect/fix_" + C.top.key, plural(C.top.n, "college", "colleges")), "."] : ["Top fix: TBA."], "cmf-topfix"),
+            el("h4", { cls: "cmf-sub", text: "Colleges that moved this week" }), p(movedKids)],
+          act: [["Catalogs stuck", "#collect/catalogs_stuck"], ["Open College Data Collection", "#collect"]] },
+        { ref: "outlines", name: "Course outlines at every college", fig: figOf(C.outlines.done, " of " + fmt(C.all) + " done"), meter: meterOf(C.outlines.done, C.all, "colleges and campuses done"),
+          extra: [el("ul", { cls: "cmf-cdc-lines" }, [line("Course outlines (SLOs, objectives, COCI)", C.outlines, "outlines", null, "no dated pace yet")]),
+            stuckLine("Course outlines", C.outlines)],
+          act: [["Outlines stuck", "#collect/outlines_stuck"], ["Outlines to find by hand", "#collect/slos"]] },
+        { ref: "credentials", name: "Credentials at every college", fig: ["TBA"],
+          extra: [el("ul", { cls: "cmf-cdc-lines" }, [el("li", { "data-dataset": "credentials" }, [el("strong", { text: "Credentials (issuer, skills): " }), "TBA, since the College Data Collection file holds no credential count by college. ETA: TBA."])])],
+          next: "a count of credentials by college for this line.",
+          act: [["The credential list", "#exhibits/list"]] }] },
       method: [p(["Each count is College Data Collection’s own list, so a count and the list it opens agree. Catalogs are done when every program in the college’s count passes, and stuck when no catalog is collected or the scout found the catalog blocked. Course outlines are done when SLOs and objectives sit on every course in the college’s Active programs, and stuck when the college’s SLO read has nothing to read or is paused; the reason beside each college is the file’s own. "
         + "The top fix is the one, of the fixes the file names for programs still to pass, that reaches the most colleges. A college moved this week when its catalog was collected within the last 7 days. "
         + "A stuck college waits on a person or on a fix to our reader; the line under the counts names which, college by college. "
@@ -1096,53 +1154,135 @@
       links: [["College Collections Plan", "library/college-collections-plan/"], ["College Collections ETA", "#collect/eta"]] });
   }
 
+  /* The cards in Collect, Curate and Connect (Sam, 2026-11-24: "apply the design from the subject card to the other
+     commons cards"). Every card but the Plan is a card of checks; every figure is one the model already reads, and an
+     unmeasured one reads TBA. The Why and Next words come from the card's own lane file (lanes/commons.md and the
+     lanes its tab belongs to). Each card's quick links run in the order of what most needs action: what waits on a
+     person or a fix first, then the largest remaining count. Only the Courses and M-IDs card reads a measured
+     0-to-1 score, so it alone carries a Confident line (the Subjects scale: Confident at 0.9 or better). */
   function cards(M) {
-    var P = M.programs, Cl = M.colleges, Co = M.courses, Cd = M.cards, E = M.exhibits, R = M.cr, X = ASKED.cr, K = ASKED.credentials;
-    var sloPct = pct(Co.slo, Co.active), objPct = pct(Co.obj, Co.active), progPct = pct(P.complete, P.active);
+    var P = M.programs, Cl = M.colleges, Co = M.courses, Cd = M.cards, E = M.exhibits, R = M.cr, X = ASKED.cr, K = ASKED.credentials, B = M.building;
+    var O = needsModel(M).outline, top = M.cdc && M.cdc.top;
+    var noLink = Cl.registry != null && Cl.outlineLinks != null ? Cl.registry - Cl.outlineLinks : null;
     var collect = [
-      card({ key: "colleges", title: "Colleges and catalogs", pill: "Catalog blocked: " + fmt(Cl.blocked), pillCls: Cl.blocked ? "cmn-pill-needs" : "cmn-pill-done",
+      checksCard({ key: "colleges", title: "Colleges and catalogs", pill: "Catalog blocked: " + fmt(Cl.blocked), pillCls: Cl.blocked ? "cmn-pill-needs" : "cmn-pill-done",
         big: fmt(Cl.collected), rest: [" colleges with a collected catalog"],
-        body: [p(["Catalogs read for every college, plus what’s still blocked."]),
-          p([fmt(Cl.collected) + " means we have read each college’s catalog and have saved a read of its ", a("#program-requirements/list", "program requirements"),
-            ", at least once. It does not mean we already have everything we need from each college. Still missing: about " + fmt(P.left) + " Active programs in current catalogs left to finish (every college still has some); course outlines, student learning outcomes, and course objectives (a public outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges); and " + ASKED.evergreen + "’s saved catalog read is still from the 2025–2026 catalog and needs a re-read for the newest year."])],
+        quick: [{ ref: "catalog", n: Cl.blocked, one: "college with a blocked catalog", many: "colleges with a blocked catalog" },
+          { ref: "catalog", n: ASKED.evergreen ? 1 : null, one: "catalog to read again for the newest year", many: "catalogs to read again for the newest year" },
+          { ref: "outline", n: noLink, one: "college with no public outline link on file", many: "colleges with no public outline link on file" }],
+        defs: [["Why", "each college’s catalog is the source of its program records: how each course counts toward the award, the program total and the catalog year."],
+          ["Finished when", "every college’s current catalog is collected and read, and none is blocked."],
+          ["Scale", fmt(Cl.total) + " colleges in " + fmt(Cl.districts) + " districts (" + fmt(Cl.districts - 1) + " plus Calbright); some adoption lists add " + fmt(Cl.ce) + " continuing-education campuses."]],
+        stages: { Collect: [
+          { ref: "catalog", name: "A collected catalog at every college", fig: figOf(Cl.collected, " of " + fmt(Cl.total) + " colleges"), meter: meterOf(Cl.collected, Cl.total, "colleges"),
+            line: [fmt(Cl.collected) + " means we have read each college’s catalog and have saved a read of its ", a("#program-requirements/list", "program requirements"),
+              ", at least once. Catalog blocked: " + fmt(Cl.blocked) + ". Still missing: about " + fmt(P.left) + " Active programs in current catalogs left to finish (every college still has some). "
+              + ASKED.evergreen + "’s saved catalog read is still from the 2025–2026 catalog and needs a re-read for the newest year."],
+            act: [[fmt(Cl.total) + "-college list", "#collect"], ["Colleges not collected yet", "#collect/unread"]] },
+          { ref: "outline", name: "A public course outline link at every college", fig: figOf(Cl.outlineLinks, " of " + fmt(Cl.registry) + " colleges"), meter: meterOf(Cl.outlineLinks, Cl.registry, "colleges"),
+            line: ["A course outline carries the course’s student learning outcomes and objectives; the ", onPage("courses-data", "Courses data"), " card counts them."],
+            act: [["Outlines blocked", "#collect/outlines-blocked"], ["Hand over a file or link", "#collect"]] }] },
         method: [p(["“Collected” means we have saved a program-requirements catalog read for the college — the catalog has been read at least once. “Not collected yet” would mean no such saved read exists; today that count is " + fmt(Cl.total - Cl.collected) + ", and catalog blocked is " + fmt(Cl.blocked) + ". Some adoption lists also include " + fmt(Cl.ce) + " continuing-education campuses, which is why ASE coverage uses " + fmt(Cl.total + Cl.ce) + " names. The statewide district count is " + fmt(Cl.districts) + ": " + fmt(Cl.districts - 1) + " districts plus Calbright. Open the ", a("#collect", fmt(Cl.total) + "-college list"), " for the college-by-college view."])],
         links: [[fmt(Cl.total) + "-college list", "#collect"]] }),
-      card({ key: "programs", title: "Programs", pill: "In progress",
+      checksCard({ key: "programs", title: "Programs", pill: "In progress",
         big: fmt(P.complete) + " of " + fmt(P.active), rest: [" Active programs complete at ", a("#collect", fmt(Cl.collected) + " colleges")],
-        after: [meter(progPct, fmt(P.complete) + " of " + fmt(P.active) + " complete, " + Math.round(progPct) + " percent")],
-        body: [p(["Each college program’s requirements, read from its catalog."]),
-          p([fmt(P.complete) + " of " + fmt(P.active) + " (" + Math.round(progPct) + "%). Target: every Active program in its college’s current catalog, about " + fmt(P.target) + " (" + fmt(P.active) + " minus the COCI-only programs). On pace for: " + (P.doneN == null ? "not dated yet" : monthDay(P.doneN)) + " for that target."])],
+        after: [meter(pct(P.complete, P.active), fmt(P.complete) + " of " + fmt(P.active) + " complete, " + Math.round(pct(P.complete, P.active)) + " percent")],
+        quick: [{ ref: "record", n: P.unread, one: "Active program with no record yet", many: "Active programs with no record yet" },
+          { ref: "gap", n: P.gap, one: "Active program with a gap noted", many: "Active programs with a gap noted" },
+          { ref: "target", n: P.left, one: "Active program left to finish", many: "Active programs left to finish" }],
+        defs: [["Why", "each program’s required, list-choice and elective courses, so the units of credit for prior learning a student saves can be shown."],
+          ["Finished when", "every Active program in its college’s current catalog has a complete record: about " + fmt(P.target) + ", the " + fmt(P.active) + " Active programs minus the COCI-only ones."],
+          ["Scale", fmt(P.active) + " Active programs at " + fmt(Cl.collected) + " colleges."]],
+        stages: {
+          Collect: [
+            { ref: "target", name: "A complete record for every program in the target", fig: figOf(P.complete, " of about " + fmt(P.target)), meter: meterOf(P.complete, P.target, "in the target complete"),
+              line: "About " + fmt(P.left) + " left" + (P.doneN == null ? "; the date reads TBA." : " at about " + fmt(Math.round(P.pace)) + " a day: " + longDate(P.doneN) + ", estimated."),
+              act: [["The programs list", "#program-requirements/list"], ["College Data Collection", "#collect"]] },
+            { ref: "record", name: "A record for every Active program", fig: figOf(P.unread, " with no record yet"),
+              line: fmt(P.unread) + " Active programs have no record yet; each college’s catalog read adds them.",
+              act: [["Catalogs in progress", "#collect/catalogs_progress"], ["The programs list", "#program-requirements/list"]] }],
+          Curate: [
+            { ref: "gap", name: "No gap left in a record", fig: figOf(P.gap, " with a gap noted"),
+              line: fmt(P.gap) + " Active programs have a gap noted in their record.",
+              next: top ? "the top fix, which reaches " + plural(top.n, "college", "colleges") + ": " + top.what + "." : null,
+              act: [["The programs list", "#program-requirements/list"]].concat(top ? [["The colleges the top fix reaches", "#collect/fix_" + top.key]] : []) }] },
         method: [p([fmt(P.complete) + " of " + fmt(P.active) + " is the live count of Active programs with a complete record. " + fmt(P.gap) + " have a gap noted; " + fmt(P.unread) + " have no record yet; " + fmt(P.confirmed) + " have been confirmed by a person, " + fmt(P.confirmedComplete) + " of them complete. A wider count of " + fmt(P.wider) + " of " + fmt(P.widerOf) + " adds Approved programs, which are approved but not yet offered (" + fmt(P.approved) + "), and Teachout programs, which are being phased out (" + fmt(P.teachout) + "). The collection target is every Active program in its college’s current catalog: " + fmt(P.active) + " minus the COCI-only programs, about " + fmt(P.target) + ", which leaves about " + fmt(P.left) + ". About " + fmt(P.cociOnly) + " COCI-only programs (active in the Chancellor’s Office curriculum inventory but not in the current catalog) are optional cleanup, not unfinished work, and are not part of that target. " + (P.doneN == null ? "" : "On pace, at about " + fmt(Math.round(P.pace)) + " a day, that target finishes " + longDate(P.doneN) + ". ") + "The older 72% “passing” card is cut from this page. ", a("#program-requirements/list", "Open the programs list"), "."])],
         links: [["Open Programs", "#program-requirements/list"]] }),
-      card({ key: "courses-data", id: "courses-data", title: "Courses data", pill: "In progress",
+      checksCard({ key: "courses-data", id: "courses-data", title: "Courses data", pill: "In progress",
         big: fmt(Co.slo) + " of " + fmt(Co.active), rest: [" courses in active programs have student learning outcomes"],
-        after: [meter(sloPct, fmt(Co.slo) + " of " + fmt(Co.active) + " have SLOs, " + Math.round(sloPct) + " percent")],
-        body: [p(["Course outlines, plus student learning outcomes (SLOs) and course objectives, collected from each college."]),
-          p([fmt(Co.slo) + " of " + fmt(Co.active) + " have SLOs (" + Math.round(sloPct) + "%), and " + fmt(Co.obj) + " have course objectives (" + Math.round(objPct) + "%). Target: SLOs and objectives for every course we can already read automatically. The count of those readable courses is not computed yet (Sky would add it). Dates: pending readable-course count. The rest need people or a district request. A bot test found about 43% of colleges readable (range 35–65%); the Los Angeles district’s 9 colleges need a district request."]),
-          p([huntWords(needsModel(M).outline) + " A public outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges. " + fmt(Co.sloColleges) + " colleges have any SLOs in the live statewide count; " + fmt(Co.objColleges) + " have objectives. Those " + fmt(Co.sloColleges) + " are not the same as the " + fmt(M.building.outcomeColleges) + " colleges on the Building line’s deeper outcomes read."])],
+        after: [meter(pct(Co.slo, Co.active), fmt(Co.slo) + " of " + fmt(Co.active) + " have SLOs, " + Math.round(pct(Co.slo, Co.active)) + " percent")],
+        quick: [{ ref: "outlines", n: O ? O.courses : null, one: "course whose outline needs a person", many: "courses whose outline needs a person" },
+          { ref: "slo", n: Co.sloLeft, one: "course in Active programs with no SLOs", many: "courses in Active programs with no SLOs" },
+          { ref: "obj", n: Co.objLeft, one: "course in Active programs with no objectives", many: "courses in Active programs with no objectives" }],
+        defs: [["Why", "a course’s student learning outcomes (SLOs) and objectives join the score that places it under its M-ID."],
+          ["Finished when", "SLOs and objectives sit on every course in Active programs that can be read automatically; the count of those readable courses is TBA."],
+          ["Scale", fmt(Co.active) + " courses in Active programs statewide."]],
+        stages: { Collect: [
+          { ref: "slo", name: "SLOs on every course", fig: figOf(Co.slo, " of " + fmt(Co.active)), meter: meterOf(Co.slo, Co.active, "courses with SLOs"),
+            line: fmt(Co.sloColleges) + " colleges have any SLOs in the live statewide count. SLOs grew by " + fmt(Co.sloGrow) + " since the " + ASKED.sloSnap.at + " snapshot.",
+            next: "the readable-course count, so SLOs and objectives join the collection date.",
+            act: [["Outlines to find by hand", "#collect/slos"], ["Outlines blocked", "#collect/outlines-blocked"]] },
+          { ref: "obj", name: "Course objectives on every course", fig: figOf(Co.obj, " of " + fmt(Co.active)), meter: meterOf(Co.obj, Co.active, "courses with objectives"),
+            line: fmt(Co.objColleges) + " colleges have objectives in the live statewide count. Objectives grew by " + fmt(Co.objGrow) + " since that snapshot.",
+            act: [["Outlines to find by hand", "#collect/slos"], ["Courses List", "#coci-lookup/courses"]] },
+          { ref: "outlines", name: "Every outline a person must find", fig: O ? figOf(O.courses, " at " + plural(O.colleges.length, "college", "colleges")) : ["TBA"],
+            line: huntWords(O) + " A public outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges. A bot test found about 43% of colleges readable (range 35–65%); the Los Angeles district’s 9 colleges need a district request.",
+            act: [["The courses by college", "#collect/outlines-blocked"], ["Hand over a file or link", "#collect"]] }] },
         method: [p([fmt(Co.active) + " is the number of courses that appear in Active programs statewide. " + fmt(Co.slo) + " of those already have student learning outcomes on file, and " + fmt(Co.obj) + " have course objectives (a course can have both). Those are live statewide counts. A separate Building-line read has " + fmt(M.building.outcomes) + " outcomes from " + fmt(M.building.outcomeCourses) + " courses at " + fmt(M.building.outcomeColleges) + " colleges; it is not the same " + fmt(Co.sloColleges) + "-college live SLO cut. The recent rates are measured from those nights, not one fixed nightly estimate: from the " + ASKED.sloSnap.at + " snapshot to this page’s counts, about one and a half days, SLOs grew by " + fmt(Co.sloGrow) + " (" + fmt(ASKED.sloSnap.slo) + " to " + fmt(Co.slo) + ") and objectives by " + fmt(Co.objGrow) + " (" + fmt(ASKED.sloSnap.obj) + " to " + fmt(Co.obj) + "). "
           + (Co.objDoneN != null && Co.sloDoneN != null ? "If every one of the " + fmt(Co.active) + " were already readable, objectives at about " + fmt(Math.round(Co.objGrow / 100) * 100) + " a night would finish around " + longDate(Co.objDoneN) + " (" + fmt(Co.objLeft) + " left), and SLOs at about " + fmt(Math.round(Co.sloGrow / 100) * 100) + " a night around " + longDate(Co.sloDoneN) + " (" + fmt(Co.sloLeft) + " left). " : "")
           + "Those dates are not shown, because a finish date should be set only for courses that can already be read automatically, and that readable-course count is not computed yet."])],
         links: [["Outlines blocked", "#collect/outlines-blocked"], ["Courses List", "#coci-lookup/courses"]] }),
       cdcCard(M)
     ];
-    var cardPct = pct(Cd.ready, Cd.total), exPct = pct(E.stamped, E.titles);
-    var S = M.subjects, LT = M.localTitles, HC = M.heldCodes, sOf = !!S && S.of != null;
+    var unstamped = E.titles != null && E.stamped != null ? E.titles - E.stamped : null;
     var curate = [
       subjectsCard(M),
-      card({ key: "courses", title: "Courses and M-IDs", pill: "In progress",
+      checksCard({ key: "courses", title: "Courses and M-IDs", pill: "In progress",
         big: fmt(Cd.ready) + " of " + fmt(Cd.total), rest: [" cards the automatic check scores as ready (0.85 or better)"],
-        after: [meter(cardPct, fmt(Cd.ready) + " of " + fmt(Cd.total) + " ready, " + Math.round(cardPct) + " percent")],
-        body: [p(["Local courses grouped into shared common courses, each with a shared course ID (an M-ID)."]),
-          p([el("strong", { text: "M-ID gap — not counted yet" }), " A once-through count of program courses with no shared course ID is not counted yet. Open the Courses list’s ", a("#coci-lookup/list/nomid", "Needs an M-ID filter"), ". One known cause: " + fmt(ASKED.missingMembership) + " cards are missing from the published list of which local courses belong to each shared course (a membership fix)."])],
+        after: [meter(pct(Cd.ready, Cd.total), fmt(Cd.ready) + " of " + fmt(Cd.total) + " ready, " + Math.round(pct(Cd.ready, Cd.total)) + " percent")],
+        quick: [{ ref: "ready", n: Cd.repair, one: "card that needs repair", many: "cards that need repair" },
+          { ref: "mid", n: ASKED.missingMembership, one: "card missing from the membership list", many: "cards missing from the membership list" },
+          { ref: "ready", n: Cd.review, one: "card that needs review", many: "cards that need review" }],
+        defs: [["Why", "each common course carries one shared course ID (an M-ID), so a local course at any college points to the same course."],
+          ["Finished when", "every card scores Confident on the automatic check, and every course in an Active program sits under an M-ID."],
+          ["Confident", "0.9 or better on the automatic check’s 0-to-1 score, from the data or from a person’s confirm. The count at 0.9 is TBA; the headline counts 0.85 or better."],
+          ["Scale", fmt(Cd.total) + " cards, each one common course and its local courses."]],
+        stages: {
+          Curate: [
+            { ref: "ready", name: "Every card scores ready", fig: figOf(Cd.ready, " of " + fmt(Cd.total)), meter: meterOf(Cd.ready, Cd.total, "cards ready"),
+              line: fmt(Cd.review) + " need review and " + fmt(Cd.repair) + " need repair.",
+              next: "Jev as a second stage, a same-course yes or no on the top candidates; then SLOs and objectives in the score where the outcomes are on file.",
+              act: [["The Courses List", "#coci-lookup/courses"]] }],
+          Connect: [
+            { ref: "mid", name: "Every program course under an M-ID", fig: ["TBA"],
+              line: ["A once-through count of program courses with no shared course ID is not counted yet; the Courses List’s ", a("#coci-lookup/list/nomid", "Needs an M-ID filter"),
+                " lists them. One known cause: " + fmt(ASKED.missingMembership) + " cards are missing from the published list of which local courses belong to each shared course (a membership fix)."],
+              next: "the pile mint’s next wave, 76 tutoring titles that name a subject, assigned under LSKL M9004.",
+              act: [["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }] },
         method: [p(["Of the " + fmt(Cd.total) + " cards, " + fmt(Cd.review) + " need review, " + fmt(Cd.repair) + " need repair, and " + fmt(Cd.notReady) + " are not ready. " + fmt(Cd.confirmed) + " have been confirmed by a person, " + fmt(Cd.confirmedReady) + " of them ready. The " + fmt(Cd.ready) + " ready cards are those the automatic check scores 0.85 or better. The M-ID gap is a placeholder; it is not the older 2,362 of 8,912 figure, which this page does not show. Five cards you already ruled on are still in the discipline-in-doubt file — see the ", a(REPO + "3447", "Backfill fix"), "."])],
         links: [["Open the Courses List", "#coci-lookup/courses"], ["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }),
-      card({ key: "exhibit", title: "Exhibit titles", pill: "In progress",
+      checksCard({ key: "exhibit", title: "Exhibit titles", pill: "In progress",
         big: fmt(E.stamped) + " of " + fmt(E.titles), rest: [" local titles reviewed"],
-        after: [meter(exPct, fmt(E.stamped) + " of " + fmt(E.titles) + " reviewed, " + Math.round(exPct) + " percent")],
-        body: [p(["The local titles colleges use in MAP, each filed under one credential name."]),
-          p([fmt(E.noSubject) + " credentials have no common subject code yet. That list is growing:" + fmt(ASKED.noSubjectWas.n) + " on " + ASKED.noSubjectWas.day + ", now " + fmt(E.noSubject) + "."]),
-          p([fmt(E.left) + " old titles no college uses in MAP any more."])],
+        after: [meter(pct(E.stamped, E.titles), fmt(E.stamped) + " of " + fmt(E.titles) + " reviewed, " + Math.round(pct(E.stamped, E.titles)) + " percent")],
+        quick: [{ ref: "stamp", n: unstamped, one: "local title with no review stamp", many: "local titles with no review stamp" },
+          { ref: "subject", n: E.noSubject, one: "credential with no common subject code", many: "credentials with no common subject code" },
+          { ref: "old", n: E.left, one: "old title no college uses", many: "old titles no college uses" }],
+        defs: [["Why", "colleges type their own exhibit titles into MAP, and each files under one credential name, so a credential counts once."],
+          ["Finished when", "every local title carries a review stamp and every credential a common subject code."],
+          ["Scale", fmt(E.titles) + " local titles under " + fmt(E.names) + " credential names."]],
+        stages: {
+          Curate: [
+            { ref: "stamp", name: "A review stamp on every local title", fig: figOf(E.stamped, " of " + fmt(E.titles)), meter: meterOf(E.stamped, E.titles, "titles reviewed"),
+              line: "The nightly run applies the rules, then the classifier settles the rest; " + fmt(E.person) + " carry a person’s stamp and " + fmt(E.cohort) + " a review group’s.",
+              next: "the Exhibits rename batch goes to Sam.",
+              act: [["Open Exhibits", "#exhibits/list"], ["Renamed titles", "#exhibits/renamed"]] },
+            { ref: "old", name: "Every old title retired", fig: figOf(E.left, " old titles"),
+              line: "A local wording the Commons still files under a shared name, though no college’s current MAP exhibit uses it any more; nothing breaks while it stays.",
+              act: [["Old titles", "#exhibits/list/left"]] }],
+          Connect: [
+            { ref: "subject", name: "A common subject code on every credential", fig: figOf(E.noSubject, " with none"),
+              line: "That list is growing: " + fmt(ASKED.noSubjectWas.n) + " on " + ASKED.noSubjectWas.day + ", now " + fmt(E.noSubject) + ".",
+              act: [["No subject code", "#exhibits/list/nosubj"], ["The subjects list", "#commons/subjects"]] }] },
         method: [p(["The exhibit name list has " + fmt(E.names) + " names, " + fmt(E.names - K.of) + " more than the " + fmt(K.of) + " credentials on the Credentials card. Cleanup lists: ", a("#exhibits/held", fmt(M.held.n) + " titles held for a person"), "; ", a("#exhibits/list/nosubj", fmt(E.noSubject) + " with no common subject code"), "; ", a("#exhibits/list/left", fmt(E.left) + " old titles"),
           " (a local wording the Commons still files under a shared name, but no college’s current MAP exhibit uses it any more, usually because the college renamed or retyped it — for example, “Automotive Services Excellence (A5: Brakes) Certificate” sits under “ASE A5 — Brakes,” which current MAP titles already cover; nothing breaks while it stays); and ", a("#exhibits/renamed", fmt(E.renamed) + " renamed titles"),
           ". Of the " + fmt(E.titles) + " local titles, " + fmt(E.stamped) + " carry a review stamp (" + fmt(E.person) + " a person’s, " + fmt(E.cohort) + " a review-group’s), counting " + fmt(E.backlog) + " titles MAP carries with no entry yet."])],
@@ -1158,44 +1298,90 @@
       el("li", null, [el("span", { cls: "cmf-swatch cmf-seg-ace", "aria-hidden": "true" }), fmt(X.ace) + " waiting on ACE’s recommendation text (" + share(X.ace) + "), which MAP already sends nightly but we don’t save yet."]),
       el("li", null, [el("span", { cls: "cmf-swatch cmf-seg-cannot", "aria-hidden": "true" }), fmt(X.cannot) + " matching can’t clear (" + share(X.cannot) + "; " + fmt(X.cannotNoExhibit) + " worklist wordings with no exhibit, " + fmt(X.cannotTruncated) + " truncated or run-on, " + fmt(X.cannotNoId) + " with no exhibit id)."])
     ]);
+    var skillsLeft = B.industry != null && B.skillsCreds != null ? B.industry - B.skillsCreds : null;
     var connect = [
-      card({ key: "credentials", title: "Credentials", pill: "Design",
+      checksCard({ key: "credentials", title: "Credentials", pill: "Design",
         big: fmt(K.credit) + " of " + fmt(K.of), rest: [" credentials: at least one college gives credit. The list will show how many colleges, never only a yes-or-no badge, so a student does not assume their own college gives credit."],
-        body: [p(["One list, counted once per credential — including a credential a college grants credit for, or a local course exam — under one name and issuer."]),
-          p(["Proposed: exhibits are the evaluations under each credential (one evaluation can carry one or more credit recommendations)."]),
-          p(["The other two statuses, “Has a credit recommendation” and “No credit recommendation yet,” aren’t counted yet."])],
+        quick: [{ ref: "skills", n: skillsLeft, one: "industry credential with no issuer-published skills yet", many: "industry credentials with no issuer-published skills yet" }],
+        defs: [["Why", "one list, counted once per credential under one name and issuer, so a student sees how many colleges give credit, never only a yes or a no."],
+          ["Finished when", "every credential is counted once, with the colleges that give credit and its credit-recommendation status."],
+          ["Scale", fmt(K.of) + " credentials across " + fmt(K.lines) + " articulation lines; " + fmt(B.industry) + " industry credentials from " + fmt(B.issuers) + " issuers."]],
+        stages: {
+          Curate: [
+            { ref: "colleges", name: "Colleges giving credit, counted once per credential", fig: figOf(K.credit, " of " + fmt(K.of)), meter: meterOf(K.credit, K.of, "credentials with a college giving credit"),
+              line: fmt(K.one) + " at one college, " + fmt(K.two5) + " at 2–5, " + fmt(K.six10) + " at 6–10 and " + fmt(K.eleven) + " at 11 or more (max " + K.max + ").",
+              act: [["The credential list", "#exhibits/list"]] },
+            { ref: "status", name: "Each credential’s credit-recommendation status", fig: ["TBA"],
+              line: "“Has a credit recommendation” and “No credit recommendation yet” are not counted yet; the split waits on a stable credential id and a link from each credential to its exhibits. Proposed: exhibits are the evaluations under each credential (one evaluation can carry one or more credit recommendations).",
+              act: [["The credential list", "#exhibits/list"], ["Credit Recommendations", "#cr-reference"]] }],
+          Connect: [
+            { ref: "skills", name: "Issuer-published skills on each credential", fig: figOf(B.skillsCreds, " of " + fmt(B.industry)), meter: meterOf(B.skillsCreds, B.industry, "industry credentials with skills"),
+              line: "Issuer-published skills on " + fmt(B.skillsCreds) + " of " + fmt(B.industry) + " industry credentials so far.",
+              next: "the ASE slice’s public copy on the Credential Catalog; then CompTIA, the American Welding Society, NCCER and military.",
+              act: [["The ASE credentials", "#commons/ase"]] }] },
         method: [p([fmt(K.of) + " is the count of titles filed under one name. " + fmt(K.credit) + " of them have at least one college giving credit: " + fmt(K.one) + " at one college, " + fmt(K.two5) + " at 2–5, " + fmt(K.six10) + " at 6–10, and " + fmt(K.eleven) + " at 11 or more (max " + K.max + "), across " + fmt(K.lines) + " articulation lines. The other two statuses (“Has a credit recommendation” and “No credit recommendation yet”) are not yet counted once per credential; that split waits on a stable credential id and a link from each credential to its exhibits. ", a("#exhibits/list", "Open the list"), "."])],
         links: [["Open the credential list", "#exhibits/list"]] }),
-      card({ key: "cr", title: "Credit Recommendations", pill: "In progress",
+      checksCard({ key: "cr", title: "Credit Recommendations", pill: "In progress",
         big: fmt(X.rows), rest: [" rows in the CR inventory ", el("span", { cls: "cmf-badge", text: "Preliminary" })],
-        after: [crBar, crLegend],
-        body: [p(["One wording for each credit recommendation, so the same credit reads the same everywhere."]),
-          p(["Colleges’ wording kept: Sam said yes on November 19, and the 36 groups are recorded. In cases like POST Basic Academy the course-number link itself may be wrong, so the rule flags those links for a check."])],
+        quick: [{ ref: "ace", n: X.ace, one: "row waiting on ACE’s recommendation text", many: "rows waiting on ACE’s recommendation text" },
+          { ref: "rule", n: X.rule, one: "row a cleanup rule would settle", many: "rows a cleanup rule would settle" },
+          { ref: "cannot", n: X.cannot, one: "row matching cannot clear", many: "rows matching cannot clear" }],
+        defs: [["Why", "one wording for each credit recommendation, so the same credit reads the same everywhere."],
+          ["Finished when", "every row in the CR inventory carries one settled wording."],
+          ["Scale", fmt(X.rows) + " rows: " + fmt(X.pairs) + " exhibit-plus-wording pairs and " + fmt(X.noExhibit) + " worklist wordings with no exhibit."]],
+        stages: {
+          Curate: [
+            { ref: "settled", name: "One settled wording for every row", fig: figOf(X.settled, " of " + fmt(X.rows)), extra: [crBar, crLegend],
+              line: "Colleges’ wording kept: Sam said yes on November 19, and the 36 groups are recorded. In cases like POST Basic Academy the course-number link itself may be wrong, so the rule flags those links for a check.",
+              next: "Sam works the top 50 groups first.",
+              act: [["Wordings still open", "#cr-reference/open"]] },
+            { ref: "rule", name: "The cleanup rule applied", fig: figOf(X.rule, " rows"),
+              line: "A typographic cleanup rule would settle them; it ran as a dry run and is not applied yet.",
+              act: [["Open Credit Recommendations", "#cr-reference"]] },
+            { ref: "cannot", name: "Every row matching cannot clear, settled", fig: figOf(X.cannot, " rows"),
+              line: fmt(X.cannotNoExhibit) + " worklist wordings with no exhibit, " + fmt(X.cannotTruncated) + " truncated or run-on, " + fmt(X.cannotNoId) + " with no exhibit id.",
+              act: [["Wordings still open", "#cr-reference/open"]] },
+            { ref: "tracked", name: "The wordings the Commons tracks", fig: figOf(R.settled, " of " + fmt(R.wordings)), meter: meterOf(R.settled, R.wordings, "wordings settled"),
+              line: fmt(R.rule) + " settled by a rule and " + fmt(R.curator) + " more by a curator. The count has not moved since " + X.since + ": human credit-recommendation curation is paused, and rule-settled counts grow only when a new rule ships.",
+              act: [["Open Credit Recommendations", "#cr-reference"]] }],
+          Connect: [
+            { ref: "ace", name: "ACE’s recommendation text saved", fig: figOf(X.ace, " rows wait"),
+              line: "MAP already sends ACE’s recommendation text nightly; we do not save it yet.",
+              next: "ask Sky to save the CreditRecommendation column.",
+              act: [["Wordings still open", "#cr-reference/open"]] }] },
         method: [p([fmt(X.rows) + " is " + fmt(X.pairs) + " exhibit-plus-wording pairs plus " + fmt(X.noExhibit) + " worklist wordings with no exhibit. This is the inventory that rules actually move; it is not in the tracker on main yet. Two other counts measure different things: " + fmt(X.crm) + " is the count in MAP’s Custom Reporting Module, and the Commons page today tracks a narrower set — " + fmt(R.settled) + " of " + fmt(R.wordings) + " wordings settled (" + fmt(R.rule) + " by a rule, " + fmt(R.curator) + " more by a curator). Those " + fmt(R.settled) + " have not moved since " + X.since + " because human credit-recommendation curation is paused, and rule-settled counts only grow when a new rule ships. The credit-recommendation line should later point at this " + fmt(X.rows) + "-row inventory. On the " + fmt(R.groups) + " groups: Sam said yes on November 19 to keeping the colleges’ wording, and the 36 are recorded; each course-number link is flagged for a check. In the POST Basic Academy group, " + X.post.colleges + " colleges (" + X.post.rows + " rows) wrote “3 hours in Physical Training and Health Education (CSU GE Area E),” linked to C-ID AJ 110, whose official title is “Introduction to Criminal Justice.” In cases like POST Basic Academy the course-number link itself may be wrong, so the rule flags those links for a check. ", a("#cr-reference/open", "Wordings still open"), "."])],
         links: [["Open Credit Recommendations", "#cr-reference"], ["Name-check groups", "#cr-reference/names"]] }),
-      card({ key: "interconnect", title: "Interconnectivity", pill: "5 blocked", pillCls: "cmn-pill-needs",
+      checksCard({ key: "interconnect", title: "Interconnectivity", pill: "5 blocked", pillCls: "cmn-pill-needs",
         big: "5 blocked", rest: [", 4 APIs that would help, and 4 datasets to integrate"],
-        body: [
-          el("h4", { cls: "cmf-sub", text: "Blocked" }),
-          el("ul", null, [
-            el("li", { text: "ACE recommendation text (CreditRecommendation column) · fetched nightly, not stored · ask Sky · " + fmt(X.ace) + " rows" }),
-            el("li", { text: "MAP CR ID · missing from the MAP report view we sync from · raised with Sam" }),
-            el("li", { text: "Course outlines at the Los Angeles district’s 9 colleges · district request" }),
-            el("li", { text: "eLumen guest sign-in (eLumen, a curriculum system some colleges use) · Sam’s call; we don’t use it" }),
-            el("li", { text: "CourseLeaf CIM behind sign-ins (Pasadena) · blocked" })]),
-          el("h4", { cls: "cmf-sub", text: "APIs that would help" }),
-          el("ul", null, [
-            el("li", { text: "MAP API, to port credentials and exhibits · planned" }),
-            el("li", { text: "Credential Engine ID (CTID) for credentials and credit recommendations · ask Malone" }),
-            el("li", { text: "curriQunet/CurricUNET public report endpoints · work at CCSF" }),
-            el("li", { text: "eLumen catalog API (eLumen, a curriculum system some colleges use) · would help" })]),
-          el("h4", { cls: "cmf-sub", text: "Datasets to integrate" }),
-          el("ul", null, [
-            el("li", { text: "JST education section · MAP stores it; COBI doesn’t use it yet" }),
-            el("li", { text: "COCI · integrated" }),
-            el("li", { text: "Course outline links · " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges on file" }),
-            el("li", { text: "Peer-articulation exhibit IDs · " + fmt(X.cannotNoExhibit) + " worklist wordings have no exhibit" })])],
-        methodLabel: "More detail",
+        quick: [{ ref: "blocked", n: X.ace, one: "row waits on ACE’s recommendation text", many: "rows wait on ACE’s recommendation text" },
+          { ref: "blocked", n: 9, one: "Los Angeles district college waits on a district request", many: "Los Angeles district colleges wait on a district request" },
+          { ref: "blocked", n: 1, one: "college’s curriculum system sits behind sign-ins", many: "colleges’ curriculum systems sit behind sign-ins" }],
+        defs: [["Why", "each connection to another dataset or platform changes the Commons’ pace, its cost and the quality of what it holds."],
+          ["Finished when", "nothing is blocked, and every dataset worth integrating is integrated."],
+          ["Scale", "5 blocked, 4 APIs that would help and 4 datasets to integrate."]],
+        stages: { Connect: [
+          { ref: "blocked", name: "Every blocked connection cleared", fig: figOf(5, " blocked"),
+            extra: [el("ul", { cls: "cmf-list" }, [
+              el("li", { text: "ACE recommendation text (CreditRecommendation column) · fetched nightly, not stored · ask Sky · " + fmt(X.ace) + " rows" }),
+              el("li", { text: "MAP CR ID · missing from the MAP report view we sync from · raised with Sam" }),
+              el("li", { text: "Course outlines at the Los Angeles district’s 9 colleges · district request" }),
+              el("li", { text: "eLumen guest sign-in (eLumen, a curriculum system some colleges use) · Sam’s call; we don’t use it" }),
+              el("li", { text: "CourseLeaf CIM behind sign-ins (Pasadena) · blocked" })])],
+            act: [["Outlines blocked", "#collect/outlines-blocked"], ["Open Credit Recommendations", "#cr-reference"]] },
+          { ref: "apis", name: "APIs that would help", fig: figOf(4, " to reach"),
+            extra: [el("ul", { cls: "cmf-list" }, [
+              el("li", { text: "MAP API, to port credentials and exhibits · planned" }),
+              el("li", { text: "Credential Engine ID (CTID) for credentials and credit recommendations · ask Malone" }),
+              el("li", { text: "curriQunet/CurricUNET public report endpoints · work at CCSF" }),
+              el("li", { text: "eLumen catalog API (eLumen, a curriculum system some colleges use) · would help" })])],
+            act: [["The APIs", "#collect/apis"]] },
+          { ref: "datasets", name: "Every dataset integrated", fig: figOf(1, " of 4"), meter: meterOf(1, 4, "datasets integrated"),
+            extra: [el("ul", { cls: "cmf-list" }, [
+              el("li", { text: "JST education section · MAP stores it; COBI doesn’t use it yet" }),
+              el("li", { text: "COCI · integrated" }),
+              el("li", { text: "Course outline links · " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges on file" }),
+              el("li", { text: "Peer-articulation exhibit IDs · " + fmt(X.cannotNoExhibit) + " worklist wordings have no exhibit" })])],
+            act: [["Integrations", "#collect/integrations"], ["The data dictionary", "#collect/dictionary"]] }] },
         method: [p(["ACE recommendation text, from the CreditRecommendation column, is fetched nightly but not stored; ask Sky. That is the " + fmt(X.ace) + "-row wait on the Credit Recommendations card. The MAP CR ID is missing from the MAP report view we sync from; that has been raised with Sam. Course outlines at the Los Angeles district’s 9 colleges need a district request. We do not use eLumen guest sign-in (eLumen is a curriculum system some colleges use); that is Sam’s call. CourseLeaf CIM at Pasadena sits behind sign-ins. The MAP API would port credentials and exhibits to Malone’s new MAP exhibit module; that work is planned. Ask Malone whether COBI gets Credential Engine IDs (CTIDs) minted under its own org when it publishes, for credentials and for credit recommendations. " + fmt(ASKED.ctid) + " of " + fmt(M.building.industry) + " catalog rows have a Credential Engine ID (CTID) today. Public report endpoints for curriQunet/CurricUNET would help; work on those is under way at City College of San Francisco. An eLumen catalog API would also help. The JST education section holds non-military certifications, CCC courses, and assessments; MAP stores that section, and COBI doesn’t use it yet. COCI, the Chancellor’s Office curriculum inventory, is already integrated; ask the Chancellor’s Office for an API or a full extract with SLOs and objectives. Today’s extract has descriptions only: " + fmt(ASKED.noDescription) + " active courses have none, and retired courses are marked inconsistently. A public course outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges. " + fmt(X.cannotNoExhibit) + " worklist wordings have no peer-articulation exhibit ID."])],
         links: [] })
     ];
@@ -1276,7 +1462,8 @@
         || Array.prototype.some.call(groupsEl.querySelectorAll(".cmf-group-cards"), function (g) { return tracks(g) !== 1; })) return;
       rows.forEach(function (row) {
         var open = row.filter(function (c) { return !c.classList.contains("cmf-folded"); });
-        var basis = open.filter(function (c) { return !c.classList.contains("cmf-unclamped"); });
+        /* A card with a stage open grows on its own; the row keeps the height of its cards at the top section. */
+        var basis = open.filter(function (c) { return !c.classList.contains("cmf-unclamped") && !c.querySelector(".cmf-stage-b[aria-expanded='true']"); });
         var max = 0;
         (basis.length ? basis : open).forEach(function (c) { max = Math.max(max, c.offsetHeight || 0); });
         if (max) open.forEach(function (c) { c.style.minHeight = max + "px"; });
@@ -1288,7 +1475,7 @@
       queued = true;
       (window.requestAnimationFrame || setTimeout)(function () { queued = false; equalize(); });
     }
-    wrap.addEventListener("click", function (e) { if (e.target && e.target.closest && e.target.closest(".cmf-fold, #cmf-all, .cmf-more")) later(); });
+    wrap.addEventListener("click", function (e) { if (e.target && e.target.closest && e.target.closest(".cmf-fold, #cmf-all, .cmf-more, .cmf-stage-b, a[data-onpage]")) later(); });
     wrap.addEventListener("toggle", later, true);   // a method toggle does not bubble; the capture phase still sees it
     if (onResize) window.removeEventListener("resize", onResize);   // a redraw replaces the last page's listener
     onResize = later;
