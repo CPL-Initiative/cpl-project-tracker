@@ -121,21 +121,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "noted_figures_differ",
-    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
-    "words": "The last block's heading says 'COMPLETE FOUR UNITS' but prints '2-3' as its block total; minimum recorded as 4 from the heading, stated as printed 2-3. Printed block totals 8+2+3+(2-3)+4 sum to the printed 19-20, suggesting the '2-3' is a misprint."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 40,
-   "course_list_match": 74,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": false
  },
  "record": {
   "program": {

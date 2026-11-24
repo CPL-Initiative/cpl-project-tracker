@@ -6,9 +6,9 @@ its gaps noted and confidence scores, a gap noted instead of a reread. Pinned he
 
   * each kind the plan files carries a sentence and a unit-arithmetic score in kb/_program_named_gaps.py;
   * precision 9 of 9 against the hand reading of the census members pinned in the fixture
-    (p-test-pins-census-members-s714): 5 collected, 4 held;
+    (p-test-pins-census-members-s714): 4 collected, 5 held;
   * the claim check holds a record whose named course the capture did not find; every boundary reading names no gap;
-  * the plan: 5 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans
+  * the plan: 4 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans
     none; the load's image of each committed record is its receipt's after-image, carrying its one gap.
 
 Run from repo root: python3 tests/program_piles_s720_ela_test.py
@@ -27,9 +27,9 @@ import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s720_ela as W  # noqa: E402
 
 COLLEGE = 'East Los Angeles College'
-ROWS = {'38168': 'noted_figures_differ', '02430': 'nested_award_not_read', '08252': 'nested_award_not_read', '21157': 'nested_award_not_read', '02456': 'unit_line_not_read'}
-HELD = {'37510', '33013', '41231', '31017'}
-SCORES = {'noted_figures_differ': 40, 'nested_award_not_read': 30, 'unit_line_not_read': 40}
+ROWS = {'02430': 'nested_award_not_read', '08252': 'nested_award_not_read', '21157': 'nested_award_not_read', '02456': 'unit_line_not_read'}
+HELD = {'37510', '41231', '31017', '33013', '38168'}
+SCORES = {'nested_award_not_read': 30, 'unit_line_not_read': 40}
 checks, failures = [0], []
 
 
@@ -50,28 +50,28 @@ pr = W.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 9 and pr["right"] == 9 and not pr["wrong"], "precision 9 of 9: %s" % pr["wrong"])
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 5} and not cc["not_standing"], "5 claims stand")
+check(cc["counts"] == {"stands": 4} and not cc["not_standing"], "4 claims stand")
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2['21157']["codes_found"] = [c for c in s2['21157']["codes_found"] if c != 'ARC110']
 check(W.claim(W._load('21157'), s2) == "a named course not found", "a named course the capture lacks holds it")
 
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 15, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == 12, "every boundary reading names no gap: %s" % bd)
 
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
 got = {r["control_number"]: r["moves_to"] for r in rec["records"]}
-check(got == ROWS and rec["moved"] == 5, "the receipt names the 5 rows and their gaps")
-check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 4")
+check(got == ROWS and rec["moved"] == 4, "the receipt names the 4 rows and their gaps")
+check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 5")
 check(rec["census"]["members"] == members, "the receipt's keys are the fixture's")
 for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for cn in ROWS) and not any("'%s'" % cn in sql for cn in HELD | set(W.PERSON)),
-          "%s names exactly the 5" % part)
+          "%s names exactly the 4" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (5))" in sql, "the apply guards a confirm")
+        check("confirm guard" in sql and "e(expect) as (values (4))" in sql, "the apply guards a confirm")
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:
@@ -80,6 +80,10 @@ for r in rec["records"]:
     check(img["checks"].get("gaps") == [r["moves_to"]], "%s: the image carries its one gap" % r["control_number"])
     check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
 
+W.REVIEWED["38168"] = {"gap": "noted_figures_differ", "words": "COMPLETE FOUR UNITS"}
+check(W.claim(W._load("38168")) == "the page is shared and no note names the record's own section",
+      "38168 holds on its shared page (the reader's BLOCKER)")
+del W.REVIEWED["38168"]
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the rows (#3753's MAJOR)")
 check(set(rec.get("shared_pages") or {}) <= set(ROWS), "the receipt lists the rows' shared pages")
 f = W._load("02456")

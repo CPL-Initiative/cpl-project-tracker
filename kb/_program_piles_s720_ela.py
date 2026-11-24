@@ -13,7 +13,6 @@ THE REVIEWED LIST (REVIEWED below, a hand reading of each record's own notes, th
 #3753's second reader's two guards: a record today's scorer passes on its own record (scorer_passes) is never
 gap-filed, and the receipt lists each row's shared_pages. The kinds, reused before any is added:
 
-  noted_figures_differ   (#3753) 'COMPLETE FOUR UNITS' printed over the block figure 2-3 (38168).
   nested_award_not_read  (new, 30) the program counts a certificate as one line whose courses sit in that award's
                          own section (02430, 08252, 21157). No existing kind fits: noted_section_cut_off says the
                          program's own section runs past the read, and here the section is whole and names the other
@@ -22,7 +21,10 @@ gap-filed, and the receipt lists each row's shared_pages. The kinds, reused befo
                          with no course, left out (02456). No existing kind fits: no list or figure disagrees, and the
                          record's courses plus the line give the printed 48-50 exactly, which the entry checks.
 
-Held (4): 31017 (its movement list is read as three courses of up to 4 units: a reread); 41231 (a sequence read one
+THE OWN-PAGE GUARD (#3753's, by East Los Angeles's second reader): a record whose capture page shared_pages lists
+another program on holds unless a note names its own section (REVIEWED's own_section words); 38168 is held so.
+
+Held (5): 38168 (its identity is unconfirmed: see HAND); 31017 (its movement list is read as three courses of up to 4 units: a reread); 41231 (a sequence read one
 course short: a reread); 37510 (its arithmetic reads 'unstated', which the Commons counts passing once posted: no
 gap); 33013 (a person's key: the page's own figures add to 21-23 under 22-24 and the record reads 21-24, so neither
 figures kind's sentence holds).
@@ -61,15 +63,15 @@ LEVERS = ("reconcile_steps",)
 PERSON = ()
 
 REVIEWED = {
-    "38168": {"gap": "noted_figures_differ", "computed": [17, 19], "stated": [19, 20],
-              "words": "The last block's heading says 'COMPLETE FOUR UNITS' but prints '2-3' as its block total"},
     "02430": {"gap": "nested_award_not_read", "computed": [56, 58], "stated": [60, 61],
-              "words": "The Skills Certificate course list falls on the previous page"},
+              "words": "The Skills Certificate course list falls on the previous page",
+              "own_section": "The degree's major includes the Certificate of Achievement in Architectural Design"},
     "08252": {"gap": "nested_award_not_read", "computed": [39, 39], "stated": [61, 61],
               "words": "its courses are printed in the certificate's section, not here, so they are not placed in blocks"},
     "21157": {"gap": "nested_award_not_read", "computed": [8, 8], "stated": [22, 22],
               "words": "The Skills Certificate in Architectural Technology (14 units) is required but its courses are "
-                       "not printed in this excerpt", "courses": ["ARC110"]},
+                       "not printed in this excerpt", "courses": ["ARC110"],
+              "own_section": "The Skills Certificate in Architectural Technology (14 units) is required"},
     # A negative "less" adds the units line: the courses' 45 plus the line's 3-5 is the printed 48-50.
     "02456": {"gap": "unit_line_not_read", "computed": [45, 45], "stated": [48, 50],
               "words": "'Completion of Intermediate Algebra or its equivalent or higher Math course 3-5', which has no "
@@ -77,6 +79,11 @@ REVIEWED = {
 }
 HAND = {cn: e["gap"] for cn, e in REVIEWED.items()}
 HAND.update({
+    # East Los Angeles's second reader (BLOCKER): 38168 shares #page=288 with 38169 and 38206, and its note says no
+    # section carries its title; it was read as the matching award by its courses, so its identity is unconfirmed.
+    "38168": "held: titled Instrumental/Vocal Performer but read from the 'Commercial Music: Performance' section on "
+             "#page=288 (shared with 38169 and 38206); its note says no section carries its title and asks a "
+             "reviewer to confirm, so its identity is unconfirmed: a page-finding step, never a gap",
     "31017": "held: its movement-based list reads three courses at up to 4 units (major 20-33 against 20-27): a reread",
     "41231": "held: the low end reads 39 against the printed 41-45, a sequence read one course short: a reread",
     "37510": "held: its arithmetic reads 'unstated' (0 units per noncredit course, no hours), which the Commons counts "
@@ -194,6 +201,11 @@ def claim(filed: dict, src: dict | None = None) -> str:
     s = (_sources() if src is None else src).get(cn)
     if not e or not s:
         return "no capture"
+    if shared_with(cn) and not any(e.get("own_section") and e["own_section"] in str(n)
+                                   for n in (filed.get("record") or {}).get("notes") or []):
+        # #3753's own_page guard, for PDF pages: a page shared_pages lists another program on is the record's own
+        # only where a note names the record's own section (East Los Angeles's second reader, 38168).
+        return "the page is shared and no note names the record's own section"
     found = {S.norm_code(x) for x in s.get("codes_found") or []}
     if any(S.norm_code(c) not in found for c in e.get("courses") or []):
         return "a named course not found"
