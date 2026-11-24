@@ -430,26 +430,47 @@ function rule(t, value, words, similar) {
       !dataRows(t.d).some((r) => txt(cell(r, t.d, "Title")).indexOf("College Composition") === 0), dataRows(t.d).map((r) => txt(cell(r, t.d, "Title"))));
   }
   {
-    // (13) ⭐ Sam, S723, 2026-11-24: "accept the current common subject on the in doubt course directly on the course
-    // row without having to click into the sidebar". The band's Accept writes the panel's Keep, and the card leaves.
+    // (13) ⭐ Sam, S723, 2026-11-24: "the courses should be curated individually under their mid course heading ...
+    // move the accept button to the course row, not the mid row"; "accept and move are good to have on the course rows";
+    // "would be nice if the move gave me the dropdown right in the row".
     const t = tab({ signedIn: true });
-    await until(() => Array.from(t.d.querySelectorAll(".ccl-band-accept")).length > 0);
-    const acc = Array.from(t.d.querySelectorAll(".ccl-band-accept")).find((b) => /^Accept English/.test(txt(b)));
-    check("(13) ⭐ each unruled card's band carries Accept with its common subject", !!acc && acc.tagName === "BUTTON"
-      && /as the common subject of ENGL M1001/.test(acc.getAttribute("aria-label")), Array.from(t.d.querySelectorAll(".ccl-band-accept")).map(txt).join("|"));
-    acc.click();
-    await until(() => t.writes.length >= 2);
-    const v = JSON.parse(t.writes[0].body.value);
-    check("(13) ⭐ it writes the same Keep the panel writes, then the common subject's confirm", v.ruling === "keep" && v.mid === "ENGL M1001" && v.words === "" && t.writes.length >= 2, t.writes.map((w) => w.body.field).join("|"));
-    await until(() => !dataRows(t.d).some((r) => txt(cell(r, t.d, "Title")).indexOf("College Composition") === 0));
-    check("(13) and the card leaves the list at once, with no Accept left on it", !dataRows(t.d).some((r) => txt(cell(r, t.d, "Title")).indexOf("College Composition") === 0)
-      && !Array.from(t.d.querySelectorAll(".ccl-band-accept")).some((b) => /ENGL M1001/.test(b.getAttribute("aria-label"))));
+    await until(() => t.d.querySelectorAll(".ccl-row-acts button").length > 0);
+    const bodies = () => [].concat(...t.writes.map((w) => Array.isArray(w.body) ? w.body : [w.body])).filter(Boolean);
+    const rowOf = (title) => dataRows(t.d).find((r) => txt(cell(r, t.d, "Title")).indexOf(title) === 0);
+    const wordsIn = (r) => Array.from(r.querySelectorAll(".ccl-row-acts button")).map(txt);
+    check("(13) ⭐ each course row in doubt carries Accept and Move; the M-ID heading carries none",
+      wordsIn(rowOf("College Composition")).join("|") === "Accept|Move" && wordsIn(rowOf("Tool and Equipment Applications")).join("|") === "Accept|Move"
+      && !Array.from(t.d.querySelectorAll("tr[class*='band'] .ccl-band-accept")).length, wordsIn(rowOf("College Composition")).join("|"));
+    // Move opens a dropdown in the row; another common course by its id moves it (the merge_into row Assign writes).
+    Array.from(rowOf("College Composition").querySelectorAll(".ccl-row-acts button")).find((b) => txt(b) === "Move").click();
+    await until(() => !!rowOf("College Composition").querySelector("select.ccl-move-pick"));
+    const sel = rowOf("College Composition").querySelector("select.ccl-move-pick");
+    check("(13) ⭐ Move shows its dropdown right in the row, ending with another common course by its id",
+      !!sel && sel.options[0].value === "" && sel.options[sel.options.length - 1].value === "other");
+    sel.value = "other"; sel.dispatchEvent(new t.w.Event("change"));
+    const typed = rowOf("College Composition").querySelector("input.ccl-move-id");
+    typed.value = "weld m1109";
+    Array.from(rowOf("College Composition").querySelectorAll(".ccl-row-acts button")).find((b) => txt(b) === "Move here").click();
+    await until(() => bodies().some((b) => b.field === "merge_into"));
+    const mv = bodies().find((b) => b.field === "merge_into");
+    check("(13) ⭐ Move here writes the course's own re-home, never the card's common subject", mv.course_id === "CN:CCC1" && mv.value === "WELD M1109"
+      && !bodies().some((b) => b.field === "ccr_procedure_request"), JSON.stringify(mv));
+    // Accept on the only course of a card: its own row, then the card's Keep, and the card leaves the list.
+    Array.from(rowOf("Tool and Equipment Applications").querySelectorAll(".ccl-row-acts button")).find((b) => txt(b) === "Accept").click();
+    await until(() => bodies().some((b) => b.field === "mid_member_confirm"));
+    const ac = bodies().find((b) => b.field === "mid_member_confirm");
+    check("(13) ⭐ Accept writes that one course's place under its common course", ac.course_id === "CN:CCC4" && ac.value === "CNST M1009" && !!ac.reviewer_email, JSON.stringify(ac));
+    await until(() => bodies().some((b) => b.field === "ccr_procedure_request"));
+    const kp = JSON.parse(bodies().find((b) => b.field === "ccr_procedure_request").value);
+    check("(13) ⭐ with every course of the card accepted, the card's own Keep is saved", kp.mid === "CNST M1009" && kp.ruling === "keep", JSON.stringify(kp));
+    await until(() => !rowOf("Tool and Equipment Applications"));
+    check("(13) and the card leaves the list", !rowOf("Tool and Equipment Applications"));
   }
   {
     const t = tab({});
     await until(() => dataRows(t.d).length > 0);
     await sleep(30);
-    check("(13) signed out, no band carries Accept", !t.d.querySelector(".ccl-band-accept"));
+    check("(13) signed out, no course row carries Accept or Move", !t.d.querySelector(".ccl-row-acts"));
   }
   {
     // (12) ⭐ COBIx on #3517 finding 1: a "not sure" changed to a Keep replaces its card's ruling without changing how

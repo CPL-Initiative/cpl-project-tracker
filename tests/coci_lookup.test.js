@@ -140,6 +140,14 @@ const rowByTitle = (doc, t) => visibleRows(doc).find((tr) => txt(cellOf(doc, tr,
 
   // ── 3. chips ──
   const carpt = rowByTitle(doc, "Tool and Equipment Applications");
+  /* Sam, S723, 2026-11-24: "a hover over on the course title with the course description would make it fast work". */
+  {
+    const t = carpt && carpt.querySelector(".ccl-title-t");
+    if (t) t.dispatchEvent(new window.MouseEvent("mouseover", { bubbles: true }));
+    await sleep(30);
+    const host = t && (t.closest("button, a") || t);
+    check("hover: a course title shows its catalog description", !!host && host.getAttribute("title") === "Safety and health training for the carpenter.");
+  }
   check("chips: M-ID chip renders with the mid class",
     !!carpt.querySelector(".cplcoci-chip.mid")
     && txt(carpt.querySelector(".cplcoci-chip.mid")) === "CNST M1009");
