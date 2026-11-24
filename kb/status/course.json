@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 713,
-  "moniker": "SkyKittiwake",
-  "run": "the CPL Queue routine",
+  "session": 723,
+  "moniker": "SkyBooby",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_714_handoff.md",
+  "handoff": "docs/session_724_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-22T15:13:06Z",
+  "written_at": "2026-11-24T19:13:07Z",
   "project": "course",
   "next_step": {
-    "title": "Read the next college's course outlines",
-    "text": "The four Peralta colleges and City College of San Francisco are loaded. Once City College of San Francisco's pull request merges, the next session asks the next-college helper on main which college comes next and starts its outline read. Peralta's remaining label lines wait for the night's one follow-up."
+    "title": "Rule on the cards whose common subject is in doubt",
+    "text": "Sam rules on the 15 cards in the Courses List's Common subject in doubt job, by Accept on a band or in the panel; then each band gets a short line saying why it is in doubt."
   },
   "changes": [
+    {
+      "at": "2026-11-24T19:05:00Z",
+      "text": "The Courses List's doubt job is now Common subject in doubt: every common subject in both lists with its code, Accept on each band, and a Local subject column."
+    },
     {
       "at": "2026-11-23T09:37:00Z",
       "text": "City College of San Francisco's outlines were read again in four parts: learning outcomes for 3 more courses were loaded, and the other 1,416 matched the rows already live."

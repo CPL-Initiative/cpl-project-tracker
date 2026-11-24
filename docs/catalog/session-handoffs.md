@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-679 document(s).
+680 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 724 | [Session 724 handoff (from SkyBooby, S723, Sam's plain session of 2026-11-24: the Commons top section, Rulings to find, Common subject in doubt)](../session_724_handoff.md) | 2026-11-24 |
 | 723 | [Session 723 handoff (from SkyCormorant, S722, Sam's plain session of 2026-11-24: Titles to check, the 0-100 bar, sidebars that never cover the view)](../session_723_handoff.md) | 2026-11-24 |
 | 722 | [Session 722 handoff (from SkySkua, S721, the CPL Queue routine's collection run of 2026-11-24, from 10:41Z)](../session_722_handoff.md) | 2026-11-24 |
 | 721 | [Session 721 handoff (from SkyEider, S720, the CPL Queue routine's collection run of 2026-11-24)](../session_721_handoff.md) | 2026-11-24 |

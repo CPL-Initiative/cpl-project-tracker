@@ -714,3 +714,25 @@ place of Sky). Sam drove from ~13:20Z with five asks on Subject codes with no ti
   (`f-mq-sections-reread-reaches-the-vocabulary-s722`, the CSR lane).
 - **Not run:** a real-browser check. The session's permission check blocked a local server and Playwright twice;
   the jsdom suites carry every guard.
+
+## S723 (SkyBooby, Sam's plain session, 2026-11-24): the Commons top section, Rulings to find, Common subject in doubt
+
+Shipped #3778, #3781, #3784, #3785. Sam's five asks on the top section: two ETA columns with matching graphs (later
+no cost bars: *"we just need the trend line"*); Needs you as ranked links only (*"it should not show things I have
+already acted on"*); every link landing on the card link, highlighted; counts that move with an edit; a prompt for
+COBI on owed fixes. Then the Back link lost on Courses and Programs, and the doubt ruling panel.
+
+- **A figure handed in by another agent is a claim, not a fact.** The "five cards you already ruled on" came from a
+  COBIx ASKED figure. `kb_curation` held only bot `unified_title` stamps for them and `kb/coci_curation.json` no
+  `ruling`; Sam: *"I don't remember anything about those rulings..."*. The page now asks (Rulings to find) instead of
+  claiming. Check a typed-in figure's source before a page asserts it as a person's act.
+- **A back link placed into a pane can be wiped by the tab's own first draw.** jsdom did not reproduce it until the
+  test redrew the pane; a MutationObserver on the pane while the link applies puts it back (`watchBack`). The test
+  fails with the watch removed.
+- **A list that drops the signals' choices from the full list reads as missing.** The ruling select put the signal
+  disciplines on top and left them out of "Move to another"; Sam looked for PEDS in the alphabetical group. Show the
+  full list in each group.
+- **Name the object of a curation act.** A ruling assigns a common subject; the old words ("discipline", "Subject")
+  let a reader think a local subject would move. Sam's rule: label common subject and local subject on every surface.
+- **Pitfalls:** the local render and Playwright were refused again (never routed around); a guessed PR number
+  subscribed the wrong PR (#3780), so read the number from the create result.
