@@ -100,7 +100,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "The page also prints 'Program Total Units: 64.5'. This includes the Post ECC Graduation Courses RTEC 216 and RTEC 328 (6.5 units). The note says these are completed after ECC graduation but are required to complete the Rad Tech Program. A reviewer should check whether they count toward the A.S. degree itself."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

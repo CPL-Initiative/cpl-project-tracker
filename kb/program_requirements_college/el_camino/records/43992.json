@@ -98,7 +98,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pair_read_as_alternatives",
+    "label": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.",
+    "words": "ATEC 22B (8 units) may be replaced by ATEC 25 AND ATEC 26 together (4+4 units); the two alternatives must both be taken, not either one."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

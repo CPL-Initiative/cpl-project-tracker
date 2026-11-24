@@ -1326,6 +1326,28 @@ def ge_units_recall(every: list[dict]) -> dict:
     return out
 
 
+# S720 at El Camino (kb/_program_piles_s720_elcamino.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('noted_figures_differ',
+         "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+         40),  # #3753
+        ('pool_figure_not_read',
+         'The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.',
+         40),  # #3755
+        ('prerequisites_counted',
+         "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+         70),  # College of the Sequoias' branch
+        ('pair_read_as_alternatives',
+         'The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.',
+         50),  # #3755
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def ge_units_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     """The gap's own claim, that no units were printed for the pattern, measured on the records of its shape
     (#3678 second reader, finding 2): ge_claim's three counts (says_none, prints_figure, silent) on those records,

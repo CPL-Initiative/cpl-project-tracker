@@ -98,7 +98,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "prerequisites_counted",
+    "label": "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+    "words": "total_units records 'Total Major Units: 48', which covers the Required Core only; the Program Prerequisites block prints its own 'Total Prerequisite Units: 20' and is not included in the 48."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
