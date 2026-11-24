@@ -108,6 +108,14 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   // The held codes (S695): #commons/subjects/held, the same address path; the round trip is in
   // tests/commons_subjects_held.test.js (1, 5).
   check("(E) commons/subjects/held is a view of the Subjects list's address", /var HELD = "held"/.test(SUBJJS) && /S\.view === HELD/.test(SUBJJS));
+  // S719: the MQ view (#commons/subjects/mq), its code sidebar (mq/code/<COMMON>), the statewide list filtered to a
+  // code (statewide/code/<COMMON>) and a second sidebar (.../courses/<LOCAL>, .../colleges/<LOCAL>) are parts of the
+  // Subjects list's address, read by render and reported by address(); the round trips are in
+  // tests/commons_subjects_mq.test.js (1, 2, 4).
+  check("(E) ⭐ commons/subjects/mq, its sidebars and the statewide code filter carry their address",
+    /var MQ = "mq"/.test(SUBJJS) && /S\.view === MQ && MQS\.code \? "\/code\/" \+ MQS\.code/.test(SUBJJS)
+    && /SWS\.filter === "code" && SWS\.common \? "\/code\/" \+ SWS\.common/.test(SUBJJS)
+    && /"\/" \+ STACK\.second\[0\] \+ "\/" \+ STACK\.second\[1\]/.test(SUBJJS) && /if \(seg\[1\] === "code" && seg\[2\]\)/.test(SUBJJS));
   check("(E) a college's hand-over pane carries its address", /handover: 0/.test(DATAJS) && /p\.k === "handover"/.test(DATAJS));
   // #3310: a module beside commons_data.js adds its views to VIEWS, so each opens from #collect/<view> by the
   // same parser; Data elements and sharing is the first (#collect/sharing). The round trip is in
