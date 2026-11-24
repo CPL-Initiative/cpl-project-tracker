@@ -232,13 +232,21 @@ def may_continue(filed: dict) -> str | None:
     return words if words and words in notes else None
 
 
+# A gap that says the page prints a degree's general education as None or N/A (Contra Costa's second reader, S720):
+# such a record read no GE, so its GE score is ge_units_not_read's 50, never 100. Kept here, inside confidence(),
+# because the reconcile's keep_named_gaps recomputes every kept gap's scores through this function (#3756).
+GE_NOT_PRINTED = frozenset({"degree_summary_ge_none"})
+GE_NOT_PRINTED_CAP = 50
+
+
 def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok: bool | None = True) -> dict:
     """The five scores, 0-100, or None where a score does not apply. Unit arithmetic: 100 when the check passes,
     else the gap's score. Course-list match: the share of the closed list placed, None with no closed list, and at
     most 50 on a reviewed record whose note says its list may continue (MAY_CONTINUE_REVIEWED). GE pattern:
     None for a program with no degree total (general education does not apply: a certificate, a noncredit
-    program), else 50 when it names a pattern with no units, else 100. Catalog year: 100 for the registry's current
-    year, 60 for a prior year. Source: by how the page was found: a sitemap or link page 100, a PDF slice 80, and 60
+    program), else 50 when it names a pattern with no units or when its gap says the page prints no general
+    education (GE_NOT_PRINTED), else 100. Catalog year: 100 for the registry's current year, 60 for a prior year.
+    Source: by how the page was found: a sitemap or link page 100, a PDF slice 80, and 60
     (UNKNOWN_SOURCE) when the sources file names another method or none."""
     sc = filed.get("score") or {}
     a = sc.get("arithmetic") or {}
@@ -248,6 +256,8 @@ def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok:
         ge = None
     else:
         ge = 50 if (prog.get("ge_pattern") and S._span(prog.get("ge_units")) is None) else 100
+        if gap in GE_NOT_PRINTED:
+            ge = min(ge, GE_NOT_PRINTED_CAP)
     clm = None if share is None else int(round(float(share) * 100))
     # S720 (#3755's reader): noted_section_cut_off, section_cut_off's reviewed-list form, takes the same cap here, so
     # a recompute through confidence() (fill's keep_named_gaps, #3756) keeps the plan's filed score.
@@ -1458,6 +1468,25 @@ def hours_precision(files: list[dict], keys: frozenset | None = None) -> dict:
             "silent": counts["silent"], "hand_held_no_section": len(held),
             "hand_held_flagged_by_hours_claim": len(flagged),
             "hand_held_not_flagged": ["%s %s" % (f["college"], f["control_number"]) for f in held if f not in flagged]}
+
+
+# S720 at Contra Costa (kb/_program_piles_s720_contracosta.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('lists_not_closed',
+         "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),  # #3753
+        ('noted_unit_floor',
+         'The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.',
+         70),  # #3753
+        ('degree_summary_ge_none',
+         "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+         50),  # Contra Costa's branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
 
 
 def ge_units_recall(every: list[dict]) -> dict:
