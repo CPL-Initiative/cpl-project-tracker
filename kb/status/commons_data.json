@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T10:09:03Z",
+ "written_at": "2026-11-24T11:28:16Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17227,
-  "gap": 5108,
+  "passing": 17235,
+  "gap": 5100,
   "with_gap": 118,
   "cost_usd": 1341.01,
   "passed_at_read": 16357,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16794,
-  "gap": 5108,
-  "collected_with_gaps": 433,
+  "passing": 16807,
+  "gap": 5100,
+  "collected_with_gaps": 428,
   "discontinued": 0
  },
  "census_live": {
@@ -7848,13 +7848,13 @@
    "harvested": true,
    "slug": "modesto_junior",
    "programs": 199,
-   "passing": 165,
-   "gap": 34,
+   "passing": 173,
+   "gap": 26,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 8,
     "places_none": 1,
-    "unknown_without_live": 22
+    "unknown_without_live": 14
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -7910,7 +7910,7 @@
    "read_seconds": 899.9,
    "run": "44540818388",
    "levers": {
-    "reconcile_steps": 22,
+    "reconcile_steps": 14,
     "reader_page_search": 8,
     "program_course_file_check": 3,
     "reader_page_assignment": 1

@@ -64,18 +64,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
+    18.0,
     22.0
    ],
    "stated": [
     18.0,
     19.0
    ],
-   "why": [
-    "the blocks sum to 15.0-22.0; the catalog states 18.0-19.0"
+   "against": "program",
+   "why": [],
+   "meets": true,
+   "pooled": [
+    {
+     "blocks": [
+      "LIST A: SELECT ONE TO TWO",
+      "LIST B: SELECT ONE"
+     ],
+     "figure": [
+      6.0,
+      6.0
+     ],
+     "minimum": true,
+     "parts": [
+      3.0,
+      10.0
+     ],
+     "read": [
+      6.0,
+      10.0
+     ],
+     "words": "An overarching rule spans Lists A and B: 'SELECT 6 UNITS MINIMUM FROM THE LISTS BELOW WITH AT LEAST 3 UNITS FROM LIST A' (printed total 6)."
+    }
    ]
   },
   "repeated": {
@@ -97,7 +119,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

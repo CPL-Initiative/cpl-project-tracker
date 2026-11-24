@@ -77,19 +77,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
-    21.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 15.0-21.0; the catalog states 18.0-18.0"
+   "why": [],
+   "pooled": [
+    {
+     "blocks": [
+      "LIST A: Rehearsal and Performance or Technical Theatre Practicum",
+      "LIST B: Select courses from the following"
+     ],
+     "figure": [
+      12.0,
+      12.0
+     ],
+     "minimum": false,
+     "parts": [
+      9.0,
+      15.0
+     ],
+     "read": [
+      12.0,
+      12.0
+     ],
+     "words": "Beyond the 6 required units, an additional 12 units are required: minimum 3 units from List A and minimum 6 units from List B; the remaining 3 units may come from either list."
+    }
    ]
   },
   "repeated": {
@@ -117,21 +137,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "pool_figure_not_read",
-    "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
-    "words": "Beyond the 6 required units, an additional 12 units are required: minimum 3 units from List A and minimum 6 units from List B; the remaining 3 units may come from either list. List B may use up to 3 units from List A not already used; repeated courses apply once and cannot count for both lists."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 40,
-   "course_list_match": 91,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": true
  },
  "record": {
   "program": {

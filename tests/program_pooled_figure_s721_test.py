@@ -1,0 +1,162 @@
+#!/usr/bin/env python3
+"""S721, lane 1: one figure printed over several lists together, read as one pool, and the plan s721p
+(kb/_program_requirements_score.py pooled_figures and pool_span; kb/_program_pooled_s721.py).
+
+WHY. S720 filed the named gap pool_figure_not_read on records whose notes name one parent figure over several lists
+(f-pool-figure-gaps-pass-when-pooled-s720) and held Modesto Junior's plan s720j for the rule
+(d-modesto-held-pooled-rule-s720). A record today's scorer passes is never gap-filed (p-scorer-passes-guard-s720), so a
+record the pooled reading passes loses the gap through the rescore. Pinned here:
+
+  * the reading on built records: a heading split over sub-lists, lists named by letter, a figure equal to the
+    program's total, the sentences that name no pool, two figures over the same parts, a cut-off read, parts that
+    cannot reach a fixed figure, and the switch;
+  * the held answers (S720's #3756 negatives, Modesto's eight, the sixteen applied rows) through the module's own
+    classify, against the records the plan rescored;
+  * the self-recall the plan ran over every committed record, read from the fixture: no pass-to-fail, and every
+    fail-to-pass names the sentence that prints its figure;
+  * the plan: the rows and held keys pinned in the fixture (tests/fixtures/pooled_figure_s721.json, never the live
+    census), named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none, and the
+    load's image of each committed record is its receipt's after-image.
+
+Run from repo root: python3 tests/program_pooled_figure_s721_test.py
+"""
+import json
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FIXTURE = os.path.join(ROOT, "tests", "fixtures", "pooled_figure_s721.json")
+MIG = os.path.join(ROOT, "kb", "migrations", "2026-11-24_s721p_prreq_pooled_%s.sql")
+sys.path.insert(0, os.path.join(ROOT, "kb"))
+import _program_named_gaps as NG  # noqa: E402
+import _program_pooled_s721 as W  # noqa: E402
+import _program_requirements_score as S  # noqa: E402
+
+checks, failures = [0], []
+
+
+def check(cond, msg):
+    checks[0] += 1
+    if not cond:
+        failures.append(msg)
+
+
+def blk(name, rule, minimum=None, stated=None, units=(), group=None):
+    return {"name": name, "rule": rule, "minimum": minimum, "option_group": group, "stated": stated,
+            "courses": [{"code": "X %d" % i, "units": u} for i, u in enumerate(units)]}
+
+
+def rec(blocks, notes, total):
+    return {"program": {"measure": "units", "total_units": {"min": total[0], "max": total[1]}},
+            "blocks": blocks, "notes": notes}
+
+
+def units(r):
+    return S.program_units(r, {})
+
+
+# ── the reading on built records ──────────────────────────────────────────
+breadth = [blk("CAREER - COMPLETE 5 UNITS", "all", units=(5,)),
+           blk("SCIENCE BREADTH COURSES", "choose_units", 6, {"min": 6, "max": 9}, (3, 3, 3)),
+           blk("SCIENCE BREADTH COURSES", "choose_units", 0, {"min": 0, "max": 3}, (3, 3)),
+           blk("MAJOR - COMPLETE 12 UNITS", "all", units=(6, 6))]
+note = "The Science Breadth section requires 9 units total, split as 6-9 units and 0-3 units."
+r = rec(breadth, [note], (26, 26))
+check(units(rec(breadth, [], (26, 26)))[0] == (23.0, 29.0), "with no note, the parts add up (23-29)")
+check(units(r)[0] == (26.0, 26.0), "a heading split over two sub-lists reads its 9 once (26)")
+check(S.score(r, [], "")["arithmetic"]["status"] == "equal", "the pooled record passes")
+check(S.score(r, [], "")["arithmetic"]["pooled"][0]["figure"] == [9.0, 9.0], "the score names the pool it read")
+check(units(rec(breadth, ["The Science Breadth section is printed as two lists of 6-9 and 0-3 units."], (26, 26)))[0]
+      == (23.0, 29.0), "a sentence printing no figure over its parts reads no pool")
+check(units(rec(breadth, ["The Science Breadth section requires 9 units total."], (26, 26)))[0] == (23.0, 29.0),
+      "a figure with no word saying the parts are taken together reads no pool")
+check(units(rec(breadth, [note, "The Science Breadth section requires 8 units total, split as two lists."],
+                (26, 26)))[0] == (23.0, 29.0), "two figures over the same parts read no pool")
+cut = rec(breadth, [note, "The Category C list is cut off after 'X 4' with no units printed; further courses may "
+                         "follow on the full page."], (26, 26))
+cut["missing_explained"] = [{"code": "X 9", "why": "not in the text read"}]
+check(S.window_cut(cut) and units(cut)[0] == (23.0, 29.0),
+      "a reader's note saying the list is cut off refuses the pool (Fullerton 18166)")
+lists = [blk("Required", "all", units=(33,)), blk("List A: Select 3 to 5 units", "choose_units", 3, {"min": 3, "max": 5}),
+         blk("List B: Select 3 to 9 units", "choose_units", 3, {"min": 3, "max": 9}),
+         blk("List C: May select 3 or 6 units", "choose_units", 0, {"min": 3, "max": 6})]
+check(units(rec(lists, ["Lists B and C together require a total of 9 units: List B 3-9 units."], (45, 47)))[0]
+      == (45.0, 47.0), "lists named by letter read their one figure (45-47)")
+check(units(rec(lists, ["Lists B and D together require a total of 9 units."], (45, 47)))[0] == (42.0, 53.0),
+      "a letter no block carries reads no pool")
+fill = [blk("Required Core", "all", units=(5,)), blk("a minimum of 4 units (List A)", "choose_units", 4),
+        blk("a minimum of 3 units (List B)", "choose_units", 3)]
+fn = "Additional courses from List A or List B must be completed to achieve 18 total units."
+check(units(rec(fill, [fn], (18, 18)))[0] == (18.0, 18.0), "the program's printed total over its lists fills it (18)")
+check(units(rec(fill, [fn], (20, 20)))[0] == (12.0, 12.0), "a figure apart from the printed total and its parts reads none")
+check(units(rec(fill, ["Additional courses must be completed to achieve 18 total units."], (18, 18)))[0]
+      == (12.0, 12.0), "a total figure naming no list, area or group reads none")
+check(S.pool_span((9, 9), False, 1, 6, False) is None, "parts that cannot run past their figures never reach 9")
+check(S.pool_span((9, 9), False, 10, 12, False) == (10, 10), "a part's own floor still binds past the figure")
+check(S.pool_span((6, 6), True, 3, 10, False) == (6, 10), "a minimum lets the parts' high end stand")
+check(S.pool_span((18, 22), False, 4, 10, True) == (18, 22), "open lists reach a printed range")
+S.POOLED_ON = False
+check(units(r)[0] == (23.0, 29.0), "POOLED_ON off reads no pool")
+S.POOLED_ON = True
+
+# ── the held answers ──────────────────────────────────────────────────────
+ha = W.held_answers()
+check(ha["read"] == len(W.HELD_ANSWERS) == 29 and ha["right"] == ha["read"] and not ha["wrong"],
+      "the held answers, %d of %d: %s" % (ha["right"], ha["read"], ha["wrong"]))
+check(set(W.REVIEWED_S720J) == {cn for (c, cn), v in W.HELD_ANSWERS.items() if c == W.MODESTO}
+      and not set(W.HELD_S720J) & set(W.REVIEWED_S720J) and len(W.HELD_S720J) == 13,
+      "Modesto's eight are pinned and its 13 held stay apart")
+
+# ── the self-recall and the plan, read from the fixture ───────────────────
+with open(FIXTURE, encoding="utf-8") as fh:
+    fx = json.load(fh)
+with open(os.path.join(ROOT, fx["receipt"]), encoding="utf-8") as fh:
+    rcpt = json.load(fh)
+sr = rcpt["self_recall"]
+check(sr["counts"] == fx["self_recall_counts"] and "pass_to_fail" not in sr["counts"], "no pass-to-fail statewide")
+check(sr["records"] > 18000, "the self-recall read every committed record (%d)" % sr["records"])
+check([{"college": m["college"], "control_number": m["control_number"]} for m in sr["members"]["fail_to_pass"]]
+      == fx["fail_to_pass"], "the fail-to-pass members are the fixture's")
+check(all(m["pooled"] and all(p["words"] and S._pool_figure(p["words"]) for p in m["pooled"])
+          for m in sr["members"]["fail_to_pass"]), "every fail-to-pass names the sentence that prints its figure")
+check(set(rcpt["elsewhere_left_for_next_run"]) == {"Cuyamaca College", "Golden West College", "Rio Hondo College"}
+      and not set(rcpt["elsewhere_left_for_next_run"]) & set(W.LANE), "flips outside the eight are left, counted")
+
+rows = {(r["college"], r["control_number"]): r["moves_to"] for r in fx["rows"]}
+got = {(r["college"], r["control_number"]): r["moves_to"] for r in rcpt["records"]}
+check(got == rows and rcpt["moved"] == len(rows) == 14, "the receipt names the fixture's 14 rows")
+check(sum(1 for v in rows.values() if v == "passes") == 13 and rows[(W.MODESTO, "06642")] == W.GAP,
+      "13 rows pass, and Modesto 06642 takes pool_figure_not_read")
+check({(h["college"], h["control_number"]) for h in rcpt["held"]}
+      == {(h["college"], h["control_number"]) for h in fx["held"]}, "the receipt holds the fixture's keys")
+check(set(rcpt["colleges"]) == set(W.LANE) and all(c in W.LANE for c, _ in rows), "rows at the eight colleges only")
+for part in ("apply", "preread", "preread_md5", "rollback"):
+    with open(MIG % part, encoding="utf-8") as fh:
+        sql = fh.read()
+    check(all("'%s'" % cn in sql for _, cn in rows)
+          and not any("'%s'" % h["control_number"] in sql for h in fx["held"]), "%s names exactly the 14" % part)
+    if part == "apply":
+        check("confirm guard" in sql and "e(expect) as (values (14))" in sql, "the apply guards a confirm")
+check(not os.path.exists(os.path.join(ROOT, "kb", "migrations", ".apply"))
+      or "s721p" not in open(os.path.join(ROOT, "kb", "migrations", ".apply"), encoding="utf-8").read(),
+      "the plan does not write .apply (d-conductor-owns-applies-s720)")
+check(W.plan(write=False)["rows"] == [], "a second run plans none")
+images = NG._load_images(set(W.LANE) & {c for c, _ in rows})
+pages = {(r["college"], r["control_number"]): r["page"] for r in fx["rows"]}
+for r in rcpt["records"]:
+    k = (r["college"], r["control_number"])
+    img = images[k]
+    check(img["checks"] == r["after_image"]["checks"], "%s %s: the load posts the receipt's after-image" % k)
+    check(img["record"] == r["before_image"]["record"] and img["source_url"] == pages[k],
+          "%s %s: the record and its page are unchanged" % k)
+    if r["moves_to"] == "passes":
+        check(img["checks"]["arithmetic"] == "equal" and not img["checks"].get("gaps"), "%s %s: passes with no gap" % k)
+    else:
+        check(img["checks"].get("gaps") == [W.GAP] and img["checks"]["arithmetic"] == "unequal",
+              "%s %s: still failing, its one gap" % k)
+    check(W.on_live_run(W.load(*k)), "%s %s: on its live run" % k)
+
+print("%d checks, %d failures" % (checks[0], len(failures)))
+for m in failures:
+    print("FAIL:", m)
+sys.exit(1 if failures else 0)

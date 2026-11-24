@@ -64,18 +64,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    20.0,
-    26.0
+    23.0,
+    23.0
    ],
    "stated": [
     23.0,
     23.0
    ],
-   "why": [
-    "the blocks sum to 20.0-26.0; the catalog states 23.0-23.0"
+   "against": "program",
+   "why": [],
+   "pooled": [
+    {
+     "blocks": [
+      "AGRICULTURE SCIENCE BREADTH COURSES",
+      "AGRICULTURE SCIENCE BREADTH COURSES CONTINUED-TAKE AGM 200 OR AGM 235 BUT NOT BOTH"
+     ],
+     "figure": [
+      6.0,
+      6.0
+     ],
+     "minimum": false,
+     "parts": [
+      3.0,
+      9.0
+     ],
+     "read": [
+      6.0,
+      6.0
+     ],
+     "words": "Section II (AGRICULTURE SCIENCE BREADTH COURSES - COMPLETE 6 UNITS, Total 6) requires 6 units across two sub-lists: 3-6 units from PLSC200/NR200/AGEC225 and 0-3 units from AGM200 or AGM235 (not both)."
+    }
    ]
   },
   "repeated": {
@@ -97,7 +118,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

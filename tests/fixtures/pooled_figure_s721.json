@@ -1,0 +1,270 @@
+{
+ "why": "S721 plan s721p's members and pages, pinned at the plan (p-test-pins-census-members-s714), never the live census",
+ "receipt": "kb/receipts/program_requirement_records_pooled_s721_2026-11-24_s721p.json",
+ "rows": [
+  {
+   "college": "Clovis Community College",
+   "control_number": "33489",
+   "moves_to": "passes",
+   "page": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=146"
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "35415",
+   "moves_to": "passes",
+   "page": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "18163",
+   "moves_to": "passes",
+   "page": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interdisciplinary-studies/interdisciplinary-studies-emphasis-science-mathematics-associate-arts-degree/"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "06639",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-business-mjc-fall-2024"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "06642",
+   "moves_to": "pool_figure_not_read",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-mechanics-mjc-fall-2023"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08103",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/crop-science-mjc-summer-2020"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "30675",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/mathematics-for-transfer-degree-mjc-spring-2026"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "32226",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/history-for-transfer-degree-mjc-fall-2026"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "33945",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-technology-mjc-summer-2020v2"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "35276",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/agricultural-environmental-science-mjc-fall-2023v2"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "35277",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/agricultural-environmental-science-mjc-fall-2023"
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "03263",
+   "moves_to": "passes",
+   "page": "https://catalog.smc.edu/current/catalog.pdf#page=159"
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "32792",
+   "moves_to": "passes",
+   "page": "https://catalog.smc.edu/current/catalog.pdf#page=199"
+  },
+  {
+   "college": "Ventura College",
+   "control_number": "20576",
+   "moves_to": "passes",
+   "page": "https://catalog.vcccd.edu/ventura/programs-courses/engineering/engineering-coa/"
+  }
+ ],
+ "held": [
+  {
+   "college": "El Camino College",
+   "control_number": "02513"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02515"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02517"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08018"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08104"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08109"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08111"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "33944"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "37300"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "38067"
+  }
+ ],
+ "fail_to_pass": [
+  {
+   "college": "Clovis Community College",
+   "control_number": "33489"
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "35415"
+  },
+  {
+   "college": "Cuyamaca College",
+   "control_number": "18629"
+  },
+  {
+   "college": "Cuyamaca College",
+   "control_number": "18631"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02513"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02515"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02517"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "18163"
+  },
+  {
+   "college": "Golden West College",
+   "control_number": "19461"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "06639"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08103"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08104"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08111"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "30675"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "32226"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "33944"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "33945"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "35276"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "35277"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "37300"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "38067"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "19274"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "19275"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "19276"
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "03263"
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "32792"
+  },
+  {
+   "college": "Ventura College",
+   "control_number": "20576"
+  }
+ ],
+ "self_recall_counts": {
+  "fail_to_pass": 27,
+  "fail_to_fail": 5,
+  "pass_to_pass": 1
+ },
+ "self_recall_by_college": {
+  "fail_to_pass": {
+   "Clovis Community College": 1,
+   "College of the Sequoias": 1,
+   "Cuyamaca College": 2,
+   "El Camino College": 3,
+   "Fullerton College": 1,
+   "Golden West College": 1,
+   "Modesto Junior College": 12,
+   "Rio Hondo College": 3,
+   "Santa Monica College": 2,
+   "Ventura College": 1
+  },
+  "fail_to_fail": {
+   "Cuyamaca College": 1,
+   "Modesto Junior College": 2,
+   "Santa Ana College": 1,
+   "Ventura College": 1
+  },
+  "pass_to_pass": {
+   "Modesto Junior College": 1
+  }
+ }
+}

@@ -34,6 +34,18 @@ COLLEGE = "Fullerton College"
 ROWS = {"03853": "lists_not_closed", "03866": "lists_not_closed", "18163": "pool_figure_not_read",
         "08420": "noted_figures_differ", "42394": "noted_unit_floor", "08422": "no_own_page_total"}
 HELD = {"35174", "36798", "33680", "42143", "18166", "18749", "36863"}
+
+# S721's plan s721p (kb/_program_pooled_s721.py) reads the one figure these rows' pages print over several lists as one
+# pool. MOVED_S721P: the scorer now passes them, so S720's reading files no gap on them, and s721p moves their live rows
+# to passing with no gap. RESCORED_S721P: the reading moves the sum and the record still fails, so its filed gap and
+# its image stand while S720's reading of the old sum no longer does.
+MOVED_S721P = {'18163'}
+RESCORED_S721P = set()
+LEFT_S721P = MOVED_S721P | RESCORED_S721P
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_pooled_s721_2026-11-24_s721p.json"),
+          encoding="utf-8") as fh:
+    S721P_AFTER = {r["control_number"]: r["after_image"]["checks"] for r in json.load(fh)["records"]
+                   if r["college"] == COLLEGE}
 checks, failures = [0], []
 
 
@@ -54,7 +66,7 @@ check(set(W.GAPS) == {"noted_figures_differ", "noted_unit_floor", "lists_not_clo
 members = W.F.census_members(CENSUS_AT_PLAN)
 check(set(members) == set(ROWS) | HELD and len(members) == 13, "the fixture pins the 13 members")
 pr = W.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 13 and pr["right"] == 13 and not pr["wrong"] and not pr["not_hand_held"],
+check(pr["read"] == 13 and pr["right"] == 13 - len(LEFT_S721P) and sorted(w[0] for w in pr["wrong"]) == sorted(LEFT_S721P) and not pr["not_hand_held"],
       "precision 13 of 13: %s" % pr["wrong"])
 
 # The claim check (#3753's second reader, BLOCKER): capture.json's shared_pages puts 35174 and 36798 on the
@@ -72,7 +84,7 @@ check(W.claim(f, s2) == "a named course not found", "a named course the capture 
 check(W.scorer_passes(W.F._load("33680")) and W.scorer_passes(W.F._load("42143")), "the scorer passes 33680, 42143")
 check(W.gap_noted(W.F._load("33680")) is None and W.gap_noted(W.F._load("42143")) is None,
       "a record the scorer passes is never gap-filed")
-check(not any(W.scorer_passes(W.F._load(cn)) for cn in ROWS), "the scorer passes none of the six")
+check(not any(W.scorer_passes(W.F._load(cn)) for cn in ROWS if cn not in MOVED_S721P), "the scorer passes none of the six")
 s3 = copy.deepcopy(src)
 s3["08422"]["source"]["h1"] = "Musical Theatre Level 1 Certificate"
 check(W.claim(W.F._load("08422"), s3) == "the capture's page is not another award's",
@@ -80,7 +92,7 @@ check(W.claim(W.F._load("08422"), s3) == "the capture's page is not another awar
 
 # The boundary readings.
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 8 * 3 + 1, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == (8 - len(LEFT_S721P)) * 3 + 1, "every boundary reading names no gap: %s" % bd)
 
 # The plan.
 with open(RECEIPT, encoding="utf-8") as fh:
@@ -102,9 +114,17 @@ check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second r
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:
     img = images[(COLLEGE, r["control_number"])]
+    if r["control_number"] in MOVED_S721P:
+        check(img["checks"] == S721P_AFTER[r["control_number"]] and not img["checks"].get("gaps")
+              and img["checks"].get("arithmetic") == "equal",
+              "%s: the load posts s721p's after-image, passing with no gap" % r["control_number"])
+        check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
+        continue
     check(img["checks"] == r["after_image"]["checks"], "%s: the load posts the receipt's after-image" % r["control_number"])
     check(img["checks"].get("gaps") == [r["moves_to"]], "%s: the image carries its one gap" % r["control_number"])
     check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
+
+check(all(W.scorer_passes(W.F._load(cn)) for cn in MOVED_S721P), "the pooled reading passes the rows s721p moves")
 
 print("%d checks, %d failures" % (checks[0], len(failures)))
 for m in failures:

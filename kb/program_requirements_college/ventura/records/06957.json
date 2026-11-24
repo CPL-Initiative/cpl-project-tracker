@@ -63,37 +63,57 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    42.0,
-    53.0
+    69.0,
+    71.0
    ],
    "stated": [
-    45.0,
-    47.0
+    63.0,
+    65.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
    "why": [
-    "the blocks sum to 42.0-53.0; the catalog states 45.0-47.0"
+    "the blocks and general education sum to 69.0-71.0; the catalog prints 63.0-65.0 for the degree"
    ],
-   "degree": {
-    "pass": false,
-    "status": "unequal",
+   "major": {
+    "pass": true,
+    "status": "equal",
     "computed": [
-     66.0,
-     77.0
+     45.0,
+     47.0
     ],
     "stated": [
-     63.0,
-     65.0
+     45.0,
+     47.0
     ],
-    "against": "degree",
-    "ge": [
-     24.0,
-     24.0
-    ],
-    "why": [
-     "the blocks and general education sum to 66.0-77.0; the catalog prints 63.0-65.0 for the degree"
-    ]
-   }
+    "against": "program",
+    "why": []
+   },
+   "pooled": [
+    {
+     "blocks": [
+      "List B: Select 3 to 9 units from the following",
+      "List C: May select 3 or 6 units as part of the 9 units"
+     ],
+     "figure": [
+      9.0,
+      9.0
+     ],
+     "minimum": false,
+     "parts": [
+      6.0,
+      15.0
+     ],
+     "read": [
+      9.0,
+      9.0
+     ],
+     "words": "Lists B and C together require a total of 9 units: List B 3-9 units, List C optional ('May select 3 or 6 units as part of the 9 units'); List C minimum recorded as 0 with stated 3-6."
+    }
+   ]
   },
   "repeated": {
    "codes": [],
