@@ -79,8 +79,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 24.0-28.0; the catalog states 44.0-48.0"
-   ]
+    "the blocks sum to 24.0-28.0; the catalog states 44.0-48.0",
+    "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+   ],
+   "fill_refused": {
+    "gap": "section_cut_off",
+    "words": "The supplied text begins mid-table on page 359; the degree's heading, description and the first rows of its requirements table (likely on page 358) are missing."
+   }
   },
   "repeated": {
    "codes": [],
@@ -326,5 +331,6 @@
    "Certificates (CAD/CAM Programming, Manufacturing and Industrial Technology Certificate, Production Planning, Quality Technician) were not recorded."
   ]
  },
- "extracted_run": "39046850071"
+ "extracted_run": 45356831201,
+ "read_run": "39046850071"
 }

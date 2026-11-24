@@ -83,8 +83,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 9.0-9.0; the catalog states 30.0-30.0"
-   ]
+    "the blocks sum to 9.0-9.0; the catalog states 30.0-30.0",
+    "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+   ],
+   "fill_refused": {
+    "gap": "section_cut_off",
+    "words": "ART 300: core requirements not in text (likely on page 142); appears only in Art Education certificate and course descriptions"
+   }
   },
   "repeated": {
    "codes": [],
@@ -384,5 +389,6 @@
   ],
   "notes": []
  },
- "extracted_run": "39046850071"
+ "extracted_run": 45356831201,
+ "read_run": "39046850071"
 }
