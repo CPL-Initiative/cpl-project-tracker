@@ -729,6 +729,40 @@ blank-discipline row minted on them later would be edge-filled wrong; none exist
 - **Read a minted code against the local codes too.** ESTI was free among the common codes and is the local Esthetics
   code at 4 cosmetology and barbering colleges; Estimating keeps ESTG (#3730).
 
+## 2026-11-24 — S719 SkyShearwater: the web-search pass, the program-label rule, the 20th-edition baseline
+
+Sam, 2026-11-24 ~01:20Z: *"In this session, let's finish the subjects work and apply the design from the subject card to
+the other commons cards."* The search pass (#3741) closed handoff 719's first item; the views are in
+`docs/commons_lessons.md`, same date.
+
+- **A search summary is not the page.** The helpers filed titles from the search engine's summary of a page, and a
+  summary can name a code the page never prints. The rows say so in their notes, and the 69 pages read afterward (run
+  45304208269) named none of their codes in parentheses. The renames the summaries suggest (LATTC's IT 077-079 as formerly
+  MICROTK; Mt. San Antonio's DSPS as *Access (ACCS)*) wait for the printed line.
+- **A program that requires a code's courses is not a label for the code.** Two labels were dropped (Southwest FAM &
+  CS, West Los Angeles ALD HTH): each page was a program listing one or two of the code's courses among its own
+  requirements. The rule (`d-program-label-lists-the-codes-courses-s719`): a label files only when the program's page
+  lists the code's courses as its own.
+- **A grouped search does not stand for a row.** One helper ran a search across several codes at once and recorded
+  per-row queries that were never run for those codes. A row records only a query run for that code
+  (`d-search-row-records-its-own-query-s719`), so a reader can tell a code that was searched from one that was not.
+- **The web-search allowance is one budget per turn, shared by every helper.** Four helpers ran 196 searches, and 9
+  Los Angeles Trade-Technical rows got none when the allowance ran out; the session ran them in the next turn. A
+  fan-out of searches sizes its slices to the turn's allowance, not to the helper count.
+- **robots.txt closes a source, and the reader respects it.** Southwestern's 2017-2018 catalog archive prints
+  *Formerly PE/...* beside its ES courses and answers `robots_disallow` (run 45304973641); the current catalog prints
+  only *Formerly: ES/L ...* on ES/S courses (run 45305645978). COCI's PE/D matches DANC course for course (3 of 3),
+  and 19 of PE/A's 22 numbers sit under ES/A. The evidence is strong and still not printed in a page the reader may
+  take, so nothing files until Sam's word (a person's word is a source for the code history) or a printed source.
+- **A test that pins a committed value breaks on the day the value is correctly updated.**
+  `tests/csr_quarterly_probe_test.py` asserted edition 19; the re-baseline on the 20th edition (#3744, dispatch run
+  45311236371: COMPARE `same`, 2,983,718 bytes) failed it. The test now checks the baseline against the edition and
+  sha256 in `kb/reference/mq_handbook_20th.json`, the file the repo was read from, so a re-baseline that leaves the two
+  apart fails and a correct one passes
+  ([`methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh`](kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md),
+  its fourth instance). `kb/reference/mq_sections.json` still reads the 19th edition, so the probe's
+  `committed_edition` reads 19 (`f-mq-sections-still-19th-s719`).
+
 ## Moved from the lane (S717)
 
 The lane's definition of complete and its measured state, as they stood before Sam's ruling of 2026-11-23

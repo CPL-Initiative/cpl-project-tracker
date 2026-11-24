@@ -1,7 +1,7 @@
 ---
 title: A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect
 created: 2026-09-17
-updated: 2026-11-12
+updated: 2026-11-24
 tags: [methodology, testing, funding, daily-pipeline]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -13,6 +13,8 @@ artifacts:
   - tests/cpl_funding_measure_picker.test.js
   - tests/cpl_funding_metric_pin.test.js
   - cpl_funding_performance.js (regenerated daily)
+  - tests/csr_quarterly_probe_test.py
+  - kb/reference/csr_quarterly_baseline.json
 ---
 
 # A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect
@@ -136,3 +138,14 @@ real-data block only while its card is still held, lets a skipped block still re
 holds, and fails one check when no card is left, so the guard cannot go quietly vacuous. Data a curator acts on moves
 as surely as data a generator rewrites. Pin the rule to a fixture, and let a live-data block prove only that the
 fixture still looks like the data.
+
+## A fourth instance: a committed value a session updated correctly (2026-11-24, S719)
+
+`tests/csr_quarterly_probe_test.py` asserted that the quarterly MQ baseline in
+`kb/reference/csr_quarterly_baseline.json` was the 19th edition. No pipeline rewrites that file: a session does, when
+the Chancellor's Office prints a new handbook. #3744 re-based it on the 20th edition, the one
+`kb/reference/mq_handbook_20th.json` was read from (dispatch run 45311236371 printed COMPARE `same`, 2,983,718
+bytes), and the test failed on the correct change. The rewrite asserts the relation instead: the baseline's edition and
+sha256 equal the ones the committed handbook file records in its `_source`. A re-baseline that leaves the two apart
+still fails, and the next edition's re-baseline passes when the handbook file moves with it. **A committed value a
+person or session is expected to update is pinned to the file it must agree with, never to its current literal.**

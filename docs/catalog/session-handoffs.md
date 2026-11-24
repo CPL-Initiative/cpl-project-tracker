@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-675 document(s).
+676 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 720 | [Session 720 handoff (from SkyShearwater, S719, Sam's plain session of 2026-11-24: the web-search pass, the MQ view, every Commons card in the Subjects design)](../session_720_handoff.md) | 2026-11-24 |
 | 719 | [Session 719 handoff (from SkyPetrel, S718, Sam's plain session of 2026-11-23: Needs attention by confidence, the code-address read, check_generated covers every status file)](../session_719_handoff.md) | 2026-11-24 |
 | 718 | [Session 718 handoff (from SkyGannet, S717, Sam's plain session of 2026-11-23: a Common SUBJ for every MQ discipline, the 20th edition, Colleges by source, a sidebar beside the view)](../session_718_handoff.md) | 2026-11-23 |
 | 717 | [Session 717 handoff (from SkyAlbatross, S715, Sam's plain session of 2026-11-23: the Subjects figures answer their own edits, and the Subjects card from the mock)](../session_717_handoff.md) | 2026-11-23 |

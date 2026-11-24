@@ -274,7 +274,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A test must not take its own rule as the truth](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md) | methodology | published | 2026-11-14 | 2026-11-22 |
 | [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
-| [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-11-12 |
+| [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-11-24 |
 | [A test that writes to the queue it monitors — CI noise is indistinguishable from user signal](../kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A text measure must agree with what sits beside it](../kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A threshold belongs to the question that measured it](../kb-notes/methodology-a-threshold-belongs-to-the-question-that-measured-it.md) | methodology | published | 2026-09-21 |  |
