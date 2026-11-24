@@ -1,0 +1,60 @@
+{
+ "_readme": "S721 lever (the gap census's reader_page_assignment lever, run 45371224551): College of the Redwoods' 5 programs whose filed record places none of the state's listed courses. Automotive Technology A.S. 01816 and Advanced Automotive Technology certificate 22666 were handed each other's page; Aquaculture Technology A.S. 42928 the certificate page (aquaculture-technology-ca-fall-2023); Early Childhood Education certificate 13559 the page early-childhood-education-fall-2018; North Coast Paramedic certificate 30811 its own-looking page, whose record placed none of HO159, HO170A, HO170B and HO170D. This plan reads each candidate page through the publish/content call the capture reads, and the menu's publish call for the Early Childhood and Paramedic addresses, so a session checks each site_pages pin against the text the capture will read. No model call, nothing written.",
+ "college": "College of the Redwoods",
+ "questions": {
+  "own_page": "What the capture reads on each program's own page: its heading, its course list and its total.",
+  "menu": "Which addresses the menu gives Early Childhood Education and Paramedic programs."
+ },
+ "keywords": [
+  "<h[1-3][^>]*>[^<]{0,120}",
+  "[Tt]otal[^\\n<]{0,60}[Uu]nits?",
+  "[Rr]equired [Cc]ourses?",
+  "early-childhood[^\"\\s,]{0,60}",
+  "paramedic[^\"\\s,]{0,60}",
+  "HO ?1[57]\\d[A-D]?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "menu"
+   ],
+   "why": "13559 and 30811: the menu's addresses",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/2026-2027,home?tenant=redwoods.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "01816",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,automotive-technology-fall-2024?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22666",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,advanced-automotive-technology-ca-fall-2024?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "42928",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,aquaculture-technology-fall-2023?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "30811",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,north-coast-paramedic-summer-2019?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "13559",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,early-childhood-education-fall-2018?tenant=redwoods.elumenapp.com"
+  }
+ ]
+}

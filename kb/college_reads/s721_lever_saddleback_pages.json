@@ -1,0 +1,41 @@
+{
+ "_readme": "S721 lever (the gap census's reader_page_assignment lever, run 45371224551): Saddleback College's 7 programs whose filed record (capture 38843470509, 2026-10-16) places none of the state's listed courses, each handed another program's entry: Retailing and Selling A.S. 04054 and certificate 22844, School Age Care and Recreation 22895, Early Childhood Master Teacher 22896 and Site Supervisor 22897 (all three the Cal-GETC entry), Business Information Worker I 36224 and II 36225. This plan reads the catalog list and the Credit Programs A-Z entry with the data its own scripts fetch from its host (each navigation record naming these titles, with its id and aliaspath) and the links it renders, so a session sees whether each program has an entry of its own in the 2026-2027 catalog. No model call, nothing written.",
+ "college": "Saddleback College",
+ "questions": {
+  "own_page": "Which entry, if any, is each program's own in the 2026-2027 catalog (its id and aliaspath)."
+ },
+ "keywords": [
+  "[Rr]etail[^\\n\"]{0,80}",
+  "[Ss]chool [Aa]ge[^\\n\"]{0,80}",
+  "[Mm]aster [Tt]eacher[^\\n\"]{0,80}",
+  "[Ss]ite [Ss]upervisor[^\\n\"]{0,80}",
+  "[Ii]nformation [Ww]orker[^\\n\"]{0,80}",
+  "2026[^\\n\"]{0,40}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "the catalog list (which catalog id is 2026-2027)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getCatalogs"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "04054 22844 22895 22896 22897 36224 36225",
+   "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ",
+   "network": true,
+   "network_find": [
+    "Retail",
+    "School Age",
+    "Master Teacher",
+    "Site Supervisor",
+    "Information Worker"
+   ],
+   "links": "retail|school|master|site|worker|information|child|early|pgrm",
+   "links_cap": 120
+  }
+ ]
+}
