@@ -38,6 +38,19 @@ ROWS.update({cn: "pool_figure_not_read" for cn in ("03263", "08970", "21007", "3
 ROWS.update({cn: "pair_read_as_alternatives" for cn in ("39671", "44004", "46189", "39680")})
 ROWS.update({cn: "repeat_read_once" for cn in ("43655", "43743", "44720")})
 HELD = {"41797", "43767", "21026"}
+
+# S721's plan s721p (kb/_program_pooled_s721.py) reads the one figure these rows' pages print over several lists as one
+# pool. MOVED_S721P: the scorer now passes them, so S720's reading files no gap on them, and s721p moves their live rows
+# to passing with no gap. RESCORED_S721P: the reading moves the sum and the record still fails, so its filed gap and
+# its image stand while S720's reading of the old sum no longer does. These sets pin only the keys s721p moved;
+# every other key stays pinned to S720's reading as before.
+MOVED_S721P = {'03263', '32792'}
+RESCORED_S721P = set()
+LEFT_S721P = MOVED_S721P | RESCORED_S721P
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_pooled_s721_2026-11-24_s721p.json"),
+          encoding="utf-8") as fh:
+    S721P_AFTER = {r["control_number"]: r["after_image"]["checks"] for r in json.load(fh)["records"]
+                   if r["college"] == COLLEGE}
 checks, failures = [0], []
 
 
@@ -55,19 +68,19 @@ members = W.census_members(CENSUS_AT_PLAN)
 check(set(members) == set(ROWS) | HELD and len(members) == 23 and not set(W.PERSON) & set(members),
       "the fixture less the three for a person gives the 23")
 pr = W.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 23 and pr["right"] == 23 and not pr["wrong"], "precision 23 of 23: %s" % pr["wrong"])
+check(pr["read"] == 23 and pr["right"] == 23 - len(LEFT_S721P) and sorted(w[0] for w in pr["wrong"]) == sorted(LEFT_S721P), "precision 23 of 23: %s" % pr["wrong"])
 check(NG.figures_differ_fails(W._load("41797")) is not None and W.gap_noted(W._load("41797")) is None,
       "figures_differ_fails holds 41797 off catalog_figures_differ")
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 20} and not cc["not_standing"], "20 claims stand")
+check(cc["counts"] == {"stands": 20 - len(LEFT_S721P)} and not cc["not_standing"], "20 claims stand")
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2["43743"]["codes_found"] = [c for c in s2["43743"]["codes_found"] if c != "MUSIC64"]
 check(W.claim(W._load("43743"), s2) == "a named course not found", "a named course the capture lacks holds it")
 
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 20 * 3 + 3, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == (20 - len(LEFT_S721P)) * 3 + 3, "every boundary reading names no gap: %s" % bd)
 
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
@@ -82,15 +95,23 @@ for part in ("apply", "preread", "preread_md5", "rollback"):
           "%s names exactly the 20" % part)
     if part == "apply":
         check("confirm guard" in sql and "e(expect) as (values (20))" in sql, "the apply guards a confirm, expects 20")
-check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the rows (#3753's MAJOR)")
+check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS if cn not in MOVED_S721P), "the scorer passes none of the rows (#3753's MAJOR)")
 check(W.shared_with("43767") == ["03302", "40812"], "43767's page is shared (#3753's BLOCKER class)")
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:
     img = images[(COLLEGE, r["control_number"])]
+    if r["control_number"] in MOVED_S721P:
+        check(img["checks"] == S721P_AFTER[r["control_number"]] and not img["checks"].get("gaps")
+              and img["checks"].get("arithmetic") == "equal",
+              "%s: the load posts s721p's after-image, passing with no gap" % r["control_number"])
+        check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
+        continue
     check(img["checks"] == r["after_image"]["checks"], "%s: the load posts the receipt's after-image" % r["control_number"])
     check(img["checks"].get("gaps") == [r["moves_to"]], "%s: the image carries its one gap" % r["control_number"])
     check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
+
+check(all(W.scorer_passes(W._load(cn)) for cn in MOVED_S721P), "the pooled reading passes the rows s721p moves")
 
 print("%d checks, %d failures" % (checks[0], len(failures)))
 for m in failures:

@@ -60,40 +60,60 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    42.0,
-    53.0
+    69.0,
+    71.0
    ],
    "stated": [
-    45.0,
-    47.0
+    63.0,
+    65.0
    ],
-   "against": "program",
-   "why": [
-    "the blocks sum to 42.0-53.0; the catalog states 45.0-47.0"
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
    ],
-   "degree": {
-    "pass": false,
-    "status": "unequal",
+   "why": [],
+   "major": {
+    "pass": true,
+    "status": "equal",
     "computed": [
-     66.0,
-     77.0
+     45.0,
+     47.0
     ],
     "stated": [
-     63.0,
-     65.0
+     45.0,
+     47.0
     ],
-    "against": "degree",
-    "ge": [
-     24.0,
-     24.0
-    ],
-    "why": [
-     "the blocks and general education sum to 66.0-77.0; the catalog prints 63.0-65.0 for the degree"
-    ]
-   }
+    "against": "program",
+    "why": []
+   },
+   "pooled": [
+    {
+     "blocks": [
+      "List B: Select 3 to 9 units from the following",
+      "List C: May select 3 or 6 units as part of the 9 units"
+     ],
+     "figure": [
+      9.0,
+      9.0
+     ],
+     "minimum": false,
+     "parts": [
+      6.0,
+      15.0
+     ],
+     "read": [
+      9.0,
+      9.0
+     ],
+     "words": "Lists B and C together require a total of 9 units: List B 3-9 units, List C optional ('May select 3 or 6 units as part of the 9 units'); List C minimum recorded as 0 with stated 3-6."
+    }
+   ],
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -117,21 +137,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "pool_figure_not_read",
-    "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
-    "words": "Lists B and C together require a total of 9 units: List B 3-9 units, List C optional ('May select 3 or 6 units as part of the 9 units'); List C minimum recorded as 0 with stated 3-6."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 40,
-   "course_list_match": 100,
-   "ge_pattern": 100,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": true
  },
  "record": {
   "program": {
@@ -160,7 +166,8 @@
     "Analyze and interpret data to make engineering problem decisions.",
     "Identify, formulate, and solve basic engineering problems."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -432,5 +439,14 @@
    "Outcomes are printed in the page's program student learning outcomes tab for this program; recorded for this award."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "38756014587",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 45-47, the major total the catalog prints; the major and general education sum to 69-71 against the degree's 63-65 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

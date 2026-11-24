@@ -73,26 +73,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
-    21.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 15.0-21.0; the catalog states 18.0-18.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     66.0,
-     72.0
+     69.0,
+     69.0
     ],
     "stated": [
      60.0,
@@ -105,7 +103,29 @@
     ],
     "why": [],
     "overlap": true
-   }
+   },
+   "pooled": [
+    {
+     "blocks": [
+      "AREA 1 DIVERSITY",
+      "AREA 1 DIVERSITY"
+     ],
+     "figure": [
+      3.0,
+      3.0
+     ],
+     "minimum": false,
+     "parts": [
+      0.0,
+      6.0
+     ],
+     "read": [
+      3.0,
+      3.0
+     ],
+     "words": "Together Area 1 requires one 3-unit course."
+    }
+   ]
   },
   "repeated": {
    "codes": [],
@@ -129,7 +149,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
