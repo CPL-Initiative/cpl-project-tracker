@@ -75,6 +75,8 @@ All verbatim in `docs/commons_lessons.md`, S724. **RULED:** `r-sidebar-narrow-bo
    holding its words, common subject and local subjects, saved under the reviewer's name for the whole team and opened
    from its own address. A deliberate save, so it sits outside *Tabs never remember a filter*. Storing it is a new
    field on a shared table: map it in `kb/governance_surface_map.json` before it ships (Rule 10 a3).
+   Sam: *"the saved filters might come in handy for auto combining"*: a saved filter can run nightly, gathering new
+   matches that clear a confidence score and listing the rest for review (the same low-impact saves, each undoable).
    Sam then: *"els will be a similar case of big mid consolidation into just a few"*: build Gather for both; read
    `docs/reference/lanes/esl-packaging.md` (the comprehensives and carve-outs) before designing it.
 1. **The anchor-page build, step 2:** the Common courses / Local courses toggle on the Courses List.
