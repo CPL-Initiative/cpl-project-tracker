@@ -89,10 +89,9 @@ withhold kb/reference/blocked_catalog_hunt.json
 # The attempts to read a college's subject titles (S717): kb/_subject_sources.py reads it; the page reads
 # kb/status/subject_sources.json.
 withhold kb/reference/subject_source_attempts.json
-# The 20th-edition MQ handbook's disciplines and the MQ view (S717): builders and the MQ view mock read them; no
-# COBI page reads them yet.
+# The 20th-edition MQ handbook's disciplines (S717): kb/_mq_view.py reads them; the MQ view reads
+# kb/status/mq_view.json (published, S719).
 withhold kb/reference/mq_handbook_20th.json
-withhold kb/status/mq_view.json
 withhold kb/status/csr_proposed_codes.json
 # A college's own department list of its subject codes (S705, Cerritos's schedule): the title builder reads it; the
 # pages read kb/status/local_subject_titles.json.
@@ -488,6 +487,7 @@ publish kb/status/local_subject_titles.json
 publish kb/status/mid_outcomes_compare_2026-11-12.json
 publish kb/status/mid_outcomes_compare_2026-11-12.md
 publish kb/status/mid_readiness.json
+publish kb/status/mq_view.json
 publish kb/status/noncredit_categories.json
 publish kb/status/noncredit_subject_titles.json
 publish kb/status/outline_hunt.json

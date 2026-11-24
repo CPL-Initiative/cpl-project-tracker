@@ -33,8 +33,12 @@
 // courses a decided common subject code releases; read from kb/status/held_subject_codes.json, built by
 // kb/_held_subject_codes.py, and fetched only when that view opens), #commons/subjects/statewide (S712: every local code at
 // every college with a call and a confidence, read from kb/status/statewide_subject_codes.json when it opens; a confirm
-// is a person's statewide filing, _SUBJ_DISC::<CODE>). The view picked lasts the visit; only the address carries it. Tokens only (the tab's --cmn roles),
-// words for every control, no glyphs.
+// is a person's statewide filing, _SUBJ_DISC::<CODE>), #commons/subjects/statewide/code/<COMMON> (S719: the same list
+// filtered to the local codes whose common code is <COMMON>), #commons/subjects/mq (S719: every MQ discipline with its
+// list type, its Title 5 provisions, its common code and the decisions behind it, read from kb/status/mq_view.json when
+// it opens) and #commons/subjects/mq/code/<COMMON> (its sidebar: the statewide list filtered to that code). A count in a
+// sidebar's table opens a second sidebar at .../courses/<LOCAL> or .../colleges/<LOCAL>. The view picked lasts the
+// visit; only the address carries it. Tokens only (the tab's --cmn roles), words for every control, no glyphs.
 (function () {
   "use strict";
 
@@ -132,6 +136,17 @@
   var SRC_PICKS = [["needed", "Titles needed", function (r) { return !r.catalog_on_file; }],
     ["titled", "Titled", function (r) { return r.catalog_on_file; }], ["all", "All", function () { return true; }]];
   var SRCS = { pick: "needed" };
+  /* The MQ view (S719; Sam, 2026-11-23, r-mq-view-more-than-codes-sam-2026-11-23: "we may need an mq view that
+     integrates our subj codes and decisions to we can troubleshoot anything moving forward"): every discipline in the
+     20th-edition Minimum Qualifications handbook, read from kb/status/mq_view.json (kb/_mq_view.py) when the view opens.
+     A common code opens a sidebar holding the statewide list filtered to that code. The pick and the search last the
+     visit; the open code lives in the address. */
+  var MQ = "mq", MQ_FILE = "kb/status/mq_view.json";
+  var MQS = { pick: "all", q: "", code: "", side: null };
+  /* The second sidebar a count in a sidebar's table opens (Sam, 2026-11-23, r-sidebar-tables-sort-resize-and-stack-
+     sam-2026-11-23: "add clickable links to open a second sidbar as needed--example Courses column for CT has 162
+     courses--would like to see those courses in another sidebar"): [kind, local code], kind "courses" or "colleges". */
+  var STACK = { second: null };
 
   /* ── Edit and Save (S701): a person's decision as one kb_curation row ── */
   var REST = (window.CPL_SUPABASE_URL || "https://hvuwhnbuahrtptokpqfh.supabase.co") + "/rest/v1";
@@ -436,17 +451,25 @@
      three lists, all/<slug>/<code> on the front list. */
   var S = { view: "", code: "", at: "", band: "", pick: "" };
   var ALL = "all";
+  /* A surface's own part of the address (S719): the statewide list's code filter, or the MQ view's open code, each
+     code/<COMMON>; then a second sidebar, <kind>/<LOCAL>. */
+  function subPath(first) {
+    var p = S.view === SW && SWS.filter === "code" && SWS.common ? "/code/" + SWS.common : S.view === MQ && MQS.code ? "/code/" + MQS.code : "";
+    return p + (!first && STACK.second && (S.view === SW || (S.view === MQ && MQS.code)) ? "/" + STACK.second[0] + "/" + STACK.second[1] : "");
+  }
+  /* first: the surface with its first sidebar only, where a course panel or a second sidebar opens from. */
+  function surfacePath(first) { return S.view ? S.view + subPath(first) : ""; }
   function address() {
-    var base = S.view ? "commons/subjects/" + encodeURIComponent(S.view) : S.code ? "commons/subjects/" + ALL : "commons/subjects";
+    var base = S.view ? "commons/subjects/" + encodeURIComponent(S.view) + subPath().split("/").map(encodeURIComponent).join("/") : S.code ? "commons/subjects/" + ALL : "commons/subjects";
     if (S.code && S.at) base += "/" + encodeURIComponent(S.at);
     return S.code ? base + "/" + S.code.split("/").map(encodeURIComponent).join("/") : base;
   }
   /* The same pick as render reads it: the surface, then the panel's college and code. */
   function viewPath() {
-    if (!S.code) return S.view;
-    return (S.view || ALL) + (S.at ? "/" + S.at : "") + "/" + S.code;
+    if (!S.code) return surfacePath();
+    return (surfacePath() || ALL) + (S.at ? "/" + S.at : "") + "/" + S.code;
   }
-  function panelPath(slug, code) { return S.view === slug ? slug + "/" + code : (S.view || ALL) + "/" + slug + "/" + code; }
+  function panelPath(slug, code) { return S.view === slug ? slug + "/" + code : (surfacePath(true) || ALL) + "/" + slug + "/" + code; }
   /* The filters a count opens (CLAUDE.md, a figure card opens what it counts). */
   var PICKS = {
     both: ["in both the catalog and COCI", function (r) { return r.side === "both"; }],
@@ -812,8 +835,19 @@
   }
 
   /* ── every local code statewide (S712) ── */
-  var SWS = { filter: "top", q: "", shown: 200, saved: null, readErr: "", msg: "", bulk: false, busy: false };
+  /* SWS holds the filings read live and the list's own filters on its page; a sidebar that holds the list (the MQ
+     view's) keeps its filters apart, so the page's list and the sidebar's never move each other. */
+  var SWS = { filter: "top", common: "", q: "", shown: 200, saved: null, readErr: "", msg: "", bulk: false, busy: false };
+  /* A code's common code: a person's filing (live, then the build's), else the list's call; the MQ builder keys a
+     code's local codes the same way (kb/_mq_view.py). */
+  function commonOf(c, W) {
+    var live = SWS.saved && SWS.saved[c.code];
+    if (live) return (W && W.byDisc[live.discipline]) || "";
+    return (c.filing && c.filing.common) || (c.recommend && c.recommend.common) || "";
+  }
   var SW_FILTERS = [
+    /* S719: the local codes under one common code, at statewide/code/<COMMON>; its chip shows only while it is on. */
+    ["code", "Under one common code", function (c, V, W) { return !!(V && V.common) && commonOf(c, W) === V.common; }],
     ["top", "Calls at 90% or better", function (c) { return canFile(c) && !filedOf(c) && c.recommend.confidence >= 0.9; }],
     ["all", "All", function () { return true; }],
     ["confirm", "Draft and peers agree", function (c) { return c["class"] === "confirm"; }],
@@ -829,9 +863,9 @@
     ["settled", "Filed by a person", function (c) { return !!filedOf(c); }]];
   function swModel(f) {
     f = f || {};
-    var disc = {};
-    (f.common_codes || []).forEach(function (p) { disc[p[0]] = p[1]; });
-    return { codes: f.codes || [], totals: f.totals || {}, rule: f._rule || "", recall: f.self_recall || [], disc: disc, pairs: f.common_codes || [] };
+    var disc = {}, byDisc = {};
+    (f.common_codes || []).forEach(function (p) { disc[p[0]] = p[1]; byDisc[p[1]] = p[0]; });
+    return { codes: f.codes || [], totals: f.totals || {}, rule: f._rule || "", recall: f.self_recall || [], disc: disc, byDisc: byDisc, pairs: f.common_codes || [] };
   }
   var swCache = null;
   function loadStatewide() {
@@ -941,10 +975,12 @@
     return String(college || "") + " " + first;
   }
   function webHref(q) { return "https://www.google.com/search?q=" + encodeURIComponent(q); }
-  function swRows(W) {
-    var F = SW_FILTERS.filter(function (f) { return f[0] === SWS.filter; })[0] || SW_FILTERS[0];
-    var q = SWS.q.trim().toLowerCase();
-    return W.codes.filter(F[2]).filter(function (c) {
+  function swFilter(k) { return SW_FILTERS.filter(function (f) { return f[0] === k; })[0]; }
+  function swRows(W, V) {
+    V = V || SWS;
+    var F = swFilter(V.filter) || swFilter("top");
+    var q = String(V.q || "").trim().toLowerCase();
+    return W.codes.filter(function (c) { return F[2](c, V, W); }).filter(function (c) {
       if (!q) return true;
       return (c.code + " " + (c.spellings || []).join(" ") + " " + (c.titles || []).join(" ") + " " + (c.colleges || []).map(function (x) { return x[0]; }).join(" ")).toLowerCase().indexOf(q) >= 0;
     });
@@ -972,7 +1008,7 @@
     });
   }
   function swRedraw(focusId) {
-    if (VIEW.root && VIEW.M && S.view === SW) render(VIEW.root, VIEW.M, SW);
+    if (VIEW.root && VIEW.M && (S.view === SW || S.view === MQ)) render(VIEW.root, VIEW.M, viewPath());
     var f = focusId && VIEW.root && VIEW.root.querySelector("#" + focusId);
     if (f && f.focus) f.focus();
   }
@@ -1070,50 +1106,78 @@
       + "Each attempt the catalog read cannot show, such as a probe sent, a way blocked or a read by hand, is recorded with its date." }));
     return box;
   }
-  function statewideView(W) {
+  /* V: the list's filters (SWS on its own page, the sidebar's own object in the MQ view's sidebar). side: drawn in a
+     sidebar, where the statewide summary and the chips give way to one line about the code it is filtered to. */
+  function statewideView(W, V, side) {
+    V = V || SWS;
     var T = W.totals, signed = !!reviewer();
-    var box = el("div", { cls: "csw" });
-    var top = W.recall[0] || {};
-    box.appendChild(el("p", { cls: "csb-note", id: "csw-sum" }, [el("strong", { text: fmt(T.codes) }), " local subject codes at ", el("strong", { text: fmt(T.colleges) }),
-      " colleges (" + fmt(T.pairs) + " college-and-code pairs, " + fmt(T.courses) + " COCI courses); " + fmt(T.one_college) + " are used at one college. "
-      + "Every code carries a call and a confidence from the evidence the list names: the subject map’s draft, the M-IDs its courses joined at three or more colleges, its course titles, and a noncredit code’s COCI category. "
-      + (top.tried ? "On " + fmt(top.tried) + " codes whose peers already agree, calls at 90% or better were right " + Math.round((top.accuracy || 0) * 100) + "% of the time. " : "")
-      + "A confirm is your statewide filing for the code; the daily build carries it to every college that uses it."]));
+    var box = el("div", { cls: "csw" + (side ? " csw-side" : "") });
+    var rows = swRows(W, V);
+    if (!side) {
+      var top = W.recall[0] || {};
+      box.appendChild(el("p", { cls: "csb-note", id: "csw-sum" }, [el("strong", { text: fmt(T.codes) }), " local subject codes at ", el("strong", { text: fmt(T.colleges) }),
+        " colleges (" + fmt(T.pairs) + " college-and-code pairs, " + fmt(T.courses) + " COCI courses); " + fmt(T.one_college) + " are used at one college. "
+        + "Every code carries a call and a confidence from the evidence the list names: the subject map’s draft, the M-IDs its courses joined at three or more colleges, its course titles, and a noncredit code’s COCI category. "
+        + (top.tried ? "On " + fmt(top.tried) + " codes whose peers already agree, calls at 90% or better were right " + Math.round((top.accuracy || 0) * 100) + "% of the time. " : "")
+        + "A confirm is your statewide filing for the code; the daily build carries it to every college that uses it."]));
+    }
     if (SWS.readErr) box.appendChild(el("p", { cls: "csb-note", role: "status", text: "The filings people made could not be read live (" + SWS.readErr + "); the list shows the filings the daily build carried." }));
-    var lv = levels(W).pairs;
-    box.appendChild(el("p", { cls: "csb-note", id: "csw-levels" }, ["College-and-code pairs by level: ",
-      ["Confident", "Likely", "Leaning", "Unsure"].map(function (k) { return k + " " + fmt(lv[k]); }).join(" · "),
-      ". Confident is 90% or more, Likely 75 to 90%, Leaning 50 to 75%, Unsure under 50%. A confirm raises a call to Confident."]));
-    var chips = el("p", { cls: "csw-chips", role: "group", "aria-label": "Show" }, SW_FILTERS.map(function (f) {
-      var n = W.codes.filter(f[2]).length;
-      var b = el("button", { type: "button", cls: "csb-word", "data-csw-filter": f[0], "aria-pressed": SWS.filter === f[0] ? "true" : "false", text: f[1] + " (" + fmt(n) + ")" });
-      b.addEventListener("click", function () { SWS.filter = f[0]; SWS.shown = 200; SWS.bulk = false; swRedraw("csw-f-" + f[0]); });
-      b.id = "csw-f-" + f[0];
-      return b;
-    }));
-    box.appendChild(chips);
-    var search = el("input", { type: "search", id: "csw-q", value: SWS.q, "aria-label": "Find a code, a course title or a college", placeholder: "Find a code, a course title or a college" });
-    search.addEventListener("change", function () { SWS.q = search.value; SWS.shown = 200; swRedraw("csw-q"); });
-    box.appendChild(el("p", null, [el("label", { "for": "csw-q", cls: "csb-sub", text: "Find " }), search]));
-    var rows = swRows(W);
+    if (!side) {
+      var lv = levels(W).pairs;
+      box.appendChild(el("p", { cls: "csb-note", id: "csw-levels" }, ["College-and-code pairs by level: ",
+        ["Confident", "Likely", "Leaning", "Unsure"].map(function (k) { return k + " " + fmt(lv[k]); }).join(" · "),
+        ". Confident is 90% or more, Likely 75 to 90%, Leaning 50 to 75%, Unsure under 50%. A confirm raises a call to Confident."]));
+      var chips = el("p", { cls: "csw-chips", role: "group", "aria-label": "Show" }, SW_FILTERS.filter(function (f) { return f[0] !== "code" || (V.filter === "code" && V.common); }).map(function (f) {
+        var n = W.codes.filter(function (c) { return f[2](c, V, W); }).length;
+        var b = el("button", { type: "button", cls: "csb-word", "data-csw-filter": f[0], "aria-pressed": V.filter === f[0] ? "true" : "false",
+          text: (f[0] === "code" ? "Under " + V.common : f[1]) + " (" + fmt(n) + ")" });
+        b.addEventListener("click", function () {
+          var was = V.filter;
+          V.filter = f[0]; V.shown = 200; V.bulk = false;
+          /* The code filter lives in the address: leaving it moves the address back to the list's own. */
+          if (was === "code" && f[0] !== "code") { V.common = ""; open(SW); var on = VIEW.root && VIEW.root.querySelector("#csw-f-" + f[0]); if (on && on.focus) on.focus(); }
+          else swRedraw("csw-f-" + f[0]);
+        });
+        b.id = "csw-f-" + f[0];
+        return b;
+      }));
+      box.appendChild(chips);
+    } else {
+      var filed = 0, conf = 0, cols = 0;
+      rows.forEach(function (c) { if (filedOf(c)) filed++; else if (((c.recommend || {}).confidence || 0) >= 0.9) conf++; cols += (c.colleges || []).length; });
+      box.appendChild(el("p", { cls: "csb-note", id: "csw-side-sum" }, [el("strong", { text: fmt(rows.length) }), (rows.length === 1 ? " local code" : " local codes") + " statewide take " + V.common
+        + " as their common code: " + fmt(filed) + " filed by a person, " + fmt(conf) + " called at 90% or better, " + fmt(rows.length - filed - conf) + " below that; "
+        + fmt(cols) + " college-and-code pairs. A count opens what it counts beside this list. ",
+        go("#commons/subjects/" + SW + "/code/" + encodeURIComponent(V.common), "Open this list on its own page"), "."]));
+    }
+    var sid = side ? "csw-side-q" : "csw-q";
+    var search = el("input", { type: "search", id: sid, value: V.q, "aria-label": "Find a code, a course title or a college", placeholder: "Find a code, a course title or a college" });
+    search.addEventListener("change", function () { V.q = search.value; V.shown = 200; swRedraw(sid); });
+    box.appendChild(el("p", null, [el("label", { "for": sid, cls: "csb-sub", text: "Find " }), search]));
     var bulkable = rows.filter(function (c) { return canFile(c) && !filedOf(c) && c.recommend.confidence >= 0.9; });
     if (!signed) box.appendChild(el("p", { cls: "csb-note", text: "Sign in as a reviewer to confirm a call or file another code." }));
     else if (bulkable.length) {
-      if (!SWS.bulk) {
+      if (!V.bulk) {
         var bulk = el("button", { type: "button", cls: "csb-word", id: "csw-bulk", disabled: SWS.busy ? "" : null, text: "Confirm the " + fmt(bulkable.length) + " calls shown at 90% or better" });
-        bulk.addEventListener("click", function () { SWS.bulk = true; swRedraw("csw-bulk-yes"); });
+        bulk.addEventListener("click", function () { V.bulk = true; swRedraw("csw-bulk-yes"); });
         box.appendChild(el("p", null, [bulk]));
       } else {
         var yes = el("button", { type: "button", cls: "csb-word", id: "csw-bulk-yes", text: "Save " + fmt(bulkable.length) + " filings" });
         var no = el("button", { type: "button", cls: "csb-word", id: "csw-bulk-no", text: "Cancel" });
-        yes.addEventListener("click", function () { swSave(bulkable.map(function (c) { return { code: c.code, discipline: c.recommend.discipline }; }), "csw-sum"); });
-        no.addEventListener("click", function () { SWS.bulk = false; swRedraw("csw-bulk"); });
+        yes.addEventListener("click", function () { V.bulk = false; swSave(bulkable.map(function (c) { return { code: c.code, discipline: c.recommend.discipline }; }), side ? "csw-side-sum" : "csw-sum"); });
+        no.addEventListener("click", function () { V.bulk = false; swRedraw("csw-bulk"); });
         box.appendChild(el("p", { cls: "csb-note", id: "csw-bulk-ask", role: "group", "aria-label": "Confirm the calls" }, [
           "Save " + fmt(bulkable.length) + " statewide filings under your name, each code under its call? Any one can be changed later from its row. ", yes, " ", no]));
       }
     }
     if (SWS.msg) box.appendChild(el("p", { cls: "csb-note", id: "csw-msg", role: "status", text: SWS.msg }));
-    var shown = rows.slice(0, SWS.shown);
+    var shown = rows.slice(0, V.shown);
+    /* A count is a word that opens what it counts in a sidebar beside this one (Sam, 2026-11-23). */
+    function second(kind, c, n, words) {
+      var b = el("button", { type: "button", cls: "csb-word csb-num", "data-csb-second": kind, "data-csb-local": c.code, "aria-label": words, text: kind === "colleges" ? fmt(n) + " colleges" : fmt(n) });
+      b.addEventListener("click", function () { openSecond(kind, c.code); });
+      return b;
+    }
     var tbl = el("table", { cls: "csb-table csw-table" }, [
       el("colgroup", null, [el("col", { cls: "csb-c-code" }), el("col", { cls: "csb-c-mid" }), el("col", { cls: "csb-c-num" }), el("col", { cls: "csb-c-mid" }),
         el("col", { cls: "csb-c-num" }), el("col", { cls: "csb-c-num" }), el("col", { cls: "csb-c-ev" }), el("col", { cls: "csb-c-mid" })]),
@@ -1125,24 +1189,270 @@
           el("th", { scope: "row" }, [c.code, (c.spellings || []).length > 1 || (c.spellings || [])[0] !== c.code ? el("span", { cls: "csb-sub", text: "Spelled " + (c.spellings || []).join(", ") }) : null,
             el("span", { cls: "csb-sub", text: (c.titles || []).slice(0, 3).join("; ") }),
             (c.local_titles || []).length ? el("span", { cls: "csb-sub", text: "Catalog title: " + c.local_titles.map(function (t) { return t[0]; }).join("; ") }) : null]),
-          el("td", null, cols.length <= 3 ? [cols.map(function (x) { return x[0]; }).join("; ")]
-            : [el("details", null, [el("summary", { text: fmt(cols.length) + " colleges" }), el("span", { cls: "csb-sub", text: cols.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") })])]),
-          el("td", { text: fmt(c.courses) }),
+          el("td", { "data-sort": String(cols.length) }, cols.length <= 3 ? [cols.map(function (x) { return x[0]; }).join("; ")]
+            : [second("colleges", c, cols.length, "The " + fmt(cols.length) + " colleges that use " + c.code + ". Show them.")]),
+          el("td", { "data-sort": String(c.courses || 0) }, [second("courses", c, c.courses || 0, "The " + fmt(c.courses || 0) + (c.courses === 1 ? " course" : " courses") + " under " + c.code + " in COCI. Show them.")]),
           el("td", null, [c.recommend.common || "", el("span", { cls: "csb-sub", text: c.recommend.discipline || "" })]),
           el("td", { text: filedOf(c) && filedOf(c).discipline === c.recommend.discipline ? "Filed" : confWords(c.recommend.confidence) }),
           el("td", { text: nx ? nx.common + " " + Math.max(0, Math.round(nx.confidence * 100)) + "%" : "" }),
           el("td", { cls: "csb-ev", text: c.recommend.why ? c.recommend.why.charAt(0).toUpperCase() + c.recommend.why.slice(1) + "." : "" }),
           el("td", null, swActions(W, c, signed))]);
       }) : [el("tr", null, [el("td", { colspan: "8", text: "No code matches." })])])]);
-    box.appendChild(gridify(el("div", { cls: "csb-wrap", role: "region", "aria-label": "Every local subject code, statewide", tabindex: "0" }, [tbl]), "statewide", [1, 6, 7]));
+    box.appendChild(gridify(el("div", { cls: "csb-wrap" + (side ? " csb-wrap-in" : ""), role: "region", "aria-label": side ? "Local codes under " + V.common + ", statewide" : "Every local subject code, statewide", tabindex: "0" }, [tbl]),
+      side ? "statewide-side" : "statewide", [6, 7]));
     if (rows.length > shown.length) {
       var more = el("button", { type: "button", cls: "csb-word", id: "csw-more", text: "Show " + fmt(Math.min(200, rows.length - shown.length)) + " more (" + fmt(rows.length - shown.length) + " not shown)" });
-      more.addEventListener("click", function () { SWS.shown += 200; swRedraw("csw-more"); });
+      more.addEventListener("click", function () { V.shown += 200; swRedraw("csw-more"); });
       box.appendChild(el("p", null, [more]));
     }
     return box;
   }
 
+  /* ── the MQ view (S719): every MQ discipline, its list type, its provisions, its common code and what our data
+     holds under it, from Sam's mock of 2026-11-23 (https://claude.ai/artifact/SHS5eNN4nb5vLkNCzzWvVE) ── */
+  var MQ_LEDE = "Every discipline in the 20th edition of the Minimum Qualifications handbook, with its list type, the Title 5 provisions that bear on it, its common subject code and what our data holds under it. The last column names what to look at. A common code, or its count of local codes, opens the statewide list of the local codes under it beside this table. A course’s vocational TOP code marks its MQ type, master’s or experience-based; it never sets its discipline.";
+  var MQ_PROV = { license_53410_1: "License alternative", credential_required: "Credential required", noncredit_53412: "Noncredit subsection",
+    apprenticeship_53413: "Apprenticeship tie", dsps_53414: "DSPS", learning_assistance_53415: "Learning assistance", work_experience_53416: "Work experience",
+    licensed_occupations_53417: "Licensed occupation" };
+  function hasType(r, t) { return (r.types || []).indexOf(t) >= 0; }
+  function hasProv(r, k) { return (r.provisions || []).indexOf(k) >= 0; }
+  /* The figures in the stamp, each a filter that shows what it counts. */
+  var MQ_PICKS = [
+    ["all", "All", function () { return true; }],
+    ["masters", "Master’s", function (r) { return hasType(r, "masters"); }],
+    ["specific", "Specific degree", function (r) { return hasType(r, "specific"); }],
+    ["any", "Any degree", function (r) { return hasType(r, "any"); }],
+    ["noncredit", "Noncredit", function (r) { return !!r.noncredit; }],
+    ["license", "License or credential", function (r) { return hasProv(r, "license_53410_1") || hasProv(r, "credential_required"); }],
+    ["appr", "Apprenticeship", function (r) { return hasProv(r, "apprenticeship_53413"); }],
+    ["dsps", "DSPS", function (r) { return hasProv(r, "dsps_53414"); }],
+    ["assigned", "Assigned codes", function (r) { return r.code_source === "assigned"; }],
+    ["lower", "Codes below Likely", function (r) { return r.confidence != null && r.confidence < 0.75; }],
+    ["voc", "MQ type and TOP disagree", function (r) { return (r.gaps || []).some(function (g) { return /vocational TOP code/.test(g); }); }],
+    ["gaps", "Something to look at", function (r) { return (r.gaps || []).length > 0; }]];
+  function mqPick(k) { return MQ_PICKS.filter(function (p) { return p[0] === k; })[0] || MQ_PICKS[0]; }
+  var mqCache = null;
+  function loadMq() {
+    mqCache = mqCache || fetch(MQ_FILE, { cache: "no-cache" }).then(function (r) {
+      if (!r || !r.ok) throw new Error(MQ_FILE + " answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(function (f) {
+      f = f || {};
+      return { rows: f.rows || [], provisions: f.provisions || {}, totals: f.totals || {}, types: f.types || {}, ncWithout: f.noncredit_categories_without_discipline || [], what: f._what || "" };
+    }, function (e) { mqCache = null; throw e; });
+    return mqCache;
+  }
+  function provWords(k) { return MQ_PROV[k] || k; }
+  function mqRows(Q) {
+    var f = mqPick(MQS.pick)[2], q = String(MQS.q || "").trim().toLowerCase();
+    return Q.rows.filter(f).filter(function (r) {
+      if (!q) return true;
+      return [r.name, r.areas, r.code, r.our_name, r.type_words, (r.provisions || []).map(provWords).join(" "), (r.noncredit_categories || []).join(" ")].join(" ").toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  /* The code's level in words beside it, so a number is never the only signal. */
+  function mqLevel(r) {
+    if (r.confidence == null) return null;
+    return el("span", { cls: "csb-sub", title: r.code_source === "assigned" ? r.code_note || "" : null,
+      text: (r.level || levelOf(r.confidence)) + " " + Math.round(r.confidence * 100) + "%" + (r.code_source === "assigned" ? "" : ", a person’s pick") });
+  }
+  function mqCodeWord(code, label, text, extra) {
+    return el("button", Object.assign({ type: "button", cls: "csb-word", "data-mq-code": code, "aria-label": label, text: text }, extra || {}));
+  }
+  function mqTable(Q, list) {
+    var tbl = el("table", { cls: "csb-table csb-mq" }, [
+      el("colgroup", null, [el("col", { cls: "csb-mq-name" }), el("col", { cls: "csb-mq-type" }), el("col", { cls: "csb-mq-c-prov" }), el("col", { cls: "csb-mq-code" }),
+        el("col", { cls: "csb-mq-num" }), el("col", { cls: "csb-mq-num" }), el("col", { cls: "csb-mq-loc" }), el("col", { cls: "csb-mq-nc" }), el("col", { cls: "csb-mq-gap" })]),
+      el("thead", null, [el("tr", null, ["Discipline", "MQ type", "Title 5 provisions", "Common code", "M-IDs", "Vocational TOP share", "Local codes", "COCI noncredit categories", "To look at"]
+        .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
+      el("tbody", null, list.length ? list.map(function (r) {
+        var lc = r.local_codes, nLoc = lc ? (lc.filed || 0) + (lc.confident || 0) + (lc.other || 0) : 0, gaps = r.gaps || [];
+        return el("tr", { "data-mq": r.name, "data-code": r.code || "" }, [
+          el("th", { scope: "row", "data-sort": r.name }, [r.name, r.areas ? el("span", { cls: "csb-sub", text: r.areas }) : null,
+            r.same_as ? el("span", { cls: "csb-sub", text: "Also printed as " + r.same_as }) : null]),
+          el("td", null, [r.type_words || "", r.noncredit ? el("span", { cls: "csb-sub", text: "Noncredit" }) : null]),
+          el("td", null, (r.provisions || []).length ? [r.provisions.map(provWords).join(", "), r.cite ? el("span", { cls: "csb-sub", text: r.cite }) : null]
+            : [el("span", { cls: "csb-tba", text: r.cite || "None" })]),
+          el("td", { "data-sort": r.code || "" }, r.code ? [mqCodeWord(r.code, "Open " + r.code + ", the common code of " + r.name + ", with the local codes under it", r.code), mqLevel(r)]
+            : [el("span", { cls: "csb-tba", text: "None" })]),
+          el("td", { "data-sort": String((r.mids_credit || 0) + (r.mids_noncredit || 0)), text: r.code ? fmt(r.mids_credit || 0) + " credit, " + fmt(r.mids_noncredit || 0) + " noncredit" : "" }),
+          el("td", { "data-sort": r.vocational_share == null ? "" : String(r.vocational_share), text: pct(r.vocational_share) }),
+          el("td", { "data-sort": String(nLoc) }, lc && r.code ? [mqCodeWord(r.code, fmt(nLoc) + " local codes take " + r.code + " as their common code. Show them.", fmt(nLoc) + (nLoc === 1 ? " code" : " codes"), { "data-mq-count": "yes" }),
+            el("span", { cls: "csb-sub", text: fmt(lc.filed || 0) + " filed, " + fmt(lc.confident || 0) + " Confident" })] : []),
+          el("td", { text: (r.noncredit_categories || []).join(", ") }),
+          el("td", { "data-sort": String(gaps.length) }, gaps.length ? [el("ul", { cls: "csb-mq-gaps" }, gaps.map(function (g) {
+            return el("li", { cls: /vocational TOP|No common/.test(g) ? "csb-mq-act" : null, text: g });
+          }))] : [el("span", { cls: "csb-tba", text: "Nothing" })])]);
+      }) : [el("tr", null, [el("td", { colspan: "9", text: "No discipline matches." })])])]);
+    var wrap = gridify(el("div", { cls: "csb-wrap", id: "csb-mq-wrap", role: "region", "aria-label": "MQ disciplines", tabindex: "0" }, [tbl]), "mq", null, { col: 0, dir: 1 });
+    Array.prototype.forEach.call(wrap.querySelectorAll("button[data-mq-code]"), function (b) {
+      b.addEventListener("click", function () { open(MQ + "/code/" + b.getAttribute("data-mq-code")); });
+    });
+    return wrap;
+  }
+  function mqView(Q) {
+    var out = [];
+    var figs = el("p", { cls: "csb-stamp csb-mq-figs", id: "csb-mq-figs", role: "group", "aria-label": "Show" }, MQ_PICKS.map(function (p) {
+      var b = el("button", { type: "button", cls: "csb-word", id: "csb-mq-f-" + p[0], "data-mq-pick": p[0], "aria-pressed": MQS.pick === p[0] ? "true" : "false",
+        text: p[1] + " " + fmt(Q.rows.filter(p[2]).length) });
+      b.addEventListener("click", function () { MQS.pick = p[0]; render(VIEW.root, VIEW.M, viewPath()); var on = VIEW.root.querySelector("#csb-mq-f-" + p[0]); if (on && on.focus) on.focus(); });
+      return b;
+    }));
+    out.push(figs);
+    var list = mqRows(Q);
+    var status = el("span", { cls: "csb-sub csb-mq-count", id: "csb-mq-count", role: "status", text: fmt(list.length) + " of " + fmt(Q.rows.length) + " disciplines" });
+    var search = el("input", { type: "search", id: "csb-mq-q", value: MQS.q, placeholder: "Carpentry, BSKL, apprenticeship" });
+    var holder = el("div", { cls: "csb-mq-hold" }, [mqTable(Q, list)]);
+    /* Each keystroke redraws the table alone, so the field keeps its focus and what was typed. */
+    search.addEventListener("input", function () {
+      MQS.q = search.value;
+      var l2 = mqRows(Q);
+      holder.textContent = "";
+      holder.appendChild(mqTable(Q, l2));
+      status.textContent = fmt(l2.length) + " of " + fmt(Q.rows.length) + " disciplines";
+    });
+    out.push(el("p", { cls: "csb-mq-find" }, [el("label", { "for": "csb-mq-q", text: "Find a discipline or code" }), search, status]));
+    out.push(holder);
+    out.push(el("h3", { cls: "csb-mq-h", id: "csb-mq-prov-h", text: "The provisions, from the handbook’s Title 5 pages" }));
+    out.push(el("div", { cls: "csb-mq-prov" }, Object.keys(Q.provisions).map(function (k) {
+      var p = Q.provisions[k] || {};
+      return el("p", { cls: "csb-note" }, [el("strong", { text: provWords(k) + ", " + (p.section || "") + (p.printed_page ? " (printed page " + p.printed_page + "). " : ". ") }), p.words || ""]);
+    })));
+    out.push(el("p", { cls: "csb-foot", text: "COCI’s noncredit " + (Q.ncWithout.length === 1 ? "category" : "categories") + " with no MQ discipline of " + (Q.ncWithout.length === 1 ? "its" : "their") + " own: "
+      + (Q.ncWithout.join(", ") || "none") + "; " + (Q.ncWithout.length === 1 ? "its" : "their") + " courses take their credit discipline’s qualifications (CCR 53412). "
+      + "Sources: the 20th-edition handbook, the Common Subjects Reference, the minted M-IDs and the statewide local code list, joined by kb/_mq_view.py. Nothing here is a decision." }));
+    return out;
+  }
+
+  /* ── the sidebars a surface holds beside it (S719): the MQ view's code, then a second sidebar a count opens ── */
+  function sidePanel(o) {
+    var close = el("button", { type: "button", cls: "csb-word", id: o.id + "-close", text: "Close" });
+    function shut() {
+      open(o.back);
+      var f = o.opener && VIEW.root && VIEW.root.querySelector(o.opener);
+      if (f && f.focus) f.focus();
+    }
+    close.addEventListener("click", shut);
+    var panel = el("aside", { cls: "csb-panel csb-side", id: o.id, role: "dialog", "aria-labelledby": o.id + "-h", "data-csb-level": String(o.level) }, [
+      el("div", { cls: "csb-panel-in" }, [
+        el("div", { cls: "csb-panel-head", id: o.id + "-head" }, [
+          el("div", { cls: "csb-panel-top" }, [el("p", { cls: "csb-eyebrow", text: o.eyebrow }), close]),
+          el("h3", { id: o.id + "-h", tabindex: "-1", text: o.title })])].concat(o.body))]);
+    panel.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); shut(); } });
+    var mem = o.level === 2 ? MEM2 : MEM1;
+    panel.insertBefore(gripFor(panel, mem, o.id + "-grip"), panel.firstChild);
+    /* A second sidebar opens narrower than the first, so the first shows beside it even where it must sit over it. */
+    var w = mem.get() || (o.level === 2 ? mem.def : 0);
+    panel.style.width = w ? Math.min(w, panelMax()) + "px" : "";
+    return panel;
+  }
+  function openSecond(kind, local) { open(surfacePath(true) + "/" + kind + "/" + local); }
+  function mqRowOf(Q, code) {
+    var rows = Q.rows.filter(function (r) { return r.code === code; });
+    return { all: rows, main: rows.filter(function (r) { return r.name === r.our_name; })[0] || rows.filter(function (r) { return !r.same_as; })[0] || rows[0] || null };
+  }
+  function mqSide() {
+    var Q = VIEW.Q, code = MQS.code, R = Q ? mqRowOf(Q, code) : { all: [], main: null }, r = R.main;
+    var name = r ? r.our_name || r.name : VIEW.W && VIEW.W.disc[code] ? VIEW.W.disc[code] : "";
+    var body = [];
+    if (!r) body.push(el("p", { cls: "csb-note", role: "status", text: Q ? "No MQ discipline carries the common code " + code + "." : "Reading the MQ disciplines…" }));
+    else {
+      var names = R.all.map(function (x) { return x.name; });
+      if (names.length > 1) body.push(el("p", { cls: "csb-note", text: "Printed in the handbook as " + names.slice(0, -1).join(", ") + " and " + names[names.length - 1] + "." }));
+      var prov = (r.provisions || []).map(function (k) { return provWords(k) + (Q.provisions[k] && Q.provisions[k].section ? " (" + Q.provisions[k].section + ")" : ""); }).join("; ");
+      var facts = [["MQ discipline", r.name + (r.areas ? " (" + r.areas + ")" : "")], ["MQ type", (r.type_words || "") + (r.noncredit ? ", noncredit" : "")], ["Provisions", prov || "None"],
+        ["Common code", code + (r.our_name && r.our_name !== r.name ? ", our name " + r.our_name : "")],
+        ["How the code was set", r.code_source === "assigned" ? r.code_note || "Assigned." : "A person’s pick" + (r.confidence != null ? ", " + confWords(r.confidence) : "") + "."],
+        ["M-IDs", fmt(r.mids_credit || 0) + " credit, " + fmt(r.mids_noncredit || 0) + " noncredit"],
+        ["Vocational TOP share", r.vocational_share == null ? "Not measured" : pct(r.vocational_share) + " of its credit M-IDs"],
+        ["COCI noncredit categories", (r.noncredit_categories || []).join(", ") || "None"]];
+      body.push(el("dl", { cls: "csb-facts" }, facts.reduce(function (a, f) { return a.concat([el("dt", { text: f[0] }), el("dd", { text: f[1] })]); }, [])));
+      if ((r.gaps || []).length) { body.push(el("h4", { cls: "csb-band", text: "To look at" })); body.push(el("ul", { cls: "csb-mq-gaps" }, r.gaps.map(function (g) { return el("li", { text: g }); }))); }
+    }
+    body.push(el("h4", { cls: "csb-band", id: "csb-mq-side-list", text: "Local codes under " + code + ", statewide" }));
+    if (!VIEW.W) body.push(el("p", { cls: "csb-note", role: "status", text: VIEW.swError ? "The statewide list could not be read (" + VIEW.swError + "). Close the panel and open it again to retry." : "Reading the statewide list…" }));
+    else body.push(statewideView(VIEW.W, MQS.side, true));
+    return sidePanel({ id: "csb-side-1", level: 1, eyebrow: "Common subject code", title: code + (name ? ", " + name : ""), back: MQ,
+      opener: 'button[data-mq-code="' + code + '"]:not([data-mq-count])', body: body });
+  }
+  /* The state course list (coci_lookup_data.js, 17 MB) loads once, on the first press of a Courses count; the
+     course panel reads its small per-college files instead (kb/_build_subject_courses.py). */
+  var COCI_FILE = "coci_lookup_data.js", cociWait = null, COCI_IX = null;
+  function loadCoci() {
+    if (window.CPL_COCI_LOOKUP) return Promise.resolve(window.CPL_COCI_LOOKUP);
+    cociWait = cociWait || new Promise(function (res, rej) {
+      var T = window.CPL_TABS;
+      if (!T || typeof T.loadScript !== "function") { rej(new Error("the page cannot load " + COCI_FILE)); return; }
+      T.loadScript(COCI_FILE, "CPL_COCI_LOOKUP", function () { if (window.CPL_COCI_LOOKUP) res(window.CPL_COCI_LOOKUP); else rej(new Error(COCI_FILE + " did not load")); });
+    }).then(null, function (e) { cociWait = null; throw e; });
+    return cociWait;
+  }
+  /* A code's courses, as kb/_statewide_subject_codes.py counts them: the state list's college with " Credit" set
+     aside, at each college the code names; there, the rows whose subject is the code in key form, or, where that is
+     not the college's count (a code the college renamed), the rows under any of the code's spellings. */
+  function cociName(n) { return String(n || "").trim().replace(/\s+Credit$/, ""); }
+  function keyForm(s) { return String(s || "").trim().toUpperCase().replace(/[^A-Z0-9]/g, ""); }
+  function coursesOf(c) {
+    var D = window.CPL_COCI_LOOKUP;
+    if (!D) return null;
+    if (!COCI_IX || COCI_IX.D !== D) {
+      var by = {}, names = (D.colleges || []).map(cociName);
+      (D.rows || []).forEach(function (r) { var k = names[r[0]]; (by[k] = by[k] || []).push(r); });
+      COCI_IX = { D: D, by: by, names: names };
+    }
+    var sp = {}, out = [];
+    (c.spellings || [c.code]).forEach(function (s) { sp[String(s).trim().toUpperCase()] = 1; });
+    (c.colleges || []).forEach(function (x) {
+      var here = COCI_IX.by[x[0]] || [];
+      var rows = here.filter(function (r) { return keyForm(r[2]) === c.code; });
+      if (rows.length !== x[1]) rows = here.filter(function (r) { return sp[String(r[2] || "").trim().toUpperCase()]; });
+      rows.forEach(function (r) { out.push({ college: x[0], subject: String(r[2] || "").trim(), number: String(r[3] || ""), title: r[4] || "", units: r[5], band: r[6] || "", top: r[7] || "" }); });
+    });
+    return out;
+  }
+  var COCI_BANDS = { C: "Credit", N: "Noncredit", E: "Noncredit enhanced" };
+  function secondSide() {
+    var kind = STACK.second[0], local = STACK.second[1], W = VIEW.W;
+    var c = W ? W.codes.filter(function (x) { return x.code === local; })[0] : null;
+    var body = [], title = local;
+    if (!W) body.push(el("p", { cls: "csb-note", role: "status", text: VIEW.swError ? "The statewide list could not be read (" + VIEW.swError + ")." : "Reading the statewide list…" }));
+    else if (!c) body.push(el("p", { cls: "csb-note", role: "status", text: "The statewide list names no local code " + local + "." }));
+    else if (kind === "colleges") {
+      var cols = c.colleges || [];
+      title = local + ", " + fmt(cols.length) + " colleges";
+      body.push(el("p", { cls: "csb-note", id: "csb-side-2-sum", text: fmt(cols.length) + " colleges use " + local + " in COCI, for " + fmt(c.courses) + " courses. Its call is " + ((c.recommend || {}).common || "none") + "." }));
+      body.push(gridify(el("div", { cls: "csb-wrap csb-wrap-in", role: "region", "aria-label": "Colleges that use " + local, tabindex: "0" }, [el("table", { cls: "csb-table csb-side-cols" }, [
+        el("colgroup", null, [el("col", { cls: "csb-c-wide" }), el("col", { cls: "csb-c-num" })]),
+        el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "College" }), el("th", { scope: "col", text: "Courses" })])]),
+        el("tbody", null, cols.map(function (x) { return el("tr", { "data-college": x[0] }, [el("th", { scope: "row", text: x[0] }), el("td", { text: fmt(x[1]) })]); }))])]), "side-colleges", null, { col: 1, dir: -1 }));
+    } else {
+      title = local + ", " + fmt(c.courses) + (c.courses === 1 ? " course" : " courses");
+      var rows = coursesOf(c);
+      if (rows === null) {
+        body.push(el("p", { cls: "csb-note", role: "status", id: "csb-side-2-wait", text: VIEW.cociError ? "The state course list could not be read (" + VIEW.cociError + "). Close the panel and open it again to retry." : "Reading the state course list…" }));
+        if (!VIEW.cociError) loadCoci().then(function () { if (STACK.second && STACK.second[1] === local && VIEW.root && VIEW.M) render(VIEW.root, VIEW.M, viewPath()); },
+          function (e) { VIEW.cociError = e && e.message ? e.message : String(e); if (STACK.second && VIEW.root && VIEW.M) render(VIEW.root, VIEW.M, viewPath()); });
+      } else {
+        body.push(el("p", { cls: "csb-note", id: "csb-side-2-sum", text: "COCI lists " + fmt(rows.length) + (rows.length === 1 ? " course" : " courses") + " under " + local + " at " + fmt((c.colleges || []).length) + ((c.colleges || []).length === 1 ? " college" : " colleges")
+          + (rows.length !== c.courses ? "; the statewide list counts " + fmt(c.courses) + ", from its last build" : "") + ". Its call is " + ((c.recommend || {}).common || "none") + "." }));
+        body.push(gridify(el("div", { cls: "csb-wrap csb-wrap-in", role: "region", "aria-label": "Courses under " + local + ", statewide", tabindex: "0" }, [el("table", { cls: "csb-table csb-side-courses" }, [
+          el("colgroup", null, [el("col", { cls: "csb-sc-college" }), el("col", { cls: "csb-sc-course" }), el("col", { cls: "csb-sc-title" }), el("col", { cls: "csb-sc-top" })]),
+          el("thead", null, [el("tr", null, ["College", "Course", "Title", "TOP code"].map(function (t) { return el("th", { scope: "col", text: t }); }))]),
+          el("tbody", null, rows.map(function (x) {
+            /* A course names its subject code before its number, and whether it is credit or noncredit under it (the MQs keep them apart). */
+            return el("tr", { "data-course": x.college + "|" + x.subject + " " + x.number, "data-band": x.band }, [el("td", { text: x.college }),
+              el("th", { scope: "row", "data-sort": x.subject + " " + x.number }, [x.subject + " " + x.number, el("span", { cls: "csb-sub", text: COCI_BANDS[x.band] || x.band })]),
+              el("td", { text: x.title }), el("td", { text: String(x.top).split(":")[0] })]);
+          }))])]), "side-courses"));
+      }
+    }
+    return sidePanel({ id: "csb-side-2", level: 2, eyebrow: kind === "colleges" ? "Colleges that use a local code" : "Courses under a local code, statewide", title: title,
+      back: surfacePath(true), opener: 'button[data-csb-second="' + kind + '"][data-csb-local="' + local + '"]', body: body });
+  }
+  function stackDraw(root) {
+    if (S.view === MQ && MQS.code) root.appendChild(mqSide());
+    if (STACK.second && (S.view === SW || (S.view === MQ && MQS.code))) root.appendChild(secondSide());
+  }
   /* ── the course panel (S700, #3655 item 3): a local code opens its courses at that college, credit and noncredit
      apart (Sam, 2026-11-21: "nc and cr courses should be differentiated in the college subject sidebars"). It reads
      kb/status/subject_courses/<slug>.json (kb/_build_subject_courses.py), one college's file, when it opens. ── */
@@ -1686,46 +1996,90 @@
     return box;
   }
   /* The panel's width: dragged by mouse, pen or finger from its left edge, or set from the keyboard on the grip (Left
-     widens, Right narrows, Home returns it to its own width). One width for every Subjects panel, kept across visits:
-     a width is no filter (CLAUDE.md, tabs never remember a filter). */
-  var PANEL_KEY = "cplSubjectsPanelW", PANEL_MIN = 360, PANEL_STEP = 40, panelMem;
+     widens, Right narrows, Home returns it to its own width). One width for every first Subjects panel, and one for a
+     second sidebar, kept across visits: a width is no filter (CLAUDE.md, tabs never remember a filter). */
+  var PANEL_MIN = 360, PANEL_STEP = 40, VIEW_MIN = 360;
+  function widthMem(key, def) {
+    var m = { key: key, def: def, v: undefined };
+    m.get = function () {
+      if (m.v === undefined) { try { m.v = parseInt(window.localStorage.getItem(key), 10) || null; } catch (e) { m.v = null; } }
+      return m.v;
+    };
+    m.set = function (w) {
+      m.v = w || null;
+      try { if (m.v) window.localStorage.setItem(key, String(m.v)); else window.localStorage.removeItem(key); } catch (e) { /* storage blocked */ }
+    };
+    return m;
+  }
+  var MEM1 = widthMem("cplSubjectsPanelW", 620), MEM2 = widthMem("cplSubjectsPanel2W", 540);
   function panelMax() { return Math.max(PANEL_MIN, (window.innerWidth || 1280) - 24); }
-  function panelW() {
-    if (panelMem === undefined) { try { panelMem = parseInt(window.localStorage.getItem(PANEL_KEY), 10) || null; } catch (e) { panelMem = null; } }
-    return panelMem;
+  function sizeTo(panel, mem) { var w = mem.get(); panel.style.width = w ? Math.min(w, panelMax()) + "px" : ""; beside(panel); }
+  function panelSize(panel) { sizeTo(panel, MEM1); }
+  /* A sidebar starts below COBI's header bar (S717's lesson: it ran the full window height over the bar's right end).
+     The bar's bottom is read from the page, never a fixed number; once the bar scrolls away the sidebar runs to the top. */
+  function headerBottom() {
+    var h = document.querySelector("body > .header") || document.querySelector(".header");
+    var b = h && h.getBoundingClientRect ? h.getBoundingClientRect().bottom : 0;
+    return b > 0 ? Math.round(b) : 0;
   }
-  function setPanelW(w) {
-    panelMem = w || null;
-    try { if (panelMem) window.localStorage.setItem(PANEL_KEY, String(panelMem)); else window.localStorage.removeItem(PANEL_KEY); } catch (e) { /* storage blocked */ }
+  function sidePanels(root) {
+    return Array.prototype.filter.call((root && root.children) || [], function (n) { return n.classList && n.classList.contains("csb-panel"); });
   }
-  function panelSize(panel) { var w = panelW(); panel.style.width = w ? Math.min(w, panelMax()) + "px" : ""; beside(panel); }
+  function widthOf(p) {
+    var w = p.getBoundingClientRect ? Math.round(p.getBoundingClientRect().width) : 0;
+    return w || parseInt(p.style.width, 10) || (p.getAttribute("data-csb-level") === "2" ? MEM2.def : MEM1.def);
+  }
   /* A sidebar opens beside the view, never over it (Sam, 2026-11-23: "make sure when side bar is opened that it opens
-     beside the view no over it--this is a rule for all sidebars"): the view gives up the panel's width on its right,
-     and takes it back when the panel closes. Below 900px there is no room beside, so the panel covers the view there. */
-  function beside(panel) {
-    var root = panel && panel.parentNode;
-    if (!root || !root.style) return;
-    var w = Math.round(panel.getBoundingClientRect ? panel.getBoundingClientRect().width : 0) || parseInt(panel.style.width, 10) || 620;
+     beside the view no over it--this is a rule for all sidebars"): the view gives up the panels' width on its right,
+     and takes it back when they close. A second sidebar sits beside the first while the view keeps VIEW_MIN; with no
+     room for both it sits over the first, never over the view. Below 900px there is no room beside, so the panels
+     cover the view there. */
+  function stackLayout(root) {
+    if (!root || !root.classList || !root.style) return;
+    var ps = sidePanels(root);
+    if (!ps.length) { besideOff(root); return; }
+    var top = headerBottom(), ws = ps.map(widthOf), sum = ws.reduce(function (a, x) { return a + x; }, 0);
+    var left = root.getBoundingClientRect ? Math.max(0, root.getBoundingClientRect().left) : 0;
+    var room = ps.length === 1 || (window.innerWidth || 1280) - left - sum >= VIEW_MIN, right = 0;
+    for (var i = ps.length - 1; i >= 0; i--) {
+      ps[i].style.top = top + "px";
+      ps[i].style.right = (room ? right : 0) + "px";
+      right += ws[i];
+    }
     root.classList.add("csb-beside");
-    root.style.setProperty("--csb-panel-w", w + "px");
+    root.style.setProperty("--csb-panel-w", (room ? sum : Math.max.apply(null, ws)) + "px");
+    root.setAttribute("data-csb-stack", ps.length === 1 ? "one" : room ? "beside" : "over");
   }
+  function beside(panel) { stackLayout(panel && panel.parentNode); }
   function besideOff(root) {
     if (!root || !root.classList) return;
     root.classList.remove("csb-beside");
+    root.removeAttribute("data-csb-stack");
     if (root.style && root.style.removeProperty) root.style.removeProperty("--csb-panel-w");
   }
-  function panelGrip(panel) {
-    function now() { return panelW() || Math.round(panel.getBoundingClientRect().width) || 620; }
-    var g = el("span", { cls: "csb-pgrip", id: "csb-panel-grip", role: "separator", tabindex: "0", "aria-orientation": "vertical",
+  /* The header bar scrolls with the page, so the sidebars follow its bottom edge as it goes. */
+  var LAYOUT_ON = false;
+  function followHeader() {
+    if (LAYOUT_ON) return;
+    LAYOUT_ON = true;
+    var again = function () { if (VIEW.root && sidePanels(VIEW.root).length) stackLayout(VIEW.root); };
+    try {
+      document.addEventListener("scroll", again, { passive: true, capture: true });
+      window.addEventListener("resize", again);
+    } catch (e) { /* the sidebars keep their first place */ }
+  }
+  function gripFor(panel, mem, id) {
+    function now() { return mem.get() || Math.round(panel.getBoundingClientRect().width) || mem.def; }
+    var g = el("span", { cls: "csb-pgrip", id: id, role: "separator", tabindex: "0", "aria-orientation": "vertical",
       "aria-label": "Resize the panel", "aria-valuemin": String(PANEL_MIN), "aria-valuemax": String(panelMax()), "aria-valuenow": String(now()) });
     function set(w) {
       w = Math.max(PANEL_MIN, Math.min(panelMax(), Math.round(w)));
-      setPanelW(w); panelSize(panel); g.setAttribute("aria-valuenow", String(w));
+      mem.set(w); sizeTo(panel, mem); g.setAttribute("aria-valuenow", String(w));
     }
     g.addEventListener("keydown", function (e) {
       if (e.key === "ArrowLeft") set(now() + PANEL_STEP);
       else if (e.key === "ArrowRight") set(now() - PANEL_STEP);
-      else if (e.key === "Home") { setPanelW(null); panelSize(panel); g.setAttribute("aria-valuenow", String(now())); }
+      else if (e.key === "Home") { mem.set(null); sizeTo(panel, mem); g.setAttribute("aria-valuenow", String(now())); }
       else return;
       e.preventDefault(); e.stopPropagation();
     });
@@ -1746,6 +2100,7 @@
     });
     return g;
   }
+  function panelGrip(panel) { return gripFor(panel, MEM1, "csb-panel-grip"); }
   function foldEdit(sec) {
     if (!sec || !sec.firstChild || sec.firstChild.tagName !== "H4") return sec;
     return fold(sec, sec.firstChild);
@@ -1806,9 +2161,9 @@
   function panelDraw(root, M) {
     var old = root.querySelector("#csb-panel");
     if (old) old.parentNode.removeChild(old);
-    besideOff(root);
-    var slug = S.at || S.view, back = S.view;
-    if (!S.code || !M.by[slug]) return;
+    /* Close returns to the surface with its first sidebar, where one was open (S719). */
+    var slug = S.at || S.view, back = surfacePath(true);
+    if (!S.code || !M.by[slug]) { stackLayout(root); return; }
     var c = M.by[slug], code = S.code;
     var row = c.rows.filter(function (r) { return r.code === code; })[0];
     var close = el("button", { type: "button", cls: "csb-word", id: "csb-panel-close", text: "Close" });
@@ -1927,8 +2282,24 @@
     /* <college slug>/<local code> opens that college with the code's course panel; a code may hold a slash (ES/A). */
     var seg = view.split("/"), code = "", at = "";
     view = seg[0] === ALL && seg.length >= 3 ? "" : seg[0];
-    var special = view === DISAGREE || view === HELD || view === NC || view === SW || view === SRC;
-    if (seg.length >= 3 && (special || seg[0] === ALL)) { at = seg[1]; code = seg.slice(2).join("/"); }
+    var special = view === DISAGREE || view === HELD || view === NC || view === SW || view === SRC || view === MQ;
+    STACK.second = null;
+    if (view === SW || view === MQ) {
+      /* S719: statewide[/code/<COMMON>] and mq[/code/<COMMON>], then a second sidebar (<kind>/<LOCAL>) or a course
+         panel (<college slug>/<code>). */
+      var i = 1, cm = "";
+      if (seg[1] === "code" && seg[2]) { cm = String(seg[2]).toUpperCase(); i = 3; }
+      if ((seg[i] === "courses" || seg[i] === "colleges") && seg[i + 1]) { if (view === SW || cm) STACK.second = [seg[i], String(seg[i + 1]).toUpperCase()]; }
+      else if (seg.length >= i + 2) { at = seg[i]; code = seg.slice(i + 1).join("/"); }
+      if (view === SW) {
+        if (cm) { if (SWS.filter !== "code" || SWS.common !== cm) { SWS.shown = 200; SWS.bulk = false; } SWS.filter = "code"; SWS.common = cm; }
+        else if (SWS.filter === "code") { SWS.filter = "top"; SWS.common = ""; }
+      } else {
+        if (MQS.code !== cm || !MQS.side) MQS.side = { filter: "code", common: cm, q: "", shown: 200, bulk: false };
+        MQS.code = cm;
+      }
+    }
+    else if (seg.length >= 3 && (special || seg[0] === ALL)) { at = seg[1]; code = seg.slice(2).join("/"); }
     else if (seg.length >= 2 && !special && seg[0] !== ALL) code = seg.slice(1).join("/");
     var c = view && !special ? M.by[view] : null;
     var missing = view && !special && !c ? view : "";
@@ -1942,13 +2313,13 @@
     M.list.forEach(function (x) { all = all.concat(x.rows); });
     var untitled = F.untitled, nSaved = F.saved;   /* counted as the lists they open count, the live saves on top */
     var wrap = el("div", { cls: "cmn-wrap csb" });
-    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : S.view === SRC ? "Colleges by source" : ""));
+    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : S.view === SRC ? "Colleges by source" : S.view === MQ ? "MQ disciplines" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : "Subjects" }),
+      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : S.view === MQ ? "Minimum Qualifications disciplines" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
-      el("p", { cls: "cmn-lede", text: "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading, and Sky scores each code’s common subject code. A code is settled once that score is Confident, 90% or more, from the evidence or from a person’s confirm or save. Needs attention counts each college’s codes below Confident or with no title." })
+      el("p", { cls: "cmn-lede", text: S.view === MQ ? MQ_LEDE : "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading, and Sky scores each code’s common subject code. A code is settled once that score is Confident, 90% or more, from the evidence or from a person’s confirm or save. Needs attention counts each college’s codes below Confident or with no title." })
     ]));
-    wrap.appendChild(el("p", { cls: "csb-stamp" }, [
+    if (S.view !== MQ) wrap.appendChild(el("p", { cls: "csb-stamp" }, [
       count(F.named, "", "titled", fmt(F.named) + " codes with a local title. Show them."), " local titles at ", el("strong", { text: fmt(F.collegesNamed) + " of " + fmt(F.colleges) }),
       " colleges with a catalog on file (" + fmt(T.courses) + " courses, ", count(T.catalog_codes, "", "incat", fmt(T.catalog_codes) + " subject codes in the catalogs. Show them."), " subject codes in the catalogs). ",
       go("#commons/subjects/" + DISAGREE, fmt(untitled) + " codes with no title"),
@@ -1958,7 +2329,8 @@
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
       go("#commons/subjects/" + NC, "Noncredit subject titles"), ". ",
-      go("#commons/subjects/" + SRC, "Colleges by source"), ".",
+      go("#commons/subjects/" + SRC, "Colleges by source"), ". ",
+      go("#commons/subjects/" + MQ, "MQ disciplines"), ".",
       nSaved ? " " : null, nSaved ? count(nSaved, "", "saved", fmt(nSaved) + " codes with a person’s save. Show them.") : null,
       nSaved ? (nSaved === 1 ? " code carries" : " codes carry") + " a person’s save." : ""]));
     if (SAVE_ERR) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-save-err", role: "status", text: "The saves people made could not be read (" + SAVE_ERR + "). The list below is drawn from the files alone, with the saves the daily build carried." }));
@@ -1973,9 +2345,12 @@
     } else if (S.view === SRC) {
       if (!VIEW.R) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.srcError ? "The colleges by source could not be read (" + VIEW.srcError + "). Reload the tab to try again." : "Reading the colleges by source…" }));
       else wrap.appendChild(sourcesView(VIEW.R, F));
+    } else if (S.view === MQ) {
+      if (!VIEW.Q) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.mqError ? "The MQ disciplines could not be read (" + VIEW.mqError + "). Reload the tab to try again." : "Reading the MQ disciplines…" }));
+      else mqView(VIEW.Q).forEach(function (n) { wrap.appendChild(n); });
     } else if (S.view === SW) {
       if (!VIEW.W) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.swError ? "The statewide list could not be read (" + VIEW.swError + "). Reload the tab to try again." : "Reading the statewide list…" }));
-      else wrap.appendChild(statewideView(VIEW.W));
+      else wrap.appendChild(statewideView(VIEW.W, SWS));
     } else if (S.view === HELD) {
       var H = VIEW.H;
       if (!H) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.heldError ? "The held codes could not be read (" + VIEW.heldError + "). Reload the tab to try again." : "Reading the held codes…" }));
@@ -2018,9 +2393,10 @@
     /* Below the tables, so the lists above keep their place (S712). */
     if (S.view !== SW) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-to-statewide" }, ["Every college’s codes, with a call and a confidence for each: ",
       go("#commons/subjects/" + SW, "Every local code, statewide"), "."]));
-    wrap.appendChild(el("p", { cls: "csb-foot", text: "How codes are compared: " + (S.view === HELD && VIEW.H ? VIEW.H.rule : S.view === NC && VIEW.N ? VIEW.N._rule : M.rule + (M.built ? " The state course list was built " + day(M.built) + "." : "")) }));
+    if (S.view !== MQ) wrap.appendChild(el("p", { cls: "csb-foot", text: "How codes are compared: " + (S.view === HELD && VIEW.H ? VIEW.H.rule : S.view === NC && VIEW.N ? VIEW.N._rule : M.rule + (M.built ? " The state course list was built " + day(M.built) + "." : "")) }));
     var page = el("div", { cls: "cmn-page" }, [wrap]);
     root.appendChild(page);
+    stackDraw(root);   /* before the bindings below, so a sidebar's words open what they name */
     Array.prototype.forEach.call(root.querySelectorAll("a[data-csb-go]"), function (a) {
       a.addEventListener("click", function (e) { if (e && e.preventDefault) e.preventDefault(); open(a.getAttribute("data-csb-go")); });
     });
@@ -2048,6 +2424,7 @@
       });
     });
     panelDraw(root, M);
+    followHeader();
     return page;
   }
   /* A pick: draw it and put it in the address, which is the only place it lives. */
@@ -2073,13 +2450,21 @@
     return Promise.all([withStatewide(view), withLists(view)]);
   }
   function withLists(view) {
+    var v0 = String(view || "").split("/")[0];
+    if (v0 === MQ) {
+      var need = [];
+      if (!VIEW.Q && !VIEW.mqError) need.push(loadMq().then(function (Q) { VIEW.Q = Q; VIEW.mqError = ""; }, function (e) { VIEW.mqError = e && e.message ? e.message : String(e); }));
+      if (MQS.code && !VIEW.W && !VIEW.swError) need.push(loadStatewide().then(function (W) { VIEW.W = W; VIEW.swError = ""; }, function (e) { VIEW.swError = e && e.message ? e.message : String(e); }));
+      if (!need.length) return Promise.resolve();
+      return Promise.all(need).then(function () { if (VIEW.root && VIEW.M && S.view === MQ) render(VIEW.root, VIEW.M, viewPath()); });
+    }
     if (String(view || "") === SRC && !VIEW.R) {
       return loadSources().then(function (R) { VIEW.R = R; VIEW.srcError = ""; }, function (e) { VIEW.srcError = e && e.message ? e.message : String(e); })
         .then(function () { if (VIEW.root && VIEW.M && S.view === SRC) render(VIEW.root, VIEW.M, SRC); });
     }
-    if (String(view || "") === SW && !VIEW.W) {
+    if (v0 === SW && !VIEW.W) {
       return loadStatewide().then(function (W) { VIEW.W = W; VIEW.swError = ""; }, function (e) { VIEW.swError = e && e.message ? e.message : String(e); })
-        .then(function () { if (VIEW.root && VIEW.M && S.view === SW) render(VIEW.root, VIEW.M, SW); });
+        .then(function () { if (VIEW.root && VIEW.M && S.view === SW) render(VIEW.root, VIEW.M, viewPath()); });
     }
     if (String(view || "") === NC && !VIEW.N) {
       return loadNc().then(function (N) { VIEW.N = N; VIEW.ncError = ""; }, function (e) { VIEW.ncError = e && e.message ? e.message : String(e); })
@@ -2095,12 +2480,14 @@
     var first = String(view || "").split("/")[0];
     if (!keep && (first === ALL ? "" : first) !== S.view) S.pick = "";
     if (first !== SRC) SRCS.pick = "needed";   /* a pick lasts the visit (Sam, 2026-10-21) */
+    if (first !== MQ) { MQS.pick = "all"; MQS.q = ""; }
     render(VIEW.root, VIEW.M, view || "");
     withHeld(view);
     var h = "#" + address();
     try { if (window.history && history.pushState && location.hash !== h) history.pushState(null, "", h); } catch (e) { /* the view still draws */ }
     if (VIEW.noted) VIEW.noted(String(location.hash || ""));
-    var h2 = VIEW.root.querySelector(S.code ? "#csb-panel-h" : "#csb-h");
+    var sides = sidePanels(VIEW.root), last = sides[sides.length - 1];
+    var h2 = S.code ? VIEW.root.querySelector("#csb-panel-h") : last ? last.querySelector("h3") : VIEW.root.querySelector("#csb-h");
     if (h2) { h2.setAttribute("tabindex", "-1"); if (h2.focus) h2.focus(); }
   }
 
@@ -2190,7 +2577,7 @@
     ".csb-courses .csb-c-box { width:44px; } .csb-courses input[type=checkbox] { width:20px; height:20px; margin:2px 0; accent-color:var(--cmn-accent); }",
     ".csb-vh { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }",
     ".csb-table thead th.csb-th { position:sticky; padding-right:20px; }",
-    ".csb-sort { all:unset; box-sizing:border-box; cursor:pointer; min-height:24px; font:inherit; letter-spacing:inherit; text-transform:inherit; color:inherit; text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }",
+    ".csb-sort { all:unset; box-sizing:border-box; display:inline-block; vertical-align:top; cursor:pointer; min-height:24px; font:inherit; letter-spacing:inherit; text-transform:inherit; color:inherit; text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }",
     ".csb-sort:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
     ".csb-th[aria-sort='ascending'] .csb-sort, .csb-th[aria-sort='descending'] .csb-sort { color:var(--cmn-heading); }",
     ".csw-chips { display:flex; flex-wrap:wrap; gap:6px 16px; margin:8px 0; }",
@@ -2236,6 +2623,9 @@
     "#csb-panel-body { display:grid; gap:10px; min-width:0; }",
     "@media (min-width: 900px) { .csb-beside > .cmn-page { margin-right:var(--csb-panel-w, 620px); transition:margin-right .15s ease; } }",
     "@media (prefers-reduced-motion: reduce) { .csb-beside > .cmn-page { transition:none; } }",
+    /* S719: a view that gives up its width to a sidebar keeps its tables at their phone widths, so they scroll inside
+       their own box rather than crush a header to one letter a line. */
+    "@media (min-width: 900px) { .csb-beside > .cmn-page .csb-table { min-width:36rem; } .csb-beside > .cmn-page .csb-codes, .csb-beside > .cmn-page .csb-held { min-width:44rem; } .csb-beside > .cmn-page .csb-nc { min-width:40rem; } .csb-beside > .cmn-page .csw-table { min-width:56rem; } .csb-beside > .cmn-page .csb-mq { min-width:60rem; } }",
     ".csb-move-bar.csb-move-live { position:sticky; bottom:0; z-index:2; background:var(--cmn-dialog, var(--cmn-surface)); box-shadow:0 -8px 20px color-mix(in srgb, var(--cmn-heading) 14%, transparent); }",
     ".csb-move-bar.csb-move-live .csb-move-help { display:none; }",
     ".csb-fold-row { margin:2px 0 6px; display:flex; flex-wrap:wrap; gap:4px 18px; }",
@@ -2268,6 +2658,29 @@
     ".csb-nc-form { display:grid; gap:8px; min-width:0; margin:0; padding:8px 12px 10px; border:1px solid var(--cmn-line); border-radius:8px; }",
     ".csb-nc-form legend { padding:0 4px; font-weight:600; color:var(--cmn-heading); font-size:.95rem; overflow-wrap:anywhere; }",
     ".csb-ed-ro { margin:0; color:var(--cmn-ink-2); font-size:.92rem; max-width:var(--cpl-measure,none); overflow-wrap:anywhere; } .csb-ed-ro strong { color:var(--cmn-heading); font-weight:600; }",
+    /* S719: the MQ view, its sidebars and the statewide list inside one. */
+    ".csb-mq-figs { display:flex; flex-wrap:wrap; gap:4px 20px; align-items:baseline; }",
+    ".csb-mq-figs .csb-word { font-variant-numeric:tabular-nums; }",
+    ".csb-mq-figs .csb-word[aria-pressed='true'] { color:var(--cmn-heading); font-weight:700; text-decoration:none; border-bottom:2px solid var(--cmn-accent); }",
+    ".csb-mq-find { margin:0; display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center; }",
+    ".csb-mq-find label { font-weight:600; color:var(--cmn-heading); }",
+    ".csb-mq-find input[type=search], .csw-side input[type=search] { min-height:32px; padding:4px 8px; width:min(420px, 100%); box-sizing:border-box; border:1px solid var(--cmn-muted); border-radius:8px; font:inherit; color:var(--cmn-ink); background:var(--cmn-surface); }",
+    ".csb-mq-find input:focus-visible, .csw input[type=search]:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
+    ".csb-mq-count { display:inline; font-variant-numeric:tabular-nums; }",
+    ".csb-table.csb-mq { min-width:60rem; }",
+    ".csb-mq-name { width:15%; } .csb-mq-type { width:8%; } .csb-mq-c-prov { width:11.5%; } .csb-mq-code { width:9%; } .csb-mq-num { width:10%; } .csb-mq-loc { width:8%; } .csb-mq-nc { width:11.5%; } .csb-mq-gap { width:17%; }",
+    /* A header breaks between words, never inside one, in the MQ table and the sidebars' small tables. */
+    ".csb-mq .csb-sort, .csb-mq thead th { overflow-wrap:normal; word-break:normal; }",
+    ".csb-mq-gaps { margin:0; padding-left:1.1em; color:var(--cmn-ink-2); } .csb-mq-gaps li + li { margin-top:4px; }",
+    ".csb-mq-gaps li.csb-mq-act { color:var(--cmn-ink); font-weight:600; }",
+    ".csb-mq-h { margin:12px 0 0; font-family:var(--cmn-serif); color:var(--cmn-heading); font-size:clamp(1.1rem, 1rem + .5vw, 1.35rem); }",
+    ".csb-mq-prov { display:grid; gap:10px; } .csb-mq-prov .csb-note { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:12px 16px; }",
+    ".csb-mq-prov strong { color:var(--cmn-heading); }",
+    ".csb-facts { display:grid; grid-template-columns:max-content minmax(0, 1fr); gap:4px 14px; margin:0; } .csb-facts dt { color:var(--cmn-muted); } .csb-facts dd { margin:0; color:var(--cmn-ink); overflow-wrap:anywhere; }",
+    ".csw-side { display:grid; gap:8px; min-width:0; } .csw-side > p { margin:0; }",
+    ".csb-side-courses { min-width:30rem; } .csb-sc-college { width:30%; } .csb-sc-course { width:20%; } .csb-sc-title { width:34%; } .csb-sc-top { width:16%; }",
+    ".csb-side-courses .csb-sort, .csb-side-cols .csb-sort, .csb-side-courses th, .csb-side-courses td { overflow-wrap:normal; word-break:normal; }",
+    "@media (max-width: 560px) { .csb-facts { grid-template-columns:minmax(0, 1fr); } .csb-facts dd { margin-bottom:6px; } }",
     "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-codes { min-width:44rem; } .csb-held { min-width:44rem; } .csb-nc { min-width:40rem; } .csb-courses { min-width:26rem; } .csb-table th, .csb-table td { padding:8px; } }"
   ].join("\n");
   function ensureCss() {
@@ -2280,6 +2693,8 @@
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
     _state: S, COURSE_DIR: COURSE_DIR, bandOf: bandOf, saveKey: saveKey, titleCase: titleCase, savesModel: savesModel,
     SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX, dominantOf: dominantOf, attentionBy: attentionBy, webQuery: webQuery,
-    _reset: function () { VIEW.W = null; VIEW.swError = ""; swCache = null; SW_IX = null; SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.at = ""; S.band = ""; S.pick = ""; }
+    MQ_FILE: MQ_FILE, _stack: STACK,
+    _reset: function () { VIEW.Q = null; VIEW.mqError = ""; mqCache = null; MQS.pick = "all"; MQS.q = ""; MQS.code = ""; MQS.side = null; STACK.second = null; VIEW.cociError = ""; cociWait = null; COCI_IX = null;
+      SWS.filter = "top"; SWS.common = ""; VIEW.W = null; VIEW.swError = ""; swCache = null; SW_IX = null; SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.at = ""; S.band = ""; S.pick = ""; }
   };
 })();

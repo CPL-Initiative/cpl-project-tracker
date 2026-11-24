@@ -14,6 +14,8 @@
 //   (6) a noncredit code offers no statewide filing (its category settles it at each college); a filed code shows
 //       Filed and its discipline; another code can be filed from the row's list of the common codes;
 //   (7) the table carries th scope, a labelled region, and the view stores nothing.
+// A count in a row (Colleges past three, Courses) is a word that opens a sidebar and writes nothing (S719), so the
+// checks for a writing control set those aside.
 //
 // Run from repo root: `npm test` (or `node tests/commons_subjects_statewide.test.js`).
 const fs = require("fs");
@@ -105,7 +107,7 @@ const rowCodes = (d) => Array.from(d.querySelectorAll(".csw-table tbody tr")).ma
   check("(2) the pairs are counted by the four confidence levels, a filed code as Confident",
     /Confident 417 · Likely 0 · Leaning 0 · Unsure 2/.test(txt(d.getElementById("csw-levels"))), txt(d.getElementById("csw-levels")));
   check("(2) the summary names the scale and the measured accuracy", /210 local subject codes at 118 colleges/.test(txt(d.getElementById("csw-sum"))) && /right 97% of the time/.test(txt(d.getElementById("csw-sum"))));
-  check("(3) ⭐ signed out, no control writes and the page says to sign in", !d.querySelector(".csw-table tbody button, .csw-table tbody select") && !d.getElementById("csw-bulk")
+  check("(3) ⭐ signed out, no control writes and the page says to sign in", !d.querySelector(".csw-table tbody button:not([data-csb-second]), .csw-table tbody select") && !d.getElementById("csw-bulk")
     && /Sign in as a reviewer/.test(txt(d.querySelector(".csw"))) && posts(x).length === 0);
   d.getElementById("csw-f-all").click(); await settle();
   const low = d.querySelector('.csw-table tr[data-code="LOW"]');
@@ -136,7 +138,7 @@ const rowCodes = (d) => Array.from(d.querySelectorAll(".csw-table tbody tr")).ma
   d.getElementById("csw-f-all").click(); await settle();
   d.getElementById("csw-more").click(); await settle();
   const nc = d.querySelector('.csw-table tr[data-code="ESLNC"]');
-  check("(6) a noncredit code offers no statewide filing and says why", nc && !nc.querySelector("button, select") && /Settled by its noncredit category at each college/.test(txt(nc)));
+  check("(6) a noncredit code offers no statewide filing and says why", nc && !nc.querySelector("button:not([data-csb-second]), select") && /Settled by its noncredit category at each college/.test(txt(nc)));
   const done = d.querySelector('.csw-table tr[data-code="DONE"]');
   check("(6) a filed code shows Filed and its discipline", done && txt(done.children[4]) === "Filed" && /Filed under Mathematics/.test(txt(done.children[7])));
   const pick = d.getElementById("csw-LOW-pick");

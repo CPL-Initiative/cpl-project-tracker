@@ -1220,7 +1220,10 @@ async function seedCommonsSubjects(page, theme) {
   if (/subjects\/held/.test(await page.evaluate(() => location.hash))) await page.waitForSelector("#commons-root .csb-held", { state: "attached", timeout: 60000 });
   /* S712: the statewide list reads its own file after the list draws, then opens signed in so each row's Confirm, its
      list of the common codes and the bulk confirm are measured. Nothing is sent: no control is pressed. */
-  if (/subjects\/statewide/.test(await page.evaluate(() => location.hash))) {
+  /* S719: the MQ view's sidebars read the statewide list, and a second sidebar the state course list, after the view draws. */
+  if (/subjects\/mq\/code\//.test(await page.evaluate(() => location.hash))) await page.waitForSelector("#csb-side-1 .csw-table", { state: "attached", timeout: 60000 });
+  if (/subjects\/mq\/code\/[^/]+\/courses\//.test(await page.evaluate(() => location.hash))) await page.waitForSelector("#csb-side-2 table", { state: "attached", timeout: 90000 });
+  if (/subjects\/(statewide|mq\/code\/)/.test(await page.evaluate(() => location.hash))) {
     await page.waitForSelector("#commons-root .csw-table", { state: "attached", timeout: 60000 });
     await page.evaluate(() => {
       const s = { email: "seed@example.org", access_token: "seed.seed.seed", refresh_token: "seed", exp: Date.now() + 3600 * 1000 };
@@ -3821,7 +3824,11 @@ module.exports = {
       /* Southwestern NC spans ten categories. */
       { hash: "commons/subjects/southwestern/NC", name: "subjects-edit-noncredit-ten" },
       /* S712: every local code statewide, signed in. */
-      { hash: "commons/subjects/statewide", name: "subjects-statewide" }],
+      { hash: "commons/subjects/statewide", name: "subjects-statewide" },
+      /* S719: the MQ view, a code's sidebar (the statewide list filtered to it, signed in) and a second sidebar a
+         Courses count opens (the state course list, loaded on that press). */
+      { hash: "commons/subjects/mq", name: "subjects-mq" }, { hash: "commons/subjects/mq/code/CNST", name: "subjects-mq-side" },
+      { hash: "commons/subjects/mq/code/CNST/courses/CT", name: "subjects-mq-second" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsSubjects(page, "light"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3833,7 +3840,8 @@ module.exports = {
       { hash: "commons/subjects/cerritos/ATH", name: "subjects-edit-dark" },
       { hash: "commons/subjects/cerritos/AED", name: "subjects-edit-noncredit-dark" },
       { hash: "commons/subjects/southwestern/NC", name: "subjects-edit-noncredit-ten-dark" },
-      { hash: "commons/subjects/statewide", name: "subjects-statewide-dark" }],
+      { hash: "commons/subjects/statewide", name: "subjects-statewide-dark" },
+      { hash: "commons/subjects/mq", name: "subjects-mq-dark" }, { hash: "commons/subjects/mq/code/CNST/courses/CT", name: "subjects-mq-second-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsSubjects(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
