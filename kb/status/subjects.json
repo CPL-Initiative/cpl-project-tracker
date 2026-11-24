@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 718,
-  "moniker": "SkyPetrel",
+  "session": 719,
+  "moniker": "SkyShearwater",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_719_handoff.md",
+  "handoff": "docs/session_720_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-24T00:48:39Z",
+  "written_at": "2026-11-24T03:51:16Z",
   "project": "subjects",
   "next_step": {
-    "title": "A web search for every untitled code that has none",
-    "text": "206 untitled local codes have no filed web search, mostly at the Los Angeles district colleges; each search is filed and read the way S718 read Cerritos's INST. Then the card's measure matches college names as the table does."
+    "title": "The renames read from print, and a courses file for the MQ view",
+    "text": "Two likely renames wait on their printed lines: Los Angeles Trade-Technical's IT 077 to 079, formerly MICROTK, and Mt. San Antonio's DSPS, now Access (ACCS); Southwestern's PE codes wait on Sam's word or a printed source. Then a small per-code courses file, so the MQ view's courses sidebar no longer loads the 17 MB course list."
   },
   "changes": [
     {
@@ -200,6 +200,22 @@
     {
       "at": "2026-11-24T00:08:00Z",
       "text": "The pages eleven web searches found were read; none names its code, so each is recorded as tried."
+    },
+    {
+      "at": "2026-11-24T01:56:00Z",
+      "text": "The Subjects card matches a college's name as the table does, so a save at Los Angeles Trade-Technical lifts its codes on the card too."
+    },
+    {
+      "at": "2026-11-24T02:15:00Z",
+      "text": "Every untitled code with no filed web search now has one: 205 searched, 6 more codes carry a recommended title, and the 69 pages the searches found were read; none names its code, so each is recorded as tried."
+    },
+    {
+      "at": "2026-11-24T03:05:00Z",
+      "text": "The quarterly MQ compare reads against the 20th edition; the runner read the same edition and hash."
+    },
+    {
+      "at": "2026-11-24T03:33:00Z",
+      "text": "The MQ disciplines view opens from the Subjects card: each discipline's list type, provisions, common code and what to look at; a code opens the statewide list filtered to it, and a count opens a second sidebar beside the first."
     }
   ]
 }

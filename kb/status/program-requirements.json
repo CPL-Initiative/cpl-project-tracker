@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-23T20:46:25Z",
-  "session": 717,
-  "moniker": "SkyGannet",
+  "written_at": "2026-11-24T03:51:16Z",
+  "session": 719,
+  "moniker": "SkyShearwater",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_718_handoff.md",
+  "handoff": "docs/session_720_handoff.md",
   "next_step": {
-    "title": "The MQ view in COBI",
-    "text": "Sam's plain session put a common subject code on every MQ discipline; the next one builds the MQ disciplines view under Subjects and tests CIP in place of TOP for a course's MQ type. The harvest runs on in the CPL Queue routine."
+    "title": "The renames read from print, and a courses file for the MQ view",
+    "text": "Two likely renames wait on their printed lines: Los Angeles Trade-Technical's IT 077 to 079, formerly MICROTK, and Mt. San Antonio's DSPS, now Access (ACCS); Southwestern's PE codes wait on Sam's word or a printed source. Then a small per-code courses file, so the MQ view's courses sidebar no longer loads the 17 MB course list."
   },
   "calls": [
     {
