@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-24T09:24:42Z",
-  "session": 720,
-  "moniker": "SkyEider",
+  "written_at": "2026-11-24T13:48:38Z",
+  "session": 721,
+  "moniker": "SkySkua",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_721_handoff.md",
+  "handoff": "docs/session_722_handoff.md",
   "next_step": {
-    "title": "The display build for tonight's records, then the census and the follow-up rules",
-    "text": "Build the display page carrying the 144 records collected tonight once #3758 merges, gate one college, apply the whole build, then run the census on main. Then the night's one follow-up: the pooled-figure, recommended-list and own-option readings that pass records free, and the San Bernardino Valley page the general-education rule refuses."
+    "title": "The display build for tonight's records, then the census",
+    "text": "Build the display page carrying the 65 records collected tonight once the pooled reading's pull request merges, gate one college, apply the whole build, then run the census on main. Then the pooled reading's next records, the eLumen sister-award reader fix and the census's next piles."
   },
   "calls": [
     {
@@ -337,6 +337,46 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-24T11:01:00Z",
+      "text": "The display page now carries every filed record: 18,699 programs at build 6de40ebdf2fd, after a first apply at Glendale."
+    },
+    {
+      "at": "2026-11-24T11:29:00Z",
+      "text": "Orange Coast: 3 programs collected with their gaps named."
+    },
+    {
+      "at": "2026-11-24T11:46:00Z",
+      "text": "Porterville: 15 programs collected, 14 with their gaps named and one passing on its catalog's own misprint of a course code."
+    },
+    {
+      "at": "2026-11-24T11:48:00Z",
+      "text": "Palo Verde: 15 programs collected with their gaps named, under two new gap kinds."
+    },
+    {
+      "at": "2026-11-24T12:04:00Z",
+      "text": "Gavilan: 7 programs collected with their gaps named."
+    },
+    {
+      "at": "2026-11-24T12:19:00Z",
+      "text": "College of the Redwoods: 3 programs read from their own pages and loaded, 2 passing."
+    },
+    {
+      "at": "2026-11-24T12:36:00Z",
+      "text": "Butte: 5 programs collected with their gaps named; nine more wait for a reconcile that passes them."
+    },
+    {
+      "at": "2026-11-24T12:55:00Z",
+      "text": "MiraCosta: 1 program read again from its own section and loaded, passing."
+    },
+    {
+      "at": "2026-11-24T13:25:00Z",
+      "text": "Antelope Valley: 8 programs read from their own pages and loaded, all passing."
+    },
+    {
+      "at": "2026-11-24T13:31:00Z",
+      "text": "The scorer reads one printed figure over several named lists as one pool: 8 Modesto Junior programs collected, 7 passing, and 7 named gaps at five colleges now pass."
+    },
     {
       "at": "2026-11-24T06:43:00Z",
       "text": "The display page now carries every filed record: 18,665 programs at build abf1f6396156, after a first apply at Glendale."
@@ -972,18 +1012,18 @@
     {
       "day": "2026-11-24",
       "active": 20282,
-      "complete": 15498,
+      "complete": 15524,
       "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-24T06:12:00Z"
+    "at": "2026-11-24T15:12:00Z"
   },
   "harvest": {
     "day": "2026-11-24",
-    "gaps": 3393,
+    "gaps": 3387,
     "parts": {
       "links": {
         "catalog": [
@@ -1004,7 +1044,7 @@
         20282
       ],
       "coci": [
-        17216,
+        17228,
         20282
       ],
       "outcomes": {
@@ -1013,12 +1053,12 @@
           88736
         ],
         "plo": [
-          17216,
+          17228,
           20282
         ]
       },
       "careers": [
-        16238,
+        16250,
         20282
       ]
     }
