@@ -216,10 +216,10 @@
    }
   }
  },
- "web_searches_filed": 108,
+ "web_searches_filed": 313,
  "totals": {
-  "common_high": 198,
-  "common_low": 170,
+  "common_high": 197,
+  "common_low": 171,
   "common_medium": 433,
   "common_no_code_yet": 6,
   "common_none": 176,
@@ -230,10 +230,10 @@
   "noncredit_no_title": 50,
   "noncredit_title": 3,
   "noncredit_title_unused_condition": 11,
-  "title_high": 115,
-  "title_low": 87,
-  "title_medium": 19,
-  "title_none": 80
+  "title_high": 113,
+  "title_low": 91,
+  "title_medium": 23,
+  "title_none": 74
  },
  "colleges": [
   {
@@ -1315,17 +1315,31 @@
         "title": "Sign Language Interpreter Training",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "\"El Camino College\" ASL American Sign Language I 111 course descriptions",
+       "searched_on": "2026-11-24",
+       "result_title": "SLAN 111 course outline",
+       "result_url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/llr/docs/SLAN%20111.pdf",
+       "where": "none"
+      }
      }
     },
     {
      "code": "BSRC",
      "title": {
       "title": "Respiratory Care",
-      "level": "Low",
+      "level": "Medium",
       "from": "program_titles",
-      "why": "program titles: 1 of 1 programs (one or mixed).",
-      "also": []
+      "why": "program titles: 1 of 1 programs (one or mixed). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "site:elcamino.edu BSRC Respiratory Care Management and Supervisorial Skills",
+       "searched_on": "2026-11-24",
+       "result_title": "Bachelor's Degree in Respiratory Care",
+       "result_url": "https://www.elcamino.edu/academics/divisions/health-sciences-and-athletics/respiratory-care/bachelors-program.php",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "RSPT",
@@ -1371,7 +1385,14 @@
         "title": "Accounting",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:elcamino.edu BUS 1A Financial Accounting catalog",
+       "searched_on": "2026-11-24",
+       "result_title": "BUS 150 COR Effective FALL 2024",
+       "result_url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/busi/docs/BUS%20150%20COR_Effective%20FALL%202024.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -1457,7 +1478,14 @@
         "title": "Business",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:elcamino.edu DART Digital Illustration Design Principles and Tools",
+       "searched_on": "2026-11-24",
+       "result_title": "DART 102 COR effective FALL 2024",
+       "result_url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/fine/docs/DART%20102%20COR_effective%20FALL%202024.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -1491,7 +1519,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 1 of 1 joined courses (few or mixed). program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:elcamino.edu ECHT Introduction to Electronics Electric Power Industry",
+       "searched_on": "2026-11-24",
+       "result_title": "ECHT 110 COR Effective FALL 2024",
+       "result_url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/itec/docs/ECHT%20110%20COR_Effective%20FALL%202024.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ELET",
@@ -1528,7 +1563,14 @@
       "level": "Medium",
       "from": "other_colleges",
       "why": "other colleges: 1 of 1 other colleges (one college).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:elcamino.edu ET Sustainable/Regen Practices 165",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "ENGT",
@@ -1599,7 +1641,14 @@
       "level": "Low",
       "from": "course_joins",
       "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:elcamino.edu LGBT 101 Introduction to LGBTQ+ Studies",
+       "searched_on": "2026-11-24",
+       "result_title": "LGBT 101 COR EFFECTIVE FALL 2024",
+       "result_url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/bssc/docs/LGBT%20101%20COR_EFFECTIVE%20FALL%202024.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "SOCI",
@@ -1725,7 +1774,14 @@
       "level": "High",
       "from": "other_colleges",
       "why": "other colleges: 4 of 4 other colleges (all agree). course joins, program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:elcamino.edu PHOT 101 Beginning Photography catalog",
+       "searched_on": "2026-11-24",
+       "result_title": "PHOT 101 Spring 2021",
+       "result_url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/FINE/docs/PHOT 101_Spring 2021.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -1734,8 +1790,15 @@
       "title": "Respiratory Care",
       "level": "Medium",
       "from": "program_titles",
-      "why": "program titles: 2 of 2 programs (several agree).",
-      "also": []
+      "why": "program titles: 2 of 2 programs (several agree). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "site:elcamino.edu RC 170 Introduction to Respiratory Care Sciences and the Profession",
+       "searched_on": "2026-11-24",
+       "result_title": "respiratory care",
+       "result_url": "https://www.elcamino.edu/academics/areas-of-study/respiratory-care.php",
+       "where": "college site"
+      }
      }
     },
     {
@@ -1764,8 +1827,15 @@
       "title": "Radiologic Technology",
       "level": "High",
       "from": "course_joins",
-      "why": "course joins: 3 of 3 joined courses (most courses agree). program titles agrees.",
-      "also": []
+      "why": "course joins: 3 of 3 joined courses (most courses agree). program titles, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "site:elcamino.edu RTEC Radiographic Pathology Clinical Education",
+       "searched_on": "2026-11-24",
+       "result_title": "Courses Offered",
+       "result_url": "https://www.elcamino.edu/academics/divisions/health-care/radiologic-technology/courses.php",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "RADT",
@@ -1777,12 +1847,26 @@
     },
     {
      "code": "SLAN",
+     "title": {
+      "title": "Sign Language/Interpreter Training",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "site:elcamino.edu SLAN Beg American Sign Lang 15",
+       "searched_on": "2026-11-24",
+       "result_title": "Sign Language/Interpreter Training",
+       "result_url": "https://www.elcamino.edu/support/resources/src/sign-language-interpreter-training.html",
+       "where": "college site"
+      }
+     },
      "common": {
-      "code": "SLNA",
-      "discipline": "Sign Language, American",
-      "level": "Medium",
-      "from": "same_code_statewide",
-      "why": "4 of 5 courses under this code statewide sit under SLNA."
+      "code": "SLNG",
+      "discipline": "Sign Language/ English Interpreting",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Sign Language/ English Interpreting."
      }
     },
     {
@@ -1802,7 +1886,14 @@
       "level": "High",
       "from": "other_colleges",
       "why": "other colleges: 11 of 13 other colleges (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:elcamino.edu STAT Introduction to Statistics Support 0100S",
+       "searched_on": "2026-11-24",
+       "result_title": "STAT 0100S COR effective FA 2025",
+       "result_url": "https://www.elcamino.edu/academics/divisions/mathematical-sciences/docs/STAT%200100S%20COR_effective%20FA%202025.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -1817,6 +1908,20 @@
     },
     {
      "code": "SUST",
+     "title": {
+      "title": "Sustainable Design",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "site:elcamino.edu SUST Sustainability in the Building Sector 100",
+       "searched_on": "2026-11-24",
+       "result_title": "Wind turbines in a field",
+       "result_url": "https://www.elcamino.edu/academics/areas-of-study/sustainable-design.php",
+       "where": "college site"
+      }
+     },
      "common": {
       "code": "ARCH",
       "discipline": "Architecture",
@@ -2580,7 +2685,14 @@
         "title": "ESL Milestone - Language Arts, Oral Communication",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles City College E.S.L. courses lacc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "Learn English at LACC",
+       "result_url": "https://lacc.edu/academics/esl",
+       "where": "college site"
+      }
      }
     },
     {
@@ -2660,7 +2772,14 @@
         "title": "Dietetic Service Supervisor",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles City College \"FAM &CS\" Family and Consumer Studies lacc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "Kids Playing",
+       "result_url": "https://lacc.edu/academics/pathways/sbs/cfs-dept",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "FCSH",
@@ -3318,7 +3437,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 5 of 5 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Harbor College \"PHYS SC\" physical science courses lahc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "PHSC",
@@ -3437,7 +3563,14 @@
         "title": "History",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:lamission.edu catalog course descriptions AFRO AM African American Studies",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "ETHS",
@@ -3459,7 +3592,14 @@
         "title": "Medical Assistant Training",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "\"Los Angeles Mission College\" ALD HTH Medical Assisting Basic Life Support for the Healthcare Provider",
+       "searched_on": "2026-11-24",
+       "result_title": "AH021,CPR,Sp2020 schedule PDF",
+       "result_url": "https://www.lamission.edu:443/sites/lamc.edu/files/2022-08/AH021%2CCPR%2CSp2020.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "HTEC",
@@ -3510,7 +3650,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 3 of 3 colleges in the district (all agree). other colleges, sibling agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "lamission.edu ARTH C1200 Survey of Art from the Renaissance to Contemporary Art History",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -3520,7 +3667,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" ARTHIST Survey of Western Art History I course",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -3530,7 +3684,14 @@
       "level": "High",
       "from": "other_colleges",
       "why": "other colleges: 8 of 8 other colleges (all agree). district agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" BIOL 110 Anatomy course catalog",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -3571,7 +3732,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" CH DEV Child Growth and Development",
+       "searched_on": "2026-11-24",
+       "result_title": "Major Sheets - Child Development LAMC",
+       "result_url": "https://lamission.edu/sites/lamc.edu/files/2024-02/Major%20Sheets%20-%20Child%20Development%20LAMC.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -3586,7 +3754,14 @@
         "title": "Chicana/O Studies, Latina/O Studies",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "\"Los Angeles Mission College\" CHICANO Mexican-American in Contemporary Society",
+       "searched_on": "2026-11-24",
+       "result_title": "CHICANO STUDIES",
+       "result_url": "https://lamission.edu/academics/aos/chicano-studies",
+       "where": "college site"
+      }
      }
     },
     {
@@ -3606,7 +3781,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 2 of 4 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" COLLEGE 101 Navigating Your Path Through College to Career",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "IDST",
@@ -3663,7 +3845,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" E.S.L. College ESL III Writing and Grammar",
+       "searched_on": "2026-11-24",
+       "result_title": "GLOBAL LANGUAGES AND SOCIETY",
+       "result_url": "https://lamission.edu/academics/pathways/scc/global-languages-and-society/esl-program",
+       "where": "college site"
+      }
      }
     },
     {
@@ -3683,7 +3872,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" ECON 001 Principles of Microeconomics economics department",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -3693,7 +3889,14 @@
       "level": "High",
       "from": "course_joins",
       "why": "course joins: 3 of 4 joined courses (most courses agree). district agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" EGD TEK Engineering Graphics with CAD SolidWorks",
+       "searched_on": "2026-11-24",
+       "result_title": "SKILL CERTIFICATE",
+       "result_url": "https://lamission.edu/academics/aos/drafting",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "DRAF",
@@ -3710,7 +3913,14 @@
       "level": "High",
       "from": "course_joins",
       "why": "course joins: 3 of 5 joined courses (most courses agree). district agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" ENG GEN Statics Materials of Engineering MATLAB",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "ENGR",
@@ -3727,7 +3937,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" ENG SUP Plane Surveying I land surveying",
+       "searched_on": "2026-11-24",
+       "result_title": "CERTIFICATE OF ACHIEVEMENT",
+       "result_url": "https://lamission.edu/academics/aos/land-surveying",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ENSP",
@@ -3744,7 +3961,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 5 of 5 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" STAT C1000 Introduction to Statistics POLS C1000 ENGL C1000",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -3754,7 +3978,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "LAMC Catalog 2024-2025 course descriptions ENGLISH 101 College Reading & Composition I Los Angeles Mission College",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -3794,7 +4025,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 5 of 5 colleges in the district (all agree). course joins, program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" FIRETEK Fire Protection Organization Fire Technology",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "FIRE",
@@ -3838,15 +4076,27 @@
      "code": "HTHTEK",
      "title": {
       "title": "Health Information Technology",
-      "level": "High",
+      "level": "Low",
       "from": "district",
-      "why": "district: 1 of 1 colleges in the district (one college). course joins agrees.",
-      "also": []
+      "why": "district: 1 of 1 colleges in the district (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Fundamentals of Medical Billing & Coding",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "\"Los Angeles Mission College\" HTHTEK Health Information Technology coding",
+       "searched_on": "2026-11-24",
+       "result_title": "Fundamentals of Medical Billing & Coding Certificate",
+       "result_url": "https://lamission.edu/academics/aos/medical-billing-and-coding",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "HEIT",
       "discipline": "Health Information Technology",
-      "level": "High",
+      "level": "Low",
       "from": "title",
       "why": "The title names the discipline Health Information Technology."
      }
@@ -3858,7 +4108,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" IND TEK Print Reading with GD&T Industrial Technology",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "INDT",
@@ -3934,8 +4191,15 @@
       "title": "Mathematics",
       "level": "High",
       "from": "district",
-      "why": "district: 7 of 7 colleges in the district (all agree). course joins, other colleges, program titles agrees.",
-      "also": []
+      "why": "district: 7 of 7 colleges in the district (all agree). course joins, other colleges, program titles, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" MATH 115 Elementary Algebra Pre-Algebra mathematics department",
+       "searched_on": "2026-11-24",
+       "result_title": "Mathematics Courses We Offer:",
+       "result_url": "https://www.lamission.edu/academics/aos/mathematics",
+       "where": "college site"
+      }
      }
     },
     {
@@ -3956,7 +4220,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" MEDIART Digital Media Storytelling Introduction to Podcast",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -3975,8 +4246,15 @@
       "title": "Multimedia",
       "level": "High",
       "from": "district",
-      "why": "district: 1 of 1 colleges in the district (one college). course joins, program titles agrees.",
-      "also": []
+      "why": "district: 1 of 1 colleges in the district (one college). course joins, program titles, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" MULTIMD Multimedia Digital Imaging Graphic Design for Multimedia",
+       "searched_on": "2026-11-24",
+       "result_title": "About our Program",
+       "result_url": "https://lamission.edu/Multimedia/Home.aspx",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "MULT",
@@ -4025,8 +4303,20 @@
       "title": "Certified Nurse Assistant and Home Health Aide",
       "level": "Low",
       "from": "program_titles",
-      "why": "program titles: 1 of 1 programs (one or mixed).",
-      "also": []
+      "why": "program titles: 1 of 1 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Cna-Hha",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "\"Los Angeles Mission College\" NRS-HCA Nurse Assistant Training Program Home Health Aide",
+       "searched_on": "2026-11-24",
+       "result_title": "CNA-HHA Courses/Certificate",
+       "result_url": "https://lamission.edu:443/academics/aos/nursing-assitant-hha",
+       "where": "college site"
+      }
      }
     },
     {
@@ -4035,8 +4325,15 @@
       "title": "Nursing",
       "level": "High",
       "from": "district",
-      "why": "district: 3 of 4 colleges in the district (mixed). program titles agrees.",
-      "also": []
+      "why": "district: 3 of 4 colleges in the district (mixed). program titles, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" NURSING 90 Vocational Nursing Skills Laboratory",
+       "searched_on": "2026-11-24",
+       "result_title": "Vocational Nursing",
+       "result_url": "https://lamission.edu/academics/aos/vocational-nursing",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "NRSR",
@@ -4098,8 +4395,15 @@
       "title": "Pharmacy Technician",
       "level": "High",
       "from": "district",
-      "why": "district: 1 of 1 colleges in the district (one college). course joins, program titles agrees.",
-      "also": []
+      "why": "district: 1 of 1 colleges in the district (one college). course joins, program titles, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" PHRMCTK Pharmacy Technician Introduction to Pharmacy",
+       "searched_on": "2026-11-24",
+       "result_title": "Basic Pharmacy Technician",
+       "result_url": "https://lamission.edu/academics/aos/pharm-tech",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "PHMT",
@@ -4116,7 +4420,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 5 of 5 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" PHYS SC Physical Science I Physical Science Laboratory",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "PHSC",
@@ -4133,7 +4444,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 8 of 8 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" PHYSICS 6 General Physics I Physics for Engineers and Scientists",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "PHYS",
@@ -4160,7 +4478,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" POL SCI 001 The Government of the United States",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "POLS",
@@ -4177,7 +4502,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" STAT C1000 Introduction to Statistics POLS C1000 ENGL C1000",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -4197,7 +4529,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" PUBSERV Public Service Correctional Personnel Supplemental Academy probation core",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -4207,7 +4546,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" STAT C1000 Introduction to Statistics POLS C1000 ENGL C1000",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -4217,7 +4563,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Mission College\" TECTHTR Technical Stage Production 342",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "THES",
@@ -4273,8 +4626,19 @@
        {
         "title": "African American Studies",
         "from": "district"
+       },
+       {
+        "title": "African American Studies",
+        "from": "web_search"
        }
-      ]
+      ],
+      "search": {
+       "query": "Pierce College catalog \"AFRO AM\" African American Studies \"KIN\" Kinesiology course descriptions",
+       "searched_on": "2026-11-24",
+       "result_title": "Los Angeles Pierce College General Catalog 2026-2027",
+       "result_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "HIST",
@@ -4306,7 +4670,14 @@
         "title": "Agriculture Animal Sciences",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Pierce College catalog course descriptions \"ANML SC\" Animal Science",
+       "searched_on": "2026-11-24",
+       "result_title": "Los Angeles Pierce College General Catalog 2026-2027",
+       "result_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "AGRI",
@@ -4323,7 +4694,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins, other colleges, program titles, sibling agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:piercecollege.edu ART 101 Survey of Art History I course descriptions",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -4389,8 +4767,15 @@
       "title": "Dance Studies",
       "level": "High",
       "from": "district",
-      "why": "district: 6 of 6 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "why": "district: 6 of 6 colleges in the district (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Pierce College catalog DANCETQ DNCESPC DANCEST dance courses",
+       "searched_on": "2026-11-24",
+       "result_title": "Los Angeles Pierce College General Catalog 2026-2027",
+       "result_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "DANC",
@@ -4406,8 +4791,15 @@
       "title": "Dance Techniques",
       "level": "High",
       "from": "district",
-      "why": "district: 6 of 6 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "why": "district: 6 of 6 colleges in the district (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Pierce College catalog DANCETQ DNCESPC DANCEST dance courses",
+       "searched_on": "2026-11-24",
+       "result_title": "Los Angeles Pierce College General Catalog 2026-2027",
+       "result_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+       "where": "catalog"
+      }
      }
     },
     {
@@ -4416,8 +4808,15 @@
       "title": "Dance Specialties",
       "level": "High",
       "from": "district",
-      "why": "district: 3 of 3 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "why": "district: 3 of 3 colleges in the district (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Pierce College catalog DANCETQ DNCESPC DANCEST dance courses",
+       "searched_on": "2026-11-24",
+       "result_title": "Los Angeles Pierce College General Catalog 2026-2027",
+       "result_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "DANC",
@@ -4560,7 +4959,14 @@
         "title": "Numerical Control Programming",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "Pierce College catalog \"IND TEK\" Industrial Technology courses",
+       "searched_on": "2026-11-24",
+       "result_title": "Los Angeles Pierce College General Catalog 2026-2027",
+       "result_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "INDT",
@@ -4606,8 +5012,15 @@
       "title": "Kinesiology",
       "level": "High",
       "from": "district",
-      "why": "district: 8 of 8 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "why": "district: 8 of 8 colleges in the district (all agree). course joins, other colleges, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Pierce College catalog \"AFRO AM\" African American Studies \"KIN\" Kinesiology course descriptions",
+       "searched_on": "2026-11-24",
+       "result_title": "Kinesiology & Health",
+       "result_url": "https://www.lapc.edu/academics/departments/kinesiology-dept",
+       "where": "college site"
+      }
      }
     },
     {
@@ -4709,7 +5122,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 8 of 8 colleges in the district (all agree). course joins, other colleges, program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:piercecollege.edu MUSIC 101 Fundamentals of Music course descriptions",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -4927,7 +5347,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 3 of 4 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College AFRO AM African American in Contemporary Urban Society lasc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "African American Studies",
+       "result_url": "https://lasc.edu/academics/aos/esaas",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ETHS",
@@ -4995,7 +5422,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 3 of 3 colleges in the district (all agree). other colleges, sibling agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"Los Angeles Southwest College\" ARTH C1100 Survey of Art from Prehistory to the Medieval Era",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -5005,7 +5439,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College ARTHIST 126 Introduction to Modern Art lasc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -5269,7 +5710,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College FAM & CS Family and Consumer Studies Nutrition 021 lasc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "Nutrition & Dietetics (AST)",
+       "result_url": "https://www.lasc.edu/academics/aos/nutrition",
+       "where": "college site"
+      }
      }
     },
     {
@@ -5706,7 +6154,14 @@
         "title": "History",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:lattc.edu \"AFRO AM\" African American Contemporary Urban Society",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "ETHS",
@@ -5733,7 +6188,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu \"ART 101\" Survey of Art History I",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -5743,7 +6205,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 3 of 3 colleges in the district (all agree). other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu ARTH Survey of Art from Prehistory to the Medieval Era",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -5753,7 +6222,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 4 of 4 joined courses (most courses agree).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu AUTOCOR auto body construction repair welding fundamentals",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "LEGL",
@@ -5775,7 +6251,14 @@
         "title": "Auto & Related Technology: Transmission Repair",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:lattc.edu AUTORTK heating and air conditioning systems theory",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "LEGL",
@@ -5827,7 +6310,14 @@
         "title": "Weatherization and Energy Auditor",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:lattc.edu BLDGCTQ applied trades calculations and measurements",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "LEGL",
@@ -5863,8 +6353,19 @@
        {
         "title": "Computer Applications and Office",
         "from": "course_joins"
+       },
+       {
+        "title": "Computer Applications and Office Technologies",
+        "from": "web_search"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:lattc.edu CAOT computer keyboarding and document applications",
+       "searched_on": "2026-11-24",
+       "result_title": "CAOT - Office Assistant-Clerical",
+       "result_url": "https://www.lattc.edu/academics/aos/caot-office-assistant-clerical",
+       "where": "college site"
+      }
      }
     },
     {
@@ -5879,7 +6380,14 @@
         "title": "Amazon Web Services",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:lattc.edu \"CIS 101\" Introduction to Computers and Their Uses",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -5923,7 +6431,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 2 of 4 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu COLLEGE 101 Navigating Your Path Through College to Career",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "IDST",
@@ -5937,10 +6452,17 @@
      "code": "COMPLAN",
      "title": {
       "title": "Community Planning & Economic Development",
-      "level": "Low",
+      "level": "Medium",
       "from": "program_titles",
-      "why": "program titles: 1 of 1 programs (one or mixed).",
-      "also": []
+      "why": "program titles: 1 of 1 programs (one or mixed). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu COMPLAN community economic development community organizing",
+       "searched_on": "2026-11-24",
+       "result_title": "Community Planning and Economic Development",
+       "result_url": "https://lattc.edu/academics/aos/community-planning-and-economic-development",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "PUBS",
@@ -5986,7 +6508,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu COUNSEL 1 Introduction to College interpersonal relationships",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "COUN",
@@ -6008,7 +6537,14 @@
         "title": "Law",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:lattc.edu CRPNTRY carpentry construction I calculations woodworking",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "CARP",
@@ -6030,7 +6566,14 @@
         "title": "Heavy Truck, Transit, and Equipment Technology",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:lattc.edu DIESLTK 112 diesel engine fundamentals",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "LEGL",
@@ -6057,7 +6600,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu DRAFT CADD for architects sustainable landscape design",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "DRAF",
@@ -6111,7 +6661,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 5 of 6 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu \"EGD TEK\" engineering graphics",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "DRAF",
@@ -6123,6 +6680,20 @@
     },
     {
      "code": "ELECL",
+     "title": {
+      "title": "Powerline Mechanic (Lineman)",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found a department or program label on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu ELECL power line mechanic trainee pre-electric station operator",
+       "searched_on": "2026-11-24",
+       "result_title": "Powerline Mechanic (Lineman)",
+       "result_url": "https://www.lattc.edu/academics/aos/powerline-mechanic",
+       "where": "college site"
+      }
+     },
      "common": {
       "code": "ELEC",
       "discipline": "Electricity",
@@ -6138,7 +6709,14 @@
       "level": "Low",
       "from": "program_titles",
       "why": "program titles: 1 of 1 programs (one or mixed).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu ELECLNM electrical lineman apprentice related training",
+       "searched_on": "2026-11-24",
+       "result_title": "Electrical Line-Worker (Lineman)",
+       "result_url": "https://www.lattc.edu/academics/aos/electrical-line-worker",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ELEC",
@@ -6187,7 +6765,14 @@
       "level": "High",
       "from": "course_joins",
       "why": "course joins: 3 of 4 joined courses (most courses agree). district agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu \"ENG GEN\" introduction to science engineering and technology MATLAB",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "ENGR",
@@ -6204,7 +6789,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 8 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu \"ENV SCI\" Introduction to Environmental Science",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "GEOG",
@@ -6316,7 +6908,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 7 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu \"KIN ATH\" intercollegiate athletics basketball",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "KINE",
@@ -6401,7 +7000,14 @@
       "level": "Low",
       "from": "program_titles",
       "why": "program titles: 1 of 1 programs (one or mixed).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lattc.edu MCYCMEK motorcycle tune-up chassis maintenance",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "INDT",
@@ -6423,6 +7029,20 @@
     },
     {
      "code": "MICROTK",
+     "title": {
+      "title": "Microcomputer Technician",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found a department or program label on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College MICROTK Cisco Networking Academy courses (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Microcomputer%20Technician_0.pdf",
+       "where": "college site"
+      }
+     },
      "common": {
       "code": "INDT",
       "discipline": "Industrial Technology",
@@ -6453,7 +7073,14 @@
         "title": "Law",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College MSCNC \"Principles of Machine Tools\" machine shop CNC (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "Machine Shop: CNC",
+       "result_url": "https://www.lattc.edu/academics/aos/machine-shop-cnc",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "MACH",
@@ -6485,7 +7112,14 @@
         "title": "Air Conditioning & Refrigeration",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College \"OPMA AP\" Hazwoper OSHA safety courses (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "Your Future, Our Mission EDUCATE. EMPOWER. ELEVATE. Discover programs and",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+       "where": "catalog"
+      }
      }
     },
     {
@@ -6578,8 +7212,15 @@
       "title": "Baking, Professional",
       "level": "High",
       "from": "district",
-      "why": "district: 1 of 2 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "why": "district: 1 of 2 colleges in the district (mixed). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College PROFBKG \"Plant Based Baking\" professional baking (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "Your Future, Our Mission EDUCATE. EMPOWER. ELEVATE. Discover programs and",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "CULN",
@@ -6595,8 +7236,15 @@
       "title": "Process Technology",
       "level": "Medium",
       "from": "program_titles",
-      "why": "program titles: 2 of 3 programs (several agree).",
-      "also": []
+      "why": "program titles: 2 of 3 programs (several agree). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College PRPLTEK \"Introduction to Industrial Process\" process plant technology (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu PROCESS TECHNOLOGY",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Process%20Technology.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -6675,8 +7323,15 @@
       "title": "Nursing, Registered",
       "level": "High",
       "from": "district",
-      "why": "district: 1 of 1 colleges in the district (one college). course joins, program titles agrees.",
-      "also": []
+      "why": "district: 1 of 1 colleges in the district (one college). course joins, program titles, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College REGNRSG registered nursing \"Introduction to Nursing\" 119 (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu NURSING, REGISTERED",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Nursing%20Registered.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "NRSR",
@@ -6741,8 +7396,15 @@
       "title": "Street Maintenance Technology",
       "level": "Medium",
       "from": "program_titles",
-      "why": "program titles: 2 of 2 programs (several agree).",
-      "also": []
+      "why": "program titles: 2 of 2 programs (several agree). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College \"ST MAIN\" street maintenance \"Survey of Street Services\" (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Street%20Maintenance%20Technology.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "CNSM",
@@ -6759,7 +7421,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College STAT C1000 Introduction to Statistics (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "Common Course Numbering (AB 1111)",
+       "result_url": "https://www.lattc.edu/academics/common-course-numbering",
+       "where": "college site"
+      }
      }
     },
     {
@@ -6805,10 +7474,17 @@
      "code": "SWM TEK",
      "title": {
       "title": "Solid Waste Management Technology",
-      "level": "Low",
+      "level": "Medium",
       "from": "program_titles",
-      "why": "program titles: 1 of 1 programs (one or mixed).",
-      "also": []
+      "why": "program titles: 1 of 1 programs (one or mixed). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College \"SWM TEK\" solid waste management technology courses (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "Solid Waste Management Technology",
+       "result_url": "https://www.lattc.edu/academics/aos/solid-waste-management-technology",
+       "where": "college site"
+      }
      }
     },
     {
@@ -6903,7 +7579,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College ANATOMY 1 Introduction to Human Anatomy lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "BIOL",
@@ -6920,7 +7603,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 4 of 4 colleges in the district (all agree).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lavc.edu ANIMATN 218 Fundamentals of Animation",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -6930,7 +7620,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 8 of 8 colleges in the district (all agree). course joins, other colleges, program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lavc.edu ANTHRO 101 Human Biological Evolution",
+       "searched_on": "2026-11-24",
+       "result_title": "lavc.edu",
+       "result_url": "https://lavc.edu/anthro/index.aspx",
+       "where": "college site"
+      }
      }
     },
     {
@@ -6965,7 +7662,14 @@
         "title": "Law",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "site:lavc.edu BRDCSTG 1 Introduction to Broadcasting and the Internet",
+       "searched_on": "2026-11-24",
+       "result_title": "Class Descriptions",
+       "result_url": "https://lavc.edu/Media-Arts/Broadcasting/Broadcasting-class-descriptions.aspx",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "WEXP",
@@ -6993,7 +7697,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins, program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lavc.edu CH DEV 1 Child Growth and Development",
+       "searched_on": "2026-11-24",
+       "result_title": "Child Development",
+       "result_url": "https://lavc.edu/academics/pathways/sbs/cd-dept",
+       "where": "college site"
+      }
      }
     },
     {
@@ -7003,7 +7714,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins, program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lavc.edu CHICANO 4 Introduction to Chicana/o Studies",
+       "searched_on": "2026-11-24",
+       "result_title": "Chicano Studies",
+       "result_url": "https://www.lavc.edu/academics/aos/chicanostudies",
+       "where": "college site"
+      }
      }
     },
     {
@@ -7061,7 +7779,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 2 of 4 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "site:lavc.edu COLLEGE 101 Navigating Your Path Through College to Career",
+       "searched_on": "2026-11-24",
+       "result_title": "College 101",
+       "result_url": "https://lavc.edu/student-services/fys/college-101",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "IDST",
@@ -7122,7 +7847,14 @@
         "title": "Chicano Studies",
         "from": "other_colleges"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Valley College CS 101 Introduction to Computer Science course lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "Computer Science (CS)",
+       "result_url": "https://lavc.edu/academics/aos/computer-science",
+       "where": "college site"
+      }
      }
     },
     {
@@ -7132,7 +7864,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College DANCEST DANCETQ DNCESPC dance courses lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "DANC",
@@ -7149,7 +7888,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College DANCEST DANCETQ DNCESPC dance courses lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -7183,7 +7929,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 3 of 3 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College DANCEST DANCETQ DNCESPC dance courses lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "DANC",
@@ -7222,7 +7975,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 5 of 6 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College EGD TEK 101 Engineering Graphics with CAD lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "Engineering Graphics and Design",
+       "result_url": "https://www.lavc.edu/academics/aos/engineering-graphics-design",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "DRAF",
@@ -7254,7 +8014,14 @@
         "title": "Law",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Valley College ELECTRN 2 Introduction to Electronics lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "lavc.edu",
+       "result_url": "https://lavc.edu/academics/aos/electronics",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ELET",
@@ -7288,7 +8055,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College ENGLISH 72 English Bridge lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "lavc.edu",
+       "result_url": "https://lavc.edu/academics/aos/english",
+       "where": "college site"
+      }
      }
     },
     {
@@ -7349,7 +8123,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 8 of 8 colleges in the district (all agree). course joins, other colleges, program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College HUMAN 1 Cultural Patterns of Western Civilization lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -7379,7 +8160,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins, program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College JOURNAL 101 Collecting and Writing News lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "www.lavc.edu",
+       "result_url": "https://www.lavc.edu/academics/aos/journalism",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "JOUR",
@@ -7406,7 +8194,14 @@
       "level": "High",
       "from": "course_joins",
       "why": "course joins: 5 of 5 joined courses (most courses agree). district agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College KIN MAJ 100 Introduction to Kinesiology lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -7432,8 +8227,15 @@
       "title": "Library Science",
       "level": "High",
       "from": "district",
-      "why": "district: 7 of 7 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "why": "district: 7 of 7 colleges in the district (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College LIB SCI 101 College Research Skills library lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "lib sci",
+       "result_url": "https://lib.lavc.edu/lib-sci",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "LIBR",
@@ -7465,7 +8267,14 @@
         "title": "Learning Foundation",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Valley College LRNSKIL 40 Introduction to Learning Disabilities lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "IDST",
@@ -7492,7 +8301,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins, other colleges, program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College MATH 110 Introduction to Algebraic Concepts lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "lavc.edu",
+       "result_url": "https://lavc.edu/academics/aos/math",
+       "where": "college site"
+      }
      }
     },
     {
@@ -7518,7 +8334,14 @@
         "title": "Law",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Valley College MEDIART 101 Introduction to Digital Film Production lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "Media Arts Department",
+       "result_url": "https://www.lavc.edu/academics/pathways/amd/ma-dept",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "MULT",
@@ -7540,7 +8363,14 @@
         "title": "Geography",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Valley College METEOR 3 Introduction to Weather and Climate lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "GEOG",
@@ -7576,8 +8406,20 @@
       "title": "Law",
       "level": "Low",
       "from": "course_joins",
-      "why": "course joins: 4 of 13 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 4 of 13 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Nursing",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "Los Angeles Valley College NRSCE 1 Foundational Concepts of Nursing lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "www.lavc.edu",
+       "result_url": "https://www.lavc.edu/academics/aos/nursing",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "LEGL",
@@ -7594,7 +8436,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 4 of 4 joined courses (most courses agree).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College NUM CON 21 Manual CNC Lathe Programming lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "LEGL",
@@ -7611,7 +8460,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 5 of 6 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College OCEANO 1 Introduction to Oceanography lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -7673,7 +8529,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 8 of 8 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College PHYSIOL 1 Introduction to Human Physiology lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "BIOL",
@@ -7690,7 +8553,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins, program titles agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College POL SCI 2 Introduction to Comparative Politics lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "POLS",
@@ -7740,8 +8610,15 @@
       "title": "Psychology",
       "level": "High",
       "from": "course_joins",
-      "why": "course joins: 11 of 13 joined courses (most courses agree). district, other colleges agrees.",
-      "also": []
+      "why": "course joins: 11 of 13 joined courses (most courses agree). district, other colleges, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College PSYCH 2 Biological Psychology lavc.edu",
+       "searched_on": "2026-11-24",
+       "result_title": "www.lavc.edu",
+       "result_url": "https://www.lavc.edu/academics/aos/psychology",
+       "where": "college site"
+      }
      }
     },
     {
@@ -8116,8 +8993,15 @@
       "title": "Art History",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college). course joins agrees.",
-      "also": []
+      "why": "other colleges: 1 of 1 other colleges (one college). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "catalog.mtsac.edu coursesaz AHIS Art History courses",
+       "searched_on": "2026-11-24",
+       "result_title": "Art History (AHIS)",
+       "result_url": "https://catalog.mtsac.edu/programs/coursesaz/ahis/ahis.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "ARTH",
@@ -8230,8 +9114,19 @@
        {
         "title": "Economics",
         "from": "course_joins"
+       },
+       {
+        "title": "Business: Economics",
+        "from": "web_search"
        }
-      ]
+      ],
+      "search": {
+       "query": "catalog.mtsac.edu coursesaz BUSC Principles of Macroeconomics",
+       "searched_on": "2026-11-24",
+       "result_title": "Business: Economics (BUSC) < Mt. San Antonio College",
+       "result_url": "https://catalog.mtsac.edu/programs/coursesaz/busc/",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "ECON",
@@ -8338,8 +9233,15 @@
       "title": "Dance",
       "level": "High",
       "from": "course_joins",
-      "why": "course joins: 2 of 3 joined courses (most courses agree). sibling agrees.",
-      "also": []
+      "why": "course joins: 2 of 3 joined courses (most courses agree). sibling, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "catalog.mtsac.edu coursesaz DN T Dance Audition Techniques Introduction to Dance",
+       "searched_on": "2026-11-24",
+       "result_title": "Dance: Theory (DN-T) < Mt. San Antonio College",
+       "result_url": "https://catalog.mtsac.edu/programs/coursesaz/dn_t/",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "DANC",
@@ -8356,7 +9258,14 @@
       "level": "Medium",
       "from": "other_colleges",
       "why": "other colleges: 1 of 3 other colleges (mixed).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "catalog.mtsac.edu coursesaz DSPS Memory Strategies for Students with Disabilities",
+       "searched_on": "2026-11-24",
+       "result_title": "Access (ACCS) < Mt. San Antonio College",
+       "result_url": "https://catalog.mtsac.edu/programs/coursesaz/accs/",
+       "where": "catalog"
+      }
      }
     },
     {
@@ -8390,8 +9299,19 @@
        {
         "title": "Fire Technology",
         "from": "course_joins"
+       },
+       {
+        "title": "Emergency Medical Technician",
+        "from": "web_search"
        }
-      ]
+      ],
+      "search": {
+       "query": "catalog.mtsac.edu coursesaz EMT Emergency Medical Technician 90",
+       "searched_on": "2026-11-24",
+       "result_title": "Emergency Medical Technician < Mt. San Antonio College",
+       "result_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-emergency-medical-technician/",
+       "where": "catalog"
+      }
      }
     },
     {
@@ -8506,6 +9426,20 @@
     },
     {
      "code": "LERN",
+     "title": {
+      "title": "Learning Assistance",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "catalog.mtsac.edu coursesaz LERN Basic Math Skills Review",
+       "searched_on": "2026-11-24",
+       "result_title": "Learning Assistance (LERN) < Mt. San Antonio College",
+       "result_url": "https://catalog.mtsac.edu/programs/coursesaz/lern/",
+       "where": "catalog"
+      }
+     },
      "common": {
       "code": "MATH",
       "discipline": "Mathematics",
@@ -8637,7 +9571,14 @@
         "title": "Law",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "catalog.mtsac.edu coursesaz R TV Introduction to Electronic Media On-Air Personality",
+       "searched_on": "2026-11-24",
+       "result_title": "Radio & Television (R-TV) < Mt. San Antonio College",
+       "result_url": "https://catalog.mtsac.edu/programs/coursesaz/r_tv/",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "WEXP",
@@ -8699,6 +9640,20 @@
     },
     {
      "code": "TUTR",
+     "title": {
+      "title": "Tutor Training",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found a department or program label on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "catalog.mtsac.edu coursesaz TUTR Introduction to Tutoring",
+       "searched_on": "2026-11-24",
+       "result_title": "Tutor Training < Mt. San Antonio College",
+       "result_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-tutor-training/",
+       "where": "catalog"
+      }
+     },
      "common": {
       "code": "EDUC",
       "discipline": "Education",
@@ -9404,15 +10359,22 @@
      "code": "CAR",
      "title": {
       "title": "Reading",
-      "level": "Low",
+      "level": "Medium",
       "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 1 of 1 joined courses (few or mixed). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Santa Ana College sac.edu CAR courses catalog",
+       "searched_on": "2026-11-24",
+       "result_title": "sac.edu",
+       "result_url": "https://sac.edu/catalogAndSchedule/Documents/2024-25/Spring%202025%20Class%20Schedule%2011.8.24.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "READ",
       "discipline": "Reading",
-      "level": "Low",
+      "level": "Medium",
       "from": "title",
       "why": "The title names the discipline Reading."
      }
@@ -9846,8 +10808,15 @@
       "title": "Reading",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 3 of 3 other colleges (all agree).",
-      "also": []
+      "why": "other colleges: 3 of 3 other colleges (all agree). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Santa Ana College sac.edu READ reading courses catalog",
+       "searched_on": "2026-11-24",
+       "result_title": "Reading Course Descriptions",
+       "result_url": "https://www.sac.edu/StudentServices/AssessmentCenter/Documents/Reading Course Descriptions.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -9878,7 +10847,14 @@
       "level": "Low",
       "from": "course_joins",
       "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Santa Ana College sac.edu SPEC special courses catalog",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "COUN",
@@ -10599,7 +11575,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 8 of 8 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"West Los Angeles College\" ACCTG Introductory Accounting I Tax Accounting accounting",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -10618,8 +11601,15 @@
       "title": "African American Studies",
       "level": "High",
       "from": "district",
-      "why": "district: 3 of 4 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "why": "district: 3 of 4 colleges in the district (mixed). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "wlac.edu AFRO AM African American Studies courses",
+       "searched_on": "2026-11-24",
+       "result_title": "silhouettes of people of African decent",
+       "result_url": "https://www.wlac.edu/academics/aos/afro-am",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ETHS",
@@ -10645,7 +11635,14 @@
         "title": "Emergency Medical Technician",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "\"West Los Angeles College\" ALD HTH Emergency Medical Technician Anatomy and Physiology for Emergency Health Care Personnel",
+       "searched_on": "2026-11-24",
+       "result_title": "Emergency Medical Technician (EMT)",
+       "result_url": "https://www.wlac.edu/academics/pathways/hs/emt",
+       "where": "college site"
+      }
      }
     },
     {
@@ -10665,7 +11662,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 3 of 3 colleges in the district (all agree). other colleges, sibling agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "wlac.edu Art History ARTH C1100 Survey of Art from Prehistory to the Medieval Era",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -10684,8 +11688,20 @@
       "title": "Aircraft Power Plant Technician",
       "level": "Low",
       "from": "program_titles",
-      "why": "program titles: 1 of 3 programs (one or mixed).",
-      "also": []
+      "why": "program titles: 1 of 3 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Aviation Technology",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "wlac.edu AVIATEK Aviation Maintenance Technology Basic Aircraft Science",
+       "searched_on": "2026-11-24",
+       "result_title": "Aviation Technology",
+       "result_url": "https://wlac.edu/aviation-technology/index.aspx",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "AVIA",
@@ -10741,10 +11757,22 @@
      "code": "CHICANO",
      "title": {
       "title": "Chicano Studies",
-      "level": "High",
+      "level": "Low",
       "from": "district",
-      "why": "district: 6 of 6 colleges in the district (all agree). course joins, program titles agrees.",
-      "also": []
+      "why": "district: 6 of 6 colleges in the district (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Chicana/O Studies",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "wlac.edu CHICANO Chicano Studies courses Mexican-American in Contemporary Society",
+       "searched_on": "2026-11-24",
+       "result_title": "Chicana/o Studies",
+       "result_url": "https://wlac.edu/academics/aos/Chicano-Studies",
+       "where": "college site"
+      }
      }
     },
     {
@@ -10754,7 +11782,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 2 of 4 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "\"West Los Angeles College\" COLLEGE 101 Navigating Your Path Through College to Career",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "IDST",
@@ -10791,7 +11826,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "wlac.edu COUNSEL College Success Seminar Pathway to Higher Education counseling courses",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "COUN",
@@ -10813,7 +11855,14 @@
         "title": "Chicano Studies",
         "from": "other_colleges"
        }
-      ]
+      ],
+      "search": {
+       "query": "wlac.edu Computer Science CS 101 Introduction to Computer Science Programming in Python",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -10843,7 +11892,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 4 of 4 joined courses (most courses agree).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "wlac.edu DEN HY Dental Hygiene Principles of Dental Hygiene",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "DENT",
@@ -10890,7 +11946,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 5 of 5 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "wlac.edu English department ENGLISH 101 College Composition ENGL C1000 Academic Reading and Writing",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -10900,7 +11963,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "wlac.edu English department ENGLISH 101 College Composition ENGL C1000 Academic Reading and Writing",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -10975,7 +12045,14 @@
         "title": "Law",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "wlac.edu FLM PRD Film Production Motion Picture and TV Production Crafts",
+       "searched_on": "2026-11-24",
+       "result_title": "Film/TV Production",
+       "result_url": "https://wlac.edu/academics/aos/production",
+       "where": "college site"
+      }
      }
     },
     {
@@ -10999,8 +12076,19 @@
        {
         "title": "Fundamentals of Medical Assisting",
         "from": "program_titles"
+       },
+       {
+        "title": "Health Occupation",
+        "from": "web_search"
        }
-      ]
+      ],
+      "search": {
+       "query": "wlac.edu HLTHOCC Health Occupations Medical Office Procedures Clinical Assisting Techniques",
+       "searched_on": "2026-11-24",
+       "result_title": "Health Occupation",
+       "result_url": "https://wlac.edu/academics/aos/health-occupation",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "HTEC",
@@ -11089,7 +12177,14 @@
         "title": "Art",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "wlac.edu MULTIMD Multimedia Web Design Motion Graphics Interactive Media Design",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "MULT",
@@ -11195,7 +12290,14 @@
       "level": "High",
       "from": "course_joins",
       "why": "course joins: 3 of 3 joined courses (most courses agree). district agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "wlac.edu THEATER Introduction to the Theater History of the World Theater Introduction to Acting",
+       "searched_on": "2026-11-24",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "THTR",

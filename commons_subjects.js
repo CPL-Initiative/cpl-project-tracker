@@ -900,17 +900,26 @@
      the statewide view and the Commons card. A pair is Confident when a person filed the code statewide or saved a
      common subject code at that college, so a Confirm or a college's Save moves it at once. */
   var LEVELS = ["Confident", "Likely", "Leaning", "Unsure"];
+  /* One college-name match for levels() and the college table (S719): a name is matched exactly, then with its
+     punctuation and spacing set aside, so "Trade-Technical" and "Trade Technical" are one college. Two matchers of one
+     name drift apart (S718: the card's 83% left out Los Angeles Trade-Technical while the table counted it). */
+  function normName(s) { return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, ""); }
+  function slugMap(M) {
+    var slugs = {};
+    ((M && M.list) || []).forEach(function (x) { slugs[x.college] = x.slug; slugs["~" + normName(x.college)] = x.slug; });
+    return slugs;
+  }
+  function slugFor(slugs, name) { return slugs[name] || slugs["~" + normName(name)]; }
   function levels(W, M) {
     M = M || VIEW.M;
     var L = { pairs: {}, courses: {}, codes: {}, totalPairs: 0, totalCourses: 0 };
     LEVELS.forEach(function (k) { L.pairs[k] = 0; L.courses[k] = 0; L.codes[k] = 0; });
-    var saves = commonSaves(M, false), slugs = {};
-    ((M && M.list) || []).forEach(function (x) { slugs[x.college] = x.slug; });
+    var saves = commonSaves(M, false), slugs = slugMap(M);
     ((W && W.codes) || []).forEach(function (c) {
       var base = filedOf(c) ? "Confident" : levelOf((c.recommend || {}).confidence || 0);
       L.codes[base]++;
       (c.colleges || []).forEach(function (x) {
-        var k = base === "Confident" || savedAt(saves, slugs[x[0]], c) ? "Confident" : base, n = x[1] || 0;
+        var k = base === "Confident" || savedAt(saves, slugFor(slugs, x[0]), c) ? "Confident" : base, n = x[1] || 0;
         L.pairs[k]++; L.courses[k] += n; L.totalPairs++; L.totalCourses += n;
       });
     });
@@ -923,18 +932,15 @@
      per-pair rule of levels() (the statewide code's confidence, lifted to Confident by a statewide filing or a college
      save), or when it has no local title, no saved title and no High recommended title. A code the statewide list does
      not name at that college (a catalog-only code, mostly) needs attention only when it has no common subject code.
-     Codes are counted, not courses. A college's name is matched as levels() matches it, then with its punctuation and
-     spacing set aside, so "Trade-Technical" and "Trade Technical" are one college. */
+     Codes are counted, not courses. A college's name is matched by slugFor(), the one match levels() uses too. */
   var SW_IX = null, SW_IX_W = null, SW_IX_M = null;
-  function normName(s) { return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, ""); }
   function swIndex(W, M) {
     if (SW_IX && SW_IX_W === W && SW_IX_M === M) return SW_IX;
-    var slugs = {}, ix = {};
-    ((M && M.list) || []).forEach(function (x) { slugs[x.college] = x.slug; slugs["~" + normName(x.college)] = x.slug; });
+    var slugs = slugMap(M), ix = {};
     ((W && W.codes) || []).forEach(function (c) {
       var names = [c.code, c.key].concat(c.spellings || []).filter(Boolean);
       (c.colleges || []).forEach(function (x) {
-        var s = slugs[x[0]] || slugs["~" + normName(x[0])];
+        var s = slugFor(slugs, x[0]);
         if (s) names.forEach(function (n) { var k = s + "|" + String(n).toUpperCase(); if (!ix[k]) ix[k] = c; });
       });
     });
@@ -1486,11 +1492,7 @@
   }
   /* A college's code named on a list that is not the college's own: a word that opens its panel where the college
      has a catalog on file and the code is in its list, and plain words where it does not. */
-  function slugOfName(name, M0) {
-    var M = M0 || VIEW.M, hit = "";
-    ((M && M.list) || []).forEach(function (x) { if (x.college === name) hit = x.slug; });
-    return hit;
-  }
+  function slugOfName(name, M0) { return slugFor(slugMap(M0 || VIEW.M), name) || ""; }
   function codeAt(slug, code, words) {
     var M = VIEW.M, c = slug && M && M.by[slug];
     if (!c || !c.rows.some(function (r) { return r.code === code; })) return words;

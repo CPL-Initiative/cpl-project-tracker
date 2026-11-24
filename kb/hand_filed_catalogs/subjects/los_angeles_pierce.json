@@ -1790,5 +1790,21 @@
    ],
    "first_course": "WELDING 161 Oxy-Acetylene Welding I (3) CSU"
   }
+ ],
+ "code_address_tried": [
+  {
+   "code": "IND TEK",
+   "address": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+   "status": "200",
+   "first_line": "",
+   "run": "45304208269"
+  },
+  {
+   "code": "KIN",
+   "address": "https://www.lapc.edu/academics/departments/kinesiology-dept",
+   "status": "200",
+   "first_line": "Credit for Prior Learning (CPL)",
+   "run": "45304208269"
+  }
  ]
 }

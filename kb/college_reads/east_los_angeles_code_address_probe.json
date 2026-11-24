@@ -1,0 +1,28 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for East Los Angeles College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "East Los Angeles College",
+ "questions": {
+  "code_eslnc": "Does this page name East Los Angeles College's ESL NC, and under what heading?",
+  "code_mathnc": "Does this page name East Los Angeles College's MATH NC, and under what heading?"
+ },
+ "keywords": [
+  "ESL\\ NC",
+  "MATH\\ NC"
+ ],
+ "pages": [
+  {
+   "url": "https://www.elac.edu/academics/cewd/adult-ed-nc/esl",
+   "answers": [
+    "code_eslnc"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://elac.edu/sites/elac.edu/files/2022-08/Noncredit-COC-for-Basic-Math-Success.pdf",
+   "answers": [
+    "code_mathnc"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

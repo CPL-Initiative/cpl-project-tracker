@@ -1628,5 +1628,49 @@
    ],
    "first_course": "VOC ED 249CE Reservationist Skills Training .. 9-18 hours"
   }
+ ],
+ "code_address_tried": [
+  {
+   "code": "ALD HTH",
+   "address": "https://www.wlac.edu/academics/pathways/hs/emt",
+   "status": "200",
+   "first_line": "Emergency Medical Technician (EMT)",
+   "run": "45304208269"
+  },
+  {
+   "code": "BASIC SKILLS",
+   "address": "https://wlac.edu/academics/aos/creativity-studies",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "CHICANO",
+   "address": "https://wlac.edu/academics/aos/Chicano-Studies",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "ESL NC",
+   "address": "https://www.wlac.edu/sites/wlac.edu/files/2025-06/The%20ESL%20Fundamentals%20I%20%28updated%29.pdf",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "FLM PRD",
+   "address": "https://wlac.edu/academics/aos/production",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "VOC ED",
+   "address": "https://wlac.edu/sites/wlac.edu/files/2025-02/Custodial%20Technician%20Preparation.pdf",
+   "status": "200",
+   "first_line": "",
+   "run": "45304208269"
+  }
  ]
 }
