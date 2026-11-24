@@ -1,0 +1,56 @@
+{
+ "_readme": "S719 (SkyShearwater), 2026-11-24: Southwestern College's 2017-2018 catalog archive, read for the printed line that ties each ES course to its former PE code (Formerly PE/T 135). The lane's NEXT: find a printed source for PE/* to ES/* before kb/reference/subject_code_history/ takes it. No model call.",
+ "college": "Southwestern College",
+ "questions": {
+  "code_pet": "Which former PE code does this page print beside its courses (Formerly ...), and under what heading?",
+  "code_pei": "Which former PE code does this page print beside its courses (Formerly ...), and under what heading?",
+  "code_pea": "Which former PE code does this page print beside its courses (Formerly ...), and under what heading?",
+  "code_pel": "Which former PE code does this page print beside its courses (Formerly ...), and under what heading?",
+  "code_ped": "Which former PE code does this page print beside its courses (Formerly ...), and under what heading?"
+ },
+ "keywords": [
+  "Formerly",
+  "PE/A",
+  "PE/D",
+  "PE/I",
+  "PE/L",
+  "PE/T"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.swccd.edu/archives/2017-2018/course-descriptions/es_t/",
+   "answers": [
+    "code_pet"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://catalog.swccd.edu/archives/2017-2018/course-descriptions/es_i/",
+   "answers": [
+    "code_pei"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://catalog.swccd.edu/archives/2017-2018/course-descriptions/es_a/",
+   "answers": [
+    "code_pea"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://catalog.swccd.edu/archives/2017-2018/course-descriptions/es_l/",
+   "answers": [
+    "code_pel"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://catalog.swccd.edu/archives/2017-2018/course-descriptions/danc/",
+   "answers": [
+    "code_ped"
+   ],
+   "source": "web_search"
+  }
+ ]
+}
