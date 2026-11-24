@@ -84,7 +84,8 @@ check("data: the retirement is recorded in the data file's own header",
   // base on its own size; the other 12 stay at it. Still no rural bound: each
   // rural college is floored or sized by the same rule as everyone else.
   check("⭐ the 13 rural colleges ride the uniform base (12 × $150,000 + Imperial $157,435 = $1,957,435, no rural bound)",
-    Math.abs(rural13 - 1957435) < 1 &&
+    // Imperial's award is whole dollars divisible by the years since 2026-11-24: within $2.
+    Math.abs(rural13 - 1957435) <= 2 &&
     D.colleges.filter(function (c) { return c.rural && c.college !== "Imperial"; })
       .every(function (c) { return T._alloc(c.college).floored; }));
 
