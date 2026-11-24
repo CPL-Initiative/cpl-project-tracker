@@ -2057,6 +2057,34 @@
    "status": "200",
    "first_line": "Home",
    "run": "45283003411"
+  },
+  {
+   "code": "ELECL",
+   "address": "https://www.lattc.edu/academics/aos/powerline-mechanic",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "ELECLNM",
+   "address": "https://www.lattc.edu/academics/aos/electrical-line-worker",
+   "status": "200",
+   "first_line": "Skip to main content",
+   "run": "45304208269"
+  },
+  {
+   "code": "HLTHHOC",
+   "address": "https://lattc.edu/sites/lattc.edu/files/2025-03/Health%20Foundation%20Career%20Program%20Cert%20%282022%29.pdf",
+   "status": "200",
+   "first_line": "",
+   "run": "45304208269"
+  },
+  {
+   "code": "TUTOR",
+   "address": "https://www.lattc.edu/academic-services/academic-connections-tutoring",
+   "status": "200",
+   "first_line": "Avanza Los Angeles (ALAS)",
+   "run": "45304208269"
   }
  ]
 }

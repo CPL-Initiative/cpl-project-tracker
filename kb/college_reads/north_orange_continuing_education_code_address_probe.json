@@ -1,0 +1,19 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for North Orange Continuing Education read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "North Orange Continuing Education",
+ "questions": {
+  "code_ece": "Does this page name North Orange Continuing Education's ECE, and under what heading?"
+ },
+ "keywords": [
+  "ECE"
+ ],
+ "pages": [
+  {
+   "url": "https://noce.edu/programs/careers/early-childhood-education/",
+   "answers": [
+    "code_ece"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

@@ -2,25 +2,115 @@
  "_readme": "S718 (SkyPetrel), 2026-11-23: pages for El Camino College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
  "college": "El Camino College",
  "questions": {
-  "code_it": "Does this page name El Camino College's IT, and under what heading?",
-  "code_tutr": "Does this page name El Camino College's TUTR, and under what heading?"
+  "code_asl": "Does this page name El Camino College's ASL, and under what heading?",
+  "code_bsrc": "Does this page name El Camino College's BSRC, and under what heading?",
+  "code_bus": "Does this page name El Camino College's BUS, and under what heading?",
+  "code_dart": "Does this page name El Camino College's DART, and under what heading?",
+  "code_echt": "Does this page name El Camino College's ECHT, and under what heading?",
+  "code_lgbt": "Does this page name El Camino College's LGBT, and under what heading?",
+  "code_nate": "Does this page name El Camino College's NATE, and under what heading?",
+  "code_neng": "Does this page name El Camino College's NENG, and under what heading?",
+  "code_phot": "Does this page name El Camino College's PHOT, and under what heading?",
+  "code_rc": "Does this page name El Camino College's RC, and under what heading?",
+  "code_rtec": "Does this page name El Camino College's RTEC, and under what heading?",
+  "code_stat": "Does this page name El Camino College's STAT, and under what heading?"
  },
  "keywords": [
-  "IT",
-  "TUTR"
+  "ASL",
+  "BSRC",
+  "BUS",
+  "DART",
+  "ECHT",
+  "LGBT",
+  "NATE",
+  "NENG",
+  "PHOT",
+  "RC",
+  "RTEC",
+  "STAT"
  ],
  "pages": [
   {
-   "url": "https://www.elcamino.edu/support/careers/ITech%20Exploratory%20Courses.pdf",
+   "url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/llr/docs/SLAN%20111.pdf",
    "answers": [
-    "code_it"
+    "code_asl"
    ],
    "source": "web_search"
   },
   {
-   "url": "https://catalog.elcamino.edu/preview_course_nopop.php?catoid=2&coid=2370",
+   "url": "https://www.elcamino.edu/academics/divisions/health-sciences-and-athletics/respiratory-care/bachelors-program.php",
    "answers": [
-    "code_tutr"
+    "code_bsrc"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/busi/docs/BUS%20150%20COR_Effective%20FALL%202024.pdf",
+   "answers": [
+    "code_bus"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/fine/docs/DART%20102%20COR_effective%20FALL%202024.pdf",
+   "answers": [
+    "code_dart"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/itec/docs/ECHT%20110%20COR_Effective%20FALL%202024.pdf",
+   "answers": [
+    "code_echt"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/bssc/docs/LGBT%20101%20COR_EFFECTIVE%20FALL%202024.pdf",
+   "answers": [
+    "code_lgbt"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/itec/docs/NATE%204_Fall%202021.pdf",
+   "answers": [
+    "code_nate"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/huma/docs/NENG 1AS_COR Fall 2019.pdf",
+   "answers": [
+    "code_neng"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/FINE/docs/PHOT 101_Spring 2021.pdf",
+   "answers": [
+    "code_phot"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.elcamino.edu/academics/areas-of-study/respiratory-care.php",
+   "answers": [
+    "code_rc"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.elcamino.edu/academics/divisions/health-care/radiologic-technology/courses.php",
+   "answers": [
+    "code_rtec"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.elcamino.edu/academics/divisions/mathematical-sciences/docs/STAT%200100S%20COR_effective%20FA%202025.pdf",
+   "answers": [
+    "code_stat"
    ],
    "source": "web_search"
   }

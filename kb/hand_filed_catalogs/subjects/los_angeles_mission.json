@@ -1764,6 +1764,90 @@
    "status": "200",
    "first_line": "Home",
    "run": "45283003411"
+  },
+  {
+   "code": "ALD HTH",
+   "address": "https://www.lamission.edu:443/sites/lamc.edu/files/2022-08/AH021%2CCPR%2CSp2020.pdf",
+   "status": "200",
+   "first_line": "",
+   "run": "45304208269"
+  },
+  {
+   "code": "CH DEV",
+   "address": "https://lamission.edu/sites/lamc.edu/files/2024-02/Major%20Sheets%20-%20Child%20Development%20LAMC.pdf",
+   "status": "200",
+   "first_line": "",
+   "run": "45304208269"
+  },
+  {
+   "code": "CHICANO",
+   "address": "https://lamission.edu/academics/aos/chicano-studies",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "E.S.L.",
+   "address": "https://lamission.edu/academics/pathways/scc/global-languages-and-society/esl-program",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "EGD TEK",
+   "address": "https://lamission.edu/academics/aos/drafting",
+   "status": "200",
+   "first_line": "Engineering Drafting Technician Program",
+   "run": "45304208269"
+  },
+  {
+   "code": "ENG SUP",
+   "address": "https://lamission.edu/academics/aos/land-surveying",
+   "status": "200",
+   "first_line": "Land Surveying Programs",
+   "run": "45304208269"
+  },
+  {
+   "code": "ESLCVCS",
+   "address": "https://lamission.edu/academics/pathways/scc/global-languages-and-society/ESL-program/sequence",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "HTHTEK",
+   "address": "https://lamission.edu/academics/aos/medical-billing-and-coding",
+   "status": "200",
+   "first_line": "Medical Billing and Coding",
+   "run": "45304208269"
+  },
+  {
+   "code": "MULTIMD",
+   "address": "https://lamission.edu/Multimedia/Home.aspx",
+   "status": "200",
+   "first_line": "Multimedia",
+   "run": "45304208269"
+  },
+  {
+   "code": "NRS-HCA",
+   "address": "https://lamission.edu:443/academics/aos/nursing-assitant-hha",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "NURSING",
+   "address": "https://lamission.edu/academics/aos/vocational-nursing",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "PHRMCTK",
+   "address": "https://lamission.edu/academics/aos/pharm-tech",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
   }
  ]
 }

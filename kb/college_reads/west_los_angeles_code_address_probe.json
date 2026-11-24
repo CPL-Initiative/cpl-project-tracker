@@ -1,0 +1,64 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for West Los Angeles College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "West Los Angeles College",
+ "questions": {
+  "code_aldhth": "Does this page name West Los Angeles College's ALD HTH, and under what heading?",
+  "code_basicskills": "Does this page name West Los Angeles College's BASIC SKILLS, and under what heading?",
+  "code_chicano": "Does this page name West Los Angeles College's CHICANO, and under what heading?",
+  "code_eslnc": "Does this page name West Los Angeles College's ESL NC, and under what heading?",
+  "code_flmprd": "Does this page name West Los Angeles College's FLM PRD, and under what heading?",
+  "code_voced": "Does this page name West Los Angeles College's VOC ED, and under what heading?"
+ },
+ "keywords": [
+  "ALD\\ HTH",
+  "BASIC\\ SKILLS",
+  "CHICANO",
+  "ESL\\ NC",
+  "FLM\\ PRD",
+  "VOC\\ ED"
+ ],
+ "pages": [
+  {
+   "url": "https://www.wlac.edu/academics/pathways/hs/emt",
+   "answers": [
+    "code_aldhth"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://wlac.edu/academics/aos/creativity-studies",
+   "answers": [
+    "code_basicskills"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://wlac.edu/academics/aos/Chicano-Studies",
+   "answers": [
+    "code_chicano"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2025-06/The%20ESL%20Fundamentals%20I%20%28updated%29.pdf",
+   "answers": [
+    "code_eslnc"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://wlac.edu/academics/aos/production",
+   "answers": [
+    "code_flmprd"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://wlac.edu/sites/wlac.edu/files/2025-02/Custodial%20Technician%20Preparation.pdf",
+   "answers": [
+    "code_voced"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

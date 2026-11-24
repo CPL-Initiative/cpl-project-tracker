@@ -1214,5 +1214,105 @@
    ],
    "first_course": "VOC ED 089CE Advanced Tutor Training"
   }
+ ],
+ "code_address_tried": [
+  {
+   "code": "ACAD PR",
+   "address": "https://www.lavc.edu/sites/lavc.edu/files/2023-08/lavc_catalog_2023-2024.pdf",
+   "status": "200",
+   "first_line": "",
+   "run": "45304208269"
+  },
+  {
+   "code": "ANTHRO",
+   "address": "https://lavc.edu/anthro/index.aspx",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "BRDCSTG",
+   "address": "https://lavc.edu/Media-Arts/Broadcasting/Broadcasting-class-descriptions.aspx",
+   "status": "403",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "CH DEV",
+   "address": "https://lavc.edu/academics/pathways/sbs/cd-dept",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "CHICANO",
+   "address": "https://www.lavc.edu/academics/aos/chicanostudies",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "COLLEGE",
+   "address": "https://lavc.edu/student-services/fys/college-101",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "EGD TEK",
+   "address": "https://www.lavc.edu/academics/aos/engineering-graphics-design",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "ELECTRN",
+   "address": "https://lavc.edu/academics/aos/electronics",
+   "status": "200",
+   "first_line": "Electronics Technology The AS degree in Electronics can serve as a basis for fur",
+   "run": "45304208269"
+  },
+  {
+   "code": "ENGLISH",
+   "address": "https://lavc.edu/academics/aos/english",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "ESL NC",
+   "address": "https://www.lavc.edu/academics/aos/nc-esl",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "JEWISH",
+   "address": "https://www.lavc.edu/academics/aos/jewish-studies",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "JOURNAL",
+   "address": "https://www.lavc.edu/academics/aos/journalism",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "MATH",
+   "address": "https://lavc.edu/academics/aos/math",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  },
+  {
+   "code": "MEDIART",
+   "address": "https://www.lavc.edu/academics/pathways/amd/ma-dept",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45304208269"
+  }
  ]
 }

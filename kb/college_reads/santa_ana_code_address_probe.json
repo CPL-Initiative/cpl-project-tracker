@@ -1,0 +1,19 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Santa Ana College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "Santa Ana College",
+ "questions": {
+  "code_cmsd": "Does this page name Santa Ana College's CMSD, and under what heading?"
+ },
+ "keywords": [
+  "CMSD"
+ ],
+ "pages": [
+  {
+   "url": "https://www.sac.edu/catalogAndSchedule/Documents/2021-2022/SAC_FALL2021_f2f.pdf",
+   "answers": [
+    "code_cmsd"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

@@ -1,0 +1,136 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Los Angeles Valley College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "Los Angeles Valley College",
+ "questions": {
+  "code_acadpr": "Does this page name Los Angeles Valley College's ACAD PR, and under what heading?",
+  "code_anthro": "Does this page name Los Angeles Valley College's ANTHRO, and under what heading?",
+  "code_brdcstg": "Does this page name Los Angeles Valley College's BRDCSTG, and under what heading?",
+  "code_chdev": "Does this page name Los Angeles Valley College's CH DEV, and under what heading?",
+  "code_chicano": "Does this page name Los Angeles Valley College's CHICANO, and under what heading?",
+  "code_college": "Does this page name Los Angeles Valley College's COLLEGE, and under what heading?",
+  "code_egdtek": "Does this page name Los Angeles Valley College's EGD TEK, and under what heading?",
+  "code_electrn": "Does this page name Los Angeles Valley College's ELECTRN, and under what heading?",
+  "code_english": "Does this page name Los Angeles Valley College's ENGLISH, and under what heading?",
+  "code_eslnc": "Does this page name Los Angeles Valley College's ESL NC, and under what heading?",
+  "code_jewish": "Does this page name Los Angeles Valley College's JEWISH, and under what heading?",
+  "code_journal": "Does this page name Los Angeles Valley College's JOURNAL, and under what heading?",
+  "code_math": "Does this page name Los Angeles Valley College's MATH, and under what heading?",
+  "code_mediart": "Does this page name Los Angeles Valley College's MEDIART, and under what heading?"
+ },
+ "keywords": [
+  "ACAD\\ PR",
+  "ANTHRO",
+  "BRDCSTG",
+  "CH\\ DEV",
+  "CHICANO",
+  "COLLEGE",
+  "EGD\\ TEK",
+  "ELECTRN",
+  "ENGLISH",
+  "ESL\\ NC",
+  "JEWISH",
+  "JOURNAL",
+  "MATH",
+  "MEDIART"
+ ],
+ "pages": [
+  {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2023-08/lavc_catalog_2023-2024.pdf",
+   "answers": [
+    "code_acadpr"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lavc.edu/anthro/index.aspx",
+   "answers": [
+    "code_anthro"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lavc.edu/Media-Arts/Broadcasting/Broadcasting-class-descriptions.aspx",
+   "answers": [
+    "code_brdcstg"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lavc.edu/academics/pathways/sbs/cd-dept",
+   "answers": [
+    "code_chdev"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.lavc.edu/academics/aos/chicanostudies",
+   "answers": [
+    "code_chicano"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lavc.edu/student-services/fys/college-101",
+   "answers": [
+    "code_college"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.lavc.edu/academics/aos/engineering-graphics-design",
+   "answers": [
+    "code_egdtek"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lavc.edu/academics/aos/electronics",
+   "answers": [
+    "code_electrn"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lavc.edu/academics/aos/english",
+   "answers": [
+    "code_english"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.lavc.edu/academics/aos/nc-esl",
+   "answers": [
+    "code_eslnc"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.lavc.edu/academics/aos/jewish-studies",
+   "answers": [
+    "code_jewish"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.lavc.edu/academics/aos/journalism",
+   "answers": [
+    "code_journal"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lavc.edu/academics/aos/math",
+   "answers": [
+    "code_math"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.lavc.edu/academics/pathways/amd/ma-dept",
+   "answers": [
+    "code_mediart"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

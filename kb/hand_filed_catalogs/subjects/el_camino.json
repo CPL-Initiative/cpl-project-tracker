@@ -1807,6 +1807,90 @@
    "status": "200",
    "first_line": "Select a Catalog",
    "run": "45283003411"
+  },
+  {
+   "code": "ASL",
+   "address": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/llr/docs/SLAN%20111.pdf",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "BSRC",
+   "address": "https://www.elcamino.edu/academics/divisions/health-sciences-and-athletics/respiratory-care/bachelors-program.php",
+   "status": "200",
+   "first_line": "Skip to Main Menu",
+   "run": "45304208269"
+  },
+  {
+   "code": "BUS",
+   "address": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/busi/docs/BUS%20150%20COR_Effective%20FALL%202024.pdf",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "DART",
+   "address": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/fine/docs/DART%20102%20COR_effective%20FALL%202024.pdf",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "ECHT",
+   "address": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/itec/docs/ECHT%20110%20COR_Effective%20FALL%202024.pdf",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "LGBT",
+   "address": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/bssc/docs/LGBT%20101%20COR_EFFECTIVE%20FALL%202024.pdf",
+   "status": "200",
+   "first_line": "",
+   "run": "45304208269"
+  },
+  {
+   "code": "NATE",
+   "address": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/itec/docs/NATE%204_Fall%202021.pdf",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "NENG",
+   "address": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/huma/docs/NENG 1AS_COR Fall 2019.pdf",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "PHOT",
+   "address": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/FINE/docs/PHOT 101_Spring 2021.pdf",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "RC",
+   "address": "https://www.elcamino.edu/academics/areas-of-study/respiratory-care.php",
+   "status": "200",
+   "first_line": "Skip to Main Menu",
+   "run": "45304208269"
+  },
+  {
+   "code": "RTEC",
+   "address": "https://www.elcamino.edu/academics/divisions/health-care/radiologic-technology/courses.php",
+   "status": "200",
+   "first_line": "Skip to Main Menu",
+   "run": "45304208269"
+  },
+  {
+   "code": "STAT",
+   "address": "https://www.elcamino.edu/academics/divisions/mathematical-sciences/docs/STAT%200100S%20COR_effective%20FA%202025.pdf",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
   }
  ]
 }

@@ -1,0 +1,18 @@
+{
+ "_what": "Santa Ana College's subject headings, filed by kb/_subject_code_address_probe.py from pages read one by one (no course-descriptions index is filed for this college).",
+ "college": "Santa Ana College",
+ "run": "45304208269",
+ "source": [],
+ "subjects": 0,
+ "with_heading": 0,
+ "rows": [],
+ "code_address_tried": [
+  {
+   "code": "CMSD",
+   "address": "https://www.sac.edu/catalogAndSchedule/Documents/2021-2022/SAC_FALL2021_f2f.pdf",
+   "status": "200",
+   "first_line": "",
+   "run": "45304208269"
+  }
+ ]
+}

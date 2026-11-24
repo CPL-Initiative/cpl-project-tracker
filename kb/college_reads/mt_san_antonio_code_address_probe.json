@@ -1,0 +1,37 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Mt. San Antonio College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "code_dsps": "Does this page name Mt. San Antonio College's DSPS, and under what heading?",
+  "code_emt": "Does this page name Mt. San Antonio College's EMT, and under what heading?",
+  "code_tutr": "Does this page name Mt. San Antonio College's TUTR, and under what heading?"
+ },
+ "keywords": [
+  "DSPS",
+  "EMT",
+  "TUTR"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/accs/",
+   "answers": [
+    "code_dsps"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-emergency-medical-technician/",
+   "answers": [
+    "code_emt"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-tutor-training/",
+   "answers": [
+    "code_tutr"
+   ],
+   "source": "web_search"
+  }
+ ]
+}
