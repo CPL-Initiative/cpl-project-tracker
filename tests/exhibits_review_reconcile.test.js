@@ -285,7 +285,7 @@ const P = "_UNCLASSIFIED::";
     check("with no COBI key the view says the saves could not be read",
       /could not be read from COBI \(COBI could not be reached from this page\)/.test(txt(t.d.querySelector(".exh-unread"))));
 
-    // The Queue's Blocked on Sky line names it too.
+    // The Queue's Blocked on COBI line names it too.
     t = load({ fail: true, hash: "#exhibits/queue" });
     await t.M.boot(); await settle();
     check("the Queue names the unread saves in its blocked line",

@@ -5777,7 +5777,7 @@
      Needs Sam, Ready to check, All, Connections, Later, History, in that order. Each lens is a set of entry points into
      an existing list, counted from the set that list opens: no new store, no second decision screen, no bulk
      acceptance. Review stays the tab's first view and every deep link stays. A read that failed, the classifier's
-     errors or a review file gone stale show in their own Blocked on Sky line, never as an empty lens. */
+     errors or a review file gone stale show in their own Blocked on COBI line (Sam, 2026-11-24: Sky is never rendered), never as an empty lens. */
   var QUEUE_LENSES = [
     ["needs-sam", "Needs " + DECIDER], ["ready", "Ready to check"], ["all", "All"],
     ["connections", "Connections"], ["later", "Later"], ["history", "History"]
@@ -5906,7 +5906,7 @@
     ensureListEngine();
     var blocked = queueBlocked();
     if (blocked.length) {
-      wrap.appendChild(el("div", { cls: "exh-qb", role: "status" }, [el("h3", { cls: "exh-qh", text: "Blocked on Sky" }),
+      wrap.appendChild(el("div", { cls: "exh-qb", role: "status" }, [el("h3", { cls: "exh-qh", text: "Blocked on COBI" }),
         el("ul", { cls: "exh-ql" }, blocked.map(function (t) { return el("li", { text: t }); }))]));
     }
     var lens = queueLens();
