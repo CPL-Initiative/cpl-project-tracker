@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T00:13:36Z",
+ "written_at": "2026-11-24T06:27:07Z",
  "rows": [
   {
    "key": "requirements",
@@ -99,13 +99,13 @@
    "pair": [
     {
      "n": 3222,
-     "of": 6253,
-     "words": "titles carry a review stamp (1,582 a person's, 1,640 a cohort's), counting 1 titles MAP carries with no entry yet; 2,970 credentials, 2,574 of 3,344 records stamped",
+     "of": 6254,
+     "words": "titles carry a review stamp (1,582 a person's, 1,640 a cohort's), counting 2 titles MAP carries with no entry yet; 2,970 credentials, 2,574 of 3,344 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1582,
-     "of": 6253,
+     "of": 6254,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -163,7 +163,7 @@
    },
    "facts": {
     "titles": 6252,
-    "backlog": 1,
+    "backlog": 2,
     "stamped": 3222,
     "person": 1582,
     "cohort": 1640,
@@ -173,8 +173,8 @@
     "records_stamped": 2574,
     "saved_at": "2026-11-21T15:42:56Z",
     "fold_at": "2026-11-23T06:19:46Z",
-    "map_titles": 5441,
-    "unclassified": 1,
+    "map_titles": 5442,
+    "unclassified": 2,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -285,7 +285,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-24T00:12:23+00:00",
+    "at": "2026-11-24T06:25:22+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -509,7 +509,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-24T00:09:16Z",
+    "at": "2026-11-24T06:21:03Z",
     "every_hours": 24
    },
    "facts": {

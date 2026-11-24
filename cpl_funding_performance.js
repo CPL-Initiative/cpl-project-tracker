@@ -8,19 +8,19 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 52708,
-  "pa": 47594,
-  "ppa": 125,
+  "pe": 52712,
+  "pa": 47598,
+  "ppa": 124,
   "p2": 3731,
   "p3": 17020,
   "pp": 7,
-  "ppe": 137,
+  "ppe": 136,
   "pac": 5446,
   "ptc": 4757,
-  "pe_u": 1667931.95,
-  "pa_u": 292538.9,
-  "ppa_u": 773.5,
-  "ppe_u": 7262.5,
+  "pe_u": 1667973.25,
+  "pa_u": 292563.2,
+  "ppa_u": 769.5,
+  "ppe_u": 7258.5,
   "pac_u": 40002.7,
   "ptc_u": 33504.95,
   "p3_u": 86813.65,
@@ -262,10 +262,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 0
   },
   "Canyons": {
-   "pe": 534,
-   "pe_u": 22342.0,
-   "pa": 534,
-   "pa_u": 1602.0,
+   "pe": 535,
+   "pe_u": 22362.0,
+   "pa": 535,
+   "pa_u": 1605.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 23.0,
@@ -352,10 +352,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 76
   },
   "Chaffey": {
-   "pe": 1598,
-   "pe_u": 36251.0,
-   "pa": 1593,
-   "pa_u": 20798.5,
+   "pe": 1599,
+   "pe_u": 36257.0,
+   "pa": 1594,
+   "pa_u": 20804.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 18.0,
@@ -2068,20 +2068,20 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 0
   },
   "Santa Ana": {
-   "pe": 495,
-   "pe_u": 17407.5,
-   "pa": 489,
-   "pa_u": 2243.2,
-   "ppa": 13,
-   "ppa_u": 42.0,
+   "pe": 497,
+   "pe_u": 17422.8,
+   "pa": 491,
+   "pa_u": 2258.5,
+   "ppa": 12,
+   "ppa_u": 38.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": 26,
    "p3_u": 353.2,
    "pp": 0,
    "pp_u": 0.0,
-   "ppe": 13,
-   "ppe_u": 66.0,
+   "ppe": 12,
+   "ppe_u": 62.0,
    "pac": 32,
    "pac_u": 422.2,
    "ptc": 26,
@@ -2761,8 +2761,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Canyons": {
    "Military": {
-    "pe": 534,
-    "pa": 534,
+    "pe": 535,
+    "pa": 535,
     "p3": 0
    }
   },
@@ -2828,6 +2828,13 @@ window.CPL_FUNDING_PERF = {
     "pa_suppressed": true,
     "p3": null,
     "p3_suppressed": true
+   },
+   "Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
    },
    "Standardized Assessment": {
     "pe": 1148,
@@ -4113,9 +4120,16 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Industry Certification": {
-    "pe": 17,
-    "pa": 15,
+    "pe": 18,
+    "pa": 16,
     "p3": 11
+   },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
    },
    "Industry Certification | Other": {
     "pe": null,
@@ -4429,13 +4443,13 @@ window.CPL_FUNDING_PERF = {
    "p3": 50
   },
   "Industry Certification": {
-   "pe": 1485,
-   "pa": 1461,
+   "pe": 1486,
+   "pa": 1462,
    "p3": 1224
   },
   "Industry Certification | Military": {
-   "pe": 62,
-   "pa": 61,
+   "pe": 63,
+   "pa": 62,
    "p3": 37
   },
   "Industry Certification | Military | Portfolio Review": {
@@ -4484,8 +4498,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 31817,
-   "pa": 28485,
+   "pe": 31818,
+   "pa": 28486,
    "p3": 2690
   },
   "Military | Other": {
@@ -4518,8 +4532,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Portfolio Review": {
-   "pe": 584,
-   "pa": 578,
+   "pe": 585,
+   "pa": 579,
    "p3": 120
   },
   "Portfolio Review | Standardized Assessment": {
@@ -4541,13 +4555,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1667931.95,
-   "pa_u": 292538.9,
+   "pe_u": 1667973.25,
+   "pa_u": 292563.2,
    "p3_u": 86813.65
   },
   "map": {
-   "pe_u": 1675194.45,
-   "pa_u": 293312.4,
+   "pe_u": 1675231.75,
+   "pa_u": 293332.7,
    "p3_u": 86887.15
   },
   "ratio": {
@@ -4844,8 +4858,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Canyons": {
    "vets": 413,
-   "jst": 534,
-   "pct": 1.293
+   "jst": 535,
+   "pct": 1.2954
   },
   "San Joaquin Delta": {
    "vets": 258,
