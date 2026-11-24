@@ -106,11 +106,20 @@ const fig = (x, k, n) => txt(x.d.querySelector("#cmf-" + k + "-check-" + n + " .
 const quick = (x, k, re) => { const a = Array.from(cardOf(x, k).querySelectorAll(".cmf-quick a")).map(txt).filter((t) => re.test(t))[0]; return a ? num(a) : 0; };
 function exhibit(x) {
   const c = cardOf(x, "exhibit"), heldLink = Array.from(c.querySelectorAll(".cmf-links a")).filter((a) => a.getAttribute("href") === "#exhibits/held")[0];
-  return { big: txt(c.querySelector(".cmf-big")), stamp: fig(x, "exhibit", 1), unstamped: quick(x, "exhibit", /no review stamp/),
-    held: heldLink ? num(txt(heldLink)) : null, line: txt(x.d.querySelector("#cmf-exhibit-check-1 .cmf-check-line")) };
+  /* S723: check 1 is now "Every held title named" (its figure is the live held count); the stamp check is 2. */
+  return { big: txt(c.querySelector(".cmf-big")), stamp: fig(x, "exhibit", 2), unstamped: quick(x, "exhibit", /no review stamp/),
+    held: heldLink ? num(txt(heldLink)) : null, heldFig: num(fig(x, "exhibit", 1)), heldQuick: quick(x, "exhibit", /held titles? to name/),
+    line: txt(x.d.querySelector("#cmf-exhibit-check-2 .cmf-check-line")) };
 }
-/* Needs you's held line: the titles still to name, or 0 when the line says none is left. */
-function needsHeld(x) { const t = txt(x.d.getElementById("cmf-held")); const m = /^([\d,]+) exhibit titles? held for a person to name/.exec(t); return m ? num(m[1]) : 0; }
+/* Needs you's ranked link for the held titles (S723: Needs you is the ranked links): the titles still to name, or 0
+   when no link is left. Its count must agree with the card's held check and quick link. */
+function needsHeld(x) {
+  const li = Array.from(x.d.querySelectorAll("#cmf-rank li")).filter((l) => /^Exhibit titles to name/.test(txt(l)))[0];
+  const m = li && /frees ([\d,]+) exhibit titles?/.exec(txt(li));
+  const c = cardOf(x, "exhibit"), f = num(fig(x, "exhibit", 1)), q = quick(x, "exhibit", /held titles? to name/);
+  const n = m ? num(m[1]) : 0;
+  return n === (f || 0) && n === (q || 0) ? n : "Needs you " + n + ", card " + f + ", quick " + q;
+}
 function outlines(x) { return { fig: num(fig(x, "courses-data", 3)), quick: quick(x, "courses-data", /outline needs a person/) }; }
 /* Needs you's Course Outline Fixes: one link a course still to find. */
 function needsOutlines(x) { return x.d.querySelectorAll("#cmf-outline-list a[data-course]").length; }

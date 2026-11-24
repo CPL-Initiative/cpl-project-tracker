@@ -43,7 +43,8 @@
   var DETAILS_FOLD_KEY = "cplCommons.detailsFold.v1";
   var FILES = { program: "kb/status/program-requirements.json", data: "kb/status/commons_data.json",
     skills: "kb/reference/industry_credential_skills.json", subjects: "kb/status/local_subject_titles.json",
-    held: "kb/status/held_subject_codes.json", readiness: "kb/status/mid_readiness.json", history: "kb/status/commons_history.json", spend: "kb/reference/model_spend_daily.json" };
+    held: "kb/status/held_subject_codes.json", readiness: "kb/status/mid_readiness.json", history: "kb/status/commons_history.json", spend: "kb/reference/model_spend_daily.json",
+    doubt: "kb/ccr_doubt.json" };
   /* Collect / Curate / Connect, then the Plan (Sam, 2026-11-21, item 4: "check every card sits under the right one"):
      Credentials and Credit Recommendations are curated references, so they sit under Curate. */
   var KEYS = ["colleges", "programs", "courses-data", "cdc", "subjects", "courses", "exhibit", "credentials", "cr", "interconnect", "plan"];
@@ -183,7 +184,22 @@
     var undated = open.filter(function (r) { return r.dayN == null; });
     var day = thin.length || undated.length ? null : open.length ? Math.max.apply(null, open.map(function (r) { return r.dayN; })) : lastN;
     var last = open.filter(function (r) { return r.dayN === day; })[0] || null;
-    return { day: day, lastN: lastN, fromN: fromN, refs: refs, undated: undated, last: last, why: thin.length ? "days" : undated.length ? "pace" : "" };
+    /* The chart beside the date (Sam, S723, 2026-11-24: the curation side's graph matches the collection side's): what
+       the four references curated each day, summed, on the same 30 days; a day with no pair of counts is no figure. */
+    var days = [];
+    for (var dn = lastN - DAYS + 1; dn <= lastN; dn++) {
+      var any = false, sum = 0;
+      CUR_REFS.forEach(function (R) {
+        var a = v(dn - 1, R.key), b = v(dn, R.key);
+        if (!a || !b) return;
+        any = true; sum += Math.max(0, (b[0] - a[0]) + Math.max(0, a[1] - b[1]));
+      });
+      days.push({ n: dn, v: any ? sum : null });
+    }
+    var left = open.reduce(function (s, r) { return s + r.remaining; }, 0);
+    var need = day != null && day > lastN ? left / (day - lastN) : null;
+    return { day: day, lastN: lastN, fromN: fromN, refs: refs, undated: undated, last: last, days: days, need: need, left: left,
+      why: thin.length ? "days" : undated.length ? "pace" : "" };
   }
 
   /* ── the College Data Collection card (Sam, 2026-11-21, item 8) ──
@@ -337,9 +353,12 @@
      highlight the link so user knows to click the link when ready. Do not just drop the user on text that has no link").
      The check's Where to act link the quick link names (data-onpage-to, its href), else the check's first one, takes
      the focus and a highlight that stays until the focus leaves it. */
+  /* A list a card holds for one item each (the colleges an outline or a catalog waits on) and a hand-over's summary are
+     landing places too (.cmf-land), so a Needs you link about one college lands on that college's own link. */
   function landOn(t, to) {
-    var links = t.querySelectorAll ? Array.prototype.slice.call(t.querySelectorAll(".cmf-act a[href]")) : [];
-    var l = links.filter(function (x) { return to && x.getAttribute("href") === to; })[0] || links[0];
+    var links = t.querySelectorAll ? Array.prototype.slice.call(t.querySelectorAll(".cmf-land a[href], .cmf-land summary, .cmf-act a[href]")) : [];
+    var l = links.filter(function (x) { return to && x.getAttribute("href") === to; })[0]
+      || links.filter(function (x) { return x.tagName !== "SUMMARY" || !to; })[0] || links[0];
     if (!l) return false;
     if (l.scrollIntoView) l.scrollIntoView({ block: "center" });
     l.classList.add("cmf-hl");
@@ -347,11 +366,15 @@
     if (l.focus) l.focus();
     return true;
   }
-  function jump(id, to) {
+  /* ref names a check inside the card id names (data-ref), so a Needs you link reaches a check whatever its number. */
+  function jump(id, to, ref) {
     var t = document.getElementById(id);
     if (!t) return false;
+    var cardEl = t.closest ? t.closest(".cmf-card") : null;
+    if (cardEl && typeof cardEl._unfold === "function") cardEl._unfold();
+    if (ref) { var c = t.querySelector('.cmf-check[data-ref="' + String(ref).replace(/(["\\])/g, "\\$1") + '"]'); if (c) t = c; }
     if (typeof t._unfold === "function") t._unfold();
-    if (t.classList && t.classList.contains("cmf-check") && landOn(t, to)) return true;
+    if (t.classList && (t.classList.contains("cmf-check") || t.classList.contains("cmf-landable")) && landOn(t, to)) return true;
     if (t.scrollIntoView) t.scrollIntoView({ block: "start" });
     /* A check takes the focus itself: its own heading is a line, and a check may hold a subheading of its own. */
     var h = t.classList && t.classList.contains("cmf-check") ? t : t.querySelector("h3, h4") || t;
@@ -423,19 +446,23 @@
       : [Q.why === "file" ? "TBA: the daily series of the Commons references could not be read."
         : Q.why === "days" ? "TBA: the last 7 days hold a count on fewer than " + MIN_DAYS + " days."
         : "TBA: " + Q.undated.map(function (r) { return r.name; }).join(", ") + " curated nothing in the last 7 days."];
+    /* Two columns (Sam, S723, 2026-11-24: "put the collection stuff all on the left, including the line graph and the
+       curation stuff to the right of it, and make the bar graph match the line graph of the collection side"): each
+       column holds its date, its note, its "...(more)" and its own chart, drawn by the one chart function, so the two
+       graphs share a form, a height and a window. Cost per day sits under the collection graph at the same height. */
     return el("section", { cls: "cmf-eta", "aria-labelledby": "cmf-eta-h" }, [
       el("h3", { id: "cmf-eta-h", cls: "cmf-eta-h", text: "Phase 1 Dates" }),
       el("div", { cls: "cmf-dates" }, [
-        etaLine("Data Collection", E.doneN, colNote, [p([programsMethod(M)])]),
-        etaLine("Data Curation", Q.day, curNote, curationMethod(M))
-      ]),
-      chart(M)
+        el("div", { cls: "cmf-eta-col", id: "cmf-eta-collect" }, [etaLine("Data Collection", E.doneN, colNote, [p([programsMethod(M)])]), chart(M)]),
+        el("div", { cls: "cmf-eta-col", id: "cmf-eta-curate" }, [etaLine("Data Curation", Q.day, curNote, curationMethod(M)), curationChart(M)])
+      ])
     ]);
   }
 
-  /* ── the daily chart (item 7): program records collected each day (solid) against the daily pace the estimated date
-     needs (dashed), a trend line (dotted), and cost per day in a second panel on the same dates. Hover, a tap or the
-     arrow keys read one day's figures; the table under it holds every figure as text. ── */
+  /* ── the daily charts (item 7): what was done each day (solid) against the daily pace the estimated date needs
+     (dashed) and a trend line (dotted); the collection chart adds cost per day in a second panel on the same dates and
+     at the same height. Hover, a tap or the arrow keys read one day's figures; the table under each holds every figure
+     as text. One function draws both, so the two graphs match. ── */
   var NS = "http://www.w3.org/2000/svg";
   function svgEl(tag, attrs) {
     var e = document.createElementNS(NS, tag);
@@ -443,7 +470,7 @@
     return e;
   }
   function trendOf(D) {
-    var pts = D.map(function (d, i) { return d.programs == null ? null : [i, d.programs]; }).filter(Boolean);
+    var pts = D.map(function (d, i) { return d.v == null ? null : [i, d.v]; }).filter(Boolean);
     if (pts.length < 2) return null;
     var n = pts.length, sx = 0, sy = 0, sxx = 0, sxy = 0;
     pts.forEach(function (q) { sx += q[0]; sy += q[1]; sxx += q[0] * q[0]; sxy += q[0] * q[1]; });
@@ -454,9 +481,22 @@
   }
   function usd(v) { return "$" + Math.round(v).toLocaleString("en-US"); }
   function chart(M) {
-    var D = M.days, n = D.length, W = 600, H1 = 120, H2 = 60, need = M.needPace, T = trendOf(D);
+    return dailyChart({ sfx: "", days: M.days.map(function (d) { return { n: d.n, v: d.programs, cost: d.cost }; }), need: M.needPace,
+      cost: true, spendRead: M.spendRead, axis: "Program records a day", what: "program records collected", none: "no count of program records",
+      solid: "Solid line: program records collected that day", col: "Program records collected",
+      caption: function (a, b) { return "Program records collected each day, " + a + " to " + b + ": the day’s rise in complete Active program records. Cost per day sits under it on the same dates: the account totals where Sam pasted them, else the reading jobs’ and sessions’ own figures."; } });
+  }
+  function curationChart(M) {
+    var Q = M.curation;
+    if (!Q.days || !Q.days.length) return p(["The daily curation chart is TBA: the daily series of the Commons references could not be read."], "cmf-muted");
+    return dailyChart({ sfx: "-cur", days: Q.days, need: Q.need, cost: false, axis: "Items curated a day", what: "items curated", none: "no count of curation",
+      solid: "Solid line: items curated that day", col: "Items curated",
+      caption: function (a, b) { return "Items curated each day, " + a + " to " + b + ": exhibit titles, course cards, credit-recommendation wordings and common subjects settled or set aside, summed."; } });
+  }
+  function dailyChart(o) {
+    var D = o.days, n = D.length, W = 600, H1 = 120, H2 = 120, need = o.need, T = trendOf(D), sfx = o.sfx;
     var max1 = 1, max2 = 1;
-    D.forEach(function (d) { if (d.programs != null) max1 = Math.max(max1, d.programs); if (d.cost) max2 = Math.max(max2, d.cost.usd); });
+    D.forEach(function (d) { if (d.v != null) max1 = Math.max(max1, d.v); if (d.cost) max2 = Math.max(max2, d.cost.usd); });
     if (need != null) max1 = Math.max(max1, need);
     if (T) max1 = Math.max(max1, T.at(0), T.at(n - 1));
     function x(i) { return (i + 0.5) * W / n; }
@@ -465,44 +505,47 @@
     top.appendChild(svgEl("line", { x1: 0, x2: W, y1: H1, y2: H1, "class": "cmf-base" }));
     var d = "", pen = false;
     D.forEach(function (r, i) {
-      if (r.programs == null) { pen = false; return; }
-      d += (pen ? " L" : " M") + x(i).toFixed(1) + " " + y1(r.programs).toFixed(1); pen = true;
+      if (r.v == null) { pen = false; return; }
+      d += (pen ? " L" : " M") + x(i).toFixed(1) + " " + y1(r.v).toFixed(1); pen = true;
     });
     if (d) top.appendChild(svgEl("path", { d: d.trim(), "class": "cmf-l-actual" }));
-    D.forEach(function (r, i) { if (r.programs != null) top.appendChild(svgEl("circle", { cx: x(i).toFixed(1), cy: y1(r.programs).toFixed(1), r: 2.5, "class": "cmf-dot" })); });
+    D.forEach(function (r, i) { if (r.v != null) top.appendChild(svgEl("circle", { cx: x(i).toFixed(1), cy: y1(r.v).toFixed(1), r: 2.5, "class": "cmf-dot" })); });
     if (need != null) top.appendChild(svgEl("line", { x1: x(0).toFixed(1), x2: x(n - 1).toFixed(1), y1: y1(need).toFixed(1), y2: y1(need).toFixed(1), "class": "cmf-l-need" }));
     if (T) top.appendChild(svgEl("line", { x1: x(0).toFixed(1), x2: x(n - 1).toFixed(1), y1: y1(T.at(0)).toFixed(1), y2: y1(T.at(n - 1)).toFixed(1), "class": "cmf-l-trend" }));
-    var mark1 = svgEl("line", { y1: 0, y2: H1, "class": "cmf-mark" });
-    top.appendChild(mark1);
-    var low = svgEl("svg", { viewBox: "0 0 " + W + " " + H2, preserveAspectRatio: "none", "class": "cmf-plot cmf-plot-cost", "aria-hidden": "true" });
-    low.appendChild(svgEl("line", { x1: 0, x2: W, y1: H2, y2: H2, "class": "cmf-base" }));
-    var bw = Math.max(2, W / n * 0.6);
-    D.forEach(function (r, i) {
-      if (!r.cost) return;
-      var h = r.cost.usd / max2 * (H2 - 4);
-      low.appendChild(svgEl("rect", { x: (x(i) - bw / 2).toFixed(1), width: bw.toFixed(1), y: (H2 - h).toFixed(1), height: Math.max(0, h).toFixed(1), "class": "cmf-b-cost" }));
-    });
-    var mark2 = svgEl("line", { y1: 0, y2: H2, "class": "cmf-mark" });
-    low.appendChild(mark2);
-
+    var marks = [svgEl("line", { y1: 0, y2: H1, "class": "cmf-mark" })];
+    top.appendChild(marks[0]);
+    var low = null;
+    if (o.cost) {
+      low = svgEl("svg", { viewBox: "0 0 " + W + " " + H2, preserveAspectRatio: "none", "class": "cmf-plot cmf-plot-cost", "aria-hidden": "true" });
+      low.appendChild(svgEl("line", { x1: 0, x2: W, y1: H2, y2: H2, "class": "cmf-base" }));
+      var bw = Math.max(2, W / n * 0.6);
+      D.forEach(function (r, i) {
+        if (!r.cost) return;
+        var h = r.cost.usd / max2 * (H2 - 6);
+        low.appendChild(svgEl("rect", { x: (x(i) - bw / 2).toFixed(1), width: bw.toFixed(1), y: (H2 - h).toFixed(1), height: Math.max(0, h).toFixed(1), "class": "cmf-b-cost" }));
+      });
+      marks.push(svgEl("line", { y1: 0, y2: H2, "class": "cmf-mark" }));
+      low.appendChild(marks[1]);
+    }
+    function costWords(r) { return r.cost ? "cost " + usd(r.cost.usd) + (r.cost.from === "billing" ? " (account totals)" : " (the reading jobs’ and sessions’ own figures)") : o.spendRead ? "no cost recorded" : "cost TBA"; }
     function dayWords(i) {
-      var r = D[i], out = [longDate(r.n) + ":", r.programs == null ? "no count of program records" : fmt(r.programs) + " program records collected"];
+      var r = D[i], out = [longDate(r.n) + ":", r.v == null ? o.none : fmt(r.v) + " " + o.what];
       if (need != null) out.push("pace needed about " + fmt(Math.round(need)) + " a day");
       if (T) out.push("trend about " + fmt(Math.max(0, Math.round(T.at(i)))) + " a day");
-      out.push(r.cost ? "cost " + usd(r.cost.usd) + (r.cost.from === "billing" ? " (account totals)" : " (the reading jobs’ and sessions’ own figures)") : M.spendRead ? "no cost recorded" : "cost TBA");
+      if (o.cost) out.push(costWords(r));
       return out[0] + " " + out.slice(1).join("; ") + ".";
     }
-    var readout = el("p", { cls: "cmf-readout", id: "cmf-readout", "aria-live": "polite" });
+    var readout = el("p", { cls: "cmf-readout", id: "cmf-readout" + sfx, "aria-live": "polite" });
     var cur = n - 1;
     function show(i) {
       cur = Math.max(0, Math.min(n - 1, i));
-      [mark1, mark2].forEach(function (m) { m.setAttribute("x1", x(cur).toFixed(1)); m.setAttribute("x2", x(cur).toFixed(1)); });
+      marks.forEach(function (m) { m.setAttribute("x1", x(cur).toFixed(1)); m.setAttribute("x2", x(cur).toFixed(1)); });
       readout.textContent = dayWords(cur);
     }
-    var plots = el("div", { cls: "cmf-plots", tabindex: "0", role: "group", id: "cmf-plots",
-      "aria-label": "Daily chart, " + longDate(D[0].n) + " to " + longDate(D[n - 1].n) + ". The left and right arrow keys read one day at a time.", "aria-describedby": "cmf-readout" }, [
-      el("p", { cls: "cmf-axis", text: "Program records a day, up to " + fmt(Math.round(max1)) }), top,
-      el("p", { cls: "cmf-axis", text: "Cost a day" + (M.spendRead ? ", up to " + usd(max2) : ": TBA") }), low,
+    var plots = el("div", { cls: "cmf-plots", tabindex: "0", role: "group", id: "cmf-plots" + sfx,
+      "aria-label": o.axis + ", " + longDate(D[0].n) + " to " + longDate(D[n - 1].n) + ". The left and right arrow keys read one day at a time.", "aria-describedby": "cmf-readout" + sfx }, [
+      el("p", { cls: "cmf-axis", text: o.axis + ", up to " + fmt(Math.round(max1)) }), top,
+      o.cost ? el("p", { cls: "cmf-axis", text: "Cost a day" + (o.spendRead ? ", up to " + usd(max2) : ": TBA") }) : null, low,
       el("div", { cls: "cmf-axis cmf-axis-x" }, [el("span", { text: shortDay(D[0].n) }), el("span", { text: shortDay(D[n - 1].n) })])
     ]);
     function fromPointer(e) {
@@ -520,25 +563,26 @@
     });
     show(cur);
     var legend = el("ul", { cls: "cmf-legend" }, [
-      el("li", null, [el("span", { cls: "cmf-key cmf-key-actual", "aria-hidden": "true" }), "Solid line: program records collected that day"]),
+      el("li", null, [el("span", { cls: "cmf-key cmf-key-actual", "aria-hidden": "true" }), o.solid]),
       el("li", null, [el("span", { cls: "cmf-key cmf-key-need", "aria-hidden": "true" }), need != null ? "Dashed line: daily pace needed for the estimated date" : "Dashed line: daily pace needed, TBA while the date is TBA"]),
       el("li", null, [el("span", { cls: "cmf-key cmf-key-trend", "aria-hidden": "true" }), T ? "Dotted line: trend" : "Dotted line: trend, TBA"]),
-      el("li", null, [el("span", { cls: "cmf-key cmf-key-cost", "aria-hidden": "true" }), "Bars: cost per day"])
+      o.cost ? el("li", null, [el("span", { cls: "cmf-key cmf-key-cost", "aria-hidden": "true" }), "Bars: cost per day"]) : null
     ]);
+    var heads = ["Day", o.col, "Pace needed", "Trend"].concat(o.cost ? ["Cost"] : []);
     var table = el("table", { cls: "cmf-table" }, [
       el("caption", { text: "Daily figures, " + longDate(D[0].n) + " to " + longDate(D[n - 1].n) }),
-      el("thead", null, [el("tr", null, ["Day", "Program records collected", "Pace needed", "Trend", "Cost"].map(function (h) { return el("th", { scope: "col", text: h }); }))]),
+      el("thead", null, [el("tr", null, heads.map(function (h) { return el("th", { scope: "col", text: h }); }))]),
       el("tbody", null, D.map(function (r, i) {
-        return el("tr", null, [el("th", { scope: "row", text: shortDay(r.n) }), el("td", { text: r.programs == null ? "no count" : fmt(r.programs) }),
+        return el("tr", null, [el("th", { scope: "row", text: shortDay(r.n) }), el("td", { text: r.v == null ? "no count" : fmt(r.v) }),
           el("td", { text: need == null ? "TBA" : fmt(Math.round(need)) }), el("td", { text: T ? fmt(Math.max(0, Math.round(T.at(i)))) : "TBA" }),
-          el("td", { text: r.cost ? usd(r.cost.usd) + (r.cost.from === "billing" ? "" : ", measured") : M.spendRead ? "none recorded" : "TBA" })]);
+          o.cost ? el("td", { text: r.cost ? usd(r.cost.usd) + (r.cost.from === "billing" ? "" : ", measured") : o.spendRead ? "none recorded" : "TBA" }) : null]);
       }))
     ]);
     return el("figure", { cls: "cmf-chart" }, [
-      el("figcaption", { text: "Program records collected each day, " + longDate(D[0].n) + " to " + longDate(D[n - 1].n) + ": the day’s rise in complete Active program records. Cost per day sits under it on the same dates: the account totals where Sam pasted them, else the reading jobs’ and sessions’ own figures." }),
+      el("figcaption", { text: o.caption(longDate(D[0].n), longDate(D[n - 1].n)) }),
       plots, readout, legend,
       el("details", { cls: "cmf-tablefold" }, [el("summary", { text: "Daily figures table" }),
-        el("div", { cls: "cmf-tablewrap", role: "region", "aria-label": "Daily figures table", tabindex: "0" }, [table])])
+        el("div", { cls: "cmf-tablewrap", role: "region", "aria-label": "Daily figures table" + (sfx ? ", curation" : ""), tabindex: "0" }, [table])])
     ]);
   }
 
@@ -582,44 +626,63 @@
     return { outline: outline, catalog: { colleges: cat, handed: Object.keys(colDone).length },
       term: { wanted: termsWanted(termNamed, termUnnamed), handed: terms } };
   }
-  function chip(n) { return el("span", { cls: "cmn-pill cmn-pill-done cmf-handed", text: "Handed over: " + fmt(n || 0) }); }
-  function needHead(title, n, id) { return el("div", { cls: "cmf-need-head" }, [el("h4", { id: id || null, text: title }), chip(n)]); }
   function plural(n, one, many) { return fmt(n) + " " + (n === 1 ? one : many); }
+  /* The address a college's own link carries, in the lists the cards hold: the hand-over's college panel when that
+     module loaded, else the college's row on College Data Collection. */
+  function collegeTo(name, slug) { var H = HO(); return H ? H.collegeHref(name) : "#collect/college/" + slug; }
 
-  /* The ranked links (item 1): wave blockers first, then by the count each frees, largest first; an item with no count
-     ranks after those with one and shows no figure. At most RANK_CAP, with a plain count of the rest. An item about one
-     college opens that college's row on College Data Collection (item 8); every other item jumps to its card here. */
+  /* The ranked links (item 1): only what waits on you now; an item a person finished leaves at once (Sam, S723,
+     2026-11-24: "need you section should only show prioritized links to things that need me (which are also on the
+     cards below). it should not show things I have already acted on"). Wave blockers first, then by the count each
+     frees, largest first; an item with no count ranks after those with one. At most RANK_CAP, with a plain count of
+     the rest. Every item lands on the card link that holds it, focused and highlighted, so a second press opens the
+     view where the action waits (Sam, S723: "go directly to the card link, which gets the focus and is highlighted
+     prompting another click"); a decision, which no card holds, opens the decision itself. */
   function rankItems(M, N, opts) {
     var items = [];
     if (N.outline) N.outline.colleges.forEach(function (c) {
       var k = c.still_taught.length;
-      items.push({ wave: true, n: k, label: c.college + ": course outlines", unlock: "frees " + plural(k, "course", "courses") + " for its outcomes", href: "#collect/college/" + c.slug });
+      items.push({ wave: true, n: k, label: c.college + ": course outlines", unlock: "frees " + plural(k, "course", "courses") + " for its outcomes",
+        land: { id: "courses-data", ref: "outlines", to: collegeTo(c.college, c.slug) } });
     });
-    N.catalog.colleges.forEach(function (c) { items.push({ wave: true, n: null, label: c.college + ": catalog", unlock: "", href: "#collect/college/" + c.slug }); });
+    N.catalog.colleges.forEach(function (c) {
+      items.push({ wave: true, n: null, label: c.college + ": catalog", unlock: "", land: { id: "cmf-card-colleges", ref: "catalog", to: collegeTo(c.college, c.slug) } });
+    });
     var HC = M.heldCodes;
     if (HC && HC.held > 0) items.push({ wave: true, n: HC.held, label: "Common subject codes for " + plural(HC.codes, "local subject code", "local subject codes"),
-      unlock: "frees " + plural(HC.held, "course", "courses") + " for an M-ID", onpage: "cmf-card-subjects" });
+      unlock: "frees " + plural(HC.held, "course", "courses") + " for an M-ID", land: { id: "cmf-subj-check-3", to: "#commons/subjects/held" } });
     var L = M.heldLive, open = L ? L.open : (M.held && M.held.n) || 0;
-    if (open > 0) items.push({ wave: false, n: open, label: "Exhibit titles to name", unlock: "frees " + plural(open, "exhibit title", "exhibit titles"), onpage: "cmf-need-titles" });
-    if (N.term.wanted.length) items.push({ wave: false, n: null, label: "Term reports: " + N.term.wanted.join(", "), unlock: "", onpage: "cmf-need-terms" });
+    if (open > 0) items.push({ wave: false, n: open, label: "Exhibit titles to name", unlock: "frees " + plural(open, "exhibit title", "exhibit titles"),
+      land: { id: "cmf-card-exhibit", ref: "held", to: "#exhibits/held" } });
+    if (N.term.wanted.length) items.push({ wave: false, n: null, label: "Term reports: " + N.term.wanted.join(", "), unlock: "", land: { id: "courses-data", ref: "terms", to: null } });
     (((opts || {}).decisions || {}).open || []).forEach(function (x) {
       var t = String(x.title || x.call && x.call.title || "A decision").split(":")[0].replace(/\?$/, "");
-      items.push({ wave: false, n: null, label: "Decision waiting: " + t, unlock: "", onpage: "cmf-need-decisions" });
+      items.push({ wave: false, n: null, label: "Decision waiting: " + t, unlock: "", href: x.href || "#commons/details/decisions", todo: x.call && x.call.todo_id || null });
     });
+    var owed = owedNow(M);
+    if (owed.length) items.push({ wave: false, n: null, last: true, label: "Fixes owed: ask COBI to carry " + plural(owed.length, "ruling", "rulings"), unlock: "",
+      land: { id: "cmf-need-owed", to: owedAsk(owed) } });
     items.forEach(function (it, i) { it.i = i; });
     return items.sort(function (a, b) {
+      if (!!a.last !== !!b.last) return a.last ? 1 : -1;
       if (a.wave !== b.wave) return a.wave ? -1 : 1;
       if ((a.n == null) !== (b.n == null)) return a.n == null ? 1 : -1;
       return (b.n || 0) - (a.n || 0) || a.i - b.i;
     });
+  }
+  function rankLink(it) {
+    if (!it.land) return a(it.href, it.label, "cmf-rank-t");
+    var l = onPage(it.land.id, it.label, "cmf-rank-t");
+    if (it.land.ref) l.setAttribute("data-onpage-ref", it.land.ref);
+    if (it.land.to) l.setAttribute("data-onpage-to", it.land.to);
+    return l;
   }
   function drawRank(box, M, N, opts) {
     box.textContent = "";
     var items = rankItems(M, N, opts), shown = items.slice(0, RANK_CAP);
     if (!items.length) { box.appendChild(p(["Nothing waits on you."])); return; }
     box.appendChild(el("ol", { cls: "cmf-rank", id: "cmf-rank" }, shown.map(function (it) {
-      var link = it.onpage ? onPage(it.onpage, it.label, "cmf-rank-t") : a(it.href, it.label, "cmf-rank-t");
-      return el("li", { "data-wave": it.wave ? "yes" : "no" }, [link,
+      return el("li", { "data-wave": it.wave ? "yes" : "no", "data-todo": it.todo || null }, [rankLink(it),
         it.unlock ? el("span", { cls: "cmf-rank-n", text: it.unlock }) : null,
         it.wave ? el("span", { cls: "cmf-rank-w", text: "blocks the next wave" }) : null]);
     })));
@@ -627,8 +690,9 @@
   }
 
   /* Course Outline Fixes: the still-taught courses whose outline needs a person, by college (Sam's work order,
-     2026-11-20). Each course opens beside the page (#commons/course/<control number>); each college opens College Data
-     Collection's own panel. A course a person finished leaves at once (item 2). */
+     2026-11-20), held by the Courses data card's outlines check. Each course opens beside the page
+     (#commons/course/<control number>); each college opens College Data Collection's own panel. A course a person
+     finished leaves at once (item 2). */
   function courseLinks(c, list) {
     var H = HO(), out = [];
     (list || c.still_taught || []).forEach(function (x, i) {
@@ -646,44 +710,46 @@
       + (O.colleges.length === 1 ? " college needs its course outline from a person." : " colleges need their course outline from a person.");
   }
   function drawOutlines(box, M, N) {
-    var O = N.outline, H = HO();
+    var O = N.outline;
     box.textContent = "";
-    box.appendChild(p([huntWords(O)]));
     if (!O || !O.colleges.length) return;
     box.appendChild(el("ul", { cls: "cmf-need-list cmf-hunt" }, O.colleges.map(function (c) {
       return el("li", { "data-hunt-college": c.slug }, [
-        p([H ? el("a", { cls: "cmf-need-t", href: H.collegeHref(c.college), "data-college-panel": c.slug, text: c.college }) : el("span", { cls: "cmf-need-t", text: c.college }), ": "]
-          .concat(courseLinks(c), ["."])),
+        p([el("a", { cls: "cmf-need-t", href: collegeTo(c.college, c.slug), "data-college-panel": c.slug, text: c.college }), ": "].concat(courseLinks(c), ["."])),
         p([], "cmf-standing"),
         !c.catalog_url ? null : WEB.test(c.catalog_url) ? p([el("a", { cls: "cmf-out", href: c.catalog_url, target: "_blank", rel: "noopener", text: c.catalog_url })])
           : p([el("span", { cls: "cmf-out-plain", text: c.catalog_url })])
       ].filter(Boolean));
     })));
-    if (H) box.appendChild(p(["Choose a course to open it beside this list, then drop its outline, give a link to try, or paste the data. A college's name opens its own panel."]));
-    box.appendChild(p([el("strong", { text: "Send the PDF to COBIx in your Grok Bot chat." })]));
+    box.appendChild(p(["Choose a course to open it beside this list, then drop its outline, give a link to try, or paste the data. A college's name opens its own panel. Send the PDF to COBIx in your Grok Bot chat."]));
   }
-  /* Catalog Fixes: the colleges with no collected catalog. A college a person handed a catalog for leaves at once. */
-  function drawCatalogs(box, M, N) {
-    var C = N.catalog.colleges, H = HO();
-    box.textContent = "";
-    if (!C.length) { box.appendChild(p(["No college waits on a catalog fix."])); return; }
-    box.appendChild(p([plural(C.length, "college has", "colleges have") + " no collected catalog yet."]));
-    box.appendChild(el("ul", { cls: "cmf-need-list" }, C.map(function (c) {
-      return el("li", { "data-catalog-college": c.slug }, [p([H ? el("a", { cls: "cmf-need-t", href: H.collegeHref(c.college), text: c.college }) : el("span", { cls: "cmf-need-t", text: c.college })])]);
-    })));
+  function outlineBlock(M, N) {
+    var box = el("div", { id: "cmf-outline-list", cls: "cmf-need-body cmf-land" });
+    drawOutlines(box, M, N);
+    return box.firstChild ? box : null;
+  }
+  /* Catalog Fixes: the colleges with no collected catalog, held by the Colleges and catalogs card. A college a person
+     handed a catalog for leaves at once. */
+  function catalogBlock(M, N) {
+    var C = N.catalog.colleges;
+    if (!C.length) return null;
+    return el("div", { id: "cmf-catalog-list", cls: "cmf-need-body cmf-land" }, [p([plural(C.length, "college has", "colleges have") + " no collected catalog yet; each opens its own panel to hand one over:"]),
+      el("ul", { cls: "cmf-need-list" }, C.map(function (c) {
+        return el("li", { "data-catalog-college": c.slug }, [a(collegeTo(c.college, c.slug), c.college, "cmf-need-t")]);
+      }))]);
   }
   function termWords(T) {
     if (!T.wanted.length) return "No term report waits on you: " + plural(T.handed, "term report", "term reports") + " handed over. Our reader names each one's term when it reads it.";
     return "Wanted, newest first: " + (T.wanted.length === 1 ? T.wanted[0] : T.wanted.slice(0, -1).join(", ") + " and " + T.wanted[T.wanted.length - 1]) + "."
       + (T.handed ? " " + plural(T.handed, "term report", "term reports") + " handed over so far; our reader names each one's term when it reads it." : "");
   }
-  /* Term Reports Needed (cpl_memory q-term-report-sources-2026-11-20): the set-aside for courses a college no longer
-     offers compares term course files. A hand-over that names its term takes that term off the list; the counts carry
-     no term today, so the wanted terms leave once as many term reports are handed over as are wanted (termsWanted). */
-  function termReports(M, N) {
-    var H = HO(), kids = [needHead("Term Reports Needed", N.term.handed),
-      p(["To set aside courses a college no longer offers, the Commons compares the term course files each college reported to the Chancellor's Office. Fall 2025 is on hand."]),
-      p([termWords(N.term)], "cmf-term-wanted"), el("p", { cls: "cmf-standing", id: "cmf-term-standing" })];
+  /* Term reports (cpl_memory q-term-report-sources-2026-11-20), held by the Courses data card: the set-aside for
+     courses a college no longer offers compares term course files. A hand-over that names its term takes that term off
+     the list; the counts carry no term today, so the wanted terms leave once as many term reports are handed over as
+     are wanted (termsWanted). */
+  function termBlock(M, N) {
+    var H = HO(), kids = [p([termWords(N.term)], "cmf-term-wanted"), el("p", { cls: "cmf-standing", id: "cmf-term-standing" })];
+    kids[0].id = "cmf-term-wanted";
     if (H) {
       var hold = el("div", { cls: "cmf-term-box" });
       var d = el("details", { cls: "cho-term", id: "cmf-term" }, [el("summary", { text: "Hand over a term report" }), hold]);
@@ -693,32 +759,60 @@
       });
       kids.push(d);
     }
-    var box = el("div", { cls: "cmf-need", id: "cmf-need-terms" }, kids);
-    box.querySelector(".cmf-term-wanted").id = "cmf-term-wanted";
-    return box;
+    return el("div", { cls: "cmf-land", id: "cmf-need-terms" }, kids);
   }
-  /* Every list in Needs you drawn again from the model: the nightly files and the live hand-over counts. */
+
+  /* Fixes owed to you (Sam, S723, 2026-11-24: "fixes owed to you section is OK to keep but there should be something
+     queued up for me to do to prompt COBI (sky) to do to get the process going"): the ruled cards still on the
+     Discipline in doubt list (kb/ccr_doubt.json, read live; unread, the list stands as given), and one press that opens
+     a new issue already written, so COBI takes the fix from the queue. The box leaves once the list holds none. */
+  function owedNow(M) {
+    var on = M.doubtIds;
+    return ASKED.doubt.filter(function (id) { return !on || Object.keys(on).some(function (k) { return k.slice(-id.length - 1) === " " + id; }); });
+  }
+  function owedAsk(ids) {
+    var list = ids.slice(0, -1).join(", ") + (ids.length > 1 ? " and " : "") + ids[ids.length - 1];
+    var title = "Fixes owed: carry the Discipline in doubt rulings on " + list;
+    var body = "Filed from the CPL Commons, Needs you, Fixes owed to you.\n\n"
+      + "The Commons lists " + plural(ids.length, "common-course card", "common-course cards") + " (" + list + ") as already ruled on, yet each still sits on the "
+      + "Discipline in doubt list (kb/ccr_doubt.json). kb/_ccr_seed_recheck_dryrun.py --doubt leaves a card out only when "
+      + "kb/coci_curation.json carries a `ruling` on it, and these carry none.\n\n"
+      + "Find where the rulings are recorded, carry them into the curation the job reads (with a rollback receipt), and rebuild "
+      + "kb/ccr_doubt.json, so the cards leave the list and this box leaves the Commons. If no ruling exists, say so here and "
+      + "the cards go back on the list as open.";
+    return REPO + "new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body);
+  }
+  function owedBox(M) {
+    var ids = owedNow(M);
+    if (!ids.length) return null;
+    var list = ids.length < 3 ? ids.join(" and ") : ids.slice(0, -1).join(", ") + ", and " + ids[ids.length - 1];
+    return el("div", { cls: "cmf-need cmf-landable", id: "cmf-need-owed" }, [el("h4", { text: "Fixes owed to you" }),
+      p([plural(ids.length, "common-course card", "common-course cards") + " you already ruled on (shared course IDs " + list + ") still sit on the list of cards whose catalog description reads as another discipline, because your rulings have not been carried into that list yet. COBI owes that fix. Your part is one press: ask COBI to carry it, and the request reaches COBI as a new issue."]),
+      el("p", { cls: "cmf-act" }, [el("span", { cls: "cmf-act-l", text: "Where to act:" }), " ",
+        el("a", { href: owedAsk(ids), target: "_blank", rel: "noopener", text: "Ask COBI to carry the fix" }), " ",
+        a("#coci-lookup/list/doubt", "The cards in the doubt list")])]);
+  }
+
+  /* Needs you, drawn again from the model: the ranked links and Fixes owed. The lists the cards hold redraw with
+     their cards (redrawCards). */
   function redrawNeeds(M) {
     var N = needsModel(M), opts = M._opts || {};
     var r = document.getElementById("cmf-rank-box"); if (r) drawRank(r, M, N, opts);
-    var o = document.getElementById("cmf-outline-list"); if (o) drawOutlines(o, M, N);
-    var c = document.getElementById("cmf-catalog-list"); if (c) drawCatalogs(c, M, N);
-    var t = document.getElementById("cmf-term-wanted"); if (t) t.textContent = termWords(N.term);
-    [["cmf-need-rows", N.outline ? N.outline.handed : 0], ["cmf-need-catalogs", N.catalog.handed], ["cmf-need-terms", N.term.handed]].forEach(function (x) {
-      var ch = document.querySelector("#" + x[0] + " .cmf-handed");
-      if (ch) ch.textContent = "Handed over: " + fmt(x[1] || 0);
-    });
+    var o = document.getElementById("cmf-need-owed"), nb = owedBox(M);
+    if (o && nb) o.parentNode.replaceChild(nb, o); else if (o) o.parentNode.removeChild(o);
+    else if (nb) { var sec = document.getElementById("cmf-needs"); if (sec) sec.appendChild(nb); }
     return N;
   }
   /* What has been handed over so far, beside each college (the public counts: no person, file name or address). A
-     finished item leaves its list first (item 2). */
+     finished item leaves Needs you and its card's list at once, and every count that names it moves (item 2; Sam,
+     S723: "Make sure all numbers are dynamically updated when action is taken"). */
   function drawStanding(M) {
     var H = HO();
     if (!H) return;
     H.summary(true).then(function (rows) {
       if (Array.isArray(rows)) M.handed = rows;
       var N = redrawNeeds(M);
-      redrawCards(M, ["courses-data"]);   /* the outlines a person must find, as Needs you counts them */
+      redrawCards(M, ["courses-data", "colleges"]);
       (N.outline ? N.outline.colleges : []).forEach(function (c) {
         var line = document.querySelector('.cmf-hunt li[data-hunt-college="' + c.slug + '"] .cmf-standing');
         if (!line) return;
@@ -730,73 +824,21 @@
     });
   }
 
-  /* Needs you (#3566; Sam, 2026-11-21, item 1): the ranked links, then the cards they open. Decisions waiting reads the
-     decisions list commons.js hands in (the decision record's own list). */
+  /* Needs you (#3566; Sam, 2026-11-21, item 1; S723): the ranked links to what waits on you, each also on its card
+     below, then Fixes owed to you while any is owed. The decisions list commons.js hands in feeds the ranked links. */
   function needs(M, opts) {
     opts = opts || {};
     M._opts = opts;
     var N = needsModel(M);
-    var open = (opts.decisions && opts.decisions.open) || [];
-    var dec = el("div", { cls: "cmf-need", id: "cmf-need-decisions" }, [el("h4", { text: "Decisions waiting" })]);
-    if (open.length) {
-      dec.appendChild(el("ul", { cls: "cmf-need-list" }, open.map(function (x) {
-        return el("li", { "data-todo": x.call.todo_id || null }, [
-          p([x.href ? a(x.href, x.title) : el("span", { text: x.title })], "cmf-need-t"),
-          x.call.text ? p([x.call.text]) : null,
-          x.call.if_no_reply ? p(["Until you answer: " + x.call.if_no_reply]) : null
-        ].filter(Boolean));
-      })));
-    } else dec.appendChild(p(["None waiting."]));
     var note = typeof opts.marksNote === "function" ? opts.marksNote() : null;
-    if (note) dec.appendChild(note);
-    dec.appendChild(p([a("#commons/details/decisions", "Decision record")], "cmf-need-links"));
-    var outlineBox = el("div", { id: "cmf-outline-list", cls: "cmf-need-body" });
-    drawOutlines(outlineBox, M, N);
-    var rows = el("div", { cls: "cmf-need", id: "cmf-need-rows" }, [needHead("Course Outline Fixes", N.outline ? N.outline.handed : 0), outlineBox,
-      p([a("#collect/outlines-blocked", "Open the courses by college")], "cmf-need-links")]);
-    var catBox = el("div", { id: "cmf-catalog-list", cls: "cmf-need-body" });
-    drawCatalogs(catBox, M, N);
-    var cats = el("div", { cls: "cmf-need", id: "cmf-need-catalogs" }, [needHead("Catalog Fixes", N.catalog.handed), catBox,
-      p([a("#collect/unread", "Open the colleges not collected yet")], "cmf-need-links")]);
-    var titles = el("div", { cls: "cmf-need", id: "cmf-need-titles" }, [el("h4", { text: "Exhibit Titles to Name" })]);
-    var heldBox = el("div", { cls: "cmf-held", id: "cmf-held", "aria-live": "polite" });
-    titles.appendChild(heldBox);
-    drawHeld(heldBox, M, opts.held || null);
     var rank = el("div", { id: "cmf-rank-box", cls: "cmf-rank-box" });
     drawRank(rank, M, N, opts);
     return el("section", { cls: "cmf-needs", id: "cmf-needs", "aria-labelledby": "cmf-needs-h" }, [
       el("h3", { id: "cmf-needs-h", cls: "cmf-needs-h", tabindex: "-1", text: "Needs you" }),
-      rank,
-      el("div", { cls: "cmf-needs-grid" }, [
-        dec,
-        el("div", { cls: "cmf-need", id: "cmf-need-owed" }, [el("h4", { text: "Fixes owed to you" }),
-          p(["Five common-course cards you already ruled on (shared course IDs " + ASKED.doubt.slice(0, -1).join(", ") + ", and " + ASKED.doubt[ASKED.doubt.length - 1] + ") still sit on the list of cards whose catalog description reads as another discipline, because your rulings have not been carried into that list yet. The nightly build owes that fix. Nothing for you to decide."])]),
-        rows,
-        cats,
-        termReports(M, N),
-        titles
-      ])
-    ]);
+      rank, note, p([a("#commons/details/decisions", "Decision record")], "cmf-need-links"), owedBox(M)
+    ].filter(Boolean));
   }
-  /* The held titles' line. L is the live read (heldLive): { held, saved: [{ raw, value }], open, at }; null while it
-     reads or when it failed, and then the status file's count stands, named as of its time. */
-  function drawHeld(box, M, L) {
-    box.textContent = "";
-    if (L && L.held === 0) return;   /* the fold landed: the review file holds no held title, so the line goes */
-    if (L) {
-      if (L.open > 0) box.appendChild(p([a("#exhibits/held", fmt(L.open) + (L.open === 1 ? " exhibit title" : " exhibit titles")), " held for a person to name. ", el("span", { cls: "cmf-owner", text: "· a curator" })]));
-      if (L.saved.length) {
-        box.appendChild(p([fmt(L.saved.length) + (L.saved.length === 1 ? " exhibit title a person saved waits" : " exhibit titles a person saved wait") + " for the nightly build, which adds " + (L.saved.length === 1 ? "it" : "them") + " to the reference. No one needs to act."]));
-        box.appendChild(el("details", { cls: "cmf-method cmf-saved" }, [el("summary", { text: "The saved titles" }),
-          el("ul", { cls: "cmf-saved-list" }, L.saved.map(function (x) { return el("li", { text: x.raw + " is saved as " + x.value }); }))]));
-      }
-      return;
-    }
-    var H = M.held;
-    if (!H || !H.n) return;
-    var heldWords = H.unsure != null ? " (the title-sorting routine is unsure on " + H.unsure + ", a merge would join two issuers on " + H.issuers + ", a course code is left in the title on " + H.code + ")" : "";
-    box.appendChild(p([a("#exhibits/held", fmt(H.n) + " titles"), " held for a person" + heldWords + ", as of " + stampWords(M.commonsAt) + ". ", el("span", { cls: "cmf-owner", text: "· a curator" })]));
-  }
+
   /* A stamp in Pacific time, in words: "8:53 AM PT on November 19". */
   function stampWords(v) {
     var d = new Date(v || "");
@@ -998,7 +1040,7 @@
     Array.prototype.forEach.call(box.querySelectorAll(".cmf-check"), function (c) { c._unfold = function () { set(true); }; });
     return [el("h4", { cls: "cmf-stage" }, [b]), box];
   }
-  function checkBox(key, n, kids) { return el("div", { cls: "cmf-check", id: "cmf-" + key + "-check-" + n }, kids.filter(Boolean)); }
+  function checkBox(key, n, kids, ref) { return el("div", { cls: "cmf-check", id: "cmf-" + key + "-check-" + n, "data-ref": ref || null }, kids.filter(Boolean)); }
   /* The quick links under the headline (Sam, 2026-11-23: "add a short bulleted set of quick links to prioritized action
      needed--the links can shoot down to links on the lower sections so user can get oriented and then one more click to
      the action view"): what most needs action first, each with its live count; each opens its check's stage, scrolls to
@@ -1047,7 +1089,7 @@
       body = body.concat(stageFold(key, s, list.map(function (c) {
         return checkBox(key, num[c.ref], [checkHead(num[c.ref], c.name, c.fig || ["TBA"]), c.meter || null,
           c.line ? el("p", { cls: "cmf-check-line" }, typeof c.line === "string" ? [c.line] : c.line) : null]
-          .concat(c.extra || [], [c.next ? ul(["Next: " + c.next]) : null, act(c.act)]));
+          .concat(c.extra || [], [c.next ? ul(["Next: " + c.next]) : null, act(c.act)]), c.ref);
       })));
     });
     return body.filter(Boolean);
@@ -1156,6 +1198,7 @@
         if (M.heldCodes && F.held != null) M.heldCodes = { held: F.held, codes: F.heldCodes, pairs: M.heldCodes.pairs, released: F.released };
         if (F.levels) { M.subjLevels = F.levels; M.subjStatewide = F.statewide; } else M.subjLevelsError = "the statewide list could not be read";
         redrawSubjects(M);
+        redrawNeeds(M);   /* the ranked links take the live count of codes the mint holds */
         return F;
       });
     }
@@ -1302,14 +1345,31 @@
      lanes its tab belongs to). Each card's quick links run in the order of what most needs action: what waits on a
      person or a fix first, then the largest remaining count. Only the Courses and M-IDs card reads a measured
      0-to-1 score, so it alone carries a Confident line (the Subjects scale: Confident at 0.9 or better). */
+  /* The held titles' line on the Exhibit titles card: the live read's count, and the saves waiting on the nightly
+     build, which no one needs to act on. */
+  function heldLine(M, E) {
+    var L = M.heldLive, H = M.held || {};
+    if (!L) return "A held title is one the title-sorting routine left for a person to name"
+      + (H.unsure != null ? " (it is unsure on " + H.unsure + ", a merge would join two issuers on " + H.issuers + ", a course code is left in the title on " + H.code + ")" : "")
+      + "; this count is as of " + stampWords(M.commonsAt) + " until the live read answers.";
+    return "A held title is one the title-sorting routine left for a person to name; a name saved on the Exhibits tab leaves this count at once."
+      + (L.saved.length ? " " + plural(L.saved.length, "saved title waits", "saved titles wait") + " for the nightly build, which adds " + (L.saved.length === 1 ? "it" : "them") + " to the reference; no one needs to act." : "");
+  }
+  /* The saves the nightly build has not carried, each findable by its raw title (COBIx on #3570). */
+  function savedTitles(M) {
+    var L = M.heldLive;
+    if (!L || !L.saved || !L.saved.length) return null;
+    return el("details", { cls: "cmf-method cmf-saved" }, [el("summary", { text: "The saved titles" }),
+      el("ul", { cls: "cmf-saved-list" }, L.saved.map(function (x) { return el("li", { text: x.raw + " is saved as " + x.value }); }))]);
+  }
   function cards(M) {
     var P = M.programs, Cl = M.colleges, Co = M.courses, Cd = M.cards, E = exhibitsNow(M), R = crNow(M), X = ASKED.cr, K = ASKED.credentials, B = M.building;
-    var O = needsModel(M).outline, top = M.cdc && M.cdc.top;
+    var NM = needsModel(M), O = NM.outline, top = M.cdc && M.cdc.top, catLeft = NM.catalog.colleges.length;
     var noLink = Cl.registry != null && Cl.outlineLinks != null ? Cl.registry - Cl.outlineLinks : null;
     var collect = [
       checksCard({ key: "colleges", title: "Colleges and catalogs", pill: "Catalog blocked: " + fmt(Cl.blocked), pillCls: Cl.blocked ? "cmn-pill-needs" : "cmn-pill-done",
         big: fmt(Cl.collected), rest: [" colleges with a collected catalog"],
-        quick: [{ ref: "catalog", n: Cl.blocked, one: "college with a blocked catalog", many: "colleges with a blocked catalog" },
+        quick: [{ ref: "catalog", n: catLeft, one: "college with a blocked catalog", many: "colleges with a blocked catalog", to: NM.catalog.colleges[0] ? collegeTo(NM.catalog.colleges[0].college, NM.catalog.colleges[0].slug) : null },
           { ref: "catalog", n: ASKED.evergreen ? 1 : null, one: "catalog to read again for the newest year", many: "catalogs to read again for the newest year" },
           { ref: "outline", n: noLink, one: "college with no public outline link on file", many: "colleges with no public outline link on file" }],
         defs: [["Why", "each college’s catalog is the source of its program records: how each course counts toward the award, the program total and the catalog year."],
@@ -1320,6 +1380,7 @@
             line: [fmt(Cl.collected) + " means we have read each college’s catalog and have saved a read of its ", a("#program-requirements/list", "program requirements"),
               ", at least once. Catalog blocked: " + fmt(Cl.blocked) + ". Still missing: about " + fmt(P.left) + " Active programs in current catalogs left to finish (every college still has some). "
               + ASKED.evergreen + "’s saved catalog read is still from the 2025–2026 catalog and needs a re-read for the newest year."],
+            extra: [catalogBlock(M, NM)],
             act: [[fmt(Cl.total) + "-college list", "#collect"], ["Colleges not collected yet", "#collect/unread"]] },
           { ref: "outline", name: "A public course outline link at every college", fig: figOf(Cl.outlineLinks, " of " + fmt(Cl.registry) + " colleges"), meter: meterOf(Cl.outlineLinks, Cl.registry, "colleges"),
             line: ["A course outline carries the course’s student learning outcomes and objectives; the ", onPage("courses-data", "Courses data"), " card counts them."],
@@ -1355,7 +1416,8 @@
         after: [meter(pct(Co.slo, Co.active), fmt(Co.slo) + " of " + fmt(Co.active) + " have SLOs, " + Math.round(pct(Co.slo, Co.active)) + " percent")],
         quick: [{ ref: "outlines", n: O ? O.courses : null, one: "course whose outline needs a person", many: "courses whose outline needs a person" },
           { ref: "slo", n: Co.sloLeft, one: "course in Active programs with no SLOs", many: "courses in Active programs with no SLOs" },
-          { ref: "obj", n: Co.objLeft, one: "course in Active programs with no objectives", many: "courses in Active programs with no objectives" }],
+          { ref: "obj", n: Co.objLeft, one: "course in Active programs with no objectives", many: "courses in Active programs with no objectives" },
+          { ref: "terms", n: NM.term.wanted.length, one: "term report wanted", many: "term reports wanted" }],
         defs: [["Why", "a course’s student learning outcomes (SLOs) and objectives join the score that places it under its M-ID."],
           ["Finished when", "SLOs and objectives sit on every course in Active programs that can be read automatically; the count of those readable courses is TBA."],
           ["Scale", fmt(Co.active) + " courses in Active programs statewide."]],
@@ -1367,9 +1429,14 @@
           { ref: "obj", name: "Course objectives on every course", fig: figOf(Co.obj, " of " + fmt(Co.active)), meter: meterOf(Co.obj, Co.active, "courses with objectives"),
             line: fmt(Co.objColleges) + " colleges have objectives in the live statewide count. Objectives grew by " + fmt(Co.objGrow) + " since that snapshot.",
             act: [["Outlines to find by hand", "#collect/slos"], ["Courses List", "#coci-lookup/courses"]] },
-          { ref: "outlines", name: "Every outline a person must find", fig: O ? figOf(O.courses, " at " + plural(O.colleges.length, "college", "colleges")) : ["TBA"],
+          { ref: "outlines", name: "Every outline a person must find", fig: O ? figOf(O.courses, " at " + plural(O.colleges.length, "college", "colleges") + "; " + fmt(O.handed) + " handed over") : ["TBA"],
             line: huntWords(O) + " A public outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges. A bot test found about 43% of colleges readable (range 35–65%); the Los Angeles district’s 9 colleges need a district request.",
-            act: [["The courses by college", "#collect/outlines-blocked"], ["Hand over a file or link", "#collect"]] }] },
+            extra: [outlineBlock(M, NM)],
+            act: [["The courses by college", "#collect/outlines-blocked"], ["Hand over a file or link", "#collect"]] },
+          { ref: "terms", name: "Term reports for the set-aside", fig: figOf(NM.term.handed, " handed over"),
+            line: "To set aside courses a college no longer offers, the Commons compares the term course files each college reported to the Chancellor’s Office. Fall 2025 is on hand.",
+            extra: [termBlock(M, NM)],
+            act: [["Hand over a file or link", "#collect"]] }] },
         method: [p([fmt(Co.active) + " is the number of courses that appear in Active programs statewide. " + fmt(Co.slo) + " of those already have student learning outcomes on file, and " + fmt(Co.obj) + " have course objectives (a course can have both). Those are live statewide counts. A separate Building-line read has " + fmt(M.building.outcomes) + " outcomes from " + fmt(M.building.outcomeCourses) + " courses at " + fmt(M.building.outcomeColleges) + " colleges; it is not the same " + fmt(Co.sloColleges) + "-college live SLO cut. The recent rates are measured from those nights, not one fixed nightly estimate: from the " + ASKED.sloSnap.at + " snapshot to this page’s counts, about one and a half days, SLOs grew by " + fmt(Co.sloGrow) + " (" + fmt(ASKED.sloSnap.slo) + " to " + fmt(Co.slo) + ") and objectives by " + fmt(Co.objGrow) + " (" + fmt(ASKED.sloSnap.obj) + " to " + fmt(Co.obj) + "). "
           + (Co.objDoneN != null && Co.sloDoneN != null ? "If every one of the " + fmt(Co.active) + " were already readable, objectives at about " + fmt(Math.round(Co.objGrow / 100) * 100) + " a night would finish around " + longDate(Co.objDoneN) + " (" + fmt(Co.objLeft) + " left), and SLOs at about " + fmt(Math.round(Co.sloGrow / 100) * 100) + " a night around " + longDate(Co.sloDoneN) + " (" + fmt(Co.sloLeft) + " left). " : "")
           + "Those dates are not shown, because a finish date should be set only for courses that can already be read automatically, and that readable-course count is not computed yet."]), p([LIVE_WORDS.coursesData])],
@@ -1406,7 +1473,8 @@
       checksCard({ key: "exhibit", title: "Exhibit titles", pill: "In progress",
         big: fmt(E.stamped) + " of " + fmt(E.titles), rest: [" local titles reviewed"],
         after: [meter(pct(E.stamped, E.titles), fmt(E.stamped) + " of " + fmt(E.titles) + " reviewed, " + Math.round(pct(E.stamped, E.titles)) + " percent")],
-        quick: [{ ref: "stamp", n: unstamped, one: "local title with no review stamp", many: "local titles with no review stamp" },
+        quick: [{ ref: "held", n: E.held, one: "held title to name", many: "held titles to name", to: "#exhibits/held" },
+          { ref: "stamp", n: unstamped, one: "local title with no review stamp", many: "local titles with no review stamp" },
           { ref: "subject", n: E.noSubject, one: "credential with no common subject code", many: "credentials with no common subject code" },
           { ref: "old", n: E.left, one: "old title no college uses", many: "old titles no college uses" }],
         defs: [["Why", "colleges type their own exhibit titles into MAP, and each files under one credential name, so a credential counts once."],
@@ -1414,6 +1482,9 @@
           ["Scale", fmt(E.titles) + " local titles under " + fmt(E.names) + " credential names."]],
         stages: {
           Curate: [
+            { ref: "held", name: "Every held title named", fig: figOf(E.held, " held for a person"),
+              line: heldLine(M, E), extra: [savedTitles(M)],
+              act: [["Held titles", "#exhibits/held"]] },
             { ref: "stamp", name: "A review stamp on every local title", fig: figOf(E.stamped, " of " + fmt(E.titles)), meter: meterOf(E.stamped, E.titles, "titles reviewed"),
               line: "The nightly run applies the rules, then the classifier settles the rest; " + fmt(E.person) + " carry a person’s stamp and " + fmt(E.cohort) + " a review group’s."
                 + (E.fresh ? " The person’s count holds " + plural(E.fresh, "held title a person named", "held titles a person named") + " since the last nightly build, which adds " + (E.fresh === 1 ? "it" : "them") + " to the reference next." : ""),
@@ -1675,8 +1746,11 @@
     /* The curation series and the spend are their own reads too: either missing reads TBA where it is used. */
     var history = readJson(FILES.history).then(null, function () { return null; });
     var spend = readJson(FILES.spend).then(null, function () { return null; });
-    return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills), titles, heldCodes, history, spend, readiness]).then(function (r) {
+    var doubt = readJson(FILES.doubt).then(null, function () { return null; });
+    return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills), titles, heldCodes, history, spend, readiness, doubt]).then(function (r) {
       var M = model(C, r[0], r[1], r[2], r[3], r[4], r[5], r[6]);
+      /* Fixes owed reads the doubt list itself, so a carried ruling takes its card off Needs you (owedNow). */
+      if (r[8] && Array.isArray(r[8].cards)) { M.doubtIds = {}; r[8].cards.forEach(function (c) { if (c && c.id) M.doubtIds[c.id] = true; }); }
       M.readiness = subjReadiness(r[7], r[3]);
       M.platforms = {}; M.allColleges = ((r[1] && r[1].colleges) || []).length || null;
       ((r[1] && r[1].colleges) || []).forEach(function (c) { if (c && c.platform) M.platforms[c.platform] = (M.platforms[c.platform] || 0) + 1; });
@@ -1701,8 +1775,6 @@
   function liveReads(M) {
     if (M._round) return M._round;
     var held = heldLive().then(function (L) {
-      var box = document.getElementById("cmf-held");
-      if (box) drawHeld(box, M, L);
       M.heldLive = L;
       redrawNeeds(M);   /* the ranked links take the live count of titles still to name */
       redrawCards(M, ["exhibit"]);
@@ -1738,7 +1810,7 @@
   function againLive() {
     if (!document.getElementById("cmf-needs")) return;
     if (COURSE.M) drawStanding(COURSE.M);
-    if (NOW.M) liveReads(NOW.M);
+    if (NOW.M) { liveReads(NOW.M); subjectsLive(NOW.M).then(null, function () {}); }
   }
   window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab === "commons") againLive(); });
   document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") againLive(); });
@@ -1751,7 +1823,7 @@
   }
   function closeCourse() { var H = HO(); if (H && H.panel.isOpen()) H.panel.close(); }
   document.addEventListener("click", function (e) {
-    var l = e.target && e.target.closest ? e.target.closest(".cmf-needs a[data-course]") : null;
+    var l = e.target && e.target.closest ? e.target.closest(".cmf a[data-course]") : null;
     if (!l || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
     if (openCourse(l.getAttribute("data-course"), l)) e.preventDefault();
   });
@@ -1760,7 +1832,7 @@
   document.addEventListener("click", function (e) {
     var l = e.target && e.target.closest ? e.target.closest(".cmf a[data-onpage]") : null;
     if (!l || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (jump(l.getAttribute("data-onpage"), l.getAttribute("data-onpage-to"))) e.preventDefault();
+    if (jump(l.getAttribute("data-onpage"), l.getAttribute("data-onpage-to"), l.getAttribute("data-onpage-ref"))) e.preventDefault();
   });
 
   /* #commons/needs-you (#3566): the front page scrolled to Needs you, its heading focused. */
@@ -1854,7 +1926,8 @@
     ".cmf-eta { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-top:4px solid var(--cmn-gold); border-radius:12px; padding:12px 20px; display:grid; gap:6px; }",
     ".cmf-eta-h, .cmf-needs-h { margin:0; font-family:var(--cmn-serif); font-size:1.25rem; color:var(--cmn-heading); }",
     ".cmf-status { margin:0; color:var(--cmn-ink-2); }",
-    ".cmf-dates { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap:12px 24px; }",
+    ".cmf-dates { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap:12px 32px; }",
+    ".cmf-eta-col { display:grid; gap:6px; align-content:start; min-width:0; }",
     ".cmf-date { display:grid; gap:4px; align-content:start; min-width:0; }",
     ".cmf-date p { margin:0; }",
     ".cmf-date-l { font-weight:700; color:var(--cmn-heading); }",
@@ -1871,7 +1944,6 @@
     ".cmf-plots { display:grid; gap:2px; min-width:0; padding:4px 0; border-radius:4px; cursor:crosshair; }",
     ".cmf-plots:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".cmf-plot { width:100%; height:120px; display:block; overflow:visible; }",
-    ".cmf-plot-cost { height:60px; }",
     ".cmf-plot path, .cmf-plot line { vector-effect:non-scaling-stroke; fill:none; }",
     ".cmf-l-actual { stroke:var(--cmf-s-programs); stroke-width:2.5; }",
     ".cmf-dot { fill:var(--cmf-s-programs); }",
@@ -1932,7 +2004,7 @@
     ".cmf-stage-b { font:inherit; letter-spacing:inherit; text-transform:inherit; color:var(--cmn-link); background:none; border:0; padding:0; min-height:24px; line-height:24px; text-decoration:underline; text-underline-offset:3px; cursor:pointer; }",
     ".cmf-stage-b[aria-expanded='false']::after { content:' (show)'; } .cmf-stage-b[aria-expanded='true']::after { content:' (hide)'; }",
     ".cmf-stage-b:focus-visible, .cmf-check:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
-    ".cmf-act a.cmf-hl { background:var(--cmn-pill-bg); outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:3px; }",
+    ".cmf .cmf-hl { background:var(--cmn-pill-bg); outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:3px; }",
     ".cmf-check:focus { outline:none; } .cmf-quick { margin:6px 0 2px; } .cmf-quick a { display:inline-block; min-height:24px; line-height:24px; }",
     ".cmf-stage { margin:14px 0 6px; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:var(--cmn-muted); border-bottom:2px solid var(--cmn-gold); padding-bottom:4px; }",
     ".cmf-check-h { margin:6px 0 4px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; align-items:baseline; }",
@@ -1996,7 +2068,7 @@
   }
 
   window.CPL_COMMONS_FRONT = { boot: boot, model: model, render: render, migrate: migrate, readFold: readFold, KEYS: KEYS,
-    focusNeeds: focusNeeds, openCourse: openCourse, closeCourse: closeCourse, heldLive: heldLive, drawHeld: drawHeld, placeBack: placeBack, markBack: markBack, BACK: BACK, LIVE: LIVE,
+    focusNeeds: focusNeeds, openCourse: openCourse, closeCourse: closeCourse, heldLive: heldLive, heldLine: heldLine, owedNow: owedNow, owedAsk: owedAsk, jump: jump, placeBack: placeBack, markBack: markBack, BACK: BACK, LIVE: LIVE,
     exhibitsNow: exhibitsNow, crNow: crNow, crLive: crLive, crFigures: crFigures, redrawCards: redrawCards, CRL: CRL, LIVE_WORDS: LIVE_WORDS,
     FOLD_KEY: FOLD_KEY, ORDER_KEY: ORDER_KEY, DETAILS_ORDER_KEY: DETAILS_ORDER_KEY, DETAILS_FOLD_KEY: DETAILS_FOLD_KEY, FILES: FILES, ASKED: ASKED };
 })();

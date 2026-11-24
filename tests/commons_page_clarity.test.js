@@ -77,21 +77,32 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
   check("(1) and among them the larger count first, each figure in its line", counted.every((n, i) => n != null && (i === 0 || counted[i - 1] >= n)), counted.join(","));
   const hc = BASE["kb/status/held_subject_codes.json"].totals;
   check("(1) the subject codes the M-ID mint holds on show what they free", rank.some((li) => txt(li).indexOf("frees " + hc.held.toLocaleString("en-US") + " courses for an M-ID") >= 0));
+  /* S723 (Sam, 2026-11-24): every link lands on the card link that holds its item, focused and highlighted; a second
+     press opens the view. An item about one college lands on that college's own link in its card. */
   const one = rank.filter((li) => /: course outlines/.test(txt(li)));
-  check("(1) ⭐ an item about one college opens that college's row on College Data Collection",
-    one.length === hunted.length && one.every((li) => /^#collect\/college\/[a-z0-9_-]+$/.test(li.querySelector("a").getAttribute("href"))), one.map((li) => li.querySelector("a").getAttribute("href")).join(" "));
+  const OUTL = x.d.querySelector('.cmf-card[data-key="courses-data"] .cmf-check[data-ref="outlines"]');
+  check("(1) ⭐ an item about one college lands on that college's own link in the Courses data card",
+    one.length === hunted.length && one.every((li) => { const l = li.querySelector("a"); return l.getAttribute("data-onpage") === "courses-data" && l.getAttribute("data-onpage-ref") === "outlines"
+      && OUTL.querySelector('.cmf-land a[href="' + l.getAttribute("data-onpage-to") + '"]'); }), one.map((li) => li.querySelector("a").outerHTML).join(" "));
   const onPage = rank.map((li) => li.querySelector("a")).filter((l) => l.hasAttribute("data-onpage"));
-  check("(1) ⭐ every other link jumps to a card on this page that exists", onPage.length > 0 && onPage.every((l) => l.getAttribute("href") === "#" + l.getAttribute("data-onpage") && x.d.getElementById(l.getAttribute("data-onpage"))),
+  check("(1) ⭐ every link but a decision's jumps to a place on this page that exists", onPage.length > 0 && onPage.length === rank.filter((li) => !li.hasAttribute("data-todo")).length
+    && onPage.every((l) => l.getAttribute("href") === "#" + l.getAttribute("data-onpage") && x.d.getElementById(l.getAttribute("data-onpage"))),
     onPage.map((l) => l.getAttribute("href")).join(" "));
   check("(1) no link in the list leaves the site", rank.every((li) => /^#/.test(li.querySelector("a").getAttribute("href"))));
-  // a jump to a folded card opens it and focuses its heading, with no route change
+  // a jump into a folded card opens it and its stage, and lands on the check's link, highlighted, with no route change
   const subj = x.d.querySelector('.cmf-card[data-key="subjects"]');
   click(x.w, subj.querySelector(".cmf-fold"));
-  const toSubj = onPage.find((l) => l.getAttribute("data-onpage") === "cmf-card-subjects");
+  const toSubj = onPage.find((l) => l.getAttribute("data-onpage") === "cmf-subj-check-3");
   const before = x.w.location.hash;
   click(x.w, toSubj); await settle();
-  check("(1) ⭐ a jump unfolds the card, scrolls to it and focuses its heading, and the address stays", !subj.classList.contains("cmf-folded") && x.w.scrolled.indexOf("cmf-card-subjects") >= 0
-    && x.d.activeElement === subj.querySelector("h3") && x.w.location.hash === before);
+  const A = x.d.activeElement;
+  check("(1) ⭐ a jump unfolds the card and its stage, and lands on the check's link, highlighted, and the address stays", !subj.classList.contains("cmf-folded")
+    && !x.d.getElementById("cmf-subj-check-3").closest("[hidden]") && A && A.tagName === "A" && A.getAttribute("href") === "#commons/subjects/held"
+    && A.classList.contains("cmf-hl") && x.d.getElementById("cmf-subj-check-3").contains(A) && x.w.location.hash === before, A && A.outerHTML);
+  // the same for a college's outline item: its card's college link takes the focus
+  click(x.w, one[0].querySelector("a")); await settle();
+  check("(1) ⭐ an outline item lands on its college's link in the card, highlighted", x.d.activeElement && x.d.activeElement.getAttribute("href") === one[0].querySelector("a").getAttribute("data-onpage-to")
+    && x.d.activeElement.classList.contains("cmf-hl") && OUTL.contains(x.d.activeElement));
   // more than 12 items: 12 links and a plain count of the rest
   const many = JSON.parse(JSON.stringify(OPEN_HUNT));
   for (let i = 0; i < 12; i++) many.colleges.push({ slug: "fixture_" + i, college: "Fixture College " + i, hunted: true, filed: false, catalog_url: "", still_taught: [{ course: "FIX " + i, control_number: "CCC9" + i, title: "Fixture" }], answered: [] });
@@ -111,17 +122,19 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
   ];
   x = load({ files: { "kb/status/commons_data.json": noCatalog }, summary: SUMMARY });
   await x.M.boot(); await settle();
-  const outline = x.d.getElementById("cmf-need-rows");
-  check("(2) ⭐ a course handed over leaves Course Outline Fixes on the live read",
+  const outline = x.d.querySelector('.cmf-card[data-key="courses-data"] .cmf-check[data-ref="outlines"]');
+  check("(2) ⭐ a course handed over leaves the outline list on the live read",
     !Array.from(outline.querySelectorAll("a[data-course]")).some((l) => txt(l) === C0.still_taught[0].course && l.closest("li").getAttribute("data-hunt-college") === C0.slug));
   check("(2) a hand-over our reader could not read still waits", Array.from(outline.querySelectorAll('li[data-hunt-college="' + C1.slug + '"] a[data-course]')).some((l) => txt(l) === C1.still_taught[0].course));
-  const chips = ["cmf-need-rows", "cmf-need-catalogs", "cmf-need-terms"].map((id) => x.d.querySelector("#" + id + " .cmf-handed"));
-  check("(2) ⭐ each list head carries a green Handed over chip, word and figure", chips.every((c) => c && c.classList.contains("cmn-pill") && c.classList.contains("cmn-pill-done") && /^Handed over: \d+$/.test(txt(c))), chips.map(txt).join(" | "));
-  check("(2) the outline chip counts the live hand-over", txt(chips[0]) === "Handed over: 1");
-  const cats = x.d.getElementById("cmf-need-catalogs");
-  check("(2) ⭐ Catalog Fixes lists a college with no catalog, and a college handed one leaves",
-    !!cats.querySelector('[data-catalog-college="' + (noCatalog.colleges[1].slug) + '"]') && !cats.querySelector('[data-catalog-college="' + noCatalog.colleges[0].slug + '"]') && txt(chips[1]) === "Handed over: 1", txt(cats));
-  check("(2) ⭐ with as many term reports handed over as are wanted, the wanted terms leave", !/Spring 2026/.test(txt(x.d.getElementById("cmf-term-wanted"))) && txt(chips[2]) === "Handed over: 7"
+  check("(2) ⭐ Needs you holds only what waits: no Handed over chip, no list of its own", !x.d.querySelector("#cmf-needs .cmf-handed, #cmf-needs [data-hunt-college], #cmf-needs [data-catalog-college]"));
+  const colCard = x.d.querySelector('.cmf-card[data-key="colleges"]');
+  check("(2) ⭐ the catalog list lives in its card: a college with no catalog stays, a college handed one leaves, in Needs you too",
+    !!colCard.querySelector('[data-catalog-college="' + (noCatalog.colleges[1].slug) + '"]') && !colCard.querySelector('[data-catalog-college="' + noCatalog.colleges[0].slug + '"]')
+    && rank.length >= 0 && !Array.from(x.d.querySelectorAll("#cmf-rank li")).some((li) => txt(li) === noCatalog.colleges[0].name + ": catalog")
+    && Array.from(x.d.querySelectorAll("#cmf-rank li")).some((li) => txt(li).indexOf(noCatalog.colleges[1].name + ": catalog") === 0), txt(colCard));
+  check("(2) ⭐ the card's quick link counts the same colleges the list holds", /^1 college with a blocked catalog$/.test(txt(colCard.querySelector('.cmf-quick a'))), txt(colCard.querySelector(".cmf-quick")));
+  const termFig = (d) => txt(d.querySelector('.cmf-card[data-key="courses-data"] .cmf-check[data-ref="terms"] .cmf-check-fig'));
+  check("(2) ⭐ with as many term reports handed over as are wanted, the wanted terms leave", !/Spring 2026/.test(txt(x.d.getElementById("cmf-term-wanted"))) && termFig(x.d) === "7 handed over"
     && !Array.from(x.d.querySelectorAll("#cmf-rank li")).some((li) => /Term reports/.test(txt(li))), txt(x.d.getElementById("cmf-term-wanted")));
   check("(2) the answered list is gone from Needs you", !x.d.querySelector(".cmf-answered, [data-hunt-answered]"));
   check("(2) the source no longer only appends a line: the lists redraw from the live counts", /function redrawNeeds\(M\)/.test(SRC) && /M\.handed = rows/.test(SRC));
@@ -132,7 +145,7 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
   x = load({ files: { "kb/status/commons_data.json": noCatalog }, summary: [term("Spring 2026", 3)] });
   await x.M.boot(); await settle();
   check("(2) ⭐ three hand-overs of one named term leave the other two terms wanted", txt(x.d.getElementById("cmf-term-wanted")).indexOf("Wanted, newest first: Spring 2025 and Fall 2024.") === 0
-    && txt(x.d.querySelector("#cmf-need-terms .cmf-handed")) === "Handed over: 3", txt(x.d.getElementById("cmf-term-wanted")));
+    && termFig(x.d) === "3 handed over", txt(x.d.getElementById("cmf-term-wanted")));
   x = load({ files: { "kb/status/commons_data.json": noCatalog }, summary: [term("Spring 2026", 1), term("Fall 2024", 1), term(null, 1)] });
   await x.M.boot(); await settle();
   check("(2) two named terms and one more hand-over clear the list", /^No term report waits on you: 3 term reports handed over\./.test(txt(x.d.getElementById("cmf-term-wanted"))), txt(x.d.getElementById("cmf-term-wanted")));
@@ -145,7 +158,7 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
   oddC[0].catalog_url = "javascript:alert(1)"; oddC[1].catalog_url = "https://catalog.example.edu/";
   x = load({ files: { "kb/status/commons_data.json": withData((d) => { d.blocked_hunt = odd; }) } });
   await x.M.boot(); await settle();
-  const li0 = x.d.querySelector('#cmf-need-rows li[data-hunt-college="' + oddC[0].slug + '"]'), li1 = x.d.querySelector('#cmf-need-rows li[data-hunt-college="' + oddC[1].slug + '"]');
+  const li0 = x.d.querySelector('.cmf-hunt li[data-hunt-college="' + oddC[0].slug + '"]'), li1 = x.d.querySelector('.cmf-hunt li[data-hunt-college="' + oddC[1].slug + '"]');
   check("⭐ an address that is not a web address shows as plain text, never a link", li0 && !li0.querySelector("a.cmf-out") && txt(li0.querySelector(".cmf-out-plain")) === "javascript:alert(1)"
     && !Array.from(x.d.querySelectorAll("a[href]")).some((l) => /^javascript:/i.test(l.getAttribute("href"))), li0 && txt(li0));
   check("a web address still opens as a link", li1 && li1.querySelector("a.cmf-out") && li1.querySelector("a.cmf-out").getAttribute("href") === "https://catalog.example.edu/");
@@ -207,14 +220,43 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
   // ── (7) the chart ──
   check("(7) ⭐ a solid line of records a day, a dashed pace-needed line, a dotted trend", !!x.d.querySelector(".cmf-plot path.cmf-l-actual") && !!x.d.querySelector(".cmf-plot line.cmf-l-need") && !!x.d.querySelector(".cmf-plot line.cmf-l-trend")
     && /\.cmf-l-need \{[^}]*stroke-dasharray:8 5/.test(SRC) && /\.cmf-l-trend \{[^}]*stroke-dasharray:2 4/.test(SRC));
-  check("(7) ⭐ the cost panel sits under it on the same dates", x.d.querySelectorAll(".cmf-plot").length === 2 && x.d.querySelectorAll(".cmf-plot-cost rect.cmf-b-cost").length > 0);
+  const colCol = x.d.getElementById("cmf-eta-collect"), curCol = x.d.getElementById("cmf-eta-curate");
+  check("(7) ⭐ the cost panel sits under the collection graph on the same dates", colCol.querySelectorAll(".cmf-plot").length === 2 && colCol.querySelectorAll(".cmf-plot-cost rect.cmf-b-cost").length > 0);
+  /* S723 (Sam, 2026-11-24): "put the collection stuff all on the left, including the line graph and the curation stuff
+     to the right of it, and make the bar graph match the line graph of the collection side". */
+  const etaCols = Array.from(x.d.querySelectorAll(".cmf-dates > .cmf-eta-col"));
+  check("(7) ⭐ two columns: collection on the left with its date and graph, curation on the right with its own",
+    etaCols.length === 2 && etaCols[0] === colCol && etaCols[1] === curCol && /^Data Collection/.test(txt(colCol.querySelector(".cmf-date-l"))) && /^Data Curation/.test(txt(curCol.querySelector(".cmf-date-l")))
+    && colCol.querySelector("figure.cmf-chart") && curCol.querySelector("figure.cmf-chart") && !x.d.querySelector(".cmf-eta > figure"));
+  check("(7) ⭐ the curation graph matches the collection graph: the same lines, the same 30 days, and no cost panel of its own",
+    !!curCol.querySelector(".cmf-plot path.cmf-l-actual") && curCol.querySelectorAll(".cmf-plot").length === 1 && !curCol.querySelector(".cmf-plot-cost")
+    && curCol.querySelectorAll(".cmf-table tbody tr").length === 30 && /^Items curated a day, up to /.test(txt(curCol.querySelector(".cmf-axis"))) && x.d.getElementById("cmf-plots-cur"));
+  check("(7) ⭐ the bar panel is as tall as the line panel", /var D = o\.days, n = D\.length, W = 600, H1 = 120, H2 = 120/.test(SRC) && !/\.cmf-plot-cost \{ height/.test(SRC));
   check("(7) the legend says each line in words", /Solid line/.test(txt(x.d.querySelector(".cmf-legend"))) && /Dashed line: daily pace needed/.test(txt(x.d.querySelector(".cmf-legend"))) && /Dotted line: trend/.test(txt(x.d.querySelector(".cmf-legend"))) && /cost per day/.test(txt(x.d.querySelector(".cmf-legend"))));
   const plots = x.d.getElementById("cmf-plots"), ro = x.d.getElementById("cmf-readout"), r0 = txt(ro);
   plots.dispatchEvent(new x.w.KeyboardEvent("keydown", { key: "ArrowLeft", bubbles: true, cancelable: true }));
   check("(7) ⭐ the keyboard reads one day at a time: the readout moves and is a live region", plots.getAttribute("tabindex") === "0" && ro.getAttribute("aria-live") === "polite" && txt(ro) !== r0 && /program records|no count/.test(txt(ro)) && /cost/.test(txt(ro)), r0 + " -> " + txt(ro));
-  const trows = x.d.querySelectorAll(".cmf-chart .cmf-table tbody tr");
+  const trows = colCol.querySelectorAll(".cmf-chart .cmf-table tbody tr");
   check("(7) the table holds every day's figures, with scoped headers", trows.length === 30 && Array.from(x.d.querySelectorAll(".cmf-chart .cmf-table th")).every((t) => t.hasAttribute("scope")));
   check("(7) the plots scale to the width, with no fixed pixel width", /\.cmf-plot \{ width:100%/.test(SRC) && !/\.cmf-plot \{[^}]*width:\d+px/.test(SRC));
+
+  // ── Fixes owed to you (Sam, S723, 2026-11-24: "there should be something queued up for me to do to prompt COBI") ──
+  const doubtWith = (ids) => ({ cards: ids.map((id) => ({ id: id, why: ["description"] })) });
+  x = load({ files: { "kb/ccr_doubt.json": doubtWith(["KINE M1524", "KINE M1762", "KINE M1142"]) } });
+  await x.M.boot(); await settle();
+  const owed = x.d.getElementById("cmf-need-owed"), ask = owed && Array.from(owed.querySelectorAll(".cmf-act a")).find((l) => /^Ask COBI/.test(txt(l)));
+  check("⭐ Fixes owed names only the ruled cards still on the doubt list, and gives one press to ask COBI",
+    owed && /^2 common-course cards you already ruled on \(shared course IDs M1524 and M1762\)/.test(txt(owed.querySelector("p"))) && !/M1553|M1142/.test(txt(owed))
+    && ask && ask.getAttribute("target") === "_blank" && /noopener/.test(ask.getAttribute("rel"))
+    && /^https:\/\/github\.com\/CPL-Initiative\/cpl-project-tracker\/issues\/new\?title=Fixes%20owed/.test(ask.getAttribute("href")) && /M1524%20and%20M1762/.test(ask.getAttribute("href")), owed && txt(owed));
+  const owedLi = Array.from(x.d.querySelectorAll("#cmf-rank > li")).pop();
+  check("⭐ Needs you ranks it last, and its link lands on Ask COBI, highlighted", owedLi && /^Fixes owed: ask COBI to carry 2 rulings$/.test(txt(owedLi))
+    && owedLi.querySelector("a").getAttribute("data-onpage-to") === ask.getAttribute("href"));
+  click(x.w, owedLi.querySelector("a")); await settle();
+  check("and the press lands there", x.d.activeElement === ask && ask.classList.contains("cmf-hl"));
+  x = load({ files: { "kb/ccr_doubt.json": doubtWith(["KINE M1142"]) } });
+  await x.M.boot(); await settle();
+  check("⭐ once the list holds none of them, Fixes owed and its Needs you link leave", !x.d.getElementById("cmf-need-owed") && !Array.from(x.d.querySelectorAll("#cmf-rank li")).some((l) => /^Fixes owed/.test(txt(l))));
 
   // ── (8) College Data Collection ──
   const cdc = x.d.getElementById("cmf-card-cdc"), X = x.w.CPL_COMMONS_DATA, CM = X.model(BASE["kb/status/commons_data.json"]);
