@@ -123,13 +123,13 @@
   "pass": false,
   "gaps": [
    {
-    "gap": "lists_not_closed",
-    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "gap": "pool_figure_not_read",
+    "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
     "words": "Rule: select at least one course from each category (A and B), then complete additional courses in A and/or B for a combined total of 18-22 units. Each block is recorded as choose_courses minimum 1; the 18-22 unit total applies to A and B together and is recorded in total_units."
    }
   ],
   "confidence": {
-   "unit_arithmetic": 30,
+   "unit_arithmetic": 40,
    "course_list_match": 99,
    "ge_pattern": null,
    "catalog_year": 100,

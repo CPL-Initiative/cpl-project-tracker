@@ -31,10 +31,9 @@ import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s720_fullerton as W  # noqa: E402
 
 COLLEGE = "Fullerton College"
-ROWS = {"03853": "lists_not_closed", "03866": "lists_not_closed", "18163": "lists_not_closed",
-        "33680": "lists_not_closed", "08420": "noted_figures_differ", "35174": "noted_figures_differ",
-        "42143": "noted_unit_floor", "42394": "noted_unit_floor", "08422": "no_own_page_total"}
-HELD = {"36798", "18166", "18749", "36863"}
+ROWS = {"03853": "lists_not_closed", "03866": "lists_not_closed", "18163": "pool_figure_not_read",
+        "08420": "noted_figures_differ", "42394": "noted_unit_floor", "08422": "no_own_page_total"}
+HELD = {"35174", "36798", "33680", "42143", "18166", "18749", "36863"}
 checks, failures = [0], []
 
 
@@ -46,7 +45,7 @@ def check(cond, msg):
 
 # The gaps' sentences and scores.
 for g, score in (("noted_figures_differ", 40), ("noted_unit_floor", 70), ("lists_not_closed", 30),
-                 ("no_own_page_total", 20)):
+                 ("no_own_page_total", 20), ("pool_figure_not_read", 40)):
     check(g in NG.GAPS and NG.ARITH_SCORE.get(g) == score and g.isidentifier(), "%s has its sentence and score" % g)
 check(set(W.GAPS) == {"noted_figures_differ", "noted_unit_floor", "lists_not_closed", "no_own_page_total"},
       "the module names the four gaps")
@@ -58,14 +57,22 @@ pr = W.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 13 and pr["right"] == 13 and not pr["wrong"] and not pr["not_hand_held"],
       "precision 13 of 13: %s" % pr["wrong"])
 
-# The claim check: 36798's capture reads the UC-transfer degree's page, so the claim does not stand.
+# The claim check (#3753's second reader, BLOCKER): capture.json's shared_pages puts 35174 and 36798 on the
+# UC-transfer page, so neither page is the record's own.
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["not_standing"] == [["36798", "the capture's page is not the program's own"]], "36798 alone fails the claim")
+check(cc["not_standing"] == [["35174", "the capture's page is not the program's own"],
+                             ["36798", "the capture's page is not the program's own"]], "35174 and 36798 fail the claim")
+check(W.shared_with("35174") == ["36798"] and W.shared_with("03853") == [], "shared_pages read from capture.json")
 src = W._sources()
-f = W.F._load("42143")
+f = W.F._load("42394")
 s2 = copy.deepcopy(src)
-s2["42143"]["codes_found"] = [c for c in s2["42143"]["codes_found"] if c != "ARTH295F"]
+s2["42394"]["codes_found"] = [c for c in s2["42394"]["codes_found"] if c != "NUTR295F"]
 check(W.claim(f, s2) == "a named course not found", "a named course the capture did not find holds the record")
+# #3753's second reader (MAJOR): today's scorer passes 33680 and 42143 on their own records, so neither takes a gap.
+check(W.scorer_passes(W.F._load("33680")) and W.scorer_passes(W.F._load("42143")), "the scorer passes 33680, 42143")
+check(W.gap_noted(W.F._load("33680")) is None and W.gap_noted(W.F._load("42143")) is None,
+      "a record the scorer passes is never gap-filed")
+check(not any(W.scorer_passes(W.F._load(cn)) for cn in ROWS), "the scorer passes none of the six")
 s3 = copy.deepcopy(src)
 s3["08422"]["source"]["h1"] = "Musical Theatre Level 1 Certificate"
 check(W.claim(W.F._load("08422"), s3) == "the capture's page is not another award's",
@@ -73,22 +80,24 @@ check(W.claim(W.F._load("08422"), s3) == "the capture's page is not another awar
 
 # The boundary readings.
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 10 * 3 + 2, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == 8 * 3 + 1, "every boundary reading names no gap: %s" % bd)
 
 # The plan.
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
 got = {r["control_number"]: r["moves_to"] for r in rec["records"]}
-check(got == ROWS and rec["moved"] == 9, "the receipt names the 9 rows and their gaps")
-check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 4")
+check(got == ROWS and rec["moved"] == 6, "the receipt names the 6 rows and their gaps")
+check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 7")
+check({r["control_number"]: r["confidence"]["source"] for r in rec["records"]}["08422"] == NG.OTHER_PAGE_SOURCE,
+      "no_own_page_total scores its source at 50")
 check(rec["census"]["members"] == members, "the receipt's census is the fixture's")
 for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for cn in ROWS) and not any("'%s'" % cn in sql for cn in HELD),
-          "%s names exactly the 9" % part)
+          "%s names exactly the 6" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (9))" in sql, "the apply guards a confirm and expects 9")
+        check("confirm guard" in sql and "e(expect) as (values (6))" in sql, "the apply guards a confirm and expects 6")
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:

@@ -26,6 +26,15 @@ gaps, added to kb/_program_named_gaps.py's GAPS:
   no_own_page_total     the record was read from another award's page, which prints this program's courses inside
                         its own requirements and no total for this program. Unit arithmetic 20.
 
+  pool_figure_not_read  (#3755's kind, by #3753's second reader) one figure over several lists, read as its parts
+                        (18163). Unit arithmetic 40.
+
+#3753'S SECOND READER (FIX THEN APPLY): a page capture.json's shared_pages lists another program on is never the
+record's own, so 35174 is held with 36798 (both on the UC-transfer page); a record today's scorer passes on its own
+record (S.score, no closed list, no text) is rescored, never gap-filed, so 33680 and 42143 are held for a closed-list
+rescore; no_own_page_total and one_option_of_shared_page score their source at most 50 (OTHER_PAGE_SOURCE). Six rows
+remain: 03853, 03866, 18163, 08420, 42394, 08422.
+
 THE CLAIM CHECK (p-claim-check-reads-current-capture-s713), a second source the rule's fields do not supply: today's
 capture (sources.json) must show the page the entry says the record was read from (its h1 names the program's award
 for an own-page gap, another award for no_own_page_total), and every course an entry names must be among the codes
@@ -83,7 +92,7 @@ REVIEWED = {
               "words": "no unit minimum is printed for the block, so minimum is null", "courses": []},
     "03866": {"gap": "lists_not_closed", "computed": [16, 22], "stated": [19, 19], "page": "own",
               "words": "List C minimum depends on the core option", "courses": []},
-    "18163": {"gap": "lists_not_closed", "computed": [4, 10], "stated": [18, 22], "page": "own",
+    "18163": {"gap": "pool_figure_not_read", "computed": [4, 10], "stated": [18, 22], "page": "own",
               "words": "the 18-22 unit total applies to A and B together", "courses": []},
     "33680": {"gap": "lists_not_closed", "computed": [20, 26], "stated": [22, 26], "page": "own",
               "words": "List B also allows 'any LIST A course not already used'", "courses": []},
@@ -96,6 +105,16 @@ REVIEWED = {
 # The hand answer for every census member: the gap it should take, or "held: why".
 HAND = {cn: e["gap"] for cn, e in REVIEWED.items()}
 HAND.update({
+    # #3753's second reader (BLOCKER): capture.json's shared_pages puts 35174 and 36798 on the UC-transfer page, and
+    # the state's UCTP Chemistry (41936) is the program that page prints; 35174's own note cites 2S41936.
+    "35174": "held: capture.json's shared_pages puts it on the Chemistry Associate in Science Degree for UC Transfer "
+             "page with 36798, and its own note cites program 2S41936 (the state's UCTP Chemistry, 41936); a "
+             "page-finding step (reader_page_assignment), never a gap",
+    # #3753's second reader (MAJOR): today's scorer passes both on their own records (the 2026-10-30 printed floor,
+    # S.score with no closed list: 18-19 and 22-26), so neither takes a gap; a closed-list rescore settles them.
+    "42143": "held: today's scorer passes it on its record (18-19, equal); a closed-list rescore, never a gap",
+    "33680": "held: today's scorer passes it on its record (22-26, equal; the ESC lecture-lab pair); a closed-list "
+             "rescore, never a gap",
     "36798": "held: today's capture reads it from the Chemistry Associate in Science Degree for UC Transfer page, "
              "not its own A.S.-T page; a page-finding step (reader_page_assignment), never a gap",
     "18166": "held: coverage fails (BUS 101 F, WELL 230 F, CISG 100 F and F PE248 not placed): the Category C list is "
@@ -125,6 +144,20 @@ def _course(filed: dict, code: str) -> dict | None:
     return None
 
 
+def scorer_passes(filed: dict) -> bool:
+    """Today's scorer passes the record's own arithmetic (S.score with no closed list and no text, so no electives
+    fill): such a record is rescored, never gap-filed (#3753's second reader, MAJOR)."""
+    a = S.score(filed.get("record") or {}, [], "", filed.get("award")).get("arithmetic") or {}
+    return a.get("status") == "equal"
+
+
+def shared_with(cn: str) -> list[str]:
+    """The other programs capture.json's shared_pages lists on the record's page."""
+    with open(os.path.join(NG.COLLEGE_DIR, SLUG, "capture.json"), encoding="utf-8") as fh:
+        sp = json.load(fh).get("shared_pages") or {}
+    return sorted({str(m) for v in sp.values() if str(cn) in [str(x) for x in v] for m in v if str(m) != str(cn)})
+
+
 def gap_noted(filed: dict, reviewed: dict | None = None) -> tuple[str, str] | None:
     """(gap, words) where a reviewed entry stands on the record as it is filed; else None."""
     e = (REVIEWED if reviewed is None else reviewed).get(str(filed.get("control_number")))
@@ -137,6 +170,8 @@ def gap_noted(filed: dict, reviewed: dict | None = None) -> tuple[str, str] | No
     if not words or not NG.collectable(sc) or a.get("pass") or S.passes_live(sc):
         return None
     if not _same(a.get("computed"), e["computed"]) or not _same(a.get("stated"), e["stated"]):
+        return None
+    if scorer_passes(filed):
         return None
     fl = e.get("floor")
     if fl:
@@ -160,7 +195,13 @@ def _sources() -> dict:
 def own_page(filed: dict, e: dict) -> bool:
     """The capture's h1 names the record's title and its award: a transfer degree's page says 'for Transfer' (never
     'for UC Transfer'), an A.A. 'Associate in Arts', an A.S. 'Associate in Science', a certificate 'Certificate'; and
-    the title's level ('Level 1') is the h1's."""
+    the title's level ('Level 1') is the h1's. A page capture.json's shared_pages lists another program on is never
+    the record's own (#3753's second reader, BLOCKER)."""
+    return not shared_with(filed.get("control_number")) and own_h1(filed, e)
+
+
+def own_h1(filed: dict, e: dict) -> bool:
+    """The capture's h1 alone names the record's title, award and level."""
     h1 = ((e.get("source") or {}).get("h1") or "")
     award = str(filed.get("award") or "")
     title = str(e.get("title") or "")
@@ -190,7 +231,7 @@ def claim(filed: dict, src: dict | None = None, reviewed: dict | None = None) ->
     if e["page"] == "other":
         title = str(s.get("title") or "")
         h1 = (s.get("source") or {}).get("h1") or ""
-        if own or not re.sub(r"\s*Level\s+\d\b", "", title).lower() in h1.lower():
+        if own_h1(filed, s) or not re.sub(r"\s*Level\s+\d\b", "", title).lower() in h1.lower():
             return "the capture's page is not another award's"
     return "stands"
 

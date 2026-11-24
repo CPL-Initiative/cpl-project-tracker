@@ -100,21 +100,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "noted_unit_floor",
-    "label": "The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.",
-    "words": "Catalog note: ARTH 295 F must be taken for a minimum of 3 units; taking it for 2 units does not count toward this degree. Units printed beside it are 2-4."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 70,
-   "course_list_match": 100,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {
