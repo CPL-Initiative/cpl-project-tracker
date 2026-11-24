@@ -1,13 +1,14 @@
 // tests/cpl_funding_public_dollars.test.js
 //
-// COUNTS MASK UNDER 10, UNITS CARRY THE MONEY, PUBLIC DOLLARS COARSEN (Sam,
-// 2026-09-03 — docs/kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md).
+// COUNTS MASK UNDER 10, UNITS CARRY THE MONEY (Sam, 2026-09-03 —
+// docs/kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md),
+// AND PUBLIC DOLLARS ARE EXACT (Sam, 2026-11-24, reversing the $1,000 rounding).
 //
 // A college whose every student COUNT is masked in the published artifact
 // still carries its UNIT sums, so its earning computes on the true numbers in
-// both views; on the public page its earned figures read "<$1,000" or a
-// multiple of $1,000 (the CSV too), while the curator view keeps exact dollars
-// and the caps stay exact everywhere. Two DOMs only (heap).
+// both views; on the public page its earned figures print the same whole
+// dollars as the curator view (the CSV too), and the caps stay exact
+// everywhere. Two DOMs only (heap).
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_public_dollars.test.js`).
 const fs = require("fs");
@@ -76,7 +77,7 @@ check("D1: a college with every count masked still EARNS (units carry the money)
 check("D1: the public and curator views compute the SAME earned figure",
   !!ba && Math.abs(pa.earned_total - ba.earned_total) < 0.01);
 
-// 2. On the public page the earned figure is coarse; the curator view is exact.
+// 2. The earned figure is exact, in whole dollars, in both views (2026-11-24).
 // The qualifying figure reads in the Curr Total Funds column since the College
 // Dashboard (Sam, 2026-09-28), beside the award it is measured against.
 function curTotal(doc) {
@@ -87,36 +88,21 @@ function curTotal(doc) {
 // retired "earn" on 2026-09-13, and on 2026-08-27 he required the present
 // participle because a past tense "read like a settled award". It rides the
 // cell's hover now.
-// Parse the figure the cell prints rather than pattern-match it: a regex that
-// forbids a trailing non-zero digit misread "$101,000" as exact on the first
-// run (the "1" before ",000"). The public figure must be the earned total
-// rounded to the nearest $1,000 (or "<$1,000" under the floor); the curator
-// figure must be the exact rounded dollar.
 function earnFigure(td) {
   const t = td ? td.textContent.trim() : "";
-  return /^(<\$1,000|\$[\d,]+)$/.test(t) && /qualifying so far/.test(td.getAttribute("title") || "") ? t : null;
+  return /^\$[\d,]+$/.test(t) && /qualifying so far/.test(td.getAttribute("title") || "") ? t : null;
 }
 const pubFig = earnFigure(curTotal(pubDoc)), privFig = earnFigure(curTotal(privDoc));
-const pubNum = pubFig === "<$1,000" ? 0 : (pubFig ? Number(pubFig.replace(/[$,]/g, "")) : NaN);
-// The row prints the figure for the span its award covers (Sam, 2026-09-27,
-// funding asks card 1): under the default Annual funding that is the viewed
-// year's qualifying figure beside that year's tranche, so it is the one the
-// public page coarsens. The CSV below still carries the window (D4).
+// The row prints the figure for the span its award covers (Sam, 2026-09-27):
+// under the default Annual funding, the viewed year's qualifying figure.
 const shown = pa["ey" + P._state.viewSlot];
 const exact = "$" + Math.round(shown).toLocaleString("en-US");
-const nearestK = Math.round(shown / 1000) * 1000;
-check("D2: the public row prints its earning as <$1,000 or a multiple of $1,000",
-  pubFig === "<$1,000" || (Number.isFinite(pubNum) && pubNum % 1000 === 0));
-check("D2: ...and that figure is the earned total rounded to the nearest $1,000 (" +
-  (pubFig || "none") + " for " + exact + ")",
-  pubFig === "<$1,000" ? shown < 1000 : pubNum === nearestK);
-// The figure the row shows is deliberately NOT a multiple of 1,000 (the check
-// asserts it), so "coarse" and "exact" differ and the next two checks cannot
-// pass vacuously.
-check("D2: the public row never prints the exact earned dollar figure",
-  Math.round(shown) % 1000 !== 0 && pubFig !== null && pubFig !== exact);
-check("D2: the curator row prints the exact earned figure (" + exact + ")",
-  privFig === exact);
+// The figure is deliberately NOT a multiple of 1,000, so a return of the
+// $1,000 rounding cannot pass these checks.
+check("D2: the fixture's figure is not a round thousand (" + exact + ")", Math.round(shown) % 1000 !== 0);
+check("D2: the public row prints the exact earned figure in whole dollars (" + (pubFig || "none") + " for " + exact + ")",
+  pubFig === exact);
+check("D2: the curator row prints the same figure (" + exact + ")", privFig === exact);
 
 // 3. Caps stay exact on the public page — they are size allocations, not
 // measures — so the max-award figure is IDENTICAL in both views and never
@@ -142,8 +128,8 @@ function alamedaCsvEarned(T) {
   return line.split(",")[iEarn];
 }
 const pubCsv = alamedaCsvEarned(B), privCsv = alamedaCsvEarned(P);
-check("D4: the public CSV earned column is <1000 or a multiple of 1000",
-  pubCsv === "<1000" || (/^\d+$/.test(pubCsv) && Number(pubCsv) % 1000 === 0));
+check("D4: the public CSV earned column is the same whole dollars as the curator CSV (" + pubCsv + ")",
+  /^\d+$/.test(pubCsv) && pubCsv === privCsv);
 // Demonstrated is what the measures show, the minimum conditions aside
 // (2026-09-29): the qualifying figure plus any part held.
 check("D4: the curator CSV Demonstrated column is the exact figure",

@@ -1220,9 +1220,8 @@ window.CPL_PAINT_EXPLAINER = function (D) {
             : "");
         el.appendChild(tl);
       }
-      // An institution's demonstrated dollars arrive coarsened to the nearest
-      // $1,000; under the floor `under` is set, and the line says "less than"
-      // and gives the floor's share as an upper bound.
+      // An institution's demonstrated dollars arrive exact, in whole dollars
+      // (Sam, 2026-11-24); `under` no longer sets.
       var pl = document.createElement("p"); pl.className = "aim prog";
       pl.textContent = pr.demonstrated == null
         ? "Progress: TBA."

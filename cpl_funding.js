@@ -1527,68 +1527,40 @@
     if (a >= 1e3) return "$" + parseFloat((v / 1e3).toFixed(1)) + "K";
     return "$" + Math.round(v);
   }
-  // PUBLIC-VIEW DOLLARS (Sam, 2026-09-03). Student COUNTS mask under 10 on the
-  // public page while the money computes on the true numbers, so a college's
-  // EARNED figures — the ones derived from measured units — are floored at
-  // "<$1,000" and rounded to the nearest $1,000 above it, the row's total
-  // included: subtracting visible measures then cannot recover a masked one.
-  // Units, FTES and dollars describe credit, never people; the coarsening is
-  // belt to the mask's suspenders. $0 stays $0 — "posted nothing" is a state
-  // the college needs to see, not a small amount. Caps, max awards, the base
-  // and the cap are size allocations, not measures, and stay exact. The
-  // curator view keeps exact dollars: this is a formatting rule (dollars are
-  // computed on the page), unlike the count mask, which is baked into the
-  // published artifact and applies wherever the artifact is read.
-  // The label is built from the constant, never typed: tests/suppression_floor
-  // fails on a quoted "<N" so a mask can never drift from its threshold.
-  var PUBLIC_MONEY_FLOOR = 1000;
-  // A FIGURE BESIDE ITS MAX (Cabrillo's question, 2026-11-17: a noncredit
-  // outcome at 37 exhibits against a target of 9 read "$18,000" under a max of
-  // "$18,336", and two credit priorities read "$66,000" under "$65,545"). The
-  // coarsening protects a figure the page does not otherwise show. A figure
-  // that has reached its cap IS the cap, which the page prints exactly beside
-  // it, so it prints exactly too; and a coarse figure short of its cap never
-  // rounds up past the cap's own thousand, so it can never read as more than
-  // the max or as a met target it has not met. `cap` is optional: a caller
-  // with no cap in hand keeps the plain rule.
+  // PUBLIC-VIEW DOLLARS ARE EXACT, IN WHOLE DOLLARS (Sam, 2026-11-24, reversing
+  // his 2026-09-03 coarsening): "The qualified so far doesn't need to round to
+  // the nearest 1000 for privacy...since we are showing the exact number on the
+  // max funding side. they should match. there is no possibility someone could
+  // deduce an individual at a college based on the funding allocation since
+  // there is no connection to the type of cpl either applicable or transcribed
+  // and we don't show the number of students who qualify for either. the ftes
+  // could be any combination of student numbers." Funds Qualified So Far prints
+  // the same whole dollars as Max Funds, on every page and in the CSV. The
+  // count mask under 10 is a separate rule and stays. $0 stays $0, and a
+  // figure at its cap prints the cap.
   function atCap(v, cap) {
     var c = Number(cap) || 0;
     return c > 0 && (Number(v) || 0) >= c - 0.5;
   }
-  function coarseDollars(v, cap) {
-    if (atCap(v, cap)) return Number(cap);
-    var r = Math.round(v / PUBLIC_MONEY_FLOOR) * PUBLIC_MONEY_FLOOR, c = Number(cap) || 0;
-    return c > 0 ? Math.min(r, Math.floor(c / PUBLIC_MONEY_FLOOR) * PUBLIC_MONEY_FLOOR) : r;
+  function wholeDollars(v, cap) {
+    if (atCap(v, cap)) return Math.round(Number(cap));
+    return Math.round(Number(v) || 0);
   }
   function earnedMoney(v, cap) {
     if (v == null) return "—";
-    if (!publicMode()) return fmtMoney(v);
-    var a = Math.abs(Number(v) || 0);
-    if (a < 0.5) return "$0";
-    if (atCap(a, cap)) return fmtMoney(cap);
-    if (a < PUBLIC_MONEY_FLOOR) return "<" + fmtMoney(PUBLIC_MONEY_FLOOR);
-    return fmtMoney(coarseDollars(v, cap));
+    if (Math.abs(Number(v) || 0) < 0.5) return "$0";
+    return fmtMoney(wholeDollars(v, cap));
   }
-  // The same public rule as words for a sentence, in every mode: the My CPL
-  // Funding block is college-facing wherever it renders (Sam's card 8,
-  // 2026-10-01: "Current outcomes demonstrate $71,000 funding").
+  // The same figure as words for a sentence (My CPL Funding, 2026-10-01).
   function publicDollarWords(v, cap) {
-    var a = Math.abs(Number(v) || 0);
-    if (a < 0.5) return "$0";
-    if (atCap(a, cap)) return fmtMoney(cap);
-    if (a < PUBLIC_MONEY_FLOOR) return "less than " + fmtMoney(PUBLIC_MONEY_FLOOR);
-    return fmtMoney(coarseDollars(v, cap));
+    if (Math.abs(Number(v) || 0) < 0.5) return "$0";
+    return fmtMoney(wholeDollars(v, cap));
   }
-  // The CSV twin: a number, or the same label, so the export never carries a
-  // figure the screen withholds (scope, not shape).
+  // The CSV twin: the same whole dollars the screen shows.
   function earnedCsv(v, cap) {
     if (v == null) return "";
-    if (!publicMode()) return Math.round(v);
-    var a = Math.abs(Number(v) || 0);
-    if (a < 0.5) return 0;
-    if (atCap(a, cap)) return Math.round(cap);
-    if (a < PUBLIC_MONEY_FLOOR) return "<" + PUBLIC_MONEY_FLOOR;
-    return coarseDollars(v, cap);
+    if (Math.abs(Number(v) || 0) < 0.5) return 0;
+    return wholeDollars(v, cap);
   }
   // NONCREDIT targets are order 1–25 CPL FTES, and at that scale fmtCountK's
   // integer rounding stops being a compaction and becomes a misstatement: 1.4
@@ -7993,22 +7965,12 @@
     // them carry the figure a gray cell shows and its gray part.
     var curHead = ["Credit funds qualified so far " + windowLabel(), "Noncredit funds qualified so far " + windowLabel(),
       "Funds qualified so far " + windowLabel(), "Funds qualified so far as % of max award"];
-    // THE PERCENTAGE READS THE FIGURE BESIDE IT (2026-09-29, funding NEXT ⓪f).
-    // The max award is exact and public, so a percentage of the EXACT current
-    // total hands back what the $1,000 rule withholds: 98.1% of $150,000 sat
-    // beside a coarse $147,000 and recovered $147,097 to within $75. On the
-    // public page the share comes from the coarse figure, and under the floor
-    // it reads the floor's own share as an upper bound.
+    // The percentage of the max award the exact figure beside it reaches
+    // (public dollars are exact since Sam, 2026-11-24).
     function curPct(row) {
       if (!(row.total > 0)) return "";
       var v = row.earned_total || 0;
-      if (publicMode()) {
-        var a = Math.abs(v);
-        if (a < 0.5) return "0%";
-        if (atCap(a, row.total)) return "100%";
-        if (a < PUBLIC_MONEY_FLOOR) return "<" + Math.ceil(PUBLIC_MONEY_FLOOR / row.total * 1000) / 10 + "%";
-        v = coarseDollars(v, row.total);
-      }
+      if (atCap(v, row.total)) return "100%";
       return Math.round(v / row.total * 1000) / 10 + "%";
     }
     function curCells(row) {
@@ -12276,8 +12238,8 @@
     var unitWord = cal.quarter && cal.semester ? "" : (cal.quarter ? "quarter" : "semester");
     var prios = ps.map(function (p, i) {
       var f = tot[i], ftes = prioIsFtes(p), cap = f.cap || 0;
-      var a = Math.abs(f.earned), under = a >= 0.5 && a < PUBLIC_MONEY_FLOOR && !atCap(a, cap);
-      var shown = a < 0.5 ? 0 : atCap(a, cap) ? cap : (under ? PUBLIC_MONEY_FLOOR : coarseDollars(f.earned, cap));
+      var a = Math.abs(f.earned), under = false;
+      var shown = a < 0.5 ? 0 : wholeDollars(f.earned, cap);
       return { label: p.label, title: p.title || "", ftes: ftes, target: f.crTarget + f.ncTarget,
                units: ftes ? units[i] : null, unitWord: unitWord,
                factor: prioFactor(p), price: prioPrice(p), rate: ftesRate(),
@@ -12289,8 +12251,8 @@
     // targets added up, TBA while every member's denominator is still to come.
     var ncPrios = totNc.map(function (f, i) {
       var p = ncPs[i], cap = f.ncCap || 0;
-      var a = Math.abs(f.ncEarned), under = a >= 0.5 && a < PUBLIC_MONEY_FLOOR && !atCap(a, cap);
-      var shown = a < 0.5 ? 0 : atCap(a, cap) ? cap : (under ? PUBLIC_MONEY_FLOOR : coarseDollars(f.ncEarned, cap));
+      var a = Math.abs(f.ncEarned), under = false;
+      var shown = a < 0.5 ? 0 : wholeDollars(f.ncEarned, cap);
       var pending = sc.rows.every(function (col) { return !(instSplit(col).nc > 0) || countTargetPending(col, p); });
       return { label: p.label, title: p.title || "", count: true, unitWord: ncUnitWord(p, 2),
                target: pending ? null : f.ncTarget, rule: countTargetWords(null, p), metric: p.metric || "",
@@ -13561,17 +13523,11 @@
   // award cell", and suites read the award pair by it. The figure is the RELEASED one (cellFig — $0 while an
   // institution has yet to meet its minimum conditions), the same figure the
   // Statewide row, the district subtotals and both drill-ins add up.
-  // earnedMoney() coarsens it on the public page; the cap stays exact.
+  // earnedMoney() prints it in whole dollars, as Max Funds is printed.
   var CURR_FIELD = { cr_current: "earned_cr", nc_current: "earned_nc", current_total: "earned_total" };
-  // The sort key of a Curr figure: exact for a curator, and on the public page
-  // the coarse figure the cell shows, so the order reveals nothing more.
+  // The sort key of a Curr figure: the exact figure, on every page (2026-11-24).
   function curSortVal(v, cap) {
-    if (!publicMode()) return v;
-    var a = Math.abs(Number(v) || 0);
-    if (a < 0.5) return 0;
-    if (atCap(a, cap)) return Number(cap);
-    if (a < PUBLIC_MONEY_FLOOR) return PUBLIC_MONEY_FLOOR / 2;
-    return coarseDollars(v, cap);
+    return Number(v) || 0;
   }
   // The cap a Curr column's figure sits under, for curSortVal and earnedMoney.
   var CURR_CAP = { earned_cr: "cr_award", earned_nc: "nc_award", earned_total: "total" };
@@ -13852,9 +13808,9 @@
   // divided the two would teach the wrong rule. The ratio is read off the two
   // figures the model produced, never assumed.
   //
-  // ⚠️ PUBLIC PAGES STOP AT THE UNITS. The public page shows qualifying funding
-  // to the nearest $1,000 (the ADR), so its hover never multiplies a fraction
-  // by an exact cap: that product is the exact figure the rounding withholds.
+  // PUBLIC PAGES STOP AT THE UNITS. Written when the public page rounded
+  // qualifying funding to the nearest $1,000; the figure is exact there since
+  // 2026-11-24, and the public hover keeps its shorter form.
   // 19,020 · 196.5 · 30 · 45: one decimal only where there is one.
   function fmtTrim1(v) { var n = Number(v) || 0; return Math.round(n * 10) % 10 ? fmtNum1(n) : fmtInt(n); }
   // "30 units per FTES (525 contact hours ÷ 17.5 per semester unit)". The
@@ -14331,18 +14287,12 @@
     // header band over nothing.
     return body || outRows || reported ? head + body + outRows + reported : "";
   }
-  // Max Funds less Actual Funds, as hover text, printed so that it never
-  // undoes the public coarsening of Actual Funds (the ADR: demonstrated figures
-  // coarsen to the nearest $1,000 on the public page, caps stay exact). An
-  // exact difference beside an exact cap would hand back the exact
-  // demonstrated figure by subtraction, so the public page subtracts the
-  // COARSE figure it shows. Plain text: the caller escapes it.
+  // Max Funds less Actual Funds, as hover text, in whole dollars: the two
+  // figures it subtracts as each is printed. Plain text: the caller escapes it.
   function diffMoney(max, actual) {
     var m = Number(max) || 0, a = Number(actual) || 0;
-    if (!publicMode() || Math.abs(a) < 0.5) return fmtMoney(Math.max(0, m - a));
     if (atCap(a, m)) return fmtMoney(0);
-    if (Math.abs(a) < PUBLIC_MONEY_FLOOR) return ">" + fmtMoney(Math.max(0, m - PUBLIC_MONEY_FLOOR));
-    return fmtMoney(Math.max(0, m - coarseDollars(a, m)));
+    return fmtMoney(Math.max(0, Math.round(m) - Math.round(a)));
   }
   // The detail line for each reported card a curator switched on (2026-09-23).
   function reportedDetailRows(slot, statewide) {
@@ -17512,12 +17462,8 @@
       var m = /^Source:\s*(.+?):\s*(https?:\S+)\s*$/.exec(String(f));
       if (m) parts.push(link(m[2], esc(m[1])));
     });
-    // The public page names its dollar rule too (the CSM team's test, 2026-10-29:
-    // a college's public figure read $149,000 where the curator view read
-    // $149,426). The rule is the ADR's (PUBLIC_MONEY_FLOOR); the line says it.
-    var money = publicMode() ? '<div class="cplfund-foot-money">On this page, Funds Qualified So Far rounds to the nearest ' +
-      fmtMoney(PUBLIC_MONEY_FLOOR) + ", and a figure under " + fmtMoney(PUBLIC_MONEY_FLOOR) + " reads &lt;" + fmtMoney(PUBLIC_MONEY_FLOOR) +
-      ", so no small count of students can be worked out from it. Max awards are exact.</div>" : "";
+    // No dollar-rule line (Sam, 2026-11-24): every figure on the page is exact.
+    var money = "";
     return '<div class="cplfund-foot"><div>Sources: ' + parts.join(" &middot; ") + ".</div>" + money + "</div>";
   }
 

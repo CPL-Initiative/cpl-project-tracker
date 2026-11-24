@@ -48,7 +48,7 @@ function openCollege(window, doc, name) {
   return row ? openDrill(window, doc, row.getAttribute("data-id")) : drillOf(doc, null);
 }
 function openSystem(window, doc) { return openDrill(window, doc, "sys"); }
-// A money figure: "$1,234", "$0", or the public floor "<$1,000". NEVER a bare
+// A money figure: "$1,234" or "$0" (a ">$" hover form is allowed). NEVER a bare
 // number and never a unit figure ("8.0 FTES" / "156 stu") — which is exactly
 // what lands under a header when a row is one cell short.
 const MONEY = /^(\$[\d,]+|<\$[\d,]+|>\$[\d,]+)$/;

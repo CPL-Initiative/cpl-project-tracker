@@ -57,19 +57,20 @@ The package he approved:
 4. **Complementary masking.** When exactly one college is masked for a metric,
    the smallest visible college is masked too (`_complementary`), so the hidden
    count cannot be read off the statewide figure by subtraction. Counts only.
-5. **Dollars coarsen on the public page.** A college's figures are floored at
-   "<$1,000" and rounded to the nearest $1,000 above it, row totals included,
-   so subtracting visible measures cannot recover a masked one. $0 stays $0
-   ("posted nothing" is a state, not a small amount). The curator view keeps
-   exact dollars: this is a formatting rule, since dollars are computed on the
-   page.
-   **Beside its max (2026-11-17, Cabrillo College's question; COBIx's privacy read
-   found no new exposure; Sam's go on #3471, 2026-11-17).** A figure that has reached its cap
-   prints the cap exactly, because the page already prints that cap beside it
-   and the figure discloses nothing more; and a coarse figure short of its cap
-   never rounds past the cap's own thousand. Before this, a noncredit outcome
-   at 37 exhibits against a target of 9 read "$18,000" under a max of
-   "$18,336", and two credit priorities read "$66,000" under "$65,545". Guard:
+5. **Dollars are exact on every page (Sam, 2026-11-24, superseding the
+   2026-09-03 coarsening).** Funds Qualified So Far prints the same whole
+   dollars as Max Funds, on the public page, the curator view and the CSV. His
+   words: *"The qualified so far doesn't need to round to the nearest 1000 for
+   privacy...since we are showing the exact number on the max funding side.
+   they should match. there is no possibility someone could deduce an
+   individual at a college based on the funding allocation since there is no
+   connection to the type of cpl either applicable or transcribed and we don't
+   show the number of students who qualify for either. the ftes could be any
+   combination of student numbers."* The count mask (decisions 1 to 4) is
+   unchanged. $0 stays $0, and a figure at its cap prints the cap. The
+   $1,000 rule it replaces, with its 2026-11-17 beside-the-max refinement
+   (Cabrillo College's question, #3471), read a met $18,336 outcome as $18,000
+   until that fix. Guards: `tests/cpl_funding_public_dollars.test.js`,
    `tests/cpl_funding_public_dollars_at_cap.test.js`.
 6. **The rate and the explanations stay public.** What dollars deconstruct to
    is units, never students; the rate is derivable from figures public by
