@@ -1,6 +1,6 @@
 -- S720Q lane 2's cheap piles at College of the Sequoias (named gaps 7). Each row's checks become the
 -- college load's image of its committed record (load_rows): checks.gaps and checks.confidence added; the
--- record unchanged. Receipt: kb/receipts/program_requirement_records_piles_sequoias_2026-11-24_s720q.json (before_image per row).
+-- record unchanged. Receipt: kb/receipts/program_requirement_records_piles_s720_sequoias_2026-11-24_s720q.json (before_image per row).
 -- Compact pre-read, read-only: one SELECT, one JSON value; md5 of each image's jsonb text
 -- (the full before-values, the fallback where a hash does not match, are in ..._preread.sql).
 with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values

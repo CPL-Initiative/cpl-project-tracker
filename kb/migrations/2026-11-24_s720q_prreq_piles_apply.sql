@@ -1,6 +1,6 @@
 -- S720Q lane 2's cheap piles at College of the Sequoias (named gaps 7). Each row's checks become the
 -- college load's image of its committed record (load_rows): checks.gaps and checks.confidence added; the
--- record unchanged. Receipt: kb/receipts/program_requirement_records_piles_sequoias_2026-11-24_s720q.json (before_image per row).
+-- record unchanged. Receipt: kb/receipts/program_requirement_records_piles_s720_sequoias_2026-11-24_s720q.json (before_image per row).
 -- Guarded UPDATE: only where the row holds the filed run, the before-image's record and checks,
 -- and no person's check. It aborts, writing nothing, unless it matches the plan's 7 rows less
 -- those a person checked (listed as skipped_checked), or a row holds a matching confirm.

@@ -1,6 +1,6 @@
 {
  "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S720: College of the Sequoias' 9 records S714 held, collected with their gaps named (no reread)",
- "at": "2026-11-24T07:01:49Z",
+ "at": "2026-11-24T07:09:15Z",
  "college": "College of the Sequoias",
  "census": {
   "file": "kb/status/harvest_gap_census.json",
@@ -2037,6 +2037,7 @@
    "i": 7
   }
  ],
+ "shared_pages": {},
  "representation": "checks.gaps and checks.confidence added as the load reads the filed score; checks.arithmetic, coverage, invented and the record unchanged",
  "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found. The capture keeps no page text, so a note's quoted figures are the reader's words, never re-read here.",
  "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",

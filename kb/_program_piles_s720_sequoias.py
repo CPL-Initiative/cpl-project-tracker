@@ -142,6 +142,21 @@ def repeats_close(filed: dict, e: dict) -> bool:
     return all(abs(c + extra - s) <= NG.FIG_EPS for c, s in zip(comp, st))
 
 
+def scorer_passes(filed: dict) -> bool:
+    """Today's scorer passes the record's own arithmetic (S.score with no closed list and no text, so no electives
+    fill): such a record is rescored, never gap-filed (#3753's second reader, MAJOR)."""
+    a = S.score(filed.get("record") or {}, [], "", filed.get("award")).get("arithmetic") or {}
+    return a.get("status") == "equal"
+
+
+def shared_with(cn: str) -> list[str]:
+    """The other programs capture.json's shared_pages lists on the record's page (#3753's second reader, BLOCKER:
+    reported in the receipt; a PDF page holds several sections, so a shared page alone holds no record here)."""
+    with open(os.path.join(NG.COLLEGE_DIR, SLUG, "capture.json"), encoding="utf-8") as fh:
+        sp = json.load(fh).get("shared_pages") or {}
+    return sorted({str(m) for v in sp.values() if str(cn) in [str(x) for x in v] for m in v if str(m) != str(cn)})
+
+
 def gap_noted(filed: dict, reviewed: dict | None = None) -> tuple[str, str] | None:
     """(gap, words) where a reviewed entry stands on the record as it is filed; else None."""
     e = (REVIEWED if reviewed is None else reviewed).get(str(filed.get("control_number")))
@@ -153,6 +168,8 @@ def gap_noted(filed: dict, reviewed: dict | None = None) -> tuple[str, str] | No
     if not words or not NG.collectable(sc) or a.get("pass") or S.passes_live(sc):
         return None
     if not _same(a.get("computed"), e["computed"]) or not _same(a.get("stated"), e["stated"]):
+        return None
+    if scorer_passes(filed):
         return None
     if e.get("repeats") and not repeats_close(filed, e):
         return None
@@ -337,13 +354,15 @@ def main(argv=None) -> int:
     rows = res["rows"]
     stamp = time.gmtime()
     day = time.strftime("%Y-%m-%d", stamp)
-    path = os.path.join(NG.RECEIPTS, "program_requirement_records_piles_sequoias_%s_%s.json" % (day, a.tag))
+    path = os.path.join(NG.RECEIPTS, "program_requirement_records_piles_s720_sequoias_%s_%s.json" % (day, a.tag))
     body = {"rule": NG.RULING + "; S720: College of the Sequoias' 9 records S714 held, collected with their gaps named (no reread)",
             "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", stamp), "college": COLLEGE,
             "census": {"file": os.path.relpath(CENSUS, ROOT), "levers": list(LEVERS), "person": list(PERSON),
                        "members": census_members()},
             "gaps": {g: NG.GAPS[g] for g in sorted(by)}, "moved": len(rows), "by": by,
             "precision": pr, "claim_checks": cc, "boundaries": bd, "held": res["held"], "records": rows,
+            "shared_pages": {r["control_number"]: shared_with(r["control_number"]) for r in rows
+                             if shared_with(r["control_number"])},
             "representation": "checks.gaps and checks.confidence added as the load reads the filed score; "
                               "checks.arithmetic, coverage, invented and the record unchanged",
             "claim_check_reads": ("Today's capture (sources.json): every course an entry names among the codes it "

@@ -20,7 +20,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CENSUS_AT_PLAN = os.path.join(ROOT, "tests", "fixtures", "harvest_gap_census_s720_sequoias.json")
-RECEIPT = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_sequoias_2026-11-24_s720q.json")
+RECEIPT = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_s720_sequoias_2026-11-24_s720q.json")
 MIG = os.path.join(ROOT, "kb", "migrations", "2026-11-24_s720q_prreq_piles_%s.sql")
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _program_named_gaps as NG  # noqa: E402
@@ -80,6 +80,7 @@ for r in rec["records"]:
     check(img["checks"].get("gaps") == [r["moves_to"]], "%s: the image carries its one gap" % r["control_number"])
     check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
 
+check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the rows")
 # The new kinds' arithmetic: the double count and the prerequisites, each one unit off, name no gap.
 f = W._load("36073")
 check(W.gap_noted(f, dict(W.REVIEWED, **{"36073": dict(W.REVIEWED["36073"], double=1)})) is None,

@@ -1,6 +1,6 @@
 -- S720Q lane 2's cheap piles at College of the Sequoias (named gaps 7). Each row's checks become the
 -- college load's image of its committed record (load_rows): checks.gaps and checks.confidence added; the
--- record unchanged. Receipt: kb/receipts/program_requirement_records_piles_sequoias_2026-11-24_s720q.json (before_image per row).
+-- record unchanged. Receipt: kb/receipts/program_requirement_records_piles_s720_sequoias_2026-11-24_s720q.json (before_image per row).
 -- Rollback, NOT applied: the before-image's checks back where the row still holds the
 -- after-image, skipping and listing a row a person checked. A rollback lasts only until the
 -- next load of that college: revert the record files too (git revert of this plan's commit).
