@@ -117,7 +117,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "degree_within_map_range",
+    "label": "The degree total is the range the page's sample term map prints; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end, so no figure on the page settles what the degree requires.",
+    "words": "degree_total 60-66 is taken from the Map (Butte GE) sample plan, which prints 'Units: 60.00- 66.00' and 'Total : 60.00- 66.00'; the page prints no separate total for the GE pattern."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

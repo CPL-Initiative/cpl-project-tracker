@@ -221,6 +221,14 @@ for _g, _s, _a in (
     GAPS.setdefault(_g, _s)
     ARITH_SCORE.setdefault(_g, _a)
 del _g, _s, _a
+# S721 at Butte (kb/_program_piles_s721_butte.py): a degree whose major adds up and whose degree total is the range a
+# sample term map prints, with the degree's units as read strictly inside it. No existing kind fits
+# (hours_within_printed_range names a program measured in hours); its score is that kind's 50.
+GAPS.setdefault("degree_within_map_range",
+                "The degree total is the range the page's sample term map prints; the major adds up to its printed "
+                "major total, and the degree's units as read fall inside the map's range and match neither end, so "
+                "no figure on the page settles what the degree requires.")
+ARITH_SCORE.setdefault("degree_within_map_range", 50)
 
 
 # ── confidence ─────────────────────────────────────────────────────────────

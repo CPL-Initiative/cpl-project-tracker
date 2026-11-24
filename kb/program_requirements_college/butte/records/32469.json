@@ -117,7 +117,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "degree_within_map_range",
+    "label": "The degree total is the range the page's sample term map prints; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end, so no figure on the page settles what the degree requires.",
+    "words": "degree_total 60-71 is taken from the Cal-GETC map ('Units: 60.00- 71.00', 'Total : 60.00- 71.00'); the page prints no single total for Cal-GETC units, only per-area choices, so ge_units is null."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
