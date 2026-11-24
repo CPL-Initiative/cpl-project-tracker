@@ -81,7 +81,10 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
   check("the Credit Recommendations card links to #cr-reference and does not embed it", d.querySelector('.cmf-card[data-key="cr"] .cmf-links a[href="#cr-reference"]') && !d.querySelector("#tab-commons script[src*=cr_reference]"));
   check("Name-check groups is linked once, in the link row", Array.from(d.querySelectorAll('a[href="#cr-reference/names"]')).length === 1);
   check("Interconnectivity keeps an empty, reserved link row", d.querySelector('.cmf-card[data-key="interconnect"] .cmf-links') && !d.querySelector('.cmf-card[data-key="interconnect"] .cmf-links a'));
-  check("the Backfill fix links to its issue, not the doubt list", /issues\/3447$/.test((d.querySelector('.cmf-card[data-key="courses"] .cmf-more-body a[href*="3447"]') || {}).href || ""));
+  /* S723: the five "ruled" cards held no ruling (Sam: "I don't remember anything about those rulings..."), so the card
+     no longer points at a Backfill fix; the doubt list is a check of its own. */
+  check("the Courses and M-IDs card claims no Backfill fix, and carries the doubt list as a check", !/Backfill fix|already ruled/.test(txt(d.querySelector('.cmf-card[data-key="courses"]')))
+    && !!d.querySelector('.cmf-card[data-key="courses"] .cmf-check[data-ref="doubt"] .cmf-act a[href="#coci-lookup/list/doubt"]'));
 
   // (1) one model, figures agree
   const PR = FILES["kb/status/program-requirements.json"].headline.filter((r) => typeof r.complete === "number");

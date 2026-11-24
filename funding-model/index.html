@@ -155,6 +155,9 @@ a:hover{text-decoration-thickness:2px}
 .title-accent{width:66px; height:4px; margin:16px 0 14px; background:var(--mustard-fill)}
 .ver{margin:0; font-size:.8rem; color:var(--text-muted); white-space:nowrap; font-variant-numeric:tabular-nums}
 .ver abbr{text-decoration:none}
+/* The As of label sits on the Resource Links words' baseline (Sam, 2026-11-24): one baseline, one line box. */
+.cplh-end{align-items:baseline}
+.cplh-end > .ver{display:inline-flex; align-items:center; min-height:24px; line-height:1.2; padding:2px 0; box-sizing:border-box}
 .mh-row{margin-top:0}
 .mh-actions{display:flex; flex-wrap:wrap; align-items:center; gap:4px 22px}
 .mh-actions .btn, .mh-actions .btn.primary, .cplh-links .btn{
@@ -482,6 +485,13 @@ section[hidden], #contents[hidden]{display:none}
     <a class="cplh-logo" href="https://www.cccco.edu/about-us/chancellors-office/divisions/educational-services-and-support/credit-for-prior-learning/" target="_blank" rel="noopener">
       <img src="../sierra/cpl-initiative-logo-navy.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="1115" height="209">
     </a>
+    <!-- SIMPLE VIEW (Sam, 2026-11-24): the switch, centered in the header row, on its
+         own line on a phone. Hidden until simple_view.js shows it to a signed-in
+         team member, or to every reader once the funding tab's Simple view on the
+         public page setting is on. On by default; never remembered. -->
+    <div class="sv-center" id="svCenter" hidden>
+      <button type="button" id="simpleBtn" aria-pressed="true"><span class="sv-track" aria-hidden="true"><span class="sv-knob"></span></span>Simple view <span class="sv-onoff" id="simpleOnOff">On</span></button>
+    </div>
     <div class="cplh-end">
       <!-- The version (Sam, 2026-10-21: "As of: 10/21/2026 Ver. 3"), the last
            save's date and the scenario's number, painted from the live config.
@@ -509,7 +519,7 @@ section[hidden], #contents[hidden]{display:none}
         <!-- PDF (Sam, 2026-09-15) prints THIS page: every figure is computed
              live, so a committed PDF would be stale the first time a dial moved.
              The print stylesheet opens every fold and drops the controls. -->
-        <button type="button" class="btn" id="pdf-btn" aria-describedby="pdf-note">PDF</button>
+        <button type="button" class="btn" id="pdf-btn">PDF</button>
         <button type="button" class="btn" id="btn-collapse-all" aria-controls="start">Collapse all</button>
       </div>
     </div>
@@ -541,9 +551,14 @@ section[hidden], #contents[hidden]{display:none}
     <div class="mh-text">
       <h1 id="page-title">2026-2028 CPL Initiative Funding</h1>
       <div class="title-accent" aria-hidden="true"></div>
+      <!-- THE COUNT CARDS (Sam, 2026-11-24), in place of the gold rule wherever the
+           Simple view package shows: simple_view.js paints them from the funding
+           module's own condition logic (CPL_FUNDING_TAB.condCards). -->
+      <div class="sv-cards" id="svCards" role="group" aria-label="Minimum conditions at a glance" hidden></div>
     </div>
   </div>
 </section>
+<p class="wrap sv-line" id="simpleLine" hidden>For more details, turn Simple view off.</p>
 
 <!-- STEP 1: CHOOSE YOUR COLLEGE (Sam, 2026-10-15: "Make the College selector
      more prominent so folks see that it is an important first step"). The
@@ -601,9 +616,6 @@ section[hidden], #contents[hidden]{display:none}
         title="For help configuring your landing page, the MAP team recommends its office hours.">Find your college&rsquo;s CPL landing page</a></li>
       <li class="toc-tail"><a id="training-link" data-plink="training" href="../prototype/landing_page_video/">Watch the training video on configuring a landing page</a></li>
     </ul>
-    <p class="toc-note" id="pdf-note">PDF prints the whole page in landscape, your college first; it asks you to
-      choose a college when none is chosen. Choose &ldquo;Save as PDF&rdquo; in the print dialog. The file holds the
-      figures as they stand the day you save it.</p>
   </div>
 </nav>
 
@@ -1093,6 +1105,17 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     } else if (D.model_version) {
       var vm = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(D.model_version));
       asOf = vm ? (+vm[2]) + "/" + (+vm[3]) + "/" + vm[1] : String(D.model_version);
+    }
+    // Where the Simple view package shows (Sam, 2026-11-24): "As of" the later of the
+    // last save and the page's version date, and Ver. the page's version, 2, in place
+    // of the scenario's number.
+    var TV = window.CPL_FUNDING_TAB;
+    if (TV && typeof TV.simplePackageShown === "function" && TV.simplePackageShown()) {
+      var PAGE_VER = "2", PAGE_VER_AT = Date.parse("2026-11-24T08:00:00Z");   // midnight Pacific, 11/24/2026
+      if (!(t && !isNaN(t.getTime()) && t.getTime() > PAGE_VER_AT)) asOf = "11/24/2026";
+      setText("x-version", asOf);
+      setText("x-scenario-no", PAGE_VER);
+      return;
     }
     if (asOf) setText("x-version", asOf);
     if (D.scenario) {
@@ -1884,6 +1907,8 @@ window.CPL_SIERRA_SUGGESTED = [
       var h = sec.querySelector("h2");
       if (!h) return;
       var li = document.createElement("li"), a = document.createElement("a");
+      // Which section the item opens, for Simple view's hiding (simple_view.js).
+      li.setAttribute("data-sec", sec.id);
       a.href = "#" + sec.id;
       a.textContent = h.textContent.replace(/\s+/g, " ").trim();
       li.appendChild(a);
@@ -1998,6 +2023,8 @@ window.CPL_SIERRA_SUGGESTED = [
       var memoLi = document.getElementById("memo-link");
       var tabled = typeof T._docStatus === "function" && T._docStatus("memo") === "tabled";
       if (memoLi && memoLi.parentNode) memoLi.parentNode.hidden = tabled;
+      // Simple view (simple_view.js) follows each paint: who sees it, the cards, the label.
+      if (window.CPL_SIMPLE_VIEW && typeof window.CPL_SIMPLE_VIEW.sync === "function") window.CPL_SIMPLE_VIEW.sync();
       painted = true;
       document.documentElement.classList.remove("cplfund-holding");
       if (status) status.textContent = "";
@@ -2073,6 +2100,9 @@ window.CPL_SIERRA_SUGGESTED = [
 <!-- EDIT THIS PAGE (Sam, 2026-10-15, call 1): a signed-in curator arranges and
      edits this page in place. After the page's own script, so it repaints on
      top of the page's paint. Nothing of it reaches a reader who cannot curate. -->
+<!-- SIMPLE VIEW (Sam, 2026-11-24): the switch, the cards, the hiding and the folds.
+     After the page's script, so it follows the page's paint. -->
+<script src="simple_view.js"></script>
 <script src="edit_page.js"></script>
 </body>
 </html>

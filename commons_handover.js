@@ -51,7 +51,7 @@
     xls: "application/vnd.ms-excel", xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     doc: "application/msword", docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document" };
   var TAKES = "a PDF, a saved web page, a text file, a CSV, a spreadsheet, a Word file or a zip";
-  var SEND = "Send the PDF to COBIx in your Grok Bot chat.";
+  var SEND = "Send the PDF to COBI in your Grok Bot chat.";
   var POLL = { every: 15000, tries: 16 };   /* four minutes: a runner starts in about one */
 
   /* The words each dataset's box uses. Every Commons dataset has an entry, so the same box serves each of them. */

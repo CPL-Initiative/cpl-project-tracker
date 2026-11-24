@@ -571,6 +571,9 @@
     // condition, and the dialog they open, drawn like the PDF prompt.
     ".cplfund-howto-w { font: inherit; font-size: .92em; font-weight: 600; color: var(--seal-blue-text, var(--cobalt)); background: none; border: 0; padding: 0 2px; margin-left: .35em; min-height: 24px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }",
     ".cplfund-howto-w:focus-visible { outline: 3px solid var(--gold-accent); outline-offset: 2px; border-radius: 2px; }",
+    // The line over the table while a count card holds (Sam, 2026-11-24).
+    ".cplfund-cardfilt { margin: 0 0 10px; font-size: .95rem; color: var(--text-strong); max-width: var(--cpl-measure, none); }",
+    ".cplfund-cardfilt .cplfund-howto-w { margin-left: .2em; }",
     ".cplfund-howto { border: 1px solid var(--border-strong); border-radius: 8px; padding: 0; width: min(92vw, 680px); max-width: min(92vw, 680px); background: var(--surface-opaque); color: var(--text-body); }",
     ".cplfund-howto-in { padding: 20px 22px; display: grid; gap: 12px; }",
     ".cplfund-howto h2 { margin: 0; font-size: 1.3rem; color: var(--text-strong); }",
@@ -5327,6 +5330,18 @@
     if (!Object.keys(ov.pubLinks).length) delete ov.pubLinks;
     persistActive();
   }
+  // ── SIMPLE VIEW ON THE PUBLIC PAGE (Sam, 2026-11-24) ───────────────────
+  // funding-model/ carries a Simple view switch, the count cards under its title,
+  // How to meet it beside each unmet condition and the Ver. 2 label. The team tests
+  // it signed in first; everyone else sees it once a curator turns this setting on
+  // in the Internal view (default off). The same layers as every other curator
+  // setting, so it saves with the scenario and travels with Publish.
+  function simpleViewLive() { return !!firstDefined(SCENARIO.simpleViewLive, SHARED.simpleViewLive); }
+  function setSimpleViewLive(v) { activeOverride().simpleViewLive = !!v; persistActive(); }
+  // Who sees the package: a signed-in team member (reviewing(), the session the
+  // page's Edit this page builds on), or every reader once the setting is on.
+  function simplePackageShown() { return reviewing() || simpleViewLive(); }
+  function howToWordsOn() { return publicMode() && simplePackageShown(); }
   function secHidden(id) {
     return !!firstDefined(SCENARIO.secHidden && SCENARIO.secHidden[id],
       SHARED.secHidden && SHARED.secHidden[id]);
@@ -5643,7 +5658,7 @@
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
     "cplFundScenSel", "cplFundScenNew", "cplFundScenDel", "cplFundScenPublish",
-    "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1", "cplFundAddPrio"];
+    "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1", "cplFundAddPrio", "cplFundSimpleLive"];
   // The review work's own controls: a door sign-in keeps these (the database gives them to is_funding_reviewer()).
   var REVIEW_ATTRS = ["data-note", "data-notesave",
     "data-optinconfirm", "data-optinrevoke", "data-optinremove",
@@ -7309,12 +7324,17 @@
       var vc = w.counts ? ' <span class="cf-cond-who cf-vetcount">' + esc(w.counts) + "</span>" : "";
       // The space between the two spans keeps them two phrases in any copy
       // that loses the stylesheet; the flex column ignores it on screen.
+      // How to meet it after an unmet condition (Sam, 2026-11-24), on the public page wherever its Simple view
+      // package shows; it opens the same dialog as the Eligibility section's words.
+      var how = !r.met && howToWordsOn() && HOW_BY_KIND[r.kind]
+        ? '<button type="button" class="cplfund-howto-w" data-condhowto="' + esc(r.kind) + '" data-condhowtoc="' +
+          esc(college) + '" aria-haspopup="dialog">How to meet it</button>' : "";
       return '<span class="cf-cond' + (r.met ? " cf-met" : "") + (w.star ? " cf-vet" : "") + '"' + tip + ">" +
         '<span class="cf-box" aria-hidden="true"></span>' +
         (who ? '<span class="cf-cond-txt"><span>' + esc(w.text) + "</span> " + who + "</span>"
              : "<span>" + esc(w.text) + "</span>") +
         (w.star ? '<span class="cplfund-vstar" role="img" aria-label="Veteran Star" title="Veteran Star">★</span>' : "") +
-        vc + "</span>";
+        vc + "</span>" + how;
     };
     var conds = eligReqList(college).map(one), items = conds.slice(1).join("");
     // The noncredit share's own conditions (Scenario 4), after the
@@ -12712,6 +12732,9 @@
     // The minimum-conditions filter on the institution table (Sam, 2026-11-02),
     // for the visit only, like the search (tabs never remember a filter).
     condFilter: "",
+    // Simple view on the public page (Sam, 2026-11-24): the page sets it; the
+    // table then renders flat. For the visit only.
+    simpleView: false,
     // The College Dashboard's view on a public rendering: "all" (the table) or
     // "one" (an institution's My CPL Funding block), and which institution.
     collegeView: "all", oneCollege: "",
@@ -13368,7 +13391,7 @@
   }
 
 
-  function grouped() { return state.group === "district"; }
+  function grouped() { return state.group === "district" && !state.simpleView; }
   // ── THE MINIMUM-CONDITIONS FILTER (Sam, 2026-11-02: "Add a filter to the
   //    college table to show colleges that have or have not met the 3
   //    conditions or attested to the NC lead") ─────────────────────────────
@@ -13385,9 +13408,96 @@
     { val: "nc_yes", label: "Noncredit CPL Lead attested", nc: true },
     { val: "nc_no", label: "Noncredit CPL Lead not yet attested", nc: true }
   ];
+  // ── THE COUNT CARDS (Sam, 2026-11-24) ──────────────────────────────────
+  // Five cards under the public page's title, each the count of institutions
+  // meeting one condition "of" those it applies to; a press filters the table to
+  // them through this filter. Every state reads the functions the pie and the
+  // Minimum Conditions line read (eligReqList, baselineGate, ncLaneGate,
+  // ncAttestShown, ncLeadAttested), so a card cannot disagree with a row.
+  // "All conditions met" counts every condition that applies to an institution:
+  // the three minimum conditions and, where its award carries a noncredit share,
+  // that share's own conditions.
+  var COND_CARDS = [
+    { key: "all", label: "All conditions met", phrase: "meet every condition that applies to them" },
+    { key: "part", label: "Confirmed participation", phrase: "have confirmed participation" },
+    { key: "coord", label: "CPL Coordinator on file", phrase: "have a CPL Coordinator on file" },
+    { key: "jst", label: "Veteran JSTs at", phrase: "have veteran JSTs at", star: true },
+    { key: "nc", label: "NC Lead attested", phrase: "have the Noncredit CPL Lead attested" }
+  ];
+  function cardPctWords() { return fmtPctTrim((perf() && perf().vet_star_threshold) || 0.75); }
+  function cardLabel(d) { return d.key === "jst" ? d.label + " " + cardPctWords() : d.label; }
+  function cardPhrase(d) { return d.key === "jst" ? d.phrase + " " + cardPctWords() : d.phrase; }
+  // One institution against one card: null where the condition does not apply,
+  // "pending" while its feed has not loaded (in neither list, never a false no),
+  // else whether it is met. `r` is a roster or table row.
+  function condCardState(key, r) {
+    var college = r.college;
+    if (key === "nc") {
+      if (!ncAttestShown(r)) return null;
+      if (!ELIG.ncAttestOk) return "pending";
+      return ncLeadAttested(college);
+    }
+    if (key === "all") {
+      var g = baselineGate(college);
+      if (g.pending) return "pending";
+      if (g.blocked) return false;
+      if (!r.nco && ncAttestShown(r)) {
+        var n = ncLaneGate(college);
+        if (n.pending) return "pending";
+        return !n.blocked;
+      }
+      return true;
+    }
+    var kind = key === "jst" ? "vetstar" : key, hit = null;
+    eligReqList(college).forEach(function (q) { if (q.kind === kind) hit = q; });
+    if (!hit) return null;
+    if (hit.pending || !ELIG.loaded) return "pending";
+    return !!hit.met;
+  }
+  function condCards() {
+    var roster = oneRoster();
+    return COND_CARDS.map(function (d) {
+      var n = 0, of = 0, waiting = 0, names = [];
+      roster.forEach(function (c) {
+        var st = condCardState(d.key, c);
+        if (st === null) return;
+        of++;
+        if (st === "pending") waiting++;
+        else if (st) { n++; names.push(dispName(c.college)); }
+      });
+      names.sort(function (a, b) { return a.localeCompare(b); });
+      // Every institution it applies to still loading: TBA, never a false zero.
+      return { key: d.key, filter: "c_" + d.key, label: cardLabel(d), phrase: cardPhrase(d), star: !!d.star,
+               n: of && waiting === of ? null : n, of: of, names: names };
+    });
+  }
+  function cardOfFilter(v) {
+    var k = /^c_(\w+)$/.exec(String(v || ""));
+    if (!k) return null;
+    for (var i = 0; i < COND_CARDS.length; i++) if (COND_CARDS[i].key === k[1]) return COND_CARDS[i];
+    return null;
+  }
+  // The page's API for the cards and the switch. A subscriber that calls one while
+  // render() notifies needs no second render: the table mounts after the notice.
+  function setCondFilter(v) {
+    v = String(v || "");
+    if (v && !cardOfFilter(v) && !COND_FILTERS.some(function (f) { return f.val === v; })) v = "";
+    state.condFilter = v;
+    if (!_notifying) render();
+  }
+  function setSimpleView(on) {
+    on = !!on;
+    if (state.simpleView === on) return;
+    state.simpleView = on;
+    if (!_notifying) render();
+  }
   function condFilterChoices() {
     var nc = ncOutcomesMode() && ncCoordShown();
-    return COND_FILTERS.filter(function (f) { return !f.nc || nc; });
+    var list = COND_FILTERS.filter(function (f) { return !f.nc || nc; });
+    // A pressed card is the filter's choice while it holds, so the menu says what the table shows.
+    var d = cardOfFilter(state.condFilter);
+    if (d) list = list.concat([{ val: "c_" + d.key, label: cardLabel(d) }]);
+    return list;
   }
   function condFilterOn() {
     var v = state.condFilter;
@@ -13399,6 +13509,8 @@
     return ncLeadInMap(college) || ncAttestStanding(att) || ncAttestPending(att);
   }
   function condFilterKeeps(r, v) {
+    var card = cardOfFilter(v);
+    if (card) return condCardState(card.key, r) === true;
     if (v === "met" || v === "unmet") {
       var g = baselineGate(r.college);
       if (g.pending) return false;
@@ -14714,7 +14826,11 @@
     }).join("") + "</colgroup>";
     // .cplfund-coltable carries the fixed layout, so the rule reaches this
     // table and no other that shares .cplfund-table (the grants table).
-    return colHideStyleHtml() + '<div class="cplfund-tablewrap cplfund-colwrap" role="region" aria-label="' + esc(caption) +
+    // A pressed count card (Sam, 2026-11-24) says what the table shows, and one word brings every row back.
+    var card = cardOfFilter(state.condFilter);
+    var cardLine = card ? '<p class="cplfund-cardfilt" id="cplFundCardFilt">Showing the institutions that ' +
+      esc(cardPhrase(card)) + '. <button type="button" class="cplfund-howto-w" id="cplFundCardAll">Show all institutions</button></p>' : "";
+    return cardLine + colHideStyleHtml() + '<div class="cplfund-tablewrap cplfund-colwrap" role="region" aria-label="' + esc(caption) +
       '" tabindex="0"><table class="cplfund-table cplfund-coltable" style="min-width:' + minPx + 'px">' +
       '<caption class="cplfund-sr-only">' + esc(caption) + "</caption>" + colgroup +
       "<thead><tr>" + head + "</tr></thead>" +
@@ -15026,7 +15142,7 @@
   // Segmented single-choice control. role=group + a label for screen readers,
   // aria-pressed on each button reflecting the active choice (a11y, 2026-07-28).
   var SEG_LABELS = {
-    cplFundView: "View by", cplFundGroup: "Grouping", cplFundYear: "Funding year",
+    cplFundView: "View by", cplFundGroup: "Grouping", cplFundSimpleLive: "Simple view on the public page", cplFundYear: "Funding year",
     cplFundCollegeView: "Show",
     cplFundDisb: "Disbursement timing",
     cplFundDocType: "Document type"
@@ -16228,8 +16344,13 @@
   // the ledger landed and its figures changed underneath it.
   var _subs = [];
   var _describers = [];
+  var _notifying = false;
   function notifyModel() {
-    _subs.forEach(function (fn) { try { fn(); } catch (e) { /* a subscriber must never break a load */ } });
+    var was = _notifying;
+    _notifying = true;
+    try {
+      _subs.forEach(function (fn) { try { fn(); } catch (e) { /* a subscriber must never break a load */ } });
+    } finally { _notifying = was; }
   }
 
   // ── THE FIGURES CPL FUNDING IN MOTION SHOWS (Sam, 2026-10-19) ────────────
@@ -17139,8 +17260,16 @@
       '<button type="button" class="cplfund-optbtn" data-viewmode="public" aria-pressed="' + (!!state.previewPublic) +
       '" title="The one public page, funding-model/, as colleges read it. Signed in, Edit this page on it arranges and edits it.">Public page</button>';
   }
+  // Simple view on the public page (Sam, 2026-11-24): off until a curator turns it
+  // on for every reader; the team sees it signed in either way. A curator setting,
+  // saved for everyone with the scenario.
+  function simpleLiveHtml() {
+    if (window.CPL_FUNDING_PUBLIC || publicMode() || !unlocked()) return "";
+    return '<span class="cplfund-viewlab">Simple view on the public page</span>' +
+      segHtml("cplFundSimpleLive", [{ val: "off", label: "Off" }, { val: "on", label: "On" }], simpleViewLive() ? "on" : "off");
+  }
   function actionsRowHtml() {
-    var view = viewControlHtml();
+    var view = viewControlHtml() + simpleLiveHtml();
     return '<div class="cplfund-actions" role="toolbar" aria-label="Page actions">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundXall">' +
         (anySectionOpenNow() ? "Collapse all sections" : "Expand all sections") + "</button>" +
@@ -17651,6 +17780,15 @@
         refreshTable();
       });
     });
+    // How to meet it beside an unmet condition, and Show all institutions under a pressed card (Sam, 2026-11-24).
+    holder.querySelectorAll("[data-condhowto]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        howToOpen(b.getAttribute("data-condhowto"), b.getAttribute("data-condhowtoc") || "", { surface: "funding", opener: b });
+      });
+    });
+    var cardAll = holder.querySelector("#cplFundCardAll");
+    if (cardAll) cardAll.addEventListener("click", function () { setCondFilter(""); });
     // Self-service opt-in form (public + private): open / cancel / submit. Clicks
     // inside the form stop propagation so the row doesn't collapse under them.
     holder.querySelectorAll("[data-optinbtn]").forEach(function (b) {
@@ -18270,8 +18408,10 @@
     var condSel = document.getElementById("cplFundCondFilter");
     if (condSel) {
       condSel.addEventListener("change", function () {
+        var wasCard = !!cardOfFilter(state.condFilter);
         state.condFilter = condSel.value || "";
-        refreshTable();
+        // Leaving a card's filter redraws through render(), so the page's pressed card lets go too.
+        if (wasCard) render(); else refreshTable();
       });
     }
     function wireSeg(id, apply) {
@@ -18290,6 +18430,11 @@
       if (v === state.group) return;
       state.group = v;
       render();
+    });
+    wireSeg("cplFundSimpleLive", function (v) {
+      if ((v === "on") === simpleViewLive()) return;
+      savingState = "";
+      setSimpleViewLive(v === "on");
     });
     wireSeg("cplFundCollegeView", function (v) {
       if (!publicMode() || v === (state.collegeView || "all")) return;
@@ -19306,6 +19451,11 @@
     // funding-model/). Every write goes through the layers the tab's editors
     // use, so the database's RLS decides what a save may do.
     canCurate: function () { return unlocked(); },
+    // SIMPLE VIEW on the public page (Sam, 2026-11-24): who sees the package, the
+    // count cards and their filter, and the flat table the switch asks for.
+    simplePackageShown: simplePackageShown, simpleViewLive: simpleViewLive, setSimpleViewLive: setSimpleViewLive,
+    simpleView: function () { return !!state.simpleView; }, setSimpleView: setSimpleView,
+    condCards: condCards, condFilter: function () { return state.condFilter || ""; }, setCondFilter: setCondFilter,
     setText: setText, textPlain: textPlain, textIsCustom: textIsCustom, textIsBlank: textIsBlank,
     // The minimum conditions' words (Sam, 2026-11-02), by the refs _requirements() hands the page.
     reqText: reqTextOf, setReqText: setReqText,
