@@ -2039,8 +2039,10 @@
      and takes it back when they close. A second sidebar opens beside the first, never over it: the first narrows to
      PAIR_FIRST (a person may widen it again from its grip) and the view gives up the pair's width. Only where the view
      has no width left beside the pair does the pair cover it, as one panel covers the view below 900px; and only a
-     window narrower than the pair puts the second over the first. Close on the second draws the first at its own width. */
-  var PAIR_FIRST = 320;
+     window narrower than the pair puts the second over the first. Close on the second draws the first at its own width.
+     A strip narrower than MIN_VIEW is no width left (S722): at 1280px a pair beside the side menu left about 124px of the
+     view, too narrow to read a row, so the pair covers the view there instead of squeezing it. */
+  var PAIR_FIRST = 320, MIN_VIEW = 360;
   function paired(panel) { var ps = sidePanels(panel && panel.parentNode); return ps.length > 1 && ps[0] === panel; }
   function pairW(panel) { return parseInt(panel.getAttribute("data-csb-pair-w"), 10) || PAIR_FIRST; }
   function stackLayout(root) {
@@ -2054,7 +2056,7 @@
     }
     var top = headerBottom(), ws = ps.map(widthOf), sum = ws.reduce(function (a, x) { return a + x; }, 0), vw = window.innerWidth || 1280;
     var left = root.getBoundingClientRect ? Math.max(0, root.getBoundingClientRect().left) : 0;
-    var mode = ps.length === 1 ? "one" : vw - left - sum >= 0 ? "beside" : vw >= sum ? "cover" : "over", right = 0;
+    var mode = ps.length === 1 ? "one" : vw - left - sum >= MIN_VIEW ? "beside" : vw >= sum ? "cover" : "over", right = 0;
     for (var i = ps.length - 1; i >= 0; i--) {
       ps[i].style.top = top + "px";
       ps[i].style.right = (mode === "over" ? 0 : right) + "px";
