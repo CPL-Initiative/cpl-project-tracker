@@ -111,7 +111,8 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 13:31Z: #3764's round 2, MERGE AND APPLY; after a clean pre-read of 15, migrate 45404108418 returned 15: 14 pass with
   no gap, Modesto 06642 carries `pool_figure_not_read`. Antelope Valley's paid read 45399693231 ($0.56 against $0.80)
   and its load: all 8 live and passing. #3763 ready at head `45ae3364`, `test` running.
-- <<FINAL: #3763's and #3764's merges and the closing census, each with its time>>
+- 13:53Z: #3763 merged (`42e6e4d9`). 14:22Z: #3764 merged (`db49ae39`). 14:26Z: the closing census 45413377558 on
+  `main` (`592012a3`): 15,524 of 20,282 pass, 4,289 without a passing record, 469 collected with a named gap.
 
 ## What shipped
 
@@ -131,13 +132,13 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   MiraCosta 15183, 22006, 36144, 36171; Saddleback 7). Antelope Valley's paid read 45399693231 ($0.56 against $0.80)
   put its 8 live (02145, 02149, 02153, 11647, 11648, 12161, 14414, 15404), all passing. In all, 12 collected and live,
   11 passing (Redwoods 42928 fails its arithmetic: blocks of 29-35 under its printed "Total 25 - 28"), $0.89 paid
-  against $1.21 estimated. Beyond the lever: `f-elumen-sister-award-swap-s721`. Head `45ae3364`;
-  <<FINAL: merged sha and time>>.
+  against $1.21 estimated. Beyond the lever: `f-elumen-sister-award-swap-s721`. Merged as `42e6e4d9` at
+  13:53Z.
 - **#3764 (`claude/s721-pooled`), the pooled reading:** the scorer reads one printed figure over named lists as one
   pool; plan s721p, 15 rows (14 to passing at Modesto, Ventura, Santa Monica, Clovis, Sequoias and Fullerton; Modesto
   06642 to `pool_figure_not_read`). Round 2, MERGE AND APPLY; a clean pre-read of 15, then migrate 45404108418
   returned 15 at 13:31Z: 14 pass with no gap, Modesto 06642 carries `pool_figure_not_read`. Two minors go to the
-  follow-up. It merges after #3763; <<FINAL: merged sha and time>>.
+  follow-up. It merged after #3763, as `db49ae39` at 14:22Z.
 
 **Tonight's count:** 65 records collected and live: lane 2, 45 (44 with named gaps, 1 passing); the lever, 12 (11
 passing); the pooled reading, 8 at Modesto (7 passing, 06642 with a named gap). Besides: 7 records moved from a named
@@ -145,7 +146,9 @@ gap to passing (Ventura 20576, 06957; Santa Monica 03263, 32792; Clovis 33489; S
 named gaps for programs with no record. 0 outline rows (step 11's queue is empty). Paid reads $0.89 against $1.21
 estimated.
 
-**The closing census on `main`:** <<FINAL: its run id and time, passing and without a passing record>>
+**The closing census on `main`:** run 45413377558 (14:26Z, `592012a3`): 15,524 of 20,282 active programs pass and
+4,289 have no passing record (4,353 at this run's start, 64 fewer); 469 are collected with a named gap (431 at the start).
+Step 12's headline: 15,524 of 20,282 at 118 colleges (15,498 at the start).
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
 `docs/program_requirements_harvest_lessons.md`, *S721*; `docs/reference/conductor_mode.md`, *What went wrong in S721*;
@@ -306,10 +309,10 @@ this run is served by Opus 5.5.
 | #3765 (`claude/s721-piles-orangecoast`) | merged `5a653136` (12:09Z); applied by migrate 45384449239 | none |
 | #3769 (`claude/s721-piles-land`) | merged `3d39f29b` (13:10Z): Palo Verde, Porterville, Gavilan and Butte, all applied and live | none |
 | #3762, #3767 | closed with pointers to #3769 | none |
-| #3763 (`claude/s721-lever`) | head `45ae3364` ready, `test` running at 13:35Z; its 12 loads live; <<FINAL: merged sha>> | the display build, then the eLumen swap |
-| #3764 (`claude/s721-pooled`) | applied by migrate 45404108418 (15 rows live); merges after #3763; <<FINAL: merged sha>> | the display build, then Modesto's holds |
+| #3763 (`claude/s721-lever`) | merged `42e6e4d9` (13:53Z); its 12 loads live | the display build, then the eLumen swap |
+| #3764 (`claude/s721-pooled`) | applied by migrate 45404108418 (15 rows live); merged `db49ae39` (14:22Z) | the display build, then Modesto's holds |
 | `claude/s720-piles-modesto` (`a6d019a4`) | S720's held plan s720j, superseded by #3764 | never merge it |
-| Harvest gap census on `main` | run 45384590964 (11:33Z), before Palo Verde, Porterville, Gavilan and Butte applied; <<FINAL: the closing census run>> | the next after tonight's display build |
+| Harvest gap census on `main` | run 45384590964 (11:33Z), before Palo Verde, Porterville, Gavilan and Butte applied; the closing run 45413377558 (14:26Z): 15,524 pass, 4,289 without | the next after tonight's display build |
 | #3383 | dependabot's | waits |
 
 ## Let go
@@ -319,8 +322,8 @@ none to drop. No COBIx watcher ran (Sam's word of 2026-11-23). Workers end with 
 local Postgres 16 used for the apply proofs stops at sign-off. The vault note for this run is
 `CPLBrain/07-session-notes/2026-11-24-s721-skyskua-collection.md`, on the vault's branch `claude/pensive-archimedes-jzzf78`.
 
-Spend: <<FINAL: the run's spend by model and its collection tag, then its start (10:13Z) and end times in UTC, in the step 8 shape>>
+Spend: $197.07 (Opus 5.5 $193.98, Sonnet $2.20, Haiku $0.90); collection $197.07; 2026-11-24T10:13Z to 2026-11-24T14:55Z. An estimate from the session's and its agents' token counts at list prices, `kb/_spend_meter.py`'s rates (no cost readout here): the conductor about $55, sixteen agents about $142. The paid reads' own cost, $0.89 on their meter against $1.21 estimated, is listed apart. Stop rules: none fired (65 records, about $3.03 each; no outline rows; no rollback). With S720's about $255, the UTC day's known spend is about $452 before Sam's plain sessions S719 and S722.
 
 Opening line: *Greetings, you are SkyTropicbird (the next free session number; Sam's plain session holds 722), see SkySkua's (S721) handoff — `docs/session_722_handoff.md` — let's keep rolling with our queue.*
 
-This session's cost: <<FINAL: cost>>, records collected 65 (lane 2's 45, the lever's 12, the pooled reading's 8; besides, 7 moved from a named gap to passing and 14 named gaps for programs with no record), outline rows added 0, substantive PRs merged <<FINAL: count and numbers>>.
+This session's cost: about $197 at list prices (no `get_session` here; estimated from the session's and its agents' token counts) plus $0.89 of paid reads, records collected 65 (lane 2's 45, the lever's 12, the pooled reading's 8; besides, 7 moved from a named gap to passing and 14 named gaps for programs with no record), outline rows added 0, substantive PRs merged 5 (#3761, #3765, #3769, #3763, #3764).

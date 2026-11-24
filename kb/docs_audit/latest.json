@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1584,
-    "bytes": 17412044,
+    "bytes": 17412924,
     "over_budget": 6,
     "handoff_max": 722,
     "always_loaded_files": 1,
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 542750,
+        "bytes": 542753,
         "over": 2
       },
       "handoff": {
         "files": 678,
-        "bytes": 5097588,
+        "bytes": 5098465,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 80
     },
     "vault": {
-      "files": 29942,
-      "bytes": 1611918699,
-      "heavy_bytes": 1232493290,
-      "heavy_share": 0.765,
+      "files": 29966,
+      "bytes": 1612746872,
+      "heavy_bytes": 1232822112,
+      "heavy_share": 0.764,
       "ignore_filters": [
         "agent-ad087760928796583/kb/program_requirements_college",
         "agent-ad087760928796583/kb/regional_cpl_out",
@@ -244,10 +244,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 158952899,
+        "bytes": 159005629,
         "kind": "dir"
       },
-      "message": "directory totals 158,952,899 B inside the vault"
+      "message": "directory totals 159,005,629 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -264,10 +264,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 84720556,
+        "bytes": 84720916,
         "kind": "dir"
       },
-      "message": "directory totals 84,720,556 B inside the vault"
+      "message": "directory totals 84,720,916 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -324,10 +324,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 17220980,
+        "bytes": 17300580,
         "kind": "dir"
       },
-      "message": "directory totals 17,220,980 B inside the vault"
+      "message": "directory totals 17,300,580 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -354,20 +354,20 @@
       "fixable": false,
       "path": "kb/migrations",
       "detail": {
-        "bytes": 10521232,
+        "bytes": 10731734,
         "kind": "dir"
       },
-      "message": "directory totals 10,521,232 B inside the vault"
+      "message": "directory totals 10,731,734 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/status/commons_data_programs",
       "detail": {
-        "bytes": 10244286,
+        "bytes": 10229916,
         "kind": "dir"
       },
-      "message": "directory totals 10,244,286 B inside the vault"
+      "message": "directory totals 10,229,916 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
