@@ -499,7 +499,8 @@
   /* Sky's title stands (Sam, S722, 2026-11-24: "Yes save any title 90 or above. Really it should save all titles and
      just flag for possible action those that are below 80"): a code with no title and no person's save takes Sky's most
      confident title as its title; a code under STANDS (80 on the 0-100 bar), or with no recommendation, stays in the
-     list to check. A person's save still wins, and Sky's title is marked as Sky's. A recommendation the file gives no
+     list to check. A person's save still wins, and the row marks it "Derived title" (Sam, 2026-11-24: "rather than
+     sky's title, how about derived title or expected title"). A recommendation the file gives no
      number for stays in the list to check: the bar is the measure, and no level word stands in for it. */
   var STANDS = 0.80;
   function skyTitle(r) {
@@ -804,7 +805,7 @@
         var sk = skyTitle(r);
         var st = untitledNow(r) ? stateOf(r) : null;
         var title = sv && sv.title ? el("td", { "data-saved": "title" }, [sv.title, " ", savedLine(sv)])
-          : sk && sk.stands ? el("td", { "data-sky": "title" }, [sk.title, " ", bar(sk.confidence, sk.title), " ", el("span", { cls: "csb-sub csb-sky", text: "Sky's title" })])
+          : sk && sk.stands ? el("td", { "data-sky": "title" }, [sk.title, " ", bar(sk.confidence, sk.title), " ", el("span", { cls: "csb-sub csb-sky", text: "Derived title" })])
           : st ? el("td", { cls: "csb-tba" }, [
           titleCands(r),
           r.candidate ? el("span", { cls: "csb-sub", text: "A line near it in the catalog: " + r.candidate }) : null,
@@ -2509,7 +2510,7 @@
       /* Every row with no title, in or out of the catalog (#3655, item 7: a code in both with no title was dropped
          by the old one-sided filter). Sam's rows first: Not in catalog, then Blocked, then Sky's Not read yet. */
       var order = { not_in_catalog: 0, blocked: 1, not_read: 2 };
-      wrap.appendChild(el("p", { cls: "csb-note", id: "csb-check-rule", text: "Sky’s title stands for every code it rates 80 or more on the confidence bar, marked as Sky’s, and a person’s save replaces it. These codes are below 80 or have no recommendation: Accept a title, or Edit." }));
+      wrap.appendChild(el("p", { cls: "csb-note", id: "csb-check-rule", text: "A derived title stands for every code Sky rates 80 or more on the confidence bar, and a person’s save replaces it. These codes are below 80 or have no recommendation: Accept a title, or Edit." }));
       wrap.appendChild(bandBar(all.filter(untitledNow)));
       wrap.appendChild(codeTable(all.filter(untitledNow).filter(function (r) { return inBand(r, S.band); }).sort(function (a, b) {
         return (order[a.title_state] == null ? 2 : order[a.title_state]) - (order[b.title_state] == null ? 2 : order[b.title_state])

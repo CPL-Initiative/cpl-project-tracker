@@ -377,7 +377,7 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   x = load("#commons/subjects/alpha", { files: { "kb/status/local_subject_recommendations.json": RECS3 } });
   await x.M.boot(); await settle();
   const sky = x.d.querySelector('.csb-codes tr[data-code="MATH"] td[data-sky="title"]');
-  check("(14) ⭐ on the college's list it reads as the title, with its bar, marked as Sky's", sky && /^Mathematics 86 Sky's title$/.test(txt(sky)), txt(sky));
+  check("(14) ⭐ on the college's list it reads as the title, with its bar, marked as a derived title", sky && /^Mathematics 86 Derived title$/.test(txt(sky)), txt(sky));
   x = load("#commons/subjects/alpha", { files: { "kb/status/local_subject_recommendations.json": RECS2 } });
   await x.M.boot(); await settle();
   check("(14) a title under 80 does not stand: the row still offers its candidates", !x.d.querySelector('.csb-codes tr[data-code="MATH"] td[data-sky]')
