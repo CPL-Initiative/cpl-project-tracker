@@ -101,7 +101,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "recommended_lists_only",
+    "label": "The catalog prints the major's courses as lists the department recommends rather than requires, so the record's lists cannot add up to the degree's printed total.",
+    "words": "All three course blocks are headed 'Recommended' and the text says 'Below are courses recommended by the department that can be used to meet major requirements for this degree'; the only stated major rule is 'at least 30 units in the major'. They are therefore recorded as recommended blocks. Each heading is followed by 'Complete the following number of credits' (13, 8, 9), so a reviewer could instead read them as required: Major Requirements = all (13), Major Electives = choose 8 units, General Electives = choose 9 units."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

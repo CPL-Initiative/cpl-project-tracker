@@ -1483,6 +1483,28 @@ def _lists_reading(f, rec, sc, pick, reading, tot, out):
                                   "held": held, "rule": got, "test": test})
 
 
+# S720 at Cabrillo (kb/_program_piles_s720_cabrillo.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('unit_line_not_read',
+         'The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.',
+         40),  # East Los Angeles's branch
+        ('prerequisites_counted',
+         "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+         70),  # College of the Sequoias' branch
+        ('repeat_read_once',
+         'The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.',
+         60),  # Santa Monica's branch
+        ('recommended_lists_only',
+         "The catalog prints the major's courses as lists the department recommends rather than requires, so the record's lists cannot add up to the degree's printed total.",
+         30),  # Cabrillo's branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     """The gap's own claim, that the figures add to the printed total while a list's courses pass its figure,
     measured on the records of its shape (_lists_shape; #3678 and #3679 second readers, finding 2) with keys the

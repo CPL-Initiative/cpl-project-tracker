@@ -108,7 +108,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "recommended_lists_only",
+    "label": "The catalog prints the major's courses as lists the department recommends rather than requires, so the record's lists cannot add up to the degree's printed total.",
+    "words": "Every major block is headed 'Recommended Major Requirements' or 'Recommended ... Electives', and the description says these are 'courses recommended by the department that can be used to meet major requirements'. Because each block prints a credit count that sums with GE (24) and general electives (5) to the printed 60-unit degree total, they were recorded as requirement blocks (all/choose_units) rather than 'recommended'. Reviewer should confirm."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 94,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
