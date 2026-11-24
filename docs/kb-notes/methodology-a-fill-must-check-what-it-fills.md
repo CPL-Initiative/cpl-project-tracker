@@ -1,7 +1,7 @@
 ---
 title: A fill must check the units it fills, not the word that licenses it
 created: 2026-11-14
-updated: 2026-11-23
+updated: 2026-11-24
 tags: [methodology, program-requirements-harvest, scorer, guards]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -62,6 +62,19 @@ student, and rows the reader never saw. A fill must rule out the second before i
 record says about its own window, and a guard on the fill must read every college, since the next reconcile can land
 anywhere.
 
+## S720: the fill reads the record's own window first
+
+#3756 (`35854487`, 2026-11-24) put the claim into the scorer. Both electives fills, the program total's in `score()`
+and the degree total's in `degree_verdict`, now read the record's own words before they fill: `window_cut` returns the
+reader's sentence saying the requirements run outside the text (a table opening mid-page, rows cut off or on the
+previous page, a missing course placed on another page), and the fill is refused with `fill_refused` naming
+`section_cut_off`. A cut counts only beside a listed course the record explains as missing, and a sentence saying
+nothing was lost is read first, so Cypress 37246, Riverside 43896, Folsom Lake 33791 and Cerritos 20493 keep their
+passes and are pinned as negatives. The guard reads every college: a dry run over 18,960 committed records took away
+15 passes and added none. American River 04544 was the one filed false pass; its correction and the nine Los Rios
+records' `section_cut_off` named gaps went live the same night (#3759). The reconcile now keeps a filed named gap
+while its rule still names it (`keep_named_gaps`), so a rescore no longer drops one.
+
 ## When this applies (and when it doesn't)
 
 Any rule that lets a named slack (electives, "as needed to reach 60", GE double counting) close an arithmetic gap.
@@ -74,6 +87,8 @@ the case the fill was built for, and the word guard serves it. The fault is the 
 - PR `#3288`: the two pinned rows loaded, the seven held
 - `[[docs/program_requirements_harvest_lessons]]`: S714, the reconciles that reached past the pins
 - PR `#3715`: the nine held back to `main`'s filings
+- PR `#3756`: the fill reads the record's window; `keep_named_gaps`
+- PR `#3759`: American River 04544 and the nine `section_cut_off` named gaps
 - `[[methodology-a-record-level-join-needs-a-word-guard]]`: a word guard where a word is the right test
 
 ---
