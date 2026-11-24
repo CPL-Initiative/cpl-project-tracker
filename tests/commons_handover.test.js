@@ -105,7 +105,7 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
   // ── (1) every name is a place to act ──
   let x = load("#commons");
   await x.M.boot(); await settle();
-  const rows = x.d.querySelector("#cmf-need-rows");
+  const rows = x.d.querySelector('.cmf-card[data-key="courses-data"] .cmf-check[data-ref="outlines"]');   /* S723: the outline list lives in the Courses data card */
   const links = Array.from(rows.querySelectorAll("a[data-course]"));
   check("(1) ⭐ every still-taught course in Needs you is a link", links.length === COURSES.length && COURSES.length > 0, links.length + " links for " + COURSES.length + " courses");
   check("(1) each course's address is its own control number",
@@ -361,16 +361,15 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
   ANS.open = 3; ANS.still_taught_open = 7; ANS.still_taught_answered = 5;
   x = load("#commons", { signedIn: true, hunt: ANS, answers: Object.assign({}, ADDED) });
   await x.M.boot(); await settle();
-  const need = x.d.querySelector("#cmf-need-rows");
-  check("(16) ⭐ the to-do counts only the courses still waiting", /^7 courses still taught at 3 colleges need their course outline from a person\./.test(txt(need.querySelector("#cmf-outline-list p"))), txt(need.querySelector("#cmf-outline-list p")));
+  const need = x.d.querySelector('.cmf-card[data-key="courses-data"] .cmf-check[data-ref="outlines"]');
+  check("(16) ⭐ the to-do counts only the courses still waiting", /^7 courses still taught at 3 colleges need their course outline from a person\./.test(txt(need.querySelector(".cmf-check-line"))), txt(need.querySelector(".cmf-check-line")));
   check("(16) a college with one course answered keeps only the other on its to-do line",
     txt(need.querySelector('li[data-hunt-college="north_orange_continuing_education"] p')) === "North Orange Continuing Education: " + aNoce.still_taught[0].course + "." && !need.querySelector('li[data-hunt-college="ohlone"]'),
     txt(need.querySelector('li[data-hunt-college="north_orange_continuing_education"] p')));
   /* Sam, 2026-11-21 (item 2): an item he finished leaves the list at once; the list head counts it as handed over. */
-  check("(16) ⭐ the answered courses leave Needs you: no answered list, and the head counts them as handed over",
-    !need.querySelector(".cmf-answered") && !need.querySelector("[data-hunt-answered]") && txt(need.querySelector(".cmf-handed")) === "Handed over: 5"
-      && need.querySelector(".cmf-handed").classList.contains("cmn-pill-done"),
-    txt(need.querySelector(".cmf-handed")));
+  check("(16) ⭐ the answered courses leave the list: no answered list, and the check's figure counts them as handed over",
+    !need.querySelector(".cmf-answered") && !need.querySelector("[data-hunt-answered]") && /; 5 handed over$/.test(txt(need.querySelector(".cmf-check-fig"))),
+    txt(need.querySelector(".cmf-check-fig")));
   /* An answered course still opens its own panel at its own address. */
   check("(16) each answered course still opens its own panel at its address", x.w.CPL_COMMONS_FRONT.openCourse(pastedCourse.control_number) !== false);
   await settle();
@@ -391,12 +390,12 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
   await x.M.boot(); await settle();
   const liveAnswered = [].concat(...LIVE_HUNT.colleges.map((c) => (c.answered || []).map((a) => a.control_number)));
   const liveOpen = [].concat(...LIVE_HUNT.colleges.filter((c) => c.hunted && !c.filed).map((c) => (c.still_taught || []).map((a) => a.control_number)));
-  const liveLinks = Array.from(x.d.querySelectorAll("#cmf-need-rows a[data-course]")).map((l) => l.getAttribute("data-course"));
+  const liveLinks = Array.from(x.d.querySelectorAll('.cmf-check[data-ref="outlines"] a[data-course]')).map((l) => l.getAttribute("data-course"));
   check("(16) the committed hunt: every open course is a link, no answered course is, and the head counts the answered",
     liveOpen.every((k) => liveLinks.includes(k)) && !liveAnswered.some((k) => liveLinks.includes(k)) && liveLinks.length === liveOpen.length
-      && txt(x.d.querySelector("#cmf-need-rows .cmf-handed")) === "Handed over: " + liveAnswered.length,
+      && new RegExp("; " + liveAnswered.length + " handed over$").test(txt(x.d.querySelector('.cmf-check[data-ref="outlines"] .cmf-check-fig'))),
     JSON.stringify({ answered: liveAnswered.length, open: liveOpen.length, links: liveLinks.length }));
-  if (!liveOpen.length) check("(16) with nothing left open the group says so in words", /^No still-taught course waits on an outline from a person\./.test(txt(x.d.querySelector("#cmf-outline-list p"))), txt(x.d.querySelector("#cmf-outline-list p")));
+  if (!liveOpen.length) check("(16) with nothing left open the group says so in words", /^No still-taught course waits on an outline from a person\./.test(txt(x.d.querySelector('.cmf-check[data-ref="outlines"] .cmf-check-line'))), txt(x.d.querySelector('.cmf-check[data-ref="outlines"] .cmf-check-line')));
 
   // ── (9) the public counts as words ──
   const SUMMARY = [
@@ -416,8 +415,8 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
     x.H.standing(SUMMARY, { subject_kind: "course", college: OPEN[0].college, course_code: OPEN[0].still_taught[0].course }).join("; ") === "1 file to be opened by our reader");
 
   // ── (12) Term Reports Needed ──
-  const terms = x.d.querySelector("#cmf-need-terms");
-  check("(12) Term Reports Needed sits in Needs you, naming the three terms", terms && txt(terms.querySelector("h4")) === "Term Reports Needed" && /Spring 2026, Spring 2025 and Fall 2024/.test(txt(terms)), txt(terms));
+  const terms = x.d.querySelector('.cmf-card[data-key="courses-data"] .cmf-check[data-ref="terms"]');   /* S723: the term reports live in the Courses data card */
+  check("(12) the term reports check sits in the Courses data card, naming the three terms", terms && /^\d+\. Term reports for the set-aside/.test(txt(terms.querySelector(".cmf-check-h"))) && /Spring 2026, Spring 2025 and Fall 2024/.test(txt(terms)), txt(terms));
   check("(12) its standing line reads the term hand-overs", txt(x.d.querySelector("#cmf-term-standing")) === "Handed over: 1 file to be opened by our reader.", txt(x.d.querySelector("#cmf-term-standing")));
   const fold = terms.querySelector("details");
   fold.open = true; fold.dispatchEvent(new x.w.Event("toggle")); await settle();

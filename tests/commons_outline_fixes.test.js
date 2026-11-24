@@ -58,24 +58,23 @@ function withHunt(change) {
 (async function () {
   const x = load();
   await x.M.boot(); await settle();
-  const box = x.d.querySelector("#cmf-need-rows"), needs = x.d.querySelector("#cmf-needs");
+  /* S723 (Sam, 2026-11-24): Needs you is the ranked links; the outline list lives in the Courses data card's outlines
+     check, and each college's Needs you link lands on that college's own link there. */
+  const OUT = (d) => d.querySelector('.cmf-card[data-key="courses-data"] .cmf-check[data-ref="outlines"]');
+  const box = OUT(x.d), needs = x.d.querySelector("#cmf-needs");
   const hunted = HUNT.colleges.filter((c) => c.hunted && !c.filed);
+  const line = (b) => txt(b.querySelector(".cmf-check-line"));
 
-  check("(1) ⭐ the front page's count is the hunt file's: " + HUNT.still_taught_open + " courses at " + hunted.length + " colleges",
-    box && new RegExp("^" + HUNT.still_taught_open + " courses still taught at " + hunted.length + " colleges need their course outline from a person\\.").test(txt(box.querySelector("p"))), txt(box));
+  check("(1) ⭐ the card's count is the hunt file's: " + HUNT.still_taught_open + " courses at " + hunted.length + " colleges",
+    box && new RegExp("^" + HUNT.still_taught_open + " courses still taught at " + hunted.length + " colleges need their course outline from a person\\.").test(line(box)), box && txt(box));
   check("(1) the hunt lists 12 courses and they are the 12 the file counts", HUNT.still_taught_total === 12 && HUNT.courses.length === 12 && HUNT.still_taught_open === 12);
   check("(1) ⭐ no typed-in figure is left: the source has no outlinesBlocked, and the page prints no \"140 cards\" or \"13 current\"",
     !/outlinesBlocked/.test(SRC) && !/140 cards|13 current/.test(txt(x.d.querySelector("#commons-root"))));
-  check("(1) the Courses data card says the same sentence", (function () {
-    const card = Array.from(x.d.querySelectorAll(".cmf-card")).filter((c) => /courses still taught at/.test(txt(c)))[0];
-    return card && txt(card).indexOf(txt(box.querySelector("p"))) >= 0;
-  })());
-
-  check("(2) ⭐ the group is named for its work, and \"Rows waiting on a person\" is gone from the page",
-    box && txt(box.querySelector("h4")) === "Course Outline Fixes" && !/Rows waiting on a person/.test(txt(needs)), txt(needs).slice(0, 200));
-  const titles = x.d.querySelector("#cmf-need-titles");
-  check("(2) the held exhibit titles sit under their own name", titles && txt(titles.querySelector("h4")) === "Exhibit Titles to Name" && titles.querySelector("#cmf-held") && !box.querySelector("#cmf-held"));
-  check("(2) no group heading in Needs you opens on What, When, How or Why", Array.from(needs.querySelectorAll("h4")).every((h) => !/^(What|When|How|Why)\b/.test(txt(h))));
+  const ranked = Array.from(needs.querySelectorAll("#cmf-rank li a")).filter((a) => /: course outlines$/.test(txt(a)));
+  check("(1) ⭐ Needs you links each hunted college, and each link lands on that college's own link in the card",
+    ranked.length === hunted.length && ranked.every((a) => a.getAttribute("data-onpage") === "courses-data" && a.getAttribute("data-onpage-ref") === "outlines"
+      && box.querySelector('.cmf-land a[href="' + a.getAttribute("data-onpage-to") + '"]')), ranked.map((a) => a.outerHTML).join(" "));
+  check("(2) ⭐ \"Rows waiting on a person\" is gone, and Needs you holds no outline box of its own", !/Rows waiting on a person/.test(txt(needs)) && !needs.querySelector("[data-hunt-college]"));
 
   const rows = Array.from(box.querySelectorAll("[data-hunt-college]"));
   check("(3) each hunted college is a row that names its still-taught courses",
@@ -88,18 +87,20 @@ function withHunt(change) {
     links.length === hunted.length && links.every((a) => a.getAttribute("target") === "_blank" && /noopener/.test(a.getAttribute("rel") || "") && /^https?:\/\//.test(a.getAttribute("href")) && txt(a) === a.getAttribute("href")),
     links.map((a) => a.outerHTML).join(" "));
   check("(5) ⭐ the one line a person needs, word for word", /Send the PDF to COBIx in your Grok Bot chat\./.test(txt(box)));
-  check("(5) the group opens the courses by college on College Data Collection", (function () { const a = box.querySelector('a[href="#collect/outlines-blocked"]'); return a && txt(a) === "Open the courses by college"; })());
+  check("(5) the check opens the courses by college on College Data Collection", (function () { const a = box.querySelector('.cmf-act a[href="#collect/outlines-blocked"]'); return a && txt(a) === "The courses by college"; })());
 
   const y = load(withHunt((h) => { const g = h.colleges.filter((c) => c.slug === "grossmont")[0]; g.filed = true; h.open -= 1; h.still_taught_open -= g.still_taught.length; }));
   await y.M.boot(); await settle();
-  const b2 = y.d.querySelector("#cmf-need-rows");
-  check("(6) ⭐ a filed college leaves the list and the count", b2 && !b2.querySelector('[data-hunt-college="grossmont"]') && b2.querySelectorAll("[data-hunt-college]").length === hunted.length - 1
-    && new RegExp("^" + (HUNT.still_taught_open - 1) + " courses still taught at " + (hunted.length - 1) + " colleges").test(txt(b2.querySelector("p"))), txt(b2));
+  const b2 = OUT(y.d);
+  check("(6) ⭐ a filed college leaves the list, the count and Needs you", b2 && !b2.querySelector('[data-hunt-college="grossmont"]') && b2.querySelectorAll("[data-hunt-college]").length === hunted.length - 1
+    && new RegExp("^" + (HUNT.still_taught_open - 1) + " courses still taught at " + (hunted.length - 1) + " colleges").test(line(b2))
+    && !Array.from(y.d.querySelectorAll("#cmf-rank li")).some((l) => /Grossmont/.test(txt(l))), txt(b2));
   const z = load(withHunt((h) => { h.colleges.forEach((c) => { c.filed = true; }); h.open = 0; h.still_taught_open = 0; }));
   await z.M.boot(); await settle();
-  const b3 = z.d.querySelector("#cmf-need-rows");
-  check("(6) every hunted college filed: the group says nothing waits, with no list and no send line",
-    b3 && /^No still-taught course waits on an outline from a person\./.test(txt(b3.querySelector("p"))) && !b3.querySelector("[data-hunt-college]") && !/Send the PDF/.test(txt(b3)), txt(b3));
+  const b3 = OUT(z.d);
+  check("(6) every hunted college filed: the check says nothing waits, with no list and no send line, and Needs you names none",
+    b3 && /^No still-taught course waits on an outline from a person\./.test(line(b3)) && !b3.querySelector("[data-hunt-college]") && !/Send the PDF/.test(txt(b3))
+    && !Array.from(z.d.querySelectorAll("#cmf-rank li")).some((l) => /course outlines$/.test(txt(l.querySelector("a")))), txt(b3));
 
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])));
   const failed = results.filter((r) => !r[1]).length;

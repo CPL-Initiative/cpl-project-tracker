@@ -124,7 +124,8 @@ const quickTexts = (d, k) => Array.from(cardOf(d, k).querySelectorAll(".cmf-quic
        text that has no link": the focus lands on a Where to act link inside the check, highlighted; the one the quick
        link names where it names one. */
     const to = l.getAttribute("data-onpage-to"), A = d.activeElement;
-    if (!A || A.tagName !== "A" || !t.contains(A) || !A.closest(".cmf-act")) bad3.push(txt(l) + ": focus on " + (A && (A.id || A.tagName)) + ", not a link in its check");
+    /* S723: a list the check holds (.cmf-land: a college's own link, or a hand-over's summary) is a landing place too. */
+    if (!A || (A.tagName !== "A" && A.tagName !== "SUMMARY") || !t.contains(A) || !A.closest(".cmf-act, .cmf-land")) bad3.push(txt(l) + ": focus on " + (A && (A.id || A.tagName)) + ", not a link in its check");
     else if (!A.classList.contains("cmf-hl")) bad3.push(txt(l) + ": its link is not highlighted");
     else if (to && A.getAttribute("href") !== to) bad3.push(txt(l) + ": landed on " + A.getAttribute("href") + ", not " + to);
     if (A && A.dispatchEvent) A.dispatchEvent(new x.w.FocusEvent("blur"));

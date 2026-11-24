@@ -119,35 +119,46 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   const f = load("#commons");
   await f.M.boot(); await settle();
   const needs = f.d.getElementById("cmf-needs");
-  const decList = f.d.querySelectorAll("#cmf-need-decisions li");
-  check("(A) ⭐ the college wording rule leads Decisions waiting while it has no answer", decList.length >= 1 && decList[0].getAttribute("data-todo") === WORDING
-    && decList[0].querySelector('a[href="#cr-reference/names"]') && /POST Basic Academy/.test(txt(decList[0])) && /C-ID AJ 110/.test(txt(decList[0])));
-  check("(A) Decisions waiting no longer says None waiting while the rule is open", !/None waiting/.test(txt(f.d.getElementById("cmf-need-decisions"))));
+  /* S723 (Sam, 2026-11-24): Needs you is the ranked links to what waits on you; a decision is one of them, and its
+     link opens the decision itself. Its words are the decision record's, one press away. */
+  const decList = f.d.querySelectorAll("#cmf-rank li[data-todo]");
+  check("(A) ⭐ the college wording rule leads the decisions in Needs you while it has no answer", decList.length >= 1 && decList[0].getAttribute("data-todo") === WORDING
+    && decList[0].querySelector('a[href="#cr-reference/names"]') && /^Decision waiting: /.test(txt(decList[0])));
+  check("(A) ⭐ Needs you shows only what waits: no None waiting, no empty box", !/None waiting|No college waits|No still-taught course waits|No term report waits/.test(txt(needs))
+    && !f.d.getElementById("cmf-need-decisions") && !f.d.getElementById("cmf-need-rows") && !f.d.getElementById("cmf-need-catalogs") && !f.d.getElementById("cmf-need-titles"));
   check("(A) ⭐ the slash ruling is nowhere on Needs you, open or closed", needs && !/slash/i.test(txt(needs)));
   check("(A) ⭐ Decision record opens its own address, not the bare details", !!needs.querySelector('a[href="#commons/details/decisions"]') && !needs.querySelector('a[href="#commons/details"]'));
   check("the wording rule is not applied: nothing is written anywhere", !f.calls.some((c) => c[1] && c[1].method && c[1].method !== "GET"));
-  check("the two 36s stay apart: the wording rule names the held exhibit titles as a different list", /different list from the 36 exhibit titles a person saved/.test(txt(decList[0])));
+  const rec0 = load("#commons/details/decisions");
+  await rec0.M.boot(); await settle();
+  const recLi = rec0.d.querySelector('#cmn-rec-open li[data-todo="' + WORDING + '"]');
+  check("the decision's words sit in the record: the examples, and the two 36s kept apart", recLi && /POST Basic Academy/.test(txt(recLi)) && /C-ID AJ 110/.test(txt(recLi))
+    && /different list from the 36 exhibit titles a person saved/.test(txt(recLi)));
 
   // ── (C) the held titles, live ──
-  const held = f.d.getElementById("cmf-held");
-  check("(C) ⭐ with the saves in kb_curation, the held line reads as saved by a person, waiting for the nightly build",
-    new RegExp("^" + HELD.length + " exhibit titles a person saved wait for the nightly build, which adds them to the reference\\. No one needs to act\\.").test(txt(held)));
-  check("(C) and it is work for no one: no held link, no owner, no count of held titles", !held.querySelector('a[href="#exhibits/held"]') && !/held for a person/.test(txt(held)) && !/a curator/.test(txt(held)));
-  check("(C) ⭐ the five titles COBIx could not find are findable from the line", /Completed NC\.NURSNG-089 at College of the Canyons is saved as Success in Fundamental Nursing/.test(txt(held)) && held.querySelectorAll(".cmf-saved-list li").length === HELD.length);
+  /* S723: the held titles live on the Exhibit titles card's held check; Needs you links to it only while one waits. */
+  const heldCheck = (x) => x.d.querySelector('.cmf-card[data-key="exhibit"] .cmf-check[data-ref="held"]');
+  const heldRank = (x) => Array.from(x.d.querySelectorAll("#cmf-rank li")).filter((l) => /^Exhibit titles to name/.test(txt(l)))[0] || null;
+  const held = heldCheck(f);
+  check("(C) ⭐ with the saves in kb_curation, the held check reads as saved by a person, waiting for the nightly build",
+    held && new RegExp(HELD.length + " saved titles wait for the nightly build, which adds them to the reference; no one needs to act\\.").test(txt(held.querySelector(".cmf-check-line"))));
+  check("(C) and it is work for no one: no Needs you link, and the held figure reads 0", !heldRank(f) && /^0 held for a person/.test(txt(held.querySelector(".cmf-check-fig"))));
+  check("(C) ⭐ the five titles COBIx could not find are findable from the check", /Completed NC\.NURSNG-089 at College of the Canyons is saved as Success in Fundamental Nursing/.test(txt(held)) && held.querySelectorAll(".cmf-saved-list li").length === HELD.length);
   const live = f.calls.filter((c) => c[0].indexOf("/rest/v1/kb_curation") >= 0);
   check("(C) the read is Range-paged and read-only, in chunks of 40", live.length === Math.ceil(HELD.length / 40)
     && live.every((c) => c[1] && c[1].headers && c[1].headers.Range === "0-999" && c[1].headers["Range-Unit"] === "items" && !c[1].method));
   const off = load("#commons", { liveFails: true });
   await off.M.boot(); await settle();
   check("(C) ⭐ a failed live read leaves the status file's count, named with its time in Pacific time",
-    /^36 titles held for a person \(the title-sorting routine is unsure on 12, a merge would join two issuers on 19, a course code is left in the title on 5\), as of 8:53 AM PT on November 19\. · a curator$/.test(txt(off.d.getElementById("cmf-held"))));
+    /^36 held for a person/.test(txt(heldCheck(off).querySelector(".cmf-check-fig"))) && /\(it is unsure on 12, a merge would join two issuers on 19, a course code is left in the title on 5\); this count is as of 8:53 AM PT on November 19 until the live read answers\./.test(txt(heldCheck(off).querySelector(".cmf-check-line")))
+    && /frees 36 exhibit titles/.test(txt(heldRank(off))));
   const some = load("#commons", { files: { "kb/exhibits_review.json": Object.assign({}, REVIEW, { held: REVIEW.held.concat([{ raw: "A title no one saved", step: "Proposed" }]) }) } });
   await some.M.boot(); await settle();
-  check("(C) a title still unsaved keeps its held link beside the saved line", /^1 exhibit title held for a person to name\./.test(txt(some.d.getElementById("cmf-held")))
-    && !!some.d.querySelector('#cmf-held a[href="#exhibits/held"]'));
+  check("(C) a title still unsaved keeps its Needs you link, landing on the held check's link", /frees 1 exhibit title$/.test(txt(heldRank(some)))
+    && heldRank(some).querySelector("a").getAttribute("data-onpage-to") === "#exhibits/held" && /^1 held for a person/.test(txt(heldCheck(some).querySelector(".cmf-check-fig"))));
   const folded = load("#commons", { files: { "kb/exhibits_review.json": Object.assign({}, REVIEW, { held: [] }) } });
   await folded.M.boot(); await settle();
-  check("(C) once the fold lands the line goes", txt(folded.d.getElementById("cmf-held")) === "");
+  check("(C) once the fold lands the Needs you link goes", !heldRank(folded));
 
   // ── (A) the details view ──
   const dv = load("#commons/details");
@@ -160,7 +171,7 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   check("(A) ⭐ Common Exhibits carries no Needs you pill and no Your decision line", exCard && exCard.getAttribute("data-kind") !== "needs"
     && txt(exCard.querySelector(".cmn-pill")) !== "Needs you" && !exCard.querySelector(".cmn-card-ask"));
   const first = dv.M.decisions(STALE, { exhibit: { Q: runLog("exhibit") }, cr: { Q: runLog("cr") }, course: { Q: runLog("course") }, subjects: { Q: runLog("subjects") } });
-  check("(A) ⭐ one decisions list: the front page's Decisions waiting is decisions()'s open list, in its order",
+  check("(A) ⭐ one decisions list: the front page's decision links are decisions()'s open list, in its order",
     Array.from(decList).map((li) => li.getAttribute("data-todo") || "").join("|") === first.open.map((x) => x.call.todo_id || "").join("|"));
 
   // ── (A) the decision record at its own address ──
@@ -183,8 +194,8 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   subjAnswered.calls = subjAnswered.calls.filter((c) => c.answer);
   const ruled = load("#commons", { files: { "kb/status/cr.json": crRuled, "kb/status/subjects.json": subjAnswered } });
   await ruled.M.boot(); await settle();
-  check("(A) ⭐ once a decision is fixtured, the wording rule leaves Decisions waiting", !ruled.d.querySelector('#cmf-need-decisions li[data-todo="' + WORDING + '"]')
-    && /None waiting\./.test(txt(ruled.d.getElementById("cmf-need-decisions"))));
+  check("(A) ⭐ once a decision is fixtured, the wording rule leaves Needs you", !ruled.d.querySelector('#cmf-rank li[data-todo="' + WORDING + '"]')
+    && !/None waiting/.test(txt(ruled.d.getElementById("cmf-needs"))));
   /* S701: Sam answered the noncredit subject title list (r-noncredit-title-list-go-sam-2026-11-22), so the Subjects
      run log waits on nothing and the list is empty again once the wording rule is answered. */
   const ruledRec = load("#commons/details/decisions", { files: { "kb/status/cr.json": crRuled, "kb/status/subjects.json": subjAnswered } });
@@ -204,30 +215,30 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   crBad.calls.push({ title: "A call whose address is a script", text: "x", view: { href: "javascript:alert(1)", text: "x" }, todo_id: "bad-href-fixture" });
   const bad = load("#commons", { files: { "kb/status/cr.json": crBad } });
   await bad.M.boot(); await settle();
-  const badLi = bad.d.querySelector('#cmf-need-decisions li[data-todo="bad-href-fixture"]');
-  check("⭐ a call whose view.href is javascript:alert(1) renders no link on Needs you", badLi && /A call whose address is a script/.test(txt(badLi)) && !badLi.querySelector("a")
-    && !bad.d.querySelector('a[href^="javascript"]'));
+  const badLi = bad.d.querySelector('#cmf-rank li[data-todo="bad-href-fixture"]');
+  check("⭐ a call whose view.href is javascript:alert(1) links to the decision record instead on Needs you", badLi && /A call whose address is a script/.test(txt(badLi))
+    && badLi.querySelector("a").getAttribute("href") === "#commons/details/decisions" && !bad.d.querySelector('a[href^="javascript"]'));
   const badRec = load("#commons/details/decisions", { files: { "kb/status/cr.json": crBad } });
   await badRec.M.boot(); await settle();
   check("and none in the decision record", !badRec.d.querySelector('a[href^="javascript"]') && /A call whose address is a script/.test(txt(badRec.d.getElementById("cmn-rec-open"))));
 
   // ── COBIx's review of #3570, item 2: Mark done's closings are read behind a reviewer sign-in only ──
-  check("⭐ signed out, Decisions waiting says signing in also hides the items already marked done",
-    /Signing in as a reviewer also hides the items already marked done\./.test(txt(f.d.getElementById("cmf-need-decisions")))
+  check("⭐ signed out, Needs you says signing in also hides the items already marked done",
+    /Signing in as a reviewer also hides the items already marked done\./.test(txt(f.d.getElementById("cmf-needs")))
     && /Signing in as a reviewer also hides the items already marked done\./.test(txt(rec.d.getElementById("cmn-rec-open").parentNode)));
   const mark = [{ project: "cr", todo_id: WORDING, by_email: "reviewer@example.org", at: "2026-11-19T20:00:00Z", note: "keep the wording", reopen: false }];
   const rv = load("#commons", { reviewer: true, marks: mark });
   await rv.M.boot(); await settle();
-  check("⭐ signed in, a call closed by Mark done leaves Decisions waiting, and the line goes",
-    !rv.d.querySelector('#cmf-need-decisions li[data-todo="' + WORDING + '"]') && !/Signing in as a reviewer/.test(txt(rv.d.getElementById("cmf-need-decisions"))));
+  check("⭐ signed in, a call closed by Mark done leaves Needs you, and the line goes",
+    !rv.d.querySelector('#cmf-rank li[data-todo="' + WORDING + '"]') && !/Signing in as a reviewer/.test(txt(rv.d.getElementById("cmf-needs"))));
   const rvRec = load("#commons/details/decisions", { reviewer: true, marks: mark });
   await rvRec.M.boot(); await settle();
   check("and the record lists it as decided by its mark", /Marked done: keep the wording/.test(txt(rvRec.d.getElementById("cmn-rec-done")))
     && !rvRec.d.querySelector('#cmn-rec-open li[data-todo="' + WORDING + '"]'));
   const rvNone = load("#commons", { reviewer: true, marks: [] });
   await rvNone.M.boot(); await settle();
-  check("signed in with no marks, the rule still waits and the line is not shown", !!rvNone.d.querySelector('#cmf-need-decisions li[data-todo="' + WORDING + '"]')
-    && !/Signing in as a reviewer/.test(txt(rvNone.d.getElementById("cmf-need-decisions"))));
+  check("signed in with no marks, the rule still waits and the line is not shown", !!rvNone.d.querySelector('#cmf-rank li[data-todo="' + WORDING + '"]')
+    && !/Signing in as a reviewer/.test(txt(rvNone.d.getElementById("cmf-needs"))));
 
   // ── (B) every Needs you link: a view in the router, and the way back ──
   const tabs = new Set(Array.from(HTML.matchAll(/class="cpl-tab[^"]*" data-tab="([a-z0-9-]+)"/g)).map((m) => m[1]).concat(["collect"]));
@@ -238,7 +249,8 @@ const count = (hay, needle) => hay.split(needle).length - 1;
     "collect/outlines-blocked": /"outlines-blocked": "Course outlines blocked"/.test(DATA),
     "collect/unread": /unread: \{ word: "Not collected yet"/.test(DATA),
     "exhibits/held": /ROUTE_WORDS = \{ held:/.test(fs.readFileSync("exhibits.js", "utf8")),
-    "cr-reference/names": /FILTERS = \[[^\]]*"names"/.test(fs.readFileSync("cr_reference.js", "utf8"))
+    "cr-reference/names": /FILTERS = \[[^\]]*"names"/.test(fs.readFileSync("cr_reference.js", "utf8")),
+    "coci-lookup/list/doubt": /\["doubt", "Discipline in doubt", null\]/.test(fs.readFileSync("coci_lookup.js", "utf8"))   // Fixes owed's list (S723)
   };
   /* Sam, 2026-11-21 (item 1): the ranked links jump to a card on this page (data-onpage); they are guarded in
      tests/commons_page_clarity.test.js. Every other Needs you link opens a view in the router. */
@@ -246,8 +258,11 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   /* Sam, 2026-11-20 (his work order): the catalog addresses in Course Outline and Catalog Fixes Needed are links that
      open in a new tab. They are the one exception (a.cmf-out inside #cmf-need-rows, guarded in
      tests/commons_outline_fixes.test.js); every other Needs you link stays in the site. */
-  const offSite = (l) => l.classList.contains("cmf-out") && l.closest("#cmf-need-rows") && l.getAttribute("target") === "_blank" && /noopener/.test(l.getAttribute("rel") || "");
-  check("(B) Needs you carries in-site links only, but for the outline fixes' catalog addresses, which open in a new tab",
+  /* S723: Fixes owed's Ask COBI opens a new issue in the tracker, already written, in a new tab (Sam: "something queued
+     up for me to do to prompt COBI"); it is Needs you's one off-site link. */
+  const offSite = (l) => l.closest("#cmf-need-owed") && /^https:\/\/github\.com\/CPL-Initiative\/cpl-project-tracker\/issues\/new\?title=/.test(l.getAttribute("href"))
+    && l.getAttribute("target") === "_blank" && /noopener/.test(l.getAttribute("rel") || "");
+  check("(B) Needs you carries in-site links only, but for Fixes owed's Ask COBI, which opens in a new tab",
     Array.from(f.d.querySelectorAll("#cmf-needs a")).every((l) => /^#/.test(l.getAttribute("href")) || offSite(l)));
   for (const l of links) {
     const href = l.getAttribute("href"), h = href.slice(1), tab = h.split("/")[0];
@@ -318,7 +333,7 @@ const count = (hay, needle) => hay.split(needle).length - 1;
 
   // ── the plain words ──
   const page = txt(f.d.querySelector(".cmf"));
-  check("plain words: no discipline-in-doubt file on main, no Backfill fix, no off-site link on Needs you but the outline fixes' catalog addresses", !/discipline-in-doubt file|on main|Backfill fix/.test(txt(needs)) && Array.from(needs.querySelectorAll('a[href^="http"]')).every(offSite));
+  check("plain words: no discipline-in-doubt file on main, no Backfill fix, no off-site link on Needs you but Ask COBI", !/discipline-in-doubt file|on main|Backfill fix/.test(txt(needs)) && Array.from(needs.querySelectorAll('a[href^="http"]')).every(offSite));
   check("no glyph on Needs you", !/[\u2190-\u21FF\u2600-\u27BF\u{1F300}-\u{1FAFF}]/u.test(txt(needs)));
   check("American spelling", !/\b(colour|behaviour|organisation|analyse|centre|catalogue|whilst|amongst)\b/i.test(FRONT + PRG));
   check("the back link's CSS uses tokens only", !/#[0-9a-fA-F]{3,8}\b/.test(FRONT.slice(FRONT.indexOf("var BACK_CSS"), FRONT.indexOf("function ensureBackCss"))));
