@@ -5320,10 +5320,14 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                             or (rule or {}).get("heading"), above,
                             numbers_after=ctx or False)
             # A gated program the after path did not bind (pdf_best's after_unbound; none at all when the
-            # picker found no window): a passing filed record stays on file unless the run forces it.
+            # picker found no window): a passing filed record stays on file unless the run forces it. A pinned
+            # program never takes the after path (pdf_best reads a pin's heading first): a person named its
+            # window, so it is never unbound (S720 second reader, finding 3: Santiago Canyon's pins under uniform
+            # pdf_numbers_after were marked no_window, and a forced read kept their failing records).
             unbound = ({"refused": (best or {}).get("refused"), "why": (best or {}).get("after_unbound") or "no_window",
                         **({"judged": best["judged"]} if (best or {}).get("judged") else {})}
-                       if ctx and not (best and best.get("bound")) else None)
+                       if ctx and not (best and best.get("bound")) and not pinned.get(prog["control_number"])
+                       else None)
             if best and (best.get("refused") or best.get("after_unbound") == "block_names_other_program"):
                 # Decision 16 (a): a refused block is never filed as a read page. Its own method, no text,
                 # no coverage claimed; refused_passing names it where the filed record passes.
@@ -5499,12 +5503,26 @@ def _page_key(url: str | None) -> str:
     return "%s://%s%s%s" % (u.scheme, (u.hostname or "").lower(), u.path.rstrip("/"), "?" + u.query if u.query else "")
 
 
+def site_heading_names(pg: dict, program: dict) -> tuple[bool, str]:
+    """(whether the page's own heading prints the program's title with its award, the heading tested). The heading
+    is the page's h1 as the capture holds it, which drop_banner_h1() blanks where the catalog prints one banner on
+    every page (never read back from the raw load), else its title before the site's name (Coastline's pages,
+    S381). Each is tested alone with the reader's rule A (RC.heading_line), so one never lends the other its award.
+    Self-recall on San Bernardino Valley's filed sources: tests/program_requirements_site_pins_s720_test.py."""
+    h1 = pg.get("h1") if "h1" in pg else (pg.get("got") or {}).get("h1")
+    title0 = ((pg.get("title") or (pg.get("got") or {}).get("title") or "").split("|")[0]).strip()
+    heads = [x for x in ((h1 or "").strip(), title0) if x]
+    named = any(RC.heading_line([x], program.get("title"), program.get("award")) >= 0 for x in heads)
+    return named, (heads[0] if heads else "")
+
+
 def site_pinned(programs: list[dict], pages: list[dict], pins: dict[str, dict]) -> dict[str, dict]:
     """Each pinned program's page: {control number: {"best": candidate} or {"why": refusal}}.
 
-    A pin binds only where the page was read, its own heading (h1) prints every word of the program's title with
-    its award (the reader's rule A heading test, kb/_reader_page_checks.py heading_line, on the h1 alone, so a
-    department list on the page body never stands in for it), and candidates() accepts it for the program on its
+    A pin binds only where the page was read, its own heading (its h1, or its title where the h1 is blank or a
+    banner) prints every word of the program's title with its award (the reader's rule A heading test,
+    kb/_reader_page_checks.py heading_line, on the heading alone, so a department list on the page body never
+    stands in for it), and candidates() accepts it for the program on its
     own (the coarse net, ACCEPT_SHARE coverage, rules B and C). The pin moves only the program it names: every
     other program keeps the page assign() gave it, the pinned page included. A refused pin reads the program from
     no page (the capture files why), so a paid read never extracts it from the page the pin was meant to replace."""
@@ -5521,9 +5539,10 @@ def site_pinned(programs: list[dict], pages: list[dict], pins: dict[str, dict]) 
         if pg is None:
             out[cn] = {"why": "the pinned page was not read"}
             continue
-        h1 = pg.get("h1") or (pg.get("got") or {}).get("h1") or ""
-        if RC.heading_line([h1], prog.get("title"), prog.get("award")) < 0:
-            out[cn] = {"why": "the pinned page's heading (%r) does not print the program's title with its award" % h1}
+        named, head = site_heading_names(pg, prog)
+        if not named:
+            out[cn] = {"why": "the pinned page's heading (%r) does not print the program's title with its award"
+                              % head}
             continue
         cands = candidates(prog, [pg], programs, {})
         if not cands:
@@ -5531,6 +5550,19 @@ def site_pinned(programs: list[dict], pages: list[dict], pins: dict[str, dict]) 
             continue
         out[cn] = {"best": dict(cands[0], pinned=True)}
     return out
+
+
+def with_site_pins(given: dict[str, dict], pinned: dict[str, dict], pins: dict[str, dict]) -> tuple[dict, dict]:
+    """(assign()'s result with each bound pin's page in place of its program's, the capture's site_pins account).
+    Only a bound pin's program changes; a refused one keeps assign()'s entry here, and the capture reads it from no
+    page (its "why" in pinned)."""
+    out = dict(given)
+    for cn, got in pinned.items():
+        if "best" in got:
+            out[cn] = {"best": got["best"]}
+    account = {cn: ({"url": pins[cn]["url"], "bound": True} if "best" in got else
+                    {"url": pins[cn]["url"], "bound": False, "why": got["why"]}) for cn, got in pinned.items()}
+    return out, account
 
 
 def capture(college: str, out_dir: str, limit: int = 0) -> int:
@@ -5711,13 +5743,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         given = assign(programs, pages)
         pinned_site = site_pinned(programs, pages, site_pins) if site_pins else {}
         if pinned_site:
-            report["site_pins"] = {cn: ({"url": site_pins[cn]["url"], "bound": True} if "best" in got else
-                                        {"url": site_pins[cn]["url"], "bound": False, "why": got["why"]})
-                                   for cn, got in pinned_site.items()}
+            given, report["site_pins"] = with_site_pins(given, pinned_site, site_pins)
             for cn, got in pinned_site.items():
-                if "best" in got:
-                    given[cn] = {"best": got["best"]}
-                else:
+                if "why" in got:
                     print("::warning::%s %s: the reconcile entry's site_pages pin is refused (%s); no page is read "
                           "for it" % (college, cn, got["why"]), flush=True)
         refused = {}

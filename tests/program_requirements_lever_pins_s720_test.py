@@ -21,6 +21,8 @@ lever's members are pinned here, never read from the live census (p-test-pins-ce
      apart on p.131 and each closed by its own printed control number.
   3. Santiago Canyon's Public Administration A.S. 42990 prints PASV 150 to 153 and 155 for the state's PBLC codes: the
      course-id route (the Program Course File's own ids) reads them, so its window carries all six.
+     3b. Under Santiago Canyon's uniform pdf_numbers_after, capture_pdf itself reads the 3 pins: each source is
+     pinned and never after_unbound (S720 second reader, finding 3), so a forced read sends them.
   4. The named gaps: each program once, a defined reason, never pinned, and with the pins they cover the lever's list.
 Pure stdlib.
 """
@@ -137,6 +139,43 @@ check(printed.get("PBLC 150") == "PASV 150" and printed.get("PBLC 154") is None,
       "42990's PBLC 150 is looked for as the Program Course File's PASV 150; PBLC 154, printed as listed, is not (%s)"
       % printed)
 check(pa and pa[0]["coverage"] == 1.0, "42990's window places all six listed courses (%s)" % (pa and pa[0]["coverage"]))
+
+# ── 3b. a pin under Santiago Canyon's uniform pdf_numbers_after is bound, never unbound ─────────────────
+# capture_pdf reads the college's gate from its entry and the votes from the pages; the fixture holds five pages, so
+# the votes are those the entry records for the whole catalog (182 after, 0 before). Before S720's fix every pinned
+# source came back after_unbound "no_window", and a forced read kept the failing records it was meant to replace.
+import io  # noqa: E402
+import tempfile  # noqa: E402
+from contextlib import redirect_stdout  # noqa: E402
+
+_votes = (STEPS[SCC].get("pdf_numbers_after_votes") or {})
+check(STEPS[SCC].get("pdf_numbers_after") is True and _votes.get("after", 0) >= C.PDF_UNIFORM_AFTER
+      and _votes.get("before") == 0, "Santiago Canyon's entry gates pdf_numbers_after on uniform votes (%s)" % _votes)
+_pages = pages_of(SCC)
+_real_votes, _real_hf, _real_miner = C.pdf_numbers_after, C.read_hand_filed, C.P.pdfminer_pages
+C.pdf_numbers_after = lambda pg, programs: dict(_real_votes(pg, programs), after=_votes["after"],
+                                                before=_votes["before"], after_mode=True)
+C.read_hand_filed = lambda hf: {"url": URL, "access": "hand_filed", "pages": _pages, "extractor": "pypdf"}
+C.P.pdfminer_pages = lambda pdf: {"pages": [], "extractor": "pdfminer"}
+_progs = [dict(program(SCC, cn), award=FIX["colleges"][SCC]["programs"][cn]["award"], shape="degree", status="Active",
+               load_id="1") for cn in sorted(FIX["colleges"][SCC]["programs"])]
+_out = tempfile.mkdtemp()
+os.makedirs(os.path.join(_out, "sources"))
+_report = {}
+try:
+    with redirect_stdout(io.StringIO()):
+        _recs = C.capture_pdf(SCC, _out, _progs, {"catalog_url": URL}, _report,
+                              {"meta": {"url": URL, "fetched_by": "test", "fetched_at": "2026-11-24", "sha256": "0"}})
+finally:
+    C.pdf_numbers_after, C.read_hand_filed, C.P.pdfminer_pages = _real_votes, _real_hf, _real_miner
+_na = (_report.get("pdf") or {}).get("numbers_after") or {}
+check(_na.get("read") == "number_after" and _na.get("binding") == "number_line",
+      "the capture reads Santiago Canyon by the number line, as the live catalog does (%s)" % _na)
+check(all(r["method"] == "pdf_pages" and (r.get("source") or {}).get("pinned") is True and not r.get("after_unbound")
+          and not (r.get("source") or {}).get("after_unbound") and r["coverage"] >= C.P.ACCEPT_SHARE for r in _recs)
+      and len(_recs) == 3,
+      "each of the 3 pinned programs reads its pin's window, marked pinned and never after_unbound (%s)"
+      % [(r["control_number"], (r.get("source") or {}).get("after_unbound")) for r in _recs])
 
 # ── 4. the named gaps ─────────────────────────────────────────────────────────────────────
 for college, (slug, members) in LEVER.items():
