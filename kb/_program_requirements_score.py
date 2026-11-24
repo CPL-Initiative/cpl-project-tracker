@@ -778,21 +778,66 @@ def _stem_keys(stem: str) -> list[str]:
     return [k for k in out if k]
 
 
+# #3764's second reader: a sentence that hedges, makes the list conditional or negates the pool is no reading of one
+# (Reedley 33833 "not stated (likely from either list)", Cuesta 32562 "applies only to students who begin in SPAN
+# 203", "Lists A and B are not combined"); nor is a sentence that gives each part its own figure (Ventura 36858
+# "each list requires 3 units").
+POOL_REFUSED = re.compile(
+    r"\b(?:likely|appears?|apparently|possibly|perhaps|probably|unclear|uncertain|not\s+stated|reviewer|should\s+check"
+    r"|conditional|applies\s+only|only\s+(?:applies|for|to|when|if|students)|if\s+(?:a|an|the|any|students?|they)"
+    r"|not\s+(?:\w+\s+){0,2}(?:together|combined|pooled|shared)"
+    r"|each\s+(?:list|group|area|block|sub-?list)\s+(?:requires?|needs?|carries|has|prints))", re.I)
+# The program's printed total is read over its lists only where the sentence says the lists complete it together
+# (the second reader's finding 2: Ohlone 41245 "covers the whole Major Field list", Yuba 36015 "continues across a page
+# break" and Santa Ana 39840 restate the total).
+POOL_COMPLETES = re.compile(
+    r"\b(?:together|combined\s+(?:total|minimum)|(?:lists?|[A-Z])\s+combined|either\s+list|and/or|any\s+category"
+    r"|additional\s+(?:units|courses)|remaining\s+\d+(?:\.\d+)?\s+units|across\s+both\s+lists|from\s+the\s+above\s+areas"
+    r"|to\s+(?:total|achieve|reach))\b")
+# A figure belongs to the letters or the heading it is printed beside: within this many characters of them.
+POOL_NEAR = 60
+POOL_NEAR_HEADING = 40
+
+
+def _pool_figures(sentence: str) -> list[tuple]:
+    """Every figure the sentence prints, as (start, end, lo, hi, minimum, fill, words), in order."""
+    out = []
+    for rx, least, fill in FIGURE_OVER:
+        for m in rx.finditer(sentence):
+            n = float(m.group("n"))
+            top = _num(m.groupdict().get("m")) or n
+            out.append((m.start(), m.end(), n, max(n, top), least, fill, m.group(0)))
+    return sorted(out)
+
+
 def _pool_figure(sentence: str):
-    """(lo, hi, minimum, fill, words) for the first figure the sentence prints over its parts, else None."""
-    hits = [(m.start(), m, least, fill) for rx, least, fill in FIGURE_OVER for m in [rx.search(sentence)] if m]
-    if not hits:
-        return None
-    _, m, least, fill = min(hits, key=lambda h: h[0])
-    n = float(m.group("n"))
-    top = _num(m.groupdict().get("m")) or n
-    return n, max(n, top), least, fill, m.group(0)
+    """(lo, hi, minimum, fill, words) for the first figure the sentence prints, else None."""
+    figs = _pool_figures(sentence)
+    return figs[0][2:] if figs else None
+
+
+def _key_pattern(key: str):
+    return re.compile(r"\b" + r"[^A-Za-z0-9]+".join(re.escape(w) for w in key.split()) + r"\b", re.I)
+
+
+def _figure_after(sentence: str, keys: list[str], figs: list[tuple]):
+    """The figure printed right after the heading's own words (the next figure, within POOL_NEAR_HEADING characters),
+    from the last mention that has one; else None."""
+    best = None
+    for k in keys:
+        for m in _key_pattern(k).finditer(sentence):
+            nxt = next((f for f in figs if f[0] >= m.end()), None)
+            if nxt and nxt[0] - m.end() <= POOL_NEAR_HEADING and (best is None or m.start() > best[0]):
+                best = (m.start(), nxt)
+    return best[1] if best else None
 
 
 def pooled_figures(record: dict) -> list[dict]:
     """The figures the record's notes print over several of its blocks together: [{"blocks": [indexes] or "all",
     "figure": (lo, hi), "minimum": bool, "words": the sentence}], one per block set, none where two sentences give
-    the same blocks different figures or two block sets overlap."""
+    the same blocks different figures or two block sets overlap. Each figure is bound to the letters or the heading
+    it is printed beside (#3764's second reader); a sentence that names two split headings, hedges or negates reads
+    none."""
     if not POOLED_ON or window_cut(record):
         # A pool fills its parts to the figure, so a reader's note saying the requirements run outside the text read
         # refuses it, as it refuses an electives fill (Fullerton 18166: its Category C list is cut off; S720).
@@ -815,36 +860,48 @@ def pooled_figures(record: dict) -> list[dict]:
         if j > i:
             runs.append((list(range(i, j + 1)), st))
         i = j + 1
+
+    def is_total(f):
+        return bool(total) and abs(total[0] - f[2]) <= TOL and abs(total[1] - f[3]) <= TOL
+
     found: dict = {}
     for note in record.get("notes") or []:
         for sent in _SENTENCE.split(str(note)):
-            fig = _pool_figure(sent)
-            if not fig:
+            figs = _pool_figures(sent)
+            if not figs or POOL_REFUSED.search(sent):
                 continue
-            lo_f, hi_f, least, fill, _ = fig
             pooled = bool(POOL_WORDS.search(sent))
-            whole = bool(total) and abs(total[0] - lo_f) <= TOL and abs(total[1] - hi_f) <= TOL
-            if whole:
-                # The program's own total: the lists complete it, where the sentence names them.
-                if (pooled or fill) and POOL_PARTS.search(sent):
-                    found.setdefault("all", set()).add(((lo_f, hi_f), least, sent))
+            tot = next((f for f in figs if is_total(f)), None)
+            if tot is not None:
+                # The program's own total: the lists complete it, where the sentence names them and says so.
+                if (pooled or tot[5]) and POOL_PARTS.search(sent) and POOL_COMPLETES.search(sent):
+                    found.setdefault("all", set()).add(((tot[2], tot[3]), tot[4], sent))
                 continue
-            if not pooled:
+            if not pooled or len({(f[2], f[3]) for f in figs}) > 1:
+                # A sentence printing two different figures over its parts (two headings' figures, or a heading and
+                # a total that disagree: Modesto 08018's "COMPLETE 12 UNITS prints Total 9") reads none (#3764's
+                # second reader, finding 3).
                 continue
-            ix = None
-            lets = set()
+            ix, fig = None, None
+            lets, spans = set(), []
             for lm in POOL_LETTERS.finditer(sent):
                 lets.add(lm.group(1))
                 lets.update(_POOL_MORE.findall(lm.group(2) or ""))
+                spans.append(lm.span())
             if len(lets) >= 2 and all(x in letter for x in lets):
                 ix = sorted(k for x in lets for k in letter[x])
+                # The figure nearest the letters, before or after them, within POOL_NEAR characters.
+                lo_s, hi_s = min(x for x, _ in spans), max(y for _, y in spans)
+                near = [(max(lo_s - f[1], f[0] - hi_s, 0), f) for f in figs]
+                near = [x for x in near if x[0] <= POOL_NEAR]
+                fig = min(near, key=lambda x: x[0])[1] if near else None
             else:
-                up = " %s " % re.sub(r"[^A-Z0-9]+", " ", sent.upper())
-                named = [r for r, st in runs if any(" %s " % k in up for k in _stem_keys(st))]
+                named = [(r, st) for r, st in runs if any(_key_pattern(k).search(sent) for k in _stem_keys(st))]
                 if len(named) == 1:
-                    ix = named[0]
-            if ix and len(ix) >= 2:
-                found.setdefault(tuple(ix), set()).add(((lo_f, hi_f), least, sent))
+                    ix = named[0][0]
+                    fig = _figure_after(sent, _stem_keys(named[0][1]), figs)
+            if ix and len(ix) >= 2 and fig is not None:
+                found.setdefault(tuple(ix), set()).add(((fig[2], fig[3]), fig[4], sent))
     out, used = [], set()
     for key, figs in found.items():
         if len({f for f, _, _ in figs}) != 1:

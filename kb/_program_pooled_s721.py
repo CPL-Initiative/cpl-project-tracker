@@ -300,6 +300,100 @@ def on_live_run(filed: dict) -> bool:
 
 
 # ── the self-recall ───────────────────────────────────────────────────────
+# The hand reading of every record the pooled reading fired on before #3764's second reader, and of every record it
+# fires on now (S721): {(college, control number): the figures (low ends) the page prints over several of the
+# record's lists together}. An empty set: the record's sentence names no real pool (it restates the total, hedges,
+# makes a list conditional, takes the wrong parts, or gives one list's own figure). The live scan (live_scan) reads
+# the reading over every committed record against it: a figure read that the hand reading lacks is wrong, a figure the
+# hand reading holds and the reading refuses is missed (POOLS_MISSED pins those), and a record it fires on with no hand
+# answer is wrong.
+_M, _V = MODESTO, "Ventura College"
+POOLS_HELD = {
+    ("Clovis Community College", "33489"): {18}, ("College of the Sequoias", "35415"): {18},
+    ("Cuyamaca College", "18629"): {18}, ("Cuyamaca College", "18631"): {18}, ("Cuyamaca College", "18635"): {18},
+    ("El Camino College", "02513"): {18}, ("El Camino College", "02515"): {18}, ("El Camino College", "02517"): {18},
+    ("Fullerton College", "18163"): {18}, ("Golden West College", "19461"): {18},
+    ("Rio Hondo College", "19274"): {18}, ("Rio Hondo College", "19275"): {18}, ("Rio Hondo College", "19276"): {18},
+    (_M, "06637"): {5, 9}, (_M, "06639"): {5, 9}, (_M, "06642"): {5, 9}, (_M, "06672"): {7},
+    # 08018: its Major Courses heading prints "COMPLETE 12 UNITS" and Total 9, which disagree: no pool there.
+    (_M, "08018"): {5, 9}, (_M, "08103"): {5, 9}, (_M, "08104"): {9}, (_M, "08109"): {9}, (_M, "08111"): {9},
+    (_M, "10602"): {5}, (_M, "14886"): {18}, (_M, "14888"): {23}, (_M, "30675"): {6}, (_M, "32226"): {3},
+    (_M, "33944"): {5, 9}, (_M, "33945"): {5, 9}, (_M, "35276"): {5, 6}, (_M, "35277"): {9},
+    (_M, "37300"): {5, 9}, (_M, "38067"): {9},
+    ("Santa Ana College", "04256"): {22}, ("Santa Monica College", "03263"): {8},
+    ("Santa Monica College", "32792"): {12}, (_V, "06957"): {9}, (_V, "20576"): {9},
+    # Real pools whose sentences the reading refuses (missed, pinned in POOLS_MISSED).
+    ("Compton College", "38176"): {18}, ("Hartnell College", "17912"): {18}, ("Pasadena City College", "43761"): {18},
+    # No real pool: the second reader's eleven, and three more the first reading fired on.
+    ("Allan Hancock College", "19936"): set(), ("Chaffey College", "46153"): set(),   # the wrong parts
+    ("Columbia College", "41581"): set(), ("Reedley College", "33833"): set(),          # hedged
+    ("Los Angeles Valley College", "32410"): set(), (_V, "36858"): set(),              # one list's own figure
+    ("Cuesta College", "32562"): set(), ("MiraCosta College", "40577"): set(),         # a conditional list
+    ("Moreno Valley College", "37553"): set(), ("Mt. San Antonio College", "40154"): set(),   # restate the total
+    ("Ohlone College", "41245"): set(), ("Santa Ana College", "39840"): set(), ("Yuba College", "36015"): set(),
+    ("Laney College", "19057"): set(),   # one list, its own total
+}
+# Each sentence says the lists complete the total, in words the whole-program pool does not take ("selected across the
+# listed disciplines", "applies to List A as a whole", "for a total of 18 units" over three areas), or hedges
+# ("appears to describe the whole section", Modesto 37300's career 5).
+POOLS_MISSED = {("Compton College", "38176", 18), ("Hartnell College", "17912", 18),
+                ("Pasadena City College", "43761", 18), (_M, "37300", 5)}
+
+
+def live_scan(every: list | None = None) -> dict:
+    """The pooled reading over every committed record against POOLS_HELD: right (the figures read are the hand
+    reading's, less the pinned misses), wrong (a figure read that the hand reading lacks, or a record with no hand
+    answer), missed."""
+    out = {"read": 0, "fired": 0, "right": 0, "wrong": [], "missed": []}
+    for _, f in every if every is not None else every_record():
+        key = (f.get("college"), str(f.get("control_number")))
+        got = {int(p["figure"][0]) if float(p["figure"][0]).is_integer() else p["figure"][0]
+               for p in S.pooled_figures(f["record"])}
+        if got:
+            out["fired"] += 1
+        if not got and key not in POOLS_HELD:
+            continue
+        out["read"] += 1
+        want = POOLS_HELD.get(key)
+        if want is None:
+            out["wrong"].append([key[0], key[1], sorted(got), "no hand answer"])
+            continue
+        extra = got - want
+        miss = {x for x in want - got}
+        if extra:
+            out["wrong"].append([key[0], key[1], sorted(got), sorted(want)])
+        out["missed"] += [[key[0], key[1], x] for x in sorted(miss)]
+        if not extra and all((key[0], key[1], x) in POOLS_MISSED for x in miss):
+            out["right"] += 1
+    return out
+
+
+def live_flips(every: list | None = None) -> dict:
+    """The recall's flips, live, over every record the reading fires on (a record it does not fire on cannot move):
+    {kind: [(college, control number)]} for fail_to_pass, pass_to_fail and the rest."""
+    out = collections.defaultdict(list)
+    for _, f in every if every is not None else every_record():
+        if not S.pooled_figures(f["record"]):
+            continue
+        fa = (f.get("score") or {}).get("arithmetic") or {}
+        if fa.get("pooled"):
+            # Rescored by this plan: its filed arithmetic is the reading on; the reading off is S.POOLED_ON False.
+            saved = S.POOLED_ON
+            S.POOLED_ON = False
+            try:
+                off = current(f, C.fresh_score(f)["arithmetic"])
+            finally:
+                S.POOLED_ON = saved
+            on = fa
+        else:
+            off, on = arithmetic(f)
+        if off == on:
+            continue
+        kind = "%s_to_%s" % ("pass" if verdict(f, off) else "fail", "pass" if verdict(f, on) else "fail")
+        out[kind].append((f.get("college"), str(f.get("control_number"))))
+    return {k: sorted(v) for k, v in out.items()}
+
+
 def recall_all(every: list | None = None) -> dict:
     """The reading over every committed record: reading off against on, as each record's live verdict counts it."""
     moved = collections.defaultdict(list)

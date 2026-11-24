@@ -33,7 +33,8 @@ HELD = {'33431', '37227', '33506', '33432', '45325'}
 # S721's plan s721p (kb/_program_pooled_s721.py) reads the one figure these rows' pages print over several lists as one
 # pool. MOVED_S721P: the scorer now passes them, so S720's reading files no gap on them, and s721p moves their live rows
 # to passing with no gap. RESCORED_S721P: the reading moves the sum and the record still fails, so its filed gap and
-# its image stand while S720's reading of the old sum no longer does.
+# its image stand while S720's reading of the old sum no longer does. These sets pin only the keys s721p moved;
+# every other key stays pinned to S720's reading as before.
 MOVED_S721P = {'33489'}
 RESCORED_S721P = set()
 LEFT_S721P = MOVED_S721P | RESCORED_S721P

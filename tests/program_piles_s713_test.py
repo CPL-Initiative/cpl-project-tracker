@@ -116,7 +116,8 @@ check(NG.confidence(rec([CUT_NOTE]), "section_cut_off")["course_list_match"] == 
 # ── the self-recall ──
 pr = P.precision(CENSUS_AT_PLAN)
 # S721's plan s721p passes Santa Monica 03263 and 32792 under the pooled reading (kb/_program_pooled_s721.py); this hand reading held it for
-# a reread, so the rule now reads it passing.
+# a reread, so the rule now reads it passing. The exception pins only the keys s721p moved; every other key
+# stays pinned to this plan's hand reading.
 check(pr["read"] == 53 and pr["right"] == 51 and pr["wrong"] == 2 and pr["not_hand_held"] == 0
       and sorted((k["control_number"], k["hand"], k["rule"]) for k in pr["wrong_keys"])
       == [("03263", "none", "passes"), ("32792", "none", "passes")],

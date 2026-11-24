@@ -162,7 +162,8 @@ for r in rows:
 # ── the self-recall ──
 pr = C.precision(CENSUS_AT_PLAN)
 # S721's plan s721p passes 33489 under the pooled reading (kb/_program_pooled_s721.py); this hand reading held it for
-# a reread, so the rule now reads it passing.
+# a reread, so the rule now reads it passing. The exception pins only the keys s721p moved; every other key
+# stays pinned to this plan's hand reading.
 check(pr["read"] == 17 and pr["right"] == 16 and pr["wrong"] == 1 and pr["not_hand_held"] == 0
       and [(k["control_number"], k["hand"], k["rule"]) for k in pr["wrong_keys"]] == [("33489", "none", "passes")]
       and pr["by_answer"] == {"passes": 6, "none": 11}, "precision against the hand reading: %r" % pr)

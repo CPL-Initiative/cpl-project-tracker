@@ -12,8 +12,10 @@ record the pooled reading passes loses the gap through the rescore. Pinned here:
     cannot reach a fixed figure, and the switch;
   * the held answers (S720's #3756 negatives, Modesto's eight, the sixteen applied rows) through the module's own
     classify, against the records the plan rescored;
-  * the self-recall the plan ran over every committed record, read from the fixture: no pass-to-fail, and every
-    fail-to-pass names the sentence that prints its figure;
+  * the self-recall, live (#3764's second reader): the reading over every committed record against a hand answer for
+    each record it fires on (POOLS_HELD; right, wrong and the pinned misses), the flips over every record it fires on
+    (no pass-to-fail; the 28 fail-to-pass the fixture pins, each naming the sentence that prints its figure), and the
+    sentences the second reader found misread, refused on built records;
   * the plan: the rows and held keys pinned in the fixture (tests/fixtures/pooled_figure_s721.json, never the live
     census), named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none, and the
     load's image of each committed record is its receipt's after-image.
@@ -107,18 +109,52 @@ check(set(W.REVIEWED_S720J) == {cn for (c, cn), v in W.HELD_ANSWERS.items() if c
       and not set(W.HELD_S720J) & set(W.REVIEWED_S720J) and len(W.HELD_S720J) == 13,
       "Modesto's eight are pinned and its 13 held stay apart")
 
-# ── the self-recall and the plan, read from the fixture ───────────────────
+# ── the self-recall, live (#3764's second reader, finding 1) ──────────────
+# Every committed record the reading fires on, read against the hand answer each holds (POOLS_HELD): no figure read
+# that the hand reading lacks, no record fired on without a hand answer, and the misses pinned.
+every = W.every_record()
+scan = W.live_scan(every)
+check(scan["read"] == len(W.POOLS_HELD) == 55 and scan["fired"] == 38,
+      "the scan reads the 55 hand-held records, 38 of them firing (%d, %d)" % (scan["read"], scan["fired"]))
+check(scan["right"] == 55 and not scan["wrong"], "the live recall: %d right, wrong %s" % (scan["right"], scan["wrong"]))
+check({tuple(m) for m in scan["missed"]} == W.POOLS_MISSED, "the misses are the four pinned: %s" % scan["missed"])
+flips = W.live_flips(every)
 with open(FIXTURE, encoding="utf-8") as fh:
     fx = json.load(fh)
+check(not flips.get("pass_to_fail"), "no pass-to-fail, live: %s" % flips.get("pass_to_fail"))
+check([{"college": c, "control_number": cn} for c, cn in flips.get("fail_to_pass") or []]
+      == sorted(fx["fail_to_pass"], key=lambda m: (m["college"], m["control_number"])),
+      "the live fail-to-pass members are the fixture's 28 (%d)" % len(flips.get("fail_to_pass") or []))
+for c, cn in flips.get("fail_to_pass") or []:
+    pools = S.pooled_figures(W.load(c, cn)["record"])
+    check(pools and all(p["words"] and S._pool_figure(p["words"]) for p in pools),
+          "%s %s: its pool names the sentence that prints its figure" % (c, cn))
+# The second reader's sentences, refused on built records.
+lists2 = [blk("Core", "all", units=(5,)), blk("a minimum of 4 units (List A)", "choose_units", 4),
+          blk("a minimum of 3 units (List B)", "choose_units", 3)]
+for words in ("The block's stated total of 12 units is taken from 'Total Required Units: 12.0', which covers the whole "
+              "Major Field list.",
+              "The required course list continues across a page break; the total of 12 units was read from page 92.",
+              "Block minimums fall short of the stated total of 12 units; how the rest are chosen is not stated (likely "
+              "from either list).",
+              "Lists A and B are not combined toward the total of 12 units."):
+    check(not S.pooled_figures(rec(lists2, [words], (12, 12))), "refused: %s" % words[:60])
+check(S.pooled_figures(rec(lists2, ["Additional courses from List A or List B must be completed to achieve 12 total "
+                                    "units."], (12, 12))), "a completing sentence still fills the total")
+swapped = [blk("CAREER - COMPLETE 5 UNITS", "all", units=(5,)),
+           blk("SCIENCE BREADTH COURSES", "choose_units", 6, {"min": 6, "max": 9}, (3, 3, 3)),
+           blk("SCIENCE BREADTH COURSES", "choose_units", 0, None, (3, 3)),
+           blk("MAJOR COURSES", "all", units=(6, 6)), blk("MAJOR COURSES", "all", units=(3,))]
+two = ("Container headings 'MAJOR COURSES - COMPLETE 15 UNITS' (Total 15) and 'SCIENCE BREADTH COURSES - COMPLETE 9 "
+       "UNITS' (Total 9) hold no courses directly; their sub-blocks are recorded.")
+check(not S.pooled_figures(rec(swapped, [two], (29, 29))), "a sentence printing two headings' figures reads none")
+check([p["figure"] for p in S.pooled_figures(rec(swapped, ["'SCIENCE BREADTH COURSES - COMPLETE 9 UNITS' is a container "
+                                                           "over two nested blocks."], (29, 29)))] == [(9.0, 9.0)],
+      "a heading's figure binds to its own heading")
+
+# ── the plan, read from the fixture ───────────────────────────────────────
 with open(os.path.join(ROOT, fx["receipt"]), encoding="utf-8") as fh:
     rcpt = json.load(fh)
-sr = rcpt["self_recall"]
-check(sr["counts"] == fx["self_recall_counts"] and "pass_to_fail" not in sr["counts"], "no pass-to-fail statewide")
-check(sr["records"] > 18000, "the self-recall read every committed record (%d)" % sr["records"])
-check([{"college": m["college"], "control_number": m["control_number"]} for m in sr["members"]["fail_to_pass"]]
-      == fx["fail_to_pass"], "the fail-to-pass members are the fixture's")
-check(all(m["pooled"] and all(p["words"] and S._pool_figure(p["words"]) for p in m["pooled"])
-          for m in sr["members"]["fail_to_pass"]), "every fail-to-pass names the sentence that prints its figure")
 check(set(rcpt["elsewhere_left_for_next_run"]) == {"Cuyamaca College", "Golden West College", "Rio Hondo College"}
       and not set(rcpt["elsewhere_left_for_next_run"]) & set(W.LANE), "flips outside the eight are left, counted")
 

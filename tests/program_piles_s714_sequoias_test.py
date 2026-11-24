@@ -87,7 +87,8 @@ check(conf["steps"][0].get("from_heading") is True, "the fill reads from the pro
 # ── the self-recall, on the run's filed records ──
 pr = Q.precision(CENSUS_AT_PLAN)
 # S721's plan s721p passes 35415 under the pooled reading (kb/_program_pooled_s721.py); this hand reading held it for
-# a reread, so the rule now reads it passing.
+# a reread, so the rule now reads it passing. The exception pins only the keys s721p moved; every other key
+# stays pinned to this plan's hand reading.
 check(pr["read"] == 22 and pr["right"] == 21 and pr["wrong"] == [["35415", "none", "passes"]] and pr["by_answer"] == {"passes": 13, "none": 9},
       "precision: %r" % pr)
 cc = Q.claim_checks(CENSUS_AT_PLAN)
