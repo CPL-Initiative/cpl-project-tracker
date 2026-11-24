@@ -20,6 +20,11 @@
 //   kb/status/commons_history.json            the references' daily settled counts: the Data Curation Phase 1 ETA.
 //   kb/reference/model_spend_daily.json       cost a day, the chart's second panel (the ETA clock's Show costs source).
 //   commons_data.js (College Data Collection's own filters, loaded by commons.js) for the College Data Collection card.
+// Read live, Range-paged, so a person's save moves its card's figures at once (S719; "The cards answer their own
+// edits" below): kb/exhibits_review.json and the held titles' kb_curation saves (Exhibit titles, Needs you's held
+// line); the hand-over counts (CPL_HANDOVER.summary; Courses data, Needs you); for a signed-in reviewer, the
+// cr_reference_decisions table and, when it holds a decision newer than the last receipt, kb/cr_reference_worklist.json
+// (Credit Recommendations).
 // A figure with no single committed source on main yet is in ASKED below, named with where it comes from, so the
 // page never invents one and a later source replaces it in one place. Every figure is read once into the model, and
 // every place on the page that shows it reads the model, so the page agrees with itself (S490).
@@ -284,9 +289,10 @@
       cards: { ready: course.ready, total: course.total, review: course.needs_review, repair: course.needs_repair, notReady: course.not_ready,
         confirmed: course.confirmed, confirmedReady: course.confirmed_ready },
       exhibits: { stamped: ex.stamped, titles: (ex.titles || 0) + (ex.backlog || 0), person: ex.person, cohort: ex.cohort, backlog: ex.backlog,
-        names: ex.credentials, noSubject: ex.no_subject, left: ex.left_map, renamed: ex.review_list },
+        names: ex.credentials, noSubject: ex.no_subject, left: ex.left_map, renamed: ex.review_list, foldAt: ex.fold_at || "" },
       held: { n: held.n, unsure: heldParts ? heldParts[1] : null, issuers: heldParts ? heldParts[2] : null, code: heldParts ? heldParts[3] : null },
-      cr: { settled: cr.settled, wordings: cr.wordings, rule: cr.rule_wordings, curator: cr.curator_only, groups: cr.names_to_check },
+      cr: { settled: cr.settled, wordings: cr.wordings, rule: cr.rule_wordings, curator: cr.curator_only, groups: cr.names_to_check,
+        through: cr.decisions_through || "", liveRows: cr.live_rows || 0 },
       subjects: { settled: subj.settled, of: subj.disciplines },
       /* Step b (S694): the local subject titles the Courses bot drafted from the printed catalogs; null reads TBA. */
       localTitles: LS && LS.totals ? { colleges: LS.totals.colleges, named: LS.totals.named, collegesNamed: LS.totals.colleges_named,
@@ -697,6 +703,7 @@
     H.summary(true).then(function (rows) {
       if (Array.isArray(rows)) M.handed = rows;
       var N = redrawNeeds(M);
+      redrawCards(M, ["courses-data"]);   /* the outlines a person must find, as Needs you counts them */
       (N.outline ? N.outline.colleges : []).forEach(function (c) {
         var line = document.querySelector('.cmf-hunt li[data-hunt-college="' + c.slug + '"] .cmf-standing');
         if (!line) return;
@@ -812,17 +819,134 @@
       }
       return Promise.all(chunks.map(function (c) {
         var q = c.map(function (r) { var id = LIVE.prefix + r; return encodeURIComponent('"' + id.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); });
-        return page(LIVE.url + "?select=course_id,field,value&field=eq." + LIVE.field + "&course_id=in.(" + q.join(",") + ")&order=course_id.asc", 0, []);
+        return page(LIVE.url + "?select=course_id,field,value,reviewed_at&field=eq." + LIVE.field + "&course_id=in.(" + q.join(",") + ")&order=course_id.asc", 0, []);
       })).then(function (parts) {
-        var by = {};
+        var by = {}, at = {};
         parts.forEach(function (rows) { rows.forEach(function (r) {
           var v = String(r.value || "").trim();
-          if (r.field === LIVE.field && String(r.course_id || "").indexOf(LIVE.prefix) === 0 && v) by[r.course_id.slice(LIVE.prefix.length)] = v;
+          if (r.field === LIVE.field && String(r.course_id || "").indexOf(LIVE.prefix) === 0 && v) {
+            by[r.course_id.slice(LIVE.prefix.length)] = v; at[r.course_id.slice(LIVE.prefix.length)] = r.reviewed_at || "";
+          }
         }); });
-        var saved = raws.filter(function (r) { return by[r]; }).map(function (r) { return { raw: r, value: by[r] }; });
+        /* Each save keeps its time, so the Exhibit titles card can tell a save the fold already carried (exhibitsNow). */
+        var saved = raws.filter(function (r) { return by[r]; }).map(function (r) { return { raw: r, value: by[r], at: at[r] }; });
         return { held: held.length, saved: saved, open: held.length - saved.length, at: d.written_at };
       });
     });
+  }
+
+  /* ── The cards answer their own edits (S719; Sam, 2026-11-23: "when I make edits or decisions, they are immediately
+     reflected in the numbers (going in the right direction) shown in the links. Then I will want to apply the same
+     process and principles to the other commons cards") ──
+     The Subjects card's rule (d-subjects-figures-live-s715) on every card that has a save to read: a figure is the
+     committed count plus the live saves the build has not carried, judged by the test its own list applies, and the
+     card draws again in place (redrawCards) when a read answers. Every read here is read-only and Range-paged.
+       Exhibit titles: a held title a person saved leaves the held count (heldLive, the Exhibits Review queue's own
+         test) and carries a person's review stamp. The nightly fold writes that stamp, so a save made before the fold's
+         last report (the exhibit row's fold_at) may be counted already and is never added a second time.
+       Courses data: the outlines a person must find drop each course handed over (CPL_HANDOVER.summary, needsModel),
+         as Needs you's list and College Data Collection's to-do do.
+       Credit Recommendations: a wording a curator's decision names is settled (crLive), the CR tab's own test over its
+         decisions table, read for a signed-in reviewer once the table holds a decision newer than the last receipt.
+     Left to the nightly build, each card's method saying so (LIVE_WORDS): the program records; the Courses and M-IDs
+     card, whose scores the automatic check writes nightly and whose Assign lists a course at the next build; and the
+     College Data Collection states, which change when a session loads what a person handed over. */
+  var LIVE_WORDS = {
+    exhibit: "A held title a person names on the Exhibits tab leaves the held count at once and counts as reviewed, with a person’s stamp, while it waits for the nightly build to add it to the reference.",
+    coursesData: "A course handed over leaves the count of outlines a person must find at once, as it leaves Needs you.",
+    cr: "Signed in, a wording a curator’s decision names on the Credit Recommendations tab counts as settled at once; signed out, the count is the last receipt’s.",
+    programs: "These counts come from the program records, which refresh nightly: a hand-over or a save shows here after the next build.",
+    courses: "The automatic check scores the cards nightly, and an Assign in the Courses List lists its course under the common course at the next daily build, so these counts move then.",
+    cdc: "A hand-over takes its item off Needs you at once; a college’s state here changes when a session loads what was handed over, at the next build."
+  };
+  function copyOf(o) { var x = {}; for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) x[k] = o[k]; return x; }
+  /* The Exhibit titles card's figures with the live held read on top. held is the titles still held (the status file's
+     count until the read answers); fresh is the saves since the fold's last report, each one a person's stamp. */
+  function exhibitsNow(M) {
+    var E = copyOf(M.exhibits), L = M.heldLive;
+    E.held = L ? L.open : (M.held && M.held.n) || 0;
+    E.fresh = 0;
+    if (L && L.saved && L.saved.length && E.stamped != null) {
+      var fold = Date.parse(E.foldAt || "") || 0;
+      E.fresh = L.saved.filter(function (x) { var t = Date.parse(x && x.at || ""); return !isNaN(t) && t > fold; }).length;
+      E.stamped += E.fresh;
+      E.person = (E.person || 0) + E.fresh;
+    }
+    return E;
+  }
+  /* The Credit Recommendations card's figures with the live decisions on top (crLive), once they read. */
+  function crNow(M) {
+    var R = copyOf(M.cr), F = M.crLive;
+    if (F && F.fresh) { R.settled = F.settled; R.wordings = F.wordings; R.rule = F.rule; R.curator = F.curator; R.fresh = F.fresh; }
+    return R;
+  }
+  var CRL = { url: "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/cr_reference_decisions", worklist: "kb/cr_reference_worklist.json",
+    page: 1000, settles: { confirmed: true, not_a_topic: true } };
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  /* What the build carried: until a copy of the live table is committed, the decisions through the last receipt's day
+     ("Nov 19, 2026", the row's decisions_through); once one is, the decisions as of the build. */
+  function crCarried(M) {
+    var R = M.cr, built = Date.parse(M.commonsAt || "") || 0;
+    var m = /^([A-Z][a-z]{2}) (\d{1,2}), (\d{4})$/.exec(String(R.through || "")), mo = m ? MONTHS.indexOf(m[1]) : -1;
+    return R.liveRows > 0 || mo < 0 ? built : Date.UTC(+m[3], mo, +m[2] + 1);
+  }
+  function listOf(v) {
+    if (Array.isArray(v)) return v;
+    if (typeof v === "string") { try { var x = JSON.parse(v); return Array.isArray(x) ? x : []; } catch (e) { return []; } }
+    return [];
+  }
+  /* kb/_build_commons_status.py row_cr()'s count over the live table: a wording is settled when a rung 1 to 4 rule
+     places it (its group acts automatically) or a confirmed or not-a-topic decision names it and does not exclude it. */
+  function crFigures(W, D) {
+    var of = Object.create(null), rule = Object.create(null), named = Object.create(null), by = Object.create(null);
+    ((W && W.groups) || []).forEach(function (g) {
+      (g.members || []).forEach(function (m) { if (!m || m.rec == null) return; of[m.rec] = true; if (g.acts_automatically) rule[m.rec] = true; });
+    });
+    (D || []).forEach(function (r) { if (r && r.group_key) by[r.group_key] = r; });
+    Object.keys(by).forEach(function (k) {
+      var d = by[k], out = Object.create(null);
+      if (!CRL.settles[d.decision]) return;
+      listOf(d.excluded).forEach(function (w) { out[w] = true; });
+      listOf(d.members).forEach(function (w) { if (!out[w] && of[w]) named[w] = true; });
+    });
+    var F = { settled: 0, wordings: 0, rule: 0, curator: 0 };
+    Object.keys(of).forEach(function (w) {
+      F.wordings++;
+      if (rule[w]) F.rule++;
+      if (rule[w] || named[w]) F.settled++;
+      if (named[w] && !rule[w]) F.curator++;
+    });
+    return F;
+  }
+  /* The decisions table answers a signed-in reviewer (the CR tab reads it the same way). With no decision newer than
+     what the build carried, the committed count stands and the worklist is not read; otherwise the count is taken
+     again over the whole table, so a decision counts once however it reached the build. */
+  function crLive(M) {
+    var S = window.CPL_SESSION, s = S && typeof S.get === "function" ? S.get() : null;
+    if (!s || !s.access_token || typeof S.authHeaders !== "function" || (typeof S.isFresh === "function" && !S.isFresh(s))) return Promise.resolve(null);
+    var rows = [];
+    function page(from) {
+      return fetch(CRL.url + "?select=group_key,decision,members,excluded,updated_at&order=group_key.asc",
+        { headers: S.authHeaders({ "Range-Unit": "items", Range: from + "-" + (from + CRL.page - 1) }) })
+        .then(function (r) { if (!r.ok) throw new Error("the decisions table answered " + r.status); return r.json(); })
+        .then(function (arr) { arr = Array.isArray(arr) ? arr : []; rows = rows.concat(arr); return arr.length === CRL.page ? page(from + CRL.page) : rows; });
+    }
+    var at = crCarried(M);
+    return page(0).then(function (D) {
+      var fresh = D.filter(function (r) { var t = Date.parse(r && r.updated_at || ""); return !isNaN(t) && t > at; }).length;
+      if (!fresh) return { fresh: 0 };
+      /* The worklist is committed and changes only with a deploy: read once a page load. */
+      var W = CRL.W || (CRL.W = readJson(CRL.worklist).then(null, function (e) { CRL.W = null; throw e; }));
+      return W.then(function (w) { var F = crFigures(w, D); F.fresh = fresh; return F; });
+    });
+  }
+  /* The cards named, drawn again from the model; each takes its old one's place (render's M._swap) only when a figure
+     or a word changed. */
+  function redrawCards(M, keys) {
+    if (!M || typeof M._swap !== "function") return [];
+    var C = cards(M), done = [];
+    C.collect.concat(C.curate, C.connect).forEach(function (c) { if (keys.indexOf(c.getAttribute("data-key")) >= 0 && M._swap(c)) done.push(c.getAttribute("data-key")); });
+    return done;
   }
 
   /* One card: title, pill, headline (its number stays when folded), meter, body (clamped to six lines), "...(more)"
@@ -1111,7 +1235,8 @@
         + "The top fix is the one, of the fixes the file names for programs still to pass, that reaches the most colleges. A college moved this week when its catalog was collected within the last 7 days. "
         + "A stuck college waits on a person or on a fix to our reader; the line under the counts names which, college by college. "
         + "The file counts " + fmt(C.all) + " colleges and continuing-education campuses"
-        + (M.colleges && M.colleges.districts > 1 ? ", in " + fmt(M.colleges.districts) + " districts (" + fmt(M.colleges.districts - 1) + " plus Calbright)." : ".")])],
+        + (M.colleges && M.colleges.districts > 1 ? ", in " + fmt(M.colleges.districts) + " districts (" + fmt(M.colleges.districts - 1) + " plus Calbright)." : ".")]),
+        p([LIVE_WORDS.cdc])],
       links: [["Open College Data Collection", "#collect"]] });
   }
 
@@ -1161,7 +1286,7 @@
      person or a fix first, then the largest remaining count. Only the Courses and M-IDs card reads a measured
      0-to-1 score, so it alone carries a Confident line (the Subjects scale: Confident at 0.9 or better). */
   function cards(M) {
-    var P = M.programs, Cl = M.colleges, Co = M.courses, Cd = M.cards, E = M.exhibits, R = M.cr, X = ASKED.cr, K = ASKED.credentials, B = M.building;
+    var P = M.programs, Cl = M.colleges, Co = M.courses, Cd = M.cards, E = exhibitsNow(M), R = crNow(M), X = ASKED.cr, K = ASKED.credentials, B = M.building;
     var O = needsModel(M).outline, top = M.cdc && M.cdc.top;
     var noLink = Cl.registry != null && Cl.outlineLinks != null ? Cl.registry - Cl.outlineLinks : null;
     var collect = [
@@ -1206,7 +1331,7 @@
               line: fmt(P.gap) + " Active programs have a gap noted in their record.",
               next: top ? "the top fix, which reaches " + plural(top.n, "college", "colleges") + ": " + top.what + "." : null,
               act: [["The programs list", "#program-requirements/list"]].concat(top ? [["The colleges the top fix reaches", "#collect/fix_" + top.key]] : []) }] },
-        method: [p([fmt(P.complete) + " of " + fmt(P.active) + " is the live count of Active programs with a complete record. " + fmt(P.gap) + " have a gap noted; " + fmt(P.unread) + " have no record yet; " + fmt(P.confirmed) + " have been confirmed by a person, " + fmt(P.confirmedComplete) + " of them complete. A wider count of " + fmt(P.wider) + " of " + fmt(P.widerOf) + " adds Approved programs, which are approved but not yet offered (" + fmt(P.approved) + "), and Teachout programs, which are being phased out (" + fmt(P.teachout) + "). The collection target is every Active program in its college’s current catalog: " + fmt(P.active) + " minus the COCI-only programs, about " + fmt(P.target) + ", which leaves about " + fmt(P.left) + ". About " + fmt(P.cociOnly) + " COCI-only programs (active in the Chancellor’s Office curriculum inventory but not in the current catalog) are optional cleanup, not unfinished work, and are not part of that target. " + (P.doneN == null ? "" : "On pace, at about " + fmt(Math.round(P.pace)) + " a day, that target finishes " + longDate(P.doneN) + ". ") + "The older 72% “passing” card is cut from this page. ", a("#program-requirements/list", "Open the programs list"), "."])],
+        method: [p([fmt(P.complete) + " of " + fmt(P.active) + " is the live count of Active programs with a complete record. " + fmt(P.gap) + " have a gap noted; " + fmt(P.unread) + " have no record yet; " + fmt(P.confirmed) + " have been confirmed by a person, " + fmt(P.confirmedComplete) + " of them complete. A wider count of " + fmt(P.wider) + " of " + fmt(P.widerOf) + " adds Approved programs, which are approved but not yet offered (" + fmt(P.approved) + "), and Teachout programs, which are being phased out (" + fmt(P.teachout) + "). The collection target is every Active program in its college’s current catalog: " + fmt(P.active) + " minus the COCI-only programs, about " + fmt(P.target) + ", which leaves about " + fmt(P.left) + ". About " + fmt(P.cociOnly) + " COCI-only programs (active in the Chancellor’s Office curriculum inventory but not in the current catalog) are optional cleanup, not unfinished work, and are not part of that target. " + (P.doneN == null ? "" : "On pace, at about " + fmt(Math.round(P.pace)) + " a day, that target finishes " + longDate(P.doneN) + ". ") + "The older 72% “passing” card is cut from this page. ", a("#program-requirements/list", "Open the programs list"), "."]), p([LIVE_WORDS.programs])],
         links: [["Open Programs", "#program-requirements/list"]] }),
       checksCard({ key: "courses-data", id: "courses-data", title: "Courses data", pill: "In progress",
         big: fmt(Co.slo) + " of " + fmt(Co.active), rest: [" courses in active programs have student learning outcomes"],
@@ -1230,7 +1355,7 @@
             act: [["The courses by college", "#collect/outlines-blocked"], ["Hand over a file or link", "#collect"]] }] },
         method: [p([fmt(Co.active) + " is the number of courses that appear in Active programs statewide. " + fmt(Co.slo) + " of those already have student learning outcomes on file, and " + fmt(Co.obj) + " have course objectives (a course can have both). Those are live statewide counts. A separate Building-line read has " + fmt(M.building.outcomes) + " outcomes from " + fmt(M.building.outcomeCourses) + " courses at " + fmt(M.building.outcomeColleges) + " colleges; it is not the same " + fmt(Co.sloColleges) + "-college live SLO cut. The recent rates are measured from those nights, not one fixed nightly estimate: from the " + ASKED.sloSnap.at + " snapshot to this page’s counts, about one and a half days, SLOs grew by " + fmt(Co.sloGrow) + " (" + fmt(ASKED.sloSnap.slo) + " to " + fmt(Co.slo) + ") and objectives by " + fmt(Co.objGrow) + " (" + fmt(ASKED.sloSnap.obj) + " to " + fmt(Co.obj) + "). "
           + (Co.objDoneN != null && Co.sloDoneN != null ? "If every one of the " + fmt(Co.active) + " were already readable, objectives at about " + fmt(Math.round(Co.objGrow / 100) * 100) + " a night would finish around " + longDate(Co.objDoneN) + " (" + fmt(Co.objLeft) + " left), and SLOs at about " + fmt(Math.round(Co.sloGrow / 100) * 100) + " a night around " + longDate(Co.sloDoneN) + " (" + fmt(Co.sloLeft) + " left). " : "")
-          + "Those dates are not shown, because a finish date should be set only for courses that can already be read automatically, and that readable-course count is not computed yet."])],
+          + "Those dates are not shown, because a finish date should be set only for courses that can already be read automatically, and that readable-course count is not computed yet."]), p([LIVE_WORDS.coursesData])],
         links: [["Outlines blocked", "#collect/outlines-blocked"], ["Courses List", "#coci-lookup/courses"]] }),
       cdcCard(M)
     ];
@@ -1259,7 +1384,7 @@
                 " lists them. One known cause: " + fmt(ASKED.missingMembership) + " cards are missing from the published list of which local courses belong to each shared course (a membership fix)."],
               next: "the pile mint’s next wave, 76 tutoring titles that name a subject, assigned under LSKL M9004.",
               act: [["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }] },
-        method: [p(["Of the " + fmt(Cd.total) + " cards, " + fmt(Cd.review) + " need review, " + fmt(Cd.repair) + " need repair, and " + fmt(Cd.notReady) + " are not ready. " + fmt(Cd.confirmed) + " have been confirmed by a person, " + fmt(Cd.confirmedReady) + " of them ready. The " + fmt(Cd.ready) + " ready cards are those the automatic check scores 0.85 or better. The M-ID gap is a placeholder; it is not the older 2,362 of 8,912 figure, which this page does not show. Five cards you already ruled on are still in the discipline-in-doubt file — see the ", a(REPO + "3447", "Backfill fix"), "."])],
+        method: [p(["Of the " + fmt(Cd.total) + " cards, " + fmt(Cd.review) + " need review, " + fmt(Cd.repair) + " need repair, and " + fmt(Cd.notReady) + " are not ready. " + fmt(Cd.confirmed) + " have been confirmed by a person, " + fmt(Cd.confirmedReady) + " of them ready. The " + fmt(Cd.ready) + " ready cards are those the automatic check scores 0.85 or better. The M-ID gap is a placeholder; it is not the older 2,362 of 8,912 figure, which this page does not show. Five cards you already ruled on are still in the discipline-in-doubt file — see the ", a(REPO + "3447", "Backfill fix"), "."]), p([LIVE_WORDS.courses])],
         links: [["Open the Courses List", "#coci-lookup/courses"], ["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }),
       checksCard({ key: "exhibit", title: "Exhibit titles", pill: "In progress",
         big: fmt(E.stamped) + " of " + fmt(E.titles), rest: [" local titles reviewed"],
@@ -1273,7 +1398,8 @@
         stages: {
           Curate: [
             { ref: "stamp", name: "A review stamp on every local title", fig: figOf(E.stamped, " of " + fmt(E.titles)), meter: meterOf(E.stamped, E.titles, "titles reviewed"),
-              line: "The nightly run applies the rules, then the classifier settles the rest; " + fmt(E.person) + " carry a person’s stamp and " + fmt(E.cohort) + " a review group’s.",
+              line: "The nightly run applies the rules, then the classifier settles the rest; " + fmt(E.person) + " carry a person’s stamp and " + fmt(E.cohort) + " a review group’s."
+                + (E.fresh ? " The person’s count holds " + plural(E.fresh, "held title a person named", "held titles a person named") + " since the last nightly build, which adds " + (E.fresh === 1 ? "it" : "them") + " to the reference next." : ""),
               next: "the Exhibits rename batch goes to Sam.",
               act: [["Open Exhibits", "#exhibits/list"], ["Renamed titles", "#exhibits/renamed"]] },
             { ref: "old", name: "Every old title retired", fig: figOf(E.left, " old titles"),
@@ -1283,10 +1409,10 @@
             { ref: "subject", name: "A common subject code on every credential", fig: figOf(E.noSubject, " with none"),
               line: "That list is growing: " + fmt(ASKED.noSubjectWas.n) + " on " + ASKED.noSubjectWas.day + ", now " + fmt(E.noSubject) + ".",
               act: [["No subject code", "#exhibits/list/nosubj"], ["The subjects list", "#commons/subjects"]] }] },
-        method: [p(["The exhibit name list has " + fmt(E.names) + " names, " + fmt(E.names - K.of) + " more than the " + fmt(K.of) + " credentials on the Credentials card. Cleanup lists: ", a("#exhibits/held", fmt(M.held.n) + " titles held for a person"), "; ", a("#exhibits/list/nosubj", fmt(E.noSubject) + " with no common subject code"), "; ", a("#exhibits/list/left", fmt(E.left) + " old titles"),
+        method: [p(["The exhibit name list has " + fmt(E.names) + " names, " + fmt(E.names - K.of) + " more than the " + fmt(K.of) + " credentials on the Credentials card. Cleanup lists: ", a("#exhibits/held", fmt(E.held) + " titles held for a person"), "; ", a("#exhibits/list/nosubj", fmt(E.noSubject) + " with no common subject code"), "; ", a("#exhibits/list/left", fmt(E.left) + " old titles"),
           " (a local wording the Commons still files under a shared name, but no college’s current MAP exhibit uses it any more, usually because the college renamed or retyped it — for example, “Automotive Services Excellence (A5: Brakes) Certificate” sits under “ASE A5 — Brakes,” which current MAP titles already cover; nothing breaks while it stays); and ", a("#exhibits/renamed", fmt(E.renamed) + " renamed titles"),
-          ". Of the " + fmt(E.titles) + " local titles, " + fmt(E.stamped) + " carry a review stamp (" + fmt(E.person) + " a person’s, " + fmt(E.cohort) + " a review-group’s), counting " + fmt(E.backlog) + " titles MAP carries with no entry yet."])],
-        links: [["Open Exhibits", "#exhibits/list"], [fmt(M.held.n) + " held", "#exhibits/held"], [fmt(E.left) + " old titles", "#exhibits/list/left"], ["No subject code", "#exhibits/list/nosubj"]] })
+          ". Of the " + fmt(E.titles) + " local titles, " + fmt(E.stamped) + " carry a review stamp (" + fmt(E.person) + " a person’s, " + fmt(E.cohort) + " a review-group’s), counting " + fmt(E.backlog) + " titles MAP carries with no entry yet."]), p([LIVE_WORDS.exhibit])],
+        links: [["Open Exhibits", "#exhibits/list"], [fmt(E.held) + " held", "#exhibits/held"], [fmt(E.left) + " old titles", "#exhibits/list/left"], ["No subject code", "#exhibits/list/nosubj"]] })
     ];
     var seg = [["settled", X.settled, "cmf-seg-settled"], ["rule", X.rule, "cmf-seg-rule"], ["ace", X.ace, "cmf-seg-ace"], ["cannot", X.cannot, "cmf-seg-cannot"]];
     function share(n) { return (n / X.rows * 100).toFixed(2) + "%"; }
@@ -1342,14 +1468,16 @@
               line: fmt(X.cannotNoExhibit) + " worklist wordings with no exhibit, " + fmt(X.cannotTruncated) + " truncated or run-on, " + fmt(X.cannotNoId) + " with no exhibit id.",
               act: [["Wordings still open", "#cr-reference/open"]] },
             { ref: "tracked", name: "The wordings the Commons tracks", fig: figOf(R.settled, " of " + fmt(R.wordings)), meter: meterOf(R.settled, R.wordings, "wordings settled"),
-              line: fmt(R.rule) + " settled by a rule and " + fmt(R.curator) + " more by a curator. The count has not moved since " + X.since + ": human credit-recommendation curation is paused, and rule-settled counts grow only when a new rule ships.",
+              line: fmt(R.rule) + " settled by a rule and " + fmt(R.curator) + " more by a curator. " + (R.fresh
+                ? "The curator count reads the decisions table, " + plural(R.fresh, "decision", "decisions") + " newer than the last receipt among them."
+                : "The count has not moved since " + X.since + ": human credit-recommendation curation is paused, and rule-settled counts grow only when a new rule ships."),
               act: [["Open Credit Recommendations", "#cr-reference"]] }],
           Connect: [
             { ref: "ace", name: "ACE’s recommendation text saved", fig: figOf(X.ace, " rows wait"),
               line: "MAP already sends ACE’s recommendation text nightly; we do not save it yet.",
               next: "ask Sky to save the CreditRecommendation column.",
               act: [["Wordings still open", "#cr-reference/open"]] }] },
-        method: [p([fmt(X.rows) + " is " + fmt(X.pairs) + " exhibit-plus-wording pairs plus " + fmt(X.noExhibit) + " worklist wordings with no exhibit. This is the inventory that rules actually move; it is not in the tracker on main yet. Two other counts measure different things: " + fmt(X.crm) + " is the count in MAP’s Custom Reporting Module, and the Commons page today tracks a narrower set — " + fmt(R.settled) + " of " + fmt(R.wordings) + " wordings settled (" + fmt(R.rule) + " by a rule, " + fmt(R.curator) + " more by a curator). Those " + fmt(R.settled) + " have not moved since " + X.since + " because human credit-recommendation curation is paused, and rule-settled counts only grow when a new rule ships. The credit-recommendation line should later point at this " + fmt(X.rows) + "-row inventory. On the " + fmt(R.groups) + " groups: Sam said yes on November 19 to keeping the colleges’ wording, and the 36 are recorded; each course-number link is flagged for a check. In the POST Basic Academy group, " + X.post.colleges + " colleges (" + X.post.rows + " rows) wrote “3 hours in Physical Training and Health Education (CSU GE Area E),” linked to C-ID AJ 110, whose official title is “Introduction to Criminal Justice.” In cases like POST Basic Academy the course-number link itself may be wrong, so the rule flags those links for a check. ", a("#cr-reference/open", "Wordings still open"), "."])],
+        method: [p([fmt(X.rows) + " is " + fmt(X.pairs) + " exhibit-plus-wording pairs plus " + fmt(X.noExhibit) + " worklist wordings with no exhibit. This is the inventory that rules actually move; it is not in the tracker on main yet. Two other counts measure different things: " + fmt(X.crm) + " is the count in MAP’s Custom Reporting Module, and the Commons page today tracks a narrower set — " + fmt(R.settled) + " of " + fmt(R.wordings) + " wordings settled (" + fmt(R.rule) + " by a rule, " + fmt(R.curator) + " more by a curator). Those " + fmt(R.settled) + " have not moved since " + X.since + " because human credit-recommendation curation is paused, and rule-settled counts only grow when a new rule ships. The credit-recommendation line should later point at this " + fmt(X.rows) + "-row inventory. On the " + fmt(R.groups) + " groups: Sam said yes on November 19 to keeping the colleges’ wording, and the 36 are recorded; each course-number link is flagged for a check. In the POST Basic Academy group, " + X.post.colleges + " colleges (" + X.post.rows + " rows) wrote “3 hours in Physical Training and Health Education (CSU GE Area E),” linked to C-ID AJ 110, whose official title is “Introduction to Criminal Justice.” In cases like POST Basic Academy the course-number link itself may be wrong, so the rule flags those links for a check. ", a("#cr-reference/open", "Wordings still open"), "."]), p([LIVE_WORDS.cr])],
         links: [["Open Credit Recommendations", "#cr-reference"], ["Name-check groups", "#cr-reference/names"]] }),
       checksCard({ key: "interconnect", title: "Interconnectivity", pill: "5 blocked", pillCls: "cmn-pill-needs",
         big: "5 blocked", rest: [", 4 APIs that would help, and 4 datasets to integrate"],
@@ -1424,11 +1552,14 @@
       save();
     });
     var folded = readFold();
-    all.forEach(function (c) {
-      setFold(c, folded.indexOf(c.getAttribute("data-key")) >= 0);
+    function wire(c) {
       c._fold.addEventListener("click", function () { setFold(c, !c.classList.contains("cmf-folded")); save(); });
       /* A Needs you link that jumps here opens the card first (item 1). */
       c._unfold = function () { if (c.classList.contains("cmf-folded")) { setFold(c, false); save(); later(); } };
+    }
+    all.forEach(function (c) {
+      setFold(c, folded.indexOf(c.getAttribute("data-key")) >= 0);
+      wire(c);
     });
     var B = M.building;
     var wrap = el("div", { cls: "cmn-wrap cmf" }, [
@@ -1481,6 +1612,38 @@
     onResize = later;
     window.addEventListener("resize", onResize);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(later, function () {});
+    /* A card drawn again from the model (redrawCards) takes its old one's place: the fold, an open "...(more)" and the
+       focus inside it carry over, the stages keep what is open (OPEN), and the rows measure again. A card whose words
+       and figures did not change stays as it is. */
+    function sig(c) {
+      var parts = [];
+      Array.prototype.forEach.call(c.querySelectorAll(".cmf-headline, .cmf-body, .cmf-more-body, .cmf-links"), function (n) { parts.push(n.textContent); });
+      Array.prototype.forEach.call(c.querySelectorAll("[aria-label]"), function (n) { parts.push(n.getAttribute("aria-label")); });
+      return parts.join("\n");
+    }
+    M._swap = function (nu) {
+      var k = nu.getAttribute("data-key"), i = -1;
+      all.forEach(function (c, j) { if (c.getAttribute("data-key") === k) i = j; });
+      var old = i < 0 ? null : all[i];
+      /* A page drawn again since (a new boot) has its own cards: a late read for the old one changes nothing. */
+      if (!old || !old.parentNode || !document.documentElement.contains(old) || sig(old) === sig(nu)) return false;
+      var ob = old.querySelector(":scope > .cmf-x > .cmf-more"), nb = nu.querySelector(":scope > .cmf-x > .cmf-more");
+      if (ob && nb && ob.getAttribute("aria-expanded") === "true") nb.click();
+      var f = document.activeElement, sel = null;
+      if (f && f !== document.body && old.contains(f)) {
+        var ac = f.getAttribute("aria-controls");
+        sel = f === ob ? nb : f === old._fold ? nu._fold : f.id ? nu.querySelector("#" + f.id.replace(/([^\w-])/g, "\\$1"))
+          : ac ? nu.querySelector('[aria-controls="' + ac.replace(/(["\\])/g, "\\$1") + '"]') : null;
+      }
+      old.parentNode.replaceChild(nu, old);
+      all[i] = nu;
+      rows.forEach(function (r) { var j = r.indexOf(old); if (j >= 0) r[j] = nu; });
+      setFold(nu, old.classList.contains("cmf-folded"));
+      wire(nu);
+      if (sel && sel.focus) sel.focus();
+      later();
+      return true;
+    };
     save();
     later();
     return wrap;
@@ -1506,16 +1669,34 @@
       wireHandover(M, opts);
       if (opts.focus === "needs") focusNeeds();
       if (opts.course) openCourse(opts.course);
-      /* The live read redraws only the held line; a failed read leaves the status file's line, named as of its time. */
-      var live = heldLive().then(function (L) {
-        var box = document.getElementById("cmf-held");
-        if (box) drawHeld(box, M, L);
-        M.heldLive = L;
-        redrawNeeds(M);   /* the ranked links take the live count of titles still to name */
-      }, function (e) { M.heldLiveError = String(e && e.message || e); });
-      M.ready = live;
-      return live.then(function () { return M; });
+      NOW.M = M;
+      var round = liveReads(M);
+      return round.held.then(function () { return M; });
     });
+  }
+  /* The live reads behind Needs you's held line and the Exhibit titles and Credit Recommendations cards: on the first
+     draw, and again on each return to the tab or the browser window (againLive), since a save on the Exhibits or Credit
+     Recommendations tab leaves this page drawn; so the figures move the moment the person comes back. One round at a
+     time. The held read redraws the held line, the ranked links and the Exhibit titles card; a failed read leaves what
+     the last read or the status file gave, named as of its time. The decisions read redraws the Credit Recommendations
+     card; a failed one keeps the committed count. */
+  var NOW = { M: null };
+  function liveReads(M) {
+    if (M._round) return M._round;
+    var held = heldLive().then(function (L) {
+      var box = document.getElementById("cmf-held");
+      if (box) drawHeld(box, M, L);
+      M.heldLive = L;
+      redrawNeeds(M);   /* the ranked links take the live count of titles still to name */
+      redrawCards(M, ["exhibit"]);
+    }, function (e) { M.heldLiveError = String(e && e.message || e); });
+    var cr = crLive(M).then(function (F) {
+      if (F) { M.crLive = F; redrawCards(M, ["cr"]); }
+      return F;
+    }, function (e) { M.crLiveError = String(e && e.message || e); return null; });
+    M.ready = held; M.crReady = cr;
+    var round = M._round = { held: held, cr: cr, done: Promise.all([held, cr]).then(function () { M._round = null; }) };
+    return round;
   }
   /* The course panel (#commons/course/<control number>). A press on a course opens it in place: the address follows
      without a page move, and Close puts the address back. commons.js opens the course an arrival names and closes it
@@ -1537,7 +1718,11 @@
   }
   /* A return to the tab, or to the browser window, reads the hand-over counts again, so a hand-over made elsewhere
      takes its item off the lists (item 2). */
-  function againLive() { if (COURSE.M && document.getElementById("cmf-needs")) drawStanding(COURSE.M); }
+  function againLive() {
+    if (!document.getElementById("cmf-needs")) return;
+    if (COURSE.M) drawStanding(COURSE.M);
+    if (NOW.M) liveReads(NOW.M);
+  }
   window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab === "commons") againLive(); });
   document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") againLive(); });
   function openCourse(key, from) {
@@ -1794,5 +1979,6 @@
 
   window.CPL_COMMONS_FRONT = { boot: boot, model: model, render: render, migrate: migrate, readFold: readFold, KEYS: KEYS,
     focusNeeds: focusNeeds, openCourse: openCourse, closeCourse: closeCourse, heldLive: heldLive, drawHeld: drawHeld, placeBack: placeBack, markBack: markBack, BACK: BACK, LIVE: LIVE,
+    exhibitsNow: exhibitsNow, crNow: crNow, crLive: crLive, crFigures: crFigures, redrawCards: redrawCards, CRL: CRL, LIVE_WORDS: LIVE_WORDS,
     FOLD_KEY: FOLD_KEY, ORDER_KEY: ORDER_KEY, DETAILS_ORDER_KEY: DETAILS_ORDER_KEY, DETAILS_FOLD_KEY: DETAILS_FOLD_KEY, FILES: FILES, ASKED: ASKED };
 })();
