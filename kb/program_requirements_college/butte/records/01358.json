@@ -120,7 +120,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "degree_within_map_range",
+    "label": "The record takes the degree total from the sample map's range, whose low end is the 60 units the page prints as needed to graduate; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end.",
+    "words": "degree_total 60-62 is taken from the 'Map (Butte GE)' advising pathway ('Units: 60.00- 62.00', 'Total : 60.00- 62.00')"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

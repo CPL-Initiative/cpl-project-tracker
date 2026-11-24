@@ -1,0 +1,37 @@
+{
+  "_what": "S721 (lane 2, Orange Coast): the reconcile_steps lever of the committed census (run 45371224551) at the college, frozen: kb/_program_piles_s721_orangecoast.py planned from it.",
+  "written_at": "2026-11-24 11:18Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "Orange Coast College",
+      "programs": 20,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "03954",
+        "03993",
+        "08628",
+        "08663",
+        "08664",
+        "08670",
+        "19473",
+        "19474",
+        "19547",
+        "31217",
+        "32189",
+        "32737",
+        "32790",
+        "35182",
+        "36032",
+        "36732",
+        "41373",
+        "42331",
+        "43100",
+        "43362"
+      ]
+    }
+  ]
+}

@@ -117,7 +117,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "degree_electives_not_printed",
+    "label": "The degree's major and general education add to less than the printed degree total, and the page prints no figure for electives and does not say they fill the rest.",
+    "words": "The page prints no figure for electives between the emphasis and CalGETC and the 60-61 degree total; no electives statement recorded."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -95,7 +95,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_no_total",
+    "label": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+    "words": "The only total printed is 'Required Core Courses: (33 units)', recorded as the block's stated total; no separate certificate total is printed, so total_units is left null even though the core appears to be the whole requirement."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

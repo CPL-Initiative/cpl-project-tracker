@@ -1,0 +1,37 @@
+{
+  "_what": "S721 (lane 2, Palo Verde): the reconcile_steps lever of the committed census (run 45371224551) at the college, frozen: kb/_program_piles_s721_paloverde.py planned from it.",
+  "written_at": "2026-11-24 11:02Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "Palo Verde College",
+      "programs": 20,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "17998",
+        "17999",
+        "18000",
+        "18045",
+        "22484",
+        "41189",
+        "41208",
+        "41221",
+        "41222",
+        "41223",
+        "41224",
+        "41225",
+        "41226",
+        "41227",
+        "41241",
+        "41242",
+        "41243",
+        "41250",
+        "41260",
+        "45359"
+      ]
+    }
+  ]
+}

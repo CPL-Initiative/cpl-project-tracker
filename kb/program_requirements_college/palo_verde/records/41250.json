@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "figure_within_variable_units",
+    "label": "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
+    "words": "The Required Courses heading states 'Total 13 Credits', but the listed required courses add up to far less at their low ends. The 13 is reached only through variable-unit courses such as FST 090 (0.25-12). Reviewer should check this."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
