@@ -270,6 +270,10 @@ nobody finds; `unreferenced_offload` flags any that stop being.
 - **"Sky" and "COBIx" are internal names, never rendered (Sam, 2026-11-24: *"don't refer to cobix as, like sky, it is an internal tool"*).** "Sky" is the MAP team's name for Claude (Sam, 2026-11-24): *"no one outside of the map team knows
   we call you sky."* Where a page needs the actor, it says **COBI** (Sam: *"you could substitute COBI where you might need to refer to sky"*), or the process: *the nightly data collection*, *a web search*.
   Handoffs, lanes and chat keep it; *SkyView* is a product name and stays. The Commons is guarded.
+- **"Common subject" and "local subject" are always labeled (Sam, 2026-11-24):** *"It would help to always label common
+  subjects as 'common subject' vs. 'Local Subject' on surfaces."* A common course is assigned a common subject (an MQ
+  discipline and its code, shown together: *PEDS Physical Education Disabled Students*); nothing ever moves it to another
+  local subject. A wrong local subject title is Subjects work in the Commons. Each view converts at its UI pass.
 - **CO style guide (Sam, 2026-09-30):** governs our writing and CO colors and
   identity, never CCC or CCCCO; no UI change from it:
   [`reference-cccco-style-guide`](docs/kb-notes/reference-cccco-style-guide.md).
