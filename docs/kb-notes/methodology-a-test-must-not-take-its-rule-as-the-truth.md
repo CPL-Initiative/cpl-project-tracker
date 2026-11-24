@@ -1,7 +1,7 @@
 ---
 title: A test must not take its own rule as the truth
 created: 2026-11-14
-updated: 2026-11-22
+updated: 2026-11-24
 tags: [methodology, testing, matching, program-requirements, honors]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -78,6 +78,27 @@ the claim check against the records a person held by hand and reports how many i
 held records stay out of the apply by key, and the count is committed beside the test. Pitfall row
 `p-self-recall-reads-rule-fields-s703`; the run:
 [`program_requirements_harvest_lessons`](../program_requirements_harvest_lessons.md), *S703*.
+
+## A test that reads its own plan's receipt (S721, #3764, #3769)
+
+A data plan writes a receipt: the rows it moves, their before and after images, and, once applied, the migrate run that
+posted them. Two tests in one night read that receipt as if it were evidence. #3764's recall for the pooled reading took
+its answers from plan s721p's own receipt, which is the rule's output, so the count could not fall; its second reader
+marked it a blocker. The fix runs the recall live: the reading goes over every committed record, and each record it
+fires on is checked against a hand answer (55 read, 55 right, and 4 real pools the scorer refuses, pinned).
+
+Porterville's test failed the other way. Its live-run check asked whether each row's latest posted run was its
+committed run, and passed. The conductor's apply then posted the plan's own receipt, the check read that receipt as
+the live state, and a correct apply failed it. The fix reads the receipts as they stood before the plan's own apply
+(`posted_runs(skip=("s721c",))`) and checks apart that the applied plan posts the same run. Butte's test, written
+after it, holds both ways (`assume_applied`). A third test, Butte's again, held a record by asserting that another open
+PR's new gap kind was absent from `main`; it failed once the two PRs landed together, and now asserts the record is not
+among its own plan's reviewed rows.
+
+So a plan's test holds true before and after the plan's own apply, and before and after any PR it does not depend on.
+Its answers come from the page or a live derivation, never from the receipt the plan writes. Pitfall rows
+`p-test-reads-own-apply-receipt-s721` and `p-test-asserts-other-pr-absent-s721`; the run:
+[`program_requirements_harvest_lessons`](../program_requirements_harvest_lessons.md), *S721*.
 
 Related: [A new matcher is gated by a self-recall test](methodology-a-new-matcher-is-gated-by-a-self-recall-test.md).
 Pitfall row `p-snapshot-test-pins-the-rule-s653`.

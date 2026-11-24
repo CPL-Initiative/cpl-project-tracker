@@ -213,6 +213,38 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S721, and what worked
+
+The CPL Queue routine's 10:12Z collection run of 2026-11-24 (SkySkua), served by Opus 5.5 (the form names Fable 5.2).
+S720's checkpoint #3751 was open at the firing, its handoff complete and `test` running, so the run stayed read-only
+and took the queue at its merge, 10:40Z, as S681's firing did (`d-firing-takes-queue-after-routine-checkpoint-s721`).
+Sam's plain session S722 ran beside it (#3768, 12:56Z), one writer per file. No `list_sessions` or `get_trigger` in
+this session. Lane 1 ran `display`, `pooled` and `lever`; lane 2 ran the piles at Orange Coast, Palo Verde,
+Porterville, Gavilan and Butte, a fresh worker per college, then `land`.
+
+- **Two tests read their plan's own receipt** (`p-test-reads-own-apply-receipt-s721`): #3764's recall took its answers
+  from the plan's receipt and could never fail, which its second reader marked a blocker; Porterville's test passed
+  before its apply and failed after it, because its live-run check read the receipt the conductor's apply posts. Both
+  were fixed before their merges: the recall runs live against hand answers, and the check reads the receipts as they
+  stood before the plan's own apply.
+- **A test asserted another PR's change absent** (`p-test-asserts-other-pr-absent-s721`): Butte's 01312 check failed
+  once Palo Verde's new gap kind landed beside it in the land PR; it now reads the hold.
+- **A pin test that did not mark its members** (`p-pin-test-sets-production-mark-s721`): rule B refused Antelope
+  Valley's 8 pins in production, where every lever member is marked, while the unmarked test passed. Round 1 caught it
+  before any paid read.
+- **A push that touches a plan file starts a page read** (`p-plan-file-push-starts-page-read-s721`), and a third queued
+  run cancels the pending one, so the read's commit goes last on its push.
+- **What worked:** one display build first, while no apply was in flight (#3761), then the census on `main`; a second
+  reader on every plan (Opus on the two that added a gap kind, Sonnet on the three that reused one, as
+  `d-sonnet-reader-for-scoped-plans-s714` allows), a clean md5 pre-read and the conductor's apply, `.apply` restored after each run; four applied branches landed as one PR under the cap (#3769,
+  `d-piles-land-as-one-pr-s721`), merged without an update from `main` since S722's commit touched none of its files
+  (`d-land-merged-without-main-update-s721`); records a cheaper lever passes held, never gap-filed (Butte's nine,
+  `p-gap-filing-leaves-census-lever-s721`); a forced re-read only where the text window reaches the section
+  (`d-miracosta-force-07863-only-s721`); the two lanes kept off one college (Orange Coast's 8 on the lever waited,
+  `d-orange-coast-lever-waits-s721`); no new worker once spend passed about $110 at 12:22Z
+  (`d-no-new-workers-after-12z-s721`); the credential harvest held, as in every conductor run since 2026-11-17
+  (`d-credential-watch-held-in-conductor-runs-s721`).
+
 ## What went wrong in S720, and what worked
 
 The CPL Queue routine's 06:12Z collection run of 2026-11-24 (SkyEider), served by Opus 5.5 (the form names Fable

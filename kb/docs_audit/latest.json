@@ -10,8 +10,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 1585,
-    "bytes": 17373845,
+    "files": 1586,
+    "bytes": 17432746,
     "over_budget": 5,
     "handoff_max": 723,
     "always_loaded_files": 1,
@@ -26,32 +26,32 @@
       },
       "other": {
         "files": 167,
-        "bytes": 5848826,
+        "bytes": 5870013,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 12261,
+        "bytes": 12828,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2867136,
+        "bytes": 2872243,
         "over": 2
       },
       "kb_note": {
         "files": 607,
-        "bytes": 2964046,
+        "bytes": 2965839,
         "over": 0
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 541712,
+        "bytes": 541543,
         "over": 1
       },
       "handoff": {
-        "files": 678,
-        "bytes": 5075316,
+        "files": 679,
+        "bytes": 5105732,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 80
     },
     "vault": {
-      "files": 29966,
-      "bytes": 1612886396,
-      "heavy_bytes": 1232812900,
+      "files": 29968,
+      "bytes": 1612965420,
+      "heavy_bytes": 1232830714,
       "heavy_share": 0.764,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -251,10 +251,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 84720845,
+        "bytes": 84720916,
         "kind": "dir"
       },
-      "message": "directory totals 84,720,845 B inside the vault"
+      "message": "directory totals 84,720,916 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -341,10 +341,10 @@
       "fixable": false,
       "path": "kb/migrations",
       "detail": {
-        "bytes": 10713991,
+        "bytes": 10731734,
         "kind": "dir"
       },
-      "message": "directory totals 10,713,991 B inside the vault"
+      "message": "directory totals 10,731,734 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
