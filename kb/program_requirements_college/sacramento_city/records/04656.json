@@ -82,8 +82,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 21.0-21.0; the catalog states 35.0-36.0"
-   ]
+    "the blocks sum to 21.0-21.0; the catalog states 35.0-36.0",
+    "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+   ],
+   "fill_refused": {
+    "gap": "section_cut_off",
+    "words": "The catalog text begins mid-table on page 221: the A.S. in Marketing heading, description and the first part of the requirements table (page 220) are not in the text."
+   }
   },
   "repeated": {
    "codes": [],
@@ -271,5 +276,6 @@
    "The Marketing Certificate section (page 224) mentions 'the A.A. degree in Marketing'; this record reads the A.S. degree section only."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45353709365,
+ "read_run": "39047070975"
 }

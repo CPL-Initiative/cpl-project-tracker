@@ -46,29 +46,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 13,
    "listed": 16,
-   "share": 0.75,
+   "share": 0.812,
    "missing": [
-    "HIST310",
     "HIST311",
     "HIST483",
     "HIST484"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST310",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
-    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H"
    ],
    "flagged": [
-    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H"
@@ -332,5 +336,6 @@
    "The A.A.-T. section above (outcomes and careers on page 612) was not used; HIST C1001, C1001H, C1002, C1002H appear to be newer common-course numbers replacing HIST 310/311/483/484 in the closed list."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45353709365,
+ "read_run": "39047070975"
 }

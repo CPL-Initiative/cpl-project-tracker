@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 227,
  "with_closed_list": 207,
- "started": "2026-11-23T13:37:43Z",
+ "started": "2026-11-24T08:10:42Z",
  "pdf": {
   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -3053,7 +3053,7 @@
  "loads": 0,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 304.3,
+ "seconds": 470.1,
  "found": 201,
  "by_method": {
   "no_closed_list": 20,
@@ -3311,9 +3311,9 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/sacramento_city",
-  "kept": 164,
+  "kept": 180,
   "kept_moved": 0,
-  "programs": 32,
+  "programs": 17,
   "list": [
    {
     "control_number": "04662",
@@ -3321,7 +3321,7 @@
     "award": "A.A. Degree",
     "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=466",
     "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=468",
+    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=466",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3331,7 +3331,7 @@
     "award": "A.S. Degree",
     "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=262",
     "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=263",
+    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=262",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3351,38 +3351,8 @@
     "award": "A.S. Degree",
     "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=560",
     "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=563",
+    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=560",
     "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "10646",
-    "title": "Commercial Music, Music Business Management Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=537",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=537",
-    "was_coverage": 0.947,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12283",
-    "title": "Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=277",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=277",
-    "was_coverage": 0.889,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12284",
-    "title": "PC Support",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=276",
-    "coverage": 0.933,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=276",
-    "was_coverage": 0.867,
     "was_method": "pdf_pages"
    },
    {
@@ -3396,43 +3366,13 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "14415",
-    "title": "Communication",
-    "award": "A.A. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=247",
-    "coverage": 0.941,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=247",
-    "was_coverage": 0.824,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "14646",
     "title": "English",
     "award": "A.A. Degree",
     "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=372",
     "coverage": 0.97,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=373",
-    "was_coverage": 0.939,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "16905",
-    "title": "Political Science",
-    "award": "A.A. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=612",
-    "coverage": 0.812,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=612",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "17873",
-    "title": "Interdisciplinary Studies: Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=162",
-    "coverage": 0.973,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=162",
-    "was_coverage": 0.968,
+    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=372",
+    "was_coverage": 0.97,
     "was_method": "pdf_pages"
    },
    {
@@ -3441,8 +3381,8 @@
     "award": "A.A. Degree",
     "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=459",
     "coverage": 0.949,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=252",
-    "was_coverage": 0.919,
+    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=459",
+    "was_coverage": 0.949,
     "was_method": "pdf_pages"
    },
    {
@@ -3451,8 +3391,8 @@
     "award": "A.A. Degree",
     "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=453",
     "coverage": 0.9,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=455",
-    "was_coverage": 0.7,
+    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=453",
+    "was_coverage": 0.9,
     "was_method": "pdf_pages"
    },
    {
@@ -3461,8 +3401,8 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=535",
     "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=537",
-    "was_coverage": 0.947,
+    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=535",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -3476,33 +3416,13 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "30472",
-    "title": "Biology",
-    "award": "A.S. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=206",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=206",
-    "was_coverage": 0.962,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "30518",
     "title": "Air Traffic Control",
     "award": "A.S. Degree",
     "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=130",
     "coverage": 0.636,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=131",
+    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=130",
     "was_coverage": 0.636,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30659",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=247",
-    "coverage": 0.941,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=247",
-    "was_coverage": 0.824,
     "was_method": "pdf_pages"
    },
    {
@@ -3526,73 +3446,23 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "33804",
-    "title": "Pre-Health Occupations",
-    "award": "A.S. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=148",
-    "coverage": 0.963,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=148",
-    "was_coverage": 0.926,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35481",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=345",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=345",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39526",
-    "title": "Legal Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=126",
-    "coverage": 0.852,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=126",
-    "was_coverage": 0.741,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39527",
-    "title": "Teacher Education",
-    "award": "A.A. Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=348",
-    "coverage": 0.929,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=348",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "40346",
     "title": "Chemical Technician, Beginning",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=236",
     "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=237",
-    "was_coverage": 0.952,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40347",
-    "title": "Chemical Technician, Intermediate",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=237",
-    "coverage": 0.944,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=237",
-    "was_coverage": 0.889,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40348",
-    "title": "Chemical Technician, Advanced",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=236",
-    "coverage": 1.0,
     "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=236",
-    "was_coverage": 0.933,
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41435",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=122",
+    "coverage": 0.921,
+    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=122",
+    "was_coverage": 0.921,
     "was_method": "pdf_pages"
    },
    {
@@ -3606,33 +3476,13 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "42894",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=247",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=247",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42984",
-    "title": "Social Media Marketing",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=225",
-    "coverage": 1.0,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=225",
-    "was_coverage": 0.857,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "44608",
     "title": "Honors",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=409",
     "coverage": 0.913,
-    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=410",
-    "was_coverage": 0.87,
+    "was_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=409",
+    "was_coverage": 0.913,
     "was_method": "pdf_pages"
    }
   ],
@@ -4482,5 +4332,5 @@
    "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=515"
   }
  },
- "run": "45184748331"
+ "run": "45353709365"
 }

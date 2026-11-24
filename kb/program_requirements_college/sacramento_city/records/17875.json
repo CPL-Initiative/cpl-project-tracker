@@ -46,41 +46,49 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 91,
+   "placed": 94,
    "listed": 99,
-   "share": 0.919,
+   "share": 0.949,
    "missing": [
-    "COMM321",
     "ECON302",
     "ECON304",
-    "ENGWR384",
-    "HIST310",
     "HIST311",
     "HIST483",
     "HIST484"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM321",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL384",
+     "listed": "ENGWR384",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST310",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 5,
    "codes": [
-    "COMMC1004",
     "ECONC2001",
     "ECONC2002",
-    "ENGL384",
-    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H"
    ],
    "flagged": [
-    "COMMC1004",
     "ECONC2001",
     "ECONC2002",
-    "ENGL384",
-    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H"
@@ -150,7 +158,7 @@
   ],
   "confidence": {
    "unit_arithmetic": 50,
-   "course_list_match": 92,
+   "course_list_match": 95,
    "ge_pattern": 50,
    "catalog_year": 100,
    "source": 80
@@ -934,5 +942,6 @@
    "Page footers read 'Programs of Study – Communication'. The certificates that follow (Applied Communication Skills, Professional and Workplace Communication) belong to other awards and were not read."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45353709365,
+ "read_run": "39047070975"
 }

@@ -87,8 +87,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 29.0-30.0; the catalog states 35.0-36.0"
-   ]
+    "the blocks sum to 29.0-30.0; the catalog states 35.0-36.0",
+    "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+   ],
+   "fill_refused": {
+    "gap": "section_cut_off",
+    "words": "The excerpt begins mid-section on page 538; the section heading, description and the start of the required course table are on the previous page and not in the text."
+   }
   },
   "repeated": {
    "codes": [],
@@ -451,5 +456,6 @@
    "Career Information names only 'a performer of various styles of popular music'; recorded 'performer'."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45353709365,
+ "read_run": "39047070975"
 }

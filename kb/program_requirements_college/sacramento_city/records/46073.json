@@ -46,25 +46,29 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 8,
    "listed": 9,
-   "share": 0.778,
+   "share": 0.889,
    "missing": [
-    "HIST310",
     "HIST311"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST310",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "HISTC1001",
     "HISTC1002"
    ],
    "flagged": [
-    "HISTC1001",
     "HISTC1002"
    ],
    "pass": true
@@ -244,5 +248,6 @@
    "Career field taken from the program description and the Career Information heading on page 436 ('Jobs and internships may be available in cultural resources management'); the employment levels (private, city, county, state, federal) are sectors rather than careers and were not recorded."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45353709365,
+ "read_run": "39047070975"
 }

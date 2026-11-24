@@ -117,8 +117,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 8.0-8.0; the catalog states 26.0-26.0"
-   ]
+    "the blocks sum to 8.0-8.0; the catalog states 26.0-26.0",
+    "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+   ],
+   "fill_refused": {
+    "gap": "section_cut_off",
+    "words": "The extracted text begins mid-section on page 455; the section heading, program description and the earlier requirement blocks (core and other lists, likely on page 454) are cut off."
+   }
   },
   "repeated": {
    "codes": [],
@@ -605,5 +610,6 @@
    "DEAF 310-316 appear in the language list; DEAF courses are American Sign Language."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45353709365,
+ "read_run": "39047070975"
 }

@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 19,
    "listed": 19,
-   "share": 0.895,
-   "missing": [
-    "ENGWR330",
-    "ENGWR384"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL330",
+     "listed": "ENGWR330",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL384",
+     "listed": "ENGWR384",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ENGL330",
-    "ENGL384"
-   ],
-   "flagged": [
-    "ENGL330",
-    "ENGL384"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -132,7 +135,7 @@
   ],
   "confidence": {
    "unit_arithmetic": 50,
-   "course_list_match": 90,
+   "course_list_match": 100,
    "ge_pattern": 50,
    "catalog_year": 100,
    "source": 80
@@ -357,5 +360,6 @@
    "Careers 'print', 'broadcast', 'online news media' split from 'careers in print, broadcast, and online news media'; 'journalism' from 'skills to work in journalism'."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45353709365,
+ "read_run": "39047070975"
 }
