@@ -6,9 +6,10 @@ its gaps noted and confidence scores, a gap noted instead of a reread. Pinned he
 
   * each kind the plan files carries a sentence and a unit-arithmetic score in kb/_program_named_gaps.py;
   * precision 18 of 18 against the hand reading of the census members pinned in the fixture
-    (p-test-pins-census-members-s714): 10 collected, 8 held;
+    (p-test-pins-census-members-s714): 7 collected, 11 held;
+  * a sum inside the printed range names no noted_figures_differ (08460, 19378, 38787 held);
   * every entry's own figure check holds on its record, and moved one unit it names no gap;
-  * the plan: 10 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans
+  * the plan: 7 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans
     none; the load's image of each committed record is its receipt's after-image, carrying its one gap.
 
 Run from repo root: python3 tests/program_piles_s721_gavilan_test.py
@@ -27,11 +28,13 @@ import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s721_gavilan as W  # noqa: E402
 
 COLLEGE = "Gavilan College"
-ROWS = {"08460": "noted_figures_differ", "15555": "noted_figures_differ", "19378": "noted_figures_differ",
-        "37750": "noted_figures_differ", "38787": "noted_figures_differ", "06129": "pool_figure_not_read",
+ROWS = {"15555": "noted_figures_differ", "37750": "noted_figures_differ", "06129": "pool_figure_not_read",
         "39624": "pool_figure_not_read", "14041": "lists_not_closed", "18453": "lists_not_closed",
         "38119": "lists_not_closed"}
-HELD = {"06128", "06132", "08464", "18541", "24369", "37896", "41394", "45357"}
+# 08460, 19378 and 38787: a sum inside the printed range is no disagreement (the S721 second reader).
+IN_RANGE = {"08460": ([36, 36], [30, 36], [30, 36], [36, 36]), "19378": ([24, 24], [14, 24], [14, 24], [24, 24]),
+            "38787": ([53, 60], [48, 60], [42, 48], [47, 48])}
+HELD = {"06128", "06132", "08464", "18541", "24369", "37896", "41394", "45357"} | set(IN_RANGE)
 SCORES = {"noted_figures_differ": 40, "pool_figure_not_read": 40, "lists_not_closed": 30}
 checks, failures = [0], []
 
@@ -54,13 +57,13 @@ check(set(members) == set(ROWS) | HELD and len(members) == 18 and not set(W.PERS
       "the fixture gives the 18 keys")
 pr = W.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 18 and pr["right"] == 18 and not pr["wrong"], "precision 18 of 18: %s" % pr["wrong"])
-check(pr["by_answer"] == {"none": 8, "noted_figures_differ": 5, "pool_figure_not_read": 2, "lists_not_closed": 3},
+check(pr["by_answer"] == {"none": 11, "noted_figures_differ": 2, "pool_figure_not_read": 2, "lists_not_closed": 3},
       "the hand reading's answers: %s" % pr["by_answer"])
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 10} and not cc["not_standing"], "10 claims stand")
+check(cc["counts"] == {"stands": 7} and not cc["not_standing"], "7 claims stand")
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 40, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == 28, "every boundary reading names no gap: %s" % bd)
 
 # The figure checks, one per kind, on the records' own figures.
 check(all(W.noted_closes(W.REVIEWED[cn]) for cn in ROWS if ROWS[cn] == "noted_figures_differ"),
@@ -74,6 +77,16 @@ check(W.list_open(W._load("14041"), W.REVIEWED["14041"]) and W.list_open(W._load
       "14041 and 38119 carry their open elective list")
 check(W.list_open(W._load("18453"), W.REVIEWED["18453"]), "18453's five lists reach 17, short of 18")
 
+# The in-range class: each record's own figures, as an entry would read them, close nothing.
+for cn, (comp, st, printed, summed) in IN_RANGE.items():
+    a = W._load(cn)["score"]["arithmetic"]
+    e = {"computed": comp, "stated": st, "noted": {"printed": printed, "sum": summed}}
+    check(cn not in W.REVIEWED and a["computed"] == [float(x) for x in comp]
+          and a["stated"] == [float(x) for x in st] and not W.noted_closes(e),
+          "%s: its sum inside the printed range names no gap" % cn)
+check(W.noted_closes(W.REVIEWED["15555"]) and W.noted_closes(W.REVIEWED["37750"]),
+      "a sum outside the printed range still closes (15555, 37750)")
+
 # The held records, each by its own reason.
 check(not W.on_live_run(W._load("08464")) and not W._load("08464")["record"].get("notes"),
       "08464 holds: no notes, and its committed run is not its live row's")
@@ -84,17 +97,17 @@ check(c37896["computed"] == [65.0, 72.0] and c37896["stated"] == [64.0, 64.0],
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
 got = {r["control_number"]: r["moves_to"] for r in rec["records"]}
-check(got == ROWS and rec["moved"] == 10, "the receipt names the 10 rows and their gaps")
-check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 8")
+check(got == ROWS and rec["moved"] == 7, "the receipt names the 7 rows and their gaps")
+check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 11")
 check(rec["census"]["members"] == members, "the receipt's keys are the fixture's")
-check(rec["local_proof"]["apply"].startswith("returned 10"), "the receipt records the local proof")
+check(rec["local_proof"]["apply"].startswith("returned 7"), "the receipt records the local proof")
 for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for cn in ROWS) and not any("'%s'" % cn in sql for cn in HELD | set(W.PERSON)),
-          "%s names exactly the 10" % part)
+          "%s names exactly the 7" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (10))" in sql, "the apply guards a confirm")
+        check("confirm guard" in sql and "e(expect) as (values (7))" in sql, "the apply guards a confirm")
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:

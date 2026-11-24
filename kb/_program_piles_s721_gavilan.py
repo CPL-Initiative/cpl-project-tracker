@@ -13,11 +13,10 @@ member's page is shared). Every kind is reused, and each entry carries a check o
 
   noted_figures_differ  (#3753) a figure the page prints over courses that add to another, and the record's sum
                         differs from its stated total by exactly that difference at both ends (the "noted" check):
-                        08460 (30-36 over 36), 15555 (13 over 3 + 3 + 8 = 14), 19378 (14-24 over 14 + 10 = 24),
-                        37750 (27-34 over 32-35), 38787 (the core's 42-48 over 47-48). 08460 and 38787 are two of
-                        the six S703 held from lists_past_their_figure (d-lists-gap-holds-range-sums-s703: the sum
-                        sits inside the printed range). That kind says the courses carry past the figure; this one
-                        says only that the two printed figures disagree, which the notes quote.
+                        15555 (13 over 3 + 3 + 8 = 14), 37750 (27-34 over 32-35). A sum inside the printed range is
+                        no disagreement (d-lists-gap-holds-range-sums-s703; the S721 second reader): noted_closes
+                        holds it, and 08460 (36 inside 30-36), 19378 (24 inside 14-24) and 38787 (the core's 47-48
+                        inside 42-48) are held.
   pool_figure_not_read  (#3755) one figure the page prints over several lists, and the record adds the parts; with
                         the pool at its figure the page's figures add to the stated total exactly (the "closes"
                         check): 06129 (the core's 13-15, the section's 11 and general education's 35-39 make the
@@ -27,8 +26,8 @@ member's page is shared). Every kind is reused, and each entry carries a check o
                         from any list: 14041 (electives to a total 18 in the major), 18453 (an additional course from
                         any area to reach 18), 38119 (electives whose units vary by option).
 
-Held (8): 06128 (MUS 12's printed 1-4 puts the printed 21 inside the record's 20-23, and no list prints a figure:
-nearest #3762's figure_within_variable_units, which is not on main); 06132 (two gaps at once: the BIO pair read
+Held (11): 08460, 19378 and 38787 (a sum inside the printed range, above); 06128 (MUS 12's printed 1-4 puts the
+printed 21 inside the record's 20-23, and no list prints a figure: nearest #3762's figure_within_variable_units, which is not on main); 06132 (two gaps at once: the BIO pair read
 singly and the prerequisites' printed 46.5-51.5 over courses adding to 22-26); 08464 (no notes, and its committed
 run is not its live row's: on_live_run); 18541 (two printed figures differ from their courses, ACCT 20 sits in both
 lists and the last core choice is ambiguous); 24369 (noncredit: a printed 0 over figures the note says may be
@@ -73,21 +72,12 @@ PERSON = ()
 REVIEWED = {
     # noted_figures_differ: "noted" is the two figures the note quotes, the printed one and what its courses add to;
     # the record's computed less its stated is their difference at both ends.
-    "08460": {"gap": "noted_figures_differ", "computed": [36, 36], "stated": [30, 36],
-              "noted": {"printed": [30, 36], "sum": [36, 36]},
-              "words": "The requirements block states 'Units: 30- 36', but the three listed courses total 36 units"},
     "15555": {"gap": "noted_figures_differ", "computed": [62, 68], "stated": [61, 67],
               "noted": {"printed": [13, 13], "sum": [14, 14]},
               "words": "Note 3 + 3 + 8 = 14, which does not match the printed 13"},
-    "19378": {"gap": "noted_figures_differ", "computed": [24, 24], "stated": [14, 24],
-              "noted": {"printed": [14, 24], "sum": [24, 24]},
-              "words": "the two blocks (14 + 10) sum to 24, so the low end of 14 looks inconsistent"},
     "37750": {"gap": "noted_figures_differ", "computed": [32, 35], "stated": [27, 34],
               "noted": {"printed": [27, 34], "sum": [32, 35]},
               "words": "Summing the listed courses gives 32-35 major units, which does not match 27-34"},
-    "38787": {"gap": "noted_figures_differ", "computed": [53, 60], "stated": [48, 60],
-              "noted": {"printed": [42, 48], "sum": [47, 48]},
-              "words": "The Required Core prints 'Units: 42- 48', while the listed courses sum to 47-48 units"},
     # pool_figure_not_read: "closes" names the figures the page prints, the pool once, which add to the stated total.
     "06129": {"gap": "pool_figure_not_read", "computed": [22, 30], "stated": [59, 65],
               "closes": [["block", "CORE COURSES"], ["block", "ADDITIONAL REQUIREMENTS (11 unit minimum)"], ["ge"]],
@@ -107,6 +97,12 @@ REVIEWED = {
 }
 HAND = {cn: e["gap"] for cn, e in REVIEWED.items()}
 HAND.update({
+    # The S721 second reader: a sum inside the printed range is no disagreement (S703's
+    # d-lists-gap-holds-range-sums-s703); noted_closes holds the class, and these entries test it.
+    "08460": "held: its courses' 36 sits inside the printed 30-36, so no two figures disagree (the second reader)",
+    "19378": "held: its blocks' 24 sits inside the printed 14-24, and its note says only the low end looks "
+             "inconsistent, so no two figures disagree (the second reader)",
+    "38787": "held: its core's 47-48 sits inside the printed 42-48, so no two figures disagree (the second reader)",
     "06128": "held: MUS 12's printed 1-4 puts the printed 21 inside the record's 20-23, and no list prints a figure "
              "of its own; the nearest kind is #3762's figure_within_variable_units, which is not on main",
     "06132": "held: two gaps at once, the BIO pair (BIO 7 and BIO 9 together) read as alternatives and the "
@@ -248,6 +244,10 @@ def noted_closes(e: dict) -> bool:
     figure, at both ends (the difference is the one the note quotes, and nothing else)."""
     comp, st = _pair(e["computed"]), _pair(e["stated"])
     pr, sm = _pair(e["noted"]["printed"]), _pair(e["noted"]["sum"])
+    if pr[0] - NG.FIG_EPS <= sm[0] and sm[1] <= pr[1] + NG.FIG_EPS:
+        # A sum inside the printed range is no disagreement: S703's hold (d-lists-gap-holds-range-sums-s703), and
+        # the S721 second reader's on this plan (08460, 19378, 38787).
+        return False
     return all(abs((c - s) - (m - p)) <= NG.FIG_EPS for c, s, m, p in zip(comp, st, sm, pr))
 
 
