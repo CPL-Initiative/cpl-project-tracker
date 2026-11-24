@@ -8,6 +8,12 @@
 # so what got committed was already behind.
 #
 # Run it as the LAST thing before a push, not the first.
+#
+# It covers every committed kb/status/*.json (S718, Sam 2026-11-24: a PR rebuilt local_subject_titles.json, and
+# statewide_subject_codes.json and subject_sources.json, which read it, failed CI's lints job one round each after
+# this script said all was current). Each file is named below beside its check, or in NOT_CHECKED of
+# tests/check_generated_covers_status_test.py with the reason no check can hold it; that test fails a file in
+# neither, so a new status file must pick one.
 set -u
 cd "$(dirname "$0")/.."
 fail=0
@@ -20,6 +26,32 @@ report() {
   printf '%-46s ' "$1"
   if eval "$2" >/dev/null 2>&1; then echo "ok"; else echo "$3"; fi
 }
+# The kb/status checks are the slow ones (mid_readiness ~25s, statewide_subject_codes ~20s, alone), so they start
+# here in the background and their lines print last, in this order. Every one is a --check: it writes nothing.
+st=$(mktemp -d); trap 'rm -rf "$st"' EXIT
+slabels=()
+srun() {
+  local i=${#slabels[@]}; slabels+=("$1")
+  ( eval "$2" >"$st/$i.out" 2>&1; echo $? >"$st/$i.rc" ) &
+}
+# The subject family, in the daily run's order (scripts/daily_build.sh): each reads the one before it.
+srun "status: local_subject_titles.json"          "python3 kb/_build_local_subject_titles.py --check"
+srun "status: held_subject_codes.json"            "python3 kb/_held_subject_codes.py --check"
+srun "status: noncredit_categories.json"          "python3 kb/_build_noncredit_categories.py --check"
+srun "status: noncredit_subject_titles.json"      "python3 kb/_build_noncredit_subject_titles.py --check"
+srun "status: local_subject_recommendations.json" "python3 kb/_build_local_subject_recommendations.py --check"
+srun "status: mid_readiness.json"                 "python3 kb/_mid_readiness.py --check"
+srun "status: outline_hunt.json"                  "python3 kb/_outline_hunt.py --check"
+srun "status: statewide_subject_codes.json"       "python3 kb/_statewide_subject_codes.py --check"
+srun "status: subject_sources.json"               "python3 kb/_subject_sources.py --check"
+srun "status: mq_view.json"                       "python3 kb/_mq_view.py --check"
+srun "status: csr_proposed_codes.json"            "python3 kb/_csr_propose_codes.py --check"
+# The harvest's committed-file builds.
+srun "status: commons_data.json"                  "python3 kb/_build_commons_data_status.py --check --quiet"
+srun "status: program_discontinued.json"          "python3 kb/_program_discontinued.py --check"
+# The session side of each Progress view, written at checkpoints: course.json, cr.json, exhibit.json,
+# subjects.json and program-requirements.json. Hand-kept, so the check is their shape, never their bytes.
+srun "status: five checkpoint-written files"      "q() { python3 scripts/queue_status.py --check --project \$1; }; q course && q cr && q exhibit && q subjects && q program-requirements"
 run "docs index + catalogs"   "python3 kb/_build_docs_index.py --check"
 # The dependency map is a report line, never a failure (Sam, 2026-11-18: "No dependency-map rebuild inside PRs.
 # kb/dependency_map.json and docs/reference/dependency_map.md are rebuilt by one job on main after each merge.").
@@ -56,7 +88,7 @@ run "statewide catalog (Fact Sheet + Sierra)" "python3 fact-sheet/_build_statewi
 run "discipline blanks worklist" "python3 kb/_build_discipline_blanks_worklist.py --check"
 run "orphan-parent worklist"   "python3 kb/_build_orphan_parent_worklist.py --check"
 # College Data Collection's data dictionary (#3310): kb/cdc_data_dictionary.json is hand-kept; the status file and the
-# doc are built from it, so an edit to the JSON stales both here.
+# doc are built from it, so an edit to the JSON stales both here (kb/status/cdc_sharing.json, kb/status/cdc_integrations.json).
 run "CDC data dictionary"      "python3 kb/_build_cdc_sharing.py --check"
 # A stored credential title is resolved at read time through the applied renames (S641): the browser reads
 # kb/credential_title_moves.json, which the one resolver writes, so a new rename snapshot stales it here.
@@ -93,6 +125,11 @@ else
   printf '%-46s %s\n' "open-asks sheet coverage" "NOT RUN: the vault is not beside the tracker (attach CPLBrain, or set CPL_VAULT_ROOT)"
   fail=1
 fi
+wait
+for i in "${!slabels[@]}"; do
+  printf '%-46s ' "${slabels[$i]}"
+  if [ "$(cat "$st/$i.rc" 2>/dev/null)" = 0 ]; then echo "ok"; else echo "STALE"; tail -4 "$st/$i.out" | sed 's/^/    /'; fail=1; fi
+done
 echo
 if [ "$fail" -ne 0 ]; then
   echo "Regenerate, re-run this, THEN push:"
@@ -100,6 +137,10 @@ if [ "$fail" -ne 0 ]; then
   echo "    && python3 kb/_build_cobi_admin_surface.py && python3 kb/_build_sierra_rule_defaults.py \\"
   echo "    && python3 fact-sheet/_build_statewide_catalog.py && python3 kb/credential_aliases.py \\"
   echo "    && python3 kb/slash_titles.py && python3 kb/_build_spend_daily.py --sessions-only"
+  echo "A STALE status: line names its builder; run the subject family in its order, from the first stale one:"
+  echo "  kb/_build_local_subject_titles.py, _held_subject_codes.py, _build_noncredit_subject_titles.py,"
+  echo "  _build_local_subject_recommendations.py, _mid_readiness.py, _outline_hunt.py, _statewide_subject_codes.py,"
+  echo "  _subject_sources.py, _mq_view.py, _csr_propose_codes.py"
   exit 1
 fi
 echo "All generated files are current (the dependency map is the main job's to rebuild)."

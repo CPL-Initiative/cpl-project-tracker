@@ -42,7 +42,8 @@ THE DAILY RUN (scripts/daily_build.sh, after the closest M-ID and the local subj
 in memory, so the run writes nothing under kb/pile_mint_out/. The file stores a fingerprint of what decides the list:
 the document less its _sources, whose plan date and identity-file stamp move every run. The builder reads the dry run's
 inputs through its load_inputs, so the fingerprint is taken over the list it produces, never over those files' bytes.
-With --if-changed a run whose fingerprint matches the file's leaves the file untouched.
+With --if-changed a run whose fingerprint matches the file's leaves the file untouched; --check compares the same
+fingerprint and exits 1 when the committed file is behind its inputs (scripts/check_generated.sh runs it).
 
 GUARD (held_of). A plan with none of the held reasons, a held reason that is not a list, or a row missing a field
 stops the build. A held count that falls by more than half against the committed file stops the write with a warning
@@ -50,6 +51,7 @@ stops the build. A held count that falls by more than half against the committed
 --expect-fall names the fall as expected.
 
   python3 kb/_held_subject_codes.py [--plan PATH] [--out PATH] [--if-changed] [--expect-fall]
+  python3 kb/_held_subject_codes.py --check    exit 1 if the committed file is behind its inputs; writes nothing
 """
 from __future__ import annotations
 
@@ -369,6 +371,7 @@ def main(argv=None):
     ap.add_argument("--out", default=os.path.join(ROOT, OUT))
     ap.add_argument("--if-changed", action="store_true", help="leave the file untouched when the list did not change")
     ap.add_argument("--expect-fall", action="store_true", help="the held count may fall by more than half")
+    ap.add_argument("--check", action="store_true", help="exit 1 if the committed file is behind its inputs; write nothing")
     a = ap.parse_args(argv)
     import _pile_mint_dryrun as pm  # noqa: E402  (load_inputs, compute_plan, holders, own_subj4, vote_tables)
     inp = pm.load_inputs()
@@ -391,6 +394,17 @@ def main(argv=None):
     sources["subject_decisions"] = "kb/status/subject_decisions.json"
     doc = build(held, thresholds, col, state, inp["disc_map"], titles_doc, short_max=pm.SUBJ_SHORT, sources=sources,
                 decided=plan.get("decided"))
+    if a.check:
+        try:
+            with open(a.out, encoding="utf-8") as f:
+                was = fingerprint(json.load(f))
+        except (OSError, ValueError):
+            was = None
+        if was != fingerprint(doc):
+            print(f"[held_subject_codes] {os.path.relpath(a.out, ROOT)} is stale: run python3 kb/_held_subject_codes.py")
+            return 1
+        print(f"[held_subject_codes] {os.path.relpath(a.out, ROOT)} is current")
+        return 0
     if not write_if_changed(doc, a.out, a.if_changed):
         return 0
     t = doc["totals"]

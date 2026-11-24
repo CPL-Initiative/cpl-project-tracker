@@ -155,7 +155,10 @@ check("(3) ⭐ a noncredit-only code takes its title and its dominant category's
       and OLD["decision"]["was"]["printed_name"] is None and [d["holds"] for d in OLD["noncredit_decisions"]] == [True])
 ESL = dict(zip(cols, after[("el_camino", "ESL")]))
 check("(3) ⭐ a code with credit courses keeps its credit row: its title, its code and no decision",
-      ESL["printed_name"] == dict(zip(cols, before[("el_camino", "ESL")]))["printed_name"] and ESL["common"] == "ESOL" and ESL["decision"] is None
+      ESL["printed_name"] == dict(zip(cols, before[("el_camino", "ESL")]))["printed_name"] and ESL["common"] == "ESOL"
+      # A person's own credit save on the code (El Camino ESL, 2026-11-23, synced by the daily run) may stand; the
+      # noncredit decisions injected here never become the row's decision.
+      and (ESL["decision"] is None or ESL["decision"]["band"] == "credit")
       and [(d["category"], d["holds"]) for d in ESL["noncredit_decisions"]] == [("English as a Second Language (ESL)", True), ("Parenting", False)])
 changed = sorted(k for k in after if [x for i, x in enumerate(after[k]) if i != NCD] != [x for i, x in enumerate(before.get(k, [])) if i != NCD])
 listed = sorted(k for k in after if after[k][NCD])
@@ -165,7 +168,10 @@ real = sorted({(d["college"], d["code"]) for d in committed.get("decisions") or 
 check("(3) ⭐ nothing else moves: no other row at any college, and no other row lists a noncredit decision",
       changed == [("los_angeles_pierce", "OLD")] and listed == sorted(set([("el_camino", "ESL"), ("los_angeles_pierce", "OLD")] + real)),
       json.dumps(changed[:6]) + " " + json.dumps(listed))
-na = {r["key"]: r["why"] for r in out["decisions"]["not_applied"]}
+# Only the decisions injected here are judged; live noncredit saves the daily sync carries (Cerritos AED's of
+# 2026-11-23) sit in not_applied beside them and are not this test's subject.
+_INJ = {d["key"] for d in NC_DECS}
+na = {r["key"]: r["why"] for r in out["decisions"]["not_applied"] if r["key"] in _INJ}
 check("(3) ⭐ applied counts only what a built column takes: the noncredit-only row's decision, never a credit-and-"
       "noncredit code's category (no per-course reader takes it yet), each other one listed with why",
       out["decisions"]["applied"] == titles["decisions"]["applied"] + 1

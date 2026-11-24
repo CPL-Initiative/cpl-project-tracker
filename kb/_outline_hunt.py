@@ -29,6 +29,7 @@ beyond the inputs' own dates, so a rerun on the same inputs writes the same byte
 
     python3 kb/_outline_hunt.py              write the file
     python3 kb/_outline_hunt.py --stdout     print the list, write nothing
+    python3 kb/_outline_hunt.py --check      exit 1 if the committed file is behind its inputs; write nothing
 """
 import argparse
 import gzip
@@ -175,6 +176,7 @@ def dump(doc):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--stdout", action="store_true")
+    ap.add_argument("--check", action="store_true", help="exit 1 if the committed file is behind its inputs; write nothing")
     a = ap.parse_args(argv)
     comp = _compare_module()
     members, members_at = comp.load_members(ROOT)
@@ -190,6 +192,16 @@ def main(argv=None):
         return 0
     text = dump(doc)
     p = os.path.join(ROOT, OUT)
+    if a.check:
+        try:
+            was = open(p, encoding="utf-8").read()
+        except OSError:
+            was = None
+        if was != text:
+            print("[outline_hunt] %s is stale: run python3 kb/_outline_hunt.py" % OUT)
+            return 1
+        print("[outline_hunt] %s is current" % OUT)
+        return 0
     try:
         if open(p, encoding="utf-8").read() == text:
             print("[outline_hunt] %d courses; unchanged" % len(doc["courses"]))
