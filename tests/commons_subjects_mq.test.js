@@ -283,16 +283,13 @@ async function group(n, fn) {
     g1.dispatchEvent(new x.w.KeyboardEvent("keydown", { key: "ArrowLeft", bubbles: true }));
     check("(7) the first's grip widens it within the pair, and the view gives up that width too", s1.style.width === "360px" && s1.style.right === "540px"
       && croot.style.getPropertyValue("--csb-panel-w") === "900px" && g1.getAttribute("aria-valuemin") === "320", [s1.style.width, croot.style.getPropertyValue("--csb-panel-w")]);
-    x.w.innerWidth = 1000; croot.getBoundingClientRect = () => ({ left: 280, right: 1000, top: 0, bottom: 900, width: 720, height: 900 });
-    x.w.dispatchEvent(new x.w.Event("resize"));
-    check("(7) ⭐ only where the view has no width left beside the pair does the pair cover it, still side by side",
-      croot.getAttribute("data-csb-stack") === "cover" && croot.style.getPropertyValue("--csb-panel-w") === "0px" && s1.style.right === "540px", [croot.getAttribute("data-csb-stack"), s1.style.right]);
     x.w.innerWidth = 1280; croot.getBoundingClientRect = () => ({ left: 280, right: 1280, top: 0, bottom: 900, width: 1000, height: 900 });
     x.w.dispatchEvent(new x.w.Event("resize"));
-    check("(7) ⭐ S722: a strip too narrow to read (1280px less the side menu and the pair leaves 140px) gives way: the pair covers the view",
-      croot.getAttribute("data-csb-stack") === "cover" && croot.style.getPropertyValue("--csb-panel-w") === "0px", croot.getAttribute("data-csb-stack"));
+    check("(7) ⭐ S722, Sam's rule: from 900px up a pair stays beside the view, never over it; the second narrows toward what leaves 360px of the view, down to its 320px floor",
+      croot.getAttribute("data-csb-stack") === "beside" && s2.style.width === "320px" && croot.style.getPropertyValue("--csb-panel-w") === "680px",
+      [croot.getAttribute("data-csb-stack"), s2.style.width, croot.style.getPropertyValue("--csb-panel-w")]);
     x.w.innerWidth = 1600; x.w.dispatchEvent(new x.w.Event("resize"));
-    check("(7) a window with room for a readable view beside the pair keeps the pair beside it", croot.getAttribute("data-csb-stack") === "beside", croot.getAttribute("data-csb-stack"));
+    check("(7) with room again, the second takes back its own width", croot.getAttribute("data-csb-stack") === "beside" && s2.style.width === "540px", s2.style.width);
     delete croot.getBoundingClientRect;
     x.w.innerWidth = 800; x.w.dispatchEvent(new x.w.Event("resize"));
     check("(7) a window narrower than the pair puts the second over the first", croot.getAttribute("data-csb-stack") === "over" && s1.style.right === "0px");
@@ -307,6 +304,15 @@ async function group(n, fn) {
     d.querySelector('#csb-side-1 button[data-csb-second="colleges"][data-csb-local="CT"]').click(); await settle();
     const cols = Array.from(d.querySelectorAll("#csb-side-2 table tbody tr")).map((r) => r.getAttribute("data-college"));
     check("(4) ⭐ a Colleges count opens the colleges it counts", same(cols, ["Alpha College", "Beta College", "Gamma College", "Delta College"]) && x.S.address() === "commons/subjects/mq/code/CNST/colleges/CT", cols);
+    d.getElementById("csb-side-2-close").click(); await settle();
+    {
+      const r0 = d.getElementById("commons-root"), p1 = d.getElementById("csb-side-1"), gp = d.getElementById("csb-side-1-grip");
+      x.w.innerWidth = 1280; r0.getBoundingClientRect = () => ({ left: 280, right: 1280, top: 0, bottom: 900, width: 1000, height: 900 });
+      for (let i = 0; i < 30; i++) gp.dispatchEvent(new x.w.KeyboardEvent("keydown", { key: "ArrowLeft", bubbles: true }));
+      check("(7) ⭐ S722, Sam's rule: a sidebar dragged wide stops where 360px of the view is left, and the view gives up only that",
+        p1.style.width === "640px" && r0.style.getPropertyValue("--csb-panel-w") === "640px" && gp.getAttribute("aria-valuenow") === "640", [p1.style.width, r0.style.getPropertyValue("--csb-panel-w")]);
+      delete r0.getBoundingClientRect; x.w.innerWidth = 1600; x.w.dispatchEvent(new x.w.Event("resize"));
+    }
     d.getElementById("csb-side-1-close").click(); await settle();
     check("(4) Close on the first closes both and gives the view its width back", !d.querySelector(".csb-side") && x.S.address() === "commons/subjects/mq"
       && !d.getElementById("commons-root").classList.contains("csb-beside"));

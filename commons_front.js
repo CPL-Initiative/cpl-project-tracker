@@ -333,10 +333,25 @@
   /* A link to a card on this page (item 1): scroll to it, unfold it and focus its heading; never route (the tab router
      reads a bare #<id> as a tab). The click is handled once, for every such link, below. */
   function onPage(id, kids, cls) { return el("a", { href: "#" + id, "data-onpage": id, cls: cls || null }, typeof kids === "string" ? [kids] : kids); }
-  function jump(id) {
+  /* A quick link lands on a link, never on bare text (Sam, S722, 2026-11-24: "it should drop you on a lower link and
+     highlight the link so user knows to click the link when ready. Do not just drop the user on text that has no link").
+     The check's Where to act link the quick link names (data-onpage-to, its href), else the check's first one, takes
+     the focus and a highlight that stays until the focus leaves it. */
+  function landOn(t, to) {
+    var links = t.querySelectorAll ? Array.prototype.slice.call(t.querySelectorAll(".cmf-act a[href]")) : [];
+    var l = links.filter(function (x) { return to && x.getAttribute("href") === to; })[0] || links[0];
+    if (!l) return false;
+    if (l.scrollIntoView) l.scrollIntoView({ block: "center" });
+    l.classList.add("cmf-hl");
+    l.addEventListener("blur", function off() { l.classList.remove("cmf-hl"); l.removeEventListener("blur", off); });
+    if (l.focus) l.focus();
+    return true;
+  }
+  function jump(id, to) {
     var t = document.getElementById(id);
     if (!t) return false;
     if (typeof t._unfold === "function") t._unfold();
+    if (t.classList && t.classList.contains("cmf-check") && landOn(t, to)) return true;
     if (t.scrollIntoView) t.scrollIntoView({ block: "start" });
     /* A check takes the focus itself: its own heading is a line, and a check may hold a subheading of its own. */
     var h = t.classList && t.classList.contains("cmf-check") ? t : t.querySelector("h3, h4") || t;
@@ -994,15 +1009,17 @@
     if (!shown.length) return null;
     return el("div", { cls: "cmf-quick", id: "cmf-" + key + "-quick" }, [el("p", { cls: "cmf-sub", text: "Needs action first:" }),
       el("ul", { cls: "cmf-list" }, shown.map(function (i) {
-        return el("li", { "data-check": String(i.check) }, [onPage("cmf-" + key + "-check-" + i.check, fmt(i.n) + " " + (i.text || (i.n === 1 ? i.one : i.many)))]);
+        var l = onPage("cmf-" + key + "-check-" + i.check, fmt(i.n) + " " + (i.text || (i.n === 1 ? i.one : i.many)));
+        if (i.to) l.setAttribute("data-onpage-to", i.to);
+        return el("li", { "data-check": String(i.check) }, [l]);
       }))]);
   }
   function subjQuick(L, LT, HC, R, all) {
     return quickLinks("subj", [
-      { check: 2, n: L && L.codes ? L.codes.Unsure : null, text: "local codes with an Unsure common code" },
-      { check: 1, n: LT ? LT.untitled : null, text: "codes with no title" },
-      { check: 3, n: HC ? HC.held : null, text: "courses the M-ID mint holds" },
-      { check: 1, n: LT && all ? all - LT.collegesNamed : null, text: "colleges with no catalog read yet" },
+      { check: 2, n: L && L.codes ? L.codes.Unsure : null, text: "local codes with an Unsure common code", to: "#commons/subjects/statewide" },
+      { check: 1, n: LT ? LT.untitled : null, text: "codes with no title", to: "#commons/subjects/disagree" },
+      { check: 3, n: HC ? HC.held : null, text: "courses the M-ID mint holds", to: "#commons/subjects/held" },
+      { check: 1, n: LT && all ? all - LT.collegesNamed : null, text: "colleges with no catalog read yet", to: "#collect" },
       { check: 4, n: R ? R.mids - R.ready : null, text: R ? R.code + " M-IDs not ready to re-mint" : "" }]);
   }
   function checkHead(n, name, fig) { return el("p", { cls: "cmf-check-h" }, [el("strong", { text: n + ". " + name }), el("span", { cls: "cmf-check-fig" }, fig)]); }
@@ -1022,7 +1039,7 @@
   function checksBody(key, o) {
     var num = {}, n = 0, stages = o.stages || {};
     STAGES.forEach(function (s) { (stages[s] || []).filter(Boolean).forEach(function (c) { num[c.ref] = ++n; }); });
-    var body = [quickLinks(key, (o.quick || []).map(function (q) { return q && num[q.ref] ? { check: num[q.ref], n: q.n, text: q.text, one: q.one, many: q.many } : null; })),
+    var body = [quickLinks(key, (o.quick || []).map(function (q) { return q && num[q.ref] ? { check: num[q.ref], n: q.n, text: q.text, one: q.one, many: q.many, to: q.to } : null; })),
       ul((o.defs || []).filter(function (d) { return d && d[1]; }).map(function (d) { return lead(d[0] + ":", d[1]); }))];
     STAGES.forEach(function (s) {
       var list = (stages[s] || []).filter(Boolean);
@@ -1083,7 +1100,7 @@
         "A person’s hand-over, where a site blocks our reader.",
         "COCI and the MIS reports carry no subject names.",
         "Who: Sky, in the nightly data collection."]),
-      act([["The colleges and their titles", "#commons/subjects"], ["Hand over a file or link", "#collect"]])])]), stageFold("subj", "Curate", [checkBox("subj", 2, [
+      act([["The colleges and their titles", "#commons/subjects"], ["Codes with no title", "#commons/subjects/disagree"], ["Hand over a file or link", "#collect"]])])]), stageFold("subj", "Curate", [checkBox("subj", 2, [
       checkHead(2, "A Confident common code for every local code", L ? [el("strong", { text: fmt(L.pairs.Confident) }), " of " + fmt(L.totalPairs) + " pairs"] : ["TBA"]),
       L ? stack(L) : null,
       L ? el("p", { cls: "cmf-sub", id: "cmf-subj-levels", text: LEVEL_WORDS.map(function (k) { return k + " " + fmt(L.pairs[k]); }).join(" · ") }) : null,
@@ -1743,7 +1760,7 @@
   document.addEventListener("click", function (e) {
     var l = e.target && e.target.closest ? e.target.closest(".cmf a[data-onpage]") : null;
     if (!l || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (jump(l.getAttribute("data-onpage"))) e.preventDefault();
+    if (jump(l.getAttribute("data-onpage"), l.getAttribute("data-onpage-to"))) e.preventDefault();
   });
 
   /* #commons/needs-you (#3566): the front page scrolled to Needs you, its heading focused. */
@@ -1915,6 +1932,7 @@
     ".cmf-stage-b { font:inherit; letter-spacing:inherit; text-transform:inherit; color:var(--cmn-link); background:none; border:0; padding:0; min-height:24px; line-height:24px; text-decoration:underline; text-underline-offset:3px; cursor:pointer; }",
     ".cmf-stage-b[aria-expanded='false']::after { content:' (show)'; } .cmf-stage-b[aria-expanded='true']::after { content:' (hide)'; }",
     ".cmf-stage-b:focus-visible, .cmf-check:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
+    ".cmf-act a.cmf-hl { background:var(--cmn-pill-bg); outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:3px; }",
     ".cmf-check:focus { outline:none; } .cmf-quick { margin:6px 0 2px; } .cmf-quick a { display:inline-block; min-height:24px; line-height:24px; }",
     ".cmf-stage { margin:14px 0 6px; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:var(--cmn-muted); border-bottom:2px solid var(--cmn-gold); padding-bottom:4px; }",
     ".cmf-check-h { margin:6px 0 4px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; align-items:baseline; }",

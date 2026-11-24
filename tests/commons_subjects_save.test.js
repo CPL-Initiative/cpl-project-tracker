@@ -18,6 +18,9 @@
 //  (10) a refused token marks the sign-in ended, and the page stores nothing;
 //  (11) ⭐ a code whose band moved since its save still shows the save, says the band changed, and saves anew under
 //       the current band;
+//  (13) ⭐ S722 (Sam, 2026-11-24): Accept on the row saves the first title and the recommended common code, one row,
+//       the same write Edit makes; Accept beside a title saves that title and keeps the common code already saved;
+//       signed out, an Accept writes nothing and says to sign in;
 //  (12) ⭐ a save the daily build carries (the titles file's `decision`, #3655) shows one line: the live save where the
 //       read holds it, the file's where the read failed, and the files' own values where the save was taken back.
 // Run from repo root: `npm test` (or `node tests/commons_subjects_save.test.js`).
@@ -334,6 +337,36 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   x.d.getElementById("csb-ed-undo").click(); await settle();
   check("(12) ⭐ taking back a save the file carries returns the row to the files' own values at once",
     txt(pexCell(x)) === "" && /Taken back/.test(txt(x.d.getElementById("csb-ed-status"))), txt(pexCell(x)));
+
+  /* (13) Accept on the row */
+  const RECS2 = { colleges: [{ slug: "alpha", rows: [{ code: "MATH",
+    title: { title: "Mathematics", level: "Medium", confidence: 0.8, from: "web_search", candidates: [
+      { title: "Mathematics", confidence: 0.8, level: "Medium", from: ["web_search"] }, { title: "Math Lab", confidence: 0.575, level: "Low", from: ["course_joins"] }],
+      search: { result_url: "https://alpha.edu/math", result_title: "Mathematics" } },
+    common: { code: "MATH", discipline: "Mathematics", level: "Medium", confidence: 0.91, from: "own_courses" } }] }] };
+  x = load("#commons/subjects/disagree", { sess: ME, files: { "kb/status/local_subject_recommendations.json": RECS2 } });
+  await x.M.boot(); await settle();
+  let m13row = x.d.querySelector('.csb-codes tr[data-code="MATH"]');
+  check("(13) ⭐ the title cell shows each candidate with a 0-100 bar and its number", m13row && Array.from(m13row.querySelectorAll(".csb-cands .cmn-cbar")).map((b) => b.getAttribute("data-conf")).join(",") === "80,58"
+    && /confidence 80 of 100/.test(m13row.querySelector(".csb-cands .cmn-cbar").getAttribute("aria-label")), m13row && txt(m13row.children[2]));
+  check("(13) the common code's recommendation carries a bar too", m13row.children[3].querySelector(".cmn-cbar") && m13row.children[3].querySelector(".cmn-cbar").getAttribute("data-conf") === "91");
+  m13row.querySelector('button[data-csb-accept="row"]').click(); await settle();
+  let posts13 = writesOf(x), b13 = posts13[0] && JSON.parse(posts13[0].body);
+  check("(13) ⭐ Accept on the row posts one save: the first title, the recommended code, the page the search found",
+    posts13.length === 1 && b13.course_id === "SUBJ:alpha|MATH|credit" && b13.field === "subject_decision"
+    && b13.value === JSON.stringify({ local_title: "Mathematics", common_code: "MATH", source_url: "https://alpha.edu/math" }) && b13.reviewer_email === ME.email, posts13[0] && posts13[0].body);
+  m13row = x.d.querySelector('.csb-codes tr[data-code="MATH"]');
+  check("(13) the accepted row drops out of the no-title list at once", !m13row);
+  x = load("#commons/subjects/disagree", { sess: ME, files: { "kb/status/local_subject_recommendations.json": RECS2 } });
+  await x.M.boot(); await settle();
+  x.d.querySelectorAll('.csb-codes tr[data-code="MATH"] .csb-cands button[data-csb-accept="title"]')[1].click(); await settle();
+  posts13 = writesOf(x); b13 = posts13[0] && JSON.parse(posts13[0].body);
+  check("(13) ⭐ Accept beside the second title saves that title alone", posts13.length === 1 && b13.value === JSON.stringify({ local_title: "Math Lab" }), posts13[0] && posts13[0].body);
+  x = load("#commons/subjects/disagree", { files: { "kb/status/local_subject_recommendations.json": RECS2 } });
+  await x.M.boot(); await settle();
+  x.d.querySelector('.csb-codes tr[data-code="MATH"] button[data-csb-accept="row"]').click(); await settle();
+  check("(13) ⭐ signed out, Accept writes nothing and says to sign in", writesOf(x).length === 0
+    && /sign-in has ended|Sign in/.test(txt(x.d.querySelector('.csb-codes tr[data-code="MATH"] .csb-acc-msg'))), txt(x.d.querySelector('.csb-codes tr[data-code="MATH"] .csb-acc-msg')));
 
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "  [" + r[2] + "]")));
