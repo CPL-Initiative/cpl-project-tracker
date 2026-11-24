@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "repeat_read_once",
+    "label": "The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.",
+    "words": "MUSIC 64 (Piano Ensemble, 2 units) is printed twice in the required list; the description says 4 units of piano ensemble are required, so MUSIC 64 is taken twice (4 units). It is recorded once in the block per the one-entry rule; the listed course units sum to 10, while the block and the award total are printed as 12."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
