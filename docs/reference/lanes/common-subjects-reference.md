@@ -60,6 +60,9 @@ provisions read from printed pages 56-67 (printed page = PDF page - 6: 53410.1 l
 M-IDs, vocational TOP share, local codes, noncredit categories and *To look at* (46 today: 26 list type against
 vocational share, 15 names, 4 codes on a C-ID or CCN prefix attributed elsewhere, 3 new). Guards
 `tests/mq_view_test.py`, `tests/csr_code_history_test.py`. Mock: https://claude.ai/artifact/SHS5eNN4nb5vLkNCzzWvVE.
+The COBI view, `#commons/subjects/mq`, is live (#3745, `48d67aa4`; [`commons`](commons.md)), and Pages now
+serves `kb/status/mq_view.json`. **FINDING** `f-mq-sections-still-19th-s719` (informational): the quarterly probe's
+`committed_edition` still reads 19, because `kb/reference/mq_sections.json` was read from the 19th edition.
 
 **RULED (Sam, 2026-11-23).** `r-csr-codes-settled-on-list-confidence-not-confirmation-sam-2026-11-23`: every MQ
 discipline takes a code without waiting for a course; a code on the list is settled; confidence informs, and a person
@@ -86,52 +89,15 @@ under the cards (`kb/csr_procedures.json`) and the findings waiting on a judgmen
 its filter; `#canonical-subj4/<filter>`, `/progress`, `/list` and `/check` route from the address (the Commons'
 step 3). Guard `tests/csr_progress.test.js`; a11y `canonical-subj4-progress-dark`.
 
-**LIVE: the List view (2026-11-01).** `#canonical-subj4/list`, the third word beside Progress and Reference, is the
-Catalog Commons' shared List (`commons_list.js`, lazy-loaded) with this reference's spec in `canonical_subj4.js` (Sam,
-2026-11-01: *"I want one now for each of our Catalog Commons groups"*): one row per MQ discipline (147; 246 once #3726 lands), A to Z, with its
-Common SUBJ, status (confirmed by a person, by the nightly procedure `csr-confirm-authority@bot`, by a session cohort,
-or open), any collision, the Local SUBJs colleges use and how many, local courses, M-IDs, authority and note. Edit, Edit
-every row and the Status drawer's Confirm this pick write through one path (`canonCheck`, `writeCanon`,
-`writeNote`): the same `_CANON_SUBJ4::` kb_curation rows, no new write surface. No flag
-column (no flag field) and no find and replace (a replace on Common SUBJ hands one code to several MQ disciplines; a
-note where no code row exists stands in as the review, so a replace across notes would confirm picks). Guard
-`tests/csr_list.test.js`; a11y `canonical-subj4-list`, `canonical-subj4-list-dark`. **A pick waiting for a person
-opens the List on Open** (`#canonical-subj4/open`, `TO.confirm`): the Commons card's unconfirmed issue and the Progress
-view's *Confirm them* once led to a filter whose box saved only a changed code, so Sam found nothing to press
-(2026-11-03). **The List is the workspace
-(2026-11-04, the List norms):** over the List, the engine's line of the subjects row in `kb/status/commons.json` (Open
-and Confirmed by a person set the List's own filters), and the Progress view's opened page folded behind *Hide the
-summary* (prefix `csl-pg-`). A press on a row opens its edit row and its side panel: its local subjects (most used first, each
-share), the codes it shares (a collision, or shared by design; another MQ discipline's name opens its panel),
-*Confirm this pick* with its own status line, and the authority, note and identity codes folded. Guard
-`tests/csr_list_panel.test.js`. **The Reference view retired into the List (2026-11-04, SkyPawpaw):** its lists are
-List filters (*No code yet*, *Confirmed*, *On the CCN code*, *On the C-ID code*, *An official code differs*, *Proposed*),
-and every Progress count, old address (`/reference` too) and quickstart hint opens the List; a TOP column takes the TOP
-filter's place (a fuzzy filter only); the head carries the sign-in and *Run the SUBJ check*, whose *show* opens a
-discipline's panel; the panel folds the CPL window and the C-ID and CCN courses on its codes, and lists the *Codes it
-could take* (the box's suggestions, each a *Take* word). Guards `tests/csr_list_reference_port.test.js` and the
-table's suites ported onto the List (`csr_alias_chip`, `csr_authority_chip`, `csr_fl_split`, `csr_ui_tweaks`,
-`csr_subj_check`; harness `tests/csr_list_harness.js`). The table's rules left the tab's `<style>` (both HTMLs) and
-the injected box CSS with it. **The List as Sam's workspace (SkyJujube, 2026-11-04/05; the story in `docs/common_subject_code_tab_lessons.md`):** saves
-read the session at write time (`freshSess`) and a lapsed sign-in says so; a row press edits the row and moves the panel
-(engine `editByRow`); *Check alignment* audits a typed code (`edit.extra`; Exhibits carries its own); a code edit seeds
-the Note, keeping a code asks its reason; the panel's local codes show Colleges beside Courses (from
-`kb/discipline_local_courses/`, `kb/_build_discipline_local_courses.py`), name their courses, and carry *Use <code>*;
-a row saved since the scan ran leaves *A scan finding to confirm or note*; *What a Common SUBJ is*
-(`prototype/common_subj_explainer.html`). Every Commons view: *Hide the top*, side panels resize, both remembered.
-**Sync:** `phase-1e-sync.yml` is manual, and a code change must land with its re-mint: the 2026-11-05 00:15Z sync put
-Sam's new codes in the file ahead of the M-IDs, broke `tests/csr_trail_rules_test.py` on main, and was reverted. His
-saves stay in `kb_curation`; the re-mint run syncs and folds them in one window. The evening's codes landed
-(*APPLIED*, under NEXT below; re-key 41958042347 green; S583 read back no row left on an old code). **NEXT:** ECONMT and Electricity's
-adult-education codes, his refile in Local subjects.
-**The Local subjects List** (Sam, 2026-11-03: *"yes on
-local subjects"*; `csr_local_subjects.js`, the fourth view, `#canonical-subj4/local[/<filter>]`): one row per local
-code the subject map names (320), leaves out on purpose (18) or the seed's courses use (1,376 more), with its MQ
-discipline, Common SUBJ, courses and where they land. *Confirm* records a filing as `_SUBJ_DISC::<CODE>` /
-`subject_discipline_confirm`, a note as `subject_discipline_note` (both DR-25, Sam's); the map file changes only when a
-session applies the filings under DR-25 with its ripple check. Guard `tests/csr_local_subjects.test.js`; a11y
-`canonical-subj4-local`, `-dark`. NEXT: the Commons card's second count (local codes confirmed by a person) needs the
-confirms synced to a committed file.
+**LIVE: the List view (2026-11-01) and the Local subjects List (2026-11-03).** `#canonical-subj4/list` (one row per MQ
+discipline; Edit, Edit every row and *Confirm this pick* write the same `_CANON_SUBJ4::` kb_curation rows; the Reference
+view retired into it, 2026-11-04) and `#canonical-subj4/local[/<filter>]` (one row per local code; *Confirm* writes
+`_SUBJ_DISC::<CODE>` under DR-25). The paragraph as it stood, every surface, sync rule and guard named,
+[`docs/roadmap_archive_8.md`](../../roadmap_archive_8.md), *Moved from lanes/common-subjects-reference.md (S719
+checkpoint)*. Guards `tests/csr_list.test.js`, `tests/csr_list_panel.test.js`, `tests/csr_list_reference_port.test.js`,
+`tests/csr_local_subjects.test.js`. **Sync:** `phase-1e-sync.yml` is manual, and a code change lands with its re-mint.
+**NEXT:** ECONMT and Electricity's adult-education codes, his refile in Local subjects; the Commons card's second count
+(local codes confirmed by a person) needs the confirms synced to a committed file.
 
 **The definition of complete (Sam, 2026-11-23, `r-csr-codes-settled-on-list-confidence-not-confirmation-sam-2026-11-23`):**
 every MQ discipline carries a Common SUBJ on the list, the code follows the authority rule, and no code sits on two
@@ -166,14 +132,13 @@ Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../..
 
 ## NEXT
 
-**NEXT (S718), in order:** (1) the MQ view in COBI, `#commons/subjects/mq` ([`commons`](commons.md); the local
-subject-title collection that S718 worked lives there too); (2) re-point the folded local codes, a re-mint under
+**NEXT (S719), in order:** (1) re-point the folded local codes, a re-mint under
 [`docs/coursecontrolnumber_remint.md`](../../coursecontrolnumber_remint.md), dry run first: ACCT, ACCTG, ACC and ACTG
 to ACCT under Accounting, LING, HOSP, the religion codes (RLST, RELS, RELG) to RLST, MCOM, AERO (its AFROTC courses
 to MILS); `kb/reference/subject_discipline_map.json` still sends ACC, ACCT and ACCTG to Business; AT and INS are
-homonyms (Automotive, tutoring), read college by college; (3) test CIP in place of TOP for MQ type; (4) collect the
-outline's MQ discipline in the SLO pass ([`data_sources`](../data_sources.md)); (5) `csr-quarterly.yml`'s baseline
-holds the 19th edition's sha256, so re-baseline it on the 20th before its January compare.
+homonyms (Automotive, tutoring), read college by college; (2) test CIP in place of TOP for MQ type; (3) collect the
+outline's MQ discipline in the SLO pass ([`data_sources`](../data_sources.md)); (4) re-read `kb/reference/mq_sections.json`
+from the 20th edition. The MQ view and the local subject-title collection live in [`commons`](commons.md).
 
 **The Subjects card (S694, #3620):** each college's local subject codes and printed names beside the common subject codes, on the Commons front at `#commons/subjects`; where it stands and its NEXT: [`commons`](commons.md).
 
@@ -193,9 +158,11 @@ any. The merge is a curriculum judgment made in the curation UI (ruling 6, 2026-
 
 **The quarterly routine compares on a cron (S433, #2279).** `csr-quarterly.yml` runs
 `kb/_csr_quarterly_probe.py --compare` at 13:17Z on the 1st of January, April, July and October, and on dispatch. It
-reads each source against `kb/reference/csr_quarterly_baseline.json` (the 19th edition and the handbook PDF's sha256,
-from run 39374671352), prints `COMPARE` lines (same, changed, unread, no_baseline) and a step summary, and reads red on
-`changed`; a session then diffs the Disciplines Index and opens a card. **The C-ID source a runner reaches (S437,
+reads each source against `kb/reference/csr_quarterly_baseline.json`, prints `COMPARE` lines (same, changed, unread, no_baseline) and a step summary, and reads red on
+`changed`; a session then diffs the Disciplines Index and opens a card. **LIVE (#3744, S719): the baseline is the 20th
+edition** (the address and sha256 `kb/reference/mq_handbook_20th.json` was read from); dispatch run 45311236371 printed
+COMPARE `same`, 2,983,718 bytes. `tests/csr_quarterly_probe_test.py` ties the baseline to that file rather than to an
+edition number (**DECIDED** `d-csr-baseline-20th-s719`). **The C-ID source a runner reaches (S437,
 #2289):** the site moved to c-idsystem.org (ASCCC), and its search pages live on data-c-idsystem.org with no `www`
 (the probe had asked c-id.net, a runner 403, and www.data-c-idsystem.org, no such host). `/descriptors/final` links its
 own export, `/descriptors/final/csv` (217,763 bytes, `text/csv`); the probe follows and hashes it, and two runs (13:16Z

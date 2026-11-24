@@ -1,7 +1,7 @@
 ---
 title: "The Commons — lessons"
 date: 2026-10-18
-updated: 2026-11-23
+updated: 2026-11-24
 tags: [lessons, commons, program-requirements, cer-procedures, skyview, common-cr-reference]
 artifacts:
   - commons_progress.js
@@ -657,3 +657,30 @@ Sam's asks: `r-commons-page-clarity-sam-2026-11-21`, `r-commons-cdc-card-sam-202
   to that code, so the view reuses a list rather than drawing a new one.
 - **Two open PRs that both run the docs lint both write `kb/docs_audit/<date>.*`.** #3727 and this checkpoint each
   carry a copy; the second to merge reruns `python3 kb/_docs_audit.py` after its update from `main`.
+
+## S719 (SkyShearwater, Sam's plain session, 2026-11-24): the MQ view, the second sidebar, every card in the Subjects design
+
+Sam, 2026-11-24 ~01:20Z: *"In this session, let's finish the subjects work and apply the design from the subject card to
+the other commons cards."* Shipped: #3740, #3743, #3744 and #3745 merged; #3748 open at the checkpoint. The search
+pass is in `docs/common_subject_code_tab_lessons.md`, same date.
+
+- **One normalizer for one name closes the drift S718 named.** `levels()` now matches a college's name through the
+  table's own `slugMap` and `slugFor` (#3740), so the card and the table count Los Angeles Trade-Technical alike. The
+  guard reads both on a punctuated name.
+- **The screen caught what jsdom could not.** The MQ table scrolled sideways at 1280, and the second sidebar sat over
+  the first; jsdom measures every rectangle as zero, so the suite passed both. The worker measured scrollWidth and
+  clientWidth with Playwright (902 against 902 after folding the noncredit categories under MQ type and the vocational
+  TOP share under M-IDs) and read the two panels' edges. A view with a width rule is verified in a browser.
+- **A design carried to every card keeps only the lines each card can fill.** All cards but Plan took the checks design
+  (#3743), and a Confident line appears only where a card reads a measured score (`d-cards-checks-design-s719`): Courses
+  and M-IDs alone, and its count at 0.9 reads TBA. A line copied onto a card with nothing to measure would invent a
+  figure.
+- **A card's figure is live only when the edit changes its input.** #3748 recounts Exhibit titles, Courses data and
+  Credit Recommendations from the saves; Courses and M-IDs stays committed, because an Assign never changes the nightly
+  ready and repair scores, and the M-ID gap would need the 17 MB `coci_lookup_data.js`. Each committed-only figure says
+  why in its method text, so a reader does not take a still number for a stale one.
+- **A second sidebar narrows the first.** Opening a count in a sidebar opens a second beside it; the first narrows to
+  about 320px and the view gives up their joint width, covered only when no room is left
+  (`d-second-sidebar-beside-first-s719`). The last ~124px strip of the view still shows with both open.
+- **The harness keeps worker worktrees under `.claude/worktrees/`.** The paths named in the briefs were not honored; a
+  brief names the branch and lets the worker report its path.

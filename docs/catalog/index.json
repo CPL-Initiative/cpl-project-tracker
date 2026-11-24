@@ -5030,7 +5030,9 @@
      "governs": [
       "tests/cpl_funding_measure_picker.test.js",
       "tests/cpl_funding_metric_pin.test.js",
-      "cpl_funding_performance.js"
+      "cpl_funding_performance.js",
+      "tests/csr_quarterly_probe_test.py",
+      "kb/reference/csr_quarterly_baseline.json"
      ],
      "path": "docs/kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md",
      "status": "published",
@@ -5042,7 +5044,7 @@
      ],
      "title": "A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect",
      "type": "methodology",
-     "updated": "2026-11-12"
+     "updated": "2026-11-24"
     },
     {
      "created": "2026-08-07",
@@ -14098,7 +14100,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-23"
+     "updated": "2026-11-24"
     },
     {
      "created": "2026-11-14",
@@ -17538,8 +17540,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 675,
+   "count": 676,
    "docs": [
+    {
+     "created": "2026-11-24",
+     "governs": [],
+     "n": 720,
+     "path": "docs/session_720_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 720 handoff (from SkyShearwater, S719, Sam's plain session of 2026-11-24: the web-search pass, the MQ view, every Commons card in the Subjects design)",
+     "type": null,
+     "updated": "2026-11-24"
+    },
     {
      "created": "2026-11-24",
      "governs": [],
@@ -28762,5 +28778,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1567
+ "total": 1568
 }
