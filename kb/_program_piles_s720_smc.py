@@ -8,7 +8,7 @@ person list, PERSON below, and untouched here). Today's census (kb/status/harves
 lists the same 26. Sam's ruling (2026-11-17, sam-collect-with-gaps-2026-11-17): never drop a record for failing;
 collect it with its gaps noted and confidence scores, a gap noted instead of a reread. The committed files hold no
 page text, so neither runner step can run here, and no rule from the files alone passes a record: each of the 23 is
-collected with a named gap, less one held.
+collected with a named gap where one is honest: 20 are, and 3 are held (41797, 43767, 21026).
 
 THE REVIEWED LIST (REVIEWED below, a hand reading of each record's own notes, the shape of #3753 and #3755). An
 entry names the gap, the words of the record's note that show it, and the computed and stated figures the record
@@ -16,12 +16,13 @@ holds; the rule names the gap only where the record still carries those words, c
 arithmetic fails, and its figures are exactly the entry's. The kinds, reused before any is added:
 
   lists_not_closed           (#3753) a list prints no unit figure of its own. 03256, 03272, 33339.
-  noted_figures_differ       (#3753) the note quotes two printed figures that disagree. 03282, 03302, 21026, 33270,
-                             33271, 35284, 37452.
+  noted_figures_differ       (#3753) the note quotes two printed figures that disagree. 03282, 03302, 33270, 33271,
+                             35284, 37452.
   pool_figure_not_read       (#3755) one figure over several lists or options, read as its parts. 03263, 08970,
-                             21007, 32792, 39680.
+                             21007, 32792.
   pair_read_as_alternatives  (#3755) courses or groups taken together read as separate alternatives. 39671, 44004,
-                             46189.
+                             46189, and 39680 (each language track's culture course and its list, two blocks
+                             taken together, the shape of 44004 and 46189: #3755's reader).
   catalog_figures_differ     (existing, S681) each list matches its printed figure and the lists sum past the
                              printed total; filed only where figures_differ_fails reads the record meeting the
                              sentence. It holds 41797 (the lists meet the printed total's high end), so 41797 is
@@ -79,8 +80,6 @@ REVIEWED = {
               "courses": ["RC11L"]},
     "03302": {"gap": "noted_figures_differ", "computed": [27.5, 27.5], "stated": [26.5, 26.5],
               "words": "which does not match the stated 26.5 units"},
-    "21026": {"gap": "noted_figures_differ", "computed": [27.5, 27.5], "stated": [26.5, 26.5],
-              "words": "the same Area of Emphasis (26.5 units)"},
     "33270": {"gap": "noted_figures_differ", "computed": [19, 22], "stated": [18, 18],
               "words": "'If completed entirely at SMC, the Area of Emphasis requires 19 units'"},
     "33271": {"gap": "noted_figures_differ", "computed": [21, 24], "stated": [20, 20],
@@ -97,7 +96,7 @@ REVIEWED = {
               "words": "the student selects 2 of the 5 groups (12 units), not 1"},
     "32792": {"gap": "pool_figure_not_read", "computed": [15, 21], "stated": [18, 18],
               "words": "the remaining 3 units may come from either list"},
-    "39680": {"gap": "pool_figure_not_read", "computed": [9, 13], "stated": [16, 16],
+    "39680": {"gap": "pair_read_as_alternatives", "computed": [9, 13], "stated": [16, 16],
               "words": "is printed as one option of 'Select 1 Language Track' with '(10 units minimum)'"},
     "39671": {"gap": "pair_read_as_alternatives", "computed": [7, 10], "stated": [9, 9],
               "words": "the alternative to ANTHRO 35s is the pair ERTHSC 88A and ERTHSC 88B taken together",
@@ -126,6 +125,10 @@ HAND = {cn: e["gap"] for cn, e in REVIEWED.items()}
 # page read: held, never a gap.
 HAND["43767"] = ("held: its Barbering heading is inferred (on a page the read did not hold) and capture.json's "
                  "shared_pages puts its page with 03302 and 40812: whether it read its own section is a page read")
+# #3755's reader (MAJOR 1): 21026's cited note quotes one figure (26.5); none of its own notes quotes the 27.5 its
+# courses add to (03302's does), so noted_figures_differ's sentence does not hold on its own words.
+HAND["21026"] = ("held: its notes quote only the printed 26.5 (none quotes the 27.5 its courses add to, which "
+                 "03302's note does), so no kind's sentence holds on its own words")
 HAND["41797"] = ("held: the lists print 5-6, 3 and 6 (14-15) under a printed 13-15; catalog_figures_differ needs the "
                  "lists past the total at both ends, and the note quotes no second total; a person or a page read")
 

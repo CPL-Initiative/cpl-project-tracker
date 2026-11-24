@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T07:13:38Z",
+ "written_at": "2026-11-24T07:45:11Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17106,
-  "gap": 5229,
+  "passing": 17105,
+  "gap": 5230,
   "with_gap": 118,
   "cost_usd": 1340.94,
   "passed_at_read": 16325,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16763,
-  "gap": 5229,
-  "collected_with_gaps": 343,
+  "gap": 5230,
+  "collected_with_gaps": 342,
   "discontinued": 0
  },
  "census_live": {
@@ -10998,13 +10998,13 @@
    "harvested": true,
    "slug": "santa_monica",
    "programs": 256,
-   "passing": 225,
-   "gap": 31,
+   "passing": 224,
+   "gap": 32,
    "causes": {
     "no_closed_list": 16,
     "page_not_found": 9,
     "places_none": 1,
-    "unknown_without_live": 5
+    "unknown_without_live": 6
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -11061,7 +11061,7 @@
    "levers": {
     "program_course_file_check": 16,
     "reader_page_search": 9,
-    "reconcile_steps": 5,
+    "reconcile_steps": 6,
     "reader_page_assignment": 1
    },
    "collection": {

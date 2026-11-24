@@ -8,7 +8,8 @@ its gaps noted and confidence scores, a gap noted instead of a reread. Pinned he
   * the kinds reused from #3753 and #3755 and the new repeat_read_once carry a sentence and a unit-arithmetic score
     (the setdefault block in kb/_program_named_gaps.py, a no-op beside those PRs' lines once all have merged);
   * precision 23 of 23 against the hand reading of the census members pinned in the fixture, less the three left
-    for a person (p-test-pins-census-members-s714): 22 collected, 41797 held (figures_differ_fails holds it off
+    for a person (p-test-pins-census-members-s714): 20 collected, 3 held (21026 on its own notes, 43767 on its
+    shared page, and 41797: figures_differ_fails holds it off
     catalog_figures_differ, and no other kind is honest);
   * the claim check holds a record whose named course the capture did not find; every boundary reading names no
     gap, a repeat one time short included;
@@ -32,11 +33,11 @@ import _program_piles_s720_smc as W  # noqa: E402
 
 COLLEGE = "Santa Monica College"
 ROWS = {cn: "lists_not_closed" for cn in ("03256", "03272", "33339")}
-ROWS.update({cn: "noted_figures_differ" for cn in ("03282", "03302", "21026", "33270", "33271", "35284", "37452")})
-ROWS.update({cn: "pool_figure_not_read" for cn in ("03263", "08970", "21007", "32792", "39680")})
-ROWS.update({cn: "pair_read_as_alternatives" for cn in ("39671", "44004", "46189")})
+ROWS.update({cn: "noted_figures_differ" for cn in ("03282", "03302", "33270", "33271", "35284", "37452")})
+ROWS.update({cn: "pool_figure_not_read" for cn in ("03263", "08970", "21007", "32792")})
+ROWS.update({cn: "pair_read_as_alternatives" for cn in ("39671", "44004", "46189", "39680")})
 ROWS.update({cn: "repeat_read_once" for cn in ("43655", "43743", "44720")})
-HELD = {"41797", "43767"}
+HELD = {"41797", "43767", "21026"}
 checks, failures = [0], []
 
 
@@ -59,28 +60,28 @@ check(NG.figures_differ_fails(W._load("41797")) is not None and W.gap_noted(W._l
       "figures_differ_fails holds 41797 off catalog_figures_differ")
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 21} and not cc["not_standing"], "21 claims stand")
+check(cc["counts"] == {"stands": 20} and not cc["not_standing"], "20 claims stand")
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2["43743"]["codes_found"] = [c for c in s2["43743"]["codes_found"] if c != "MUSIC64"]
 check(W.claim(W._load("43743"), s2) == "a named course not found", "a named course the capture lacks holds it")
 
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 21 * 3 + 3, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == 20 * 3 + 3, "every boundary reading names no gap: %s" % bd)
 
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
 got = {r["control_number"]: r["moves_to"] for r in rec["records"]}
-check(got == ROWS and rec["moved"] == 21, "the receipt names the 21 rows and their gaps")
-check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds 41797 and 43767")
+check(got == ROWS and rec["moved"] == 20, "the receipt names the 20 rows and their gaps")
+check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds 41797, 43767 and 21026")
 check(rec["census"]["members"] == members and rec["census"]["person"] == list(W.PERSON), "the receipt's keys")
 for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for cn in ROWS) and not any("'%s'" % cn in sql for cn in HELD | set(W.PERSON)),
-          "%s names exactly the 21" % part)
+          "%s names exactly the 20" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (21))" in sql, "the apply guards a confirm, expects 22")
+        check("confirm guard" in sql and "e(expect) as (values (20))" in sql, "the apply guards a confirm, expects 20")
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the rows (#3753's MAJOR)")
 check(W.shared_with("43767") == ["03302", "40812"], "43767's page is shared (#3753's BLOCKER class)")
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
