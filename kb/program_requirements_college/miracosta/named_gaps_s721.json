@@ -1,0 +1,28 @@
+{
+ "_readme": "S721 (lever), the gap census's reader_page_assignment lever (run 45371224551): 2 programs of MiraCosta College whose filed record places none of the state's listed courses because the 2026-27 catalog's list for the program does not print the course the state lists. Free page read 45382513707 read the Child Development discipline page as the capture reads it. The college's other 3 programs on the lever (07863, 36144, 36171) read their namesake certificate's section on their discipline page, as their sister degrees do, and are sent to a forced re-read instead. These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. They are the college's to settle in COCI.",
+ "college": "MiraCosta College",
+ "written": "2026-11-24T11:23:46Z",
+ "capture": "44529741837",
+ "page_reads": [
+  "45382513707"
+ ],
+ "reasons": {
+  "catalog_list_differs": "The 2026-27 catalog prints the program's own section and course list, and the list names none of the state's listed courses: the Program Course File's list and the catalog's differ, so a read of the section places none of them."
+ },
+ "programs": [
+  {
+   "control_number": "15183",
+   "title": "Child Development Teacher",
+   "award": "A.A. Degree",
+   "reason": "catalog_list_differs",
+   "note": "The Degrees tab says the A.A. is earned by completing the Child Development Teacher certificate of achievement and the general education courses. That certificate's section (disciplines/childdevelopment/, Certificates tab) lists CDEV 105, 106, 109, 112 or C1000, 200, 205, 210 and 270, 3 elective units from CDEV 111 to 240, and 16 units of general education, 'Total Units 43'; the state lists CDEV 212 alone, which prints only in the Associate Teacher and Master Teacher lists and the course descriptions."
+  },
+  {
+   "control_number": "22006",
+   "title": "Child Development Teacher",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) units",
+   "reason": "catalog_list_differs",
+   "note": "Its own section (disciplines/childdevelopment/, Certificates tab) lists CDEV 105, 106, 109, 112 or C1000, 200, 205, 210 and 270, 3 elective units from CDEV 111 to 240, and 16 units of general education, 'Total Units 43'; the state lists CDEV 212 alone, which prints only in the Associate Teacher and Master Teacher lists and the course descriptions."
+  }
+ ]
+}

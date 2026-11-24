@@ -5529,7 +5529,10 @@ def site_heading_names(pg: dict, program: dict) -> tuple[bool, str]:
 # heading is the department's name and whose next line names one of its programs with its award never stands in.
 SITE_OPENING = 6             # the page's first lines, where its heading prints
 SITE_AWARD_FIGURE = re.compile(r"\(\s*\d+(?:\.\d+)?(?:\s*-\s*\d+(?:\.\d+)?)?\s*(?:credits?|units?|hours?)\s*\)", re.I)
-SITE_AWARD_REST = {"degree", "of", "in", "achievement", "accomplishment", "proficiency"}
+# The words an award line may print beside the award pattern's match: a transfer degree's line reads "A.A. Degree for
+# Transfer", where the pattern matches "for Transfer" and leaves the A.A.; rule A still refuses a local degree on it.
+SITE_AWARD_REST = {"degree", "of", "in", "achievement", "accomplishment", "proficiency", "a", "s", "t", "aa", "as",
+                   "associate", "arts", "science", "for", "transfer"}
 
 
 def site_award_line(line: str, award: str | None) -> bool:
