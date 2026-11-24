@@ -94,6 +94,9 @@ for r in rec["records"]:
     check(img["checks"] == r["after_image"]["checks"], "%s: the load posts the receipt's after-image" % r["control_number"])
     check(img["checks"].get("gaps") == [r["moves_to"]], "%s: the image carries its one gap" % r["control_number"])
     check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
+check(all(r["confidence"]["source"] == NG.OTHER_PAGE_SOURCE for r in rec["records"]
+          if r["moves_to"] == "one_option_of_shared_page"), "a shared page's source scores 50 (#3753's second reader)")
+check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the rows (#3753's MAJOR)")
 cut = [r for r in rec["records"] if r["moves_to"] == "noted_section_cut_off"]
 check(all((r["confidence"]["course_list_match"] or 0) <= NG.MAY_CONTINUE_CAP for r in cut),
       "a cut-off record's course-list match is capped")

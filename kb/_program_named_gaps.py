@@ -151,6 +151,10 @@ INCOMPLETE_READ = re.compile(
 # The S680 second reader's held answers: the two no-units records whose notes say the list is incomplete.
 HELD_INCOMPLETE = frozenset({("Butte College", "14583"), ("West Los Angeles College", "42627")})
 FOUND_SOURCE = {"sitemap_page": 100, "link_search": 100, "pdf_pages": 80}
+# S720 (#3753's second reader): a gap that says the record was read from a page another program owns or shares
+# scores its source at most 50, however the page was found.
+OTHER_PAGE_GAPS = frozenset({"no_own_page_total", "one_option_of_shared_page"})
+OTHER_PAGE_SOURCE = 50
 UNKNOWN_SOURCE = 60
 # The records whose own note says the requirements or course list may continue past the text read (COBIx's finding
 # 3 on #3497), each reviewed by a person with the words of its note: course_list_match is capped at 50 on these
@@ -235,7 +239,8 @@ def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok:
     return {"unit_arithmetic": 100 if a.get("pass") else ARITH_SCORE.get(gap, 0),
             "course_list_match": clm,
             "ge_pattern": ge, "catalog_year": 100 if year_ok in (True, None) else 60,
-            "source": FOUND_SOURCE.get(method or "", UNKNOWN_SOURCE)}
+            "source": min(FOUND_SOURCE.get(method or "", UNKNOWN_SOURCE), OTHER_PAGE_SOURCE)
+            if gap in OTHER_PAGE_GAPS else FOUND_SOURCE.get(method or "", UNKNOWN_SOURCE)}
 
 
 
