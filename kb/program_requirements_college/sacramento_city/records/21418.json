@@ -150,7 +150,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "section_cut_off",
+    "label": "The program's section runs onto a page the read did not hold, so part of its requirements is missing from the record and its units cannot be checked against the printed total.",
+    "words": "an electives fill was refused: the reader's note says the requirements run outside the text read: \"The extracted text begins mid-section on page 455; the section heading, program description and the earlier requirement blocks (core and other lists, likely on page 454) are cut off.\""
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

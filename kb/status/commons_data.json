@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T08:29:35Z",
+ "written_at": "2026-11-24T08:36:24Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17091,
-  "gap": 5244,
+  "passing": 17100,
+  "gap": 5235,
   "with_gap": 118,
   "cost_usd": 1340.94,
   "passed_at_read": 16325,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16762,
-  "gap": 5244,
-  "collected_with_gaps": 329,
+  "gap": 5235,
+  "collected_with_gaps": 338,
   "discontinued": 0
  },
  "census_live": {
@@ -3477,13 +3477,13 @@
    "harvested": true,
    "slug": "cosumnes_river",
    "programs": 226,
-   "passing": 176,
-   "gap": 50,
+   "passing": 178,
+   "gap": 48,
    "causes": {
     "no_closed_list": 7,
     "page_not_found": 2,
     "places_none": 9,
-    "unknown_without_live": 32
+    "unknown_without_live": 30
    },
    "census_causes": {
     "coverage_fails": 8,
@@ -3547,7 +3547,7 @@
    "read_seconds": 341.2,
    "run": "45355422235",
    "levers": {
-    "reconcile_steps": 18,
+    "reconcile_steps": 16,
     "ge_units_steps": 14,
     "reader_page_assignment": 9,
     "program_course_file_check": 7,
@@ -4650,11 +4650,11 @@
    "harvested": true,
    "slug": "folsom_lake",
    "programs": 108,
-   "passing": 96,
-   "gap": 12,
+   "passing": 99,
+   "gap": 9,
    "causes": {
     "page_not_found": 1,
-    "unknown_without_live": 11
+    "unknown_without_live": 8
    },
    "census_causes": {
     "page_not_found": 1,
@@ -4673,7 +4673,7 @@
    "outcomes_file": "kb/status/commons_data_programs/folsom_lake.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-23T13:51:23Z",
+   "read_at": "2026-11-24T08:32:02Z",
    "read_kind": "capture",
    "cost_usd": 9.4,
    "passed_at_read": 90,
@@ -4701,10 +4701,10 @@
    "capture_root": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 158.9,
-   "run": "45187906040",
+   "read_seconds": 89.1,
+   "run": "45356831201",
    "levers": {
-    "reconcile_steps": 11,
+    "reconcile_steps": 8,
     "reader_page_search": 1
    },
    "collection": {
@@ -4713,8 +4713,8 @@
      "models": {
       "claude-opus-5-5": 107
      },
-     "run": "45187906040",
-     "at": "2026-11-23T13:51:23Z",
+     "run": "45356831201",
+     "at": "2026-11-24T08:32:02Z",
      "cost_usd": 9.4,
      "platform": "pdf"
     },
@@ -9822,13 +9822,13 @@
    "harvested": true,
    "slug": "sacramento_city",
    "programs": 227,
-   "passing": 178,
-   "gap": 49,
+   "passing": 182,
+   "gap": 45,
    "causes": {
     "no_closed_list": 20,
     "page_not_found": 3,
     "places_none": 4,
-    "unknown_without_live": 22
+    "unknown_without_live": 18
    },
    "census_causes": {
     "coverage_fails": 3,
@@ -9885,7 +9885,7 @@
    "run": "45353709365",
    "levers": {
     "program_course_file_check": 20,
-    "reconcile_steps": 18,
+    "reconcile_steps": 14,
     "ge_units_steps": 4,
     "reader_page_assignment": 4,
     "reader_page_search": 3
