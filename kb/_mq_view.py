@@ -193,7 +193,10 @@ def main(argv=None):
     text = json.dumps(doc, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
     old = open(a.out, encoding="utf-8").read() if os.path.exists(a.out) else None
     if a.check:
-        return 0 if old == text else 1
+        if old != text:
+            print(f"[mq_view] {OUT} is stale: run python3 kb/_mq_view.py")
+            return 1
+        return 0
     if old != text:
         with open(a.out, "w", encoding="utf-8") as f:
             f.write(text)

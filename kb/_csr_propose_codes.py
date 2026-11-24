@@ -251,7 +251,10 @@ def main(argv=None):
     doc = build()
     if "--check" in (argv or sys.argv[1:]):
         old = open(os.path.join(ROOT, OUT), encoding="utf-8").read() if os.path.exists(os.path.join(ROOT, OUT)) else None
-        return 0 if old == json.dumps(doc, ensure_ascii=False, indent=1, sort_keys=True) + "\n" else 1
+        if old != json.dumps(doc, ensure_ascii=False, indent=1, sort_keys=True) + "\n":
+            print(f"[csr_propose_codes] {OUT} is stale: run python3 kb/_csr_propose_codes.py")
+            return 1
+        return 0
     with open(os.path.join(ROOT, OUT), "w", encoding="utf-8") as f:
         f.write(json.dumps(doc, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
     print(f"[csr_propose_codes] {doc['count']} proposals ({doc['by_basis']}); {len(doc['problems'])} problems")

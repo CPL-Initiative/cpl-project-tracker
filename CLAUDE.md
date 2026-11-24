@@ -544,6 +544,8 @@ against, and the toggle history are in
   **Sibling branches are authorized** — a session may open additional
   `claude/*` branches off `main` for independent PRs rather than stacking
   unrelated changes. One concern per branch.
+- **Never open a PR on a branch that holds another open PR's commits;** wait for that PR to merge, then branch from
+  `main` ([stacked-PR empty squash](docs/kb-notes/methodology-stacked-pr-empty-squash.md); S718 lost a CI round to it).
 - **Artifact policy: prefer code-only PRs.** Ship generator/consumer changes
   without the regenerated `unified_courses_*.js` / `credential_reference_data.js`
   artifacts; merge, then dispatch `daily-dashboard.yml` and let the runner

@@ -208,7 +208,10 @@ _T = json.load(open(os.path.join(_R, "kb", "status", "local_subject_titles.json"
 _C = [c for c in _T["colleges"] if c["slug"] == "clovis_community"][0]
 _CR = {r[0]: dict(zip(_T["columns"], r)) for r in _C["rows"]}
 check("(9) ⭐ a renamed code takes its subject's title from the code history and names the code it became",
-      _CR["ANTHRO"]["printed_name"] == "Anthropology" and _CR["ANTHRO"]["title_source"] == lst.CODE_HISTORY
+      _CR["ANTHRO"]["printed_name"] == "Anthropology"
+      # A person's save wins over the code history (CLAUDE.md, person-settled wins): a reviewer saved ANTHRO's title in
+      # the Commons on 2026-11-23, and the daily run of 2026-11-24 synced it, so either source passes.
+      and _CR["ANTHRO"]["title_source"] in (lst.CODE_HISTORY, "a person's save")
       and _CR["ANTHRO"]["renamed_to"] == "ANTH" and _CR["ANTHRO"]["side"] == "state")
 check("(9) ⭐ both codes of a rename list the change with its source", [h["from_code"] for h in _CR["ANTH"]["history"]] == ["ANTHRO"]
       and _CR["COTR"]["history"][0]["from_title"] == "Cooperative Work Experience" and "page=3" in _CR["COTR"]["history"][0]["source"])

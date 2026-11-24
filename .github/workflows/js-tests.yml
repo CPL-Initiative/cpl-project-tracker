@@ -311,6 +311,11 @@ jobs:
       # two-signal re-check sends to a person, and the store's active discipline. Pure stdlib.
       - name: Discipline in doubt (kb/_ccr_seed_recheck_dryrun.py --doubt)
         run: python3 tests/ccr_doubt_test.py
+      # The last step before a push checks every status file (Sam, 2026-11-24, after S718 lost two CI rounds to two
+      # that scripts/check_generated.sh never ran): each kb/status/*.json is named there or listed with its reason in
+      # the test's NOT_CHECKED, and a new one fails here until it picks one. Pure stdlib.
+      - name: check_generated.sh covers every kb/status file
+        run: python3 tests/check_generated_covers_status_test.py
       # The Commons' Subjects card (S694): local subject titles from the printed catalogs beside the state list,
       # codes compared exactly, one-sided codes kept for the curator, byte-identical reruns. Pure stdlib.
       - name: Local subject titles (kb/_build_local_subject_titles.py)
