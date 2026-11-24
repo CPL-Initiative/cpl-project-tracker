@@ -1,7 +1,7 @@
 ---
 title: "Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state"
 created: 2026-10-19
-updated: 2026-11-23
+updated: 2026-11-24
 tags: [reference, roadmap-lane, csr, commons, subjects, mq-disciplines]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -35,7 +35,7 @@ umbrella has several
 
 ## Status
 
-**ON #3726 (S717, open; merge it first): a Common SUBJ for every MQ discipline.** The reference was seeded from the
+**LIVE (#3726, S717; merged 2026-11-23): a Common SUBJ for every MQ discipline.** The reference was seeded from the
 M-IDs' disciplines, so 95 of the handbook's disciplines had no code and the statewide calls could pick only an
 existing one (`f-csr-seeded-from-mids-left-95-mq-disciplines-uncoded-s717`;
 [`methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached`](../../kb-notes/methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached.md)).
@@ -44,11 +44,13 @@ existing one (`f-csr-seeded-from-mids-left-95-mq-disciplines-uncoded-s717`;
 `kb/receipts/csr_assigned_codes_s717.json`, undone by `git revert`): 2 from C-ID (ACCT, HOSP), 18 from codes colleges
 use (LING at 24 colleges, AERO, FINA from FINANCE, ADST from C-ID's ADS), 75 minted and read for connotation (CRMT,
 DSCS, MDVT, SANI, RSPC). FLTA (Foreign Languages: Filipino) and ESTI (Esthetics' M-IDs) were taken: Flight Attendant
-Training is FLTR (Sam's pick, formerly FATR), Estimating ESTG. Of the 251 disciplines, 156 read a person's pick and 95
+Training is FLTR (Sam's pick, formerly FATR), Estimating ESTG (**DECIDED** `d-estimating-keeps-estg-s718`: ESTI is
+the local Esthetics code at 4 cosmetology and barbering colleges; #3730 made the proposer, the note and the receipt's
+`_corrected` line agree with the reference). Of the 251 disciplines, 156 read a person's pick and 95
 an assigned code (8 Confident, 84 Likely, 3 Leaning: ECOL, HOSP, UASY); no M-ID sits under an assigned code yet.
 `statewide_subject_codes.json` and `local_subject_recommendations.json` were rebuilt, since both read the code list.
 
-**The 20th edition and the MQ view (#3726).** `kb/_mq_handbook_parse.py` writes `kb/reference/mq_handbook_20th.json`
+**LIVE: the 20th edition and the MQ view's data (#3726).** `kb/_mq_handbook_parse.py` writes `kb/reference/mq_handbook_20th.json`
 from the CO's PDF (address and sha256 recorded, the PDF out of the repo): 251 disciplines, 3 new since the 19th
 (Counseling: Mental Health is printed in the master's list and missing from the index), each with its list type per CCR 53407(a)(2)-(4)
 (master's 91, a degree in the discipline plus experience 20, any degree plus experience 146) and the Title 5
@@ -136,7 +138,7 @@ every MQ discipline carries a Common SUBJ on the list, the code follows the auth
 disciplines; a person looks only at a code of low confidence. It replaces the confirmation bar of Sheet 99 card 1
 (2026-10-19). That definition and the measured state of 2026-10-19 and 2026-11-04 moved verbatim to
 [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S717)*.
-Measured 2026-11-23 on #3726: 251 of 251 carry a code (164 Confident, 84 Likely, 3 Leaning), none on two disciplines.
+Measured 2026-11-23 at #3726: 251 of 251 carry a code (164 Confident, 84 Likely, 3 Leaning), none on two disciplines.
 
 **The machine side.** `kb/_csr_trail.py --latest` runs daily from `daily-dashboard.yml` after the picks sync
 and before the Commons build, read-only, and writes `kb/csr_out/latest.json` (the nine canon rules, every
@@ -164,13 +166,13 @@ Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../..
 
 ## NEXT
 
-**NEXT (S717), in order:** (1) merge #3726 on a green `test`; (2) the MQ view in COBI, `#commons/subjects/mq`
-([`commons`](commons.md)); (3) re-point the folded local codes, a re-mint under
+**NEXT (S718), in order:** (1) the MQ view in COBI, `#commons/subjects/mq` ([`commons`](commons.md); the local
+subject-title collection that S718 worked lives there too); (2) re-point the folded local codes, a re-mint under
 [`docs/coursecontrolnumber_remint.md`](../../coursecontrolnumber_remint.md), dry run first: ACCT, ACCTG, ACC and ACTG
 to ACCT under Accounting, LING, HOSP, the religion codes (RLST, RELS, RELG) to RLST, MCOM, AERO (its AFROTC courses
 to MILS); `kb/reference/subject_discipline_map.json` still sends ACC, ACCT and ACCTG to Business; AT and INS are
-homonyms (Automotive, tutoring), read college by college; (4) test CIP in place of TOP for MQ type; (5) collect the
-outline's MQ discipline in the SLO pass ([`data_sources`](../data_sources.md)); (6) `csr-quarterly.yml`'s baseline
+homonyms (Automotive, tutoring), read college by college; (3) test CIP in place of TOP for MQ type; (4) collect the
+outline's MQ discipline in the SLO pass ([`data_sources`](../data_sources.md)); (5) `csr-quarterly.yml`'s baseline
 holds the 19th edition's sha256, so re-baseline it on the 20th before its January compare.
 
 **The Subjects card (S694, #3620):** each college's local subject codes and printed names beside the common subject codes, on the Commons front at `#commons/subjects`; where it stands and its NEXT: [`commons`](commons.md).

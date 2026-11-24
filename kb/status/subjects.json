@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 717,
-  "moniker": "SkyGannet",
+  "session": 718,
+  "moniker": "SkyPetrel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_718_handoff.md",
+  "handoff": "docs/session_719_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-23T20:46:25Z",
+  "written_at": "2026-11-24T00:48:39Z",
   "project": "subjects",
   "next_step": {
-    "title": "The MQ view in COBI, and the folded local codes re-pointed",
-    "text": "Every MQ discipline now has a common subject code. Next, the MQ disciplines view joins the Subjects tab with a link on the Subjects card, its sidebar reusing the statewide list filtered by code; then the local codes the old list folded into neighbors (ACCT into Business, LING into Anthropology) move to their own codes through a re-mint dry run."
+    "title": "A web search for every untitled code that has none",
+    "text": "206 untitled local codes have no filed web search, mostly at the Los Angeles district colleges; each search is filed and read the way S718 read Cerritos's INST. Then the card's measure matches college names as the table does."
   },
   "changes": [
     {
@@ -180,6 +180,26 @@
     {
       "at": "2026-11-05T00:45:00Z",
       "text": "A row press edits the row and moves the panel; Check alignment audits a typed code"
+    },
+    {
+      "at": "2026-11-23T21:56:00Z",
+      "text": "Estimating's common subject code reads ESTG everywhere; ESTI is a local Esthetics code at four colleges."
+    },
+    {
+      "at": "2026-11-23T22:30:00Z",
+      "text": "The college table counts the codes that need attention, the panel leads with ways to act, and course lines read with their subject code."
+    },
+    {
+      "at": "2026-11-23T22:30:00Z",
+      "text": "The Subjects card carries quick links under its headline and opens with its sections folded."
+    },
+    {
+      "at": "2026-11-23T23:22:00Z",
+      "text": "A code the catalog index leaves out is read at its own address: Cerritos INST is Interdisciplinary Studies, Long Beach City CART is Creative Arts."
+    },
+    {
+      "at": "2026-11-24T00:08:00Z",
+      "text": "The pages eleven web searches found were read; none names its code, so each is recorded as tried."
     }
   ]
 }
