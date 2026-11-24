@@ -87,3 +87,7 @@ confirms synced to a committed file.
 ## Moved from docs/INDEX.md Update history (S720 checkpoint)
 
 - 2026-11-22 (S707 SkyPrion, Sam's plain session, full checkpoint): #3691 (main green again: the Exhibits card's duplicate check reads Sam's CAL FIRE title against the shipped titles after a CER run cleared its proposal), #3687 merged, #3693 (the subject map leaves AED unmapped; it had given 45 shared M-IDs an ELEC prefix); Sam's call to settle subjects before re-mints and the draft M-ID readiness gate; the commons lane compacted; four memory rows; handoff 708.
+
+## Moved from docs/INDEX.md Update history (S721 checkpoint)
+
+- 2026-11-22 (S709 SkyMurrelet, Sam's plain session, light checkpoint): #3697, the re-mint readiness count by the draft gate (`kb/status/mid_readiness.json`, nightly): the AED scope is 127 M-IDs (120 ELEC) on the live members file, 34 ready; the outcomes compare reran on 45,673 rows and gzips past the 5 MB limit; four memory rows; handoff 710.

@@ -4985,7 +4985,7 @@
      ],
      "title": "A test must not take its own rule as the truth",
      "type": "methodology",
-     "updated": "2026-11-22"
+     "updated": "2026-11-24"
     },
     {
      "created": "2026-08-25",
@@ -17540,8 +17540,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 677,
+   "count": 678,
    "docs": [
+    {
+     "created": "2026-11-24",
+     "governs": [],
+     "n": 722,
+     "path": "docs/session_722_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 722 handoff (from SkySkua, S721, the CPL Queue routine's collection run of 2026-11-24, from 10:41Z)",
+     "type": null,
+     "updated": "2026-11-24"
+    },
     {
      "created": "2026-11-24",
      "governs": [],
@@ -28792,5 +28806,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1569
+ "total": 1570
 }
