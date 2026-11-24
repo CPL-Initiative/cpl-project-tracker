@@ -1,6 +1,6 @@
 {
  "rule": "S720: an electives fill never passes a record over a window the reader cut off (f-elective-fill-passes-cut-off-windows-s714); the record is collected with the gap named (sam-collect-with-gaps-2026-11-17)",
- "at": "2026-11-24T06:43:45Z",
+ "at": "2026-11-24T07:22:49Z",
  "measure": {
   "records": 18960,
   "changes": [
@@ -65,16 +65,6 @@
     "words": "ART 320: not in the text provided; likely in the required core on page 169"
    },
    {
-    "college": "Cypress College",
-    "control_number": "37246",
-    "before": "equal",
-    "after": "unequal",
-    "before_pass": true,
-    "after_pass": false,
-    "filed_pass": false,
-    "words": "The DevSecOps emphasis is headed '11 units' but lists only CIS 257 C (4) plus one 3-unit secondary course (7 units); a 4-unit course may be missing from the list."
-   },
-   {
     "college": "East Los Angeles College",
     "control_number": "02430",
     "before": "equal",
@@ -123,16 +113,6 @@
     "after_pass": false,
     "filed_pass": false,
     "words": "The supplied text begins mid-table on page 359; the degree's heading, description and the first rows of its requirements table (likely on page 358) are missing."
-   },
-   {
-    "college": "Riverside City College",
-    "control_number": "43896",
-    "before": "unequal",
-    "after": "unequal",
-    "before_pass": false,
-    "after_pass": false,
-    "filed_pass": false,
-    "words": "A reviewer should check whether a required course is missing from the page or the header is misprinted."
    },
    {
     "college": "Sacramento City College",
@@ -189,13 +169,12 @@
    "American River College": 2,
    "Cañada College": 1,
    "Cosumnes River College": 2,
-   "Cypress College": 1,
    "East Los Angeles College": 1,
    "Folsom Lake College": 4,
    "Sacramento City College": 4,
    "Solano Community College": 1
   },
-  "takes_away": 16,
+  "takes_away": 15,
   "adds": 0,
   "not_reproduced": []
  },

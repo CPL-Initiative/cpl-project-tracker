@@ -16,6 +16,11 @@ WHAT THIS PINS, on a pinned fixture (tests/fixtures/reconcile_named_gaps/, Sacra
      unchanged, never stamps the record with the run (step=reread would post it).
   2. keep_named_gaps: the gap stays on a failing fresh score; a passing fresh score carries none; a fresh score
      whose major no longer adds up drops ge_units_not_read (its rule no longer names it).
+  2b. A record a reconcile step rewrites (a synthetic Cabrillo degree, its degree total filled) keeps its gap, with
+     the rule's words now.
+  2c. A gap's rule found through by_measure (Berkeley City 37797's no_hours_read is no_units_read's rule on an hours
+     program) and #3502's planned catalog_figures_differ (Bakersfield 20269, read by its own sentence): each stays
+     while it holds and drops when it no longer does (an unequal hours sum is hours_total_differs).
   3. Every committed record that files a gap: its own score, rescored to itself, keeps every gap and the confidence
      unchanged, so a reconcile that reads nothing new changes no gap anywhere.
 
@@ -122,6 +127,74 @@ if callable(keep_gaps):
         out = keep_gaps("04662", filed["score"], broken, filed)
     check("gaps" not in out and "no longer holds" in buf.getvalue(),
           "a fresh score whose major no longer adds up drops ge_units_not_read, said aloud")
+
+# ── 2b. The changed-record branch: a reconcile step writes the record, and the gap still rides ──────
+# Cabrillo's step fills the degree total the page prints ("Complete the following number of credits: 60"); the GE
+# pattern's units stay unread, so the record still takes ge_units_not_read (a synthetic record, the S392 shape).
+tmp = tempfile.mkdtemp()
+try:
+    keep, outd = os.path.join(tmp, "keep"), os.path.join(tmp, "out")
+    os.makedirs(os.path.join(keep, "records"))
+    os.makedirs(os.path.join(outd, "sources"))
+    gap = {"gap": "ge_units_not_read", "label": "x", "words": "filed words"}
+    cab = {"college": "Cabrillo College", "control_number": "06326", "award": "A.S. Degree", "extracted_run": 38442109713,
+           "record": {"program": {"section_heading": "Astronomy - Associate in Science (A.S.)",
+                                  "total_units": {"min": 30, "max": 30}, "measure": "units",
+                                  "ge_pattern": "Cabrillo College General Education"},
+                      "blocks": [{"name": "Major", "rule": "all", "courses": [{"code": "ASTRO 3", "units": 30}]}]},
+           "score": {"pass": False, "arithmetic": {"pass": False, "status": "incomplete", "against": "degree"},
+                     "coverage": {"pass": True}, "invented": {"pass": True}, "gaps": [gap],
+                     "confidence": {"catalog_year": 100, "source": 80}}}
+    with open(os.path.join(keep, "records", "06326.json"), "w", encoding="utf-8") as fh:
+        json.dump(cab, fh)
+    with open(os.path.join(outd, "sources", "06326.json"), "w", encoding="utf-8") as fh:
+        json.dump({"control_number": "06326", "award": "A.S. Degree", "closed_list": [{"code": "ASTRO 3", "units": 30}],
+                   "text": "Program Requirements\nAstronomy - Associate in Science (A.S.)\n"
+                           "Complete the following number of credits: 60\nASTRO 3 Stars 30\n"}, fh)
+    with contextlib.redirect_stdout(io.StringIO()):
+        C.reconcile_filed("Cabrillo College", outd, "45999999998", keep)
+    with open(os.path.join(outd, "records", "06326.json"), encoding="utf-8") as fh:
+        got = json.load(fh)
+    gg = got["score"].get("gaps") or [{}]
+    check([n.get("field") for n in got.get("reconciled") or []] == ["degree_total"]
+          and [g.get("gap") for g in gg] == ["ge_units_not_read"] and gg[0].get("words", "").startswith(
+              "the degree names the Cabrillo College General Education pattern")
+          and got["score"]["confidence"].get("source") == 80,
+          "a record a reconcile step rewrote keeps its gap, with the rule's words now and the filed source score")
+finally:
+    shutil.rmtree(tmp, ignore_errors=True)
+
+# ── 2c. A gap found through by_measure, and a planned gap ────────────────────────────────────────
+import _program_named_gaps as NG  # noqa: E402
+if callable(keep_gaps):
+    with open(os.path.join(os.path.dirname(FIXTURE), "berkeley_city_37797.json"), encoding="utf-8") as fh:
+        bc = json.load(fh)
+    fresh = {k: v for k, v in bc["score"].items() if k not in ("gaps", "confidence", "confidence_notes")}
+    with contextlib.redirect_stdout(io.StringIO()):
+        same = keep_gaps("37797", bc["score"], fresh, bc)
+    check(bc["score"]["gaps"][0]["gap"] == "no_hours_read" and same == bc["score"],
+          "Berkeley City 37797's no_hours_read (no_units_read's rule on an hours program) stays while it holds")
+    fresh["arithmetic"] = {"pass": False, "status": "unequal", "computed": [100.0, 100.0], "stated": [120.0, 120.0],
+                           "against": "program", "why": ["the blocks sum to 100-100; the catalog states 120-120"]}
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        out = keep_gaps("37797", bc["score"], fresh, bc)
+    check("gaps" not in out and "no_hours_read no longer holds" in buf.getvalue()
+          and NG.answer(dict(bc, score=fresh))[0] == "hours_total_differs",
+          "given an unequal hours sum, 37797 drops no_hours_read (the named gaps would give hours_total_differs)")
+    with open(os.path.join(os.path.dirname(FIXTURE), "bakersfield_20269.json"), encoding="utf-8") as fh:
+        bk = json.load(fh)
+    fresh = {k: v for k, v in bk["score"].items() if k not in ("gaps", "confidence", "confidence_notes")}
+    with contextlib.redirect_stdout(io.StringIO()):
+        same = keep_gaps("20269", bk["score"], fresh, bk)
+    check(bk["score"]["gaps"][0]["gap"] == "catalog_figures_differ" and same == bk["score"],
+          "Bakersfield 20269's planned catalog_figures_differ stays while the record meets the gap's sentence")
+    fresh["arithmetic"] = dict(fresh["arithmetic"], computed=[30.0, 30.0])
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        out = keep_gaps("20269", bk["score"], fresh, bk)
+    check("gaps" not in out and "catalog_figures_differ no longer holds" in buf.getvalue(),
+          "a sum no longer past the printed total drops catalog_figures_differ")
 
 # ── 3. Every committed record that files a gap keeps it on its own score ─────────────────────────
 n = same = 0

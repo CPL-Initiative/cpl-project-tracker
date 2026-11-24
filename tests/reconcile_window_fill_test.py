@@ -31,7 +31,8 @@ WHAT THIS PINS.
      are not a cut window; the words of a lost table, core or rows are.
   4. Every college, from an independent word list (mid-table, start of table, cut off, not supplied, truncated,
      previous page, partway, may be missing, likely on page N) over each record a rescore passes through a fill: the
-     scorer refuses every one, apart from four read by hand whose words concern a heading or an outcome.
+     scorer refuses every one, apart from five read by hand whose words concern a heading or an outcome, or
+     hedge with every listed course placed (Cypress 37246).
   5. Every college, filed: no record passes through a fill over a cut window, apart from American River 04544,
      which the guarded plan kb/receipts/program_requirement_records_cut_window_fill_s720.json moves.
 
@@ -158,6 +159,35 @@ for name, why in (("college_of_the_desert_30553.json", "its major adds up to its
 f = fixture("east_los_angeles_37924.json")
 check(REAL_CUT is not None and REAL_CUT(f["record"]) is None,
       "East Los Angeles 37924's note (the excerpt begins mid-section, its heading not shown) names no cut window")
+# The second reader's negatives (S720): a hedge with every listed course placed, and a note that says nothing was
+# lost. Each names no cut, so the scorer reads each as main's did.
+for name, why in (("cypress_37246.json", "\"a 4-unit course may be missing from the list\", every listed course placed"),
+                  ("riverside_city_43896.json", "\"a reviewer should check whether a required course is missing\", "
+                   "every listed course placed"),
+                  ("folsom_lake_33791.json", "\"no courses appear to be cut off\""),
+                  ("cerritos_20493.json", "\"the program section itself appears complete\"")):
+    f = fixture(name)
+    check(REAL_CUT is not None and REAL_CUT(f["record"]) is None and arith(f) == arith(f, guard=False),
+          "%s %s names no cut window and scores as main scored it: %s" % (f["college"], f["control_number"], why))
+
+# The guard's two other readers (S720 second reader, the surviving mutants): the rescore never passes a refused
+# degree fill again, and the named gaps file section_cut_off for a refused fill at any college.
+import _program_requirements_rescore as RS  # noqa: E402
+import _program_named_gaps as NG  # noqa: E402
+ela = fixture("east_los_angeles_02430.json")
+refiled = dict(ela, score=dict(ela["score"], arithmetic=arith(ela)))
+check(refused(refiled["score"]["arithmetic"]).get("gap") == "section_cut_off" and RS._verdict(refiled) is None,
+      "East Los Angeles 02430 as the scorer now files it: the rescore's degree verdict keeps the fill refused")
+s_ok = RS._verdict(dict(refiled, record=dict(ela["record"], notes=[], missing_explained=[])))
+check(s_ok is not None and s_ok.get("pass"),
+      "the same sum with no cut in its words: the rescore's verdict passes it through the fill (the guard is what holds)")
+ar = fixture("american_river_04544.json")
+ar_after = dict(ar, score=dict(ar["score"], arithmetic=arith(ar), **{"pass": False}))
+check(ar["college"] not in NG.CUT_OFF_COLLEGES and (NG.section_cut_off(ar_after) or "").startswith(
+      "an electives fill was refused") and (NG.answer(ar_after) or ("",))[0] == "section_cut_off"
+      and NG.held_answer(ar_after) == "section_cut_off",
+      "American River 04544 refiled: the named gaps give section_cut_off outside the two gated colleges")
+check(NG.section_cut_off(ar) is None, "04544 as filed (its fill passing) takes no gap")
 
 # ── 3. Boundary readings ──────────────────────────────────────────────────────────────────────────
 CUT = ("The supplied text begins mid-table at the top of page 177.",
@@ -172,11 +202,21 @@ WHOLE = ("The Program Outcomes list is cut off at outcome 4.",
          "The Career Opportunities list is cut off at 'Community Health N'.",
          "SOCI C1000 is matched to the closed-list entry 'SOCIC1000' (missing space in the state file).",
          "The catalog text begins mid-list of other awards (certificates), which were ignored.",
-         "The page refers to the Requirements tab, which is not in the text.")
+         "The page refers to the Requirements tab, which is not in the text.",
+         # The second reader's (S720): a resolved note, read before the opening words.
+         "The TAP elective table continues across a repeated table header within the page; no courses appear to "
+         "be cut off.",
+         "The text begins partway through a navigation list of program titles (cut off at the start); the program "
+         "section itself appears complete.")
+# A cut counts only beside a listed course the record explains as missing; each reading carries one.
+MISSING = [{"code": "ANTH 300", "why": "not in the text"}]
 for s in CUT:
-    check(REAL_CUT is not None and REAL_CUT({"notes": [s]}) == s, "a cut window: %r" % s[:70])
+    check(REAL_CUT is not None and REAL_CUT({"notes": [s], "missing_explained": MISSING}) == s, "a cut window: %r" % s[:70])
+    check(REAL_CUT is not None and REAL_CUT({"notes": [s]}) is None,
+          "the same words with no missing course behind them are a hedge, not a cut: %r" % s[:50])
 for s in WHOLE:
-    check(REAL_CUT is not None and REAL_CUT({"notes": [s]}) is None, "not a cut window: %r" % s[:70])
+    check(REAL_CUT is not None and REAL_CUT({"notes": [s], "missing_explained": MISSING}) is None,
+          "not a cut window: %r" % s[:70])
 check(REAL_CUT is not None and REAL_CUT({"missing_explained": [{"code": "CIS 300", "why":
       "not in the provided text; likely on page 428 (start of table not included)"}]}),
       "a missing course placed on another page names a cut window")
@@ -188,11 +228,14 @@ INDEPENDENT = re.compile(
     r"\bmid[-\s]?(?:table|list|section|page)\b|\bstart\s+of\s+(?:the\s+)?(?:requirements\s+)?table\b|\bcut[-\s]off\b"
     r"|\bnot\s+supplied\b|\btruncat\w*|\b(?:previous|preceding|prior|earlier)\s+page\b|\bpartway\b"
     r"|\bmay\s+be\s+missing\b|\blikely\s+on\s+page\s+\d", re.I)
-# Read by hand at S720: the words these records carry concern a heading or an outcome, never a requirement row.
+# Read by hand at S720: the words these records carry concern a heading or an outcome, or hedge with every listed
+# course placed; none says a requirement row is outside the text.
 WORDS_ELSEWHERE = {("East Los Angeles College", "33382"): "the printed program heading is cut off",
                    ("East Los Angeles College", "37924"): "the excerpt begins mid-section; its heading is not shown",
                    ("Palo Verde College", "32242"): "the first program outcome appears truncated",
-                   ("Porterville College", "06773"): "the section heading is not printed (text begins mid-section)"}
+                   ("Porterville College", "06773"): "the section heading is not printed (text begins mid-section)",
+                   # The S720 second reader: a hedge, every listed course placed, so no row is missing behind it.
+                   ("Cypress College", "37246"): "\"a 4-unit course may be missing from the list\", a hedge"}
 seen = refused_n = 0
 for path in sorted(glob.glob(os.path.join(COLLEGE_DIR, "*", "records", "*.json"))):
     with open(path, encoding="utf-8") as fh:

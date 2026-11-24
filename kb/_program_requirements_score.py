@@ -1020,9 +1020,11 @@ def electives_named(prog: dict, text: str) -> bool:
 # page 428", "start of table not included"). S714's eight Los Rios records ("begins mid-table", "cut off", "not
 # supplied") and S655's American River 07206 are the cases; methodology-a-fill-must-check-what-it-fills.
 # The words say what was lost, so a lost heading, description, outcomes or career list, a course-description list or
-# a summary table is not this, nor a note saying the requirements are complete. Measured over every committed record
-# at S720: 249 of 18,960 notes match, and a hand read of 40 drawn at random found 36 saying requirement rows sit
-# outside the text; over the 165 records an electives fill reaches, 16 match and all 16 say so.
+# a summary table is not this, nor a note saying the requirements are complete, nor a note with no missing course
+# behind it. Measured over every committed record at S720, after the second reader: 185 of 18,960 records match, and
+# a hand read of 40 drawn at random found 38 saying requirement rows sit outside the text (the two others: another
+# program's content not included, Mt. San Antonio 03081; a course named only in the cut-off descriptions, Long Beach
+# City 20915); of the 15 passes the guard takes away, all 15 read so by hand.
 _CUT_PAGE_AT = r"(?:\s+(?:on|at)\s+(?:the\s+top\s+of\s+)?page\s+\d{1,4})?"
 # A requirements noun, never a tab's, a heading's, a label's or a text's name ("the Requirements tab", "'Program
 # Requirements' heading"), nor the verb "lists".
@@ -1064,7 +1066,10 @@ _CUT_NOT_REQ = re.compile(
     r"|\bXML\b|\bcolumn\s+header|\bawards?\s+table\b|\bnavigation\b"
     r"|\bbelong(?:s|ing)?\s+to\s+(?:a|an|the)\s+(?:preceding|previous|different|other|another|separate)\b"
     r"|\b(?:appears?|is|are|itself)\s+(?:\w+\s+)?complete\b|\bnot\s+used\s+for\b|\bclosed[-\s]list\b"
-    r"|\bstate(?:'s)?\s+(?:file|list)\b", re.I)
+    r"|\bstate(?:'s)?\s+(?:file|list)\b"
+    # The reader saying nothing was lost ("no courses appear to be cut off", Folsom Lake 33791).
+    r"|\bno\s+(?:\w+\s+){0,3}(?:appears?|seems?|is|are|was|were)\s+(?:to\s+be\s+)?(?:cut|missing|lost|truncated)\b",
+    re.I)
 _CUT_OTHER_SUBJECT = re.compile(r"\b(?:outcomes?|careers?|goals|objectives|awards?\s+table|program\s+table|other\s+awards)\b",
                                 re.I)
 _CUT_NAMES_COURSES = re.compile(r"\b(?:requirements?|required|core|courses?)\b(?!['’]?\s+(?:tab|text|heading)\b)", re.I)
@@ -1092,14 +1097,24 @@ def _cut_clause(clause: str) -> bool:
 def window_cut(record: dict) -> str | None:
     """The reader's words saying the record's requirements run outside the text it was read from, or None: a note's
     sentence, else a missing course's reason. A fill never closes such a window: the record fails with the gap named
-    (fill_refused, which kb/_program_named_gaps.py files as section_cut_off)."""
+    (fill_refused, which kb/_program_named_gaps.py files as section_cut_off).
+    A cut counts only where the record explains a listed course as missing (missing_explained): a window that lost
+    rows loses the state file's courses with them, and a note with no missing course behind it is a hedge ("a 4-unit
+    course may be missing from the list", Cypress 37246; "a reviewer should check whether a required course is
+    missing", Riverside 43896; S720's second reader). The sentence that says nothing was lost is read first, before
+    the opening words ("the program section itself appears complete", Cerritos 20493)."""
+    if not any(m.get("code") and m.get("why") for m in (record or {}).get("missing_explained") or []
+               if isinstance(m, dict)):
+        return None
     for n in (record or {}).get("notes") or []:
         for s in re.split(r"(?<=[a-z0-9)'\"][.!?])\s+(?=[A-Z])", str(n)):
             if not s:
                 continue
+            if _CUT_NOT_REQ.search(s):
+                continue
             if _CUT_OPENS.search(s) and not (_CUT_OPENS_OTHER.search(s) and not _CUT_NAMES_REQ.search(s)):
                 return s.strip()
-            if _CUT_NOT_REQ.search(s) or (_CUT_OTHER_SUBJECT.search(s) and not _CUT_NAMES_COURSES.search(s)):
+            if _CUT_OTHER_SUBJECT.search(s) and not _CUT_NAMES_COURSES.search(s):
                 continue
             if any(_cut_clause(c) for c in re.split(r";\s+|:\s+", s)):
                 return s.strip()

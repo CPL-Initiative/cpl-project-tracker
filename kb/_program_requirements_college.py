@@ -7596,35 +7596,49 @@ def keep_rescored_marker(cn, filed_score: dict | None, fresh: dict, scored: dict
     return fresh
 
 
+def named_gap_holds(name: str, now: dict):
+    """Whether the named gap still holds on a record as now scored: the words its own record rule gives (the rule
+    found through by_measure, so no_hours_read is no_units_read's on an hours program), True for #3502's planned
+    catalog_figures_differ where the record still meets the gap's own sentence (figures_differ_fails), None where it
+    no longer holds, and False for a name no rule or check reads (kept as filed)."""
+    import _program_named_gaps as NG
+    for rule, fn in NG.RECORD_RULES:
+        if rule == name or NG.by_measure(rule, now) == name:
+            return fn(now) or None
+    if name == "catalog_figures_differ":
+        a = (now.get("score") or {}).get("arithmetic") or {}
+        ok = (not a.get("pass") and NG.collectable(now.get("score") or {}) and NG.figures_differ_fails(now) is None)
+        return True if ok else None
+    return False
+
+
 def keep_named_gaps(cn, filed_score: dict | None, fresh: dict, scored: dict) -> dict:
     """The named gaps a filed score carries (score.gaps, score.confidence; kb/_program_named_gaps.py) survive a
     reconcile's rescore (S720, f-rescore-drops-ge-units-not-read-gaps-s714: S.score writes neither, so three Los Rios
     reconciles dropped 16 named ge_units_not_read gaps). scored is the filed record with the record this run made.
     A fresh score that passes as the live table counts it needs no gap, so it stands alone. A fresh score that fails
-    keeps each filed gap its own rule still names on the record as now scored (the words that rule gives now), and
-    each gap no rule names (a hand-held answer, a plan's gap), as filed; the confidence is read again for the first
-    gap kept, its catalog year and source carried from the filed scores. A gap whose rule no longer names it is
-    dropped, said aloud, so a reconcile never files a gap the record no longer has."""
+    keeps each filed gap that still holds on the record as now scored (named_gap_holds: its record rule's words now,
+    or catalog_figures_differ's own sentence), and a name no rule reads, as filed; the confidence is read again for
+    the first gap kept, its catalog year and source carried from the filed scores. A gap that no longer holds is
+    dropped, said aloud, so a reconcile never files a gap the record no longer has; the named-gaps wave names the
+    record's gap again (an hours sum that now reads unequal is hours_total_differs, never no_hours_read)."""
     if not isinstance(fresh, dict) or not (filed_score or {}).get("gaps"):
         return fresh
     if pass_grade(fresh):
         return fresh
     import _program_named_gaps as NG
-    rules = dict(NG.RECORD_RULES)
     now = dict(scored, score=fresh)
     kept = []
     for g in filed_score["gaps"]:
         name = g.get("gap") if isinstance(g, dict) else g
-        fn = rules.get(name)
-        if fn is None:
-            kept.append(g)
-            continue
-        words = fn(now)
-        if words:
-            kept.append(dict(g, words=words) if isinstance(g, dict) else g)
-        else:
+        holds = named_gap_holds(name, now)
+        if holds is None:
             print("::warning::%s: the named gap %s no longer holds on the rescored record; dropped" % (cn, name),
                   flush=True)
+        elif isinstance(holds, str) and isinstance(g, dict):
+            kept.append(dict(g, words=holds))
+        else:
+            kept.append(g)
     if not kept:
         return fresh
     out = dict(fresh, gaps=kept)
