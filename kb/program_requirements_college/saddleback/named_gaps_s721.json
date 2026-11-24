@@ -1,0 +1,64 @@
+{
+ "_readme": "S721 (lever), the gap census's reader_page_assignment lever (run 45371224551): Saddleback College's 7 programs on the lever, whose filed record places none of the state's listed courses because the capture handed each another program's entry, and for which the 2026-2027 catalog prints no entry. Free page read 45382520936 read the host's catalog list (one catalog, 'Saddleback 2026-2027 Spring', id 4420) and the Credit Programs A-Z entry with the data its scripts fetch; read 45383732976 searched that section's whole navigation call (parentId 48776, 208,699 bytes) for retailing, school-age care, a master teacher, a site supervisor and a business information worker, and found none. These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. They are the college's to settle in COCI.",
+ "college": "Saddleback College",
+ "written": "2026-11-24T11:35:35Z",
+ "capture": "38843470509",
+ "page_reads": [
+  "45382520936",
+  "45383732976"
+ ],
+ "reasons": {
+  "not_in_catalog": "The 2026-2027 catalog prints no entry for the program: its Credit Programs A-Z navigation, which lists every credit program the catalog prints, names none of its title's words, so no page holds a section a read could place its courses from."
+ },
+ "programs": [
+  {
+   "control_number": "04054",
+   "title": "Retailing and Selling",
+   "award": "A.S. Degree",
+   "reason": "not_in_catalog",
+   "note": "No A-Z entry names retailing; the filed record was read from the Business Communication Skills certificate's entry (pgrm_bus_comm_skills_ca)."
+  },
+  {
+   "control_number": "22844",
+   "title": "Retailing and Selling",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "not_in_catalog",
+   "note": "No A-Z entry names retailing; the filed record was read from the New Media certificate's entry (pgrm_new_media_ca)."
+  },
+  {
+   "control_number": "22895",
+   "title": "SCHOOL AGE CARE AND RECREATION",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) units",
+   "reason": "not_in_catalog",
+   "note": "No A-Z entry names school-age care; the filed record was read from the Cal-GETC certificate's entry (pgrm-calgetc-ca)."
+  },
+  {
+   "control_number": "22896",
+   "title": "Early Childhood Master Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "not_in_catalog",
+   "note": "No A-Z entry names a master teacher; the filed record was read from the Cal-GETC certificate's entry (pgrm-calgetc-ca)."
+  },
+  {
+   "control_number": "22897",
+   "title": "Site Supervisor",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "not_in_catalog",
+   "note": "No A-Z entry names a site supervisor; the filed record was read from the Cal-GETC certificate's entry (pgrm-calgetc-ca)."
+  },
+  {
+   "control_number": "36224",
+   "title": "Business Information Worker I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "reason": "not_in_catalog",
+   "note": "No A-Z entry names a business information worker (the catalog's program-code list still carries 'Business Information Worker I', CIMWI); the filed record was read from the Banking A.S. entry (pgrm_banking_AS)."
+  },
+  {
+   "control_number": "36225",
+   "title": "Business Information Worker II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "not_in_catalog",
+   "note": "No A-Z entry names a business information worker (the catalog's program-code list still carries 'Business Information Worker II', CIMWII); the filed record was read from the Administrative Assistant A.S. entry (Pgrm_Admin_Asst_AS)."
+  }
+ ]
+}

@@ -569,6 +569,11 @@ jobs:
       # moves only the program it names. Pure stdlib.
       - name: Program requirements site pins (S720)
         run: python3 tests/program_requirements_site_pins_s720_test.py
+      # S721: site_pages pins load on the eLumen and curriQunet roads; Antelope Valley's and Redwoods' pins bind on
+      # their own pages, a heading with its award on the line under it binds (self-recall on Redwoods' 71 pages), and
+      # the named gaps and forced re-reads cover the rest of the lever. Pure stdlib.
+      - name: Program requirements lever pins (S721)
+        run: python3 tests/program_requirements_lever_pins_s721_test.py
       # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
       # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
       - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)
@@ -661,6 +666,9 @@ jobs:
       # S714 at College of the Sequoias: the page's double-count figure as a capped overlap; the self-recall and the plan.
       - name: Cheap piles S714 at College of the Sequoias (double count, the plan)
         run: python3 tests/program_piles_s714_sequoias_test.py
+      # S721 at Butte: the census's 17 wording-rule records, 5 collected with named gaps; the plan.
+      - name: Cheap piles S721 at Butte (named gaps, the plan)
+        run: python3 tests/program_piles_s721_butte_test.py
       # S720 at Fullerton: S714's 13 held, collected with four named gaps; the self-recall and the plan's 9 rows.
       - name: Cheap piles S720 at Fullerton (named gaps, the plan)
         run: python3 tests/program_piles_s720_fullerton_test.py
@@ -700,6 +708,16 @@ jobs:
       # S721 at Orange Coast: the census's 20 wording-rule records, 3 collected with named gaps; the plan.
       - name: Cheap piles S721 at Orange Coast (named gaps, the plan)
         run: python3 tests/program_piles_s721_orangecoast_test.py
+      # S721 at Palo Verde: the census's 20 wording-rule records, 15 collected with named gaps (two new kinds); the plan.
+      - name: Cheap piles S721 at Palo Verde (named gaps, the plan)
+        run: python3 tests/program_piles_s721_paloverde_test.py
+      # S721 at Porterville: the census's 19 wording-rule records, one passed by its catalog's misprint, 14
+      # collected with named gaps, 4 held; the plan.
+      - name: Cheap piles S721 at Porterville (a misprint rename, named gaps, the plan)
+        run: python3 tests/program_piles_s721_porterville_test.py
+      # S721 at Gavilan: the census's 18 wording-rule records, 7 collected with named gaps; the plan.
+      - name: Cheap piles S721 at Gavilan (named gaps, the plan)
+        run: python3 tests/program_piles_s721_gavilan_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

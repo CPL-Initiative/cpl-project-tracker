@@ -1,0 +1,35 @@
+{
+  "_what": "S721 (lane 2, Gavilan): the reconcile_steps lever of the committed census (run 45384590964) at the college, frozen: kb/_program_piles_s721_gavilan.py planned from it.",
+  "written_at": "2026-11-24 11:51Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "Gavilan College",
+      "programs": 18,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "06128",
+        "06129",
+        "06132",
+        "08460",
+        "08464",
+        "14041",
+        "15555",
+        "18453",
+        "18541",
+        "19378",
+        "24369",
+        "37750",
+        "37896",
+        "38119",
+        "38787",
+        "39624",
+        "41394",
+        "45357"
+      ]
+    }
+  ]
+}

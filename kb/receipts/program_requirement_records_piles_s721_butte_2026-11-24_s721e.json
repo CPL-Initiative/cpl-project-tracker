@@ -1,0 +1,1383 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S721: Butte's 17 wording-rule records, collected with their gaps named where one is honest (no reread)",
+ "at": "2026-11-24T12:30:56Z",
+ "college": "Butte College",
+ "census": {
+  "file": "kb/status/harvest_gap_census.json",
+  "levers": [
+   "reconcile_steps"
+  ],
+  "person": [],
+  "members": [
+   "01305",
+   "01312",
+   "01358",
+   "01362",
+   "07258",
+   "07269",
+   "11136",
+   "14583",
+   "31000",
+   "31042",
+   "31941",
+   "32469",
+   "33199",
+   "33579",
+   "40923",
+   "43453",
+   "45652"
+  ]
+ },
+ "gaps": {
+  "degree_within_map_range": "The record takes the degree total from the sample map's range, whose low end is the 60 units the page prints as needed to graduate; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end.",
+  "pool_figure_not_read": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure."
+ },
+ "moved": 5,
+ "by": {
+  "degree_within_map_range": 4,
+  "pool_figure_not_read": 1
+ },
+ "new_kind": {
+  "degree_within_map_range": "no existing kind fits: hours_within_printed_range names a program measured in hours, and every other kind names a list or figure these records read right"
+ },
+ "precision": {
+  "read": 17,
+  "right": 17,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "degree_within_map_range": 4,
+   "none": 12,
+   "pool_figure_not_read": 1
+  }
+ },
+ "within_recall": {
+  "read": 17,
+  "right": 17,
+  "wrong": []
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 5
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 5,
+   "the stated total one unit off right": 5,
+   "coverage failing right": 5,
+   "its own figure check moved right": 5
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "01312",
+   "why": "held: the major adds up, and the degree's 60-61 falls short of the map's 62-69; the map's 2-unit Graduation Requirement line closes the low end only (62 against 62-69), and Butte's reconcile step keeps that line out by S636's call; the nearest kind is #3762's degree_electives_not_printed, which is not on main",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "01362",
+   "why": "held: the record counts the map's 'Only necessary if the 60 units needed to graduate have not been completed' line at its printed figure; read as electives that fill the degree it passes today's scorer, so the page's 60 settles the total and the failure is the record's misread: it stays on the census's reconcile_steps lever for a Butte reconcile step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "07269",
+   "why": "held: the record counts the map's 'Only necessary if the 60 units needed to graduate have not been completed' line at its printed figure; read as electives that fill the degree it passes today's scorer, so the page's 60 settles the total and the failure is the record's misread: it stays on the census's reconcile_steps lever for a Butte reconcile step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "11136",
+   "why": "held: the record counts the map's 'Only necessary if the 60 units needed to graduate have not been completed' line at its printed figure; read as electives that fill the degree it passes today's scorer, so the page's 60 settles the total and the failure is the record's misread: it stays on the census's reconcile_steps lever for a Butte reconcile step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "14583",
+   "why": "held: an incomplete read (the requirements table is not in the text read; HELD_INCOMPLETE), on a page shared_pages lists with 43185, whose section heading names program code 43185: the own-section guard",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31042",
+   "why": "held: the record counts the map's 'Only necessary if the 60 units needed to graduate have not been completed' line at its printed figure; read as electives that fill the degree it passes today's scorer, so the page's 60 settles the total and the failure is the record's misread: it stays on the census's reconcile_steps lever for a Butte reconcile step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31941",
+   "why": "held: the record counts the map's 'Only necessary if the 60 units needed to graduate have not been completed' line at its printed figure; read as electives that fill the degree it passes today's scorer, so the page's 60 settles the total and the failure is the record's misread: it stays on the census's reconcile_steps lever for a Butte reconcile step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32469",
+   "why": "held: the record counts the map's 'Only necessary if the 60 units needed to graduate have not been completed' line at its printed figure; read as electives that fill the degree it passes today's scorer, so the page's 60 settles the total and the failure is the record's misread: it stays on the census's reconcile_steps lever for a Butte reconcile step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "33199",
+   "why": "held: the record counts the map's 'Only necessary if the 60 units needed to graduate have not been completed' line at its printed figure; read as electives that fill the degree it passes today's scorer, so the page's 60 settles the total and the failure is the record's misread: it stays on the census's reconcile_steps lever for a Butte reconcile step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "33579",
+   "why": "held: the requirements print AGS 20 / AGS 40 as their own 'Select one', and the note says the map lists them inside List A; inside List A the figures add to the printed 23, apart to the record's 26: a reread settles which",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "40923",
+   "why": "held: the record counts the map's 'Only necessary if the 60 units needed to graduate have not been completed' line at its printed figure; read as electives that fill the degree it passes today's scorer, so the page's 60 settles the total and the failure is the record's misread: it stays on the census's reconcile_steps lever for a Butte reconcile step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "43453",
+   "why": "held: the record counts the map's 'Only necessary if the 60 units needed to graduate have not been completed' line at its printed figure; read as electives that fill the degree it passes today's scorer, so the page's 60 settles the total and the failure is the record's misread: it stays on the census's reconcile_steps lever for a Butte reconcile step",
+   "claim": "no entry stands"
+  }
+ ],
+ "next_lever": {
+  "what": "a Butte reconcile step reading the map's elective line ('Only necessary if the 60 units needed to graduate have not been completed') as electives that fill the degree; it changes the record, so a reconcile run's work",
+  "passes_on_todays_scorer": [
+   "01362",
+   "07269",
+   "11136",
+   "31042",
+   "31941",
+   "32469",
+   "33199",
+   "40923",
+   "43453"
+  ]
+ },
+ "records": [
+  {
+   "college": "Butte College",
+   "control_number": "01305",
+   "award": "A.S. Degree",
+   "extracted_run": 42973457189,
+   "moves_to": "degree_within_map_range",
+   "words": "degree_total 60-64 is taken from the 'Map (Butte GE)' section ('Units: 60.00- 64.00', 'Total : 60.00- 64.00'), which includes Butte Local GE area choices",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/butte/records/01305.json",
+   "before_image": {
+    "program_title": "Mechanized Agriculture",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28198",
+    "measure": "units",
+    "total_min": 41,
+    "total_max": 41,
+    "record": {
+     "program": {
+      "section_heading": "AS Degree in Mechanized Agriculture",
+      "measure": "units",
+      "total_units": {
+       "min": 41,
+       "max": 41
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 1,
+       "max": 1
+      },
+      "ge_pattern": "Butte Local",
+      "degree_total": {
+       "min": 60,
+       "max": 64
+      },
+      "ge_units": {
+       "min": 21,
+       "max": 21
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Identify and demonstrate proper use, care, and adjustment of common and precision tools and machines found in a mechanized agriculture shop.",
+       "Operate wheel and track type tractors safely and properly.",
+       "Perform operator level maintenance and adjustments of tractor systems.",
+       "Analyze and match the proper tractor and equipment to do the job correctly and efficiently."
+      ],
+      "careers": [
+       "Production agriculture",
+       "equipment suppliers",
+       "the rental industry",
+       "landscape businesses",
+       "recreation",
+       "construction industries"
+      ],
+      "ge_overlap": true
+     },
+     "blocks": [
+      {
+       "name": "Required courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AB 20",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AB 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AB 54",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AET 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AET 34",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AET 36",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AET 38",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AET 43",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGS 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGS 50",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGS 99",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "WLD 20",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "AET 22",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 22",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14
+    },
+    "extracted_run": "42973457189"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14,
+     "gaps": [
+      "degree_within_map_range"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Butte College",
+   "control_number": "01358",
+   "award": "A.S. Degree",
+   "extracted_run": 42973457189,
+   "moves_to": "degree_within_map_range",
+   "words": "degree_total 60-62 is taken from the 'Map (Butte GE)' advising pathway ('Units: 60.00- 62.00', 'Total : 60.00- 62.00')",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/butte/records/01358.json",
+   "before_image": {
+    "program_title": "Chemistry",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28094/28255",
+    "measure": "units",
+    "total_min": 40,
+    "total_max": 40,
+    "record": {
+     "program": {
+      "section_heading": "AS Degree in Chemistry",
+      "measure": "units",
+      "total_units": {
+       "min": 40,
+       "max": 40
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Butte Local, Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 62
+      },
+      "ge_units": {
+       "min": 21,
+       "max": 21
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate basic experimental knowledge through data gathering, judging the accuracy and reliability of data, creating informative graphs, and discussing the limitations of experimental designs.",
+       "Demonstrate basic analytical skills by interpreting graphs and schematics and diagnosing realistic physical problems.",
+       "Demonstrate conceptual understanding by being able to describe qualitatively the underlying causes of basic physical phenomena."
+      ],
+      "careers": [
+       "agronomy",
+       "biotechnology",
+       "energy production",
+       "environmental science",
+       "material science",
+       "medicine",
+       "patent law",
+       "teaching"
+      ],
+      "ge_overlap": true
+     },
+     "blocks": [
+      {
+       "name": "Required courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CHEM 1",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 2",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 21",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 32",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 41",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 42",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 43",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 5,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "MATH C2210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2210E",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9
+    },
+    "extracted_run": "42973457189"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9,
+     "gaps": [
+      "degree_within_map_range"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Butte College",
+   "control_number": "07258",
+   "award": "A.S. Degree",
+   "extracted_run": 42973457189,
+   "moves_to": "degree_within_map_range",
+   "words": "degree_total 60-64 is taken from the Map (Butte GE) section ('Units: 60.00- 64.00', 'Total : 60.00- 64.00'), which includes GE area choices",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/butte/records/07258.json",
+   "before_image": {
+    "program_title": "Environmental Horticulture",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28284",
+    "measure": "units",
+    "total_min": 40,
+    "total_max": 40,
+    "record": {
+     "program": {
+      "section_heading": "AS Degree in Environmental Horticulture",
+      "measure": "units",
+      "total_units": {
+       "min": 40,
+       "max": 40
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 2,
+       "max": 2
+      },
+      "ge_pattern": "Butte Local",
+      "degree_total": {
+       "min": 60,
+       "max": 64
+      },
+      "ge_units": {
+       "min": 21,
+       "max": 21
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Demonstrate competencies in irrigation design and construction.",
+       "Identify turf species and their recommended management styles.",
+       "Explain the principles of greenhouse glazing choices."
+      ],
+      "careers": [
+       "nursery and greenhouse management",
+       "retail garden centers",
+       "supply and equipment sales",
+       "commercial fruit and nut production",
+       "irrigation and landscape design",
+       "installation and maintenance",
+       "plant protection",
+       "interior landscaping",
+       "ag education"
+      ],
+      "ge_overlap": true
+     },
+     "blocks": [
+      {
+       "name": "Required courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "AB 20",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AET 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGS 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGS 50",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 26",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 28",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 72",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 74",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 99",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "EH 23",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 24",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "EH 38",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 70",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "AGS 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 60",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 61",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EH 62",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 19,
+     "listed": 19
+    },
+    "extracted_run": "42973457189"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 19,
+     "listed": 19,
+     "gaps": [
+      "degree_within_map_range"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Butte College",
+   "control_number": "31000",
+   "award": "A.A- T Degree",
+   "extracted_run": 42973457189,
+   "moves_to": "pool_figure_not_read",
+   "words": "List B says 'Select one course from each group' (6.00 overall), but Group 1 prints 6.00 and Group 2 prints 9.00, which are the sums of the listed courses rather than the 3 units required",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 92,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/butte/records/31000.json",
+   "before_image": {
+    "program_title": "History",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28138/28306",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "AA-T Degree in History",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 67
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Identify major developments in the history of the United States and of the world, and to examine the past from diverse perspectives.",
+       "Apply historical reasoning to the study of the past and to think in terms of causation, context, chronology, and change and continuity.",
+       "Utilize historical method through posing questions and conducting research, analyzing evidence, and articulating defensible conclusions."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HIST C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Select one",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "HIST 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 21",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Select one",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "HIST 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 23",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B: Group 1",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "ANTH 33",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B: Group 2",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "ECON C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 12
+    },
+    "extracted_run": "42973457189"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 12,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 92,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Butte College",
+   "control_number": "45652",
+   "award": "A.A- T Degree",
+   "extracted_run": 42973457189,
+   "moves_to": "degree_within_map_range",
+   "words": "degree_total 60-64 is taken from the Cal-GETC term map ('Required Courses: Units: 60.00- 64.00', 'Total : 60.00- 64.00')",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/butte/records/45652.json",
+   "before_image": {
+    "program_title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28428/28534",
+    "measure": "units",
+    "total_min": 28,
+    "total_max": 29,
+    "record": {
+     "program": {
+      "section_heading": "AA-T Degree in Social Work and Human Services",
+      "measure": "units",
+      "total_units": {
+       "min": 28,
+       "max": 29
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 64
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Professional Identity: Students will conduct themselves in a professional manner in their field service.",
+       "Ethical Practice: Students will apply social work ethical principles to guide their professional practice.",
+       "Critical Thinking: Students will employ critical thinking to inform and communicate professional judgments.",
+       "Diversity and Difference: Students will actively participate in learning about and appreciating the various backgrounds, perspectives, and identities present within their community, actively seeking to understand and respect differences.",
+       "Human Rights and Social Justice: Students will apply research informed practices to their field service.",
+       "Research-Informed Practice: Students will engage in research-informed practice and practice-informed research.",
+       "Human Behavior Knowledge: Students will apply knowledge of human behavior and the social environment.",
+       "Policy Practice: Students will engage in field service to advance social and economic well-being for all clients and work to deliver effective social work services in all work settings.",
+       "Practice Contexts: Students will respond to contexts that shape practice.",
+       "Engagement, Assessment, Intervention, and Evaluation: Students will engage, assess, intervene, and evaluate with individuals, families, groups, organizations, and communities."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "SWHS 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SWHS 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "BIOL 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 20",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 21",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ECON C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000E",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Select two:",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "ANTH 4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDF 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CMST 9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSY 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSY 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 23,
+     "listed": 23
+    },
+    "extracted_run": "42973457189"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 23,
+     "listed": 23,
+     "gaps": [
+      "degree_within_map_range"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 5
+  }
+ ],
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score; checks.arithmetic, coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found. The capture keeps no page text, so a note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Butte College', '01305', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 20\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 54\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 36\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 38\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 43\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 50\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 99\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WLD 20\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 22\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"Production agriculture\",\"equipment suppliers\",\"the rental industry\",\"landscape businesses\",\"recreation\",\"construction industries\"],\"degree_elective_units\":{\"max\":1,\"min\":1},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_overlap\":true,\"ge_pattern\":\"Butte Local\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify and demonstrate proper use, care, and adjustment of common and precision tools and machines found in a mechanized agriculture shop.\",\"Operate wheel and track type tractors safely and properly.\",\"Perform operator level maintenance and adjustments of tractor systems.\",\"Analyze and match the proper tractor and equipment to do the job correctly and efficiently.\"],\"section_heading\":\"AS Degree in Mechanized Agriculture\",\"total_units\":{\"max\":41,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (2, 'Butte College', '01358', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 1\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 21\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 32\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 41\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 42\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 43\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210E\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":5}}],\"program\":{\"careers\":[\"agronomy\",\"biotechnology\",\"energy production\",\"environmental science\",\"material science\",\"medicine\",\"patent law\",\"teaching\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":62,\"min\":60},\"electives_fill_degree\":false,\"ge_overlap\":true,\"ge_pattern\":\"Butte Local, Cal-GETC\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate basic experimental knowledge through data gathering, judging the accuracy and reliability of data, creating informative graphs, and discussing the limitations of experimental designs.\",\"Demonstrate basic analytical skills by interpreting graphs and schematics and diagnosing realistic physical problems.\",\"Demonstrate conceptual understanding by being able to describe qualitatively the underlying causes of basic physical phenomena.\"],\"section_heading\":\"AS Degree in Chemistry\",\"total_units\":{\"max\":40,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (3, 'Butte College', '07258', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 20\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 50\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 72\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 74\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 99\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 24\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 70\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 61\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 62\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"nursery and greenhouse management\",\"retail garden centers\",\"supply and equipment sales\",\"commercial fruit and nut production\",\"irrigation and landscape design\",\"installation and maintenance\",\"plant protection\",\"interior landscaping\",\"ag education\"],\"degree_elective_units\":{\"max\":2,\"min\":2},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_overlap\":true,\"ge_pattern\":\"Butte Local\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate competencies in irrigation design and construction.\",\"Identify turf species and their recommended management styles.\",\"Explain the principles of greenhouse glazing choices.\"],\"section_heading\":\"AS Degree in Environmental Horticulture\",\"total_units\":{\"max\":40,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb),\n  (4, 'Butte College', '31000', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 21\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 23\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 30\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Group 1\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Group 2\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":67,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify major developments in the history of the United States and of the world, and to examine the past from diverse perspectives.\",\"Apply historical reasoning to the study of the past and to think in terms of causation, context, chronology, and change and continuity.\",\"Utilize historical method through posing questions and conducting research, analyzing evidence, and articulating defensible conclusions.\"],\"section_heading\":\"AA-T Degree in History\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":92,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":12,\"placed\":11}'::jsonb),\n  (5, 'Butte College', '45652', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SWHS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SWHS 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 20\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 21\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDF 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMST 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSY 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSY 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 30\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List A: Select two:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Professional Identity: Students will conduct themselves in a professional manner in their field service.\",\"Ethical Practice: Students will apply social work ethical principles to guide their professional practice.\",\"Critical Thinking: Students will employ critical thinking to inform and communicate professional judgments.\",\"Diversity and Difference: Students will actively participate in learning about and appreciating the various backgrounds, perspectives, and identities present within their community, actively seeking to understand and respect differences.\",\"Human Rights and Social Justice: Students will apply research informed practices to their field service.\",\"Research-Informed Practice: Students will engage in research-informed practice and practice-informed research.\",\"Human Behavior Knowledge: Students will apply knowledge of human behavior and the social environment.\",\"Policy Practice: Students will engage in field service to advance social and economic well-being for all clients and work to deliver effective social work services in all work settings.\",\"Practice Contexts: Students will respond to contexts that shape practice.\",\"Engagement, Assessment, Intervention, and Evaluation: Students will engage, assess, intervene, and evaluate with individuals, families, groups, organizations, and communities.\"],\"section_heading\":\"AA-T Degree in Social Work and Human Services\",\"total_units\":{\"max\":29,\"min\":28}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Butte College', '01305', 42973457189, 'ee2bbec362f7d0690d05fc7a9e60cfbe', '3e096e5d8483d0570dfc23bf65a968b0', '5b8d3c8acaaec75ebc972751c289d76f'),\n  (2, 'Butte College', '01358', 42973457189, '8f05473261572d2cb19db1b2df5b71fc', '88e2495efd06d1573c7fb0fe096e2788', '582c97103b0c9e38dafb1613f96ab97b'),\n  (3, 'Butte College', '07258', 42973457189, '1387ea3281401c0281c69e8517010dc2', 'd2b6fcfb6953124b2f0584dbf2bd644b', 'bdd0ac1797d5413654fa702e60c0a77f'),\n  (4, 'Butte College', '31000', 42973457189, '5e4a6e16dc367583005bc7f89bb87611', '3c80fbd5773b6304e04af72d50991591', '55970c21bc316cdbc66fff9321d62551'),\n  (5, 'Butte College', '45652', 42973457189, 'ab4e92d16fffe542b327f73109183615', 'c59940d88ccdbd2a63fe18ec194066c9', '80d96e1f7d76b23dc1924b9cd145385d'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Butte College', '01305', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 20\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 54\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 36\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 38\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 43\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 50\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 99\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WLD 20\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 22\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"Production agriculture\",\"equipment suppliers\",\"the rental industry\",\"landscape businesses\",\"recreation\",\"construction industries\"],\"degree_elective_units\":{\"max\":1,\"min\":1},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_overlap\":true,\"ge_pattern\":\"Butte Local\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify and demonstrate proper use, care, and adjustment of common and precision tools and machines found in a mechanized agriculture shop.\",\"Operate wheel and track type tractors safely and properly.\",\"Perform operator level maintenance and adjustments of tractor systems.\",\"Analyze and match the proper tractor and equipment to do the job correctly and efficiently.\"],\"section_heading\":\"AS Degree in Mechanized Agriculture\",\"total_units\":{\"max\":41,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (2, 'Butte College', '01358', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 1\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 21\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 32\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 41\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 42\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 43\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210E\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":5}}],\"program\":{\"careers\":[\"agronomy\",\"biotechnology\",\"energy production\",\"environmental science\",\"material science\",\"medicine\",\"patent law\",\"teaching\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":62,\"min\":60},\"electives_fill_degree\":false,\"ge_overlap\":true,\"ge_pattern\":\"Butte Local, Cal-GETC\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate basic experimental knowledge through data gathering, judging the accuracy and reliability of data, creating informative graphs, and discussing the limitations of experimental designs.\",\"Demonstrate basic analytical skills by interpreting graphs and schematics and diagnosing realistic physical problems.\",\"Demonstrate conceptual understanding by being able to describe qualitatively the underlying causes of basic physical phenomena.\"],\"section_heading\":\"AS Degree in Chemistry\",\"total_units\":{\"max\":40,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (3, 'Butte College', '07258', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 20\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 50\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 72\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 74\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 99\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 24\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 70\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 61\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 62\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"nursery and greenhouse management\",\"retail garden centers\",\"supply and equipment sales\",\"commercial fruit and nut production\",\"irrigation and landscape design\",\"installation and maintenance\",\"plant protection\",\"interior landscaping\",\"ag education\"],\"degree_elective_units\":{\"max\":2,\"min\":2},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_overlap\":true,\"ge_pattern\":\"Butte Local\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate competencies in irrigation design and construction.\",\"Identify turf species and their recommended management styles.\",\"Explain the principles of greenhouse glazing choices.\"],\"section_heading\":\"AS Degree in Environmental Horticulture\",\"total_units\":{\"max\":40,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb),\n  (4, 'Butte College', '31000', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 21\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 23\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 30\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Group 1\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Group 2\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":67,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify major developments in the history of the United States and of the world, and to examine the past from diverse perspectives.\",\"Apply historical reasoning to the study of the past and to think in terms of causation, context, chronology, and change and continuity.\",\"Utilize historical method through posing questions and conducting research, analyzing evidence, and articulating defensible conclusions.\"],\"section_heading\":\"AA-T Degree in History\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":92,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":12,\"placed\":11}'::jsonb),\n  (5, 'Butte College', '45652', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SWHS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SWHS 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 20\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 21\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDF 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMST 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSY 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSY 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 30\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List A: Select two:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Professional Identity: Students will conduct themselves in a professional manner in their field service.\",\"Ethical Practice: Students will apply social work ethical principles to guide their professional practice.\",\"Critical Thinking: Students will employ critical thinking to inform and communicate professional judgments.\",\"Diversity and Difference: Students will actively participate in learning about and appreciating the various backgrounds, perspectives, and identities present within their community, actively seeking to understand and respect differences.\",\"Human Rights and Social Justice: Students will apply research informed practices to their field service.\",\"Research-Informed Practice: Students will engage in research-informed practice and practice-informed research.\",\"Human Behavior Knowledge: Students will apply knowledge of human behavior and the social environment.\",\"Policy Practice: Students will engage in field service to advance social and economic well-being for all clients and work to deliver effective social work services in all work settings.\",\"Practice Contexts: Students will respond to contexts that shape practice.\",\"Engagement, Assessment, Intervention, and Evaluation: Students will engage, assess, intervene, and evaluate with individuals, families, groups, organizations, and communities.\"],\"section_heading\":\"AA-T Degree in Social Work and Human Services\",\"total_units\":{\"max\":29,\"min\":28}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s721e piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s721e piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Butte College', '01305', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 20\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 54\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 36\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 38\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 43\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 50\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 99\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WLD 20\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 22\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"Production agriculture\",\"equipment suppliers\",\"the rental industry\",\"landscape businesses\",\"recreation\",\"construction industries\"],\"degree_elective_units\":{\"max\":1,\"min\":1},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_overlap\":true,\"ge_pattern\":\"Butte Local\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify and demonstrate proper use, care, and adjustment of common and precision tools and machines found in a mechanized agriculture shop.\",\"Operate wheel and track type tractors safely and properly.\",\"Perform operator level maintenance and adjustments of tractor systems.\",\"Analyze and match the proper tractor and equipment to do the job correctly and efficiently.\"],\"section_heading\":\"AS Degree in Mechanized Agriculture\",\"total_units\":{\"max\":41,\"min\":41}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (2, 'Butte College', '01358', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 1\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 2\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 21\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 32\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 41\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 42\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 43\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210E\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":5}}],\"program\":{\"careers\":[\"agronomy\",\"biotechnology\",\"energy production\",\"environmental science\",\"material science\",\"medicine\",\"patent law\",\"teaching\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":62,\"min\":60},\"electives_fill_degree\":false,\"ge_overlap\":true,\"ge_pattern\":\"Butte Local, Cal-GETC\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate basic experimental knowledge through data gathering, judging the accuracy and reliability of data, creating informative graphs, and discussing the limitations of experimental designs.\",\"Demonstrate basic analytical skills by interpreting graphs and schematics and diagnosing realistic physical problems.\",\"Demonstrate conceptual understanding by being able to describe qualitatively the underlying causes of basic physical phenomena.\"],\"section_heading\":\"AS Degree in Chemistry\",\"total_units\":{\"max\":40,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (3, 'Butte College', '07258', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AB 20\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AET 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 50\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 26\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 28\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 72\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 74\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 99\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 24\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 70\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGS 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 61\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EH 62\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"nursery and greenhouse management\",\"retail garden centers\",\"supply and equipment sales\",\"commercial fruit and nut production\",\"irrigation and landscape design\",\"installation and maintenance\",\"plant protection\",\"interior landscaping\",\"ag education\"],\"degree_elective_units\":{\"max\":2,\"min\":2},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_overlap\":true,\"ge_pattern\":\"Butte Local\",\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate competencies in irrigation design and construction.\",\"Identify turf species and their recommended management styles.\",\"Explain the principles of greenhouse glazing choices.\"],\"section_heading\":\"AS Degree in Environmental Horticulture\",\"total_units\":{\"max\":40,\"min\":40}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":19,\"placed\":19}'::jsonb),\n  (4, 'Butte College', '31000', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 21\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 23\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 30\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Group 1\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Group 2\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":67,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify major developments in the history of the United States and of the world, and to examine the past from diverse perspectives.\",\"Apply historical reasoning to the study of the past and to think in terms of causation, context, chronology, and change and continuity.\",\"Utilize historical method through posing questions and conducting research, analyzing evidence, and articulating defensible conclusions.\"],\"section_heading\":\"AA-T Degree in History\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":92,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":12,\"placed\":11}'::jsonb),\n  (5, 'Butte College', '45652', 42973457189, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SWHS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SWHS 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 20\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 21\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000E\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDF 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CMST 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSY 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSY 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 30\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List A: Select two:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Professional Identity: Students will conduct themselves in a professional manner in their field service.\",\"Ethical Practice: Students will apply social work ethical principles to guide their professional practice.\",\"Critical Thinking: Students will employ critical thinking to inform and communicate professional judgments.\",\"Diversity and Difference: Students will actively participate in learning about and appreciating the various backgrounds, perspectives, and identities present within their community, actively seeking to understand and respect differences.\",\"Human Rights and Social Justice: Students will apply research informed practices to their field service.\",\"Research-Informed Practice: Students will engage in research-informed practice and practice-informed research.\",\"Human Behavior Knowledge: Students will apply knowledge of human behavior and the social environment.\",\"Policy Practice: Students will engage in field service to advance social and economic well-being for all clients and work to deliver effective social work services in all work settings.\",\"Practice Contexts: Students will respond to contexts that shape practice.\",\"Engagement, Assessment, Intervention, and Evaluation: Students will engage, assess, intervene, and evaluate with individuals, families, groups, organizations, and communities.\"],\"section_heading\":\"AA-T Degree in Social Work and Human Services\",\"total_units\":{\"max\":29,\"min\":28}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"degree_within_map_range\"],\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s721e piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

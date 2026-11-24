@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "General Aircraft Maintenance",
  "award": "A.S. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7962,
+  "input_tokens": 8350,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7962,
-    "output_tokens": 1437,
+    "input_tokens": 8350,
+    "output_tokens": 2110,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1437,
+  "output_tokens": 2110,
   "output_tokens_details": {
-   "thinking_tokens": 466
+   "thinking_tokens": 717
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06059,
- "ms": 13550,
- "seconds": 13.9,
+ "cost_usd": 0.0756,
+ "ms": 18406,
+ "seconds": 19.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "AERO120",
-    "AERO121",
-    "AFAB110",
-    "AFAB115",
-    "AFAB120",
-    "AFAB130",
-    "AFAB210",
-    "ELTE252",
-    "ELTE254"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -71,117 +61,201 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    23.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    23.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     39.0,
+     44.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "fill": [
+     16.0,
+     21.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "General Aircraft Maintenance Cert",
+   "section_heading": "General Aircraft Maintenance AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 23
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "AVC GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Analyze and evaluate critical aspects of the aerospace industry related to safe work practices, standards and tolerances, standard shop practices, proper use of tools, power equipment, and personal protective equipment.",
+    "Analyze, evaluate, troubleshoot, and repair structural, propulsion, electrical, and guidance systems to meet airworthy standards.",
+    "Evaluate and apply Federal Aviation Regulations, technical maintenance data, and acceptable industry standards pertinent to proper maintenance and safety standards."
+   ],
+   "careers": [
+    "aviation maintenance",
+    "supervisory and management positions",
+    "certificates aircraft mechanic"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AERO 120",
-    "why": "named only in the certificate section; the text prints no A.S. degree section"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "AERO120",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO121",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AERO 121",
-    "why": "named only in the certificate section; the text prints no A.S. degree section"
-   },
-   {
-    "code": "AFAB 110",
-    "why": "named only in the certificate section; the text prints no A.S. degree section"
-   },
-   {
-    "code": "AFAB 115",
-    "why": "named only in the certificate section; the text prints no A.S. degree section"
-   },
-   {
-    "code": "AFAB 210",
-    "why": "named only in the certificate section; the text prints no A.S. degree section"
-   },
-   {
-    "code": "AFAB120",
-    "why": "named only in the certificate section; the text prints no A.S. degree section"
-   },
-   {
-    "code": "AFAB130",
-    "why": "named only in the certificate section; the text prints no A.S. degree section"
-   },
-   {
-    "code": "ELTE 252",
-    "why": "named only in the certificate section; the text prints no A.S. degree section"
-   },
-   {
-    "code": "ELTE 254",
-    "why": "named only in the certificate section; the text prints no A.S. degree section"
+    "name": "Program Electives",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "AFAB110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB115",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB120",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTE252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTE254",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The requested award is the A.S. Degree, but the source page (URL ending general-aircraft-maintenance-cert-fall-2026) and all of its text describe only the General Aircraft Maintenance Certificate ('Gen Aircraft Maint Cert'). No A.S. degree section, degree total, or GE pattern is printed, so no blocks, totals, outcomes or careers were recorded for the A.S. award. A reviewer should locate the A.S. degree page.",
-   "For reference, the certificate section prints: Required Courses (Total 15) AERO120 7.5, AERO121 7.5; Program Electives (Total 3-8, 'Complete the following number of credits: 3-8') AFAB110 3, AFAB115 8, AFAB120 7, AFAB130 4, AFAB210 4, ELTE252 3, ELTE254 3; total 18-23 units. The Recommended Pathway says 'Take one of the following' for electives.",
-   "The certificate page prints three Program Outcomes ('General Aircraft Maintenance Cert') and names career areas (aircraft maintenance support, aircraft service operations, aviation inspection support, related aviation maintenance occupations; 'certificates aircraft mechanic'); these were not recorded because they are printed for the certificate, not the A.S. degree.",
-   "Page contains eLumen workflow/administrative text (Workflow Agreement, Checklist), indicating this may be a proposal record rather than a published catalog entry."
+   "Codes printed without a space (e.g. AERO120) in the Program Requirements section; matched to closed-list codes with a space (AERO 120, etc.).",
+   "total_units 18-23 from 'Total Major Units 18-23 units' and the requirements header '(Total 18 - 23)'; degree_total 60 from 'TOTAL Units 60 units'.",
+   "ge_units 21 taken from the description sentence '21 units of general education requirements'; the requirements table instead prints 'Completion of General Education requirements, plus electives (as needed to reach 60 units) 37-42 Units', which combines GE and electives.",
+   "ge_pattern 'AVC GE' inferred from the Recommended Pathway entries ('Any AVC GE Area ...'); the requirements text does not otherwise name the GE pattern.",
+   "Description says to select 'an additional 3 units from the restricted list of program electives', while the block header says 'Complete the following number of credits: 3-8'; recorded minimum 3 with stated 3-8.",
+   "Program Goals and Objectives section lists objectives phrased 'Upon completion of the certificate...'; these were not recorded as program outcomes for the A.S. Only the 'Program Outcomes' list was recorded.",
+   "Recommended Pathway lists general electives and GE courses (ENGLC1000, MATH103) not recorded as blocks; Proposed Sequence labels the fifth term 'Year 2 Summer' with 15 units while the pathway calls it Fall, apparently a catalog error.",
+   "Careers: 'certificates aircraft mechanic' printed as is (likely 'certificated'); 'supervisory and management positions' taken from the description."
   ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": "45399693231",
+ "catalog_year": "2026-2027"
 }

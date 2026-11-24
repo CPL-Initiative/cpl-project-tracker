@@ -1,0 +1,93 @@
+{
+ "_readme": "S721 lever (the gap census's reader_page_assignment lever, run 45371224551): Antelope Valley College's 10 programs whose filed record places none of the state's listed courses. Each degree was handed its sister certificate's page (computer-applications-cert-fall-2026 for Computer Applications A.S. 02145), and Electrical Technology certificate 20184 the A.S. page; eLumen heads them 'Computer Applications AS' and 'Computer Applications Cert'. Chemistry A.S.-T 35818 was handed Engineering Fundamentals' certificate page, and the capture's menu listed no Chemistry A.S.-T page. This plan reads each program's own page through the catalog's publish/content call, the call the capture reads (el_pages_fast, heading = the first h1 to h3), and the menu's publish call for every Chemistry address, so a session checks each site_pages pin against the text the capture will read and a test pins it. No model call, nothing written.",
+ "college": "Antelope Valley College",
+ "questions": {
+  "own_page": "What the capture reads on each program's own page: its heading, its course list and its total.",
+  "chemistry": "Which addresses the menu gives Chemistry, and whether an A.S.-T page exists."
+ },
+ "keywords": [
+  "<h[1-3][^>]*>[^<]{0,120}",
+  "[Tt]otal[^\\n<]{0,60}[Uu]nits?",
+  "[Rr]equired [Cc]ourses?",
+  "chemistry[^\"\\s,]{0,60}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "chemistry"
+   ],
+   "why": "35818 the menu's Chemistry addresses",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/2026-27,welcome?tenant=avc.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "02145",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,program,computer-applications-as-fall-2026?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "02149",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,program,electronics-technology-as-fall-2026?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "02153",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,program,general-aircraft-maintenance-as-fall-2026?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "11647",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,program,aircraft-airframe-as-fall-2026?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "11648",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,program,aircraft-powerplant-as-fall-2026?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "12161",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,program,computer-animation-aa-fall-2026?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "14414",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,program,electrical-technology-as-fall-2026?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "15404",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,program,aircraft-fabrication-and-assembly-technician-as-fall-2026?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "20184",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,program,electrical-technology-cert-fall-2025?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "35818",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,program,chemistry-as-t-fall-2026?tenant=avc.elumenapp.com"
+  }
+ ]
+}

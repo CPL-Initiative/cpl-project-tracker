@@ -109,6 +109,7 @@ function load(hash, opt) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div class="header" id="hdr" style="height:64px">COBI</div><div id="tab-commons"><div id="commons-root">Loading</div></div></body></html>',
     { url: "https://example.org/index.html" + (hash || ""), runScripts: "dangerously", pretendToBeVisual: true });
   const w = dom.window, o = {}, fetched = [], scripts = [], reports = {};
+  if (opt.width) w.innerWidth = opt.width;
   const hdr = { bottom: opt.headerBottom == null ? 64 : opt.headerBottom };
   w.document.getElementById("hdr").getBoundingClientRect = () => ({ top: hdr.bottom - 64, bottom: hdr.bottom, left: 0, right: 1280, width: 1280, height: 64 });
   Object.defineProperty(w, "localStorage", { value: { getItem: (k) => (k in o ? o[k] : null), setItem: (k, v) => { o[k] = String(v); }, removeItem: (k) => { delete o[k]; } }, configurable: true });
@@ -260,7 +261,7 @@ async function group(n, fn) {
   /* (4) a count opens a second sidebar */
   await group(4, async function () {
     let x, d;
-    x = load("#commons/subjects/mq/code/CNST");
+    x = load("#commons/subjects/mq/code/CNST", { width: 1600 });
     await x.M.boot(); await settle();
     d = x.d;
     check("(4) a code's course file is not read before a Courses count is pressed", x.fetched.indexOf("kb/status/statewide_code_courses/C.json") < 0);
@@ -286,9 +287,16 @@ async function group(n, fn) {
     x.w.dispatchEvent(new x.w.Event("resize"));
     check("(7) ⭐ only where the view has no width left beside the pair does the pair cover it, still side by side",
       croot.getAttribute("data-csb-stack") === "cover" && croot.style.getPropertyValue("--csb-panel-w") === "0px" && s1.style.right === "540px", [croot.getAttribute("data-csb-stack"), s1.style.right]);
+    x.w.innerWidth = 1280; croot.getBoundingClientRect = () => ({ left: 280, right: 1280, top: 0, bottom: 900, width: 1000, height: 900 });
+    x.w.dispatchEvent(new x.w.Event("resize"));
+    check("(7) ⭐ S722: a strip too narrow to read (1280px less the side menu and the pair leaves 140px) gives way: the pair covers the view",
+      croot.getAttribute("data-csb-stack") === "cover" && croot.style.getPropertyValue("--csb-panel-w") === "0px", croot.getAttribute("data-csb-stack"));
+    x.w.innerWidth = 1600; x.w.dispatchEvent(new x.w.Event("resize"));
+    check("(7) a window with room for a readable view beside the pair keeps the pair beside it", croot.getAttribute("data-csb-stack") === "beside", croot.getAttribute("data-csb-stack"));
+    delete croot.getBoundingClientRect;
     x.w.innerWidth = 800; x.w.dispatchEvent(new x.w.Event("resize"));
     check("(7) a window narrower than the pair puts the second over the first", croot.getAttribute("data-csb-stack") === "over" && s1.style.right === "0px");
-    x.w.innerWidth = 1024; delete croot.getBoundingClientRect; x.w.dispatchEvent(new x.w.Event("resize"));
+    x.w.innerWidth = 1600; x.w.dispatchEvent(new x.w.Event("resize"));
     check("(4) the second sidebar's table sorts and resizes too", !!second.querySelector("thead button.csb-sort") && !!second.querySelector("thead .csb-grip[role=separator]"));
     check("(4) the second sidebar resizes from its own edge and keeps its top row", !!d.getElementById("csb-side-2-grip") && d.getElementById("csb-side-2-head").contains(d.getElementById("csb-side-2-close")));
     d.getElementById("csb-side-2-close").click(); await settle();

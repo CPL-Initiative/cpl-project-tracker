@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Computer Applications",
  "award": "A.S. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7866,
+  "input_tokens": 8559,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7866,
-    "output_tokens": 1606,
+    "input_tokens": 8559,
+    "output_tokens": 2455,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1606,
+  "output_tokens": 2455,
   "output_tokens_details": {
-   "thinking_tokens": 642
+   "thinking_tokens": 914
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06358,
- "ms": 15244,
- "seconds": 15.7,
+ "cost_usd": 0.08334,
+ "ms": 20899,
+ "seconds": 21.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 11,
    "listed": 11,
-   "share": 0.0,
-   "missing": [
-    "CA103",
-    "CA107",
-    "CA111",
-    "CA121",
-    "CA131",
-    "CA151",
-    "CA157",
-    "CA171",
-    "CA175",
-    "CA199",
-    "CA221"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -73,124 +61,257 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    28.0,
+    30.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    28.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     49.0,
+     51.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "fill": [
+     9.0,
+     11.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Computer Applications Cert",
+   "section_heading": "Computer Applications AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 30
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "AVC GE (local general education)",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate an understanding of computer components and explain their purpose.",
+    "Demonstrate the ability to use a word processing software application.",
+    "Demonstrate the ability to use a spreadsheet software application.",
+    "Demonstrate the ability to use a database management software application."
+   ],
+   "careers": [
+    "information technology",
+    "help desk support",
+    "general office computer management",
+    "entry-level office positions",
+    "office networking",
+    "troubleshooting"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CA 103",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
+    "name": "Introductory Module",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CA103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA221",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CA 107",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
+    "name": "Intermediate Module",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "CA107",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CA 111",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
+    "name": "Advanced Module",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CA131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CA 121",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
-   },
-   {
-    "code": "CA 131",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
-   },
-   {
-    "code": "CA 151",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
-   },
-   {
-    "code": "CA 157",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
-   },
-   {
-    "code": "CA 171",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
-   },
-   {
-    "code": "CA 175",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
-   },
-   {
-    "code": "CA 199",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
-   },
-   {
-    "code": "CA 221",
-    "why": "named only in the certificate section; no A.S. Degree section in the text"
+    "name": "Program Electives",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CA103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA199",
+      "units": 1,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA221",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The requested award is the A.S. Degree, but the source page (URL ends 'computer-applications-cert-fall-2026') and the text print only the 'Computer Applications Cert' section. No A.S. Degree section, degree total, GE pattern or degree requirements appear, so no blocks were recorded for the A.S. Degree.",
-   "The certificate section prints: Computer Applications Cert (Total 28 - 30); Required Courses (Total 25 - 26) with Introductory Module choose 3-4 credits from CA103 (3) or CA221 (4); Intermediate Module (16) all of CA107 (4), CA111, CA121, CA151, CA171 (3 each); Advanced Module (6) all of CA131, CA157 (3 each); Program Elective choose 3-4 credits from CA103 (3), CA175 (3), CA199 (1-8), CA221 (4). The description says the certificate 'requires a minimum of 28 units'; a proposal table prints 'Total Degree Units 28-29'.",
-   "The certificate's Program Outcomes (4 items) and its career statement ('entry-level office positions, office networking, and troubleshooting') belong to the certificate section and were not recorded for the A.S. Degree. A reviewer should locate the A.S. Degree page for this program."
+   "Introductory Module is printed as 'Complete the following number of credits: 3-4' with two courses; the second table says 'Choose one', so it is recorded as choose 1 course.",
+   "Advanced Module is printed as 'Complete the following number of credits: 6' with two 3-unit courses, so in effect both are required.",
+   "The Introductory Module and Program Electives are grouped under 'Required Courses (Total 25 - 26)'. Program Electives (3-4) sit separately in the summary table. CA103 and CA221 appear in both the Introductory Module and Program Electives; presumably the course used for one cannot count for the other.",
+   "total_units 28-30 is the printed program total. The 'Program Goals and Objectives' section says 'This certificate requires a minimum of 28 units' and labels the required courses 'Required Course (60 Units)'; this appears to be proposal text copied from the certificate.",
+   "degree_total 60 is from 'Total Degree Units 60'. ge_units 21 is from the description ('21 units of general education requirements'). The summary table prints 'General Education + General Electives 30-32' combined, so no separate elective unit figure is recorded.",
+   "Electives are described as 'sufficient elective credits to total 60 units', so electives_fill_degree is true.",
+   "The Recommended Pathway is a semester sequence, not a requirement list, and is not recorded as blocks.",
+   "Careers 'entry-level office positions', 'office networking' and 'troubleshooting' come from the Program Goals text, which refers to 'this certificate'; the degree is satisfied by completing that certificate. A reviewer should confirm these belong to this award."
   ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": "45399693231",
+ "catalog_year": "2026-2027"
 }

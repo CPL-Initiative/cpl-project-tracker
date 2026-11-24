@@ -645,6 +645,21 @@
    "pdf_pages_why": "S680, the harvest lane's NEXT (5): the five transfer degrees the set step waits on are read from the pages main files them from, each named here with the words its section opens on there, never found by a pattern over the catalog's text (S650, Cosumnes River). A pin binds only while the catalog prints the words and every title word on that page; otherwise the program gets no fresh text and its filed record stands. Reversible by deleting this entry."
   },
   "College of the Redwoods": {
+   "site_pages": {
+    "01816": {
+     "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-technology-fall-2024",
+     "evidence": "Automotive Technology A.S. 01816: its own page, read through the publish/content call the capture reads (college-page-read run 45381629186): the heading 'Automotive Technology' over 'A.S. Degree ( 60.0 Credits )', its Program Requirements list and '(Total 35)'. The filed record was read from the Advanced Automotive Technology certificate's (advanced-automotive-technology-ca-fall-2024) page, so it placed none of its listed courses."
+    },
+    "22666": {
+     "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-ca-fall-2024",
+     "evidence": "Advanced Automotive Technology certificate 22666: its own page, read through the publish/content call the capture reads (college-page-read run 45381629186): the heading 'Advanced Automotive Technology, CA' over 'Certificate of Achievement ( 39.0 Credits )', its Program Requirements list and '(Total 39)'. The filed record was read from the Automotive Technology A.S. (automotive-technology-fall-2024) page, so it placed none of its listed courses."
+    },
+    "42928": {
+     "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
+     "evidence": "Aquaculture Technology A.S. 42928: its own page, read through the publish/content call the capture reads (college-page-read run 45381629186): the heading 'Aquaculture Technology' over 'A.S. Degree ( 60.0 Credits )', its Program Requirements list and 'AQUA Tech A.S. (Total 25 - 28)'. The filed record was read from the Aquaculture Technology certificate's (aquaculture-technology-ca-fall-2023) page, so it placed none of its listed courses."
+    }
+   },
+   "site_pages_why": "S721 (lever, the gap census's reader_page_assignment lever, run 45371224551): College of the Redwoods' eLumen catalog heads a degree page with its title alone over its award line ('Automotive Technology' over 'A.S. Degree ( 60.0 Credits )') and a certificate page 'Title, CA', and the capture handed these 3 programs their sister award's page, so extraction placed none of their listed courses. Each is pinned to its own page (page read 45381629186); a degree's pin binds on its heading with the award line under it (site_award_subheading). Early Childhood Education 13559 and North Coast Paramedic 30811 are named gaps (named_gaps_s721.json). Reversible by deleting this key.",
    "why": "S608 SkyCondor, 2026-11-08, read Redwoods' failures by shape: 14 transfer degrees name the degree's 60 and CalGETC with no units and fail the degree check as incomplete; 8 local degrees name the 60 and no GE pattern. A free page read (college-page-read 42479757804, kb/college_reads/redwoods_ge_units.json) gave the transfer words: the Biology AS-T page prints 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis.' Redwoods' own Cal-GETC page (grad5) renders no text to the reader, so this step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Columbia's, Taft's and Los Medanos's steps are. The local degrees wait: their pages print no GE pattern or figure, and the CR-GE page (grad4) was not read. Proceeded on the recommendation; reversible by deleting this entry. S636 SkyAntennae, 2026-11-11: the 8 local degrees. COBIx found the college's 2026-2027 CRGE pattern sheet on its counseling page (#3096); read 43013608134 verified it: 'CRGE Units Required 21', 'Major Requirements and Elective Units 18+', 'Minimum Degree Units for Associate 60'. Read 43015726456 gave the local pages' own words as the capture holds them: the title line 'A.S. Degree ( 60.0 Credits )', blocks headed '(Total N)', no general education line, and on Forestry 'This program includes requirements that can be double counted for GE requirements'. Three local steps: ge_units 21; degree_total_minimum where the title prints 60.0; ge_overlap where the page says double counted. Simulated on the filed records: 6 of the 8 read equal; Registered Nursing 01831 and LVN to RN 08393 print their own totals and stay. Session call, cpl_memory d-redwoods-crge-21-s636; reversible by deleting the three local steps. The college-level gate read 'transfer' and held the local steps out (reconcile 43016437012 changed none); it now reads 'associate', and each step keeps its own gate.",
    "awards": "associate",
    "steps": [
@@ -1630,6 +1645,41 @@
    ]
   },
   "Antelope Valley College": {
+   "site_pages": {
+    "02145": {
+     "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
+     "evidence": "Computer Applications A.S. 02145: its own page, read through the publish/content call the capture reads (college-page-read run 45381304038): the heading 'Computer Applications AS', its Program Requirements list and '(Total 28 - 30)'. The filed record was read from the computer-applications-cert-fall-2026 page, so it placed none of its listed courses."
+    },
+    "02149": {
+     "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026",
+     "evidence": "Electronics Technology A.S. 02149: its own page, read through the publish/content call the capture reads (college-page-read run 45381304038): the heading 'Electronics Technology AS', its Program Requirements list and '(Total 30)'. The filed record was read from the electronics-technology-cert-fall-2026 page, so it placed none of its listed courses."
+    },
+    "02153": {
+     "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
+     "evidence": "General Aircraft Maintenance A.S. 02153: its own page, read through the publish/content call the capture reads (college-page-read run 45381304038): the heading 'General Aircraft Maintenance AS', its Program Requirements list and '(Total 18 - 23)'. The filed record was read from the general-aircraft-maintenance-cert-fall-2026 page, so it placed none of its listed courses."
+    },
+    "11647": {
+     "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026",
+     "evidence": "Aircraft Airframe A.S. 11647: its own page, read through the publish/content call the capture reads (college-page-read run 45381304038): the heading 'Aircraft Airframe AS', its Program Requirements list and '(Total 30)'. The filed record was read from the aircraft-airframe-cert-fall-2026 page, so it placed none of its listed courses."
+    },
+    "11648": {
+     "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026",
+     "evidence": "Aircraft Powerplant A.S. 11648: its own page, read through the publish/content call the capture reads (college-page-read run 45381304038): the heading 'Aircraft Powerplant AS', its Program Requirements list and '(Total 30)'. The filed record was read from the aircraft-powerplant-cert-fall-2026 page, so it placed none of its listed courses."
+    },
+    "12161": {
+     "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026",
+     "evidence": "Computer Animation A.A. 12161: its own page, read through the publish/content call the capture reads (college-page-read run 45381304038): the heading 'Computer Animation AA', its Program Requirements list and '(Total 30)'. The filed record was read from the computer-animation-cert-fall-2025 page, so it placed none of its listed courses."
+    },
+    "14414": {
+     "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026",
+     "evidence": "Electrical Technology A.S. 14414: its own page, read through the publish/content call the capture reads (college-page-read run 45381304038): the heading 'Electrical Technology AS', its Program Requirements list and '(Total 34)'. The filed record was read from the electrical-technology-cert-fall-2025 page, so it placed none of its listed courses."
+    },
+    "15404": {
+     "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026",
+     "evidence": "Aircraft Fabrication and Assembly Technician A.S. 15404: its own page, read through the publish/content call the capture reads (college-page-read run 45381304038): the heading 'Aircraft Fabrication and Assembly Technician AS', its Program Requirements list and '(Total 26)'. The filed record was read from the aircraft-fabrication-assembly-technician-cert-fall-2026 page, so it placed none of its listed courses."
+    }
+   },
+   "site_pages_why": "S721 (lever, the gap census's reader_page_assignment lever, run 45371224551): Antelope Valley's eLumen catalog heads each degree page 'Title AS' (or AA) and each certificate page 'Title Cert', and the capture handed these 8 degrees their sister certificate's page, so extraction placed none of their listed courses. Each is pinned to its own page, read through the publish/content call (run 45381304038). Electrical Technology certificate 20184 needs no pin: capture 45133183717 already reads it from its own page (electrical-technology-cert-fall-2025). Chemistry A.S.-T 35818 has no page in the 2026-27 catalog and is a named gap (named_gaps_s721.json). Reversible by deleting this key.",
    "why": "S713 (lane 2's cheap piles; the conductor's d-ge-steps-three-colleges-s713). #3678's second reader held Commercial Music A.A. 36852, Dance A.A. 39295 and IT Cybersecurity A.S. 40870 because each page prints a general education figure (d-ge-gap-only-where-no-figure-s703). The figure is printed as one line for general education and electives together: 'Completion of General Education requirements, plus electives as needed to reach 60 units' over 34, '30-33' and '29 Units' (the records' notes, run 38979725726); no figure for the AVC GE pattern alone is printed. This step files that printed figure as the general education units of a local degree that names the degree total, so the degree check adds the major and the line the page prints for the rest; the figure includes the electives, so the record's note names it as GE with electives. The step takes only a figure that is the degree total less the major's total (fills_degree_rest; #3707's second reader fed 36852's record a list number, a footnote, a catalog year and the proposal text above the table, and the first digits after the words were wrong four times in nine). Held for a person: Communication Studies 2.0 AA-T 43028 (CSU GE and IGETC figures on a Cal-GETC degree). Reversible by deleting this entry.",
    "awards": "associate",
    "steps": [

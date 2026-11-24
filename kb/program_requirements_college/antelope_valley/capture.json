@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 199,
  "with_closed_list": 197,
- "started": "2026-11-23T07:44:32Z",
+ "started": "2026-11-24T13:05:32Z",
  "elumen": {
   "catalog": "2026-27",
   "read": "publish/content",
@@ -26,15 +26,49 @@
  "pages_answered": 197,
  "listing_failed": 0,
  "banner_h1": null,
+ "site_pins": {
+  "02145": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
+   "bound": true
+  },
+  "02149": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026",
+   "bound": true
+  },
+  "02153": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
+   "bound": true
+  },
+  "11647": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026",
+   "bound": true
+  },
+  "11648": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026",
+   "bound": true
+  },
+  "12161": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026",
+   "bound": true
+  },
+  "14414": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026",
+   "bound": true
+  },
+  "15404": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026",
+   "bound": true
+  }
+ },
  "catalog_lookup": {
   "self_test": {
-   "tested": 177,
-   "hits": 87,
-   "recall": 0.492,
+   "tested": 171,
+   "hits": 88,
+   "recall": 0.515,
    "false": 2,
    "false_off_own": 2,
    "false_no_claims": 20,
-   "shared": 6,
+   "shared": 20,
    "false_matches": [
     {
      "control_number": "02150",
@@ -230,7 +264,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 87 of 177 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 88 of 171 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -238,14 +272,42 @@
   "yield_refused_passing": 0
  },
  "loads": 278,
- "seconds": 1140.0,
- "found": 183,
+ "seconds": 1148.5,
+ "found": 191,
  "by_method": {
   "no_closed_list": 2,
-  "not_found": 14,
-  "sitemap_page": 183
+  "not_found": 6,
+  "sitemap_page": 191
  },
  "shared_pages": {
+  "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026": [
+   "02145",
+   "20159"
+  ],
+  "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026": [
+   "02149",
+   "19460"
+  ],
+  "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026": [
+   "02153",
+   "20175"
+  ],
+  "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026": [
+   "11647",
+   "20177"
+  ],
+  "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026": [
+   "11648",
+   "20179"
+  ],
+  "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026": [
+   "12161",
+   "19467"
+  ],
+  "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026": [
+   "15404",
+   "20181"
+  ],
   "https://avc.elumenapp.com/catalog/2026-27/program/mathematics-2-0-as-t-fall-2026": [
    "30661",
    "46238"
@@ -260,230 +322,6 @@
   ]
  },
  "not_found": [
-  {
-   "control_number": "02145",
-   "title": "Computer Applications",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 11,
-    "listed": 11,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4740,
-     "content": 4740,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "02149",
-   "title": "Electronics Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 13,
-    "listed": 13,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4964,
-     "content": 4964,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "02153",
-   "title": "General Aircraft Maintenance",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 9,
-    "listed": 9,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 5080,
-     "content": 5080,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "11647",
-   "title": "Aircraft Airframe",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 2,
-    "listed": 2,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4294,
-     "content": 4294,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "11648",
-   "title": "Aircraft Powerplant",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 2,
-    "listed": 2,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4236,
-     "content": 4236,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "12161",
-   "title": "Computer Animation",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-cert-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 18,
-    "listed": 18,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4101,
-     "content": 4101,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14414",
-   "title": "Electrical Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-cert-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 9,
-    "listed": 9,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4756,
-     "content": 4756,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "15404",
-   "title": "Aircraft Fabrication and Assembly Technician",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 5,
-    "listed": 5,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4909,
-     "content": 4909,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
   {
    "control_number": "20166",
    "title": "Air Conditioning & Refrigeration Specialist",
@@ -656,34 +494,109 @@
  "coverage_bands": {
   "0.5-0.8": 2,
   "0.8-1.0": 1,
-  "1.0": 180
+  "1.0": 188
  },
  "would_extract": {
   "against": "kb/program_requirements_college/antelope_valley",
-  "kept": 173,
+  "kept": 182,
   "kept_moved": 0,
-  "programs": 10,
+  "programs": 8,
   "list": [
    {
-    "control_number": "18018",
-    "title": "Arts and Humanities - Option III",
-    "award": "A.A. Degree",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/arts-and-humanities-option-iii-aa-fall-2026",
+    "control_number": "02145",
+    "title": "Computer Applications",
+    "award": "A.S. Degree",
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
     "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/arts-and-humanities-option-iii-aa-fall-2026",
-    "was_coverage": 0.973,
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "18020",
-    "title": "Social and Behavioral Sciences - Option II",
-    "award": "A.A. Degree",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/social-and-behavioral-sciences-option-ii-aa-fall-2026",
+    "control_number": "02149",
+    "title": "Electronics Technology",
+    "award": "A.S. Degree",
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026",
     "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/social-and-behavioral-sciences-option-ii-aa-fall-2026",
-    "was_coverage": 0.984,
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
+   {
+    "control_number": "02153",
+    "title": "General Aircraft Maintenance",
+    "award": "A.S. Degree",
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11647",
+    "title": "Aircraft Airframe",
+    "award": "A.S. Degree",
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11648",
+    "title": "Aircraft Powerplant",
+    "award": "A.S. Degree",
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "12161",
+    "title": "Computer Animation",
+    "award": "A.A. Degree",
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-cert-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "14414",
+    "title": "Electrical Technology",
+    "award": "A.S. Degree",
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-cert-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "15404",
+    "title": "Aircraft Fabrication and Assembly Technician",
+    "award": "A.S. Degree",
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "only": [
+   "02145",
+   "02149",
+   "02153",
+   "11647",
+   "11648",
+   "12161",
+   "14414",
+   "15404"
+  ],
+  "not_named": [
    {
     "control_number": "20184",
     "title": "Electrical Technology",
@@ -693,81 +606,8 @@
     "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32137",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/art-history-aa-t-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/art-history-aa-t-fall-2026",
-    "was_coverage": 0.938,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32151",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/political-science-aa-t-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/political-science-aa-t-fall-2026",
-    "was_coverage": 0.941,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32204",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/studio-arts-aa-t-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/studio-arts-aa-t-fall-2026",
-    "was_coverage": 0.917,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33011",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/philosophy-aa-t-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/philosophy-aa-t-fall-2026",
-    "was_coverage": 0.8,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33228",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/economics-aa-t-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/economics-aa-t-fall-2026",
-    "was_coverage": 0.964,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41303",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/business-administration-2-0-as-t-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/business-administration-2-0-as-t-fall-2026",
-    "was_coverage": 0.933,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41823",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/law-public-policy-and-society-aa-t-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/law-public-policy-and-society-aa-t-fall-2026",
-    "was_coverage": 0.98,
-    "was_method": "sitemap_page"
    }
   ],
-  "held_worse_window": [],
-  "held_no_gain": [],
-  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -784,9 +624,17 @@
    "sha256": "3a03b6b332baecf495d09b3eff9d24de743163edd9b298f24e7be67d68949a5c",
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/real-estate-as-fall-2026"
   },
+  "02145": {
+   "sha256": "9c7b14108c6174112bd91243a0fd0d638126eb34e46d010e3d789cbcb396cc44",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026"
+  },
   "02147": {
    "sha256": "e9ade073a5360edeb02467103112cf72daa73923c00e6313ffe70c0d1b5699b1",
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/mechanical-engineering-as-fall-2026"
+  },
+  "02149": {
+   "sha256": "f4f1faabeed2360b8c2d4fce4a1f412fec8b507dad1fb39ed4af551df2cf3dfd",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026"
   },
   "02150": {
    "sha256": "afb82e38507322fa3fc75e150a965357f7283046395304a7bbc8b6ad01513dc6",
@@ -795,6 +643,10 @@
   "02152": {
    "sha256": "471e1b8e43b1bfb75a781938dd5d6ac1f58a75d291998a242e4cb80b99eb878a",
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-cert-fall-2026"
+  },
+  "02153": {
+   "sha256": "46f6c29a61b21073a953d3be9b6156a0f1bfe938d4efe72964b1e0fc5d1eeb30",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026"
   },
   "02155": {
    "sha256": "d7494074f533c701d44ed1049a12eb54df9581a35ce8544f2b067e4dbc95c853",
@@ -876,9 +728,21 @@
    "sha256": "4f7ed1432befdacb699404770063e95cb9e71dcef0ccbcb26f08e78bc71509a1",
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-cert-fall-2025"
   },
+  "11647": {
+   "sha256": "4e7bc8ea2e0d4fa2cc3bdeec83cd84c6ca7fb9141c4d04aff84a52ea84a9b787",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026"
+  },
+  "11648": {
+   "sha256": "9b88dec7ed5aee4a59e3770583648b14350d9a426bfd1b31ea54a8018010f246",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026"
+  },
   "12137": {
    "sha256": "229482fd466be1054d9a625874db1f242ab60a71a0adb1fe0acb7b2ce22bf3a4",
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-cert-fall-2025"
+  },
+  "12161": {
+   "sha256": "40a18174566f7aac6e268a2865768fb60c654fb291fb07b1d86d1e98eda28f9f",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026"
   },
   "13167": {
    "sha256": "4fef0d43a29e2edc1661b2d58e7c5feb7120cfb02c97113b32ff686e95c21a69",
@@ -888,6 +752,10 @@
    "sha256": "7370f81a701911e5a9ef737ea62f7f07307eefc76de41a464196a3a897cb25eb",
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/real-estate-salesperson-cert-fall-2026"
   },
+  "14414": {
+   "sha256": "f2cb5db58110a0fe8f825f51b11bf505e55ea290a6214d01da5488d23f08a4c7",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026"
+  },
   "14790": {
    "sha256": "eb5db038dfc45dc0b9a65c0030c1aad24a1124d505cc0dbf2ec12d0952c7e337",
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-cert-fall-2026"
@@ -895,6 +763,10 @@
   "14791": {
    "sha256": "321aefe3cded3226515219ed83ef633cb4e55b06a8c74d101ee1998b75fa8bdd",
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-cert-fall-2026"
+  },
+  "15404": {
+   "sha256": "cf5a6726aba0b040b01c10de1d11c462e52dc98e7b319fc3df2d1039789b6f54",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026"
   },
   "16468": {
    "sha256": "47d5f1f812a0c38f34a9d17921cdc5596e860d15814a98af87c2d6a38dd7d7b4",
@@ -1505,5 +1377,5 @@
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/physics-2-0-as-t-fall-2026"
   }
  },
- "run": "45133183717"
+ "run": "45399693231"
 }
