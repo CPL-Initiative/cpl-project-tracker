@@ -661,6 +661,9 @@ jobs:
       # S714 at College of the Sequoias: the page's double-count figure as a capped overlap; the self-recall and the plan.
       - name: Cheap piles S714 at College of the Sequoias (double count, the plan)
         run: python3 tests/program_piles_s714_sequoias_test.py
+      # S721 at Butte: the census's 17 wording-rule records, 5 collected with named gaps; the plan.
+      - name: Cheap piles S721 at Butte (named gaps, the plan)
+        run: python3 tests/program_piles_s721_butte_test.py
       # S720 at Fullerton: S714's 13 held, collected with four named gaps; the self-recall and the plan's 9 rows.
       - name: Cheap piles S720 at Fullerton (named gaps, the plan)
         run: python3 tests/program_piles_s720_fullerton_test.py
