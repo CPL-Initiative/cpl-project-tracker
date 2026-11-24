@@ -1043,6 +1043,31 @@ def judge(filed: dict) -> tuple[str, str] | None:
 
 
 # ── the labels ─────────────────────────────────────────────────────────────
+# S720 at College of the Sequoias (kb/_program_piles_s720_sequoias.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('lists_not_closed',
+         "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),  # #3753
+        ('noted_figures_differ',
+         "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+         40),  # #3753
+        ('pool_figure_not_read',
+         'The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.',
+         40),  # #3755
+        ('double_count_noted',
+         "The catalog lets some of the program's units count twice, toward the major and general education, and the record adds them twice.",
+         40),  # College of the Sequoias' branch
+        ('prerequisites_counted',
+         "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+         70),  # College of the Sequoias' branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def labels(base: str = COLLEGE_DIR, skip: tuple = ()) -> list[dict]:
     out = []
     for sp in sorted(glob.glob(os.path.join(base, "*", "sources.json"))):
