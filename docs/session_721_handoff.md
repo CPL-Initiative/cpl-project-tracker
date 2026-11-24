@@ -135,7 +135,7 @@ section 1 slimming items and section 4 go to a plain session, as section 4 item 
   keeps a filed named gap its rule still names (`keep_named_gaps`); the statewide rescore of 18,960 committed records
   takes away 15 false passes and adds none.
 
-- **#3758 `MERGE_3758`** (`claude/s720-piles-land`, all three lanes in one PR so the Commons files rebuilt once,
+- **#3758 `a16777d9`** (`claude/s720-piles-land`, all three lanes in one PR so the Commons files rebuilt once,
   `d-piles-land-as-one-pr-s720`), every row applied or loaded and confirmed live before the merge:
   - piles: College of the Sequoias 7, Clovis 3, East Los Angeles 3, Glendale 2, City College of San Francisco 17, Santa
     Monica 20, Ventura 5, Cabrillo 8, Contra Costa 16, El Camino 14 (95 records, each collected with a named gap; run
@@ -305,12 +305,10 @@ by Opus 5.5.
 | #3754 | merged `79a534fb`; display build `abf1f6396156` live | none |
 | #3753 | merged `949c3194`; applied by migrate 45346957909 | none |
 | #3756 | merged `35854487` | none |
-| #3758 (`claude/s720-piles-land`, `127a5c04` at 08:55Z) | the ten piles branches, 95 records applied and live | `test`, one update from `main`, the merge |
-| #3759 (`claude/s720-rios`, `5941ee65`) | American River 04544 and the nine `section_cut_off` gaps, applied and live | `test`, the merge after #3758 |
-| #3752 (`claude/s720-lever`, `f465b972` at 08:52Z) | 16 records loaded; San Bernardino Valley's read filed (45355976381), its load next; Santiago Canyon's read pending | the load and the read, then the merge |
-| #3755 (`claude/s720-piles-ccsf`) | City College of San Francisco's 17, applied, landing in #3758 | closes with a pointer to #3758 |
+| #3758 (`claude/s720-piles-land`) | merged `a16777d9` (10:04Z): piles 95, rios 10, lever 34, all applied or loaded and live | none |
+| #3759 (`claude/s720-rios`), #3752 (`claude/s720-lever`), #3755 (`claude/s720-piles-ccsf`) | closed with pointers to #3758 | none |
 | `claude/s720-piles-modesto` (`a6d019a4`) | Modesto Junior's plan, held unapplied | the pooled rule |
-| Harvest gap census 45345225943 on `main` | `d24901b0` (07:08Z) | the next after tonight's display build |
+| Harvest gap census on `main` after #3758 | see the census line above | the next after tonight's display build |
 | #3383 | dependabot's | waits |
 
 ## Let go
@@ -319,8 +317,8 @@ The brief names no PR subscription, scheduled check-in or artifact watch: the ru
 watcher ran (Sam's word of 2026-11-23). Workers end with the session; each branch is pushed. The local Postgres 16
 used for the apply proofs stops at sign-off.
 
-SPEND_LINE
+Spend: about $255 (an estimate from the session's and its agents' token counts at list prices, `kb/_spend_meter.py`'s rates: Opus 5.5 about $246, Sonnet $6, Haiku $0.6; the conductor about $48, eleven workers and twelve second readers about $207), all collection; 2026-11-24T06:14Z to about 10:15Z. Every message ran on Opus 5.5, Sonnet or Haiku (the form names Fable 5.2). The paid reads' own cost, $2.01 on their meter against $2.36 estimated, is listed apart. Stop rules: none fired (144 records, about $1.77 each; no outline rows; no rollback). Context at sign-off: about 110,000 tokens left of 786,077, at the warning line, so the run checkpointed and let go.
 
 Opening line: *Greetings, you are SkySkua (Session 721), see SkyEider's (S720) handoff — `docs/session_721_handoff.md` — let's keep rolling with our queue.* (If a plain session has taken 721 by then, take the next free number and say so.)
 
-FINAL_LINE
+This session's cost: about $255 at list prices (no `get_session` in this session; estimated from the session's and its agents' token counts) plus $2.01 of paid reads. Records collected: 144 (101 with named gaps at eleven colleges, 9 named gaps at Los Rios, 34 from own pages, 32 of them passing), and one false pass corrected. Outline rows added: 0. Substantive PRs merged: 4 (#3754, #3753, #3756, #3758).
