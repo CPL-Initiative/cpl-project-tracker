@@ -57,6 +57,7 @@ import _program_requirements_pilot as P
 SWITCH_ABC = "CPL_READER_PAGE_CHECKS"     # "0" turns rules A to C off; any other value, or none, leaves them on
 SWITCH_D = "CPL_RULE_D_NOT_PRINTED"       # "1" turns rule D on; off by default
 MARK = "page_checks"                      # the program dict's key capture() sets
+PIN_HEADING = "site_pin_heading"          # set on the copy site_pinned() tests: the pinned page's heading names it
 
 # Words a heading need not print (COBIx's STOP list, file set 1).
 STOP = {"and", "the", "for", "with", "of", "in", "to", "a", "an", "degree", "certificate", "program", "studies"}
@@ -555,7 +556,12 @@ def site_page(pg: dict, program: dict, text: str, found: dict, field: str) -> tu
     courses = program.get("closed_list") or []
     got = pg.get("got") or {}
     body = got.get("body") or pg.get("body") or ""
-    if DESC_PATH.search(urllib.parse.urlparse(pg.get("url") or "").path) or page_type(body) != "other":
+    kind = page_type(body)
+    # A site_pages pin whose page's own heading prints the program's title with its award (PIN_HEADING, set by
+    # site_pinned() in kb/_program_requirements_college.py, S721) passes rule B's general-education check: Antelope
+    # Valley's degree pages print their GE map ("Any AVC GE Area 2") beside the program's own list.
+    if DESC_PATH.search(urllib.parse.urlparse(pg.get("url") or "").path) or kind == "descriptions" or (
+            kind == "ge" and not program.get(PIN_HEADING)):
         return None, "rule B: a course-descriptions or general-education page"
     tabs = P.hidden_tabs_text(got)
     if tabs and field == "innerText":

@@ -5590,9 +5590,16 @@ def site_pinned(programs: list[dict], pages: list[dict], pins: dict[str, dict]) 
             out[cn] = {"why": "the pinned page's heading (%r) does not print the program's title with its award"
                               % head}
             continue
+        # Its heading names it, so rule B's general-education check stands aside for this page (RC.PIN_HEADING, S721).
+        prog = dict(prog, **{RC.PIN_HEADING: True})
         cands = candidates(prog, [pg], programs, {})
         if not cands:
-            out[cn] = {"why": "the pinned page is no candidate: %s" % ((near_miss(prog, [pg]) or {}).get("why") or "")}
+            why = None
+            if RC.applies(prog):
+                body = (pg.get("got") or {}).get("body") or pg.get("body") or ""
+                _, why = RC.site_page(pg, prog, body, P.find_codes(body, prog.get("closed_list") or []), "innerText")
+            out[cn] = {"why": "the pinned page is no candidate: %s"
+                              % (why or (near_miss(prog, [pg]) or {}).get("why") or "")}
             continue
         out[cn] = {"best": dict(cands[0], pinned=True)}
     return out

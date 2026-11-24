@@ -10,9 +10,13 @@ alone over its award line, which S720's heading test refused. S721 loads the pin
 heading through site_award_subheading (kb/_program_requirements_college.py).
 
   1. The capture loads site_pages on the curriQunet and eLumen roads too (a source check: the capture needs a browser).
-  2. Antelope Valley's 9 pins bind on their own pages as page read 45381304038 printed them, never on the page the
+  2. Antelope Valley's 8 pins bind on their own pages as page read 45381304038 printed them, never on the page the
      filed record was read from, at the accept share; a pin to the sister award's page ('Title Cert' for a degree) is
-     refused on its heading.
+     refused on its heading. Every program here is marked (RC.MARK), as the capture marks each whose record places
+     none, so rules B, C and A run: AVC's degree pages print their GE map ("Any AVC GE Area 2"), rule B reads them as
+     general-education pages, and a pin whose heading names its program passes that check (RC.PIN_HEADING) while the
+     same page unpinned is refused (S721 second reader, round 1, finding 1). A pin to a course-descriptions page is
+     still refused, its reason naming rule B. 20184 needs no pin: capture 45133183717 reads it from its own page.
   3. Redwoods' 3 pins bind on the pages page read 45381629186 printed; Automotive Technology A.S. 01816 binds through
      the award line under its heading; a degree pinned to its sister certificate's page and a certificate pinned to its
      A.S. page (13559, the catalog's only Early Childhood page) are refused.
@@ -20,7 +24,8 @@ heading through site_award_subheading (kb/_program_requirements_college.py).
   5. The rule's self-recall on Redwoods' 71 filed pages (page read in the fixture): every program filed alone on its own
      page with a record that places its courses binds there, and no program binds on another program's page.
   6. The lever's members, pinned here (p-test-pins-census-members-s714), are each a pin, a named gap
-     (named_gaps_s721.json, a defined reason, never pinned) or a forced re-read, once.
+     (named_gaps_s721.json, a defined reason, never pinned), a forced re-read, or a program the capture already reads
+     from its own page, once.
 The pages are in tests/fixtures/program_requirements_lever_pins_s721.json.gz. Pure stdlib.
 """
 import gzip
@@ -54,7 +59,8 @@ LEVER = {
     "College of the Redwoods": ("college_of_the_redwoods", "01816 13559 22666 30811 42928"),
     "MiraCosta College": ("miracosta", "07863 15183 22006 36144 36171"),
 }
-FORCED = {"MiraCosta College": {"07863", "36144", "36171"}}
+FORCED = {"MiraCosta College": {"07863"}}
+CAPTURED = {"Antelope Valley College": {"20184"}}   # capture 45133183717's would_extract reads it from its own page
 
 
 def page(url, h1, body):
@@ -62,9 +68,10 @@ def page(url, h1, body):
     return {"url": url, "title": h1, "h1": h1, "body": body, "content": body, "got": got, "codes": C.page_net(got)}
 
 
-def prog(cn, p):
+def prog(cn, p, marked=True):
+    # The capture marks each lever member (RC.mark: its committed record places none), so rules B, C and A apply.
     return {"control_number": cn, "title": p["title"], "award": p["award"], "shape": "x", "status": "Active",
-            "closed_list": [{"code": c} for c in p["codes"]], "load_id": "1"}
+            "closed_list": [{"code": c} for c in p["codes"]], "load_id": "1", C.RC.MARK: marked}
 
 
 # ── 1. the capture loads the pins on every road ─────────────────────────────────────────────────
@@ -92,6 +99,13 @@ for college, want_sub in (("Antelope Valley College", set()), ("College of the R
     check(not bad, "2 each of %s's %d pins binds on its own page, never the filed one, at the accept share (%s)"
           % (college, len(pins), bad))
     by_url = {pg["url"]: pg for pg in pages}
+    # Rule B: the pinned pages a general-education page to the rules, refused unpinned, bound pinned.
+    ge = sorted(cn for cn in pins if C.RC.page_type(by_url[pins[cn]["url"]]["body"]) == "ge")
+    unpinned = sorted(cn for cn in ge if C.candidates(prog(cn, part["programs"][cn]), [by_url[pins[cn]["url"]]],
+                                                      progs, {}))
+    check(not unpinned and (college != "Antelope Valley College" or len(ge) >= 6),
+          "2 %s: %d pinned pages read as general-education pages to rule B (%s); unpinned, none is a candidate (%s), "
+          "pinned, each binds" % (college, len(ge), ge, unpinned))
     sub = {cn for cn, p in part["programs"].items()
            if not C.RC.heading_line([by_url[pins[cn]["url"]]["h1"]], p["title"], p["award"]) >= 0}
     check(sub == want_sub, "3 %s: the pins that bind through the award line under the heading are %s (%s)"
@@ -101,6 +115,17 @@ for college, want_sub in (("Antelope Valley College", set()), ("College of the R
         r = C.site_pinned([prog(cn, p)], pages, {cn: {"url": wrong}}).get(cn) or {}
         check("best" not in r and "heading" in (r.get("why") or ""),
               "2 %s %s pinned to %s is refused on its heading (%s)" % (college, cn, what, r.get("why")))
+
+# A pin never lifts rule B's course-descriptions check, and its refusal names the rule.
+avc = FIX["colleges"]["Antelope Valley College"]
+cn0, p0 = "02145", avc["programs"]["02145"]
+desc_body = "Computer Applications AS\n" + "".join(
+    "%s - Course %d\nUnits: 3\nLecture Hours: 54\nPrerequisite: None\nTransfer: CSU\nAdvisory: None\n" % (c, k)
+    for k, c in enumerate(p0["codes"] * 2))
+desc = page("https://avc.elumenapp.com/catalog/2026-27/program/x-descriptions", "Computer Applications AS", desc_body)
+got = C.site_pinned([prog(cn0, p0)], [desc], {cn0: {"url": desc["url"]}}).get(cn0) or {}
+check(C.RC.page_type(desc_body) == "descriptions" and "best" not in got and "rule B" in (got.get("why") or ""),
+      "2 a pin to a course-descriptions page is refused, and its reason names rule B (%s)" % got.get("why"))
 
 # ── 4. the award line ───────────────────────────────────────────────────────────────────────────
 COA = "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
@@ -146,13 +171,15 @@ for college, (slug, members) in LEVER.items():
     ng = json.load(open(path)) if os.path.exists(path) else {"programs": [], "reasons": {}}
     gaps = [g["control_number"] for g in ng["programs"]]
     forced = FORCED.get(college, set())
-    covered = pins | set(gaps) | forced
+    captured = CAPTURED.get(college, set())
+    sets = [pins, set(gaps), forced, captured]
+    covered = set().union(*sets)
     check(len(gaps) == len(set(gaps)) and all(g["reason"] in ng["reasons"] for g in ng["programs"])
-          and not (set(gaps) & pins) and not (set(gaps) & forced) and not (pins & forced),
-          "6 %s: each named gap once with a defined reason, never also pinned or forced" % college)
+          and sum(len(s) for s in sets) == len(covered),
+          "6 %s: each named gap once with a defined reason, and no member in two of pins, gaps, forced, captured" % college)
     check(covered <= members and (covered == members or college in FIX["open"]),
-          "6 %s: pins %d, named gaps %d, forced %d cover the lever's %d%s"
-          % (college, len(pins), len(gaps), len(forced), len(members),
+          "6 %s: pins %d, named gaps %d, forced %d, captured %d cover the lever's %d%s"
+          % (college, len(pins), len(gaps), len(forced), len(captured), len(members),
              "" if covered == members else " (open: %s)" % sorted(members - covered)))
 
 print("\n%d checks, %d failed" % (N[0], len(FAILS)))
