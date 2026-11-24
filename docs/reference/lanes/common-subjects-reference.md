@@ -62,7 +62,7 @@ vocational share, 15 names, 4 codes on a C-ID or CCN prefix attributed elsewhere
 `tests/mq_view_test.py`, `tests/csr_code_history_test.py`. Mock: https://claude.ai/artifact/SHS5eNN4nb5vLkNCzzWvVE.
 The COBI view, `#commons/subjects/mq`, is live (#3745, `48d67aa4`; [`commons`](commons.md)), and Pages now
 serves `kb/status/mq_view.json`. **FINDING** `f-mq-sections-still-19th-s719` (informational): the quarterly probe's
-`committed_edition` still reads 19, because `kb/reference/mq_sections.json` was read from the 19th edition.
+`committed_edition` still reads 19, because `kb/reference/mq_sections.json` was read from the 19th edition. **FINDING** `f-mq-sections-reread-reaches-the-vocabulary-s722`: the re-read is its own planned pass. `mq_handbook_20th.json`'s parse checks against the PDF (sha256 matches; Physics/Astronomy and Theater Arts carry one mark, master's only, where the 19th listed both), but `mq_sections.json` shares its 248 names with `mq_disciplines.json`, which about ten builders read (the discipline list, M-ID seeding, the auditor's fire-gate vocabulary), and `tests/mq_sections.test.js` pins the 19th's both-lists rows. Plan it: keep the 19th file under its own name for `_mq_view.py`'s *new in the 20th* check, map 20th names to the 19th keys, then measure each reader's change.
 
 **RULED (Sam, 2026-11-23).** `r-csr-codes-settled-on-list-confidence-not-confirmation-sam-2026-11-23`: every MQ
 discipline takes a code without waiting for a course; a code on the list is settled; confidence informs, and a person

@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 719,
-  "moniker": "SkyShearwater",
+  "session": 722,
+  "moniker": "SkyCormorant",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_720_handoff.md",
+  "handoff": "docs/session_723_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-24T03:51:16Z",
+  "written_at": "2026-11-24T14:41:07Z",
   "project": "subjects",
   "next_step": {
-    "title": "The renames read from print, and a courses file for the MQ view",
-    "text": "Two likely renames wait on their printed lines: Los Angeles Trade-Technical's IT 077 to 079, formerly MICROTK, and Mt. San Antonio's DSPS, now Access (ACCS); Southwestern's PE codes wait on Sam's word or a printed source. Then a small per-code courses file, so the MQ view's courses sidebar no longer loads the 17 MB course list."
+    "title": "Derived titles in the titles build",
+    "text": "A title COBI rates 80 or more now stands as a derived title on the page; the next step writes those titles into the titles file as their own column, so the Subjects card's committed count agrees with the page, then measures how often a web search's title is right."
   },
   "changes": [
     {
@@ -216,6 +216,18 @@
     {
       "at": "2026-11-24T03:33:00Z",
       "text": "The MQ disciplines view opens from the Subjects card: each discipline's list type, provisions, common code and what to look at; a code opens the statewide list filtered to it, and a count opens a second sidebar beside the first."
+    },
+    {
+      "at": "2026-11-24T12:56:00Z",
+      "text": "A Courses count in the MQ view or the statewide list opens its code's own small course file instead of the 17 MB state course list."
+    },
+    {
+      "at": "2026-11-24T14:40:00Z",
+      "text": "The codes with no title became Titles to check: a title COBI rates 80 or more stands as a derived title with its confidence bar, and about 100 of the 301 codes remain, each with Accept on the row and beside every candidate title."
+    },
+    {
+      "at": "2026-11-24T14:40:00Z",
+      "text": "Confidence shows as one 0 to 100 bar; a web search on the college's own site counts as a candidate, so Clovis MECH reads Mechatronics/Industrial Automation; a sidebar resize leaves 360 pixels of the view."
     }
   ]
 }

@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 604 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 605 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 110 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 678 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1570** | |
+| Session handoffs | 679 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1572** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-24 (S722 SkyCormorant, Sam's plain session, full checkpoint): #3768 (a Courses count reads its code's own course file, never the 17 MB state list), #3771 (Titles to check: a derived title stands at 80+, Accept on the row and per title, the 0-100 confidence bar as one component, sidebars never cover the view, quick links land on a link, the Commons names COBI, never Sky); #3770 withdrawn in #3771. KB note: `methodology-a-source-that-only-checks-the-winner-never-wins`.
 - 2026-11-24 (S721 SkySkua, the CPL Queue routine's collection run, conductor, full checkpoint): #3761 (display build `6de40ebdf2fd`, 18,699 rows live), #3765 (Orange Coast's 3 collected with named gaps), #3769 (Palo Verde 15, Porterville 15, Gavilan 7 and Butte 5; three new gap kinds), #3763 (the reader-page lever: 12 loaded, 11 passing; 14 named gaps) and #3764 (the pooled reading, applied: 8 at Modesto, 7 named gaps to passing); 65 records collected; the test kb-note's section on a test that reads its own plan's receipt; 23 memory rows drafted; handoff 722.
 - 2026-11-24 (S720 SkyEider, the CPL Queue routine's collection run, conductor, full checkpoint): #3754 (display build `abf1f6396156`, 18,665 rows live), #3753 (Fullerton's 6 collected with named gaps), #3756 (no electives fill over a cut-off window; a reconcile keeps named gaps); applied and live in open PRs: #3758 (ten colleges' piles, 95 named-gap records), #3759 (American River 04544 corrected; nine `section_cut_off` gaps at Los Rios), #3752 (the reader-page lever, 16 passing at Mendocino, Los Angeles Southwest and American River). Handoff 721; the harvest lane rebuilt under 20,000 bytes; lessons S691 and S697 moved to archive 8.
 - 2026-11-24 (S719 SkyShearwater, Sam's plain session, full checkpoint): #3740 (the Subjects card matches a college's name as the table does), #3741 (the web-search pass for all 205 untitled codes with no filed search; a program label only where the page lists the code's courses), #3743 (every Commons card but Plan in the Subjects card's checks design), #3744 (the quarterly MQ baseline on the 20th edition, its test tied to the handbook file), #3745 (the MQ view at `#commons/subjects/mq`, the second sidebar), #3748 open (the cards answer their own edits). The commons and CSR lanes compacted to archive 8. No new KB note; a fourth instance in methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh. Handoff 720 (SkyCormorant).
