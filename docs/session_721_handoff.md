@@ -135,20 +135,25 @@ section 1 slimming items and section 4 go to a plain session, as section 4 item 
   keeps a filed named gap its rule still names (`keep_named_gaps`); the statewide rescore of 18,960 committed records
   takes away 15 false passes and adds none.
 
-**Applied or loaded and live, in open PRs:**
-- **#3758** (`claude/s720-piles-land`): College of the Sequoias 7, Clovis 3, East Los Angeles 3, Glendale 2, City
-  College of San Francisco 17, Santa Monica 20, Ventura 5, Cabrillo 8, Contra Costa 16, El Camino 14 (95 records, each
-  collected with a named gap; run ids in the lessons, *S720*).
-- **#3759** (`claude/s720-rios`): American River 04544's false pass corrected (45353104736) and nine `section_cut_off`
-  named gaps (Sacramento City 04656, 04688, 07350, 21418; Cosumnes River 04602, 04614; Folsom Lake 15368, 39574, 42612;
-  45358426469) after three free reconciles. Its records differ from `main` only in those ten rows; Folsom Lake 38736
-  was not rescored by its reconcile.
-- **#3752** (`claude/s720-lever`): Mendocino 6, Los Angeles Southwest 5 and American River 5 loaded, all passing, $0.90
-  paid; 7 named gaps filed at Los Angeles Southwest and Santiago Canyon; San Bernardino Valley's read of 15 filed
-  ($0.93), its load next; Santiago Canyon re-pinned to its accessible catalog, its read pending.
+- **#3758 `MERGE_3758`** (`claude/s720-piles-land`, all three lanes in one PR so the Commons files rebuilt once,
+  `d-piles-land-as-one-pr-s720`), every row applied or loaded and confirmed live before the merge:
+  - piles: College of the Sequoias 7, Clovis 3, East Los Angeles 3, Glendale 2, City College of San Francisco 17, Santa
+    Monica 20, Ventura 5, Cabrillo 8, Contra Costa 16, El Camino 14 (95 records, each collected with a named gap; run
+    ids in the lessons, *S720*);
+  - rios: American River 04544's false pass corrected (45353104736) and nine `section_cut_off` named gaps (Sacramento
+    City 04656, 04688, 07350, 21418; Cosumnes River 04602, 04614; Folsom Lake 15368, 39574, 42612; 45358426469) after
+    three free reconciles; Folsom Lake 38736 was not rescored by its reconcile; the S713 test's `section_cut_off`
+    check now admits the refused-fill route by key;
+  - lever: Mendocino 6, Los Angeles Southwest 5, American River 5, San Bernardino Valley 15, Santiago Canyon 3 loaded
+    (34, 32 passing; SBVC 09267 and 22784 collected with a failing check named), $2.01 paid against $2.36 estimated;
+    7 named gaps filed at Los Angeles Southwest and Santiago Canyon; SBVC 32317 held (`f-sbvc-32317-rule-b-s720`).
+- Closed with pointers to #3758: #3755 (CCSF's own), #3759 (rios), #3752 (lever; its body keeps the lever's runs and
+  both review rounds).
 
-**At this writing:** 126 records live (101 collected with named gaps at eleven colleges, 9 named gaps at Los Rios, 16
-passing loads); 0 outline rows (step 11's queue is empty).
+**Tonight's count:** 144 records collected and live: 101 collected with named gaps at eleven colleges, 9 named gaps at
+Los Rios, 34 loaded from own pages (32 passing); American River 04544 corrected from a false pass; 0 outline rows
+(step 11's queue is empty). Headline at step 12: 15,498 of 20,282 active programs pass the machine checks (15,467
+on 2026-11-23), 118 colleges.
 
 CENSUS_LINE
 
