@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T12:56:34Z",
+ "written_at": "2026-11-24T13:28:24Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17233,
-  "gap": 5102,
+  "passing": 17283,
+  "gap": 5052,
   "with_gap": 118,
-  "cost_usd": 1341.06,
-  "passed_at_read": 16363,
+  "cost_usd": 1341.14,
+  "passed_at_read": 16371,
   "cost_receipts": 118,
   "spent_usd": 1238.16,
   "spent_runs": 207,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16797,
-  "gap": 5102,
-  "collected_with_gaps": 436,
+  "passing": 16806,
+  "gap": 5052,
+  "collected_with_gaps": 477,
   "discontinued": 0
  },
  "census_live": {
@@ -428,12 +428,12 @@
    "harvested": true,
    "slug": "antelope_valley",
    "programs": 199,
-   "passing": 162,
-   "gap": 37,
+   "passing": 170,
+   "gap": 29,
    "causes": {
     "no_closed_list": 2,
     "page_not_found": 2,
-    "places_none": 13,
+    "places_none": 5,
     "unknown_without_live": 20
    },
    "census_causes": {
@@ -458,10 +458,10 @@
    "outcomes_file": "kb/status/commons_data_programs/antelope_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-23T07:44:32Z",
+   "read_at": "2026-11-24T13:05:32Z",
    "read_kind": "capture",
-   "cost_usd": 14.18,
-   "passed_at_read": 162,
+   "cost_usd": 14.26,
+   "passed_at_read": 170,
    "slo_queue": {
     "state": "held",
     "why": "the eLumen 2026-27 catalog prints none: 11 of 12 trial pages answered with the description and units only, no SLO or objective heading in the page source, and PSY 101 came back empty. As at College of Marin, the course outline reports on avc.elumenapp.com/public are untried; waits on the same reader for eLumen's public Course Outline Report, then a 12-page trial",
@@ -474,13 +474,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 197,
-   "found": 183,
+   "found": 191,
    "extracted": 195,
    "errors": 0,
    "failed_checks": {
-    "coverage": 13,
+    "coverage": 5,
     "invented": 0,
-    "arithmetic": 33,
+    "arithmetic": 25,
     "repeated": 0,
     "outcomes": 0
    },
@@ -490,12 +490,12 @@
    "capture_root": "https://avc.elumenapp.com/catalog/2026-27/welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1140.0,
-   "run": "45133183717",
+   "read_seconds": 1148.5,
+   "run": "45399693231",
    "levers": {
-    "reader_page_assignment": 13,
     "reconcile_steps": 10,
     "ge_units_steps": 9,
+    "reader_page_assignment": 5,
     "program_course_file_check": 2,
     "reader_page_search": 2,
     "scorer_noncredit_hours": 1
@@ -506,13 +506,13 @@
      "models": {
       "claude-opus-5-5": 195
      },
-     "run": "45133183717",
-     "at": "2026-11-23T07:44:32Z",
-     "cost_usd": 14.18,
+     "run": "45399693231",
+     "at": "2026-11-24T13:05:32Z",
+     "cost_usd": 14.26,
      "platform": "elumen"
     },
     "slo_read": null,
-    "plo_programs": 120,
+    "plo_programs": 128,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -846,12 +846,12 @@
    "harvested": true,
    "slug": "butte",
    "programs": 192,
-   "passing": 148,
-   "gap": 44,
+   "passing": 153,
+   "gap": 39,
    "causes": {
     "no_closed_list": 24,
     "page_not_found": 3,
-    "unknown_without_live": 17
+    "unknown_without_live": 12
    },
    "census_causes": {
     "no_closed_list": 24,
@@ -904,7 +904,7 @@
    "run": "45025068740",
    "levers": {
     "program_course_file_check": 24,
-    "reconcile_steps": 17,
+    "reconcile_steps": 12,
     "reader_page_search": 3
    },
    "collection": {
@@ -5042,13 +5042,13 @@
    "harvested": true,
    "slug": "gavilan",
    "programs": 135,
-   "passing": 84,
-   "gap": 51,
+   "passing": 91,
+   "gap": 44,
    "causes": {
     "no_closed_list": 15,
     "page_not_found": 17,
     "places_none": 1,
-    "unknown_without_live": 18
+    "unknown_without_live": 11
    },
    "census_causes": {
     "no_closed_list": 15,
@@ -5102,9 +5102,9 @@
    "read_seconds": 862.5,
    "run": "44090922437",
    "levers": {
-    "reconcile_steps": 18,
     "reader_page_search": 17,
     "program_course_file_check": 15,
+    "reconcile_steps": 11,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -9081,12 +9081,12 @@
    "harvested": true,
    "slug": "palo_verde",
    "programs": 69,
-   "passing": 44,
-   "gap": 25,
+   "passing": 59,
+   "gap": 10,
    "causes": {
     "no_closed_list": 1,
     "page_not_found": 2,
-    "unknown_without_live": 22
+    "unknown_without_live": 7
    },
    "census_causes": {
     "no_closed_list": 1,
@@ -9141,7 +9141,7 @@
    "read_seconds": 527.3,
    "run": "39852997888",
    "levers": {
-    "reconcile_steps": 22,
+    "reconcile_steps": 7,
     "reader_page_search": 2,
     "program_course_file_check": 1
    },
@@ -9395,12 +9395,12 @@
    "harvested": true,
    "slug": "porterville",
    "programs": 91,
-   "passing": 54,
-   "gap": 37,
+   "passing": 69,
+   "gap": 22,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 6,
-    "unknown_without_live": 25
+    "unknown_without_live": 10
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -9454,7 +9454,7 @@
    "read_seconds": 44.4,
    "run": "44477695238",
    "levers": {
-    "reconcile_steps": 24,
+    "reconcile_steps": 9,
     "program_course_file_check": 6,
     "reader_page_search": 6,
     "scorer_noncredit_hours": 1

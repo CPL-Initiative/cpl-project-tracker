@@ -188,6 +188,8 @@ jobs:
             git add kb/status/outline_hunt.json 2>/dev/null || true
             # Every local subject code statewide (kb/_statewide_subject_codes.py, S712).
             git add kb/status/statewide_subject_codes.json 2>/dev/null || true
+            # The courses under each code, by first character (kb/_statewide_subject_codes.py, S722).
+            git add kb/status/statewide_code_courses 2>/dev/null || true
             # Every college's subject titles by source (kb/_subject_sources.py, S717).
             git add kb/status/subject_sources.json 2>/dev/null || true
             # The MQ view (kb/_mq_view.py, S717).
