@@ -1211,6 +1211,16 @@ async function seedCociList(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The CPL Commons front page (S719): every card's Collect, Curate and Connect opened by its word.
+async function seedCommonsFrontOpen(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "commons") location.hash = "commons"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#commons-root .cmf-card[data-key='interconnect'] .cmf-stage-b", { state: "attached", timeout: 60000 });
+  await page.waitForTimeout(300);
+  await page.evaluate(() => document.querySelectorAll("#commons-root .cmf-stage-b[aria-expanded='false']").forEach((b) => b.click()));
+  await page.waitForTimeout(200);
+}
+
 // The CPL Commons' Subjects list (S694): opened by its address, as the Subjects card links to it.
 async function seedCommonsSubjects(page, theme) {
   await page.evaluate(() => { if (!/^commons\/subjects/.test(location.hash.replace(/^#/, ""))) location.hash = "commons/subjects/cerritos"; });
@@ -3844,6 +3854,25 @@ module.exports = {
       { hash: "commons/subjects/mq", name: "subjects-mq-dark" }, { hash: "commons/subjects/mq/code/CNST/courses/CT", name: "subjects-mq-second-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsSubjects(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── The CPL Commons front page with every card's stages open (S719) ──
+     The cards open on their top section, so the cobi target measures the checks' words only once they are open: each
+     Collect, Curate and Connect is opened here by its own word, as a reader opens it. */
+  "commons-front-open": {
+    file: "index.html",
+    title: "CPL Commons: the front page, every stage open",
+    routes: [{ hash: "commons", name: "front-stages-open" }],
+    widths: [390, 1280],
+    seed: (page) => seedCommonsFrontOpen(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-front-open-dark": {
+    file: "index.html",
+    title: "CPL Commons: the front page, every stage open, dark",
+    routes: [{ hash: "commons", name: "front-stages-open-dark" }],
+    widths: [390, 1280],
+    seed: (page) => seedCommonsFrontOpen(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── The Commons data dashboard, slice 1 (#3215): the statewide figures and the college list ──
