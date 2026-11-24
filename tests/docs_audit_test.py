@@ -697,6 +697,7 @@ _ALL = [
     "- **EVERY SIDEBAR RESIZES, AND ITS TOP ROW STAYS FROZEN.**",
     "- **A SIDEBAR OPENS BESIDE THE VIEW, NEVER OVER IT.**",
     "- **CONFIDENCE IS ONE 0-100 BAR.**",
+    "- **SIDEBAR FOR NARROW WORK, BOTTOM BAR FOR WIDE WORK, ON ONE ANCHOR PAGE PER COMMONS CARD.**",
 ]
 _e = _claude_presentation(_ALL)
 check("presentation doctrine: silent when every rule is stated",

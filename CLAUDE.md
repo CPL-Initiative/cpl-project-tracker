@@ -676,6 +676,10 @@ file.
   gives up the panel's width and takes it back on Close, and a resize stops where 360px of the view is left (Sam,
   2026-11-24: *"should not cover the lower main window when resized"*); below 900px the panel covers the view. First built on the
   Subjects panel (`beside()` in `commons_subjects.js`); each other panel converts at its UI pass.
+- **Sidebar for narrow work, bottom bar for wide work, on one anchor page per Commons card (Sam, 2026-11-24):** *"sidebar
+  for narrow work and bottom bar for wide work"*, a sidebar where the row must stay in sight; a bottom bar spans the
+  page, as tall as its content, and stacks below another. Nothing opens a separate tab. Mock and words:
+  `r-sidebar-narrow-bottom-bar-wide-sam-2026-11-24`.
 - **Confidence is one 0–100 bar (Sam, 2026-11-24):** *"a simple bar from 0-100 is the most recognizable and quickly
   understood indicator--better that high, medium, low or others."* One component, `CPL_COMMONS.confBar` (`commons.js`),
   its number beside it; each view converts at its UI pass. First built on Subject codes with no title.
@@ -836,13 +840,7 @@ stays here.
 
 **Moved to [`docs/reference/troubleshooting.md`](docs/reference/troubleshooting.md)**.
 
-Go there when: the **dashboard is not updating** · a **Pages deploy failed** or
-the site is stale after a merge (dispatch a fresh `pages.yml` run — never
-`rerun_failed_jobs`) · the **scrape returns errors** · KPI values are stale but
-the date moved · **duplicate sections / HTML growing** on every run ·
-`kpi_history.json` shows a stale 1d delta · **CI dies at `npm install` with a
-404** (the lockfile is gitignored, so every range resolves live — pin exactly) ·
-**docx library errors**.
+Go there when the dashboard or Pages is stale (dispatch a fresh `pages.yml` run, never `rerun_failed_jobs`), the scrape errors, sections duplicate, a KPI delta is stale, CI dies at `npm install` with a 404 (pin exactly), or docx errors.
 
 **The stop-hook nags** too (`python3 scripts/check_hooks_live.py --fix`); on the
 "Unverified `noreply@github.com`" one, do nothing: amending rewrites `main` (Rule 5).
