@@ -1,5 +1,5 @@
 {
- "_readme": "S719 (SkyShearwater), 2026-11-24: Southwestern College's 2017-2018 catalog archive, read for the printed line that ties each ES course to its former PE code (Formerly PE/T 135). The lane's NEXT: find a printed source for PE/* to ES/* before kb/reference/subject_code_history/ takes it. No model call.",
+ "_readme": "S719 (SkyShearwater), 2026-11-24: Southwestern College's current catalog, read for the printed line that ties each ES course to its former PE code (Formerly PE/T 135). The 2017-2018 archive answered robots_disallow (run 45304973641), so the current pages are read. The lane's NEXT: find a printed source for PE/* to ES/* before kb/reference/subject_code_history/ takes it. No model call.",
  "college": "Southwestern College",
  "questions": {
   "code_pet": "Which former PE code does this page print beside its courses (Formerly ...), and under what heading?",
@@ -18,35 +18,35 @@
  ],
  "pages": [
   {
-   "url": "https://catalog.swccd.edu/archives/2017-2018/course-descriptions/es_t/",
+   "url": "https://catalog.swccd.edu/course-descriptions/es_t/",
    "answers": [
     "code_pet"
    ],
    "source": "web_search"
   },
   {
-   "url": "https://catalog.swccd.edu/archives/2017-2018/course-descriptions/es_i/",
+   "url": "https://catalog.swccd.edu/course-descriptions/es_i/",
    "answers": [
     "code_pei"
    ],
    "source": "web_search"
   },
   {
-   "url": "https://catalog.swccd.edu/archives/2017-2018/course-descriptions/es_a/",
+   "url": "https://catalog.swccd.edu/course-descriptions/es_a/",
    "answers": [
     "code_pea"
    ],
    "source": "web_search"
   },
   {
-   "url": "https://catalog.swccd.edu/archives/2017-2018/course-descriptions/es_l/",
+   "url": "https://catalog.swccd.edu/course-descriptions/es_s/",
    "answers": [
     "code_pel"
    ],
    "source": "web_search"
   },
   {
-   "url": "https://catalog.swccd.edu/archives/2017-2018/course-descriptions/danc/",
+   "url": "https://catalog.swccd.edu/course-descriptions/danc/",
    "answers": [
     "code_ped"
    ],
