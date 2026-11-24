@@ -1,0 +1,32 @@
+{
+ "_what": "Mt. San Antonio College's subject headings, filed by kb/_subject_code_address_probe.py from pages read one by one (no course-descriptions index is filed for this college).",
+ "college": "Mt. San Antonio College",
+ "run": "45304208269",
+ "source": [],
+ "subjects": 0,
+ "with_heading": 0,
+ "rows": [],
+ "code_address_tried": [
+  {
+   "code": "DSPS",
+   "address": "https://catalog.mtsac.edu/programs/coursesaz/accs/",
+   "status": "200",
+   "first_line": "Access (ACCS)",
+   "run": "45304208269"
+  },
+  {
+   "code": "EMT",
+   "address": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-emergency-medical-technician/",
+   "status": "200",
+   "first_line": "Emergency Medical Technician",
+   "run": "45304208269"
+  },
+  {
+   "code": "TUTR",
+   "address": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-tutor-training/",
+   "status": "200",
+   "first_line": "Tutor Training",
+   "run": "45304208269"
+  }
+ ]
+}

@@ -1826,5 +1826,28 @@
    ],
    "first_course": "VOC ED 002CE - IN-HOME SUPPORTIVE SERVICE"
   }
+ ],
+ "code_address_tried": [
+  {
+   "code": "E.S.L.",
+   "address": "https://lacc.edu/academics/esl",
+   "status": "200",
+   "first_line": "Common Course Numbering (AB 1111)",
+   "run": "45304208269"
+  },
+  {
+   "code": "ESL NC",
+   "address": "https://lacc.edu/academics/noncredit-dept",
+   "status": "200",
+   "first_line": "Common Course Numbering (AB 1111)",
+   "run": "45304208269"
+  },
+  {
+   "code": "FAM &CS",
+   "address": "https://lacc.edu/academics/pathways/sbs/cfs-dept",
+   "status": "200",
+   "first_line": "Child & Family Studies/ Dietetics",
+   "run": "45304208269"
+  }
  ]
 }
