@@ -46,44 +46,36 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 183,
+   "placed": 181,
    "listed": 188,
-   "share": 0.973,
+   "share": 0.963,
    "missing": [
+    "ART49923746",
     "ENG49523697",
     "ENGL494",
+    "ENGWR301",
     "ENGWR303",
     "HUM352",
     "MUIV31544940"
    ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ARTH499",
-     "listed": "ART49923746",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ENGL301",
-     "listed": "ENGWR301",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 15,
+   "count": 17,
    "codes": [
     "ART300",
     "ART302",
     "ART304",
     "ART305",
     "ARTH494",
+    "ARTH499",
     "DEAF310",
     "DEAF312",
     "DEAF314",
     "DEAF316",
+    "ENGL301",
     "ENGLC1003",
     "ENGLT301",
     "ENGLT334",
@@ -97,10 +89,12 @@
     "ART304",
     "ART305",
     "ARTH494",
+    "ARTH499",
     "DEAF310",
     "DEAF312",
     "DEAF314",
     "DEAF316",
+    "ENGL301",
     "ENGLC1003",
     "ENGLT301",
     "ENGLT334",
@@ -173,7 +167,7 @@
   ],
   "confidence": {
    "unit_arithmetic": 50,
-   "course_list_match": 97,
+   "course_list_match": 96,
    "ge_pattern": 50,
    "catalog_year": 100,
    "source": 80
@@ -1652,6 +1646,5 @@
    "Art section outcomes and career information on page 162 belong to the preceding Art program and were not used."
   ]
  },
- "extracted_run": 45353709365,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }
