@@ -240,23 +240,35 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
   check("(7) the table holds every day's figures, with scoped headers", trows.length === 30 && Array.from(x.d.querySelectorAll(".cmf-chart .cmf-table th")).every((t) => t.hasAttribute("scope")));
   check("(7) the plots scale to the width, with no fixed pixel width", /\.cmf-plot \{ width:100%/.test(SRC) && !/\.cmf-plot \{[^}]*width:\d+px/.test(SRC));
 
-  // ── Fixes owed to you (Sam, S723, 2026-11-24: "there should be something queued up for me to do to prompt COBI") ──
+  // ── Rulings to find and the doubt list (Sam, S723, 2026-11-24: "I don't remember anything about those rulings...",
+  //    "maybe cobix can find them...") ──
   const doubtWith = (ids) => ({ cards: ids.map((id) => ({ id: id, why: ["description"] })) });
   x = load({ files: { "kb/ccr_doubt.json": doubtWith(["KINE M1524", "KINE M1762", "KINE M1142"]) } });
   await x.M.boot(); await settle();
   const owed = x.d.getElementById("cmf-need-owed"), ask = owed && Array.from(owed.querySelectorAll(".cmf-act a")).find((l) => /^Ask COBI/.test(txt(l)));
-  check("⭐ Fixes owed names only the ruled cards still on the doubt list, and gives one press to ask COBI",
-    owed && /^2 common-course cards you already ruled on \(shared course IDs M1524 and M1762\)/.test(txt(owed.querySelector("p"))) && !/M1553|M1142/.test(txt(owed))
-    && ask && ask.getAttribute("target") === "_blank" && /noopener/.test(ask.getAttribute("rel"))
-    && /^https:\/\/github\.com\/CPL-Initiative\/cpl-project-tracker\/issues\/new\?title=Fixes%20owed/.test(ask.getAttribute("href")) && /M1524%20and%20M1762/.test(ask.getAttribute("href")), owed && txt(owed));
-  const owedLi = Array.from(x.d.querySelectorAll("#cmf-rank > li")).pop();
-  check("⭐ Needs you ranks it last, and its link lands on Ask COBI, highlighted", owedLi && /^Fixes owed: ask COBI to carry 2 rulings$/.test(txt(owedLi))
+  check("⭐ Rulings to find never claims a ruling: it names the cards still listed and asks COBI to look",
+    owed && txt(owed.querySelector("h4")) === "Rulings to find" && /named 2 common-course cards \(shared course IDs M1524 and M1762\) as already ruled on, but no ruling is on file/.test(txt(owed))
+    && !/you already ruled|COBI owes|M1553|M1142/.test(txt(owed)) && ask && txt(ask) === "Ask COBI to find the rulings" && ask.getAttribute("target") === "_blank" && /noopener/.test(ask.getAttribute("rel"))
+    && /^https:\/\/github\.com\/CPL-Initiative\/cpl-project-tracker\/issues\/new\?title=Find%20the%20Discipline%20in%20doubt%20rulings/.test(ask.getAttribute("href")) && /M1524%20and%20M1762/.test(ask.getAttribute("href")), owed && txt(owed));
+  const rk = Array.from(x.d.querySelectorAll("#cmf-rank > li")), owedLi = rk[rk.length - 1];
+  check("⭐ Needs you ranks it last, and its link lands on Ask COBI, highlighted", owedLi && /^Rulings to find: ask COBI about 2 cards$/.test(txt(owedLi))
     && owedLi.querySelector("a").getAttribute("data-onpage-to") === ask.getAttribute("href"));
   click(x.w, owedLi.querySelector("a")); await settle();
   check("and the press lands there", x.d.activeElement === ask && ask.classList.contains("cmf-hl"));
-  x = load({ files: { "kb/ccr_doubt.json": doubtWith(["KINE M1142"]) } });
+  const doubtLi = rk.find((l) => /^Discipline in doubt: cards to rule on/.test(txt(l)));
+  check("⭐ the doubt list is a Needs you item with its count, landing on its check in Courses and M-IDs", doubtLi && /3 cards to rule on/.test(txt(doubtLi))
+    && doubtLi.querySelector("a").getAttribute("data-onpage") === "cmf-card-courses" && doubtLi.querySelector("a").getAttribute("data-onpage-ref") === "doubt"
+    && /^3 to rule on/.test(txt(x.d.querySelector('.cmf-card[data-key="courses"] .cmf-check[data-ref="doubt"] .cmf-check-fig'))));
+  click(x.w, doubtLi.querySelector("a")); await settle();
+  check("and the press lands on Discipline in doubt, highlighted", x.d.activeElement && x.d.activeElement.getAttribute("href") === "#coci-lookup/list/doubt" && x.d.activeElement.classList.contains("cmf-hl"));
+  x = load({ files: { "kb/ccr_doubt.json": doubtWith([]) } });
   await x.M.boot(); await settle();
-  check("⭐ once the list holds none of them, Fixes owed and its Needs you link leave", !x.d.getElementById("cmf-need-owed") && !Array.from(x.d.querySelectorAll("#cmf-rank li")).some((l) => /^Fixes owed/.test(txt(l))));
+  check("⭐ an empty doubt list takes both off Needs you", !x.d.getElementById("cmf-need-owed") && !Array.from(x.d.querySelectorAll("#cmf-rank li")).some((l) => /^(Rulings to find|Discipline in doubt)/.test(txt(l))));
+
+  /* Sam, 2026-11-24: "don't refer to cobix as, like sky, it is an internal tool". The page names COBI. */
+  x = load({ files: { "kb/ccr_doubt.json": doubtWith(["KINE M1524"]) } });
+  await x.M.boot(); await settle();
+  check("⭐ the rendered page never names COBIx or Sky", !/COBIx|\bSky\b/.test(txt(x.d.querySelector(".cmf"))), (txt(x.d.querySelector(".cmf")).match(/.{40}(COBIx|\bSky\b).{20}/) || [""])[0]);
 
   // ── (8) College Data Collection ──
   const cdc = x.d.getElementById("cmf-card-cdc"), X = x.w.CPL_COMMONS_DATA, CM = X.model(BASE["kb/status/commons_data.json"]);

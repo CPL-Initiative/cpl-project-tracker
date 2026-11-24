@@ -834,7 +834,7 @@
       var w = LW[k] || {};
       A.push({ text: (w.what || words(k)).replace(/^./, function (x) { return x.toUpperCase(); }), detail: fmt(LV0[k]) + " program" + (LV0[k] === 1 ? "" : "s") + (w.kind ? ", " + w.kind : ""), owner: null });
     });
-    if (c.harvested && !c.spot_check) A.push({ text: "Team-internal: COBIx spot-checks five records against the catalog", detail: "the spot-check contract on #3111", owner: "COBIx" });
+    if (c.harvested && !c.spot_check) A.push({ text: "Team-internal: COBI spot-checks five records against the catalog", detail: "the spot-check contract on #3111", owner: "COBI" });
     return A;
   }
   function stampLine(st, now) {
@@ -1228,7 +1228,7 @@
     var W = { census: ["The gap census", "The script that gives every program still to pass one cause and one lever, read through its committed-files functions."],
       slo_queue: ["The SLO read queue", "The colleges whose course SLO read is held, has nothing to read, or waits on a parser, with why."],
       scout: ["The source scout's file", "What the source scout found at the college's catalog host ahead of a collection wave."],
-      spot: ["The spot-check receipt", "COBIx's check of five records against the catalog" + (sp && sp.pr ? ", filed on pull request " + sp.pr : "") + "."],
+      spot: ["The spot-check receipt", "COBI's check of five records against the catalog" + (sp && sp.pr ? ", filed on pull request " + sp.pr : "") + "."],
       universe: ["The college identity crosswalk", "Every college and continuing-education campus, by district: the page's universe."],
       dictionary: ["The data dictionary", "The doc the dictionary view is parsed from: every dataset, its owner, how we get it and what would improve it."],
       apis: ["The API checklist", "The checklist section of the data dictionary: each API, whether a connection is needed, its status and evidence."] }[k];
@@ -1644,11 +1644,11 @@
       sec.appendChild(el("p", { cls: "cdd-src", text: fmt(b.still_taught_open) + (b.still_taught_open === 1 ? " course still taught at " : " courses still taught at ")
         + fmt(open.length) + (open.length === 1 ? " college needs its course outline. " : " colleges need their course outline. ")
         + "The outline reader cannot reach these colleges' outlines, so a person fetches each one. Blocked outlines for courses no longer taught are set aside." }));
-      sec.appendChild(el("p", { cls: "cdd-src cdd-todo-send", text: "Send the PDF to COBIx in your Grok Bot chat." }));
+      sec.appendChild(el("p", { cls: "cdd-src cdd-todo-send", text: "Send the PDF to COBI in your Grok Bot chat." }));
     } else {
       sec.appendChild(el("p", { cls: "cdd-src", text: fmt(open.length) + " of " + fmt(b.colleges.length) + " colleges still to find, " + fmt(b.local_courses_open)
         + " local courses in all; " + (b.still_taught_total != null ? fmt(b.still_taught_total) + " of them are still taught, and only those are hunted. " : "")
-        + "Send the PDF to COBIx in your Grok Bot chat." }));
+        + "Send the PDF to COBI in your Grok Bot chat." }));
     }
     if (b.open) sec.appendChild(teamFiles("Where a session files it", b.file_in || "kb/hand_filed_catalogs/outlines"));
     var ul = el("ul", { cls: "cdd-todo-list" });
@@ -1759,7 +1759,7 @@
     /* The asks are the MAP team's and COBIx's work, never the college's (Sam, Nov 13, #3229: "steer away from anything
        that could be construed as an expectation to do double work"). */
     var A = asks(M, c);
-    out.push(section("Team asks", [el("p", { cls: "cdd-src", "data-team": "asks", text: "Work for the MAP team and COBIx. Nothing here asks the college to do anything." }),
+    out.push(section("Team asks", [el("p", { cls: "cdd-src", "data-team": "asks", text: "Work for the MAP team and COBI. Nothing here asks the college to do anything." }),
       A.length ? el("ul", { cls: "cdd-gaps" }, A.map(function (a) {
         return el("li", null, [el("span", { cls: "cdd-ask", text: a.text }), el("span", { cls: "cdd-of", text: a.detail + (a.owner ? ". Owner: " + a.owner : ". Owner: TBA") })]);
       })) : el("p", { cls: "cdd-of", text: "None on file." }), tbaOf(M, "owners") ? el("p", { cls: "cdd-src", text: tbaOf(M, "owners") }) : null]));
@@ -1947,7 +1947,7 @@
         : S.view === "slos" ? "The colleges whose course SLOs or objectives the database count holds: how many courses, how many sit on Active programs, and when each was loaded."
         : S.view === "dictionary" ? "Every dataset College Data Collection tracks: who holds it, how we get it today, what would improve it, how far it has come, and the evidence for each claim."
         : S.view === "apis" ? "Each API the datasets would connect through: who holds it, whether a connection is needed, its status and the evidence for that status."
-        : S.view === "outlines-blocked" ? "The courses still taught whose outline needs a person, by college. Send the PDF to COBIx in your Grok Bot chat."
+        : S.view === "outlines-blocked" ? "The courses still taught whose outline needs a person, by college. Send the PDF to COBI in your Grok Bot chat."
         : S.view ? exts().map(function (x) { return (x.ledes || {})[S.view]; }).filter(Boolean)[0] || ""
         : "Every college and continuing-education campus: what we have collected for it, how complete it is, how confident we are in it, and what is in the way." })
     ]));

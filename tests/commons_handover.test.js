@@ -117,7 +117,7 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
   check("(1) the line still reads as it did: the college, then its courses",
     OPEN.every((c) => txt(rows.querySelector('li[data-hunt-college="' + c.slug + '"] p')) === c.college + ": " + c.still_taught.map((s) => s.course).join(", ") + "."),
     txt(rows.querySelector("li[data-hunt-college] p")));
-  check("(1) the other route stays, word for word", txt(rows).includes("Send the PDF to COBIx in your Grok Bot chat."));
+  check("(1) the other route stays, word for word", txt(rows).includes("Send the PDF to COBI in your Grok Bot chat."));
 
   // ── (2) the panel opens in place ──
   check("(2) no panel shows before a course is chosen", !x.d.querySelector("#cho-panel") || x.d.querySelector("#cho-panel").hasAttribute("hidden"));
