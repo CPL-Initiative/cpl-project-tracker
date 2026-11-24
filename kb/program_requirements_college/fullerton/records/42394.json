@@ -97,7 +97,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_unit_floor",
+    "label": "The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.",
+    "words": "The description states the certificate requires a total of 16 units and the block heading says 16 units, but the table's Total Units line prints 14-16. A footnote requires 4 units of NUTR 295 F (printed 2-4), so 16 was recorded as the total. A reviewer should confirm."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

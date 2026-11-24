@@ -131,11 +131,27 @@ GAPS = {
     # 2026-11-17: gaps noted instead of rereads).
     "section_cut_off": ("The program's section runs onto a page the read did not hold, so part of its requirements "
                         "is missing from the record and its units cannot be checked against the printed total."),
+    # S720 (lane 2's cheap piles at Fullerton, kb/_program_piles_s720_fullerton.py): four gaps a reviewed list names
+    # from each record's own notes, never a pattern; collected with the gap named instead of a reread.
+    "noted_figures_differ": ("The reader's notes quote two figures from the catalog page that disagree, and the "
+                             "record's units add to one and state the other; no page read has settled which the "
+                             "program requires."),
+    "noted_unit_floor": ("The catalog requires a variable-unit course at a minimum above the units printed beside it; "
+                         "with that minimum the courses add to the printed total."),
+    "lists_not_closed": ("A choice list prints no unit figure of its own, one that depends on another choice, or "
+                         "also takes courses from another list, so the lists alone cannot add the program's units."),
+    "no_own_page_total": ("The record was read from another award's page, which prints this program's courses "
+                          "inside its own requirements and prints no total for this program."),
+    # #3753's second reader: Fullerton 18163's one total over A and B is #3755's kind (same sentence and score).
+    "pool_figure_not_read": ("The catalog prints one figure over several lists or nested options together, and the "
+                             "record adds the parts instead, so its units cannot be checked against that figure."),
 }
 ARITH_SCORE = {"major_total_differs": 30, "no_units_printed": 40, "no_units_read": 20, "no_hours_read": 20,
                "catalog_figures_differ": 50, "total_not_printed": 40, "total_differs": 50, "ge_units_not_read": 50,
                "hours_total_not_read": 40, "hours_within_printed_range": 50, "hours_total_differs": 30,
-               "lists_past_their_figure": 60, "section_cut_off": 20}
+               "lists_past_their_figure": 60, "section_cut_off": 20,
+               "noted_figures_differ": 40, "noted_unit_floor": 70, "lists_not_closed": 30, "no_own_page_total": 20,
+               "pool_figure_not_read": 40}
 MAJOR_NOT_EXACT = "the major does not match the catalog's major total exactly"
 NO_UNITS_WHY = re.compile(r"^a required course in '.*' has no units$")
 PRINTED_NO_UNITS = re.compile(r"\b(?:no|without)\s+units\b|\bunits?\s+(?:are\s+|is\s+)?not\s+(?:printed|listed|given)\b"
@@ -151,6 +167,10 @@ INCOMPLETE_READ = re.compile(
 # The S680 second reader's held answers: the two no-units records whose notes say the list is incomplete.
 HELD_INCOMPLETE = frozenset({("Butte College", "14583"), ("West Los Angeles College", "42627")})
 FOUND_SOURCE = {"sitemap_page": 100, "link_search": 100, "pdf_pages": 80}
+# S720 (#3753's second reader): a gap that says the record was read from a page another program owns or shares
+# scores its source at most 50, however the page was found.
+OTHER_PAGE_GAPS = frozenset({"no_own_page_total", "one_option_of_shared_page"})
+OTHER_PAGE_SOURCE = 50
 UNKNOWN_SOURCE = 60
 # The records whose own note says the requirements or course list may continue past the text read (COBIx's finding
 # 3 on #3497), each reviewed by a person with the words of its note: course_list_match is capped at 50 on these
@@ -206,7 +226,8 @@ def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok:
     return {"unit_arithmetic": 100 if a.get("pass") else ARITH_SCORE.get(gap, 0),
             "course_list_match": clm,
             "ge_pattern": ge, "catalog_year": 100 if year_ok in (True, None) else 60,
-            "source": FOUND_SOURCE.get(method or "", UNKNOWN_SOURCE)}
+            "source": min(FOUND_SOURCE.get(method or "", UNKNOWN_SOURCE), OTHER_PAGE_SOURCE)
+            if gap in OTHER_PAGE_GAPS else FOUND_SOURCE.get(method or "", UNKNOWN_SOURCE)}
 
 
 

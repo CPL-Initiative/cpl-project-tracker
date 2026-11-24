@@ -94,7 +94,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "no_own_page_total",
+    "label": "The record was read from another award's page, which prints this program's courses inside its own requirements and prints no total for this program.",
+    "words": "The source text is the Musical Theatre Level 2 Certificate page (program code 2C46182), not the Level 1 Certificate page. No section for the Level 1 Certificate itself appears in the text."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 50
+  }
  },
  "record": {
   "program": {
