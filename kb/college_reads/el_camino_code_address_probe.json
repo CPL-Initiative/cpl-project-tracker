@@ -1,0 +1,28 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for El Camino College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "El Camino College",
+ "questions": {
+  "code_it": "Does this page name El Camino College's IT, and under what heading?",
+  "code_tutr": "Does this page name El Camino College's TUTR, and under what heading?"
+ },
+ "keywords": [
+  "IT",
+  "TUTR"
+ ],
+ "pages": [
+  {
+   "url": "https://www.elcamino.edu/support/careers/ITech%20Exploratory%20Courses.pdf",
+   "answers": [
+    "code_it"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://catalog.elcamino.edu/preview_course_nopop.php?catoid=2&coid=2370",
+   "answers": [
+    "code_tutr"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

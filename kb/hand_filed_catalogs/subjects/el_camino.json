@@ -1792,5 +1792,21 @@
    ],
    "first_course": "WSTU 1 - Introduction of Women's Studies"
   }
+ ],
+ "code_address_tried": [
+  {
+   "code": "IT",
+   "address": "https://www.elcamino.edu/support/careers/ITech%20Exploratory%20Courses.pdf",
+   "status": "200",
+   "first_line": "",
+   "run": "45283003411"
+  },
+  {
+   "code": "TUTR",
+   "address": "https://catalog.elcamino.edu/preview_course_nopop.php?catoid=2&coid=2370",
+   "status": "200",
+   "first_line": "Select a Catalog",
+   "run": "45283003411"
+  }
  ]
 }

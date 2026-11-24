@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T22:21:19Z",
+ "written_at": "2026-11-24T00:13:36Z",
  "rows": [
   {
    "key": "requirements",
@@ -99,13 +99,13 @@
    "pair": [
     {
      "n": 3222,
-     "of": 6252,
-     "words": "titles carry a review stamp (1,582 a person's, 1,640 a cohort's); 2,970 credentials, 2,574 of 3,344 records stamped",
+     "of": 6253,
+     "words": "titles carry a review stamp (1,582 a person's, 1,640 a cohort's), counting 1 titles MAP carries with no entry yet; 2,970 credentials, 2,574 of 3,344 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1582,
-     "of": 6252,
+     "of": 6253,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -163,7 +163,7 @@
    },
    "facts": {
     "titles": 6252,
-    "backlog": 0,
+    "backlog": 1,
     "stamped": 3222,
     "person": 1582,
     "cohort": 1640,
@@ -173,8 +173,8 @@
     "records_stamped": 2574,
     "saved_at": "2026-11-21T15:42:56Z",
     "fold_at": "2026-11-23T06:19:46Z",
-    "map_titles": 5440,
-    "unclassified": 0,
+    "map_titles": 5441,
+    "unclassified": 1,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -285,7 +285,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-23T06:22:16+00:00",
+    "at": "2026-11-24T00:12:23+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -375,7 +375,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-22T22:56:49-08:00",
+    "at": "2026-11-19T06:22:43Z",
     "every_hours": null
    },
    "facts": {
@@ -468,14 +468,21 @@
    "issues": [
     {
      "n": 1,
+     "words": "scan findings to confirm or note (an official prefix on another subject)",
+     "owner": "a curator, after Jev's sitting",
+     "carry": "unsure",
+     "open": "#canonical-subj4/list/scan"
+    },
+    {
+     "n": 3,
      "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
      "owner": "a re-key of the anchor under the playbook",
      "carry": "reaches",
      "open": "#canonical-subj4/progress"
     },
     {
-     "n": 93,
-     "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 305 identities",
+     "n": 88,
+     "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 251 identities",
      "owner": "a re-mint under the playbook",
      "carry": "reaches",
      "open": "#coci-lookup/list/stray"
@@ -502,7 +509,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-23T06:19:44Z",
+    "at": "2026-11-24T00:09:16Z",
     "every_hours": 24
    },
    "facts": {
@@ -515,7 +522,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-23",
+    "scanned_at": "2026-11-24",
     "procedures_on": 6
    },
    "sources": [
@@ -710,6 +717,14 @@
       "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
       "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
       "open": "#coci-lookup/list/doubt"
+     },
+     {
+      "ref": "subjects",
+      "title": "Common Subjects Reference",
+      "n": 1,
+      "words": "scan findings to confirm or note (an official prefix on another subject)",
+      "owner": "a curator, after Jev's sitting",
+      "open": "#canonical-subj4/list/scan"
      }
     ]
    },
@@ -719,7 +734,7 @@
      {
       "ref": "subjects",
       "title": "Common Subjects Reference",
-      "n": 1,
+      "n": 3,
       "words": "curated anchor entries keyed off a Common SUBJ that changed, or in the dead key format",
       "owner": "a re-key of the anchor under the playbook",
       "open": "#canonical-subj4/progress"
@@ -727,8 +742,8 @@
      {
       "ref": "subjects",
       "title": "Common Subjects Reference",
-      "n": 93,
-      "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 305 identities",
+      "n": 88,
+      "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 251 identities",
       "owner": "a re-mint under the playbook",
       "open": "#coci-lookup/list/stray"
      }
@@ -796,8 +811,8 @@
     "title": "Program Requirements",
     "kind": "not_shrinking",
     "n": 2928,
-    "was": 2820,
-    "since": "2026-11-16",
+    "was": 2828,
+    "since": "2026-11-17",
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -808,7 +823,7 @@
     "kind": "not_shrinking",
     "n": 597,
     "was": 499,
-    "since": "2026-11-16",
+    "since": "2026-11-17",
     "words": "credentials with no Common SUBJ (450 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"

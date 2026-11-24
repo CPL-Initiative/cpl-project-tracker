@@ -1,23 +1,23 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-23T19:33:10Z",
+ "written_at": "2026-11-24T00:12:58Z",
  "sources": {
   "procedures_run": "2026-11-23T19:33:03Z",
-  "suggestions": "2026-11-22T21:51:52Z",
-  "statewide": "2026-11-23T06:18:44",
-  "audit": "2026-11-23T06:22:23+00:00",
+  "suggestions": "2026-11-24T00:12:51Z",
+  "statewide": "2026-11-24T00:03:44",
+  "audit": "2026-11-24T00:12:31+00:00",
   "assignments": {
    "read": "live",
-   "at": "2026-11-23T19:33:07Z",
+   "at": "2026-11-24T00:12:56Z",
    "decided": []
   }
  },
  "tiles": {
   "names": {
    "n": 6252,
-   "of": 6252,
-   "waiting": 0
+   "of": 6253,
+   "waiting": 1
   },
   "aligned": {
    "n": 0,
@@ -403,6 +403,7 @@
   "Baldy View Regional Occupational Program",
   "Birmingham Community Charter High School",
   "Boatworks 101",
+  "Cabrillo College Noncredit",
   "Cajon High School",
   "California Department of Forestry and Fire Protection (CAL FIRE)",
   "California State Fire Training (SFT)",
@@ -470,7 +471,7 @@
   "Villa Park High School"
  ],
  "no_cr": {
-  "of": 3065,
+  "of": 3066,
   "owners_read": "2026-10-26T23:35Z",
   "rows": [
    {

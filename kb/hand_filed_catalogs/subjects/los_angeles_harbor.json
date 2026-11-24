@@ -1,0 +1,25 @@
+{
+ "_what": "Los Angeles Harbor College's subject headings, filed by kb/_subject_code_address_probe.py from pages read one by one (no course-descriptions index is filed for this college).",
+ "college": "Los Angeles Harbor College",
+ "run": "45283003411",
+ "source": [],
+ "subjects": 0,
+ "with_heading": 0,
+ "rows": [],
+ "code_address_tried": [
+  {
+   "code": "E.S.L.",
+   "address": "https://lahc.edu/academics/aos/esl",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45283003411"
+  },
+  {
+   "code": "NRS HCA",
+   "address": "https://www.lahc.edu/academics/aos/cna-hha",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45283003411"
+  }
+ ]
+}

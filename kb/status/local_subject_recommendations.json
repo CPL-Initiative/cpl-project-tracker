@@ -4,15 +4,15 @@
  "measured_on_titled_codes": {
   "course_joins": {
    "few or mixed": {
-    "right": 374,
-    "asked": 648,
-    "share": 0.577,
+    "right": 373,
+    "asked": 649,
+    "share": 0.575,
     "level": "Low"
    },
    "most courses agree": {
-    "right": 583,
-    "asked": 660,
-    "share": 0.883,
+    "right": 586,
+    "asked": 663,
+    "share": 0.884,
     "level": "Medium"
    }
   },
@@ -38,9 +38,9 @@
   },
   "other_colleges": {
    "all agree": {
-    "right": 303,
-    "asked": 310,
-    "share": 0.977,
+    "right": 306,
+    "asked": 313,
+    "share": 0.978,
     "level": "High"
    },
    "mixed": {
@@ -50,9 +50,9 @@
     "level": "Medium"
    },
    "one college": {
-    "right": 135,
-    "asked": 168,
-    "share": 0.804,
+    "right": 137,
+    "asked": 170,
+    "share": 0.806,
     "level": "Medium"
    }
   },
@@ -72,9 +72,9 @@
   },
   "sibling": {
    "one letter apart": {
-    "right": 50,
-    "asked": 75,
-    "share": 0.667,
+    "right": 54,
+    "asked": 79,
+    "share": 0.684,
     "level": "Medium"
    },
    "same letters": {
@@ -122,9 +122,9 @@
   },
   "common_code_from_the_category": {
    "right": 16,
-   "wrong": 25,
-   "asked": 41,
-   "share": 0.39,
+   "wrong": 24,
+   "asked": 40,
+   "share": 0.4,
    "level": "Low"
   },
   "note": "Measured on the noncredit-only codes that hold a catalog heading (titles) or a common code from the subject map (codes), each left out of its own vote. A title condition right less than half the time is a guess: it stays measured here, used false, and gives no recommendation. The common code's answer key is the subject map, which reads a code without its credit or noncredit band (f-subject-map-ignores-credit-band-s698), so its share is a floor, and it reads Low."
@@ -203,59 +203,42 @@
   },
   "rows_the_subject_map_settles": {
    "own_courses": {
-    "right": 156,
-    "asked": 173
+    "right": 153,
+    "asked": 169
    },
    "same_code_statewide": {
     "right": 36,
     "asked": 46
    },
    "title": {
-    "right": 477,
-    "asked": 506
+    "right": 473,
+    "asked": 502
    }
   }
  },
  "web_searches_filed": 108,
  "totals": {
   "common_high": 198,
-  "common_low": 171,
-  "common_medium": 434,
+  "common_low": 170,
+  "common_medium": 433,
   "common_no_code_yet": 6,
-  "common_none": 177,
-  "no_common": 986,
-  "no_title": 307,
+  "common_none": 176,
+  "no_common": 983,
+  "no_title": 301,
   "noncredit_common": 142,
   "noncredit_no_common": 174,
   "noncredit_no_title": 50,
   "noncredit_title": 3,
   "noncredit_title_unused_condition": 11,
-  "title_high": 118,
-  "title_low": 89,
-  "title_medium": 20,
+  "title_high": 115,
+  "title_low": 87,
+  "title_medium": 19,
   "title_none": 80
  },
  "colleges": [
   {
    "slug": "cerritos",
    "rows": [
-    {
-     "code": "ESL",
-     "title": {
-      "title": "English as a Second Language",
-      "level": "High",
-      "from": "other_colleges",
-      "why": "other colleges: 5 of 5 other colleges (all agree). web search agrees.",
-      "also": [],
-      "search": {
-       "query": "Cerritos College ESL pronunciation plus multilingual courses",
-       "searched_on": "2026-11-21",
-       "result_title": "English as a Second Language (ESL)/English for Multilingual Students (EMLS)",
-       "result_url": "https://www.cerritos.edu/esl/",
-       "where": "college site"
-      }
-     }
-    },
     {
      "code": "FIN",
      "common": {
@@ -284,23 +267,6 @@
       "level": "Medium",
       "from": "own_courses",
       "why": "7 of 7 of its courses with an M-ID sit under MANU."
-     }
-    },
-    {
-     "code": "POL",
-     "title": {
-      "title": "Political Science",
-      "level": "High",
-      "from": "course_joins",
-      "why": "course joins: 4 of 5 joined courses (most courses agree). sibling, web search agrees.",
-      "also": [],
-      "search": {
-       "query": "Cerritos College POL California state local government courses",
-       "searched_on": "2026-11-21",
-       "result_title": "Political Science Course Descriptions",
-       "result_url": "https://www.cerritos.edu/political-science/course-descriptions.htm",
-       "where": "college site"
-      }
      }
     },
     {
@@ -336,35 +302,6 @@
       "level": "Medium",
       "from": "own_courses",
       "why": "15 of 18 of its courses with an M-ID sit under CRIM."
-     }
-    },
-    {
-     "code": "DATA",
-     "title": {
-      "title": "Computer Science",
-      "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
-      "also": [
-       {
-        "title": "Data Science",
-        "from": "web_search"
-       }
-      ],
-      "search": {
-       "query": "Clovis Community College Data Science DATA \"Foundations of Data Science\" (cloviscollege.edu, scccd.edu only)",
-       "searched_on": "2026-11-21",
-       "result_title": "spring 2026",
-       "result_url": "https://www.cloviscollege.edu/_uploaded-files/_documents/class-schedule/2026-spring-class-schedule.pdf",
-       "where": "college site"
-      }
-     },
-     "common": {
-      "code": "COMP",
-      "discipline": "Computer Science",
-      "level": "Low",
-      "from": "title",
-      "why": "The title names the discipline Computer Science."
      }
     },
     {
@@ -1572,21 +1509,6 @@
       "level": "Medium",
       "from": "own_courses",
       "why": "14 of 17 of its courses with an M-ID sit under IDST."
-     }
-    },
-    {
-     "code": "ESL",
-     "title": {
-      "title": "English as a Second Language",
-      "level": "Low",
-      "from": "other_colleges",
-      "why": "other colleges: 5 of 5 other colleges (all agree). Another source reads differently.",
-      "also": [
-       {
-        "title": "American Language",
-        "from": "course_joins"
-       }
-      ]
      }
     },
     {
@@ -3191,23 +3113,6 @@
       "level": "Medium",
       "from": "same_code_statewide",
       "why": "2 of 3 courses under this code statewide sit under GEOG."
-     }
-    },
-    {
-     "code": "ESL",
-     "title": {
-      "title": "English as a Second Language",
-      "level": "High",
-      "from": "other_colleges",
-      "why": "other colleges: 5 of 5 other colleges (all agree). course joins agrees.",
-      "also": [],
-      "search": {
-       "query": "Los Angeles Harbor College English as a Second Language ESL courses (lahc.edu only)",
-       "searched_on": "2026-11-21",
-       "result_title": null,
-       "result_url": null,
-       "where": "none"
-      }
      }
     },
     {
@@ -5673,23 +5578,6 @@
       "level": "Medium",
       "from": "same_code_statewide",
       "why": "4 of 4 courses under this code statewide sit under BIOL."
-     }
-    },
-    {
-     "code": "POL",
-     "title": {
-      "title": "Political Science",
-      "level": "Medium",
-      "from": "sibling",
-      "why": "sibling: code POLS at the same college (one letter apart).",
-      "also": [],
-      "search": {
-       "query": "Los Angeles Southwest College lasc.edu political science \"POL SCI\" courses area of study",
-       "searched_on": "2026-11-21",
-       "result_title": null,
-       "result_url": null,
-       "where": "none"
-      }
      }
     },
     {
@@ -8817,16 +8705,6 @@
       "level": "Medium",
       "from": "same_code_statewide",
       "why": "5 of 6 courses under this code statewide sit under EDUC."
-     }
-    },
-    {
-     "code": "ZOOL",
-     "common": {
-      "code": "BIOL",
-      "discipline": "Biological Sciences",
-      "level": "Medium",
-      "from": "same_code_statewide",
-      "why": "9 of 10 courses under this code statewide sit under BIOL."
      }
     }
    ]

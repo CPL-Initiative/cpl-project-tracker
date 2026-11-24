@@ -1231,6 +1231,27 @@
    "status": "404",
    "first_line": null,
    "run": "45275042093"
+  },
+  {
+   "code": "PE/A",
+   "address": "https://catalog.swccd.edu/course-descriptions/es_a/",
+   "status": "200",
+   "first_line": "",
+   "run": "45283003411"
+  },
+  {
+   "code": "PE/D",
+   "address": "https://catalog.swccd.edu/course-descriptions/danc/",
+   "status": "200",
+   "first_line": "Dance (DANC)",
+   "run": "45283003411"
+  },
+  {
+   "code": "PE/I",
+   "address": "https://catalog.swccd.edu/course-descriptions/es_i/",
+   "status": "200",
+   "first_line": "Exercise Science/Intercollegiate (ES/I)",
+   "run": "45283003411"
   }
  ]
 }
