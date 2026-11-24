@@ -117,7 +117,7 @@ const press = (w, el) => el.dispatchEvent(new w.Event("click", { bubbles: true }
   const dr = Array.from(d.querySelectorAll(".csb-codes tbody tr"));
   check("(2) ⭐ every row of the no-title list carries an Edit word", dr.length === 3 && dr.every((r) => r.querySelector('button[data-csb-edit="yes"]')));
   press(x.w, dr[0].querySelector('button[data-csb-edit="yes"]')); await settle();
-  check("(1) the panel opens over the no-title list", d.getElementById("csb-panel") && txt(d.getElementById("csb-h")) === "Subject codes with no title" && /^commons\/subjects\/disagree\/[a-z]+\/[A-Z]+$/.test(x.X.address()));
+  check("(1) the panel opens over the no-title list", d.getElementById("csb-panel") && txt(d.getElementById("csb-h")) === "Subject titles to check" && /^commons\/subjects\/disagree\/[a-z]+\/[A-Z]+$/.test(x.X.address()));
   x = load("#commons/subjects/alpha");
   await x.X.boot(x.root, "alpha"); await settle();
   check("(2) every row of a college's list carries an Edit word", Array.from(x.d.querySelectorAll(".csb-codes tbody tr")).every((r) => r.querySelector('button[data-csb-edit="yes"]')));
@@ -147,7 +147,7 @@ const press = (w, el) => el.dispatchEvent(new w.Event("click", { bubbles: true }
   check("(7) ⭐ all/<slug>/<code> draws the panel over the front list on arrival", x.d.getElementById("csb-panel") && txt(x.d.getElementById("csb-h")) === "Subjects" && x.X.address() === "commons/subjects/all/beta/WELD");
   x = load("#commons/subjects/disagree/beta/WELD");
   await x.X.boot(x.root, "disagree/beta/WELD"); await settle();
-  check("(7) <list>/<slug>/<code> draws the panel over that list on arrival", x.d.getElementById("csb-panel") && txt(x.d.getElementById("csb-h")) === "Subject codes with no title");
+  check("(7) <list>/<slug>/<code> draws the panel over that list on arrival", x.d.getElementById("csb-panel") && txt(x.d.getElementById("csb-h")) === "Subject titles to check");
   x = load("#commons/subjects/all/nowhere/WELD");
   await x.X.boot(x.root, "all/nowhere/WELD"); await settle();
   check("(7) a panel address naming no college draws the list and no panel", !x.d.getElementById("csb-panel") && x.X.address() === "commons/subjects");

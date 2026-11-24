@@ -340,15 +340,15 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
 
   /* (13) Accept on the row */
   const RECS2 = { colleges: [{ slug: "alpha", rows: [{ code: "MATH",
-    title: { title: "Mathematics", level: "Medium", confidence: 0.8, from: "web_search", candidates: [
-      { title: "Mathematics", confidence: 0.8, level: "Medium", from: ["web_search"] }, { title: "Math Lab", confidence: 0.575, level: "Low", from: ["course_joins"] }],
+    title: { title: "Mathematics", level: "Medium", confidence: 0.7, from: "web_search", candidates: [
+      { title: "Mathematics", confidence: 0.7, level: "Medium", from: ["web_search"] }, { title: "Math Lab", confidence: 0.575, level: "Low", from: ["course_joins"] }],
       search: { result_url: "https://alpha.edu/math", result_title: "Mathematics" } },
     common: { code: "MATH", discipline: "Mathematics", level: "Medium", confidence: 0.91, from: "own_courses" } }] }] };
   x = load("#commons/subjects/disagree", { sess: ME, files: { "kb/status/local_subject_recommendations.json": RECS2 } });
   await x.M.boot(); await settle();
   let m13row = x.d.querySelector('.csb-codes tr[data-code="MATH"]');
-  check("(13) ⭐ the title cell shows each candidate with a 0-100 bar and its number", m13row && Array.from(m13row.querySelectorAll(".csb-cands .cmn-cbar")).map((b) => b.getAttribute("data-conf")).join(",") === "80,58"
-    && /confidence 80 of 100/.test(m13row.querySelector(".csb-cands .cmn-cbar").getAttribute("aria-label")), m13row && txt(m13row.children[2]));
+  check("(13) ⭐ the title cell shows each candidate with a 0-100 bar and its number", m13row && Array.from(m13row.querySelectorAll(".csb-cands .cmn-cbar")).map((b) => b.getAttribute("data-conf")).join(",") === "70,58"
+    && /confidence 70 of 100/.test(m13row.querySelector(".csb-cands .cmn-cbar").getAttribute("aria-label")), m13row && txt(m13row.children[2]));
   check("(13) the common code's recommendation carries a bar too", m13row.children[3].querySelector(".cmn-cbar") && m13row.children[3].querySelector(".cmn-cbar").getAttribute("data-conf") === "91");
   m13row.querySelector('button[data-csb-accept="row"]').click(); await settle();
   let posts13 = writesOf(x), b13 = posts13[0] && JSON.parse(posts13[0].body);
@@ -367,6 +367,21 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   x.d.querySelector('.csb-codes tr[data-code="MATH"] button[data-csb-accept="row"]').click(); await settle();
   check("(13) ⭐ signed out, Accept writes nothing and says to sign in", writesOf(x).length === 0
     && /sign-in has ended|Sign in/.test(txt(x.d.querySelector('.csb-codes tr[data-code="MATH"] .csb-acc-msg'))), txt(x.d.querySelector('.csb-codes tr[data-code="MATH"] .csb-acc-msg')));
+
+  /* (14) Sam, S722: "save all titles and just flag for possible action those that are below 80" */
+  const RECS3 = JSON.parse(JSON.stringify(RECS2));
+  RECS3.colleges[0].rows[0].title.candidates[0].confidence = 0.86;
+  x = load("#commons/subjects/disagree", { files: { "kb/status/local_subject_recommendations.json": RECS3 } });
+  await x.M.boot(); await settle();
+  check("(14) ⭐ a title Sky rates 80 or more stands: it leaves the list to check", !x.d.querySelector('.csb-codes tr[data-code="MATH"]') && /80 or more/.test(txt(x.d.getElementById("csb-check-rule"))));
+  x = load("#commons/subjects/alpha", { files: { "kb/status/local_subject_recommendations.json": RECS3 } });
+  await x.M.boot(); await settle();
+  const sky = x.d.querySelector('.csb-codes tr[data-code="MATH"] td[data-sky="title"]');
+  check("(14) ⭐ on the college's list it reads as the title, with its bar, marked as Sky's", sky && /^Mathematics 86 Sky's title$/.test(txt(sky)), txt(sky));
+  x = load("#commons/subjects/alpha", { files: { "kb/status/local_subject_recommendations.json": RECS2 } });
+  await x.M.boot(); await settle();
+  check("(14) a title under 80 does not stand: the row still offers its candidates", !x.d.querySelector('.csb-codes tr[data-code="MATH"] td[data-sky]')
+    && x.d.querySelectorAll('.csb-codes tr[data-code="MATH"] .csb-cands li').length === 2);
 
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "  [" + r[2] + "]")));

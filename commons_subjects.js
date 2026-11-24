@@ -486,7 +486,7 @@
     catalog: ["in the catalog only", function (r) { return r.side === "catalog"; }],
     state: ["in COCI only", function (r) { return r.side === "state"; }],
     incat: ["in the catalog", function (r) { return r.side !== "state"; }],
-    titled: ["with a local title", function (r) { var sv = savedOf(r); return !needsTitle(r) || !!(sv && sv.title); }],
+    titled: ["with a local title", function (r) { var sv = savedOf(r), sk = skyTitle(r); return !needsTitle(r) || !!(sv && sv.title) || !!(sk && sk.stands); }],
     common: ["with a common subject code", function (r) { var sv = savedOf(r); return !!r.common || !!(sv && sv.common); }],
     saved: ["with a person’s save", function (r) { return !!savedOf(r); }],
     attention: ["that need attention", function (r) { return !!VIEW.W && needsAttention(r); }]
@@ -496,7 +496,21 @@
      reflected in the numbers (going in the right direction) shown in the links"). Each figure is counted from the rows
      with the live saves on top, by the same test the list it opens applies, so a figure always equals its list and
      moves the moment a save lands or is taken back. With no save since the build it equals the file's own totals. ── */
-  function untitledNow(r) { var sv = savedOf(r); return needsTitle(r) && !(sv && sv.title); }
+  /* Sky's title stands (Sam, S722, 2026-11-24: "Yes save any title 90 or above. Really it should save all titles and
+     just flag for possible action those that are below 80"): a code with no title and no person's save takes Sky's most
+     confident title as its title; a code under STANDS (80 on the 0-100 bar), or with no recommendation, stays in the
+     list to check. A person's save still wins, and Sky's title is marked as Sky's. A recommendation the file gives no
+     number for stays in the list to check: the bar is the measure, and no level word stands in for it. */
+  var STANDS = 0.80;
+  function skyTitle(r) {
+    if (!needsTitle(r)) return null;
+    var sv = savedOf(r);
+    if (sv && sv.title) return null;
+    var top = candidatesOf(recOf(r).title)[0];
+    if (!top || !top.title) return null;
+    return { title: top.title, confidence: top.confidence, stands: top.confidence != null && top.confidence >= STANDS };
+  }
+  function untitledNow(r) { var sv = savedOf(r), sk = skyTitle(r); return needsTitle(r) && !(sv && sv.title) && !(sk && sk.stands); }
   function figures(M) {
     var F = { named: 0, withCommon: 0, untitled: 0, notInCatalog: 0, notRead: 0, blocked: 0, saved: 0, colleges: 0, collegesNamed: 0, by: {} };
     ((M && M.list) || []).forEach(function (x) {
@@ -759,7 +773,7 @@
   }
   function acceptRow(r) {
     var sv = savedOf(r), rec = recOf(r), top = candidatesOf(rec.title)[0];
-    var t = needsTitle(r) && !(sv && sv.title) && top ? top.title : "";
+    var t = untitledNow(r) && top ? top.title : "";
     var v = acceptValue(r, t, true);
     if (!v.local_title && !(v.common_code && !(sv && sv.common) && !r.common)) return null;
     var what = [v.local_title, v.common_code].filter(Boolean).join(" and ");
@@ -787,8 +801,10 @@
           : fmt(r.catalog_courses) + (r.side === "both" ? " in the catalog, " + fmt(r.state_courses) + " in COCI" + bands(r) : "")
             + (r.address && !r.catalog_courses ? (r.page_codes && r.page_codes.length ? "; its page prints its courses under " + r.page_codes.join(" and ") : "; its page is not read yet") : "");
         var sv = savedOf(r);
-        var st = needsTitle(r) && !(sv && sv.title) ? stateOf(r) : null;
+        var sk = skyTitle(r);
+        var st = untitledNow(r) ? stateOf(r) : null;
         var title = sv && sv.title ? el("td", { "data-saved": "title" }, [sv.title, " ", savedLine(sv)])
+          : sk && sk.stands ? el("td", { "data-sky": "title" }, [sk.title, " ", bar(sk.confidence, sk.title), " ", el("span", { cls: "csb-sub csb-sky", text: "Sky's title" })])
           : st ? el("td", { cls: "csb-tba" }, [
           titleCands(r),
           r.candidate ? el("span", { cls: "csb-sub", text: "A line near it in the catalog: " + r.candidate }) : null,
@@ -2427,16 +2443,16 @@
     M.list.forEach(function (x) { all = all.concat(x.rows); });
     var untitled = F.untitled, nSaved = F.saved;   /* counted as the lists they open count, the live saves on top */
     var wrap = el("div", { cls: "cmn-wrap csb" });
-    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : S.view === SRC ? "Colleges by source" : S.view === MQ ? "MQ disciplines" : ""));
+    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Titles to check" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : S.view === SRC ? "Colleges by source" : S.view === MQ ? "MQ disciplines" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : S.view === MQ ? "Minimum Qualifications disciplines" : "Subjects" }),
+      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject titles to check" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : S.view === MQ ? "Minimum Qualifications disciplines" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
       el("p", { cls: "cmn-lede", text: S.view === MQ ? MQ_LEDE : "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading, and Sky scores each code’s common subject code. A code is settled once that score is Confident, 90% or more, from the evidence or from a person’s confirm or save. Needs attention counts each college’s codes below Confident or with no title." })
     ]));
     if (S.view !== MQ) wrap.appendChild(el("p", { cls: "csb-stamp" }, [
       count(F.named, "", "titled", fmt(F.named) + " codes with a local title. Show them."), " local titles at ", el("strong", { text: fmt(F.collegesNamed) + " of " + fmt(F.colleges) }),
       " colleges with a catalog on file (" + fmt(T.courses) + " courses, ", count(T.catalog_codes, "", "incat", fmt(T.catalog_codes) + " subject codes in the catalogs. Show them."), " subject codes in the catalogs). ",
-      go("#commons/subjects/" + DISAGREE, fmt(untitled) + " codes with no title"),
+      go("#commons/subjects/" + DISAGREE, fmt(untitled) + " titles to check"),
       " (" + fmt(F.notInCatalog) + " not in catalog, " + fmt(F.notRead) + " not read yet, " + fmt(F.blocked) + " blocked). "
         + (F.notRead ? "Sky reads the codes not read yet in the nightly data collection. " : ""),
       count(F.withCommon, "", "common", fmt(F.withCommon) + " codes with a common subject code. Show them."), " codes have a common subject code, each with Sky’s confidence score. ",
@@ -2493,11 +2509,12 @@
       /* Every row with no title, in or out of the catalog (#3655, item 7: a code in both with no title was dropped
          by the old one-sided filter). Sam's rows first: Not in catalog, then Blocked, then Sky's Not read yet. */
       var order = { not_in_catalog: 0, blocked: 1, not_read: 2 };
+      wrap.appendChild(el("p", { cls: "csb-note", id: "csb-check-rule", text: "Sky’s title stands for every code it rates 80 or more on the confidence bar, marked as Sky’s, and a person’s save replaces it. These codes are below 80 or have no recommendation: Accept a title, or Edit." }));
       wrap.appendChild(bandBar(all.filter(untitledNow)));
       wrap.appendChild(codeTable(all.filter(untitledNow).filter(function (r) { return inBand(r, S.band); }).sort(function (a, b) {
         return (order[a.title_state] == null ? 2 : order[a.title_state]) - (order[b.title_state] == null ? 2 : order[b.title_state])
           || a.college.localeCompare(b.college) || String(a.code).localeCompare(String(b.code));
-      }), "Subject codes with no title"));
+      }), "Subject titles to check"));
     } else {
       wrap.appendChild(collegeTable(M, M.list));
       wrap.appendChild(bandBar(all));

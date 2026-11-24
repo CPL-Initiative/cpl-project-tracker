@@ -81,7 +81,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   const by = (t) => links.find((l) => txt(l).indexOf(t) >= 0 && !l.hasAttribute("data-onpage"));
   check("(2) ⭐ the drafted titles open the subjects list", by("3 local titles") && by("3 local titles").getAttribute("href") === "#commons/subjects");
   check("(2) ⭐ the colleges open the subjects list", by("1 of 2 colleges") && by("1 of 2 colleges").getAttribute("href") === "#commons/subjects");
-  check("(2) the codes with no title open their list, each reason counted", by("3 codes with no title") && by("3 codes with no title").getAttribute("href") === "#commons/subjects/disagree"
+  check("(2) the titles to check open their list, each reason counted", by("3 titles to check") && by("3 titles to check").getAttribute("href") === "#commons/subjects/disagree"
     && /\(1 not in catalog, 2 not read yet, 0 blocked\)/.test(txt(first)) && !/on hold/.test(txt(first)));
   check("(2) Step a's figure opens the Common Subjects Reference", links.some((l) => l.getAttribute("href") === "#canonical-subj4" && /disciplines settled/.test(txt(l))));
   check("(2) the card names who does each check", /Owner: the Courses bot/.test(txt(first)) && /Who: Sky/.test(txt(first)) && /(Owner: a curator|Done: all)/.test(txt(first)));
@@ -97,7 +97,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   const ql = quick ? Array.from(quick.querySelectorAll("a[data-onpage]")) : [];
   check("(12) ⭐ the quick links sit at the top of the card, before the Why list and the stages", quick && first.querySelector(".cmf-body").firstElementChild === quick && ql.length >= 2 && ql.length <= 5);
   check("(12) ⭐ each quick link carries its live count and points to a check that exists", ql.every((l) => /^[\d,]+ /.test(txt(l)) && first.querySelector("#" + l.getAttribute("data-onpage") + ".cmf-check"))
-    && ql.some((l) => txt(l) === "3 codes with no title" && l.getAttribute("data-onpage") === "cmf-subj-check-1"), ql.map(txt).join(" | "));
+    && ql.some((l) => txt(l) === "3 titles to check" && l.getAttribute("data-onpage") === "cmf-subj-check-1"), ql.map(txt).join(" | "));
   const sb = Array.from(first.querySelectorAll("button.cmf-stage-b"));
   check("(12) ⭐ Collect, Curate and Connect start folded, each behind a button with aria-expanded", sb.length === 3 && sb.every((b) => b.getAttribute("aria-expanded") === "false"
     && d.getElementById(b.getAttribute("aria-controls")).hasAttribute("hidden")) && !first.querySelector("#cmf-subj-quick").closest("[hidden]"));
@@ -108,7 +108,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(12) ⭐ a quick link opens its stage, scrolls to its check and focuses it", collectB.getAttribute("aria-expanded") === "true" && !d.getElementById("cmf-subj-stage-collect").hasAttribute("hidden")
     && d.activeElement && d.activeElement.tagName === "A" && d.getElementById("cmf-subj-check-1").querySelector(".cmf-act").contains(d.activeElement)
     && d.activeElement.classList.contains("cmf-hl"));
-  check("(12) ⭐ S722, Sam: a quick link drops you on a link, never bare text, and highlights it (codes with no title lands on that list's link)",
+  check("(12) ⭐ S722, Sam: a quick link drops you on a link, never bare text, and highlights it (titles to check lands on that list's link)",
     toTitles.getAttribute("data-onpage-to") === d.activeElement.getAttribute("href") && d.activeElement.getAttribute("href") === "#commons/subjects/disagree");
   d.activeElement.dispatchEvent(new x.w.FocusEvent("blur"));
   check("(12) the highlight leaves with the focus", !d.querySelector(".cmf-hl"));
@@ -243,7 +243,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   const states = Array.from(d.querySelectorAll(".csb-codes tbody tr")).map((r) => r.getAttribute("data-title-state"));
   check("(7) ⭐ the list holds every code with no title, in or out of the catalog, a person's rows first",
     sides.length === 3 && states.join(",") === "not_in_catalog,not_read,not_read" && sides.indexOf("both") >= 0, states.join(",") + " / " + sides.join(","));
-  check("(7) its heading says what it lists", txt(d.getElementById("csb-h")) === "Subject codes with no title");
+  check("(7) its heading says what it lists", txt(d.getElementById("csb-h")) === "Subject titles to check");
 
   // Noncredit (S701): the hold lifted (r-noncredit-title-list-go-sam-2026-11-22). A noncredit-only untitled code reads its
   // true reason; its courses count noncredit and noncredit enhanced apart; its COCI categories show with their MQ discipline.
@@ -268,7 +268,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(8) ⭐ a category with no common code shows by name and no code, beside the categories most courses first",
     /COCI noncredit categories: Workforce Preparation \(5\), Parenting \(2\)\. No noncredit MQ discipline is named for Workforce Preparation, and no common subject code yet\./.test(txt(ncw.children[4]))
     && /^No common subject code yet\. The category has no common subject code yet: .*Workforce Preparation \(5 of 7 noncredit courses, 71%\)\.$/.test(txt(ncw.children[3].querySelector('.csb-rec[data-rec="common-none"]'))));
-  check("(8) the stamp's reasons still sum to the codes with no title, and none is on hold", /3 codes with no title \(1 not in catalog, 2 not read yet, 0 blocked\)\./.test(txt(x.d.querySelector(".csb-stamp"))));
+  check("(8) the stamp's reasons still sum to the titles to check, and none is on hold", /3 titles to check \(1 not in catalog, 2 not read yet, 0 blocked\)\./.test(txt(x.d.querySelector(".csb-stamp"))));
   x = load("#commons/subjects/alpha", { "kb/status/local_subject_titles.json": NC });
   await x.M.boot(); await settle();
   check("(8) ⭐ a code's credit and noncredit courses are counted apart, with its category's MQ discipline and code", /\(1 credit, 1 noncredit\)/.test(txt(x.d.querySelector('.csb-codes tr[data-code="ENGL"]').children[4]))

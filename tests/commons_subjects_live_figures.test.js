@@ -3,7 +3,7 @@
 //
 // WHAT THIS GUARDS (each a way a save would leave a figure behind the list it opens):
 //   (1) ⭐ with no save since the build, every figure equals the file's own totals;
-//   (2) ⭐ a Save of a local title and a common code moves the stamp at once: local titles +1, codes with no title -1
+//   (2) ⭐ a Save of a local title and a common code moves the stamp at once: local titles +1, titles to check -1
 //       (and its reason), codes with a common subject code +1, codes settled by a save +1; the college's row moves
 //       the same way, and each figure still equals the rows its list shows;
 //   (3) ⭐ Take it back moves every one of them back;
@@ -96,7 +96,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
 function stamp(x) {
   const s = txt(x.d.querySelector(".csb-stamp"));
   const n = (re) => { const m = re.exec(s); return m ? Number(m[1].replace(/,/g, "")) : null; };
-  return { named: n(/^([\d,]+) local titles/), untitled: n(/([\d,]+) codes with no title/), nic: n(/\(([\d,]+) not in catalog/),
+  return { named: n(/^([\d,]+) local titles/), untitled: n(/([\d,]+) titles to check/), nic: n(/\(([\d,]+) not in catalog/),
     common: n(/([\d,]+) codes have a common subject code/), saved: n(/([\d,]+) codes? carr(?:y|ies) a person’s save/) || 0, text: s };
 }
 function alphaTitled(x) {
@@ -131,7 +131,7 @@ async function listed(x, pick) {
     && after.common === before.common + 1 && after.saved === before.saved + 1, JSON.stringify([before, after]));
   check("(2) ⭐ the college's row moves the same way", alphaTitled(x) === 4, String(alphaTitled(x)));
   x.X().open("disagree"); await settle();
-  check("(2) the list of codes with no title drops the saved code and equals its figure",
+  check("(2) the list of titles to check drops the saved code and equals its figure",
     !x.d.querySelector('.csb-codes tr[data-code="MATH"]') && x.d.querySelectorAll(".csb-codes tbody tr[data-code]").length === after.untitled);
 
   /* (4) the held codes, in the same visit */
@@ -155,7 +155,7 @@ async function listed(x, pick) {
   await x.M.boot(); await settle();
   const fm = x.d.querySelector("#cmf-subj-titles"), fh = x.d.querySelector("#cmf-subj-held");
   check("(6) ⭐ the Commons front's Subjects card shows the live counts",
-    fm && /^4 local titles at 1 of 2 colleges/.test(txt(fm)) && /2 codes with no title/.test(txt(fm))
+    fm && /^4 local titles at 1 of 2 colleges/.test(txt(fm)) && /2 titles to check/.test(txt(fm))
     && fh && /^7 courses the M-ID mint holds wait on 2 local subject codes/.test(txt(fh)), txt(fm) + " | " + txt(fh));
   const card = x.d.querySelector('.cmf-card[data-key="subjects"]');
   check("(6) ⭐ the card's headline and level line read the live levels: the saved pair is Confident",

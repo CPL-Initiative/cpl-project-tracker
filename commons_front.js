@@ -1017,7 +1017,7 @@
   function subjQuick(L, LT, HC, R, all) {
     return quickLinks("subj", [
       { check: 2, n: L && L.codes ? L.codes.Unsure : null, text: "local codes with an Unsure common code", to: "#commons/subjects/statewide" },
-      { check: 1, n: LT ? LT.untitled : null, text: "codes with no title", to: "#commons/subjects/disagree" },
+      { check: 1, n: LT ? LT.untitled : null, text: "titles to check", to: "#commons/subjects/disagree" },
       { check: 3, n: HC ? HC.held : null, text: "courses the M-ID mint holds", to: "#commons/subjects/held" },
       { check: 1, n: LT && all ? all - LT.collegesNamed : null, text: "colleges with no catalog read yet", to: "#collect" },
       { check: 4, n: R ? R.mids - R.ready : null, text: R ? R.code + " M-IDs not ready to re-mint" : "" }]);
@@ -1069,7 +1069,7 @@
   function subjTitleKids(LT) {
     return LT ? [a("#commons/subjects", fmt(LT.named) + " local titles"), " at ", a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges"),
       " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading. For each of the ",
-      a("#commons/subjects/disagree", fmt(LT.untitled) + " codes with no title"),
+      a("#commons/subjects/disagree", fmt(LT.untitled) + " titles to check"),
       " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked), Sky recommends a title, and a person’s save confirms it."]
       : ["Local subject titles: TBA."];
   }
@@ -1100,7 +1100,7 @@
         "A person’s hand-over, where a site blocks our reader.",
         "COCI and the MIS reports carry no subject names.",
         "Who: Sky, in the nightly data collection."]),
-      act([["The colleges and their titles", "#commons/subjects"], ["Codes with no title", "#commons/subjects/disagree"], ["Hand over a file or link", "#collect"]])])]), stageFold("subj", "Curate", [checkBox("subj", 2, [
+      act([["The colleges and their titles", "#commons/subjects"], ["Titles to check", "#commons/subjects/disagree"], ["Hand over a file or link", "#collect"]])])]), stageFold("subj", "Curate", [checkBox("subj", 2, [
       checkHead(2, "A Confident common code for every local code", L ? [el("strong", { text: fmt(L.pairs.Confident) }), " of " + fmt(L.totalPairs) + " pairs"] : ["TBA"]),
       L ? stack(L) : null,
       L ? el("p", { cls: "cmf-sub", id: "cmf-subj-levels", text: LEVEL_WORDS.map(function (k) { return k + " " + fmt(L.pairs[k]); }).join(" · ") }) : null,
