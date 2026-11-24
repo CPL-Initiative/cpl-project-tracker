@@ -122,6 +122,9 @@
     ".ccl-band-accept { font:inherit; background:none; border:0; padding:0; cursor:pointer; color:var(--accent-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
     ".ccl-band-accept:focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }",
     ".ccl-band-said { color: var(--text-body); font-size:.82rem; }",
+    // Accept and Move on a course row (S723): words in a row of their own under the identity chips.
+    ".ccl-row-acts { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:center; margin-top:4px; }",
+    ".ccl-row-acts .ccl-cc-in { flex:1 1 180px; font-size:.8rem; }",
     ".ccl-rule input[type=checkbox] { width:20px; height:20px; margin:2px 0; }",
     ".ccl-cc-fold > summary { cursor:pointer; min-height:24px; line-height:24px; font-size:.82rem; color: var(--text-body); }",
     ".cplcoci-lede { margin:0 0 4px; font-size:.88rem; color: var(--text-body); max-width:var(--cpl-measure,none); }",
@@ -209,6 +212,22 @@
   }
 
   function root() { return document.getElementById("coci-lookup-root"); }
+  /* A course title shows its catalog description on hover or focus (Sam, S723, 2026-11-24: "a hover over on the course
+     title with the course description would make it fast work"). The description is read from its letter's shard once,
+     on first hover, and kept on the title as its tooltip. */
+  function titleHover(e) {
+    var t = e.target && e.target.closest ? e.target.closest(".ccl-title-t") || (e.target.querySelector && e.target.querySelector(".ccl-title-t")) : null;
+    if (!t || t.getAttribute("data-desc-read")) return;
+    var host = t.closest("button, a") || t, ctrl = t.getAttribute("data-ctrl"), subj = t.getAttribute("data-subj");
+    if (!ctrl) return;
+    t.setAttribute("data-desc-read", "1");
+    withDesc(subj, ctrl, function (d) {
+      var words = d ? String(d).replace(/\s+/g, " ").trim() : "No catalog description is on file for this course.";
+      host.setAttribute("title", words.length > 900 ? words.slice(0, 900) + "…" : words);
+    });
+  }
+  document.addEventListener("mouseover", function (e) { var r = root(); if (r && r.contains(e.target)) titleHover(e); });
+  document.addEventListener("focusin", function (e) { var r = root(); if (r && r.contains(e.target)) titleHover(e); });
 
   /* ── a course's learning outcomes (Sam, 2026-10-14) ──
    * "Where can I view the SLOs we've pulled so far? Seems like there should be a link to them on
@@ -604,7 +623,9 @@
   }
   function listCols() {
     return LIST.cols || (LIST.cols = [
-      { h: "Title", w: 17, v: function (r) { return r.title; } },
+      { h: "Title", w: 17, v: function (r) { return r.title; },
+        // The title carries its course's keys, so a hover can show the catalog description (titleHover).
+        cell: function (r, mk) { return [mk("span", { cls: "ccl-title-t", "data-subj": r.subj || "", "data-ctrl": r.ctrl || "" }, [r.title || ""])]; } },
       { h: "College", w: 11, v: function (r) { return r.college; } },
       { h: "Local subject", w: 5, v: function (r) { return r.subj; } },   // a college's own subject code, never the common subject (Sam, S723)
       { h: "Number", w: 5, v: function (r) { return r.num; } },
@@ -612,7 +633,7 @@
       { h: "Credit", w: 6, v: function (r) { return r.credit; } },
       { h: "Transfer", w: 5, v: function (r) { return r.cid ? "Yes" : "No"; } },
       { h: "TOP", w: 9, v: function (r) { return r.top; } },
-      { h: "Identities (M-ID, C-ID, CCN)", w: 14, v: function (r) { return r.ids; }, cell: idChips },
+      { h: "Identities (M-ID, C-ID, CCN)", w: 14, v: function (r) { return r.ids; }, cell: function (r, mk) { var c = idChips(r, mk), x = rowActs(r); return x.length ? (c || []).concat(x) : c; } },
       // Its value is the words the cell shows (a download carries them); it sorts by the exhibits the M-ID would unlock
       // (pileRank). The level's measured share right is in the panel (second read of #3619: one column, one meaning).
       { h: "Closest M-ID", w: 9, v: function (r) { return r.assigned && !r.mid ? "Assigned to " + r.assigned.to : r.rec ? closestWords(r.rec) : ""; },
@@ -815,19 +836,114 @@
         { "aria-label": "Save your ruling on " + mid })])]));
     return out;
   }
-  /* Accept on a band (Sam, S723, 2026-11-24: "it would be convenient to be able to accept the current common subject
-     on the in doubt course directly on the course row without having to click into the sidebar"): a signed-in
-     reviewer keeps an unruled card's common subject in one press; it writes the same ruling the panel's Keep writes,
-     with no reason, and the card leaves the list. The panel stays for a move, a second common subject or a reason. */
-  function bandAccept(id) {
-    var card = JOBS.doubt && JOBS.doubt.map.get(id);
-    if (!card || ruledCard(id) || !ccSession()) return [];
+  /* Accept and Move on each course row (Sam, S723, 2026-11-24: "the courses should be curated individually under their
+     mid course heading. when I set one to adaptive pe it seems to have set the other as well ... move the accept button
+     to the course row, not the mid row"; "accept and move are good to have on the course rows"; "would be nice if the
+     move gave me the dropdown right in the row"). A common subject belongs to the common course, so a local course that
+     belongs in another common subject belongs in another common course: Move re-homes it (the merge_into row Assign and
+     SkyView write), and Accept says it belongs here. Accept writes kb_curation CN:<control number> mid_member_confirm
+     <M-ID> under the reviewer's name (mapped DR-25). Once every course of a card in doubt is accepted or moved, the
+     card's own Keep is saved, as the panel's Keep is, and the card leaves the list. Read live, a page at a time. */
+  var MEMB = { rows: null, loading: false, busy: false, said: {}, open: {}, pick: {}, kept: {} }, MEMB_FIELD = "mid_member_confirm";
+  function loadMembers() {
+    if (MEMB.loading) return Promise.resolve();
+    MEMB.loading = true;
+    var by = {}, PAGE = 1000, sess = ccSession(), token = sess && sess.access_token;
+    function page(from) {
+      return fetch(REST + "/kb_curation?select=course_id,value&field=eq." + MEMB_FIELD + "&order=course_id.asc",
+        { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + (token || SUPABASE_ANON), "Range-Unit": "items", Range: from + "-" + (from + PAGE - 1) } })
+        .then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); })
+        .then(function (rows) {
+          (rows || []).forEach(function (x) { var k = String(x.course_id || ""); if (k.indexOf("CN:") === 0) by[assignKey(k.slice(3))] = String(x.value || ""); });
+          return rows && rows.length === PAGE ? page(from + PAGE) : null;
+        });
+    }
+    return page(0).then(function () { MEMB.rows = by; MEMB.loading = false; }, function () { MEMB.loading = false; });
+  }
+  function rowDoubtMid(r) {
+    if (!JOBS.doubt) return null;
+    return (r.mids || []).filter(function (id) { return JOBS.doubt.map.has(id) && !ruledCard(id); })[0] || null;
+  }
+  function membersOf(mid) { return listBuild().rows.filter(function (x) { return (x.mids || []).indexOf(mid) >= 0; }); }
+  function memberSettled(x, mid) { var a = assignedOf(x.ctrl); return (MEMB.rows && MEMB.rows[assignKey(x.ctrl)] === mid) || (a && a.to && a.to !== mid); }
+  /* The common courses a course could move to: its closest matches when the scorer has them, then the common courses
+     in the card's signal subjects whose titles share the most words with the course's title. */
+  function moveChoices(r, mid) {
+    var out = [], seen = {}; seen[mid] = 1;
+    (r.rec && r.rec.top || []).forEach(function (t) { if (!seen[t[0]]) { seen[t[0]] = 1; out.push(t[0]); } });
+    var card = JOBS.doubt && JOBS.doubt.map.get(mid), subs = {};
+    if (card) { subs[card.discipline] = 1; (card.desc || []).forEach(function (d) { subs[d[0]] = 1; }); Object.keys(card.votes || {}).forEach(function (d) { subs[d] = 1; }); }
+    var words = String(r.title || "").toLowerCase().split(/[^a-z]+/).filter(function (w) { return w.length > 3; });
+    var scored = [];
+    if (CC.byId) CC.byId.forEach(function (c, id) {
+      if (seen[id] || !subs[c.disc]) return;
+      var t = String(c.title || "").toLowerCase(), n = words.filter(function (w) { return t.indexOf(w) >= 0; }).length;
+      if (n) scored.push([n, id]);
+    });
+    scored.sort(function (a, b) { return b[0] - a[0] || (a[1] < b[1] ? -1 : 1); }).slice(0, 12).forEach(function (x) { out.push(x[1]); });
+    return out;
+  }
+  function moveLabel(id) { var c = CC.byId && CC.byId.get(id); return id + (c && c.title ? ", " + c.title : "") + (c && c.disc ? " (" + ccName(c.disc) + ")" : ""); }
+  function rowActs(r) {
+    var mid = rowDoubtMid(r), sess = ccSession();
+    if (!mid || !sess) return [];
     ccLoad();
-    var c = CC.byId && CC.byId.get(id);
-    if (!c || !(c.disc || card.discipline)) return [];
-    var b = el("button", { type: "button", "class": "ccl-band-accept", "aria-label": "Accept " + ccName(c.disc || card.discipline) + " as the common subject of " + id }, ["Accept " + ccName(c.disc || card.discipline)]);
-    b.addEventListener("click", function () { CC.rule[id] = { choice: "keep", words: "", similar: false }; ccRule(c, card); });
-    return CC.said[id] ? [b, el("span", { "class": "ccl-band-said", role: "status" }, [CC.said[id]])] : [b];
+    afterMember(mid);   // a move lands after its save answers: the next draw sees it
+    if (!MEMB.rows && !MEMB.loading) loadMembers().then(ccRedraw);
+    var k = assignKey(r.ctrl), a = assignedOf(r.ctrl), said = MEMB.said[k] || ASSIGN.said[r.ctrl];
+    var stop = function (e) { e.stopPropagation(); };
+    function btn(text, label, fn) { var b = el("button", { type: "button", "class": "ccl-band-accept", "aria-label": label }, [text]); b.addEventListener("click", function (e) { stop(e); fn(); }); return b; }
+    var out = [el("span", { "class": "ccl-row-acts" }, [])], box = out[0];
+    box.addEventListener("click", stop);
+    if (MEMB.rows && MEMB.rows[k] === mid) box.appendChild(el("span", { "class": "ccl-band-said" }, ["Accepted under " + mid]));
+    else if (a && a.to && a.to !== mid) box.appendChild(el("span", { "class": "ccl-band-said" }, ["Moved to " + a.to + "; the nightly build lists it there"]));
+    else if (MEMB.open[k]) {
+      var opts = moveChoices(r, mid), sel = el("select", { "class": "ccl-cc-in ccl-move-pick", "aria-label": "Move " + r.subj + " " + r.num + " at " + r.college + " to another common course" });
+      sel.appendChild(el("option", { value: "" }, ["Choose a common course"]));
+      opts.forEach(function (id) { var o = el("option", { value: id }, [moveLabel(id)]); if (MEMB.pick[k] === id) o.selected = true; sel.appendChild(o); });
+      var other = el("option", { value: "other" }, ["Another common course, by its id"]); if (MEMB.pick[k] === "other") other.selected = true; sel.appendChild(other);
+      var typed = el("input", { type: "text", "class": "ccl-cc-in ccl-move-id", "aria-label": "The common course's id, such as KINE M1344", hidden: MEMB.pick[k] === "other" ? null : true });
+      sel.addEventListener("change", function () { MEMB.pick[k] = sel.value; if (sel.value === "other") typed.removeAttribute("hidden"); else typed.setAttribute("hidden", ""); });
+      [sel, typed].forEach(function (n) { n.addEventListener("click", stop); n.addEventListener("keydown", stop); });
+      box.appendChild(sel); box.appendChild(typed);
+      box.appendChild(btn("Move here", "Move " + r.subj + " " + r.num + " to the chosen common course", function () {
+        var id = sel.value === "other" ? String(typed.value || "").trim().replace(/\s+/g, " ").toUpperCase() : sel.value, X = listBuild().X;
+        if (!id) { MEMB.said[k] = "Choose a common course first."; ccRedraw(); return; }
+        if (!(X && X.size.has(id))) { MEMB.said[k] = "No common course " + id + " is in today's identity file. Nothing was saved."; ccRedraw(); return; }
+        if (!ASSIGN.rows) { MEMB.said[k] = "The list of moved courses has not loaded yet, so nothing was saved. Try again in a moment."; ccRedraw(); return; }
+        MEMB.said[k] = ""; MEMB.open[k] = false; assignSave(r, id);
+      }));
+      box.appendChild(btn("Cancel", "Cancel the move", function () { MEMB.open[k] = false; ccRedraw(); }));
+    } else {
+      box.appendChild(btn("Accept", "Accept " + r.subj + " " + r.num + " at " + r.college + " under " + mid, function () { memberSave(r, mid); }));
+      box.appendChild(btn("Move", "Move " + r.subj + " " + r.num + " at " + r.college + " to another common course", function () { MEMB.open[k] = true; ccRedraw(); }));
+    }
+    if (said) box.appendChild(el("span", { "class": "ccl-band-said", role: "status" }, [said]));
+    return out;
+  }
+  function memberSave(r, mid) {
+    if (MEMB.busy) return;
+    var k = assignKey(r.ctrl);
+    if (noControlNumber(r.ctrl)) { MEMB.said[k] = "This course has no control number to save under."; ccRedraw(); return; }
+    MEMB.busy = true; MEMB.said[k] = "Saving…"; ccRedraw();
+    ccFresh().then(function (sess) {
+      if (!sess) { MEMB.busy = false; MEMB.said[k] = "Your sign-in has ended. Sign in again, then accept."; ccRedraw(); return; }
+      return fetch(REST + "/kb_curation", { method: "POST", headers: ccHeaders(sess),
+        body: JSON.stringify({ course_id: "CN:" + r.ctrl, field: MEMB_FIELD, value: mid, reviewer_email: sess.email }) })
+        .then(function (res) {
+          MEMB.busy = false;
+          if (!res.ok) { MEMB.said[k] = "Not saved: the server answered " + res.status + ". Only a reviewer on the list may accept."; ccRedraw(); return; }
+          (MEMB.rows = MEMB.rows || {})[k] = mid; MEMB.said[k] = ""; afterMember(mid); ccRedraw();
+        });
+    }).catch(function (e) { MEMB.busy = false; MEMB.said[k] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
+  }
+  /* Every course of the card accepted or moved: save the card's Keep, the panel's own ruling. */
+  function afterMember(mid) {
+    var list = membersOf(mid), card = JOBS.doubt && JOBS.doubt.map.get(mid), c = CC.byId && CC.byId.get(mid);
+    if (MEMB.kept[mid] || CC.busy || !list.length || !card || !c || ruledCard(mid) || !list.every(function (x) { return memberSettled(x, mid); })) return;
+    MEMB.kept[mid] = true;
+    CC.rule[mid] = { choice: "keep", words: "Every course accepted or moved on its row.", similar: false };
+    ccRule(c, card);
   }
   /* The ruling's two writes: its reason (a ccr_procedure_request row, a new key per save), then the discipline through
      ccSave (keep confirms it, move sets it, also list as adds a second discipline and leaves the home, not sure writes
@@ -1575,7 +1691,7 @@
       bands: { key: function (r) { return r.mid; }, by: "M-ID", label: "Bands by M-ID", none: "Not in a group",
         name: function (id, members) { var t = bandTitle(members); return id + (t ? ", " + t : ""); },
         facts: function (id, members) { return bandFacts(members); },
-        acts: function (id) { return bandAccept(id).concat([skyLink(id)]); } },
+        acts: function (id) { return [skyLink(id)]; } },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       filters: LIST_FILTERS, counts: function () { return Object.assign({}, listBuild().counts, jobCounts()); },
       // The jobs first, in the order to act on them, then the census words (Sam, 2026-11-09, issue 2997: "put them

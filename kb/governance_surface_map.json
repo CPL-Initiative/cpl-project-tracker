@@ -80,6 +80,7 @@
   "field:kb_curation.discipline": "DR-25",
   "field:kb_curation.cross_listed_disciplines": "DR-25",
   "field:kb_curation.ccr_procedure_request": "DR-25",
+  "field:kb_curation.mid_member_confirm": "DR-25",
   "field:kb_curation.training_sites_override": "DR-07",
   "field:kb_curation.unified_title_supersedes": "DR-07",
   "field:kb_curation.title_sweep_kept": "DR-07",
