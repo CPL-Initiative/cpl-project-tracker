@@ -162,30 +162,35 @@ function rule(t, value, words, similar) {
 (async () => {
   {
     const t = tab();
-    await until(() => dataRows(t.d).length > 0 && /Discipline in doubt, English/.test(txt(t.d.body)));
+    await until(() => dataRows(t.d).length > 0 && /Common subject in doubt, English/.test(txt(t.d.body)));
     check("(1) ⭐ #coci-lookup/list/doubt lists the courses of the common courses in doubt",
       titles(t.d).sort().join("|") === "College Composition|Composition and Reading|Freshman Composition|Tool and Equipment Applications", titles(t.d).join("|"));
     const note = txt(t.d.body);
     check("(1) the note counts the cards and says which signal put them there",
       /2 common courses the daily re-check could not settle\. On 1 the catalog description reads as another discipline; on 1 only the colleges' TOP codes do/.test(note), note.slice(0, 400));
     check("(1) and what a ruling teaches", /A reason marked for similar cards becomes a proposed procedure/.test(note));
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     const p = txt(panel(t.d));
     check("(2) the description's reading, in words", /Its catalog description reads closest to Communication Studies, then Journalism\./.test(p), p.slice(0, 500));
-    check("(2) a card with no TOP vote says so", /None of its colleges' TOP codes maps to a discipline\./.test(p));
+    check("(2) a card with no TOP vote says so", /None of its colleges' TOP codes maps to a common subject\./.test(p));
+    /* S723 (Sam, 2026-11-24): the ruling assigns the common course to a common subject, never a local subject. */
+    check("(2) ⭐ the panel says a ruling assigns a common subject and never changes a local subject code",
+      /A ruling assigns this common course to a common subject: an MQ discipline and its common subject code\. It never changes a college's local subject code/.test(p));
+    check("(2) ⭐ a common subject reads with its code once the Common Subjects Reference seed answers", /function ccName\(d\) \{ var k = d && CC\.code && CC\.code\[d\]; return k \? k \+ " " \+ d : d \|\| ""; \}/.test(fs.readFileSync("coci_lookup.js", "utf8"))
+      && /fetch\("kb\/discipline_canonical_subj4\.json"\)/.test(fs.readFileSync("coci_lookup.js", "utf8")));
     check("(3) signed out: the evidence shows, the ruling form does not", !t.d.getElementById("ccl-rule-choice") && /sign in to rename it/.test(p));
   }
   {
     const t = tab({ signedIn: true });
-    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    await openPanel(t, "Tool and Equipment Applications", /Why its common subject is in doubt/);
     const p = txt(panel(t.d));
     check("(2) TOP's votes, most first", /Its colleges' TOP codes point to Welding \(2\), Construction \(1\)\./.test(p), p.slice(0, 500));
     const opts = Array.from(t.d.getElementById("ccl-rule-choice").querySelectorAll("option")).map((o) => o.value + "=" + txt(o));
-    check("(4) the ruling offers keep, the signals' disciplines, not sure, then every other discipline",
-      opts.join("|") === "=Choose a ruling|keep=Keep Construction|move:Welding=Move to Welding|unsure=Not sure yet|move:English=English|also:Welding=Welding|also:English=English", opts.join("|"));
+    check("(4) the ruling offers keep, the signals' disciplines, not sure, then every common subject but its own (S723)",
+      opts.join("|") === "=Choose a ruling|keep=Keep Construction|move:Welding=Move to Welding|unsure=Not sure yet|move:English=English|move:Welding=Welding|also:Welding=Welding|also:English=English", opts.join("|"));
     const groups = Array.from(t.d.getElementById("ccl-rule-choice").querySelectorAll("optgroup")).map((g) => g.getAttribute("label"));
     check("(10) the second-discipline choices sit in their own group, named for the home it keeps",
-      groups.join("|") === "Move to another discipline|Keep Construction, and also list as", groups.join("|"));
+      groups.join("|") === "Move to another common subject|Keep Construction, and also list under", groups.join("|"));
     rule(t, "move:Welding", "", true);
     await sleep(20);
     check("(6) a reason for similar cards must say why, and nothing is written", t.writes.length === 0 && /Say why, so a session can write the rule/.test(txt(panel(t.d))));
@@ -203,7 +208,7 @@ function rule(t, value, words, similar) {
   }
   {
     const t = tab({ signedIn: true });
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     rule(t, "keep", "Composition stays English.", false);
     await until(() => t.writes.length >= 2);
     check("(5) keep confirms the discipline as it stands",
@@ -212,14 +217,14 @@ function rule(t, value, words, similar) {
   }
   {
     const t = tab({ signedIn: true });
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     rule(t, "unsure", "", false);
     await until(() => /Marked not sure/.test(txt(panel(t.d))));
     check("(5) not sure writes the reason row alone", t.writes.length === 1 && JSON.parse(t.writes[0].body.value).ruling === "unsure", JSON.stringify(t.writes));
   }
   {
     const t = tab({ signedIn: true, refuse: true });
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     rule(t, "move:Journalism", "Reads as reporting.", true);
     await until(() => /Not saved/.test(txt(panel(t.d))));
     check("(6) a refused write says so and writes no discipline", t.writes.length === 1 && /server answered 403/.test(txt(panel(t.d))), txt(panel(t.d)).slice(0, 300));
@@ -228,23 +233,23 @@ function rule(t, value, words, similar) {
     const t = tab({ ruled: RULED });
     await until(() => /1 ruled so far, 1 with a reason marked for similar cards/.test(txt(t.d.body)));
     check("(7) the note counts the rulings read back", /1 ruled so far, 1 with a reason marked for similar cards/.test(txt(t.d.body)));
-    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    await openPanel(t, "Tool and Equipment Applications", /Why its common subject is in doubt/);
     check("(7) ⭐ a ruling read back shows on the card",
       /Kept Construction by a reviewer on 2026-11-09\. Why: Shop tools are taught for the trade\. Marked for similar cards\./.test(txt(panel(t.d))), txt(panel(t.d)).slice(0, 500));
     check("(8) ⭐ signed out, the rulings read asks for no email and the card names none",
       t.reads.length >= 1 && t.reads.every((r) => !/reviewer_email/.test(r.url)) && !/sam@rccd\.edu/.test(txt(t.d.body)), JSON.stringify(t.reads));
     // The trail names the job when the panel opens from it: an unruled card, still on the in-doubt list (#3510 B3).
-    const back = Array.from(t.d.querySelectorAll("[id$='filters'] button")).find((b) => /^Discipline in doubt/.test(txt(b)));
+    const back = Array.from(t.d.querySelectorAll("[id$='filters'] button")).find((b) => /^Common subject in doubt/.test(txt(b)));
     if (back) back.click();
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     const trail = panel(t.d).querySelector("nav[aria-label='Trail']");
     check("(8) the panel's trail: CPL Commons / Courses / the job / the course",
-      !!trail && /^CPL Commons \/ Courses \/ Discipline in doubt \/ /.test(txt(trail)) && trail.querySelector("a[href='#commons']"), trail && txt(trail));
+      !!trail && /^CPL Commons \/ Courses \/ Common subject in doubt \/ /.test(txt(trail)) && trail.querySelector("a[href='#commons']"), trail && txt(trail));
   }
   {
     const t = tab({ ruled: RULED, signedIn: true });
     await until(() => /1 ruled so far/.test(txt(t.d.body)));
-    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    await openPanel(t, "Tool and Equipment Applications", /Why its common subject is in doubt/);
     check("(8) signed in, the read carries the reviewer's token and the card names who ruled",
       t.reads.some((r) => /reviewer_email/.test(r.url) && r.auth === "Bearer tok.en.x") && /Kept Construction by sam@rccd\.edu on 2026-11-09/.test(txt(panel(t.d))), JSON.stringify(t.reads));
     t.w.dispatchEvent(new t.w.Event("cpl-session-changed"));
@@ -257,7 +262,7 @@ function rule(t, value, words, similar) {
     // sidebar and the listview is not obviously highlighted as to which row you're acting on. the save ruling and
     // other buttons are a bit jumbled together."
     const t = tab({ signedIn: true });
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     const cur = () => t.d.querySelector("tr.ccl-cur");
     check("(9) ⭐ the row whose panel is open is marked current, in class and for a screen reader",
       !!cur() && cur().getAttribute("aria-current") === "true" && /College Composition/.test(txt(cur())) && t.d.querySelectorAll("tr.ccl-cur").length === 1);
@@ -282,7 +287,7 @@ function rule(t, value, words, similar) {
   {
     // (10) an unconfirmed, unmerged common course: the reason, then one write of two rows.
     const t = tab({ signedIn: true });
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     rule(t, "also:Journalism", "Taken as English or as Journalism, by major.", false);
     await until(() => t.writes.length >= 2);
     const v = JSON.parse(t.writes[0].body.value), rows = t.writes[1].body;
@@ -303,7 +308,7 @@ function rule(t, value, words, similar) {
     // (10) a merged common course: the second discipline and, since issue 3447, the home discipline row as it stands
     // (a merged card's confirmation is a POST; the overlay fold stamps validated_at from it), never another discipline.
     const t = tab({ signedIn: true });
-    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    await openPanel(t, "Tool and Equipment Applications", /Why its common subject is in doubt/);
     rule(t, "also:Welding", "", false);
     await until(() => t.writes.length >= 2);
     await sleep(30);
@@ -318,7 +323,7 @@ function rule(t, value, words, similar) {
     // (11) ⭐ issue 3447: a Keep on a merged card POSTs field=discipline and sends no PATCH (6 of Sam's 13 Keeps were
     // merged cards whose PATCH the row policy refused, so they never saved).
     const t = tab({ signedIn: true });
-    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    await openPanel(t, "Tool and Equipment Applications", /Why its common subject is in doubt/);
     rule(t, "keep", "Shop tools stay Construction.", false);
     await until(() => t.writes.length >= 2);
     await sleep(30);
@@ -330,7 +335,7 @@ function rule(t, value, words, similar) {
   {
     // (11) a discipline write that fails says the discipline did not save, and the ruling is not shown as landed.
     const t = tab({ signedIn: true, refuseDisc: true });
-    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    await openPanel(t, "Tool and Equipment Applications", /Why its common subject is in doubt/);
     rule(t, "keep", "Shop tools stay Construction.", false);
     await until(() => /did not save/.test(txt(panel(t.d))));
     const p = txt(panel(t.d));
@@ -341,7 +346,7 @@ function rule(t, value, words, similar) {
   {
     // (10) a course that already lists a second discipline: a new one adds to it, and one choice clears them.
     const t = tab({ signedIn: true, xdisc: { "ENGL M1001": ["Communication Studies"] } });
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     const opts = Array.from(t.d.getElementById("ccl-rule-choice").querySelectorAll("option")).map((o) => o.value);
     check("(10) what it already lists is said, is not offered again, and can be cleared",
       /It is also listed as Communication Studies\./.test(txt(panel(t.d))) && opts.indexOf("also:Communication Studies") < 0 && opts.indexOf("also:") >= 0
@@ -363,7 +368,7 @@ function rule(t, value, words, similar) {
   {
     // (10) COBIx on #3025: two MQ names carry commas of their own. The name is kept whole in the panel and the reason row.
     const t = tab({ signedIn: true, mq: ["Construction", "English", "Sign Language, American", "Welding"], xdisc: { "ENGL M1001": ["Journalism"] } });
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     rule(t, "also:Sign Language, American", "", false);
     await until(() => t.writes.length >= 2);
     const v = JSON.parse(t.writes[0].body.value);
@@ -383,7 +388,7 @@ function rule(t, value, words, similar) {
   {
     // (10) a course with no home discipline has nothing to keep: no second-discipline group, and never "Keep undefined".
     const t = tab({ signedIn: true, nohome: "ENGL M1001" });
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     const sel = t.d.getElementById("ccl-rule-choice");
     check("(10) with no home discipline the group is left out", !!sel && !Array.from(sel.querySelectorAll("optgroup")).some((g) => /also list as/.test(g.getAttribute("label")))
       && !/undefined/.test(txt(panel(t.d))), sel && Array.from(sel.querySelectorAll("optgroup")).map((g) => g.getAttribute("label")).join("|"));
@@ -391,7 +396,7 @@ function rule(t, value, words, similar) {
   {
     const t = tab({ ruled: [Object.assign({}, RULED[0], { value: JSON.stringify({ mid: "CNST M1009", discipline_was: "Construction", ruling: "crosslist", to: "Welding", words: "", similar: false }) })] });
     await until(() => /1 ruled so far/.test(txt(t.d.body)));
-    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    await openPanel(t, "Tool and Equipment Applications", /Why its common subject is in doubt/);
     check("(10) a cross-list ruling read back shows on the card", /Kept Construction, also listed as Welding by a reviewer on 2026-11-09\./.test(txt(panel(t.d))), txt(panel(t.d)).slice(0, 400));
   }
   {
@@ -403,7 +408,7 @@ function rule(t, value, words, similar) {
     check("(12) ⭐ the ruled card's local course is off the in-doubt list; the unruled card's stay",
       !titles.some((x) => x.indexOf("Tool and Equipment Applications") === 0) && titles.some((x) => x.indexOf("College Composition") === 0), titles);
     const cur = t.d.querySelector("[id$='filters'] [aria-current]");
-    check("(12) the filter's count follows: 3 local courses, the ruled card's 1 gone", cur && /^Discipline in doubt \(3\)$/.test(txt(cur)), cur && txt(cur));
+    check("(12) the filter's count follows: 3 local courses, the ruled card's 1 gone", cur && /^Common subject in doubt \(3\)$/.test(txt(cur)), cur && txt(cur));
     check("(12) the note says a ruled card leaves and how many common courses wait",
       /a ruled card leaves this list, and its ruling stays on its panel\. 1 common course waits for a ruling/.test(txt(t.d.body)), txt(t.d.querySelector(".ccl-doubt-note")));
     const note = t.d.querySelector("[data-doubt-desc-open]");
@@ -417,7 +422,7 @@ function rule(t, value, words, similar) {
   {
     // (12) a Keep saved in the panel takes its card off the list in the same visit.
     const t = tab({ signedIn: true });
-    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     rule(t, "keep", "Composition is English.", false);
     await until(() => t.writes.length >= 2);
     await until(() => !dataRows(t.d).some((r) => txt(cell(r, t.d, "Title")).indexOf("College Composition") === 0));
@@ -425,19 +430,41 @@ function rule(t, value, words, similar) {
       !dataRows(t.d).some((r) => txt(cell(r, t.d, "Title")).indexOf("College Composition") === 0), dataRows(t.d).map((r) => txt(cell(r, t.d, "Title"))));
   }
   {
+    // (13) ⭐ Sam, S723, 2026-11-24: "accept the current common subject on the in doubt course directly on the course
+    // row without having to click into the sidebar". The band's Accept writes the panel's Keep, and the card leaves.
+    const t = tab({ signedIn: true });
+    await until(() => Array.from(t.d.querySelectorAll(".ccl-band-accept")).length > 0);
+    const acc = Array.from(t.d.querySelectorAll(".ccl-band-accept")).find((b) => /^Accept English/.test(txt(b)));
+    check("(13) ⭐ each unruled card's band carries Accept with its common subject", !!acc && acc.tagName === "BUTTON"
+      && /as the common subject of ENGL M1001/.test(acc.getAttribute("aria-label")), Array.from(t.d.querySelectorAll(".ccl-band-accept")).map(txt).join("|"));
+    acc.click();
+    await until(() => t.writes.length >= 2);
+    const v = JSON.parse(t.writes[0].body.value);
+    check("(13) ⭐ it writes the same Keep the panel writes, then the common subject's confirm", v.ruling === "keep" && v.mid === "ENGL M1001" && v.words === "" && t.writes.length >= 2, t.writes.map((w) => w.body.field).join("|"));
+    await until(() => !dataRows(t.d).some((r) => txt(cell(r, t.d, "Title")).indexOf("College Composition") === 0));
+    check("(13) and the card leaves the list at once, with no Accept left on it", !dataRows(t.d).some((r) => txt(cell(r, t.d, "Title")).indexOf("College Composition") === 0)
+      && !Array.from(t.d.querySelectorAll(".ccl-band-accept")).some((b) => /ENGL M1001/.test(b.getAttribute("aria-label"))));
+  }
+  {
+    const t = tab({});
+    await until(() => dataRows(t.d).length > 0);
+    await sleep(30);
+    check("(13) signed out, no band carries Accept", !t.d.querySelector(".ccl-band-accept"));
+  }
+  {
     // (12) ⭐ COBIx on #3517 finding 1: a "not sure" changed to a Keep replaces its card's ruling without changing how
     // many rulings there are; the in-doubt count still drops with the card's rows.
     const unsure = [Object.assign({}, RULED[0], { value: JSON.stringify({ mid: "CNST M1009", discipline_was: "Construction", ruling: "unsure", words: "", similar: false }) })];
     const t = tab({ ruled: unsure, signedIn: true });
-    await until(() => { const c = t.d.querySelector("[id$='filters'] [aria-current]"); return c && /^Discipline in doubt \(4\)$/.test(txt(c)); });
+    await until(() => { const c = t.d.querySelector("[id$='filters'] [aria-current]"); return c && /^Common subject in doubt \(4\)$/.test(txt(c)); });
     const before = t.d.querySelector("[id$='filters'] [aria-current]");
     check("(12) a not-sure card stays in doubt: 4 local courses", before && /\(4\)$/.test(txt(before)), before && txt(before));
-    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    await openPanel(t, "Tool and Equipment Applications", /Why its common subject is in doubt/);
     rule(t, "keep", "Shop tools are taught for the trade.", false);
     await until(() => t.writes.length >= 2);
     await until(() => { const c = t.d.querySelector("[id$='filters'] [aria-current]"); return c && /\(3\)$/.test(txt(c)); });
     const after = t.d.querySelector("[id$='filters'] [aria-current]");
-    check("(12) ⭐ a changed ruling moves the in-doubt count with its rows: 4 becomes 3", after && /^Discipline in doubt \(3\)$/.test(txt(after)), after && txt(after));
+    check("(12) ⭐ a changed ruling moves the in-doubt count with its rows: 4 becomes 3", after && /^Common subject in doubt \(3\)$/.test(txt(after)), after && txt(after));
   }
   {
     const t = tab({ doubtFail: true });

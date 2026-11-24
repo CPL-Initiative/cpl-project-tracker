@@ -174,10 +174,10 @@ const rowByTitle = (doc, t) => visibleRows(doc).find((tr) => txt(cellOf(doc, tr,
   check("college: filters to ARC's two rows", visibleRows(doc).length === 2);
   typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "College")), "");
 
-  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Subject")), "carpt");
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Local subject")), "carpt");
   check("subject: CARPT (case-insensitive) isolates the CARPT row",
     rowTitles(doc).length === 1 && rowTitles(doc)[0] === "Tool and Equipment Applications");
-  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Subject")), "");
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Local subject")), "");
 
   wordBtn(doc, /^Has a CCN \(1\)$/).click();
   check("identity: has-CCN isolates the ENGL row",
@@ -242,14 +242,14 @@ const rowByTitle = (doc, t) => visibleRows(doc).find((tr) => txt(cellOf(doc, tr,
   reopen();
 
   // ── 7. a spreadsheet of the filtered set ──
-  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Subject")), "ENGL");
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Local subject")), "ENGL");
   wordBtn(doc, /^Download these 1 as a spreadsheet$/).click();
   check("csv: Download builds a blob", log.blobs.length === 1);
   const csvText = (await log.blobs[0].text()).replace(/^﻿/, "");
   check("csv: carries ONLY the filtered row (+ header)",
     csvText.trim().split(/\r\n/).length === 2 && csvText.indexOf("College Composition") > 0
     && csvText.indexOf("Rigging") < 0 && csvText.indexOf("ENGL M1001") > 0);
-  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Subject")), "");
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Local subject")), "");
 
   // ── 8. Programs view (toggle → lazy-load → table + transfer/award filters) ──
   const progBtn = Array.from(doc.querySelectorAll(".cplcoci-viewbtn")).find((b) => txt(b) === "Programs");

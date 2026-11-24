@@ -100,7 +100,7 @@ function input(w, node, v) { node.value = v; node.dispatchEvent(new w.Event("inp
   check("the List spans the window (the engine's host lifts the cap)", !!d.getElementById(P + "host") && /\.main-container:has\(#ccl-host\)\{max-width:none/.test(txt(d.getElementById(P + "css"))));
 
   // ── (2) columns by name ──
-  const want = ["Title", "College", "Subject", "Number", "Units", "Credit", "Transfer", "TOP", "Identities (M-ID, C-ID, CCN)", "Closest M-ID", "Control number"];
+  const want = ["Title", "College", "Local subject", "Number", "Units", "Credit", "Transfer", "TOP", "Identities (M-ID, C-ID, CCN)", "Closest M-ID", "Control number"];
   check("the columns are the tab's, by name", want.every((h) => colOf(d, h) >= 0) && heads(d).length === want.length);
   check("no Edit, flag, find and replace or AI sort: the List reads only",
     !word(d, /^Edit/) && !word(d, /^Find and replace$/) && !word(d, /^AI sort$/) && !Array.from(d.querySelectorAll("thead th")).some((th) => txt(th) === "Flag"));
@@ -150,7 +150,7 @@ function input(w, node, v) { node.value = v; node.dispatchEvent(new w.Event("inp
   const fgroups = Array.from(d.querySelectorAll("." + P + "filters > ." + P + "fgroup")).map((g) => txt(g.firstElementChild));
   check("the filter words carry their counts", fgroups.join("|") === "To do|Browse" &&
     // S574: the Commons' jobs, uncounted until their file is read (commons_jobs_filtered guards them).
-    fwords.join(" | ") === "Discipline in doubt | On a stray identity code | No catalog description | A unit anomaly | Discipline no seed has touched"
+    fwords.join(" | ") === "Common subject in doubt | On a stray identity code | No catalog description | A unit anomaly | Discipline no seed has touched"
     + " | All (9) | Has an M-ID (6) | Needs an M-ID (3) | Has a C-ID (2) | Has a CCN (1) | Has any identity (6) | Credit (7) | Noncredit (1) | Noncredit enhanced (1)"
     + " | Kept, not counted (0)", fwords.join(" | "));
   // Sam, 2026-11-20: the No M-ID pile "includes courses with cid and ccn, which don't need a mid". One gap pile now.
