@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-677 document(s).
+678 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 723 | [Session 723 handoff (from SkyCormorant, S722, Sam's plain session of 2026-11-24: Titles to check, the 0-100 bar, sidebars that never cover the view)](../session_723_handoff.md) | 2026-11-24 |
 | 721 | [Session 721 handoff (from SkyEider, S720, the CPL Queue routine's collection run of 2026-11-24)](../session_721_handoff.md) | 2026-11-24 |
 | 720 | [Session 720 handoff (from SkyShearwater, S719, Sam's plain session of 2026-11-24: the web-search pass, the MQ view, every Commons card in the Subjects design)](../session_720_handoff.md) | 2026-11-24 |
 | 719 | [Session 719 handoff (from SkyPetrel, S718, Sam's plain session of 2026-11-23: Needs attention by confidence, the code-address read, check_generated covers every status file)](../session_719_handoff.md) | 2026-11-24 |

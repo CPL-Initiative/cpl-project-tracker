@@ -684,3 +684,33 @@ pass is in `docs/common_subject_code_tab_lessons.md`, same date.
   (`d-second-sidebar-beside-first-s719`). The last ~124px strip of the view still shows with both open.
 - **The harness keeps worker worktrees under `.claude/worktrees/`.** The paths named in the briefs were not honored; a
   brief names the branch and lets the worker report its path.
+
+## S722 (SkyCormorant, Sam's plain session, 2026-11-24): Titles to check, the 0-100 bar, Accept on the row
+
+What shipped: #3768 (a Courses count reads its code's own course file, 26 files under
+`kb/status/statewide_code_courses/`, never the 17 MB state list), #3770 (withdrawn in #3771) and #3771 (Titles to check,
+Accept on the row and per title, the bar, sidebars that never cover the view, quick links that land on a link, COBI in
+place of Sky). Sam drove from ~13:20Z with five asks on Subject codes with no title, then four rulings.
+
+- **A fixed rule can break a ruling the session did not reread.** #3770 made a two-sidebar pair cover the view at
+  1280px to avoid a 140px strip. Sam's 2026-11-23 rule says a sidebar opens beside the view, never over it; he
+  restated it within the hour (*"sidebar should not cover the lower main window when resized. this is a rule for
+  sidbars"*). The fix keeps the pair beside and narrows the second sidebar. Before changing a layout rule, grep the
+  presentation rules for the word it changes.
+- **A source that only checks the winner never wins.** The recommender appended the web search to agree/differ after
+  ranking the measured sources, so one joined course (57.5% right) beat the college's own page (Clovis MECH read
+  Law). A source belongs in the ranking, with its own number, even when that number is set rather than measured;
+  the file says which.
+- **Group candidate titles by any member, and show the most specific.** Greedy grouping by the first title made
+  "Technologies" absorb "Computer Applications and Office Technologies" and show the short one.
+- **`0.575 * 100` is 57.49999 in JavaScript.** A rounding bar needs `+ 1e-9`, or 58 reads 57.
+- **A guard on rendered text must drop script and style first.** The first "never Sky" check read the page's own
+  source comments through `textContent`.
+- **A page-level rule moves the live figures off the file's totals.** Derived titles are applied from the
+  recommendations file, so `local_subject_titles.json` still counts 301 until the live figures draw; the tests that
+  pin "figures equal the file's totals" pass only because a fixture with no number never stands
+  (`d-no-number-no-stand-s722`). The fix is a column in the titles build, NEXT (1) in the lane.
+- **The MQ sections re-read is not a side task.** It reaches the discipline vocabulary under the M-IDs
+  (`f-mq-sections-reread-reaches-the-vocabulary-s722`, the CSR lane).
+- **Not run:** a real-browser check. The session's permission check blocked a local server and Playwright twice;
+  the jsdom suites carry every guard.

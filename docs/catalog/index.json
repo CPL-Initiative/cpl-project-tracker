@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 604,
+   "count": 605,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4586,6 +4586,24 @@
      "title": "A source file that abbreviates titles fakes an absence",
      "type": "methodology",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-11-24",
+     "governs": [
+      "kb/_build_local_subject_recommendations.py",
+      "tests/local_subject_recommendations_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-source-that-only-checks-the-winner-never-wins.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "recommendations",
+      "confidence",
+      "commons"
+     ],
+     "title": "A source that only checks the winner never wins",
+     "type": "methodology",
+     "updated": "2026-11-24"
     },
     {
      "created": "2026-10-10",
@@ -17540,8 +17558,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 677,
+   "count": 678,
    "docs": [
+    {
+     "created": "2026-11-24",
+     "governs": [],
+     "n": 723,
+     "path": "docs/session_723_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 723 handoff (from SkyCormorant, S722, Sam's plain session of 2026-11-24: Titles to check, the 0-100 bar, sidebars that never cover the view)",
+     "type": null,
+     "updated": "2026-11-24"
+    },
     {
      "created": "2026-11-24",
      "governs": [],
@@ -28792,5 +28824,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1569
+ "total": 1571
 }
