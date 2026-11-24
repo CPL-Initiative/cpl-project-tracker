@@ -917,6 +917,8 @@ PRESENTATION_DOCTRINE = {
     "a sidebar opens beside the view": (r"a sidebar opens beside the view", r"never over it"),
     # Sam, 2026-11-24 (S722): "a simple bar from 0-100 is the most recognizable and quickly understood indicator".
     "confidence is one 0-100 bar": (r"confidence is one 0.100 bar", r"confbar"),
+    # Sam, 2026-11-24 (S724): "so sidebar for narrow work and bottom bar for wide work".
+    "sidebar for narrow work, bottom bar for wide work": (r"sidebar for narrow work, bottom bar for wide work", r"one anchor page per commons card"),
 }
 
 

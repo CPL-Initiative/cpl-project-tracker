@@ -677,8 +677,8 @@ file.
   2026-11-24: *"should not cover the lower main window when resized"*); below 900px the panel covers the view. First built on the
   Subjects panel (`beside()` in `commons_subjects.js`); each other panel converts at its UI pass.
 - **Sidebar for narrow work, bottom bar for wide work, on one anchor page per Commons card (Sam, 2026-11-24):** *"sidebar
-  for narrow work and bottom bar for wide work"*, a sidebar where the row must stay in sight; a bottom bar runs full
-  width, as tall as its content, and stacks below another. Nothing opens a separate tab. Mock and words:
+  for narrow work and bottom bar for wide work"*, a sidebar where the row must stay in sight; a bottom bar spans the
+  page, as tall as its content, and stacks below another. Nothing opens a separate tab. Mock and words:
   `r-sidebar-narrow-bottom-bar-wide-sam-2026-11-24`.
 - **Confidence is one 0–100 bar (Sam, 2026-11-24):** *"a simple bar from 0-100 is the most recognizable and quickly
   understood indicator--better that high, medium, low or others."* One component, `CPL_COMMONS.confBar` (`commons.js`),
