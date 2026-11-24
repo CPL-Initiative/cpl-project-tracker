@@ -69,6 +69,7 @@ at least once), Scheduled (read on a routine). An entry states its current stage
 | Credit for Being You, the student portal's requests | Found | Credentials (the harvested standing), Exhibits | Ask Malone what the portal records when a student names a credential no exhibit covers, and whether a request can arrive with the credential already named |
 | The state's license lists, the Department of Insurance's license types first | Found | Credentials (the harvested standing), Exhibits | Read the Department of Insurance's published license types; measure how many the Catalog lacks |
 | The course outline of record's MQ discipline | Assessed | Subjects (the CSR and the MQ view), Courses | Keep the field in the SLO pass's reader and file it per course |
+| MAP College Contacts report: IT Contact, Lead Manager, Primary Contact Phone, the VRC official from the MAP cohort application (each with its email) | Found (Sam's screenshot, 2026-11-24); the sync reads the report's other 22 fields | Student-contact routing, the CSM Workspace | Add the fields to `CONTACTS_FIELD_MAP` in `map/sync_map_users.py` after a value-signature probe confirms each exact API name (MAP rejects the whole report on an unknown column), with columns on `map_college_contacts`; the Noncredit CPL Lead field follows when ITPI adds it (Sam is asking Pedro) |
 
 ### CPL-AI, the Foundation and ASCCC's certification recommendations
 Faculty-reviewed credit recommendations for 115 industry certifications, each paired with courses colleges could

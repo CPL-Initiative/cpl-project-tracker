@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-24_whole_dollar_totals_cpl_memory_rows.sql
-name=whole_dollar_totals_cpl_memory_rows
+file=kb/migrations/2026-11-24_cpl_assistant_email_cpl_memory_rows.sql
+name=cpl_assistant_email_cpl_memory_rows
