@@ -915,6 +915,8 @@ PRESENTATION_DOCTRINE = {
     # Sam, 2026-11-22 (S705): "this is a rule to apply to all side bars".
     "every sidebar resizes and keeps its top row": (r"every sidebar resizes", r"top row stays frozen"),
     "a sidebar opens beside the view": (r"a sidebar opens beside the view", r"never over it"),
+    # Sam, 2026-11-24 (S722): "a simple bar from 0-100 is the most recognizable and quickly understood indicator".
+    "confidence is one 0-100 bar": (r"confidence is one 0.100 bar", r"confbar"),
 }
 
 

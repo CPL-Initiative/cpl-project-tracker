@@ -696,6 +696,7 @@ _ALL = [
     "- **A SCREEN LEADS WITH THE JOB; A TOOL IS BUILT TO SCALE.**",
     "- **EVERY SIDEBAR RESIZES, AND ITS TOP ROW STAYS FROZEN.**",
     "- **A SIDEBAR OPENS BESIDE THE VIEW, NEVER OVER IT.**",
+    "- **CONFIDENCE IS ONE 0-100 BAR.**",
 ]
 _e = _claude_presentation(_ALL)
 check("presentation doctrine: silent when every rule is stated",
