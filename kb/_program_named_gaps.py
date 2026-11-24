@@ -1009,10 +1009,24 @@ def section_cut_off_ungated(filed: dict) -> str | None:
     return "the reader's note says the section continues past the pages read: \"%s\"" % claim.strip()[:300]
 
 
+def refused_fill_words(filed: dict) -> str | None:
+    """section_cut_off at any college where the scorer refused an electives fill over the record's own words that its
+    requirements run outside the text read (S720: the arithmetic's fill_refused, from S.window_cut), the record
+    collectable and its sum short of the printed total."""
+    a = (filed.get("score") or {}).get("arithmetic") or {}
+    refused = a.get("fill_refused") or (a.get("degree") or {}).get("fill_refused")
+    if not isinstance(refused, dict) or refused.get("gap") != "section_cut_off" or not refused.get("words"):
+        return None
+    if not collectable(filed.get("score") or {}) or not _short_or_unread(filed):
+        return None
+    return "an electives fill was refused: the reader's note says the requirements run outside the text read: \"%s\"" \
+        % str(refused["words"]).strip()[:300]
+
+
 def section_cut_off(filed: dict) -> str | None:
     if filed.get("college") not in CUT_OFF_COLLEGES:
-        return None
-    return section_cut_off_ungated(filed)
+        return refused_fill_words(filed)
+    return section_cut_off_ungated(filed) or refused_fill_words(filed)
 
 
 RECORD_RULES = (("major_total_differs", major_total_differs), ("total_not_printed", total_not_printed),
@@ -1176,6 +1190,11 @@ def held_answer(filed: dict) -> str | None:
         # A record whose own words make the claim false is held out of both by one reading (lists_held_out);
         # lists_precision measures that reading against the hand-held answers.
         return "lists_past_their_figure"
+    refused = a.get("fill_refused") or (a.get("degree") or {}).get("fill_refused") or {}
+    if refused.get("gap") == "section_cut_off" and a.get("status") == "unequal" and comp and st and comp[0] < st[0]:
+        # S720: the scorer refused an electives fill over the reader's words that the requirements run outside the
+        # text, read from the score's own field.
+        return "section_cut_off"
     if filed.get("college") in CUT_OFF_COLLEGES and (filed.get("college"), str(filed.get("control_number"))) \
             in HAND_HELD_CUT_OFF:
         # S713: the second read by hand of every failing record at the gated colleges, apart from the rule's matcher.

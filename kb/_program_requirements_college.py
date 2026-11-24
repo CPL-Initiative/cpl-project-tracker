@@ -7449,14 +7449,16 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 for old in filed.get("reconciled") or []:
                     if old not in notes and R.statewide_note_stands(old, new):
                         notes = notes + [old]
+                fresh = keep_rescored_marker(filed.get("control_number"), filed.get("score"),
+                                             S.score(new, src["closed_list"], src["text"],
+                                                     filed.get("award") or src.get("award"),
+                                                     R.prefix_aliases(college, year=filed.get("catalog_year")),
+                                                     R.packed_codes(college)),
+                                             dict(filed, record=new))
                 filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
                              extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,
-                             score=keep_rescored_marker(filed.get("control_number"), filed.get("score"),
-                                                        S.score(new, src["closed_list"], src["text"],
-                                                                filed.get("award") or src.get("award"),
-                                                                R.prefix_aliases(college, year=filed.get("catalog_year")),
-                                                                R.packed_codes(college)),
-                                                        dict(filed, record=new)))
+                             score=keep_named_gaps(filed.get("control_number"), filed.get("score"), fresh,
+                                                   dict(filed, record=new)))
                 changed.append(filed["control_number"])
                 a = filed["score"]["arithmetic"]
                 print("%-6s reconciled %s; arith %s" % (filed["control_number"],
@@ -7469,6 +7471,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
                                 R.prefix_aliases(college, year=filed.get("catalog_year")), R.packed_codes(college))
                 fresh = keep_rescored_marker(filed.get("control_number"), filed.get("score"), fresh, filed)
+                fresh = keep_named_gaps(filed.get("control_number"), filed.get("score"), fresh, filed)
                 if fresh != filed.get("score"):
                     filed = dict(filed, score=fresh, read_run=filed.get("extracted_run"),
                                  extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id)
@@ -7591,6 +7594,50 @@ def keep_rescored_marker(cn, filed_score: dict | None, fresh: dict, scored: dict
         print("::warning::%s: the fresh arithmetic fails where the ruling's rescore (%s) passed, and the rule no "
               "longer passes it" % (cn, fa["rescored"]), flush=True)
     return fresh
+
+
+def keep_named_gaps(cn, filed_score: dict | None, fresh: dict, scored: dict) -> dict:
+    """The named gaps a filed score carries (score.gaps, score.confidence; kb/_program_named_gaps.py) survive a
+    reconcile's rescore (S720, f-rescore-drops-ge-units-not-read-gaps-s714: S.score writes neither, so three Los Rios
+    reconciles dropped 16 named ge_units_not_read gaps). scored is the filed record with the record this run made.
+    A fresh score that passes as the live table counts it needs no gap, so it stands alone. A fresh score that fails
+    keeps each filed gap its own rule still names on the record as now scored (the words that rule gives now), and
+    each gap no rule names (a hand-held answer, a plan's gap), as filed; the confidence is read again for the first
+    gap kept, its catalog year and source carried from the filed scores. A gap whose rule no longer names it is
+    dropped, said aloud, so a reconcile never files a gap the record no longer has."""
+    if not isinstance(fresh, dict) or not (filed_score or {}).get("gaps"):
+        return fresh
+    if pass_grade(fresh):
+        return fresh
+    import _program_named_gaps as NG
+    rules = dict(NG.RECORD_RULES)
+    now = dict(scored, score=fresh)
+    kept = []
+    for g in filed_score["gaps"]:
+        name = g.get("gap") if isinstance(g, dict) else g
+        fn = rules.get(name)
+        if fn is None:
+            kept.append(g)
+            continue
+        words = fn(now)
+        if words:
+            kept.append(dict(g, words=words) if isinstance(g, dict) else g)
+        else:
+            print("::warning::%s: the named gap %s no longer holds on the rescored record; dropped" % (cn, name),
+                  flush=True)
+    if not kept:
+        return fresh
+    out = dict(fresh, gaps=kept)
+    was = (filed_score or {}).get("confidence") or {}
+    first = kept[0].get("gap") if isinstance(kept[0], dict) else kept[0]
+    conf = NG.confidence(now, first)
+    for k in ("catalog_year", "source"):
+        if k in was:
+            conf[k] = was[k]
+    out["confidence"] = conf
+    if (filed_score or {}).get("confidence_notes"):
+        out["confidence_notes"] = filed_score["confidence_notes"]
+    return out
 
 
 def held_summary(dest: str, prior: dict) -> dict:
