@@ -97,6 +97,13 @@ for r in rec["records"]:
 check(all(r["confidence"]["source"] == NG.OTHER_PAGE_SOURCE for r in rec["records"]
           if r["moves_to"] == "one_option_of_shared_page"), "a shared page's source scores 50 (#3753's second reader)")
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the rows (#3753's MAJOR)")
+# #3755's reader (MAJOR 1): the cap lives in confidence(), so a recompute keeps each cut-off row's filed score.
+for r in rec["records"]:
+    if r["moves_to"] == "noted_section_cut_off":
+        f = W._load(r["control_number"])
+        check(NG.confidence(f, "noted_section_cut_off", "pdf_pages")["course_list_match"] <= NG.MAY_CONTINUE_CAP
+              and NG.confidence(f, "noted_section_cut_off", "pdf_pages") == r["confidence"],
+              "%s: confidence() caps noted_section_cut_off and reproduces the filed score" % r["control_number"])
 cut = [r for r in rec["records"] if r["moves_to"] == "noted_section_cut_off"]
 check(all((r["confidence"]["course_list_match"] or 0) <= NG.MAY_CONTINUE_CAP for r in cut),
       "a cut-off record's course-list match is capped")

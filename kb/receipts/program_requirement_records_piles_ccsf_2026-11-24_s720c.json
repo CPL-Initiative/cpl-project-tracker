@@ -1,6 +1,6 @@
 {
  "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S720: City College of San Francisco's 26 keys S714 held, collected with their gaps named (no reread)",
- "at": "2026-11-24T07:11:30Z",
+ "at": "2026-11-24T07:41:18Z",
  "college": "City College of San Francisco",
  "census": {
   "file": "kb/status/harvest_gap_census.json",

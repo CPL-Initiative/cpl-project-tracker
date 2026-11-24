@@ -233,7 +233,9 @@ def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok:
     else:
         ge = 50 if (prog.get("ge_pattern") and S._span(prog.get("ge_units")) is None) else 100
     clm = None if share is None else int(round(float(share) * 100))
-    if clm is not None and (may_continue(filed) or gap == "section_cut_off"):
+    # S720 (#3755's reader): noted_section_cut_off, section_cut_off's reviewed-list form, takes the same cap here, so
+    # a recompute through confidence() (fill's keep_named_gaps, #3756) keeps the plan's filed score.
+    if clm is not None and (may_continue(filed) or gap in ("section_cut_off", "noted_section_cut_off")):
         # A record whose section runs past the read (S713) places the courses it read, not the program's list.
         clm = min(clm, MAY_CONTINUE_CAP)
     return {"unit_arithmetic": 100 if a.get("pass") else ARITH_SCORE.get(gap, 0),

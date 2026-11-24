@@ -5,10 +5,12 @@
 census (kb/status/harvest_gap_census.json, run 45319725062) lists the same 20 under reconcile_steps, 17954 under
 reconcile_then_load, and four of S713's six under reader_page_search. Sam's ruling (2026-11-17,
 sam-collect-with-gaps-2026-11-17): never drop a record for failing; collect it with its gaps noted and confidence
-scores, a gap noted instead of a reread. No free rule from the committed files passes any of them (each rule the
-S714 reasons name, a wrapper fill, an own-option reading, pool_lists with floors, a fill_to, is a reconcile step
-over page text the committed files do not hold), so each record whose coverage and invented checks pass is collected
-with a named gap, and the rest stay held with their reasons.
+scores, a gap noted instead of a reread. Tonight no free rule runs on any of them: a wrapper fill, pool_lists with
+floors and a fill_to are reconcile steps over page text the committed files do not hold, so each record whose
+coverage and invented checks pass is collected with a named gap, and the rest stay held with their reasons. The
+own-option reading needs no page text (#3755's reader): keeping only each CNIT program's own OPTION block scores
+17615 to 17618 equal (short_high). It is tomorrow's free rule, which would move those four from
+one_option_of_shared_page to passing; tonight they carry the gap.
 
 THE REVIEWED LIST (REVIEWED below, a hand reading of each record's own notes). An entry names the gap, the words of
 the record's note that show it, and the computed and stated figures the record holds. The rule names the gap only
@@ -72,6 +74,8 @@ REVIEWED = {
               "words": "but the catalog prints no overall major total", "courses": ["VMD100", "VMD105"]},
     "33208": {"gap": "noted_section_cut_off", "computed": [3, 24], "stated": [21, 27],
               "words": "The text is cut off at the end of page 184", "not_page": 185},
+    # 37781 stands (#3755's reader): its heading is inferred from p.252 and its page is shared (09193, 09194), but the
+    # printed 14-15 it holds is its closed list's own total, so the record is the program's.
     "37781": {"gap": "noted_section_cut_off", "computed": [10, 11], "stated": [14, 15],
               "words": "the start of the required course list are on page 252 and are not in the text", "not_page": 252},
     "38907": {"gap": "noted_section_cut_off", "computed": [17, 17], "stated": [16, 17],
@@ -305,9 +309,6 @@ def plan(write: bool, census_path: str = CENSUS) -> dict:
         score["gaps"] = [{"gap": gap, "label": NG.GAPS[gap], "words": words}]
         score["confidence"] = NG.confidence(dict(f, score=score), gap, e.get("method"),
                                             (e.get("catalog_year") or year) == year)
-        if gap == "noted_section_cut_off" and score["confidence"]["course_list_match"] is not None:
-            score["confidence"]["course_list_match"] = min(score["confidence"]["course_list_match"],
-                                                           NG.MAY_CONTINUE_CAP)
         hits.append((cn, f, score, gap, words, img))
     for cn, f, score, gap, words, img in hits:
         row = {"college": COLLEGE, "control_number": cn, "award": f.get("award"),
