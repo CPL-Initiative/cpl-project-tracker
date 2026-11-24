@@ -661,7 +661,7 @@
       items.push({ wave: false, n: null, label: "Decision waiting: " + t, unlock: "", href: x.href || "#commons/details/decisions", todo: x.call && x.call.todo_id || null });
     });
     var owed = owedNow(M);
-    if (M.doubtN > 0) items.push({ wave: false, n: M.doubtN, label: "Discipline in doubt: cards to rule on", unlock: plural(M.doubtN, "card", "cards") + " to rule on",
+    if (M.doubtN > 0) items.push({ wave: false, n: M.doubtN, label: "Common subject in doubt: cards to rule on", unlock: plural(M.doubtN, "card", "cards") + " to rule on",
       land: { id: "cmf-card-courses", ref: "doubt", to: "#coci-lookup/list/doubt" } });
     if (owed.length) items.push({ wave: false, n: null, last: true, label: "Rulings to find: ask COBI about " + plural(owed.length, "card", "cards"), unlock: "",
       land: { id: "cmf-need-owed", to: owedAsk(owed) } });
@@ -793,7 +793,7 @@
     if (!ids.length) return null;
     var list = ids.length < 3 ? ids.join(" and ") : ids.slice(0, -1).join(", ") + ", and " + ids[ids.length - 1];
     return el("div", { cls: "cmf-need cmf-landable", id: "cmf-need-owed" }, [el("h4", { text: "Rulings to find" }),
-      p(["An earlier figure on this page named " + plural(ids.length, "common-course card", "common-course cards") + " (shared course IDs " + list + ") as already ruled on, but no ruling is on file. One press asks COBI to look for the rulings and carry any it finds; a card with none stays on the Discipline in doubt list for you to rule on."]),
+      p(["An earlier figure on this page named " + plural(ids.length, "common-course card", "common-course cards") + " (shared course IDs " + list + ") as already ruled on, but no ruling is on file. One press asks COBI to look for the rulings and carry any it finds; a card with none stays on the Common subject in doubt list for you to rule on."]),
       el("p", { cls: "cmf-act" }, [el("span", { cls: "cmf-act-l", text: "Where to act:" }), " ",
         el("a", { href: owedAsk(ids), target: "_blank", rel: "noopener", text: "Ask COBI to find the rulings" }), " ",
         a("#coci-lookup/list/doubt", "The cards in the doubt list")])]);
@@ -1456,7 +1456,7 @@
         big: fmt(Cd.ready) + " of " + fmt(Cd.total), rest: [" cards the automatic check scores as ready (0.85 or better)"],
         after: [meter(pct(Cd.ready, Cd.total), fmt(Cd.ready) + " of " + fmt(Cd.total) + " ready, " + Math.round(pct(Cd.ready, Cd.total)) + " percent")],
         quick: [{ ref: "ready", n: Cd.repair, one: "card that needs repair", many: "cards that need repair" },
-          { ref: "doubt", n: M.doubtN, one: "card whose discipline is in doubt", many: "cards whose discipline is in doubt", to: "#coci-lookup/list/doubt" },
+          { ref: "doubt", n: M.doubtN, one: "card whose common subject is in doubt", many: "cards whose common subject is in doubt", to: "#coci-lookup/list/doubt" },
           { ref: "mid", n: ASKED.missingMembership, one: "card missing from the membership list", many: "cards missing from the membership list" },
           { ref: "ready", n: Cd.review, one: "card that needs review", many: "cards that need review" }],
         defs: [["Why", "each common course carries one shared course ID (an M-ID), so a local course at any college points to the same course."],
@@ -1469,16 +1469,16 @@
               line: fmt(Cd.review) + " need review and " + fmt(Cd.repair) + " need repair.",
               next: "Jev as a second stage, a same-course yes or no on the top candidates; then SLOs and objectives in the score where the outcomes are on file.",
               act: [["The Courses List", "#coci-lookup/courses"]] },
-            { ref: "doubt", name: "Every card whose discipline is in doubt ruled on", fig: M.doubtN == null ? ["TBA"] : figOf(M.doubtN, " to rule on"),
-              line: "A card lands here when its catalog description points to another discipline, or only its TOP code does. A person rules on each in the Courses List's side panel, and a ruled card leaves the list at its next build.",
-              act: [["Discipline in doubt", "#coci-lookup/list/doubt"]] }],
+            { ref: "doubt", name: "Every card whose common subject is in doubt ruled on", fig: M.doubtN == null ? ["TBA"] : figOf(M.doubtN, " to rule on"),
+              line: "A card lands here when its catalog description points to another common subject, or only its TOP code does. A person assigns each to a common subject in the Courses List's side panel; a ruled card leaves the list at its next build.",
+              act: [["Common subject in doubt", "#coci-lookup/list/doubt"]] }],
           Connect: [
             { ref: "mid", name: "Every program course under an M-ID", fig: ["TBA"],
               line: ["A once-through count of program courses with no shared course ID is not counted yet; the Courses List’s ", a("#coci-lookup/list/nomid", "Needs an M-ID filter"),
                 " lists them. One known cause: " + fmt(ASKED.missingMembership) + " cards are missing from the published list of which local courses belong to each shared course (a membership fix)."],
               next: "the pile mint’s next wave, 76 tutoring titles that name a subject, assigned under LSKL M9004.",
               act: [["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }] },
-        method: [p(["Of the " + fmt(Cd.total) + " cards, " + fmt(Cd.review) + " need review, " + fmt(Cd.repair) + " need repair, and " + fmt(Cd.notReady) + " are not ready. " + fmt(Cd.confirmed) + " have been confirmed by a person, " + fmt(Cd.confirmedReady) + " of them ready. The " + fmt(Cd.ready) + " ready cards are those the automatic check scores 0.85 or better. The M-ID gap is a placeholder; it is not the older 2,362 of 8,912 figure, which this page does not show. " + (M.doubtN ? fmt(M.doubtN) + (M.doubtN === 1 ? " card waits" : " cards wait") + " on a person's ruling in the Discipline in doubt list." : "")]), p([LIVE_WORDS.courses])],
+        method: [p(["Of the " + fmt(Cd.total) + " cards, " + fmt(Cd.review) + " need review, " + fmt(Cd.repair) + " need repair, and " + fmt(Cd.notReady) + " are not ready. " + fmt(Cd.confirmed) + " have been confirmed by a person, " + fmt(Cd.confirmedReady) + " of them ready. The " + fmt(Cd.ready) + " ready cards are those the automatic check scores 0.85 or better. The M-ID gap is a placeholder; it is not the older 2,362 of 8,912 figure, which this page does not show. " + (M.doubtN ? fmt(M.doubtN) + (M.doubtN === 1 ? " card waits" : " cards wait") + " on a person's ruling in the Common subject in doubt list." : "")]), p([LIVE_WORDS.courses])],
         links: [["Open the Courses List", "#coci-lookup/courses"], ["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }),
       checksCard({ key: "exhibit", title: "Exhibit titles", pill: "In progress",
         big: fmt(E.stamped) + " of " + fmt(E.titles), rest: [" local titles reviewed"],

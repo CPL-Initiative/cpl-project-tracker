@@ -250,7 +250,7 @@ const count = (hay, needle) => hay.split(needle).length - 1;
     "collect/unread": /unread: \{ word: "Not collected yet"/.test(DATA),
     "exhibits/held": /ROUTE_WORDS = \{ held:/.test(fs.readFileSync("exhibits.js", "utf8")),
     "cr-reference/names": /FILTERS = \[[^\]]*"names"/.test(fs.readFileSync("cr_reference.js", "utf8")),
-    "coci-lookup/list/doubt": /\["doubt", "Discipline in doubt", null\]/.test(fs.readFileSync("coci_lookup.js", "utf8"))   // Fixes owed's list (S723)
+    "coci-lookup/list/doubt": /\["doubt", "Common subject in doubt", null\]/.test(fs.readFileSync("coci_lookup.js", "utf8"))   // Fixes owed's list (S723)
   };
   /* Sam, 2026-11-21 (item 1): the ranked links jump to a card on this page (data-onpage); they are guarded in
      tests/commons_page_clarity.test.js. Every other Needs you link opens a view in the router. */

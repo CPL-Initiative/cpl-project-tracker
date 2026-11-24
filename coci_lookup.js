@@ -118,6 +118,10 @@
       " border:1px solid var(--border-strong); border-radius:4px; background: var(--surface-opaque); color: var(--text-body); }",
     // Discipline in doubt: the ruling's reason runs the panel's width; the checkbox meets the 24px target.
     ".ccl-rule-words { flex:1 1 100%; min-height:64px; resize:vertical; }",
+    // Accept on a band in Common subject in doubt (S723): an underlined word, 24px tall, like the band's links.
+    ".ccl-band-accept { font:inherit; background:none; border:0; padding:0; cursor:pointer; color:var(--accent-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
+    ".ccl-band-accept:focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }",
+    ".ccl-band-said { color: var(--text-body); font-size:.82rem; }",
     ".ccl-rule input[type=checkbox] { width:20px; height:20px; margin:2px 0; }",
     ".ccl-cc-fold > summary { cursor:pointer; min-height:24px; line-height:24px; font-size:.82rem; color: var(--text-body); }",
     ".cplcoci-lede { margin:0 0 4px; font-size:.88rem; color: var(--text-body); max-width:var(--cpl-measure,none); }",
@@ -602,7 +606,7 @@
     return LIST.cols || (LIST.cols = [
       { h: "Title", w: 17, v: function (r) { return r.title; } },
       { h: "College", w: 11, v: function (r) { return r.college; } },
-      { h: "Subject", w: 5, v: function (r) { return r.subj; } },
+      { h: "Local subject", w: 5, v: function (r) { return r.subj; } },   // a college's own subject code, never the common subject (Sam, S723)
       { h: "Number", w: 5, v: function (r) { return r.num; } },
       { h: "Units", w: 4, n: true, v: function (r) { return r.units; } },
       { h: "Credit", w: 6, v: function (r) { return r.credit; } },
@@ -622,7 +626,7 @@
      The Commons counts common courses (cards); a filter here lists their local courses, banded by M-ID. */
   var JOB_FILTERS = [["seedless", "Discipline no seed has touched", "seed_untouched_discipline"], ["units", "A unit anomaly", "unit_anomaly"],
     ["nodesc", "No catalog description", "blank_description"], ["stray", "On a stray identity code", null],
-    ["doubt", "Discipline in doubt", null]];
+    ["doubt", "Common subject in doubt", null]];
   LIST_FILTERS = LIST_FILTERS.concat(JOB_FILTERS.map(function (f) { return [f[0], f[1]]; }));
   var JOBS = { by: null, strays: null, error: null, strayError: null, loading: null, doubt: null, doubtError: null, rulings: null };
   /* Discipline in doubt (Sam, 2026-11-09: "make a built in way for me to rule on them so our procedures can be adjusted
@@ -732,26 +736,29 @@
     });
     return el("div", { "class": "ccl-doubt-note" }, [
       el("p", { "class": "cplcoci-meta", "data-doubt-open": String(open), "data-doubt-desc": String(nDesc),
-        "data-doubt-desc-open": String(descOpen), "data-doubt-desc-ruled": String(descRuled) }, ["Discipline in doubt, " + D.discipline + ": " + fmt(n) + (n === 1 ? " common course" : " common courses") +
+        "data-doubt-desc-open": String(descOpen), "data-doubt-desc-ruled": String(descRuled) }, ["Common subject in doubt, " + ccName(D.discipline) + ": " + fmt(n) + (n === 1 ? " common course" : " common courses") +
         " the daily re-check could not settle. On " + fmt(nDesc) + " the catalog description reads as another discipline; on " + fmt(nTop) +
         " only the colleges' TOP codes do, and TOP is a last-in-line signal. " + fmt(ruled) + " ruled so far" +
         (taught ? ", " + fmt(taught) + " with a reason marked for similar cards" : "") + (ruled ? "; a ruled card leaves this list, and its ruling stays on its panel" : "") +
         ". " + fmt(open) + (open === 1 ? " common course waits" : " common courses wait") + " for a ruling; the list below shows their local courses."]),
-      el("p", { "class": "cplcoci-meta" }, ["Open a course to see both signals and rule on its common course: keep the discipline, move it, or say you are not sure, and say why. " +
+      el("p", { "class": "cplcoci-meta" }, ["Open a course to see both signals and rule on its common course's common subject: keep it, move it to another common subject, or say you are not sure, and say why. A ruling never changes a college's local subject code. " +
         "A reason marked for similar cards becomes a proposed procedure: a session writes it as a rule, counts the waiting cards it would settle, and switches it on with your word, so the next card like it settles without reaching you."])]);
   }
   /* The evidence and the ruling, on a common course in the job. */
   function doubtBlock(c, card, sess, h) {
     var out = [], mid = c.id, R = JOBS.rulings && JOBS.rulings[mid];
-    out.push(h.heading("Why its discipline is in doubt"));
+    out.push(h.heading("Why its common subject is in doubt"));
+    /* Sam, S723, 2026-11-24: "the purpose of this action is to assign the course to a common subject ... we would never"
+       assign it to a different local subject. */
+    out.push(el("p", { "class": "cplcoci-meta ccl-doubt-purpose" }, ["A ruling assigns this common course to a common subject: an MQ discipline and its common subject code. It never changes a college's local subject code; a local subject's title that reads wrong is fixed under Subjects, in the CPL Commons."]));
     var lines = [];
     if ((card.why || []).indexOf("description") >= 0 && card.desc && card.desc.length)
-      lines.push("Its catalog description reads closest to " + card.desc.map(function (d) { return d[0]; }).slice(0, 2).join(", then ") + ".");
+      lines.push("Its catalog description reads closest to " + card.desc.map(function (d) { return ccName(d[0]); }).slice(0, 2).join(", then ") + ".");
     else if (card.desc && card.desc.length)
-      lines.push("Its catalog description reads closest to " + card.desc[0][0] + ".");
+      lines.push("Its catalog description reads closest to " + ccName(card.desc[0][0]) + ".");
     var votes = Object.keys(card.votes || {}).sort(function (a, b) { return card.votes[b] - card.votes[a] || (a < b ? -1 : 1); });
-    if (votes.length) lines.push("Its colleges' TOP codes point to " + votes.map(function (d) { return d + " (" + card.votes[d] + ")"; }).join(", ") + ".");
-    else lines.push("None of its colleges' TOP codes maps to a discipline.");
+    if (votes.length) lines.push("Its colleges' TOP codes point to " + votes.map(function (d) { return ccName(d) + " (" + card.votes[d] + ")"; }).join(", ") + ".");
+    else lines.push("None of its colleges' TOP codes maps to a common subject.");
     lines.push(fmt(card.colleges) + (card.colleges === 1 ? " college offers it." : " colleges offer it."));
     var also = (c.xdisc || []).filter(Boolean);
     if (also.length) lines.push("It is also listed as " + ccNames(also) + ".");
@@ -766,13 +773,16 @@
     if (!sess) return out;
     var F = CC.rule[mid] = CC.rule[mid] || { choice: "", words: "", similar: false };
     var sel = el("select", { id: "ccl-rule-choice", "class": "ccl-cc-in", "aria-label": "Your ruling on " + mid });
-    var opts = [["", R ? "Rule again" : "Choose a ruling"], ["keep", "Keep " + (c.disc || card.discipline)]];
+    /* Each common subject reads with its code (KINE Kinesiology). The signals' common subjects come first; the group
+       under them lists every common subject but the one it has, the signals' too (Sam, S723, 2026-11-24: "I should see
+       the full list of possible common subjects in both lists"). */
+    var opts = [["", R ? "Rule again" : "Choose a ruling"], ["keep", "Keep " + ccName(c.disc || card.discipline)]];
     var seen = {}; seen[c.disc || card.discipline] = 1;
-    (card.desc || []).map(function (d) { return d[0]; }).concat(votes).forEach(function (d) { if (!seen[d]) { seen[d] = 1; opts.push(["move:" + d, "Move to " + d]); } });
+    (card.desc || []).map(function (d) { return d[0]; }).concat(votes).forEach(function (d) { if (!seen[d]) { seen[d] = 1; opts.push(["move:" + d, "Move to " + ccName(d)]); } });
     opts.push(["unsure", "Not sure yet"]);
     opts.forEach(function (o) { var n = el("option", { value: o[0] }, [o[1]]); if (o[0] === F.choice) n.selected = true; sel.appendChild(n); });
-    var other = el("optgroup", { label: "Move to another discipline" });
-    CC.mq.forEach(function (d) { if (!seen[d]) { var n = el("option", { value: "move:" + d }, [d]); if ("move:" + d === F.choice) n.selected = true; other.appendChild(n); } });
+    var other = el("optgroup", { label: "Move to another common subject" }), here = c.disc || card.discipline;
+    CC.mq.forEach(function (d) { if (d !== here) { var n = el("option", { value: "move:" + d }, [ccName(d)]); other.appendChild(n); } });
     sel.appendChild(other);
     /* Keep the home discipline and list a second one (Sam, 2026-11-09, issue 2981: a student can take the course as
        Kinesiology or as Psychology, depending on their major). The home stays for counting and the M-ID; the second
@@ -780,11 +790,11 @@
        signals' disciplines come first, then every other one. */
     var home = c.disc || card.discipline;
     if (home) {   // a course with no home has nothing to keep: the group waits until it has one
-      var xg = el("optgroup", { label: "Keep " + home + ", and also list as" }), xseen = {};
+      var xg = el("optgroup", { label: "Keep " + ccName(home) + ", and also list under" }), xseen = {};
       xseen[home] = 1; also.forEach(function (d) { xseen[d] = 1; });
       (card.desc || []).map(function (d) { return d[0]; }).concat(votes).concat(CC.mq).forEach(function (d) {
         if (xseen[d]) return; xseen[d] = 1;
-        var n = el("option", { value: "also:" + d }, [d]); if ("also:" + d === F.choice) n.selected = true; xg.appendChild(n);
+        var n = el("option", { value: "also:" + d }, [ccName(d)]); if ("also:" + d === F.choice) n.selected = true; xg.appendChild(n);
       });
       if (also.length) { var nx = el("option", { value: "also:" }, ["No second discipline (clear " + ccNames(also) + ")"]); if (F.choice === "also:") nx.selected = true; xg.appendChild(nx); }
       sel.appendChild(xg);
@@ -798,12 +808,26 @@
     cb.checked = !!F.similar;
     cb.addEventListener("change", function () { F.similar = cb.checked; });
     out.push(el("div", { "class": "ccl-rule" }, [
-      el("p", { "class": "ccl-cc-edit" }, [el("label", { "for": "ccl-rule-choice" }, ["Your ruling "]), sel]),
+      el("p", { "class": "ccl-cc-edit" }, [el("label", { "for": "ccl-rule-choice" }, ["Common subject "]), sel]),
       el("p", { "class": "ccl-cc-edit" }, [el("label", { "for": "ccl-rule-words" }, ["Why, in plain words"]), ta]),
       el("p", { "class": "ccl-cc-edit" }, [cb, el("label", { "for": "ccl-rule-similar" }, [" Use this reason for similar cards"])]),
       el("p", { "class": "ccl-pn-acts ccl-rule-save" }, [h.word(CC.busy ? "Saving…" : "Save the ruling", function () { ccRule(c, card); },
         { "aria-label": "Save your ruling on " + mid })])]));
     return out;
+  }
+  /* Accept on a band (Sam, S723, 2026-11-24: "it would be convenient to be able to accept the current common subject
+     on the in doubt course directly on the course row without having to click into the sidebar"): a signed-in
+     reviewer keeps an unruled card's common subject in one press; it writes the same ruling the panel's Keep writes,
+     with no reason, and the card leaves the list. The panel stays for a move, a second common subject or a reason. */
+  function bandAccept(id) {
+    var card = JOBS.doubt && JOBS.doubt.map.get(id);
+    if (!card || ruledCard(id) || !ccSession()) return [];
+    ccLoad();
+    var c = CC.byId && CC.byId.get(id);
+    if (!c || !(c.disc || card.discipline)) return [];
+    var b = el("button", { type: "button", "class": "ccl-band-accept", "aria-label": "Accept " + ccName(c.disc || card.discipline) + " as the common subject of " + id }, ["Accept " + ccName(c.disc || card.discipline)]);
+    b.addEventListener("click", function () { CC.rule[id] = { choice: "keep", words: "", similar: false }; ccRule(c, card); });
+    return CC.said[id] ? [b, el("span", { "class": "ccl-band-said", role: "status" }, [CC.said[id]])] : [b];
   }
   /* The ruling's two writes: its reason (a ccr_procedure_request row, a new key per save), then the discipline through
      ccSave (keep confirms it, move sets it, also list as adds a second discipline and leaves the home, not sure writes
@@ -927,14 +951,27 @@
      time on 2026-11-04): description edits and merge notes (never used), anchor proposals (1), dismissed suggestions
      (12), Mind Meld notes (10); `git revert` of the tab's deletion brings any back. The merge editor and Suggested
      merges follow in their own PR. */
-  var CC = { byId: null, mq: [], loading: false, failed: false, live: {}, liveAsked: {}, said: {}, busy: false, edit: {}, rule: {} };
+  var CC = { byId: null, mq: [], code: null, loading: false, failed: false, live: {}, liveAsked: {}, said: {}, busy: false, edit: {}, rule: {} };
   var DSRC_WORDS = { top_code: "from its TOP code, a last-in-line signal that waits on a second signal or a person",
     top_division: "from its TOP division, a last-in-line signal that waits on a second signal or a person",
     subject_map: "from its subject code", subject_map_edge: "from its subject code", title_keyword: "from words in its title",
     description: "from its catalog description", description_and_top: "from its seed, confirmed by its catalog description with its TOP code agreeing", coci_reference: "from COCI's reference", crossdisc_remint: "from a re-mint across disciplines",
     pile_mint: "from the mint of the Needs an M-ID pile, which no person has confirmed" };
+  /* A common subject's code beside its name (Sam, S723: "include the common subject code next to the title"), from the
+     Common Subjects Reference seed; read once, and a name reads alone until it answers or if it fails. */
+  function ccName(d) { var k = d && CC.code && CC.code[d]; return k ? k + " " + d : d || ""; }
+  function ccCodes() {
+    if (CC.code || CC.codeAsked || typeof fetch !== "function") return;
+    CC.codeAsked = true;
+    fetch("kb/discipline_canonical_subj4.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (seed) {
+      var m = {}, D = (seed && seed.disciplines) || {};
+      Object.keys(D).forEach(function (d) { if (D[d] && D[d].canonical_subj4) m[d] = D[d].canonical_subj4; });
+      CC.code = m; ccRedraw();
+    }, function () { /* names alone */ });
+  }
   function ccRedraw() { var api = listApi(); if (api && api.redraw) api.redraw(); }
   function ccLoad() {
+    ccCodes();
     if (CC.byId || CC.loading || CC.failed) return;
     var index = function () {
       var D = window.CPL_UNIFIED_COURSES;
@@ -1486,9 +1523,9 @@
     } else if (name === "College") {
       h.line(r.college + ".");
       h.box.appendChild(h.word("Show every course at " + r.college, function () { h.filterBy(h.colIndex("College"), r.college); }));
-    } else if (name === "Subject" || name === "Number") {
+    } else if (name === "Local subject" || name === "Number") {
       h.line(r.subj + " " + r.num + " at " + r.college + ".");
-      h.box.appendChild(h.word("Show every " + r.subj + " course", function () { h.filterBy(h.colIndex("Subject"), r.subj); }));
+      h.box.appendChild(h.word("Show every " + r.subj + " course", function () { h.filterBy(h.colIndex("Local subject"), r.subj); }));
     } else if (name === "Identities (M-ID, C-ID, CCN)") {
       if (!m.X) h.line("Today's identity file did not arrive, so the List cannot say which M-ID holds this course.");
       if (r.note) h.line(r.note);
@@ -1538,7 +1575,7 @@
       bands: { key: function (r) { return r.mid; }, by: "M-ID", label: "Bands by M-ID", none: "Not in a group",
         name: function (id, members) { var t = bandTitle(members); return id + (t ? ", " + t : ""); },
         facts: function (id, members) { return bandFacts(members); },
-        acts: function (id) { return [skyLink(id)]; } },
+        acts: function (id) { return bandAccept(id).concat([skyLink(id)]); } },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       filters: LIST_FILTERS, counts: function () { return Object.assign({}, listBuild().counts, jobCounts()); },
       // The jobs first, in the order to act on them, then the census words (Sam, 2026-11-09, issue 2997: "put them

@@ -255,15 +255,15 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
     && owedLi.querySelector("a").getAttribute("data-onpage-to") === ask.getAttribute("href"));
   click(x.w, owedLi.querySelector("a")); await settle();
   check("and the press lands there", x.d.activeElement === ask && ask.classList.contains("cmf-hl"));
-  const doubtLi = rk.find((l) => /^Discipline in doubt: cards to rule on/.test(txt(l)));
+  const doubtLi = rk.find((l) => /^Common subject in doubt: cards to rule on/.test(txt(l)));
   check("⭐ the doubt list is a Needs you item with its count, landing on its check in Courses and M-IDs", doubtLi && /3 cards to rule on/.test(txt(doubtLi))
     && doubtLi.querySelector("a").getAttribute("data-onpage") === "cmf-card-courses" && doubtLi.querySelector("a").getAttribute("data-onpage-ref") === "doubt"
     && /^3 to rule on/.test(txt(x.d.querySelector('.cmf-card[data-key="courses"] .cmf-check[data-ref="doubt"] .cmf-check-fig'))));
   click(x.w, doubtLi.querySelector("a")); await settle();
-  check("and the press lands on Discipline in doubt, highlighted", x.d.activeElement && x.d.activeElement.getAttribute("href") === "#coci-lookup/list/doubt" && x.d.activeElement.classList.contains("cmf-hl"));
+  check("and the press lands on Common subject in doubt, highlighted", x.d.activeElement && x.d.activeElement.getAttribute("href") === "#coci-lookup/list/doubt" && x.d.activeElement.classList.contains("cmf-hl"));
   x = load({ files: { "kb/ccr_doubt.json": doubtWith([]) } });
   await x.M.boot(); await settle();
-  check("⭐ an empty doubt list takes both off Needs you", !x.d.getElementById("cmf-need-owed") && !Array.from(x.d.querySelectorAll("#cmf-rank li")).some((l) => /^(Rulings to find|Discipline in doubt)/.test(txt(l))));
+  check("⭐ an empty doubt list takes both off Needs you", !x.d.getElementById("cmf-need-owed") && !Array.from(x.d.querySelectorAll("#cmf-rank li")).some((l) => /^(Rulings to find|Common subject in doubt)/.test(txt(l))));
 
   /* Sam, 2026-11-24: "don't refer to cobix as, like sky, it is an internal tool". The page names COBI. */
   x = load({ files: { "kb/ccr_doubt.json": doubtWith(["KINE M1524"]) } });
