@@ -67,6 +67,10 @@ All verbatim in `docs/commons_lessons.md`, S724. **RULED:** `r-sidebar-narrow-bo
    Sam's direction (`v-mid-decisions-automatic-and-fluid-sam-2026-11-24`): as SLO and objective data fill in, M-ID
    decisions grow automatic from confidence scores; keep consolidation low impact and fluid. Gather's starting ticks
    should come from those scores, title words being the first signal.
+   Sam on version 2: *"gather looks good as long as we can reuse this gather for other cases by changing variables
+   (common and local subjects, keywords, etc."*. Build it as one tool: words (space = all, comma or *or* = either,
+   minus = leave out, quotes = a phrase; a word matches its start), the common subject, the local subject codes, the
+   target, each in the view's address so a gather can be linked and rerun.
    Sam then: *"els will be a similar case of big mid consolidation into just a few"*: build Gather for both; read
    `docs/reference/lanes/esl-packaging.md` (the comprehensives and carve-outs) before designing it.
 1. **The anchor-page build, step 2:** the Common courses / Local courses toggle on the Courses List.
