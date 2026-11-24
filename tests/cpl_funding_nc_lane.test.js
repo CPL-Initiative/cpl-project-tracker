@@ -296,7 +296,8 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
   const crSS = function (sl) { return (T._prios(key, sl) || []).reduce(function (t, p) { return t + p.share; }, 0); };
   const wrong = ["1", "2"].reduce(function (s, sl) { return s + ncW * ssOf(sl) / 2 * ssOf(sl) / crSS(sl); }, 0);
   check("E3: with the shares diverged the NC caps scale on the NC lane's OWN share sum, exactly as the credit lane scales on its own",
-    Math.abs(capAll - expected) < 0.01);
+    // Whole-dollar priority parts since 2026-11-24: each part rounds once.
+    Math.abs(capAll - expected) <= (T._ncPrios(key, "1") || []).length * 2);
   check("E4: and NOT on the credit share sum — the two now differ, so this discriminates",
     Math.abs(ssOf("1") - crSS("1")) > 0.01 && Math.abs(capAll - wrong) > 1);
 })();

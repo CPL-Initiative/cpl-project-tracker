@@ -104,7 +104,8 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   const worst = open.rows.reduce(function (mx, r) {
     return Math.max(mx, Math.abs(r.total - (W[r.college] || 0)));
   }, 0);
-  check("C2: ⭐ ceiling OFF reproduces the pre-ceiling pin loop EXACTLY (max diff = 0)", worst === 0);
+  // whole dollars at the source since 2026-11-24: an award moves by at most its rounding unit ($2 over two years), so "exactly" is to the unit.
+  check("C2: ⭐ ceiling OFF reproduces the pre-ceiling pin loop to the dollar unit (max diff " + worst.toFixed(2) + " <= 2)", worst <= 2);
   check("C2: ceiling off leaves the floored set unchanged",
     open.m.floorCount === Object.keys(F).length && open.m.floorCount > 0);
   check("C2: ceiling off reports no capped colleges and no unspent pool",
@@ -208,7 +209,8 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
       return s + Math.max(0, was.total - r.total);
     }, 0);
   check("C3: capReleased is the money that actually moved (not a proportional-split proxy)",
-    Math.abs(capped.m.capReleased - grossReleased) < 1);
+    // The rows are whole dollars (2026-11-24); each capped row's comparison can move by its $2 unit.
+    Math.abs(capped.m.capReleased - grossReleased) <= 2 * capped.rows.filter(function (r) { return r.capped; }).length + 1);
   // Conservation of the movement: what the over-the-ceiling institutions gave
   // up (net) is exactly what everyone else — the pushed-over institution's
   // climb included — received. Signed sums over the whole roster cancel.
@@ -265,7 +267,8 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
     const spread = Math.max.apply(null, aboveMin) / Math.min.apply(null, aboveMin);
     const nCapped = D.colleges.filter(function (c) { return m.capped[c.college]; }).length;
     check(basis + ": ⭐ ONE earn rate for every college above the minimum, capped ones included",
-      nCapped > 0 && spread < 1.000001);
+      // Whole-dollar priority figures (2026-11-24) move a rate by a dollar in tens of thousands.
+      nCapped > 0 && spread < 1.0005);
     // Guard the direction too: a capped college must be asked for LESS, never
     // more. A scale factor above 1 would be the penalty this is here to prevent.
     check(basis + ": a capped college's target is BELOW its pre-cap proportional target",

@@ -193,7 +193,8 @@ check("sizePct is COMPUTED, never read from a baked percentage",
     const expect = hcOf[n] / baseHc * remaining;
     return Math.max(mx, Math.abs((m.W[n] || 0) - expect));
   }, 0);
-  check("the basis reduces to the proportional split over the roster (max err < $1)", worst < 1);
+  // whole dollars at the source since 2026-11-24: an award moves by at most its rounding unit ($2 over two years).
+  check("the basis reduces to the proportional split over the roster (max err " + worst.toFixed(2) + " <= $2)", worst <= 2);
   check("every bound institution sits exactly on its bound (base or cap)",
     ROSTER.filter(function (n) { return m.floored[n] || m.capped[n]; })
       .every(function (n) {
