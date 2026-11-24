@@ -1,23 +1,23 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-24T00:12:58Z",
+ "written_at": "2026-11-24T06:26:13Z",
  "sources": {
   "procedures_run": "2026-11-23T19:33:03Z",
   "suggestions": "2026-11-24T00:12:51Z",
-  "statewide": "2026-11-24T00:03:44",
-  "audit": "2026-11-24T00:12:31+00:00",
+  "statewide": "2026-11-24T06:19:56",
+  "audit": "2026-11-24T06:25:33+00:00",
   "assignments": {
    "read": "live",
-   "at": "2026-11-24T00:12:56Z",
+   "at": "2026-11-24T06:26:09Z",
    "decided": []
   }
  },
  "tiles": {
   "names": {
    "n": 6252,
-   "of": 6253,
-   "waiting": 1
+   "of": 6254,
+   "waiting": 2
   },
   "aligned": {
    "n": 0,
@@ -471,7 +471,7 @@
   "Villa Park High School"
  ],
  "no_cr": {
-  "of": 3066,
+  "of": 3067,
   "owners_read": "2026-10-26T23:35Z",
   "rows": [
    {
