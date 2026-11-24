@@ -48,10 +48,14 @@ for cn in members:
 check(by_reading == {"plan_line": [6, 0], "ge_overlap": [4, 0], "ge_waiver": [2, 0], "repeat": [1, 0],
                      "course_renumbers": [1, 0], "total_differs": [1, 0]},
       "each reading's right and wrong: %s" % by_reading)
-# The two records the electives step holds by name: the plan-line reading alone passes them, and the hand holds them.
-check(pr["held_by_name"] == {"02430": {"without_the_hold": "passes", "hand": "none"},
+# The two records the electives step holds by name, and the hand holds them. The plan-line reading alone passes
+# 08252. It passed 02430 too until S720: 02430's notes say its Skills Certificate course list falls on the previous
+# page, outside the text, with five listed courses explained as missing, so the scorer now refuses the degree's
+# electives fill there (window_cut, f-elective-fill-passes-cut-off-windows-s714) and the reading agrees with the hand.
+check(pr["held_by_name"] == {"02430": {"without_the_hold": "none", "hand": "none"},
                              "08252": {"without_the_hold": "passes", "hand": "none"}},
-      "02430 and 08252 pass without the hold and are held by name: %s" % pr["held_by_name"])
+      "08252 passes without the hold, 02430 is refused its fill over a cut window, and both are held by name: %s"
+      % pr["held_by_name"])
 # Each held record stays held (none) under the readings: they read no gap and pass nothing.
 held = [cn for cn in members if E.hand_answer(cn) == "none"]
 check(all(E.read(E.at_base(cn), secs[cn]["text"])["answer"] == "none" for cn in held), "the 9 held stay held")

@@ -1,0 +1,1130 @@
+{
+ "rule": "S720: an electives fill never passes a record over a window the reader cut off (f-elective-fill-passes-cut-off-windows-s714); the record is collected with the gap named (sam-collect-with-gaps-2026-11-17)",
+ "at": "2026-11-24T07:22:49Z",
+ "measure": {
+  "records": 18960,
+  "changes": [
+   {
+    "college": "American River College",
+    "control_number": "04544",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": true,
+    "words": "The text begins on page 941 mid-table; the section heading and any earlier rows (likely on page 940) are not in the text."
+   },
+   {
+    "college": "American River College",
+    "control_number": "07206",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "The provided text begins mid-table on page 429; the section heading, program description, possible career information, and the first rows of the requirements table are on page 428, which is not included."
+   },
+   {
+    "college": "Cañada College",
+    "control_number": "31856",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "The text opens partway through a program's requirements and then begins 'AA Kinesiology'."
+   },
+   {
+    "college": "College of the Desert",
+    "control_number": "12021",
+    "before": "unequal",
+    "after": "unequal",
+    "before_pass": false,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "ART 001A: degree list cut off; appears only in the Certificate of Achievement section in the text"
+   },
+   {
+    "college": "Cosumnes River College",
+    "control_number": "04602",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "BUS 300: not in the text; the 1st Semester rows appear to be on page 248, which was not supplied"
+   },
+   {
+    "college": "Cosumnes River College",
+    "control_number": "04614",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "ART 320: not in the text provided; likely in the required core on page 169"
+   },
+   {
+    "college": "East Los Angeles College",
+    "control_number": "02430",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "The Skills Certificate course list falls on the previous page and is not in the text; its 12 units are not represented in any block."
+   },
+   {
+    "college": "Folsom Lake College",
+    "control_number": "15368",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "ART 300: core requirements not in text (likely on page 142); appears only in Art Education certificate and course descriptions"
+   },
+   {
+    "college": "Folsom Lake College",
+    "control_number": "38736",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "The supplied text begins mid-table at the top of page 177."
+   },
+   {
+    "college": "Folsom Lake College",
+    "control_number": "39574",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "The extracted text starts mid-table on page 166: the A.S. degree heading, description and the first rows of its requirements table (probably BIOL 400, BIOL 410 or BIOL 411, BIOL 420, as in the Environmental Science Certificate) are on page 165, which is not included."
+   },
+   {
+    "college": "Folsom Lake College",
+    "control_number": "42612",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "The supplied text begins mid-table on page 359; the degree's heading, description and the first rows of its requirements table (likely on page 358) are missing."
+   },
+   {
+    "college": "Sacramento City College",
+    "control_number": "04656",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "The catalog text begins mid-table on page 221: the A.S. in Marketing heading, description and the first part of the requirements table (page 220) are not in the text."
+   },
+   {
+    "college": "Sacramento City College",
+    "control_number": "04688",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "The text begins mid-table at page 563; the section heading, block heading and the first rows (likely BIOL 430 and an ANTH 310/ANTH 481/ETHNS 300 etc. choice) are on page 562, not supplied."
+   },
+   {
+    "college": "Sacramento City College",
+    "control_number": "07350",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "The excerpt begins mid-section on page 538; the section heading, description and the start of the required course table are on the previous page and not in the text."
+   },
+   {
+    "college": "Sacramento City College",
+    "control_number": "21418",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "The extracted text begins mid-section on page 455; the section heading, program description and the earlier requirement blocks (core and other lists, likely on page 454) are cut off."
+   },
+   {
+    "college": "Solano Community College",
+    "control_number": "38591",
+    "before": "equal",
+    "after": "unequal",
+    "before_pass": true,
+    "after_pass": false,
+    "filed_pass": false,
+    "words": "Part of the requirements table may be missing from the extraction (e.g., a required core preceding the 18-unit selection)."
+   }
+  ],
+  "by_college": {
+   "American River College": 2,
+   "Cañada College": 1,
+   "Cosumnes River College": 2,
+   "East Los Angeles College": 1,
+   "Folsom Lake College": 4,
+   "Sacramento City College": 4,
+   "Solano Community College": 1
+  },
+  "takes_away": 15,
+  "adds": 0,
+  "not_reproduced": []
+ },
+ "rows": 1,
+ "moved": [
+  {
+   "college": "American River College",
+   "control_number": "04544",
+   "award": "A.A. Degree",
+   "path": "kb/program_requirements_college/american_river/records/04544.json",
+   "words": "The text begins on page 941 mid-table; the section heading and any earlier rows (likely on page 940) are not in the text.",
+   "passes_before": true,
+   "passes_after": false,
+   "before_image": {
+    "program_title": "Theatre Arts: Acting",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=941",
+    "measure": "units",
+    "total_min": 31,
+    "total_max": 31,
+    "record": {
+     "program": {
+      "section_heading": "A.A. in Theatre Arts: Acting",
+      "measure": "units",
+      "total_units": {
+       "min": 31,
+       "max": 31
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "recognize standard practices of ensemble playing in a rehearsal/performance environment",
+       "compare and analyze the theories and techniques of acting from a historical perspective",
+       "analyze texts and scripts as they pertain to performance",
+       "demonstrate skill for technical aspects of acting, including physical, vocal, imaginative, analytical, and emotional elements",
+       "analyze theatre as a dynamic art form influencing society",
+       "compare and contrast theatrical periods and styles in terms of acting, directing, playwriting, and technical elements",
+       "analyze the components of a theatrical production",
+       "apply imagination and character analysis to identify and describe the personality and motivations of a given character",
+       "apply technical processes, including lighting, set, costume, and/or stage make-up design, as they pertain to a given dramatic script"
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Degree Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "TA 350",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 351",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 370",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 375",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 420",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 437",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 2 units from the following",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "TA 344",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 356",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 357",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 362",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 366",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 3 units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "TA 356",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 357",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 362",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 366",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 377",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 390",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 406",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 2 units from the following",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "MUSM 342",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 404",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 422",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 424",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 430",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 433",
+         "units": 0.5,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 434",
+         "units": 0.5,
+         "units_max": 2,
+         "alternatives": [
+          {
+           "code": "FASHN 334",
+           "units": 0.5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 435",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "FASHN 330",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 440",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 2 units from the following",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "TA 466",
+         "units": 0.5,
+         "units_max": 3,
+         "alternatives": [
+          {
+           "code": "MUP 370",
+           "units": 0.5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 2 units from the following",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "DANCE 310",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 320",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 340",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 360",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 377",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGLT 380",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGLT 382",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUFHL 321",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUIVI 310",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUIVI 390",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUP 350",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 38,
+     "listed": 39
+    },
+    "extracted_run": "43212067552"
+   },
+   "after_image": {
+    "program_title": "Theatre Arts: Acting",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=941",
+    "measure": "units",
+    "total_min": 31,
+    "total_max": 31,
+    "record": {
+     "program": {
+      "section_heading": "A.A. in Theatre Arts: Acting",
+      "measure": "units",
+      "total_units": {
+       "min": 31,
+       "max": 31
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "recognize standard practices of ensemble playing in a rehearsal/performance environment",
+       "compare and analyze the theories and techniques of acting from a historical perspective",
+       "analyze texts and scripts as they pertain to performance",
+       "demonstrate skill for technical aspects of acting, including physical, vocal, imaginative, analytical, and emotional elements",
+       "analyze theatre as a dynamic art form influencing society",
+       "compare and contrast theatrical periods and styles in terms of acting, directing, playwriting, and technical elements",
+       "analyze the components of a theatrical production",
+       "apply imagination and character analysis to identify and describe the personality and motivations of a given character",
+       "apply technical processes, including lighting, set, costume, and/or stage make-up design, as they pertain to a given dramatic script"
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Degree Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "TA 350",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 351",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 370",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 375",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 420",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 437",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 2 units from the following",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "TA 344",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 356",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 357",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 362",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 366",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 3 units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "TA 356",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 357",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 362",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 366",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 377",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 390",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 406",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 2 units from the following",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "MUSM 342",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 404",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 422",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 424",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 430",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 433",
+         "units": 0.5,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 434",
+         "units": 0.5,
+         "units_max": 2,
+         "alternatives": [
+          {
+           "code": "FASHN 334",
+           "units": 0.5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 435",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "FASHN 330",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "TA 440",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 2 units from the following",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "TA 466",
+         "units": 0.5,
+         "units_max": 3,
+         "alternatives": [
+          {
+           "code": "MUP 370",
+           "units": 0.5,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "A minimum of 2 units from the following",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "DANCE 310",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 320",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 340",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 360",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 377",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGLT 380",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGLT 382",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUFHL 321",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUIVI 310",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUIVI 390",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUP 350",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 38,
+     "listed": 39,
+     "gaps": [
+      "section_cut_off"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 50,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    },
+    "extracted_run": "43212067552"
+   },
+   "i": 1
+  }
+ ],
+ "after_scores": {
+  "American River College 04544": {
+   "measure": "units",
+   "coverage": {
+    "placed": 38,
+    "listed": 39,
+    "share": 0.974,
+    "missing": [
+     "TA300"
+    ],
+    "unexplained": [],
+    "none_placed": false,
+    "pass": true
+   },
+   "invented": {
+    "count": 0,
+    "codes": [],
+    "flagged": [],
+    "pass": true
+   },
+   "arithmetic": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     28.0,
+     28.0
+    ],
+    "stated": [
+     31.0,
+     31.0
+    ],
+    "against": "program",
+    "why": [
+     "the blocks sum to 28.0-28.0; the catalog states 31.0-31.0",
+     "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+    ],
+    "fill_refused": {
+     "gap": "section_cut_off",
+     "words": "The text begins on page 941 mid-table; the section heading and any earlier rows (likely on page 940) are not in the text."
+    }
+   },
+   "repeated": {
+    "codes": [],
+    "pass": true
+   },
+   "outcomes": {
+    "program": 9,
+    "courses": 0,
+    "count": 9,
+    "not_verbatim": [],
+    "why": [],
+    "heading_printed": true,
+    "heading_without_outcomes": false,
+    "pass": true
+   },
+   "careers": {
+    "count": 0,
+    "not_verbatim": [],
+    "pass": true
+   },
+   "degree": {
+    "status": "major only",
+    "why": [
+     "the record names no degree total and no general education units"
+    ]
+   },
+   "pass": false,
+   "gaps": [
+    {
+     "gap": "section_cut_off",
+     "label": "The program's section runs onto a page the read did not hold, so part of its requirements is missing from the record and its units cannot be checked against the printed total.",
+     "words": "an electives fill was refused: the reader's note says the requirements run outside the text read: \"The text begins on page 941 mid-table; the section heading and any earlier rows (likely on page 940) are not in the text.\""
+    }
+   ],
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 50,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   }
+  }
+ },
+ "records": "The record files keep their filed score until the apply lands; then `python3 kb/_program_fill_cut_window_s720.py --write-records` writes each after_score, so the next load and display carry the same checks.",
+ "follow_verdict": "The record does not change, so a confirm given on it would carry onto the row: the apply aborts, writing nothing, if any row's latest verdict is such a confirm (Sheet 82 card 1).",
+ "pre_read": "with v(i, college, control_number, before_run, before_record, before_checks, after_run, after_record, after_checks) as (values\n  (1, 'American River College', '04544', 43212067552, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 350\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 351\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 370\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 375\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 420\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 437\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 344\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 377\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 390\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 406\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"A minimum of 3 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSM 342\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 404\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 422\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 424\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 430\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 433\",\"units\":0.5,\"units_max\":3},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 334\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 434\",\"units\":0.5,\"units_max\":2},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 330\",\"units\":3}],\"catalog_addition\":false,\"code\":\"TA 435\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 440\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUP 370\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 466\",\"units\":0.5,\"units_max\":3}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 310\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 340\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 360\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 377\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 380\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 382\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUFHL 321\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 310\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 390\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUP 350\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"recognize standard practices of ensemble playing in a rehearsal/performance environment\",\"compare and analyze the theories and techniques of acting from a historical perspective\",\"analyze texts and scripts as they pertain to performance\",\"demonstrate skill for technical aspects of acting, including physical, vocal, imaginative, analytical, and emotional elements\",\"analyze theatre as a dynamic art form influencing society\",\"compare and contrast theatrical periods and styles in terms of acting, directing, playwriting, and technical elements\",\"analyze the components of a theatrical production\",\"apply imagination and character analysis to identify and describe the personality and motivations of a given character\",\"apply technical processes, including lighting, set, costume, and/or stage make-up design, as they pertain to a given dramatic script\"],\"section_heading\":\"A.A. in Theatre Arts: Acting\",\"total_units\":{\"max\":31,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":39,\"placed\":38}'::jsonb, 43212067552, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 350\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 351\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 370\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 375\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 420\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 437\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 344\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 377\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 390\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 406\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"A minimum of 3 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSM 342\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 404\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 422\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 424\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 430\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 433\",\"units\":0.5,\"units_max\":3},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 334\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 434\",\"units\":0.5,\"units_max\":2},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 330\",\"units\":3}],\"catalog_addition\":false,\"code\":\"TA 435\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 440\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUP 370\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 466\",\"units\":0.5,\"units_max\":3}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 310\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 340\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 360\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 377\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 380\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 382\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUFHL 321\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 310\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 390\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUP 350\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"recognize standard practices of ensemble playing in a rehearsal/performance environment\",\"compare and analyze the theories and techniques of acting from a historical perspective\",\"analyze texts and scripts as they pertain to performance\",\"demonstrate skill for technical aspects of acting, including physical, vocal, imaginative, analytical, and emotional elements\",\"analyze theatre as a dynamic art form influencing society\",\"compare and contrast theatrical periods and styles in terms of acting, directing, playwriting, and technical elements\",\"analyze the components of a theatrical production\",\"apply imagination and character analysis to identify and describe the personality and motivations of a given character\",\"apply technical processes, including lighting, set, costume, and/or stage make-up design, as they pertain to a given dramatic script\"],\"section_heading\":\"A.A. in Theatre Arts: Acting\",\"total_units\":{\"max\":31,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"section_cut_off\"],\"invented\":true,\"listed\":39,\"placed\":38}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.before_run),\n  'both_before', count(*) filter (where r.extracted_run = v.before_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.extracted_run = v.after_run and r.record = v.after_record and r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches_after', count(*) filter (where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(v.after_record)),\n  'confirm_carried', count(*) filter (where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(v.before_record) and public.program_record_carry_basis(v.after_record) = public.program_record_carry_basis(v.before_record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, before_run, before_record, before_checks, after_run, after_record, after_checks) as (values\n  (1, 'American River College', '04544', 43212067552, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 350\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 351\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 370\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 375\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 420\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 437\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 344\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 377\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 390\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 406\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"A minimum of 3 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSM 342\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 404\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 422\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 424\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 430\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 433\",\"units\":0.5,\"units_max\":3},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 334\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 434\",\"units\":0.5,\"units_max\":2},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 330\",\"units\":3}],\"catalog_addition\":false,\"code\":\"TA 435\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 440\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUP 370\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 466\",\"units\":0.5,\"units_max\":3}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 310\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 340\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 360\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 377\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 380\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 382\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUFHL 321\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 310\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 390\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUP 350\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"recognize standard practices of ensemble playing in a rehearsal/performance environment\",\"compare and analyze the theories and techniques of acting from a historical perspective\",\"analyze texts and scripts as they pertain to performance\",\"demonstrate skill for technical aspects of acting, including physical, vocal, imaginative, analytical, and emotional elements\",\"analyze theatre as a dynamic art form influencing society\",\"compare and contrast theatrical periods and styles in terms of acting, directing, playwriting, and technical elements\",\"analyze the components of a theatrical production\",\"apply imagination and character analysis to identify and describe the personality and motivations of a given character\",\"apply technical processes, including lighting, set, costume, and/or stage make-up design, as they pertain to a given dramatic script\"],\"section_heading\":\"A.A. in Theatre Arts: Acting\",\"total_units\":{\"max\":31,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":39,\"placed\":38}'::jsonb, 43212067552, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 350\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 351\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 370\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 375\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 420\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 437\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 344\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 377\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 390\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 406\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"A minimum of 3 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSM 342\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 404\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 422\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 424\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 430\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 433\",\"units\":0.5,\"units_max\":3},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 334\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 434\",\"units\":0.5,\"units_max\":2},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 330\",\"units\":3}],\"catalog_addition\":false,\"code\":\"TA 435\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 440\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUP 370\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 466\",\"units\":0.5,\"units_max\":3}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 310\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 340\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 360\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 377\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 380\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 382\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUFHL 321\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 310\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 390\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUP 350\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"recognize standard practices of ensemble playing in a rehearsal/performance environment\",\"compare and analyze the theories and techniques of acting from a historical perspective\",\"analyze texts and scripts as they pertain to performance\",\"demonstrate skill for technical aspects of acting, including physical, vocal, imaginative, analytical, and emotional elements\",\"analyze theatre as a dynamic art form influencing society\",\"compare and contrast theatrical periods and styles in terms of acting, directing, playwriting, and technical elements\",\"analyze the components of a theatrical production\",\"apply imagination and character analysis to identify and describe the personality and motivations of a given character\",\"apply technical processes, including lighting, set, costume, and/or stage make-up design, as they pertain to a given dramatic script\"],\"section_heading\":\"A.A. in Theatre Arts: Acting\",\"total_units\":{\"max\":31,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"section_cut_off\"],\"invented\":true,\"listed\":39,\"placed\":38}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm'\n         and (lv.requirements_fp = public.program_record_fp(v.after_record)\n              or (lv.requirements_fp = public.program_record_fp(v.before_record) and public.program_record_carry_basis(v.after_record) = public.program_record_carry_basis(v.before_record)))),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set record = v.after_record, checks = v.after_checks, extracted_run = v.after_run\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.before_run and r.record = v.before_record and r.checks = v.before_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s720 cut window fill confirm guard: ' || f.n || ' rows hold a confirm verdict matching the new record or carried from the old ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s720 cut window fill guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, before_run, before_record, before_checks, after_run, after_record, after_checks) as (values\n  (1, 'American River College', '04544', 43212067552, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 350\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 351\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 370\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 375\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 420\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 437\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 344\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 377\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 390\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 406\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"A minimum of 3 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSM 342\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 404\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 422\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 424\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 430\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 433\",\"units\":0.5,\"units_max\":3},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 334\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 434\",\"units\":0.5,\"units_max\":2},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 330\",\"units\":3}],\"catalog_addition\":false,\"code\":\"TA 435\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 440\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUP 370\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 466\",\"units\":0.5,\"units_max\":3}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 310\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 340\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 360\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 377\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 380\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 382\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUFHL 321\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 310\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 390\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUP 350\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"recognize standard practices of ensemble playing in a rehearsal/performance environment\",\"compare and analyze the theories and techniques of acting from a historical perspective\",\"analyze texts and scripts as they pertain to performance\",\"demonstrate skill for technical aspects of acting, including physical, vocal, imaginative, analytical, and emotional elements\",\"analyze theatre as a dynamic art form influencing society\",\"compare and contrast theatrical periods and styles in terms of acting, directing, playwriting, and technical elements\",\"analyze the components of a theatrical production\",\"apply imagination and character analysis to identify and describe the personality and motivations of a given character\",\"apply technical processes, including lighting, set, costume, and/or stage make-up design, as they pertain to a given dramatic script\"],\"section_heading\":\"A.A. in Theatre Arts: Acting\",\"total_units\":{\"max\":31,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":39,\"placed\":38}'::jsonb, 43212067552, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 350\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 351\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 370\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 375\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 420\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 437\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Degree Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 344\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 356\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 357\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 362\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 366\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 377\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 390\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 406\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"A minimum of 3 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSM 342\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 404\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 422\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 424\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 430\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 433\",\"units\":0.5,\"units_max\":3},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 334\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 434\",\"units\":0.5,\"units_max\":2},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"FASHN 330\",\"units\":3}],\"catalog_addition\":false,\"code\":\"TA 435\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"TA 440\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUP 370\",\"units\":0.5}],\"catalog_addition\":false,\"code\":\"TA 466\",\"units\":0.5,\"units_max\":3}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 310\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 320\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 340\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 360\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 377\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 380\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGLT 382\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUFHL 321\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 310\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUIVI 390\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUP 350\",\"units\":2,\"units_max\":null}],\"minimum\":2,\"name\":\"A minimum of 2 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":true,\"ge_pattern\":\"Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"recognize standard practices of ensemble playing in a rehearsal/performance environment\",\"compare and analyze the theories and techniques of acting from a historical perspective\",\"analyze texts and scripts as they pertain to performance\",\"demonstrate skill for technical aspects of acting, including physical, vocal, imaginative, analytical, and emotional elements\",\"analyze theatre as a dynamic art form influencing society\",\"compare and contrast theatrical periods and styles in terms of acting, directing, playwriting, and technical elements\",\"analyze the components of a theatrical production\",\"apply imagination and character analysis to identify and describe the personality and motivations of a given character\",\"apply technical processes, including lighting, set, costume, and/or stage make-up design, as they pertain to a given dramatic script\"],\"section_heading\":\"A.A. in Theatre Arts: Acting\",\"total_units\":{\"max\":31,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"section_cut_off\"],\"invented\":true,\"listed\":39,\"placed\":38}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set record = v.before_record, checks = v.before_checks, extracted_run = v.before_run\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.after_run and r.record = v.after_record and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s720 cut window fill rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}
