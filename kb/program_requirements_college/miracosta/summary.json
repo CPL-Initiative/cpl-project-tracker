@@ -5,18 +5,18 @@
  "found": 137,
  "extracted": 137,
  "errors": 0,
- "passed_machine_checks": 109,
+ "passed_machine_checks": 111,
  "failed": {
-  "coverage": 9,
+  "coverage": 8,
   "invented": 0,
-  "arithmetic": 25,
+  "arithmetic": 23,
   "repeated": 0,
   "outcomes": 2
  },
- "cost_usd_run": 0.3,
- "cost_usd_filed": 11.66,
- "cost_per_program": 0.0851,
- "extract_calls": 3,
+ "cost_usd_run": 0.08,
+ "cost_usd_filed": 11.67,
+ "cost_per_program": 0.0852,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
   {
@@ -90,7 +90,8 @@
    "title": "Basic Education for Academic or Workforce Preparation",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Approved"
   },
@@ -99,7 +100,8 @@
    "title": "Social Justice Studies: Gender Studies",
    "award": "A.A- T Degree",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Approved"
   },
@@ -108,7 +110,8 @@
    "title": "Social Justice Studies: LGBTQ Studies",
    "award": "A.A- T Degree",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Approved"
   },
@@ -156,7 +159,8 @@
       "TECHNOLOGY CAREER INSTITUTE",
       98
      ]
-    ]
+    ],
+    "page_checks": true
    },
    "status": "Approved"
   },
@@ -183,7 +187,8 @@
    "title": "Liberal Arts: Elementary Subject Matter Education",
    "award": "A.A. Degree",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -242,5 +247,5 @@
    "status": "Active"
   }
  ],
- "run": "44529741837"
+ "run": "45392607854"
 }
