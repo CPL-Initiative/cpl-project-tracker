@@ -1,4 +1,4 @@
-{"schema":1,"college":"Monterey Peninsula College","slug":"monterey_peninsula","basis":"live","census_at":"2026-11-24 11:33Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Monterey Peninsula College","slug":"monterey_peninsula","basis":"live","census_at":"2026-11-24 14:26Z","correction_rules":true,"programs":[
 {"cn":"32361","title":"Administration of Justice","award":"A.S. T Degree","cause":"parked_college","lever":"unpark","url":"https://catalog.mpc.edu/programs-study/administration-justice/administration-justice-as-t/"},
 {"cn":"39356","title":"Administration of Justice - Level II Corrections","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"parked_college","lever":"unpark","url":"https://catalog.mpc.edu/programs-study/administration-justice/level-ii-corrections-coa/"},
 {"cn":"45242","title":"Advanced IT Networking & Security","award":"Noncredit program","cause":"parked_college","lever":"unpark","url":"https://catalog.mpc.edu/programs-study/computer-security-information-systems/advanced-it-networking-security-coc/"},

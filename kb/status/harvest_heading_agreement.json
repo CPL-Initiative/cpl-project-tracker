@@ -1,7 +1,7 @@
 {
  "_readme": "A dated snapshot of main at `commit` (as_of: the newest capture it reads), written by kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on its freshness, so it can trail the records. Each record's own heading (program.section_heading) against the program it is filed under (sources.json: COCI title and award). check_would_fail_passing counts the records that pass on the committed files (passes_live) whose heading names another award type (heading_award_check, in no pass rule). award_not_program counts headings that name an award and none of the program's title words, set aside (Pasadena's one page for an A.S. and its certificate).",
  "commit": {
-  "sha": "21ebe65d6c846fa95c6aafff3885ef0a8f702588",
+  "sha": "db49ae3996a98530c71e652bf39f8c90a0f2ec16",
   "date": "2026-11-24"
  },
  "as_of": "2026-11-24",
@@ -10,18 +10,18 @@
  ],
  "totals": {
   "records": 18968,
-  "agree": 15466,
-  "disagree": 269,
-  "cannot_tell": 3233,
-  "heading_absent": 264,
-  "disagree_passing": 168,
-  "disagree_loaded": 206,
-  "check_would_fail_passing": 136,
+  "agree": 15477,
+  "disagree": 260,
+  "cannot_tell": 3231,
+  "heading_absent": 262,
+  "disagree_passing": 169,
+  "disagree_loaded": 207,
+  "check_would_fail_passing": 137,
   "check_would_fail_passing_transfer_local": 31,
   "window_after": 8,
   "window_after_passing": 7,
-  "suspect": 277,
-  "suspect_passing": 175,
+  "suspect": 268,
+  "suspect_passing": 176,
   "check_would_fail_passing_generic_heading": 0,
   "award_not_program": 74,
   "award_not_program_passing": 70
@@ -239,8 +239,8 @@
    "platform": "elumen",
    "records": 195,
    "pdf_records": 0,
-   "agree": 133,
-   "disagree": 58,
+   "agree": 141,
+   "disagree": 50,
    "cannot_tell": 4,
    "heading_absent": 0,
    "disagree_passing": 38,
@@ -252,7 +252,7 @@
    "pdf_agree": 0,
    "pdf_cannot_tell": 0,
    "by_reason": {
-    "award": 58
+    "award": 50
    },
    "check_would_fail_passing": 38,
    "check_would_fail_passing_transfer_local": 0,
@@ -265,7 +265,7 @@
    "award_not_program_passing": 0,
    "window_after": 0,
    "window_after_passing": 0,
-   "suspect": 58,
+   "suspect": 50,
    "suspect_passing": 38,
    "suspect_loaded": 46,
    "disagreements": [
@@ -282,36 +282,6 @@
      "window": null,
      "passes_live": false,
      "places_none": false,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "02145",
-     "title": "Computer Applications",
-     "award": "A.S. Degree",
-     "heading": "Computer Applications Cert",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "certificate_under_local_degree",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "02149",
-     "title": "Electronics Technology",
-     "award": "A.S. Degree",
-     "heading": "Electronics Technology Cert",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "certificate_under_local_degree",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
      "method": "sitemap_page"
     },
     {
@@ -342,21 +312,6 @@
      "window": null,
      "passes_live": true,
      "places_none": false,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "02153",
-     "title": "General Aircraft Maintenance",
-     "award": "A.S. Degree",
-     "heading": "General Aircraft Maintenance Cert",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "certificate_under_local_degree",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
      "method": "sitemap_page"
     },
     {
@@ -555,36 +510,6 @@
      "method": "sitemap_page"
     },
     {
-     "control_number": "11647",
-     "title": "Aircraft Airframe",
-     "award": "A.S. Degree",
-     "heading": "Aircraft Airframe Cert",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "certificate_under_local_degree",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "11648",
-     "title": "Aircraft Powerplant",
-     "award": "A.S. Degree",
-     "heading": "Aircraft Powerplant Cert",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "certificate_under_local_degree",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
-     "method": "sitemap_page"
-    },
-    {
      "control_number": "12137",
      "title": "Deaf Studies: Interpreter Training",
      "award": "A.A. Degree",
@@ -600,36 +525,6 @@
      "method": "sitemap_page"
     },
     {
-     "control_number": "12161",
-     "title": "Computer Animation",
-     "award": "A.A. Degree",
-     "heading": "Computer Animation Cert",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "certificate_under_local_degree",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "14414",
-     "title": "Electrical Technology",
-     "award": "A.S. Degree",
-     "heading": "Electrical Technology Cert",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "certificate_under_local_degree",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
-     "method": "sitemap_page"
-    },
-    {
      "control_number": "14790",
      "title": "Computer Networking Multi-Platform",
      "award": "A.S. Degree",
@@ -642,21 +537,6 @@
      "window": null,
      "passes_live": true,
      "places_none": false,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "15404",
-     "title": "Aircraft Fabrication and Assembly Technician",
-     "award": "A.S. Degree",
-     "heading": "Aircraft Fabrication & Assembly Technician Cert",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "certificate_under_local_degree",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
      "method": "sitemap_page"
     },
     {
@@ -2560,10 +2440,10 @@
    "platform": "elumen",
    "records": 73,
    "pdf_records": 0,
-   "agree": 54,
-   "disagree": 4,
-   "cannot_tell": 15,
-   "heading_absent": 2,
+   "agree": 57,
+   "disagree": 2,
+   "cannot_tell": 14,
+   "heading_absent": 1,
    "disagree_passing": 1,
    "disagree_loaded": 2,
    "pdf_disagree": 0,
@@ -2573,7 +2453,7 @@
    "pdf_agree": 0,
    "pdf_cannot_tell": 0,
    "by_reason": {
-    "award": 4
+    "award": 2
    },
    "check_would_fail_passing": 1,
    "check_would_fail_passing_transfer_local": 0,
@@ -2585,25 +2465,10 @@
    "award_not_program_passing": 0,
    "window_after": 0,
    "window_after_passing": 0,
-   "suspect": 4,
+   "suspect": 2,
    "suspect_passing": 1,
    "suspect_loaded": 2,
    "disagreements": [
-    {
-     "control_number": "01816",
-     "title": "Automotive Technology",
-     "award": "A.S. Degree",
-     "heading": "Advanced Automotive Technology, CA",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "certificate_under_local_degree",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
-     "method": "sitemap_page"
-    },
     {
      "control_number": "42895",
      "title": "Aquaculture Technology",
@@ -2617,21 +2482,6 @@
      "window": null,
      "passes_live": false,
      "places_none": false,
-     "method": "sitemap_page"
-    },
-    {
-     "control_number": "42928",
-     "title": "Aquaculture Technology",
-     "award": "A.S. Degree",
-     "heading": "Aquaculture Technology, CA",
-     "verdict": "disagree",
-     "reason": "award",
-     "kind": "certificate_under_local_degree",
-     "heading_names_a_program": true,
-     "title_share": 1.0,
-     "window": null,
-     "passes_live": false,
-     "places_none": true,
      "method": "sitemap_page"
     },
     {
@@ -5600,11 +5450,11 @@
    "records": 137,
    "pdf_records": 0,
    "agree": 95,
-   "disagree": 22,
-   "cannot_tell": 20,
-   "heading_absent": 5,
-   "disagree_passing": 18,
-   "disagree_loaded": 22,
+   "disagree": 23,
+   "cannot_tell": 19,
+   "heading_absent": 4,
+   "disagree_passing": 19,
+   "disagree_loaded": 23,
    "pdf_disagree": 0,
    "pdf_disagree_passing": 0,
    "pdf_suspect": 0,
@@ -5612,21 +5462,21 @@
    "pdf_agree": 0,
    "pdf_cannot_tell": 0,
    "by_reason": {
-    "award": 22
+    "award": 23
    },
-   "check_would_fail_passing": 18,
+   "check_would_fail_passing": 19,
    "check_would_fail_passing_transfer_local": 0,
    "check_kinds_passing": {
-    "certificate_under_local_degree": 18
+    "certificate_under_local_degree": 19
    },
    "check_would_fail_passing_generic_heading": 0,
    "award_not_program": 0,
    "award_not_program_passing": 0,
    "window_after": 0,
    "window_after_passing": 0,
-   "suspect": 22,
-   "suspect_passing": 18,
-   "suspect_loaded": 22,
+   "suspect": 23,
+   "suspect_passing": 19,
+   "suspect_loaded": 23,
    "disagreements": [
     {
      "control_number": "05110",
@@ -5648,6 +5498,21 @@
      "title": "Bookkeeping",
      "award": "A.A. Degree",
      "heading": "Certificate of Achievement: Bookkeeping",
+     "verdict": "disagree",
+     "reason": "award",
+     "kind": "certificate_under_local_degree",
+     "heading_names_a_program": true,
+     "title_share": 1.0,
+     "window": null,
+     "passes_live": true,
+     "places_none": false,
+     "method": "sitemap_page"
+    },
+    {
+     "control_number": "07863",
+     "title": "Architectural Design",
+     "award": "A.A. Degree",
+     "heading": "Certificate of Achievement Architectural Design",
      "verdict": "disagree",
      "reason": "award",
      "kind": "certificate_under_local_degree",

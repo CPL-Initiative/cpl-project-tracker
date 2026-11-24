@@ -1,4 +1,4 @@
-{"schema":1,"college":"MiraCosta College","slug":"miracosta","basis":"live","census_at":"2026-11-24 11:33Z","correction_rules":false,"programs":[
+{"schema":1,"college":"MiraCosta College","slug":"miracosta","basis":"live","census_at":"2026-11-24 14:26Z","correction_rules":false,"programs":[
 {"cn":"07865","title":"Accounting","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"21981","title":"Accounting","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"05120","title":"Automotive Technology","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -41,7 +41,6 @@
 {"cn":"17363","title":"Personal Fitness Trainer","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"36442","title":"Research and Development","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"41618","title":"Teacher's Aide Training","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"07863","title":"Architectural Design","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/disciplines/design/"},
 {"cn":"15183","title":"Child Development Teacher","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/disciplines/childdevelopment/"},
 {"cn":"22006","title":"Child Development Teacher","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/disciplines/childdevelopment/"},
 {"cn":"36144","title":"Tech Support","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"},
