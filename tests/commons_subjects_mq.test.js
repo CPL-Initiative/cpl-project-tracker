@@ -19,7 +19,13 @@
 //       courses from the state course list, loaded only on that press; the colleges from the statewide list); Close on
 //       the second returns to the first, its address and the count that opened it;
 //   (5) ⭐ the course panel, and every sidebar, starts at or below the bottom of COBI's header bar, read from the page,
-//       and runs to the top once the bar scrolls away.
+//       and runs to the top once the bar scrolls away;
+//   (6) ⭐ the MQ table fits at desktop widths with whole words (Sam, 2026-06-11): seven columns, each but To look at at a
+//       set width in an explicit colgroup, no break inside a word but where one token is wider than its cell, and the
+//       mock's two narrowest pairs folded (COCI noncredit categories under MQ type, the vocational TOP share under M-IDs);
+//   (7) ⭐ a second sidebar opens beside the first and never over it: the first narrows to 320px, the view gives up the
+//       pair's width, the pair covers the view only where no width is left, and Close on the second gives the first
+//       its own width back. Geometry is measured in a browser (the PR's numbers); jsdom checks the arithmetic.
 //
 // Run from repo root: `npm test` (or `node tests/commons_subjects_mq.test.js`).
 const fs = require("fs");
@@ -40,14 +46,15 @@ function disc(name, code, extra) {
 const MQV = {
   _what: "fixture",
   provisions: { apprenticeship_53413: { disciplines: {}, printed_page: 61, section: "CCR 53413", words: "Apprenticeship instructors." } },
-  totals: { disciplines: 5 }, types: {},
+  totals: { disciplines: 6 }, types: {},
   noncredit_categories_without_discipline: ["Workforce Preparation"],
   rows: [
     disc("Mathematics", "MATH", { local_codes: { colleges: 6, confident: 1, examples: ["MAT"], filed: 1, other: 2 } }),
     disc("Physics", "PHYS", { gaps: ["Master's list, but 91% of its credit M-IDs carry a vocational TOP code, which takes the experience qualifications"], level: "Leaning", confidence: 0.6, code_source: "assigned", code_note: "Assigned at Leaning (60%)." }),
     disc("Construction Technology", "CNST", { types: ["any"], type_words: "Any degree", provisions: ["apprenticeship_53413"], cite: "CCR 53413", local_codes: { colleges: 6, confident: 2, examples: ["CT", "CARP"], filed: 0, other: 0 } }),
     disc("African American Studies", "ETHS", { our_name: "Ethnic Studies", gaps: ["Our name is Ethnic Studies"] }),
-    disc("Ethnic Studies", "ETHS")]
+    disc("Ethnic Studies", "ETHS"),
+    disc("English as a Second Language: Noncredit", "ESLN", { noncredit: true, noncredit_categories: ["English as a Second Language (ESL)"], vocational_share: 0.12 })]
 };
 /* The statewide list, in kb/_statewide_subject_codes.py's shape. */
 function code(k, common, conf, extra) {
@@ -143,28 +150,47 @@ async function group(n, fn) {
     await x.M.boot(); await settle();
     d = x.d;
     check("(1) ⭐ the address opens the MQ view", txt(d.getElementById("csb-h")) === "Minimum Qualifications disciplines");
-    check("(1) ⭐ every injected discipline is a row, A to Z", JSON.stringify(mqRows(d)) === JSON.stringify(["African American Studies", "Construction Technology", "Ethnic Studies", "Mathematics", "Physics"]), mqRows(d));
+    check("(1) ⭐ every injected discipline is a row, A to Z", JSON.stringify(mqRows(d)) === JSON.stringify(["African American Studies", "Construction Technology", "English as a Second Language: Noncredit", "Ethnic Studies", "Mathematics", "Physics"]), mqRows(d));
     const cn = d.querySelector('table.csb-mq tr[data-mq="Construction Technology"]');
     check("(1) a row shows its list type, its provisions, its common code with its level, and its local codes",
       txt(cn.children[1]) === "Any degree" && /Apprenticeship tie/.test(txt(cn.children[2])) && /CCR 53413/.test(txt(cn.children[2]))
       && txt(cn.children[3].querySelector("button[data-mq-code]")) === "CNST" && txt(cn.children[3].querySelector(".csb-sub")) === "Confident 97%, a person’s pick"
-      && txt(cn.children[6].querySelector("button[data-mq-count]")) === "2 codes" && txt(cn.children[6].querySelector(".csb-sub")) === "0 filed, 2 Confident", txt(cn));
+      && txt(cn.children[5].querySelector("button[data-mq-count]")) === "2 codes" && txt(cn.children[5].querySelector(".csb-sub")) === "0 filed, 2 Confident", txt(cn));
     const ph = d.querySelector('table.csb-mq tr[data-mq="Physics"]');
-    check("(1) a row names what to look at, and an assigned code shows its level alone (the mock)", /vocational TOP code/.test(txt(ph.children[8])) && txt(ph.children[3].querySelector(".csb-sub")) === "Leaning 60%", txt(ph));
-    check("(1) the figures say their counts", txt(d.getElementById("csb-mq-f-all")) === "All 5" && txt(d.getElementById("csb-mq-f-gaps")) === "Something to look at 2"
+    check("(1) a row names what to look at, and an assigned code shows its level alone (the mock)", /vocational TOP code/.test(txt(ph.children[6])) && txt(ph.children[3].querySelector(".csb-sub")) === "Leaning 60%", txt(ph));
+    check("(1) the figures say their counts", txt(d.getElementById("csb-mq-f-all")) === "All 6" && txt(d.getElementById("csb-mq-f-gaps")) === "Something to look at 2"
       && txt(d.getElementById("csb-mq-f-appr")) === "Apprenticeship 1", txt(d.getElementById("csb-mq-figs")));
     d.getElementById("csb-mq-f-gaps").click(); await settle();
     check("(1) ⭐ a figure shows what it counts", same(mqRows(d), ["African American Studies", "Physics"]) && d.getElementById("csb-mq-f-gaps").getAttribute("aria-pressed") === "true"
-      && /^2 of 5 disciplines$/.test(txt(d.getElementById("csb-mq-count"))), mqRows(d));
+      && /^2 of 6 disciplines$/.test(txt(d.getElementById("csb-mq-count"))), mqRows(d));
     d.getElementById("csb-mq-f-all").click(); await settle();
     const q = d.getElementById("csb-mq-q");
     q.focus(); q.value = "apprentice"; q.dispatchEvent(new x.w.Event("input", { bubbles: true }));
     check("(1) the search finds a discipline by its provision, and keeps its focus", same(mqRows(d), ["Construction Technology"]) && d.activeElement === q
-      && /^1 of 5 disciplines$/.test(txt(d.getElementById("csb-mq-count"))), mqRows(d));
+      && /^1 of 6 disciplines$/.test(txt(d.getElementById("csb-mq-count"))), mqRows(d));
     check("(1) the provisions and the noncredit category with no discipline are named", /Apprenticeship tie, CCR 53413 \(printed page 61\)/.test(txt(d.querySelector(".csb-mq-prov")))
       && /Workforce Preparation/.test(txt(d.querySelector(".csb-foot"))));
     check("(1) ⭐ the view reports its address, to address() and to the tab's viewAddress", x.S.address() === "commons/subjects/mq" && x.w.location.hash === "#commons/subjects/mq"
       && typeof x.reports.commons === "function" && x.reports.commons() === "commons/subjects/mq", x.reports.commons && x.reports.commons());
+    x = load("#commons/subjects/mq");
+    await x.M.boot(); await settle();
+    d = x.d;
+    const nc = d.querySelector('table.csb-mq tr[data-mq="English as a Second Language: Noncredit"]');
+    check("(6) ⭐ seven columns: the noncredit categories sit under MQ type, the vocational TOP share under M-IDs",
+      JSON.stringify(Array.from(d.querySelectorAll("table.csb-mq thead th")).map((th) => th.querySelector(".csb-sort") ? txt(th.querySelector(".csb-sort")).replace(/, (A to Z|Z to A|low to high|high to low)$/, "") : txt(th)))
+        === JSON.stringify(["Discipline", "MQ type", "Title 5 provisions", "Common code", "M-IDs", "Local codes", "To look at"])
+      && nc.children.length === 7 && txt(nc.children[1].querySelector(".csb-sub")) === "Noncredit: English as a Second Language (ESL)"
+      && txt(nc.children[4].querySelector(".csb-sub")) === "12% with a vocational TOP code", nc && txt(nc));
+    const CSS = x.S.CSS, cols = Array.from(d.querySelectorAll("table.csb-mq col")).map((c) => c.className);
+    const widthOf = (k) => { const m = new RegExp("\\." + k + " \\{ width:([\\d.]+)rem; \\}").exec(CSS); return m ? parseFloat(m[1]) : null; };
+    const set = cols.slice(0, -1).map(widthOf), minW = /\.csb-table\.csb-mq \{ min-width:([\d.]+)rem; \}/.exec(CSS);
+    check("(6) ⭐ every column but To look at has a set width, and To look at keeps at least 8rem at the table's least width",
+      cols.length === 7 && set.every((v) => v > 0) && widthOf(cols[6]) === null && !!minW && parseFloat(minW[1]) - set.reduce((a, v) => a + v, 0) >= 8
+      && parseFloat(minW[1]) <= 56, [cols, set, minW && minW[1]]);
+    check("(6) ⭐ the MQ table breaks between words: no overflow-wrap:anywhere or word-break:break-all reaches its cells",
+      /\.csb-mq th, \.csb-mq td, \.csb-mq \.csb-sort \{ overflow-wrap:break-word; word-break:normal; \}/.test(CSS) && !/csb-mq[^{]*\{[^}]*break-all/.test(CSS));
+    const dn = d.querySelector('table.csb-mq tr[data-mq="Construction Technology"] th');
+    check("(6) a name may wrap after a slash or a comma", x.S._breakAfter("Dietetics/Nutritional Science").length === 4 && x.S._breakAfter("Brewing,Fermentation")[2].tagName === "WBR" && !!dn);
     check("(1) every header cell carries a scope and the table scrolls in a labelled region", Array.from(d.querySelectorAll("table.csb-mq th")).every((th) => th.getAttribute("scope"))
       && d.getElementById("csb-mq-wrap").getAttribute("role") === "region");
   });
@@ -239,10 +265,27 @@ async function group(n, fn) {
     const listed = Array.from(d.querySelectorAll("#csb-side-2 table tbody tr")).map((r) => r.getAttribute("data-course"));
     check("(4) ⭐ the count opens a second sidebar listing exactly the courses it counts", second && same(listed, CT_COURSES) && x.scripts.indexOf("coci_lookup_data.js") >= 0, listed);
     check("(4) ⭐ the first sidebar stays open beside it, and the address names both", !!d.getElementById("csb-side-1") && x.S.address() === "commons/subjects/mq/code/CNST/courses/CT"
-      && /^(beside|over)$/.test(d.getElementById("commons-root").getAttribute("data-csb-stack")));
+      && d.getElementById("commons-root").getAttribute("data-csb-stack") === "beside");
+    const s1 = d.getElementById("csb-side-1"), s2 = d.getElementById("csb-side-2"), croot = d.getElementById("commons-root");
+    check("(7) ⭐ the second opens beside the first, never over it: the first narrows to 320px and sits left of the second",
+      s1.style.width === "320px" && s2.style.width === "540px" && s1.style.right === "540px" && s2.style.right === "0px", [s1.style.width, s1.style.right, s2.style.width, s2.style.right]);
+    check("(7) ⭐ the view gives up the pair's width", croot.classList.contains("csb-beside") && croot.style.getPropertyValue("--csb-panel-w") === "860px", croot.style.getPropertyValue("--csb-panel-w"));
+    const g1 = d.getElementById("csb-side-1-grip");
+    g1.dispatchEvent(new x.w.KeyboardEvent("keydown", { key: "ArrowLeft", bubbles: true }));
+    check("(7) the first's grip widens it within the pair, and the view gives up that width too", s1.style.width === "360px" && s1.style.right === "540px"
+      && croot.style.getPropertyValue("--csb-panel-w") === "900px" && g1.getAttribute("aria-valuemin") === "320", [s1.style.width, croot.style.getPropertyValue("--csb-panel-w")]);
+    x.w.innerWidth = 1000; croot.getBoundingClientRect = () => ({ left: 280, right: 1000, top: 0, bottom: 900, width: 720, height: 900 });
+    x.w.dispatchEvent(new x.w.Event("resize"));
+    check("(7) ⭐ only where the view has no width left beside the pair does the pair cover it, still side by side",
+      croot.getAttribute("data-csb-stack") === "cover" && croot.style.getPropertyValue("--csb-panel-w") === "0px" && s1.style.right === "540px", [croot.getAttribute("data-csb-stack"), s1.style.right]);
+    x.w.innerWidth = 800; x.w.dispatchEvent(new x.w.Event("resize"));
+    check("(7) a window narrower than the pair puts the second over the first", croot.getAttribute("data-csb-stack") === "over" && s1.style.right === "0px");
+    x.w.innerWidth = 1024; delete croot.getBoundingClientRect; x.w.dispatchEvent(new x.w.Event("resize"));
     check("(4) the second sidebar's table sorts and resizes too", !!second.querySelector("thead button.csb-sort") && !!second.querySelector("thead .csb-grip[role=separator]"));
     check("(4) the second sidebar resizes from its own edge and keeps its top row", !!d.getElementById("csb-side-2-grip") && d.getElementById("csb-side-2-head").contains(d.getElementById("csb-side-2-close")));
     d.getElementById("csb-side-2-close").click(); await settle();
+    check("(7) ⭐ Close on the second gives the first its own width back", d.getElementById("csb-side-1").style.width === "" && d.getElementById("csb-side-1").style.right === "0px"
+      && !d.getElementById("csb-side-1").hasAttribute("data-csb-paired"), d.getElementById("csb-side-1").style.width);
     check("(4) ⭐ Close on the second returns to the first, its address and the count that opened it", !d.getElementById("csb-side-2") && !!d.getElementById("csb-side-1")
       && x.S.address() === "commons/subjects/mq/code/CNST" && d.activeElement && d.activeElement.getAttribute("data-csb-local") === "CT");
     d.querySelector('#csb-side-1 button[data-csb-second="colleges"][data-csb-local="CT"]').click(); await settle();

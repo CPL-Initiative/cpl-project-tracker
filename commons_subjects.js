@@ -1256,34 +1256,47 @@
     return el("span", { cls: "csb-sub", title: r.code_source === "assigned" ? r.code_note || "" : null,
       text: (r.level || levelOf(r.confidence)) + " " + Math.round(r.confidence * 100) + "%" + (r.code_source === "assigned" ? "" : ", a person’s pick") });
   }
+  /* A name's words with a break allowed after each slash and comma, so a column wraps there before it breaks a word. */
+  function breakAfter(s) {
+    var out = [];
+    String(s || "").split(/([\/,])/).forEach(function (part) { if (!part) return; out.push(part); if (part === "/" || part === ",") out.push(el("wbr")); });
+    return out;
+  }
+  /* A citation's parts stay on one line (53414(d) (1)(2)(C), (1-3)): a word joiner after each closing parenthesis and
+     hyphen inside a part, so it wraps only at its spaces. */
+  function citeWords(s) { return String(s || "").replace(/([)\-])(?=[(\w])/g, "$1\u2060"); }
   function mqCodeWord(code, label, text, extra) {
     return el("button", Object.assign({ type: "button", cls: "csb-word", "data-mq-code": code, "aria-label": label, text: text }, extra || {}));
   }
   function mqTable(Q, list) {
+    /* Seven columns, each but the last at a set width, so the table fits beside COBI's side menu at 1280px with whole
+       words (Sam, 2026-06-11: tables fit the viewport at desktop widths, table-layout:fixed and an explicit colgroup).
+       Two pairs of the mock's nine share a column: a noncredit discipline's COCI categories sit under its MQ type, and
+       the vocational TOP share under its M-IDs. To look at takes what is left. */
     var tbl = el("table", { cls: "csb-table csb-mq" }, [
       el("colgroup", null, [el("col", { cls: "csb-mq-name" }), el("col", { cls: "csb-mq-type" }), el("col", { cls: "csb-mq-c-prov" }), el("col", { cls: "csb-mq-code" }),
-        el("col", { cls: "csb-mq-num" }), el("col", { cls: "csb-mq-num" }), el("col", { cls: "csb-mq-loc" }), el("col", { cls: "csb-mq-nc" }), el("col", { cls: "csb-mq-gap" })]),
-      el("thead", null, [el("tr", null, ["Discipline", "MQ type", "Title 5 provisions", "Common code", "M-IDs", "Vocational TOP share", "Local codes", "COCI noncredit categories", "To look at"]
+        el("col", { cls: "csb-mq-mids" }), el("col", { cls: "csb-mq-loc" }), el("col", { cls: "csb-mq-gap" })]),
+      el("thead", null, [el("tr", null, ["Discipline", "MQ type", "Title 5 provisions", "Common code", "M-IDs", "Local codes", "To look at"]
         .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
       el("tbody", null, list.length ? list.map(function (r) {
-        var lc = r.local_codes, nLoc = lc ? (lc.filed || 0) + (lc.confident || 0) + (lc.other || 0) : 0, gaps = r.gaps || [];
+        var lc = r.local_codes, nLoc = lc ? (lc.filed || 0) + (lc.confident || 0) + (lc.other || 0) : 0, gaps = r.gaps || [], cats = r.noncredit_categories || [];
         return el("tr", { "data-mq": r.name, "data-code": r.code || "" }, [
-          el("th", { scope: "row", "data-sort": r.name }, [r.name, r.areas ? el("span", { cls: "csb-sub", text: r.areas }) : null,
-            r.same_as ? el("span", { cls: "csb-sub", text: "Also printed as " + r.same_as }) : null]),
-          el("td", null, [r.type_words || "", r.noncredit ? el("span", { cls: "csb-sub", text: "Noncredit" }) : null]),
-          el("td", null, (r.provisions || []).length ? [r.provisions.map(provWords).join(", "), r.cite ? el("span", { cls: "csb-sub", text: r.cite }) : null]
-            : [el("span", { cls: "csb-tba", text: r.cite || "None" })]),
+          el("th", { scope: "row", "data-sort": r.name }, breakAfter(r.name).concat([r.areas ? el("span", { cls: "csb-sub", text: r.areas }) : null,
+            r.same_as ? el("span", { cls: "csb-sub", text: "Also printed as " + r.same_as }) : null])),
+          el("td", { "data-sort": r.type_words || "" }, [r.type_words || "", r.noncredit ? el("span", { cls: "csb-sub csb-mq-nc", text: "Noncredit" + (cats.length ? ": " + cats.join(", ") : "") }) : null,
+            !r.noncredit && cats.length ? el("span", { cls: "csb-sub csb-mq-nc", text: "COCI noncredit: " + cats.join(", ") }) : null]),
+          el("td", null, (r.provisions || []).length ? [r.provisions.map(provWords).join(", "), r.cite ? el("span", { cls: "csb-sub", text: citeWords(r.cite) }) : null]
+            : [el("span", { cls: "csb-tba", text: r.cite ? citeWords(r.cite) : "None" })]),
           el("td", { "data-sort": r.code || "" }, r.code ? [mqCodeWord(r.code, "Open " + r.code + ", the common code of " + r.name + ", with the local codes under it", r.code), mqLevel(r)]
             : [el("span", { cls: "csb-tba", text: "None" })]),
-          el("td", { "data-sort": String((r.mids_credit || 0) + (r.mids_noncredit || 0)), text: r.code ? fmt(r.mids_credit || 0) + " credit, " + fmt(r.mids_noncredit || 0) + " noncredit" : "" }),
-          el("td", { "data-sort": r.vocational_share == null ? "" : String(r.vocational_share), text: pct(r.vocational_share) }),
+          el("td", { "data-sort": String((r.mids_credit || 0) + (r.mids_noncredit || 0)) }, r.code ? [fmt(r.mids_credit || 0) + " credit, " + fmt(r.mids_noncredit || 0) + " noncredit",
+            r.vocational_share == null ? null : el("span", { cls: "csb-sub csb-mq-voc", text: pct(r.vocational_share) + " with a vocational TOP code" })] : []),
           el("td", { "data-sort": String(nLoc) }, lc && r.code ? [mqCodeWord(r.code, fmt(nLoc) + " local codes take " + r.code + " as their common code. Show them.", fmt(nLoc) + (nLoc === 1 ? " code" : " codes"), { "data-mq-count": "yes" }),
             el("span", { cls: "csb-sub", text: fmt(lc.filed || 0) + " filed, " + fmt(lc.confident || 0) + " Confident" })] : []),
-          el("td", { text: (r.noncredit_categories || []).join(", ") }),
           el("td", { "data-sort": String(gaps.length) }, gaps.length ? [el("ul", { cls: "csb-mq-gaps" }, gaps.map(function (g) {
             return el("li", { cls: /vocational TOP|No common/.test(g) ? "csb-mq-act" : null, text: g });
           }))] : [el("span", { cls: "csb-tba", text: "Nothing" })])]);
-      }) : [el("tr", null, [el("td", { colspan: "9", text: "No discipline matches." })])])]);
+      }) : [el("tr", null, [el("td", { colspan: "7", text: "No discipline matches." })])])]);
     var wrap = gridify(el("div", { cls: "csb-wrap", id: "csb-mq-wrap", role: "region", "aria-label": "MQ disciplines", tabindex: "0" }, [tbl]), "mq", null, { col: 0, dir: 1 });
     Array.prototype.forEach.call(wrap.querySelectorAll("button[data-mq-code]"), function (b) {
       b.addEventListener("click", function () { open(MQ + "/code/" + b.getAttribute("data-mq-code")); });
@@ -2031,24 +2044,33 @@
   }
   /* A sidebar opens beside the view, never over it (Sam, 2026-11-23: "make sure when side bar is opened that it opens
      beside the view no over it--this is a rule for all sidebars"): the view gives up the panels' width on its right,
-     and takes it back when they close. A second sidebar sits beside the first while the view keeps VIEW_MIN; with no
-     room for both it sits over the first, never over the view. Below 900px there is no room beside, so the panels
-     cover the view there. */
+     and takes it back when they close. A second sidebar opens beside the first, never over it: the first narrows to
+     PAIR_FIRST (a person may widen it again from its grip) and the view gives up the pair's width. Only where the view
+     has no width left beside the pair does the pair cover it, as one panel covers the view below 900px; and only a
+     window narrower than the pair puts the second over the first. Close on the second draws the first at its own width. */
+  var PAIR_FIRST = 320;
+  function paired(panel) { var ps = sidePanels(panel && panel.parentNode); return ps.length > 1 && ps[0] === panel; }
+  function pairW(panel) { return parseInt(panel.getAttribute("data-csb-pair-w"), 10) || PAIR_FIRST; }
   function stackLayout(root) {
     if (!root || !root.classList || !root.style) return;
     var ps = sidePanels(root);
     if (!ps.length) { besideOff(root); return; }
-    var top = headerBottom(), ws = ps.map(widthOf), sum = ws.reduce(function (a, x) { return a + x; }, 0);
+    if (ps.length > 1) {
+      ps[0].style.width = pairW(ps[0]) + "px"; ps[0].setAttribute("data-csb-paired", "yes");
+      var g0 = ps[0].querySelector(".csb-pgrip");
+      if (g0) { g0.setAttribute("aria-valuemin", String(PAIR_FIRST)); g0.setAttribute("aria-valuenow", String(pairW(ps[0]))); }
+    }
+    var top = headerBottom(), ws = ps.map(widthOf), sum = ws.reduce(function (a, x) { return a + x; }, 0), vw = window.innerWidth || 1280;
     var left = root.getBoundingClientRect ? Math.max(0, root.getBoundingClientRect().left) : 0;
-    var room = ps.length === 1 || (window.innerWidth || 1280) - left - sum >= VIEW_MIN, right = 0;
+    var mode = ps.length === 1 ? "one" : vw - left - sum >= 0 ? "beside" : vw >= sum ? "cover" : "over", right = 0;
     for (var i = ps.length - 1; i >= 0; i--) {
       ps[i].style.top = top + "px";
-      ps[i].style.right = (room ? right : 0) + "px";
+      ps[i].style.right = (mode === "over" ? 0 : right) + "px";
       right += ws[i];
     }
     root.classList.add("csb-beside");
-    root.style.setProperty("--csb-panel-w", (room ? sum : Math.max.apply(null, ws)) + "px");
-    root.setAttribute("data-csb-stack", ps.length === 1 ? "one" : room ? "beside" : "over");
+    root.style.setProperty("--csb-panel-w", (mode === "cover" ? 0 : mode === "over" ? Math.max.apply(null, ws) : sum) + "px");
+    root.setAttribute("data-csb-stack", mode);
   }
   function beside(panel) { stackLayout(panel && panel.parentNode); }
   function besideOff(root) {
@@ -2069,16 +2091,23 @@
     } catch (e) { /* the sidebars keep their first place */ }
   }
   function gripFor(panel, mem, id) {
-    function now() { return mem.get() || Math.round(panel.getBoundingClientRect().width) || mem.def; }
+    /* A first sidebar beside a second resizes within the pair, and keeps its own width for when the second closes. */
+    function now() { return paired(panel) ? pairW(panel) : mem.get() || Math.round(panel.getBoundingClientRect().width) || mem.def; }
     var g = el("span", { cls: "csb-pgrip", id: id, role: "separator", tabindex: "0", "aria-orientation": "vertical",
       "aria-label": "Resize the panel", "aria-valuemin": String(PANEL_MIN), "aria-valuemax": String(panelMax()), "aria-valuenow": String(now()) });
     function set(w) {
+      if (paired(panel)) {
+        w = Math.max(PAIR_FIRST, Math.min(panelMax(), Math.round(w)));
+        panel.setAttribute("data-csb-pair-w", String(w)); stackLayout(panel.parentNode); g.setAttribute("aria-valuenow", String(w));
+        return;
+      }
       w = Math.max(PANEL_MIN, Math.min(panelMax(), Math.round(w)));
       mem.set(w); sizeTo(panel, mem); g.setAttribute("aria-valuenow", String(w));
     }
     g.addEventListener("keydown", function (e) {
       if (e.key === "ArrowLeft") set(now() + PANEL_STEP);
       else if (e.key === "ArrowRight") set(now() - PANEL_STEP);
+      else if (e.key === "Home" && paired(panel)) { panel.removeAttribute("data-csb-pair-w"); stackLayout(panel.parentNode); g.setAttribute("aria-valuenow", String(now())); }
       else if (e.key === "Home") { mem.set(null); sizeTo(panel, mem); g.setAttribute("aria-valuenow", String(now())); }
       else return;
       e.preventDefault(); e.stopPropagation();
@@ -2625,7 +2654,7 @@
     "@media (prefers-reduced-motion: reduce) { .csb-beside > .cmn-page { transition:none; } }",
     /* S719: a view that gives up its width to a sidebar keeps its tables at their phone widths, so they scroll inside
        their own box rather than crush a header to one letter a line. */
-    "@media (min-width: 900px) { .csb-beside > .cmn-page .csb-table { min-width:36rem; } .csb-beside > .cmn-page .csb-codes, .csb-beside > .cmn-page .csb-held { min-width:44rem; } .csb-beside > .cmn-page .csb-nc { min-width:40rem; } .csb-beside > .cmn-page .csw-table { min-width:56rem; } .csb-beside > .cmn-page .csb-mq { min-width:60rem; } }",
+    "@media (min-width: 900px) { .csb-beside > .cmn-page .csb-table { min-width:36rem; } .csb-beside > .cmn-page .csb-codes, .csb-beside > .cmn-page .csb-held { min-width:44rem; } .csb-beside > .cmn-page .csb-nc { min-width:40rem; } .csb-beside > .cmn-page .csw-table { min-width:56rem; } .csb-beside > .cmn-page .csb-mq { min-width:54rem; } }",
     ".csb-move-bar.csb-move-live { position:sticky; bottom:0; z-index:2; background:var(--cmn-dialog, var(--cmn-surface)); box-shadow:0 -8px 20px color-mix(in srgb, var(--cmn-heading) 14%, transparent); }",
     ".csb-move-bar.csb-move-live .csb-move-help { display:none; }",
     ".csb-fold-row { margin:2px 0 6px; display:flex; flex-wrap:wrap; gap:4px 18px; }",
@@ -2667,16 +2696,16 @@
     ".csb-mq-find input[type=search], .csw-side input[type=search] { min-height:32px; padding:4px 8px; width:min(420px, 100%); box-sizing:border-box; border:1px solid var(--cmn-muted); border-radius:8px; font:inherit; color:var(--cmn-ink); background:var(--cmn-surface); }",
     ".csb-mq-find input:focus-visible, .csw input[type=search]:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".csb-mq-count { display:inline; font-variant-numeric:tabular-nums; }",
-    ".csb-table.csb-mq { min-width:60rem; }",
-    ".csb-mq-name { width:15%; } .csb-mq-type { width:8%; } .csb-mq-c-prov { width:11.5%; } .csb-mq-code { width:9%; } .csb-mq-num { width:10%; } .csb-mq-loc { width:8%; } .csb-mq-nc { width:11.5%; } .csb-mq-gap { width:17%; }",
-    /* A header breaks between words, never inside one, in the MQ table and the sidebars' small tables. */
-    ".csb-mq .csb-sort, .csb-mq thead th { overflow-wrap:normal; word-break:normal; }",
+    ".csb-table.csb-mq { min-width:54rem; }",
+    ".csb-mq-name { width:11rem; } .csb-mq-type { width:6.5rem; } .csb-mq-c-prov { width:9rem; } .csb-mq-code { width:6.5rem; } .csb-mq-mids { width:6.75rem; } .csb-mq-loc { width:6.25rem; }",
+    /* The MQ table breaks between words; a single token breaks only where it is wider than its cell. */
+    ".csb-mq th, .csb-mq td, .csb-mq .csb-sort { overflow-wrap:break-word; word-break:normal; }",
     ".csb-mq-gaps { margin:0; padding-left:1.1em; color:var(--cmn-ink-2); } .csb-mq-gaps li + li { margin-top:4px; }",
     ".csb-mq-gaps li.csb-mq-act { color:var(--cmn-ink); font-weight:600; }",
     ".csb-mq-h { margin:12px 0 0; font-family:var(--cmn-serif); color:var(--cmn-heading); font-size:clamp(1.1rem, 1rem + .5vw, 1.35rem); }",
     ".csb-mq-prov { display:grid; gap:10px; } .csb-mq-prov .csb-note { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:12px 16px; }",
     ".csb-mq-prov strong { color:var(--cmn-heading); }",
-    ".csb-facts { display:grid; grid-template-columns:max-content minmax(0, 1fr); gap:4px 14px; margin:0; } .csb-facts dt { color:var(--cmn-muted); } .csb-facts dd { margin:0; color:var(--cmn-ink); overflow-wrap:anywhere; }",
+    ".csb-facts { display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 3fr); gap:4px 14px; margin:0; } .csb-facts dt { color:var(--cmn-muted); } .csb-facts dt, .csb-facts dd { overflow-wrap:break-word; word-break:normal; } .csb-facts dd { margin:0; color:var(--cmn-ink); }",
     ".csw-side { display:grid; gap:8px; min-width:0; } .csw-side > p { margin:0; }",
     ".csb-side-courses { min-width:30rem; } .csb-sc-college { width:30%; } .csb-sc-course { width:20%; } .csb-sc-title { width:34%; } .csb-sc-top { width:16%; }",
     ".csb-side-courses .csb-sort, .csb-side-cols .csb-sort, .csb-side-courses th, .csb-side-courses td { overflow-wrap:normal; word-break:normal; }",
@@ -2693,7 +2722,7 @@
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
     _state: S, COURSE_DIR: COURSE_DIR, bandOf: bandOf, saveKey: saveKey, titleCase: titleCase, savesModel: savesModel,
     SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX, dominantOf: dominantOf, attentionBy: attentionBy, webQuery: webQuery,
-    MQ_FILE: MQ_FILE, _stack: STACK,
+    MQ_FILE: MQ_FILE, _stack: STACK, _breakAfter: breakAfter,
     _reset: function () { VIEW.Q = null; VIEW.mqError = ""; mqCache = null; MQS.pick = "all"; MQS.q = ""; MQS.code = ""; MQS.side = null; STACK.second = null; VIEW.cociError = ""; cociWait = null; COCI_IX = null;
       SWS.filter = "top"; SWS.common = ""; VIEW.W = null; VIEW.swError = ""; swCache = null; SW_IX = null; SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.at = ""; S.band = ""; S.pick = ""; }
   };
