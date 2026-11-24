@@ -169,6 +169,11 @@ function rule(t, value, words, similar) {
     check("(1) the note counts the cards and says which signal put them there",
       /2 common courses the daily re-check could not settle\. On 1 the catalog description reads as another discipline; on 1 only the colleges' TOP codes do/.test(note), note.slice(0, 400));
     check("(1) and what a ruling teaches", /A reason marked for similar cards becomes a proposed procedure/.test(note));
+    /* S724 (the S723 NEXT): each band in doubt says in one line which signal put it there; the panel keeps the rest. */
+    const bandOf = (re) => Array.from(t.d.querySelectorAll("tr.ccl-band")).filter((tr) => re.test(txt(tr)))[0];
+    const bE = bandOf(/ENGL M1001/);
+    check("(13) ⭐ a band in doubt by its description says where the description reads",
+      bE && /Common subject in doubt: its catalog description reads closest to Communication Studies\./.test(txt(bE)), bE && txt(bE));
     await openPanel(t, "College Composition", /Why its common subject is in doubt/);
     const p = txt(panel(t.d));
     check("(2) the description's reading, in words", /Its catalog description reads closest to Communication Studies, then Journalism\./.test(p), p.slice(0, 500));
