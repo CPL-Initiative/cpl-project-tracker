@@ -101,21 +101,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "recommended_lists_only",
-    "label": "The catalog prints the major's courses as lists the department recommends rather than requires, so the record's lists cannot add up to the degree's printed total.",
-    "words": "The catalog labels every list 'Recommended' (Recommended Major Requirements, Recommended Major Electives, Recommended General Electives) and says these are 'courses recommended by the department that can be used to meet major requirements for this degree', so all three were recorded with rule 'recommended'. Each list nonetheless prints 'Complete the following number of credits' (10, 8, 18), recorded in stated. A reviewer may prefer reading the major lists as required (all / choose_units 8)."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 30,
-   "course_list_match": 100,
-   "ge_pattern": 100,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {

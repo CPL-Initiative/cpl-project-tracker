@@ -16,12 +16,12 @@ three guards: scorer_passes, on_live_run and the own-section guard. The kinds, r
   prerequisites_counted   (College of the Sequoias' branch) MA70 and the English prerequisite (6) the printed 61
                           leaves out (09600; 67 less 6 is 61).
   repeat_read_once        (Santa Monica's branch) MUS16 taken twice, counted once (42781; 15 plus 1 is 16).
-  recommended_lists_only  (new, 30) the major's lists are 'courses recommended by the department that can be used to
-                          meet major requirements', so they cannot add up to the degree (06349, 06352, 06380, 06381,
-                          44992; 11293 holds on on_live_run). No existing kind fits: lists_not_closed names a list with no figure or one
-                          that takes another list's courses, and these lists print figures but bind no one.
+TOMORROW'S FREE RULE (Cabrillo's reader): a block headed 'Recommended ...' with 'Complete the following number of
+credits: N' reads as choose_units N; today's scorer then passes 06352, 06380, 06381 and 44992 (and 17 other Cabrillo
+records with the same wording already pass). It is a rescore wording rule, never a gap, so those four are held here.
 
-Held (8): 11293 (on_live_run: its live row is on another run than its committed record); 06328 (two blocks the note only suspects are alternatives); 06341, 06385, 32291 (their notes support no
+Held (13): 06352, 06380, 06381, 44992 (tomorrow's free rule); 06349 (its ensemble blocks read as 0);
+11293 (on_live_run: its live row is on another run than its committed record); 06328 (two blocks the note only suspects are alternatives); 06341, 06385, 32291 (their notes support no
 honest kind); 41186 (18 units of general electives in the degree: the electives fill, held tonight); 43556 (MUS68
 and MUS68CP share four repeats, and the block's printed 13 differs from its 14: no exact closure); 45306 (a stray
 '4 - 5' figure beside the required block).
@@ -61,12 +61,6 @@ LEVERS = ("reconcile_steps",)
 PERSON = ()
 
 REVIEWED = {
-    "06349": {"gap": "recommended_lists_only", "computed": [53, 53], "stated": [60, 60], "words": 'recommended by the department that can be used to meet'},
-    "06352": {"gap": "recommended_lists_only", "computed": [29, 29], "stated": [60, 60], "words": 'recommended by the department that can be used to meet'},
-    "06380": {"gap": "recommended_lists_only", "computed": [30, 30], "stated": [60, 60], "words": 'recommended by the department that can be used to meet'},
-    "06381": {"gap": "recommended_lists_only", "computed": [33, 33], "stated": [60, 60], "words": 'recommended by the department that can be used to meet'},
-    "11293": {"gap": "recommended_lists_only", "computed": [49, 58], "stated": [60, 60], "words": 'recommended by the department that can be used to meet'},
-    "44992": {"gap": "recommended_lists_only", "computed": [24, 24], "stated": [60, 60], "words": 'recommended by the department that can be used to meet'},
     # A negative "less" adds the units line: the courses plus the line's 12 give the printed total.
     "12745": {"gap": "unit_line_not_read", "computed": [21.5, 21.5], "stated": [33.5, 33.5], "less": [-12, -12], "words": 'any transferable or degree applicable ECE course',
               "courses": ["ECE51"]},
@@ -93,6 +87,15 @@ REVIEWED = {
 }
 HAND = {cn: e["gap"] for cn, e in REVIEWED.items()}
 HAND.update({
+    # Cabrillo's reader (BLOCKING): with their 'Recommended' blocks read as choose_units, today's scorer passes 06352,
+    # 06380, 06381 and 44992 (the page's credit counts bind: 06380's 24 + 30 + 6 = 60), and 17 other Cabrillo records
+    # with the same wording pass: a rescore wording rule, tomorrow's free rule, never a gap. 06349's blocks are all
+    # and choose_units, and its ensemble blocks read as 0.
+    "06352": "held: tomorrow's free rule passes it (its 'Recommended' blocks read as choose_units)",
+    "06380": "held: tomorrow's free rule passes it (its 'Recommended' blocks read as choose_units)",
+    "06381": "held: tomorrow's free rule passes it (its 'Recommended' blocks read as choose_units)",
+    "44992": "held: tomorrow's free rule passes it (its 'Recommended' blocks read as choose_units)",
+    "06349": "held: its blocks are all and choose_units, and its ensemble blocks read as 0, so its sum is short",
     # on_live_run: the latest committed receipt posts 44112287720 to 11293's live row; its committed file is 44090886950.
     "11293": "held: its live row is on 44112287720 and its committed record is 44090886950's (on_live_run)",
     "06328": "held: its note only suspects two blocks are alternatives (24 + 15 + 15 + 6 would be 60)",

@@ -6,9 +6,9 @@ its gaps noted and confidence scores, a gap noted instead of a reread. Pinned he
 
   * each kind the plan files carries a sentence and a unit-arithmetic score in kb/_program_named_gaps.py;
   * precision 21 of 21 against the hand reading of the census members pinned in the fixture
-    (p-test-pins-census-members-s714): 13 collected, 8 held;
+    (p-test-pins-census-members-s714): 8 collected, 13 held;
   * the claim check holds a record whose named course the capture did not find; every boundary reading names no gap;
-  * the plan: 13 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans
+  * the plan: 8 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans
     none; the load's image of each committed record is its receipt's after-image, carrying its one gap.
 
 Run from repo root: python3 tests/program_piles_s720_cabrillo_test.py
@@ -27,9 +27,9 @@ import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s720_cabrillo as W  # noqa: E402
 
 COLLEGE = 'Cabrillo College'
-ROWS = {'06349': 'recommended_lists_only', '06352': 'recommended_lists_only', '06380': 'recommended_lists_only', '06381': 'recommended_lists_only', '44992': 'recommended_lists_only', '12745': 'unit_line_not_read', '12746': 'unit_line_not_read', '12747': 'unit_line_not_read', '12748': 'unit_line_not_read', '12749': 'unit_line_not_read', '16558': 'unit_line_not_read', '09600': 'prerequisites_counted', '42781': 'repeat_read_once'}
-HELD = {'06328', '32291', '41186', '45306', '06385', '43556', '06341', '11293'}
-SCORES = {'recommended_lists_only': 30, 'unit_line_not_read': 40, 'prerequisites_counted': 70, 'repeat_read_once': 60}
+ROWS = {'12745': 'unit_line_not_read', '12746': 'unit_line_not_read', '12747': 'unit_line_not_read', '12748': 'unit_line_not_read', '12749': 'unit_line_not_read', '16558': 'unit_line_not_read', '09600': 'prerequisites_counted', '42781': 'repeat_read_once'}
+HELD = {'41186', '32291', '43556', '06352', '06349', '11293', '06385', '06380', '44992', '06341', '06328', '06381', '45306'}
+SCORES = {'unit_line_not_read': 40, 'prerequisites_counted': 70, 'repeat_read_once': 60}
 checks, failures = [0], []
 
 
@@ -50,28 +50,28 @@ pr = W.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 21 and pr["right"] == 21 and not pr["wrong"], "precision 21 of 21: %s" % pr["wrong"])
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 13} and not cc["not_standing"], "13 claims stand")
+check(cc["counts"] == {"stands": 8} and not cc["not_standing"], "8 claims stand")
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2['42781']["codes_found"] = [c for c in s2['42781']["codes_found"] if c != 'MUS16']
 check(W.claim(W._load('42781'), s2) == "a named course not found", "a named course the capture lacks holds it")
 
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 40, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == 25, "every boundary reading names no gap: %s" % bd)
 
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
 got = {r["control_number"]: r["moves_to"] for r in rec["records"]}
-check(got == ROWS and rec["moved"] == 13, "the receipt names the 13 rows and their gaps")
-check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 8")
+check(got == ROWS and rec["moved"] == 8, "the receipt names the 8 rows and their gaps")
+check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 13")
 check(rec["census"]["members"] == members, "the receipt's keys are the fixture's")
 for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for cn in ROWS) and not any("'%s'" % cn in sql for cn in HELD | set(W.PERSON)),
-          "%s names exactly the 13" % part)
+          "%s names exactly the 8" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (13))" in sql, "the apply guards a confirm")
+        check("confirm guard" in sql and "e(expect) as (values (8))" in sql, "the apply guards a confirm")
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:
@@ -80,6 +80,7 @@ for r in rec["records"]:
     check(img["checks"].get("gaps") == [r["moves_to"]], "%s: the image carries its one gap" % r["control_number"])
     check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
 
+check('recommended_lists_only' not in NG.GAPS, "the kind is gone (Cabrillo's reader)")
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS), "the scorer passes none of the rows (#3753's MAJOR)")
 check(all(W.on_live_run(W._load(cn)) for cn in ROWS) and not W.on_live_run(W._load("11293")),
       "the rows are on their live runs; 11293's live row is on another run")

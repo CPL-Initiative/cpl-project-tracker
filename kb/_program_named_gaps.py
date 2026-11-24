@@ -1496,9 +1496,6 @@ for _g, _s, _a in (
         ('repeat_read_once',
          'The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.',
          60),  # Santa Monica's branch
-        ('recommended_lists_only',
-         "The catalog prints the major's courses as lists the department recommends rather than requires, so the record's lists cannot add up to the degree's printed total.",
-         30),  # Cabrillo's branch
 ):
     GAPS.setdefault(_g, _s)
     ARITH_SCORE.setdefault(_g, _a)
