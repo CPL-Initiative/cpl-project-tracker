@@ -6,8 +6,9 @@
 WHY. The census (run 45319725062) filed 9 Los Angeles Southwest, 6 Mendocino and 6 Santiago Canyon programs whose
 extraction placed none of the state's listed courses: the picker handed each a sibling award's section or the course
 descriptions. S720 pins 14 of them to their own sections in kb/program_requirements_reconcile.json (pdf_pages: page,
-words, through, until) and files 7 as named gaps (named_gaps_s720.json). The pages are the 2026-27 catalog PDFs as
-college-page-read run 45341735139 printed them (tests/fixtures/program_requirements_lever_pins_s720.json.gz). The
+words, through, until) and files 7 as named gaps (named_gaps_s720.json), and pins American River's 5 in its
+hand-filed catalog as refiled in S720. The pages are the 2026-27 catalog PDFs as college-page-read run 45341735139
+printed them, and American River's as run 45344701810 did (tests/fixtures/program_requirements_lever_pins_s720.json.gz). The
 lever's members are pinned here, never read from the live census (p-test-pins-census-members-s714).
 
   1. Every pin binds on the filed pages, and the window the capture reads (pdf_best, with the college's printed forms
@@ -55,6 +56,7 @@ LEVER = {
     "Los Angeles Southwest College": ("los_angeles_southwest", "02862 02877 10738 19186 24277 33868 38597 40275 40947"),
     "Mendocino College": ("mendocino", "03454 03461 12278 18732 21973 43366"),
     "Santiago Canyon College": ("santiago_canyon", "11909 18117 18118 21673 37073 42990"),
+    "American River College": ("american_river", "16946 18005 20109 20134 44412"),
 }
 
 
@@ -73,7 +75,7 @@ def program(college, cn):
 
 
 def s720_pins(college):
-    return {cn: p for cn, p in ((STEPS.get(college) or {}).get("pdf_pages") or {}).items() if RUN in p.get("evidence", "")}
+    return {cn: p for cn, p in ((STEPS.get(college) or {}).get("pdf_pages") or {}).items() if FIX["colleges"][college]["run"] in p.get("evidence", "")}
 
 
 def flat(s):

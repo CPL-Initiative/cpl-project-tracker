@@ -2157,7 +2157,86 @@
      "pattern": "\\bTotal\\s+Hours\\b[ \\t]*(?:\\n[ \\t]*)?\\d",
      "source_words": "San Bernardino Valley noncredit certificates: 'Total Hours 48-54' over a UNITS column of 0 (the readings of 35699, 35700 and 36070, notes)"
     }
-   ]
+   ],
+   "course_renumbers": {
+    "CDEV108": "CD 108",
+    "CDEV111": "CD 111",
+    "CDEV113": "CD 113",
+    "CDEV114": "CD 114",
+    "CDEV115": "CD 115",
+    "CDEV126": "CD 126",
+    "CDEV138": "CD 138",
+    "CDEV185": "CD 185",
+    "CDEV205": "CD 205"
+   },
+   "course_renumbers_why": "S720 (lever), college-page-read run 45344701810: Early Childhood Education A.S.-T 32317's own page prints its courses under CDEV ('CDEV 108 Early Childhood Development 3', 'CDEV 111 Observation and Assessment in Child Development 3', 113 Principles and Practices of Teaching Young Children, 114 Introduction to Curriculum, 115 Health, Safety and Nutrition, 126 Child, Family, and the Community, 138 Teaching in a Diverse Society, 185 Infant/Toddler Growth and Development, 205 Child Development Practicum / Field Experience 4) where the Program Course File lists CD108 to CD205 with the same titles (CD111 'Observation and Assessment in Child Development', CCC000642974; CD205 'Child Development Practicum / Field Experience', CCC000588546). Read only where the file lists the CD code and not the CDEV one.",
+   "site_pages": {
+    "04881": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-certificate-achievement/",
+     "evidence": "Heavy/Medium Duty Truck Technology certificate 04881: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Heavy/Medium Duty Truck Technology Certificate of Achievement', its course list and 'Total Units 28'. The filed record was read from the Heavy/Medium Duty Truck Technology A.S. page, so it placed none of its listed courses."
+    },
+    "09267": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-as-degree/",
+     "evidence": "Electronics Technology A.S. 09267: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Electronics Technology Associate of Science Degree', its course list and 'Total Units 34'. The filed record was read from the Avionics Technology A.S. page, so it placed none of its listed courses."
+    },
+    "22756": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-certificate-achievement/",
+     "evidence": "Electronics Technology certificate 22756: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Electronics Technology Certificate of Achievement', its course list and 'Total Units 34'. The filed record was read from the Avionics Technology A.S. page, so it placed none of its listed courses."
+    },
+    "22799": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-certificate-achievement/",
+     "evidence": "Avionics Technology certificate 22799: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Avionics Technology Certificate of Achievement', its course list and 'Total Units 52'. The filed record was read from the Avionics Technology A.S. page, so it placed none of its listed courses."
+    },
+    "19002": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-certificate-achievement/",
+     "evidence": "Child Development - Early Intervention and Inclusion certificate 19002: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Child Development - Early Intervention and Inclusion Certificate of Achievement', its course list and 'Total Units 32'. The filed record was read from the Early Intervention and Inclusion A.A. page, so it placed none of its listed courses."
+    },
+    "32317": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/early-childhood-education-ast-degree/",
+     "evidence": "Early Childhood Education A.S.-T 32317: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Early Childhood Education Associate in Science for Transfer Degree', its course list and 'Total Units 60'. The filed record was read from the Child Development department page, so it placed none of its listed courses. The page prints its courses as CDEV where the state's file lists CD; course_renumbers reads them."
+    },
+    "22732": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-certificate-achievement/",
+     "evidence": "Accounting certificate 22732: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Accounting Certificate of Achievement', its course list and 'Total Units 27'. The filed record was read from the Accounting A.A. page, so it placed none of its listed courses."
+    },
+    "22754": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-certificate-achievement/",
+     "evidence": "Computer Science certificate 22754: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Computer Science Certificate of Achievement', its course list and 'Total Units 33'. The filed record was read from the Computer Science A.S. page, so it placed none of its listed courses."
+    },
+    "22784": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-certificate-achievement/",
+     "evidence": "Automotive Wheel Alignment and Brakes certificate 22784: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Automotive Wheel Alignment and Brakes Certificate of Achievement', its course list and 'Total Units 16-20'. The filed record was read from the Wheel Alignment and Brakes A.S. page, so it placed none of its listed courses."
+    },
+    "41789": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-certificate/",
+     "evidence": "Automotive Clean Vehicle Technology certificate 41789: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Automotive Clean Vehicle Technology Certificate of Achievement', its course list and 'Total Units 16'. The filed record was read from the Clean Vehicle Technology A.S. page, so it placed none of its listed courses."
+    },
+    "22787": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-certificate-achievement/",
+     "evidence": "Advanced Automotive Collision Repair and Refinishing certificate 22787: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Advanced Automotive Collision Repair and Refinishing Certificate of Achievement', its course list and 'Total Units 33'. The filed record was read from the Advanced Collision Repair A.S. page, so it placed none of its listed courses."
+    },
+    "22792": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-certificate-achievement/",
+     "evidence": "Aviation Maintenance Technician certificate 22792: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Aviation Maintenance Technician Certificate of Achievement', its course list and 'Total Units 58'. The filed record was read from the Aviation Maintenance Technician A.S. page, so it placed none of its listed courses."
+    },
+    "22816": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-certificate-achievement/",
+     "evidence": "Inspection Technology certificate 22816: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Inspection Technology Certificate of Achievement', its course list and 'Total Units 39'. The filed record was read from the Inspection Technology department page, so it placed none of its listed courses."
+    },
+    "22818": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-technology-certificate-achievement/",
+     "evidence": "Welding Technology certificate 22818: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Welding Technology Certificate of Achievement', its course list and 'Total Units 47'. The filed record was read from the Welding Technology department page, so it placed none of its listed courses."
+    },
+    "22831": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-certificate-achievement/",
+     "evidence": "Library Technology certificate 22831: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Library Technology Certificate of Achievement', its course list and 'Total Units 17-18'. The filed record was read from the Library Technology department page, so it placed none of its listed courses."
+    },
+    "22768": {
+     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-certificate-achievement/",
+     "evidence": "Heating, Ventilation, Air Conditioning and Refrigeration certificate 22768: its own page, linked from its department page (college-page-read run 45341735139), read as the capture reads it (run 45344701810): the h1 'Heating, Ventilation, Air Conditioning and Refrigeration Certificate of Achievement', its course list and 'Total Units 31'. The filed record was read from the HVAC/R A.S. page (found, never extracted), so it placed none of its listed courses."
+    }
+   },
+   "site_pages_why": "S720 (lever, the gap census's reader_page_assignment lever, run 45319725062): San Bernardino Valley's CourseLeaf catalog gives each certificate a page of its own, and the capture handed each of these its sister degree's page or its department's landing page, whose side menu prints every award of the department, so extraction placed none of its listed courses. Each is pinned to its own page, which its department page links (college-page-read run 45341735139) and whose h1 and course list the capture view of run 45344701810 printed. Reversible by deleting this key."
   },
   "Coalinga College": {
    "why": "S644, the harvest's NEXT 5. Coalinga's noncredit certificates print 'Total Hours N' with no colon and 'N/A' in the units column beside each course (the readings of English as a Second Language 36894 'Total Hours 216', Unmanned Aerial System Remote Pilot 44511 'Total Hours 54', Irrigation Systems Management 44555 'Total Hours 145', notes). The step names the scorer's no-colon reading for this catalog alone, as San Bernardino Valley's does, and the scorer asks the page for the same positive evidence. Measured on the filed records: 4 records, none passing today. Session decision for Sam to revise (d-hours-total-no-colon-s644); reversible by deleting this entry.",
@@ -2289,7 +2368,44 @@
      }
     }
    ],
-   "steps": []
+   "steps": [],
+   "pdf_pages": {
+    "16946": {
+     "page": 448,
+     "words": "Computer Information Security Essentials Certificate This program provides basic cyber operations",
+     "through": 449,
+     "until": "Cybersecurity and Information Assurance Certificate This certificate prepares",
+     "evidence": "Computer Information Security Essentials certificate 16946: its heading prints at the foot of PDF p.448 with its Certificate Requirements (CISS 310, 315, 350 and 360) and 'Total Units: 12'; its outcomes run onto p.449, and the window ends where the Cybersecurity and Information Assurance certificate opens. The filed record was read from p.428 of the retired file, the A.S. in CIS: Computer Networking Management (college-page-read run 45344701810)."
+    },
+    "20109": {
+     "page": 449,
+     "words": "Cybersecurity and Information Assurance Certificate This certificate prepares",
+     "through": 450,
+     "until": "Cybersecurity and Information Security Administration Certificate",
+     "evidence": "Cybersecurity and Information Assurance certificate 20109: its heading prints on PDF p.449 with its ten Certificate Requirements and 'Total Units: 31'; the window ends where the Cybersecurity and Information Security Administration certificate opens on p.450. The filed record was read from p.428 of the retired file (college-page-read run 45344701810)."
+    },
+    "18005": {
+     "page": 499,
+     "words": "Diesel Technology Certificate This certificate provides training in diesel technology",
+     "through": 500,
+     "until": "Light Duty Diesel Truck Certificate",
+     "evidence": "Diesel Technology certificate 18005: its heading prints on PDF p.499 with DCDT 101 to 150 and 'Total Units: 24'; its outcomes and career information run onto p.500, where the Light Duty Diesel Truck certificate opens. The filed record was read from p.491 of the retired file, the A.S.'s section (college-page-read run 45344701810)."
+    },
+    "20134": {
+     "page": 642,
+     "words": "Gerontology: Administrative Certificate This program provides a broad overview",
+     "through": 643,
+     "until": "Career Information",
+     "evidence": "Gerontology: Administrative certificate 20134: its heading prints on PDF p.642 with its Certificate Requirements and 'Total Units: 36'; its outcomes run onto p.643, and the window ends at its Career Information. The page prints SWCD 300 and 310 where the state lists HSER 300 and 310, so the record is collected with that gap (13 of 17 placed). The filed record was read from p.630 of the retired file, the A.A.'s section (college-page-read run 45344701810)."
+    },
+    "44412": {
+     "page": 421,
+     "words": "Business Information Professional II Certificate This Certificate prepares students for mid-level",
+     "until": "Law Office Clerical Assistant Certificate",
+     "evidence": "Business Information Professional II certificate 44412: its heading prints on PDF p.421 with its Certificate Requirements and 'Total Units: 25.5'; the window ends where the Law Office Clerical Assistant certificate opens. The filed record was read from p.408 of the retired file, the A.A. and A.S. sections (college-page-read run 45344701810)."
+    }
+   },
+   "pdf_pages_why": "S720 (lever, the gap census's reader_page_assignment lever, run 45319725062): American River's 5 programs on the lever, each pinned to its own section in the hand-filed 2026-27 catalog as refiled in S720 (kb/hand_filed_catalogs/american_river.json, 8,050,566 bytes, sha256 pinned by run 45341899083), read page for page by college-page-read run 45344701810 (hand_filed: true). 04544 is not among them (fill's plan, #3756). Reversible by deleting this key."
   },
   "Barstow Community College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints CDEV n, POLS n where the state's Program Course File lists CHLD n, POLI n, the same number and title in every case kb/_prefix_alias_census.py could title (CDEV for CHLD, 18 courses; POLS for POLI, 3 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
