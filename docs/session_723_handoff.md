@@ -45,6 +45,11 @@ changed), step 3 (no tab joined or left), step 7 (no re-mint; the pipeline did n
   second sidebar; a Commons quick link lands on its check's highlighted action link; the Commons names COBI, never Sky.
   CLAUDE.md gained three rules (the 0-100 bar, the resize clause, "Sky" never rendered).
 
+- **#3774** `lints` runs in four shards (Sam: *"do we need to do lints check on the whole code base every time?"*, then
+  *"good, hopefully we can optimize this for future sessions"*). On its own run the shards took 5.4 to 8.6 min and the whole
+  CI run about 9 min, against about 22 before. Every lint step names its shard (`if: matrix.shard == N`); a new step must
+  name one, or `tests/lints_shards_test.py` fails.
+
 ## Sam's words this run (verbatim, 2026-11-24)
 
 - His five asks on the no-title view (~13:20Z): Accept on the row; the chip at the end, a confidence bar for
@@ -73,6 +78,10 @@ changed), step 3 (no tab joined or left), step 7 (no re-mint; the pipeline did n
 
 ## Open work (from the lanes' NEXT)
 
+0. **CI, the second half (Sam's ask):** on a docs-only PR (the gate's `skip` decision), skip the lint steps that rebuild a
+   generator, so a checkpoint PR finishes in about 2 min. Every step still runs on `main`. Classify the 303 steps with care
+   (the docs lints must keep running); rebalance the shards by a fresh run's step times, since each shard pays about 1.5
+   min of setup and shard 2 ran longest.
 1. **Derived titles into the titles build** as their own column in `kb/status/local_subject_titles.json` (never
    `printed_name`: the recommender votes from it), so the committed totals agree with the page (they still count 301).
 2. **Measure `WEB_SHARE`** once titled codes have filed searches.
@@ -98,9 +107,9 @@ changed), step 3 (no tab joined or left), step 7 (no re-mint; the pipeline did n
 
 ## Let go
 
-At sign-off: the PR watch on the checkpoint PR. #3768, #3770 and #3771 merged (watches ended). No COBIx watcher, no
+At sign-off: no PR watch remains. #3768, #3770, #3771, #3773 (the checkpoint) and #3774 merged (watches ended). No COBIx watcher, no
 artifact watches, no check-ins.
 
-Spend: not available; 2026-11-24T11:49Z to 2026-11-24T14:55Z.
+Spend: not available; 2026-11-24T11:49Z to 2026-11-24T15:55Z.
 
 Opening line: *Greetings, you are SkyBooby (Session 723), see SkyCormorant's handoff — `docs/session_723_handoff.md` — let's keep rolling with our queue.*
