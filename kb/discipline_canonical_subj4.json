@@ -7,7 +7,7 @@
     "total_disciplines": 246,
     "multi_subj4_disciplines": 40,
     "needs_review": 0,
-    "seeded_default": 151,
+    "seeded_default": 246,
     "assigned_s717": 95
   },
   "disciplines": {
@@ -13767,6 +13767,6 @@
       "with_chips": 24
     }
   },
-  "_synced_at": "2026-11-23T06:19:44Z",
+  "_synced_at": "2026-11-24T00:09:16Z",
   "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }

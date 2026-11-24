@@ -2,7 +2,7 @@
  "_what": "The course outlines of record worth finding by hand, so kb/_mid_outcomes_compare.py can read the most-shared CTE M-IDs it cannot read today. Written by kb/_outline_hunt.py, read by the Commons SLOs and objectives view (commons_data.js). Sam's ask, 2026-11-23 (S711).",
  "_rule": "M-IDs only, never C-ID or CCN; CTE by the TOP manual's asterisk; credit; at least 5 districts; fewer than two districts print enough outcome text; no shell titles. Ranked by districts reached per outline needed. Each course is a member in a district with no outcome text for its M-ID yet, at a college already read where one is, nearest the M-ID's title.",
  "_sources": {
-  "members": "unified_courses_members.js generated 2026-11-23 06:20",
+  "members": "unified_courses_members.js generated 2026-11-24 00:09",
   "compare": "kb/status/mid_outcomes_compare_2026-11-23.json.gz",
   "compare_date": "2026-11-23",
   "cte": "kb/coci_minted_courses.json"

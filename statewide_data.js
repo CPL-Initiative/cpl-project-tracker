@@ -176941,146 +176941,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 7.0
     },
     {
-      "exhibit_id": "MAPICI-CBA-1-001",
-      "exhibit_ids": [
-        "MAPICI-CBA-1-001"
-      ],
-      "title": "California Real Estate Appraiser License",
-      "unified_title": "California Real Estate Appraiser License",
-      "is_classified": true,
-      "issuing_agency": "California Bureau of Real Estate Appraisers (BREA)",
-      "training_agency": "",
-      "confidence_title": 0.85,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "CA BREA Appraiser"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Business and Management",
-      "sector": "Business & Entrepreneurship",
-      "cip_sector": "52",
-      "top_codes": [
-        "15"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "West Los Angeles College"
-      ],
-      "potential": 63,
-      "potential_names": [
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Cuyamaca College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Mendocino College",
-        "Merritt College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Norco College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Palomar College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "Solano Community College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Valley College"
-      ],
-      "total_addressable": 64,
-      "credit_recs": [
-        {
-          "course": "REAL ES 009",
-          "credit": "3 hours in REAL ESTATE APPRAISAL I"
-        },
-        {
-          "course": "REAL ES 010",
-          "credit": "3 hours in REAL ESTATE APPRAISAL II"
-        },
-        {
-          "course": "REAL ES 039",
-          "credit": "1 hour in UNIFORM STANDARDS OF PROFESSIONAL APPR"
-        },
-        {
-          "course": "REAL ES 040",
-          "credit": "3 hours in RESIDENTIAL REPORT WRITING AND CASE STUDIES"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-CBA-1-001",
-          "title": "CA BREA Appraiser",
-          "units": 10.0,
-          "lines": 4
-        }
-      ],
-      "adopter_units": {
-        "West Los Angeles College": 10.0
-      },
-      "adopter_lines": {
-        "West Los Angeles College": 4
-      },
-      "adopter_rec_idx": {
-        "West Los Angeles College": [
-          0,
-          1,
-          2,
-          3
-        ]
-      },
-      "peer_units_median": 10.0,
-      "peer_units_max": 10.0,
-      "rec_units_total": 10.0
-    },
-    {
       "exhibit_id": "MAPICI-MCAF-1-001",
       "exhibit_ids": [
         "MAPICI-MCAF-1-001"
@@ -180739,6 +180599,154 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 4.75,
       "peer_units_max": 7.0,
       "rec_units_total": 9.5
+    },
+    {
+      "exhibit_id": "MAPICI-CBA-1-001",
+      "exhibit_ids": [
+        "MAPICI-CBA-1-001"
+      ],
+      "title": "California Real Estate Appraiser License",
+      "unified_title": "California Real Estate Appraiser License",
+      "is_classified": true,
+      "issuing_agency": "California Bureau of Real Estate Appraisers (BREA)",
+      "training_agency": "",
+      "confidence_title": 0.85,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "CA BREA Appraiser"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "15"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Los Angeles Southwest College",
+        "West Los Angeles College"
+      ],
+      "potential": 62,
+      "potential_names": [
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuyamaca College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 64,
+      "credit_recs": [
+        {
+          "course": "REAL ES 009",
+          "credit": "3 hours in REAL ESTATE APPRAISAL I"
+        },
+        {
+          "course": "REAL ES 010",
+          "credit": "3 hours in REAL ESTATE APPRAISAL II"
+        },
+        {
+          "course": "REAL ES 039",
+          "credit": "1 hour in UNIFORM STANDARDS OF PROFESSIONAL APPR"
+        },
+        {
+          "course": "REAL ES 040",
+          "credit": "3 hours in RESIDENTIAL REPORT WRITING AND CASE STUDIES"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CBA-1-001",
+          "title": "CA BREA Appraiser",
+          "units": 10.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Southwest College": 10.0,
+        "West Los Angeles College": 10.0
+      },
+      "adopter_lines": {
+        "Los Angeles Southwest College": 4,
+        "West Los Angeles College": 4
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Southwest College": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "West Los Angeles College": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "peer_units_median": 10.0,
+      "peer_units_max": 10.0,
+      "rec_units_total": 10.0
     },
     {
       "exhibit_id": "MAPICI-R1RE-1-001|MAPICI-R3EP-1-001",
@@ -223272,16 +223280,16 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Real Estate Principles"
         },
         {
+          "course": "REAL ES 005",
+          "credit": "3 hours in LEGAL ASPECTS OF REAL ESTATE I"
+        },
+        {
           "course": "REAL ES 001",
           "credit": "3 hours in REAL ESTATE PRINCIPLES"
         },
         {
           "course": "REAL ES 003",
           "credit": "3 hours in REAL ESTATE PRACTICES"
-        },
-        {
-          "course": "REAL ES 005",
-          "credit": "3 hours in LEGAL ASPECTS OF REAL ESTATE I"
         },
         {
           "course": "RLE 81",
@@ -223345,7 +223353,7 @@ window.CPL_STATEWIDE = {
         "City College of San Francisco": 18.0,
         "Fullerton College": 6.0,
         "Lake Tahoe Community College": 6.0,
-        "Los Angeles Southwest College": 3.0,
+        "Los Angeles Southwest College": 9.0,
         "West Los Angeles College": 15.0
       },
       "adopter_lines": {
@@ -223354,7 +223362,7 @@ window.CPL_STATEWIDE = {
         "City College of San Francisco": 6,
         "Fullerton College": 2,
         "Lake Tahoe Community College": 2,
-        "Los Angeles Southwest College": 1,
+        "Los Angeles Southwest College": 3,
         "West Los Angeles College": 5
       },
       "adopter_rec_idx": {
@@ -223384,7 +223392,9 @@ window.CPL_STATEWIDE = {
           14
         ],
         "Los Angeles Southwest College": [
-          18
+          18,
+          19,
+          20
         ],
         "West Los Angeles College": [
           3,
@@ -223394,7 +223404,7 @@ window.CPL_STATEWIDE = {
           20
         ]
       },
-      "peer_units_median": 6.0,
+      "peer_units_median": 9.0,
       "peer_units_max": 18.0,
       "rec_units_total": 66.0
     },
@@ -225760,16 +225770,16 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Real Estate Appraisal 1"
         },
         {
+          "course": "REAL ES 005",
+          "credit": "3 hours in LEGAL ASPECTS OF REAL ESTATE I"
+        },
+        {
           "course": "REAL ES 001",
           "credit": "3 hours in REAL ESTATE PRINCIPLES"
         },
         {
           "course": "REAL ES 003",
           "credit": "3 hours in REAL ESTATE PRACTICES"
-        },
-        {
-          "course": "REAL ES 005",
-          "credit": "3 hours in LEGAL ASPECTS OF REAL ESTATE I"
         },
         {
           "course": "REAL ES 007",
@@ -225866,7 +225876,7 @@ window.CPL_STATEWIDE = {
         "City College of San Francisco": 3.0,
         "Fullerton College": 9.0,
         "Lake Tahoe Community College": 12.0,
-        "Los Angeles Southwest College": 3.0,
+        "Los Angeles Southwest College": 24.0,
         "West Los Angeles College": 30.0
       },
       "adopter_lines": {
@@ -225876,7 +225886,7 @@ window.CPL_STATEWIDE = {
         "City College of San Francisco": 1,
         "Fullerton College": 3,
         "Lake Tahoe Community College": 4,
-        "Los Angeles Southwest College": 1,
+        "Los Angeles Southwest College": 8,
         "West Los Angeles College": 10
       },
       "adopter_rec_idx": {
@@ -225910,7 +225920,14 @@ window.CPL_STATEWIDE = {
           11
         ],
         "Los Angeles Southwest College": [
-          23
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
         ],
         "West Los Angeles College": [
           17,
@@ -225925,7 +225942,7 @@ window.CPL_STATEWIDE = {
           30
         ]
       },
-      "peer_units_median": 9.0,
+      "peer_units_median": 10.5,
       "peer_units_max": 30.0,
       "rec_units_total": 114.0
     },
@@ -275272,6 +275289,125 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPICI-C1IC-1-001|MAPICI-OC1-1-001",
+      "exhibit_ids": [
+        "MAPICI-C1IC-1-001",
+        "MAPICI-OC1-1-001"
+      ],
+      "title": "OSHA Safety Training",
+      "unified_title": "OSHA Safety Training",
+      "is_classified": true,
+      "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "OSHA Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "277",
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Cuesta College",
+        "San Jose City College"
+      ],
+      "potential": 39,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 41,
+      "credit_recs": [
+        {
+          "course": "CNSTR 117",
+          "credit": "1 hour in OSHA Construction Safety Standards"
+        },
+        {
+          "course": "CTCH 200",
+          "credit": "0.5 hours in WORKPLACE SAFETY- OSHA10"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-C1IC-1-001",
+          "title": "OSHA Certification",
+          "units": 1.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-OC1-1-001",
+          "title": "OSHA Certification",
+          "units": 0.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cuesta College": 0.5,
+        "San Jose City College": 1.0
+      },
+      "adopter_lines": {
+        "Cuesta College": 1,
+        "San Jose City College": 1
+      },
+      "adopter_rec_idx": {
+        "Cuesta College": [
+          1
+        ],
+        "San Jose City College": [
+          0
+        ]
+      },
+      "peer_units_median": 0.75,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.5
+    },
+    {
       "exhibit_id": "MAPPRA-CAM-1-001",
       "exhibit_ids": [
         "MAPPRA-CAM-1-001"
@@ -293652,103 +293788,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 2.0
     },
     {
-      "exhibit_id": "MAPICI-C1IC-1-001",
-      "exhibit_ids": [
-        "MAPICI-C1IC-1-001"
-      ],
-      "title": "OSHA Safety Training",
-      "unified_title": "OSHA Safety Training",
-      "is_classified": true,
-      "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "OSHA Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
-      "top_codes": [
-        "60"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "San Jose City College"
-      ],
-      "potential": 35,
-      "potential_names": [
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 36,
-      "credit_recs": [
-        {
-          "course": "CNSTR 117",
-          "credit": "1 hour in OSHA Construction Safety Standards"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-C1IC-1-001",
-          "title": "OSHA Certification",
-          "units": 1.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "San Jose City College": 1.0
-      },
-      "adopter_lines": {
-        "San Jose City College": 1
-      },
-      "adopter_rec_idx": {
-        "San Jose City College": [
-          0
-        ]
-      },
-      "peer_units_median": 1.0,
-      "peer_units_max": 1.0,
-      "rec_units_total": 1.0
-    },
-    {
       "exhibit_id": "MAPCXH-C4-1-001|MAPCXH-FUSD-1-001|MAPCXH-SHSC-1-001|MAPCXS-CSMA-1-001",
       "exhibit_ids": [
         "MAPCXH-C4-1-001",
@@ -303449,6 +303488,101 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-CHWC-1-001",
+      "exhibit_ids": [
+        "MAPICI-CHWC-1-001"
+      ],
+      "title": "Community Health Worker Certificate-Code Tenderloin",
+      "unified_title": "Community Health Worker Certificate-Code Tenderloin",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Community Health Worker Certificate-Code Tenderloin"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "cip_sector": "51",
+      "top_codes": [
+        "200"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "City College of San Francisco"
+      ],
+      "potential": 33,
+      "potential_names": [
+        "Bakersfield College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Calbright College Non-Credit",
+        "Cerritos College",
+        "Chabot College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Mission College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 34,
+      "credit_recs": [
+        {
+          "course": "HLTH 59",
+          "credit": "1 hour in Intro to the Community Health Worker Field"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CHWC-1-001",
+          "title": "Community Health Worker Certificate-Code Tenderloin",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "City College of San Francisco": 1.0
+      },
+      "adopter_lines": {
+        "City College of San Francisco": 1
+      },
+      "adopter_rec_idx": {
+        "City College of San Francisco": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
     },
     {
       "exhibit_id": "MAPSAH-AHUS-1-001|MAPSAH-AUHE-1-001|MAPSAS-A-UH-1-001|MAPSAS-A:UH-1-001|MAPSAS-A:UH1-1-001|MAPSAS-AE-U1-1-001|MAPSAS-AEUH-1-001|MAPSAS-AEUS-1-001|MAPSAS-AH-U-1-001|MAPSAS-AH-U1-1-001|MAPSAS-AH-U2-1-001|MAPSAS-AH-U3-1-001|MAPSAS-AHU(-1-001|MAPSAS-AHU(1-1-001|MAPSAS-AHU(2-1-001|MAPSAS-AHU(3-1-001|MAPSAS-AHUH-1-001|MAPSAS-AHUS-1-001|MAPSAS-AUH(-1-001|MAPSAS-AUH(1-1-001|MAPSAS-AUH(2-1-001|MAPSAS-AUH-1-001|MAPSAS-AUH-2-1-001|MAPSAS-AUH-3-1-001|MAPSAS-AUH-4-1-001|MAPSAS-AUH1-1-001|MAPSAS-AUH10-1-001|MAPSAS-AUH11-1-001|MAPSAS-AUH12-1-001|MAPSAS-AUH2-1-001|MAPSAS-AUH3-1-001|MAPSAS-AUH4-1-001|MAPSAS-AUH6-1-001|MAPSAS-AUH7-1-001|MAPSAS-AUH8-1-001|MAPSAS-AUH9-1-001|MAPSAS-AUHA-1-001|MAPSAS-AUHA1-1-001|MAPSAS-AUHA2-1-001|MAPSAS-AUHA3-1-001|MAPSAS-AUHA4-1-001|MAPSAS-AUSH-1-001|MAPSAS-AUSH1-1-001|MAPSAS-AUSH4-1-001|MAPSAS-AUSH5-1-001|MAPSAS-AUSH6-1-001|MAPSAS-AUSH7-1-001",
@@ -331368,7 +331502,7 @@ window.CPL_STATEWIDE = {
       "unified_title": "Preproduction for Video, Photography, and Media",
       "is_classified": true,
       "issuing_agency": "California Community Colleges",
-      "training_agency": "",
+      "training_agency": "Cabrillo College Noncredit",
       "confidence_title": 1.0,
       "confidence_issuer": 1.0,
       "quality_flag": "",
@@ -449298,11 +449432,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "City College of San Francisco",
-        "credit_recs": 315,
-        "exhibits": 242,
+        "credit_recs": 316,
+        "exhibits": 243,
         "disciplines": 15,
         "ccc_collaborative": 75,
-        "industry_certs": 107,
+        "industry_certs": 108,
         "pct": 1.8
       },
       {
@@ -449594,21 +449728,21 @@ window.CPL_STATEWIDE = {
         "pct": 0.7
       },
       {
+        "college": "Cuesta College",
+        "credit_recs": 121,
+        "exhibits": 89,
+        "disciplines": 11,
+        "ccc_collaborative": 1,
+        "industry_certs": 30,
+        "pct": 0.7
+      },
+      {
         "college": "Solano Community College",
         "credit_recs": 120,
         "exhibits": 90,
         "disciplines": 4,
         "ccc_collaborative": 15,
         "industry_certs": 33,
-        "pct": 0.7
-      },
-      {
-        "college": "Cuesta College",
-        "credit_recs": 120,
-        "exhibits": 88,
-        "disciplines": 11,
-        "ccc_collaborative": 1,
-        "industry_certs": 29,
         "pct": 0.7
       },
       {
@@ -449852,7 +449986,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 3,
         "ccc_collaborative": 1,
         "industry_certs": 2,
-        "pct": 0.5
+        "pct": 0.4
       },
       {
         "college": "Palo Verde College",
@@ -449861,7 +449995,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 2,
         "ccc_collaborative": 0,
         "industry_certs": 79,
-        "pct": 0.5
+        "pct": 0.4
       },
       {
         "college": "Sacramento City College",
@@ -449870,7 +450004,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 2,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 0.5
+        "pct": 0.4
       },
       {
         "college": "Los Medanos College",
@@ -450000,12 +450134,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Los Angeles Southwest College",
-        "credit_recs": 36,
-        "exhibits": 33,
+        "credit_recs": 49,
+        "exhibits": 34,
         "disciplines": 6,
         "ccc_collaborative": 9,
-        "industry_certs": 14,
-        "pct": 0.2
+        "industry_certs": 27,
+        "pct": 0.3
       },
       {
         "college": "CA MAP INITIATIVE COLLEGE",
@@ -450110,9 +450244,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 3828,
-        "exhibits": 1265,
-        "courses": 1641,
+        "credit_recs": 3829,
+        "exhibits": 1266,
+        "courses": 1642,
         "colleges": 61,
         "ccc_collaborative": 595,
         "pct": 21.8
@@ -450137,12 +450271,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 549,
+        "credit_recs": 562,
         "exhibits": 335,
         "courses": 270,
         "colleges": 52,
         "ccc_collaborative": 68,
-        "pct": 3.1
+        "pct": 3.2
       },
       {
         "discipline": "Information Technology",
@@ -450155,9 +450289,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 527,
-        "exhibits": 292,
-        "courses": 338,
+        "credit_recs": 528,
+        "exhibits": 293,
+        "courses": 339,
         "colleges": 53,
         "ccc_collaborative": 38,
         "pct": 3.0
@@ -450317,8 +450451,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 6192,
-        "exhibits": 1541,
+        "credit_recs": 6207,
+        "exhibits": 1543,
         "colleges": 85,
         "pct": 35.3
       },
@@ -450327,7 +450461,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 2467,
         "exhibits": 1984,
         "colleges": 67,
-        "pct": 14.1
+        "pct": 14.0
       },
       {
         "cpl_type": "Portfolio Review",
@@ -450357,7 +450491,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 9648,
         "exhibits": 4537,
         "colleges": 95,
-        "pct": 55.0
+        "pct": 54.9
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
@@ -450368,10 +450502,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 3164,
-        "exhibits": 1300,
+        "credit_recs": 3179,
+        "exhibits": 1302,
         "colleges": 80,
-        "pct": 18.0
+        "pct": 18.1
       },
       {
         "mode": "High school coursework (H)",
@@ -450426,8 +450560,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 15686,
-        "exhibits": 7133,
+        "credit_recs": 15701,
+        "exhibits": 7135,
         "colleges": 100,
         "disciplines": 23,
         "pct": 89.4
@@ -450852,8 +450986,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-23T06:18:44",
-  "total_credit_recs": 17552,
+  "generated_at": "2026-11-24T00:03:44",
+  "total_credit_recs": 17567,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

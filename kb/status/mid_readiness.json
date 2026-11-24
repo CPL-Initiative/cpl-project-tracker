@@ -6,7 +6,7 @@
   "the outcomes comparison ran on the current reads, and no strong or partial split waits on an answer"
  ],
  "_sources": {
-  "members": "unified_courses_members.js generated 2026-11-23 06:20",
+  "members": "unified_courses_members.js generated 2026-11-24 00:09",
   "courses": "kb/status/subject_courses/<slug>.json",
   "decisions": "kb/status/subject_decisions.json",
   "subject_map": "kb/reference/subject_discipline_map.json",
@@ -613,7 +613,7 @@
      "held_members": {},
      "codes": {
       "ELEC": 1,
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "splits along code",
      "outcomes": null,
@@ -628,7 +628,7 @@
       "call below Confident": 2
      },
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -871,7 +871,7 @@
       "no noncredit category": 1
      },
      "codes": {
-      "VOCE": 3
+      "OLAD": 3
      },
      "shape": "one code",
      "outcomes": null,
@@ -898,7 +898,7 @@
      "settled": 3,
      "held_members": {},
      "codes": {
-      "VOCE": 2,
+      "OLAD": 2,
       "HVAC": 1
      },
      "shape": "splits along code",
@@ -964,7 +964,7 @@
       "category has no common code": 1
      },
      "codes": {
-      "VOCE": 2
+      "OLAD": 2
      },
      "shape": "one code",
      "outcomes": {
@@ -1234,7 +1234,7 @@
      "settled": 2,
      "held_members": {},
      "codes": {
-      "VOCE": 1,
+      "OLAD": 1,
       "ELEC": 1
      },
      "shape": "splits along code",
@@ -1263,7 +1263,7 @@
       "call below Confident": 1
      },
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -1373,7 +1373,7 @@
      "settled": 2,
      "held_members": {},
      "codes": {
-      "VOCE": 1,
+      "OLAD": 1,
       "ELEC": 1
      },
      "shape": "splits along code",
@@ -1451,7 +1451,7 @@
      "settled": 2,
      "held_members": {},
      "codes": {
-      "VOCE": 2
+      "OLAD": 2
      },
      "shape": "one code",
      "outcomes": null,
@@ -1493,7 +1493,7 @@
       "no noncredit category": 1
      },
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -1514,7 +1514,7 @@
      "settled": 2,
      "held_members": {},
      "codes": {
-      "VOCE": 2
+      "OLAD": 2
      },
      "shape": "one code",
      "outcomes": null,
@@ -1566,7 +1566,7 @@
      "settled": 3,
      "held_members": {},
      "codes": {
-      "VOCE": 3
+      "OLAD": 3
      },
      "shape": "one code",
      "outcomes": null,
@@ -1681,7 +1681,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -1720,7 +1720,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -1780,7 +1780,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -1856,7 +1856,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -1916,7 +1916,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -1984,7 +1984,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -1997,7 +1997,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2010,7 +2010,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2023,7 +2023,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2036,7 +2036,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2049,7 +2049,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2062,7 +2062,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2075,7 +2075,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2088,7 +2088,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2164,7 +2164,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2240,7 +2240,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2253,7 +2253,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2287,7 +2287,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2300,7 +2300,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2334,7 +2334,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2347,7 +2347,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2449,7 +2449,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2483,7 +2483,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2496,7 +2496,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2509,7 +2509,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2522,7 +2522,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2535,7 +2535,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,
@@ -2574,7 +2574,7 @@
      "settled": 1,
      "held_members": {},
      "codes": {
-      "VOCE": 1
+      "OLAD": 1
      },
      "shape": "one code",
      "outcomes": null,

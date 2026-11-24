@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-11-23T06:19:35.776299+00:00",
+  "scraped_at": "2026-11-24T00:04:31.906882+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 32580,
-    "star_colleges": 70
+    "jst": 32692,
+    "star_colleges": 71
   },
-  "computed_star_colleges": 70,
+  "computed_star_colleges": 71,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 286,
-      "jst": 175,
+      "jst": 176,
       "star": false
     },
     "Santiago Canyon College": {
@@ -132,12 +132,12 @@
     },
     "Modesto Junior College": {
       "vets": 223,
-      "jst": 154,
+      "jst": 156,
       "star": false
     },
     "Santa Ana College": {
       "vets": 392,
-      "jst": 397,
+      "jst": 398,
       "star": true
     },
     "Mt. San Jacinto College": {
@@ -162,7 +162,7 @@
     },
     "Santa Rosa Junior College": {
       "vets": 591,
-      "jst": 448,
+      "jst": 449,
       "star": true
     },
     "Irvine Valley College": {
@@ -237,7 +237,7 @@
     },
     "Victor Valley College": {
       "vets": 74,
-      "jst": 349,
+      "jst": 350,
       "star": true
     },
     "Evergreen Valley College": {
@@ -259,6 +259,11 @@
       "vets": 60,
       "jst": 53,
       "star": true
+    },
+    "Golden West College": {
+      "vets": 227,
+      "jst": 160,
+      "star": false
     },
     "College of the Sequoias": {
       "vets": 266,
@@ -283,11 +288,6 @@
     "Lemoore College": {
       "vets": 76,
       "jst": 20,
-      "star": false
-    },
-    "Golden West College": {
-      "vets": 227,
-      "jst": 115,
       "star": false
     },
     "Oxnard College": {
@@ -392,12 +392,12 @@
     },
     "Coalinga College": {
       "vets": 26,
-      "jst": 10,
+      "jst": 11,
       "star": false
     },
     "American River College": {
       "vets": 311,
-      "jst": 91,
+      "jst": 90,
       "star": false
     },
     "College of the Redwoods": {
@@ -425,6 +425,11 @@
       "jst": 30,
       "star": true
     },
+    "Cuesta College": {
+      "vets": 208,
+      "jst": 185,
+      "star": true
+    },
     "Los Medanos College": {
       "vets": 154,
       "jst": 231,
@@ -439,11 +444,6 @@
       "vets": 52,
       "jst": 30,
       "star": false
-    },
-    "Cuesta College": {
-      "vets": 208,
-      "jst": 185,
-      "star": true
     },
     "Santa Monica College": {
       "vets": 631,
@@ -482,12 +482,12 @@
     },
     "Los Angeles City College": {
       "vets": 330,
-      "jst": 200,
-      "star": false
+      "jst": 259,
+      "star": true
     },
     "Ohlone College": {
       "vets": 56,
-      "jst": 132,
+      "jst": 134,
       "star": true
     },
     "Sacramento City College": {
