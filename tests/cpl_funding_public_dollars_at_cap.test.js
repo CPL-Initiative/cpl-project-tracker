@@ -1,14 +1,11 @@
 // tests/cpl_funding_public_dollars_at_cap.test.js
 //
 // A PUBLIC FIGURE BESIDE ITS MAX (Cabrillo College's question, 2026-11-17).
-// The public page coarsens Funds Qualified So Far to the nearest $1,000 (the
-// ADR docs/kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md,
-// decision 5) and prints Max Funds exactly. Cabrillo's noncredit exhibits
-// outcome, 37 exhibits against a target of 9, qualified for its whole
-// $18,336 and read "$18,000"; two credit priorities at $65,545 read "$66,000",
-// more than their max. A figure at its cap is the cap the page already prints,
-// so it prints exactly; a figure short of its cap never rounds past the cap's
-// own thousand. The curator view is exact throughout.
+// The public page used to round Funds Qualified So Far to the nearest $1,000,
+// so Cabrillo's met $18,336 outcome read "$18,000" and two $65,545 priorities
+// read "$66,000", more than their max. Since Sam's ruling of 2026-11-24 the
+// figure prints the same whole dollars as Max Funds on every page, so a met
+// figure equals its max and a partial one is exact. These checks keep it so.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_public_dollars_at_cap.test.js`).
 const fs = require("fs");
@@ -41,17 +38,17 @@ check("A1: ...and nothing is left to qualify for", B._diffMoney(18336, 18336) ==
 // 2. The credit priorities at $65,545: never above the max.
 check("A2: a met $65,545 priority reads $65,545, not $66,000",
   B._earnedMoney(65545, 65545) === "$65,545");
-check("A2: a figure just short of its cap rounds down to the cap's thousand, never to $66,000",
-  B._earnedMoney(65520, 65545) === "$65,000");
-check("A2: ...and its remaining figure stays positive",
-  B._diffMoney(65545, 65520) === "$545");
-// 3. A figure well short of its cap keeps the ADR's nearest-$1,000 rule.
-check("A3: a partial figure still coarsens to the nearest $1,000",
-  B._earnedMoney(9168, 18336) === "$9,000" && B._earnedMoney(9600, 18336) === "$10,000");
-check("A3: under the floor it still reads <$1,000", B._earnedMoney(420, 18336) === "<$1,000");
+check("A2: a figure just short of its cap prints exactly",
+  B._earnedMoney(65520, 65545) === "$65,520");
+check("A2: ...and its remaining figure is the exact difference",
+  B._diffMoney(65545, 65520) === "$25");
+// 3. Partial and small figures print exact whole dollars, never <$1,000.
+check("A3: a partial figure prints exactly, in whole dollars",
+  B._earnedMoney(9168, 18336) === "$9,168" && B._earnedMoney(9600.4, 18336) === "$9,600");
+check("A3: a small figure prints exactly, never <$1,000", B._earnedMoney(420, 18336) === "$420");
 check("A3: a met cap under $1,000 reads its exact cap", B._earnedMoney(812, 812) === "$812");
 check("A3: $0 stays $0", B._earnedMoney(0, 18336) === "$0");
-check("A3: a caller with no cap keeps the plain rule", B._earnedMoney(18336) === "$18,000");
+check("A3: a caller with no cap prints exactly", B._earnedMoney(18336) === "$18,336");
 // 4. The curator view is exact whatever the cap.
 check("A4: the curator view prints the exact figure", P._earnedMoney(18336, 18336) === "$18,336" &&
   P._earnedMoney(65520, 65545) === "$65,520");
@@ -101,7 +98,7 @@ const CAB_D = "Cabrillo Community College District";
   const a = T._alloc("Cabrillo");
   const windowMet = Math.abs(a.earned_total + (a.earned_withheld || 0) - a.total) < 0.5;
   const yearCap = frontload ? a.total : a.total / 2;
-  check("B0 (" + tag + "): Cabrillo's award is not a round thousand, so exact and coarse differ (" +
+  check("B0 (" + tag + "): Cabrillo's award is not a round thousand, so a rounded figure would show (" +
     money(a.total) + ")", Math.round(yearCap) % 1000 !== 0 && Math.round(a.total) % 1000 !== 0);
   // The district line prints the max and the figure for one span, both exact at the max.
   const line = T._districtHead(CAB_D).replace(/<[^>]+>/g, "");
@@ -110,14 +107,14 @@ const CAB_D = "Cabrillo Community College District";
     line.indexOf("funds qualified so far of " + money(yearCap)) !== -1);
   check("B1 (" + tag + "): the district line never prints a rounded figure for a met year",
     line.indexOf("funds qualified so far of " + money(Math.round(yearCap / 1000) * 1000)) === -1);
-  // The CSV carries the window: exact at the window max, else coarse and never above it.
+  // The CSV carries the window: exact at the window max, else exact and never above it.
   const csv = csvDemonstrated(T, "Cabrillo");
   if (windowMet) {
     check("B2 (" + tag + "): the CSV's Demonstrated column prints the window max exactly (" + csv + ")",
       csv === String(Math.round(a.total)));
   } else {
-    check("B2 (" + tag + "): short of the window max, the CSV keeps the $1,000 rule and stays under the max (" + csv + ")",
-      /^\d+$/.test(csv) && Number(csv) % 1000 === 0 && Number(csv) <= Math.floor(a.total / 1000) * 1000);
+    check("B2 (" + tag + "): short of the window max, the CSV prints the exact whole dollars and stays under the max (" + csv + ")",
+      /^\d+$/.test(csv) && Number(csv) === Math.round(a.earned_total + (a.earned_withheld || 0)) && Number(csv) <= Math.round(a.total));
   }
 });
 

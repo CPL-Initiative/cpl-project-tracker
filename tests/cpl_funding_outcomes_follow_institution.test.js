@@ -23,8 +23,7 @@
 // (addInstPrios, shared with earnAgg), so the identity is asserted outright:
 // the colleges' figures plus the noncredit-only institutions' are the
 // statewide figures. A district is its colleges added up. Its demonstrated
-// dollars follow the public rule (nearest $1,000, "less than $1,000" under the
-// floor), and the percentage reads the coarse figure.
+// dollars are exact whole dollars (Sam, 2026-11-24), and the percentage reads them.
 //
 // No figure is pinned (the funding lane's rule since 2026-09-16): every
 // expectation is derived from the model, under the stored config fixture.
@@ -126,12 +125,12 @@ check("s5b: ...and its scope names it as the chooser does, one member, the maxim
 check("s6: the other figures on the line (the rate, the factor, the reimbursement rate) are the statewide line's",
   sample.every((c) => per[c.college].prios.every((p, i) => p.rate === S0.prios[i].rate && p.factor === S0.prios[i].factor &&
     p.price === S0.prios[i].price && p.ftes === S0.prios[i].ftes && p.label === S0.prios[i].label)));
-// The public dollar rule.
-const coarseOk = (p) => p.demonstrated == null ||
-  (p.demonstrated >= 0 && p.demonstrated % 1000 === 0 && (!p.under || p.demonstrated === 1000) &&
-   near(p.pct, p.demonstrated / p.totalPossible));
-check("s7: a college's demonstrated dollars are coarse (nearest $1,000, the floor under it) and its percentage reads them",
-  sample.every((c) => per[c.college].prios.every(coarseOk)));
+// The public dollar rule: exact whole dollars, never above the max, never "less than".
+const wholeOk = (p) => p.demonstrated == null ||
+  (p.demonstrated >= 0 && p.demonstrated === Math.round(p.demonstrated) && !p.under &&
+   p.demonstrated <= Math.round(p.totalPossible) && near(p.pct, p.demonstrated / p.totalPossible));
+check("s7: a college's demonstrated dollars are whole dollars and its percentage reads them",
+  sample.every((c) => per[c.college].prios.every(wholeOk)));
 check("s8: the semester colleges' lines count semester units, at the statewide units per FTES",
   near(per[both.college].prios[0].units / per[both.college].prios[0].target, S0.prios[0].units / S0.prios[0].target) &&
   per[both.college].prios.every((p) => p.unitWord === "semester"));
@@ -155,7 +154,7 @@ const progLine = (p) => p.demonstrated == null ? "Progress: TBA." : "Progress: M
 check("c2: each Target line is the college's, in its calendar's units, and says statewide nowhere",
   L1.length === P1.prios.length && L1.every((x, i) => x[0] === tgtLine(P1.prios[i], nm, "semester",
     P1.scope.atMax > 0 ? " The maximum award lowers this target." : "")) && !/statewide/.test(L1.join(" ")));
-check("c3: each Progress line is the college's coarse demonstrated figure of its own Total Possible",
+check("c3: each Progress line is the college's demonstrated figure of its own Total Possible",
   L1.every((x, i) => x[1] === progLine(P1.prios[i])));
 check("c4: the cards' figures moved with the choice (the college's Total Possible is not the state's)",
   P1.prios.every((p, i) => p.totalPossible < S0.prios[i].totalPossible));
@@ -181,7 +180,7 @@ check("d1: a district's scope counts its colleges and names it as the chooser do
 check("d2: its target and Total Possible are its colleges' added up",
   PD.prios.every((p, i) => near(p.target, members.reduce((t, m) => t + lane[m][i].target, 0)) &&
     near(p.totalPossible, members.reduce((t, m) => t + lane[m][i].cap, 0))));
-check("d3: its demonstrated dollars are coarse too", PD.prios.every(coarseOk));
+check("d3: its demonstrated dollars are whole dollars too", PD.prios.every(wholeOk));
 const words = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
 const k = PD.scope.atMax, dtail = " Its " + words[members.length - 1] + " colleges' targets add up to this figure" +
   (k > 0 ? "; the maximum award lowers the " + (k === 1 ? "target of the one that reaches" : "targets of the " + words[k - 1] + " that reach") + " it." : ".");

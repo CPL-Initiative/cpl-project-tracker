@@ -224,8 +224,8 @@ function openDetail(window, doc, name) {
   // (2026-08-27) — a rename that says nothing about whether the figure is
   // conditional, which is what this assertion exists for. The words are guarded
   // where they are RENDERED, by cpl_funding_gate_ledger_public S5. The
-  // formatter is earnedMoney() since 2026-09-03 (public dollars coarsen to
-  // "<$1,000" / the nearest $1,000); either formatter satisfies the BRANCH.
+  // formatter is earnedMoney() since 2026-09-03 (exact whole dollars on every
+  // page since 2026-11-24); either formatter satisfies the BRANCH.
   // Sam, 2026-09-28: no mention of held funding on screen at all; the CSV's
   // Withheld column is the one place the reserve reads.
   check("no cell renders a held figure (no 'held $X' anywhere in the renderer)",

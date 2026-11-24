@@ -10,7 +10,7 @@
 //      would have hidden the new Total Funds on arrival.
 //   2. THE FUNDS QUALIFIED SO FAR FIGURES (named "Curr" until 2026-10-29) are
 //      what the measures compute to, gray while an institution has yet to meet
-//      all three minimum conditions (Sam, 2026-09-29), coarse on the public
+//      all three minimum conditions (Sam, 2026-09-29), exact on the public
 //      page; the Statewide row adds every institution's figure, gray included
 //      (the CSM team via Sam, 2026-10-29: "should add everything in curr college
 //      rows"), and its detail adds the SAME figure
@@ -269,29 +269,24 @@ function drillSum(doc, id, key) {
 function D_names(T) { return H.D.colleges.map((c) => c.college); }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// 3. The public page: coarse Curr figures, a coarse sort, a coarse CSV
+// 3. The public page: exact whole-dollar Curr figures and CSV (Sam, 2026-11-24)
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window, doc, T } = setup({ public: true });
   const q = T._alloc(QUAL);
   const cell = cellByKey(doc, rowOf(doc, QUAL), "cr_current").textContent.trim();
-  // A figure at its max prints the max exactly, since the max is printed
-  // exactly beside it (Sam's go on #3471, 2026-11-17); a figure short of it
-  // coarsens to the nearest $1,000 and never rounds past the max's thousand.
-  const crMet = Math.abs(q.earned_cr - q.cr_award) < 0.5;
-  check("3a: the public Curr CR Funds figure coarsens to the nearest $1,000 (or reads <$1,000), or prints its max exactly when met",
-    crMet ? cell === money(q.cr_award)
-      : (cell === "<$1,000" || (/^\$[\d,]+$/.test(cell) && num(cell) % 1000 === 0 && Math.abs(num(cell) - q.earned_cr) <= 500 &&
-         num(cell) <= q.cr_award)));
+  // The figure prints the same whole dollars on every page (Sam, 2026-11-24,
+  // reversing the $1,000 rounding), and never more than the max beside it.
+  check("3a: the public Curr CR Funds figure is the exact whole-dollar figure (" + cell + ")",
+    cell === money(Math.min(q.earned_cr, q.cr_award)) && num(cell) <= Math.round(q.cr_award));
   check("3b: the cap beside it stays exact",
     cellByKey(doc, rowOf(doc, QUAL), "cr_award").textContent.trim() === money(q.cr_award));
   const csv = T._csv().split("\r\n");
   const head = csv[1].split(",");
   const line = csv.find((l) => l.split(",")[1] === QUAL).split(",");
   const iCur = head.findIndex((x) => /^Credit funds qualified so far /.test(x));
-  check("3c: the public CSV's Credit funds qualified so far column coarsens the same way",
-    iCur > 0 && (crMet ? line[iCur] === String(Math.round(q.cr_award))
-      : (line[iCur] === "<1000" || Number(line[iCur]) % 1000 === 0)));
+  check("3c: the public CSV's Credit funds qualified so far column is the same whole dollars",
+    iCur > 0 && line[iCur] === String(num(cell)));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -612,10 +607,8 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
     ql[iPct] === Math.round(q.earned_total / q.total * 1000) / 10 + "%");
 }
 {
-  // THE PUBLIC PERCENTAGE READS THE COARSE FIGURE (2026-09-29, funding NEXT
-  // ⓪f). The max award is exact and public, so a share of the EXACT current
-  // total recovers what the $1,000 rule withholds. In this fixture the exact
-  // share reads 98.1% beside a coarse $147,000, which is 98.0%.
+  // THE PUBLIC PERCENTAGE IS THE EXACT SHARE (Sam, 2026-11-24): the figure beside
+  // it is exact, so the share matches the curator view's.
   const { T } = setup({ public: true });
   const csv = T._csv().split("\r\n");
   const head = csv[1].split(",");
@@ -624,11 +617,9 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   const q = T._alloc(QUAL);
   const ql = csv.find((l) => l.split(",")[1] === QUAL).split(",");
   const exactPct = Math.round(q.earned_total / q.total * 1000) / 10 + "%";
-  const coarsePct = Math.round(Number(ql[iTot]) / q.total * 1000) / 10 + "%";
-  check("9p: the fixture separates the two readings (a mutation that changes nothing proves nothing)",
-    Number(ql[iTot]) >= 1000 && Number(ql[iTot]) !== Math.round(q.earned_total) && exactPct !== coarsePct);
-  check("9q: on the public page the percentage is the coarse current total over the max award",
-    ql[iPct] === coarsePct);
+  check("9p: the public CSV's figure is the exact whole dollars", Number(ql[iTot]) === Math.round(q.earned_total));
+  check("9q: on the public page the percentage is the exact current total over the max award",
+    ql[iPct] === exactPct);
   const hl = csv.find((l) => l.split(",")[1] === HELD).split(",");
   check("9r: an institution qualifying for $0 reads 0% on the public page", hl[iPct] === "0%");
 }

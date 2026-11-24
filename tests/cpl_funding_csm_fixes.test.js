@@ -6,9 +6,9 @@
 //     back and returns focus to the box.
 //   · "Link led to error": the Sources line's FTES citation at DataMart's current
 //     address (/Students/FTES_Summary.aspx; /Outcomes/ answers 404).
-//   · "public college totals are wrong for curr": the public page rounds what
-//     qualifies to the nearest $1,000 (the 2026-09-03 ADR), and its Sources line
-//     now says so; the curator view, which shows exact dollars, does not.
+//   · "public college totals are wrong for curr": the public page printed what
+//     qualifies rounded to the nearest $1,000; since Sam's ruling of 2026-11-24
+//     it prints exact whole dollars, so the Sources line names no rounding.
 //   · The table's short names: Cañada with its tilde, Mt. San Antonio with its
 //     period, and College off Coalinga, Norco, Imperial Valley and Reedley.
 const H = require("./lib/cpl_funding_harness.js");
@@ -49,8 +49,8 @@ const rowsText = (doc) => Array.from(doc.querySelectorAll("#cplFundTable tbody t
   const { window } = freshDom();
   window.CPL_FUNDING_PUBLIC = true;
   const doc = boot(window);
-  check("3b: the public page's Sources line says Funds Qualified So Far rounds to the nearest $1,000",
-    /Funds Qualified So Far rounds to the nearest \$1,000/.test(footText(doc)) && /Max awards are exact/.test(footText(doc)));
+  check("3b: the public page's Sources line names no rounding: every figure is exact (Sam, 2026-11-24)",
+    footText(doc).length > 0 && !/rounds to the nearest/.test(footText(doc)) && !/<\$1,000/.test(footText(doc)));
 }
 
 finish();
