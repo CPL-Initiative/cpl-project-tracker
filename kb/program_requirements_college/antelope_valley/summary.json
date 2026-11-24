@@ -2,247 +2,23 @@
  "college": "Antelope Valley College",
  "programs": 199,
  "with_closed_list": 197,
- "found": 183,
+ "found": 191,
  "extracted": 195,
  "errors": 0,
- "passed_machine_checks": 162,
+ "passed_machine_checks": 170,
  "failed": {
-  "coverage": 13,
+  "coverage": 5,
   "invented": 0,
-  "arithmetic": 33,
+  "arithmetic": 25,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.0,
- "cost_usd_filed": 14.18,
- "cost_per_program": 0.0727,
- "extract_calls": null,
+ "cost_usd_run": 0.56,
+ "cost_usd_filed": 14.26,
+ "cost_per_program": 0.0731,
+ "extract_calls": 8,
  "extract_failed": [],
  "not_found": [
-  {
-   "control_number": "02145",
-   "title": "Computer Applications",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 11,
-    "listed": 11,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4740,
-     "content": 4740,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "02149",
-   "title": "Electronics Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 13,
-    "listed": 13,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4964,
-     "content": 4964,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "02153",
-   "title": "General Aircraft Maintenance",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 9,
-    "listed": 9,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 5080,
-     "content": 5080,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "11647",
-   "title": "Aircraft Airframe",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 2,
-    "listed": 2,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4294,
-     "content": 4294,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "11648",
-   "title": "Aircraft Powerplant",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 2,
-    "listed": 2,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4236,
-     "content": 4236,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "12161",
-   "title": "Computer Animation",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-cert-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 18,
-    "listed": 18,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4101,
-     "content": 4101,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14414",
-   "title": "Electrical Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-cert-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 9,
-    "listed": 9,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4756,
-     "content": 4756,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "15404",
-   "title": "Aircraft Fabrication and Assembly Technician",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 5,
-    "listed": 5,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 4909,
-     "content": 4909,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Active"
-  },
   {
    "control_number": "20166",
    "title": "Air Conditioning & Refrigeration Specialist",
@@ -410,5 +186,5 @@
    "status": "Approved"
   }
  ],
- "run": "45133183717"
+ "run": "45399693231"
 }
