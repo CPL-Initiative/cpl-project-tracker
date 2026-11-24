@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Real Estate",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=206",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=208",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6868,
+  "input_tokens": 6843,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6868,
-    "output_tokens": 1349,
+    "input_tokens": 6843,
+    "output_tokens": 1414,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,47 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1349,
+  "output_tokens": 1414,
   "output_tokens_details": {
-   "thinking_tokens": 358
+   "thinking_tokens": 206
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05445,
- "ms": 10934,
- "seconds": 11.3,
+ "cost_usd": 0.05565,
+ "ms": 10610,
+ "seconds": 27.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 17,
    "listed": 17,
-   "share": 0.0,
-   "missing": [
-    "BUS111",
-    "BUS136",
-    "BUS151",
-    "BUS212",
-    "BUS230",
-    "BUS50",
-    "RLS160",
-    "RLS161",
-    "RLS162",
-    "RLS163",
-    "RLS164",
-    "RLS167",
-    "RLS170",
-    "RLS172",
-    "RLS65",
-    "RLS73",
-    "RLS74"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -79,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    24.0,
+    24.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "REAL ESTATE",
+   "section_heading": "REAL ESTATE CERTIFICATE OF ACHIEVEMENT",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -138,86 +121,196 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Use in-depth knowledge of California Real Estate principles and laws to successfully complete licensure requirements for licensee and broker.",
+    "Identify and apply California real estate laws to a variety of real property transactions, including sales, inspections, mortgage loan originations, and mortgage processing.",
+    "Demonstrate the ability to communicate effectively and ethically with the principals involved in a real property transaction.",
+    "Describe the necessary skills required for marketing and negotiating real estate transaction.",
+    "Satisfy Department of Real Estate and office of Real Estate Appraisers educational requirements for state licensing."
+   ],
+   "careers": [
+    "real estate sales",
+    "land development",
+    "real estate marketing",
+    "finance",
+    "mortgage lending",
+    "appraisal",
+    "escrow",
+    "property management"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BUS 111",
-    "why": "named only in the A.S. section; certificate section not in the text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BUS 136",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "BUS 151",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "BUS 212",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "BUS 230",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "BUS 50",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 160",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 161",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 162",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 163",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 164",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 167",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 170",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 172",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 65",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 73",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "RLS 74",
-    "why": "named only in the A.S. section; certificate section not in the text"
+    "name": "Plus 3 additional units selected from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 65",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 73",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 74",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 167",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLS 172",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The text covers only page 206, which lists 'Certificate of Achievement Real Estate' under the REAL ESTATE heading but prints only the REAL ESTATE ASSOCIATE OF SCIENCE section (7 required courses plus 3 units from a list, Total Major Units 24). The Certificate of Achievement section is not in the text and likely continues on the next catalog page (207); a reviewer should fetch it.",
-   "No blocks, total, outcomes or careers were recorded for the certificate because the text does not print its section; the A.S. requirements were not assumed to apply to the certificate.",
-   "The A.S. description names careers (real estate sales, land development, real estate marketing, finance, mortgage lending, appraisal, escrow, property management), but these are printed under the A.S. heading, not the certificate's, so they were not recorded."
+   "Required courses (21 units) plus 3 elective units match the printed total of 24 units."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": "45348021173",
+ "catalog_year": "2026-2027",
+ "source_sha": "508eb2546c2238f8",
+ "source_codes": [
+  "BUS111",
+  "BUS136",
+  "BUS151",
+  "BUS212",
+  "BUS230",
+  "BUS50",
+  "RLS160",
+  "RLS161",
+  "RLS162",
+  "RLS163",
+  "RLS164",
+  "RLS167",
+  "RLS170",
+  "RLS172",
+  "RLS65",
+  "RLS73",
+  "RLS74"
+ ],
+ "source_coverage": 1.0
 }
