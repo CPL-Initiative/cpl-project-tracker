@@ -139,7 +139,7 @@
   "confidence": {
    "unit_arithmetic": 50,
    "course_list_match": 100,
-   "ge_pattern": 100,
+   "ge_pattern": 50,
    "catalog_year": 100,
    "source": 100
   }

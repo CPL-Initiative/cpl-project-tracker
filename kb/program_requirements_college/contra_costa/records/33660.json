@@ -142,21 +142,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "degree_summary_ge_none",
-    "label": "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
-    "words": "The description says the degree includes 'breadth requirements'. The Unit Summary shows General Education, Local as 'None' and CSU/IGETC as 'N/A', so ge_pattern and ge_units are left null. A reviewer should check this."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 50,
-   "course_list_match": 94,
-   "ge_pattern": 100,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {

@@ -183,13 +183,21 @@ def may_continue(filed: dict) -> str | None:
     return words if words and words in notes else None
 
 
+# A gap that says the page prints a degree's general education as None or N/A (Contra Costa's second reader, S720):
+# such a record read no GE, so its GE score is ge_units_not_read's 50, never 100. Kept here, inside confidence(),
+# because the reconcile's keep_named_gaps recomputes every kept gap's scores through this function (#3756).
+GE_NOT_PRINTED = frozenset({"degree_summary_ge_none"})
+GE_NOT_PRINTED_CAP = 50
+
+
 def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok: bool | None = True) -> dict:
     """The five scores, 0-100, or None where a score does not apply. Unit arithmetic: 100 when the check passes,
     else the gap's score. Course-list match: the share of the closed list placed, None with no closed list, and at
     most 50 on a reviewed record whose note says its list may continue (MAY_CONTINUE_REVIEWED). GE pattern:
     None for a program with no degree total (general education does not apply: a certificate, a noncredit
-    program), else 50 when it names a pattern with no units, else 100. Catalog year: 100 for the registry's current
-    year, 60 for a prior year. Source: by how the page was found: a sitemap or link page 100, a PDF slice 80, and 60
+    program), else 50 when it names a pattern with no units or when its gap says the page prints no general
+    education (GE_NOT_PRINTED), else 100. Catalog year: 100 for the registry's current year, 60 for a prior year.
+    Source: by how the page was found: a sitemap or link page 100, a PDF slice 80, and 60
     (UNKNOWN_SOURCE) when the sources file names another method or none."""
     sc = filed.get("score") or {}
     a = sc.get("arithmetic") or {}
@@ -199,6 +207,8 @@ def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok:
         ge = None
     else:
         ge = 50 if (prog.get("ge_pattern") and S._span(prog.get("ge_units")) is None) else 100
+        if gap in GE_NOT_PRINTED:
+            ge = min(ge, GE_NOT_PRINTED_CAP)
     clm = None if share is None else int(round(float(share) * 100))
     if clm is not None and (may_continue(filed) or gap == "section_cut_off"):
         # A record whose section runs past the read (S713) places the courses it read, not the program's list.

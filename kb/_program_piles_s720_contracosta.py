@@ -16,15 +16,19 @@ record whose page shared_pages lists another program on holds unless a note name
                           general education and electives as None or N/A, while the major adds up to its printed
                           major total (the entry checks the major's own check is equal and no GE pattern is named).
                           No existing kind fits: ge_units_not_read needs a named pattern, and the page names none.
-                          15 are collected; 01400 holds on on_live_run.
+                          Its GE score is ge_units_not_read's 50 (NG.GE_NOT_PRINTED, inside NG.confidence). 14 are
+                          collected; 01400 holds on on_live_run, and 33660 because no note of it says its electives
+                          are None. 01387's cited note names its GE; its next note prints its electives as None.
   lists_not_closed        (#3753) an elective list prints no rule or unit figure (36158, 42085).
   noted_unit_floor        (#3753) CIS 099, printed 1-4 units, is required at the 2 units the description names
                           (40761): with 2 the courses add to the printed 22 exactly, which the entry checks; held
                           tonight on on_live_run.
 
-Held (5): 01400 and 40761 (no committed receipt posts their committed run to a live row: on_live_run); 01415 (its 19-22 range's high end comes from 'or both' pairs read singly: a reread); 01417 (the 24.3-48.9
-summary range is two entry paths, LVN and basic: a person); 33370 (its core heading's .5-unit figures differ from
-the 0.5-5.5 ranges printed beside them, and the record's sum takes neither reading exactly).
+Held (6): 01400 and 40761 (no committed receipt posts their committed run to a live row: on_live_run); 01415 (its
+19-22 range's high end comes from 'or both' pairs read singly: a reread); 01417 (the 24.3-48.9 summary range is two
+entry paths, LVN and basic: a person); 33370 (its core heading's .5-unit figures differ from the 0.5-5.5 ranges
+printed beside them, and the record's sum takes neither reading exactly); 33660 (no note says its electives are
+None, so the kind's sentence is not its own).
 
 THE CLAIM CHECK (p-claim-check-reads-current-capture-s713): every course an entry names is among the codes today's
 capture (sources.json) found. THE SELF-RECALL: HAND is the hand reading of the 22; precision runs the rule and the
@@ -90,8 +94,6 @@ REVIEWED = {
               "words": "the summary prints General Education Units 'None' and Elective Units to reach 60 'None'"},
     "18984": {"gap": "degree_summary_ge_none", "computed": [18, 18], "stated": [60, 60], "major_equal": True,
               "words": "GE units printed as 'None', no GE pattern named"},
-    "33660": {"gap": "degree_summary_ge_none", "computed": [21, 21], "stated": [60, 60], "major_equal": True,
-              "words": "The Unit Summary shows General Education, Local as 'None' and CSU/IGETC as 'N/A'"},
     "36158": {"gap": "lists_not_closed", "computed": [9, 9], "stated": [12, 12],
               "words": "The Elective Courses list prints no selection rule or unit count"},
     "42085": {"gap": "lists_not_closed", "computed": [6, 6], "stated": [18, 18],
@@ -110,6 +112,9 @@ HAND.update({
              "live row's run is unknown here",
     "01415": "held: the 19-22 range's high end comes from 'or both' pairs read singly in the 9-unit choice: a reread",
     "01417": "held: the summary's 24.3-48.9 is two entry paths (LVN/LPN and basic nursing): a person or a reread",
+    "33660": "held: its notes print general education as None/N/A and say nothing of its electives, so "
+             "degree_summary_ge_none's sentence (general education and electives as None or N/A) is not its own "
+             "(the second reader, S720)",
     "33370": "held: the core heading's .5-unit figures differ from the 0.5-5.5 ranges printed beside them, and the "
              "record's 42.5-73.5 takes neither reading exactly",
 })
