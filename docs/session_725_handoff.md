@@ -59,9 +59,14 @@ All verbatim in `docs/commons_lessons.md`, S724. **RULED:** `r-sidebar-narrow-bo
    M-ID or none, *"do a quick view to uncheck any that don't belong"*, and move them all into that one M-ID. It fits
    step 2: the **Common courses** row grain with a box on each row, a **Gather** tab (search the whole list by title
    words, tick, uncheck, move into one M-ID), and a merge of common courses into one. Units follow the members
-   (CLAUDE.md, *Units never split an identity*): the range shows what it joins; ask whether 0 to 3 is a ceiling he
-   sets or the range he expects. Mock it before building. An M-ID merge is a re-mint question: read
-   `docs/reference/mid_lifecycle.md` and `docs/coursecontrolnumber_remint.md` first.
+   (CLAUDE.md, *Units never split an identity*); Sam: *"a range i expect them to show, not a limit"*. **Mocked on real
+   data:** https://claude.ai/artifact/PzL4Kf7oV49BGaYwF5gh1T (target PEDS M1029; 56 common courses, 40 ticked; 203
+   loose local courses, 148 ticked; each unticked row says why). **Decided:** a merge is one `merge_into` row per
+   merged M-ID, the save `kb/_apply_curation.py` already folds; no re-mint, no alias map (Sam: *"we're still in the
+   building phase and don't need to keep an audit trail on mids yet"*); Gather lists saved decisions it would end.
+   Sam's direction (`v-mid-decisions-automatic-and-fluid-sam-2026-11-24`): as SLO and objective data fill in, M-ID
+   decisions grow automatic from confidence scores; keep consolidation low impact and fluid. Gather's starting ticks
+   should come from those scores, title words being the first signal.
    Sam then: *"els will be a similar case of big mid consolidation into just a few"*: build Gather for both; read
    `docs/reference/lanes/esl-packaging.md` (the comprehensives and carve-outs) before designing it.
 1. **The anchor-page build, step 2:** the Common courses / Local courses toggle on the Courses List.
