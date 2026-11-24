@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 723,
-  "moniker": "SkyBooby",
+  "session": 724,
+  "moniker": "SkySandpiper",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_724_handoff.md",
+  "handoff": "docs/session_725_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,25 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-24T19:13:07Z",
+  "written_at": "2026-11-24T23:35:02Z",
   "project": "course",
   "next_step": {
-    "title": "Rule on the cards whose common subject is in doubt",
-    "text": "Sam rules on the 15 cards in the Courses List's Common subject in doubt job, by Accept on a band or in the panel; then each band gets a short line saying why it is in doubt."
+    "title": "Gather the adapted courses into one common course",
+    "text": "Mock a Gather tab on the Courses List's Common courses rows: merge every common course with adapt in its title into Adaptive Physical Education, then find local courses with adapt in their titles elsewhere or with no common course, uncheck the misfits and move the rest in. The ESL fold is the next case of the same tool."
   },
   "changes": [
+    {
+      "at": "2026-11-24T21:12Z",
+      "text": "Each band whose common subject is in doubt says why in one line; Cabrillo KIN 38A moved to KINE M1344 Yoga, Beginning."
+    },
+    {
+      "at": "2026-11-24T22:29Z",
+      "text": "Courses ticked under a common course move together, choosing a common subject with its minimum qualifications list and then a common course with its description and units."
+    },
+    {
+      "at": "2026-11-24T23:32Z",
+      "text": "The selected course opens a bottom bar of tabs under the list: Course, Move, Its common course, Catalog and History; every table in it sorts, filters and resizes."
+    },
     {
       "at": "2026-11-24T19:05:00Z",
       "text": "The Courses List's doubt job is now Common subject in doubt: every common subject in both lists with its code, Accept on each band, and a Local subject column."

@@ -17558,8 +17558,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 680,
+   "count": 681,
    "docs": [
+    {
+     "created": "2026-11-24",
+     "governs": [],
+     "n": 725,
+     "path": "docs/session_725_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 725 handoff (from SkySandpiper, S724, Sam's plain session of 2026-11-24: Move in the row's bottom bar, the anchor-page design)",
+     "type": null,
+     "updated": "2026-11-24"
+    },
     {
      "created": "2026-11-24",
      "governs": [],
@@ -28852,5 +28866,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1573
+ "total": 1574
 }
