@@ -1,7 +1,7 @@
 // The Exhibits Queue (Sam's Commons ruling 1, 2026-11-08, #2921; COBIx's filter contract of 16:49Z): six lenses in
 // the ruled order, each a set of entry points into a list the tab already holds, counted from the set that list opens.
 // Needs Sam's Start opens the same capped batch as the Commons' Start; a failed read or the classifier's errors show
-// as Blocked on Sky, never as an empty lens; a count whose data is unread shows no number, never a 0. Review stays
+// as Blocked on COBI, never as an empty lens; a count whose data is unread shows no number, never a 0. Review stays
 // the tab's first view.
 // Run from repo root: `npm test` (or `node tests/exhibits_queue.test.js`).
 const fs = require("fs");
@@ -94,7 +94,7 @@ const entry = (t, re) => Array.from(t.d.querySelectorAll(".exh-qs .exh-qe")).fin
   check("Needs Sam counts the batch the Start word opens: six of nine open cards", batch && /^6 /.test(txt(batch)));
   check("Needs Sam counts conflicts from the Review step", /^3 saved titles that disagree/.test(txt(entry(t, /disagree with one a person approved/))));
   check("Two issuers is a judgment for Sam", /^1 titles with two issuers/.test(txt(entry(t, /two issuers/))));
-  check("no Blocked on Sky line while every read answered", !t.d.querySelector(".exh-qb"));
+  check("no Blocked on COBI line while every read answered", !t.d.querySelector(".exh-qb"));
   clickWord(t, batch, "Start"); await settle();
   check("Start opens the capped batch, the Commons' own", t.M._state.view === "review" && t.M._state.sw.batchMode
     && /Card 1 of 6 in this batch/.test(txt(t.d.querySelector(".exh-batch-pos"))));
@@ -126,11 +126,12 @@ const entry = (t, re) => Array.from(t.d.querySelectorAll(".exh-qs .exh-qe")).fin
   await l.M.boot(); await settle();
   check("Later says Skip lasts the visit only", /Park is not yet a lasting status/.test(txt(root(l))));
 
-  // Blocked on Sky: the classifier's errors and a failed review read, in their own line
+  // Blocked on COBI: the classifier's errors and a failed review read, in their own line
   const b = load({ report: { classifier_run: { answered: 0, errors: ["HTTP 413: rules are 251866 characters; the limit is 250000"] } }, reviewFails: true });
   await b.M.boot(); await settle();
   const bl = b.d.querySelector(".exh-qb");
-  check("a classifier error shows as Blocked on Sky", bl && bl.getAttribute("role") === "status" && /classifier answered 0 and reported: HTTP 413/.test(txt(bl)));
+  check("the line is headed Blocked on COBI, never Sky (Sam, 2026-11-24)", bl && /^Blocked on COBI/.test(txt(bl)) && !/\bSky\b/.test(txt(bl)));
+  check("a classifier error shows as Blocked on COBI", bl && bl.getAttribute("role") === "status" && /classifier answered 0 and reported: HTTP 413/.test(txt(bl)));
   check("a failed review read shows there too", bl && /review file could not be read/.test(txt(bl)));
   check("a failed read leaves its counts blank, not 0", (function () { const li = entry(b, /disagree with one a person approved/); return li && !/^\d/.test(txt(li)) && !li.querySelector("button"); })());
 
