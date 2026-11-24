@@ -1,0 +1,36 @@
+{
+ "_readme": "S720 (lever), the gap census's reader_page_assignment lever (run 45319725062): 3 programs of Santiago Canyon College whose filed record places none of the state's listed courses and for which no page of the 2026-27 catalog holds a section a read could place them from. Free page read 45341735139 printed every page of the catalog PDF the capture reads; the college's other programs on the lever are pinned in its reconcile entry (kb/program_requirements_reconcile.json, pdf_pages). These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. They are the college's to settle in COCI.",
+ "college": "Santiago Canyon College",
+ "written": "2026-11-24T06:53:11Z",
+ "capture": "43693830334",
+ "page_reads": [
+  "45341735139"
+ ],
+ "reasons": {
+  "catalog_list_differs": "The 2026-27 catalog prints the program's own section and course list, and the list names fewer than half of the state's listed courses: the Program Course File's list and the catalog's differ, so a read of the section would place too few of them to count.",
+  "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design (the census's named gap, kb/_harvest_gap_census.py NAMED_GAPS)."
+ },
+ "programs": [
+  {
+   "control_number": "18117",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "The state lists 272 courses; 'Control Number: 18117' closes 'California State University General Education Breadth (CSU), CA' on PDF p.102, which names its pattern (Plan B, 39 units) and prints no course list."
+  },
+  {
+   "control_number": "18118",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "The state lists 197 courses; 'Control Number: 18118' closes 'Intersegmental General Education Transfer Curriculum (IGETC), CA' on PDF p.102, which names its pattern (Plan C, 34 units) and prints no course list."
+  },
+  {
+   "control_number": "37073",
+   "title": "Code Enforcement and Compliance",
+   "award": "A.S. Degree",
+   "reason": "catalog_list_differs",
+   "note": "'Control Number: 37073' closes 'Code Enforcement and Compliance, AS' on PDF p.130, whose list prints CJ101, PBLC085, PBLC150, PBLC050, 061 and 151 to 155: 6 of the 17 the state lists (BUS 90, CIS 101, the four COMM courses, MGMT 122, PBLC 80, the two POLS C1000 and RE 103 print nowhere in it)."
+  }
+ ]
+}

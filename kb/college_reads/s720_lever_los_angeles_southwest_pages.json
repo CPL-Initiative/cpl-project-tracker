@@ -1,0 +1,24 @@
+{
+ "_readme": "S720 lever (the gap census's reader_page_assignment lever, run 45319725062): Los Angeles Southwest College's 9 programs whose extraction placed none of the state's listed courses were handed a sibling award's section or the course descriptions (02862 02877 10738 19186 24277 33868 38597 40275 40947). This plan prints every page of the college's 2026-27 catalog PDF, the file the capture reads (250 pages, 5517393 bytes at capture 39061735776), line for line, so a session downloads the whole log (gh run view --log), finds each program's own section and names its pdf_pages pin, or files it as a named gap. One load, no model call, nothing written.",
+ "college": "Los Angeles Southwest College",
+ "questions": {
+  "own_page": "Where each program's own section opens (its heading and the first line of its requirement list) and where its list ends (its total), so a pdf_pages pin can name the page, the words it opens on and the page it runs through."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf"
+  }
+ ],
+ "pdf_span": [
+  1,
+  250
+ ],
+ "pdf_page_cap": 1000,
+ "pdf_unfolded": true
+}

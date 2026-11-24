@@ -97,7 +97,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pool_figure_not_read",
+    "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
+    "words": "Lists B and C together must total 9 units: List B 3-9 units, List C optional ('May select 3 or 6 units'), so List C minimum recorded as 0. Required Additional Units printed as 12-14."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

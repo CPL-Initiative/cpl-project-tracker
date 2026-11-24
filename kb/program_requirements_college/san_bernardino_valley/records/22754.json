@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Computer Science",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-as-degree/",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-certificate-achievement/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8308,
+  "input_tokens": 8145,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8308,
-    "output_tokens": 1223,
+    "input_tokens": 8145,
+    "output_tokens": 1253,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,90 +30,87 @@
     "model": null
    }
   ],
-  "output_tokens": 1223,
+  "output_tokens": 1253,
   "output_tokens_details": {
-   "thinking_tokens": 528
+   "thinking_tokens": 243
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05769,
- "ms": 12203,
- "seconds": 12.6,
+ "cost_usd": 0.05764,
+ "ms": 10918,
+ "seconds": 21.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "CIT100",
-    "CS100",
-    "CS102",
-    "CS102H",
-    "CS104",
-    "CS110",
-    "CS120",
-    "CS190",
-    "CS220",
-    "CS77"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "CS160",
+    "CS215"
+   ],
+   "flagged": [
+    "CS160",
+    "CS215"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    33.0,
+    33.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Computer Science Associate of Science Degree",
+   "section_heading": "Computer Science Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 33,
+    "max": 33
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,59 +127,134 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Analyze a problem and create a logical solution to the problem.",
+    "Apply knowledge of Windows development.",
+    "Design, implement, and evaluate secure computer-based system based on specifications.",
+    "Analyze the impact of computing on individuals, organizations, and society.",
+    "Incorporate diverse perspectives and inclusive design principles in computer science projects, fostering technological innovation that addresses institutional barriers and promotes equitable resource distribution."
+   ],
+   "careers": [
+    "programmers for scientific and business applications"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CIT 100",
-    "why": "named only in the A.S. section"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 077",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 102H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 190",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 215",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CS 77",
-    "why": "named only in the A.S. section (printed as CS 077)"
-   },
-   {
-    "code": "CS 100",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CS 102",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CS 102H",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CS 104",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CS 110",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CS 120",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CS 220",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CS 190",
-    "why": "named only in the A.S. section"
+    "name": "Recommended Course",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CS 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source page is the Computer Science Associate of Science Degree page. It prints no section for the Computer Science Certificate of Achievement, which appears only as a link in the site menu. No certificate requirements were recorded.",
-   "The A.S. section lists the following required courses, totaling 33 units: CIT 100, CS 077, CS 100, CS 102 or CS 102H, CS 104, CS 110, CS 120, CS 220, and CS 190 or CS 215. It also recommends CS 160. A reviewer should fetch the certificate's own page (computer-science-certificate-of-achievement) to confirm the certificate's requirements.",
-   "CS 215 and CS 160 appear in the A.S. section but are not in the closed list.",
-   "The page's program learning outcomes and its career statement ('entry-level positions as programmers for scientific and business applications') belong to the A.S. degree. They were not recorded for the certificate."
+   "Catalog prints 'CS 077'; read as the closed list's CS 77 (Introduction to C-Sharp, 4 units), so catalog_addition is false.",
+   "CS 215 (Programming with Java) is printed as an 'or' alternative to CS 190 but is not in the closed list; no units printed beside it.",
+   "CS 102H and CS 215 have no units printed beside them in the 'or' rows.",
+   "Total Units 33 printed for the required courses; CS 160 is listed only as a recommended course and is not in the closed list."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": "45355976381",
+ "catalog_year": "2026-2027"
 }

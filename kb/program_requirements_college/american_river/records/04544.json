@@ -63,8 +63,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     28.0,
     28.0
@@ -74,11 +74,14 @@
     31.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    3.0,
-    3.0
-   ]
+   "why": [
+    "the blocks sum to 28.0-28.0; the catalog states 31.0-31.0",
+    "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+   ],
+   "fill_refused": {
+    "gap": "section_cut_off",
+    "words": "The text begins on page 941 mid-table; the section heading and any earlier rows (likely on page 940) are not in the text."
+   }
   },
   "repeated": {
    "codes": [],
@@ -105,7 +108,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "section_cut_off",
+    "label": "The program's section runs onto a page the read did not hold, so part of its requirements is missing from the record and its units cannot be checked against the printed total.",
+    "words": "an electives fill was refused: the reader's note says the requirements run outside the text read: \"The text begins on page 941 mid-table; the section heading and any earlier rows (likely on page 940) are not in the text.\""
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

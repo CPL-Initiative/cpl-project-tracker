@@ -1,0 +1,39 @@
+{
+  "_what": "S720 (lane 2, El Camino): the reconcile_steps lever of the committed census (run 45319725062) at the college, frozen: kb/_program_piles_s720_elcamino.py planned from it.",
+  "written_at": "2026-11-24 07:08Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "El Camino College",
+      "programs": 22,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "02495",
+        "02512",
+        "02513",
+        "02515",
+        "02517",
+        "02518",
+        "02519",
+        "02520",
+        "02524",
+        "02528",
+        "02538",
+        "02544",
+        "15251",
+        "19857",
+        "19883",
+        "19892",
+        "31319",
+        "32238",
+        "38839",
+        "42541",
+        "43992",
+        "45290"
+      ]
+    }
+  ]
+}

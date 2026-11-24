@@ -101,7 +101,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "double_count_noted",
+    "label": "The catalog lets some of the program's units count twice, toward the major and general education, and the record adds them twice.",
+    "words": "Footnote: ASL 002 and COMM 009 (marked *) meet General Education requirements and 6 units may double count in COS-GE."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

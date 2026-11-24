@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-24_s720r_prreq_cut_window_gaps_apply.sql",
+ "name": "s720r_prreq_cut_window_gaps_apply",
+ "version": "20261124084635",
+ "sha256": "a6109336435a0a75438027b8a158499020aa52a06a2e05ed87bc6776e67d7c2e",
+ "run": "45358888504",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  22P02: invalid input syntax for type integer: \\\"s720r cut window gaps guard: the UPDATE matched 0 rows, the plan names 9\\\"\\n\"}"
+}

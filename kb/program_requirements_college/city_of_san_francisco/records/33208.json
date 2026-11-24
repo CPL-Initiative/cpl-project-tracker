@@ -116,7 +116,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The text is cut off at the end of page 184: Option 2 (Spanish Heritage Speakers) shows a second 'Choose an option 5.0-6.0' with no courses, and the 'List B' referenced in the note is not in the text. That block was not recorded; reviewer should check page 185."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

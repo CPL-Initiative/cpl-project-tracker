@@ -99,7 +99,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "The catalog prints no selection rule or unit minimum for the 'African American Classes' and 'La Raza Courses' lists. With an 18-unit major and 6 units of required core, 12 units presumably come from these lists, but the split between them (e.g., 6 from each) is not stated; recorded as choose_units with minimum null. Reviewer should verify."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

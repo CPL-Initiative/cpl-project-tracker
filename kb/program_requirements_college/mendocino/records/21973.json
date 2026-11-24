@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Administration of Justice",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=92",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6949,
+  "input_tokens": 6455,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6949,
-    "output_tokens": 818,
+    "input_tokens": 6455,
+    "output_tokens": 1105,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 818,
+  "output_tokens": 1105,
   "output_tokens_details": {
-   "thinking_tokens": 296
+   "thinking_tokens": 286
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04416,
- "ms": 7890,
- "seconds": 8.2,
+ "cost_usd": 0.04792,
+ "ms": 9189,
+ "seconds": 19.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "ADJ104",
-    "ADJ106",
-    "ADJ108",
-    "ADJ109",
-    "ADJ150",
-    "ADJ200",
-    "ADJ202",
-    "ADJ204",
-    "ADJ206",
-    "ADJ207"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    30.0,
+    30.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "ADMINISTRATION OF JUSTICE",
+   "section_heading": "ADMINISTRATION OF JUSTICE CERTIFICATE OF ACHIEVEMENT",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 30,
+    "max": 30
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -131,54 +121,122 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Understand the three parts of the criminal justice system and how they interrelate.",
+    "Demonstrate knowledge of the California Penal Code, the California Commission on Peace Officer Standards and Training regulations and appropriate department policies and procedures.",
+    "Apply basic investigative proficiencies."
+   ],
+   "careers": [
+    "law enforcement",
+    "corrections",
+    "probation",
+    "parole"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ADJ 104",
-    "why": "named only in the A.S.-T section; certificate section not in the text"
-   },
-   {
-    "code": "ADJ 106",
-    "why": "named only in the A.S.-T section; certificate section not in the text"
-   },
-   {
-    "code": "ADJ 108",
-    "why": "named only in the A.S.-T section; certificate section not in the text"
-   },
-   {
-    "code": "ADJ 109",
-    "why": "named only in the A.S.-T section; certificate section not in the text"
-   },
-   {
-    "code": "ADJ 150",
-    "why": "named only in the A.S.-T section; certificate section not in the text"
-   },
-   {
-    "code": "ADJ 200",
-    "why": "named only in the A.S.-T section; certificate section not in the text"
-   },
-   {
-    "code": "ADJ 202",
-    "why": "named only in the A.S.-T section; certificate section not in the text"
-   },
-   {
-    "code": "ADJ 204",
-    "why": "named only in the A.S.-T section; certificate section not in the text"
-   },
-   {
-    "code": "ADJ 206",
-    "why": "named only in the A.S.-T section; certificate section not in the text"
-   },
-   {
-    "code": "ADJ 207",
-    "why": "named only in the A.S.-T section; certificate section not in the text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADJ 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ 206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ 207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The careers sentence prints 'law enforcement, corrections probation, or parole' with no comma between 'corrections' and 'probation'; it was read as two separate fields, 'corrections' and 'probation'. A reviewer should check this reading."
+  ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": "45348021173",
+ "catalog_year": "2026-2027",
+ "source_sha": "1dd233456a4db27f",
+ "source_codes": [
+  "ADJ104",
+  "ADJ106",
+  "ADJ108",
+  "ADJ109",
+  "ADJ150",
+  "ADJ200",
+  "ADJ202",
+  "ADJ204",
+  "ADJ206",
+  "ADJ207"
+ ],
+ "source_coverage": 1.0
 }

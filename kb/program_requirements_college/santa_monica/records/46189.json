@@ -107,7 +107,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pair_read_as_alternatives",
+    "label": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.",
+    "words": "Elective 1 (4-6 units, printed for the whole elective) is either BIOL 15 alone, or two classes, one from each group. The second path requires BOTH group blocks; all three blocks share option_group 'Elective 1' but the two GROUP blocks together form one path. Stated 4-6 applies to Elective 1 as a whole and is not placed on any single block."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

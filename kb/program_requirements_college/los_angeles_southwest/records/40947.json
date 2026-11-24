@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Workplace Safety I",
  "award": "Noncredit program",
- "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=229",
+ "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=168",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8098,
+  "input_tokens": 6065,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8098,
-    "output_tokens": 589,
+    "input_tokens": 6065,
+    "output_tokens": 697,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,46 +30,48 @@
     "model": null
    }
   ],
-  "output_tokens": 589,
+  "output_tokens": 697,
   "output_tokens_details": {
-   "thinking_tokens": 152
+   "thinking_tokens": 218
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04417,
- "ms": 11268,
- "seconds": 12.0,
+ "cost_usd": 0.0382,
+ "ms": 6028,
+ "seconds": 9.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 1,
    "listed": 1,
-   "share": 0.0,
-   "missing": [
-    "VOCED612CE"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "VOCED613CE"
+   ],
+   "flagged": [
+    "VOCED613CE"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
+   "pass": true,
    "status": "unstated",
    "computed": null,
    "stated": null,
    "against": null,
    "why": [
-    "the record states no figure, but the catalog text names 2 hours, 0.66 hour, 0.25 hour, 0.25 hour"
+    "the catalog prints no total, no hours and no units"
    ]
   },
   "repeated": {
@@ -77,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -94,11 +96,11 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "CERTIFICATE OF COMPLETION WORKPLACE SAFETY I",
    "measure": "hours",
    "total_units": {
     "min": null,
@@ -119,22 +121,54 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate the proper care, maintenance, useful life and disposal of personal protective equipment.",
+    "Identify the limitation of personal protective equipment",
+    "Recognize and interpret the global harmonized programs"
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "VOCED612CE",
-    "why": "Appears only in the course descriptions (VOC ED 612CE, Lecture: 0.25 hour); the text has no Workplace Safety I program requirements section."
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 612CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 613CE",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 229) holds only Vocational Education course descriptions. It has no section for the Workplace Safety I noncredit program, so no section heading, blocks, total hours, outcomes or careers could be recorded.",
-   "The program requirements are probably printed on another page of the catalog. A reviewer should locate the Workplace Safety I program section.",
-   "The course description lists VOC ED 612CE Workplace Safety: Personal Protective Equipment with Lecture: 0.25 hour. Related workplace safety courses also appear in the descriptions: VOC ED 613CE, 614CE, 615CE, 616CE, 610CE and 617CE. Nothing in the text ties any of them to this program."
+   "Noncredit Certificate of Completion; the catalog prints no hours for the courses or for the program total, so all hour fields are null.",
+   "Measure set to hours because this is a noncredit program, though no hours are printed.",
+   "VOC ED 613CE (Workplace Safety: Global Harmonized System) is a required course not in the closed list; recorded as a catalog addition."
   ]
  },
- "extracted_run": "39061735776"
+ "extracted_run": "45349617908",
+ "catalog_year": "2026-2027",
+ "source_sha": "06696a5305f1403d",
+ "source_codes": [
+  "VOCED612CE"
+ ],
+ "source_coverage": 1.0
 }

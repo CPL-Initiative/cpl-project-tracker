@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Social Justice Studies",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+ "source_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=158",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8467,
+  "input_tokens": 6393,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8467,
-    "output_tokens": 949,
+    "input_tokens": 6393,
+    "output_tokens": 1428,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,85 +30,96 @@
     "model": null
    }
   ],
-  "output_tokens": 949,
+  "output_tokens": 1428,
   "output_tokens_details": {
-   "thinking_tokens": 246
+   "thinking_tokens": 458
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05285,
- "ms": 9664,
- "seconds": 10.2,
+ "cost_usd": 0.05413,
+ "ms": 12086,
+ "seconds": 12.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 4,
-   "share": 0.0,
+   "share": 0.5,
    "missing": [
     "POLSC1000",
-    "SOC1",
-    "SOC11",
-    "SOC2"
+    "SOC1"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 5,
+   "codes": [
+    "POLISCI41",
+    "SOC19",
+    "SOC31",
+    "SOC50",
+    "SOCIC1000"
+   ],
+   "flagged": [
+    "POLISCI41",
+    "SOC19",
+    "SOC31",
+    "SOC50",
+    "SOCIC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Social Justice Studies Certificate of Achievement section not found in the supplied text (text covers Ethnic Studies A.A. and Geography A.S.)",
+   "section_heading": "CERTIFICATE OF ACHIEVEMENT SOCIAL JUSTICE STUDIES",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -125,34 +136,121 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Utilize social justice theories and concepts to examine current trends and patterns of oppression and resistance.",
+    "Give community-based approaches to solving social problems.",
+    "Engage in a socially constructive interaction in a social justice organization or community."
+   ],
+   "careers": [
+    "nonprofit",
+    "governmental",
+    "educational",
+    "political",
+    "labor",
+    "philanthropic",
+    "humanitarian",
+    "community-based organizations"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "At least one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SOC 019",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLI SCI 041",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "POLS C1000",
-    "why": "Social Justice Studies section not in the text; appears only in the Ethnic Studies A.A. section"
-   },
-   {
     "code": "SOC 1",
-    "why": "Social Justice Studies section not in the text; SOCI C1000 Introduction to Sociology appears only in the Ethnic Studies A.A. section"
+    "why": "Not printed under this code; the catalog prints SOCI C1000 Introduction to Sociology, likely its common-course-numbering replacement."
    },
    {
-    "code": "SOC 11",
-    "why": "Social Justice Studies section not in the text; SOC 011 appears only in the Ethnic Studies A.A. options"
-   },
-   {
-    "code": "SOC 2",
-    "why": "Social Justice Studies section not in the text; SOC 002 appears only in the Ethnic Studies A.A. section"
+    "code": "POLS C1000",
+    "why": "Not in the text."
    }
   ],
   "notes": [
-   "The supplied catalog text (page 141) contains the Ethnic Studies Associate in Arts and the Geography Associate in Science, not the Social Justice Studies Certificate of Achievement. No blocks, totals or outcomes were recorded for this award.",
-   "The Ethnic Studies A.A. lists all four closed-list courses (POLS C1000, SOCI C1000/SOC 1, SOC 002, SOC 011) and its options total 24 units, which matches the certificate's unit band; a reviewer should check whether the Social Justice Studies certificate is printed on a different page of the 2026-27 catalog draft, or whether the Ethnic Studies section is being used in its place.",
-   "The catalog prints SOCI C1000 Introduction to Sociology where the closed list has SOC 1 INTRODUCTION TO SOCIOLOGY; this is likely a common-course-numbering renumber."
+   "SOC 002 and SOC 011 are taken as the closed list's SOC 2 and SOC 11 (same titles, zero-padded numbering).",
+   "SOCI C1000 Introduction to Sociology appears to be the common course numbering version of closed-list SOC 1; recorded as a catalog addition because the code differs.",
+   "Careers come from the phrase 'careers in nonprofit, governmental, educational, political, labor, philanthropic, humanitarian, and community-based organizations'; each adjective modifies 'organizations'.",
+   "The 'At least one of the following' rule is read as choose 1 course; the printed total of 18 units matches 15 required units plus one 3-unit course."
   ]
  },
- "extracted_run": "39061735776"
+ "extracted_run": "45349617908",
+ "catalog_year": "2026-2027",
+ "source_sha": "45c09d10c4faf812",
+ "source_codes": [
+  "SOC11",
+  "SOC2"
+ ],
+ "source_coverage": 0.5
 }

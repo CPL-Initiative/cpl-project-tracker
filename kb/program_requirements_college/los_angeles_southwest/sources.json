@@ -13,19 +13,22 @@
    "MGMT33"
   ],
   "source": {
-   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=210",
-   "title": "",
-   "h1": "",
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=127",
+   "title": "ASSOCIATE IN ARTS",
+   "h1": "ASSOCIATE IN ARTS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    210
+    127,
+    128
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "9677fea1fc127c77"
   },
   "listed": 4,
-  "text_chars": 5999
+  "text_chars": 2838
  },
  {
   "control_number": "02863",
@@ -681,19 +684,22 @@
    "GEOLOGY1"
   ],
   "source": {
-   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=99",
-   "title": "98 | Page",
-   "h1": "98 | Page",
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
+   "title": "ASSOCIATE IN SCIENCE",
+   "h1": "ASSOCIATE IN SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    99
+    141,
+    142
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "de59fcd9ceaf3383"
   },
   "listed": 1,
-  "text_chars": 3570
+  "text_chars": 1932
  },
  {
   "control_number": "11795",
@@ -1869,29 +1875,34 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.625,
+  "coverage": 1.0,
   "codes_found": [
+   "CHDEV1",
    "DANCEST302",
    "DANCEST805",
    "DANCEST814",
    "DANCEST815",
-   "DANCETQ142"
+   "DANCETQ142",
+   "PSYCC1000",
+   "PSYCH11"
   ],
   "source": {
-   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=192",
-   "title": "",
-   "h1": "",
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=138",
+   "title": "ASSOCIATE IN ARTS",
+   "h1": "ASSOCIATE IN ARTS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    192,
-    193
+    138,
+    139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "baeb48dcfd9d4a8f"
   },
   "listed": 8,
-  "text_chars": 13305
+  "text_chars": 3126
  },
  {
   "control_number": "38683",
@@ -2163,26 +2174,27 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.5,
   "codes_found": [
-   "POLSC1000",
    "SOC11",
    "SOC2"
   ],
   "source": {
-   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=141",
-   "title": "140 | Page",
-   "h1": "140 | Page",
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=158",
+   "title": "CERTIFICATE OF ACHIEVEMENT",
+   "h1": "CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    141
+    158
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "45c09d10c4faf812"
   },
   "listed": 4,
-  "text_chars": 8036
+  "text_chars": 1792
  },
  {
   "control_number": "40375",
@@ -2515,19 +2527,21 @@
    "VOCED612CE"
   ],
   "source": {
-   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=229",
-   "title": "228 | Page",
-   "h1": "228 | Page",
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=168",
+   "title": "CERTIFICATE OF COMPLETION",
+   "h1": "CERTIFICATE OF COMPLETION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    229
+    168
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "06696a5305f1403d"
   },
   "listed": 1,
-  "text_chars": 6267
+  "text_chars": 773
  },
  {
   "control_number": "41108",

@@ -99,7 +99,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "repeat_read_once",
+    "label": "The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.",
+    "words": "Second 'Required' block states 7 credits: MUS10 (3) + MUS16 taken twice (catalog note: 'MUS16 is a 1 unit course that must be taken twice for 2 units total') + MUS17A (1) + MUS17LD (1). Recorded as rule 'all' with MUS16 listed once at its printed 1 unit."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

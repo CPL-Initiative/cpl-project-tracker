@@ -17,7 +17,8 @@ rule's held answer comes from apart from its own fields. Pinned here:
     against the pages the read held (none falls), and kb/_program_named_gaps.py's recall wrong 0;
   * the plan: 15 rows (5 passing, 10 with the gap; 06566 and 32298 held on #3705's second read), all at Santa Rosa Junior, each a census member under the lever;
     the receipt and the three SQL files name exactly those rows; a second run plans none; no record at another
-    college carries section_cut_off.
+    college carries section_cut_off, apart from #3756's refused-fill route (score.arithmetic.fill_refused), on the
+    ten S720 records pinned by key (#3759's rios plan).
 
 Run from repo root: python3 tests/program_piles_s713_test.py
 """
@@ -170,13 +171,53 @@ for r in rows:
     check(r["after_image"]["checks"]["coverage"] is True and r["after_image"]["checks"]["invented"] is True,
           "%s: the row's coverage and invented pass after" % r["path"])
 check(not P.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"], "a second run plans no row")
+
+# ── section_cut_off outside Santa Rosa Junior ──
+# #3756's refused-fill route files section_cut_off at any college: the scorer refuses an electives fill over the
+# reader's words that the requirements run outside the text read, and records it in score.arithmetic.fill_refused.
+# S720's rios plan (#3759) filed it on these ten records, pinned by key, so a new one is reviewed here before it
+# passes. A section_cut_off with no fill_refused still fails outside Santa Rosa Junior, wherever it sits.
+REFUSED_FILL_S720 = frozenset({
+    ("american_river", "04544"), ("cosumnes_river", "04602"), ("cosumnes_river", "04614"),
+    ("folsom_lake", "15368"), ("folsom_lake", "39574"), ("folsom_lake", "42612"),
+    ("sacramento_city", "04656"), ("sacramento_city", "04688"), ("sacramento_city", "07350"),
+    ("sacramento_city", "21418")})
+
+
+def cut_off_route(sc: dict) -> str | None:
+    """None when the score files no section_cut_off; "refused_fill" when it comes from the refused fill
+    (score.arithmetic.fill_refused.gap is section_cut_off); "other" for any other section_cut_off."""
+    if "section_cut_off" not in [g.get("gap") for g in sc.get("gaps") or [] if isinstance(g, dict)]:
+        return None
+    refused = (sc.get("arithmetic") or {}).get("fill_refused")
+    return "refused_fill" if isinstance(refused, dict) and refused.get("gap") == "section_cut_off" else "other"
+
+
+cut = {"gaps": [{"gap": "section_cut_off"}]}
+check(cut_off_route(dict(cut, arithmetic={"fill_refused": {"gap": "section_cut_off", "words": "w"}}))
+      == "refused_fill", "a section_cut_off from the refused fill takes the route")
+check(cut_off_route(dict(cut, arithmetic={"status": "unequal"})) == "other",
+      "a section_cut_off with no fill_refused does not take it")
+check(cut_off_route(dict(cut)) == "other", "a section_cut_off with no arithmetic does not take it")
+check(cut_off_route(dict(cut, arithmetic={"fill_refused": {"gap": "ge_units_not_read"}})) == "other",
+      "a section_cut_off whose fill_refused names another gap does not take it")
+check(cut_off_route({"gaps": [{"gap": "lists_not_closed"}], "arithmetic": {"fill_refused": {"gap": "section_cut_off"}}})
+      is None, "a record filing another gap has no section_cut_off route")
+refused_seen = set()
 for p in glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "records", "*.json")):
     if "/santa_rosa_junior/" in p:
         continue
     with open(p, encoding="utf-8") as fh:
         sc = json.load(fh).get("score") or {}
-    if "section_cut_off" in [g.get("gap") for g in sc.get("gaps") or [] if isinstance(g, dict)]:
-        failures.append("%s carries section_cut_off" % os.path.relpath(p, ROOT))
+    route = cut_off_route(sc)
+    if route == "refused_fill":
+        refused_seen.add((os.path.basename(os.path.dirname(os.path.dirname(p))), os.path.basename(p)[:-len(".json")]))
+    elif route == "other":
+        failures.append("%s carries section_cut_off with no refused fill" % os.path.relpath(p, ROOT))
+check(refused_seen == REFUSED_FILL_S720,
+      "outside Santa Rosa Junior, the refused fill's section_cut_off is on the ten S720 records (%s); off the pins: %s"
+      % (", ".join("%s %s" % k for k in sorted(REFUSED_FILL_S720)),
+         ", ".join("%s %s" % k for k in sorted(refused_seen ^ REFUSED_FILL_S720)) or "none"))
 
 if failures:
     for m in failures:

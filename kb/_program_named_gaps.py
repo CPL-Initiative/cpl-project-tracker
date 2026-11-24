@@ -192,6 +192,35 @@ MAY_CONTINUE_MISSES = ("Taft College 44006", "Santa Rosa Junior College 45477", 
 MAY_CONTINUE_NEXT = ("a matcher with a held-answer test is the next step; a rough pattern missed %s"
                      % ", ".join(MAY_CONTINUE_MISSES))
 MAY_CONTINUE_CAP = 50
+# S720 at City College of San Francisco (kb/_program_piles_s720_ccsf.py): the gaps a reviewed list names from each
+# record's own notes, never a pattern. lists_not_closed and noted_figures_differ are #3753's (S720 at Fullerton), with
+# the same sentence and score; setdefault keeps this block a no-op beside #3753's GAPS lines once both have merged.
+for _g, _s, _a in (
+        ("lists_not_closed", "A choice list prints no unit figure of its own, one that depends on another choice, or "
+                             "also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),
+        ("noted_figures_differ", "The reader's notes quote two figures from the catalog page that disagree, and the "
+                                 "record's units add to one and state the other; no page read has settled which the "
+                                 "program requires.", 40),
+        ("pool_figure_not_read", "The catalog prints one figure over several lists or nested options together, and the "
+                                 "record adds the parts instead, so its units cannot be checked against that figure.",
+         40),
+        ("one_option_of_shared_page", "The program is one option of a page several programs share; the record holds "
+                                      "every option the page prints, so its units are the whole group's, not the "
+                                      "program's own.", 30),
+        ("pair_read_as_alternatives", "The catalog prints two courses taken together as one option, and the record "
+                                      "reads them as separate alternatives, so its low end falls short of the printed "
+                                      "total.", 50),
+        # The reviewed-list forms of total_not_printed and section_cut_off: those two names are filed only by their
+        # own procedures (kb/program_total_not_printed.json; CUT_OFF_COLLEGES), which tests/program_named_gaps_test.py
+        # and tests/program_piles_s713_test.py hold them to.
+        ("noted_no_total", "The reader's note says the catalog prints no total for this program, so its units cannot "
+                           "be checked against one; no page read has confirmed it.", 40),
+        ("noted_section_cut_off", "The reader's note says the program's section runs onto a page the read did not "
+                                  "hold, so part of its requirements is missing from the record.", 20)):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
@@ -203,13 +232,21 @@ def may_continue(filed: dict) -> str | None:
     return words if words and words in notes else None
 
 
+# A gap that says the page prints a degree's general education as None or N/A (Contra Costa's second reader, S720):
+# such a record read no GE, so its GE score is ge_units_not_read's 50, never 100. Kept here, inside confidence(),
+# because the reconcile's keep_named_gaps recomputes every kept gap's scores through this function (#3756).
+GE_NOT_PRINTED = frozenset({"degree_summary_ge_none"})
+GE_NOT_PRINTED_CAP = 50
+
+
 def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok: bool | None = True) -> dict:
     """The five scores, 0-100, or None where a score does not apply. Unit arithmetic: 100 when the check passes,
     else the gap's score. Course-list match: the share of the closed list placed, None with no closed list, and at
     most 50 on a reviewed record whose note says its list may continue (MAY_CONTINUE_REVIEWED). GE pattern:
     None for a program with no degree total (general education does not apply: a certificate, a noncredit
-    program), else 50 when it names a pattern with no units, else 100. Catalog year: 100 for the registry's current
-    year, 60 for a prior year. Source: by how the page was found: a sitemap or link page 100, a PDF slice 80, and 60
+    program), else 50 when it names a pattern with no units or when its gap says the page prints no general
+    education (GE_NOT_PRINTED), else 100. Catalog year: 100 for the registry's current year, 60 for a prior year.
+    Source: by how the page was found: a sitemap or link page 100, a PDF slice 80, and 60
     (UNKNOWN_SOURCE) when the sources file names another method or none."""
     sc = filed.get("score") or {}
     a = sc.get("arithmetic") or {}
@@ -219,8 +256,12 @@ def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok:
         ge = None
     else:
         ge = 50 if (prog.get("ge_pattern") and S._span(prog.get("ge_units")) is None) else 100
+        if gap in GE_NOT_PRINTED:
+            ge = min(ge, GE_NOT_PRINTED_CAP)
     clm = None if share is None else int(round(float(share) * 100))
-    if clm is not None and (may_continue(filed) or gap == "section_cut_off"):
+    # S720 (#3755's reader): noted_section_cut_off, section_cut_off's reviewed-list form, takes the same cap here, so
+    # a recompute through confidence() (fill's keep_named_gaps, #3756) keeps the plan's filed score.
+    if clm is not None and (may_continue(filed) or gap in ("section_cut_off", "noted_section_cut_off")):
         # A record whose section runs past the read (S713) places the courses it read, not the program's list.
         clm = min(clm, MAY_CONTINUE_CAP)
     return {"unit_arithmetic": 100 if a.get("pass") else ARITH_SCORE.get(gap, 0),
@@ -1062,6 +1103,30 @@ RECORD_RULES = (("major_total_differs", major_total_differs), ("total_not_printe
     (("no_units_printed", no_units_printed),) if NO_UNITS_PRINTED_ON else ()) + (("no_units_read", no_units_read),)
 
 
+# S720 at Santa Monica (kb/_program_piles_s720_smc.py): the gaps its reviewed list names from each record's own notes.
+# lists_not_closed and noted_figures_differ are #3753's (S720 at Fullerton), pool_figure_not_read and
+# pair_read_as_alternatives #3755's (S720 at City College of San Francisco), each with the same sentence and score;
+# repeat_read_once is new here. setdefault keeps this block a no-op beside those PRs' lines once all have merged.
+for _g, _s, _a in (
+        ("lists_not_closed", "A choice list prints no unit figure of its own, one that depends on another choice, or "
+                             "also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),
+        ("noted_figures_differ", "The reader's notes quote two figures from the catalog page that disagree, and the "
+                                 "record's units add to one and state the other; no page read has settled which the "
+                                 "program requires.", 40),
+        ("pool_figure_not_read", "The catalog prints one figure over several lists or nested options together, and the "
+                                 "record adds the parts instead, so its units cannot be checked against that figure.",
+         40),
+        ("pair_read_as_alternatives", "The catalog prints two courses taken together as one option, and the record "
+                                      "reads them as separate alternatives, so its low end falls short of the printed "
+                                      "total.", 50),
+        ("repeat_read_once", "The catalog prints a course the program takes more than once, and the record counts it "
+                             "once, so its units fall short of the printed total by the repeats.", 60)):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def answer(filed: dict) -> tuple[str, str] | None:
     """The first record rule that names a gap, whether or not the record already files one."""
     for name, fn in RECORD_RULES:
@@ -1078,6 +1143,31 @@ def judge(filed: dict) -> tuple[str, str] | None:
 
 
 # ── the labels ─────────────────────────────────────────────────────────────
+# S720 at College of the Sequoias (kb/_program_piles_s720_sequoias.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('lists_not_closed',
+         "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),  # #3753
+        ('noted_figures_differ',
+         "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+         40),  # #3753
+        ('pool_figure_not_read',
+         'The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.',
+         40),  # #3755
+        ('double_count_noted',
+         "The catalog lets some of the program's units count twice, toward the major and general education, and the record adds them twice.",
+         40),  # College of the Sequoias' branch
+        ('prerequisites_counted',
+         "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+         70),  # College of the Sequoias' branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def labels(base: str = COLLEGE_DIR, skip: tuple = ()) -> list[dict]:
     out = []
     for sp in sorted(glob.glob(os.path.join(base, "*", "sources.json"))):
@@ -1229,6 +1319,25 @@ def held_answer(filed: dict) -> str | None:
     return None
 
 
+# S720 at Clovis (kb/_program_piles_s720_clovis.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('lists_not_closed',
+         "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),  # #3753
+        ('pool_figure_not_read',
+         'The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.',
+         40),  # #3755
+        ('pair_read_as_alternatives',
+         'The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.',
+         50),  # #3755
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def recall(every: list[dict]) -> dict:
     """The record rules against the held answer on every failing record that coverage and invented pass, at every
     college (the collection lane's and the parked ones too, read here and written nowhere): right when the rule
@@ -1249,6 +1358,25 @@ def recall(every: list[dict]) -> dict:
                                       "held": truth, "rule": got})
     out["by_answer"] = dict(out["by_answer"])
     return out
+
+
+# S720 at East Los Angeles (kb/_program_piles_s720_ela.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('noted_figures_differ',
+         "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+         40),  # #3753
+        ('nested_award_not_read',
+         "The program counts another award as one line, and the catalog prints that award's courses in its own section, so the record holds the line without its courses.",
+         30),  # East Los Angeles's branch
+        ('unit_line_not_read',
+         'The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.',
+         40),  # East Los Angeles's branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
 
 
 def hours_recall(every: list[dict]) -> dict:
@@ -1304,6 +1432,19 @@ def hours_recall(every: list[dict]) -> dict:
     return out
 
 
+# S720 at Glendale (kb/_program_piles_s720_glendale.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('pair_read_as_alternatives',
+         'The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.',
+         50),  # #3755
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def hours_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     """hours_total_not_read's claim, a program section read with no total printed, measured on the records of its
     shape (no total read, the courses' hours above zero, one reason; held keys counted too) with keys the census's
@@ -1327,6 +1468,25 @@ def hours_precision(files: list[dict], keys: frozenset | None = None) -> dict:
             "silent": counts["silent"], "hand_held_no_section": len(held),
             "hand_held_flagged_by_hours_claim": len(flagged),
             "hand_held_not_flagged": ["%s %s" % (f["college"], f["control_number"]) for f in held if f not in flagged]}
+
+
+# S720 at Contra Costa (kb/_program_piles_s720_contracosta.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('lists_not_closed',
+         "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),  # #3753
+        ('noted_unit_floor',
+         'The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.',
+         70),  # #3753
+        ('degree_summary_ge_none',
+         "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+         50),  # Contra Costa's branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
 
 
 def ge_units_recall(every: list[dict]) -> dict:
@@ -1366,6 +1526,28 @@ def ge_units_recall(every: list[dict]) -> dict:
     return out
 
 
+# S720 at El Camino (kb/_program_piles_s720_elcamino.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('noted_figures_differ',
+         "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+         40),  # #3753
+        ('pool_figure_not_read',
+         'The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.',
+         40),  # #3755
+        ('prerequisites_counted',
+         "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+         70),  # College of the Sequoias' branch
+        ('pair_read_as_alternatives',
+         'The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.',
+         50),  # #3755
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def ge_units_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     """The gap's own claim, that no units were printed for the pattern, measured on the records of its shape
     (#3678 second reader, finding 2): ge_claim's three counts (says_none, prints_figure, silent) on those records,
@@ -1387,6 +1569,25 @@ def ge_units_precision(files: list[dict], keys: frozenset | None = None) -> dict
             "hand_held_prints_figure": len(held), "hand_held_flagged_by_ge_claim": len(flagged),
             "hand_held_not_flagged": ["%s %s" % (f["college"], f["control_number"]) for f in held
                                       if f not in flagged]}
+
+
+# S720 at Ventura (kb/_program_piles_s720_ventura.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('pool_figure_not_read',
+         'The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.',
+         40),  # #3755
+        ('pair_read_as_alternatives',
+         'The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.',
+         50),  # #3755
+        ('lists_not_closed',
+         "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),  # #3753
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
 
 
 def lists_recall(every: list[dict]) -> dict:
@@ -1521,6 +1722,25 @@ def _lists_reading(f, rec, sc, pick, reading, tot, out):
         out["wrong"] += 1
         out["wrong_keys"].append({"college": f.get("college"), "control_number": f.get("control_number"),
                                   "held": held, "rule": got, "test": test})
+
+
+# S720 at Cabrillo (kb/_program_piles_s720_cabrillo.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('unit_line_not_read',
+         'The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.',
+         40),  # East Los Angeles's branch
+        ('prerequisites_counted',
+         "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+         70),  # College of the Sequoias' branch
+        ('repeat_read_once',
+         'The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.',
+         60),  # Santa Monica's branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
 
 
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:

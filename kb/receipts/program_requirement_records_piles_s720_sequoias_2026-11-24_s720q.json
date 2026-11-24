@@ -1,0 +1,2048 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S720: College of the Sequoias' 9 records S714 held, collected with their gaps named (no reread)",
+ "at": "2026-11-24T07:09:15Z",
+ "college": "College of the Sequoias",
+ "census": {
+  "file": "kb/status/harvest_gap_census.json",
+  "levers": [
+   "reconcile_steps"
+  ],
+  "person": [],
+  "members": [
+   "06764",
+   "06770",
+   "10045",
+   "32710",
+   "35415",
+   "36073",
+   "37744",
+   "42254",
+   "45030"
+  ]
+ },
+ "gaps": {
+  "double_count_noted": "The catalog lets some of the program's units count twice, toward the major and general education, and the record adds them twice.",
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "pool_figure_not_read": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
+  "prerequisites_counted": "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total."
+ },
+ "moved": 7,
+ "by": {
+  "lists_not_closed": 3,
+  "noted_figures_differ": 1,
+  "pool_figure_not_read": 1,
+  "double_count_noted": 1,
+  "prerequisites_counted": 1
+ },
+ "precision": {
+  "read": 9,
+  "right": 9,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "lists_not_closed": 3,
+   "none": 2,
+   "noted_figures_differ": 1,
+   "pool_figure_not_read": 1,
+   "double_count_noted": 1,
+   "prerequisites_counted": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 7
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 7,
+   "the stated total one unit off right": 7,
+   "coverage failing right": 7
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "06770",
+   "why": "held: two CONCENTRATION A blocks score as alternatives of one 10-unit option, beside 13 units the page lets double count: the sum is misread and runs past the total, so no kind's sentence holds",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "45030",
+   "why": "held: the Cal-GETC pattern certificate prints no course units, and no_units_printed is off by the S681 ruling until its matcher passes a self-recall; for the Cal-GETC lane",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "College of the Sequoias",
+   "control_number": "06764",
+   "award": "A.S. Degree",
+   "extracted_run": "38748848139",
+   "moves_to": "lists_not_closed",
+   "words": "ELECTIVES are printed as 0-7 units with 'Select additional degree applicable courses numbered 1-299 to achieve 60 units.' Because the units are a range that depends on the concentration and fill the degree to 60, open_elective_units is left null and electives_fill_degree set true; reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/06764.json",
+   "before_image": {
+    "program_title": "Fire Technology",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cos.edu//areas-study/fire-technology/associate-science-fire-technology-not-for-transfer-as/",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Science: Fire Technology (Not for Transfer) A.S.",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "College of the Sequoias Associate Degree General Education (COS-GE)",
+      "degree_total": {
+       "min": 60,
+       "max": 64
+      },
+      "ge_units": {
+       "min": 25,
+       "max": 25
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Explain the history and basic principles of the fire service.",
+       "Demonstrate effective communication and interpersonal skills with supervisors, peers, and the public.",
+       "Demonstrate an understanding of the principles of fire development, cause, and prevention.",
+       "Demonstrate in-depth knowledge of the principles of fire control through the utilization of personnel, equipment, extinguishing agents on the fire ground.",
+       "Apply knowledge of building construction, fire protection systems, and fire prevention codes to affect safer occupancies and fire control.",
+       "Apply the theory and principles for the use of water in fire suppression activities, including hydraulic principles."
+      ],
+      "careers": [
+       "firefighter",
+       "firefighter-paramedic",
+       "fire investigation",
+       "fire prevention",
+       "hazardous materials",
+       "public education"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED MAJOR COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "FIRE 155",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 157",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 159",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 160",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 163",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 182",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CONCENTRATION A",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Restricted Electives - Concentration A or B",
+       "stated": {
+        "min": 24,
+        "max": 24
+       },
+       "courses": [
+        {
+         "code": "EMT 251",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 285",
+         "units": 18,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CONCENTRATION B",
+       "rule": "choose_units",
+       "minimum": 13,
+       "option_group": "Restricted Electives - Concentration A or B",
+       "stated": {
+        "min": 13,
+        "max": 13
+       },
+       "courses": [
+        {
+         "code": "EMT 251",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 125",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 230",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 231",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 232",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 233",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 234",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FIRE 280",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 15
+    },
+    "extracted_run": "38748848139"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 15,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "10045",
+   "award": "A.A. Degree",
+   "extracted_run": "38748848139",
+   "moves_to": "noted_figures_differ",
+   "words": "Printed components (GE 25 + major 15 + restricted electives 6 + electives 17 = 63) do not sum to the printed TOTAL 60; recorded as printed.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/10045.json",
+   "before_image": {
+    "program_title": "Dance",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cos.edu//areas-study/dance/associate-arts-dance-not-for-transfer-aa/",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Associate of Arts in Dance (AA)",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": 17,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "College of the Sequoias Associate Degree General Education (COS-GE)",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 25,
+       "max": 25
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Choreograph dance combinations using specified lines, design, technique and/or vocabulary in solo, duet, and group work.",
+       "Students will possess a mastery of the terminology, technical skill, and the performance artistry of the specific theatrical dance styles.",
+       "Apply aesthetic principles and critical thinking skills in the creation, performance and analysis of dance.",
+       "Evaluate theatrical forms of dance as an artistic medium of communication.",
+       "Students will possess knowledge of technical skills and vocabulary that are germane to various dance styles."
+      ],
+      "careers": [
+       "private dance studios",
+       "recreation programs",
+       "after school programs",
+       "dance drill/auxiliary teams",
+       "fitness gyms",
+       "cheerleading",
+       "entertainment parks",
+       "semiprofessional or professional theater or dance companies"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED MAJOR COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 15,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "DANC 020",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ARTH 001",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 050",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 051",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 054",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 055",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 056",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 058",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 059",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 080",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 082",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 085",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 010",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "RESTRICTED ELECTIVES",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "DANC 041",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 061",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 062",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 063",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 070",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 071",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 081",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANC 160",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DRAM 017",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PEAC 060",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PEAC 061",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 24,
+     "listed": 24
+    },
+    "extracted_run": "38748848139"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 24,
+     "listed": 24,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "32710",
+   "award": "A.A- T Degree",
+   "extracted_run": "38748848139",
+   "moves_to": "lists_not_closed",
+   "words": "The 24-unit 'REQUIRED MAJOR COURSES' total covers both the required list (20 units) and the ensemble choice; recorded as total_units rather than on a single block.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/32710.json",
+   "before_image": {
+    "program_title": "Music",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cos.edu//areas-study/music/associate-arts-music-transfer-aa-t/",
+    "measure": "units",
+    "total_min": 24,
+    "total_max": 24,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Arts in Music for Transfer (AA-T)",
+      "measure": "units",
+      "total_units": {
+       "min": 24,
+       "max": 24
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 3,
+       "max": 5
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Discriminate historical differences in music styles and use this knowledge to assess musical performances.",
+       "Implement the concepts of musical theory and analyze examples from a musical score.",
+       "Interpret a musical score and perform with technical accuracy, expression and artistry."
+      ],
+      "careers": [
+       "Studio Musician",
+       "Instrumental Teacher",
+       "Vocal Teacher",
+       "Music Director/Conductor/Producer",
+       "Accompanist",
+       "Media Composer/Arranger",
+       "Music Score Preparer",
+       "Composer",
+       "Music Therapist",
+       "Music Journalist",
+       "Audio Technician",
+       "Recording Engineer",
+       "Audio Designer"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED MAJOR COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUS 004",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 005",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 006",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 007",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 041AD",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one of the following courses (must be completed four times)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUS 034AD",
+         "units": 1,
+         "units_max": 2,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 054AD",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 074AD",
+         "units": 1,
+         "units_max": 2,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Recommended elective",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUS 020AD",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 8,
+     "listed": 8
+    },
+    "extracted_run": "38748848139"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 8,
+     "listed": 8,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "35415",
+   "award": "A.A. Degree",
+   "extracted_run": "44688217584",
+   "moves_to": "pool_figure_not_read",
+   "words": "The concentration requires a minimum of 18 units (total_units) from List A and List B combined, with at least one mathematics course and at least one science course; each list is recorded as choose_units with minimum 3 (its printed range 3-15), and the 18-unit combined minimum is not captured by the per-block minimums.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 88,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/35415.json",
+   "before_image": {
+    "program_title": "University Studies - Pathway to Math and Science",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Arts in University Studies - Pathway to Math and Science (AA)",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 5,
+       "max": 27
+      },
+      "ge_pattern": "Cal-GETC or College of the Sequoia's Associate Degree General Education (COS GE)",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 25,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate an understanding of science and mathematical concepts relevant to inquiry at the university level by being prepared for transfer into a STEM program."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "LIST A: MATHEMATICS",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "BUS 020",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 119",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 010",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 011",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 035",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 044",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 054",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 065",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 066",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 067",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 080",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 081",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SSCI 025",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST B: SCIENCE",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "AG 002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AG 004",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 011",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ASTR 010",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 001",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 002",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 020",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 021",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 022",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 025",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 030",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 031",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 040",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 001",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 002",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 010",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 020",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 021",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 001L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 005",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOL 001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 005",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 012",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NUTR 018",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHYS 020",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 021",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 055",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 056",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 057",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLSI 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSCI 020",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 37,
+     "listed": 42
+    },
+    "extracted_run": "44688217584"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 37,
+     "listed": 42,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 88,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "36073",
+   "award": "A.A. Degree",
+   "extracted_run": "38748848139",
+   "moves_to": "double_count_noted",
+   "words": "Footnote: ASL 002 and COMM 009 (marked *) meet General Education requirements and 6 units may double count in COS-GE.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/36073.json",
+   "before_image": {
+    "program_title": "American Sign Language",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cos.edu//areas-study/american-sign-language/associate-arts-american-sign-language-not-for-transfer-aa/",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Associate of Arts in American Sign Language (AA)",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": 15,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "College of the Sequoias Associate Degree General Education (COS-GE)",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 25,
+       "max": 25
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Sign effectively and fluently, using the parameters of ASL.",
+       "Demonstrate proficient receptive skills when using ASL.",
+       "Be familiar with Deaf culture and be able to articulate its basic history."
+      ],
+      "careers": [
+       "entry-level interpreting",
+       "classroom aid",
+       "Deaf student aid",
+       "advocacy for Deaf culture"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED MAJOR COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 15,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "ASL 002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL 003",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL 004",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL 005",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL 006",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "RESTRICTED ELECTIVES",
+       "rule": "choose_courses",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 11
+       },
+       "courses": [
+        {
+         "code": "ASL 001",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL 110",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL 210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL 211",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 009",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 10,
+     "listed": 10
+    },
+    "extracted_run": "38748848139"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 10,
+     "listed": 10,
+     "gaps": [
+      "double_count_noted"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "37744",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38748848139",
+   "moves_to": "prerequisites_counted",
+   "words": "The printed TOTAL of 24 covers only the required certificate courses (1st and 2nd semester); it does not include the 2-8 prerequisite units even though the table shows '+' between them. Reviewer should check whether the prerequisites count toward the certificate.",
+   "confidence": {
+    "unit_arithmetic": 70,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/37744.json",
+   "before_image": {
+    "program_title": "Entry-Level Pharmacy Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cos.edu//areas-study/pharmacy-technician/certificate-achievement-pharmacy-technician/",
+    "measure": "units",
+    "total_min": 24,
+    "total_max": 24,
+    "record": {
+     "program": {
+      "section_heading": "Certificate of Achievement in Entry-Level Pharmacy Technician",
+      "measure": "units",
+      "total_units": {
+       "min": 24,
+       "max": 24
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate professional demeanor and communications in a pharmacy environment",
+       "Perform the duties and responsibilities of an entry-level pharmacy technician,  within the standards, ethics and legal parameters of the profession",
+       "Apply pharmaceutical/medical terms, abbreviations and symbols to the dispensing and recording of medications",
+       "Perform computations required for the usual dosage determinations and medication preparation using weight and volume equivalents in metric and apothecary systems",
+       "Perform essential functions relating to drug purchasing and inventory control",
+       "Package and label drug products",
+       "Maintain records associated with dispensing prescriptions"
+      ],
+      "careers": [
+       "Entry-Level Pharmacy Technician",
+       "pharmacy technician"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED PROGRAM PREREQUISITES (ENGL C1000 & MATH 044)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Prerequisites",
+       "stated": {
+        "min": 8,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "ENGL C1000",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 044",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "REQUIRED PROGRAM PREREQUISITES (PT 200)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Prerequisites",
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "PT 200",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "REQUIRED CERTIFICATE COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 24,
+        "max": 24
+       },
+       "courses": [
+        {
+         "code": "PT 215",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PT 216",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PT 217",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PT 218",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PT 402",
+         "units": 0,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PT 225",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PT 226",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PT 227",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PT 228",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PT 229",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PT 404",
+         "units": 0,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14
+    },
+    "extracted_run": "38748848139"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14,
+     "gaps": [
+      "prerequisites_counted"
+     ],
+     "confidence": {
+      "unit_arithmetic": 70,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 6
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "42254",
+   "award": "A.S. Degree",
+   "extracted_run": "38748848139",
+   "moves_to": "lists_not_closed",
+   "words": "ELECTIVES are printed as a range '7-28' with 'Select additional degree applicable courses numbered 1-299 to achieve 60 units'; a range cannot be stored in open_elective_units, so it is null and electives_fill_degree is true. Reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 95,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/42254.json",
+   "before_image": {
+    "program_title": "Liberal Arts - Pathway to Health Science",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cos.edu//areas-study/liberal-studies/associate-arts-liberal-arts-pathway-health-science/",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Associate of Science in Liberal Arts - Pathway to Health Science (AS)",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "College of the Sequoias Associate Degree General Education (COS-GE)",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 25,
+       "max": 25
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Upon completion of this program, students will be prepared in the foundational knowledge of human biology and physiology, reading, writing, and aspects of social behavioral sciences. This knowledge will prepare students to continue on toward nursing and allied health programs as well as prepare them for entry-level positions in medical offices."
+      ],
+      "careers": [
+       "Health Science fields",
+       "Registered Nursing",
+       "Physical Therapy Assistant",
+       "Dental Hygienist",
+       "Occupational or Radiological Technologist",
+       "entry-level positions within medical offices"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED MAJOR COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 16,
+        "max": 16
+       },
+       "courses": [
+        {
+         "code": "BIOL 030",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 031",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH 044",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CONCENTRATION A: PRE-NURSING",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 13,
+        "max": 13
+       },
+       "courses": [
+        {
+         "code": "BIOL 040",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM C1004",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ANTH 010",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "NURS 106",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "CONCENTRATION B: PRE-PHYSICAL THERAPY ASSISTANT",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "SOC 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HW 001",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "HW 007",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "PSYC C1000",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "CONCENTRATION C: PRE-DENTAL HYGIENE",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 21,
+        "max": 21
+       },
+       "courses": [
+        {
+         "code": "BIOL 040",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 020",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 021",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "CONCENTRATION D: PRE-RADIOLOGICAL TECHNOLOGY",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 256",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CONCENTRATION E: PRE-OCCUPATIONAL THERAPY ASSISTANT",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "COMM 009",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS 256",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SOC 001",
+           "units": null,
+           "catalog_addition": true
+          },
+          {
+           "code": "PSYC 080",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CONCENTRATION F: PRE-RESPIRATORY CARE",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 11,
+        "max": 11
+       },
+       "courses": [
+        {
+         "code": "BIOL 040",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM 020",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 18,
+     "listed": 19
+    },
+    "extracted_run": "38748848139"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 18,
+     "listed": 19,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 95,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 7
+  }
+ ],
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score; checks.arithmetic, coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found. The capture keeps no page text, so a note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'College of the Sequoias', '06764', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 159\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 163\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 182\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EMT 251\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 285\",\"units\":18,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION A\",\"option_group\":\"Restricted Electives - Concentration A or B\",\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EMT 251\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 125\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 230\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 231\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 232\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 233\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 234\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 280\",\"units\":5,\"units_max\":null}],\"minimum\":13,\"name\":\"CONCENTRATION B\",\"option_group\":\"Restricted Electives - Concentration A or B\",\"rule\":\"choose_units\",\"stated\":{\"max\":13,\"min\":13}}],\"program\":{\"careers\":[\"firefighter\",\"firefighter-paramedic\",\"fire investigation\",\"fire prevention\",\"hazardous materials\",\"public education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Explain the history and basic principles of the fire service.\",\"Demonstrate effective communication and interpersonal skills with supervisors, peers, and the public.\",\"Demonstrate an understanding of the principles of fire development, cause, and prevention.\",\"Demonstrate in-depth knowledge of the principles of fire control through the utilization of personnel, equipment, extinguishing agents on the fire ground.\",\"Apply knowledge of building construction, fire protection systems, and fire prevention codes to affect safer occupancies and fire control.\",\"Apply the theory and principles for the use of water in fire suppression activities, including hydraulic principles.\"],\"section_heading\":\"Associate in Science: Fire Technology (Not for Transfer) A.S.\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (2, 'College of the Sequoias', '10045', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH 001\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 050\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 051\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 054\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 055\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 056\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 058\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 059\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 080\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 082\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 085\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 010\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 041\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 061\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 062\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 063\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 070\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 071\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 081\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 160\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DRAM 017\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PEAC 060\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PEAC 061\",\"units\":2,\"units_max\":null}],\"minimum\":6,\"name\":\"RESTRICTED ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[\"private dance studios\",\"recreation programs\",\"after school programs\",\"dance drill/auxiliary teams\",\"fitness gyms\",\"cheerleading\",\"entertainment parks\",\"semiprofessional or professional theater or dance companies\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":17,\"outcomes\":[\"Choreograph dance combinations using specified lines, design, technique and/or vocabulary in solo, duet, and group work.\",\"Students will possess a mastery of the terminology, technical skill, and the performance artistry of the specific theatrical dance styles.\",\"Apply aesthetic principles and critical thinking skills in the creation, performance and analysis of dance.\",\"Evaluate theatrical forms of dance as an artistic medium of communication.\",\"Students will possess knowledge of technical skills and vocabulary that are germane to various dance styles.\"],\"section_heading\":\"Associate of Arts in Dance (AA)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":24,\"placed\":24}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":24,\"placed\":24}'::jsonb),\n  (3, 'College of the Sequoias', '32710', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 004\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 007\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 041AD\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 034AD\",\"units\":1,\"units_max\":2},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 054AD\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 074AD\",\"units\":1,\"units_max\":2}],\"minimum\":1,\"name\":\"Select one of the following courses (must be completed four times)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 020AD\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended elective\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Studio Musician\",\"Instrumental Teacher\",\"Vocal Teacher\",\"Music Director/Conductor/Producer\",\"Accompanist\",\"Media Composer/Arranger\",\"Music Score Preparer\",\"Composer\",\"Music Therapist\",\"Music Journalist\",\"Audio Technician\",\"Recording Engineer\",\"Audio Designer\"],\"degree_elective_units\":{\"max\":5,\"min\":3},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Discriminate historical differences in music styles and use this knowledge to assess musical performances.\",\"Implement the concepts of musical theory and analyze examples from a musical score.\",\"Interpret a musical score and perform with technical accuracy, expression and artistry.\"],\"section_heading\":\"Associate in Arts in Music for Transfer (AA-T)\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (4, 'College of the Sequoias', '35415', 44688217584, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 010\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 011\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 035\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 044\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 054\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 065\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 066\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 067\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 080\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 081\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SSCI 025\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST A: MATHEMATICS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 011\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASTR 010\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 001\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 002\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 022\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 025\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 030\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 031\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 001\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 002\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 010\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 021\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 005\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 012\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"NUTR 018\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 020\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 021\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 055\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 056\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 057\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSI 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSCI 020\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B: SCIENCE\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":27,\"min\":5},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC or College of the Sequoia''s Associate Degree General Education (COS GE)\",\"ge_units\":{\"max\":34,\"min\":25},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate an understanding of science and mathematical concepts relevant to inquiry at the university level by being prepared for transfer into a STEM program.\"],\"section_heading\":\"Arts in University Studies - Pathway to Math and Science (AA)\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":42,\"placed\":37}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":42,\"placed\":37}'::jsonb),\n  (5, 'College of the Sequoias', '36073', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 003\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 005\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 006\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 009\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"RESTRICTED ELECTIVES\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":11,\"min\":9}}],\"program\":{\"careers\":[\"entry-level interpreting\",\"classroom aid\",\"Deaf student aid\",\"advocacy for Deaf culture\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":15,\"outcomes\":[\"Sign effectively and fluently, using the parameters of ASL.\",\"Demonstrate proficient receptive skills when using ASL.\",\"Be familiar with Deaf culture and be able to articulate its basic history.\"],\"section_heading\":\"Associate of Arts in American Sign Language (AA)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"double_count_noted\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (6, 'College of the Sequoias', '37744', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 044\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED PROGRAM PREREQUISITES (ENGL C1000 & MATH 044)\",\"option_group\":\"Prerequisites\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 200\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED PROGRAM PREREQUISITES (PT 200)\",\"option_group\":\"Prerequisites\",\"rule\":\"all\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 216\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 217\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 218\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 402\",\"units\":0,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 225\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 226\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 227\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 228\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 229\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 404\",\"units\":0,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED CERTIFICATE COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}}],\"program\":{\"careers\":[\"Entry-Level Pharmacy Technician\",\"pharmacy technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate professional demeanor and communications in a pharmacy environment\",\"Perform the duties and responsibilities of an entry-level pharmacy technician,  within the standards, ethics and legal parameters of the profession\",\"Apply pharmaceutical/medical terms, abbreviations and symbols to the dispensing and recording of medications\",\"Perform computations required for the usual dosage determinations and medication preparation using weight and volume equivalents in metric and apothecary systems\",\"Perform essential functions relating to drug purchasing and inventory control\",\"Package and label drug products\",\"Maintain records associated with dispensing prescriptions\"],\"section_heading\":\"Certificate of Achievement in Entry-Level Pharmacy Technician\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"prerequisites_counted\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (7, 'College of the Sequoias', '42254', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 030\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 031\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 044\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1004\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 010\",\"units\":null},{\"catalog_addition\":false,\"code\":\"NURS 106\",\"units\":null}],\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION A: PRE-NURSING\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":13,\"min\":13}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HW 001\",\"units\":null},{\"catalog_addition\":false,\"code\":\"HW 007\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":null}],\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION B: PRE-PHYSICAL THERAPY ASSISTANT\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 021\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION C: PRE-DENTAL HYGIENE\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":21,\"min\":21}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 256\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION D: PRE-RADIOLOGICAL TECHNOLOGY\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 256\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC 080\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION E: PRE-OCCUPATIONAL THERAPY ASSISTANT\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION F: PRE-RESPIRATORY CARE\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":11,\"min\":11}}],\"program\":{\"careers\":[\"Health Science fields\",\"Registered Nursing\",\"Physical Therapy Assistant\",\"Dental Hygienist\",\"Occupational or Radiological Technologist\",\"entry-level positions within medical offices\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Upon completion of this program, students will be prepared in the foundational knowledge of human biology and physiology, reading, writing, and aspects of social behavioral sciences. This knowledge will prepare students to continue on toward nursing and allied health programs as well as prepare them for entry-level positions in medical offices.\"],\"section_heading\":\"Associate of Science in Liberal Arts - Pathway to Health Science (AS)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":19,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":95,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":19,\"placed\":18}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'College of the Sequoias', '06764', 38748848139, '21759d8635455197c2d273eb28173827', '3c81834a38a33a73170c8fc53655fda9', '40b3607b22e0f91890bce0997c20b5e0'),\n  (2, 'College of the Sequoias', '10045', 38748848139, '9f3a2496b00e8d76f1b76b2304bd2c65', '3db55b679c617879bf8ee2173a835eae', 'd4829ff893fea5b0dd9e407ee59c3b1a'),\n  (3, 'College of the Sequoias', '32710', 38748848139, 'ba37d208d4019a0a84809be4225f4194', 'b167e014df6b97bdebba96ca16afce51', 'a0e1bc471478bd7adf979fc2eed82dd7'),\n  (4, 'College of the Sequoias', '35415', 44688217584, '22cca629a4990307d778bb794b1227c7', '6eb7b53826741ea0f8c0fc89c8d2ae1c', 'f56598692dc41388b7063e869aa57522'),\n  (5, 'College of the Sequoias', '36073', 38748848139, 'eb7ac8dbb01a04cfd9e62360c0bff637', '565698f6affa77ef6c1410d28f8c0923', '0272325feec5b177048a56ac2a9b9ac6'),\n  (6, 'College of the Sequoias', '37744', 38748848139, '411e6a09f63df68115c9ff604481270a', '3e096e5d8483d0570dfc23bf65a968b0', '3f78c72147bf6f9dbff6f34a361e1c3b'),\n  (7, 'College of the Sequoias', '42254', 38748848139, '82f0b3d6bd134c1ef53bd61cd2b18ad4', '608207fd06d305c892c32e21b82a6227', '1a3b1280f15a4bed4e431698ce16efe6'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'College of the Sequoias', '06764', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 159\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 163\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 182\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EMT 251\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 285\",\"units\":18,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION A\",\"option_group\":\"Restricted Electives - Concentration A or B\",\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EMT 251\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 125\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 230\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 231\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 232\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 233\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 234\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 280\",\"units\":5,\"units_max\":null}],\"minimum\":13,\"name\":\"CONCENTRATION B\",\"option_group\":\"Restricted Electives - Concentration A or B\",\"rule\":\"choose_units\",\"stated\":{\"max\":13,\"min\":13}}],\"program\":{\"careers\":[\"firefighter\",\"firefighter-paramedic\",\"fire investigation\",\"fire prevention\",\"hazardous materials\",\"public education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Explain the history and basic principles of the fire service.\",\"Demonstrate effective communication and interpersonal skills with supervisors, peers, and the public.\",\"Demonstrate an understanding of the principles of fire development, cause, and prevention.\",\"Demonstrate in-depth knowledge of the principles of fire control through the utilization of personnel, equipment, extinguishing agents on the fire ground.\",\"Apply knowledge of building construction, fire protection systems, and fire prevention codes to affect safer occupancies and fire control.\",\"Apply the theory and principles for the use of water in fire suppression activities, including hydraulic principles.\"],\"section_heading\":\"Associate in Science: Fire Technology (Not for Transfer) A.S.\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (2, 'College of the Sequoias', '10045', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH 001\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 050\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 051\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 054\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 055\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 056\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 058\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 059\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 080\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 082\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 085\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 010\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 041\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 061\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 062\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 063\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 070\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 071\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 081\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 160\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DRAM 017\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PEAC 060\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PEAC 061\",\"units\":2,\"units_max\":null}],\"minimum\":6,\"name\":\"RESTRICTED ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[\"private dance studios\",\"recreation programs\",\"after school programs\",\"dance drill/auxiliary teams\",\"fitness gyms\",\"cheerleading\",\"entertainment parks\",\"semiprofessional or professional theater or dance companies\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":17,\"outcomes\":[\"Choreograph dance combinations using specified lines, design, technique and/or vocabulary in solo, duet, and group work.\",\"Students will possess a mastery of the terminology, technical skill, and the performance artistry of the specific theatrical dance styles.\",\"Apply aesthetic principles and critical thinking skills in the creation, performance and analysis of dance.\",\"Evaluate theatrical forms of dance as an artistic medium of communication.\",\"Students will possess knowledge of technical skills and vocabulary that are germane to various dance styles.\"],\"section_heading\":\"Associate of Arts in Dance (AA)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":24,\"placed\":24}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":24,\"placed\":24}'::jsonb),\n  (3, 'College of the Sequoias', '32710', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 004\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 007\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 041AD\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 034AD\",\"units\":1,\"units_max\":2},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 054AD\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 074AD\",\"units\":1,\"units_max\":2}],\"minimum\":1,\"name\":\"Select one of the following courses (must be completed four times)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 020AD\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended elective\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Studio Musician\",\"Instrumental Teacher\",\"Vocal Teacher\",\"Music Director/Conductor/Producer\",\"Accompanist\",\"Media Composer/Arranger\",\"Music Score Preparer\",\"Composer\",\"Music Therapist\",\"Music Journalist\",\"Audio Technician\",\"Recording Engineer\",\"Audio Designer\"],\"degree_elective_units\":{\"max\":5,\"min\":3},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Discriminate historical differences in music styles and use this knowledge to assess musical performances.\",\"Implement the concepts of musical theory and analyze examples from a musical score.\",\"Interpret a musical score and perform with technical accuracy, expression and artistry.\"],\"section_heading\":\"Associate in Arts in Music for Transfer (AA-T)\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (4, 'College of the Sequoias', '35415', 44688217584, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 010\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 011\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 035\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 044\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 054\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 065\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 066\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 067\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 080\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 081\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SSCI 025\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST A: MATHEMATICS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 011\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASTR 010\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 001\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 002\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 022\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 025\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 030\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 031\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 001\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 002\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 010\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 021\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 005\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 012\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"NUTR 018\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 020\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 021\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 055\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 056\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 057\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSI 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSCI 020\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B: SCIENCE\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":27,\"min\":5},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC or College of the Sequoia''s Associate Degree General Education (COS GE)\",\"ge_units\":{\"max\":34,\"min\":25},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate an understanding of science and mathematical concepts relevant to inquiry at the university level by being prepared for transfer into a STEM program.\"],\"section_heading\":\"Arts in University Studies - Pathway to Math and Science (AA)\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":42,\"placed\":37}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":42,\"placed\":37}'::jsonb),\n  (5, 'College of the Sequoias', '36073', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 003\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 005\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 006\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 009\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"RESTRICTED ELECTIVES\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":11,\"min\":9}}],\"program\":{\"careers\":[\"entry-level interpreting\",\"classroom aid\",\"Deaf student aid\",\"advocacy for Deaf culture\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":15,\"outcomes\":[\"Sign effectively and fluently, using the parameters of ASL.\",\"Demonstrate proficient receptive skills when using ASL.\",\"Be familiar with Deaf culture and be able to articulate its basic history.\"],\"section_heading\":\"Associate of Arts in American Sign Language (AA)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"double_count_noted\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (6, 'College of the Sequoias', '37744', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 044\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED PROGRAM PREREQUISITES (ENGL C1000 & MATH 044)\",\"option_group\":\"Prerequisites\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 200\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED PROGRAM PREREQUISITES (PT 200)\",\"option_group\":\"Prerequisites\",\"rule\":\"all\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 216\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 217\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 218\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 402\",\"units\":0,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 225\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 226\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 227\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 228\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 229\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 404\",\"units\":0,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED CERTIFICATE COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}}],\"program\":{\"careers\":[\"Entry-Level Pharmacy Technician\",\"pharmacy technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate professional demeanor and communications in a pharmacy environment\",\"Perform the duties and responsibilities of an entry-level pharmacy technician,  within the standards, ethics and legal parameters of the profession\",\"Apply pharmaceutical/medical terms, abbreviations and symbols to the dispensing and recording of medications\",\"Perform computations required for the usual dosage determinations and medication preparation using weight and volume equivalents in metric and apothecary systems\",\"Perform essential functions relating to drug purchasing and inventory control\",\"Package and label drug products\",\"Maintain records associated with dispensing prescriptions\"],\"section_heading\":\"Certificate of Achievement in Entry-Level Pharmacy Technician\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"prerequisites_counted\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (7, 'College of the Sequoias', '42254', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 030\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 031\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 044\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1004\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 010\",\"units\":null},{\"catalog_addition\":false,\"code\":\"NURS 106\",\"units\":null}],\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION A: PRE-NURSING\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":13,\"min\":13}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HW 001\",\"units\":null},{\"catalog_addition\":false,\"code\":\"HW 007\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":null}],\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION B: PRE-PHYSICAL THERAPY ASSISTANT\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 021\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION C: PRE-DENTAL HYGIENE\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":21,\"min\":21}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 256\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION D: PRE-RADIOLOGICAL TECHNOLOGY\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 256\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC 080\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION E: PRE-OCCUPATIONAL THERAPY ASSISTANT\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION F: PRE-RESPIRATORY CARE\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":11,\"min\":11}}],\"program\":{\"careers\":[\"Health Science fields\",\"Registered Nursing\",\"Physical Therapy Assistant\",\"Dental Hygienist\",\"Occupational or Radiological Technologist\",\"entry-level positions within medical offices\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Upon completion of this program, students will be prepared in the foundational knowledge of human biology and physiology, reading, writing, and aspects of social behavioral sciences. This knowledge will prepare students to continue on toward nursing and allied health programs as well as prepare them for entry-level positions in medical offices.\"],\"section_heading\":\"Associate of Science in Liberal Arts - Pathway to Health Science (AS)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":19,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":95,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":19,\"placed\":18}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (7)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s720q piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s720q piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'College of the Sequoias', '06764', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 159\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 163\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 182\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EMT 251\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 285\",\"units\":18,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION A\",\"option_group\":\"Restricted Electives - Concentration A or B\",\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EMT 251\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 125\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 230\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 231\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 232\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 233\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 234\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FIRE 280\",\"units\":5,\"units_max\":null}],\"minimum\":13,\"name\":\"CONCENTRATION B\",\"option_group\":\"Restricted Electives - Concentration A or B\",\"rule\":\"choose_units\",\"stated\":{\"max\":13,\"min\":13}}],\"program\":{\"careers\":[\"firefighter\",\"firefighter-paramedic\",\"fire investigation\",\"fire prevention\",\"hazardous materials\",\"public education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":64,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Explain the history and basic principles of the fire service.\",\"Demonstrate effective communication and interpersonal skills with supervisors, peers, and the public.\",\"Demonstrate an understanding of the principles of fire development, cause, and prevention.\",\"Demonstrate in-depth knowledge of the principles of fire control through the utilization of personnel, equipment, extinguishing agents on the fire ground.\",\"Apply knowledge of building construction, fire protection systems, and fire prevention codes to affect safer occupancies and fire control.\",\"Apply the theory and principles for the use of water in fire suppression activities, including hydraulic principles.\"],\"section_heading\":\"Associate in Science: Fire Technology (Not for Transfer) A.S.\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":15,\"placed\":15}'::jsonb),\n  (2, 'College of the Sequoias', '10045', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH 001\",\"units\":null}],\"catalog_addition\":false,\"code\":\"DANC 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 050\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 051\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 054\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 055\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 056\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 058\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 059\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 080\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 082\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 085\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 010\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 041\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 061\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 062\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 063\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 070\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 071\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 081\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANC 160\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DRAM 017\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PEAC 060\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PEAC 061\",\"units\":2,\"units_max\":null}],\"minimum\":6,\"name\":\"RESTRICTED ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}}],\"program\":{\"careers\":[\"private dance studios\",\"recreation programs\",\"after school programs\",\"dance drill/auxiliary teams\",\"fitness gyms\",\"cheerleading\",\"entertainment parks\",\"semiprofessional or professional theater or dance companies\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":17,\"outcomes\":[\"Choreograph dance combinations using specified lines, design, technique and/or vocabulary in solo, duet, and group work.\",\"Students will possess a mastery of the terminology, technical skill, and the performance artistry of the specific theatrical dance styles.\",\"Apply aesthetic principles and critical thinking skills in the creation, performance and analysis of dance.\",\"Evaluate theatrical forms of dance as an artistic medium of communication.\",\"Students will possess knowledge of technical skills and vocabulary that are germane to various dance styles.\"],\"section_heading\":\"Associate of Arts in Dance (AA)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":24,\"placed\":24}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":24,\"placed\":24}'::jsonb),\n  (3, 'College of the Sequoias', '32710', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 004\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 006\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 007\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 041AD\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 034AD\",\"units\":1,\"units_max\":2},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 054AD\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 074AD\",\"units\":1,\"units_max\":2}],\"minimum\":1,\"name\":\"Select one of the following courses (must be completed four times)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUS 020AD\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Recommended elective\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Studio Musician\",\"Instrumental Teacher\",\"Vocal Teacher\",\"Music Director/Conductor/Producer\",\"Accompanist\",\"Media Composer/Arranger\",\"Music Score Preparer\",\"Composer\",\"Music Therapist\",\"Music Journalist\",\"Audio Technician\",\"Recording Engineer\",\"Audio Designer\"],\"degree_elective_units\":{\"max\":5,\"min\":3},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Discriminate historical differences in music styles and use this knowledge to assess musical performances.\",\"Implement the concepts of musical theory and analyze examples from a musical score.\",\"Interpret a musical score and perform with technical accuracy, expression and artistry.\"],\"section_heading\":\"Associate in Arts in Music for Transfer (AA-T)\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (4, 'College of the Sequoias', '35415', 44688217584, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 119\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 010\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 011\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 035\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 044\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 054\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 065\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 066\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 067\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 080\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 081\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SSCI 025\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST A: MATHEMATICS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ANTH 011\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASTR 010\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 001\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 002\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 022\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 025\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 030\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 031\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 001\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 002\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 010\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 021\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 001L\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 005\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 005\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 012\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"NUTR 018\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 020\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 021\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 055\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 056\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 057\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSI 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSCI 020\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B: SCIENCE\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":15,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":27,\"min\":5},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC or College of the Sequoia''s Associate Degree General Education (COS GE)\",\"ge_units\":{\"max\":34,\"min\":25},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate an understanding of science and mathematical concepts relevant to inquiry at the university level by being prepared for transfer into a STEM program.\"],\"section_heading\":\"Arts in University Studies - Pathway to Math and Science (AA)\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":42,\"placed\":37}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":42,\"placed\":37}'::jsonb),\n  (5, 'College of the Sequoias', '36073', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 003\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 005\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 006\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 001\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL 211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 009\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"RESTRICTED ELECTIVES\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":11,\"min\":9}}],\"program\":{\"careers\":[\"entry-level interpreting\",\"classroom aid\",\"Deaf student aid\",\"advocacy for Deaf culture\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":15,\"outcomes\":[\"Sign effectively and fluently, using the parameters of ASL.\",\"Demonstrate proficient receptive skills when using ASL.\",\"Be familiar with Deaf culture and be able to articulate its basic history.\"],\"section_heading\":\"Associate of Arts in American Sign Language (AA)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"double_count_noted\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (6, 'College of the Sequoias', '37744', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 044\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED PROGRAM PREREQUISITES (ENGL C1000 & MATH 044)\",\"option_group\":\"Prerequisites\",\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 200\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED PROGRAM PREREQUISITES (PT 200)\",\"option_group\":\"Prerequisites\",\"rule\":\"all\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 216\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 217\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 218\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 402\",\"units\":0,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 225\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 226\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 227\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 228\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 229\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PT 404\",\"units\":0,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED CERTIFICATE COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}}],\"program\":{\"careers\":[\"Entry-Level Pharmacy Technician\",\"pharmacy technician\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate professional demeanor and communications in a pharmacy environment\",\"Perform the duties and responsibilities of an entry-level pharmacy technician,  within the standards, ethics and legal parameters of the profession\",\"Apply pharmaceutical/medical terms, abbreviations and symbols to the dispensing and recording of medications\",\"Perform computations required for the usual dosage determinations and medication preparation using weight and volume equivalents in metric and apothecary systems\",\"Perform essential functions relating to drug purchasing and inventory control\",\"Package and label drug products\",\"Maintain records associated with dispensing prescriptions\"],\"section_heading\":\"Certificate of Achievement in Entry-Level Pharmacy Technician\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":70},\"coverage\":true,\"gaps\":[\"prerequisites_counted\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (7, 'College of the Sequoias', '42254', 38748848139, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 030\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 031\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH 044\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED MAJOR COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":16,\"min\":16}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1004\",\"units\":null}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ANTH 010\",\"units\":null},{\"catalog_addition\":false,\"code\":\"NURS 106\",\"units\":null}],\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION A: PRE-NURSING\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":13,\"min\":13}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HW 001\",\"units\":null},{\"catalog_addition\":false,\"code\":\"HW 007\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":null}],\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION B: PRE-PHYSICAL THERAPY ASSISTANT\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 021\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION C: PRE-DENTAL HYGIENE\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":21,\"min\":21}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 256\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION D: PRE-RADIOLOGICAL TECHNOLOGY\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS 256\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"SOC 001\",\"units\":null},{\"catalog_addition\":false,\"code\":\"PSYC 080\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION E: PRE-OCCUPATIONAL THERAPY ASSISTANT\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 040\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM 020\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"CONCENTRATION F: PRE-RESPIRATORY CARE\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":11,\"min\":11}}],\"program\":{\"careers\":[\"Health Science fields\",\"Registered Nursing\",\"Physical Therapy Assistant\",\"Dental Hygienist\",\"Occupational or Radiological Technologist\",\"entry-level positions within medical offices\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"College of the Sequoias Associate Degree General Education (COS-GE)\",\"ge_units\":{\"max\":25,\"min\":25},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Upon completion of this program, students will be prepared in the foundational knowledge of human biology and physiology, reading, writing, and aspects of social behavioral sciences. This knowledge will prepare students to continue on toward nursing and allied health programs as well as prepare them for entry-level positions in medical offices.\"],\"section_heading\":\"Associate of Science in Liberal Arts - Pathway to Health Science (AS)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":19,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":95,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":19,\"placed\":18}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (7)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s720q piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}
