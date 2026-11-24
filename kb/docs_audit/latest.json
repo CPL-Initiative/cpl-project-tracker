@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1582,
-    "bytes": 17298631,
+    "files": 1583,
+    "bytes": 17352065,
     "over_budget": 5,
-    "handoff_max": 720,
+    "handoff_max": 721,
     "always_loaded_files": 1,
     "always_loaded_bytes": 63653,
     "superseded_files": 0,
@@ -26,125 +26,126 @@
       },
       "other": {
         "files": 167,
-        "bytes": 5799599,
+        "bytes": 5841402,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 11949,
+        "bytes": 12125,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2881183,
+        "bytes": 2864536,
         "over": 2
       },
       "kb_note": {
         "files": 606,
-        "bytes": 2960157,
+        "bytes": 2961474,
         "over": 0
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 542399,
+        "bytes": 542347,
         "over": 1
       },
       "handoff": {
-        "files": 676,
-        "bytes": 5039691,
+        "files": 677,
+        "bytes": 5066528,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 5,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 79
+      "vault_heavy_path": 79,
+      "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 29710,
-      "bytes": 1595882420,
-      "heavy_bytes": 1221427614,
+      "files": 29746,
+      "bytes": 1596587455,
+      "heavy_bytes": 1221613004,
       "heavy_share": 0.765,
       "ignore_filters": [
-        "agent-a10e616501b790da2/kb/program_requirements_college",
-        "agent-a10e616501b790da2/kb/regional_cpl_out",
-        "agent-a10e616501b790da2/kb/reference",
-        "agent-a10e616501b790da2/kb/unclassified_fold",
-        "agent-a10e616501b790da2/cip_fitcheck",
-        "agent-a10e616501b790da2/prototype/landing_page_video",
-        "agent-a10e616501b790da2/kb/cpl_ai",
-        "agent-a10e616501b790da2/library",
-        "agent-a10e616501b790da2/tests",
-        "agent-a10e616501b790da2/tmc",
-        "agent-a10e616501b790da2/kb/course_outline_index",
-        "agent-a10e616501b790da2/kb/status/commons_data_programs",
-        "agent-a10e616501b790da2/unified_courses_member_desc.js",
-        "agent-a10e616501b790da2/kb/coci_minted_singletons.json",
-        "agent-a10e616501b790da2/kb/coci_minted_courses.json",
-        "agent-a10e616501b790da2/unified_courses_details.js",
-        "agent-a10e616501b790da2/kb/subj4_fold_out/2026-06-12/alias_map.json",
-        "agent-a10e616501b790da2/kb/subj4_dryrun/alias_map.json",
-        "agent-a10e616501b790da2/kb/subj4_apply/alias_map.json",
-        "agent-a10e616501b790da2/kb/coci_minted_memberships.json",
-        "agent-a10e616501b790da2/coci_lookup_data.js",
-        "agent-a10e616501b790da2/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
-        "agent-a10e616501b790da2/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
-        "agent-a10e616501b790da2/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
-        "agent-a10e616501b790da2/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
-        "agent-a10e616501b790da2/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
-        "agent-a10e616501b790da2/unified_courses_standalone.js",
-        "agent-a10e616501b790da2/kb/subj4_dryrun/collisions.json",
-        "agent-a10e616501b790da2/unified_courses_members.js",
-        "agent-a10e616501b790da2/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
-        "agent-a10e616501b790da2/statewide_data.js",
-        "agent-a10e616501b790da2/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
-        "agent-a10e616501b790da2/kb/row_audit/latest.json",
-        "agent-a10e616501b790da2/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
-        "agent-a10e616501b790da2/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
-        "agent-a10e616501b790da2/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
-        "agent-a10e616501b790da2/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
-        "agent-a10e616501b790da2/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
-        "agent-a10e616501b790da2/unified_courses_data.js",
-        "agent-a10e616501b790da2/kb/remint_dryrun/alias_map.json",
-        "agent-a10e616501b790da2/kb/cid_articulation_joins.json",
-        "agent-a10e616501b790da2/coci_lookup_desc_A.js",
-        "agent-a10e616501b790da2/tmc_college_courses.js",
-        "agent-a10e616501b790da2/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
-        "agent-a10e616501b790da2/kb/coci_articulations.json",
-        "agent-a10e616501b790da2/prototype/ccr_universe.json",
-        "agent-a10e616501b790da2/coci_lookup_desc_C.js",
-        "agent-a10e616501b790da2/coci_lookup_desc_E.js",
-        "agent-a10e616501b790da2/exports/unified_courses.xlsx",
-        "agent-a10e616501b790da2/kb/automerge_out/2026-06-13-titlelane/plan.json",
-        "agent-a10e616501b790da2/kb/it_ai_credential_catalog.json",
-        "agent-a10e616501b790da2/kb/coci_curation.json",
-        "agent-a10e616501b790da2/coci_lookup_desc_M.js",
-        "agent-a10e616501b790da2/kb/status/mid_outcomes_compare_2026-11-12.json",
-        "agent-a10e616501b790da2/coci_lookup_desc_P.js",
-        "agent-a10e616501b790da2/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
-        "agent-a10e616501b790da2/tools/first_light_candidates.json",
-        "agent-a10e616501b790da2/prototype/ccr_universe_members.json",
-        "agent-a10e616501b790da2/unified_courses_index.js",
-        "agent-a10e616501b790da2/credential_reference_data.js",
-        "agent-a10e616501b790da2/unified_courses_suggestions.js",
-        "agent-a10e616501b790da2/regional_cpl_opportunity_bay.js",
-        "agent-a10e616501b790da2/kb/side_by_side.json",
-        "agent-a10e616501b790da2/regional_cpl_opportunity_la.js",
-        "agent-a10e616501b790da2/coci_lookup_desc_B.js",
-        "agent-a10e616501b790da2/coci_lookup_desc_H.js",
-        "agent-a10e616501b790da2/coci_lookup_desc_D.js",
-        "agent-a10e616501b790da2/prototype/noncredit_video/narration.mp3",
-        "agent-a10e616501b790da2/kb/exhibit_audit/latest.json",
-        "agent-a10e616501b790da2/kb/remint_out/alias_map.json",
-        "agent-a10e616501b790da2/coci_programs_data.js",
-        "agent-a10e616501b790da2/kb/unified_titles.json",
-        "agent-a10e616501b790da2/kb/status/statewide_subject_codes.json",
-        "agent-a10e616501b790da2/kb/cr_reference_worklist.json",
-        "agent-a10e616501b790da2/coci_lookup_desc_F.js",
-        "agent-a10e616501b790da2/kb/receipts/program_requirement_records_named_gaps_2026-11-22_s703.json",
-        "agent-a10e616501b790da2/prototype/funding_video/narration_s1.mp3",
-        "agent-a10e616501b790da2/kb/authority_recode_out/2026-09-03/alias_map.json",
-        "agent-a10e616501b790da2/coci_lookup_desc_K.js"
+        "agent-aed23e3734ac27082/kb/program_requirements_college",
+        "agent-aed23e3734ac27082/kb/regional_cpl_out",
+        "agent-aed23e3734ac27082/kb/reference",
+        "agent-aed23e3734ac27082/kb/unclassified_fold",
+        "agent-aed23e3734ac27082/cip_fitcheck",
+        "agent-aed23e3734ac27082/prototype/landing_page_video",
+        "agent-aed23e3734ac27082/kb/cpl_ai",
+        "agent-aed23e3734ac27082/library",
+        "agent-aed23e3734ac27082/tests",
+        "agent-aed23e3734ac27082/tmc",
+        "agent-aed23e3734ac27082/kb/course_outline_index",
+        "agent-aed23e3734ac27082/kb/status/commons_data_programs",
+        "agent-aed23e3734ac27082/unified_courses_member_desc.js",
+        "agent-aed23e3734ac27082/kb/coci_minted_singletons.json",
+        "agent-aed23e3734ac27082/kb/coci_minted_courses.json",
+        "agent-aed23e3734ac27082/unified_courses_details.js",
+        "agent-aed23e3734ac27082/kb/subj4_fold_out/2026-06-12/alias_map.json",
+        "agent-aed23e3734ac27082/kb/subj4_dryrun/alias_map.json",
+        "agent-aed23e3734ac27082/kb/subj4_apply/alias_map.json",
+        "agent-aed23e3734ac27082/kb/coci_minted_memberships.json",
+        "agent-aed23e3734ac27082/coci_lookup_data.js",
+        "agent-aed23e3734ac27082/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
+        "agent-aed23e3734ac27082/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
+        "agent-aed23e3734ac27082/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
+        "agent-aed23e3734ac27082/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
+        "agent-aed23e3734ac27082/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
+        "agent-aed23e3734ac27082/unified_courses_standalone.js",
+        "agent-aed23e3734ac27082/kb/subj4_dryrun/collisions.json",
+        "agent-aed23e3734ac27082/unified_courses_members.js",
+        "agent-aed23e3734ac27082/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
+        "agent-aed23e3734ac27082/statewide_data.js",
+        "agent-aed23e3734ac27082/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
+        "agent-aed23e3734ac27082/kb/row_audit/latest.json",
+        "agent-aed23e3734ac27082/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
+        "agent-aed23e3734ac27082/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
+        "agent-aed23e3734ac27082/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
+        "agent-aed23e3734ac27082/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
+        "agent-aed23e3734ac27082/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
+        "agent-aed23e3734ac27082/unified_courses_data.js",
+        "agent-aed23e3734ac27082/kb/remint_dryrun/alias_map.json",
+        "agent-aed23e3734ac27082/kb/cid_articulation_joins.json",
+        "agent-aed23e3734ac27082/coci_lookup_desc_A.js",
+        "agent-aed23e3734ac27082/tmc_college_courses.js",
+        "agent-aed23e3734ac27082/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
+        "agent-aed23e3734ac27082/kb/coci_articulations.json",
+        "agent-aed23e3734ac27082/prototype/ccr_universe.json",
+        "agent-aed23e3734ac27082/coci_lookup_desc_C.js",
+        "agent-aed23e3734ac27082/coci_lookup_desc_E.js",
+        "agent-aed23e3734ac27082/exports/unified_courses.xlsx",
+        "agent-aed23e3734ac27082/kb/automerge_out/2026-06-13-titlelane/plan.json",
+        "agent-aed23e3734ac27082/kb/it_ai_credential_catalog.json",
+        "agent-aed23e3734ac27082/kb/coci_curation.json",
+        "agent-aed23e3734ac27082/coci_lookup_desc_M.js",
+        "agent-aed23e3734ac27082/kb/status/mid_outcomes_compare_2026-11-12.json",
+        "agent-aed23e3734ac27082/coci_lookup_desc_P.js",
+        "agent-aed23e3734ac27082/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+        "agent-aed23e3734ac27082/tools/first_light_candidates.json",
+        "agent-aed23e3734ac27082/prototype/ccr_universe_members.json",
+        "agent-aed23e3734ac27082/unified_courses_index.js",
+        "agent-aed23e3734ac27082/credential_reference_data.js",
+        "agent-aed23e3734ac27082/unified_courses_suggestions.js",
+        "agent-aed23e3734ac27082/regional_cpl_opportunity_bay.js",
+        "agent-aed23e3734ac27082/kb/side_by_side.json",
+        "agent-aed23e3734ac27082/regional_cpl_opportunity_la.js",
+        "agent-aed23e3734ac27082/coci_lookup_desc_B.js",
+        "agent-aed23e3734ac27082/coci_lookup_desc_H.js",
+        "agent-aed23e3734ac27082/coci_lookup_desc_D.js",
+        "agent-aed23e3734ac27082/prototype/noncredit_video/narration.mp3",
+        "agent-aed23e3734ac27082/kb/exhibit_audit/latest.json",
+        "agent-aed23e3734ac27082/kb/remint_out/alias_map.json",
+        "agent-aed23e3734ac27082/coci_programs_data.js",
+        "agent-aed23e3734ac27082/kb/unified_titles.json",
+        "agent-aed23e3734ac27082/kb/status/statewide_subject_codes.json",
+        "agent-aed23e3734ac27082/kb/cr_reference_worklist.json",
+        "agent-aed23e3734ac27082/coci_lookup_desc_F.js",
+        "agent-aed23e3734ac27082/kb/receipts/program_requirement_records_named_gaps_2026-11-22_s703.json",
+        "agent-aed23e3734ac27082/prototype/funding_video/narration_s1.mp3",
+        "agent-aed23e3734ac27082/kb/authority_recode_out/2026-09-03/alias_map.json",
+        "agent-aed23e3734ac27082/coci_lookup_desc_K.js"
       ]
     }
   },
@@ -203,13 +204,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 204674,
+        "bytes": 205135,
         "limit": 150000,
         "lane": "other",
-        "over_by": 54674,
-        "ratio": 1.36
+        "over_by": 55135,
+        "ratio": 1.37
       },
-      "message": "204,674 B is 1.4× the other budget (150,000 B) — candidate for compaction",
+      "message": "205,135 B is 1.4× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -230,10 +231,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 158767808,
+        "bytes": 158771729,
         "kind": "dir"
       },
-      "message": "directory totals 158,767,808 B inside the vault"
+      "message": "directory totals 158,771,729 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -310,10 +311,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 16841538,
+        "bytes": 17020488,
         "kind": "dir"
       },
-      "message": "directory totals 16,841,538 B inside the vault"
+      "message": "directory totals 17,020,488 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -530,10 +531,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 12976943,
+        "bytes": 12979242,
         "kind": "file"
       },
-      "message": "12,976,943 B single file inside the vault"
+      "message": "12,979,242 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -820,10 +821,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3712491,
+        "bytes": 3712492,
         "kind": "file"
       },
-      "message": "3,712,491 B single file inside the vault"
+      "message": "3,712,492 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -910,10 +911,10 @@
       "fixable": false,
       "path": "kb/exhibit_audit/latest.json",
       "detail": {
-        "bytes": 2509590,
+        "bytes": 2509809,
         "kind": "file"
       },
-      "message": "2,509,590 B single file inside the vault"
+      "message": "2,509,809 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1014,6 +1015,17 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "checkpoint_overdue",
+      "fixable": false,
+      "path": "docs/session_721_handoff.md",
+      "detail": {
+        "commits_since": 7,
+        "budget": 6,
+        "handoff": "session_721_handoff.md"
+      },
+      "message": "7 commit(s) have landed since `docs/session_721_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

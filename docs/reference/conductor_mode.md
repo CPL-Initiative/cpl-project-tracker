@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-23
+updated: 2026-11-24
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -212,6 +212,39 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S720, and what worked
+
+The CPL Queue routine's 06:12Z collection run of 2026-11-24 (SkyEider), served by Opus 5.5 (the form names Fable
+5.2). No session was live at the start; S719 had signed off at 03:37Z. No `list_sessions` or `get_trigger` in this
+session. Lane 1 ran `display`, `fill` and `lever`; lane 2 ran `piles` one worker at a time, then `land`.
+
+- **Both named monikers were held.** Handoff 716 named the routine's next session SkyPetrel, which Sam's plain S718
+  took, and handoff 720 named SkyCormorant for his next plain session, so the run took an unused name and the next
+  free number, 720 (`d-routine-moniker-fresh-on-collision-s720`, `d-routine-takes-next-free-number-s713`).
+- **Two writers of `.apply` on one branch** (`p-one-apply-writer-per-branch-s720`): on `claude/s720-rios` the
+  conductor put `.apply` back (`af952282`) while the worker had a commit staged that still carried the plan's
+  `.apply`. Its push fired migrate 45358888504, and the plan's guard aborted it with nothing written ("the UPDATE
+  matched 0 rows, the plan names 9"). The conductor alone writes `.apply`, after an APPLY verdict and a clean
+  pre-read, and puts it back to `main`'s value; a worker pulls before it commits once the conductor has touched its
+  branch (`d-conductor-owns-applies-s720`).
+- **A registry row changed under a pin** (`f-scc-registry-file-changed-s720`): Santiago Canyon's paid read
+  45350768246 refused its three pins before any extraction, nothing paid, because the college's registry row now
+  names a 1,165-page accessible catalog; a free page read re-pinned them.
+- **A live row older than its committed record** (`p-preread-catches-older-live-extraction-s720`): East Los Angeles
+  02456's pre-read caught it, and plans since check `on_live_run` before their second reader.
+- **A cap set in a plan alone** (`p-cap-lives-in-confidence-s720`): two readers caught score caps that #3756's
+  `keep_named_gaps` would have recomputed away; the caps moved into `confidence()`.
+- **What worked:** the fix that blocked every reconcile went first (#3756; its statewide dry run took away 15 false
+  passes and added none), as Sam's work order allows for a fix that would file wrong rows; #3756 merged after a local
+  merge with `main` passed the gap tests (`d-fill-merged-after-local-main-merge-s720`); one display build while no
+  apply was in flight, merged without an update from `main`, which had moved only by the daily dashboard commit
+  touching none of its four files (#3754, `d-display-merged-without-main-update-s720`); cheap piles one worker at a
+  time, each plan with a second reader, a pre-read and the conductor's apply, then one PR for ten applied branches
+  under the PR cap (#3758, `d-piles-land-as-one-pr-s720`); a plan held unapplied when the scorer's reading would move
+  under it (Modesto Junior, `d-modesto-held-pooled-rule-s720`); no third review round (San Bernardino Valley's read
+  went without 32317, `d-sbvc-without-32317-s720`); the brief's slimming items left to a plain session
+  (`d-slimming-left-to-plain-session-s720`).
 
 ## What went wrong in S714, and what worked
 
