@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 603,
+   "count": 604,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2297,6 +2297,26 @@
      "title": "A guidance rule that references a fact the request does not carry is an instruction to guess",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-11-24",
+     "governs": [
+      "scripts/check_generated.sh",
+      "tests/check_generated_covers_status_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-hand-listed-checklist-drifts-a-guard-on-the-unlisted-item-does-not.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ci",
+      "generators",
+      "guards",
+      "maintenance",
+      "pitfall"
+     ],
+     "title": "A hand-listed checklist drifts; a guard that fails on the unlisted item does not",
+     "type": "methodology",
+     "updated": "2026-11-24"
     },
     {
      "created": "2026-08-30",
@@ -14304,7 +14324,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 109,
+   "count": 110,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14951,6 +14971,21 @@
       "session-history"
      ],
      "title": "CPL Project Tracker \u2014 Roadmap Archive, part 7",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-24",
+     "governs": [],
+     "path": "docs/roadmap_archive_8.md",
+     "status": null,
+     "tags": [
+      "archive",
+      "roadmap",
+      "project-memory",
+      "session-history"
+     ],
+     "title": "CPL Project Tracker \u2014 Roadmap Archive, part 8",
      "type": null,
      "updated": ""
     },
@@ -16508,7 +16543,7 @@
      ],
      "title": "Common Subjects Reference (CSR) \u2014 one Common SUBJ per MQ discipline \u2014 lane state",
      "type": null,
-     "updated": "2026-11-23"
+     "updated": "2026-11-24"
     },
     {
      "created": "2026-08-28",
@@ -16977,7 +17012,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-23"
+     "updated": "2026-11-24"
     },
     {
      "created": "2026-08-28",
@@ -17503,8 +17538,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 674,
+   "count": 675,
    "docs": [
+    {
+     "created": "2026-11-24",
+     "governs": [],
+     "n": 719,
+     "path": "docs/session_719_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 719 handoff (from SkyPetrel, S718, Sam's plain session of 2026-11-23: Needs attention by confidence, the code-address read, check_generated covers every status file)",
+     "type": null,
+     "updated": "2026-11-24"
+    },
     {
      "created": "2026-11-23",
      "governs": [],
@@ -28713,5 +28762,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1564
+ "total": 1567
 }

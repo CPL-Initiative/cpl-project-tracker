@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-603 document(s).
+604 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -132,6 +132,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A guard whose protection depends on the order you work in is worse than no guard](../kb-notes/methodology-a-guard-that-depends-on-order-is-worse-than-none.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A guardrail that only forbids disables the feature — restrain salesmanship, not facts](../kb-notes/methodology-a-guardrail-that-only-forbids-disables-the-feature.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A guidance rule that references a fact the request does not carry is an instruction to guess](../kb-notes/methodology-a-guidance-rule-must-name-the-fact-it-depends-on.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A hand-listed checklist drifts; a guard that fails on the unlisted item does not](../kb-notes/methodology-a-hand-listed-checklist-drifts-a-guard-on-the-unlisted-item-does-not.md) | methodology | published | 2026-11-24 | 2026-11-24 |
 | [A harness must verify its own healthy fixture, or growth repaints the scoreboard](../kb-notes/methodology-a-harness-must-verify-its-own-fixture.md) | methodology | published | 2026-08-30 |  |
 | [A harvest's tail needs a different instrument than its body](../kb-notes/methodology-a-harvests-tail-needs-a-different-instrument.md) | methodology | published | 2026-10-19 | 2026-10-19 |
 | [A hide affordance must suppress the item in the report too — reuse the class the export already strips](../kb-notes/methodology-hide-must-suppress-the-export.md) | methodology | published | 2026-07-23 | 2026-07-23 |

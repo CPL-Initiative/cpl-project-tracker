@@ -11,7 +11,8 @@
 //       a shell title stays held; a save the build already carried subtracts nothing;
 //   (5) ⭐ the statewide view's level counts raise the saved college-and-code pair to Confident;
 //   (6) ⭐ the Commons front's Subjects card reads the same live figures as the tab, its headline (the share of courses
-//       under a Confident common code) included.
+//       under a Confident common code) included;
+//   (7) ⭐ a college the statewide list spells with other punctuation is the same college to levels() (S719).
 // Run from repo root: `npm test` (or `node tests/commons_subjects_live_figures.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -188,6 +189,25 @@ async function listed(x, pick) {
   check("(4) ⭐ a save the build already carried releases nothing a second time", /^9 courses the M-ID mint holds/.test(txt(x.d.getElementById("csb-held-note"))),
     txt(x.d.getElementById("csb-held-note")));
   FILES["kb/status/local_subject_titles.json"] = FIX;
+
+  /* (7) one college-name match (S719): the statewide list spells the college with punctuation the titles file does not
+     ("Alpha-College" for "Alpha College", as "Trade-Technical" for "Trade Technical"). The college table matched the
+     name with its punctuation set aside and levels() matched it exactly, so the card's headline left that college's
+     saves out. A save there now lifts its pair on the statewide view and on the Commons card alike. */
+  const SWP = JSON.parse(JSON.stringify(SW));
+  SWP.codes[0].colleges[0][0] = "Alpha-College";
+  FILES["kb/status/statewide_subject_codes.json"] = SWP;
+  x = load("#commons/subjects/alpha/MATH", { sess: ME });
+  await x.M.boot(); await settle();
+  x.d.getElementById("csb-ed-save").click(); await settle();
+  x.X().open("statewide"); await settle();
+  check("(7) ⭐ a save at a college the statewide list spells with punctuation lifts its pair to Confident",
+    /Confident 1 · Likely 0 · Leaning 0 · Unsure 1/.test(txt(x.d.getElementById("csw-levels"))), txt(x.d.getElementById("csw-levels")));
+  x.w.history.replaceState(null, "", "#commons");
+  await x.M.boot(); await settle();
+  check("(7) ⭐ the Commons card's level line agrees with the statewide view",
+    txt(x.d.getElementById("cmf-subj-levels")) === "Confident 1 · Likely 0 · Leaning 0 · Unsure 1", txt(x.d.getElementById("cmf-subj-levels")));
+  FILES["kb/status/statewide_subject_codes.json"] = SW;
 
   let fail = 0;
   results.forEach(([n, ok, why]) => { if (!ok) fail++; console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); });

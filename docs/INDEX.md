@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-23
+updated: 2026-11-24
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 603 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 604 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 109 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 110 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 674 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1564** | |
+| Session handoffs | 675 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1567** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-24 (S718 SkyPetrel, Sam's plain session, full checkpoint): #3730 (Estimating's common code reads ESTG), #3732 (the Subjects view by confidence: a Needs attention column after College, Act on it at the top of the panel, the card's quick links with its sections folded), #3733 and #3734 (a code the index omits read at its code's address, and the pages a filed search found read: Cerritos INST, Long Beach City CART), #3737 open (`check_generated.sh` covers every status file, with a guard). 1 new KB note (methodology-a-hand-listed-checklist-drifts-a-guard-on-the-unlisted-item-does-not). Handoff 719 (SkyShearwater).
 - 2026-11-23 (S717 SkyGannet, Sam's plain session, full checkpoint): #3724 (the Subjects tab's Colleges by source: all 118 colleges by way to look, from a new attempts register), #3725 (the course panel's move rows, Collapse all, the credit-then-noncredit picker), #3726 open (the 20th-edition MQ handbook read with its three list types and Title 5 provisions, the MQ view's data, and a Common SUBJ for the 95 MQ disciplines that had none), #3727 open (a sidebar opens beside the view); Sam's rulings on settled codes, the TOP vocational flag and the MQ view; KB note `methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached`; handoff 718.
 - 2026-11-23 (S715 SkyAlbatross, Sam's plain session, light checkpoint): #3717 (every Subjects figure counts the rows with the live saves on top, so a save moves it at once; the held line corrected: a decision releases only ordinary-title credit courses), #3718 (the Subjects card from the mock: 83% of courses under a Confident code, four checks with Where to act); two memory rows; handoff 717.
 - 2026-11-23 (S712 SkyPuffin, Sam's plain session, light checkpoint): #3702 (the outlines to find by hand open in place; every Commons sidebar resizes with a frozen top), #3711 (every local subject code statewide with a call and a confidence, and its view), #3712 (the re-mint gate reads confidence: AED 75 of 127 ready); Sam's rulings that settled means Confident and that every college counts; the Subjects card mock; the commons lane's Subjects paragraph moved to archive 7; seven memory rows; handoff 715.
@@ -131,4 +132,3 @@ Authoritative external sources we've cached:
 - 2026-11-22 (S709 SkyMurrelet, Sam's plain session, light checkpoint): #3697, the re-mint readiness count by the draft gate (`kb/status/mid_readiness.json`, nightly): the AED scope is 127 M-IDs (120 ELEC) on the live members file, 34 ready; the outcomes compare reran on 45,673 rows and gzips past the 5 MB limit; four memory rows; handoff 710.
 - 2026-11-22 (S707 SkyPrion, Sam's plain session, full checkpoint): #3691 (main green again: the Exhibits card's duplicate check reads Sam's CAL FIRE title against the shipped titles after a CER run cleared its proposal), #3687 merged, #3693 (the subject map leaves AED unmapped; it had given 45 shared M-IDs an ELEC prefix); Sam's call to settle subjects before re-mints and the draft M-ID readiness gate; the commons lane compacted; four memory rows; handoff 708.
 - 2026-11-22 (S705 SkyTystie, Sam's plain session, light checkpoint): #3687, one Save that settles a code's common subject code at every college using it (#3655 item 0), then Sam's four asks: Cerritos's department list as a title source with a source link, the frozen and resizable panel, moving courses, sortable and resizable columns; and the Exhibits Review card's tools (Previous and Next, Undo, what Change saves, Changes this visit, training sites in place, Articulated with and its no-credit-recommendation flag, another subject), with every Commons List side panel's top frozen. The queue ran beside it as S703 (#3674). Handoff 706.
-- 2026-11-22 (S703 SkyDovekie, the CPL Queue routine's collection run, conductor, full checkpoint): #3676 (a recall count binds to its own trial's parser), #3678 (`ge_units_not_read`, 131 rows), #3679 (three hours gaps, 50 rows), #3677 (San Diego College of Continuing Education's outlines: 198 objective rows, 1,860 objectives), #3681 (Clovis and Cosumnes River pins), #3685 (`lists_past_their_figure`, 17 rows); #3686, #3675, #3683 and #3684 (Peralta) in flight. The harvest lessons doc compacted to archive 8; a section on a named gap's self-recall in `methodology-a-test-must-not-take-its-rule-as-the-truth`. Handoff 704 is the routine's; a plain session follows handoff 703.
