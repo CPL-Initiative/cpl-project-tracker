@@ -95,7 +95,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_no_total",
+    "label": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+    "words": "No separate certificate total is printed; the only figure is the block total 'Required Core Courses: (15-16 units)', recorded as the block's stated total. total_units left null. Note that 15-16 units conflicts with the award band of 16 to fewer than 30 semester units when BSAD P155 (3 units) is chosen."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

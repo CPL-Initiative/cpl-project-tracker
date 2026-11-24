@@ -700,6 +700,10 @@ jobs:
       # S721 at Palo Verde: the census's 20 wording-rule records, 15 collected with named gaps (two new kinds); the plan.
       - name: Cheap piles S721 at Palo Verde (named gaps, the plan)
         run: python3 tests/program_piles_s721_paloverde_test.py
+      # S721 at Porterville: the census's 19 wording-rule records, one passed by its catalog's misprint, 14
+      # collected with named gaps, 4 held; the plan.
+      - name: Cheap piles S721 at Porterville (a misprint rename, named gaps, the plan)
+        run: python3 tests/program_piles_s721_porterville_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)
