@@ -141,9 +141,11 @@ check(not U.a8_college_ge(rec, "A.S.-T Degree", ge["Butte College"])[1], "A8 nev
 # The collection lane's colleges are left out.
 check(U.held("Lassen College") and U.held("Santiago Canyon College") and not U.held("Crafton Hills College")
       and not U.held("College of the Siskiyous") and not U.held("Butte College") and not U.held("Golden West College"),
-      "the collection lane's five colleges are held; Crafton Hills, Siskiyous, a released college and others are not")
-check(len(CL.COLLECTION_LANE) == 5 and CL.COLLECTION_LANE_S680 is CL.COLLECTION_LANE,
-      "one named constant holds tonight's five; the old name is an alias of it")
+      "the collection lane's colleges are held; Crafton Hills, Siskiyous, a released college and others are not")
+# S720: Cosumnes River College left the lane (a stale S681 hold), so four remain.
+check(len(CL.COLLECTION_LANE) == 4 and not U.held("Cosumnes River College")
+      and CL.COLLECTION_LANE_S680 is CL.COLLECTION_LANE,
+      "one named constant holds the lane's four, Cosumnes River out since S720; the old name is an alias of it")
 check(len(CL.RELEASED) == 7 and not set(CL.RELEASED) & set(CL.COLLECTION_LANE),
       "the seven released colleges, none of them in tonight's lane")
 try:

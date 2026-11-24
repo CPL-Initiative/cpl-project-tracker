@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 108,
  "with_closed_list": 108,
- "started": "2026-11-23T13:51:23Z",
+ "started": "2026-11-24T08:32:02Z",
  "pdf": {
   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -1603,7 +1603,7 @@
  "loads": 0,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 158.9,
+ "seconds": 89.1,
  "found": 107,
  "by_method": {
   "not_found": 1,
@@ -2273,5 +2273,5 @@
    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=442"
   }
  },
- "run": "45187906040"
+ "run": "45356831201"
 }
