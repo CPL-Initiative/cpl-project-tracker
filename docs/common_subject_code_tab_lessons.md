@@ -703,6 +703,32 @@ blank-discipline row minted on them later would be edge-filled wrong; none exist
   read the held-titles line, which the page leaves out when no title is held; it now reads the line only where it
   draws.
 
+## 2026-11-24 — S718 SkyPetrel: Needs attention by confidence, the code-address read, ESTG
+
+- **A rule change reaches the words as well as the figures.** Once a code was settled by its confidence (Sam,
+  2026-11-23), the Subjects view still said a curator or a person settles one. Sam asked for "all the revisions needed
+  on the subjects view"; #3732 rewrote the wording, added the Needs attention column after College, and put *Act on
+  it* at the top of the course panel. A ruling that changes what a word means sends a session through every place the
+  page says the word.
+- **Two matchers of one name drift.** The college table matches a college's name ignoring punctuation, so Los Angeles
+  Trade-Technical lines up; `levels()` in `commons_subjects.js` still matches exactly, and the card's 83% leaves that
+  college out. One normalizer for both is the fix
+  ([`methodology-two-expressions-of-one-predicate-will-drift-apart`](kb-notes/methodology-two-expressions-of-one-predicate-will-drift-apart.md)).
+- **A procedure that reads only the index never sees what the index omits.** Sam on Cerritos INST: *"Seems we should
+  have found this through our procedures...advise."* Cerritos's catalog index lists nothing under I (run
+  45269415030), so S698's rule (never read a page at an address made from its code) left INST untitled. The amendment
+  reads the code's address once, for a code COCI carries and the index omits, and files a heading only when the page
+  names the code in parentheses: Cerritos INST is Interdisciplinary Studies, Long Beach City CART Creative Arts. Of
+  22 other tries, 20 answered 404 (all 15 at Southwestern); Cerritos `/pol/` printed POLS and LBCC `/hs/` the site
+  menu, and both were recorded as tried, not filed. The parenthesis test is what keeps an address guess from filing
+  the wrong heading.
+- **A search that found a page has not finished until the page is read.** Eleven filed web searches had a page and no
+  title (run 45283003411); none of the eleven pages names its code, so nothing filed. Southwestern's PE/I page reads
+  *Exercise Science/Intercollegiate (ES/I)* and PE/D's *Dance (DANC)*: a likely rename that waits for a printed source
+  before `kb/reference/subject_code_history/` takes it.
+- **Read a minted code against the local codes too.** ESTI was free among the common codes and is the local Esthetics
+  code at 4 cosmetology and barbering colleges; Estimating keeps ESTG (#3730).
+
 ## Moved from the lane (S717)
 
 The lane's definition of complete and its measured state, as they stood before Sam's ruling of 2026-11-23

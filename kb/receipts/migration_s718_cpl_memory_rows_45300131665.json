@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-24_s718_cpl_memory_rows.sql",
+ "name": "s718_cpl_memory_rows",
+ "version": "20261124004943",
+ "sha256": "1af563c32ea0075e1a074151bd9dccf1c7f96acfa5925551e09fe05b780cd8dd",
+ "run": "45300131665",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-check-generated-covers-status-s718\",\"status\":\"proposed\",\"n\":329},{\"slug\":\"d-code-address-read-s718\",\"status\":\"proposed\",\"n\":372},{\"slug\":\"d-estimating-keeps-estg-s718\",\"status\":\"proposed\",\"n\":324},{\"slug\":\"d-search-page-read-s718\",\"status\":\"proposed\",\"n\":246},{\"slug\":\"d-subjects-needs-attention-rule-s718\",\"status\":\"proposed\",\"n\":353},{\"slug\":\"f-memo-ess-26-75-errors-in-totals-rows-only-s718\",\"status\":\"verified\",\"n\":357},{\"slug\":\"f-southwestern-pe-likely-renamed-es-s718\",\"status\":\"proposed\",\"n\":271},{\"slug\":\"p-stale-head-ci-wakes-come-from-failed-rounds-s718\",\"status\":\"proposed\",\"n\":395},{\"slug\":\"p-tests-on-live-committed-rows-break-on-person-saves-s718\",\"status\":\"proposed\",\"n\":327},{\"slug\":\"r-subjects-card-quick-links-sections-folded-sam-2026-11-23\",\"status\":\"verified\",\"n\":354},{\"slug\":\"r-subjects-needs-attention-and-act-now-sam-2026-11-23\",\"status\":\"verified\",\"n\":323},{\"slug\":\"r-subjects-try-web-search-sam-2026-11-23\",\"status\":\"verified\",\"n\":331}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
