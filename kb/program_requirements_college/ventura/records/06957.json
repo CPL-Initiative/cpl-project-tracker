@@ -166,7 +166,8 @@
     "Analyze and interpret data to make engineering problem decisions.",
     "Identify, formulate, and solve basic engineering problems."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -438,5 +439,14 @@
    "Outcomes are printed in the page's program student learning outcomes tab for this program; recorded for this award."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "38756014587",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 45-47, the major total the catalog prints; the major and general education sum to 69-71 against the degree's 63-65 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

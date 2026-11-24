@@ -92,7 +92,11 @@ for r in rec["records"]:
         check(img["checks"] == S721P_AFTER[r["control_number"]] and not img["checks"].get("gaps")
               and img["checks"].get("arithmetic") == "equal",
               "%s: the load posts s721p's after-image, passing with no gap" % r["control_number"])
-        check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
+        want = r["before_image"]["record"]
+        if r["control_number"] == "06957":
+            # s721p passes it under Sam's ruling 1 of 2026-11-17, so the record takes ge_overlap (and nothing else).
+            want = dict(want, program=dict(want["program"], ge_overlap=True))
+        check(img["record"] == want, "%s: the record is unchanged" % r["control_number"])
         continue
     check(img["checks"] == r["after_image"]["checks"], "%s: the load posts the receipt's after-image" % r["control_number"])
     check(img["checks"].get("gaps") == [r["moves_to"]], "%s: the image carries its one gap" % r["control_number"])

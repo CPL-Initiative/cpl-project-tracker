@@ -1,6 +1,6 @@
 {
  "rule": "S721 (lane 1, pooled): one figure printed over several lists together read as one pool (f-pool-figure-gaps-pass-when-pooled-s720, d-modesto-held-pooled-rule-s720); Sam, 2026-11-17, sam-collect-with-gaps-2026-11-17; p-scorer-passes-guard-s720",
- "at": "2026-11-24T11:43:50Z",
+ "at": "2026-11-24T12:04:50Z",
  "colleges": [
   "City College of San Francisco",
   "Clovis Community College",
@@ -6464,6 +6464,7 @@
     },
     "extracted_run": "38756014587"
    },
+   "ge_overlap": "the major sums to 45-47, the major total the catalog prints; the major and general education sum to 69-71 against the degree's 63-65 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
    "after_image": {
     "checks": {
      "coverage": true,

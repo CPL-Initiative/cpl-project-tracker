@@ -16,7 +16,9 @@ list (coci_program_courses as the table is built) with no page text, once with t
 A record moves only where the reading-off score gives the filed arithmetic on every field the filed arithmetic
 carries, so the rescore re-judges nothing but the pool. A pass that rests on an electives fill the filed score never
 made is held: the fill is checked against the page text (electives_named), which the capture does not keep. The
-record itself is never changed; its score is, and the live row's checks follow as the college load's image.
+record itself is never changed, but for the field Sam's ruling 1 of 2026-11-17 reads (ge_overlap with its statewide
+note, as the rescore's own run writes it: Ventura 06957); its score is, and the live row's checks follow as the
+college load's image.
 
 THE PLAN (s721p) covers the eight colleges this lane holds: Modesto Junior, El Camino, Santa Monica, Ventura, City
 College of San Francisco, Clovis, College of the Sequoias and Fullerton. Two kinds of row:
@@ -55,6 +57,7 @@ import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s713 as P  # noqa: E402
 import _program_piles_s714_ccsf as C  # noqa: E402
 import _program_piles_s714_fullerton as F  # noqa: E402
+import _program_requirements_reconcile as R  # noqa: E402
 import _program_requirements_rescore as RS  # noqa: E402
 import _program_requirements_score as S  # noqa: E402
 
@@ -175,9 +178,9 @@ def classify(filed: dict) -> tuple[str, dict, dict, str]:
     if off == on:
         return "unmoved", off, on, "the reading moves nothing"
     fa = (filed.get("score") or {}).get("arithmetic") or {}
-    if fa == on:
+    if fa == on or fa.get("pooled"):
         # Rescored already (this plan's own write, read again): the outcome the reading gave it.
-        return ("passes" if verdict(filed, on) else "fails"), off, on, "rescored already under the pooled reading"
+        return ("passes" if verdict(filed, fa) else "fails"), off, fa, "rescored already under the pooled reading"
     if not exact(fa, off):
         return "not_exact", off, on, "with the reading off, the scorer does not give the filed arithmetic"
     if verdict(filed, on):
@@ -426,15 +429,29 @@ def plan(write: bool) -> dict:
             entry["before_image"] = {k: img[k] for k in ("program_title", "award", "catalog_year", "source_url",
                                                          "measure", "total_min", "total_max", "record", "checks",
                                                          "extracted_run")}
+            out = dict(c["filed"], score=sc)
+            if kind == "passes" and c["on"].get("rescored") == RS.RULING_LOCAL_OVERLAP:
+                # Sam's ruling 1 of 2026-11-17 passes it: the record takes the field the verdict read, with the
+                # reconcile stage's statewide note, as the rescore's own run writes it (kb/_program_requirements_
+                # rescore.py run); the live move stays checks-only, as the rescore's plans do.
+                raw = C.fresh_score(c["filed"])["arithmetic"]
+                rec2, notes = R.local_degree_ge_overlap(out["record"], out.get("award"), raw)
+                if not notes:
+                    raise SystemExit("%s %s: ruling 1 gives no ge_overlap note" % key)
+                out = dict(out, record=rec2, reconciled=(out.get("reconciled") or []) + notes)
+                entry["ge_overlap"] = notes[0]["words"]
             with open(c["path"], "w", encoding="utf-8") as fh:
-                json.dump(dict(c["filed"], score=sc), fh, ensure_ascii=False, indent=1)
+                json.dump(out, fh, ensure_ascii=False, indent=1)
                 fh.write("\n")
         (rescored if kind == "rescored" else rows).append(entry)
     if write:
         after = NG._load_images({r["college"] for r in rows + rescored})
         for r in rows + rescored:
             img = after[(r["college"], r["control_number"])]
-            if img["record"] != r["before_image"]["record"]:
+            want = r["before_image"]["record"]
+            if r.get("ge_overlap"):
+                want = dict(want, program=dict(want.get("program") or {}, ge_overlap=True))
+            if img["record"] != want:
                 raise SystemExit("%s %s: the record changed" % (r["college"], r["control_number"]))
             chk = img["checks"]
             if r["moves_to"] == "passes" and (not F.row_passes(chk) or chk.get("gaps")):

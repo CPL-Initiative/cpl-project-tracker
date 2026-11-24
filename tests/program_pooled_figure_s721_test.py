@@ -147,8 +147,14 @@ for r in rcpt["records"]:
     k = (r["college"], r["control_number"])
     img = images[k]
     check(img["checks"] == r["after_image"]["checks"], "%s %s: the load posts the receipt's after-image" % k)
-    check(img["record"] == r["before_image"]["record"] and img["source_url"] == pages[k],
-          "%s %s: the record and its page are unchanged" % k)
+    want = r["before_image"]["record"]
+    if r.get("ge_overlap"):
+        # Sam's ruling 1 of 2026-11-17 passes it: the record takes ge_overlap and the statewide note, nothing else.
+        want = dict(want, program=dict(want["program"], ge_overlap=True))
+        check(k == ("Ventura College", "06957") and any(n.get("statewide") == "local_degree_ge_overlap"
+                                                        for n in W.load(*k).get("reconciled") or []),
+              "%s %s: ruling 1's field carries its statewide note" % k)
+    check(img["record"] == want and img["source_url"] == pages[k], "%s %s: the record and its page are unchanged" % k)
     if r["moves_to"] == "passes":
         check(img["checks"]["arithmetic"] == "equal" and not img["checks"].get("gaps"), "%s %s: passes with no gap" % k)
     else:
