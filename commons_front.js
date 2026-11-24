@@ -481,10 +481,11 @@
   }
   function usd(v) { return "$" + Math.round(v).toLocaleString("en-US"); }
   function chart(M) {
-    return dailyChart({ sfx: "", days: M.days.map(function (d) { return { n: d.n, v: d.programs, cost: d.cost }; }), need: M.needPace,
-      cost: true, spendRead: M.spendRead, axis: "Program records a day", what: "program records collected", none: "no count of program records",
+    /* No cost panel (Sam, S723, 2026-11-24: "delete the bar graph on collection widget. we just need the trend line"). */
+    return dailyChart({ sfx: "", days: M.days.map(function (d) { return { n: d.n, v: d.programs }; }), need: M.needPace,
+      cost: false, axis: "Program records a day", what: "program records collected", none: "no count of program records",
       solid: "Solid line: program records collected that day", col: "Program records collected",
-      caption: function (a, b) { return "Program records collected each day, " + a + " to " + b + ": the day’s rise in complete Active program records. Cost per day sits under it on the same dates: the account totals where Sam pasted them, else the reading jobs’ and sessions’ own figures."; } });
+      caption: function (a, b) { return "Program records collected each day, " + a + " to " + b + ": the day’s rise in complete Active program records."; } });
   }
   function curationChart(M) {
     var Q = M.curation;
@@ -1875,9 +1876,10 @@
     if (BACK.tab && (t !== BACK.tab || atFront(h))) { BACK.tab = null; BACK.from = ""; }
     var tab = BACK.tab, from = BACK.from;
     if (!tab && commonsView(h)) { tab = "commons"; from = "commons"; }
-    if (!tab) { if (old) old.parentNode.removeChild(old); return null; }
+    if (!tab) { watchBack(null); if (old) old.parentNode.removeChild(old); return null; }
     var pane = document.getElementById("tab-" + tab);
     if (!pane) return null;
+    watchBack(pane);
     if (old && old.parentNode && pane.contains(old) && old.getAttribute("data-back") === from) return old;
     if (old && old.parentNode) old.parentNode.removeChild(old);
     ensureBackCss();
@@ -1887,9 +1889,22 @@
     pane.insertBefore(nav, main || pane.firstChild);
     return nav;
   }
+  /* A tab that draws itself on arrival (Courses and Programs, Programs, the Common Subjects Reference) can clear its
+     pane and take the link with it (Sam, S723, 2026-11-24: "there's no link back to commons, so user gets stranded").
+     While the link applies, a watch on that pane puts it back whenever it goes. */
+  var BACK_WATCH = { obs: null, pane: null };
+  function watchBack(pane) {
+    if (BACK_WATCH.pane === pane) return;
+    if (BACK_WATCH.obs) BACK_WATCH.obs.disconnect();
+    BACK_WATCH.obs = null; BACK_WATCH.pane = pane;
+    if (!pane || typeof window.MutationObserver !== "function") return;
+    BACK_WATCH.obs = new MutationObserver(function () { if (!document.getElementById(BACK.id)) placeBack(); });
+    BACK_WATCH.obs.observe(pane, { childList: true, subtree: true });
+  }
   function markBack(href, from) { BACK.tab = tabOf(href); BACK.from = from || "needs"; }
   document.addEventListener("click", function (e) {
-    var l = e.target && e.target.closest ? e.target.closest(".cmf a[href^='#'], .cdd a[href^='#']") : null;
+    /* Every Commons view, not only the front page and College Data Collection (S723). */
+    var l = e.target && e.target.closest ? e.target.closest("#tab-commons a[href^='#'], .cmf a[href^='#'], .cdd a[href^='#']") : null;
     if (!l || l.hasAttribute("data-onpage")) return;
     var href = l.getAttribute("href");
     if (atFront(href)) return;
