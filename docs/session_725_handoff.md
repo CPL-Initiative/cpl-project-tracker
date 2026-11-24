@@ -77,6 +77,8 @@ All verbatim in `docs/commons_lessons.md`, S724. **RULED:** `r-sidebar-narrow-bo
    field on a shared table: map it in `kb/governance_surface_map.json` before it ships (Rule 10 a3).
    Sam: *"the saved filters might come in handy for auto combining"*: a saved filter can run nightly, gathering new
    matches that clear a confidence score and listing the rest for review (the same low-impact saves, each undoable).
+   Sam: *"could the filter look in either the title or description or both on a toggle?"* (mock v4): a *Look in*
+   toggle, Title, Description or Both, saved with the filter; each row shows its description in small type.
    Sam then: *"els will be a similar case of big mid consolidation into just a few"*: build Gather for both; read
    `docs/reference/lanes/esl-packaging.md` (the comprehensives and carve-outs) before designing it.
 1. **The anchor-page build, step 2:** the Common courses / Local courses toggle on the Courses List.
