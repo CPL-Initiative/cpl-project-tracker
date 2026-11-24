@@ -183,7 +183,7 @@ const press = (w, el) => el.dispatchEvent(new w.Event("click", { bubbles: true }
   press(x.w, d.querySelector('.csb-codes tr[data-code="MATH"] button[data-csb-edit="yes"]')); await settle();
   const act = d.getElementById("csb-act"), pin = d.getElementById("csb-panel").querySelector(".csb-panel-in");
   check("(9) ⭐ the panel leads with Act on it, and says why", act && pin.querySelector("section") === act
-    && /The model’s call for its common subject code, MATH Mathematics, is 80% Likely, below Confident\./.test(txt(d.getElementById("csb-act-why"))));
+    && /COBI’s call for its common subject code, MATH Mathematics, is 80% Likely, below Confident\./.test(txt(d.getElementById("csb-act-why"))));
   const ws = d.getElementById("csb-act-search");
   check("(9) ⭐ Search the web names the college, the code and its first course, in a new tab", ws && txt(ws) === "Search the web" && ws.getAttribute("data-query") === "Alpha College MATH 1 Algebra"
     && ws.getAttribute("href") === "https://www.google.com/search?q=" + encodeURIComponent("Alpha College MATH 1 Algebra") && ws.getAttribute("target") === "_blank" && /noopener/.test(ws.getAttribute("rel")));

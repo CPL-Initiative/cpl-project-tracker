@@ -50,7 +50,7 @@
   var STATES = {
     not_read: { word: "Not read yet", tip: "The catalog has this subject and our read did not take its heading. The nightly data collection clears it with a re-read." },
     blocked: { word: "Blocked", tip: "The college’s site refused our reader. A person hands the page over, or the reader is fixed." },
-    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. The model recommends a title, and a person’s save confirms it." }
+    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. COBI recommends a title, and a person’s save confirms it." }
   };
   /* A code's courses in COCI, credit and noncredit apart (Sam, 2026-11-21: the MQs separate them), and noncredit and
      noncredit enhanced apart (Sam, 2026-11-22: "Coci has a credit, noncredit, noncredit enhanced indicator"). */
@@ -1054,9 +1054,9 @@
   /* Why a code needs attention, in a sentence. */
   function attentionWords(r, A) {
     var parts = [], call = A.sw && A.sw.recommend, rec = recOf(r);
-    if (A.code) parts.push(A.level && call && call.common ? "The model’s call for its common subject code, " + call.common + (call.discipline ? " " + call.discipline : "") + ", is " + confWords(A.conf) + ", below Confident."
+    if (A.code) parts.push(A.level && call && call.common ? "COBI’s call for its common subject code, " + call.common + (call.discipline ? " " + call.discipline : "") + ", is " + confWords(A.conf) + ", below Confident."
       : "It has no common subject code yet, and no confidence is measured for it.");
-    if (A.title) parts.push(rec.title && rec.title.title ? "It has no local title; the model recommends " + rec.title.title + " at " + rec.title.level + " confidence." : "It has no local title, and the model has no recommendation for one yet.");
+    if (A.title) parts.push(rec.title && rec.title.title ? "It has no local title; COBI recommends " + rec.title.title + " at " + rec.title.level + " confidence." : "It has no local title, and COBI has no recommendation for one yet.");
     return parts.join(" ");
   }
   /* The web search a person runs for a code (Sam, 2026-11-23: "we need 'try web search' like we do for our credential
@@ -2448,7 +2448,7 @@
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
       el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject titles to check" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : S.view === MQ ? "Minimum Qualifications disciplines" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
-      el("p", { cls: "cmn-lede", text: S.view === MQ ? MQ_LEDE : "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading, and the model scores each code’s common subject code. A code is settled once that score is Confident, 90% or more, from the evidence or from a person’s confirm or save. Needs attention counts each college’s codes below Confident or with no title." })
+      el("p", { cls: "cmn-lede", text: S.view === MQ ? MQ_LEDE : "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading, and COBI scores each code’s common subject code. A code is settled once that score is Confident, 90% or more, from the evidence or from a person’s confirm or save. Needs attention counts each college’s codes below Confident or with no title." })
     ]));
     if (S.view !== MQ) wrap.appendChild(el("p", { cls: "csb-stamp" }, [
       count(F.named, "", "titled", fmt(F.named) + " codes with a local title. Show them."), " local titles at ", el("strong", { text: fmt(F.collegesNamed) + " of " + fmt(F.colleges) }),
@@ -2510,7 +2510,7 @@
       /* Every row with no title, in or out of the catalog (#3655, item 7: a code in both with no title was dropped
          by the old one-sided filter). Sam's rows first: Not in catalog, then Blocked, then Sky's Not read yet. */
       var order = { not_in_catalog: 0, blocked: 1, not_read: 2 };
-      wrap.appendChild(el("p", { cls: "csb-note", id: "csb-check-rule", text: "A derived title stands for every code the model rates 80 or more on the confidence bar, and a person’s save replaces it. These codes are below 80 or have no recommendation: Accept a title, or Edit." }));
+      wrap.appendChild(el("p", { cls: "csb-note", id: "csb-check-rule", text: "A derived title stands for every code COBI rates 80 or more on the confidence bar, and a person’s save replaces it. These codes are below 80 or have no recommendation: Accept a title, or Edit." }));
       wrap.appendChild(bandBar(all.filter(untitledNow)));
       wrap.appendChild(codeTable(all.filter(untitledNow).filter(function (r) { return inBand(r, S.band); }).sort(function (a, b) {
         return (order[a.title_state] == null ? 2 : order[a.title_state]) - (order[b.title_state] == null ? 2 : order[b.title_state])

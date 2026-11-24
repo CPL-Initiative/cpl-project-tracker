@@ -142,7 +142,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
     && !/print/i.test(Array.from(d.querySelectorAll(".csb-table thead th")).map(txt).join(" ")));
   const chip = math.children[2].querySelector(".csb-chip");
   check("(7) ⭐ a code in COCI and nowhere in the catalog carries the Not in catalog chip, a note a screen reader reads",
-    chip && txt(chip) === "Not in catalog" && chip.getAttribute("role") === "note" && /The model recommends a title, and a person’s save confirms it/.test(chip.getAttribute("aria-label")));
+    chip && txt(chip) === "Not in catalog" && chip.getAttribute("role") === "note" && /COBI recommends a title, and a person’s save confirms it/.test(chip.getAttribute("aria-label")));
   check("(7) a titled row carries no chip", !d.querySelector('.csb-codes tr[data-code="ENGL"] .csb-chip'));
   check("(4) the common code shows with its discipline title where the maps give one, blank where not", txt(d.querySelector('.csb-codes tr[data-code="ENGL"]').children[3]) === "ENGL English" && txt(zzz.children[3]) === "");
   /* (8) the recommendations (S700, #3655): a note beside a row with no title or no common code, never a value */

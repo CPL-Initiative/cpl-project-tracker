@@ -1070,7 +1070,7 @@
     return LT ? [a("#commons/subjects", fmt(LT.named) + " local titles"), " at ", a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges"),
       " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading. For each of the ",
       a("#commons/subjects/disagree", fmt(LT.untitled) + " titles to check"),
-      " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked), the model recommends a title, and a person’s save confirms it."]
+      " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked), COBI recommends a title, and a person’s save confirms it."]
       : ["Local subject titles: TBA."];
   }
   function subjHeldKids(HC) {
@@ -1104,7 +1104,7 @@
       checkHead(2, "A Confident common code for every local code", L ? [el("strong", { text: fmt(L.pairs.Confident) }), " of " + fmt(L.totalPairs) + " pairs"] : ["TBA"]),
       L ? stack(L) : null,
       L ? el("p", { cls: "cmf-sub", id: "cmf-subj-levels", text: LEVEL_WORDS.map(function (k) { return k + " " + fmt(L.pairs[k]); }).join(" · ") }) : null,
-      ul([L ? "Next: the model raises the " + fmt(L.codes.Unsure) + " Unsure codes with their titles and a web search." : null,
+      ul([L ? "Next: COBI raises the " + fmt(L.codes.Unsure) + " Unsure codes with their titles and a web search." : null,
         sOf ? [S.settled === S.of ? "Done: all " : "", a("#canonical-subj4", fmt(S.settled) + " of " + fmt(S.of) + " disciplines settled"),
           " in the Common Subjects Reference" + (S.settled === S.of ? ", each with its common code." : ". Owner: a curator.")] : "Disciplines with a settled common code: TBA."]),
       act([["Every local code, statewide", "#commons/subjects/statewide"], ["Noncredit subject titles", "#commons/subjects/noncredit"], ["The MQ disciplines", "#commons/subjects/mq"]])])]), stageFold("subj", "Connect", [checkBox("subj", 3, [
@@ -1492,7 +1492,7 @@
           Connect: [
             { ref: "ace", name: "ACE’s recommendation text saved", fig: figOf(X.ace, " rows wait"),
               line: "MAP already sends ACE’s recommendation text nightly; we do not save it yet.",
-              next: "ask the MAP team to save the CreditRecommendation column.",
+              next: "ask COBI to save the CreditRecommendation column.",
               act: [["Wordings still open", "#cr-reference/open"]] }] },
         method: [p([fmt(X.rows) + " is " + fmt(X.pairs) + " exhibit-plus-wording pairs plus " + fmt(X.noExhibit) + " worklist wordings with no exhibit. This is the inventory that rules actually move; it is not in the tracker on main yet. Two other counts measure different things: " + fmt(X.crm) + " is the count in MAP’s Custom Reporting Module, and the Commons page today tracks a narrower set — " + fmt(R.settled) + " of " + fmt(R.wordings) + " wordings settled (" + fmt(R.rule) + " by a rule, " + fmt(R.curator) + " more by a curator). Those " + fmt(R.settled) + " have not moved since " + X.since + " because human credit-recommendation curation is paused, and rule-settled counts only grow when a new rule ships. The credit-recommendation line should later point at this " + fmt(X.rows) + "-row inventory. On the " + fmt(R.groups) + " groups: Sam said yes on November 19 to keeping the colleges’ wording, and the 36 are recorded; each course-number link is flagged for a check. In the POST Basic Academy group, " + X.post.colleges + " colleges (" + X.post.rows + " rows) wrote “3 hours in Physical Training and Health Education (CSU GE Area E),” linked to C-ID AJ 110, whose official title is “Introduction to Criminal Justice.” In cases like POST Basic Academy the course-number link itself may be wrong, so the rule flags those links for a check. ", a("#cr-reference/open", "Wordings still open"), "."]), p([LIVE_WORDS.cr])],
         links: [["Open Credit Recommendations", "#cr-reference"], ["Name-check groups", "#cr-reference/names"]] }),
@@ -1507,7 +1507,7 @@
         stages: { Connect: [
           { ref: "blocked", name: "Every blocked connection cleared", fig: figOf(5, " blocked"),
             extra: [el("ul", { cls: "cmf-list" }, [
-              el("li", { text: "ACE recommendation text (CreditRecommendation column) · fetched nightly, not stored · ask the MAP team · " + fmt(X.ace) + " rows" }),
+              el("li", { text: "ACE recommendation text (CreditRecommendation column) · fetched nightly, not stored · ask COBI · " + fmt(X.ace) + " rows" }),
               el("li", { text: "MAP CR ID · missing from the MAP report view we sync from · raised with Sam" }),
               el("li", { text: "Course outlines at the Los Angeles district’s 9 colleges · district request" }),
               el("li", { text: "eLumen guest sign-in (eLumen, a curriculum system some colleges use) · Sam’s call; we don’t use it" }),
@@ -1527,7 +1527,7 @@
               el("li", { text: "Course outline links · " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges on file" }),
               el("li", { text: "Peer-articulation exhibit IDs · " + fmt(X.cannotNoExhibit) + " worklist wordings have no exhibit" })])],
             act: [["Integrations", "#collect/integrations"], ["The data dictionary", "#collect/dictionary"]] }] },
-        method: [p(["ACE recommendation text, from the CreditRecommendation column, is fetched nightly but not stored; ask the MAP team. That is the " + fmt(X.ace) + "-row wait on the Credit Recommendations card. The MAP CR ID is missing from the MAP report view we sync from; that has been raised with Sam. Course outlines at the Los Angeles district’s 9 colleges need a district request. We do not use eLumen guest sign-in (eLumen is a curriculum system some colleges use); that is Sam’s call. CourseLeaf CIM at Pasadena sits behind sign-ins. The MAP API would port credentials and exhibits to Malone’s new MAP exhibit module; that work is planned. Ask Malone whether COBI gets Credential Engine IDs (CTIDs) minted under its own org when it publishes, for credentials and for credit recommendations. " + fmt(ASKED.ctid) + " of " + fmt(M.building.industry) + " catalog rows have a Credential Engine ID (CTID) today. Public report endpoints for curriQunet/CurricUNET would help; work on those is under way at City College of San Francisco. An eLumen catalog API would also help. The JST education section holds non-military certifications, CCC courses, and assessments; MAP stores that section, and COBI doesn’t use it yet. COCI, the Chancellor’s Office curriculum inventory, is already integrated; ask the Chancellor’s Office for an API or a full extract with SLOs and objectives. Today’s extract has descriptions only: " + fmt(ASKED.noDescription) + " active courses have none, and retired courses are marked inconsistently. A public course outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges. " + fmt(X.cannotNoExhibit) + " worklist wordings have no peer-articulation exhibit ID."])],
+        method: [p(["ACE recommendation text, from the CreditRecommendation column, is fetched nightly but not stored; ask COBI. That is the " + fmt(X.ace) + "-row wait on the Credit Recommendations card. The MAP CR ID is missing from the MAP report view we sync from; that has been raised with Sam. Course outlines at the Los Angeles district’s 9 colleges need a district request. We do not use eLumen guest sign-in (eLumen is a curriculum system some colleges use); that is Sam’s call. CourseLeaf CIM at Pasadena sits behind sign-ins. The MAP API would port credentials and exhibits to Malone’s new MAP exhibit module; that work is planned. Ask Malone whether COBI gets Credential Engine IDs (CTIDs) minted under its own org when it publishes, for credentials and for credit recommendations. " + fmt(ASKED.ctid) + " of " + fmt(M.building.industry) + " catalog rows have a Credential Engine ID (CTID) today. Public report endpoints for curriQunet/CurricUNET would help; work on those is under way at City College of San Francisco. An eLumen catalog API would also help. The JST education section holds non-military certifications, CCC courses, and assessments; MAP stores that section, and COBI doesn’t use it yet. COCI, the Chancellor’s Office curriculum inventory, is already integrated; ask the Chancellor’s Office for an API or a full extract with SLOs and objectives. Today’s extract has descriptions only: " + fmt(ASKED.noDescription) + " active courses have none, and retired courses are marked inconsistently. A public course outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges. " + fmt(X.cannotNoExhibit) + " worklist wordings have no peer-articulation exhibit ID."])],
         links: [] })
     ];
     /* Item 4 (Sam, 2026-11-21: "check every card sits under the right one"): Credentials and Credit Recommendations are
