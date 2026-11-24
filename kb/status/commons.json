@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T13:54:38Z",
+ "written_at": "2026-11-24T19:10:12Z",
  "rows": [
   {
    "key": "requirements",
@@ -118,8 +118,16 @@
    ],
    "issues": [
     {
+     "n": 2,
+     "words": "titles held for a person",
+     "owner": "a curator (the classifier's title has a course code left in 1, the classifier is unsure 1)",
+     "carry": "unsure",
+     "open": "#exhibits/held",
+     "error": null
+    },
+    {
      "n": 597,
-     "words": "credentials with no Common SUBJ (450 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+     "words": "credentials with no Common SUBJ (451 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
      "open": "#exhibits/list/nosubj",
@@ -375,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-23T07:00:10-08:00",
+    "at": "2026-11-19T06:22:43Z",
     "every_hours": null
    },
    "facts": {
@@ -711,6 +719,14 @@
     "key": "unsure",
     "items": [
      {
+      "ref": "exhibit",
+      "title": "Common Exhibit Reference",
+      "n": 2,
+      "words": "titles held for a person",
+      "owner": "a curator (the classifier's title has a course code left in 1, the classifier is unsure 1)",
+      "open": "#exhibits/held"
+     },
+     {
       "ref": "course",
       "title": "Common Course Reference",
       "n": 5,
@@ -792,7 +808,7 @@
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
     "n": 597,
-    "words": "credentials with no Common SUBJ (450 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "words": "credentials with no Common SUBJ (451 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    },
@@ -806,6 +822,15 @@
    }
   ],
   "stalled": [
+   {
+    "ref": "exhibit",
+    "title": "Common Exhibit Reference",
+    "kind": "stopped",
+    "what": "the saving run and the fold",
+    "since": "2026-11-23T06:19:46Z",
+    "every_hours": 24,
+    "open": "#exhibits"
+   },
    {
     "ref": "requirements",
     "title": "Program Requirements",
@@ -824,7 +849,7 @@
     "n": 597,
     "was": 499,
     "since": "2026-11-17",
-    "words": "credentials with no Common SUBJ (450 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "words": "credentials with no Common SUBJ (451 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    }

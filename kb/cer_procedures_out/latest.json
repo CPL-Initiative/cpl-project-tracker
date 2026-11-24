@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-23T19:33:03Z",
+ "_generated_at": "2026-11-24T19:09:54Z",
  "procedures_hash": "75e72fb99f8c",
- "queue": 0,
+ "queue": 2,
  "saved_not_folded": 0,
- "waiting": 0,
- "proposed": 0,
- "needs_you_count": 0,
+ "waiting": 2,
+ "proposed": 1,
+ "needs_you_count": 2,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -112,7 +112,7 @@
     "skill": "Rule 5c"
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -143,7 +143,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -158,7 +158,7 @@
     "skill": "Rule 5f"
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -233,7 +233,7 @@
     "skill": "Rule 8c"
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -262,10 +262,55 @@
     "words": "have you classify and complete common exhibit titles"
    },
    "settled": 0,
-   "held": 0,
+   "held": 2,
    "sample": []
   }
  ],
- "classifier_run": null,
- "needs_you": []
+ "classifier_run": {
+  "calls": 1,
+  "answered": 1,
+  "errors": [],
+  "cost_usd": 0.41,
+  "spend": {
+   "estimate_usd": 5.83,
+   "limit_usd": 40.0,
+   "calls_priced": 1,
+   "asked": 2,
+   "remaining": 0,
+   "ceiling_usd": 40.0,
+   "charge_usd": 0.40718,
+   "in_flight_usd": 0.0,
+   "stopped": false,
+   "sent": 1,
+   "posts_held": 0
+  }
+ },
+ "needs_you": [
+  {
+   "raw_title": "AI-1 and AI-3 Portfolio Review KG 11/23/26",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Artificial Intelligence (AI-1 and AI-3)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.4,
+    "note": "Set aside the cx hint because it dropped 'AI-1' and kept the mechanism and the reviewer/date stamp ('KG 11/23/26'). This is a batch portfolio exhibit covering two Chaffey courses, AI-1 and AI-3. The AI prefix is read as Artificial Intelligence, but that reading is unverified. A COCI lookup of the course titles is needed to confirm the subject or find an honest umbrella; otherwise this becomes a Rule 5 generic bucket."
+   },
+   "colleges": [
+    "Chaffey College"
+   ]
+  },
+  {
+   "raw_title": "Community Health Worker Certificate-Code Tenderloin",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Community Health Worker Certificate",
+    "issuer": "Code Tenderloin",
+    "confidence": 0.6,
+    "note": "Code Tenderloin is a San Francisco workforce nonprofit, treated as a named local training provider. It was stripped from the title and made both issuer and trainer. No state CHW certifying body is named, so the issuer needs curator confirmation. The title was not folded into the CCC course family 'Community Health Worker Skills' because this exhibit is typed as an industry certificate, not a course exam (Rule 8c)."
+   },
+   "colleges": [
+    "City College of San Francisco"
+   ]
+  }
+ ]
 }

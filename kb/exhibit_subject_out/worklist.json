@@ -2,7 +2,7 @@
  "schema": 1,
  "_about": "Credentials with no Common SUBJ after the subject fill (kb/_exhibit_subject_fill.py), each with why, and a suggested subject from its title words where one exists. A suggestion is never a decision: title words were wrong on ASE MIL7 (Sam, 2026-11-11). The Commons' Exhibit card counts `no_subject`.",
  "rule": "A credential with no Common SUBJ takes the subject of the courses colleges credit for it (over half of them, several colleges first, then one), else its issuer family's; title words, TOP and CIP never decide; a family or certification link that names another subject holds it for a person; a subject already on the title always wins.",
- "written_at": "2026-11-23T19:33:07Z",
+ "written_at": "2026-11-24T19:09:57Z",
  "mode": "preview",
  "live_read": true,
  "by_rung": {
@@ -14,8 +14,8 @@
  "not_yet_written": 228,
  "no_subject": 597,
  "left": 369,
- "left_exhibits": 450,
- "suggested": 70,
+ "left_exhibits": 451,
+ "suggested": 58,
  "not_held": [
   "Theater Arts"
  ],
@@ -106,9 +106,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-G3AP-1-001"
-   ],
-   "suggested": "BSKL",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Adult CPR & Standard First Aid",
@@ -190,7 +188,9 @@
    "issuer": "",
    "exhibits": [
     "MAPICA-ATEF12-1-001"
-   ]
+   ],
+   "suggested": "RDGN",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Apprenticeship Boatworks 101 Yacht Craftsmanship Lab",
@@ -441,7 +441,9 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPPRA-BMBR-1-001"
-   ]
+   ],
+   "suggested": "RDGN",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Building Automation System (BAS) Certification — Manufacturer and Vendor",
@@ -449,9 +451,7 @@
    "issuer": "Johnson Controls Training Institute",
    "exhibits": [
     "MAPICI-MSBA-1-001"
-   ],
-   "suggested": "CBIT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Building Plans Examiner",
@@ -459,9 +459,7 @@
    "issuer": "International Code Council",
    "exhibits": [
     "MAPICI-BPE-1-001"
-   ],
-   "suggested": "CBIT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor",
@@ -495,9 +493,7 @@
    "issuer": "California Department of Forestry and Fire Protection (CAL FIRE)",
    "exhibits": [
     "MAPICI-CFBF-1-001"
-   ],
-   "suggested": "BSKL",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "CNC Operation",
@@ -523,9 +519,7 @@
    "issuer": "International Code Council (ICC)",
    "exhibits": [
     "MAPICI-CBCC-1-001"
-   ],
-   "suggested": "CBIT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "California Residential Code Certification",
@@ -589,9 +583,7 @@
    "issuer": "International Code Council (ICC)",
    "exhibits": [
     "MAPICI-CBO(-1-001"
-   ],
-   "suggested": "CBIT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Certified Crime Scene Investigator (CCSI)",
@@ -639,7 +631,9 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-CP-B-1-001"
-   ]
+   ],
+   "suggested": "PIAN",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Clinical Psychology Doctorate",
@@ -647,9 +641,7 @@
    "issuer": "Graduate Level Institution of Higher Education",
    "exhibits": [
     "MAPICI-CPP2-1-001"
-   ],
-   "suggested": "PSYC",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Commercial Building Inspector",
@@ -806,9 +798,7 @@
    "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
    "exhibits": [
     "MAPSAS-DFOC1-1-001"
-   ],
-   "suggested": "COUN",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "DSST Fundamentals of Cybersecurity",
@@ -907,7 +897,9 @@
    "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
    "exhibits": [
     "MAPSAS-DMAB-1-001"
-   ]
+   ],
+   "suggested": "FINA",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "DSST Organizational Behavior",
@@ -916,7 +908,9 @@
    "exhibits": [
     "MAPSAS-DE-O-1-001",
     "MAPSAS-DOB-1-001"
-   ]
+   ],
+   "suggested": "RBTC",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "DSST Personal Finance",
@@ -924,7 +918,9 @@
    "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
    "exhibits": [
     "MAPSAS-DPF-1-001"
-   ]
+   ],
+   "suggested": "FINA",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "DSST Physical Geography",
@@ -979,7 +975,9 @@
    "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
    "exhibits": [
     "MAPSAS-DTW-1-001"
-   ]
+   ],
+   "suggested": "WRTN",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Dance",
@@ -987,9 +985,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPPRN-CCD-1-001"
-   ],
-   "suggested": "DANC",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Darkroom 1",
@@ -1086,9 +1082,7 @@
    "issuer": "Federal Law Enforcement Training Centers (FLETC)",
    "exhibits": [
     "MAPICI-FLET-1-001"
-   ],
-   "suggested": "ELCT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Elementary Armenian 1",
@@ -1118,9 +1112,7 @@
    "title": "Elevator Constructor Apprenticeship — Work Experience",
    "why": "no signal",
    "issuer": "National Elevator Industry Educational Program (NEIEP)",
-   "exhibits": [],
-   "suggested": "WEXP",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   "exhibits": []
   },
   {
    "title": "Eligibility and Case Management",
@@ -1208,7 +1200,9 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-IFP-1-001"
-   ]
+   ],
+   "suggested": "FLMT",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Forensic Photography",
@@ -1216,9 +1210,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-DE-A14-1-001"
-   ],
-   "suggested": "PHOT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Forensic Science Advanced",
@@ -1322,7 +1314,9 @@
     "BUSI": 2,
     "EMST": 1,
     "PARA": 1
-   }
+   },
+   "suggested": "DSCS",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Generic Credit by Exam — San Jose City College",
@@ -1330,7 +1324,9 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-C1CB-1-001"
-   ]
+   ],
+   "suggested": "DSCS",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Graphic Design Technology",
@@ -1364,9 +1360,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-IH-H-1-001"
-   ],
-   "suggested": "HVAC",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Health Science",
@@ -1415,9 +1409,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPPRA-H9-1-001"
-   ],
-   "suggested": "PHOT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Human Anatomy and Physiology 3",
@@ -1595,9 +1587,7 @@
    "title": "IBEW/NECA Electrical Apprenticeship — Work Experience",
    "why": "no signal",
    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-   "exhibits": [],
-   "suggested": "WEXP",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   "exhibits": []
   },
   {
    "title": "ISA Certified Arborist",
@@ -1876,7 +1866,9 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-C01-1-001"
-   ]
+   ],
+   "suggested": "LBRL",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Introduction to Radiologic Technology",
@@ -1892,9 +1884,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-S0IT1-1-001"
-   ],
-   "suggested": "SOCS",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Introduction to Soil Science",
@@ -1918,7 +1908,9 @@
    "issuer": "Local High School",
    "exhibits": [
     "MAPCXH-C1IT-1-001"
-   ]
+   ],
+   "suggested": "UASY",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Introduction to Workplace Safety",
@@ -1932,9 +1924,7 @@
    "title": "Iron Workers Apprenticeship — Work Experience",
    "why": "no signal",
    "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-   "exhibits": [],
-   "suggested": "WEXP",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   "exhibits": []
   },
   {
    "title": "Ironworker Apprenticeship — Reinforcing, Period 1",
@@ -2276,9 +2266,7 @@
    "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
    "exhibits": [
     "MAPCXA-MBEI-1-001"
-   ],
-   "suggested": "CBIT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Modern Art History",
@@ -2320,9 +2308,7 @@
    "issuer": "NCCER",
    "exhibits": [
     "MAPICI-NCC--1-001"
-   ],
-   "suggested": "BSKL",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "NCCER Certification (unspecified)",
@@ -2449,7 +2435,8 @@
    "why": "no signal",
    "issuer": "U.S. Occupational Safety and Health Administration (OSHA)",
    "exhibits": [
-    "MAPICI-C1IC-1-001"
+    "MAPICI-C1IC-1-001",
+    "MAPICI-OC1-1-001"
    ]
   },
   {
@@ -2489,7 +2476,9 @@
    "votes": {
     "COMP": 1,
     "ITIS": 1
-   }
+   },
+   "suggested": "UASY",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Personal Training",
@@ -2526,17 +2515,13 @@
    "title": "Photography (PHOT 5 — local)",
    "why": "no signal",
    "issuer": "California Community Colleges",
-   "exhibits": [],
-   "suggested": "PHOT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   "exhibits": []
   },
   {
    "title": "Photography (PHOT 6A — local)",
    "why": "no signal",
    "issuer": "California Community Colleges",
-   "exhibits": [],
-   "suggested": "PHOT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   "exhibits": []
   },
   {
    "title": "Photojournalism",
@@ -2568,9 +2553,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCBEN-PP-1-001"
-   ],
-   "suggested": "PHOT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Prevention and Care of Athletic Injuries Lab",
@@ -2579,7 +2562,9 @@
    "exhibits": [
     "MAPCXH-CHAT-1-001",
     "MAPCXH-CHAT1-1-001"
-   ]
+   ],
+   "suggested": "ATTR",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Principles of Engineering",
@@ -2608,9 +2593,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXN-PRAS-1-001"
-   ],
-   "suggested": "READ",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Professional Internship Education",
@@ -2634,7 +2617,9 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-PHCE-1-001"
-   ]
+   ],
+   "suggested": "SANI",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Public Safety Leadership and Administration Experience",
@@ -2722,9 +2707,7 @@
    "issuer": "International Code Council",
    "exhibits": [
     "MAPICI-RBI-1-001"
-   ],
-   "suggested": "CBIT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Residential Construction 1",
@@ -2832,7 +2815,9 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-ASER-1-001"
-   ]
+   ],
+   "suggested": "SENG",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Social Work and Human Services Seminar",
@@ -2840,9 +2825,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXA-SW&H1-1-001"
-   ],
-   "suggested": "SOCS",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Solidworks Advanced Solid Modeling",
@@ -2874,9 +2857,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPPRS-P73-1-001"
-   ],
-   "suggested": "PHOT",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Sustainable Materials Management and Zero Waste in Business",
@@ -3109,9 +3090,7 @@
    "issuer": "California Community Colleges",
    "exhibits": [
     "MAPCXS-IH-V-1-001"
-   ],
-   "suggested": "HVAC",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Veterinary Physiology, Anatomy, and Terminology",
@@ -3202,9 +3181,7 @@
    "exhibits": [
     "MAPICA-F1WE-1-001",
     "MAPOH-WEHS-1-001"
-   ],
-   "suggested": "WEXP",
-   "suggested_from": "title words (a suggestion, never a decision)"
+   ]
   },
   {
    "title": "Work Experience Education",

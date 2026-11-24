@@ -1,12 +1,28 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-23T19:33:03Z",
- "_queue_count": 0,
+ "_generated_at": "2026-11-24T19:09:54Z",
+ "_queue_count": 2,
  "_counts": {
-  "staged": 0,
-  "needs_you": 0,
+  "staged": 1,
+  "needs_you": 2,
   "not_yet_asked": 0
  },
  "_residual": [],
- "staged": {}
+ "staged": {
+  "Community Health Worker Certificate-Code Tenderloin": {
+   "title": "Community Health Worker Certificate",
+   "issuer": "Code Tenderloin",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Code Tenderloin is a San Francisco workforce nonprofit, treated as a named local training provider. It was stripped from the title and made both issuer and trainer. No state CHW certifying body is named, so the issuer needs curator confirmation. The title was not folded into the CCC course family 'Community Health Worker Skills' because this exhibit is typed as an industry certificate, not a course exam (Rule 8c).",
+   "procedure": "classifier",
+   "rests_on": [
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 1",
+    "issuer-issues-the-card"
+   ],
+   "trainer": "Code Tenderloin"
+  }
+ }
 }

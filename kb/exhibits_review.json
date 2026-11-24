@@ -1,15 +1,15 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-24T06:26:13Z",
+ "written_at": "2026-11-24T19:10:00Z",
  "sources": {
-  "procedures_run": "2026-11-23T19:33:03Z",
+  "procedures_run": "2026-11-24T19:09:54Z",
   "suggestions": "2026-11-24T00:12:51Z",
   "statewide": "2026-11-24T06:19:56",
   "audit": "2026-11-24T06:25:33+00:00",
   "assignments": {
    "read": "live",
-   "at": "2026-11-24T06:26:09Z",
+   "at": "2026-11-24T19:09:57Z",
    "decided": []
   }
  },
@@ -20,8 +20,8 @@
    "waiting": 2
   },
   "aligned": {
-   "n": 0,
-   "of": 0
+   "n": 1,
+   "of": 2
   },
   "saved_not_folded": 0,
   "settled_since_run": 0,
@@ -93,12 +93,20 @@
   }
  ],
  "steps": {
-  "Proposed": 0,
-  "Wording check": 0,
+  "Proposed": 1,
+  "Wording check": 1,
   "Two issuers": 0,
   "Conflict with the reference": 0
  },
- "colleges": [],
+ "colleges": [
+  "Cabrillo College",
+  "Chaffey College",
+  "City College of San Francisco",
+  "Diablo Valley College",
+  "Long Beach City College",
+  "Mission College",
+  "Monterey Peninsula College"
+ ],
  "issuers": [
   "A.B. Miller High School",
   "Adobe",
@@ -903,6 +911,7 @@
   ]
  },
  "held": [
-
+  {"raw": "AI-1 and AI-3 Portfolio Review KG 11/23/26", "step": "Wording check", "why": "the classifier's title has a course code left in", "colleges": [1], "title": "Artificial Intelligence (AI-1 and AI-3)", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPPRA-AAAP-1-001"], "art": [1], "could": [], "basis": "", "same": false, "credit_recs": [["AI 1", "3 hours in Artificial Intelligence: Prompt Engineering and AI Systems"], ["AI 3", "3 hours in Ethics in AI and Technology"]], "confidence": 0.4},
+  {"raw": "Community Health Worker Certificate-Code Tenderloin", "step": "Proposed", "why": "the classifier is unsure (0.60)", "colleges": [2], "title": "Community Health Worker Certificate", "issuer": "Code Tenderloin", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICI-CHWC-1-001"], "art": [2], "could": [0, 3, 4, 5, 6], "basis": "M-ID HLTH M1084", "same": true, "courses_key": "HLTH M1084", "credit_recs": [["HLTH 59", "1 hour in Intro to the Community Health Worker Field"]], "local_courses": [[2, "HLTH 59", "Intro to the Community Health Worker Field", 1, "CCC000596848", "1 hour in Intro to the Community Health Worker Field", "An introduction to the roles and core competencies of Community Health Workers (CHW) and the requirements of the CCSF CHW Certificate Program. Students will learn key public health concepts and models for providing person-centered services, and assess their readiness and interest in the CHW Certificate Program._x000D_ STUDENT LEARNING OUTCOMES_x000D_ Upon…"]], "subject": "Health", "subject_course": 0, "confidence": 0.6, "needs_official_name": true, "course_title_set_aside": {"title": "Community Health Worker Skills", "basis": "M-ID HLTH M1084", "why": "industry certification, not credit by exam"}, "aligned_id": "HLTH M1084", "course": "HLTH 59", "course_college": "City College of San Francisco"}
  ]
 }
