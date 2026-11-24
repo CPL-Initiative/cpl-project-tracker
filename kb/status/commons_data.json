@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T07:55:46Z",
+ "written_at": "2026-11-24T08:22:33Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17096,
-  "gap": 5239,
+  "passing": 17101,
+  "gap": 5234,
   "with_gap": 118,
-  "cost_usd": 1340.99,
-  "passed_at_read": 16336,
+  "cost_usd": 1341.03,
+  "passed_at_read": 16341,
   "cost_receipts": 118,
   "spent_usd": 1236.15,
   "spent_runs": 199,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16774,
-  "gap": 5239,
+  "passing": 16779,
+  "gap": 5234,
   "collected_with_gaps": 322,
   "discontinued": 0
  },
@@ -324,12 +324,11 @@
    "harvested": true,
    "slug": "american_river",
    "programs": 371,
-   "passing": 333,
-   "gap": 38,
+   "passing": 338,
+   "gap": 33,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 10,
-    "places_none": 5,
     "unknown_without_live": 20
    },
    "census_causes": {
@@ -353,10 +352,10 @@
    "outcomes_file": "kb/status/commons_data_programs/american_river.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T13:05:57Z",
+   "read_at": "2026-11-24T08:09:33Z",
    "read_kind": "capture",
-   "cost_usd": 29.45,
-   "passed_at_read": 319,
+   "cost_usd": 29.49,
+   "passed_at_read": 324,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -373,13 +372,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 368,
-   "found": 358,
+   "found": 357,
    "extracted": 358,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 35,
+    "arithmetic": 30,
     "repeated": 0,
     "outcomes": 6
    },
@@ -389,12 +388,11 @@
    "capture_root": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 674.2,
-   "run": "44535418752",
+   "read_seconds": 631.0,
+   "run": "45353541681",
    "levers": {
     "reconcile_steps": 20,
     "reader_page_search": 10,
-    "reader_page_assignment": 5,
     "program_course_file_check": 3
    },
    "collection": {
@@ -403,13 +401,13 @@
      "models": {
       "claude-opus-5-5": 358
      },
-     "run": "44535418752",
-     "at": "2026-11-19T13:05:57Z",
-     "cost_usd": 29.45,
+     "run": "45353541681",
+     "at": "2026-11-24T08:09:33Z",
+     "cost_usd": 29.49,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 344,
+    "plo_programs": 349,
     "ppm_member": null,
     "maps": {
      "held": 0,
