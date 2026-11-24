@@ -699,6 +699,9 @@ jobs:
       # S720 at El Camino: the census's 22 wording-rule records, 15 collected with named gaps; the plan.
       - name: Cheap piles S720 at El Camino (named gaps, the plan)
         run: python3 tests/program_piles_s720_elcamino_test.py
+      # S721 at Orange Coast: the census's 20 wording-rule records, 3 collected with named gaps; the plan.
+      - name: Cheap piles S721 at Orange Coast (named gaps, the plan)
+        run: python3 tests/program_piles_s721_orangecoast_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)
