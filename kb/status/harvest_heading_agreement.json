@@ -1,7 +1,7 @@
 {
  "_readme": "A dated snapshot of main at `commit` (as_of: the newest capture it reads), written by kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on its freshness, so it can trail the records. Each record's own heading (program.section_heading) against the program it is filed under (sources.json: COCI title and award). check_would_fail_passing counts the records that pass on the committed files (passes_live) whose heading names another award type (heading_award_check, in no pass rule). award_not_program counts headings that name an award and none of the program's title words, set aside (Pasadena's one page for an A.S. and its certificate).",
  "commit": {
-  "sha": "5b4c057a4f291525a860f4cbd6eb367e187f4964",
+  "sha": "bf917f5961c37fb6cf1f718ee5cb511962e19e5f",
   "date": "2026-11-23"
  },
  "as_of": "2026-11-23",

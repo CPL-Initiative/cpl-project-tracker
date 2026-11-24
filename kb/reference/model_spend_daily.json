@@ -1,7 +1,7 @@
 {
  "_what": "Daily model spend by UTC day, pasted by hand from billing (no billing credentials live in the repo). api: Claude Console API totals. topups: Claude Code auto-reload top-ups on the day credit was bought, which can lag use by a day. notes: a word on a day. partial: a day not yet over when pasted.",
  "_source": "Sam, pasted in session S661, 2026-11-15 (the Commons ETA clock mock, #3360)",
- "updated": "2026-11-23",
+ "updated": "2026-11-24",
  "api": {
   "2026-10-17": 527.31,
   "2026-10-18": 68.63,
@@ -1082,6 +1082,11 @@
    "college": "folsom_lake",
    "usd": 0.0,
    "day": "2026-11-23"
+  },
+  "45194676517": {
+   "college": "college_of_the_sequoias",
+   "usd": 0.0,
+   "day": "2026-11-23"
   }
  },
  "runner_since": "2026-11-17",
@@ -1112,9 +1117,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "curation": 136.0,
+    "collection": 256.0,
     "infrastructure": 109.9,
-    "collection": 256.0
+    "curation": 136.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0

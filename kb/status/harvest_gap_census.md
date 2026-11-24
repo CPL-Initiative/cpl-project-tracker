@@ -1,8 +1,8 @@
 # Harvest gap census
 
-Written by `kb/_harvest_gap_census.py` (2026-11-23 15:53Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
+Written by `kb/_harvest_gap_census.py` (2026-11-24 03:32Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
 
-Universe 20282 · passing 15454 · without a passing record 4508.
+Universe 20282 · passing 15467 · without a passing record 4495.
 
 Of the passing, 54 counts as passing on the tab; the scorer's own test fails (listed in the JSON, not counted as gaps).
 
@@ -27,7 +27,7 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | extracted, no score (an error) | 4 |
 | live, coverage fails | 156 |
 | live, a course added | 3 |
-| live, units unequal | 903 |
+| live, units unequal | 890 |
 | live, units incomplete | 288 |
 
 ## Top levers
@@ -54,11 +54,11 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | 18 | a reader change hands it its own page, then extraction | College of the Desert | 23 | paid | $1.83 |
 | 19 | a reader change finds the program's page (a free page read first) | Allan Hancock College | 23 | free |  |
 | 20 | a reader change finds the program's page (a free page read first) | West Los Angeles College | 23 | free |  |
-| 21 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | College of the Sequoias | 22 | free |  |
-| 22 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Contra Costa College | 22 | free |  |
-| 23 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | El Camino College | 22 | free |  |
-| 24 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Ventura College | 22 | free |  |
-| 25 | a reader change finds the program's page (a free page read first) | Foothill College | 21 | free |  |
+| 21 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Contra Costa College | 22 | free |  |
+| 22 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | El Camino College | 22 | free |  |
+| 23 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Ventura College | 22 | free |  |
+| 24 | a reader change finds the program's page (a free page read first) | Foothill College | 21 | free |  |
+| 25 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Cabrillo College | 21 | free |  |
 
 ## Next wave: one college per catalog host
 
