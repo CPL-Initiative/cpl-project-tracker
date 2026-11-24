@@ -1301,7 +1301,8 @@ const mtsacOpen = FUND._alloc("Mt San Antonio");
 // Moved to $694,417 on 2026-09-24 with the fresh DataMart FTES pull (statewide
 // credit FTES 1,069,182 -> 1,108,508 shrinks every institution's share).
 check("(P) Mt. SAC's uncapped allocation is its share of the CURRENT funding",
-  !!mtsacOpen && Math.round(mtsacOpen.total) === 694417 &&
+  // (whole dollars at the source since 2026-11-24: an award moves by at most its rounding unit, $2 over two years)
+  !!mtsacOpen && Math.abs(mtsacOpen.total - 694417) <= 2 &&
   Math.round(mtsacOpen.total) > 400000,
   "the waterfall still runs underneath the ceiling; only the model's dials moved");
 FUND._setScenario({});

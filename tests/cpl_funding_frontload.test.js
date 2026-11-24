@@ -365,7 +365,8 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
     const al = D.colleges.find(function (c) { return c.college === "Alameda"; });
     const laneCr = al.credit_ftes / (al.credit_ftes + (Number(al.noncredit_ftes) || 0));
     check("even: a priority's cap is still the historical (CR slice) × share ÷ nYears",
-      r[pKeyName] > 0 && near(r[pKeyName], r.w * laneCr * share / ny, 0.01));
+      // Whole dollars since 2026-11-24: the credit slice and the priority's part each round once.
+      r[pKeyName] > 0 && near(r[pKeyName], r.w * laneCr * share / ny, 2));
   }
   check("even: Σ per-year caps == the window cap",
     near((r.y1 || 0) + (r.y2 || 0), r.total, 0.01));

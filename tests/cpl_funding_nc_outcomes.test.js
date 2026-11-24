@@ -116,7 +116,7 @@ const alloc = T._alloc("Mt San Antonio");
 check("B2: two outcomes, counted in their own units, 50/50 of the institution's noncredit share",
   mtsac.length === 2 && mtsac[0].key === "nc_exh" && mtsac[1].key === "nc_course" &&
   mtsac[0].unit === "exhibits" && mtsac[1].unit === "courses" && mtsac.every((p) => p.count === true) &&
-  Math.abs(mtsac[0].cap - mtsac[1].cap) < 1 && Math.abs(mtsac[0].cap + mtsac[1].cap - alloc.nc_award) < 1);
+  Math.abs(mtsac[0].cap - mtsac[1].cap) <= 1 && Math.abs(mtsac[0].cap + mtsac[1].cap - alloc.nc_award) < 1);
 const tgt = (name, i) => T._ncPrios(name, "1")[i].target;
 check("B3: the exhibits target is the greater of 2 and 5% of CDCP courses, capped at 10 — 196 → 10, 30 → 2 (the floor), 310 → 10 (the cap)",
   tgt("Mt San Antonio", 0) === 10 && tgt("Alameda", 0) === 2 && tgt("Santa Barbara", 0) === 10);

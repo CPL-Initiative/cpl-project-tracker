@@ -52,7 +52,8 @@ const signIn = function (win) {
   check("unset, the dial reports no percentage and a weight of exactly 1",
     e0.pool.nc_portion_set === null && e0.pool.nc_weight === 1);
   check("unset, the portion reached is the teaching mix's own",
-    Math.abs(e0.pool.nc_portion_reached - ncOf(e0) / net) < 1e-9 &&
+    // Whole-dollar credit shares since 2026-11-24 move the noncredit total by at most $2 an institution.
+    Math.abs(e0.pool.nc_portion_reached - ncOf(e0) / net) <= 2 * names.length / net &&
     e0.pool.nc_portion_reached === e0.pool.nc_portion_natural);
 
   // Every institution's FTES, to find who teaches no noncredit and who teaches most.
@@ -194,7 +195,8 @@ const signIn = function (win) {
   const inst = moneyNum(doc.getElementById("f-inst").textContent);
   const nc = moneyNum(doc.getElementById("f-nc").textContent);
   check("set to 15%, the box's noncredit figure is 15% of the total to institutions, and the pair still adds up",
-    Math.abs(nc - inst * 0.15) <= 1 && sumOk());
+    // Within $2 an institution of 15% (whole-dollar credit shares, 2026-11-24); 15% here is about $3.8 million.
+    Math.abs(nc - inst * 0.15) <= 250 && sumOk());
   const pn = doc.getElementById("nc-portion-note"), wn = doc.getElementById("nc-weight-note");
   check("...and the Overview and the allocation steps each say so, with the weight",
     !pn.hidden && /15 percent/.test(pn.textContent) && /counts each noncredit FTES as \d+\.\d\d credit FTES/.test(pn.textContent) &&
@@ -281,7 +283,7 @@ const signIn = function (win) {
   for (let i = 0; i < 100 && !(TA._splash().replies.length && TA._splash().waited); i++) await tick(100);
 
   check("6b: Refresh lands the dial on the open explainer: noncredit is 15% of the institutions box, and the pair adds up",
-    Math.abs(ncB() - instB() * 0.15) <= 1 &&
+    Math.abs(ncB() - instB() * 0.15) <= 250 &&
     moneyNum(docB.getElementById("f-cr").textContent) + ncB() === instB());
   check("6c: ...and the sentence that states the weight appears",
     !docB.getElementById("nc-portion-note").hidden && /15 percent/.test(docB.getElementById("nc-portion-note").textContent));

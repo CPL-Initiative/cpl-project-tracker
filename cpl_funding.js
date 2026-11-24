@@ -2545,7 +2545,8 @@
   }
   function ncPrioCap(W, slot, p) {
     var ss = ncShareSum(slot);
-    return ss > 0 ? ncSlotEntitlement(W, slot) * p.share / ss : 0;
+    if (!(ss > 0)) return 0;
+    return wholePrioCap(ncSlotEntitlement(W, slot), ncPriorities(slot), ss, p);
   }
   // The lane SWITCH (Lane: Credit · Noncredit) and the per-lane view helpers
   // (laneIsNc / laneReadOnly / lanePerYear / lanePriorities / lanePrioCap)
@@ -3739,7 +3740,25 @@
   // EXACTLY to the historical W × p.share ÷ nYears.
   function prioCap(W, slot, p) {
     var ss = shareSum(slot);
-    return ss > 0 ? slotEntitlement(W, slot) * p.share / ss : 0;
+    if (!(ss > 0)) return 0;
+    return wholePrioCap(slotEntitlement(W, slot), priorities(slot), ss, p);
+  }
+  // A priority's part of a lane's year, in whole dollars (2026-11-24): the
+  // parts round by the largest-remainder method, so they add to the lane's
+  // figure and the drill-in's priority rows add to the row above them.
+  var _wholePrioMemo = {};
+  function wholePrioCap(total, list, ss, p) {
+    var key = total + "|" + ss + "|" + list.map(function (q) { return q.key + ":" + q.share; }).join(",");
+    var m = _wholePrioMemo[key];
+    if (!m) {
+      var raw = list.map(function (q) { return { k: q.key, v: total * q.share / ss }; });
+      var whole = {}, used = 0, want = Math.round(raw.reduce(function (t, r) { return t + r.v; }, 0));
+      raw.forEach(function (r) { whole[r.k] = Math.floor(r.v + 1e-7); used += whole[r.k]; r.f = r.v - whole[r.k]; });
+      raw.slice().sort(function (a, b) { return (b.f - a.f) || (a.k < b.k ? -1 : 1); })
+        .forEach(function (r) { if (used < want) { whole[r.k] += 1; used += 1; } });
+      m = _wholePrioMemo[key] = whole;
+    }
+    return p && m[p.key] != null ? m[p.key] : Math.round(total * (p ? p.share : 0) / ss);
   }
   // Is the viewed year pure carryover — front-loaded, with no new money on the
   // table? Drives the "↻ carryover" states so a $0 cap never reads as a defect.
@@ -13091,6 +13110,31 @@
     out.reached = ncTotalAt(cap, out.w) / net;
     return out;
   }
+  // EVERY AWARD IS WHOLE DOLLARS AT ITS SOURCE (Sam, 2026-11-24: "no cents
+  // should be included in our calcs"). The solve leaves fractional dollars, and
+  // each figure used to round on its own, so the rows, the subtotals, the
+  // Statewide row and the memo could disagree by a few dollars (about $4 in
+  // Funds Qualified So Far against the memo, measured 2026-11-24). Each window
+  // award is a whole number of dollars that divides evenly by the years, so a
+  // year's figure is whole too. The largest-remainder method keeps the total:
+  // every award rounds down to its unit, and the dollars left over go one unit
+  // at a time to the awards that gave up the largest fractions (ties by name).
+  // A base or capped award is already whole and never moves.
+  function wholeDollarW(W, cols) {
+    var unit = nYears();
+    var sum = 0, keys = [];
+    cols.forEach(function (c) { if (W[c.college] != null) { keys.push(c.college); sum += W[c.college]; } });
+    var out = {}, fr = [], used = 0;
+    keys.forEach(function (k) {
+      var u = W[k] / unit, f = Math.floor(u + 1e-7);
+      out[k] = f; used += f; fr.push({ k: k, f: u - f });
+    });
+    var left = Math.round(sum / unit) - used;
+    fr.sort(function (a, b) { return (b.f - a.f) || (a.k < b.k ? -1 : a.k > b.k ? 1 : 0); });
+    for (var i = 0; i < fr.length && left > 0; i++, left--) out[fr[i].k] += 1;
+    Object.keys(out).forEach(function (k) { out[k] *= unit; });
+    return out;
+  }
   function allocModel() {
     if (_allocCache) return _allocCache;
     var cap = capWindow();
@@ -13119,7 +13163,7 @@
       });
     }
     _allocCache = {
-      W: r.W, floored: r.floored, capped: r.capped,
+      W: wholeDollarW(r.W, cols), floored: r.floored, capped: r.capped,
       floor: r.floor, cap: cap, net: r.net, unspent: r.unspent, plainRatio: r.plainRatio,
       floorCount: Object.keys(r.floored).length, floorCost: cost,
       cappedCount: Object.keys(r.capped).length, capReleased: released,
@@ -13148,10 +13192,13 @@
   // An institution's one award and its two lanes — the FTES-share
   // decomposition (ruled 2026-08-31). The noncredit share is restricted to the
   // noncredit measures; the credit program cannot draw it.
+  // The credit share rounds to whole dollars a year and the noncredit share is
+  // the rest, so Max CR Funds plus Max NC Funds is Max Funds in every view.
   function instSplit(c) {
     var W = allocModel().W[c.college] || 0;
-    var f = laneShareOf(c);
-    return { w: W, cr: W * f.cr, nc: W * f.nc };
+    var f = laneShareOf(c), unit = nYears();
+    var cr = Math.round(W / unit * f.cr) * unit;
+    return { w: W, cr: cr, nc: W - cr };
   }
   function collegeAlloc(c) {
     var sp = instSplit(c);
@@ -13217,15 +13264,23 @@
       };
       priorities(slot).forEach(function (p) {
         var fr = earnFraction(c, p);
-        pay(prioCap(crW, slot, p) * fr.f, fr, "cr");
+        pay(Math.round(prioCap(crW, slot, p) * fr.f), fr, "cr");
       });
       ncPriorities(slot).forEach(function (p) {
         var fr = earnFraction(c, p);
-        pay(ncPrioCap(ncW, slot, p) * fr.f, fr, "nc");
+        pay(Math.round(ncPrioCap(ncW, slot, p) * fr.f), fr, "nc");
       });
+      // Whole dollars per lane and year; every total adds these (2026-11-24).
+      ecy = Math.round(ecy); eny = Math.round(eny); hcy = Math.round(hcy); hny = Math.round(hny);
+      ey = ecy + eny; hy = hcy + hny;
       eys.push(ey); hys.push(hy); ecys.push(ecy); enys.push(eny); hcys.push(hcy); hnys.push(hny);
       earnTotal += ey;
     });
+    earnCr = ecys.reduce(function (t, v) { return t + v; }, 0);
+    earnNc = enys.reduce(function (t, v) { return t + v; }, 0);
+    heldCr = hcys.reduce(function (t, v) { return t + v; }, 0);
+    heldNc = hnys.reduce(function (t, v) { return t + v; }, 0);
+    earnWithheld = heldCr + heldNc;
     out.earned_withheld = earnWithheld;
     ys.forEach(function (v, i) { out["y" + (i + 1)] = fl ? (i === 0 ? out.total : 0) : v; });
     eys.forEach(function (v, i) { out["ey" + (i + 1)] = fl ? (i === 0 ? earnTotal : 0) : v; });
@@ -14414,18 +14469,18 @@
         // to meet its minimum conditions still shows what it posted, and its
         // Curr figures read what the measures compute to, in gray, as its
         // row's Curr columns do (Sam, 2026-09-29).
-        return { maxFtes: c[p.key + "_heads"] || 0, maxFunds: m, fr: fr, actualFunds: m * fr.f };
+        return { maxFtes: c[p.key + "_heads"] || 0, maxFunds: m, fr: fr, actualFunds: Math.round(m * fr.f) };
       };
       var ncFig = function (p) {
         var fr = earnFraction(c, p), m = c[p.key] || 0;
         // The target reads the ROSTER row, as _ncPrios() does — never a copy.
-        return { maxFtes: prioTarget(rosterRow(c.college) || c, p), maxFunds: m, fr: fr, actualFunds: m * fr.f };
+        return { maxFtes: prioTarget(rosterRow(c.college) || c, p), maxFunds: m, fr: fr, actualFunds: Math.round(m * fr.f) };
       };
       // A noncredit outcome's figures (Scenario 4): a count target from the
       // roster row, TBA while its denominator is still to come.
       var ncOutFig = function (p) {
         var fr = earnFraction(c, p), m = c[p.key] || 0, row = rosterRow(c.college) || c;
-        return { target: countTargetPending(row, p) ? null : prioTarget(row, p), fr: fr, maxFunds: m, actualFunds: m * fr.f };
+        return { target: countTargetPending(row, p) ? null : prioTarget(row, p), fr: fr, maxFunds: m, actualFunds: Math.round(m * fr.f) };
       };
       // The priority rows sit in the college table's own columns (Sam,
       // 2026-09-29), gray in the Curr columns while the gate holds.
