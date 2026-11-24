@@ -1349,6 +1349,25 @@ def ge_units_precision(files: list[dict], keys: frozenset | None = None) -> dict
                                       if f not in flagged]}
 
 
+# S720 at Ventura (kb/_program_piles_s720_ventura.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('pool_figure_not_read',
+         'The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.',
+         40),  # #3755
+        ('pair_read_as_alternatives',
+         'The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.',
+         50),  # #3755
+        ('lists_not_closed',
+         "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),  # #3753
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def lists_recall(every: list[dict]) -> dict:
     """lists_past_their_figure against answers already held (S703; S652's review rule): every passing record the
     scorer reproduces (S.score, no closed list, no page text) with a list printed at a figure its courses meet
