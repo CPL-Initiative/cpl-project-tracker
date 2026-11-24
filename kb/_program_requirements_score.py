@@ -710,9 +710,210 @@ def option_parts(record: dict) -> dict:
     return out
 
 
+# One figure the page prints over several lists or nested options together (S721; the kind S720 filed as the named gap
+# pool_figure_not_read). Modesto Junior prints "AGRICULTURE SCIENCE BREADTH COURSES - COMPLETE 9 UNITS" over two lists
+# of 6-9 and 0-3 units, which the reading keeps as two blocks and a note ("The Agriculture Science Breadth section
+# requires 9 units total, split as 6-9 units ... and 0-3 units"); Ventura's Engineering prints one 9 over Lists B and C
+# ("Lists B and C together require a total of 9 units"); El Camino's French prints "Additional courses from List A or
+# List B must be completed to achieve 18 total units" over a core and two lists that print only their minimums. The
+# scorer added the parts (6-12; 6-15; 12) where the page asks for the units chosen across them together to meet the
+# one figure (9; 9; 18). The reading: where one sentence of the reader's notes prints the figure (FIGURE_OVER), says
+# the parts are taken together (POOL_WORDS, or a figure the parts complete) and names the parts (lists or groups by
+# letter, or a run of two or more adjacent blocks the reading split one heading into), the parts' units together
+# meet the figure, and each part's own printed figure still binds (pool_span). A figure equal to the program's printed
+# total names the whole program, so the program's sum meets it. Only parts outside any option group, substitute list,
+# also-from pool, heading figure or fill, and never a pool whose parts cannot reach a fixed figure. POOLED_ON lets a
+# rescore measure the scorer with the reading off.
+POOLED_ON = True
+_FIG = r"(?P<n>\d+(?:\.\d+)?)"
+_FIG_TOP = r"(?:\s*[-\u2013]\s*(?P<m>\d+(?:\.\d+)?))?"
+# The figure, in the shapes the readers wrote it: (pattern, a minimum (the parts may run past it), a figure the parts
+# complete).
+FIGURE_OVER = [(re.compile(p, re.I), least, fill) for p, least, fill in (
+    (r"\b(?:a\s+)?(?:combined\s+)?total\s+of\s+" + _FIG + _FIG_TOP + r"\s+(?:[a-z]+\s+)?units?\b", False, False),
+    (r"\bmust\s+total\s+" + _FIG + r"\s+units?\b", False, False),
+    (r"\b" + _FIG + r"-unit\s+(?:combined\s+)?minimum\b", True, False),
+    (r"\bCOMPLETE\s+" + _FIG + r"\s+UNITS\b", False, False),
+    (r"\brequires?\s+" + _FIG + r"\s+units\b", False, False),
+    (r"\brequires?\s+a\s+minimum\s+of\s+" + _FIG + r"\s+units\b", True, False),
+    (r"\bSELECT\s+" + _FIG + r"\s+UNITS\s+MINIMUM\b", True, False),
+    (r"\bto\s+(?:achieve|total|reach)\s+" + _FIG + r"\s+(?:total\s+)?units\b", False, True),
+    (r"\bto\s+(?:achieve|total|reach)\s+(?:at\s+least|a\s+minimum\s+of)\s+" + _FIG + r"\s+(?:total\s+)?units\b",
+     True, True),
+    (r"\b(?:an\s+)?additional\s+" + _FIG + r"\s+units\s+(?:are|is)\s+required\b", False, False),
+    (r"\brequires?\s+one\s+" + _FIG + r"-unit\s+course\b", False, False))]
+POOL_WORDS = re.compile(
+    r"\b(?:together|combined|across|spans?|container|split\s+(?:as|into)|sub-?(?:blocks?|lists?|groups?)|nested"
+    r"|covers|parent|wrapper|overarching|either\s+list|applies\s+to)\b", re.I)
+# A figure the program's own lists complete ("to achieve 18 total units", "to total at least 18 units") names the
+# lists or areas it is taken from.
+POOL_PARTS = re.compile(r"\b(?:lists?|areas?|groups?|categor(?:y|ies))\b", re.I)
+POOL_LETTERS = re.compile(r"\b(?:Lists?|Groups?)\s+([A-Z])\b((?:\s*(?:,|and|or|\+|&|/)\s*(?:(?:List|Group)\s+)?[A-Z]\b)*)")
+_POOL_MORE = re.compile(r"\b([A-Z])\b")
+BLOCK_LETTER = re.compile(r"\b(?:List|Group)\s+([A-Z])(?=$|[\s:)\-–,.])", re.I)
+_SENTENCE = re.compile(r"(?<=[.!?])\s+(?=[A-Z'\"(])")
+_STEM_TAIL = re.compile(r"\s*(?:[-–]\s*COMPLETE\b.*|\bCONTINUED\b.*|\([^()]*\)\s*)$", re.I)
+
+
+def _stem(name) -> str:
+    s = re.sub(r"\s+", " ", str(name or "")).strip().upper()
+    prev = None
+    while s and s != prev:
+        prev, s = s, _STEM_TAIL.sub("", s).strip(" -–:")
+    return s
+
+
+def _stem_keys(stem: str) -> list[str]:
+    """The words a note may name a heading by: the heading, the heading less a closing COURSES, that less its first
+    word, and a label's first two words where the second is a number or a letter ("AREA 1", "LIST A")."""
+    w = stem.split()
+    out = [stem]
+    if w and w[-1] in ("COURSES", "COURSE"):
+        w = w[:-1]
+        out.append(" ".join(w))
+    if len(w) >= 3:
+        out.append(" ".join(w[1:]))
+    if len(w) >= 3 and re.fullmatch(r"\d{1,2}|[A-Z]", w[1]):
+        out.append(" ".join(w[:2]))
+    return [k for k in out if k]
+
+
+def _pool_figure(sentence: str):
+    """(lo, hi, minimum, fill, words) for the first figure the sentence prints over its parts, else None."""
+    hits = [(m.start(), m, least, fill) for rx, least, fill in FIGURE_OVER for m in [rx.search(sentence)] if m]
+    if not hits:
+        return None
+    _, m, least, fill = min(hits, key=lambda h: h[0])
+    n = float(m.group("n"))
+    top = _num(m.groupdict().get("m")) or n
+    return n, max(n, top), least, fill, m.group(0)
+
+
+def pooled_figures(record: dict) -> list[dict]:
+    """The figures the record's notes print over several of its blocks together: [{"blocks": [indexes] or "all",
+    "figure": (lo, hi), "minimum": bool, "words": the sentence}], one per block set, none where two sentences give
+    the same blocks different figures or two block sets overlap."""
+    if not POOLED_ON or window_cut(record):
+        # A pool fills its parts to the figure, so a reader's note saying the requirements run outside the text read
+        # refuses it, as it refuses an electives fill (Fullerton 18166: its Category C list is cut off; S720).
+        return []
+    blocks = record.get("blocks") or []
+    prog = record.get("program") or {}
+    total = _span(prog.get("total_units"))
+    letter: dict = {}
+    for i, b in enumerate(blocks):
+        m = BLOCK_LETTER.search(str(b.get("name") or ""))
+        if m:
+            letter.setdefault(m.group(1).upper(), []).append(i)
+    runs = []
+    i = 0
+    while i < len(blocks):
+        j = i
+        st = _stem(blocks[i].get("name"))
+        while j + 1 < len(blocks) and st and _stem(blocks[j + 1].get("name")) == st:
+            j += 1
+        if j > i:
+            runs.append((list(range(i, j + 1)), st))
+        i = j + 1
+    found: dict = {}
+    for note in record.get("notes") or []:
+        for sent in _SENTENCE.split(str(note)):
+            fig = _pool_figure(sent)
+            if not fig:
+                continue
+            lo_f, hi_f, least, fill, _ = fig
+            pooled = bool(POOL_WORDS.search(sent))
+            whole = bool(total) and abs(total[0] - lo_f) <= TOL and abs(total[1] - hi_f) <= TOL
+            if whole:
+                # The program's own total: the lists complete it, where the sentence names them.
+                if (pooled or fill) and POOL_PARTS.search(sent):
+                    found.setdefault("all", set()).add(((lo_f, hi_f), least, sent))
+                continue
+            if not pooled:
+                continue
+            ix = None
+            lets = set()
+            for lm in POOL_LETTERS.finditer(sent):
+                lets.add(lm.group(1))
+                lets.update(_POOL_MORE.findall(lm.group(2) or ""))
+            if len(lets) >= 2 and all(x in letter for x in lets):
+                ix = sorted(k for x in lets for k in letter[x])
+            else:
+                up = " %s " % re.sub(r"[^A-Z0-9]+", " ", sent.upper())
+                named = [r for r, st in runs if any(" %s " % k in up for k in _stem_keys(st))]
+                if len(named) == 1:
+                    ix = named[0]
+            if ix and len(ix) >= 2:
+                found.setdefault(tuple(ix), set()).add(((lo_f, hi_f), least, sent))
+    out, used = [], set()
+    for key, figs in found.items():
+        if len({f for f, _, _ in figs}) != 1:
+            continue
+        fig, least, sent = sorted(figs, key=lambda x: x[2])[0]
+        least = all(x[1] for x in figs)
+        if key != "all":
+            if used & set(key):
+                return []
+            used |= set(key)
+        out.append({"blocks": "all" if key == "all" else list(key), "figure": fig, "minimum": least, "words": sent})
+    return out
+
+
+def pool_open(block: dict) -> bool:
+    """Whether a part may run past its own figure: a choice list that prints no figure of its own."""
+    return block.get("rule") in ("choose_units", "choose_courses") and not _span(block.get("stated"))
+
+
+def pool_span(fig: tuple[float, float], minimum: bool, lo: float, hi: float, open_: bool):
+    """The units the parts (lo-hi as added) carry under the one figure printed over them: each end at least the
+    figure's low end and the parts' own floors; a fixed figure holds the high end to its top, where a minimum lets
+    the parts' high end stand. None where parts that cannot run past their own figures fall short of it."""
+    a, b = fig
+    if not open_ and hi < a - TOL:
+        return None
+    plo = max(a, lo)
+    if minimum:
+        return plo, max(b, hi, plo)
+    if open_:
+        return plo, max(plo, b)
+    return plo, max(plo, min(b, hi))
+
+
+def pools_read(record: dict, sub, also: dict) -> list[dict]:
+    """pooled_figures less any pool the scorer reads another way: a part in an option group, the substitute list, an
+    also-from pool, a heading figure, a fill or a recommended list; a whole-program figure where a list already fills
+    the program."""
+    blocks = record.get("blocks") or []
+    taken = set(also) | {j for js in also.values() for j in js}
+    out = []
+    for p in pooled_figures(record):
+        if p["blocks"] == "all":
+            if any(_num(b.get("fills_to")) is not None or heading_figure(b) is not None for b in blocks):
+                continue
+        elif any(blocks[i].get("option_group") or (sub and blocks[i] is sub[0]) or i in taken
+                 or heading_figure(blocks[i]) is not None or _num(blocks[i].get("fills_to")) is not None
+                 or blocks[i].get("rule") == "recommended" for i in p["blocks"]):
+            continue
+        out.append(p)
+    return out
+
+
 def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list[str]]:
     """Every block's units summed; the blocks of one option_group count once,
-    from the group's smallest block to its largest."""
+    from the group's smallest block to its largest. A figure printed over several lists together counts once
+    (pooled_figures, pool_span)."""
+    return _program_units(record, listed)
+
+
+def pooled_moved(record: dict, listed: dict) -> list[dict]:
+    """The pools that moved the program's sum, each with the parts' units as added ("parts") and as read ("read")."""
+    report: list[dict] = []
+    _program_units(record, listed, report)
+    return report
+
+
+def _program_units(record: dict, listed: dict, report: list | None = None
+                   ) -> tuple[tuple[float, float], list[str]]:
     hours = measure(record) == "hours"
     lo = hi = 0.0
     reasons: list[str] = []
@@ -724,6 +925,9 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
     blocks_all = record.get("blocks") or []
     parts = option_parts(record)
     part_spans: dict[tuple, list[float]] = {}
+    pools = pools_read(record, sub, also)
+    pool_of = {i: k for k, p in enumerate(pools) if p["blocks"] != "all" for i in p["blocks"]}
+    pool_sum = {k: [0.0, 0.0] for k in set(pool_of.values())}
     for i, b in enumerate(blocks_all):
         if sub and b is sub[0]:
             # In place of one core course: the core as printed, or the core less one course plus the list.
@@ -767,12 +971,26 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
             part_spans[part][1] += span[1]
         elif g:
             groups.setdefault(g, []).append(span)
+        elif i in pool_of:
+            # A part of a figure printed over several lists together (pooled_figures): counted with its pool.
+            pool_sum[pool_of[i]][0] += span[0]
+            pool_sum[pool_of[i]][1] += span[1]
         else:
             lo += span[0]
             hi += span[1]
     for spans in groups.values():
         lo += min(s[0] for s in spans)
         hi += max(s[1] for s in spans)
+    for k, (plo, phi) in sorted(pool_sum.items()):
+        p = pools[k]
+        read = pool_span(p["figure"], p["minimum"], plo, phi, any(pool_open(blocks_all[i]) for i in p["blocks"]))
+        if read is None:
+            read = (plo, phi)
+        if report is not None and (abs(read[0] - plo) > TOL or abs(read[1] - phi) > TOL):
+            report.append(dict(p, blocks=[blocks_all[i].get("name") for i in p["blocks"]],
+                               parts=[round(plo, 2), round(phi, 2)], read=[round(read[0], 2), round(read[1], 2)]))
+        lo += read[0]
+        hi += read[1]
     # A list the page says completes the program to a total ("3-5 UNITS CHOSEN FROM THE FOLLOWING FOR
     # A MINIMUM OF 18 UNITS", "COMPLETE 7-14 UNITS FROM THE FOLLOWING COURSES TO COMPLETE 36 TOTAL UNITS",
     # Los Angeles Valley, S534) carries fills_to: a student takes from it until the sum reaches that
@@ -780,6 +998,15 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
     fills = [_num(b.get("fills_to")) for b in record.get("blocks") or [] if _num(b.get("fills_to"))] + heading_fills
     if fills and not reasons:
         lo, hi = max(lo, max(fills)), max(hi, max(fills))
+    whole = [p for p in pools if p["blocks"] == "all"]
+    if len(whole) == 1 and not reasons:
+        # The program's printed total over its lists ("to achieve 18 total units"): the program's sum meets it.
+        p = whole[0]
+        read = pool_span(p["figure"], p["minimum"], lo, hi, any(pool_open(b) for b in blocks_all))
+        if read is not None and (abs(read[0] - lo) > TOL or abs(read[1] - hi) > TOL):
+            if report is not None:
+                report.append(dict(p, parts=[round(lo, 2), round(hi, 2)], read=[round(read[0], 2), round(read[1], 2)]))
+            lo, hi = read
     return (lo, hi), reasons
 
 
@@ -1671,6 +1898,11 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
             and not (heading_is_total(b) and not (tot and abs(tot[0] - heading_figure(b)) <= TOL))]
     if figs and arith.get("computed") is not None:
         arith["heading_figures"] = figs
+    # The figures program_units read over several lists together (S721), named with the sentence that prints each.
+    pooled = pooled_moved(record, listed)
+    if pooled and arith.get("computed") is not None:
+        arith["pooled"] = [{"blocks": p["blocks"], "figure": list(p["figure"]), "minimum": p["minimum"],
+                            "parts": p["parts"], "read": p["read"], "words": p["words"]} for p in pooled]
     # The reading program_units made from the reader's words (S713), named so a reader of the check sees it.
     bl = record.get("blocks") or []
     hrs = measure(record) == "hours"
