@@ -1,0 +1,36 @@
+{
+  "_what": "S721 (lane 2, Porterville): the reconcile_steps lever of the committed census (run 45371224551) at the college, frozen: kb/_program_piles_s721_porterville.py planned from it.",
+  "written_at": "2026-11-24 10:08Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "Porterville College",
+      "programs": 19,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "06773",
+        "06797",
+        "06809",
+        "09520",
+        "09528",
+        "30235",
+        "35229",
+        "35239",
+        "35256",
+        "35449",
+        "36704",
+        "37377",
+        "40122",
+        "41689",
+        "43554",
+        "44409",
+        "44926",
+        "45511",
+        "45626"
+      ]
+    }
+  ]
+}

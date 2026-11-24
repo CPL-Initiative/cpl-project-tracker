@@ -221,6 +221,14 @@ for _g, _s, _a in (
     GAPS.setdefault(_g, _s)
     ARITH_SCORE.setdefault(_g, _a)
 del _g, _s, _a
+# S721 at Butte (kb/_program_piles_s721_butte.py): a degree whose major adds up and whose degree total is the range a
+# sample term map prints, with the degree's units as read strictly inside it. No existing kind fits
+# (hours_within_printed_range names a program measured in hours); its score is that kind's 50.
+GAPS.setdefault("degree_within_map_range",
+                "The record takes the degree total from the sample map's range, whose low end is the 60 units the "
+                "page prints as needed to graduate; the major adds up to its printed major total, and the degree's "
+                "units as read fall inside the map's range and match neither end.")
+ARITH_SCORE.setdefault("degree_within_map_range", 50)
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
@@ -1737,6 +1745,26 @@ for _g, _s, _a in (
         ('repeat_read_once',
          'The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.',
          60),  # Santa Monica's branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
+# S721 at Palo Verde (kb/_program_piles_s721_paloverde.py): two kinds no existing one fits, each named from a reviewed
+# record's own notes. figure_within_variable_units takes lists_past_their_figure's 60 (in both, the printed figures
+# add to the printed total); degree_electives_not_printed takes ge_units_not_read's 50 (in both, the major adds up and
+# a part the page leaves unprinted is missing). noted_figures_differ is #3753's, unchanged.
+for _g, _s, _a in (
+        ('noted_figures_differ',
+         "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+         40),  # #3753
+        ('figure_within_variable_units',
+         "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
+         60),  # Palo Verde's branch
+        ('degree_electives_not_printed',
+         "The degree's major and general education add to less than the printed degree total, and the page prints no figure for electives and does not say they fill the rest.",
+         50),  # Palo Verde's branch
 ):
     GAPS.setdefault(_g, _s)
     ARITH_SCORE.setdefault(_g, _a)

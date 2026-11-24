@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "figure_within_variable_units",
+    "label": "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
+    "words": "Required Courses block states 'Total 9 Credits' but its two courses print ranges (FST 090 0.25-12, EMS 161 1-1.5); the 9 credits presumably depend on variable-unit enrollment in FST 090."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
