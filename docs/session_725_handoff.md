@@ -84,6 +84,8 @@ All verbatim in `docs/commons_lessons.md`, S724. **RULED:** `r-sidebar-narrow-bo
    say that and offer another bottom bar to drop them in manually"*: *Add them* opens a bar to paste SLOs and
    objectives with their source. A manual save to `course_outcomes` is a new write surface: governance map and a
    rollback receipt first (Rule 10 a3). Only 14 of the 203 loose adapt courses carry outcomes today.
+   Sam (mock v6): *"for courses with no description add the smae note and link with paste bar"*: *Add it* opens the
+   same kind of bar to paste a catalog description with its source.
    Sam then: *"els will be a similar case of big mid consolidation into just a few"*: build Gather for both; read
    `docs/reference/lanes/esl-packaging.md` (the comprehensives and carve-outs) before designing it.
 1. **The anchor-page build, step 2:** the Common courses / Local courses toggle on the Courses List.
