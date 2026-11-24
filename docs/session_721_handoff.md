@@ -70,6 +70,13 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   (45347712879), Clovis 3 (45348350867). Mendocino's paid read 45348021173 landed; Los Angeles Southwest's dispatched.
 - 07:3xZ: East Los Angeles's pre-read found 02456's live row on an older extraction than its committed record: held,
   the plan rebuilt at 3 (`p-preread-catches-older-live-extraction-s720`).
+- 07:40Z to 08:00Z: applied and live: Glendale 2, East Los Angeles 3, City College of San Francisco 17 (45351319471),
+  Santa Monica 20 (45352015658); loaded: Mendocino 6 and Los Angeles Southwest 5 (all passing, $0.60 paid).
+  Santiago Canyon's paid read failed before extraction, nothing paid: its registry row now names
+  `SCC_2026_2027_Catalog_accessible.pdf` (1,165 pages), so its pins wait on a page read of that file.
+- 07:53Z: `land` started (one PR for the six applied piles branches). #3753 merged (`949c3194`); #3756 merged
+  (`35854487`) after a local merge with `main` passed the gap tests. `fill` took `claude/s720-rios` (AR 04544's
+  apply, then the Los Rios reconciles). Contra Costa 17 and El Camino 15 at an Opus reader.
 
 Off the queue tonight (Sam's routine prompt: *"No new UI, tooling or governance work in conductor runs."*): the brief's
 section 1 slimming items and section 4 go to a plain session, as section 4 item 3 provides
