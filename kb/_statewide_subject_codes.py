@@ -65,6 +65,10 @@ import subject_decisions as sd  # noqa: E402
 import subject_code_history as SCH  # noqa: E402
 
 OUT = os.path.join("kb", "status", "statewide_subject_codes.json")
+# The courses under each code, one file per first character of the code (S722): the MQ view's and the statewide list's
+# Courses count opens these, so the page never loads the 17 MB state list for a sidebar.
+COURSES_DIR = os.path.join("kb", "status", "statewide_code_courses")
+COURSE_COLUMNS = ["college", "subject", "number", "title", "band", "top"]
 MINTED = os.path.join("kb", "coci_minted_courses.json")
 TITLES = os.path.join("kb", "status", "local_subject_titles.json")
 TOP_ONLY = {"top_code", "top_division"}
@@ -110,7 +114,32 @@ def local_titles(root):
     return out
 
 
-def build(root=ROOT):
+def shard_of(code):
+    """The course file a code's courses sit in: its first character when a letter or digit, else "_" (commons_subjects.js agrees)."""
+    ch = str(code or "")[:1].upper()
+    return ch if re.match(r"^[A-Z0-9]$", ch) else "_"
+
+
+def course_files(out_codes, rows_of):
+    """{shard: file text}. Each code: its colleges in the statewide list's order and its courses as rows of COURSE_COLUMNS,
+    college as an index into that list and subject blank where it is the code; sorted by college, then number."""
+    shards = collections.defaultdict(dict)
+    for c in out_codes:
+        cols = [x[0] for x in c["colleges"]]
+        at = {n: i for i, n in enumerate(cols)}
+        rows = sorted(rows_of.get(c["code"], []), key=lambda r: (at[r[0]], B.sort_key(r[2]), r[2], r[1], r[3]))
+        shards[shard_of(c["code"])][c["code"]] = {"colleges": cols, "rows": [[at[r[0]], "" if r[1] == c["code"] else r[1]] + list(r[2:]) for r in rows]}
+    out = {}
+    for k in sorted(shards):
+        out[k] = json.dumps({"_what": "The state course list's courses under each local subject code whose first character is %s, "
+                                      "as kb/_statewide_subject_codes.py counts them (a renamed code's courses under the code it "
+                                      "became). Written by that script beside kb/status/statewide_subject_codes.json." % k,
+                             "columns": COURSE_COLUMNS, "codes": dict(sorted(shards[k].items()))},
+                            ensure_ascii=False, separators=(",", ":")) + "\n"
+    return out
+
+
+def build(root=ROOT, courses_out=None):
     state = B.read_state(root)
     # COCI lists North Orange and San Diego's continuing education colleges twice, once as "... Credit", and Calbright
     # only as "Calbright College Credit": one college each (Sam, 2026-11-23: "116 (including Calbright) + 2 nc colleges =
@@ -176,6 +205,9 @@ def build(root=ROOT):
         if r[6] != "C":
             e["categories"][cats.get(str(r[1]).strip()) or B.NO_CAT] += 1
         e["spellings"][B.code_key(r[2])] += 1
+        if courses_out is not None:
+            courses_out.setdefault(kn, []).append((names[r[0]], str(r[2] or "").strip(), str(r[3] or ""), str(r[4] or ""),
+                                                   r[6] or "", str(r[7] or "").split(":")[0].strip()))
         e["colleges"][names[r[0]]] += 1
         e["courses"] += 1
         e["credit" if r[6] == "C" else "noncredit"] += 1
@@ -430,17 +462,35 @@ def dump(doc):
 
 
 def main(argv):
-    text = dump(build())
+    rows_of = {}
+    doc = build(courses_out=rows_of)
+    text = dump(doc)
+    files = course_files(doc["codes"], rows_of)
     path = os.path.join(ROOT, OUT)
+    cdir = os.path.join(ROOT, COURSES_DIR)
     if "--check" in argv:
-        if not os.path.exists(path) or open(path, encoding="utf-8").read() != text:
-            print("STALE: %s. Run python3 kb/_statewide_subject_codes.py" % OUT)
+        stale = [] if os.path.exists(path) and open(path, encoding="utf-8").read() == text else [OUT]
+        for k, t in files.items():
+            fp = os.path.join(cdir, k + ".json")
+            if not os.path.exists(fp) or open(fp, encoding="utf-8").read() != t:
+                stale.append(os.path.join(COURSES_DIR, k + ".json"))
+        extra = sorted(set(f for f in (os.listdir(cdir) if os.path.isdir(cdir) else []) if f.endswith(".json")) - {k + ".json" for k in files})
+        stale += [os.path.join(COURSES_DIR, f) + " (no longer written)" for f in extra]
+        if stale:
+            print("STALE: %s. Run python3 kb/_statewide_subject_codes.py" % ", ".join(stale))
             return 1
-        print("ok: %s is current" % OUT)
+        print("ok: %s and %d course files are current" % (OUT, len(files)))
         return 0
     with open(path, "w", encoding="utf-8") as f:
         f.write(text)
-    doc = json.loads(text)
+    os.makedirs(cdir, exist_ok=True)
+    for f in os.listdir(cdir):
+        if f.endswith(".json") and f[:-5] not in files:
+            os.remove(os.path.join(cdir, f))
+    for k, t in files.items():
+        with open(os.path.join(cdir, k + ".json"), "w", encoding="utf-8") as f:
+            f.write(t)
+    print("wrote %s: %d course files, largest %d KB" % (COURSES_DIR, len(files), max(len(t.encode()) for t in files.values()) // 1024))
     t = doc["totals"]
     print("wrote %s: %d codes at %d colleges (%d pairs, %d courses); %d used at one college" % (
         OUT, t["codes"], t["colleges"], t["pairs"], t["courses"], t["one_college"]))
