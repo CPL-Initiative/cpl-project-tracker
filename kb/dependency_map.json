@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1201,
-  "external_services": 199,
-  "consumers": 667,
+  "file_datasets": 1204,
+  "external_services": 200,
+  "consumers": 668,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -944,6 +944,18 @@
    ],
    "main_committers": []
   },
+  "external:cerritos-public.courseleaf.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_subject_code_address_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 6
+    }
+   ],
+   "main_committers": []
+  },
   "external:chaffey.curriqunet.com": {
    "consumers": [
     {
@@ -983,6 +995,16 @@
      "line": 1154,
      "tabs": [
       "canonical-subj4"
+     ]
+    },
+    {
+     "id": "module:commons_subjects.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1218,
+     "tabs": [
+      "commons"
      ]
     },
     {
@@ -1224,7 +1246,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1816
+     "line": 1829
     },
     {
      "id": "module:admin.js",
@@ -1966,7 +1988,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2476
+     "line": 2489
     }
    ],
    "main_committers": []
@@ -2270,7 +2292,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 48
+     "line": 53
     },
     {
      "id": "module:commons_progress.js",
@@ -2637,7 +2659,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1426
+     "line": 1439
     }
    ],
    "main_committers": []
@@ -2656,7 +2678,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1771
+     "line": 1784
     },
     {
      "id": "module:college_briefing.js",
@@ -3365,7 +3387,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1827
+     "line": 1840
     },
     {
      "id": "module:dashboard_filters.js",
@@ -3929,7 +3951,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 943,
+     "line": 983,
      "tabs": [
       "commons"
      ]
@@ -4632,7 +4654,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 417
+     "line": 424
     },
     {
      "id": "module:fact-sheet/factsheet_edit.js",
@@ -4753,7 +4775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2140
+     "line": 2153
     }
    ],
    "main_committers": []
@@ -4846,6 +4868,19 @@
      "direction": "read",
      "how": "literal",
      "line": 82
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:*_code_address_probe.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_subject_code_address_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 212
     }
    ],
    "served": false,
@@ -6015,7 +6050,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2024
+     "line": 2037
     },
     {
      "id": "module:admin.js",
@@ -6149,6 +6184,16 @@
      "tabs": [
       "college-briefing",
       "cpl-pathways"
+     ]
+    },
+    {
+     "id": "module:commons_subjects.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1399,
+     "tabs": [
+      "commons"
      ]
     },
     {
@@ -7192,7 +7237,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 986
+     "line": 1150
     }
    ],
    "served": true,
@@ -7380,7 +7425,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2415
+     "line": 2428
     },
     {
      "id": "module:college_briefing.js",
@@ -7593,7 +7638,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1486
+     "line": 1499
     },
     {
      "id": "module:cpl_funding.js",
@@ -13822,7 +13867,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
+     "line": 45
     },
     {
      "id": "script:kb/_overmerge_apply.py",
@@ -21573,7 +21618,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 390
+     "line": 393
     },
     {
      "id": "script:kb/_jev_next_steps.py",
@@ -21656,6 +21701,13 @@
      "direction": "read",
      "how": "literal",
      "line": 77
+    },
+    {
+     "id": "script:kb/_subject_code_address_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 42
     }
    ],
    "served": false,
@@ -22349,7 +22401,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 114,
+     "line": 118,
      "tabs": [
       "commons"
      ]
@@ -22359,7 +22411,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 68
+     "line": 70
     }
    ],
    "producers": [
@@ -22380,7 +22432,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 94,
+     "line": 98,
      "tabs": [
       "commons"
      ]
@@ -22411,7 +22463,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 41,
+     "line": 45,
      "tabs": [
       "commons"
      ]
@@ -22442,7 +22494,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 69
+     "line": 71
     },
     {
      "id": "script:kb/_mq_view.py",
@@ -22457,6 +22509,13 @@
      "direction": "read",
      "how": "literal",
      "line": 69
+    },
+    {
+     "id": "script:kb/_subject_code_address_probe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
     },
     {
      "id": "script:kb/_subject_sources.py",
@@ -22563,7 +22622,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -22609,7 +22668,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 126,
+     "line": 130,
      "tabs": [
       "commons"
      ]
@@ -22657,7 +22716,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 43
+     "line": 44
     }
    ],
    "producers": [
@@ -22838,7 +22897,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 391
+     "line": 394
     },
     {
      "id": "script:kb/_statewide_subject_codes.py",
@@ -27820,6 +27879,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/check_generated_covers_status_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/cid_claim_audit_test.py": {
    "consumers": [
     {
@@ -30971,6 +31043,19 @@
    "main_committers": []
   },
   "file:tests/stop_hook_git_check_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subject_code_address_probe_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -35427,6 +35512,13 @@
   "supabase:cr_reference_decisions": {
    "consumers": [
     {
+     "id": "module:commons_front.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 908
+    },
+    {
      "id": "module:cr_reference.js",
      "kind": "module",
      "direction": "read",
@@ -36048,14 +36140,14 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 800
+     "line": 808
     },
     {
      "id": "module:commons_subjects.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 272,
+     "line": 287,
      "tabs": [
       "commons"
      ]
@@ -36065,7 +36157,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 295,
+     "line": 310,
      "tabs": [
       "commons"
      ]
@@ -39214,6 +39306,7 @@
     "tests/handover_mark_filed_sql_proof.py",
     "tests/handover_pickup_test.py",
     "tests/ccr_doubt_test.py",
+    "tests/check_generated_covers_status_test.py",
     "tests/local_subject_titles_test.py",
     "tests/subject_decisions_filing_test.py",
     "tests/subject_headings_filer_test.py",
@@ -39232,6 +39325,7 @@
     "tests/statewide_subject_codes_test.py",
     "tests/subject_code_history_test.py",
     "tests/subject_sources_test.py",
+    "tests/subject_code_address_probe_test.py",
     "tests/mq_view_test.py",
     "tests/csr_code_history_test.py",
     "tests/subjects_daily_build_test.py",
@@ -40464,7 +40558,6 @@
   "kb/status/harvest_heading_agreement.md",
   "kb/status/harvest_ncl_lookup_census.json",
   "kb/status/mid_outcomes_compare_*",
-  "kb/status/mq_view.json",
   "kb/status/program_discontinued.json",
   "kb/status/program_named_gaps.json",
   "kb/status/subject_decisions.json",
