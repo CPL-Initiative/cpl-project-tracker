@@ -83,8 +83,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 27.0-27.0; the catalog states 31.0-32.0"
-   ]
+    "the blocks sum to 27.0-27.0; the catalog states 31.0-32.0",
+    "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+   ],
+   "fill_refused": {
+    "gap": "section_cut_off",
+    "words": "BUS 300: not in the text; the 1st Semester rows appear to be on page 248, which was not supplied"
+   }
   },
   "repeated": {
    "codes": [],
@@ -274,5 +279,6 @@
    "Career Information list appears truncated: it ends 'Applications Software Specialist; Business Operations Manager;' and runs directly into the A.S. in Web Developer heading."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 45355422235,
+ "read_run": "39047009824"
 }

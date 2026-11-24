@@ -94,8 +94,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 18.0-18.0; the catalog states 39.0-39.0"
-   ]
+    "the blocks sum to 18.0-18.0; the catalog states 39.0-39.0",
+    "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+   ],
+   "fill_refused": {
+    "gap": "section_cut_off",
+    "words": "ART 320: not in the text provided; likely in the required core on page 169"
+   }
   },
   "repeated": {
    "codes": [],
@@ -416,5 +421,6 @@
   ],
   "notes": []
  },
- "extracted_run": "39047009824"
+ "extracted_run": 45355422235,
+ "read_run": "39047009824"
 }
