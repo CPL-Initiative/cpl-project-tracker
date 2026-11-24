@@ -216,7 +216,7 @@
    }
   }
  },
- "web_searches_filed": 304,
+ "web_searches_filed": 313,
  "totals": {
   "common_high": 197,
   "common_low": 171,
@@ -232,8 +232,8 @@
   "noncredit_title_unused_condition": 11,
   "title_high": 113,
   "title_low": 91,
-  "title_medium": 22,
-  "title_none": 75
+  "title_medium": 23,
+  "title_none": 74
  },
  "colleges": [
   {
@@ -7029,6 +7029,20 @@
     },
     {
      "code": "MICROTK",
+     "title": {
+      "title": "Microcomputer Technician",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found a department or program label on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College MICROTK Cisco Networking Academy courses (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Microcomputer%20Technician_0.pdf",
+       "where": "college site"
+      }
+     },
      "common": {
       "code": "INDT",
       "discipline": "Industrial Technology",
@@ -7059,7 +7073,14 @@
         "title": "Law",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College MSCNC \"Principles of Machine Tools\" machine shop CNC (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "Machine Shop: CNC",
+       "result_url": "https://www.lattc.edu/academics/aos/machine-shop-cnc",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "MACH",
@@ -7091,7 +7112,14 @@
         "title": "Air Conditioning & Refrigeration",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College \"OPMA AP\" Hazwoper OSHA safety courses (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "Your Future, Our Mission EDUCATE. EMPOWER. ELEVATE. Discover programs and",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+       "where": "catalog"
+      }
      }
     },
     {
@@ -7184,8 +7212,15 @@
       "title": "Baking, Professional",
       "level": "High",
       "from": "district",
-      "why": "district: 1 of 2 colleges in the district (mixed). course joins agrees.",
-      "also": []
+      "why": "district: 1 of 2 colleges in the district (mixed). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College PROFBKG \"Plant Based Baking\" professional baking (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "Your Future, Our Mission EDUCATE. EMPOWER. ELEVATE. Discover programs and",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "CULN",
@@ -7201,8 +7236,15 @@
       "title": "Process Technology",
       "level": "Medium",
       "from": "program_titles",
-      "why": "program titles: 2 of 3 programs (several agree).",
-      "also": []
+      "why": "program titles: 2 of 3 programs (several agree). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College PRPLTEK \"Introduction to Industrial Process\" process plant technology (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu PROCESS TECHNOLOGY",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Process%20Technology.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -7281,8 +7323,15 @@
       "title": "Nursing, Registered",
       "level": "High",
       "from": "district",
-      "why": "district: 1 of 1 colleges in the district (one college). course joins, program titles agrees.",
-      "also": []
+      "why": "district: 1 of 1 colleges in the district (one college). course joins, program titles, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College REGNRSG registered nursing \"Introduction to Nursing\" 119 (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu NURSING, REGISTERED",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Nursing%20Registered.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "NRSR",
@@ -7347,8 +7396,15 @@
       "title": "Street Maintenance Technology",
       "level": "Medium",
       "from": "program_titles",
-      "why": "program titles: 2 of 2 programs (several agree).",
-      "also": []
+      "why": "program titles: 2 of 2 programs (several agree). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College \"ST MAIN\" street maintenance \"Survey of Street Services\" (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Street%20Maintenance%20Technology.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "CNSM",
@@ -7365,7 +7421,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College STAT C1000 Introduction to Statistics (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "Common Course Numbering (AB 1111)",
+       "result_url": "https://www.lattc.edu/academics/common-course-numbering",
+       "where": "college site"
+      }
      }
     },
     {
@@ -7411,10 +7474,17 @@
      "code": "SWM TEK",
      "title": {
       "title": "Solid Waste Management Technology",
-      "level": "Low",
+      "level": "Medium",
       "from": "program_titles",
-      "why": "program titles: 1 of 1 programs (one or mixed).",
-      "also": []
+      "why": "program titles: 1 of 1 programs (one or mixed). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College \"SWM TEK\" solid waste management technology courses (lattc.edu only)",
+       "searched_on": "2026-11-24",
+       "result_title": "Solid Waste Management Technology",
+       "result_url": "https://www.lattc.edu/academics/aos/solid-waste-management-technology",
+       "where": "college site"
+      }
      }
     },
     {

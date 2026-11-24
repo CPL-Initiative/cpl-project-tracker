@@ -1,12 +1,12 @@
 {
  "_what": "One web search per Subjects row whose catalog gives its code no heading (Sam, 2026-11-21, on #3655: \"I would add the web search any time it's not in the catalog and you are forced to make a recommendation based on a combo of data\"). A session ran each search and recorded the query, the date, and the result it used. title is the subject title a page on the college's own site gives; a result on any other site records none. where says catalog (the college's catalog: the row's page is then read), college site, or none. A program or department label that does not name the subject is kept under label with title null, and is read as weaker evidence (Sam, 2026-11-21, in session: \"Dept labels can be helpful for our edge case recommendations\"). kb/_build_local_subject_recommendations.py reads this file: a search that agrees with another source lifts its level one step, one that differs is shown beside it, and a search by itself is never more than Low.",
- "searched_by": "Sky (S700), four by the session and 104 by two helpers under its brief; Sky (S719), 196 by four helpers under its brief (2026-11-24)",
+ "searched_by": "Sky (S700), four by the session and 104 by two helpers under its brief; Sky (S719), 196 by four helpers under its brief and 9 by the session (2026-11-24)",
  "searched_on": "2026-11-21; 2026-11-24",
  "totals": {
-  "searches": 304,
+  "searches": 313,
   "with_title": 87,
-  "on_the_catalog": 23,
-  "program_labels": 24,
+  "on_the_catalog": 25,
+  "program_labels": 31,
   "none": 142
  },
  "searches": [
@@ -3401,6 +3401,119 @@
    "result_url": null,
    "where": "none",
    "note": "nothing on noce.edu names this code or its courses"
+  },
+  {
+   "college": "los_angeles_trade_technical",
+   "local_code": "MICROTK",
+   "query": "Los Angeles Trade-Technical College MICROTK Cisco Networking Academy courses (lattc.edu only)",
+   "searched_on": "2026-11-24",
+   "title": null,
+   "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu",
+   "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Microcomputer%20Technician_0.pdf",
+   "where": "college site",
+   "note": "Microcomputer Technician program sheet lists the Cisco courses; the search summary says the 2026-2027 catalog prints them as IT 077 to 079, formerly MICROTK, a rename for the code history once the line is read.",
+   "label": "Microcomputer Technician",
+   "kind": "program label"
+  },
+  {
+   "college": "los_angeles_trade_technical",
+   "local_code": "MSCNC",
+   "query": "Los Angeles Trade-Technical College MSCNC \"Principles of Machine Tools\" machine shop CNC (lattc.edu only)",
+   "searched_on": "2026-11-24",
+   "title": null,
+   "result_title": "Machine Shop: CNC",
+   "result_url": "https://www.lattc.edu/academics/aos/machine-shop-cnc",
+   "where": "college site",
+   "note": "Program page lists MSCNC 111 to 141 under Machine Shop: CNC; no heading ties a name to the code; read from the search summary.",
+   "label": "Machine Shop: CNC",
+   "kind": "program label"
+  },
+  {
+   "college": "los_angeles_trade_technical",
+   "local_code": "OPMA AP",
+   "query": "Los Angeles Trade-Technical College \"OPMA AP\" Hazwoper OSHA safety courses (lattc.edu only)",
+   "searched_on": "2026-11-24",
+   "title": null,
+   "result_title": "Your Future, Our Mission EDUCATE. EMPOWER. ELEVATE. Discover programs and",
+   "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+   "where": "catalog",
+   "note": "The 2026-2027 catalog lists OPMA AP 100 and 760; no subject heading for the code appeared in the results."
+  },
+  {
+   "college": "los_angeles_trade_technical",
+   "local_code": "PROFBKG",
+   "query": "Los Angeles Trade-Technical College PROFBKG \"Plant Based Baking\" professional baking (lattc.edu only)",
+   "searched_on": "2026-11-24",
+   "title": null,
+   "result_title": "Your Future, Our Mission EDUCATE. EMPOWER. ELEVATE. Discover programs and",
+   "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+   "where": "catalog",
+   "note": "The 2026-2027 catalog lists PROFBKG 102 under the Baking Professional program; no heading ties a name to the code; read from the search summary.",
+   "label": "Culinary Arts: Baking, Professional",
+   "kind": "program label"
+  },
+  {
+   "college": "los_angeles_trade_technical",
+   "local_code": "PRPLTEK",
+   "query": "Los Angeles Trade-Technical College PRPLTEK \"Introduction to Industrial Process\" process plant technology (lattc.edu only)",
+   "searched_on": "2026-11-24",
+   "title": null,
+   "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu PROCESS TECHNOLOGY",
+   "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Process%20Technology.pdf",
+   "where": "college site",
+   "note": "Process Technology program sheet lists PRPLTEK courses; the search summary says a Fall 2016 schedule prints PROCESS PLANT TECHNOLOGY above PRPLTEK 100, page not opened.",
+   "label": "Process Technology",
+   "kind": "program label"
+  },
+  {
+   "college": "los_angeles_trade_technical",
+   "local_code": "REGNRSG",
+   "query": "Los Angeles Trade-Technical College REGNRSG registered nursing \"Introduction to Nursing\" 119 (lattc.edu only)",
+   "searched_on": "2026-11-24",
+   "title": null,
+   "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu NURSING, REGISTERED",
+   "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Nursing%20Registered.pdf",
+   "where": "college site",
+   "note": "Nursing, Registered program sheet lists REGNRSG courses; no heading ties a name to the code.",
+   "label": "Nursing, Registered",
+   "kind": "program label"
+  },
+  {
+   "college": "los_angeles_trade_technical",
+   "local_code": "ST MAIN",
+   "query": "Los Angeles Trade-Technical College \"ST MAIN\" street maintenance \"Survey of Street Services\" (lattc.edu only)",
+   "searched_on": "2026-11-24",
+   "title": null,
+   "result_title": "400 W. Washington Blvd. Los Angeles, CA 90015 www.lattc.edu",
+   "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Street%20Maintenance%20Technology.pdf",
+   "where": "college site",
+   "note": "Street Maintenance Technology program sheet lists ST MAIN 103, 200, 201 and 208; no heading ties a name to the code.",
+   "label": "Street Maintenance Technology",
+   "kind": "program label"
+  },
+  {
+   "college": "los_angeles_trade_technical",
+   "local_code": "STAT",
+   "query": "Los Angeles Trade-Technical College STAT C1000 Introduction to Statistics (lattc.edu only)",
+   "searched_on": "2026-11-24",
+   "title": null,
+   "result_title": "Common Course Numbering (AB 1111)",
+   "result_url": "https://www.lattc.edu/academics/common-course-numbering",
+   "where": "college site",
+   "note": "The college's common course numbering page says STAT C1000 replaced MATH 227 from Fall 2025; no subject heading for STAT."
+  },
+  {
+   "college": "los_angeles_trade_technical",
+   "local_code": "SWM TEK",
+   "query": "Los Angeles Trade-Technical College \"SWM TEK\" solid waste management technology courses (lattc.edu only)",
+   "searched_on": "2026-11-24",
+   "title": null,
+   "result_title": "Solid Waste Management Technology",
+   "result_url": "https://www.lattc.edu/academics/aos/solid-waste-management-technology",
+   "where": "college site",
+   "note": "Program page lists SWM TEK 101, 102, 107 and 108 under Solid Waste Management Technology; no heading ties a name to the code.",
+   "label": "Solid Waste Management Technology",
+   "kind": "program label"
   }
  ]
 }
