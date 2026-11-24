@@ -1,0 +1,64 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for San Diego College of Continuing Education read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "San Diego College of Continuing Education",
+ "questions": {
+  "code_biol": "Does this page name San Diego College of Continuing Education's BIOL, and under what heading?",
+  "code_dies": "Does this page name San Diego College of Continuing Education's DIES, and under what heading?",
+  "code_enge": "Does this page name San Diego College of Continuing Education's ENGE, and under what heading?",
+  "code_mark": "Does this page name San Diego College of Continuing Education's MARK, and under what heading?",
+  "code_ofba": "Does this page name San Diego College of Continuing Education's OFBA, and under what heading?",
+  "code_phyn": "Does this page name San Diego College of Continuing Education's PHYN, and under what heading?"
+ },
+ "keywords": [
+  "BIOL",
+  "DIES",
+  "ENGE",
+  "MARK",
+  "OFBA",
+  "PHYN"
+ ],
+ "pages": [
+  {
+   "url": "https://sdcce.edu/node/7367",
+   "answers": [
+    "code_biol"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://sdcce.edu/coursenet/course/introduction-diesel-technology.html",
+   "answers": [
+    "code_dies"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://sdcce.edu/coursenet/course/emerging-topics-engineering.html",
+   "answers": [
+    "code_enge"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://sdcce.edu/node/6865",
+   "answers": [
+    "code_mark"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://sdcce.edu/node/7627",
+   "answers": [
+    "code_ofba"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://sdcce.edu/coursenet/course/physical-science-1.html",
+   "answers": [
+    "code_phyn"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

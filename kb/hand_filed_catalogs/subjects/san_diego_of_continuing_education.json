@@ -1,0 +1,53 @@
+{
+ "_what": "San Diego College of Continuing Education's subject headings, filed by kb/_subject_code_address_probe.py from pages read one by one (no course-descriptions index is filed for this college).",
+ "college": "San Diego College of Continuing Education",
+ "run": "45304208269",
+ "source": [],
+ "subjects": 0,
+ "with_heading": 0,
+ "rows": [],
+ "code_address_tried": [
+  {
+   "code": "BIOL",
+   "address": "https://sdcce.edu/node/7367",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "DIES",
+   "address": "https://sdcce.edu/coursenet/course/introduction-diesel-technology.html",
+   "status": "200",
+   "first_line": "Introduction to Diesel Technology",
+   "run": "45304208269"
+  },
+  {
+   "code": "ENGE",
+   "address": "https://sdcce.edu/coursenet/course/emerging-topics-engineering.html",
+   "status": "200",
+   "first_line": "Emerging Topics-Engineering",
+   "run": "45304208269"
+  },
+  {
+   "code": "MARK",
+   "address": "https://sdcce.edu/node/6865",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "OFBA",
+   "address": "https://sdcce.edu/node/7627",
+   "status": "404",
+   "first_line": null,
+   "run": "45304208269"
+  },
+  {
+   "code": "PHYN",
+   "address": "https://sdcce.edu/coursenet/course/physical-science-1.html",
+   "status": "200",
+   "first_line": "Physical Science 1",
+   "run": "45304208269"
+  }
+ ]
+}

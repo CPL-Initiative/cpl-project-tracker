@@ -1,0 +1,18 @@
+{
+ "_what": "North Orange Continuing Education's subject headings, filed by kb/_subject_code_address_probe.py from pages read one by one (no course-descriptions index is filed for this college).",
+ "college": "North Orange Continuing Education",
+ "run": "45304208269",
+ "source": [],
+ "subjects": 0,
+ "with_heading": 0,
+ "rows": [],
+ "code_address_tried": [
+  {
+   "code": "ECE",
+   "address": "https://noce.edu/programs/careers/early-childhood-education/",
+   "status": "200",
+   "first_line": "Start Your Career as a Daycare Teacher or a Preschool Teacher! NOCE’s Early Chil",
+   "run": "45304208269"
+  }
+ ]
+}

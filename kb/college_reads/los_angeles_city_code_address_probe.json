@@ -1,0 +1,37 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Los Angeles City College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "Los Angeles City College",
+ "questions": {
+  "code_esl": "Does this page name Los Angeles City College's E.S.L., and under what heading?",
+  "code_eslnc": "Does this page name Los Angeles City College's ESL NC, and under what heading?",
+  "code_famcs": "Does this page name Los Angeles City College's FAM &CS, and under what heading?"
+ },
+ "keywords": [
+  "E\\.S\\.L\\.",
+  "ESL\\ NC",
+  "FAM\\ \\&CS"
+ ],
+ "pages": [
+  {
+   "url": "https://lacc.edu/academics/esl",
+   "answers": [
+    "code_esl"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lacc.edu/academics/noncredit-dept",
+   "answers": [
+    "code_eslnc"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lacc.edu/academics/pathways/sbs/cfs-dept",
+   "answers": [
+    "code_famcs"
+   ],
+   "source": "web_search"
+  }
+ ]
+}
