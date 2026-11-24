@@ -106,7 +106,15 @@ check("a row that already holds a common code is never given one",
       all("common" not in recs[(r["slug"], r["code"])] for r in data.rows
           if r["common"] and (r["slug"], r["code"]) in recs))
 differs = [r["title"] for r in recs.values() if r.get("title", {}).get("also")]
-check("where sources differ the row reads Low and shows the other title", all(t["level"] == "Low" for t in differs))
+check("where sources differ the row is never High and shows the other title (S722: each candidate carries its own bar)",
+      differs and all(t["level"] != "High" and len(t["candidates"]) == len(t["also"]) + 1 for t in differs))
+cands = [r["title"]["candidates"] for r in recs.values() if r.get("title", {}).get("candidates")]
+check("S722: every candidate title is listed, most confident first, the first is the recommendation",
+      cands and all([c["confidence"] for c in cs] == sorted([c["confidence"] for c in cs], reverse=True) for cs in cands)
+      and all(r["title"]["title"] == r["title"]["candidates"][0]["title"] for r in recs.values() if r.get("title", {}).get("candidates")))
+mech = [r["title"] for (sl, cd), r in recs.items() if sl == "clovis_community" and cd == "MECH"]
+check("S722, Sam: a web search on the college's own site that found the title lifts it (Clovis MECH reads Mechatronics, not Law)",
+      mech and mech[0]["title"] == "Mechatronics/Industrial Automation" and mech[0]["candidates"][1]["title"] == "Law")
 s30 = doc["common_code"]["sams_30"]
 check("Sam's 30 are all accounted for: agree, diverge or no recommendation",
       s30["agree"] + s30["diverge"] + len(s30["no_recommendation"]) == s30["decisions"] == 30)
@@ -119,8 +127,12 @@ sr = json.load(open(os.path.join(ROOT, R.SEARCHES), encoding="utf-8"))["searches
 check("every filed search names its query, its date and where its result sits",
       all(x.get("query") and x.get("searched_on") and x.get("where") in ("catalog", "college site", "none") for x in sr))
 check("a title or a label is recorded only from the college's own site", all(x["where"] != "none" for x in sr if x.get("title") or x.get("label")))
-alone = [r["title"] for r in recs.values() if r.get("title", {}).get("from") == "web_search"]
-check("a search by itself never reads above Low (Sam: it lifts or lowers, a label is weaker evidence)", alone and all(t["level"] == "Low" for t in alone))
+alone = [r["title"] for r in recs.values() if (r.get("title", {}).get("candidates") or [{}])[0].get("from") == ["web_search"]]
+# Sam, 2026-11-24 (S722), updating his 2026-11-21 word that a search "lifts or lowers": "If you did a web search and found
+# a match ... your confidence bar should get higher". A title from the college's own site reads at WEB_SHARE["title"]
+# (Medium), a label at WEB_SHARE["label"] (Low); neither reaches High alone.
+check("a search by itself reads Medium for a title and Low for a label, never High (Sam, S722)", alone and all(
+    t["level"] != "High" and t["confidence"] in (R.WEB_SHARE["title"], R.WEB_SHARE["label"]) for t in alone))
 labeled = {(x["college"], x["local_code"]) for x in sr if x.get("label") and not x.get("title")}
 check("a department label is kept and read: a row it alone names says it is a label",
       labeled and all("label" in recs[k]["title"]["why"] for k in labeled if k in recs and recs[k].get("title", {}).get("from") == "web_search"))

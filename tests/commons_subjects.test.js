@@ -81,10 +81,13 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   const by = (t) => links.find((l) => txt(l).indexOf(t) >= 0 && !l.hasAttribute("data-onpage"));
   check("(2) ⭐ the drafted titles open the subjects list", by("3 local titles") && by("3 local titles").getAttribute("href") === "#commons/subjects");
   check("(2) ⭐ the colleges open the subjects list", by("1 of 2 colleges") && by("1 of 2 colleges").getAttribute("href") === "#commons/subjects");
-  check("(2) the codes with no title open their list, each reason counted", by("3 codes with no title") && by("3 codes with no title").getAttribute("href") === "#commons/subjects/disagree"
+  check("(2) the titles to check open their list, each reason counted", by("3 titles to check") && by("3 titles to check").getAttribute("href") === "#commons/subjects/disagree"
     && /\(1 not in catalog, 2 not read yet, 0 blocked\)/.test(txt(first)) && !/on hold/.test(txt(first)));
   check("(2) Step a's figure opens the Common Subjects Reference", links.some((l) => l.getAttribute("href") === "#canonical-subj4" && /disciplines settled/.test(txt(l))));
-  check("(2) the card names who does each check", /Owner: the Courses bot/.test(txt(first)) && /Who: Sky/.test(txt(first)) && /(Owner: a curator|Done: all)/.test(txt(first)));
+  const shown = (() => { const c = d.body.cloneNode(true); c.querySelectorAll("script, style").forEach((n) => n.remove()); return txt(c).replace(/SkyView/g, ""); })();
+  check("(2) ⭐ S722 (Sam, 2026-11-24: \"no one outside of the map team knows we call you sky\"): the Commons never names Sky in rendered text",
+    !/\bSky\b/.test(shown) && shown.length > 500);
+  check("(2) the card names who does each check", /Owner: the Courses bot/.test(txt(first)) && /Who: the nightly data collection/.test(txt(first)) && /(Owner: a curator|Done: all)/.test(txt(first)));
   /* Sam's mock of 2026-11-23: the share of courses under a Confident code, then four checks under Collect, Curate and
      Connect, each with a Where to act line. */
   const stages = Array.from(first.querySelectorAll(".cmf-stage")).map(txt);
@@ -97,7 +100,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   const ql = quick ? Array.from(quick.querySelectorAll("a[data-onpage]")) : [];
   check("(12) ⭐ the quick links sit at the top of the card, before the Why list and the stages", quick && first.querySelector(".cmf-body").firstElementChild === quick && ql.length >= 2 && ql.length <= 5);
   check("(12) ⭐ each quick link carries its live count and points to a check that exists", ql.every((l) => /^[\d,]+ /.test(txt(l)) && first.querySelector("#" + l.getAttribute("data-onpage") + ".cmf-check"))
-    && ql.some((l) => txt(l) === "3 codes with no title" && l.getAttribute("data-onpage") === "cmf-subj-check-1"), ql.map(txt).join(" | "));
+    && ql.some((l) => txt(l) === "3 titles to check" && l.getAttribute("data-onpage") === "cmf-subj-check-1"), ql.map(txt).join(" | "));
   const sb = Array.from(first.querySelectorAll("button.cmf-stage-b"));
   check("(12) ⭐ Collect, Curate and Connect start folded, each behind a button with aria-expanded", sb.length === 3 && sb.every((b) => b.getAttribute("aria-expanded") === "false"
     && d.getElementById(b.getAttribute("aria-controls")).hasAttribute("hidden")) && !first.querySelector("#cmf-subj-quick").closest("[hidden]"));
@@ -106,7 +109,12 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   toTitles.dispatchEvent(new x.w.MouseEvent("click", { bubbles: true, cancelable: true, button: 0 }));
   const collectB = sb.find((b) => txt(b) === "Collect");
   check("(12) ⭐ a quick link opens its stage, scrolls to its check and focuses it", collectB.getAttribute("aria-expanded") === "true" && !d.getElementById("cmf-subj-stage-collect").hasAttribute("hidden")
-    && x.w.scrolledTo === "cmf-subj-check-1" && d.activeElement && d.activeElement.id === "cmf-subj-check-1" && d.getElementById("cmf-subj-check-1").querySelector(".cmf-act"));
+    && d.activeElement && d.activeElement.tagName === "A" && d.getElementById("cmf-subj-check-1").querySelector(".cmf-act").contains(d.activeElement)
+    && d.activeElement.classList.contains("cmf-hl"));
+  check("(12) ⭐ S722, Sam: a quick link drops you on a link, never bare text, and highlights it (titles to check lands on that list's link)",
+    toTitles.getAttribute("data-onpage-to") === d.activeElement.getAttribute("href") && d.activeElement.getAttribute("href") === "#commons/subjects/disagree");
+  d.activeElement.dispatchEvent(new x.w.FocusEvent("blur"));
+  check("(12) the highlight leaves with the focus", !d.querySelector(".cmf-hl"));
   collectB.click();
   check("(12) the stage word folds it again", collectB.getAttribute("aria-expanded") === "false" && d.getElementById("cmf-subj-stage-collect").hasAttribute("hidden"));
   check("the card's link row opens the list", Array.from(first.querySelectorAll(".cmf-links a")).some((l) => l.getAttribute("href") === "#commons/subjects"));
@@ -134,16 +142,18 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
     && !/print/i.test(Array.from(d.querySelectorAll(".csb-table thead th")).map(txt).join(" ")));
   const chip = math.children[2].querySelector(".csb-chip");
   check("(7) ⭐ a code in COCI and nowhere in the catalog carries the Not in catalog chip, a note a screen reader reads",
-    chip && txt(chip) === "Not in catalog" && chip.getAttribute("role") === "note" && /Sky recommends a title, and a person’s save confirms it/.test(chip.getAttribute("aria-label")));
+    chip && txt(chip) === "Not in catalog" && chip.getAttribute("role") === "note" && /COBI recommends a title, and a person’s save confirms it/.test(chip.getAttribute("aria-label")));
   check("(7) a titled row carries no chip", !d.querySelector('.csb-codes tr[data-code="ENGL"] .csb-chip'));
   check("(4) the common code shows with its discipline title where the maps give one, blank where not", txt(d.querySelector('.csb-codes tr[data-code="ENGL"]').children[3]) === "ENGL English" && txt(zzz.children[3]) === "");
   /* (8) the recommendations (S700, #3655): a note beside a row with no title or no common code, never a value */
-  const mrec = math.children[2].querySelector('.csb-rec[data-rec="title"]');
-  check("(8) ⭐ a row with no title shows its recommended title, its level in words and why", mrec && /Recommended: Mathematics\. Confidence: High\. other colleges: 3 of 3/.test(txt(mrec)) && mrec.getAttribute("data-level") === "High");
-  check("(8) the chip stays: a recommendation is not a title", !!math.children[2].querySelector(".csb-chip") && math.getAttribute("data-title-state") === "not_in_catalog");
-  check("(8) where sources differ the other title shows", /Also read: Math Lab\./.test(txt(mrec)));
+  const mcands = Array.from(math.children[2].querySelectorAll(".csb-cands li")).map((li) => li.getAttribute("data-cand"));
+  check("(8) ⭐ S722: a row with no title lists every recommended title, most confident first, each with its own Accept", JSON.stringify(mcands) === JSON.stringify(["Mathematics", "Math Lab"])
+    && math.children[2].querySelectorAll('.csb-cands button[data-csb-accept="title"]').length === 2);
+  check("(8) ⭐ S722: no \"Recommended\" and no explanation on the row; the bar carries it", !/Recommended|other colleges: 3 of 3|Also read/.test(txt(math)));
+  check("(8) ⭐ S722: the chip moves to the end of the title cell", math.children[2].lastElementChild.classList.contains("csb-chip") && math.getAttribute("data-title-state") === "not_in_catalog");
   const mcom = math.children[3].querySelector('.csb-rec[data-rec="common"]');
-  check("(8) ⭐ a row with no common code shows the recommended code with its discipline", mcom && /Recommended: MATH Mathematics\. Confidence: Medium\./.test(txt(mcom)));
+  check("(8) ⭐ a row with no common code shows the recommended code with its discipline", mcom && /^MATH Mathematics/.test(txt(mcom)));
+  check("(8) ⭐ S722: the row has an Accept beside Edit", !!math.querySelector('button[data-csb-accept="row"]') && /Accept Mathematics/.test(math.querySelector('button[data-csb-accept="row"]').getAttribute("aria-label")));
   check("(8) a titled row with a common code carries no recommendation", !d.querySelector('.csb-codes tr[data-code="ENGL"] .csb-rec'));
   check("(8) a row the file does not name carries none", !zzz.querySelector(".csb-rec"));
   /* (9) the course panel (S700, #3655 item 3): a local code opens its courses, credit and noncredit apart */
@@ -224,7 +234,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   await x.M.boot(); await settle();
   d = x.d;
   check("(4) ⭐ #commons/subjects/<slug> opens that college", txt(d.getElementById("csb-h")) === "Subjects at Beta College" && d.querySelectorAll(".csb-codes tbody tr").length === 2);
-  check("(4) its titles read TBA, and the page says why", Array.from(d.querySelectorAll(".csb-codes tbody tr")).every((r) => /^Not read yet/.test(txt(r.children[2])) && txt(r.children[5]) === "Not read yet") && /No subject heading is read for this catalog yet/.test(txt(d.querySelector(".csb-note"))));
+  check("(4) its titles read TBA, and the page says why", Array.from(d.querySelectorAll(".csb-codes tbody tr")).every((r) => /Not read yet$/.test(txt(r.children[2])) && r.children[2].lastElementChild.classList.contains("csb-chip") && txt(r.children[5]) === "Not read yet") && /No subject heading is read for this catalog yet/.test(txt(d.querySelector(".csb-note"))));
   check("(7) a line near the code in the catalog shows under the chip, never as the title", /A line near it in the catalog: Engineering and Design/.test(txt(d.querySelector('.csb-codes tr[data-code="ENG"]').children[2])));
   check("(7) ⭐ on a college's own list its name is plain words, never a link to the page it is on",
     !d.querySelector('.csb-table a[href="#commons/subjects/beta"]') && /Beta College/.test(txt(d.querySelector(".csb-codes tbody tr").children[0])));
@@ -236,7 +246,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   const states = Array.from(d.querySelectorAll(".csb-codes tbody tr")).map((r) => r.getAttribute("data-title-state"));
   check("(7) ⭐ the list holds every code with no title, in or out of the catalog, a person's rows first",
     sides.length === 3 && states.join(",") === "not_in_catalog,not_read,not_read" && sides.indexOf("both") >= 0, states.join(",") + " / " + sides.join(","));
-  check("(7) its heading says what it lists", txt(d.getElementById("csb-h")) === "Subject codes with no title");
+  check("(7) its heading says what it lists", txt(d.getElementById("csb-h")) === "Subject titles to check");
 
   // Noncredit (S701): the hold lifted (r-noncredit-title-list-go-sam-2026-11-22). A noncredit-only untitled code reads its
   // true reason; its courses count noncredit and noncredit enhanced apart; its COCI categories show with their MQ discipline.
@@ -261,7 +271,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(8) ⭐ a category with no common code shows by name and no code, beside the categories most courses first",
     /COCI noncredit categories: Workforce Preparation \(5\), Parenting \(2\)\. No noncredit MQ discipline is named for Workforce Preparation, and no common subject code yet\./.test(txt(ncw.children[4]))
     && /^No common subject code yet\. The category has no common subject code yet: .*Workforce Preparation \(5 of 7 noncredit courses, 71%\)\.$/.test(txt(ncw.children[3].querySelector('.csb-rec[data-rec="common-none"]'))));
-  check("(8) the stamp's reasons still sum to the codes with no title, and none is on hold", /3 codes with no title \(1 not in catalog, 2 not read yet, 0 blocked\)\./.test(txt(x.d.querySelector(".csb-stamp"))));
+  check("(8) the stamp's reasons still sum to the titles to check, and none is on hold", /3 titles to check \(1 not in catalog, 2 not read yet, 0 blocked\)\./.test(txt(x.d.querySelector(".csb-stamp"))));
   x = load("#commons/subjects/alpha", { "kb/status/local_subject_titles.json": NC });
   await x.M.boot(); await settle();
   check("(8) ⭐ a code's credit and noncredit courses are counted apart, with its category's MQ discipline and code", /\(1 credit, 1 noncredit\)/.test(txt(x.d.querySelector('.csb-codes tr[data-code="ENGL"]').children[4]))

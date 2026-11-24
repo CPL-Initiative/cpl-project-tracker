@@ -120,11 +120,17 @@ const quickTexts = (d, k) => Array.from(cardOf(d, k).querySelectorAll(".cmf-quic
     x.w.scrolled = [];
     l.dispatchEvent(new x.w.MouseEvent("click", { bubbles: true, cancelable: true, button: 0 }));
     if (b.getAttribute("aria-expanded") !== "true" || box.hasAttribute("hidden")) bad3.push(txt(l) + ": its stage stayed folded");
-    if (x.w.scrolled[x.w.scrolled.length - 1] !== id) bad3.push(txt(l) + ": scrolled to " + x.w.scrolled.join(","));
-    if (d.activeElement !== t) bad3.push(txt(l) + ": focus on " + (d.activeElement && (d.activeElement.id || d.activeElement.tagName)));
+    /* S722 (Sam, 2026-11-24): "it should drop you on a lower link and highlight the link ... Do not just drop the user on
+       text that has no link": the focus lands on a Where to act link inside the check, highlighted; the one the quick
+       link names where it names one. */
+    const to = l.getAttribute("data-onpage-to"), A = d.activeElement;
+    if (!A || A.tagName !== "A" || !t.contains(A) || !A.closest(".cmf-act")) bad3.push(txt(l) + ": focus on " + (A && (A.id || A.tagName)) + ", not a link in its check");
+    else if (!A.classList.contains("cmf-hl")) bad3.push(txt(l) + ": its link is not highlighted");
+    else if (to && A.getAttribute("href") !== to) bad3.push(txt(l) + ": landed on " + A.getAttribute("href") + ", not " + to);
+    if (A && A.dispatchEvent) A.dispatchEvent(new x.w.FocusEvent("blur"));
     if (/#commons\//.test(x.w.location.hash)) bad3.push(txt(l) + ": it routed");
   });
-  check("(2) ⭐ every quick link opens its stage, scrolls to a check in its own card and focuses it", quick.length && !bad3.length, bad3.join(" | "));
+  check("(2) ⭐ every quick link opens its stage and lands on a highlighted link in its check, in its own card", quick.length && !bad3.length, bad3.join(" | "));
 
   /* (3) one id, one element */
   const seen = {}, dup = [];

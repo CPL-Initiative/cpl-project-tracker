@@ -318,52 +318,78 @@ def measure(data):
     return table
 
 
+# A web search's weight (S722; Sam, 2026-11-24: "If you did a web search and found a match, as you did for MECH and
+# Mechatronics (which is the correct title), your confidence bar should get higher"). The searches ran only for codes
+# with no title, so no titled code can measure them: these are set, not measured, and the file says so. A title a page
+# of the college's own site or catalog gives for the code's courses (d-program-label-lists-the-codes-courses-s719)
+# reads as a Medium source; a department or program label reads below it.
+WEB_SHARE = {"title": 0.80, "label": 0.55}
+
+
+def level_for(share):
+    return "High" if share >= HIGH else ("Medium" if share >= MEDIUM else "Low")
+
+
 def recommend_title(data, table, row):
+    """Every candidate title with its own confidence, most confident first; the first is the recommendation.
+
+    Each source's confidence is its measured share for the condition it is in (a web search's is WEB_SHARE). Sources that
+    name the same title join: their confidence is 1 - the product of (1 - share), so a second source that agrees lifts it.
+    Ties go to a title the code's letters run through (MECH through Mechatronics). Where another candidate differs, the
+    first reads Medium at most: disagreeing sources never settle a title on their own."""
     band = "C" if row["credit_courses"] else None
     got = sources(data, row["slug"], row["code"], band)
-    ranked = []
+    entries = []   # (share, src, title, why)
     for src, (t, cond, ev) in got.items():
-        m = table.get(src, {}).get(cond)
-        if not m:
-            m = {"level": "Low", "share": 0.0, "asked": 0}
-        ranked.append((LEVELS.index(m["level"]), m["share"], src, t, cond, ev))
+        m = table.get(src, {}).get(cond) or {"level": "Low", "share": 0.0, "asked": 0}
+        share = m["share"] if m.get("asked", 0) >= FLOOR_N else min(m["share"], MEDIUM - 0.01)
+        if src == "program_titles":
+            share = min(share, HIGH - 0.01)
+        entries.append((share, src, t, "%s: %s (%s, right %d%% of the time)" % (src.replace("_", " "), ev, cond, round(m["share"] * 100))))
     search = data.searches.get((row["slug"], row["code"]))
     # What the search found: the subject title a page of the college gives, else a department or program label
-    # (Sam, 2026-11-21: "Dept labels can be helpful for our edge case recommendations"). A label is weaker
-    # evidence: it is shown and it can agree or differ, and by itself it reads Low and says it is a label.
+    # (Sam, 2026-11-21: "Dept labels can be helpful for our edge case recommendations").
     found = (search or {}).get("title") or (search or {}).get("label")
     is_label = bool(search) and not search.get("title") and bool(search.get("label"))
     brief = None
     if search:
         brief = {k: search.get(k) for k in ("query", "searched_on", "result_title", "result_url", "where")}
-    if not ranked:
-        if found and search.get("where") in ("college site", "catalog"):
-            return {"title": title_case(found), "level": "Low", "from": "web_search",
-                    "why": ("A web search found a department or program label on the college's own site; no other "
-                            "source names a title." if is_label else
-                            "A web search found it on the college's own site; no other source names a title."),
-                    "also": [], "search": brief}
+    if found and search.get("where") in ("college site", "catalog"):
+        w = WEB_SHARE["label" if is_label else "title"]
+        entries.append((w, "web_search", found, "web search: the college's own %s gives %s %s (set at %d%%, not measured)" % (
+            "catalog" if search.get("where") == "catalog" else "site", "a department or program label" if is_label else "this title", "", round(w * 100))))
+    if not entries:
         return None
-    ranked.sort(key=lambda x: (-x[0], -x[1], x[2]))
-    if not all(same(r[3], ranked[0][3]) for r in ranked) and not fits(row["code"], ranked[0][3]):
-        # The sources differ: one whose title the code's letters run through goes ahead of one they do not.
-        ranked.sort(key=lambda x: (not fits(row["code"], x[3]), -x[0], -x[1], x[2]))
-    lvl, _, src, t, cond, ev = ranked[0]
-    agree = [r for r in ranked[1:] if same(r[3], t)]
-    differ = [r for r in ranked[1:] if not same(r[3], t)]
-    why = "%s: %s (%s)." % (src.replace("_", " "), ev, cond)
-    if found:
-        (agree if same(found, t) else differ).append((0, 0, "web_search", found, "", ""))
-    if differ:
-        lvl = 0
+    groups = []
+    for e in sorted(entries, key=lambda x: -x[0]):
+        for g in groups:
+            if any(same(x[2], e[2]) for x in g["parts"]):
+                g["parts"].append(e)
+                break
+        else:
+            groups.append({"title": e[2], "parts": [e]})
+    cands = []
+    for g in groups:
+        miss = 1.0
+        for e in g["parts"]:
+            miss *= 1 - e[0]
+        conf = round(min(0.99, 1 - miss), 3)
+        # The group reads as its most specific title (Computer Applications and Office Technologies over Technologies).
+        shown = max(g["parts"], key=lambda x: (len(norm(x[2]).split()), x[0]))[2]
+        cands.append({"title": title_case(shown), "confidence": conf, "level": level_for(conf),
+                      "from": [e[1] for e in g["parts"]], "why": "; ".join(e[3].replace("  ", " ").rstrip() for e in g["parts"]) + "."})
+    cands.sort(key=lambda c: (-c["confidence"], not fits(row["code"], c["title"]), c["title"]))
+    top = cands[0]
+    lvl = top["level"]
+    if len(cands) > 1 and lvl == "High":
+        lvl = "Medium"
+    why = top["why"]
+    if len(cands) > 1:
         why += " Another source reads differently."
-    elif agree:
-        lvl = min(2, lvl + 1)
-        if src == "program_titles" and not any(a[2] != "web_search" for a in agree):
-            lvl = min(lvl, 1)
-        why += " %s agrees." % ", ".join(sorted(set(a[2].replace("_", " ") for a in agree)))
-    out = {"title": title_case(t), "level": LEVELS[lvl], "from": src, "why": why,
-           "also": [{"title": title_case(r[3]), "from": r[2]} for r in differ]}
+    elif len(top["from"]) > 1:
+        why += " The sources agree."
+    out = {"title": top["title"], "level": lvl, "confidence": top["confidence"], "from": top["from"][0], "why": why,
+           "also": [{"title": c["title"], "from": c["from"][0]} for c in cands[1:]], "candidates": cands}
     if brief:
         out["search"] = brief
     return out
@@ -520,11 +546,12 @@ def build(root=ROOT):
             cell = score["subject_map_rows"][rec[1]]
             cell[1] += 1
             cell[0] += 1 if rec[0] == row["common"] else 0
-    common_level = {}
+    common_level, common_share = {}, {}
     for src in ("title", "own_courses", "same_code_statewide"):
         r = [score[k][src][0] for k in score]
         a = [score[k][src][1] for k in score]
         share = sum(r) / sum(a) if sum(a) else 0
+        common_share[src] = round(share, 3)
         common_level[src] = "High" if share >= HIGH else ("Medium" if share >= MEDIUM else "Low")
         if sum(a) < FLOOR_N:
             common_level[src] = "Low"
@@ -587,9 +614,13 @@ def build(root=ROOT):
                 rc = recommend_common(data, slug, code, title)
                 if rc:
                     lvl = common_level[rc[1]]
+                    # The bar's number (S722, Sam: "a simple bar from 0-100"): the source's measured share, and
+                    # where the code comes from a recommended title, no more than that title's own confidence.
+                    conf = common_share[rc[1]]
                     if not row["printed_name"] and rc[1] == "title":
                         lvl = LEVELS[min(LEVELS.index(lvl), LEVELS.index(entry["title"]["level"]))]
-                    entry["common"] = {"code": rc[0], "discipline": data.code_title[rc[0]], "level": lvl,
+                        conf = min(conf, entry["title"].get("confidence", conf))
+                    entry["common"] = {"code": rc[0], "discipline": data.code_title[rc[0]], "level": lvl, "confidence": conf,
                                        "from": rc[1], "why": rc[2][0].upper() + rc[2][1:] + "."}
                     totals["common_" + lvl.lower()] += 1
                 else:

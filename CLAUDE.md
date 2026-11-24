@@ -267,6 +267,9 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   `college_report_generator.js`; `annual_report.js` polish), the docx footers,
   Sierra's built-in instructions (`NAMING_RULE` in cpl-chat; Sheet 132, 2026-10-26),
   and the public KB's `claude/CLAUDE.md`. Historical titles/quotes stay verbatim.
+- **"Sky" is the MAP team's name for Claude, never rendered (Sam, 2026-11-24):** *"no one outside of the map team knows
+  we call you sky."* Where a page needs the actor, it says **COBI** (Sam: *"you could substitute COBI where you might need to refer to sky"*), or the process: *the nightly data collection*, *a web search*.
+  Handoffs, lanes and chat keep it; *SkyView* is a product name and stays. The Commons is guarded.
 - **CO style guide (Sam, 2026-09-30):** governs our writing and CO colors and
   identity, never CCC or CCCCO; no UI change from it:
   [`reference-cccco-style-guide`](docs/kb-notes/reference-cccco-style-guide.md).
@@ -666,8 +669,12 @@ file.
   included, stays at the top while the body scrolls inside one scroller. First built on the Subjects panel
   (`commons_subjects.js`); each other panel converts at its UI pass (`r-sidebars-resize-and-frozen-top-sam-2026-11-22`).
 - **A sidebar opens beside the view, never over it (Sam, 2026-11-23: *"this is a rule for all sidebars"*).** The view
-  gives up the panel's width and takes it back on Close; below 900px the panel covers the view. First built on the
+  gives up the panel's width and takes it back on Close, and a resize stops where 360px of the view is left (Sam,
+  2026-11-24: *"should not cover the lower main window when resized"*); below 900px the panel covers the view. First built on the
   Subjects panel (`beside()` in `commons_subjects.js`); each other panel converts at its UI pass.
+- **Confidence is one 0–100 bar (Sam, 2026-11-24):** *"a simple bar from 0-100 is the most recognizable and quickly
+  understood indicator--better that high, medium, low or others."* One component, `CPL_COMMONS.confBar` (`commons.js`),
+  its number beside it; each view converts at its UI pass. First built on Subject codes with no title.
 - **Controls are underlined words (Sam, 2026-10-09).** No border and no fill,
   underlined at rest, 24px tall, a `<button>` where it acts; each view converts
   at its UI pass. Spec: [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).

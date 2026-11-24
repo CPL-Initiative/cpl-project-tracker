@@ -333,10 +333,25 @@
   /* A link to a card on this page (item 1): scroll to it, unfold it and focus its heading; never route (the tab router
      reads a bare #<id> as a tab). The click is handled once, for every such link, below. */
   function onPage(id, kids, cls) { return el("a", { href: "#" + id, "data-onpage": id, cls: cls || null }, typeof kids === "string" ? [kids] : kids); }
-  function jump(id) {
+  /* A quick link lands on a link, never on bare text (Sam, S722, 2026-11-24: "it should drop you on a lower link and
+     highlight the link so user knows to click the link when ready. Do not just drop the user on text that has no link").
+     The check's Where to act link the quick link names (data-onpage-to, its href), else the check's first one, takes
+     the focus and a highlight that stays until the focus leaves it. */
+  function landOn(t, to) {
+    var links = t.querySelectorAll ? Array.prototype.slice.call(t.querySelectorAll(".cmf-act a[href]")) : [];
+    var l = links.filter(function (x) { return to && x.getAttribute("href") === to; })[0] || links[0];
+    if (!l) return false;
+    if (l.scrollIntoView) l.scrollIntoView({ block: "center" });
+    l.classList.add("cmf-hl");
+    l.addEventListener("blur", function off() { l.classList.remove("cmf-hl"); l.removeEventListener("blur", off); });
+    if (l.focus) l.focus();
+    return true;
+  }
+  function jump(id, to) {
     var t = document.getElementById(id);
     if (!t) return false;
     if (typeof t._unfold === "function") t._unfold();
+    if (t.classList && t.classList.contains("cmf-check") && landOn(t, to)) return true;
     if (t.scrollIntoView) t.scrollIntoView({ block: "start" });
     /* A check takes the focus itself: its own heading is a line, and a check may hold a subheading of its own. */
     var h = t.classList && t.classList.contains("cmf-check") ? t : t.querySelector("h3, h4") || t;
@@ -755,7 +770,7 @@
       el("div", { cls: "cmf-needs-grid" }, [
         dec,
         el("div", { cls: "cmf-need", id: "cmf-need-owed" }, [el("h4", { text: "Fixes owed to you" }),
-          p(["Five common-course cards you already ruled on (shared course IDs " + ASKED.doubt.slice(0, -1).join(", ") + ", and " + ASKED.doubt[ASKED.doubt.length - 1] + ") still sit on the list of cards whose catalog description reads as another discipline, because your rulings have not been carried into that list yet. Sky owes that fix. Nothing for you to decide."])]),
+          p(["Five common-course cards you already ruled on (shared course IDs " + ASKED.doubt.slice(0, -1).join(", ") + ", and " + ASKED.doubt[ASKED.doubt.length - 1] + ") still sit on the list of cards whose catalog description reads as another discipline, because your rulings have not been carried into that list yet. The nightly build owes that fix. Nothing for you to decide."])]),
         rows,
         cats,
         termReports(M, N),
@@ -994,15 +1009,17 @@
     if (!shown.length) return null;
     return el("div", { cls: "cmf-quick", id: "cmf-" + key + "-quick" }, [el("p", { cls: "cmf-sub", text: "Needs action first:" }),
       el("ul", { cls: "cmf-list" }, shown.map(function (i) {
-        return el("li", { "data-check": String(i.check) }, [onPage("cmf-" + key + "-check-" + i.check, fmt(i.n) + " " + (i.text || (i.n === 1 ? i.one : i.many)))]);
+        var l = onPage("cmf-" + key + "-check-" + i.check, fmt(i.n) + " " + (i.text || (i.n === 1 ? i.one : i.many)));
+        if (i.to) l.setAttribute("data-onpage-to", i.to);
+        return el("li", { "data-check": String(i.check) }, [l]);
       }))]);
   }
   function subjQuick(L, LT, HC, R, all) {
     return quickLinks("subj", [
-      { check: 2, n: L && L.codes ? L.codes.Unsure : null, text: "local codes with an Unsure common code" },
-      { check: 1, n: LT ? LT.untitled : null, text: "codes with no title" },
-      { check: 3, n: HC ? HC.held : null, text: "courses the M-ID mint holds" },
-      { check: 1, n: LT && all ? all - LT.collegesNamed : null, text: "colleges with no catalog read yet" },
+      { check: 2, n: L && L.codes ? L.codes.Unsure : null, text: "local codes with an Unsure common code", to: "#commons/subjects/statewide" },
+      { check: 1, n: LT ? LT.untitled : null, text: "titles to check", to: "#commons/subjects/disagree" },
+      { check: 3, n: HC ? HC.held : null, text: "courses the M-ID mint holds", to: "#commons/subjects/held" },
+      { check: 1, n: LT && all ? all - LT.collegesNamed : null, text: "colleges with no catalog read yet", to: "#collect" },
       { check: 4, n: R ? R.mids - R.ready : null, text: R ? R.code + " M-IDs not ready to re-mint" : "" }]);
   }
   function checkHead(n, name, fig) { return el("p", { cls: "cmf-check-h" }, [el("strong", { text: n + ". " + name }), el("span", { cls: "cmf-check-fig" }, fig)]); }
@@ -1022,7 +1039,7 @@
   function checksBody(key, o) {
     var num = {}, n = 0, stages = o.stages || {};
     STAGES.forEach(function (s) { (stages[s] || []).filter(Boolean).forEach(function (c) { num[c.ref] = ++n; }); });
-    var body = [quickLinks(key, (o.quick || []).map(function (q) { return q && num[q.ref] ? { check: num[q.ref], n: q.n, text: q.text, one: q.one, many: q.many } : null; })),
+    var body = [quickLinks(key, (o.quick || []).map(function (q) { return q && num[q.ref] ? { check: num[q.ref], n: q.n, text: q.text, one: q.one, many: q.many, to: q.to } : null; })),
       ul((o.defs || []).filter(function (d) { return d && d[1]; }).map(function (d) { return lead(d[0] + ":", d[1]); }))];
     STAGES.forEach(function (s) {
       var list = (stages[s] || []).filter(Boolean);
@@ -1052,8 +1069,8 @@
   function subjTitleKids(LT) {
     return LT ? [a("#commons/subjects", fmt(LT.named) + " local titles"), " at ", a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges"),
       " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading. For each of the ",
-      a("#commons/subjects/disagree", fmt(LT.untitled) + " codes with no title"),
-      " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked), Sky recommends a title, and a person’s save confirms it."]
+      a("#commons/subjects/disagree", fmt(LT.untitled) + " titles to check"),
+      " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked), COBI recommends a title, and a person’s save confirms it."]
       : ["Local subject titles: TBA."];
   }
   function subjHeldKids(HC) {
@@ -1082,12 +1099,12 @@
         "A department list: read at Cerritos.",
         "A person’s hand-over, where a site blocks our reader.",
         "COCI and the MIS reports carry no subject names.",
-        "Who: Sky, in the nightly data collection."]),
-      act([["The colleges and their titles", "#commons/subjects"], ["Hand over a file or link", "#collect"]])])]), stageFold("subj", "Curate", [checkBox("subj", 2, [
+        "Who: the nightly data collection."]),
+      act([["The colleges and their titles", "#commons/subjects"], ["Titles to check", "#commons/subjects/disagree"], ["Hand over a file or link", "#collect"]])])]), stageFold("subj", "Curate", [checkBox("subj", 2, [
       checkHead(2, "A Confident common code for every local code", L ? [el("strong", { text: fmt(L.pairs.Confident) }), " of " + fmt(L.totalPairs) + " pairs"] : ["TBA"]),
       L ? stack(L) : null,
       L ? el("p", { cls: "cmf-sub", id: "cmf-subj-levels", text: LEVEL_WORDS.map(function (k) { return k + " " + fmt(L.pairs[k]); }).join(" · ") }) : null,
-      ul([L ? "Next: Sky raises the " + fmt(L.codes.Unsure) + " Unsure codes with their titles and a web search." : null,
+      ul([L ? "Next: COBI raises the " + fmt(L.codes.Unsure) + " Unsure codes with their titles and a web search." : null,
         sOf ? [S.settled === S.of ? "Done: all " : "", a("#canonical-subj4", fmt(S.settled) + " of " + fmt(S.of) + " disciplines settled"),
           " in the Common Subjects Reference" + (S.settled === S.of ? ", each with its common code." : ". Owner: a curator.")] : "Disciplines with a settled common code: TBA."]),
       act([["Every local code, statewide", "#commons/subjects/statewide"], ["Noncredit subject titles", "#commons/subjects/noncredit"], ["The MQ disciplines", "#commons/subjects/mq"]])])]), stageFold("subj", "Connect", [checkBox("subj", 3, [
@@ -1475,7 +1492,7 @@
           Connect: [
             { ref: "ace", name: "ACE’s recommendation text saved", fig: figOf(X.ace, " rows wait"),
               line: "MAP already sends ACE’s recommendation text nightly; we do not save it yet.",
-              next: "ask Sky to save the CreditRecommendation column.",
+              next: "ask COBI to save the CreditRecommendation column.",
               act: [["Wordings still open", "#cr-reference/open"]] }] },
         method: [p([fmt(X.rows) + " is " + fmt(X.pairs) + " exhibit-plus-wording pairs plus " + fmt(X.noExhibit) + " worklist wordings with no exhibit. This is the inventory that rules actually move; it is not in the tracker on main yet. Two other counts measure different things: " + fmt(X.crm) + " is the count in MAP’s Custom Reporting Module, and the Commons page today tracks a narrower set — " + fmt(R.settled) + " of " + fmt(R.wordings) + " wordings settled (" + fmt(R.rule) + " by a rule, " + fmt(R.curator) + " more by a curator). Those " + fmt(R.settled) + " have not moved since " + X.since + " because human credit-recommendation curation is paused, and rule-settled counts only grow when a new rule ships. The credit-recommendation line should later point at this " + fmt(X.rows) + "-row inventory. On the " + fmt(R.groups) + " groups: Sam said yes on November 19 to keeping the colleges’ wording, and the 36 are recorded; each course-number link is flagged for a check. In the POST Basic Academy group, " + X.post.colleges + " colleges (" + X.post.rows + " rows) wrote “3 hours in Physical Training and Health Education (CSU GE Area E),” linked to C-ID AJ 110, whose official title is “Introduction to Criminal Justice.” In cases like POST Basic Academy the course-number link itself may be wrong, so the rule flags those links for a check. ", a("#cr-reference/open", "Wordings still open"), "."]), p([LIVE_WORDS.cr])],
         links: [["Open Credit Recommendations", "#cr-reference"], ["Name-check groups", "#cr-reference/names"]] }),
@@ -1490,7 +1507,7 @@
         stages: { Connect: [
           { ref: "blocked", name: "Every blocked connection cleared", fig: figOf(5, " blocked"),
             extra: [el("ul", { cls: "cmf-list" }, [
-              el("li", { text: "ACE recommendation text (CreditRecommendation column) · fetched nightly, not stored · ask Sky · " + fmt(X.ace) + " rows" }),
+              el("li", { text: "ACE recommendation text (CreditRecommendation column) · fetched nightly, not stored · ask COBI · " + fmt(X.ace) + " rows" }),
               el("li", { text: "MAP CR ID · missing from the MAP report view we sync from · raised with Sam" }),
               el("li", { text: "Course outlines at the Los Angeles district’s 9 colleges · district request" }),
               el("li", { text: "eLumen guest sign-in (eLumen, a curriculum system some colleges use) · Sam’s call; we don’t use it" }),
@@ -1510,7 +1527,7 @@
               el("li", { text: "Course outline links · " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges on file" }),
               el("li", { text: "Peer-articulation exhibit IDs · " + fmt(X.cannotNoExhibit) + " worklist wordings have no exhibit" })])],
             act: [["Integrations", "#collect/integrations"], ["The data dictionary", "#collect/dictionary"]] }] },
-        method: [p(["ACE recommendation text, from the CreditRecommendation column, is fetched nightly but not stored; ask Sky. That is the " + fmt(X.ace) + "-row wait on the Credit Recommendations card. The MAP CR ID is missing from the MAP report view we sync from; that has been raised with Sam. Course outlines at the Los Angeles district’s 9 colleges need a district request. We do not use eLumen guest sign-in (eLumen is a curriculum system some colleges use); that is Sam’s call. CourseLeaf CIM at Pasadena sits behind sign-ins. The MAP API would port credentials and exhibits to Malone’s new MAP exhibit module; that work is planned. Ask Malone whether COBI gets Credential Engine IDs (CTIDs) minted under its own org when it publishes, for credentials and for credit recommendations. " + fmt(ASKED.ctid) + " of " + fmt(M.building.industry) + " catalog rows have a Credential Engine ID (CTID) today. Public report endpoints for curriQunet/CurricUNET would help; work on those is under way at City College of San Francisco. An eLumen catalog API would also help. The JST education section holds non-military certifications, CCC courses, and assessments; MAP stores that section, and COBI doesn’t use it yet. COCI, the Chancellor’s Office curriculum inventory, is already integrated; ask the Chancellor’s Office for an API or a full extract with SLOs and objectives. Today’s extract has descriptions only: " + fmt(ASKED.noDescription) + " active courses have none, and retired courses are marked inconsistently. A public course outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges. " + fmt(X.cannotNoExhibit) + " worklist wordings have no peer-articulation exhibit ID."])],
+        method: [p(["ACE recommendation text, from the CreditRecommendation column, is fetched nightly but not stored; ask COBI. That is the " + fmt(X.ace) + "-row wait on the Credit Recommendations card. The MAP CR ID is missing from the MAP report view we sync from; that has been raised with Sam. Course outlines at the Los Angeles district’s 9 colleges need a district request. We do not use eLumen guest sign-in (eLumen is a curriculum system some colleges use); that is Sam’s call. CourseLeaf CIM at Pasadena sits behind sign-ins. The MAP API would port credentials and exhibits to Malone’s new MAP exhibit module; that work is planned. Ask Malone whether COBI gets Credential Engine IDs (CTIDs) minted under its own org when it publishes, for credentials and for credit recommendations. " + fmt(ASKED.ctid) + " of " + fmt(M.building.industry) + " catalog rows have a Credential Engine ID (CTID) today. Public report endpoints for curriQunet/CurricUNET would help; work on those is under way at City College of San Francisco. An eLumen catalog API would also help. The JST education section holds non-military certifications, CCC courses, and assessments; MAP stores that section, and COBI doesn’t use it yet. COCI, the Chancellor’s Office curriculum inventory, is already integrated; ask the Chancellor’s Office for an API or a full extract with SLOs and objectives. Today’s extract has descriptions only: " + fmt(ASKED.noDescription) + " active courses have none, and retired courses are marked inconsistently. A public course outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges. " + fmt(X.cannotNoExhibit) + " worklist wordings have no peer-articulation exhibit ID."])],
         links: [] })
     ];
     /* Item 4 (Sam, 2026-11-21: "check every card sits under the right one"): Credentials and Credit Recommendations are
@@ -1743,7 +1760,7 @@
   document.addEventListener("click", function (e) {
     var l = e.target && e.target.closest ? e.target.closest(".cmf a[data-onpage]") : null;
     if (!l || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (jump(l.getAttribute("data-onpage"))) e.preventDefault();
+    if (jump(l.getAttribute("data-onpage"), l.getAttribute("data-onpage-to"))) e.preventDefault();
   });
 
   /* #commons/needs-you (#3566): the front page scrolled to Needs you, its heading focused. */
@@ -1915,6 +1932,7 @@
     ".cmf-stage-b { font:inherit; letter-spacing:inherit; text-transform:inherit; color:var(--cmn-link); background:none; border:0; padding:0; min-height:24px; line-height:24px; text-decoration:underline; text-underline-offset:3px; cursor:pointer; }",
     ".cmf-stage-b[aria-expanded='false']::after { content:' (show)'; } .cmf-stage-b[aria-expanded='true']::after { content:' (hide)'; }",
     ".cmf-stage-b:focus-visible, .cmf-check:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
+    ".cmf-act a.cmf-hl { background:var(--cmn-pill-bg); outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:3px; }",
     ".cmf-check:focus { outline:none; } .cmf-quick { margin:6px 0 2px; } .cmf-quick a { display:inline-block; min-height:24px; line-height:24px; }",
     ".cmf-stage { margin:14px 0 6px; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:var(--cmn-muted); border-bottom:2px solid var(--cmn-gold); padding-bottom:4px; }",
     ".cmf-check-h { margin:6px 0 4px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; align-items:baseline; }",

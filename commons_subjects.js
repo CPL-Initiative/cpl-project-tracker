@@ -48,9 +48,9 @@
      was either blocked, title not in catalog, or not parsed yet"). The builder writes the state from a recorded fact;
      a row nothing proves reads Not read yet. Only Not in catalog rows are Sam's; Not read yet is Sky's to clear. */
   var STATES = {
-    not_read: { word: "Not read yet", tip: "The catalog has this subject and our read did not take its heading. Sky clears it with a re-read." },
+    not_read: { word: "Not read yet", tip: "The catalog has this subject and our read did not take its heading. The nightly data collection clears it with a re-read." },
     blocked: { word: "Blocked", tip: "The college’s site refused our reader. A person hands the page over, or the reader is fixed." },
-    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. Sky recommends a title, and a person’s save confirms it." }
+    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. COBI recommends a title, and a person’s save confirms it." }
   };
   /* A code's courses in COCI, credit and noncredit apart (Sam, 2026-11-21: the MQs separate them), and noncredit and
      noncredit enhanced apart (Sam, 2026-11-22: "Coci has a credit, noncredit, noncredit enhanced indicator"). */
@@ -105,13 +105,23 @@
     return by;
   }
   function recOf(r) { return REC[r.slug + "|" + r.code] || {}; }
+  /* A recommendation reads as what it names and a confidence bar from 0 to 100 (Sam, S722, 2026-11-24: delete
+     "Recommended" and the explanation, "we will rely on the bar"; a "simple bar from 0-100" is the one indicator). The
+     reasons stay in the Edit sidebar. A recommendation the file gives no number for shows its level word. */
+  function bar(v, about) { var C = window.CPL_COMMONS; return C && typeof C.confBar === "function" ? C.confBar(v, about) : null; }
   function recNote(kind, what, x) {
     if (kind === "common" && !x.code) return el("span", { cls: "csb-sub csb-rec", "data-rec": "common-none" }, [
       el("strong", { text: "No common subject code yet" }), ". " + (x.why || "")]);
-    var also = (x.also || []).map(function (a) { return a.title; }).filter(Boolean);
-    return el("span", { cls: "csb-sub csb-rec", "data-rec": kind, "data-level": x.level }, [
-      el("strong", { text: "Recommended: " + what }), ". Confidence: " + x.level + ". " + (x.why || "")
-      + (also.length ? " Also read: " + also.join("; ") + "." : "")]);
+    var b = bar(x.confidence, what);
+    return el("span", { cls: "csb-sub csb-rec", "data-rec": kind, "data-level": x.level }, [el("strong", { text: what }), " ",
+      b || el("span", { text: x.level })]);
+  }
+  /* A title's candidates, most confident first (kb/_build_local_subject_recommendations.py writes them in that order). */
+  function candidatesOf(x) {
+    if (!x || !x.title) return [];
+    if (x.candidates && x.candidates.length) return x.candidates;
+    return [{ title: x.title, confidence: x.confidence, level: x.level, from: [x.from] }].concat((x.also || []).filter(function (a) { return a && a.title; })
+      .map(function (a) { return { title: a.title, confidence: null, level: "", from: [a.from] }; }));
   }
   var DISAGREE = "disagree";
   var HELD = "held";
@@ -476,7 +486,7 @@
     catalog: ["in the catalog only", function (r) { return r.side === "catalog"; }],
     state: ["in COCI only", function (r) { return r.side === "state"; }],
     incat: ["in the catalog", function (r) { return r.side !== "state"; }],
-    titled: ["with a local title", function (r) { var sv = savedOf(r); return !needsTitle(r) || !!(sv && sv.title); }],
+    titled: ["with a local title", function (r) { var sv = savedOf(r), sk = skyTitle(r); return !needsTitle(r) || !!(sv && sv.title) || !!(sk && sk.stands); }],
     common: ["with a common subject code", function (r) { var sv = savedOf(r); return !!r.common || !!(sv && sv.common); }],
     saved: ["with a person’s save", function (r) { return !!savedOf(r); }],
     attention: ["that need attention", function (r) { return !!VIEW.W && needsAttention(r); }]
@@ -486,7 +496,22 @@
      reflected in the numbers (going in the right direction) shown in the links"). Each figure is counted from the rows
      with the live saves on top, by the same test the list it opens applies, so a figure always equals its list and
      moves the moment a save lands or is taken back. With no save since the build it equals the file's own totals. ── */
-  function untitledNow(r) { var sv = savedOf(r); return needsTitle(r) && !(sv && sv.title); }
+  /* Sky's title stands (Sam, S722, 2026-11-24: "Yes save any title 90 or above. Really it should save all titles and
+     just flag for possible action those that are below 80"): a code with no title and no person's save takes Sky's most
+     confident title as its title; a code under STANDS (80 on the 0-100 bar), or with no recommendation, stays in the
+     list to check. A person's save still wins, and the row marks it "Derived title" (Sam, 2026-11-24: "rather than
+     sky's title, how about derived title or expected title"). A recommendation the file gives no
+     number for stays in the list to check: the bar is the measure, and no level word stands in for it. */
+  var STANDS = 0.80;
+  function skyTitle(r) {
+    if (!needsTitle(r)) return null;
+    var sv = savedOf(r);
+    if (sv && sv.title) return null;
+    var top = candidatesOf(recOf(r).title)[0];
+    if (!top || !top.title) return null;
+    return { title: top.title, confidence: top.confidence, stands: top.confidence != null && top.confidence >= STANDS };
+  }
+  function untitledNow(r) { var sv = savedOf(r), sk = skyTitle(r); return needsTitle(r) && !(sv && sv.title) && !(sk && sk.stands); }
   function figures(M) {
     var F = { named: 0, withCommon: 0, untitled: 0, notInCatalog: 0, notRead: 0, blocked: 0, saved: 0, colleges: 0, collegesNamed: 0, by: {} };
     ((M && M.list) || []).forEach(function (x) {
@@ -708,6 +733,65 @@
   }
 
   /* The codes, one row each: college, local code, printed name (the draft title), common code, courses, side. */
+  /* ── Accept on the row (Sam, S722, 2026-11-24): "an Accept button on the row (without needing to click into Edit)",
+     and one beside each candidate title "so the user can quickly select the correct one on the row. If none are
+     correct, the user can click edit". An Accept is a save, the same kb_curation row the Edit sidebar writes: the row's
+     Accept saves the first title and the recommended common subject code; a title's Accept saves that title and keeps
+     a common subject code already saved. ── */
+  function acceptKey(r) {
+    var b = bandOf(r);
+    if (b !== "noncredit") return { key: saveKey(r.slug, r.code, b), mapKey: r.slug + "|" + r.code + "|" + b };
+    var ds = NC_SLUGS[dominantOf(ncParts(r))];
+    return ds ? { key: saveKey(r.slug, r.code, "nc:" + ds), mapKey: r.slug + "|" + r.code + "|nc:" + ds } : null;
+  }
+  function acceptValue(r, title, withCommon) {
+    var v = {}, rec = recOf(r), sv = savedOf(r);
+    if (title) v.local_title = titleCase(String(title).trim().replace(/\s+/g, " "));
+    var k = withCommon && !r.common && rec.common && rec.common.code ? rec.common.code : sv && sv.common ? sv.common : "";
+    if (k && COMMON && COMMON[k]) v.common_code = k;
+    var srch = rec.title && rec.title.search;
+    if (title && srch && srch.result_url && srch.result_title && rec.title.candidates && rec.title.candidates.some(function (c) {
+      return c.title === title && (c.from || []).indexOf("web_search") >= 0; })) v.source_url = srch.result_url;
+    return v;
+  }
+  function acceptStatus(r) { return el("span", { cls: "csb-sub csb-acc-msg", role: "status", id: "csb-acc-" + r.slug + "-" + String(r.code).replace(/[^A-Za-z0-9]/g, "_"), text: SAID["acc:" + r.slug + "|" + r.code] || "" }); }
+  function doAccept(r, value, btn) {
+    var k = acceptKey(r), msg = VIEW.root && VIEW.root.querySelector("#csb-acc-" + r.slug + "-" + String(r.code).replace(/[^A-Za-z0-9]/g, "_"));
+    function say(t) { if (msg) msg.textContent = t; }
+    if (!k) { say("No save can be keyed for this code's noncredit category."); return; }
+    if (!value.local_title && !value.common_code) { say("Nothing to accept. Use Edit."); return; }
+    btn.disabled = true; say("Saving…");
+    writeSave(k.key, value).then(function (res) {
+      if (!res.ok) { btn.disabled = false; say(res.lapsed ? "Not saved: your sign-in has ended. Sign in again, then accept." : "Not saved: the server answered " + res.status + ". Only a reviewer on the list may save."); return; }
+      LAPSED = false;
+      SAVED[k.mapKey] = { title: value.local_title || "", common: value.common_code || "", source: value.source_url || "", at: new Date().toISOString(), by: res.email || "",
+        label: "a reviewer", decidedBy: "", key: k.key, mapKey: k.mapKey };
+      SAID["acc:" + r.slug + "|" + r.code] = "Accepted.";
+      if (VIEW.root && VIEW.M) render(VIEW.root, VIEW.M, viewPath());
+      var back = VIEW.root && VIEW.root.querySelector('tr[data-code="' + r.code + '"] .csb-acc-msg');
+      if (back && back.focus) { back.setAttribute("tabindex", "-1"); back.focus(); }
+    }, function (e) { btn.disabled = false; say("Not saved: " + ((e && e.message) || "the network failed") + "."); });
+  }
+  function acceptRow(r) {
+    var sv = savedOf(r), rec = recOf(r), top = candidatesOf(rec.title)[0];
+    var t = untitledNow(r) && top ? top.title : "";
+    var v = acceptValue(r, t, true);
+    if (!v.local_title && !(v.common_code && !(sv && sv.common) && !r.common)) return null;
+    var what = [v.local_title, v.common_code].filter(Boolean).join(" and ");
+    var b = el("button", { type: "button", cls: "csb-word csb-accept", "data-csb-accept": "row", "aria-label": "Accept " + what + " for " + r.code + " at " + r.college, text: "Accept" });
+    b.addEventListener("click", function () { doAccept(r, v, b); });
+    return b;
+  }
+  function titleCands(r) {
+    var cs = candidatesOf(recOf(r).title);
+    if (!cs.length) return null;
+    return el("ul", { cls: "csb-cands", "aria-label": "Recommended titles for " + r.code + ", most confident first" }, cs.map(function (c, i) {
+      var b = el("button", { type: "button", cls: "csb-word csb-accept", "data-csb-accept": "title", "data-csb-cand": String(i),
+        "aria-label": "Accept " + c.title + " as the title of " + r.code + " at " + r.college, text: "Accept" });
+      b.addEventListener("click", function () { doAccept(r, acceptValue(r, c.title, false), b); });
+      return el("li", { "data-cand": c.title }, [el("strong", { text: c.title }), " ", bar(c.confidence, c.title) || el("span", { text: c.level || "" }), " ", b]);
+    }));
+  }
   function codeTable(rows, label) {
     var tbl = el("table", { cls: "csb-table csb-codes" }, [
       el("colgroup", null, [el("col", { cls: "csb-c-wide" }), el("col"), el("col", { cls: "csb-c-wide" }), el("col"), el("col"), el("col"), el("col", { cls: "csb-c-act" })]),
@@ -718,12 +802,14 @@
           : fmt(r.catalog_courses) + (r.side === "both" ? " in the catalog, " + fmt(r.state_courses) + " in COCI" + bands(r) : "")
             + (r.address && !r.catalog_courses ? (r.page_codes && r.page_codes.length ? "; its page prints its courses under " + r.page_codes.join(" and ") : "; its page is not read yet") : "");
         var sv = savedOf(r);
-        var st = needsTitle(r) && !(sv && sv.title) ? stateOf(r) : null;
+        var sk = skyTitle(r);
+        var st = untitledNow(r) ? stateOf(r) : null;
         var title = sv && sv.title ? el("td", { "data-saved": "title" }, [sv.title, " ", savedLine(sv)])
+          : sk && sk.stands ? el("td", { "data-sky": "title" }, [sk.title, " ", bar(sk.confidence, sk.title), " ", el("span", { cls: "csb-sub csb-sky", text: "Derived title" })])
           : st ? el("td", { cls: "csb-tba" }, [
-          el("span", { cls: "csb-chip", role: "note", tabindex: "0", "data-state": r.title_state || "not_read", "aria-label": st.word + ". " + st.tip, title: st.tip, text: st.word }),
+          titleCands(r),
           r.candidate ? el("span", { cls: "csb-sub", text: "A line near it in the catalog: " + r.candidate }) : null,
-          recOf(r).title ? recNote("title", recOf(r).title.title, recOf(r).title) : null])
+          el("span", { cls: "csb-chip", role: "note", tabindex: "0", "data-state": r.title_state || "not_read", "aria-label": st.word + ". " + st.tip, title: st.tip, text: st.word })])
           : el("td", { text: r.printed_name });
         return el("tr", { "data-code": r.code, "data-side": r.side, "data-title-state": r.title_state || null, "data-saved": sv ? "yes" : null }, [
           el("td", null, [S.view === r.slug ? r.college : go("#commons/subjects/" + r.slug, r.college)]),
@@ -737,8 +823,8 @@
           el("td", null, [el("button", { type: "button", cls: "csb-word csb-num", "data-csb-code": r.code, "data-csb-slug": r.slug,
             "aria-label": "Courses under " + r.code + " at " + r.college + ": " + heads + ". Show them.", text: heads }), categoryLine(r)]),
           el("td", { text: st && r.title_state === "not_read" ? st.word : SIDES[r.side] || r.side }),
-          el("td", null, [el("button", { type: "button", cls: "csb-word", "data-csb-code": r.code, "data-csb-slug": r.slug, "data-csb-edit": "yes",
-            "aria-label": "Edit " + r.code + " at " + r.college, text: "Edit" })])]);
+          el("td", null, [acceptRow(r), el("button", { type: "button", cls: "csb-word", "data-csb-code": r.code, "data-csb-slug": r.slug, "data-csb-edit": "yes",
+            "aria-label": "Edit " + r.code + " at " + r.college, text: "Edit" }), acceptStatus(r)])]);
       }) : [el("tr", null, [el("td", { colspan: "7", text: "No code is in this list." })])])]);
     return gridify(el("div", { cls: "csb-wrap", role: "region", "aria-label": label, tabindex: "0" }, [tbl]), "codes", [6]);
   }
@@ -968,9 +1054,9 @@
   /* Why a code needs attention, in a sentence. */
   function attentionWords(r, A) {
     var parts = [], call = A.sw && A.sw.recommend, rec = recOf(r);
-    if (A.code) parts.push(A.level && call && call.common ? "Sky’s call for its common subject code, " + call.common + (call.discipline ? " " + call.discipline : "") + ", is " + confWords(A.conf) + ", below Confident."
+    if (A.code) parts.push(A.level && call && call.common ? "COBI’s call for its common subject code, " + call.common + (call.discipline ? " " + call.discipline : "") + ", is " + confWords(A.conf) + ", below Confident."
       : "It has no common subject code yet, and no confidence is measured for it.");
-    if (A.title) parts.push(rec.title && rec.title.title ? "It has no local title; Sky recommends " + rec.title.title + " at " + rec.title.level + " confidence." : "It has no local title, and Sky has no recommendation for one yet.");
+    if (A.title) parts.push(rec.title && rec.title.title ? "It has no local title; COBI recommends " + rec.title.title + " at " + rec.title.level + " confidence." : "It has no local title, and COBI has no recommendation for one yet.");
     return parts.join(" ");
   }
   /* The web search a person runs for a code (Sam, 2026-11-23: "we need 'try web search' like we do for our credential
@@ -2017,7 +2103,17 @@
     return m;
   }
   var MEM1 = widthMem("cplSubjectsPanelW", 620), MEM2 = widthMem("cplSubjectsPanel2W", 540);
-  function panelMax() { return Math.max(PANEL_MIN, (window.innerWidth || 1280) - 24); }
+  /* The widest a sidebar may be: from 900px up, what leaves VIEW_MIN of the view beside it (less any other sidebar open),
+     below that the window less a margin, where a sidebar covers the view by design. */
+  function viewLeft() {
+    var r = document.getElementById("commons-root");
+    return r && r.getBoundingClientRect ? Math.max(0, Math.round(r.getBoundingClientRect().left)) : 0;
+  }
+  function panelMax(others) {
+    var vw = window.innerWidth || 1280;
+    if (vw < 900) return Math.max(PANEL_MIN, vw - 24);
+    return Math.max(PAIR_FIRST, vw - viewLeft() - VIEW_MIN - (others || 0));
+  }
   function sizeTo(panel, mem) { var w = mem.get(); panel.style.width = w ? Math.min(w, panelMax()) + "px" : ""; beside(panel); }
   function panelSize(panel) { sizeTo(panel, MEM1); }
   /* A sidebar starts below COBI's header bar (S717's lesson: it ran the full window height over the bar's right end).
@@ -2040,9 +2136,10 @@
      PAIR_FIRST (a person may widen it again from its grip) and the view gives up the pair's width. Only where the view
      has no width left beside the pair does the pair cover it, as one panel covers the view below 900px; and only a
      window narrower than the pair puts the second over the first. Close on the second draws the first at its own width.
-     A strip narrower than MIN_VIEW is no width left (S722): at 1280px a pair beside the side menu left about 124px of the
-     view, too narrow to read a row, so the pair covers the view there instead of squeezing it. */
-  var PAIR_FIRST = 320, MIN_VIEW = 360;
+     A sidebar never takes the view below VIEW_MIN (Sam, S722, 2026-11-24: "sidebar should not cover the lower main window
+     when resized. this is a rule for sidbars"): from 900px up, a drag stops where VIEW_MIN of the view is left, and a
+     pair the window cannot hold beside the view narrows its second sidebar to fit (#3770's cover rule is withdrawn). */
+  var PAIR_FIRST = 320;
   function paired(panel) { var ps = sidePanels(panel && panel.parentNode); return ps.length > 1 && ps[0] === panel; }
   function pairW(panel) { return parseInt(panel.getAttribute("data-csb-pair-w"), 10) || PAIR_FIRST; }
   function stackLayout(root) {
@@ -2054,9 +2151,20 @@
       var g0 = ps[0].querySelector(".csb-pgrip");
       if (g0) { g0.setAttribute("aria-valuemin", String(PAIR_FIRST)); g0.setAttribute("aria-valuenow", String(pairW(ps[0]))); }
     }
+    if ((window.innerWidth || 1280) >= 900) {
+      /* Beside, never over: the last sidebar narrows to what leaves VIEW_MIN of the view. */
+      var last = ps[ps.length - 1], before = ps.slice(0, -1).reduce(function (a, p) { return a + widthOf(p); }, 0);
+      var mem = last.getAttribute("data-csb-level") === "2" ? MEM2 : MEM1, own = mem.get() || mem.def;
+      var cap = panelMax(before);
+      /* The first sidebar alone keeps the stylesheet's width until a person sets one; the second's is always set. */
+      last.style.width = !mem.get() && ps.length === 1 && own <= cap ? "" : Math.min(own, cap) + "px";
+    } else {
+      var lastN = ps[ps.length - 1], memN = lastN.getAttribute("data-csb-level") === "2" ? MEM2 : MEM1;
+      if (memN.get() || ps.length > 1) lastN.style.width = Math.min(memN.get() || memN.def, panelMax()) + "px";
+    }
     var top = headerBottom(), ws = ps.map(widthOf), sum = ws.reduce(function (a, x) { return a + x; }, 0), vw = window.innerWidth || 1280;
     var left = root.getBoundingClientRect ? Math.max(0, root.getBoundingClientRect().left) : 0;
-    var mode = ps.length === 1 ? "one" : vw - left - sum >= MIN_VIEW ? "beside" : vw >= sum ? "cover" : "over", right = 0;
+    var mode = ps.length === 1 ? "one" : vw - left - sum >= 0 ? "beside" : vw >= sum ? "cover" : "over", right = 0;
     for (var i = ps.length - 1; i >= 0; i--) {
       ps[i].style.top = top + "px";
       ps[i].style.right = (mode === "over" ? 0 : right) + "px";
@@ -2175,7 +2283,7 @@
     if (isLink(row.address)) ctl.appendChild(el("a", { href: row.address, target: "_blank", rel: "noopener", id: "csb-act-catalog", text: "Open the catalog" }));
     box.appendChild(ctl);
     var srch = rec.title && rec.title.search;
-    if (srch && isLink(srch.result_url)) box.appendChild(el("p", { cls: "csb-note", id: "csb-act-found" }, ["Sky’s web search" + (srch.searched_on ? " of " + day(srch.searched_on) : "") + " found ",
+    if (srch && isLink(srch.result_url)) box.appendChild(el("p", { cls: "csb-note", id: "csb-act-found" }, ["A web search" + (srch.searched_on ? " of " + day(srch.searched_on) : "") + " found ",
       el("a", { href: srch.result_url, target: "_blank", rel: "noopener", text: srch.result_title || srch.result_url }), (srch.where ? ", on the " + srch.where : "") + "."]));
     if (!signed) box.appendChild(el("p", { cls: "csb-note", id: "csb-act-signin", text: "Sign in as a reviewer from the control in COBI’s header to save a title or a common subject code." }));
     box.appendChild(status);
@@ -2336,19 +2444,19 @@
     M.list.forEach(function (x) { all = all.concat(x.rows); });
     var untitled = F.untitled, nSaved = F.saved;   /* counted as the lists they open count, the live saves on top */
     var wrap = el("div", { cls: "cmn-wrap csb" });
-    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : S.view === SRC ? "Colleges by source" : S.view === MQ ? "MQ disciplines" : ""));
+    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Titles to check" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : S.view === SRC ? "Colleges by source" : S.view === MQ ? "MQ disciplines" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : S.view === MQ ? "Minimum Qualifications disciplines" : "Subjects" }),
+      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject titles to check" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : S.view === MQ ? "Minimum Qualifications disciplines" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
-      el("p", { cls: "cmn-lede", text: S.view === MQ ? MQ_LEDE : "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading, and Sky scores each code’s common subject code. A code is settled once that score is Confident, 90% or more, from the evidence or from a person’s confirm or save. Needs attention counts each college’s codes below Confident or with no title." })
+      el("p", { cls: "cmn-lede", text: S.view === MQ ? MQ_LEDE : "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading, and COBI scores each code’s common subject code. A code is settled once that score is Confident, 90% or more, from the evidence or from a person’s confirm or save. Needs attention counts each college’s codes below Confident or with no title." })
     ]));
     if (S.view !== MQ) wrap.appendChild(el("p", { cls: "csb-stamp" }, [
       count(F.named, "", "titled", fmt(F.named) + " codes with a local title. Show them."), " local titles at ", el("strong", { text: fmt(F.collegesNamed) + " of " + fmt(F.colleges) }),
       " colleges with a catalog on file (" + fmt(T.courses) + " courses, ", count(T.catalog_codes, "", "incat", fmt(T.catalog_codes) + " subject codes in the catalogs. Show them."), " subject codes in the catalogs). ",
-      go("#commons/subjects/" + DISAGREE, fmt(untitled) + " codes with no title"),
+      go("#commons/subjects/" + DISAGREE, fmt(untitled) + " titles to check"),
       " (" + fmt(F.notInCatalog) + " not in catalog, " + fmt(F.notRead) + " not read yet, " + fmt(F.blocked) + " blocked). "
-        + (F.notRead ? "Sky reads the codes not read yet in the nightly data collection. " : ""),
-      count(F.withCommon, "", "common", fmt(F.withCommon) + " codes with a common subject code. Show them."), " codes have a common subject code, each with Sky’s confidence score. ",
+        + (F.notRead ? "The nightly data collection reads the codes not read yet. " : ""),
+      count(F.withCommon, "", "common", fmt(F.withCommon) + " codes with a common subject code. Show them."), " codes have a common subject code, each with its confidence score. ",
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
       go("#commons/subjects/" + NC, "Noncredit subject titles"), ". ",
@@ -2402,11 +2510,12 @@
       /* Every row with no title, in or out of the catalog (#3655, item 7: a code in both with no title was dropped
          by the old one-sided filter). Sam's rows first: Not in catalog, then Blocked, then Sky's Not read yet. */
       var order = { not_in_catalog: 0, blocked: 1, not_read: 2 };
+      wrap.appendChild(el("p", { cls: "csb-note", id: "csb-check-rule", text: "A derived title stands for every code COBI rates 80 or more on the confidence bar, and a person’s save replaces it. These codes are below 80 or have no recommendation: Accept a title, or Edit." }));
       wrap.appendChild(bandBar(all.filter(untitledNow)));
       wrap.appendChild(codeTable(all.filter(untitledNow).filter(function (r) { return inBand(r, S.band); }).sort(function (a, b) {
         return (order[a.title_state] == null ? 2 : order[a.title_state]) - (order[b.title_state] == null ? 2 : order[b.title_state])
           || a.college.localeCompare(b.college) || String(a.code).localeCompare(String(b.code));
-      }), "Subject codes with no title"));
+      }), "Subject titles to check"));
     } else {
       wrap.appendChild(collegeTable(M, M.list));
       wrap.appendChild(bandBar(all));
@@ -2624,6 +2733,8 @@
     ".csb-src-read { font-weight:700; color:var(--cmn-heading); }",
     ".csb-src-on { font-weight:600; color:var(--cmn-ink-2); }",
     ".csb-rec { color:var(--cmn-ink-2); margin-top:4px; } .csb-rec strong { color:var(--cmn-heading); font-weight:600; }",
+    ".csb-cands { list-style:none; margin:0 0 4px; padding:0; display:grid; gap:4px; } .csb-cands li { display:flex; flex-wrap:wrap; align-items:center; gap:4px 8px; } .csb-cands strong { color:var(--cmn-heading); font-weight:600; }",
+    ".csb-acc-msg:empty { display:none; } .csb-accept { margin-right:8px; }",
     ".csb-chip { display:inline-block; font-size:.78rem; font-weight:600; color:var(--cmn-ink-2); border:1px solid var(--cmn-line); border-radius:999px; padding:1px 9px; background:var(--cmn-surface); white-space:nowrap; cursor:help; }",
     ".csb-chip[data-state='not_in_catalog'] { color:var(--cmn-heading); border-color:var(--cmn-accent); }",
     ".csb-chip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",

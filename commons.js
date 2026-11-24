@@ -1431,6 +1431,10 @@
     ".cmn-queue-ref { color:var(--cmn-ink-2); font-weight:600; }",
     ".cmn-carried { border-top:1px solid var(--cmn-line-soft); padding-top:10px; display:grid; gap:6px; }",
     ".cmn-conf-ref { display:grid; gap:6px; min-width:0; }",
+    ".cmn-cbar { display:inline-flex; align-items:center; gap:6px; vertical-align:middle; font-size:.8rem; font-variant-numeric:tabular-nums; color:var(--cmn-ink-2); }",
+    ".cmn-cbar-track { display:inline-block; width:64px; height:6px; border-radius:3px; background:var(--cmn-track); border:1px solid var(--cmn-line); overflow:hidden; }",
+    ".cmn-cbar-fill { display:block; height:100%; background:var(--cmn-accent); }",
+    ".cmn-cbar-n { min-width:2ch; text-align:right; }",
     ".cmn-conf-line { margin:0; color:var(--cmn-ink-2); font-size:.93rem; font-variant-numeric:tabular-nums; }",
     ".cmn-conf-wrap { overflow-x:auto; border:1px solid var(--cmn-line-soft); border-radius:10px; }",
     ".cmn-conf-table { width:100%; border-collapse:collapse; font-size:.9rem; font-variant-numeric:tabular-nums; }",
@@ -1581,11 +1585,24 @@
     if (!document.getElementById("cmn-font")) document.head.appendChild(el("link", { id: "cmn-font", rel: "stylesheet", href: FONT_HREF }));
   }
 
+  /* The one confidence indicator (Sam, S722, 2026-11-24: "lets start to regularize our use of confidence indicators. I
+     think a simple bar from 0-100 is the most recognizable and quickly understood indicator--better that high, medium,
+     low or others"). A value from 0 to 1 draws a bar on a 0-100 track with its number beside it; a missing value draws
+     nothing. The number is the word, so color never carries it alone. */
+  function confBar(v, about) {
+    if (v == null || isNaN(v)) return null;
+    var n = Math.max(0, Math.min(100, Math.round(Number(v) * 100 + 1e-9)));
+    var bar = el("span", { cls: "cmn-cbar", role: "img", "aria-label": (about ? about + ": " : "") + "confidence " + n + " of 100", "data-conf": String(n) }, [
+      el("span", { cls: "cmn-cbar-track", "aria-hidden": "true" }, [el("span", { cls: "cmn-cbar-fill" })]),
+      el("span", { cls: "cmn-cbar-n", "aria-hidden": "true", text: String(n) })]);
+    bar.querySelector(".cmn-cbar-fill").style.width = n + "%";
+    return bar;
+  }
   window.CPL_COMMONS = {
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
     queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, batchSection: batchSection, caseSection: caseSection, saveRuling: saveRuling, runProcessor: runProcessor, PROCESS: PROCESS, batchList: batchList, countDecided: countDecided, BATCH: BATCH, learningLine: learningLine,
     ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, FRONT_FOLD_KEY: FRONT_FOLD_KEY, showFront: showFront, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE,
-    decisions: decisions, renderDecisions: renderDecisions, FIRST: FIRST
+    decisions: decisions, renderDecisions: renderDecisions, FIRST: FIRST, confBar: confBar
   };
 })();
