@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T07:22:05Z",
+ "written_at": "2026-11-24T07:56:35Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17091,
-  "gap": 5244,
+  "passing": 17098,
+  "gap": 5237,
   "with_gap": 118,
   "cost_usd": 1340.94,
   "passed_at_read": 16325,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16763,
-  "gap": 5244,
-  "collected_with_gaps": 328,
+  "gap": 5237,
+  "collected_with_gaps": 335,
   "discontinued": 0
  },
  "census_live": {
@@ -2858,11 +2858,11 @@
    "harvested": true,
    "slug": "college_of_the_sequoias",
    "programs": 137,
-   "passing": 117,
-   "gap": 20,
+   "passing": 124,
+   "gap": 13,
    "causes": {
     "page_not_found": 11,
-    "unknown_without_live": 9
+    "unknown_without_live": 2
    },
    "census_causes": {
     "page_not_found": 11,
@@ -2912,7 +2912,7 @@
    "run": "45194676517",
    "levers": {
     "reader_page_search": 11,
-    "reconcile_steps": 9
+    "reconcile_steps": 2
    },
    "collection": {
     "program_reader": {

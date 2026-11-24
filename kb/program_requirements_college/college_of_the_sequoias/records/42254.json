@@ -108,7 +108,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "ELECTIVES are printed as a range '7-28' with 'Select additional degree applicable courses numbered 1-299 to achieve 60 units'; a range cannot be stored in open_elective_units, so it is null and electives_fill_degree is true. Reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 95,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
