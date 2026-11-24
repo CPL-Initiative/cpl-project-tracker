@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 187,
  "with_closed_list": 161,
- "started": "2026-11-19T13:04:36Z",
+ "started": "2026-11-24T12:21:49Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.miracosta.edu/sitemap.xml",
@@ -261,15 +261,14 @@
   "yield_unjudged": 0,
   "yield_refused_passing": 0
  },
- "loads": 374,
- "seconds": 1751.7,
+ "loads": 372,
+ "seconds": 1787.2,
  "found": 137,
  "by_method": {
-  "link_search": 1,
   "no_closed_list": 26,
   "not_found": 16,
   "page_claimed": 8,
-  "sitemap_page": 136
+  "sitemap_page": 137
  },
  "shared_pages": {
   "https://catalog.miracosta.edu/disciplines/horticulture/": [
@@ -382,7 +381,6 @@
   "https://catalog.miracosta.edu/disciplines/art/": [
    "18986",
    "18987",
-   "31936",
    "35028",
    "38727"
   ],
@@ -438,6 +436,10 @@
   "https://catalog.miracosta.edu/disciplines/politicalscience/": [
    "38730",
    "40327"
+  ],
+  "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/": [
+   "39489",
+   "39491"
   ]
  },
  "not_found": [
@@ -512,7 +514,8 @@
    "title": "Basic Education for Academic or Workforce Preparation",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Approved"
   },
@@ -521,7 +524,8 @@
    "title": "Social Justice Studies: Gender Studies",
    "award": "A.A- T Degree",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Approved"
   },
@@ -530,7 +534,8 @@
    "title": "Social Justice Studies: LGBTQ Studies",
    "award": "A.A- T Degree",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Approved"
   },
@@ -578,7 +583,8 @@
       "TECHNOLOGY CAREER INSTITUTE",
       98
      ]
-    ]
+    ],
+    "page_checks": true
    },
    "status": "Approved"
   },
@@ -605,7 +611,8 @@
    "title": "Liberal Arts: Elementary Subject Matter Education",
    "award": "A.A. Degree",
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -751,50 +758,48 @@
  ],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 1,
+  "0.5-0.8": 4,
   "0.8-1.0": 12,
-  "1.0": 124
+  "1.0": 121
  },
  "would_extract": {
   "against": "kb/program_requirements_college/miracosta",
   "kept": 134,
   "kept_moved": 0,
-  "programs": 3,
-  "list": [
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [
    {
     "control_number": "31821",
     "title": "History",
     "award": "A.A- T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/history/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.miracosta.edu/transferinfo/csu/",
-    "was_coverage": 0.5,
-    "was_method": "sitemap_page"
+    "url": "https://catalog.miracosta.edu/transferinfo/csu/",
+    "coverage": 0.5,
+    "was_coverage": 1.0
    },
    {
     "control_number": "31936",
     "title": "Studio Arts",
     "award": "A.A- T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/art/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
-    "was_coverage": 0.762,
-    "was_method": "sitemap_page"
+    "url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
+    "coverage": 0.762,
+    "was_coverage": 1.0
    },
    {
     "control_number": "39491",
     "title": "High School Equivalency Preparation",
     "award": "Noncredit program",
-    "url": "https://catalog.miracosta.edu/continuingeducation/adulthighschooldiploma/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/",
-    "was_coverage": 0.519,
-    "was_method": "sitemap_page"
+    "url": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/",
+    "coverage": 0.519,
+    "was_coverage": 1.0
    }
   ],
-  "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "07863"
+  ],
+  "not_named": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1040,12 +1045,12 @@
    "url": "https://catalog.miracosta.edu/disciplines/sociology/"
   },
   "31821": {
-   "sha256": "223fc742047544e2ac386df750e5e6c6fbe41ee0fc9f2d2166c934facfd5634c",
-   "url": "https://catalog.miracosta.edu/disciplines/history/"
+   "sha256": "7e0adbc8f5d9f49fdf7ca7b51b702be9d05a83dde0064e04e9b9958b3ca19b86",
+   "url": "https://catalog.miracosta.edu/transferinfo/csu/"
   },
   "31936": {
-   "sha256": "11e5415a4bea1508b459f5085751d9c55bf19fdd176c655fd323fb62fac37bf7",
-   "url": "https://catalog.miracosta.edu/disciplines/art/"
+   "sha256": "c5f113644d0117b8968dfe2ad15d6003f815d039bdd0d1e4f79b98a27277fbef",
+   "url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/"
   },
   "31937": {
    "sha256": "24ddd80a120fde0bfdb23587d46e4874acbb4b1f40acefbe38dcbdad56af0a50",
@@ -1256,8 +1261,8 @@
    "url": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/"
   },
   "39491": {
-   "sha256": "bc0484c068a62f7ca26701fb06a5e70f9f53e1a7f19429409a0b455151a2583e",
-   "url": "https://catalog.miracosta.edu/continuingeducation/adulthighschooldiploma/"
+   "sha256": "ba0f48554079a9d8f01826ed4ea0826713088a7c3cbd9a0a4ea7cf73a87cec58",
+   "url": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/"
   },
   "39582": {
    "sha256": "e633ae97ccd8595ed5798bc536cf94a4b41f6341f03a2ae2ad0097ae0a60d0d7",
@@ -1348,5 +1353,5 @@
    "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"
   }
  },
- "run": "44529741837"
+ "run": "45392607854"
 }
