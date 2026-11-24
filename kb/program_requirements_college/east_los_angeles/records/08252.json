@@ -115,7 +115,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "nested_award_not_read",
+    "label": "The program counts another award as one line, and the catalog prints that award's courses in its own section, so the record holds the line without its courses.",
+    "words": "The degree's major includes the 'Certificate of Achievement in Architectural Technology . . . 22' as a single line; its courses are printed in the certificate's section, not here, so they are not placed in blocks. Reviewer should check the certificate section for ARC 110, 115, 151, 161, 162, 164 and others."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 40,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

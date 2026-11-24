@@ -1276,6 +1276,25 @@ def recall(every: list[dict]) -> dict:
     return out
 
 
+# S720 at East Los Angeles (kb/_program_piles_s720_ela.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('noted_figures_differ',
+         "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+         40),  # #3753
+        ('nested_award_not_read',
+         "The program counts another award as one line, and the catalog prints that award's courses in its own section, so the record holds the line without its courses.",
+         30),  # East Los Angeles's branch
+        ('unit_line_not_read',
+         'The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.',
+         40),  # East Los Angeles's branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def hours_recall(every: list[dict]) -> dict:
     """The three hours gaps against answers already held (S703; S652's review rule): every passing record measured
     in hours whose courses' hours add to more than zero and match its printed total. The scorer itself (S.score on
