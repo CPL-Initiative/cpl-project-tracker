@@ -46,37 +46,29 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 58,
+   "placed": 56,
    "listed": 63,
-   "share": 0.921,
+   "share": 0.889,
    "missing": [
     "ECON302",
     "ECON304",
+    "ENGWR488",
+    "HIST310",
     "HIST311",
     "HIST483",
     "HIST484"
    ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGL488",
-     "listed": "ENGWR488",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "HISTC1001",
-     "listed": "HIST310",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 7,
    "codes": [
     "ECONC2001",
     "ECONC2002",
+    "ENGL488",
+    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H"
@@ -84,6 +76,8 @@
    "flagged": [
     "ECONC2001",
     "ECONC2002",
+    "ENGL488",
+    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H"
@@ -102,7 +96,9 @@
     30.0
    ],
    "against": "program",
-   "why": [],
+   "why": [
+    "the blocks sum to 30.0-32.0; the catalog states 30.0-30.0"
+   ],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -721,6 +717,5 @@
    "The Legal Studies Certificate of Achievement on page 508 was not read for this record."
   ]
  },
- "extracted_run": 45353709365,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

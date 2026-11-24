@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 6,
    "listed": 7,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.857,
+   "missing": [
+    "ENGWR384"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGL384",
-     "listed": "ENGWR384",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ENGL384"
+   ],
+   "flagged": [
+    "ENGL384"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -219,6 +218,5 @@
    "Text after the Career Information section (Business (BUS) course descriptions) belongs to the course listing and was not used."
   ]
  },
- "extracted_run": 45353709365,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

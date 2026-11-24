@@ -46,28 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 11,
    "listed": 15,
-   "share": 0.8,
+   "share": 0.733,
    "missing": [
+    "HIST310",
     "HIST311",
     "HIST483",
     "HIST484"
    ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "HISTC1001",
-     "listed": "HIST310",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 7,
    "codes": [
+    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H",
@@ -76,6 +71,7 @@
     "WGS304"
    ],
    "flagged": [
+    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H",
@@ -341,6 +337,5 @@
    "Career list also mentions that the degree gives confidence to pursue 'nontraditional careers' (not recorded as a specific field)."
   ]
  },
- "extracted_run": 45353709365,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }
