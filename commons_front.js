@@ -660,7 +660,9 @@
       items.push({ wave: false, n: null, label: "Decision waiting: " + t, unlock: "", href: x.href || "#commons/details/decisions", todo: x.call && x.call.todo_id || null });
     });
     var owed = owedNow(M);
-    if (owed.length) items.push({ wave: false, n: null, last: true, label: "Fixes owed: ask COBI to carry " + plural(owed.length, "ruling", "rulings"), unlock: "",
+    if (M.doubtN > 0) items.push({ wave: false, n: M.doubtN, label: "Discipline in doubt: cards to rule on", unlock: plural(M.doubtN, "card", "cards") + " to rule on",
+      land: { id: "cmf-card-courses", ref: "doubt", to: "#coci-lookup/list/doubt" } });
+    if (owed.length) items.push({ wave: false, n: null, last: true, label: "Rulings to find: ask COBI about " + plural(owed.length, "card", "cards"), unlock: "",
       land: { id: "cmf-need-owed", to: owedAsk(owed) } });
     items.forEach(function (it, i) { it.i = i; });
     return items.sort(function (a, b) {
@@ -721,7 +723,7 @@
           : p([el("span", { cls: "cmf-out-plain", text: c.catalog_url })])
       ].filter(Boolean));
     })));
-    box.appendChild(p(["Choose a course to open it beside this list, then drop its outline, give a link to try, or paste the data. A college's name opens its own panel. Send the PDF to COBIx in your Grok Bot chat."]));
+    box.appendChild(p(["Choose a course to open it beside this list, then drop its outline, give a link to try, or paste the data. A college's name opens its own panel. Send the PDF to COBI in your Grok Bot chat."]));
   }
   function outlineBlock(M, N) {
     var box = el("div", { id: "cmf-outline-list", cls: "cmf-need-body cmf-land" });
@@ -762,34 +764,37 @@
     return el("div", { cls: "cmf-land", id: "cmf-need-terms" }, kids);
   }
 
-  /* Fixes owed to you (Sam, S723, 2026-11-24: "fixes owed to you section is OK to keep but there should be something
-     queued up for me to do to prompt COBI (sky) to do to get the process going"): the ruled cards still on the
-     Discipline in doubt list (kb/ccr_doubt.json, read live; unread, the list stands as given), and one press that opens
-     a new issue already written, so COBI takes the fix from the queue. The box leaves once the list holds none. */
+  /* Rulings to find (Sam, S723, 2026-11-24). COBIx's figures named five Discipline in doubt cards as already ruled on;
+     Sam: "I don't remember anything about those rulings...", then "maybe cobix can find them...". No ruling is on file
+     (kb_curation holds only bot title stamps for them; kb/coci_curation.json no `ruling`). So the box asks rather than
+     claims: one press opens a new tracker issue, already written, asking COBI to look for the rulings and carry any it
+     finds; if none exists, the cards stay on the doubt list, open for a person. It shows while one of the five is still
+     on kb/ccr_doubt.json (read live; unread, the five stand). */
   function owedNow(M) {
     var on = M.doubtIds;
     return ASKED.doubt.filter(function (id) { return !on || Object.keys(on).some(function (k) { return k.slice(-id.length - 1) === " " + id; }); });
   }
   function owedAsk(ids) {
     var list = ids.slice(0, -1).join(", ") + (ids.length > 1 ? " and " : "") + ids[ids.length - 1];
-    var title = "Fixes owed: carry the Discipline in doubt rulings on " + list;
-    var body = "Filed from the CPL Commons, Needs you, Fixes owed to you.\n\n"
-      + "The Commons lists " + plural(ids.length, "common-course card", "common-course cards") + " (" + list + ") as already ruled on, yet each still sits on the "
-      + "Discipline in doubt list (kb/ccr_doubt.json). kb/_ccr_seed_recheck_dryrun.py --doubt leaves a card out only when "
-      + "kb/coci_curation.json carries a `ruling` on it, and these carry none.\n\n"
-      + "Find where the rulings are recorded, carry them into the curation the job reads (with a rollback receipt), and rebuild "
-      + "kb/ccr_doubt.json, so the cards leave the list and this box leaves the Commons. If no ruling exists, say so here and "
-      + "the cards go back on the list as open.";
+    var title = "Find the Discipline in doubt rulings on " + list;
+    var body = "Filed from the CPL Commons, Needs you, Rulings to find.\n\n"
+      + "The Commons once listed " + plural(ids.length, "common-course card", "common-course cards") + " (" + list + ") as already ruled on, from a COBIx figure. "
+      + "Sam does not recall ruling on them (2026-11-24), and none is on file: kb_curation holds only automatic unified_title stamps for them, "
+      + "and kb/coci_curation.json carries no `ruling`, which is what kb/_ccr_seed_recheck_dryrun.py --doubt reads to leave a card off "
+      + "kb/ccr_doubt.json.\n\n"
+      + "Look for the rulings (the Discipline in doubt panel's ccr_procedure_request rows, chat or sheet answers, receipts). For each one "
+      + "found, carry it into the curation the job reads, with a rollback receipt, and rebuild kb/ccr_doubt.json. Say here which were "
+      + "found and where; a card with none stays on the doubt list, open for a person to rule on.";
     return REPO + "new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body);
   }
   function owedBox(M) {
     var ids = owedNow(M);
     if (!ids.length) return null;
     var list = ids.length < 3 ? ids.join(" and ") : ids.slice(0, -1).join(", ") + ", and " + ids[ids.length - 1];
-    return el("div", { cls: "cmf-need cmf-landable", id: "cmf-need-owed" }, [el("h4", { text: "Fixes owed to you" }),
-      p([plural(ids.length, "common-course card", "common-course cards") + " you already ruled on (shared course IDs " + list + ") still sit on the list of cards whose catalog description reads as another discipline, because your rulings have not been carried into that list yet. COBI owes that fix. Your part is one press: ask COBI to carry it, and the request reaches COBI as a new issue."]),
+    return el("div", { cls: "cmf-need cmf-landable", id: "cmf-need-owed" }, [el("h4", { text: "Rulings to find" }),
+      p(["An earlier figure on this page named " + plural(ids.length, "common-course card", "common-course cards") + " (shared course IDs " + list + ") as already ruled on, but no ruling is on file. One press asks COBI to look for the rulings and carry any it finds; a card with none stays on the Discipline in doubt list for you to rule on."]),
       el("p", { cls: "cmf-act" }, [el("span", { cls: "cmf-act-l", text: "Where to act:" }), " ",
-        el("a", { href: owedAsk(ids), target: "_blank", rel: "noopener", text: "Ask COBI to carry the fix" }), " ",
+        el("a", { href: owedAsk(ids), target: "_blank", rel: "noopener", text: "Ask COBI to find the rulings" }), " ",
         a("#coci-lookup/list/doubt", "The cards in the doubt list")])]);
   }
 
@@ -1450,6 +1455,7 @@
         big: fmt(Cd.ready) + " of " + fmt(Cd.total), rest: [" cards the automatic check scores as ready (0.85 or better)"],
         after: [meter(pct(Cd.ready, Cd.total), fmt(Cd.ready) + " of " + fmt(Cd.total) + " ready, " + Math.round(pct(Cd.ready, Cd.total)) + " percent")],
         quick: [{ ref: "ready", n: Cd.repair, one: "card that needs repair", many: "cards that need repair" },
+          { ref: "doubt", n: M.doubtN, one: "card whose discipline is in doubt", many: "cards whose discipline is in doubt", to: "#coci-lookup/list/doubt" },
           { ref: "mid", n: ASKED.missingMembership, one: "card missing from the membership list", many: "cards missing from the membership list" },
           { ref: "ready", n: Cd.review, one: "card that needs review", many: "cards that need review" }],
         defs: [["Why", "each common course carries one shared course ID (an M-ID), so a local course at any college points to the same course."],
@@ -1461,14 +1467,17 @@
             { ref: "ready", name: "Every card scores ready", fig: figOf(Cd.ready, " of " + fmt(Cd.total)), meter: meterOf(Cd.ready, Cd.total, "cards ready"),
               line: fmt(Cd.review) + " need review and " + fmt(Cd.repair) + " need repair.",
               next: "Jev as a second stage, a same-course yes or no on the top candidates; then SLOs and objectives in the score where the outcomes are on file.",
-              act: [["The Courses List", "#coci-lookup/courses"]] }],
+              act: [["The Courses List", "#coci-lookup/courses"]] },
+            { ref: "doubt", name: "Every card whose discipline is in doubt ruled on", fig: M.doubtN == null ? ["TBA"] : figOf(M.doubtN, " to rule on"),
+              line: "A card lands here when its catalog description points to another discipline, or only its TOP code does. A person rules on each in the Courses List's side panel, and a ruled card leaves the list at its next build.",
+              act: [["Discipline in doubt", "#coci-lookup/list/doubt"]] }],
           Connect: [
             { ref: "mid", name: "Every program course under an M-ID", fig: ["TBA"],
               line: ["A once-through count of program courses with no shared course ID is not counted yet; the Courses List’s ", a("#coci-lookup/list/nomid", "Needs an M-ID filter"),
                 " lists them. One known cause: " + fmt(ASKED.missingMembership) + " cards are missing from the published list of which local courses belong to each shared course (a membership fix)."],
               next: "the pile mint’s next wave, 76 tutoring titles that name a subject, assigned under LSKL M9004.",
               act: [["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }] },
-        method: [p(["Of the " + fmt(Cd.total) + " cards, " + fmt(Cd.review) + " need review, " + fmt(Cd.repair) + " need repair, and " + fmt(Cd.notReady) + " are not ready. " + fmt(Cd.confirmed) + " have been confirmed by a person, " + fmt(Cd.confirmedReady) + " of them ready. The " + fmt(Cd.ready) + " ready cards are those the automatic check scores 0.85 or better. The M-ID gap is a placeholder; it is not the older 2,362 of 8,912 figure, which this page does not show. Five cards you already ruled on are still in the discipline-in-doubt file — see the ", a(REPO + "3447", "Backfill fix"), "."]), p([LIVE_WORDS.courses])],
+        method: [p(["Of the " + fmt(Cd.total) + " cards, " + fmt(Cd.review) + " need review, " + fmt(Cd.repair) + " need repair, and " + fmt(Cd.notReady) + " are not ready. " + fmt(Cd.confirmed) + " have been confirmed by a person, " + fmt(Cd.confirmedReady) + " of them ready. The " + fmt(Cd.ready) + " ready cards are those the automatic check scores 0.85 or better. The M-ID gap is a placeholder; it is not the older 2,362 of 8,912 figure, which this page does not show. " + (M.doubtN ? fmt(M.doubtN) + (M.doubtN === 1 ? " card waits" : " cards wait") + " on a person's ruling in the Discipline in doubt list." : "")]), p([LIVE_WORDS.courses])],
         links: [["Open the Courses List", "#coci-lookup/courses"], ["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }),
       checksCard({ key: "exhibit", title: "Exhibit titles", pill: "In progress",
         big: fmt(E.stamped) + " of " + fmt(E.titles), rest: [" local titles reviewed"],
@@ -1750,7 +1759,7 @@
     return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills), titles, heldCodes, history, spend, readiness, doubt]).then(function (r) {
       var M = model(C, r[0], r[1], r[2], r[3], r[4], r[5], r[6]);
       /* Fixes owed reads the doubt list itself, so a carried ruling takes its card off Needs you (owedNow). */
-      if (r[8] && Array.isArray(r[8].cards)) { M.doubtIds = {}; r[8].cards.forEach(function (c) { if (c && c.id) M.doubtIds[c.id] = true; }); }
+      if (r[8] && Array.isArray(r[8].cards)) { M.doubtIds = {}; M.doubtN = r[8].cards.length; r[8].cards.forEach(function (c) { if (c && c.id) M.doubtIds[c.id] = true; }); }
       M.readiness = subjReadiness(r[7], r[3]);
       M.platforms = {}; M.allColleges = ((r[1] && r[1].colleges) || []).length || null;
       ((r[1] && r[1].colleges) || []).forEach(function (c) { if (c && c.platform) M.platforms[c.platform] = (M.platforms[c.platform] || 0) + 1; });

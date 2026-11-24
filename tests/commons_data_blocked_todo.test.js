@@ -33,7 +33,7 @@ const H = REAL.blocked_hunt, hunted = H.colleges.filter((c) => c.hunted && !c.fi
 check("⭐ the page draws the to-do from the committed file, named for its work", b1 && /^To do: Course Outline and Catalog Fixes Needed/.test(txt(b1.querySelector("h3"))), txt(b1));
 check("⭐ it counts the still-taught courses and their colleges from the hunt file (Sam's work order, 2026-11-20), and says the one line a person needs",
   b1 && new RegExp("^" + H.still_taught_open + " courses still taught at " + hunted.length + " colleges need their course outline\\.").test(txt(b1.querySelector("p")))
-  && /Send the PDF to COBIx in your Grok Bot chat\./.test(txt(b1)), txt(b1));
+  && /Send the PDF to COBI in your Grok Bot chat\./.test(txt(b1)), txt(b1));
 check("the folder a session files into is for the team, never the person's instruction", (function () {
   const f = b1 && b1.querySelector("[data-team-files]"); return f && /kb\/hand_filed_catalogs\/outlines/.test(txt(f)) && /^For the team:/.test(txt(f.querySelector("summary")));
 })());

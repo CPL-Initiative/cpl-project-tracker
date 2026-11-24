@@ -326,7 +326,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("close: the Close word closes it too, focus returned", P.hasAttribute("hidden") && x.d.activeElement === x.d.querySelector('[data-panel-open="1"]'));
   // a college with no spot-check gets COBIx's ask
   word(3).click(); x.d.querySelector('[data-panel-open="3"]').click();
-  check("panel 9 ⭐: a college with no spot-check carries the spot-check ask, team-internal, owner COBIx (#3229)", /Team-internal: COBIx spot-checks five records against the catalog.*Owner: COBIx/.test(txt(P)));
+  check("panel 9 ⭐: a college with no spot-check carries the spot-check ask, team-internal, owner COBI (#3229; COBIx never rendered, Sam 2026-11-24)", /Team-internal: COBI spot-checks five records against the catalog.*Owner: COBI(?!x)/.test(txt(P)));
   key("Escape");
 
   // the address round trip

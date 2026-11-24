@@ -86,7 +86,7 @@ function withHunt(change) {
   check("(4) ⭐ each catalog address is a link that opens in a new tab, with rel=noopener, and its words are the address",
     links.length === hunted.length && links.every((a) => a.getAttribute("target") === "_blank" && /noopener/.test(a.getAttribute("rel") || "") && /^https?:\/\//.test(a.getAttribute("href")) && txt(a) === a.getAttribute("href")),
     links.map((a) => a.outerHTML).join(" "));
-  check("(5) ⭐ the one line a person needs, word for word", /Send the PDF to COBIx in your Grok Bot chat\./.test(txt(box)));
+  check("(5) ⭐ the one line a person needs, word for word", /Send the PDF to COBI in your Grok Bot chat\./.test(txt(box)));
   check("(5) the check opens the courses by college on College Data Collection", (function () { const a = box.querySelector('.cmf-act a[href="#collect/outlines-blocked"]'); return a && txt(a) === "The courses by college"; })());
 
   const y = load(withHunt((h) => { const g = h.colleges.filter((c) => c.slug === "grossmont")[0]; g.filed = true; h.open -= 1; h.still_taught_open -= g.still_taught.length; }));
