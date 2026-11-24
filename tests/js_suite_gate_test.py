@@ -156,8 +156,8 @@ check("the shard count is the matrix and nowhere else (strategy.job-total)",
       and re.search(r"^\s+shard: \[\d+(?:, \d+)*\]", suite, re.M))
 check("every shard reports (fail-fast is off)",
       suite is not None and "fail-fast: false" in suite)
-check("skip branch is conditioned on the gate decision",
-      "if: needs.gate.outputs.decision == 'skip'" in yaml_only)
+check("skip branch is conditioned on the gate decision (beside its lints shard since S722)",
+      re.search(r"if: (matrix\.shard == \d && \()?needs\.gate\.outputs\.decision == 'skip'", yaml_only) is not None)
 # The fan-in is the check the merge doctrine polls (CLAUDE.md: "the `test`
 # check must have SUCCEEDED on the current head"). It has to REPORT on every
 # run, which a bare `needs` chain does not give: a job whose needs failed or

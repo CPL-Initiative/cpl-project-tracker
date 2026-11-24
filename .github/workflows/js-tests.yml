@@ -195,6 +195,17 @@ jobs:
 
   lints:
     needs: gate
+    # Four shards (S722, 2026-11-24; Sam: "do we need to do lints check on the whole code base every time?"): one
+    # runner ran 303 steps in series, 19.7 min on run 45391022587. Every step past the setup carries
+    # `if: matrix.shard == N`, balanced by measured time (about 5 min each); a step's own condition stays beside it.
+    # No step reads a file another writes (the two rebuild steps restore what they change), so a step runs alone on
+    # its shard. A new step names its shard (tests/lints_shards_test.py fails one that does not). The matrix's
+    # result is `success` only when every shard succeeds, so `test` reads needs.lints.result as before.
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    name: lints (${{ matrix.shard }})
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -205,7 +216,7 @@ jobs:
       # Every step below that imports the generator needs openpyxl. It is
       # installed once, here, for all of them (COBIx #2927 item 4: nine steps
       # each installed it). A new step that needs it adds nothing.
-      - run: pip install --quiet openpyxl
+      - run: pip install --quiet openpyxl pypdf pyyaml
       # The ONE suite input a docs-shaped diff can still change is
       # docs/catalog/** — regenerated beside the docs index on most docs PRs,
       # and read by exactly one test file. Run that file even when the suite
@@ -214,12 +225,13 @@ jobs:
       # tests/js_suite_gate_test.py fails if a future test starts reading
       # another inert path without being added here.
       - name: Docs-reading jsdom tests (run even when the suite is skipped)
-        if: needs.gate.outputs.decision == 'skip'
+        if: matrix.shard == 1 && (needs.gate.outputs.decision == 'skip')
         run: node tests/governance_docs_panel.test.js
       # The Pages allowlist (#3104; #3278 review, finding 6). A docs-shaped PR that adds a root *.md skips the
       # suite, and an undecided path would then first fail on main and turn every later PR red. This runs on
       # every PR and every main run, whatever the gate decides (~3 s).
       - name: Pages allowlist (every tracked and staged path decided)
+        if: matrix.shard == 2
         run: node tests/pages_allowlist.test.js
       # The repo size guard (#3476 Part 4 step 2; Sam, 2026-11-17: "make sure we don't allow to go beyond a limit").
       # A file over 5 MB off the exceptions list, a list that grows, a latest version over the disk cap, or more than
@@ -228,7 +240,7 @@ jobs:
       # The checkout is the PR's merge commit at depth 1, so the base is fetched at depth 1 and the script compares
       # the two trees (scripts/repo_size_guard.py says why that is exactly the PR's change). About 2 s.
       - name: Repo size guard (file, list, disk total, compressed growth)
-        if: github.event_name == 'pull_request'
+        if: matrix.shard == 1 && (github.event_name == 'pull_request')
         env:
           EVENT_BASE: ${{ github.event.pull_request.base.sha }}
         run: |
@@ -241,34 +253,41 @@ jobs:
           git fetch --no-tags --depth=1 origin "$BASE_SHA"
           python3 scripts/repo_size_guard.py --base "$BASE_SHA"
       - name: Repo size guard tests (a temporary repo the test builds)
+        if: matrix.shard == 4
         run: python3 tests/repo_size_guard_test.py
       # The COBIx watcher calls only `gh api -X GET search/issues` (S683, Sam's ask relayed on #3358).
       - name: COBIx watcher calls only GitHub search
+        if: matrix.shard == 1
         run: python3 tests/cobix_watch_test.py
       # First Light contrast lint (Session 49) — verifies the live :root in
       # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
       # on worst-case backdrops. Pure-stdlib python; part of this same
       # non-required check.
       - name: Contrast lint (live :root vs First Light spec)
+        if: matrix.shard == 1
         run: python3 prototype/check_contrast.py --live
       # Supabase grant lint (Session 172) — `revoke ... from anon, authenticated`
       # does NOT remove the PUBLIC grant, so it protects nothing. Six
       # security-definer functions that truncate live tables were reachable with
       # the published anon key. Pure-stdlib python; same non-required check.
       - name: Supabase function-grant lint (revoke must name PUBLIC)
+        if: matrix.shard == 1
         run: python3 tests/supabase_function_grants_test.py
       # SEC-3 guard (2026-11-05, COBIx round 1 item 2): the refresh button carries no
       # trigger secret, in the generator, both HTMLs and the click module, and both
       # HTMLs hand the click to cobi_refresh.js. Pure-stdlib python; same check.
       - name: Refresh button carries no secret (SEC-3)
+        if: matrix.shard == 1
         run: python3 tests/refresh_button_no_secret_test.py
       # Plain words in what Sam reads (Sam, 2026-11-16, COBIx on #3395 item 1): an open call or a Commons string
       # never uses an insider term ("closed course list", "headline", "receipt", ...) without defining it.
       - name: Plain words for Sam (insider terms defined or gone)
+        if: matrix.shard == 1
         run: python3 tests/plain_words_for_sam_test.py
       # A failed live-metrics scrape turns the daily run red (S601, #2890 item 1): the
       # scrape checks HTTP 200 and logs an ::error, and the last step fails the run.
       - name: Daily scrape fails loudly
+        if: matrix.shard == 1
         run: python3 tests/daily_scrape_fails_loudly_test.py
       # Supabase table-grant lint (2026-09-23) — from 2026-10-30 Supabase stops
       # granting the API roles on a NEW public table, and five functions here
@@ -276,31 +295,37 @@ jobs:
       # SQL creates at run time, recreates, or adds new must carry its own
       # grants. Pure-stdlib python; same non-required check.
       - name: Supabase table-grant lint (new and recreated tables carry grants)
+        if: matrix.shard == 1
         run: python3 tests/supabase_table_grants_test.py
       # The Library's Public Library gate in the database (#3560, second read of #3572): the committed migration and
       # its rollback run against a throwaway Postgres the test starts itself (SKIP when no binaries are present).
       - name: Library publishing model against Postgres (set_public refuses with no passing check)
+        if: matrix.shard == 2
         run: python3 tests/library_publishing_sql_proof.py
       # Hand it over in place (Sam, 2026-11-20): the hand-over table, its private bucket and its three functions run
       # against the same throwaway Postgres. The anon key and a non-reviewer are shut out, the reviewer's name is
       # stamped by the database, no API role reads a file back, and the rollback keeps handed-over rows.
       - name: Commons hand-over against Postgres (the sign-in rule and the private store hold in the database)
+        if: matrix.shard == 4
         run: python3 tests/commons_handover_sql_proof.py
       # The hand-over's note (Sam, 2026-11-20: "there is no place for me to note that"): a fifth kind added over a
       # table that holds rows. The note reaches the table only through commons_handover_add() under the reviewer's
       # name, the four kinds are untouched, the public summary still has no column for its words, and the rollback
       # keeps every note written.
       - name: Commons hand-over note against Postgres (a fifth kind, guarded in the database)
+        if: matrix.shard == 2
         run: python3 tests/commons_handover_note_sql_proof.py
       # The S693 answer-as-filed write (a guarded UPDATE of 11 rows a person entered): it answers only the rows it
       # names, only while each still stands as it was read, the receipt's result holds what each replaced, and the
       # rollback puts it back.
       - name: Commons hand-over, answered as filed, against Postgres (guarded, with before-values)
+        if: matrix.shard == 3
         run: python3 tests/handover_mark_filed_sql_proof.py
       # The reader's pickup for hand-overs (kb/_handover_pickup.py): a bot check is filed as one and the reader loads
       # nothing more from that host, and what it found is counts and heading words, never a page's text or a name.
       # pypdf reads the dropped PDFs the test builds.
       - name: Commons hand-over pickup (bot checks, counts only, no names kept)
+        if: matrix.shard == 1
         run: |
           pip install --quiet pypdf
           python3 tests/handover_pickup_test.py
@@ -310,169 +335,209 @@ jobs:
       # The Courses List's Discipline in doubt job (S614, Sam 2026-11-09): which cards the
       # two-signal re-check sends to a person, and the store's active discipline. Pure stdlib.
       - name: Discipline in doubt (kb/_ccr_seed_recheck_dryrun.py --doubt)
+        if: matrix.shard == 1
         run: python3 tests/ccr_doubt_test.py
       # The last step before a push checks every status file (Sam, 2026-11-24, after S718 lost two CI rounds to two
       # that scripts/check_generated.sh never ran): each kb/status/*.json is named there or listed with its reason in
       # the test's NOT_CHECKED, and a new one fails here until it picks one. Pure stdlib.
       - name: check_generated.sh covers every kb/status file
+        if: matrix.shard == 1
         run: python3 tests/check_generated_covers_status_test.py
       # The Commons' Subjects card (S694): local subject titles from the printed catalogs beside the state list,
       # codes compared exactly, one-sided codes kept for the curator, byte-identical reruns. Pure stdlib.
       - name: Local subject titles (kb/_build_local_subject_titles.py)
+        if: matrix.shard == 1
         run: python3 tests/local_subject_titles_test.py
       # Sam's held Cerritos subject decisions, prepared as kb_curation rows (S701, #3655): 30 rows, 29 credit and AP
       # whole, ATH as KINE, every code canonical, INSERT only with a cohort rollback, identical reruns. Pure stdlib.
       - name: Subject decisions filing (kb/_file_subject_decisions.py)
+        if: matrix.shard == 1
         run: python3 tests/subject_decisions_filing_test.py
       # The subject headings filer (S698, #3655): a catalog's subject headings from the lines above each subject's
       # first course, saved in Title Case; a line of prose is never a heading, and none is invented. Pure stdlib.
       - name: Subject headings filer (kb/_file_subject_headings.py)
+        if: matrix.shard == 2
         run: python3 tests/subject_headings_filer_test.py
       # Noncredit by category (S698, #3655): a code's noncredit courses under the category the COCI export names,
       # apart from its credit courses; no band and no category is guessed. Pure stdlib (the build reads the export).
       - name: Noncredit categories (kb/_build_noncredit_categories.py)
+        if: matrix.shard == 1
         run: python3 tests/noncredit_categories_test.py
       # The Subjects recommendations (S700, #3655): a title's own heading never votes for it, a level is the one its
       # source measured, program titles never read High, a row on the noncredit hold takes none. Pure stdlib.
       - name: Subject recommendations (kb/_build_local_subject_recommendations.py)
+        if: matrix.shard == 1
         run: python3 tests/local_subject_recommendations_test.py
       # The missed subject pages (S700, #3655): a course the file holds is never filed twice, each college's heading
       # rule reads its own pages only, the subject's name is the page title's. Pure stdlib.
       - name: Missed subject pages (kb/_file_missed_subject_pages.py)
+        if: matrix.shard == 1
         run: python3 tests/missed_subject_pages_test.py
       # The three large noncredit catalogs (S700, #3655): no contents, program or back-matter line read as a course,
       # no course filed twice, the heading from the line above the course, no credit course from Santa Ana's PDF.
       - name: Noncredit catalogs filing (kb/_file_noncredit_catalogs.py)
+        if: matrix.shard == 1
         run: python3 tests/noncredit_catalogs_filing_test.py
       # Santa Ana's and Mt. San Antonio's credit courses (S701, #3655): no program or requisite line read as a course,
       # no course filed twice, the noncredit rows kept field for field, the noncredit title list blind to credit rows.
       - name: Credit catalogs filing (kb/_file_credit_catalogs.py)
+        if: matrix.shard == 3
         run: python3 tests/credit_catalogs_filing_test.py
       # The Subjects page's course panel (S700, #3655): one row per course whichever way its number is written, credit
       # and noncredit apart, no band guessed for a catalog-only course. Pure stdlib.
       - name: Subject courses (kb/_build_subject_courses.py)
+        if: matrix.shard == 4
         run: python3 tests/subject_courses_test.py
       # The noncredit subject title list (S700, #3655): read from the four large noncredit programs only, a category
       # counted from the export and never read from a heading's words, nothing merged beyond the named synonyms.
       - name: Noncredit subject titles (kb/_build_noncredit_subject_titles.py)
+        if: matrix.shard == 1
         run: python3 tests/noncredit_subject_titles_test.py
       # The codes the pile mint holds on (S695): held courses summed, counted once each, ranked; a vote that missed its
       # floor is a suggestion, never a decision. Pure stdlib.
       - name: Held subject codes (kb/_held_subject_codes.py)
+        if: matrix.shard == 1
         run: python3 tests/held_subject_codes_test.py
       # A person's saved subject decisions honored by the daily build (#3655): a decision beats the map and the
       # catalog for its own college and band only, a credit one leaves noncredit courses alone, a statewide filing sits
       # between, a failed or empty sync read keeps the file, a refused code is listed, the held list's released count
       # is the courses under decided codes, and no email is committed. Pure stdlib.
       - name: Subject decisions honored (kb/_sync_subject_decisions.py, kb/subject_decisions.py)
+        if: matrix.shard == 1
         run: python3 tests/subject_decisions_honored_test.py
       # Noncredit subject decisions, one per COCI noncredit category (#3655): an nc:<slug> decision changes only that
       # category's noncredit courses at that college, never a credit course and never a mint route; an unknown slug is
       # refused and listed; the sync accepts credit, whole and nc:<a listed slug>. Pure stdlib.
       - name: Subject decisions, noncredit (kb/subject_decisions.py nc:<category>)
+        if: matrix.shard == 2
         run: python3 tests/subject_decisions_noncredit_test.py
       # A person's course moves reach the re-mint's gate (#3655): the sync reads CRS: rows into `courses`, lists an
       # unreadable one, commits no email; the reader refuses a non-canonical code and the nightly mint never reads a
       # move; kb/_mid_readiness.py settles the moved course alone, ahead of its code's save. Pure stdlib.
       - name: Subject course moves (kb/_sync_subject_decisions.py courses, kb/_mid_readiness.py)
+        if: matrix.shard == 1
         run: python3 tests/subject_course_moves_test.py
       # The course outlines to find by hand (kb/_outline_hunt.py, S711): M-IDs only, CTE, credit, no shell titles, short
       # of two districts with outcome text; each pick outside the districts with text, a read college first; ranked by
       # districts per outline needed; the committed file reruns to the same bytes. Pure stdlib.
       - name: Outline hunt (kb/_outline_hunt.py)
+        if: matrix.shard == 3
         run: python3 tests/outline_hunt_test.py
       # Every local subject code statewide (kb/_statewide_subject_codes.py, S712): every code once with its colleges, a
       # call and a confidence for each, a filing settled at 100%, no vote from a TOP-only discipline or from the M-ID a
       # code named, a noncredit code by its category, the top confidence band right 95% or more on the labelled codes.
       - name: Statewide subject codes (kb/_statewide_subject_codes.py)
+        if: matrix.shard == 2
         run: python3 tests/statewide_subject_codes_test.py
       # A college's subject code history (S715; Sam, 2026-11-23: "it happens all the time"): every file names its source
       # and recorder, a rename resolves through a chain and never cycles, and the statewide list counts a renamed code's
       # courses under the new code at that college. Pure stdlib.
       - name: Subject code history (kb/subject_code_history.py)
+        if: matrix.shard == 1
         run: python3 tests/subject_code_history_test.py
       # Every college's subject titles by source (kb/_subject_sources.py, S717): one row per college, a status per way in
       # the ladder's order, No system off curriQunet and eLumen, the register's newest attempt wins, a probe is Next,
       # and the committed file is what a build writes. Pure stdlib.
       - name: Subject sources (kb/_subject_sources.py)
+        if: matrix.shard == 1
         run: python3 tests/subject_sources_test.py
       # A code the catalog index leaves out, read at its code's address (S718; Sam found Cerritos's INST page by a web
       # search): a heading is filed only when the page names the code, a 404 or another code's page files nothing, a
       # breadcrumb ahead of the heading is passed over. Pure stdlib.
       - name: Subject code-address read (kb/_subject_code_address_probe.py)
+        if: matrix.shard == 1
         run: python3 tests/subject_code_address_probe_test.py
       # The MQ view (kb/_mq_view.py, S717): the 20th-edition handbook keeps the three list types apart, every noncredit
       # discipline and the Title 5 provisions sit on their disciplines, our codes join through the alias table, and the
       # committed view is what a build writes. Pure stdlib.
       - name: MQ view (kb/_mq_view.py, kb/reference/mq_handbook_20th.json)
+        if: matrix.shard == 4
         run: python3 tests/mq_view_test.py
       # A Common SUBJ code's history (S717): a save that changes a code keeps the old one with its title, date, who and
       # note; a rerun records nothing; no email lands in it. Pure stdlib.
       - name: Common SUBJ code history (kb/_apply_canonical_subj4.py record_former)
+        if: matrix.shard == 1
         run: python3 tests/csr_code_history_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)
+        if: matrix.shard == 1
         run: python3 tests/subjects_daily_build_test.py
       # The Needs an M-ID pile's exhibit links and the daily rebuild (S694): the join, the alias chain, --if-changed, same bytes.
       - name: Closest M-ID exhibit links (kb/_closest_mid.py)
+        if: matrix.shard == 1
         run: python3 tests/closest_mid_links_test.py
       # Issue 3447: rulings fold into the overlay and stay final; a person's discipline row validates a merge target.
       - name: Rulings stick (kb/_apply_curation.py ruling fold, reseed curated guard)
+        if: matrix.shard == 1
         run: python3 tests/apply_curation_rulings_test.py
       # Issue 3454 (S678): the confidence scorer's membership fix, rule W, variant D and follow past rulings.
       - name: Confidence scorer rules (kb/_ccr_confidence_score.py)
+        if: matrix.shard == 2
         run: python3 tests/ccr_confidence_rules_test.py
       - name: Confidence scorer rules G and M, and their apply and undo (kb/_ccr_confidence_apply.py)
+        if: matrix.shard == 3
         run: python3 tests/ccr_rules_g_m_test.py
       # The seed cards both second signals confirm (S615, Open Asks Sheet 174 card 1): receipt, auditor state, undo.
       - name: Seed confirmed by description and TOP (kb/_ccr_seed_confirm_apply.py)
+        if: matrix.shard == 1
         run: python3 tests/ccr_seed_confirm_test.py
       - name: Supabase migrate runner (committed file, name, receipt)
+        if: matrix.shard == 1
         run: python3 tests/supabase_migrate_test.py
       # The Program records view's one write (Sheet 51 card 1, S347): the session's
       # email, the reviewer gate first, the fingerprint refused when stale, an
       # append-only log, and the same machine checks in SQL and in the tab.
       - name: Program record verdicts (the tab's one write)
+        if: matrix.shard == 1
         run: python3 tests/program_record_verdicts_sql_test.py
       # The contacts harvest's table (S536, CPL queue step 8): one service-role writer,
       # revoked from every client role, the roster's read gate, and no delete.
       - name: College contacts harvest (the table's one write path)
+        if: matrix.shard == 1
         run: python3 tests/college_contacts_harvest_sql_test.py
       # The contacts harvest's runner (S537, piece 3): no student-body president read as a CEO,
       # no sign-in page or off-domain link followed, no position outside Sam's list applied.
       - name: College contacts harvest (the runner, over saved pages)
+        if: matrix.shard == 1
         run: python3 tests/college_contacts_harvest_runner_test.py
       # The addenda reading agent's write (S388): service_role only, a person's
       # correction never touched, and each filing's changes say scope and kind.
       - name: Program source addenda read (the reading agent's write)
+        if: matrix.shard == 1
         run: python3 tests/program_source_addenda_read_test.py
       # The Jev sitting over the harvest's failing records (S420): asks only about
       # failing records, says when no page text is in hand, bounds the text, and
       # proposes nothing (every row uncalibrated). Pure-stdlib python.
       - name: Jev harvest sitting (failing records only, uncalibrated, suggests)
+        if: matrix.shard == 1
         run: python3 tests/jev_harvest_test.py
       # The agriculture residual's sitting (S427, Sam's Sheet 99 card 4): AGRI identities only,
       # the families' descriptor titles as the vocabulary, every row uncalibrated, nothing re-keyed.
       - name: Jev AGRI families sitting (residual identities only, uncalibrated, suggests)
+        if: matrix.shard == 1
         run: python3 tests/jev_agri_families_test.py
       # The second reader (S421, Sam's Sheet 97 ruling: Build with Grok): failing
       # records only, from the page the first reading came from, the provider sent
       # to the function, the one fingerprint for the comparison, nothing written.
       - name: Second reader (failing records only, two readings scored, suggests)
+        if: matrix.shard == 1
         run: python3 tests/second_reader_test.py
       # The Library filer (scripts/library_file.py): version names, resumable
       # upload, the two-folder fence, receipts guarded on the Drive file id, and
       # no delete anywhere. Pure-stdlib python with a fake Drive; same non-required check.
       - name: Library filer
+        if: matrix.shard == 1
         run: python3 tests/library_file_test.py
       # The Library publisher (S577): a draft from the card is published only once a person
       # approved it; the receipt keeps the before-values the guarded update checks. Pure-stdlib python.
       - name: Library publisher
+        if: matrix.shard == 1
         run: python3 tests/library_publish_test.py
       # The Library's check run (#3560 part 2, S688): one cpl_library_checks row per page with its current url, list
       # on a pass under a guarded update, and the footer line from the piece's own check. REST and engine faked.
       - name: Library check run
+        if: matrix.shard == 1
         run: python3 tests/library_check_test.py
       # The program-source census (S320) reads 118 college sites from a runner
       # and files where each one's catalog lives. Its pure half is pinned
@@ -480,120 +545,147 @@ jobs:
       # outranks the current one, a challenge page is blocked, robots.txt is
       # honored. Pure-stdlib python; same non-required check.
       - name: Program source census (catalog link, year, platform, robots)
+        if: matrix.shard == 1
         run: python3 tests/program_source_census_test.py
       # The program requirements pilot (S323) finds each pilot program's page
       # by its own listed courses and scores every drafted record against the
       # state's closed list: coverage, no invented courses, unit arithmetic.
       # Pure-stdlib python; same non-required check.
       - name: Program requirements pilot (course codes, page finder, scorer)
+        if: matrix.shard == 2
         run: python3 tests/program_requirements_pilot_test.py
       # Glendale's STV-for-OBT prefix alias (S703): Glendale's alone, it names 38973's four courses on its own
       # page, and it renames nothing in a filed record.
       - name: Glendale's STV prefix alias (S703)
+        if: matrix.shard == 1
         run: python3 tests/glendale_stv_alias_s703_test.py
       # The course-id route (S653): the scorer meets a printed code by the Program Course File's
       # own id for the listed course, before the prefix aliases. Rebuilds the proof that each
       # retired alias pair's matches are reproduced, and the self-recall test with its floor,
       # from committed files (openpyxl, installed at the top of this job; about 35 s).
       - name: Course-id route (suffix reading, self-recall, retired alias pairs)
+        if: matrix.shard == 4
         run: python3 tests/course_id_route_test.py
       # An electives fill never passes a record over a window the reader cut off (American River 07206, S655; the
       # eight Los Rios records of S714, widened to every college in S720); committed records and pinned fixtures.
       - name: Reconcile window and fill (every college, the cut-off window)
+        if: matrix.shard == 3
         run: python3 tests/reconcile_window_fill_test.py
       # A reconcile's rescore keeps a record's named gap (S714's 16 dropped ge_units_not_read gaps; S720).
       - name: Reconcile keeps named gaps (ge_units_not_read)
+        if: matrix.shard == 2
         run: python3 tests/reconcile_keeps_named_gaps_test.py
       # The reconcile steps' award filters and Cañada's Cal-GETC step (S421): a transfer-only
       # step leaves a local degree alone though its captured page spans the sibling section.
       - name: Program requirements reconcile (award filters, the Cal-GETC step)
+        if: matrix.shard == 3
         run: python3 tests/program_requirements_reconcile_test.py
       # Sam's rulings of 2026-11-17 (#3461): a local degree's major counts toward general education, a short
       # high end passes as an over-high end does, and the general education open slot, on the four tested programs.
       - name: Program requirements rulings of 2026-11-17 (local overlap, short high end, GE open slot)
+        if: matrix.shard == 4
         run: python3 tests/program_requirements_rulings_2026_11_17_test.py
       - name: Reconcile reader gaps (holds, sources.json, rescore marker; S658)
+        if: matrix.shard == 1
         run: python3 tests/reconcile_reader_gaps_test.py
       # Phase 2 (S353): every program at one college. The catalog's program
       # pages listed once from its sitemap, each program given the page naming
       # its listed courses (the award breaks a tie), the state's file read past
       # a thousand rows. Pure-stdlib python; same non-required check.
       - name: Program requirements, one college (sitemap, matching, shards)
+        if: matrix.shard == 3
         run: python3 tests/program_requirements_college_test.py
       # S663: a prior-year read files the programs it names beside the college's records, never in place of
       # them, each with the catalog year it was read from. Pure stdlib.
       - name: Program requirements, a prior-year read
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_prior_read_test.py
       # S663: a prior-year record is scored against its own year's course numbers (course_renumbers_by_year),
       # and a current-year record never gets an old code. Pure stdlib.
       - name: Program requirements, year-scoped renumbers
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_year_renumbers_test.py
       # S647 (Sam, Sheet 190 card 6): a read stops at the extraction function's 503 (or 401) and files
       # nothing over a record; run 43384599013 filed 121 stubs in a database outage. Pure stdlib.
       - name: Program requirements extraction halts on an outage (503, 401)
+        if: matrix.shard == 3
         run: python3 tests/program_requirements_extract_halt_test.py
       # S697: a run that is no whole read files nothing (Santa Monica's timed-out read dropped 46 records); the
       # pricing honors the reread gate's same-page calls (Canyons' v2 to v3); only= reads the named programs
       # alone; Butte's Catalog//iq to catalog/iq is one page. Pure stdlib.
       - name: Program requirements reader fixes (timed-out filing, same page, only=, Butte)
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_reader_fixes_s697_test.py
       # S697 follow-up (#3641's second reader): a killed wave extraction and a timed-out prior-year read file
       # nothing; a fragment naming a program keeps two pages apart; the edition token is one or two digits; a pinned
       # page's source says pinned; an only= filing keeps the earlier kept_passing entries it does not name.
       - name: Program requirements reader follow-up (killed wave, prior read, fragments, editions, pins)
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_follow_up_s697_test.py
       # S703 follow-up (S697's four left, f-followup-four-left-s697): the own-run filter with a None run stamp; a
       # route or named destination keeps two pages apart; v24 and v25 are years; a capture-only prior read with no
       # PDF page files its preview; a pin's through binds across a page break; the named-gaps rollback's tag.
       # Needs git for the keep-better fixture repo.
       - name: Program requirements reader follow-up S703 (own run, fragments, editions, prior preview, through, tag)
+        if: matrix.shard == 4
         run: python3 tests/program_requirements_follow_up_s703_test.py
       # S703: Clovis's and Cosumnes River's own-page pins bind on the pages the free reads printed, open on their
       # words, read from the pinned page in capture_pdf, and hold what the filed page lacked. Pure stdlib.
       - name: Program requirements own-page pins (Clovis, Cosumnes River)
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_pins_s703_test.py
       # S703 (census lever 6): Ohlone's two own-page pins bind on the pages the free read printed and read from the
       # pinned page in capture_pdf; the other 34 not_found programs are filed as named gaps, once each. Pure stdlib.
       - name: Program requirements own-page pins and named gaps (Ohlone)
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_ohlone_pins_s703_test.py
       # S714: the Los Rios pins (Sacramento City, Cosumnes River, Folsom Lake) read each program's own section on the
       # pages the free read printed, cut at their until words; a degree and its certificate keep their own pages;
       # the named gaps and the HVAC pair. Pure stdlib.
       - name: Program requirements Los Rios pins and until (S714)
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_rios_pins_s714_test.py
       # S720: the reader_page_assignment lever's pins at Los Angeles Southwest, Mendocino and Santiago Canyon read
       # each program's own section on the pages the free read printed; the named gaps cover the rest. Pure stdlib.
       - name: Program requirements lever pins (S720)
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_lever_pins_s720_test.py
       # S720: a site catalog's site_pages pin binds on a read page whose h1 prints the title with its award, and
       # moves only the program it names. Pure stdlib.
       - name: Program requirements site pins (S720)
+        if: matrix.shard == 2
         run: python3 tests/program_requirements_site_pins_s720_test.py
       # S721: site_pages pins load on the eLumen and curriQunet roads; Antelope Valley's and Redwoods' pins bind on
       # their own pages, a heading with its award on the line under it binds (self-recall on Redwoods' 71 pages), and
       # the named gaps and forced re-reads cover the rest of the lever. Pure stdlib.
       - name: Program requirements lever pins (S721)
+        if: matrix.shard == 4
         run: python3 tests/program_requirements_lever_pins_s721_test.py
       # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
       # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
       - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)
+        if: matrix.shard == 3
         run: python3 tests/program_requirements_sjdelta_aliases_s703_test.py
       # S703 (census levers 6, 7, 9, 10, 13): the five colleges' named gaps each name a program the filed capture
       # reads with no page, once, with a defined reason and no record file. Pure stdlib.
       - name: Program requirements page-not-found named gaps (five colleges)
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_named_gaps_s703_test.py
       # S697: the same-page calls over every committed folder, frozen in a fixture: 320 newly kept (Butte 163,
       # Cuyamaca 155, College of the Canyons 2), none one page off, and one edition pair. Pure stdlib.
       - name: Program requirements same-page recall over the committed folders
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_same_page_recall_s697_test.py
       # S653: a fragment a catalog includes (Skyline's programs/_program-headers/) is never a page; the measure
       # over the committed captures' URLs, none of them a claimed page. Pure stdlib.
       - name: Program requirements fragment paths are no pages
+        if: matrix.shard == 4
         run: python3 tests/program_requirements_fragment_path_test.py
       # A wave (S644): several colleges in one dispatch. The plan refuses two reads on one host, a
       # ninth college and a limit above $40; the price gate; each verify verdict; the table's sums.
       # Python with PyYAML for the workflow's shape; same non-required check.
       - name: Program requirements wave (plan, price, verify, file)
+        if: matrix.shard == 1
         run: |
           pip install --quiet pyyaml
           python3 tests/program_requirements_wave_test.py
@@ -601,239 +693,299 @@ jobs:
       # workflow step that runs the college extraction without its price step's go, or with an empty hard
       # stop, fails here. Python with PyYAML (installed above).
       - name: Program requirements extraction gate (every extraction priced)
+        if: matrix.shard == 2
         run: python3 tests/program_requirements_extraction_gate_test.py
       # The $40 gate on the other paid callers (S655, card 10): cer-classify's estimate and hard stop, the
       # worst-case bound for cpl-news-harvest and cpl-chat run as each workflow step with a stub model call, a
       # refused second-reader rate, and the most a call costs over every committed request. PyYAML (above).
       - name: Model run gates (cer-classify, cpl-news-harvest, cpl-chat)
+        if: matrix.shard == 3
         run: python3 tests/model_run_gates_test.py
       # The harvest gap census (S644): one cause and one lever per program without a passing
       # record, counts that sum to the universe, levers that count their members. Pure stdlib.
       - name: Harvest gap census (one cause per program, levers count their members)
+        if: matrix.shard == 1
         run: python3 tests/harvest_gap_census_test.py
       # Named gaps (S680; Sam, 2026-11-17: collect with gaps noted and confidence scores): the gap and its
       # scores, the census counting the row collected, the guarded SQL. Pure stdlib.
       - name: Named gaps (collected with the gap named, scored, counted collected)
+        if: matrix.shard == 2
         run: python3 tests/program_named_gaps_test.py
       # S703, census lever 2: ge_units_not_read, its self-recall on held answers, and lane 1's colleges untouched.
       - name: Named gap ge_units_not_read (self-recall, the plan, the held colleges)
+        if: matrix.shard == 3
         run: python3 tests/program_ge_units_not_read_s703_test.py
       # The units rules (S680; Commons Clarity's Part A on #3480): a correction lands exactly or the record
       # stays as filed; A11's named gaps; the collection lane's colleges left out. Pure stdlib.
       - name: Units rules A1, A4, A5, A6, A8 and A11 (self-check, exact sums, named gaps)
+        if: matrix.shard == 3
         run: python3 tests/program_requirements_units_rules_test.py
       # S703, census lever 3: the three hours gaps, their self-recall on held answers, and lane 1's colleges untouched.
       - name: Named hours gaps (self-recall, the plan, the held colleges)
+        if: matrix.shard == 2
         run: python3 tests/program_hours_gaps_s703_test.py
       # The S683 cheap-piles lists (#3358 section 2): A5's wrong answers are the self-check's own, key for key, and
       # each of the 33 held-out records names a committed record and a gap from GAPS or none. Pure stdlib.
       - name: Cheap piles S683 (A5's misses by cause, the 33 held-out records)
+        if: matrix.shard == 2
         run: python3 tests/program_requirements_cheap_piles_s683_test.py
       # S703, the catalog-wording lever: lists_past_their_figure, its self-recall with boundary readings, the claim
       # check's precision counts, and tonight's held colleges untouched.
       - name: Named gap lists_past_their_figure (self-recall, claim check, the plan, the held colleges)
+        if: matrix.shard == 4
         run: python3 tests/program_lists_past_figure_s703_test.py
       # S713, lane 2's cheap piles: the common number in parentheses, the named gap section_cut_off, their precision
       # against the hand reading, boundary readings and claim checks, and the plan's 15 rows at Santa Rosa Junior.
       - name: Cheap piles S713 (common numbers, section_cut_off, the plan)
+        if: matrix.shard == 2
         run: python3 tests/program_piles_s713_test.py
       # S713 at Glendale: a list taken in place of a core course, a figure printed in a list's heading, and PSYC 104
       # renumbered for the file's PSYCH 104; the self-recall against the hand reading and the plan's 13 rows.
       - name: Cheap piles S713 at Glendale (substitute list, heading figure, renumber, the plan)
+        if: matrix.shard == 2
         run: python3 tests/program_piles_s713_glendale_test.py
       # S713: the three general education reconcile steps (Las Positas, Antelope Valley, College of Marin), their
       # mechanics, the measure before the runs, and the 9-row plan against the filed records.
       - name: GE reconcile steps S713 (mechanics, precision, boundaries, the plan)
+        if: matrix.shard == 1
         run: python3 tests/program_ge_steps_s713_test.py
       # S713 at Clovis: a lecture and its lab as one option, a list taking an earlier list's unused courses, and
       # two courses renumbered; the self-recall, the blast radius at every college and the plan's 6 rows.
       - name: Cheap piles S713 at Clovis (lab pairs, earlier lists' courses, renumbers, the plan)
+        if: matrix.shard == 2
         run: python3 tests/program_piles_s713_clovis_test.py
       # S714 at East Los Angeles: the plan line, double counting, the high-unit waiver, a course taken twice, two
       # printed codes and one named gap, each on the catalog's own sections; the self-recall and the plan's rows.
       - name: Cheap piles S714 at East Los Angeles (plan line, overlap, waiver, repeat, renumbers, the plan)
+        if: matrix.shard == 4
         run: python3 tests/program_piles_s714_ela_test.py
       # S714 at City College of San Francisco: a cross-listed course and a misread code renamed to the file's rows,
       # one option the reading split over several blocks; the self-recall, the blast radius and the plan's 8 rows.
       - name: Cheap piles S714 at City College of San Francisco (renumbers, option parts, the plan)
+        if: matrix.shard == 3
         run: python3 tests/program_piles_s714_ccsf_test.py
       # S714 follow-up: the ten records at other colleges option_parts moves to passing; the self-recall and the plan.
       - name: Cheap piles S714, option_parts elsewhere (ten records, the plan)
+        if: matrix.shard == 4
         run: python3 tests/program_piles_s714_optparts_test.py
       # S714 at Fullerton: the campus letter's place in eight file codes; the self-recall and the plan's 11 rows.
       - name: Cheap piles S714 at Fullerton (campus-letter renumbers, the plan)
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s714_fullerton_test.py
       # S714 at College of the Sequoias: the page's double-count figure as a capped overlap; the self-recall and the plan.
       - name: Cheap piles S714 at College of the Sequoias (double count, the plan)
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s714_sequoias_test.py
       # S721 at Butte: the census's 17 wording-rule records, 5 collected with named gaps; the plan.
       - name: Cheap piles S721 at Butte (named gaps, the plan)
+        if: matrix.shard == 3
         run: python3 tests/program_piles_s721_butte_test.py
       # S720 at Fullerton: S714's 13 held, collected with four named gaps; the self-recall and the plan's 9 rows.
       - name: Cheap piles S720 at Fullerton (named gaps, the plan)
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s720_fullerton_test.py
       # S720 at College of the Sequoias: S714's 9 held, 7 collected with named gaps; the plan.
       - name: Cheap piles S720 at College of the Sequoias (named gaps, the plan)
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s720_sequoias_test.py
       # S720 at Clovis: S713's 8 held for Sky, 3 collected with named gaps; the plan.
       - name: Cheap piles S720 at Clovis (named gaps, the plan)
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s720_clovis_test.py
       # S720 at East Los Angeles: S714's 9 held, 3 collected with named gaps; the plan.
       - name: Cheap piles S720 at East Los Angeles (named gaps, the plan)
+        if: matrix.shard == 2
         run: python3 tests/program_piles_s720_ela_test.py
       # S720 at Glendale: S713's 3 held for Sky, 2 collected with named gaps; the plan.
       - name: Cheap piles S720 at Glendale (named gaps, the plan)
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s720_glendale_test.py
       # S720 at City College of San Francisco: S714's 26 held keys, 17 collected with named gaps; the plan.
       - name: Cheap piles S720 at City College of San Francisco (named gaps, the plan)
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s720_ccsf_test.py
       # S720 at Santa Monica: S713's 23 held for Sky, 22 collected with named gaps; the plan.
       - name: Cheap piles S720 at Santa Monica (named gaps, the plan)
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s720_smc_test.py
       # S720 at Ventura: the census's 22 wording-rule records, 5 collected with named gaps; the plan.
       - name: Cheap piles S720 at Ventura (named gaps, the plan)
+        if: matrix.shard == 3
         run: python3 tests/program_piles_s720_ventura_test.py
       # S721 lane 1: one figure printed over several lists read as one pool; the self-recall and the plan s721p.
       - name: Pooled figures S721 (the reading, the self-recall, the plan)
+        if: matrix.shard == 4
         run: python3 tests/program_pooled_figure_s721_test.py
       # S720 at Cabrillo: the census's 21 wording-rule records, 8 collected with named gaps; the plan.
       - name: Cheap piles S720 at Cabrillo (named gaps, the plan)
+        if: matrix.shard == 4
         run: python3 tests/program_piles_s720_cabrillo_test.py
       # S720 at Contra Costa: the census's 22 wording-rule records, 17 collected with named gaps; the plan.
       - name: Cheap piles S720 at Contra Costa (named gaps, the plan)
+        if: matrix.shard == 1
         run: python3 tests/program_piles_s720_contracosta_test.py
       # S720 at El Camino: the census's 22 wording-rule records, 15 collected with named gaps; the plan.
       - name: Cheap piles S720 at El Camino (named gaps, the plan)
+        if: matrix.shard == 2
         run: python3 tests/program_piles_s720_elcamino_test.py
       # S721 at Orange Coast: the census's 20 wording-rule records, 3 collected with named gaps; the plan.
       - name: Cheap piles S721 at Orange Coast (named gaps, the plan)
+        if: matrix.shard == 4
         run: python3 tests/program_piles_s721_orangecoast_test.py
       # S721 at Palo Verde: the census's 20 wording-rule records, 15 collected with named gaps (two new kinds); the plan.
       - name: Cheap piles S721 at Palo Verde (named gaps, the plan)
+        if: matrix.shard == 2
         run: python3 tests/program_piles_s721_paloverde_test.py
       # S721 at Porterville: the census's 19 wording-rule records, one passed by its catalog's misprint, 14
       # collected with named gaps, 4 held; the plan.
       - name: Cheap piles S721 at Porterville (a misprint rename, named gaps, the plan)
+        if: matrix.shard == 3
         run: python3 tests/program_piles_s721_porterville_test.py
       # S721 at Gavilan: the census's 18 wording-rule records, 7 collected with named gaps; the plan.
       - name: Cheap piles S721 at Gavilan (named gaps, the plan)
+        if: matrix.shard == 4
         run: python3 tests/program_piles_s721_gavilan_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)
+        if: matrix.shard == 1
         run: python3 tests/program_discontinued_test.py
       # The reader's page checks (S683; #3480 Source 7, file set 1 on #3510): a program whose filed record places
       # none reads only a page printing its own title with its award, never descriptions or a GE page. Pure stdlib.
       - name: Reader page checks, rules A to D (own heading, page types, every tab, not printed)
+        if: matrix.shard == 1
         run: python3 tests/reader_page_checks_test.py
       # Rule A's self-recall (S683 second reader): over the committed site records that place courses, rule A finds
       # the own page of at least 75% and accepts at most 30 sister programs' pages. Reads the committed records.
       - name: Reader page checks, rule A self-recall (own pages found, sister pages refused)
+        if: matrix.shard == 4
         run: python3 tests/reader_page_checks_recall_test.py
       # S683: after a paid re-read, the filed record stays wherever the re-read is worse (a filed pass above all), put
       # back byte for byte from the base, so step=reread leaves that row alone. Pure stdlib and a fixture git repo.
       - name: Program re-read, keep the better record
+        if: matrix.shard == 3
         run: python3 tests/program_reread_keep_better_test.py
       # Why a program has no closed list (S644): one reason per program, from the committed
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)
+        if: matrix.shard == 1
         run: python3 tests/harvest_no_closed_list_diagnosis_test.py
       # The no-closed-list lookup's self-test on the committed captures (#3299 slice A): none false. Pure stdlib.
       - name: Harvest no-closed-list lookup census (recall and false matches)
+        if: matrix.shard == 2
         run: python3 tests/harvest_ncl_lookup_census_test.py
       - name: Program requirements dated reads (the SQL's aggregate in Python, verify first)
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_dated_reads_test.py
       # A record's heading against its program, and a PDF that prints the number after (S644):
       # the scorer's heading check, the measure's counts, the reader's after-mode binding. Pure stdlib
       # plus the college reader's own imports.
       - name: Program requirements heading agreement (heading check, number printed after)
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_heading_agreement_test.py
       # The PDF reader's gated after-reading (S645): the reconcile entry switches it, the count of the
       # habit only measures, a block binds only where it names its program, a refusal never drops a
       # passing record, and capture_pdf is driven for both gate states. Constructed catalogs only.
       - name: Program requirements PDF numbers printed after (gated per college)
+        if: matrix.shard == 1
         run: python3 tests/program_requirements_pdf_numbers_after_test.py
       # The course outline census (S372, Sam 2026-10-12): which system each
       # college's course outlines open in, public or sign-in, and whether they
       # print SLOs. Reads pages only and writes no table. Pure-stdlib python.
       - name: Course outline census (systems, sign-in, curriculum links)
+        if: matrix.shard == 1
         run: python3 tests/course_outline_census_test.py
       # MID re-clustering Step 1 (S642, #2962): a same-college suite with distinct outcomes splits,
       # identical outcomes confirm, and no missing SLO, TOP difference or units difference is ever the
       # reason for a split. Reads the fixture only; writes nothing. Pure-stdlib python.
       - name: MID outcomes compare (split, confirm, the standing rules)
+        if: matrix.shard == 1
         run: python3 tests/mid_outcomes_compare_test.py
       # The re-mint readiness count (S709, #3655) by the draft gate d-remint-ready-gate-draft-s707: the subject map
       # alone settles nothing, a stale compare holds every M-ID, a strong or partial split holds. Pure-stdlib python.
       - name: Re-mint readiness (the draft gate)
+        if: matrix.shard == 1
         run: python3 tests/mid_readiness_test.py
       # The scope re-mint dry run (S710, #3655): a ready M-ID takes its settled code and that code's discipline,
       # never onto a vacated or SkyView-drawn slot; a cross-listed pair stays; a split across courses is held.
       - name: Scope re-mint dry run (the ready M-IDs)
+        if: matrix.shard == 2
         run: python3 tests/scope_remint_dryrun_test.py
       # The nine MQ names in the handbook's spelling (S430, Sam's Sheet 99 card 6):
       # no store holds an old spelling, and the rename touches whole strings only.
       # Pure-stdlib python.
       - name: MQ Title 5 rename (no old spelling in any store)
+        if: matrix.shard == 1
         run: python3 tests/mq_title5_rename_test.py
       # The CSR's quarterly routines in probe mode (S431): the handbook link and its
       # edition, a dead or unreachable source reported without raising, no file
       # written, a workflow that only reads. Pure-stdlib python, no network.
       - name: CSR quarterly probe (reads only, one line per source)
+        if: matrix.shard == 1
         run: python3 tests/csr_quarterly_probe_test.py
       # The CTDL exchange seed (S430, Sheet 102 card 1): the files Malone copies
       # into the private exchange repository, and the check that refuses a drop
       # whose manifest, checksums, CTIDs or folder disagree with its contract.
       # Builds throwaway git repositories. Pure-stdlib python.
       - name: CTDL exchange seed (contract, drops, merged-drop and branch rules)
+        if: matrix.shard == 1
         run: python3 tests/ctdl_exchange_seed_test.py
       # The display apply (S356): the college workflow's display job writes a
       # display build's receipt from a runner, exactly as reviewed, and files
       # each row's prior build as the rollback. Pure-stdlib python.
       - name: Program requirements display apply (receipt parse, rollback)
+        if: matrix.shard == 4
         run: python3 tests/program_requirements_display_apply_test.py
       # The display receipt store (S680, #3476): no display receipt in a commit
       # (the ignore rule), the runner stores it in cpl-receipts before it
       # applies (the workflow's step order), and the apply reads only bytes
       # whose sha256 kb/receipts/index/ names. Pure-stdlib python and git.
       - name: Display receipt store (index, bucket first, ignore rule, step order)
+        if: matrix.shard == 1
         run: python3 tests/display_receipt_store_test.py
       # The row audit prune (S680, #3476 step 5; KEEP 0 from S695): latest.json stays, a dated report
       # leaves only once its index entry names its sha256, and a store failure never fails the daily run.
       - name: Row audit prune (latest.json kept, indexed before removed, daily run unharmed)
+        if: matrix.shard == 4
         run: python3 tests/row_audit_prune_test.py
       # The one-time move of the display receipts committed before S680 (#3476
       # Part 4 step 4): every display receipt main tracks that this tree removed
       # must have an index entry naming its blob. It fetches main's trees alone
       # (--filter=blob:none), never a receipt. Pure-stdlib python and git.
       - name: Receipt move gate (no display receipt leaves the tree unstored)
+        if: matrix.shard == 3
         run: python3 tests/receipt_move_gate_test.py
       # The college page read (S329) reads a named list of one college's
       # pages from a runner for lines marked To confirm: it follows links only
       # on the college's own domain and prints the part that answers.
       - name: College page read (own-site follow, excerpts, plans)
+        if: matrix.shard == 1
         run: python3 tests/college_page_read_test.py
       # A college's own program map read into terms (S336): Irvine Valley's
       # all-maps page and Santa Monica's pathway pages, parsed from the text a
       # college page read printed. Pure-stdlib python; same non-required check.
       - name: Program map parse (terms, choices, list slots, acceptance)
+        if: matrix.shard == 1
         run: python3 tests/program_map_parse_test.py
       # The Progress view's status file (S343): what no anon read can know (the
       # records waiting on a check, the run, the calls), written at every
       # checkpoint. A malformed file would leave the view saying it could not
       # read it. Pure-stdlib python; same non-required check.
       - name: Queue status file (shape, parts, the stamp)
+        if: matrix.shard == 1
         run: python3 tests/queue_status_test.py
       # The checkpoint's UI pass ledger (S347): every view a person reads, each
       # COBI nav tab and each page a11y.config.js measures. A tab added to the nav
       # and missing here would never be audited. Pure-stdlib python; same
       # non-required check.
       - name: UI pass ledger (every view listed, the order --next takes)
+        if: matrix.shard == 1
         run: python3 tests/ui_pass_test.py
       # The ROEP display build (S327): CPL Pathways and Sierra read two outputs
       # of one build, so the guard holds them equal and recomputes the up-to
       # figure from the page's own data. Needs node (the JS data file).
       - name: ROEP display (page and Sierra agree, figure recomputes)
+        if: matrix.shard == 3
         run: python3 tests/roep_display_test.py
       # The MAP Custom Report loader's guard (S317). The nightly load runs it
       # before every load, so a PR that breaks it used to surface only as a
@@ -842,25 +994,31 @@ jobs:
       # and a 504 on the promotion is read from map_data_loads. Pure-stdlib
       # python; same non-required check.
       - name: MAP Custom Report loader guard (mapping, minimization, read-back)
+        if: matrix.shard == 1
         run: python3 tests/map_custom_report_sync_test.py
       # ACE's catalog CR text (S678): keyed on AceID, one row per pair, the typographic rule agreeing with
       # cr_reference.js on one fixture, a side by side that adds up, and the migration's grants closed.
       - name: ACE catalog CR text guard (key, typographic rule, grants)
+        if: matrix.shard == 1
         run: python3 tests/map_ace_catalog_cr_test.py
       # The salt-rotation sketch reads past PostgREST's 1,000-row cap and keeps
       # one pull at rest (S611; Sam's student-grain ruling, #2919 step 3).
       - name: MAP key sketch keeps one pull
+        if: matrix.shard == 1
         run: python3 tests/map_key_sketch_one_pull_test.py
       # The anchor re-key dry run reads the anchor's era from its keys and never runs the whole chain (S611).
       - name: Anchor re-key dry run reads its era
+        if: matrix.shard == 1
         run: python3 tests/anchor_rekey_dryrun_test.py
       # The CCR seed re-check lets TOP corroborate a seed discipline, never decide one (S612; Commons ruling 4).
       - name: CCR seed re-check sorts by TOP agreement
+        if: matrix.shard == 1
         run: python3 tests/ccr_seed_recheck_dryrun_test.py
       # Sierra's program -> course membership (S318): the two-signal college
       # crosswalk, the status filters, MIS as the owner of a course, and the
       # loader's re-send (an upsert lands once). Pure-stdlib python.
       - name: Program course membership guard (crosswalk, filters, re-send)
+        if: matrix.shard == 1
         run: python3 tests/program_courses_build_test.py
       # A 1-2 character subject code never decides a discipline on its own
       # (Sam's cross-list sheet item 2, 2026-09-22). `ES` maps to Ethnic Studies
@@ -869,6 +1027,7 @@ jobs:
       # in the MINTING path because the re-mint that repairs those rows runs
       # through it. Pure-stdlib python; same non-required check.
       - name: M-ID short-code gate (corroborate, never gate on 1-2 chars)
+        if: matrix.shard == 1
         run: python3 tests/mid_short_code_gate_test.py
       # The orphan-parent worklist (item 9 of the cross-list sheet): parents
       # whose recorded discipline appears nowhere among their members. Its
@@ -876,6 +1035,7 @@ jobs:
       # rows are undecidable because the members disagree among themselves.
       # Pure-stdlib python; same non-required check.
       - name: Orphan-parent worklist (the decidable column, and freshness)
+        if: matrix.shard == 1
         run: python3 tests/orphan_parent_worklist_test.py
       # The CSR scanner's anchor rule compares the M-ID's prefix, never the
       # anchor's `subject` field (the modal local code). Reading the field made
@@ -884,15 +1044,18 @@ jobs:
       # declare (FTVE, Sam's ruling of 2026-09-03). Pure-stdlib python; same
       # non-required check.
       - name: CSR scanner rules (compare the id, honor a ruled fan-in)
+        if: matrix.shard == 1
         run: python3 tests/csr_trail_rules_test.py
       # The Common Subjects Reference's procedures store (S425): the tab's Progress view
       # draws each card's procedure from it and the Commons row reads their names, so a
       # procedure with no card, or a glyph in its words, would surface on both dashes.
       - name: CSR procedures store (one per Progress card, plain words)
+        if: matrix.shard == 1
         run: python3 tests/csr_procedures_test.py
       # The nightly confirm of authority-coded picks (S427, Sam's Sheet 99 card 2): the fresh
       # read holds, the receipt before the write, the undo by cohort. Pure-stdlib python.
       - name: CSR confirm (authority-coded picks, receipt before the write)
+        if: matrix.shard == 1
         run: python3 tests/csr_confirm_authority_test.py
 
       # The Fact Sheet's statewide recommendations, which Sierra's statewide
@@ -901,6 +1064,7 @@ jobs:
       # seen used to win. It also loads the domain crosswalk, which imports
       # openpyxl (installed at the top of this job). Same non-required check.
       - name: Fact Sheet statewide recommendations (a unit range, never the first figure)
+        if: matrix.shard == 1
         run: |
           python3 tests/statewide_recs_test.py
 
@@ -912,60 +1076,75 @@ jobs:
       # (CPLBrain .github/workflows/decision-sheets.yml).
       # The reviewed CER write (sheet 19 card 1, 2026-10-02): a curator's row always wins.
       - name: CER decision applier holds a curator's row
+        if: matrix.shard == 1
         run: python3 tests/cer_decision_apply_test.py
       # Its undo never reads a write's echo (S639 review, #3123): a lost response, a died run, two rollbacks out of order.
       - name: CER decision applier undoes what landed, not what echoed
+        if: matrix.shard == 1
         run: python3 tests/cer_decision_apply_retry_test.py
       # Sierra's ghost-row delete (Sam, Open Asks Sheet 183 card 6): the plan finds exactly the ghosts, the apply's
       # guards refuse, the receipt comes from a fresh read, the undo restores every column. Pure-stdlib python.
       - name: Sierra ghost-row delete refuses, receipts and undoes
+        if: matrix.shard == 2
         run: python3 tests/chatbox_ghost_delete_test.py
       # The sync behind it: adopters and potential colleges kept apart, suppression inherited, and each retired
       # title's old name on its live successor's raw_variants (Sam, 2026-11-11). Pure-stdlib python.
       - name: Credential catalog sync (Sierra) keeps its rows and the retired names
+        if: matrix.shard == 1
         run: python3 tests/credential_catalog_sync_test.py
       # The CER's nightly procedures run (Sam, 2026-10-18): a lane only hints, the
       # gate holds residue, a disagreement is held, and a pre-fill no reason holds
       # saves under its procedure's cohort, a live row holding the save (Sheet 94
       # card 2).
       - name: CER procedures run settles, holds, and saves only what is sure
+        if: matrix.shard == 3
         run: python3 tests/cer_procedures_test.py
       # The classifier's standing rules fit the Edge Function's MAX_RULES (COBIx #2921, S604): from
       # 2026-11-07 every call came back HTTP 413 and the waiting titles showed only as a count.
       - name: CER classifier rules fit the Edge Function's limit
+        if: matrix.shard == 1
         run: python3 tests/cer_classifier_rules_size_test.py
       # The official AP names (Sam, 2026-10-31, from the Exhibits tab): an AP title takes College
       # Board's exam name however the college wrote it; a title naming two exams is held.
       - name: AP titles fold under College Board's official exam names
+        if: matrix.shard == 1
         run: python3 tests/ap_official_titles_test.py
       # The same pattern for IB: a college's IB title takes IB's own subject and level.
       - name: IB titles fold under IB's own subject names
+        if: matrix.shard == 1
         run: python3 tests/ib_official_titles_test.py
       # And for CLEP: one credential per exam, its levels folded in (Open Asks Sheet 150 card 2).
       - name: CLEP titles fold under College Board's exam names
+        if: matrix.shard == 2
         run: python3 tests/clep_official_titles_test.py
       # The CER fold (Sheet 94 card 1): a held assignment holds only itself; the
       # clean ones beside it fold.
       - name: CER fold holds each conflict by itself
+        if: matrix.shard == 1
         run: python3 tests/fold_unclassified_test.py
       # The Commons tab's figures (Sam, 2026-10-18): the builder reads every row from the
       # committed files, a figure it cannot read is null with its error, never a zero.
       - name: Commons status builder reads every row
+        if: matrix.shard == 4
         run: python3 tests/commons_status_build_test.py
       # The Commons data dashboard (#3215): the universe is the crosswalk, every harvest name resolves, the
       # statewide figures are the college rows' sums, and an unread college is null, never zero.
       - name: Commons data dashboard builder
+        if: matrix.shard == 3
         run: python3 tests/commons_data_status_build_test.py
       # College Data Collection's dictionary and integrations builder (S654): each rule broken in a fixture repo,
       # and the builder must exit 1 and name it.
       - name: CDC data dictionary builder rules
+        if: matrix.shard == 3
         run: python3 tests/cdc_sharing_build_test.py
       # Its cost read (S653): a college's cost is what its filed records cost, so a free rescore never drops it.
       - name: Commons data dashboard cost read
+        if: matrix.shard == 1
         run: python3 tests/commons_cost_read_test.py
       # Its live counts (S647, COBIx's conditions on #3222): counts only, the service key alone, fail soft, over a
       # fixture; no network. PyYAML for the census workflow's shape.
       - name: Commons data dashboard live counts
+        if: matrix.shard == 3
         run: |
           pip install --quiet pyyaml
           python3 tests/commons_data_live_test.py
@@ -975,6 +1154,7 @@ jobs:
       # output. Here, not in the shards: the builder reads kb/receipts/, which their checkout omits.
       # --out writes the file alone and leaves commons_history.json as committed.
       - name: Commons status rebuilt from this tree, then every test that reads it
+        if: matrix.shard == 1
         run: |
           set -euo pipefail
           python3 kb/_build_commons_status.py --out kb/status/commons.json --quiet
@@ -997,80 +1177,99 @@ jobs:
       # The shared daily-dashboard group, the plan checks outside it, and the one rebuild after a lost
       # push (COBIx #3110 findings 7 to 9), the push loop run in a scratch repo. PyYAML and git.
       - name: Apply workflows share one group; a lost push rebuilds once
+        if: matrix.shard == 4
         run: |
           pip install --quiet pyyaml
           python3 tests/apply_concurrency_test.py
       # Every job that reads the service key declares the main-only `live-counts` environment or is on the test's
       # PENDING list with its group and a reason (S653b, governance lane NEXT 1). PyYAML, installed by the step above.
       - name: Service-key readers run in the live-counts environment or are listed
+        if: matrix.shard == 1
         run: python3 tests/service_key_environment_test.py
       # The Docket (#2963 step 2): the cases file carries no email and names its register row, and the
       # ruling reader acts only on an open case's offered choice.
       - name: Docket cases and the ruling reader
+        if: matrix.shard == 1
         run: python3 tests/docket_rulings_test.py
       # The Exhibits tab's Review queue (Sheet 147 card 1, 2026-10-31): each held title in its step,
       # the aligned course naming the proposal, a conflict proposing the reference's title, and no
       # student figure in the public file.
       - name: Exhibits review queue builder
+        if: matrix.shard == 4
         run: python3 tests/exhibits_review_build_test.py
       # The title in use before a new one, and no course title on a certification (Sam, 2026-11-12): the one rule's
       # Python side against the fixture exhibits.js is pinned to (tests/title_in_use_parity.test.js), and the proposal.
       - name: Exhibits proposal, the title in use
+        if: matrix.shard == 1
         run: python3 tests/title_in_use_test.py
       # Another look (Sam, 2026-10-31): each rule's proposal on a fixture, what a person kept never comes
       # back, a held title is left to Review, an exam's or an industry credential's name is never read
       # as a course number.
       - name: Exhibits Another look builder
+        if: matrix.shard == 1
         run: python3 tests/exhibits_sweep_build_test.py
       # Certification naming (Sam, 2026-11-11): "<Official cert name> (ASE <code>)" for a new card, no card again once a
       # title carries it, nothing in the reference renamed without the approved batch, an old title kept as an alias.
       - name: Certification naming and the rename batch
+        if: matrix.shard == 1
         run: python3 tests/cert_naming_test.py
       # Fold issuer precedence and the one-pass apply (#3110 build step 1): a person's issuer wins, a cert-form target
       # keeps its issuer, otherwise additive; a lead and its confirmed siblings fold in one run; the undo puts it back.
       - name: Credential fold issuer precedence and undo
+        if: matrix.shard == 1
         run: python3 tests/cred_rename_fold_issuer_test.py
       # The pair re-point (COBIx's item 6, #3464, S678): one (MAP exhibit id + local title) moves and nothing beside it,
       # a tap-only row never applies, the undo restores, and the committed list's batch counts stay as measured.
       - name: Exhibit pair re-point list and apply
+        if: matrix.shard == 2
         run: python3 tests/exhibit_repoint_test.py
       # The blocker round's rules 1 and 2 (COBIx, #3480, S683): the cert-based twin of a course title and the referenced
       # leftover kept in place, as pair rows; the counts, the 3-college tests, the guard, and the undo.
       - name: Exhibit blocker rules 1 and 2
+        if: matrix.shard == 1
         run: python3 tests/exhibit_blocker_rules_test.py
       # The fold's issuer decision stored as one issuer_resolution row per target and enforced nightly (#3116): the
       # interleavings around decided_at, a failed insert, a nightly between a failed apply and its retry, a second fold,
       # apply-nightly-undo; and the resolver defined once in Python and once in JavaScript.
       - name: Credential fold issuer resolution, end to end
+        if: matrix.shard == 3
         run: python3 tests/fold_issuer_resolution_test.py
       - name: The fold issuer resolver is defined once
+        if: matrix.shard == 2
         run: python3 tests/fold_issuer_single_source_test.py
       # A person's saved fold rows on a title that holds no exhibit do nothing (Sky and COBIx, #3110): no fold, no
       # issuer conflict, no rename, and the apply stays safe; the same rows act again once a raw maps to the title.
       - name: Saved rows on an emptied title are ignored
+        if: matrix.shard == 1
         run: python3 tests/emptied_title_guard_test.py
       # The Exhibits List's Outcomes match hints (Sam, 2026-11-01): a shared course is never a hint, the 0.5 threshold
       # holds, GE pseudo-codes are skipped, and the lexemes match Postgres's to_tsvector('english').
       - name: Exhibits Outcomes match builder
+        if: matrix.shard == 1
         run: python3 tests/exhibit_slo_neighbors_build_test.py
       # The public adoption page's builder (Sheet 147 cards 1 and 3): settled credentials only, could
       # adopt from the prescriptive layer alone, no student figure in the public file.
       - name: Public adoption page builder
+        if: matrix.shard == 1
         run: python3 tests/adopt_page_build_test.py
       # The catalog's analysis for faculty (2026-11-06): the skills join, columns only, the newest read,
       # the lead-in line dropped, covered and confidence, the illustrative label.
       - name: Credential Catalog analysis builder
+        if: matrix.shard == 1
         run: python3 tests/adopt_align_build_test.py
       # The IT/AI credential catalog's fields and MAP join (2026-10-30, 2026-10-31): no guessed
       # CIP, a CTID only on its owner's row, a name join only where the issuer agrees, and the
       # hand check of Credential Engine's top 50 winning over the name join.
       - name: Credential catalog fields and MAP join
+        if: matrix.shard == 1
         run: python3 tests/credential_catalog_widening_test.py
       # The credential panel's training sites (Sheet 147 step 2): the overlay sync and exhibits.js
       # resolve the list against the one-trainer field by one rule; Mode A3 fills with the first site.
       - name: Credential panel training sites
+        if: matrix.shard == 1
         run: python3 tests/credential_review_sites_test.py
       - name: A replaced issuer override is reported, never removed (S636)
+        if: matrix.shard == 1
         run: python3 tests/credential_review_stale_issuer_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
@@ -1078,6 +1277,7 @@ jobs:
       # write reaching a shared table with no prompt and no receipt, which is
       # what Rule 10 exists to prevent. Pure-stdlib python, no network.
       - name: Supabase SQL guard (reads allow, writes deny, unknown asks)
+        if: matrix.shard == 4
         run: python3 tests/supabase_sql_guard_test.py
       # The Bash half of the same mechanism (Session 278). A hook is needed
       # here and NOT for the read-only MCP tools, because auto mode drops
@@ -1093,19 +1293,23 @@ jobs:
       # and flags that flip a reader into a writer (`sed -i`, `find -delete`).
       # Pure-stdlib python, no network.
       - name: Bash read guard (read-only allow, everything else asks)
+        if: matrix.shard == 1
         run: python3 tests/bash_read_guard_test.py
       # The execute_sql allow rule is safe ONLY beside the execute_sql hook
       # (hooks fire first, and a hook deny wins). Measured 2026-09-20: the
       # hook's own allow does not stop the prompt; the rule does.
       - name: Prompt-guard installer (the execute_sql rule never ships without its hook)
+        if: matrix.shard == 2
         run: python3 tests/install_prompt_guards_test.py
       # The S652 lesson hooks (#3306). Each refuses one recurring mistake (a merge
       # before reading the PR's comments; a "now" time written from memory) and
       # fails open with a warning, so a broken hook never blocks every merge.
       # Pure stdlib, no network; the clock is pinned by CPL_HOOK_NOW.
       - name: Merge-read guard (a merge waits until the PR's comments were read)
+        if: matrix.shard == 3
         run: python3 tests/merge_read_guard_test.py
       - name: Clock guard (a published "now" time must match the clock)
+        if: matrix.shard == 4
         run: python3 tests/clock_time_guard_test.py
       # The Jev magic half (S281). Guards the ways an AI adjudication pass fails
       # while LOOKING like it worked: a skeptic shown the verdict rubber-stamps
@@ -1113,10 +1317,12 @@ jobs:
       # boolean, and calls spent on mechanical findings. Pure stdlib, no network
       # — Jev is replaced by a recorder that asserts what it was shown.
       - name: Jev adjudication (the second look never sees the first verdict)
+        if: matrix.shard == 1
         run: python3 tests/jev_adjudicate_test.py
       # The exhibit re-analysis's Jev runner: only step 9's two questions, only on
       # what the code checks flagged, no gate, and a dry run makes no call.
       - name: Exhibit re-analysis Jev runner (two questions, no gate)
+        if: matrix.shard == 1
         run: python3 tests/exhibit_reanalysis_jev_test.py
       # The battery's SELECTION RULE (S281). A rule that cannot reject noise is
       # worse than none — it launders chance into a finding the next session
@@ -1125,6 +1331,7 @@ jobs:
       # planted signal IS detected, and that a null says "no LARGE effect"
       # rather than "no signal". Pure stdlib, no network, no key.
       - name: Jev variable battery (the rule rejects noise and detects signal)
+        if: matrix.shard == 4
         run: python3 tests/jev_battery_test.py
       # The re-mint blast radius (Session 277). Guards three READINGS rather
       # than three behaviors, because all three were got wrong while building
@@ -1134,6 +1341,7 @@ jobs:
       # every unattachable record lands on a worklist, never in a remainder.
       # Pure-stdlib python, no network.
       - name: Re-mint blast radius (join key, id era, C-ID exclusion, no silent drops)
+        if: matrix.shard == 1
         run: |
           python3 kb/_build_remint_blast_radius.py --check
           python3 tests/remint_blast_radius_test.py
@@ -1146,6 +1354,7 @@ jobs:
       # header cannot go stale silently. Imports the builder's own parsers.
       # Pure-stdlib python, no network.
       - name: COCI program CIP + CTE-marker parse guard
+        if: matrix.shard == 1
         run: python3 tests/coci_program_cip_test.py
       # My College went public on 2026-09-17, so the tab's four gated tables are
       # mirrored into `_pub` tables with suppression applied at BUILD time. This
@@ -1160,6 +1369,7 @@ jobs:
       # BOTH COCI loaders and applied to the TITLE; the test pins the live
       # shapes, idempotence, and that genuine text survives. Pure stdlib.
       - name: Course-title mojibake repair (kb/_text_repair.py)
+        if: matrix.shard == 1
         run: python3 tests/course_title_mojibake_test.py
       # Offerings sync chunk retry (S274) — the merge's path-triggered catalog
       # sync died twice on a 4,000-row chunk under the authenticator role's 8 s
@@ -1169,8 +1379,10 @@ jobs:
       # other error still stops the run; a canceled first chunk truncates again
       # on retry and a later one never does. Pure stdlib, no network.
       - name: Offerings sync chunk retry (chatbox/sync_coci_offerings.py)
+        if: matrix.shard == 1
         run: python3 tests/coci_offerings_sync_chunk_test.py
       - name: My College public layer — suppression properties
+        if: matrix.shard == 1
         run: python3 tests/college_briefing_publish_suppression_test.py
       # Re-key chain guard (Session 224) — a re-mint alias map can CHAIN (one
       # pair's old key is another pair's new key: `ARME M10AJ -> FLNG M10AJ`
@@ -1179,6 +1391,7 @@ jobs:
       # 2026-09-03 recode run went red on exactly that false positive. Pure-stdlib
       # python, no network.
       - name: Supabase re-key chain guard (kb/_rekey_kb_curation_supabase.py)
+        if: matrix.shard == 1
         run: python3 tests/rekey_kb_curation_chain_test.py
       # The two re-mint applies (Session 224, #1453) — apply == spec, gated
       # against the frozen receipt: a moved row without its stamp, a ghost key
@@ -1186,6 +1399,7 @@ jobs:
       # membership entry of its own. 37 fixture checks that ran nowhere until
       # this step. Pure-stdlib python, no network.
       - name: Re-mint apply guards (kb/_authority_recode_apply.py, kb/_zband_retire_apply.py)
+        if: matrix.shard == 2
         run: |
           source scripts/test_group.sh
           python3 tests/authority_recode_apply_test.py
@@ -1199,6 +1413,7 @@ jobs:
       # (one pointer, no discipline, no code, no band — never guessed), the
       # materialized record, P0 twice and P1 drift. Pure-stdlib python, no network.
       - name: UC-CUR promotion guard (kb/_uc_cur_promote.py)
+        if: matrix.shard == 1
         run: python3 tests/uc_cur_promote_test.py
       # The Needs an M-ID pile mint, dry run (Session 694) — an id ever minted is
       # never handed out; a short subject code decides nothing alone; a course no
@@ -1211,12 +1426,14 @@ jobs:
       # pile_mint source left as written by kb/_infer_disciplines.py and read as
       # a session mint by the auditor and the confidence scorer.
       - name: Pile mint dry-run guard (kb/_pile_mint_dryrun.py)
+        if: matrix.shard == 1
         run: python3 tests/pile_mint_dryrun_test.py
       # The pile mint apply (Session 695): stops on a moved plan, a curated
       # course, a merge target, a wrong --expect or a stale live read; untouched
       # rows byte-identical; counts grow by the planned number; the rollback
       # returns the original bytes and reserves the ids. Fixtures only.
       - name: Pile mint apply guard (kb/_pile_mint_apply.py)
+        if: matrix.shard == 3
         run: python3 tests/pile_mint_apply_test.py
       # Occupation matcher stemming (Session 263) — stem() strips -er/-or, which
       # is right for `installers -> install` and wrong for `engineer -> engine`
@@ -1227,6 +1444,7 @@ jobs:
       # pins `electricians -> electrician`, which an over-correction would break.
       # Pure-stdlib python, no network.
       - name: Occupation matcher stemming guard (kb/_build_regional_cpl_opportunity.py)
+        if: matrix.shard == 1
         run: python3 tests/occupation_matcher_stemming_test.py
       # Identities map re-key (Session 226) — the articulation identities map
       # carried 1,597 keys on ids no longer in the catalog. Guards the chain
@@ -1236,6 +1454,7 @@ jobs:
       # every ghost is dispositioned and the post-state is all live. Pure-stdlib
       # python, no network.
       - name: Identities map re-key guard (kb/_identities_rekey_dryrun.py)
+        if: matrix.shard == 4
         run: python3 tests/identities_rekey_test.py
       # Identities map rebuild (S649) — the export's rollup builds a row's
       # adopter and potential lists from identities[member], so an articulated
@@ -1246,6 +1465,7 @@ jobs:
       # through the generator's own articulation_rollup (imports the
       # generator, so it needs the openpyxl installed above). No network.
       - name: Identities map rebuild guard (kb/_identities_rebuild.py)
+        if: matrix.shard == 3
         run: python3 tests/identities_rebuild_test.py
       # SkyView's CPL payload (Session 238) — the join the CPL face and the
       # articulations light stand on. Guards that the join reaches exactly the
@@ -1255,6 +1475,7 @@ jobs:
       # committed prototype/ccr_cpl.json is a fresh build. Pure-stdlib python,
       # no network.
       - name: SkyView CPL payload guard (kb/_build_ccr_cpl.py)
+        if: matrix.shard == 1
         run: python3 tests/ccr_cpl_payload_test.py
       # SkyView's CPL UNIVERSE (Session 252) — the second universe Sam ruled on
       # 2026-09-10, where the entities are EXHIBITS rather than courses. Guards
@@ -1266,6 +1487,7 @@ jobs:
       # that every statewide exhibit is marked, and that the committed payload
       # is a fresh build. Pure-stdlib python, no network.
       - name: SkyView CPL universe guard (kb/_build_ccr_cpl_universe.py)
+        if: matrix.shard == 1
         run: python3 tests/ccr_cpl_universe_test.py
       # Its members payload (the rows behind the counts). Guards that the id is
       # imported from the universe builder rather than restated, that every key
@@ -1273,6 +1495,7 @@ jobs:
       # rows its card lists (the ring and the card are one join), the row
       # shapes the client reads, and that the committed file is a fresh build.
       - name: SkyView CPL universe members guard (kb/_build_ccr_cpl_universe_members.py)
+        if: matrix.shard == 1
         run: python3 tests/ccr_cpl_universe_members_test.py
       # SkyView's sky placement (Session 239) — where each discipline island
       # sits on the sphere, three ways, and the CTE reading behind the third.
@@ -1283,6 +1506,7 @@ jobs:
       # deterministic, and that the prototype's generator imports it rather
       # than carrying a copy. Pure-stdlib python, no network.
       - name: SkyView sky placement guard (kb/_build_ccr_sky.py)
+        if: matrix.shard == 1
         run: python3 tests/ccr_sky_payload_test.py
       # Course level in the island layout (Sam, 2026-09-09) — the rule must match
       # ccr_universe.js's LEVEL_TESTS, or the map and the sidebar ladder disagree
@@ -1290,6 +1514,7 @@ jobs:
       # points carry a level word, and the other 88% are ordered by the match
       # score that decided which ring they sit on. Pure-stdlib python, no network.
       - name: SkyView level-layout guard (kb/_build_ccr_universe.py)
+        if: matrix.shard == 1
         run: python3 tests/ccr_level_layout_test.py
       # The glyph sweep's classifier and its safe-rewrite envelope (Sam,
       # 2026-09-09). ⚠️ This runs the GUARD, not the sweep: --apply rewrites
@@ -1302,6 +1527,7 @@ jobs:
       # (was 516; the mechanical half ran) and a red-on-day-one check gets
       # ignored.
       - name: Glyph sweep guard (kb/_glyph_sweep.py)
+        if: matrix.shard == 1
         run: python3 tests/glyph_sweep_test.py
       # Memory-table lint (Session 229) — the structural half of "is this memory
       # row still true": dead paths, dangling pointers, a stale row wearing a
@@ -1312,6 +1538,7 @@ jobs:
       # definition so the 0.55 cut means what Session 190 measured. Pure-stdlib
       # python, no network.
       - name: Memory-table lint guard (kb/_memory_audit.py)
+        if: matrix.shard == 1
         run: python3 tests/memory_audit_test.py
       # Prefix fold dry run (Session 224) — the keep-number re-key for rows off
       # their discipline's canonical code: a span (KINE/ATHL) must not move, a
@@ -1319,6 +1546,7 @@ jobs:
       # cascading, a swap is a cycle and never a chain, --scope reports rather
       # than drops. Pure-stdlib python, no network.
       - name: Prefix fold dry-run guard (kb/_prefix_fold_dryrun.py)
+        if: matrix.shard == 2
         run: python3 tests/prefix_fold_dryrun_test.py
       # Prefix fold apply (Session 225) — the receipted half: a moved row
       # without its stamp or with an earlier stamp lost, a materialized
@@ -1327,16 +1555,19 @@ jobs:
       # passing P1, a second run of the same receipt, a TOP-only row moving
       # without the ruling on its evidence. Pure-stdlib python, no network.
       - name: Prefix fold apply guard (kb/_prefix_fold_apply.py)
+        if: matrix.shard == 1
         run: python3 tests/prefix_fold_apply_test.py
       # The ETHS re-mint (Session 296) — Sam's 2026-09-22 ruling on the 31
       # physical-activity identities minted under Ethnic Studies: routing by the
       # members' title, the two-signal gate, the ruled-only apply, the gates.
       - name: ETHS re-mint guard (kb/_eths_remint.py)
+        if: matrix.shard == 3
         run: python3 tests/eths_remint_test.py
       # Card 9 (open-asks sheet 4, Sam 2026-09-29): Grossmont's four KINE titles to
       # ATHL. The pinned four and their ETHS origins, the kept ETHS stamp, a second
       # apply refused, and the committed receipt resolving through the one chain.
       - name: Card 9 ATHL re-mint guard (kb/_athl_four_remint.py)
+        if: matrix.shard == 4
         run: python3 tests/athl_four_remint_test.py
       # crnc_mirrors re-key (Session 225) — the 6th id-keyed artifact class,
       # missing from the post-apply chain until the recode left 398 of its
@@ -1345,6 +1576,7 @@ jobs:
       # a key on a memberless id reported, the era suffix guarded. Reads the
       # committed file too. Pure-stdlib python, no network.
       - name: crnc mirrors re-key guard (kb/_rekey_crnc_mirrors.py)
+        if: matrix.shard == 1
         run: python3 tests/rekey_crnc_mirrors_test.py
       # MAP's per-dataset verdict (2026-08-26) — the nightly load failed three
       # nights reporting a name mismatch while MAP was plainly answering
@@ -1353,6 +1585,7 @@ jobs:
       # dashboard shares this fetcher and must not fall back over datasets it
       # never reads. Pure-stdlib python, no network.
       - name: MAP CustomReport response verdict (responseCode / duplicate views)
+        if: matrix.shard == 1
         run: python3 tests/custom_report_response_test.py
       # Lifecycle-booleans probe (Session 223) — the runner-side instrument that
       # finds Pedro's CPL lifecycle boolean columns + CollegeID2 on the MAP API.
@@ -1360,6 +1593,7 @@ jobs:
       # and that a student key used for in-memory grouping never reaches the
       # log. Pure-stdlib python, no network.
       - name: Lifecycle-booleans probe guard (kb/_probe_lifecycle_checks.py)
+        if: matrix.shard == 1
         run: python3 tests/probe_lifecycle_checks_test.py
       # Origination feed (Session 216, the N2 b gate) — the noncredit-only
       # institutions draw ONLY as CPL originating from them posts at a credit
@@ -1369,6 +1603,7 @@ jobs:
       # be guessed onto an institution. Pure-stdlib python; same non-required
       # check.
       - name: Origination feed lint (funding/_build_funding_performance.py)
+        if: matrix.shard == 1
         run: python3 tests/funding_origination_test.py
       # Career attainment (goal C, Sam 2026-09-22/23) — the Chancellor's Office
       # EDD wage-record import. ca_u / nc_ca_u stay ABSENT (not zero) until an
@@ -1376,6 +1611,7 @@ jobs:
       # under 10 stops the import, and the COMMITTED file, once there is one,
       # must pass the same checks. Pure-stdlib python; same non-required check.
       - name: Career-attainment import lint (funding/_build_funding_performance.py)
+        if: matrix.shard == 1
         run: python3 tests/funding_career_import_test.py
       # Scenario 4's noncredit outcome counts (Sheets 113 and 114, S471):
       # nc_exh / nc_cdcp / nc_course stay ABSENT without the RPC, an institution
@@ -1383,6 +1619,7 @@ jobs:
       # exhibit once, a standalone counts at its district's colleges, and NC-2
       # counts only a course COCI confirmed. Same non-required check.
       - name: Noncredit outcome counts (funding/_build_funding_performance.py)
+        if: matrix.shard == 1
         run: python3 tests/funding_nc_counts_test.py
       # The nightly refresh of Sierra's exhibit table (2026-11-12): it stood
       # unrefreshed from May, and Las Positas read 9 noncredit exhibits against
@@ -1390,20 +1627,24 @@ jobs:
       # row, chunked staging, and a promote that refuses a short pull. Pure
       # stdlib plus openpyxl, no network.
       - name: Sierra's exhibit table refresh (chatbox/sync_chatbox_exhibits.py)
+        if: matrix.shard == 1
         run: python3 tests/chatbox_exhibits_sync_test.py
       # The college join (S544): every funding roster row is reached by exactly one college, so a short-name change
       # cannot drop a college's outcomes and JST condition into `unmatched` (CCSF and Desert, 2026-10-31 to 11-02).
       - name: Funding college join (funding/_build_funding_performance.py)
+        if: matrix.shard == 2
         run: python3 tests/funding_name_resolver_test.py
       # The short-name editor's daily fold (S545): a changed short keeps the old one, a collision or a missing college
       # is refused and the committed files stay, and nothing changed writes nothing.
       - name: College short names fold (kb/_apply_college_short_names.py)
+        if: matrix.shard == 1
         run: python3 tests/college_short_names_apply_test.py
       # Who CPL serves (Sam, sheets 33-34, 2026-10-04): the Active Colleges
       # card counts community colleges only and names Cal State LA beside them,
       # from kb/non_ccc_institutions.json. Imports the generator (openpyxl, installed
       # at the top of this job). Same non-required check.
       - name: Active Colleges counts community colleges (excel_to_dashboard.py)
+        if: matrix.shard == 1
         run: |
           python3 tests/active_colleges_ccc_test.py
 
@@ -1411,12 +1652,14 @@ jobs:
       # names is caught on fixtures. The live read runs in k10-disclosure-check.yml.
       # Stdlib only. Same non-required check.
       - name: k=10 disclosure checker (fixtures)
+        if: matrix.shard == 1
         run: python3 tests/k10_disclosure_check_test.py
 
       # The failure watch (S602, COBIx #2891 item 3): every scheduled workflow is
       # watched or excused with its reason, and every watched name is a real
       # workflow name (workflow_run matches names exactly). PyYAML only.
       - name: Workflow failure watch covers every scheduled workflow
+        if: matrix.shard == 3
         run: |
           pip install --quiet pyyaml
           python3 tests/workflow_failure_watch_test.py
@@ -1425,6 +1668,7 @@ jobs:
       # went stale when the card gained its Issuer/type variants breakdown.
       # Imports the generator (openpyxl, installed at the top). Same non-required check.
       - name: Statewide Exhibits card (excel_to_dashboard.py)
+        if: matrix.shard == 1
         run: |
           python3 tests/statewide_kpi_test.py
 
@@ -1432,6 +1676,7 @@ jobs:
       # item 11, S603): a parse error stops the run, the write is atomic, and a
       # history shorter than the committed one by more than a day is refused.
       - name: KPI history write guard (excel_to_dashboard.py)
+        if: matrix.shard == 1
         run: |
           python3 tests/kpi_history_write_test.py
 
@@ -1440,6 +1685,7 @@ jobs:
       # statewide); it read articulation lines alone and marked 84 of 152.
       # Imports the generator (openpyxl, installed at the top). Same non-required check.
       - name: Credential reference statewide flag (the Fact Sheet's set)
+        if: matrix.shard == 2
         run: |
           python3 tests/credential_reference_statewide_basis_test.py
       # The printed reports name each year's own Current (S649): the generator
@@ -1447,6 +1693,7 @@ jobs:
       # from the live KPI and kpi_history. Imports the generator (openpyxl,
       # installed at the top). Same non-required check.
       - name: Workplan reports year pair (excel_to_dashboard.py)
+        if: matrix.shard == 1
         run: |
           python3 tests/workplan_reports_year_pair_test.py
       # workplan_goals.current stops being read (S653b): the per-year cur_* columns
@@ -1456,6 +1703,7 @@ jobs:
       # _row_current_years ignores it. Both import the generator (openpyxl, installed
       # at the top). Same non-required check.
       - name: workplan_goals.current is never read (guard + Current hybrid)
+        if: matrix.shard == 4
         run: |
           python3 tests/workplan_goals_current_column_guard_test.py
           python3 kb/_test_workplan_current_hybrid.py
@@ -1466,6 +1714,7 @@ jobs:
       # missing untracked files), so it carries its own guard. Pure-stdlib
       # python; same non-required check.
       - name: Doctrine lookup lint (kb/doctrine.py)
+        if: matrix.shard == 1
         run: python3 tests/doctrine_lookup_test.py
       # Context-pressure meter (Session 206) — this session auto-compacted at
       # 786,077 tokens with the checkpoint 150K stale, because Rule 9's trigger
@@ -1475,11 +1724,13 @@ jobs:
       # tokens) and that announce-once never becomes announce-never. Pure
       # stdlib; same non-required check.
       - name: Context-pressure meter (kb/_context_budget.py)
+        if: matrix.shard == 1
         run: python3 tests/context_budget_test.py
       # The read-only Side by side views (S678, COBIx's item 7 on #3464): the fixture cards' figures in
       # kb/side_by_side.json and kb/exhibit_side_by_side.json, and the builder's read-only, scorer-free shape.
       # Pure stdlib; same non-required check.
       - name: Side by side files (kb/_build_side_by_side.py)
+        if: matrix.shard == 4
         run: python3 tests/side_by_side_test.py
       # Merge-chain flattening (Session 187) — the curation overlay stores one
       # hop per row, so an identity merged into and then merged onward is both a
@@ -1490,6 +1741,7 @@ jobs:
       # a guard. Needs openpyxl (it imports the generator), installed at the top
       # of this job. Same non-required check.
       - name: Merge-chain flattening lint (excel_to_dashboard.py)
+        if: matrix.shard == 1
         run: |
           python3 tests/merge_chain_flatten_test.py
       # Assign from the panel (S694): a course from outside the identity file,
@@ -1500,6 +1752,7 @@ jobs:
       # UC_OUT_DIR seam (about a minute). Imports the generator (openpyxl,
       # installed at the top). Same non-required check.
       - name: Assign from the panel, the export (excel_to_dashboard.py)
+        if: matrix.shard == 3
         run: |
           python3 tests/assign_from_panel_build_test.py
       # Units never split an identity (Sam, 2026-09-27). The M-ID Units bake
@@ -1508,6 +1761,7 @@ jobs:
       # displays. Imports the generator (openpyxl, installed at the top). Same
       # non-required check.
       - name: Unified Courses unit range (the displayed members, no over-merge alarm)
+        if: matrix.shard == 1
         run: |
           python3 tests/unified_units_range_test.py
       # The Budget tab's First Light pass (S363): the section is generated, so the
@@ -1515,6 +1769,7 @@ jobs:
       # guarded on the generator, not the HTML. Imports the generator. Same
       # non-required check.
       - name: Budget section First Light (excel_to_dashboard.py)
+        if: matrix.shard == 1
         run: |
           python3 tests/budget_section_first_light_test.py
       # The Vision 2030 tab's First Light pass (S365): the section is generated,
@@ -1522,6 +1777,7 @@ jobs:
       # layout are guarded on the generator and both HTMLs. Imports the
       # generator. Same non-required check.
       - name: Vision 2030 section First Light (excel_to_dashboard.py)
+        if: matrix.shard == 1
         run: |
           python3 tests/vision_2030_first_light_test.py
       # Curated-anchor duplicates lane (Session 226) — the May 2026 curated
@@ -1533,6 +1789,7 @@ jobs:
       # files — that every receipt anchor is offered or already merged. Imports
       # the generator (openpyxl, installed at the top of this job).
       - name: Curated-anchor duplicates lane guard (legacy_anchor_duplicate_groups)
+        if: matrix.shard == 2
         run: python3 tests/legacy_anchor_duplicates_test.py
       # EACR CIP sectors (Session 288) — TOP_Code_Lookup.xlsx column D routes
       # every exhibit to its CIP family, and on 2026-09-25 it disagreed with its
@@ -1542,6 +1799,7 @@ jobs:
       # second is the EACR payload's own 52-check guard, which ran nowhere.
       # Both import the generator (openpyxl, installed at the top of this job).
       - name: EACR CIP route (TOP lookup column D + the matrix payload)
+        if: matrix.shard == 3
         run: |
           source scripts/test_group.sh
           python3 tests/top_code_lookup_code4_test.py
@@ -1570,6 +1828,7 @@ jobs:
       # silently strips the carve-out. Pure-stdlib python; same non-required
       # check.
       - name: ESL fold spot-check lint (kb/_build_esl_fold_spotcheck.py)
+        if: matrix.shard == 1
         run: python3 tests/esl_fold_spotcheck_test.py
       # ESL level bands (Session 188) — Sam ratified 0-2 Beginning / 3-5 Intermediate /
       # 6-10 Advanced, which supersedes the P-4 pinning and required extending the reader
@@ -1579,18 +1838,23 @@ jobs:
       # X" reads the trailing X as 10). All three are proven to fail the test when broken.
       # Pure-stdlib python; same non-required check.
       - name: ESL level-band lint (kb/_esl_relevel_dryrun.py)
+        if: matrix.shard == 1
         run: python3 tests/esl_relevel_bands_test.py
       - name: ESL reader fixes and the ladder script's own logic (sheet 2026-09-26)
+        if: matrix.shard == 3
         run: python3 tests/esl_reader_and_ladder_test.py
       - name: ESL sheet applier (holds, guarded writes, receipts, rollback)
+        if: matrix.shard == 1
         run: python3 tests/esl_sheet_apply_test.py
       - name: ESL monthly pass (what it applies, lists and never re-asks)
+        if: matrix.shard == 1
         run: python3 tests/esl_monthly_pass_test.py
       # Sam's card-7 verdict (2026-09-27): remove the garbled course rows that sit
       # beside a repaired twin. A removal needs full row images in its receipt, so
       # the suite pins the reviewed-set fingerprint, the receipt written before the
       # first removal, the title guard on the wire, and the rollback.
       - name: Course title cleanup applier (fingerprint, receipt first, title guard, rollback)
+        if: matrix.shard == 4
         run: python3 tests/course_title_cleanup_apply_test.py
       # SkyView member payload (Session 189) — the graph carried identities and NO
       # member courses, so there was nothing at course grain to drag and the one
@@ -1603,6 +1867,7 @@ jobs:
       # drag actually complete?) is prototype/check_ccr_atlas.js, deliberately not
       # in npm test. Pure-stdlib python; same non-required check.
       - name: SkyView member payload lint (kb/_build_ccr_universe.py)
+        if: matrix.shard == 1
         run: python3 tests/ccr_universe_members_test.py
       # SkyView orbit layout (Session 223) — every stand-alone course sits in
       # orbit around the identity it is most aligned to. Guards the alignment
@@ -1611,6 +1876,7 @@ jobs:
       # island) and the description shards being keyed by control number.
       # Pure-stdlib python; same non-required check.
       - name: SkyView orbit layout lint (kb/_build_ccr_universe.py)
+        if: matrix.shard == 1
         run: python3 tests/ccr_universe_orbits_test.py
       # DR-25 — the subject-discipline edge fill (Sam, 2026-09-08). All five
       # discipline-inference passes read kb/coci_minted_courses.json, which is
@@ -1621,6 +1887,7 @@ jobs:
       # colleges' freehand local codes and mis-filed four rows before it was
       # caught. Pure-stdlib python; same non-required check.
       - name: Discipline edge fill (DR-25, excel_to_dashboard.py)
+        if: matrix.shard == 1
         run: python3 tests/discipline_edge_fill_test.py
       # DR-25's other half (Sam's rulings of 2026-09-08, sheet item 9) — the
       # identities the edge CANNOT reach are a curator list, never an inference.
@@ -1631,6 +1898,7 @@ jobs:
       # 37 of the 45 codes have no corroborating identity at all. Pure-stdlib
       # python; same non-required check.
       - name: Discipline-blank worklist guard (kb/_build_discipline_blanks_worklist.py)
+        if: matrix.shard == 1
         run: python3 tests/discipline_blanks_worklist_test.py
       # An umbrella discipline's protection must be DATA, not one literal (Sam,
       # 2026-09-08: "ATHL ... is in Kinesiology but is differentiated from KINE
@@ -1641,6 +1909,7 @@ jobs:
       # kb/_subj4_dryrun.py AND the is_umbrella declaration every other CSR
       # reader sees. Pure-stdlib python, no network.
       - name: Umbrella codes are declared, not only literal (CSR + kb/_subj4_dryrun.py)
+        if: matrix.shard == 1
         run: python3 tests/umbrella_codes_are_declared_test.py
       # DR-26 — the COBI live-session banner. Every check is a FAIL-CLOSED case,
       # because the failure mode of this surface is telling the whole
@@ -1649,12 +1918,14 @@ jobs:
       # read must each render nothing. Also pins that the wording says reload
       # rather than watch, which is what the product actually does.
       - name: COBI live-session banner (DR-26, cobi_brand.js)
+        if: matrix.shard == 2
         run: node tests/cobi_live_banner.test.js
       # The Admin-tab control for the same banner. Its sharpest check is that a
       # link which is not a claude.ai session is refused BEFORE any write, and
       # that an expired row reads "not showing" — a stale "working right now"
       # is the failure this whole surface is shaped around.
       - name: Live-banner Admin control (DR-26, admin.js)
+        if: matrix.shard == 1
         run: node tests/admin_live_banner_control.test.js
       # SkyView launcher (Session 189) — Sam asked for "a button on the CCR Tab top
       # right and prominent". The failure this guards is not a missing button, it is
@@ -1673,6 +1944,7 @@ jobs:
       # MAP strings, and Sam's own words). Pure-stdlib python; same non-required
       # check.
       - name: Docs corpus — lint, index generator, spelling
+        if: matrix.shard == 2
         run: |
           source scripts/test_group.sh
           python3 tests/docs_audit_test.py
@@ -1692,6 +1964,7 @@ jobs:
       # (exit 2: a coverage floor or an inventory error) still fails the step. The
       # committed files are restored at the end. Pure-stdlib python.
       - name: Dependency map rebuilt from this tree, then every test that reads it
+        if: matrix.shard == 2
         run: |
           source scripts/test_group.sh
           pip install --quiet pyyaml
@@ -1721,7 +1994,12 @@ jobs:
       # forever-block shape (`paths-ignore` on a required check) out of this
       # file. Pure-stdlib python; always-on like every other lint here.
       - name: JS-suite gate lint (scripts/js_suite_gate.sh)
+        if: matrix.shard == 1
         run: python3 tests/js_suite_gate_test.py
+      # The lints shards (S722): the matrix, the setup every shard runs, one shard per step.
+      - name: Lints shards (tests/lints_shards_test.py)
+        if: matrix.shard == 1
+        run: python3 tests/lints_shards_test.py
       # Stop-hook unpushed check (Session 228) — the hook nagged "There are 1
       # unpushed commit(s)" at the end of nearly every remote session, on
       # branches holding nothing of ours, until sessions learned to ignore it.
@@ -1750,8 +2028,10 @@ jobs:
       # rule that actually decided rather than the first one it satisfied.
       # Pure-stdlib python, no network.
       - name: Merge candidate queue (kb/_merge_candidate_queue.py)
+        if: matrix.shard == 1
         run: python3 tests/merge_candidate_queue_test.py
       - name: Alias chain single source (kb/alias_chain.py)
+        if: matrix.shard == 2
         run: python3 tests/alias_chain_single_source_test.py
       # SkyView is BUILT (2026-09-18). prototype/skyview.html is assembled from
       # prototype/ccr_atlas_v1.html and prototype/ccr_universe.js by
@@ -1760,13 +2040,16 @@ jobs:
       # the artifact therefore survives review, merge and deploy, and is reverted
       # by a cron run days later with nothing to point at. It happened on #1618.
       - name: SkyView is built from its sources (prototype/build_ccr_atlas.py)
+        if: matrix.shard == 1
         run: python3 tests/skyview_built_from_source_test.py
       # The public veteran map is BUILT the same way (S350): its page is the output of
       # veteran-sprint-map/build_selfcontained.py, so an edit made in the page passes
       # review and is gone at the next build.
       - name: Veteran map is built from its builder (veteran-sprint-map/build_selfcontained.py)
+        if: matrix.shard == 1
         run: python3 veteran-sprint-map/build_selfcontained.py --check
       - name: Stop-hook unpushed check (scripts/patch_stop_hook.py)
+        if: matrix.shard == 1
         run: python3 tests/stop_hook_git_check_test.py
       # Video context frame planner (Session 234) — scene detection is right for
       # a screen capture and fails in opposite directions at both ends, silently:
@@ -1777,6 +2060,7 @@ jobs:
       # of speech and stills, and the mandatory YYYYMMDD_ deliverable prefix.
       # Pure-stdlib python, no network, no ffmpeg.
       - name: Video context frame planner (kb/_video_context.py)
+        if: matrix.shard == 1
         run: python3 tests/video_context_test.py
       # Rule 3, the no-date-gaps guard (added by #1541, wired here in S249).
       # ⚠️ IT WAS COMMITTED WITHOUT A RUNNER. `tests/run.js` auto-discovers
@@ -1785,78 +2069,94 @@ jobs:
       # no package.json. A guard nobody runs reports nothing, which is the
       # failure mode #1541 was itself written about. Pure-stdlib python.
       - name: KPI history has no date gaps (Rule 3)
+        if: matrix.shard == 1
         run: python3 tests/kpi_history_no_gaps_test.py
       # The registry's course outline fields (S373; Sam, Open Asks Sheet 70): the
       # receipt that fills program_source_registry's cor_* columns from a course
       # outline census, guarded and reversible. Pure-stdlib python.
       - name: Course outline registry fill (receipt, guard, rollback)
+        if: matrix.shard == 1
         run: python3 tests/course_outline_registry_fill_test.py
       # The course outline index (S373; Sam, Open Asks Sheet 70 card 3): one
       # spelling per course code, and the courses the loaded records name.
       # Reads pages only and writes no table. Pure-stdlib python.
       - name: Course outline index (course codes, the loaded records)
+        if: matrix.shard == 1
         run: python3 tests/course_outline_index_test.py
       # City College of San Francisco's CurricUNET route (S689; COBIx on #3533):
       # the census seed, route_of on curricunet.com, the checked JSON search and
       # report 28. No network. Pure-stdlib python.
       - name: CCSF CurricUNET route (census seed, route_of, checked search)
+        if: matrix.shard == 1
         run: python3 tests/ccsf_curricunet_route_test.py
       # CCSF's report 28 names curriculum staff: its reads file parsed outcomes only, no page
       # file, and no full read before the trial's rows are counted by eye (S690). No network.
       - name: CCSF outline reads file parsed outcomes only
+        if: matrix.shard == 3
         run: python3 tests/ccsf_outcomes_only_test.py
       # The course outcomes read (S374; Sam, Open Asks Sheet 70 card 3): each
       # course's SLOs as printed, every wanted course in one slice, no table write.
       # Pure-stdlib python.
       - name: Course outcomes read (outcomes as printed, slices, pages only)
+        if: matrix.shard == 3
         run: python3 tests/course_outcomes_read_test.py
       # Feather River's, Palomar's and Mt. San Antonio's readers (S689): a table's
       # column header is never an SLO, Palomar's Specific Course Objectives are
       # objectives, a report that prints no objectives files none, and Mt. San
       # Antonio's course results block is its SLOs. Pure-stdlib python.
       - name: Course outcomes read (column headers, objectives headings, Mt. San Antonio)
+        if: matrix.shard == 1
         run: python3 tests/course_outcomes_header_fix_test.py
       # Mt. San Antonio's SLO pages (S683, #3533 ask 5): no full read before the
       # self-recall count on hand-read filed pages passes. Pure-stdlib python.
       - name: Mt. San Antonio SLO reader (self-recall gate)
+        if: matrix.shard == 4
         run: python3 tests/mtsac_slo_read_test.py
       # The exhibit subject fill (S638; Sam, in session 2026-11-11): MIL7 fills
       # automotive from its course, a person's subject is never touched, undo
       # takes exactly the cohort back, a second run inserts nothing. Pure-stdlib python.
       - name: Exhibit subject fill (rungs, hold, receipt, undo)
+        if: matrix.shard == 1
         run: python3 tests/exhibit_subject_fill_test.py
       # The course outcomes load (S374): one row per college the outline names, the
       # fingerprint checked, a receipt that rolls back, and the insert-only function
       # as the only write. Pure-stdlib python.
       - name: Course outcomes load (rows, fingerprint, receipt, insert-only)
+        if: matrix.shard == 1
         run: python3 tests/course_outcomes_load_test.py
       # Objectives with every SLO read (S649; Sam, 2026-11-13): each outline system's
       # trial pages file objectives where they print them, a read with SLOs and no
       # objectives is named by the reread plan, and the objectives load posts only
       # objective rows, insert-only. Pure-stdlib python.
       - name: Course objectives standing (every read path, the guard, the reread plan)
+        if: matrix.shard == 3
         run: python3 tests/course_outcomes_objectives_standing_test.py
       # The nightly SLO read's queue (step 11 of scheduled_sessions; Sam, 2026-11-01):
       # most articulations first, loaded colleges and verdicts skipped, a trial before
       # an unproven host's full read. Pure-stdlib python.
       - name: Next SLO colleges (the order, the trial gate, the verdicts)
+        if: matrix.shard == 4
         run: python3 tests/next_slo_colleges_test.py
       # One browser install for every workflow (2026-11-11, the runners' DNS fault): a workflow that writes
       # `playwright install` itself fails here, so the next fix lands in scripts/install_browser.sh alone.
       - name: Browser install has one source
+        if: matrix.shard == 2
         run: python3 tests/browser_install_single_source_test.py
       # The honors_of field (S653): an Honors M-ID and its base never fold together and are never offered for merge,
       # an H id passes every M-ID shape check, and the fold is byte-identical while no row carries the field.
       # Pure-stdlib python. Design: docs/reference/honors_of_design.md.
       - name: Honors equivalence field (fold hold, pairwise worklist hold, H id shape, byte-identical fold)
+        if: matrix.shard == 1
         run: python3 tests/honors_of_test.py
       # The Honors rows plan's apply-day check (S653, #3315): it re-measures the pairs on the checkout's payload and
       # refuses a dissolved pair, a pre-delete overlay and a checkout without origin/main's head.
       - name: Honors rows plan, the apply-day check refuses a stale plan
+        if: matrix.shard == 4
         run: python3 tests/honors_of_rows_check_test.py
       # How the rows plan reads a subject (S655, COBIx's two findings on #3315): engineering, computing and
       # biotechnology read apart from English, communication and biology; the Honors subject marker is Victor Valley's.
       - name: Honors rows plan, the subject family and the Honors subject marker
+        if: matrix.shard == 4
         run: python3 tests/honors_subject_reading_test.py
       # A stored credential title resolves at read time through the applied renames (S641, #3148): the one resolver,
       # its table for the browser (kb/credential_title_moves.json, stale when a snapshot lands unbuilt), and the
@@ -1864,21 +2164,28 @@ jobs:
       # The sessions' own spend for the Commons ETA clock, from the handoffs' Spend: lines (Sam, 2026-11-15, #3358).
       # The daily run rebuilds the file (scripts/daily_build.sh), so no staleness check here (COBIx on #3379).
       - name: Session spend parser (kb/_build_session_spend.py)
+        if: matrix.shard == 1
         run: python3 tests/session_spend_build_test.py
       # The blocked-catalog hunt: one to-do on the College Data Collection page and the Commons (S678, #3464 item 8).
       - name: Blocked-catalog to-do (kb/_blocked_catalogs.py)
+        if: matrix.shard == 1
         run: python3 tests/blocked_catalogs_test.py
       # The leftover-title decisions' file and the link-only apply (S678, COBIx's item 2 on #3464).
       - name: Leftover-title decisions (kb/_build_left_map.py, kb/_apply_left_map.py)
+        if: matrix.shard == 4
         run: python3 tests/left_map_build_test.py
       # The daily spend file's measured series and the Commons spent figure (S678, kb/_build_spend_daily.py).
       - name: Daily spend measured series (kb/_build_spend_daily.py)
+        if: matrix.shard == 3
         run: python3 tests/spend_daily_build_test.py
       - name: Credential title moves table is current (kb/credential_aliases.py --check)
+        if: matrix.shard == 1
         run: python3 kb/credential_aliases.py --check
       - name: Credential title resolver (in force, live titles, chains, retired aliases, each reader)
+        if: matrix.shard == 4
         run: python3 tests/credential_title_resolver_test.py
       - name: Credential title resolver has one copy
+        if: matrix.shard == 1
         run: python3 tests/credential_title_resolver_single_source_test.py
       # The tests no workflow ran (S653b, 2026-11-14). The census found 32 Python tests under tests/ that no
       # pull-request step named; four had gone red unseen (standards_2_ruled_renames, ccc_metric,
@@ -1888,8 +2195,10 @@ jobs:
       # and is not on its UNRUN list with a reason. A step naming several tests sources scripts/test_group.sh
       # and ends with test_group_end, so every red test in it shows, not only the first.
       - name: Every file under tests/ runs in CI or is listed with its reason
+        if: matrix.shard == 3
         run: python3 tests/every_test_runs_test.py
       - name: Workplan, budget and KPI Trends (goals grouping and contrast, charts, drafts, the CCC row)
+        if: matrix.shard == 2
         run: |
           source scripts/test_group.sh
           python3 tests/annual_goals_activity_grouping_test.py
@@ -1901,6 +2210,7 @@ jobs:
           python3 tests/ccc_metric_test.py
           test_group_end
       - name: Funding (config edit apply, consolidated measures, CPL types, CR backlog, portal applied)
+        if: matrix.shard == 1
         run: |
           source scripts/test_group.sh
           python3 tests/funding_config_edit_apply_test.py
@@ -1910,6 +2220,7 @@ jobs:
           python3 tests/funding_portal_applied_test.py
           test_group_end
       - name: Credential renames (both standards plans, the row-move receipt, re-analysis checks)
+        if: matrix.shard == 4
         run: |
           source scripts/test_group.sh
           python3 tests/standards_ruled_renames_test.py
@@ -1918,6 +2229,7 @@ jobs:
           python3 tests/exhibit_reanalysis_checks_test.py
           test_group_end
       - name: M-ID and authority dry runs (authority codes, recode, z-band, UC-CUR z-scheme, subjects list)
+        if: matrix.shard == 3
         run: |
           source scripts/test_group.sh
           python3 tests/authority_codes_seed_test.py
@@ -1934,6 +2246,7 @@ jobs:
           python3 kb/_not_applicable_rule.py
           test_group_end
       - name: Programs, pathways, veterans, MAP fetch, the custom report payload and repo hygiene
+        if: matrix.shard == 4
         run: |
           source scripts/test_group.sh
           python3 tests/cpl_pathway_membership_test.py
@@ -1952,6 +2265,7 @@ jobs:
       # other check (tests/apply_concurrency_test.py keeps it last). Grouped steps above collect every red
       # test before they fail (scripts/test_group.sh).
       - name: Partner crosswalk (the shared map has no stale credential titles)
+        if: matrix.shard == 1
         run: python3 tests/partner_crosswalk_test.py
 
   test:
