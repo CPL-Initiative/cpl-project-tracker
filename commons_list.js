@@ -39,7 +39,9 @@
 //                        words(n) }, sortLine(L) }: the AI sort and kept groups. api.groupIndex() hands a tab every
 //                        row's group as the List draws it ({ by: key -> { key }, groups: key -> { name, isGroup } }).
 //   bands              { key(r), by, label, on, none, order(key, members), name(key, members), facts(key, members),
-//                      acts(key, members, h) }: the List norms' groupOf(r), bands by a value the row carries itself, read
+//                      acts(key, members, h), select(key, members), after(key, members, h) }: select puts a box on the
+//                      band that ticks its rows' select boxes; after returns a node drawn full width after the band's
+//                      last shown row (h adds sel(r) and redraw). Otherwise: the List norms' groupOf(r), bands by a value the row carries itself, read
 //                      only (the Courses List bands its local courses by M-ID, the Common Course Reference's common
 //                      course; the CR List its wordings by group, ordered by the group's reference). Bands that a
 //                      reviewer keeps and moves titles between are the groups hook, Exhibits' alone. A key two or more rows share gets a band
@@ -753,7 +755,9 @@
       if (gi && G.extra) S.rows().forEach(function (x) {
         if (G.extra.test(x)) { var k = gi.by[K(x)].key; sgByGroup[k] = (sgByGroup[k] || 0) + 1; }
       });
-      shown.forEach(function (r) {
+      /* bands.after(key, members, h): a full-width row after a band's last shown row (the Courses List's Move panel). */
+      var shownKeys = bi && S.bands.after ? shown.map(function (x) { return bandKey(x); }) : null;
+      shown.forEach(function (r, ri) {
         var rk = K(r), bandsBefore = body.childNodes.length;
         // Every run of rows gets its band (Sam, 2026-11-01, on 832 Arrest: three titles that stood alone read as members,
         // because only groups of two or more had one).
@@ -780,7 +784,7 @@
         selBox.checked = !!L.sel[rk];
         selBox.addEventListener("change", function () {
           if (selBox.checked) L.sel[rk] = true; else delete L.sel[rk];
-          if (gi) { var y = listScrollTop(); redrawList(); listScrollTop(y); var b = document.querySelector('[aria-label="Select ' + listTitle(r).replace(/"/g, '\\"') + '"]'); if (b) b.focus(); }
+          if (gi || (bi && S.bands.after)) { var y = listScrollTop(); redrawList(); listScrollTop(y); var b = document.querySelector('[aria-label="Select ' + listTitle(r).replace(/"/g, '\\"') + '"]'); if (b) b.focus(); }
           else listCountSel();
         });
         var flagged = S.flag ? S.flag.get(r) : "";
@@ -817,6 +821,11 @@
         body.appendChild(rowTr);
         if (open > -1) body.appendChild(listDrawer(r, open));
         if (HAS_EDIT && L.edit === rk && L.draft) body.appendChild(listEditRow(r));
+        if (shownKeys && shownKeys[ri] && shownKeys[ri] !== shownKeys[ri + 1]) {
+          var abm = bi.members.get(shownKeys[ri]);
+          var after = abm && abm.length > 1 ? S.bands.after(shownKeys[ri], abm, bandHelp()) : null;
+          if (after) body.appendChild(el("tr", { cls: P + "editrow " + P + "bandafter" }, [el("td", { colspan: String(span()) }, [after])]));
+        }
       });
       var region = el("div", { cls: P + "wrap", role: "region", "aria-label": N.region, tabindex: "0" }, [
         el("table", { cls: P + "table" + (L.wrap ? "" : " " + P + "nowrap"),
@@ -892,11 +901,27 @@
       return { by: by, groups: groups };
     }
     /* A band over a run of rows that share a key (spec.bands): its name, what its members hold, and the spec's words. */
+    function bandHelp() { var L = listState(); return { el: el, word: word, fmt: fmt, sel: function (r) { return !!L.sel[K(r)]; }, redraw: redrawList }; }
     function listColumnBand(key, members) {
-      var B = S.bands, h = { el: el, word: word, fmt: fmt };
-      var th = el("th", { scope: "rowgroup", colspan: String(span()), "data-bkey": key }, [
-        el("span", { text: B.name ? B.name(key, members) : key }),
-        el("span", { cls: CL.muted, text: B.facts ? B.facts(key, members) : fmt(members.length) + " in this group" })]);
+      var B = S.bands, h = bandHelp(), L = listState();
+      /* bands.select(key, members) (S724, Sam, 2026-11-24: "add a selector box to each and one on the mid, which if
+         selected, selects all the folded courses"): a box on the band ticks or clears every course under it. */
+      var box = null;
+      if (B.select && B.select(key, members)) {
+        var nOn = members.filter(function (r) { return L.sel[K(r)]; }).length, label = "Select every course under " + (B.name ? B.name(key, members) : key);
+        box = el("input", { type: "checkbox", cls: P + "bandbox", "aria-label": label });
+        box.checked = nOn === members.length; box.indeterminate = nOn > 0 && nOn < members.length;
+        box.addEventListener("change", function () {
+          var on = box.checked;
+          members.forEach(function (r) { if (on) L.sel[K(r)] = true; else delete L.sel[K(r)]; });
+          var y = listScrollTop(); redrawList(); listScrollTop(y);
+          var b = document.querySelector('[aria-label="' + label.replace(/"/g, '\\"') + '"]'); if (b) b.focus();
+        });
+      }
+      var th = el("th", { scope: "rowgroup", colspan: String(span()), "data-bkey": key }, (box ? [box] : []).concat([
+        el("span", { text: B.name ? B.name(key, members) : key })]));
+      th.appendChild(el("span", { cls: CL.muted, text: B.facts ? B.facts(key, members) : fmt(members.length) + " in this group" }));
+
       var acts = B.acts ? (B.acts(key, members, h) || []).filter(Boolean) : [];
       if (acts.length) th.appendChild(el("span", { cls: P + "gacts" }, acts));
       return el("tr", { cls: P + "band" }, [th]);
