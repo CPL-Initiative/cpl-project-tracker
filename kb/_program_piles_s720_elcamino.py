@@ -13,16 +13,18 @@ guard (a record whose page shared_pages lists another program on holds unless a 
 02519, 38839 and 43992 each say the page's A.S. is theirs). The kinds, all reused:
 
   noted_figures_differ       (#3753) a block or total printed at one figure over courses that add to another (02495,
-                             02512, 02520, 02524, 02528, 02538, 02544, 19892, 32238, 38839).
+                             02512, 02524, 02538, 02544, 19892, 32238, 38839).
   pool_figure_not_read       (#3755) 'Additional courses from List A or List B must be completed to achieve 18 total
-                             units' (02513, 02515, 02517).
+                             units' (02513, 02515, 02517); 02528's Total Major Units 20 over a core (7-10) and an
+                             elective list (10-13) that complement each other to 20.
   prerequisites_counted      (College of the Sequoias' branch) the 20 prerequisite units the printed 48 leaves out
                              (02519; the entry checks 68 less 20 is 48).
   pair_read_as_alternatives  (#3755) ATEC 22B or ATEC 25 and 26 together, read singly (43992).
 
-Held (7): 02518 (an Area 3 course with no listed course: 49 plus 3 is not the printed 51); 15251, 19857, 31319 and
+Held (8): 02518 (an Area 3 course with no listed course: 49 plus 3 is not the printed 51); 15251, 19857, 31319 and
 42541 (their notes support no honest kind); 19883 (the certificate was read from the Photography A.S. page, so its
-identity is unconfirmed); 45290 (cut off mid-Area 5 with no total read).
+identity is unconfirmed); 45290 (cut off mid-Area 5 with no total read); 02520 (its notes quote 64.5 as including
+the 6.5-unit post-graduation block, so the printed figures agree, 64.5 less 6.5 is 58: no figures differ).
 
 THE CLAIM CHECK (p-claim-check-reads-current-capture-s713): every course an entry names is among the codes today's
 capture (sources.json) found. THE SELF-RECALL: HAND is the hand reading of the 22; precision runs the rule and the
@@ -63,11 +65,9 @@ REVIEWED = {
     "02512": {"gap": "noted_figures_differ", "computed": [25, 25], "stated": [26, 27],
               "words": "Required Core is printed as 20-21 units, but the listed core courses sum to 19 units",
               "own_section": "ECC GE recorded as the pattern for this A.S."},
-    "02520": {"gap": "noted_figures_differ", "computed": [64.5, 64.5], "stated": [58, 58],
-              "words": "The page also prints 'Program Total Units: 64.5'"},
     "02524": {"gap": "noted_figures_differ", "computed": [23, 24], "stated": [19, 21],
               "words": "labeled 'Required Core: 7-8 units'"},
-    "02528": {"gap": "noted_figures_differ", "computed": [17, 23], "stated": [20, 20],
+    "02528": {"gap": "pool_figure_not_read", "computed": [17, 23], "stated": [20, 20],
               "words": "Total Major Units is printed as 20, although the core (7-10) plus the elective list (10-13) "
                        "would range 17-23"},
     "02538": {"gap": "noted_figures_differ", "computed": [23, 23], "stated": [20, 20],
@@ -104,6 +104,9 @@ HAND.update({
     "42541": "held: its notes support no honest kind (27-30 against 28-30): a reread",
     "19883": "held: the certificate was read from the Photography A.S. page, which prints no certificate section, so "
              "its identity is unconfirmed: a page-finding step",
+    "02520": "held: its notes quote only 'Program Total Units: 64.5' and say it includes the 6.5-unit Post ECC "
+             "Graduation block, so the printed figures agree (64.5 less 6.5 is the printed 58): no figures differ "
+             "(the second reader, S720)",
     "45290": "held: its text is cut off mid-Area 5 and it reads no total, so its arithmetic is incomplete",
 })
 

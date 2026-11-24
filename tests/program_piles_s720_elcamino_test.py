@@ -6,9 +6,9 @@ its gaps noted and confidence scores, a gap noted instead of a reread. Pinned he
 
   * each kind the plan files carries a sentence and a unit-arithmetic score in kb/_program_named_gaps.py;
   * precision 22 of 22 against the hand reading of the census members pinned in the fixture
-    (p-test-pins-census-members-s714): 15 collected, 7 held;
+    (p-test-pins-census-members-s714): 14 collected, 8 held;
   * the claim check holds a record whose named course the capture did not find; every boundary reading names no gap;
-  * the plan: 15 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans
+  * the plan: 14 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans
     none; the load's image of each committed record is its receipt's after-image, carrying its one gap.
 
 Run from repo root: python3 tests/program_piles_s720_elcamino_test.py
@@ -27,8 +27,8 @@ import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s720_elcamino as W  # noqa: E402
 
 COLLEGE = 'El Camino College'
-ROWS = {'02495': 'noted_figures_differ', '02512': 'noted_figures_differ', '02520': 'noted_figures_differ', '02524': 'noted_figures_differ', '02528': 'noted_figures_differ', '02538': 'noted_figures_differ', '02544': 'noted_figures_differ', '19892': 'noted_figures_differ', '32238': 'noted_figures_differ', '38839': 'noted_figures_differ', '02513': 'pool_figure_not_read', '02515': 'pool_figure_not_read', '02517': 'pool_figure_not_read', '02519': 'prerequisites_counted', '43992': 'pair_read_as_alternatives'}
-HELD = {'45290', '19857', '42541', '31319', '02518', '15251', '19883'}
+ROWS = {'02495': 'noted_figures_differ', '02512': 'noted_figures_differ', '02524': 'noted_figures_differ', '02538': 'noted_figures_differ', '02544': 'noted_figures_differ', '19892': 'noted_figures_differ', '32238': 'noted_figures_differ', '38839': 'noted_figures_differ', '02513': 'pool_figure_not_read', '02515': 'pool_figure_not_read', '02517': 'pool_figure_not_read', '02528': 'pool_figure_not_read', '02519': 'prerequisites_counted', '43992': 'pair_read_as_alternatives'}
+HELD = {'15251', '31319', '02520', '45290', '02518', '19857', '19883', '42541'}
 SCORES = {'noted_figures_differ': 40, 'pool_figure_not_read': 40, 'prerequisites_counted': 70, 'pair_read_as_alternatives': 50}
 checks, failures = [0], []
 
@@ -50,28 +50,28 @@ pr = W.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 22 and pr["right"] == 22 and not pr["wrong"], "precision 22 of 22: %s" % pr["wrong"])
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 15} and not cc["not_standing"], "15 claims stand")
+check(cc["counts"] == {"stands": 14} and not cc["not_standing"], "14 claims stand")
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2['43992']["codes_found"] = [c for c in s2['43992']["codes_found"] if c != 'ATEC26']
 check(W.claim(W._load('43992'), s2) == "a named course not found", "a named course the capture lacks holds it")
 
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 45, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == 42, "every boundary reading names no gap: %s" % bd)
 
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
 got = {r["control_number"]: r["moves_to"] for r in rec["records"]}
-check(got == ROWS and rec["moved"] == 15, "the receipt names the 15 rows and their gaps")
-check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 7")
+check(got == ROWS and rec["moved"] == 14, "the receipt names the 14 rows and their gaps")
+check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 8")
 check(rec["census"]["members"] == members, "the receipt's keys are the fixture's")
 for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for cn in ROWS) and not any("'%s'" % cn in sql for cn in HELD | set(W.PERSON)),
-          "%s names exactly the 15" % part)
+          "%s names exactly the 14" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (15))" in sql, "the apply guards a confirm")
+        check("confirm guard" in sql and "e(expect) as (values (14))" in sql, "the apply guards a confirm")
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:
@@ -89,6 +89,16 @@ check(W.claim(W._load("02512")) == "stands", "02512 stands with its own-section 
 W.REVIEWED["02512"] = e
 check(W.claim(W._load("02512")) == "the page is shared and no note names the record's own section",
       "without them its shared page holds it")
+
+# The second reader (S720): 02520's quoted 64.5 includes the 6.5-unit post-graduation block, so its figures agree.
+c02520 = W._load("02520")
+check("02520" not in W.REVIEWED and W.gap_noted(c02520) is None
+      and any("64.5" in str(n) and "6.5 units" in str(n) for n in c02520["record"]["notes"]),
+      "02520 holds: 64.5 less the noted 6.5 is the printed 58")
+check(any(h["control_number"] == "02520" and "no figures differ" in h["why"] for h in rec["held"]),
+      "the receipt holds 02520 with its reason")
+check(W.REVIEWED["02528"]["gap"] == "pool_figure_not_read" and NG.ARITH_SCORE["pool_figure_not_read"] == 40,
+      "02528's core and electives complement each other to 20: pool_figure_not_read, at 40")
 
 print("%d checks, %d failures" % (checks[0], len(failures)))
 for m in failures:

@@ -101,8 +101,8 @@
   "pass": false,
   "gaps": [
    {
-    "gap": "noted_figures_differ",
-    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "gap": "pool_figure_not_read",
+    "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
     "words": "Total Major Units is printed as 20, although the core (7-10) plus the elective list (10-13) would range 17-23; recorded 20 as printed. Reviewer should check."
    }
   ],
