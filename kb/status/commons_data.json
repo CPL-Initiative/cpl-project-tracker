@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T08:30:13Z",
+ "written_at": "2026-11-24T08:34:03Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17143,
-  "gap": 5192,
+  "passing": 17148,
+  "gap": 5187,
   "with_gap": 118,
   "cost_usd": 1340.94,
   "passed_at_read": 16325,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16763,
-  "gap": 5192,
-  "collected_with_gaps": 380,
+  "gap": 5187,
+  "collected_with_gaps": 385,
   "discontinued": 0
  },
  "census_live": {
@@ -11995,14 +11995,14 @@
    "harvested": true,
    "slug": "ventura",
    "programs": 184,
-   "passing": 143,
-   "gap": 41,
+   "passing": 148,
+   "gap": 36,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 6,
     "page_not_found": 4,
     "places_none": 1,
-    "unknown_without_live": 29
+    "unknown_without_live": 24
    },
    "census_causes": {
     "found_not_extracted": 1,
@@ -12058,7 +12058,7 @@
    "read_seconds": 1542.9,
    "run": "44514835321",
    "levers": {
-    "reconcile_steps": 23,
+    "reconcile_steps": 18,
     "program_course_file_check": 6,
     "ge_units_steps": 5,
     "reader_page_search": 4,

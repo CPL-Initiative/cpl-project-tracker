@@ -1,0 +1,1615 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S720: Ventura's 22 wording-rule records, collected with their gaps named where one is honest (no reread)",
+ "at": "2026-11-24T07:58:26Z",
+ "college": "Ventura College",
+ "census": {
+  "file": "kb/status/harvest_gap_census.json",
+  "levers": [
+   "reconcile_steps"
+  ],
+  "person": [],
+  "members": [
+   "06948",
+   "06957",
+   "06973",
+   "08253",
+   "20576",
+   "20599",
+   "30587",
+   "31298",
+   "31455",
+   "32054",
+   "32578",
+   "32834",
+   "35654",
+   "37415",
+   "39961",
+   "39995",
+   "42967",
+   "44994",
+   "44995",
+   "45348",
+   "45427",
+   "45731"
+  ]
+ },
+ "gaps": {
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "pool_figure_not_read": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure."
+ },
+ "moved": 5,
+ "by": {
+  "pool_figure_not_read": 3,
+  "lists_not_closed": 2
+ },
+ "precision": {
+  "read": 22,
+  "right": 22,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 17,
+   "pool_figure_not_read": 3,
+   "lists_not_closed": 2
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 5
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 5,
+   "the stated total one unit off right": 5,
+   "coverage failing right": 5
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "06948",
+   "why": "held: the requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "06973",
+   "why": "held: no committed receipt posts its committed run (39622549965) to a live row (on_live_run)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08253",
+   "why": "held: the requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "20599",
+   "why": "held: its forensic pairs print no units and the record adds to 28 against 21-22; no honest kind",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "30587",
+   "why": "held: today's scorer passes it on its own record; a closed-list rescore, never a gap",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31298",
+   "why": "held: no committed receipt posts its committed run (44514835321) to a live row (on_live_run)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32578",
+   "why": "held: both ends are off (18-27 against 20-25), from the one-per-area rule and the physics pairs",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32834",
+   "why": "held: no committed receipt posts its committed run (39622549965) to a live row (on_live_run)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "35654",
+   "why": "held: the requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "37415",
+   "why": "held: the requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "39961",
+   "why": "held: its notes support no honest kind (70 against 52): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "39995",
+   "why": "held: its notes support no honest kind (42.5 against 44.5): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "42967",
+   "why": "held: the page prints a plan-of-study total the reading did not take as the award's: a wording rule on the page text",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "44994",
+   "why": "held: the requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "44995",
+   "why": "held: the requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "45348",
+   "why": "held: a bachelor's whose upper-division general education the major total leaves out: a person",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "45427",
+   "why": "held: the page prints a plan-of-study total the reading did not take as the award's: a wording rule on the page text",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Ventura College",
+   "control_number": "06957",
+   "award": "A.S. Degree",
+   "extracted_run": "38756014587",
+   "moves_to": "pool_figure_not_read",
+   "words": "Lists B and C together require a total of 9 units: List B 3-9 units, List C optional ('May select 3 or 6 units as part of the 9 units'); List C minimum recorded as 0 with stated 3-6.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/ventura/records/06957.json",
+   "before_image": {
+    "program_title": "Engineering",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/engineering/engineering-as/",
+    "measure": "units",
+    "total_min": 45,
+    "total_max": 47,
+    "record": {
+     "program": {
+      "section_heading": "REQUIREMENTS",
+      "measure": "units",
+      "total_units": {
+       "min": 45,
+       "max": 47
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 0,
+       "max": 0
+      },
+      "ge_pattern": "VCCCD General Education Pattern",
+      "degree_total": {
+       "min": 63,
+       "max": 65
+      },
+      "ge_units": {
+       "min": 24,
+       "max": 24
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Analyze and interpret data to make engineering problem decisions.",
+       "Identify, formulate, and solve basic engineering problems."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 33,
+        "max": 33
+       },
+       "courses": [
+        {
+         "code": "CHEM V120A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V01",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2220",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH V21C",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V04",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V04L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V05",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V05L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Select 3 to 5 units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "CHEM V120B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH V22",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH V23",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V06",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V06L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B: Select 3 to 9 units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "ENGR V02",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V16",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V16L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V18L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List C: May select 3 or 6 units as part of the 9 units",
+       "rule": "choose_units",
+       "minimum": 0,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "CS V11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V13",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V17",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH V52",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V19",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V40",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V42",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 30,
+     "listed": 30
+    },
+    "extracted_run": "38756014587"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 30,
+     "listed": 30,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Ventura College",
+   "control_number": "20576",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "38756014587",
+   "moves_to": "pool_figure_not_read",
+   "words": "Lists B and C together must total 9 units: List B 3-9 units, List C optional ('May select 3 or 6 units'), so List C minimum recorded as 0. Required Additional Units printed as 12-14.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/ventura/records/20576.json",
+   "before_image": {
+    "program_title": "Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/engineering/engineering-coa/",
+    "measure": "units",
+    "total_min": 45,
+    "total_max": 47,
+    "record": {
+     "program": {
+      "section_heading": "Engineering, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 45,
+       "max": 47
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Analyze and interpret data to make engineering problem decisions.",
+       "Identify, formulate, and solve basic engineering problems."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 33,
+        "max": 33
+       },
+       "courses": [
+        {
+         "code": "CHEM V120A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V01",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2220",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH V21C",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V04",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V04L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V05",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V05L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Select 3 to 5 units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "CHEM V120B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH V22",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH V23",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V06",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V06L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B: Select 3 to 9 units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "ENGR V02",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V16",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V16L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR V18L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List C: May select 3 or 6 units as part of the 9 units",
+       "rule": "choose_units",
+       "minimum": 0,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "CS V11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V13",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V17",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH V52",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V19",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V40",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V42",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 30,
+     "listed": 30
+    },
+    "extracted_run": "38756014587"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 30,
+     "listed": 30,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Ventura College",
+   "control_number": "31455",
+   "award": "A.A- T Degree",
+   "extracted_run": "38756014587",
+   "moves_to": "lists_not_closed",
+   "words": "List A also allows 'Any course unused in Core Courses'; List B also allows 'Any course unused in Core Courses or List A'. These core courses are not repeated in the List A/B blocks.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/ventura/records/31455.json",
+   "before_image": {
+    "program_title": "Political Science",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/political-science/political-science-aat/",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "Political Science, Associate in Arts for Transfer",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 10,
+       "max": 17
+      },
+      "ge_pattern": "CalGETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Identify and explain Political Science concepts.",
+       "Understand Political Science institutions and processes.",
+       "Analyze key issues related to Political Science."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "choose_courses",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS V02",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS V04",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS V05",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "POLS V03",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSY V04",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "POLS V09",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS V11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS V12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ESRM V03",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS V14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS V17",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS V18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14
+    },
+    "extracted_run": "38756014587"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Ventura College",
+   "control_number": "32054",
+   "award": "A.A- T Degree",
+   "extracted_run": "38756014587",
+   "moves_to": "lists_not_closed",
+   "words": "List C also allows 'Any course unused from List A or List B'.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/ventura/records/32054.json",
+   "before_image": {
+    "program_title": "Anthropology",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/anthropology/anthropology-aat/",
+    "measure": "units",
+    "total_min": 21,
+    "total_max": 24,
+    "record": {
+     "program": {
+      "section_heading": "REQUIREMENTS",
+      "measure": "units",
+      "total_units": {
+       "min": 21,
+       "max": 24
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 12,
+       "max": 21
+      },
+      "ge_pattern": "CalGETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Describe the interaction between biology and culture.",
+       "Apply anthropological theories to evaluate biological, cultural and/or archaeological data.",
+       "Analyze and interpret the anthropological models of human evolution.",
+       "Analyze the anthropological models of socio-cultural structures."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 10,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "ANTH C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH C1001L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH V02",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH V03",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Select one course from the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTH V05",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSY V04",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "STAT C1000",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B: Select two courses from the following:",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ANTH V04",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH V06",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH V07",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH V08",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH V09",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH V36",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CJ V36",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM V12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG V02",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSY V30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC V03",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List C: Select one course from the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "GEOL V02",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL V02L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL V09",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG V26",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "GIS V26",
+           "units": 2,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 23,
+     "listed": 23
+    },
+    "extracted_run": "38756014587"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 23,
+     "listed": 23,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Ventura College",
+   "control_number": "45731",
+   "award": "A.S. T Degree",
+   "extracted_run": "38756014587",
+   "moves_to": "pool_figure_not_read",
+   "words": "The catalog prints 'Required Core Units 31-32' for the whole Required Core Courses list, including the PHYS V05 & V05L / BIOL V03 / BIOL V04 / CHEM V120A choice; since that choice is split into option blocks, the 31-32 is recorded as total_units rather than as the stated total of the first block.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/ventura/records/45731.json",
+   "before_image": {
+    "program_title": "Computer Science",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/computer-science-adt/",
+    "measure": "units",
+    "total_min": 31,
+    "total_max": 32,
+    "record": {
+     "program": {
+      "section_heading": "REQUIREMENTS (Course List)",
+      "measure": "units",
+      "total_units": {
+       "min": 31,
+       "max": 32
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": 1,
+       "max": 5
+      },
+      "ge_pattern": "CalGETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Satisfy the requirements to successfully transfer to a CSU program for a degree in computer science or a related field.",
+       "Demonstrate proficiencies of knowledge and skills in core Computer Science topics such as problem solving, software development, programming languages, artificial intelligence, operating systems, networking and communication, computer hardware and software architectures.",
+       "Develop a command of critical thinking with respect to privacy, ethics, and security.",
+       "Analyze short- and long-term trends in a selected topic using credible research sources.",
+       "Develop and justify strategies for preparing for and adapting to projected changes in the field."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CS V11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V13",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V17",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH V52",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS V19",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2220",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V04",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V04L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses: PHYS V05 & V05L",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Science option",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PHYS V05",
+         "units": 4,
+         "units_max": 5,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS V05L",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses: or BIOL V03",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Science option",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL V03",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses: or BIOL V04",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Science option",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL V04",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses: or CHEM V120A",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Science option",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CHEM V120A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14
+    },
+    "extracted_run": "38756014587"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 5
+  }
+ ],
+ "shared_pages": {},
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score; checks.arithmetic, coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found. The capture keeps no page text, so a note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Ventura College', '06957', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V01\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V21C\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":33,\"min\":33}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List A: Select 3 to 5 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List B: Select 3 to 9 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V15\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH V52\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V42\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"List C: May select 3 or 6 units as part of the 9 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":0,\"min\":0},\"degree_total\":{\"max\":65,\"min\":63},\"electives_fill_degree\":false,\"ge_pattern\":\"VCCCD General Education Pattern\",\"ge_units\":{\"max\":24,\"min\":24},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and interpret data to make engineering problem decisions.\",\"Identify, formulate, and solve basic engineering problems.\"],\"section_heading\":\"REQUIREMENTS\",\"total_units\":{\"max\":47,\"min\":45}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (2, 'Ventura College', '20576', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V01\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V21C\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":33,\"min\":33}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List A: Select 3 to 5 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List B: Select 3 to 9 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V15\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH V52\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V42\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"List C: May select 3 or 6 units as part of the 9 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and interpret data to make engineering problem decisions.\",\"Identify, formulate, and solve basic engineering problems.\"],\"section_heading\":\"Engineering, Certificate of Achievement\",\"total_units\":{\"max\":47,\"min\":45}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (3, 'Ventura College', '31455', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V04\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V05\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V03\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSY V04\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V09\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESRM V03\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V18\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":17,\"min\":10},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify and explain Political Science concepts.\",\"Understand Political Science institutions and processes.\",\"Analyze key issues related to Political Science.\"],\"section_heading\":\"Political Science, Associate in Arts for Transfer\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (4, 'Ventura College', '32054', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH C1001L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V03\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V05\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSY V04\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V04\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V06\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V07\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V08\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V09\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CJ V36\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH V36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSY V30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC V03\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List B: Select two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL V02L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL V09\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GIS V26\",\"units\":2}],\"catalog_addition\":false,\"code\":\"GEOG V26\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"List C: Select one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":21,\"min\":12},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe the interaction between biology and culture.\",\"Apply anthropological theories to evaluate biological, cultural and/or archaeological data.\",\"Analyze and interpret the anthropological models of human evolution.\",\"Analyze the anthropological models of socio-cultural structures.\"],\"section_heading\":\"REQUIREMENTS\",\"total_units\":{\"max\":24,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb),\n  (5, 'Ventura College', '45731', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V13\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH V52\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05\",\"units\":4,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: PHYS V05 & V05L\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL V03\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: or BIOL V03\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL V04\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: or BIOL V04\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120A\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: or CHEM V120A\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":5,\"min\":1},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Satisfy the requirements to successfully transfer to a CSU program for a degree in computer science or a related field.\",\"Demonstrate proficiencies of knowledge and skills in core Computer Science topics such as problem solving, software development, programming languages, artificial intelligence, operating systems, networking and communication, computer hardware and software architectures.\",\"Develop a command of critical thinking with respect to privacy, ethics, and security.\",\"Analyze short- and long-term trends in a selected topic using credible research sources.\",\"Develop and justify strategies for preparing for and adapting to projected changes in the field.\"],\"section_heading\":\"REQUIREMENTS (Course List)\",\"total_units\":{\"max\":32,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Ventura College', '06957', 38756014587, '92ca3f407fd7991d2ce7d1e6132a31fc', '39747decba62d1a4fc97e2e52cd92e81', 'd35baa903dd37a7c76e698c4d991853b'),\n  (2, 'Ventura College', '20576', 38756014587, '2cc7e5378f748ce0c13dac3027190cd2', '39747decba62d1a4fc97e2e52cd92e81', 'dd3be177675d4331b44b8247ee2eb19e'),\n  (3, 'Ventura College', '31455', 38756014587, '4a443e8712d936db12c06934de6e440c', '3e096e5d8483d0570dfc23bf65a968b0', 'dcb40d2ee02b6f84d56ffd06d3a4a163'),\n  (4, 'Ventura College', '32054', 38756014587, '9fb535af65ec7ce9b6e9f83ebfd709c9', 'c59940d88ccdbd2a63fe18ec194066c9', '15a7f2dad7537a32a60a0768cfd0bf98'),\n  (5, 'Ventura College', '45731', 38756014587, 'cf503bb86114461f70c3374d516becc9', '3e096e5d8483d0570dfc23bf65a968b0', 'c0dcfe17353884e11b9535558d89f1d4'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Ventura College', '06957', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V01\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V21C\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":33,\"min\":33}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List A: Select 3 to 5 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List B: Select 3 to 9 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V15\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH V52\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V42\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"List C: May select 3 or 6 units as part of the 9 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":0,\"min\":0},\"degree_total\":{\"max\":65,\"min\":63},\"electives_fill_degree\":false,\"ge_pattern\":\"VCCCD General Education Pattern\",\"ge_units\":{\"max\":24,\"min\":24},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and interpret data to make engineering problem decisions.\",\"Identify, formulate, and solve basic engineering problems.\"],\"section_heading\":\"REQUIREMENTS\",\"total_units\":{\"max\":47,\"min\":45}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (2, 'Ventura College', '20576', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V01\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V21C\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":33,\"min\":33}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List A: Select 3 to 5 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List B: Select 3 to 9 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V15\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH V52\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V42\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"List C: May select 3 or 6 units as part of the 9 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and interpret data to make engineering problem decisions.\",\"Identify, formulate, and solve basic engineering problems.\"],\"section_heading\":\"Engineering, Certificate of Achievement\",\"total_units\":{\"max\":47,\"min\":45}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (3, 'Ventura College', '31455', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V04\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V05\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V03\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSY V04\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V09\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESRM V03\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V18\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":17,\"min\":10},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify and explain Political Science concepts.\",\"Understand Political Science institutions and processes.\",\"Analyze key issues related to Political Science.\"],\"section_heading\":\"Political Science, Associate in Arts for Transfer\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (4, 'Ventura College', '32054', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH C1001L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V03\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V05\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSY V04\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V04\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V06\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V07\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V08\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V09\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CJ V36\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH V36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSY V30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC V03\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List B: Select two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL V02L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL V09\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GIS V26\",\"units\":2}],\"catalog_addition\":false,\"code\":\"GEOG V26\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"List C: Select one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":21,\"min\":12},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe the interaction between biology and culture.\",\"Apply anthropological theories to evaluate biological, cultural and/or archaeological data.\",\"Analyze and interpret the anthropological models of human evolution.\",\"Analyze the anthropological models of socio-cultural structures.\"],\"section_heading\":\"REQUIREMENTS\",\"total_units\":{\"max\":24,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb),\n  (5, 'Ventura College', '45731', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V13\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH V52\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05\",\"units\":4,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: PHYS V05 & V05L\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL V03\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: or BIOL V03\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL V04\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: or BIOL V04\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120A\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: or CHEM V120A\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":5,\"min\":1},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Satisfy the requirements to successfully transfer to a CSU program for a degree in computer science or a related field.\",\"Demonstrate proficiencies of knowledge and skills in core Computer Science topics such as problem solving, software development, programming languages, artificial intelligence, operating systems, networking and communication, computer hardware and software architectures.\",\"Develop a command of critical thinking with respect to privacy, ethics, and security.\",\"Analyze short- and long-term trends in a selected topic using credible research sources.\",\"Develop and justify strategies for preparing for and adapting to projected changes in the field.\"],\"section_heading\":\"REQUIREMENTS (Course List)\",\"total_units\":{\"max\":32,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s720t piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s720t piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Ventura College', '06957', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V01\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V21C\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":33,\"min\":33}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List A: Select 3 to 5 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List B: Select 3 to 9 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V15\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH V52\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V42\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"List C: May select 3 or 6 units as part of the 9 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":0,\"min\":0},\"degree_total\":{\"max\":65,\"min\":63},\"electives_fill_degree\":false,\"ge_pattern\":\"VCCCD General Education Pattern\",\"ge_units\":{\"max\":24,\"min\":24},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and interpret data to make engineering problem decisions.\",\"Identify, formulate, and solve basic engineering problems.\"],\"section_heading\":\"REQUIREMENTS\",\"total_units\":{\"max\":47,\"min\":45}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (2, 'Ventura College', '20576', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V01\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V21C\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05L\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":33,\"min\":33}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH V23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V06L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List A: Select 3 to 5 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V16L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR V18L\",\"units\":1,\"units_max\":null}],\"minimum\":3,\"name\":\"List B: Select 3 to 9 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V15\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH V52\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V42\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"List C: May select 3 or 6 units as part of the 9 units\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and interpret data to make engineering problem decisions.\",\"Identify, formulate, and solve basic engineering problems.\"],\"section_heading\":\"Engineering, Certificate of Achievement\",\"total_units\":{\"max\":47,\"min\":45}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb),\n  (3, 'Ventura College', '31455', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V04\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V05\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V03\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSY V04\",\"units\":null}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":2,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V09\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ESRM V03\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS V18\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":17,\"min\":10},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Identify and explain Political Science concepts.\",\"Understand Political Science institutions and processes.\",\"Analyze key issues related to Political Science.\"],\"section_heading\":\"Political Science, Associate in Arts for Transfer\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (4, 'Ventura College', '32054', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH C1001L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V03\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V05\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PSY V04\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V04\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V06\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V07\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V08\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH V09\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"CJ V36\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ANTH V36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM V12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSY V30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC V03\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List B: Select two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL V02\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL V02L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL V09\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"GIS V26\",\"units\":2}],\"catalog_addition\":false,\"code\":\"GEOG V26\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"List C: Select one course from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":21,\"min\":12},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe the interaction between biology and culture.\",\"Apply anthropological theories to evaluate biological, cultural and/or archaeological data.\",\"Analyze and interpret the anthropological models of human evolution.\",\"Analyze the anthropological models of socio-cultural structures.\"],\"section_heading\":\"REQUIREMENTS\",\"total_units\":{\"max\":24,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":23,\"placed\":23}'::jsonb),\n  (5, 'Ventura College', '45731', 38756014587, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V13\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH V52\",\"units\":3}],\"catalog_addition\":false,\"code\":\"CS V17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS V19\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH C2220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V04L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05\",\"units\":4,\"units_max\":5},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS V05L\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: PHYS V05 & V05L\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL V03\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: or BIOL V03\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL V04\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: or BIOL V04\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM V120A\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses: or CHEM V120A\",\"option_group\":\"Science option\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":5,\"min\":1},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"CalGETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Satisfy the requirements to successfully transfer to a CSU program for a degree in computer science or a related field.\",\"Demonstrate proficiencies of knowledge and skills in core Computer Science topics such as problem solving, software development, programming languages, artificial intelligence, operating systems, networking and communication, computer hardware and software architectures.\",\"Develop a command of critical thinking with respect to privacy, ethics, and security.\",\"Analyze short- and long-term trends in a selected topic using credible research sources.\",\"Develop and justify strategies for preparing for and adapting to projected changes in the field.\"],\"section_heading\":\"REQUIREMENTS (Course List)\",\"total_units\":{\"max\":32,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s720t piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}
