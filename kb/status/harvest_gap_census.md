@@ -1,12 +1,12 @@
 # Harvest gap census
 
-Written by `kb/_harvest_gap_census.py` (2026-11-24 10:08Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
+Written by `kb/_harvest_gap_census.py` (2026-11-24 11:33Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
 
-Universe 20282 · passing 15498 · without a passing record 4353.
+Universe 20282 · passing 15498 · without a passing record 4350.
 
 Of the passing, 54 counts as passing on the tab; the scorer's own test fails (listed in the JSON, not counted as gaps).
 
-Collected with a named gap, out of the gap: 431 (catalog_figures_differ 20, degree_summary_ge_none 14, double_count_noted 1, ge_units_not_read 131, hours_total_differs 11, hours_total_not_read 32, hours_within_printed_range 7, lists_not_closed 15, lists_past_their_figure 17, nested_award_not_read 3, no_hours_read 51, no_own_page_total 1, no_units_read 22, noted_figures_differ 18, noted_no_total 1, noted_section_cut_off 3, noted_unit_floor 1, one_option_of_shared_page 6, pair_read_as_alternatives 9, pool_figure_not_read 16, prerequisites_counted 3, repeat_read_once 4, section_cut_off 20, total_differs 12, total_not_printed 7, unit_line_not_read 6).
+Collected with a named gap, out of the gap: 434 (catalog_figures_differ 20, degree_summary_ge_none 14, double_count_noted 1, ge_units_not_read 131, hours_total_differs 11, hours_total_not_read 32, hours_within_printed_range 7, lists_not_closed 16, lists_past_their_figure 17, nested_award_not_read 3, no_hours_read 51, no_own_page_total 1, no_units_read 22, noted_figures_differ 19, noted_no_total 1, noted_section_cut_off 3, noted_unit_floor 1, one_option_of_shared_page 6, pair_read_as_alternatives 9, pool_figure_not_read 16, prerequisites_counted 3, repeat_read_once 4, section_cut_off 20, total_differs 12, total_not_printed 7, unit_line_not_read 7).
 
 Read by the harvest but outside the universe: Active - Teachout Only 630, Approved 1423.
 
@@ -27,7 +27,7 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | extracted, no score (an error) | 4 |
 | live, coverage fails | 156 |
 | live, a course added | 3 |
-| live, units unequal | 793 |
+| live, units unequal | 790 |
 | live, units incomplete | 277 |
 
 ## Top levers
@@ -58,7 +58,7 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | 22 | a reader change finds the program's page (a free page read first) | Los Angeles Trade Technical College | 20 | free |  |
 | 23 | a reader change finds the program's page (a free page read first) | Sierra College | 20 | free |  |
 | 24 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | College of the Canyons | 20 | free |  |
-| 25 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Orange Coast College | 20 | free |  |
+| 25 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Palo Verde College | 20 | free |  |
 
 ## Next wave: one college per catalog host
 
