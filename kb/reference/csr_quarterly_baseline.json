@@ -5,10 +5,10 @@
     "routine": "mq_list",
     "edition": 20,
     "document_sha256": "cd41c0cbbbaab592c5b008d1c9cea19c0943b96fe84a400b2f9fa49719b0263f",
-    "document_bytes": null,
+    "document_bytes": 2983718,
     "document_final_url": "https://www.cccco.edu/wp-content/uploads/2026/11/20th-edition-minimum-qualifications-final-a11y.pdf",
     "read_at": "2026-11-24",
-    "note": "Re-baselined on the 20th edition (S719), the handbook kb/reference/mq_handbook_20th.json was read from (#3726); the dispatch on this branch confirms the runner reads the same hash."
+    "note": "Re-baselined on the 20th edition (S719), the handbook kb/reference/mq_handbook_20th.json was read from (#3726); csr-quarterly.yml run 45311236371 (job 138167196027, 2026-11-24 02:17Z) read the same edition and hash: COMPARE same."
   },
   "cid_home": {
     "routine": "authority_tables",
