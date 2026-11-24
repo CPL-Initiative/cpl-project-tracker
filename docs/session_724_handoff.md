@@ -38,6 +38,7 @@ step 5 (no kb-note crossed the bar), step 7 (the pipeline did not move).
 - **#3781** Rulings to find (was Fixes owed) asks COBI by a prewritten issue; the doubt list is a Needs you item;
   COBIx never rendered on the Commons.
 - **#3784** no cost bars (*"we just need the trend line"*); Back to CPL Commons survives a tab's redraw (`watchBack`).
+- **#3787** (after the checkpoint) Accept and Move on each course row, not the M-ID heading (*"the courses should be curated individually under their mid course heading"*): Accept writes `mid_member_confirm` (new field, DR-25); Move re-homes by `merge_into` from a dropdown in the row; every course settled saves the card's Keep. Title hover shows the catalog description.
 - **#3785** the Courses List's **Common subject in doubt**: full lists in both groups, codes beside names, the panel
   says a ruling assigns a common subject, **Accept** on each band, the column **Local subject**.
 
@@ -64,7 +65,7 @@ CLAUDE.md). **FACT:** `f-five-doubt-rulings-not-recalled-s723`. **DECIDED (his t
 
 ## Open work (from the lanes' NEXT)
 
-1. **Sam is ruling on the Common subject in doubt cards.** Ask how the panel and Accept worked; then add a short
+1. **Sam is ruling on the Common subject in doubt cards.** Ask how row Accept and Move worked; KINE M1267 needs Cabrillo KIN 38A moved to a KINE yoga M-ID (Sam's PEDS ruling moved both of its courses); then add a short
    *why in doubt* line to each band (the reason now sits only in the panel).
 2. **Common subject / local subject labels and COBIx out of rendered text** in the other tabs, each at its UI pass.
 3. **CI, the second half** (S722's item 0): on a docs-only PR skip the lint steps that rebuild a generator; rebalance
