@@ -2,20 +2,34 @@
  "college": "Los Angeles Southwest College",
  "programs": 136,
  "with_closed_list": 96,
- "found": 94,
+ "found": 90,
  "extracted": 94,
  "errors": 0,
- "passed_machine_checks": 69,
+ "passed_machine_checks": 74,
  "failed": {
-  "coverage": 16,
+  "coverage": 11,
   "invented": 6,
-  "arithmetic": 19,
+  "arithmetic": 14,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 6.0,
- "cost_per_program": 0.0639,
+ "cost_usd_run": 0.25,
+ "cost_usd_filed": 6.01,
+ "cost_per_program": 0.064,
+ "extract_calls": 5,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "02877",
+   "title": "Nursing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=151",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
   {
    "control_number": "18798",
    "title": "Interdisciplinary Studies: Social And Behavioral Science",
@@ -23,17 +37,54 @@
    "near_miss": {
     "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=143",
     "coverage": 0.433
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19186",
+   "title": "Liberal Studies (teaching preparation)",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=148",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24277",
+   "title": "Job Training Preparation",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33868",
+   "title": "Workforce Preparation",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "45576",
    "title": "Cal-GETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=145",
-    "coverage": 0.368
-   }
+    "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf#page=109",
+    "coverage": 0.351
+   },
+   "status": "Active"
   }
  ],
- "run": "39061735776"
+ "run": "45349617908"
 }
