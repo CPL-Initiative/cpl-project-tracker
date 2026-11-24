@@ -17,6 +17,7 @@ heading through site_award_subheading (kb/_program_requirements_college.py).
      general-education pages, and a pin whose heading names its program passes that check (RC.PIN_HEADING) while the
      same page unpinned is refused (S721 second reader, round 1, finding 1). A pin to a course-descriptions page is
      still refused, its reason naming rule B. 20184 needs no pin: capture 45133183717 reads it from its own page.
+     San Bernardino Valley 32317, held in S720 on rule B (f-sbvc-32317-rule-b-s720), binds its S720 pin the same way.
   3. Redwoods' 3 pins bind on the pages page read 45381629186 printed; Automotive Technology A.S. 01816 binds through
      the award line under its heading; a degree pinned to its sister certificate's page and a certificate pinned to its
      A.S. page (13559, the catalog's only Early Childhood page) are refused.
@@ -126,6 +127,26 @@ desc = page("https://avc.elumenapp.com/catalog/2026-27/program/x-descriptions", 
 got = C.site_pinned([prog(cn0, p0)], [desc], {cn0: {"url": desc["url"]}}).get(cn0) or {}
 check(C.RC.page_type(desc_body) == "descriptions" and "best" not in got and "rule B" in (got.get("why") or ""),
       "2 a pin to a course-descriptions page is refused, and its reason names rule B (%s)" % got.get("why"))
+
+# San Bernardino Valley 32317 (Early Childhood Education A.S.-T), held in S720 because rule B read its own page as a
+# general-education page (it names Cal-GETC four times; f-sbvc-32317-rule-b-s720): marked as the capture marks it, its
+# S720 pin now binds, and the same page unpinned is still refused. No SBVC read runs on this branch.
+import _program_requirements_reconcile as R  # noqa: E402
+SB = "San Bernardino Valley College"
+SBF = json.load(gzip.open(os.path.join(ROOT, "tests", "fixtures", "program_requirements_site_pins_s720.json.gz"), "rt",
+                          encoding="utf-8"))
+sb_pages = [dict(page(u, p["h1"], p["text"]), title=p["title"]) for u, p in SBF["pages"].items()]
+conf = R.load_steps().get(SB) or {}
+sb_progs = C.with_renumbers([prog(cn, p) for cn, p in SBF["programs"].items()], R.course_renumbers(SB),
+                            conf.get("prefix_aliases"))
+p32 = next(p for p in sb_progs if p["control_number"] == "32317")
+pin32 = {"32317": C.site_pin_entries(SB)["32317"]}
+pg32 = next(pg for pg in sb_pages if C._page_key(pg["url"]) == C._page_key(pin32["32317"]["url"]))
+b32 = (C.site_pinned(sb_progs, sb_pages, pin32).get("32317") or {}).get("best") or {}
+check(C.RC.page_type(pg32["body"]) == "ge" and b32.get("coverage", 0) >= C.P.ACCEPT_SHARE
+      and not C.candidates(p32, [pg32], sb_progs, {}),
+      "2 SBVC 32317, marked: its page reads as general-education to rule B, unpinned it is no candidate, and its pin "
+      "binds (f-sbvc-32317-rule-b-s720; coverage %s)" % b32.get("coverage"))
 
 # ── 4. the award line ───────────────────────────────────────────────────────────────────────────
 COA = "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
