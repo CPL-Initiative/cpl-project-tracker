@@ -1189,6 +1189,25 @@ def held_answer(filed: dict) -> str | None:
     return None
 
 
+# S720 at Clovis (kb/_program_piles_s720_clovis.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('lists_not_closed',
+         "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),  # #3753
+        ('pool_figure_not_read',
+         'The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.',
+         40),  # #3755
+        ('pair_read_as_alternatives',
+         'The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.',
+         50),  # #3755
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def recall(every: list[dict]) -> dict:
     """The record rules against the held answer on every failing record that coverage and invented pass, at every
     college (the collection lane's and the parked ones too, read here and written nowhere): right when the rule

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T07:09:38Z",
+ "written_at": "2026-11-24T07:17:10Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17085,
-  "gap": 5250,
+  "passing": 17088,
+  "gap": 5247,
   "with_gap": 118,
   "cost_usd": 1340.94,
   "passed_at_read": 16325,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16763,
-  "gap": 5250,
-  "collected_with_gaps": 322,
+  "gap": 5247,
+  "collected_with_gaps": 325,
   "discontinued": 0
  },
  "census_live": {
@@ -1886,13 +1886,13 @@
    "harvested": true,
    "slug": "clovis_community",
    "programs": 129,
-   "passing": 96,
-   "gap": 33,
+   "passing": 99,
+   "gap": 30,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 12,
     "places_none": 2,
-    "unknown_without_live": 11
+    "unknown_without_live": 8
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -1948,8 +1948,8 @@
    "run": "45033577888",
    "levers": {
     "reader_page_search": 12,
-    "reconcile_steps": 11,
     "program_course_file_check": 8,
+    "reconcile_steps": 8,
     "reader_page_assignment": 2
    },
    "collection": {
