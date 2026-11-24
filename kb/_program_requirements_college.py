@@ -5513,7 +5513,50 @@ def site_heading_names(pg: dict, program: dict) -> tuple[bool, str]:
     title0 = ((pg.get("title") or (pg.get("got") or {}).get("title") or "").split("|")[0]).strip()
     heads = [x for x in ((h1 or "").strip(), title0) if x]
     named = any(RC.heading_line([x], program.get("title"), program.get("award")) >= 0 for x in heads)
+    if not named:
+        # A heading that prints the title alone, its award on the line under it (S721).
+        for x in heads:
+            sub = site_award_subheading(pg, x, program)
+            if sub:
+                return True, "%s / %s" % (x, sub)
     return named, (heads[0] if heads else "")
+
+
+# College of the Redwoods' eLumen pages head a degree with its title alone and print the award on the next line
+# ("Automotive Technology" over "A.S. Degree ( 60.0 Credits )", page read 45381629186, S721), where a certificate's
+# heading carries it ("Advanced Automotive Technology, CA"). The line under the heading binds only when it prints the
+# award and nothing else (the award's words, Degree or of Achievement, a credits figure), so a department page whose
+# heading is the department's name and whose next line names one of its programs with its award never stands in.
+SITE_OPENING = 6             # the page's first lines, where its heading prints
+SITE_AWARD_FIGURE = re.compile(r"\(\s*\d+(?:\.\d+)?(?:\s*-\s*\d+(?:\.\d+)?)?\s*(?:credits?|units?|hours?)\s*\)", re.I)
+SITE_AWARD_REST = {"degree", "of", "in", "achievement", "accomplishment", "proficiency"}
+
+
+def site_award_line(line: str, award: str | None) -> bool:
+    """Whether a line prints the program's award and nothing else."""
+    arx = RC.award_pattern(award)
+    if arx is None or not arx.search(line or ""):
+        return False
+    rest = SITE_AWARD_FIGURE.sub(" ", arx.sub(" ", line))
+    return set(re.findall(r"[a-z]+", rest.lower())) <= SITE_AWARD_REST
+
+
+def site_award_subheading(pg: dict, head: str, program: dict) -> str | None:
+    """The award line under a heading that prints the program's title alone, or None: the heading must print in the
+    page's opening lines and pass rule A without its award, and the line directly under it must print the award alone
+    and pass rule A with the heading."""
+    title, award = program.get("title"), program.get("award")
+    if RC.heading_line([head], title, None) < 0:
+        return None
+    body = pg.get("body") if "body" in pg else (pg.get("got") or {}).get("body")
+    lines = [ln.strip() for ln in (body or "").split("\n") if ln.strip()][:SITE_OPENING]
+    key = lambda s: re.sub(r"\s+", " ", s).strip().lower()  # noqa: E731
+    for j, ln in enumerate(lines):
+        if key(ln) != key(head):
+            continue
+        sub = lines[j + 1] if j + 1 < len(lines) else ""
+        return sub if site_award_line(sub, award) and RC.heading_line([head, sub], title, award) >= 0 else None
+    return None
 
 
 def site_pinned(programs: list[dict], pages: list[dict], pins: dict[str, dict]) -> dict[str, dict]:
