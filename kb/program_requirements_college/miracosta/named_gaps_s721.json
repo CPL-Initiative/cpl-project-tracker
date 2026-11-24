@@ -1,0 +1,43 @@
+{
+ "_readme": "S721 (lever), the gap census's reader_page_assignment lever (run 45371224551): 4 programs of MiraCosta College whose filed record places none of the state's listed courses. Free page read 45382513707 read the Child Development and the Computer Studies and Information Technology discipline pages as the capture reads them. Child Development Teacher's list does not print the course the state lists, and Tech Support's sections print past the text the capture sends (S721 second reader, round 1, finding 2). The college's other program on the lever, Architectural Design A.A. 07863, reads its namesake certificate's section, as its sister degrees do, and is sent to a forced re-read instead. These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. The first two are the college's to settle in COCI; the Tech Support pair waits on a reader that sends a section past the window.",
+ "college": "MiraCosta College",
+ "written": "2026-11-24T12:07:32Z",
+ "capture": "44529741837",
+ "page_reads": [
+  "45382513707"
+ ],
+ "reasons": {
+  "catalog_list_differs": "The 2026-27 catalog prints the program's own section and course list, and the list names none of the state's listed courses: the Program Course File's list and the catalog's differ, so a read of the section places none of them.",
+  "text_window_cut": "The program's own section prints on its discipline page past the 16,000 characters of the page's text the capture sends (text_window), so the extraction is given the page's other sections and none of this one's list; a forced re-read would send the same cut text."
+ },
+ "programs": [
+  {
+   "control_number": "15183",
+   "title": "Child Development Teacher",
+   "award": "A.A. Degree",
+   "reason": "catalog_list_differs",
+   "note": "The Degrees tab says the A.A. is earned by completing the Child Development Teacher certificate of achievement and the general education courses. That certificate's section (disciplines/childdevelopment/, Certificates tab) lists CDEV 105, 106, 109, 112 or C1000, 200, 205, 210 and 270, 3 elective units from CDEV 111 to 240, and 16 units of general education, 'Total Units 43'; the state lists CDEV 212 alone, which prints only in the Early Intervention and Inclusion and the Master Teacher lists and the course descriptions."
+  },
+  {
+   "control_number": "22006",
+   "title": "Child Development Teacher",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) units",
+   "reason": "catalog_list_differs",
+   "note": "Its own section (disciplines/childdevelopment/, Certificates tab) lists CDEV 105, 106, 109, 112 or C1000, 200, 205, 210 and 270, 3 elective units from CDEV 111 to 240, and 16 units of general education, 'Total Units 43'; the state lists CDEV 212 alone, which prints only in the Early Intervention and Inclusion and the Master Teacher lists and the course descriptions."
+  },
+  {
+   "control_number": "36144",
+   "title": "Tech Support",
+   "award": "A.S. Degree",
+   "reason": "text_window_cut",
+   "note": "The Degrees tab says the A.S. is earned by completing the Tech Support certificate of achievement and the general education courses. The certificate's section (disciplines/computerstudiesandinformationtechnology/, Certificates tab: CSIT 110, 149, 180, 181 or 191, 182, 195 or 286, 292, 299, BUS 136 or 290, 3 elective units, 'Total Units 23') begins about 350 characters past the 16,000 the capture sends."
+  },
+  {
+   "control_number": "36171",
+   "title": "Tech Support",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "text_window_cut",
+   "note": "Its own section (disciplines/computerstudiesandinformationtechnology/, Certificates tab: CSIT 110, 149, 180, 181 or 191, 182, 195 or 286, 292, 299, BUS 136 or 290, 3 elective units, 'Total Units 23') begins about 350 characters past the 16,000 the capture sends; the filed record's section heading reads 'Tech Support (section not present in the supplied text)'."
+  }
+ ]
+}

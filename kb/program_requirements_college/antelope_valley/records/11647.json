@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Aircraft Airframe",
  "award": "A.S. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-cert-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7352,
+  "input_tokens": 7497,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7352,
-    "output_tokens": 1347,
+    "input_tokens": 7497,
+    "output_tokens": 1198,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1347,
+  "output_tokens": 1198,
   "output_tokens_details": {
-   "thinking_tokens": 827
+   "thinking_tokens": 420
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05635,
- "ms": 13520,
- "seconds": 13.9,
+ "cost_usd": 0.05395,
+ "ms": 10994,
+ "seconds": 14.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 2,
-   "share": 0.0,
-   "missing": [
-    "AERO230",
-    "AERO231"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -64,90 +61,150 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    30.0,
+    30.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     30.0,
+     30.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     0.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Aircraft Airframe Cert",
+   "section_heading": "Aircraft Airframe AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 30,
+    "max": 30
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "AVC GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
+    "min": 30,
+    "max": 30
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Analyze and evaluate critical aspects of the aerospace industry related to safe work practices, standards and tolerances, standard shop practices, proper use of tools, power equipment, and personal protective equipment.",
+    "Analyze, evaluate, troubleshoot, and repair structural, propulsion, electrical, and guidance systems to meet airworthy standards.",
+    "Evaluate and apply Federal Aviation Regulations, technical maintenance data, and acceptable industry standards pertinent to proper maintenance and safety standards."
+   ],
+   "careers": [
+    "aviation maintenance",
+    "supervisory and management positions",
+    "aircraft maintenance"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "AERO 230",
+      "units": 15,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 231",
+      "units": 15,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints 'Completion of General Education requirements, plus electives (as needed to reach 60 units) 30 units' as a combined figure; GE units alone are not printed, so ge_units is null and electives_fill_degree is true.",
+   "GE pattern recorded as 'AVC GE' from the Recommended Pathway ('Any AVC GE Area ...'); pathway GE courses (ENGLC1000, MATH103) not placed in blocks.",
+   "Outcomes taken from the 'Program Learning Outcomes' list; a second 'Program Outcomes' list near the end repeats them with minor differences ('air worthy') and is cut off mid-sentence in the third outcome.",
+   "Codes printed as 'AERO230'/'AERO231' in the Program Requirements table and 'AERO 230'/'AERO 231' in the Requirements table; recorded with a space."
+  ]
+ },
+ "extracted_run": "45399693231",
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
-  },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "AERO 230",
-    "why": "named only in the certificate section; the text has no A.S. degree section"
+   "now": {
+    "min": 30,
+    "max": 30
    },
-   {
-    "code": "AERO 231",
-    "why": "named only in the certificate section; the text has no A.S. degree section"
-   }
-  ],
-  "notes": [
-   "The requested award is the A.S. Degree, but the source page and text are for 'Aircraft Airframe Cert' only, and no A.S. degree section appears. No blocks, totals, outcomes or careers were recorded for the A.S. A reviewer should locate the A.S. degree page.",
-   "For reference, the certificate section requires AERO 230 (15) and AERO 231 (15), all required, Total 30 units.",
-   "The certificate section lists three Program Outcomes under the heading 'Aircraft Airframe Cert'. They were not recorded because they belong to the certificate.",
-   "The description names entry-level positions in aircraft airframe maintenance, aircraft inspection, aircraft repair support, and aviation maintenance operations, plus 'certificates aircraft mechanic'. These are tied to completing the certificate and were not recorded for the A.S.",
-   "The page includes internal eLumen workflow and checklist text, which was ignored."
-  ]
- },
- "extracted_run": "38979725726"
+   "words": "Completion of General Education requirements, plus electives (as needed to reach 60 units)\n30"
+  }
+ ]
 }

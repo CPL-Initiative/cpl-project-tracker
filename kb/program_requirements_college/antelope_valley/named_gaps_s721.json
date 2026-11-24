@@ -1,0 +1,21 @@
+{
+ "_readme": "S721 (lever), the gap census's reader_page_assignment lever (run 45371224551): 1 program of Antelope Valley College whose filed record places none of the state's listed courses and for which the 2026-27 catalog prints no page. Free page read 45381304038 read the catalog's menu and the program's address; the college's other 9 programs on the lever are pinned in its reconcile entry (kb/program_requirements_reconcile.json, site_pages). It is filed as a named gap and is never sent to a paid read. Its filed record stays as filed (the load skips a record that places none). No model call, no Supabase write. It is the college's to settle in COCI.",
+ "college": "Antelope Valley College",
+ "written": "2026-11-24T11:17:30Z",
+ "capture": "45133183717",
+ "page_reads": [
+  "45381304038"
+ ],
+ "reasons": {
+  "not_in_catalog": "The 2026-27 catalog prints no page for the program: its menu lists no address for it, and the address its sister pages' pattern gives answers with no content."
+ },
+ "programs": [
+  {
+   "control_number": "35818",
+   "title": "Chemistry",
+   "award": "A.S. T Degree",
+   "reason": "not_in_catalog",
+   "note": "The menu's Chemistry department lists one program, the Chemistry A.S. (chemistry-as-fall-2026, which 43722 is read from) and the CHEM courses; chemistry-as-t-fall-2026 answers 200 with no content. The filed record was read from the Engineering Fundamentals certificate's page."
+  }
+ ]
+}

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 79,
  "with_closed_list": 76,
- "started": "2026-11-11T12:18:07Z",
+ "started": "2026-11-24T12:06:33Z",
  "elumen": {
   "catalog": "2026-2027",
   "read": "publish/content",
@@ -17,12 +17,91 @@
    "programs"
   ],
   "hub_programs": 84,
+  "program_pages_listed": 84,
+  "listing_failed": 0,
   "program_pages": 84
  },
  "pages_read": 84,
+ "pages_listed": 84,
+ "pages_answered": 84,
+ "listing_failed": 0,
  "banner_h1": null,
+ "site_pins": {
+  "01816": {
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-technology-fall-2024",
+   "bound": true
+  },
+  "22666": {
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-ca-fall-2024",
+   "bound": true
+  },
+  "42928": {
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
+   "bound": true
+  }
+ },
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 67,
+   "hits": 51,
+   "recall": 0.761,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 1,
+   "shared": 6,
+   "false_matches": [],
+   "no_claims_matches": [
+    {
+     "control_number": "45557",
+     "title": "Psychiatric Technician",
+     "award": "Certificate of Achievement requiring 60+S/90+Q units",
+     "page": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-ca-fall-2026",
+     "h1": "Psychiatric Technician, CA"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 3,
+  "by_result": {
+   "not_searched": 3
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "08395",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 67 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18226",
+    "title": "Liberal Arts: Mathematics",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 67 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30418",
+    "title": "North Coast Paramedic",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 67 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
  "loads": 154,
- "seconds": 642.8,
+ "seconds": 639.8,
  "found": 73,
  "by_method": {
   "no_closed_list": 3,
@@ -38,6 +117,10 @@
   "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026": [
    "32809",
    "46085"
+  ],
+  "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023": [
+   "42895",
+   "42928"
   ]
  },
  "not_found": [
@@ -65,7 +148,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "46338",
@@ -73,7 +157,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -83,9 +168,11 @@
    "award": "A.S. Degree",
    "pages": [
     "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 3,
   "0.8-1.0": 23,
@@ -93,9 +180,367 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/college_of_the_redwoods",
-  "kept": 73,
-  "programs": 0,
-  "list": []
+  "kept": 68,
+  "kept_moved": 0,
+  "programs": 3,
+  "list": [
+   {
+    "control_number": "01816",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-technology-fall-2024",
+    "coverage": 1.0,
+    "was_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-ca-fall-2024",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22666",
+    "title": "Advanced Automotive Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-ca-fall-2024",
+    "coverage": 1.0,
+    "was_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-technology-fall-2024",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42928",
+    "title": "Aquaculture Technology",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
+    "coverage": 0.85,
+    "was_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-ca-fall-2023",
+    "was_coverage": 0.85,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "only": [
+   "01816",
+   "22666",
+   "42928"
+  ],
+  "not_named": [
+   {
+    "control_number": "13559",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/early-childhood-education-ca-fall-2019",
+    "coverage": 0.75,
+    "was_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/early-childhood-education-fall-2018",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30811",
+    "title": "North Coast Paramedic",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/north-coast-paramedic-ca-summer-2019",
+    "coverage": 1.0,
+    "was_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/north-coast-paramedic-summer-2019",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "43018781168"
+ "fingerprints": {
+  "01793": {
+   "sha256": "1afe488a6e71872fa58dd1431ccda08d03cad27ab3c92b39fcef06bbae20c97f",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/agriculture-general-fall-2020"
+  },
+  "01796": {
+   "sha256": "c56e5d18723e23ddab3a36f0a75bff7d645d11da3b391ef037ab5e4ceac2b36e",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/forestry-and-natural-resources-technology-fall-2025"
+  },
+  "01802": {
+   "sha256": "e1077846162e9c0e2b6635a1d91ab3165f4981636906da570df14f1d4cccdbd8",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/general-business-fall-2026"
+  },
+  "01816": {
+   "sha256": "c6012aa75fd95ba5d10303003b2dfd40274c4a1c2a48df02098c95bf80e2acf0",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-technology-fall-2024"
+  },
+  "01818": {
+   "sha256": "7cb17a9d0fa3711d06e7413c952ee0d8eccc83ad8a2b433053158e0b44d354ae",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/construction-technology-fall-2026"
+  },
+  "01821": {
+   "sha256": "9ddcaad00b3e864eb85004f9225795edf1bf1e09ebdba93252aa67d640fdfe97",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/welding-technology-fall-2025"
+  },
+  "01831": {
+   "sha256": "518ca4b52870b9e82b2bbd96b85039dcd01938e94b765c6d520964a137aeb350",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/registered-nursing-fall-2026"
+  },
+  "01832": {
+   "sha256": "fe6533ad92cb3abb6b9327fa8a85512246256e88057f572bbeb294fd15c4f44e",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/licensed-vocational-nursing-fall-2022"
+  },
+  "01835": {
+   "sha256": "b8d2db433ba4ad661ef676f0032706e4766d0ee2cbd4f7b796cb4521a08f4b51",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/dental-assisting-fall-2026"
+  },
+  "08380": {
+   "sha256": "b56ed3cc6d86836856ce857b57daf72c1482166c86d57d0deee3d410eaa1d26a",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/cis-networking-fall-2020"
+  },
+  "08393": {
+   "sha256": "38235edf76513f272bb0eedac15caf2b6115ae5f53b971f0a5334a132234e0e9",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/lvn-or-paramedic-to-rn-career-mobility-fall-2026"
+  },
+  "10849": {
+   "sha256": "e33701b713d5def5d35b5b88420ee94e333cbd1184c8b897f2d0a203c515479f",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/basic-law-enforcement-academy-fall-2019"
+  },
+  "13559": {
+   "sha256": "3bd769cd6687a24ef38a447e32dc5e13b51d8121dcf024966f3133af96785db5",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/early-childhood-education-ca-fall-2019"
+  },
+  "16505": {
+   "sha256": "6d7e5385375a86a46764cc687d0738040ce0db9fda852704fe1797c924c360ec",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/addiction-studies-ca-fall-2026"
+  },
+  "18225": {
+   "sha256": "044325f6e7865288d63f7b8ca0f0e2d2987bd380836e8e86710db8d40282fd99",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-exploration-fall-2019"
+  },
+  "18227": {
+   "sha256": "c0f2e2e42ad1b7fabf165d35b2e819950b104e89acf912b13e52636c04cb231a",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-fall-2019"
+  },
+  "18228": {
+   "sha256": "ab47d207a16be52f42842fcb50f069aedb4bc37ce85c18dadcddcecfbf578819",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-fine-arts-fall-2024"
+  },
+  "18229": {
+   "sha256": "0fca856dd744e696997a54bcabac77c35ee86a4b71fc09dcaa2c5688ad2be334",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-behavioral-social-science-fall-2020"
+  },
+  "18230": {
+   "sha256": "d6831c6fd7c20e55b3bd08f637f873d842d39414c1f7f5dd75986a7b0a980ea8",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-humanities-language-communication-fall-2019"
+  },
+  "18231": {
+   "sha256": "95b658c853cf81e09ae2c462e4fa6414f5b8c6627be04906af5fb93ffd009d2b",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-business-fall-2026"
+  },
+  "18387": {
+   "sha256": "607c16699b56e88dc7a3ddf8f6ba5368944fa050acb4565c14c53c4ed2beddb0",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/residential-construction-i-ca-fall-2024"
+  },
+  "18388": {
+   "sha256": "ebe59bc40a271a295f5fca0ef4b901c484c69f11f319b108216528a66ac89a9e",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/residential-construction-ii-ca-fall-2026"
+  },
+  "18389": {
+   "sha256": "b419a51d95a76d1cfdfc33fe9889f6a43ba6518ceb2232551deb9ba64c1ff274",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/cabinetmaking-millwork-ca-fall-2018"
+  },
+  "22657": {
+   "sha256": "cddcaa7e5163692a9905b19d176ee6c536968190dffb376d9e678e6369cc908a",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/forestry-and-natural-resources-ca-fall-2024"
+  },
+  "22658": {
+   "sha256": "f19a436c7794e9a9ff1b355956c1e91b166a15f741defbff1da42644b53d31a7",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/small-business-management-ca-fall-2022"
+  },
+  "22663": {
+   "sha256": "b052fed5c3a7c41f3f5c43e3abd5cdd7fdbea7fe7b618fbbfb3d7ce5e7cb996b",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/cis-networking-ca-fall-2020"
+  },
+  "22666": {
+   "sha256": "6e3b88c2869c13cc0c4c0ac6d6ba555d30849750b84dd1fd0be15d40fbc6de99",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-ca-fall-2024"
+  },
+  "22673": {
+   "sha256": "bd3fda24b9a98d5b9880e6c51d57211a1779bb99db3301d3989f3946587ddc99",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/welding-technology-ca-fall-2025"
+  },
+  "22676": {
+   "sha256": "7d691bd18afd505262febc119d1735ac437f1303796e9390d28ba6e0cfdc215b",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/lvn-to-rn-30-unit-option-ca-summer-2019"
+  },
+  "22677": {
+   "sha256": "53ddff162a73b5ed6dc52e691dbc32b02f1910f4187982341f349c3873de16b8",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/licensed-vocational-nursing-ca-fall-2022"
+  },
+  "22678": {
+   "sha256": "35664d4c5ada1e52e3f818473638f2b8d78fac63c0b90bc787f35515995c794b",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/dental-assisting-ca-fall-2026"
+  },
+  "30811": {
+   "sha256": "6f97e6614bec71d2eb619689699d952d6a61ed059d380632e6f49086cc449699",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/north-coast-paramedic-ca-summer-2019"
+  },
+  "31004": {
+   "sha256": "e3a20da08826cb1ac8e9714e8b9fe4b99a2a6c36f51e8d0fdc240998814ed613",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychology-for-transfer-fall-2025"
+  },
+  "31005": {
+   "sha256": "fc877cdc1d64b89f8c96fc7e839b04c9f0f85489850c3574b3f194eb97c9be21",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026"
+  },
+  "31662": {
+   "sha256": "1e266171d2a57a19447467a88c2099a041b3545027e1ea6a5808eacb49999718",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-fall-2026"
+  },
+  "31796": {
+   "sha256": "969666639570162cb0603fb6ef6473a93e61c55fbba44f6df244b880dea8a7bb",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/electrician-trainee-ca-fall-2024"
+  },
+  "31934": {
+   "sha256": "7e017c04c731a2ac87d18baafcb17457a56a6c911319ca97a701a3b2ec3fb62d",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/studio-arts-for-transfer-fall-2026"
+  },
+  "32556": {
+   "sha256": "6377f57268807aa50bd0897a5b71b7fd0369b7d05ef6b1710162b0ee21e2a4a9",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/history-for-transfer-fall-2026"
+  },
+  "32808": {
+   "sha256": "4b6ddfa446be8efc6ffa0eb78a8006e94056dc24bbdb8674527f77345f212c2d",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-fall-2025"
+  },
+  "32809": {
+   "sha256": "2a6d2f4fc074f3d440b2c7ca6f2bd01d68717b4f78cdd45dea74cacd49177271",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026"
+  },
+  "32932": {
+   "sha256": "72731a94cdaf81dea72c1e5729c3d69badeafaaf28e9ac98511513b575f51e34",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/english-for-transfer-fall-2026"
+  },
+  "32947": {
+   "sha256": "a358f5c024703e21da723345426747e66bc00f9eef3587b6ef8719bcf5ed0565",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/geology-for-transfer-fall-2026"
+  },
+  "33040": {
+   "sha256": "f409091716421e3cc4745ebe3ce0e41ca559947087fa7142afc6434001ecb3d5",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/sociology-for-transfer-fall-2026"
+  },
+  "33200": {
+   "sha256": "0e39cb4e4a65984018eb9534726565d325bab94452834a59ddefff5f86563685",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/administration-of-justice-for-transfer-fall-2025"
+  },
+  "33282": {
+   "sha256": "6d172b21be9631eee3bfb6b071aebe76816bc19742519220a40bd98cbf57b206",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/kinesiology-for-transfer-fall-2026"
+  },
+  "33284": {
+   "sha256": "b4a48d32afb6e3d34d038e85500cbb3f47801d1743d2698ea867288e520730d6",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/anthropology-for-transfer-fall-2026"
+  },
+  "33453": {
+   "sha256": "7b1bf5fe83875047fbe338938d1e111369b1fb688abe4e40e66f6c784b951697",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/personal-or-academic-english-as-a-second-language-fall-2022"
+  },
+  "35147": {
+   "sha256": "e8c618e405201c85af0daac202efe5ad46a9f09ba3ce36626dfd1c102516f807",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/agriculture-plant-science-for-transfer-fall-2026"
+  },
+  "35445": {
+   "sha256": "d9f2aec5baad577c1c7a2a57a8f6b9c3921705e5958490c5751b8a3c50d83ac0",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/philosophy-for-transfer-fall-2025"
+  },
+  "35895": {
+   "sha256": "8fc1dca5d11b490731a4bb8ed701f9b3de5225a692c99c603478eafccc173613",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/biology-for-transfer-fall-2026"
+  },
+  "36425": {
+   "sha256": "59ea3f54804c90c27a9943fedd1c8988bd1285ca5a47ee53920ebf6378aab428",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/police-science-fall-2018"
+  },
+  "38708": {
+   "sha256": "dc5f658cf4f7a570fb9e98a6410e726193357956b4a1c7435904f72f91c13fad",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/horticulture-landscape-practices-ca-fall-2019"
+  },
+  "38709": {
+   "sha256": "de6f8f85182de249518a415b2c8a9fbcae258e30ac811915c8336e7f8eb08560",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/organic-sustainable-agriculture-ca-fall-2019"
+  },
+  "38710": {
+   "sha256": "6307c00ec8e27013aab0322fb807b161e86e15f18cc9a2f58825da72d082435e",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-maintenance-light-repair-ca-fall-2024"
+  },
+  "39158": {
+   "sha256": "6fa1e65daf06ddbfd6fe8730869e549ba9752dba911826d4d1d4a89ab616d2f6",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/graphic-design-visual-communication-ca-fall-2024"
+  },
+  "39210": {
+   "sha256": "03c6496695bc7f5e3c1458bcb258ad03f1c4ec08f288ceec50acbde8f21acc32",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/cis-cybersecurity-ca-fall-2021"
+  },
+  "39513": {
+   "sha256": "f1f18a7db23e8a03d6f108131874d7895e226df2d690eb457b76c564211f72c0",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/social-work-human-services-fall-2026"
+  },
+  "39540": {
+   "sha256": "785ca70e63659888144ba119e2ba788dd4f01fb9366db6348d09aa00147e4de6",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/social-justice-studies-general-fall-2026"
+  },
+  "41291": {
+   "sha256": "ed4c25e7b18eb8b9427e311581efc1db8469c92fb99afc6d14b4f2c6e8b7c5e9",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/bookkeeping-ca-fall-2026"
+  },
+  "42575": {
+   "sha256": "25a0db103ad46293be01ddcadc5521696ff3ac726fc91486a7a35c088dbb1603",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-for-transfer-fall-2026"
+  },
+  "42648": {
+   "sha256": "8d3d7d85086175b99d2c914a3909e5c50e80f9beb573233f921437a154bed1b7",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/geomatics-fall-2026"
+  },
+  "42895": {
+   "sha256": "f301b67bf4e259c9ccf475e8a340e5ea93d3c01efd03ca112a9c23ca87c66d46",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023"
+  },
+  "42928": {
+   "sha256": "f301b67bf4e259c9ccf475e8a340e5ea93d3c01efd03ca112a9c23ca87c66d46",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023"
+  },
+  "44179": {
+   "sha256": "9f5c637b640ac8c198586074ac01efa8421820c8252ee28108be0893151be293",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/communication-studies-2-0-for-transfer-fall-2026"
+  },
+  "44399": {
+   "sha256": "9480833dcc6ead9e7947650c8024d64bb8495c645863b31554dbf7a1e4d81aa1",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/personal-wellness-trainer-ca-fall-2025"
+  },
+  "44463": {
+   "sha256": "4c14f069f69b79a8461bba6ffad2745e324e26e7bd19ea602cb4465e9ecd1988",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/personal-wellness-fall-2025"
+  },
+  "44697": {
+   "sha256": "8e22af0e2c287f17dc98ae70f5d1ae9dd32d263681cc241cedbbbbe7154fae3e",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/social-work-and-human-services-for-transfer-fall-2026"
+  },
+  "45557": {
+   "sha256": "6b930b38c54c42d1252ea17217209c953fd1c2ff80fe02de2ea77b12d81b1550",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-fall-2026"
+  },
+  "45595": {
+   "sha256": "d3a93b425d4ca40c097215a37dcd2832a3bd6984c654b5cf0d0fd420d1b0f5f6",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-ca-fall-2026"
+  },
+  "45727": {
+   "sha256": "5d97a71631aaf3c5840bc457953b2652bd359a59ad474c71cfccc6685fbc9d5a",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/agriculture-business-ca-fall-2026"
+  },
+  "46085": {
+   "sha256": "2a6d2f4fc074f3d440b2c7ca6f2bd01d68717b4f78cdd45dea74cacd49177271",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026"
+  },
+  "46245": {
+   "sha256": "fc877cdc1d64b89f8c96fc7e839b04c9f0f85489850c3574b3f194eb97c9be21",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026"
+  },
+  "46247": {
+   "sha256": "d817e3ea0f9b8d406498b15a31ecfe8a957d15ea08b8c465e7b5f4409a2ddc5b",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/agriculture-business-for-transfer-fall-2026"
+  }
+ },
+ "run": "45390207374"
 }

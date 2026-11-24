@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T12:37:56Z",
+ "written_at": "2026-11-24T13:28:24Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17272,
-  "gap": 5063,
+  "passing": 17283,
+  "gap": 5052,
   "with_gap": 118,
-  "cost_usd": 1341.01,
-  "passed_at_read": 16357,
+  "cost_usd": 1341.14,
+  "passed_at_read": 16371,
   "cost_receipts": 118,
   "spent_usd": 1238.16,
   "spent_runs": 207,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16795,
-  "gap": 5063,
+  "passing": 16806,
+  "gap": 5052,
   "collected_with_gaps": 477,
   "discontinued": 0
  },
@@ -428,12 +428,12 @@
    "harvested": true,
    "slug": "antelope_valley",
    "programs": 199,
-   "passing": 162,
-   "gap": 37,
+   "passing": 170,
+   "gap": 29,
    "causes": {
     "no_closed_list": 2,
     "page_not_found": 2,
-    "places_none": 13,
+    "places_none": 5,
     "unknown_without_live": 20
    },
    "census_causes": {
@@ -458,10 +458,10 @@
    "outcomes_file": "kb/status/commons_data_programs/antelope_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-23T07:44:32Z",
+   "read_at": "2026-11-24T13:05:32Z",
    "read_kind": "capture",
-   "cost_usd": 14.18,
-   "passed_at_read": 162,
+   "cost_usd": 14.26,
+   "passed_at_read": 170,
    "slo_queue": {
     "state": "held",
     "why": "the eLumen 2026-27 catalog prints none: 11 of 12 trial pages answered with the description and units only, no SLO or objective heading in the page source, and PSY 101 came back empty. As at College of Marin, the course outline reports on avc.elumenapp.com/public are untried; waits on the same reader for eLumen's public Course Outline Report, then a 12-page trial",
@@ -474,13 +474,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 197,
-   "found": 183,
+   "found": 191,
    "extracted": 195,
    "errors": 0,
    "failed_checks": {
-    "coverage": 13,
+    "coverage": 5,
     "invented": 0,
-    "arithmetic": 33,
+    "arithmetic": 25,
     "repeated": 0,
     "outcomes": 0
    },
@@ -490,12 +490,12 @@
    "capture_root": "https://avc.elumenapp.com/catalog/2026-27/welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1140.0,
-   "run": "45133183717",
+   "read_seconds": 1148.5,
+   "run": "45399693231",
    "levers": {
-    "reader_page_assignment": 13,
     "reconcile_steps": 10,
     "ge_units_steps": 9,
+    "reader_page_assignment": 5,
     "program_course_file_check": 2,
     "reader_page_search": 2,
     "scorer_noncredit_hours": 1
@@ -506,13 +506,13 @@
      "models": {
       "claude-opus-5-5": 195
      },
-     "run": "45133183717",
-     "at": "2026-11-23T07:44:32Z",
-     "cost_usd": 14.18,
+     "run": "45399693231",
+     "at": "2026-11-24T13:05:32Z",
+     "cost_usd": 14.26,
      "platform": "elumen"
     },
     "slo_read": null,
-    "plo_programs": 120,
+    "plo_programs": 128,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -2743,13 +2743,13 @@
    "harvested": true,
    "slug": "college_of_the_redwoods",
    "programs": 79,
-   "passing": 61,
-   "gap": 18,
+   "passing": 63,
+   "gap": 16,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 3,
-    "places_none": 5,
-    "unknown_without_live": 7
+    "places_none": 2,
+    "unknown_without_live": 8
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -2776,10 +2776,10 @@
     "elumen"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-11T12:18:07Z",
+   "read_at": "2026-11-24T12:06:33Z",
    "read_kind": "capture",
-   "cost_usd": 5.41,
-   "passed_at_read": 59,
+   "cost_usd": 5.45,
+   "passed_at_read": 63,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -2792,9 +2792,9 @@
    "extracted": 73,
    "errors": 0,
    "failed_checks": {
-    "coverage": 7,
+    "coverage": 4,
     "invented": 1,
-    "arithmetic": 13,
+    "arithmetic": 9,
     "repeated": 0,
     "outcomes": 0
    },
@@ -2804,14 +2804,14 @@
    "capture_root": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 642.8,
-   "run": "43018781168",
+   "read_seconds": 639.8,
+   "run": "45390207374",
    "levers": {
-    "reader_page_assignment": 5,
-    "reconcile_steps": 5,
+    "reconcile_steps": 6,
     "program_course_file_check": 3,
     "reader_page_search": 3,
-    "ge_units_steps": 2
+    "ge_units_steps": 2,
+    "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
@@ -2819,9 +2819,9 @@
      "models": {
       "claude-opus-5-5": 73
      },
-     "run": "43018781168",
-     "at": "2026-11-11T12:18:07Z",
-     "cost_usd": 5.41,
+     "run": "45390207374",
+     "at": "2026-11-24T12:06:33Z",
+     "cost_usd": 5.45,
      "platform": "elumen"
     },
     "slo_read": {
@@ -2831,7 +2831,7 @@
      "source_kind": "catalog",
      "file": "kb/course_outcomes/redwoods/read_44252663448_p2of2.json"
     },
-    "plo_programs": 65,
+    "plo_programs": 68,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -7635,12 +7635,12 @@
    "harvested": true,
    "slug": "miracosta",
    "programs": 187,
-   "passing": 112,
-   "gap": 75,
+   "passing": 113,
+   "gap": 74,
    "causes": {
     "no_closed_list": 26,
     "page_not_found": 24,
-    "places_none": 9,
+    "places_none": 8,
     "unknown_without_live": 16
    },
    "census_causes": {
@@ -7664,10 +7664,10 @@
    "outcomes_file": "kb/status/commons_data_programs/miracosta.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T13:04:36Z",
+   "read_at": "2026-11-24T12:21:49Z",
    "read_kind": "capture",
-   "cost_usd": 11.66,
-   "passed_at_read": 109,
+   "cost_usd": 11.67,
+   "passed_at_read": 111,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -7680,9 +7680,9 @@
    "extracted": 137,
    "errors": 0,
    "failed_checks": {
-    "coverage": 9,
+    "coverage": 8,
     "invented": 0,
-    "arithmetic": 25,
+    "arithmetic": 23,
     "repeated": 0,
     "outcomes": 2
    },
@@ -7692,13 +7692,13 @@
    "capture_root": "https://catalog.miracosta.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1751.7,
-   "run": "44529741837",
+   "read_seconds": 1787.2,
+   "run": "45392607854",
    "levers": {
     "program_course_file_check": 26,
     "reader_page_search": 24,
     "reconcile_steps": 16,
-    "reader_page_assignment": 9
+    "reader_page_assignment": 8
    },
    "collection": {
     "program_reader": {
@@ -7706,13 +7706,13 @@
      "models": {
       "claude-opus-5-5": 137
      },
-     "run": "44529741837",
-     "at": "2026-11-19T13:04:36Z",
-     "cost_usd": 11.66,
+     "run": "45392607854",
+     "at": "2026-11-24T12:21:49Z",
+     "cost_usd": 11.67,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 128,
+    "plo_programs": 129,
     "ppm_member": null,
     "maps": {
      "held": 0,

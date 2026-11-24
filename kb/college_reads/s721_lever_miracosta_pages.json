@@ -1,0 +1,49 @@
+{
+ "_readme": "S721 lever (the gap census's reader_page_assignment lever, run 45371224551): MiraCosta College's 5 programs whose filed record places none of the state's listed courses, each read from its discipline page: Architectural Design A.A. 07863 (disciplines/design/), Child Development Teacher A.A. 15183 and certificate 22006 (disciplines/childdevelopment/, where the state lists CDEV 212 alone), and Tech Support A.S. 36144 and certificate 36171 (disciplines/computerstudiesandinformationtechnology/). This plan reads the three discipline pages as the capture reads them (capture_view: the visible text with the hidden tab panels appended), prints their links beneath the discipline, and follows up to five award pages, so a session sees whether each program has a page of its own and where its heading and list fall. No model call, nothing written.",
+ "college": "MiraCosta College",
+ "questions": {
+  "own_page": "Which page is each program's own (its heading with its award and its requirement list), and what the discipline page prints of it."
+ },
+ "keywords": [
+  "[Aa]rchitectur[^\\n]{0,80}",
+  "[Cc]hild [Dd]evelopment [Tt]eacher[^\\n]{0,80}",
+  "[Tt]ech(?:nical)? [Ss]upport[^\\n]{0,80}",
+  "CDEV ?212[^\\n]{0,60}",
+  "[Tt]otal[^\\n]{0,40}[Uu]nits?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "07863 Architectural Design A.A.",
+   "url": "https://catalog.miracosta.edu/disciplines/design/",
+   "capture_view": true,
+   "links": "disciplines/design/.",
+   "links_cap": 60,
+   "follow": "disciplines/design/[a-z].*architect"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "15183, 22006 Child Development Teacher",
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+   "capture_view": true,
+   "links": "disciplines/childdevelopment/.",
+   "links_cap": 60,
+   "follow": "disciplines/childdevelopment/[a-z].*teacher"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "36144, 36171 Tech Support",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "capture_view": true,
+   "links": "disciplines/computerstudiesandinformationtechnology/.",
+   "links_cap": 60,
+   "follow": "disciplines/computerstudiesandinformationtechnology/[a-z].*support"
+  }
+ ]
+}

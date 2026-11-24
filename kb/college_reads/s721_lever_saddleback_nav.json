@@ -1,0 +1,21 @@
+{
+ "_readme": "S721 lever, Saddleback College's second read (the first, 45382520936, searched the Credit Programs A-Z navigation in mixed case, and the navigation prints its titles in capitals). The only catalog the host lists is 'Saddleback 2026-2027 Spring' (id 4420), and its Credit Programs A-Z section's entries are the navigation call under parentId 48776 (208,699 bytes). This read loads that call and prints every entry naming retailing, school-age care, a master teacher, a site supervisor or a business information worker, so a session sees whether each of the lever's 7 programs (04054, 22844, 22895, 22896, 22897, 36224, 36225) has an entry of its own. No model call, nothing written.",
+ "college": "Saddleback College",
+ "questions": {
+  "own_page": "Which A-Z entry, if any, is each program's own in the 2026-2027 catalog (its id, text and urlalias)."
+ },
+ "keywords": [
+  "retail[^\"]{0,80}",
+  "school[ -]?age[^\"]{0,80}",
+  "master teacher[^\"]{0,80}",
+  "site supervisor[^\"]{0,80}",
+  "information worker[^\"]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": ["own_page"],
+   "why": "04054 22844 22895 22896 22897 36224 36225",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=48776"
+  }
+ ]
+}

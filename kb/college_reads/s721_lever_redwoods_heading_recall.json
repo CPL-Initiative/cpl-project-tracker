@@ -1,0 +1,509 @@
+{
+ "_readme": "S721 lever, the self-recall read for site_award_subheading (kb/_program_requirements_college.py): College of the Redwoods heads a degree page with its title alone over its award line ('Automotive Technology' over 'A.S. Degree ( 60.0 Credits )', page read 45381629186). This plan reads each of the 71 pages the college's filed sources were read from, through the publish/content call the capture reads, so a test counts how many programs the rule binds on their own page and how many it binds on another's. No model call, nothing written.",
+ "college": "College of the Redwoods",
+ "questions": {
+  "recall": "Each page's opening lines: its heading and the line under it."
+ },
+ "keywords": [
+  "(?:A\\.[AS]\\.|Certificate)[^\\n]{0,60}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "addiction-studies-ca-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,addiction-studies-ca-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "administration-of-justice-for-transfer-fall-2025",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,administration-of-justice-for-transfer-fall-2025?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "advanced-automotive-technology-ca-fall-2024",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,advanced-automotive-technology-ca-fall-2024?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "agriculture-business-ca-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,agriculture-business-ca-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "agriculture-business-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,agriculture-business-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "agriculture-general-fall-2020",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,agriculture-general-fall-2020?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "agriculture-plant-science-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,agriculture-plant-science-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "anthropology-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,anthropology-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "aquaculture-technology-ca-fall-2023",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,aquaculture-technology-ca-fall-2023?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "aquaculture-technology-fall-2023",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,aquaculture-technology-fall-2023?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "automotive-maintenance-light-repair-ca-fall-2024",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,automotive-maintenance-light-repair-ca-fall-2024?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "automotive-technology-fall-2024",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,automotive-technology-fall-2024?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "basic-law-enforcement-academy-fall-2019",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,basic-law-enforcement-academy-fall-2019?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "biology-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,biology-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "bookkeeping-ca-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,bookkeeping-ca-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "business-administration-2-0-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,business-administration-2-0-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "cabinetmaking-millwork-ca-fall-2018",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,cabinetmaking-millwork-ca-fall-2018?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "cis-cybersecurity-ca-fall-2021",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,cis-cybersecurity-ca-fall-2021?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "cis-networking-ca-fall-2020",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,cis-networking-ca-fall-2020?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "cis-networking-fall-2020",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,cis-networking-fall-2020?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "communication-studies-2-0-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,communication-studies-2-0-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "construction-technology-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,construction-technology-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "dental-assisting-ca-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,dental-assisting-ca-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "dental-assisting-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,dental-assisting-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "early-childhood-education-fall-2018",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,early-childhood-education-fall-2018?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "early-childhood-education-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,early-childhood-education-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "electrician-trainee-ca-fall-2024",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,electrician-trainee-ca-fall-2024?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "english-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,english-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "forestry-and-natural-resources-ca-fall-2024",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,forestry-and-natural-resources-ca-fall-2024?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "forestry-and-natural-resources-technology-fall-2025",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,forestry-and-natural-resources-technology-fall-2025?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "general-business-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,general-business-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "geology-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,geology-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "geomatics-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,geomatics-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "graphic-design-visual-communication-ca-fall-2024",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,graphic-design-visual-communication-ca-fall-2024?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "history-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,history-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "horticulture-landscape-practices-ca-fall-2019",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,horticulture-landscape-practices-ca-fall-2019?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "kinesiology-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,kinesiology-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "liberal-arts-behavioral-social-science-fall-2020",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,liberal-arts-behavioral-social-science-fall-2020?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "liberal-arts-business-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,liberal-arts-business-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "liberal-arts-fine-arts-fall-2024",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,liberal-arts-fine-arts-fall-2024?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "liberal-arts-humanities-language-communication-fall-2019",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,liberal-arts-humanities-language-communication-fall-2019?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "liberal-arts-science-exploration-fall-2019",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,liberal-arts-science-exploration-fall-2019?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "liberal-arts-science-fall-2019",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,liberal-arts-science-fall-2019?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "licensed-vocational-nursing-ca-fall-2022",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,licensed-vocational-nursing-ca-fall-2022?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "licensed-vocational-nursing-fall-2022",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,licensed-vocational-nursing-fall-2022?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "lvn-or-paramedic-to-rn-career-mobility-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,lvn-or-paramedic-to-rn-career-mobility-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "lvn-to-rn-30-unit-option-ca-summer-2019",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,lvn-to-rn-30-unit-option-ca-summer-2019?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "mathematics-2-0-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,mathematics-2-0-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "north-coast-paramedic-summer-2019",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,north-coast-paramedic-summer-2019?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "organic-sustainable-agriculture-ca-fall-2019",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,organic-sustainable-agriculture-ca-fall-2019?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "personal-or-academic-english-as-a-second-language-fall-2022",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,personal-or-academic-english-as-a-second-language-fall-2022?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "personal-wellness-fall-2025",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,personal-wellness-fall-2025?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "personal-wellness-trainer-ca-fall-2025",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,personal-wellness-trainer-ca-fall-2025?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "philosophy-for-transfer-fall-2025",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,philosophy-for-transfer-fall-2025?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "physics-2-0-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,physics-2-0-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "police-science-fall-2018",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,police-science-fall-2018?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "political-science-for-transfer-fall-2025",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,political-science-for-transfer-fall-2025?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "psychiatric-technician-ca-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,psychiatric-technician-ca-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "psychiatric-technician-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,psychiatric-technician-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "psychology-for-transfer-fall-2025",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,psychology-for-transfer-fall-2025?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "registered-nursing-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,registered-nursing-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "residential-construction-i-ca-fall-2024",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,residential-construction-i-ca-fall-2024?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "residential-construction-ii-ca-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,residential-construction-ii-ca-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "small-business-management-ca-fall-2022",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,small-business-management-ca-fall-2022?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "social-justice-studies-general-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,social-justice-studies-general-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "social-work-and-human-services-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,social-work-and-human-services-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "social-work-human-services-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,social-work-human-services-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "sociology-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,sociology-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "studio-arts-for-transfer-fall-2026",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,studio-arts-for-transfer-fall-2026?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "welding-technology-ca-fall-2025",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,welding-technology-ca-fall-2025?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "recall"
+   ],
+   "why": "welding-technology-fall-2025",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,welding-technology-fall-2025?tenant=redwoods.elumenapp.com"
+  }
+ ]
+}
