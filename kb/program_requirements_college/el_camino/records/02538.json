@@ -94,7 +94,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "Required Core is labeled 14 units, but the five listed rows (ECON C2002, ECON C2001, MATH 165, HIST C1002, POLS C1000) sum to 17 units. The 14 would fit if only one of the HIST C1002 or POLS C1000 rows were required. The core is recorded as 'all' as printed; a reviewer should check the intended rule."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

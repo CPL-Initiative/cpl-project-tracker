@@ -46,28 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 13,
    "listed": 17,
-   "share": 0.706,
+   "share": 0.765,
    "missing": [
     "ANTH310",
     "ANTH481",
     "BIOL430",
-    "ENGWR488",
     "ETHNS300"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL488",
+     "listed": "ENGWR488",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGL488"
-   ],
-   "flagged": [
-    "ENGL488"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -83,8 +85,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 66.0-67.0; the catalog states 74.0-75.0"
-   ]
+    "the blocks sum to 66.0-67.0; the catalog states 74.0-75.0",
+    "electives would fill the rest, but the reader's note says the requirements run outside the text read"
+   ],
+   "fill_refused": {
+    "gap": "section_cut_off",
+    "words": "The text begins mid-table at page 563; the section heading, block heading and the first rows (likely BIOL 430 and an ANTH 310/ANTH 481/ETHNS 300 etc. choice) are on page 562, not supplied."
+   }
   },
   "repeated": {
    "codes": [],
@@ -94,11 +101,15 @@
    "program": 10,
    "courses": 0,
    "count": 10,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "integrate the nursing process with critical reasoning skills, in direct and indirect nursing care to meet the patientâ€™s developmental and basic human needs."
+   ],
+   "why": [
+    "not in the catalog text as printed: integrate the nursing process with critical reasoning skills, in direct and indi"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 2,
@@ -111,7 +122,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "section_cut_off",
+    "label": "The program's section runs onto a page the read did not hold, so part of its requirements is missing from the record and its units cannot be checked against the printed total.",
+    "words": "an electives fill was refused: the reader's note says the requirements run outside the text read: \"The text begins mid-table at page 563; the section heading, block heading and the first rows (likely BIOL 430 and an ANTH 310/ANTH 481/ETHNS 300 etc. choice) are on page 562, not supplied.\""
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
@@ -285,5 +310,6 @@
    "The A.S. in Nursing, Vocational section on page 564 was ignored."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": 45353709365,
+ "read_run": "39047070975"
 }

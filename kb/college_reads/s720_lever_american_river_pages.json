@@ -1,0 +1,25 @@
+{
+ "_readme": "S720 lever (the gap census's reader_page_assignment lever, run 45319725062): American River College's 5 programs whose extraction placed none of the state's listed courses (16946, 18005, 20109, 20134, 44412) were handed a sibling award's section. This plan prints every page of the hand-filed 2026-27 catalog as refiled in S720 (kb/hand_filed_catalogs/american_river.json: 8,050,566 bytes, sha256 5a86716d570e32ec..., pinned by run 45341899083, the file every new record will be extracted from), line for line, so a session downloads the whole log (gh run view --log), finds each program's own section and names its pdf_pages pin. One load, no model call, nothing written.",
+ "college": "American River College",
+ "questions": {
+  "own_page": "Where each program's own section opens (its heading and the first line of its requirement list) and where its list ends (its total), so a pdf_pages pin can name the page, the words it opens on and the page it runs through."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "hand_filed": true,
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  1,
+  1000
+ ],
+ "pdf_page_cap": 1000,
+ "pdf_unfolded": true
+}

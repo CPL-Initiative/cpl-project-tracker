@@ -1,0 +1,44 @@
+{
+ "_readme": "S720 (lever), the gap census's reader_page_assignment lever (run 45319725062): 4 programs of Los Angeles Southwest College whose filed record places none of the state's listed courses and for which no page of the 2026-27 catalog holds a section a read could place them from. Free page read 45341735139 printed every page of the catalog PDF the capture reads; the college's other programs on the lever are pinned in its reconcile entry (kb/program_requirements_reconcile.json, pdf_pages). These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. They are the college's to settle in COCI.",
+ "college": "Los Angeles Southwest College",
+ "written": "2026-11-24T06:53:11Z",
+ "capture": "39061735776",
+ "page_reads": [
+  "45341735139"
+ ],
+ "reasons": {
+  "catalog_list_differs": "The 2026-27 catalog prints the program's own section and course list, and the list names fewer than half of the state's listed courses: the Program Course File's list and the catalog's differ, so a read of the section would place too few of them to count.",
+  "noncredit_not_in_catalog": "A noncredit program the 2026-27 catalog prints under no heading of its own: its section of noncredit certificates does not name it.",
+  "section_prints_no_list": "The 2026-27 catalog prints the program's own section and no course list in it: the state's listed courses print only in the course descriptions."
+ },
+ "programs": [
+  {
+   "control_number": "02877",
+   "title": "Nursing",
+   "award": "A.S. Degree",
+   "reason": "section_prints_no_list",
+   "note": "The Nursing section (PDF pp.117-121) lists its awards, admission steps and the two options, and no course list; NURSING 503A, 503B and 506B print only in the course descriptions (p.215), which the filed record was read from."
+  },
+  {
+   "control_number": "19186",
+   "title": "Liberal Studies (teaching preparation)",
+   "award": "A.A. Degree",
+   "reason": "catalog_list_differs",
+   "note": "Its own section, 'ASSOCIATE IN ARTS LIBERAL STUDIES (TEACHING PREPARATION)' (PDF pp.148-149), prints a list of 21 courses to choose 18 units from (ART 103 to POLS C1000) and none of the three the state lists, EDUC 001, 006 and 931; EDUC 001 prints in the Teacher Assistant skills certificate's list (p.139) and EDUC 006 and 931 only in the course descriptions (p.194)."
+  },
+  {
+   "control_number": "24277",
+   "title": "Job Training Preparation",
+   "award": null,
+   "reason": "noncredit_not_in_catalog",
+   "note": "No page prints 'Job Training Preparation'; the noncredit certificates (PDF pp.160-169) do not name it, and BSICSKL 002CE, its one listed course, prints only in the course descriptions (p.175)."
+  },
+  {
+   "control_number": "33868",
+   "title": "Workforce Preparation",
+   "award": null,
+   "reason": "noncredit_not_in_catalog",
+   "note": "No heading prints 'Workforce Preparation' (p.229's 'workforce preparation' is a course description's sentence); the noncredit certificates (PDF pp.160-169) do not name it, and BSICSKL 002CE prints only in the course descriptions (p.175)."
+  }
+ ]
+}

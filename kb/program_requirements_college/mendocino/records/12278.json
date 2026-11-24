@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Culinary Arts Management",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=141",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=143",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7490,
+  "input_tokens": 7721,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7490,
-    "output_tokens": 1633,
+    "input_tokens": 7721,
+    "output_tokens": 2250,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,57 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1633,
+  "output_tokens": 2250,
   "output_tokens_details": {
-   "thinking_tokens": 488
+   "thinking_tokens": 424
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06262,
- "ms": 12995,
- "seconds": 13.3,
+ "cost_usd": 0.07588,
+ "ms": 17970,
+ "seconds": 30.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 27,
    "listed": 27,
-   "share": 0.0,
-   "missing": [
-    "AGR180",
-    "AGR181",
-    "BUS132",
-    "BUS150",
-    "CAM101",
-    "CAM102",
-    "CAM120",
-    "CAM121A",
-    "CAM121B",
-    "CAM121C",
-    "CAM130A",
-    "CAM130B",
-    "CAM130C",
-    "CAM140",
-    "CAM152",
-    "CAM154",
-    "CAM161",
-    "CAM197A",
-    "CAM260",
-    "CAM58",
-    "CAM68",
-    "CAM70A",
-    "CAM70B",
-    "CAM70C",
-    "CAM70D",
-    "CAM71",
-    "WEE196"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -89,29 +61,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    25.5,
+    25.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    25.5,
+    25.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -123,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "CULINARY ARTS (Certificate of Achievement – Culinary Arts Management listed in the program index; its own section is not in the text)",
+   "section_heading": "CULINARY ARTS MANAGEMENT CERTIFICATE OF ACHIEVEMENT",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25.5,
+    "max": 25.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -148,127 +121,271 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate professionalism in appearance, time management, interpersonal skills, teamwork, decision-making, and initiative needed for foodservice.",
+    "Demonstrate skill and apply industry standards in food handling, beverage service, baking, food preparation, equipment selection, use, and maintenance.",
+    "Identify suitable career options in food service for their skills and interests.",
+    "Identify problems in food preparation and presentation and solve these problems.",
+    "Demonstrate station organization, purchasing, storage, menu writing, and sanitation principles as they apply to food handling.",
+    "Define culinary terms and describe culinary techniques."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AGR 180",
-    "why": "named only in the A.S. section"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CAM 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 140",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 152",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 154",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 197A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AGR 181",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "BUS 132",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "BUS 150",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 101",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 102",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 120",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 121A",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 121B",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 121C",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 130A",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 130B",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 130C",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 140",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 152",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 154",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 161",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 197A",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 260",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 58",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 68",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 70A",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 70B",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 70C",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 70D",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "CAM 71",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "WEE 196",
-    "why": "named only in the A.S. section"
+    "name": "Plus 6 additional units selected from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AGR 180",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AGR 181",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 58",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 68",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 70A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 70B",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 70C",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 70D",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 71",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 120",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 121A",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 121B",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 121C",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 130A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 130B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 130C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEE 196",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The provided text (catalog page 141 / printed page 139) contains only the Culinary Arts Management Associate of Science section (Total Major Units 25.5). The Certificate of Achievement section for Culinary Arts Management is listed in the department index but its requirements are not printed in the text; it likely continues on the next page. No blocks were recorded for the certificate.",
-   "The A.S. section lists 8 required CAM courses (CAM 101, 102, 140, 152, 154, 161, 197A, 260) plus 6 units from an elective list; the certificate may share these requirements, but the text does not state so. A reviewer should check the following page.",
-   "Careers named in the A.S. description (chef, kitchen manager, district supervisor, general manager, owner) were not recorded because they appear in the degree's section, not the certificate's.",
-   "No program learning outcomes are printed in the text."
+   "Required courses sum to 19.5 units plus 6 elective units, matching the printed total of 25.5.",
+   "Outcome 1 is split across lines at a hyphen ('decision-' / 'making'); recorded as 'decision-making'.",
+   "The description mentions advancement to 'management positions' and employers staffing 'restaurants, lodging and drinking establishments' in the 'food service and hospitality industry'; these were not recorded as named careers—reviewer may wish to check.",
+   "Catalog titles differ slightly from the state file for AGR 180/181 and CAM 58; CAM 154 title has a typo ('Hot to Make').",
+   "Several closed-list unit values differ from the catalog: CAM 121A/B/C printed as 0.5-1 and WEE 196 as 1-3."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": "45348021173",
+ "catalog_year": "2026-2027",
+ "source_sha": "c52fcf0f2c7819e7",
+ "source_codes": [
+  "AGR180",
+  "AGR181",
+  "BUS132",
+  "BUS150",
+  "CAM101",
+  "CAM102",
+  "CAM120",
+  "CAM121A",
+  "CAM121B",
+  "CAM121C",
+  "CAM130A",
+  "CAM130B",
+  "CAM130C",
+  "CAM140",
+  "CAM152",
+  "CAM154",
+  "CAM161",
+  "CAM197A",
+  "CAM260",
+  "CAM58",
+  "CAM68",
+  "CAM70A",
+  "CAM70B",
+  "CAM70C",
+  "CAM70D",
+  "CAM71",
+  "WEE196"
+ ],
+ "source_coverage": 1.0
 }

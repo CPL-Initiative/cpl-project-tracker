@@ -1,0 +1,135 @@
+{
+ "_readme": "S720 lever (the gap census's reader_page_assignment lever, run 45319725062): San Bernardino Valley College's 15 programs whose extraction placed none of the state's listed courses, and 22768 found and never extracted, were each handed a sister award's page or the department's landing page (capture 44481529632). The catalog's own lookup (that capture's catalog_lookup self-test) found Inspection, Welding, Pharmacy and Library Technology certificates on pages of their own. This plan reads each member's department page, prints its links under the department, and follows up to five of its award pages, so a session sees which programs have a page of their own and what it prints. No model call, nothing written.",
+ "college": "San Bernardino Valley College",
+ "questions": {
+  "own_page": "Which page is each program's own (its heading with its award and its requirement list), and what the department page prints of it."
+ },
+ "keywords": [
+  "certificate of achievement[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}units?",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "04881 Heavy/Medium Duty Truck Technology certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/",
+   "links": "degree-certificate-program-index/hmdt/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/hmdt/(?:certificate)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "09267 Electronics Technology A.S., 22756 Electronics Technology certificate, 22799 Avionics Technology certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/",
+   "links": "degree-certificate-program-index/electricity-electronics-technical-calculations/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/electricity-electronics-technical-calculations/(?:electronics-technology|avionics-technology-certificate)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "19002 Early Intervention and Inclusion certificate, 32317 Early Childhood Education A.S.-T",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/",
+   "links": "degree-certificate-program-index/child-development/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/child-development/(?:early-intervention|early-childhood|as-?t-degree)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22732 Accounting certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/",
+   "links": "degree-certificate-program-index/accounting/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/accounting/(?:certificate)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22754 Computer Science certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/",
+   "links": "degree-certificate-program-index/computer-science/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/computer-science/(?:certificate)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22784 Wheel Alignment and Brakes certificate, 41789 Clean Vehicle certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/",
+   "links": "degree-certificate-program-index/automotive-technology/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/automotive-technology/(?:(wheel-alignment|clean-vehicle)[^/]*certificate)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22787 Advanced Automotive Collision Repair and Refinishing certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/",
+   "links": "degree-certificate-program-index/automotive-collision/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/automotive-collision/(?:advanced[^/]*certificate)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22792 Aviation Maintenance Technician certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/",
+   "links": "degree-certificate-program-index/aeronautics/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/aeronautics/(?:aviation-maintenance[^/]*certificate)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22816 Inspection Technology certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/",
+   "links": "degree-certificate-program-index/inspection-technology/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/inspection-technology/(?:certificate)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22818 Welding Technology certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/",
+   "links": "degree-certificate-program-index/welding-technology/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/welding-technology/(?:certificate)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22831 Library Technology certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/",
+   "links": "degree-certificate-program-index/library-technology/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/library-technology/(?:certificate)"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22768 HVACR certificate",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/",
+   "links": "degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/.",
+   "links_cap": 60,
+   "follow": "degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/(?:certificate)"
+  }
+ ]
+}

@@ -108,7 +108,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "The catalog prints 'Required Core: 13 units' above 'Completion of Level I Certificate of Accomplishment', but the Level I paths shown total 16 units (COSM 1) or 17 units (COSM 10 + COSM 11); the 13-unit figure was not recorded as a block total because it does not match. 13 + 28-29 = the printed Total Units 41-42."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

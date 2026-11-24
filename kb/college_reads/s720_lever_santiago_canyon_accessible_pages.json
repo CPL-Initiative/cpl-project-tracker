@@ -1,0 +1,24 @@
+{
+ "_readme": "S720 lever: Santiago Canyon College's registry row now names SCC_2026_2027_Catalog_accessible.pdf (1,165 pages by pypdf in paid read 45350768246, which refused the run before any extraction), where the pins of S720 named pages of SCC_2026_2027_Catalog.pdf (374 pages, page read 45341735139). This plan prints the accessible file's pages, line for line, so a session re-pins 11909, 21673 and 42990 to their sections there (or files a named gap) before the paid read goes again. One load, no model call, nothing written. The page read prints at most 1,000 PDF pages (PDF_PAGE_CAP_MAX), so the span is pp.166-1165: the old file's credit programs began about a quarter of the way in (CSU GE on p.102 of 374), past p.166 of 1,165 by the same share.",
+ "college": "Santiago Canyon College",
+ "questions": {
+  "own_page": "Where each program's own section opens and where its 'Control Number' line closes it in the accessible file, so a pdf_pages pin can name the page, the words it opens on and its until words."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf"
+  }
+ ],
+ "pdf_span": [
+  166,
+  1165
+ ],
+ "pdf_page_cap": 1000,
+ "pdf_unfolded": true
+}

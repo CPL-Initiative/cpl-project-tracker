@@ -123,7 +123,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "RC 11L is printed with 2 units in the catalog, but the state file stores 2.5; the 2nd Year Fall Semester block is stated as 14.5 units while its printed course units sum to 14, consistent with RC 11L being 2.5 units. Recorded as printed (2)."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

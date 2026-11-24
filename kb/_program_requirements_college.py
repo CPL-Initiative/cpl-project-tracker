@@ -5320,10 +5320,14 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                             or (rule or {}).get("heading"), above,
                             numbers_after=ctx or False)
             # A gated program the after path did not bind (pdf_best's after_unbound; none at all when the
-            # picker found no window): a passing filed record stays on file unless the run forces it.
+            # picker found no window): a passing filed record stays on file unless the run forces it. A pinned
+            # program never takes the after path (pdf_best reads a pin's heading first): a person named its
+            # window, so it is never unbound (S720 second reader, finding 3: Santiago Canyon's pins under uniform
+            # pdf_numbers_after were marked no_window, and a forced read kept their failing records).
             unbound = ({"refused": (best or {}).get("refused"), "why": (best or {}).get("after_unbound") or "no_window",
                         **({"judged": best["judged"]} if (best or {}).get("judged") else {})}
-                       if ctx and not (best and best.get("bound")) else None)
+                       if ctx and not (best and best.get("bound")) and not pinned.get(prog["control_number"])
+                       else None)
             if best and (best.get("refused") or best.get("after_unbound") == "block_names_other_program"):
                 # Decision 16 (a): a refused block is never filed as a read page. Its own method, no text,
                 # no coverage claimed; refused_passing names it where the filed record passes.
@@ -5481,6 +5485,86 @@ def prior_read(spec: str | None, reg: dict, programs: list[dict]) -> tuple[dict 
     return out, None
 
 
+# A program's own page on a site catalog, named per program in the college's reconcile entry (site_pages, S720):
+# the page-level counterpart of pdf_pages. San Bernardino Valley's CourseLeaf catalog gives each certificate a page
+# of its own (.../accounting/accounting-certificate-achievement/), and assign() handed 15 of them their sister
+# degree's page or the department's landing page, which prints the title with the award in a list of the
+# department's programs and every listed code in its courses tab (gap census run 45319725062, reader_page_assignment).
+def site_pin_entries(college: str) -> dict[str, dict]:
+    """The college's site_pages pins, {control number: {url, evidence}}; empty when none."""
+    import _program_requirements_reconcile as R
+    pins = (R.load_steps().get(college) or {}).get("site_pages") or {}
+    return {str(cn): pin for cn, pin in pins.items() if isinstance(pin, dict) and pin.get("url")}
+
+
+def _page_key(url: str | None) -> str:
+    """An address as a pin compares it: the host in lower case, no fragment, no trailing slash."""
+    u = urllib.parse.urlparse(url or "")
+    return "%s://%s%s%s" % (u.scheme, (u.hostname or "").lower(), u.path.rstrip("/"), "?" + u.query if u.query else "")
+
+
+def site_heading_names(pg: dict, program: dict) -> tuple[bool, str]:
+    """(whether the page's own heading prints the program's title with its award, the heading tested). The heading
+    is the page's h1 as the capture holds it, which drop_banner_h1() blanks where the catalog prints one banner on
+    every page (never read back from the raw load), else its title before the site's name (Coastline's pages,
+    S381). Each is tested alone with the reader's rule A (RC.heading_line), so one never lends the other its award.
+    Self-recall on San Bernardino Valley's filed sources: tests/program_requirements_site_pins_s720_test.py."""
+    h1 = pg.get("h1") if "h1" in pg else (pg.get("got") or {}).get("h1")
+    title0 = ((pg.get("title") or (pg.get("got") or {}).get("title") or "").split("|")[0]).strip()
+    heads = [x for x in ((h1 or "").strip(), title0) if x]
+    named = any(RC.heading_line([x], program.get("title"), program.get("award")) >= 0 for x in heads)
+    return named, (heads[0] if heads else "")
+
+
+def site_pinned(programs: list[dict], pages: list[dict], pins: dict[str, dict]) -> dict[str, dict]:
+    """Each pinned program's page: {control number: {"best": candidate} or {"why": refusal}}.
+
+    A pin binds only where the page was read, its own heading (its h1, or its title where the h1 is blank or a
+    banner) prints every word of the program's title with its award (the reader's rule A heading test,
+    kb/_reader_page_checks.py heading_line, on the heading alone, so a department list on the page body never
+    stands in for it), and candidates() accepts it for the program on its
+    own (the coarse net, ACCEPT_SHARE coverage, rules B and C). The pin moves only the program it names: every
+    other program keeps the page assign() gave it, the pinned page included. A refused pin reads the program from
+    no page (the capture files why), so a paid read never extracts it from the page the pin was meant to replace."""
+    by_cn = {p["control_number"]: p for p in programs}
+    by_url = {}
+    for pg in pages:
+        by_url.setdefault(_page_key(pg.get("url")), pg)
+    out: dict[str, dict] = {}
+    for cn, pin in sorted(pins.items()):
+        prog = by_cn.get(cn)
+        if not prog or not prog.get("closed_list"):
+            continue
+        pg = by_url.get(_page_key(pin["url"]))
+        if pg is None:
+            out[cn] = {"why": "the pinned page was not read"}
+            continue
+        named, head = site_heading_names(pg, prog)
+        if not named:
+            out[cn] = {"why": "the pinned page's heading (%r) does not print the program's title with its award"
+                              % head}
+            continue
+        cands = candidates(prog, [pg], programs, {})
+        if not cands:
+            out[cn] = {"why": "the pinned page is no candidate: %s" % ((near_miss(prog, [pg]) or {}).get("why") or "")}
+            continue
+        out[cn] = {"best": dict(cands[0], pinned=True)}
+    return out
+
+
+def with_site_pins(given: dict[str, dict], pinned: dict[str, dict], pins: dict[str, dict]) -> tuple[dict, dict]:
+    """(assign()'s result with each bound pin's page in place of its program's, the capture's site_pins account).
+    Only a bound pin's program changes; a refused one keeps assign()'s entry here, and the capture reads it from no
+    page (its "why" in pinned)."""
+    out = dict(given)
+    for cn, got in pinned.items():
+        if "best" in got:
+            out[cn] = {"best": got["best"]}
+    account = {cn: ({"url": pins[cn]["url"], "bound": True} if "best" in got else
+                    {"url": pins[cn]["url"], "bound": False, "why": got["why"]}) for cn, got in pinned.items()}
+    return out, account
+
+
 def capture(college: str, out_dir: str, limit: int = 0) -> int:
     t0 = time.time()
     programs = college_programs(college)
@@ -5564,6 +5648,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
     delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
     pw, browser, reader = P.open_reader(delay)
     cache: dict = {}
+    site_pins: dict = {}
     try:
         scope = None
         if platform == "curriqunet":
@@ -5616,6 +5701,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                 listing_failed = len(index_failed)
             report["listing_failed"] = listing_failed
             urls = urls[:MAX_PAGES]
+            # A site_pages pin's page is read whether or not the listing named it (S720).
+            site_pins = site_pin_entries(college)
+            urls += [pin["url"] for _, pin in sorted(site_pins.items()) if pin["url"] not in urls]
             pages = []
             print("%s: %d programs (%d with a course list), %d candidate pages, %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(urls), delay / 1000), flush=True)
@@ -5653,6 +5741,13 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         recs, fallback = [], 0
         P.MAX_LOADS = FALLBACK_LOADS      # the link search, shorter here: most programs already have a page
         given = assign(programs, pages)
+        pinned_site = site_pinned(programs, pages, site_pins) if site_pins else {}
+        if pinned_site:
+            given, report["site_pins"] = with_site_pins(given, pinned_site, site_pins)
+            for cn, got in pinned_site.items():
+                if "why" in got:
+                    print("::warning::%s %s: the reconcile entry's site_pages pin is refused (%s); no page is read "
+                          "for it" % (college, cn, got["why"]), flush=True)
         refused = {}
         if platform == "coursedog":
             own_codes, shared_codes = cd_read_codes(os.path.join(COLLEGE_DIR, slug_of(college)),
@@ -5666,6 +5761,12 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                 # Its own page answered a bot check: no other page stands in for it (S646).
                 rec = source_record(college, prog, reg, None, "page_challenged")
                 rec["challenged_code"] = refused[prog["control_number"]]
+            elif "why" in (pinned_site.get(prog["control_number"]) or {}):
+                # A refused site_pages pin (S720): no other page stands in for the one a person named.
+                rec = source_record(college, prog, reg, None, "not_found")
+                rec["near_miss"] = {"url": site_pins[prog["control_number"]]["url"],
+                                    "why": "the reconcile entry's site_pages pin is refused: %s"
+                                           % pinned_site[prog["control_number"]]["why"]}
             else:
                 g = given.get(prog["control_number"]) or {}
                 best, method = g.get("best"), "sitemap_page"
@@ -5706,6 +5807,8 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and link_page_ok(b.get("url") or "", scope):
                         best, method = dict(b, label=None), "link_search"
                 rec = source_record(college, prog, reg, best, method if best else "not_found")
+                if best and best.get("pinned"):
+                    rec["source"]["pinned"] = True
                 if not best:
                     rec["near_miss"] = near_miss(prog, pages)
             recs.append(rec)

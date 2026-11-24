@@ -107,7 +107,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "Required Electives total 12 units, with a minimum of 6 units from List A; List A is 'Select 6 to 12 units' and List B is 'Select a MAXIMUM of 7 units (if less than 12 units are completed from List A)'. List B has no fixed minimum (it makes up the remainder of the 12 elective units), so minimum and stated were left null; reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

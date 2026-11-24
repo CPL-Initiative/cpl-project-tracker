@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Accounting",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-aa-degree/",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-certificate-achievement/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8295,
+  "input_tokens": 8192,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8295,
-    "output_tokens": 1766,
+    "input_tokens": 8192,
+    "output_tokens": 1505,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,73 +30,74 @@
     "model": null
    }
   ],
-  "output_tokens": 1766,
+  "output_tokens": 1505,
   "output_tokens_details": {
-   "thinking_tokens": 757
+   "thinking_tokens": 266
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0685,
- "ms": 16910,
- "seconds": 17.2,
+ "cost_usd": 0.06287,
+ "ms": 12085,
+ "seconds": 23.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 12,
    "listed": 12,
-   "share": 0.0,
-   "missing": [
-    "ACCT200",
-    "ACCT201",
-    "ACCT47",
-    "BUSAD100",
-    "BUSAD210",
-    "ECON208",
-    "ECONC2001",
-    "ECONC2001H",
-    "ECONC2002",
-    "ECONC2002H",
-    "STATC1000",
-    "STATC1000H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 5,
+   "codes": [
+    "ACCT30",
+    "ACCT90",
+    "CIT101",
+    "CIT114",
+    "MATH102"
+   ],
+   "flagged": [
+    "ACCT30",
+    "ACCT90",
+    "CIT101",
+    "CIT114",
+    "MATH102"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    27.0,
+    27.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -107,15 +108,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Accounting Associate of Arts Degree",
+   "section_heading": "Accounting Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 27
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -132,67 +133,165 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Organize, analyze, and interpret measurable business transactions.",
+    "Prepare financial statements by applying Generally Accepted Accounting Principles.",
+    "Communicate financial and managerial accounting information applying common methods of business communication.",
+    "Recognize the value of diversity in opinions, values, abilities, and cultures in all business environments.",
+    "Identify ethical and social responsibility issues facing today’s business."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ACCT 47",
-    "why": "named only in the A.A. degree section (as ACCT 047); certificate section not in text"
+    "name": "Required Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "ACCT 047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 208",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ACCT 200",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "ACCT 201",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "BUSAD 100",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "BUSAD 210",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "ECON 208",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "STAT C1000H",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "ECON C2001",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "ECON C2001H",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "ECON C2002",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "ECON C2002H",
-    "why": "named only in the A.A. degree section; certificate section not in text"
+    "name": "Recommended Courses:",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 030",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT 090",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIT 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source URL and text are the Accounting Associate of Arts Degree page; the Accounting Certificate of Achievement appears only as a link in the navigation menu, and its own requirements are not printed in the text, so no blocks were recorded for the certificate.",
-   "The A.A. section lists required courses totaling 27 units (ACCT 047 3, ACCT 200 4, ACCT 201 4, BUSAD 100 3, BUSAD 210 3, ECON 208 4 or STAT C1000/C1000H, ECON C2001 3 or C2001H, ECON C2002 3 or C2002H) and recommended courses ACCT 030, ACCT 090, CIT 101, CIT 114, MATH 102. These match the closed list exactly, so the certificate may share the same requirements; a reviewer should check the certificate's own page.",
-   "The A.A. page prints seven program learning outcomes and names entry-level jobs (accounting clerk, accounts payable/receivable clerk, claims clerk, payroll clerk, credit clerk, bookkeeper, accounting intern, tax preparer); they are written for the A.A. degree and were not recorded for the certificate.",
-   "The A.A. requires Cal-GETC or SBVC GE; not applicable to the certificate."
+   "The catalog prints ACCT 047; treated as the closed list's ACCT 47 (leading zero only), so catalog_addition is false.",
+   "Alternatives STAT C1000, STAT C1000H, ECON C2001H and ECON C2002H have no units printed beside them in the catalog; units left null (state file lists 4, 4, 3, 3).",
+   "The 27-unit total is printed as 'Total Units 27' under the required course list; recorded both as total_units and as the required block's stated total.",
+   "Program learning outcomes come from the page's outcomes tab for this certificate.",
+   "The description mentions 'entry-level positions' but names no specific career or job title, so careers is empty."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": "45355976381",
+ "catalog_year": "2026-2027"
 }

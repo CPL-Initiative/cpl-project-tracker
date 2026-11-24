@@ -135,7 +135,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "degree_summary_ge_none",
+    "label": "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+    "words": "Total Major Units 33/33 recorded as total_units (15 core + 18 elective). Total Overall Units 60/60 is printed in the program's Unit Summary and recorded as degree_total. General Education Units and Elective Units to reach 60 are printed as 'None'; no GE pattern is named (text refers only to 'breadth requirements')."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 96,
+   "ge_pattern": 50,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

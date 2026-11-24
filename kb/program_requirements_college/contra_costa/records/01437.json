@@ -128,7 +128,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "degree_summary_ge_none",
+    "label": "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+    "words": "degree_total 60 taken from the Unit Summary 'Min/Max Units - Total Program 60 / 60'; GE local and CSU/IGETC units printed as None/N/A, and electives as None."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 50,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

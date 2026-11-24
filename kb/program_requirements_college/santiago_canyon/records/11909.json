@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Construction Management",
  "award": "A.S. Degree",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=406",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12412,
+  "input_tokens": 6705,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12412,
-    "output_tokens": 1094,
+    "input_tokens": 6705,
+    "output_tokens": 1994,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,57 +30,47 @@
     "model": null
    }
   ],
-  "output_tokens": 1094,
+  "output_tokens": 1994,
   "output_tokens_details": {
-   "thinking_tokens": 308
+   "thinking_tokens": 861
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07153,
- "ms": 9743,
- "seconds": 9.9,
+ "cost_usd": 0.0667,
+ "ms": 17763,
+ "seconds": 18.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 9,
-   "share": 0.0,
+   "share": 0.889,
    "missing": [
-    "BUS90",
-    "CIS101",
-    "CIS110",
-    "MGMT122",
-    "PBLC110",
-    "PBLC50",
-    "PBLC61",
-    "PBLC74",
-    "PBLC80"
+    "BUS90"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 5,
    "codes": [
-    "CNST140",
-    "CNST141",
-    "CNST142",
-    "CNST143",
-    "CNST144",
-    "CNST145"
+    "BUS222",
+    "PASV150",
+    "PASV152",
+    "PASV153",
+    "PBLC154"
    ],
    "flagged": [
-    "CNST140",
-    "CNST141",
-    "CNST142",
-    "CNST143",
-    "CNST144",
-    "CNST145"
+    "BUS222",
+    "PASV150",
+    "PASV152",
+    "PASV153",
+    "PBLC154"
    ],
    "pass": true
   },
@@ -88,12 +78,12 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    18.0,
-    18.0
+    21.0,
+    21.0
    ],
    "stated": [
-    18.0,
-    18.0
+    21.0,
+    21.0
    ],
    "against": "program",
    "why": []
@@ -113,7 +103,7 @@
    "pass": true
   },
   "careers": {
-   "count": 4,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -123,15 +113,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Construction Management, AS",
+   "section_heading": "Construction Administration for Public Works, AS",
    "measure": "units",
    "total_units": {
-    "min": 18,
-    "max": 18
+    "min": 21,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -150,10 +140,7 @@
    "electives_fill_degree": false,
    "outcomes": [],
    "careers": [
-    "assistant project manager",
-    "construction coordinator",
-    "contract administrator",
-    "superintendent"
+    "project managers"
    ]
   },
   "blocks": [
@@ -163,47 +150,120 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 18,
-     "max": 18
+     "min": null,
+     "max": null
     },
     "courses": [
      {
-      "code": "CNST140",
+      "code": "PBLC050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PBLC061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS222",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "CNST141",
+      "code": "MGMT122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PASV150",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "CNST142",
+      "code": "PASV152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select three (3) courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PBLC074",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PBLC080",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PBLC110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PASV153",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "CNST143",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CNST144",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CNST145",
+      "code": "PBLC154",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -217,44 +277,18 @@
    {
     "code": "BUS 90",
     "why": "not in the text"
-   },
-   {
-    "code": "CIS 101",
-    "why": "named only in other programs' sections (Construction Administration, Construction Inspection, Environmental Management)"
-   },
-   {
-    "code": "CIS 110",
-    "why": "named only in the Construction Administration for Public Works, CA section"
-   },
-   {
-    "code": "MGMT 122",
-    "why": "named only in other programs' sections, not in Construction Management, AS"
-   },
-   {
-    "code": "PBLC 110",
-    "why": "named only in the Construction Administration for Public Works, CA section"
-   },
-   {
-    "code": "PBLC 50",
-    "why": "named only in other programs' sections, not in Construction Management, AS"
-   },
-   {
-    "code": "PBLC 61",
-    "why": "named only in other programs' sections, not in Construction Management, AS"
-   },
-   {
-    "code": "PBLC 74",
-    "why": "named only in the Construction Administration for Public Works, CA section"
-   },
-   {
-    "code": "PBLC 80",
-    "why": "named only in the Construction Administration for Public Works, CA section"
    }
   ],
-  "notes": []
+  "notes": [
+   "The catalog section is titled 'Construction Administration for Public Works, AS', not 'Construction Management'; reviewer should confirm this is the matching program.",
+   "The catalog prints 'Major Requirements: (Total Units 12.0 - 12.0)' over PBLC050, PBLC061, CIS101 and the nested 'Select one (1) course' list; the required-courses block itself holds 9 units, so its stated is left null and the 12 units cover both blocks.",
+   "PASV153 and PBLC154 are printed under 'Only (1) of the two (2) courses below can be used to substitute any of the above courses on this list. (Total Units 0.0 - 0.0)'; they are recorded in the select-three block, but at most one of them may count toward the three courses.",
+   "No program learning outcomes or general education pattern are printed in this section."
+  ]
  },
- "extracted_run": "43339249633",
- "source_sha": "484266d64232ebf0",
+ "extracted_run": "45362372486",
+ "catalog_year": "2026-2027",
+ "source_sha": "fe9bf8259f6c7726",
  "source_codes": [
   "CIS101",
   "CIS110",

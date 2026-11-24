@@ -1,0 +1,142 @@
+{
+ "_readme": "S720 lever: San Bernardino Valley College's 16 programs on the reader_page_assignment lever (and 22768, found and never extracted), each read on the page of its own that its department page links (college-page-read run 45341735139), as the harvest's capture reads it (capture_view: the pilot's page script, the visible text with the hidden tab panels appended), so a session checks each site_pages pin against the text the capture will read and a test pins it. No model call, nothing written.",
+ "college": "San Bernardino Valley College",
+ "questions": {
+  "own_page": "What the capture reads on each program's own page: its heading, its course list and its total."
+ },
+ "keywords": [
+  "certificate of achievement[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}units?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "04881",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "09267",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-as-degree/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22756",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22799",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "19002",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "32317",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/early-childhood-education-ast-degree/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22732",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22754",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22784",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "41789",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-certificate/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22787",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22792",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22816",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22818",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-technology-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22831",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22768",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-certificate-achievement/",
+   "capture_view": true
+  }
+ ]
+}

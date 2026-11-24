@@ -1,12 +1,12 @@
 {
  "college": "American River College",
  "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
- "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
- "fetched_at": "2026-11-11",
+ "fetched_by": "S720 lever (a worker of SkyEider, the CPL Queue routine's run of 2026-11-24), filing the file the college's address serves; the runner fetches it with the hand-filed-copy user agent and its pin step fixes the hash",
+ "fetched_at": "2026-11-24",
  "catalog_year": "2026-2027",
  "copy_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
- "note": "The college recompiled its 2026-2027 catalog on 2026-11-06 (Last-Modified), so the copy Sam filed on 2026-10-17 (8,052,937 bytes, sha256 424e6222f9767fb7067628e101000e5a7358d40a5e17f0a477253db9711623b2, https://github.com/user-attachments/files/33599450/arc-catalog-26-27.pdf, pinned by run 39046625137) is the earlier edition. The host answers the census and page-read user agent 404 (page read 43014049067) and answers the harvest's hand-filed-copy user agent 200 (COBIx, issue #3096, 2026-11-11: 8,010,776 bytes, sha256 a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708, 'American River College 2026-2027 Official Catalog'). Sam ruled on #3096 (2026-11-11, relayed by COBIx: 'yes to all recommendations') that a copy_url may point at the college's own open address. The first test of the blocked-source loop (docs/reference/blocked_sources.md): the pin below is the runner's own hash, to compare with COBIx's.",
- "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708",
- "bytes": 8010776,
- "pinned_run": "43019771268"
+ "note": "The record of 2026-11-11 (sha256 a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708, 8,010,776 bytes, pinned by run 43019771268) is retired to retired/american_river_2026-11-11.json: by S714 the address served a file whose sha256 differs (f-american-river-hand-filed-sha-mismatch-s714), so every read of it was refused. Same address and the same copy_url, ruled open by Sam on #3096 (2026-11-11). The sha256 was filed empty, and the read job's pin step fixed it on the runner's first fetch (run 45341899083: 8,050,566 bytes). The check of the filing is that free read's capture (extract 0): its catalog year, its page count against the 994 pages of the retired file, and its would_extract list of the programs whose own pages moved.",
+ "sha256": "5a86716d570e32ecdbeb75a1fa03c45e1b33888b70156f17a04f0461d5342035",
+ "bytes": 8050566,
+ "pinned_run": "45341899083"
 }

@@ -13,7 +13,9 @@ S680 already applied elsewhere.
 """
 
 COLLECTION_LANE = (
-    "Lassen College", "Cosumnes River College", "Allan Hancock College", "Chabot College", "Santiago Canyon College",
+    # S720: Cosumnes River College left the lane (a stale S681 hold), so the named gaps file section_cut_off on its
+    # records whose electives fill the scorer now refuses (04602, 04614), with the conductor's go.
+    "Lassen College", "Allan Hancock College", "Chabot College", "Santiago Canyon College",
 )
 
 # The old name, kept because another open branch still imports it. The next run removes this line.

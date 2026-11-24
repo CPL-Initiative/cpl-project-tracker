@@ -1,0 +1,39 @@
+{
+  "_what": "S720 (lane 2, Ventura): the reconcile_steps lever of the committed census (run 45319725062) at the college, frozen: kb/_program_piles_s720_ventura.py planned from it.",
+  "written_at": "2026-11-24 07:08Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "Ventura College",
+      "programs": 22,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "06948",
+        "06957",
+        "06973",
+        "08253",
+        "20576",
+        "20599",
+        "30587",
+        "31298",
+        "31455",
+        "32054",
+        "32578",
+        "32834",
+        "35654",
+        "37415",
+        "39961",
+        "39995",
+        "42967",
+        "44994",
+        "44995",
+        "45348",
+        "45427",
+        "45731"
+      ]
+    }
+  ]
+}

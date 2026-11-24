@@ -93,7 +93,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "unit_line_not_read",
+    "label": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.",
+    "words": "The third 'Required' block (18.5 units) also includes 12 units of 'any transferable or degree applicable ECE course'; these are ECE-restricted electives, not open electives, so open_elective_units is null and they are not listed as courses."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -362,20 +362,21 @@
    "HMDT98"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-as-degree/",
-   "title": "Heavy/Medium Duty Truck Technology Associate of Science Degree | Academic Catalog",
-   "h1": "Heavy/Medium Duty Truck Technology Associate of Science Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-certificate-achievement/",
+   "title": "Heavy/Medium Duty Truck Technology Certificate of Achievement | Academic Catalog",
+   "h1": "Heavy/Medium Duty Truck Technology Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "heavy/​medium duty truck technology associate of science degree heavy/​medium duty truck technology certificate of achievement",
+    "section_line": "heavy/medium duty truck technology certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 9,
-  "text_chars": 5848
+  "text_chars": 5701
  },
  {
   "control_number": "04882",
@@ -1039,9 +1040,9 @@
    "TECALC87"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/",
-   "title": "Avionics Technology Associate of Science Degree | Academic Catalog",
-   "h1": "Avionics Technology Associate of Science Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-as-degree/",
+   "title": "Electronics Technology Associate of Science Degree | Academic Catalog",
+   "h1": "Electronics Technology Associate of Science Degree",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -1049,10 +1050,11 @@
     "section": "as",
     "section_line": "electronics technology associate of science degree",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 10,
-  "text_chars": 5323
+  "text_chars": 5274
  },
  {
   "control_number": "09268",
@@ -2903,20 +2905,21 @@
    "CDEVC1000H"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-aa-degree/",
-   "title": "Child Development - Early Intervention and Inclusion Associate of Arts Degree | Academic Catalog",
-   "h1": "Child Development - Early Intervention and Inclusion Associate of Arts Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-certificate-achievement/",
+   "title": "Child Development - Early Intervention and Inclusion Certificate of Achievement | Academic Catalog",
+   "h1": "Child Development - Early Intervention and Inclusion Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "child development -​ early intervention and inclusion associate of arts degree child development -​ early intervention and inclusion certificate of achievement",
+    "section_line": "child development - early intervention and inclusion certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 11,
-  "text_chars": 5612
+  "text_chars": 5381
  },
  {
   "control_number": "19003",
@@ -2976,20 +2979,21 @@
    "STATC1000H"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-aa-degree/",
-   "title": "Accounting Associate of Arts Degree | Academic Catalog",
-   "h1": "Accounting Associate of Arts Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-certificate-achievement/",
+   "title": "Accounting Certificate of Achievement | Academic Catalog",
+   "h1": "Accounting Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "accounting associate of arts degree accounting certificate of achievement",
+    "section_line": "accounting certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 12,
-  "text_chars": 5383
+  "text_chars": 4964
  },
  {
   "control_number": "22733",
@@ -3052,20 +3056,21 @@
    "CS77"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-as-degree/",
-   "title": "Computer Science Associate of Science Degree | Academic Catalog",
-   "h1": "Computer Science Associate of Science Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-certificate-achievement/",
+   "title": "Computer Science Certificate of Achievement | Academic Catalog",
+   "h1": "Computer Science Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "computer science associate of science degree computer science certificate of achievement",
+    "section_line": "computer science certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 10,
-  "text_chars": 5621
+  "text_chars": 5017
  },
  {
   "control_number": "22756",
@@ -3087,20 +3092,21 @@
    "TECALC87"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/",
-   "title": "Avionics Technology Associate of Science Degree | Academic Catalog",
-   "h1": "Avionics Technology Associate of Science Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-certificate-achievement/",
+   "title": "Electronics Technology Certificate of Achievement | Academic Catalog",
+   "h1": "Electronics Technology Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "electronics technology associate of science degree electronics technology certificate of achievement",
+    "section_line": "electronics technology certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 10,
-  "text_chars": 5323
+  "text_chars": 5274
  },
  {
   "control_number": "22759",
@@ -3233,20 +3239,21 @@
    "TECALC87"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/",
-   "title": "Heating, Ventilation, Air Conditioning and Refrigeration Associate of Science Degree | Academic Catalog",
-   "h1": "Heating, Ventilation, Air Conditioning and Refrigeration Associate of Science Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-certificate-achievement/",
+   "title": "Heating, Ventilation, Air Conditioning and Refrigeration Certificate of Achievement | Academic Catalog",
+   "h1": "Heating, Ventilation, Air Conditioning and Refrigeration Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "heating, ventilation, air conditioning and refrigeration associate of science degree heating, ventilation, air conditioning and refrigeration certificate of achievement",
+    "section_line": "heating, ventilation, air conditioning and refrigeration certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 9,
-  "text_chars": 5006
+  "text_chars": 4806
  },
  {
   "control_number": "22771",
@@ -3380,20 +3387,21 @@
    "TECALC87"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-as-degree/",
-   "title": "Automotive Wheel Alignment and Brakes Associate of Science Degree | Academic Catalog",
-   "h1": "Automotive Wheel Alignment and Brakes Associate of Science Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-certificate-achievement/",
+   "title": "Automotive Wheel Alignment and Brakes Certificate of Achievement | Academic Catalog",
+   "h1": "Automotive Wheel Alignment and Brakes Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "automotive wheel alignment and brakes associate of science degree automotive wheel alignment and brakes certificate of achievement",
+    "section_line": "automotive wheel alignment and brakes certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 9,
-  "text_chars": 5058
+  "text_chars": 5110
  },
  {
   "control_number": "22787",
@@ -3412,20 +3420,21 @@
    "ACR60"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-as-degree/",
-   "title": "Advanced Automotive Collision Repair and Refinishing Associate of Science Degree | Academic Catalog",
-   "h1": "Advanced Automotive Collision Repair and Refinishing Associate of Science Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-certificate-achievement/",
+   "title": "Advanced Automotive Collision Repair and Refinishing Certificate of Achievement | Academic Catalog",
+   "h1": "Advanced Automotive Collision Repair and Refinishing Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "advanced automotive collision repair and refinishing associate of science degree advanced automotive collision repair and refinishing certificate of achievement",
+    "section_line": "advanced automotive collision repair and refinishing certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 7,
-  "text_chars": 4873
+  "text_chars": 4693
  },
  {
   "control_number": "22788",
@@ -3478,20 +3487,21 @@
    "AERO55L"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-as-degree/",
-   "title": "Aviation Maintenance Technician Associate of Science Degree | Academic Catalog",
-   "h1": "Aviation Maintenance Technician Associate of Science Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-certificate-achievement/",
+   "title": "Aviation Maintenance Technician Certificate of Achievement | Academic Catalog",
+   "h1": "Aviation Maintenance Technician Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "aviation maintenance technician associate of science degree aviation maintenance technician certificate of achievement",
+    "section_line": "aviation maintenance technician certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 12,
-  "text_chars": 5374
+  "text_chars": 5501
  },
  {
   "control_number": "22799",
@@ -3518,17 +3528,18 @@
    "TECALC87"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/",
-   "title": "Avionics Technology Associate of Science Degree | Academic Catalog",
-   "h1": "Avionics Technology Associate of Science Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-certificate-achievement/",
+   "title": "Avionics Technology Certificate of Achievement | Academic Catalog",
+   "h1": "Avionics Technology Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "avionics technology associate of science degree avionics technology certificate of achievement",
+    "section_line": "avionics technology certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 15,
   "text_chars": 5662
@@ -3592,20 +3603,21 @@
    "INSPEC30"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/",
-   "title": "Inspection Technology | Academic Catalog",
-   "h1": "Inspection Technology",
-   "text_from": "innerText+tabs",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-certificate-achievement/",
+   "title": "Inspection Technology Certificate of Achievement | Academic Catalog",
+   "h1": "Inspection Technology Certificate of Achievement",
+   "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "inspection technology associate of science degree inspection technology certificate of achievement",
+    "section_line": "inspection technology certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 13,
-  "text_chars": 8112
+  "text_chars": 5300
  },
  {
   "control_number": "22818",
@@ -3632,20 +3644,21 @@
    "WELD91"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/",
-   "title": "Welding Technology | Academic Catalog",
-   "h1": "Welding Technology",
-   "text_from": "innerText+tabs",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-technology-certificate-achievement/",
+   "title": "Welding Technology Certificate of Achievement | Academic Catalog",
+   "h1": "Welding Technology Certificate of Achievement",
+   "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "welding technology associate of science degree welding technology certificate of achievement",
+    "section_line": "welding technology certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 15,
-  "text_chars": 14294
+  "text_chars": 5842
  },
  {
   "control_number": "22819",
@@ -3858,20 +3871,21 @@
    "LIB98"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/",
-   "title": "Library Technology | Academic Catalog",
-   "h1": "Library Technology",
-   "text_from": "innerText+tabs",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-certificate-achievement/",
+   "title": "Library Technology Certificate of Achievement | Academic Catalog",
+   "h1": "Library Technology Certificate of Achievement",
+   "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "library technology associate of arts degree library technology certificate of achievement",
+    "section_line": "library technology certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 12,
-  "text_chars": 10486
+  "text_chars": 5116
  },
  {
   "control_number": "22832",
@@ -7523,20 +7537,21 @@
    "HMDT64"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-as-degree/",
-   "title": "Automotive Clean Vehicle Technology Associate of Science Degree | Academic Catalog",
-   "h1": "Automotive Clean Vehicle Technology Associate of Science Degree",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-certificate/",
+   "title": "Automotive Clean Vehicle Technology Certificate of Achievement | Academic Catalog",
+   "h1": "Automotive Clean Vehicle Technology Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "automotive clean vehicle technology associate of science degree automotive clean vehicle technology certificate of achievement",
+    "section_line": "automotive clean vehicle technology certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 6,
-  "text_chars": 4995
+  "text_chars": 5085
  },
  {
   "control_number": "41865",

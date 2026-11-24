@@ -187,7 +187,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "Section heading prints 'Area of Emphasis: (20 units)', but the introductory text on page 160 says 'If completed entirely at SMC, the Area of Emphasis requires 21 units.' Recorded 20 from the section's own heading; reviewer should check the discrepancy."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
