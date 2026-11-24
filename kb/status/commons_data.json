@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T08:20:30Z",
+ "written_at": "2026-11-24T08:29:35Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -3508,7 +3508,7 @@
    "outcomes_file": "kb/status/commons_data_programs/cosumnes_river.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-23T13:44:05Z",
+   "read_at": "2026-11-24T08:22:30Z",
    "read_kind": "capture",
    "cost_usd": 19.08,
    "passed_at_read": 167,
@@ -3534,9 +3534,9 @@
    "failed_checks": {
     "coverage": 17,
     "invented": 8,
-    "arithmetic": 34,
+    "arithmetic": 33,
     "repeated": 0,
-    "outcomes": 9
+    "outcomes": 12
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
@@ -3544,8 +3544,8 @@
    "capture_root": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 342.1,
-   "run": "45185759855",
+   "read_seconds": 341.2,
+   "run": "45355422235",
    "levers": {
     "reconcile_steps": 18,
     "ge_units_steps": 14,
@@ -3559,8 +3559,8 @@
      "models": {
       "claude-opus-5-5": 217
      },
-     "run": "45185759855",
-     "at": "2026-11-23T13:44:05Z",
+     "run": "45355422235",
+     "at": "2026-11-24T08:22:30Z",
      "cost_usd": 19.08,
      "platform": "pdf"
     },
