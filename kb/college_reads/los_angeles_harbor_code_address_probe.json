@@ -1,0 +1,28 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Los Angeles Harbor College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "Los Angeles Harbor College",
+ "questions": {
+  "code_esl": "Does this page name Los Angeles Harbor College's E.S.L., and under what heading?",
+  "code_nrshca": "Does this page name Los Angeles Harbor College's NRS HCA, and under what heading?"
+ },
+ "keywords": [
+  "E\\.S\\.L\\.",
+  "NRS\\ HCA"
+ ],
+ "pages": [
+  {
+   "url": "https://lahc.edu/academics/aos/esl",
+   "answers": [
+    "code_esl"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.lahc.edu/academics/aos/cna-hha",
+   "answers": [
+    "code_nrshca"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

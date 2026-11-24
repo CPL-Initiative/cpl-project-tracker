@@ -38,6 +38,8 @@ SUBJECTS = os.path.join("kb", "hand_filed_catalogs", "subjects")
 TITLES = os.path.join("kb", "status", "local_subject_titles.json")
 PLANS = os.path.join("kb", "college_reads")
 RULE = "code_address"
+SEARCH_RULE = "search_page"
+SEARCHES = os.path.join("kb", "reference", "subject_web_searches.json")
 TS = re.compile(r"^\d{4}-\d\d-\d\dT[\d:.]+Z ?")
 
 
@@ -91,7 +93,36 @@ def plans():
             "keywords": [re.escape(c) for c in codes],
             "pages": [{"url": base + slug_of_code(c) + "/", "answers": ["code_" + slug_of_code(c)]} for c in codes],
         }
+    add_search_pages(out, by)
     return out
+
+
+def add_search_pages(out, by):
+    """A web search a session filed (kb/reference/subject_web_searches.json) that found a page and recorded no title:
+    Cerritos's INST search of 2026-11-21 found the INST catalog page, and the search result did not show its heading,
+    so no one read it. Each such page is read once, under the same test: its heading must name the code."""
+    srch = load(SEARCHES).get("searches") or []
+    for x in srch:
+        if x.get("title") or not x.get("result_url") or x.get("college") not in by:
+            continue
+        slug, code, url = x["college"], x["local_code"], x["result_url"]
+        url = re.sub(r"^http://", "https://", url)    # a plan reads https only (tests/college_page_read_test.py)
+        path = os.path.join(ROOT, SUBJECTS, slug + ".json")
+        d = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {}
+        done = {(code_key(t.get("code")), t.get("address")) for t in (d.get("code_address_tried") or [])}
+        done |= {(code_key(r.get("code")), r.get("address")) for r in (d.get("rows") or [])}
+        if (code_key(code), url) in done or (code_key(code), re.sub(r"^https://", "http://", url)) in done:
+            continue
+        p = out.setdefault(slug, {
+            "_readme": "S718 (SkyPetrel), 2026-11-23: pages for %s read by kb/_subject_code_address_probe.py. A heading "
+                       "is filed only when the page names the code in parentheses. No model call." % by[slug][0],
+            "college": by[slug][0], "questions": {}, "keywords": [], "pages": []})
+        q = "code_" + slug_of_code(code)
+        p["questions"][q] = "Does this page name %s's %s, and under what heading?" % (by[slug][0], code)
+        if re.escape(code) not in p["keywords"]:
+            p["keywords"].append(re.escape(code))
+        if not any(pg["url"] == url for pg in p["pages"]):
+            p["pages"].append({"url": url, "answers": [q], "source": "web_search"})
 
 
 def parse_log(text):
@@ -122,7 +153,7 @@ def parse_log(text):
     return pages
 
 
-HEAD = re.compile(r"^\s*(.+?)\s*\(([A-Z0-9/&,\s]+)\)\s*$")
+HEAD = re.compile(r"^\s*(.+?)\s*\(([A-Z0-9/&,.\s]+)\)\s*$")
 
 
 def heading_for(page, code):
@@ -145,18 +176,21 @@ def file_log(text, run, write):
     report = []
     for slug, plan in sorted(plan_set.items()):
         path = os.path.join(ROOT, SUBJECTS, slug + ".json")
-        d = json.load(open(path, encoding="utf-8"))
+        d = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {
+            "_what": "%s's subject headings, filed by kb/_subject_code_address_probe.py from pages read one by one "
+                     "(no course-descriptions index is filed for this college)." % plan["college"],
+            "college": plan["college"], "run": run, "source": [], "subjects": 0, "with_heading": 0, "rows": []}
         changed = False
         for pg in plan["pages"]:
             code = next(k for k, v in plan["questions"].items() if k == pg["answers"][0])
             code = [c for c in plan["keywords"] if "code_" + slug_of_code(c.replace("\\", "")) == code][0].replace("\\", "")
-            p = by_url.get(pg["url"])
+            p = by_url.get(pg["url"]) or by_url.get(re.sub(r"^https://", "http://", pg["url"]))
             if not p:
                 continue
             ok = str(p.get("status")) == "200"
             heading, seen = heading_for(p, code) if ok else (None, None)
             if heading:
-                d["rows"].append({"code": code, "heading": title_case(heading), "heading_printed": heading, "rule": RULE,
+                d["rows"].append({"code": code, "heading": title_case(heading), "heading_printed": heading, "rule": SEARCH_RULE if pg.get("source") == "web_search" else RULE,
                                   "codes": [code], "candidate": None, "label": seen, "address": pg["url"], "run": run})
                 report.append("%s %s: %s" % (slug, code, title_case(heading)))
             else:
@@ -165,7 +199,6 @@ def file_log(text, run, write):
                 report.append("%s %s: no heading (status %s%s)" % (slug, code, p.get("status"), ", reads " + seen if seen else ""))
             changed = True
         if changed:
-            d["rows"].sort(key=lambda r: code_key(r.get("code")))
             d["subjects"] = len(d["rows"])
             d["with_heading"] = sum(1 for r in d["rows"] if r.get("heading"))
             if write:
