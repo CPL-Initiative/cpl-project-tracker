@@ -1,0 +1,38 @@
+{
+  "_what": "S720 (lane 2, Modesto Junior): the reconcile_steps lever of the committed census (run 45319725062) at the college, frozen: kb/_program_piles_s720_modesto.py planned from it.",
+  "written_at": "2026-11-24 07:08Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "Modesto Junior College",
+      "programs": 21,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "06639",
+        "06642",
+        "06655",
+        "06683",
+        "08103",
+        "08104",
+        "08109",
+        "08111",
+        "10602",
+        "30675",
+        "32226",
+        "33944",
+        "33945",
+        "35127",
+        "35276",
+        "35277",
+        "37300",
+        "38067",
+        "38869",
+        "42664",
+        "43164"
+      ]
+    }
+  ]
+}

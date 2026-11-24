@@ -1512,6 +1512,19 @@ def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:
 NONCREDIT_AWARD = re.compile(r"^\s*(?:noncredit\s+program|certificate\s+of\s+(?:competency|completion))", re.I)
 
 
+# S720 at Modesto Junior (kb/_program_piles_s720_modesto.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('pool_figure_not_read',
+         'The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.',
+         40),  # #3755
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def matcher_recall(files: list[dict], base: str = COLLEGE_DIR) -> dict:
     """Each new matcher against answers already held (the second reader's test on #3496):
     NONCREDIT on every committed program's award and title, against the state's own award (a noncredit program,
