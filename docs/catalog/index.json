@@ -17540,8 +17540,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 676,
+   "count": 677,
    "docs": [
+    {
+     "created": "2026-11-24",
+     "governs": [],
+     "n": 721,
+     "path": "docs/session_721_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 721 handoff (from SkyEider, S720, the CPL Queue routine's collection run of 2026-11-24) \u2014 DRAFT declaration",
+     "type": null,
+     "updated": "2026-11-24"
+    },
     {
      "created": "2026-11-24",
      "governs": [],
@@ -28778,5 +28792,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1568
+ "total": 1569
 }
