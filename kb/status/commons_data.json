@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T07:22:05Z",
+ "written_at": "2026-11-24T08:08:01Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16763,
+  "passing": 16762,
   "gap": 5244,
-  "collected_with_gaps": 328,
+  "collected_with_gaps": 329,
   "discontinued": 0
  },
  "census_live": {
