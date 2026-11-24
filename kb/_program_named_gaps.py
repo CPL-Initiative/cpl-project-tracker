@@ -1264,6 +1264,19 @@ def hours_recall(every: list[dict]) -> dict:
     return out
 
 
+# S720 at Glendale (kb/_program_piles_s720_glendale.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('pair_read_as_alternatives',
+         'The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.',
+         50),  # #3755
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def hours_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     """hours_total_not_read's claim, a program section read with no total printed, measured on the records of its
     shape (no total read, the courses' hours above zero, one reason; held keys counted too) with keys the census's
