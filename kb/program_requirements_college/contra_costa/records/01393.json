@@ -124,7 +124,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "degree_summary_ge_none",
+    "label": "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+    "words": "degree_total 60-60 taken from the Program Unit Summary 'Total Overall Units (min/max) 60-60'; the summary lists General Education Units and Elective Units to reach 60 as 'None', so ge_units is null. Major total 34-37 is printed both in the header ('34-37 Credits') and the summary."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -114,7 +114,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "degree_summary_ge_none",
+    "label": "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+    "words": "The unit summary lists General Education (Local) as 'None', CSU/IGETC as 'N/A', and Electives needed to reach 60 units as 'None', which is inconsistent with a 60-unit total over a 22-unit major; the text also says the degree includes 'breadth requirements'. GE pattern and GE units left null; reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

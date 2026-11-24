@@ -1289,6 +1289,25 @@ def hours_precision(files: list[dict], keys: frozenset | None = None) -> dict:
             "hand_held_not_flagged": ["%s %s" % (f["college"], f["control_number"]) for f in held if f not in flagged]}
 
 
+# S720 at Contra Costa (kb/_program_piles_s720_contracosta.py): the gaps its reviewed list names from each record's own notes. Each kind carries the sentence
+# and score of the branch named beside it; setdefault keeps this block a no-op beside the other S720 blocks
+# once all have merged.
+for _g, _s, _a in (
+        ('lists_not_closed',
+         "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),  # #3753
+        ('noted_unit_floor',
+         'The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.',
+         70),  # #3753
+        ('degree_summary_ge_none',
+         "The page's unit summary prints the degree total and prints its general education and electives as None or N/A, so the record holds the major alone; the major adds up to its printed major total.",
+         50),  # Contra Costa's branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def ge_units_recall(every: list[dict]) -> dict:
     """The gap's scorer shape (_ge_units_shape) against answers already held (S703; S652's review rule): every
     passing degree whose major passes and whose general education units were read. The held answer is that the units

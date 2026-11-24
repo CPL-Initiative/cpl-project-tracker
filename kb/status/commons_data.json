@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T07:09:38Z",
+ "written_at": "2026-11-24T07:49:59Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17085,
-  "gap": 5250,
+  "passing": 17102,
+  "gap": 5233,
   "with_gap": 118,
   "cost_usd": 1340.94,
   "passed_at_read": 16325,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16763,
-  "gap": 5250,
-  "collected_with_gaps": 322,
+  "gap": 5233,
+  "collected_with_gaps": 339,
   "discontinued": 0
  },
  "census_live": {
@@ -3250,13 +3250,13 @@
    "harvested": true,
    "slug": "contra_costa",
    "programs": 131,
-   "passing": 69,
-   "gap": 62,
+   "passing": 86,
+   "gap": 45,
    "causes": {
     "no_closed_list": 26,
     "page_not_found": 8,
     "places_none": 1,
-    "unknown_without_live": 27
+    "unknown_without_live": 10
    },
    "census_causes": {
     "no_closed_list": 23,
@@ -3310,8 +3310,8 @@
    "read_seconds": 791.8,
    "run": "44687786167",
    "levers": {
-    "reconcile_steps": 27,
     "program_course_file_check": 26,
+    "reconcile_steps": 10,
     "reader_page_search": 8,
     "reader_page_assignment": 1
    },
