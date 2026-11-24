@@ -104,7 +104,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "unit_line_not_read",
+    "label": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.",
+    "words": "Total Units 78-80 is printed for the certificate; it includes the Level 1 certificate and the Level 2 A.S. degree (Program Major Units 49, AS OCC General Education up to 21, Subtotal 67) as required prerequisites, so it includes general education units. Recorded in total_units as the certificate's printed total; reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 94,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -1394,40 +1394,30 @@
     return sidePanel({ id: "csb-side-1", level: 1, eyebrow: "Common subject code", title: code + (name ? ", " + name : ""), back: MQ,
       opener: 'button[data-mq-code="' + code + '"]:not([data-mq-count])', body: body });
   }
-  /* The state course list (coci_lookup_data.js, 17 MB) loads once, on the first press of a Courses count; the
-     course panel reads its small per-college files instead (kb/_build_subject_courses.py). */
-  var COCI_FILE = "coci_lookup_data.js", cociWait = null, COCI_IX = null;
-  function loadCoci() {
-    if (window.CPL_COCI_LOOKUP) return Promise.resolve(window.CPL_COCI_LOOKUP);
-    cociWait = cociWait || new Promise(function (res, rej) {
-      var T = window.CPL_TABS;
-      if (!T || typeof T.loadScript !== "function") { rej(new Error("the page cannot load " + COCI_FILE)); return; }
-      T.loadScript(COCI_FILE, "CPL_COCI_LOOKUP", function () { if (window.CPL_COCI_LOOKUP) res(window.CPL_COCI_LOOKUP); else rej(new Error(COCI_FILE + " did not load")); });
-    }).then(null, function (e) { cociWait = null; throw e; });
-    return cociWait;
+  /* A code's courses (S722): kb/_statewide_subject_codes.py files them by the code's first character under
+     kb/status/statewide_code_courses/, counted as the statewide list counts them (a renamed code's courses under the code
+     it became), so a Courses count reads one file of about a megabyte, never the 17 MB state list (coci_lookup_data.js).
+     The course panel reads its small per-college files instead (kb/_build_subject_courses.py). */
+  var CODE_COURSES_DIR = "kb/status/statewide_code_courses/", codeCourses = {}, codeCoursesWait = {};
+  function shardOf(code) { var ch = String(code || "").charAt(0).toUpperCase(); return /^[A-Z0-9]$/.test(ch) ? ch : "_"; }
+  function loadCodeCourses(code) {
+    var k = shardOf(code);
+    if (codeCourses[k]) return Promise.resolve(codeCourses[k]);
+    codeCoursesWait[k] = codeCoursesWait[k] || fetch(CODE_COURSES_DIR + k + ".json", { cache: "no-cache" }).then(function (r) {
+      if (!r || !r.ok) throw new Error(CODE_COURSES_DIR + k + ".json answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(function (j) { codeCourses[k] = j; delete codeCoursesWait[k]; return j; }, function (e) { delete codeCoursesWait[k]; throw e; });
+    return codeCoursesWait[k];
   }
-  /* A code's courses, as kb/_statewide_subject_codes.py counts them: the state list's college with " Credit" set
-     aside, at each college the code names; there, the rows whose subject is the code in key form, or, where that is
-     not the college's count (a code the college renamed), the rows under any of the code's spellings. */
-  function cociName(n) { return String(n || "").trim().replace(/\s+Credit$/, ""); }
-  function keyForm(s) { return String(s || "").trim().toUpperCase().replace(/[^A-Z0-9]/g, ""); }
+  /* The courses of statewide entry c, from its file; null until the file is read. */
   function coursesOf(c) {
-    var D = window.CPL_COCI_LOOKUP;
-    if (!D) return null;
-    if (!COCI_IX || COCI_IX.D !== D) {
-      var by = {}, names = (D.colleges || []).map(cociName);
-      (D.rows || []).forEach(function (r) { var k = names[r[0]]; (by[k] = by[k] || []).push(r); });
-      COCI_IX = { D: D, by: by, names: names };
-    }
-    var sp = {}, out = [];
-    (c.spellings || [c.code]).forEach(function (s) { sp[String(s).trim().toUpperCase()] = 1; });
-    (c.colleges || []).forEach(function (x) {
-      var here = COCI_IX.by[x[0]] || [];
-      var rows = here.filter(function (r) { return keyForm(r[2]) === c.code; });
-      if (rows.length !== x[1]) rows = here.filter(function (r) { return sp[String(r[2] || "").trim().toUpperCase()]; });
-      rows.forEach(function (r) { out.push({ college: x[0], subject: String(r[2] || "").trim(), number: String(r[3] || ""), title: r[4] || "", units: r[5], band: r[6] || "", top: r[7] || "" }); });
+    var F = codeCourses[shardOf(c.code)];
+    if (!F) return null;
+    var e = (F.codes || {})[c.code];
+    if (!e) return [];
+    return (e.rows || []).map(function (r) {
+      return { college: e.colleges[r[0]], subject: r[1] || c.code, number: String(r[2] || ""), title: r[3] || "", band: r[4] || "", top: r[5] || "" };
     });
-    return out;
   }
   var COCI_BANDS = { C: "Credit", N: "Noncredit", E: "Noncredit enhanced" };
   function secondSide() {
@@ -1448,8 +1438,8 @@
       title = local + ", " + fmt(c.courses) + (c.courses === 1 ? " course" : " courses");
       var rows = coursesOf(c);
       if (rows === null) {
-        body.push(el("p", { cls: "csb-note", role: "status", id: "csb-side-2-wait", text: VIEW.cociError ? "The state course list could not be read (" + VIEW.cociError + "). Close the panel and open it again to retry." : "Reading the state course list…" }));
-        if (!VIEW.cociError) loadCoci().then(function () { if (STACK.second && STACK.second[1] === local && VIEW.root && VIEW.M) render(VIEW.root, VIEW.M, viewPath()); },
+        body.push(el("p", { cls: "csb-note", role: "status", id: "csb-side-2-wait", text: VIEW.cociError ? "The courses under " + local + " could not be read (" + VIEW.cociError + "). Close the panel and open it again to retry." : "Reading the courses under " + local + "…" }));
+        if (!VIEW.cociError) loadCodeCourses(local).then(function () { if (STACK.second && STACK.second[1] === local && VIEW.root && VIEW.M) render(VIEW.root, VIEW.M, viewPath()); },
           function (e) { VIEW.cociError = e && e.message ? e.message : String(e); if (STACK.second && VIEW.root && VIEW.M) render(VIEW.root, VIEW.M, viewPath()); });
       } else {
         body.push(el("p", { cls: "csb-note", id: "csb-side-2-sum", text: "COCI lists " + fmt(rows.length) + (rows.length === 1 ? " course" : " courses") + " under " + local + " at " + fmt((c.colleges || []).length) + ((c.colleges || []).length === 1 ? " college" : " colleges")
@@ -2725,7 +2715,7 @@
     _state: S, COURSE_DIR: COURSE_DIR, bandOf: bandOf, saveKey: saveKey, titleCase: titleCase, savesModel: savesModel,
     SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX, dominantOf: dominantOf, attentionBy: attentionBy, webQuery: webQuery,
     MQ_FILE: MQ_FILE, _stack: STACK, _breakAfter: breakAfter,
-    _reset: function () { VIEW.Q = null; VIEW.mqError = ""; mqCache = null; MQS.pick = "all"; MQS.q = ""; MQS.code = ""; MQS.side = null; STACK.second = null; VIEW.cociError = ""; cociWait = null; COCI_IX = null;
+    _reset: function () { VIEW.Q = null; VIEW.mqError = ""; mqCache = null; MQS.pick = "all"; MQS.q = ""; MQS.code = ""; MQS.side = null; STACK.second = null; VIEW.cociError = ""; codeCourses = {}; codeCoursesWait = {};
       SWS.filter = "top"; SWS.common = ""; VIEW.W = null; VIEW.swError = ""; swCache = null; SW_IX = null; SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.at = ""; S.band = ""; S.pick = ""; }
   };
 })();

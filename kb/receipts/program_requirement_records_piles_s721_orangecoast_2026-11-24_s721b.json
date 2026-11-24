@@ -1,0 +1,1311 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S721: Orange Coast's 20 wording-rule records, collected with their gaps named where one is honest (no reread)",
+ "at": "2026-11-24T11:17:05Z",
+ "college": "Orange Coast College",
+ "census": {
+  "file": "kb/status/harvest_gap_census.json",
+  "levers": [
+   "reconcile_steps"
+  ],
+  "person": [],
+  "members": [
+   "03954",
+   "03993",
+   "08628",
+   "08663",
+   "08664",
+   "08670",
+   "19473",
+   "19474",
+   "19547",
+   "31217",
+   "32189",
+   "32737",
+   "32790",
+   "35182",
+   "36032",
+   "36732",
+   "41373",
+   "42331",
+   "43100",
+   "43362"
+  ]
+ },
+ "gaps": {
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "unit_line_not_read": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total."
+ },
+ "moved": 3,
+ "by": {
+  "unit_line_not_read": 1,
+  "lists_not_closed": 1,
+  "noted_figures_differ": 1
+ },
+ "precision": {
+  "read": 20,
+  "right": 20,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 17,
+   "unit_line_not_read": 1,
+   "lists_not_closed": 1,
+   "noted_figures_differ": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 3
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 3,
+   "the stated total one unit off right": 3,
+   "coverage failing right": 3,
+   "the subtotal one unit off right": 1
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "03954",
+   "why": "held: the Requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "03993",
+   "why": "held: its notes support no honest kind (18-21 against the printed 20; the core's 'or' alternatives carry no units): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08628",
+   "why": "held: coverage and invented fail (CNST A196 and A197 unplaced; 11 catalog codes off the closed list), so no named gap's record; its heading names Building Construction, not Residential Construction Development",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08663",
+   "why": "held: its page is the Food and Beverage Management, Advanced certificate's, which shared_pages gives 43362 too; 08663 is the Food and Beverage Management certificate, so the record is another award's: a page-finding step",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08664",
+   "why": "held: the Requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "08670",
+   "why": "held: tomorrow's free rule passes it (the page prints 'Minimum 60 units required for the degree' over 60-63.5: read as degree_total_minimum, today's scorer passes it); a rescore wording rule, never a gap",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "19473",
+   "why": "held: coverage and invented fail (CNST A196 and A197 unplaced), so no named gap's record; its heading names the Building Construction Second Award",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "19474",
+   "why": "held: coverage and invented fail (CNST A196 and A197 unplaced), so no named gap's record; its heading names the Building Construction Third Award",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31217",
+   "why": "held: the Requirements tab is not in the text the reader saw (an incomplete read, never a gap): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32737",
+   "why": "held: tomorrow's free rule passes it (a 'Required Core (Substitution Courses) 15 Units Maximum' list, which its note says does not add to the 23-25, read as no requirement: today's scorer passes it); a rescore wording rule, never a gap; and no committed receipt posts its committed run to its live row (on_live_run)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "32790",
+   "why": "held: its text is cut off mid-Area 5A and it reads no total, so its arithmetic is incomplete; and no committed receipt posts its committed run to its live row (on_live_run)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "36032",
+   "why": "held: its major plus Cal-GETC fall short of the printed 60 and the page prints its electives as 'Varies': #3762's degree_electives_not_printed, after that PR merges",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "36732",
+   "why": "held: no committed receipt posts its committed run (39726645292) to its live row (on_live_run: the load that inserted it held three runs); then noted_figures_differ (the overview's 18 plus 6 against the table's 12 core plus 3-7 electives in 18-19)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "41373",
+   "why": "held: its page is shared (shared_pages lists 32086 on it); the page's title is 41373's, and 32086's page-finding step releases it (then noted_figures_differ: the printed 28-29 against the courses' 29)",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "42331",
+   "why": "held: today's scorer passes it on its own record; a closed-list rescore, never a gap",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "43100",
+   "why": "held: coverage fails (PSYC A160 on the closed list, not placed), so no named gap's record",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "43362",
+   "why": "held: its page is shared (shared_pages lists 08663 on it); the page's title is 43362's, and 08663's page-finding step releases it (then noted_figures_differ: the prerequisite list's 20.5 heading against its printed 22)",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Orange Coast College",
+   "control_number": "19547",
+   "award": "Certificate of Achievement requiring 60+S/90+Q units",
+   "extracted_run": "38670927724",
+   "moves_to": "unit_line_not_read",
+   "words": "Total Units 78-80 is printed for the certificate; it includes the Level 1 certificate and the Level 2 A.S. degree (Program Major Units 49, AS OCC General Education up to 21, Subtotal 67) as required prerequisites, so it includes general education units. Recorded in total_units as the certificate's printed total; reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 94,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/orange_coast/records/19547.json",
+   "before_image": {
+    "program_title": "Level 3 - Interior Design Professional",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/interior-design/level-3-interior-design-professional-certificate-achievement/",
+    "measure": "units",
+    "total_min": 78,
+    "total_max": 80,
+    "record": {
+     "program": {
+      "section_heading": "Level 3 - Interior Design Professional, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 78,
+       "max": 80
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "AS OCC General Education",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "The outcome of this Interior Design certificate of achievement is to prepare students for entry-level employment as a professional interior designer and for industry certifications."
+      ],
+      "careers": [
+       "entry level professional designers",
+       "professional interior designer"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Interior Design Foundation - Level 1, Certificate of Achievement (Required Prerequisites)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 24,
+        "max": 24
+       },
+       "courses": [
+        {
+         "code": "ART A110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ID A175",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A110",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A120",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A150",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A180",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A190",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Level 2 Interior Design Associate in Science Degree (67 units including Level 1 Certificate)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 25,
+        "max": 25
+       },
+       "courses": [
+        {
+         "code": "ID A170",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A215",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A230",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A240",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A245",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A260",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ID A250",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A265",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ID A290",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Restricted Electives - Select 1 course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "ARCH A155",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARCH A156",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART A111",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART A116",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CNST A116",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS A240",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHOT A120",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHOT A120H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHOT A123",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 30,
+     "listed": 32
+    },
+    "extracted_run": "38670927724"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 30,
+     "listed": 32,
+     "gaps": [
+      "unit_line_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 94,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Orange Coast College",
+   "control_number": "32189",
+   "award": "A.A- T Degree",
+   "extracted_run": "44747523200",
+   "moves_to": "lists_not_closed",
+   "words": "List B minimum depends on the Core option: 1 course if Core Option 1, 2 courses if Core Option 2; recorded minimum 1 and stated 3-6 (printed '6-3'). List B also allows 'Any List A Course not already used'. ENGL C1002/C1002H count in List B only if not used for Core.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/orange_coast/records/32189.json",
+   "before_image": {
+    "program_title": "English",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/english/english-associate-arts-degree-transfer-aat/",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "Associate Degree for Transfer Requirements",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": 34,
+       "max": 34
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "This program serves all English majors whether their emphasis at the CSU level will ultimately be the study of literature, rhetoric and non-fiction writing, or creative writing.",
+       "Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools."
+      ],
+      "careers": [
+       "teaching at the K-12 or community college level",
+       "literary scholarship at the graduate level",
+       "legal professions",
+       "creative writing",
+       "non-fiction essay writing in literary, business, and scientific journals"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Option 1",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Core",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1001",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1001H",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "ENGL A109",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1002H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Option 2",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Core",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1003",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1003H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A - Select two courses from the following:",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "ENGL A150",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A150H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A151",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A151H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A160",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A160H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A161",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A161H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A270",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A270H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A275",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A275H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B - If using Core option 1 select 1 course, if Core option 2 is used select two courses",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "ENGL A119",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1002",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1002H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL A141",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A141H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A143",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A143H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A152",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A152H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A173",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A173H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A176",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A176H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A181",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A181H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List C - Select one course not used in Lists A or B or from the following:",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ENGL A121",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A122",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A126",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A127",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A147",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A147H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A148",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A148H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A156",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A156H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A168",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A170",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A170H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A179",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A179H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL A187",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL A187H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 49,
+     "listed": 49
+    },
+    "extracted_run": "44747523200"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 49,
+     "listed": 49,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Orange Coast College",
+   "control_number": "35182",
+   "award": "A.S. Degree",
+   "extracted_run": "39726645292",
+   "moves_to": "noted_figures_differ",
+   "words": "Math Required Courses block prints 5-10 units while listing MATH A180/A180H AND MATH A185/A185H; the 5-unit low end is ambiguous (perhaps Calculus 1 alone can suffice for some students). Recorded as both required; reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/orange_coast/records/35182.json",
+   "before_image": {
+    "program_title": "Astronomy",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/astronomy/astronomy-associate-science-degree/",
+    "measure": "units",
+    "total_min": 26,
+    "total_max": 31,
+    "record": {
+     "program": {
+      "section_heading": "Astronomy, Associate in Science Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 26,
+       "max": 31
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "OCC AS General Education",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": 21
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Describe the constituents of the Universe and the relevant physical processes underlying their behavior.",
+       "Become familiar with the methods of observational astronomy and the analysis of data.",
+       "Develop the necessary knowledge and skills to analyze evidence and evaluate claims as related to astronomy.",
+       "Students who complete the degree will be prepared for admission to California State University/University of California schools in astronomy/astrophysics."
+      ],
+      "careers": [
+       "observatory and planetarium operations"
+      ],
+      "degree_total_minimum": true
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ASTR A100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ASTR A100H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASTR A100L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ASTR A100M",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASTR A200",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ASTR A200H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Astronomy Electives",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ASTR A101",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASTR A102",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASTR A103",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASTR A104",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Math Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 5,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "MATH A180",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH A180H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH A185H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Physics Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 10,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "PHYS A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS A280",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHYS A285",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Strongly recommended prior to transfer",
+       "rule": "recommended",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CS A131",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH A185",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH A185H",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH A280",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH A280H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH A285",
+         "units": null,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH A285H",
+           "units": null,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 17,
+     "listed": 17
+    },
+    "extracted_run": "39726645292"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 17,
+     "listed": 17,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  }
+ ],
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score; checks.arithmetic, coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found. The capture keeps no page text, so a note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '19547', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ID A175\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ART A110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A120\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A180\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A190\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Interior Design Foundation - Level 1, Certificate of Achievement (Required Prerequisites)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A240\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A245\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A260\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Level 2 Interior Design Associate in Science Degree (67 units including Level 1 Certificate)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":25,\"min\":25}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A265\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART A111\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CNST A116\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ART A116\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHOT A120H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHOT A120\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHOT A123\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Restricted Electives - Select 1 course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":2}}],\"program\":{\"careers\":[\"entry level professional designers\",\"professional interior designer\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"AS OCC General Education\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"The outcome of this Interior Design certificate of achievement is to prepare students for entry-level employment as a professional interior designer and for industry certifications.\"],\"section_heading\":\"Level 3 - Interior Design Professional, Certificate of Achievement\",\"total_units\":{\"max\":80,\"min\":78}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":32,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":94,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":32,\"placed\":30}'::jsonb),\n  (2, 'Orange Coast College', '32189', 44747523200, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ENGL A109\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1\",\"option_group\":\"Core\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1003H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2\",\"option_group\":\"Core\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A150H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A151H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A151\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A160H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A160\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A161H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A161\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A270H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A275H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A275\",\"units\":null,\"units_max\":null}],\"minimum\":2,\"name\":\"List A - Select two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A119\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A141H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A141\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A143H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A143\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A152H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A152\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A173H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A173\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A176H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A176\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A181H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A181\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - If using Core option 1 select 1 course, if Core option 2 is used select two courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A121\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A122\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A126\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A127\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A147H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A147\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A148H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A148\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A156H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A168\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A170H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A179H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A179\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A187H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A187\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List C - Select one course not used in Lists A or B or from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"teaching at the K-12 or community college level\",\"literary scholarship at the graduate level\",\"legal professions\",\"creative writing\",\"non-fiction essay writing in literary, business, and scientific journals\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"This program serves all English majors whether their emphasis at the CSU level will ultimately be the study of literature, rhetoric and non-fiction writing, or creative writing.\",\"Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools.\"],\"section_heading\":\"Associate Degree for Transfer Requirements\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb),\n  (3, 'Orange Coast College', '35182', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ASTR A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR A100M\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ASTR A100L\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR A200H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ASTR A200\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A103\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A104\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Astronomy Electives\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH A180H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH A185\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Math Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHYS A285\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHYS A280\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CS A131\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH A280H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"MATH A280\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH A285H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"MATH A285\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Strongly recommended prior to transfer\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"observatory and planetarium operations\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":21,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe the constituents of the Universe and the relevant physical processes underlying their behavior.\",\"Become familiar with the methods of observational astronomy and the analysis of data.\",\"Develop the necessary knowledge and skills to analyze evidence and evaluate claims as related to astronomy.\",\"Students who complete the degree will be prepared for admission to California State University/University of California schools in astronomy/astrophysics.\"],\"section_heading\":\"Astronomy, Associate in Science Degree\",\"total_units\":{\"max\":31,\"min\":26}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Orange Coast College', '19547', 38670927724, 'e5d0fae56938403c8f6a5ca8f298b1b5', '77ca9f8d75dc2d265a73e519736e92ea', '4e04371fac7891f7908b6a44dff4a713'),\n  (2, 'Orange Coast College', '32189', 44747523200, '6a20f08840fafa8f9cb993471c9d8432', '639e2f24726fec0b7145ccbb2fae568b', '8a758d51cc1ab167078bdb300a9b170d'),\n  (3, 'Orange Coast College', '35182', 39726645292, '1581b5ba3f34bb3aca5a04e31bd86e6a', '788ee0293bdb78bb388760da1bbc39c5', '0a7d0d96c69af3680fff3c31b8049fb3'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '19547', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ID A175\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ART A110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A120\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A180\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A190\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Interior Design Foundation - Level 1, Certificate of Achievement (Required Prerequisites)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A240\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A245\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A260\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Level 2 Interior Design Associate in Science Degree (67 units including Level 1 Certificate)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":25,\"min\":25}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A265\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART A111\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CNST A116\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ART A116\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHOT A120H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHOT A120\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHOT A123\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Restricted Electives - Select 1 course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":2}}],\"program\":{\"careers\":[\"entry level professional designers\",\"professional interior designer\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"AS OCC General Education\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"The outcome of this Interior Design certificate of achievement is to prepare students for entry-level employment as a professional interior designer and for industry certifications.\"],\"section_heading\":\"Level 3 - Interior Design Professional, Certificate of Achievement\",\"total_units\":{\"max\":80,\"min\":78}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":32,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":94,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":32,\"placed\":30}'::jsonb),\n  (2, 'Orange Coast College', '32189', 44747523200, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ENGL A109\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1\",\"option_group\":\"Core\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1003H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2\",\"option_group\":\"Core\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A150H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A151H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A151\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A160H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A160\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A161H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A161\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A270H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A275H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A275\",\"units\":null,\"units_max\":null}],\"minimum\":2,\"name\":\"List A - Select two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A119\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A141H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A141\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A143H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A143\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A152H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A152\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A173H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A173\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A176H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A176\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A181H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A181\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - If using Core option 1 select 1 course, if Core option 2 is used select two courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A121\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A122\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A126\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A127\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A147H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A147\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A148H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A148\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A156H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A168\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A170H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A179H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A179\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A187H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A187\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List C - Select one course not used in Lists A or B or from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"teaching at the K-12 or community college level\",\"literary scholarship at the graduate level\",\"legal professions\",\"creative writing\",\"non-fiction essay writing in literary, business, and scientific journals\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"This program serves all English majors whether their emphasis at the CSU level will ultimately be the study of literature, rhetoric and non-fiction writing, or creative writing.\",\"Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools.\"],\"section_heading\":\"Associate Degree for Transfer Requirements\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb),\n  (3, 'Orange Coast College', '35182', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ASTR A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR A100M\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ASTR A100L\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR A200H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ASTR A200\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A103\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A104\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Astronomy Electives\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH A180H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH A185\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Math Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHYS A285\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHYS A280\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CS A131\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH A280H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"MATH A280\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH A285H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"MATH A285\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Strongly recommended prior to transfer\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"observatory and planetarium operations\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":21,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe the constituents of the Universe and the relevant physical processes underlying their behavior.\",\"Become familiar with the methods of observational astronomy and the analysis of data.\",\"Develop the necessary knowledge and skills to analyze evidence and evaluate claims as related to astronomy.\",\"Students who complete the degree will be prepared for admission to California State University/University of California schools in astronomy/astrophysics.\"],\"section_heading\":\"Astronomy, Associate in Science Degree\",\"total_units\":{\"max\":31,\"min\":26}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (3)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s721b piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s721b piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Orange Coast College', '19547', 38670927724, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ID A175\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ART A110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A110\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A120\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A180\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A190\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Interior Design Foundation - Level 1, Certificate of Achievement (Required Prerequisites)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":24,\"min\":24}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A240\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A245\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A260\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Level 2 Interior Design Associate in Science Degree (67 units including Level 1 Certificate)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":25,\"min\":25}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A265\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ID A290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH A155\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARCH A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART A111\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CNST A116\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ART A116\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS A240\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHOT A120H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHOT A120\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHOT A123\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Restricted Electives - Select 1 course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":2}}],\"program\":{\"careers\":[\"entry level professional designers\",\"professional interior designer\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"AS OCC General Education\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"The outcome of this Interior Design certificate of achievement is to prepare students for entry-level employment as a professional interior designer and for industry certifications.\"],\"section_heading\":\"Level 3 - Interior Design Professional, Certificate of Achievement\",\"total_units\":{\"max\":80,\"min\":78}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":32,\"placed\":30}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":94,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":32,\"placed\":30}'::jsonb),\n  (2, 'Orange Coast College', '32189', 44747523200, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":null},{\"catalog_addition\":false,\"code\":\"ENGL A109\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1\",\"option_group\":\"Core\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1003H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL C1003\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2\",\"option_group\":\"Core\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A150H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A150\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A151H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A151\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A160H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A160\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A161H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A161\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A270H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A270\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A275H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A275\",\"units\":null,\"units_max\":null}],\"minimum\":2,\"name\":\"List A - Select two courses from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A119\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ENGL C1002H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"ENGL C1002\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A141H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A141\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A143H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A143\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A152H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A152\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A173H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A173\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A176H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A176\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A181H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A181\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List B - If using Core option 1 select 1 course, if Core option 2 is used select two courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A121\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A122\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A126\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A127\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A147H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A147\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A148H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A148\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A156H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A156\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL A168\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A170H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A170\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A179H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A179\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL A187H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ENGL A187\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"List C - Select one course not used in Lists A or B or from the following:\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"teaching at the K-12 or community college level\",\"literary scholarship at the graduate level\",\"legal professions\",\"creative writing\",\"non-fiction essay writing in literary, business, and scientific journals\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":34,\"min\":34},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"This program serves all English majors whether their emphasis at the CSU level will ultimately be the study of literature, rhetoric and non-fiction writing, or creative writing.\",\"Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools.\"],\"section_heading\":\"Associate Degree for Transfer Requirements\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb),\n  (3, 'Orange Coast College', '35182', 39726645292, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR A100H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ASTR A100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR A100M\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ASTR A100L\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ASTR A200H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"ASTR A200\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A101\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A102\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A103\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR A104\",\"units\":null,\"units_max\":null}],\"minimum\":1,\"name\":\"Astronomy Electives\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH A180H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH A180\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH A185\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Math Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHYS A285\",\"units\":null}],\"catalog_addition\":false,\"code\":\"PHYS A280\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Physics Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CS A131\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MATH A185H\",\"units\":null}],\"catalog_addition\":false,\"code\":\"MATH A185\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH A280H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"MATH A280\",\"units\":null,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH A285H\",\"units\":null}],\"catalog_addition\":true,\"code\":\"MATH A285\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Strongly recommended prior to transfer\",\"option_group\":null,\"rule\":\"recommended\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"observatory and planetarium operations\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":true,\"ge_pattern\":\"OCC AS General Education\",\"ge_units\":{\"max\":21,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe the constituents of the Universe and the relevant physical processes underlying their behavior.\",\"Become familiar with the methods of observational astronomy and the analysis of data.\",\"Develop the necessary knowledge and skills to analyze evidence and evaluate claims as related to astronomy.\",\"Students who complete the degree will be prepared for admission to California State University/University of California schools in astronomy/astrophysics.\"],\"section_heading\":\"Astronomy, Associate in Science Degree\",\"total_units\":{\"max\":31,\"min\":26}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (3)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s721b piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

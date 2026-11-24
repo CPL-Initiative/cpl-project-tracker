@@ -42,7 +42,8 @@ def check(name, ok, detail=""):
         FAILS.append(name)
 
 
-doc = ssc.build(ROOT)
+rows_of = {}
+doc = ssc.build(ROOT, courses_out=rows_of)
 codes = {c["code"]: c for c in doc["codes"]}
 state = B.read_state(ROOT)
 names = [ssc.college_name(n) for n in state["colleges"]]
@@ -116,6 +117,25 @@ check("(1) a college COCI lists twice (\"... Credit\") is one college: 118 in al
 with open(os.path.join(ROOT, ssc.OUT), encoding="utf-8") as f:
     committed = f.read()
 check("(7) a rerun writes the committed file's bytes", committed == ssc.dump(doc))
+
+# (8) S722: the course files by code, which the MQ view's and the statewide list's Courses counts open.
+files = ssc.course_files(doc["codes"], rows_of)
+filed = {}
+for k, t in files.items():
+    filed.update(json.loads(t)["codes"])
+check("(8) every code's course file holds exactly the courses the statewide list counts for it",
+      set(filed) == set(codes) and all(len(filed[k]["rows"]) == codes[k]["courses"] for k in codes),
+      [k for k in codes if len(filed.get(k, {}).get("rows", [])) != codes[k]["courses"]][:5])
+check("(8) each course sits at one of its code's colleges, in the statewide list's order",
+      all(filed[k]["colleges"] == [x[0] for x in codes[k]["colleges"]] for k in codes))
+check("(8) a code's file is named by its first character, as commons_subjects.js reads it",
+      all(k in json.loads(files[ssc.shard_of(k)])["codes"] for k in codes) and ssc.shard_of("ab") == "A" and ssc.shard_of("#X") == "_")
+check("(8) no course file passes 3 MB (the page reads one per Courses count)", max(len(t.encode()) for t in files.values()) < 3 * 1024 * 1024)
+check("(8) a rerun writes the committed course files' bytes",
+      all(os.path.exists(os.path.join(ROOT, ssc.COURSES_DIR, k + ".json")) and open(os.path.join(ROOT, ssc.COURSES_DIR, k + ".json"), encoding="utf-8").read() == t for k, t in files.items()))
+js = open(os.path.join(ROOT, "commons_subjects.js"), encoding="utf-8").read()
+check("(8) the page reads the course files, never the 17 MB state list, for a Courses count",
+      'CODE_COURSES_DIR = "kb/status/statewide_code_courses/"' in js and "coci_lookup_data.js\"" not in js and "loadScript(" not in js.split("function loadCodeCourses")[1].split("function coursesOf")[0])
 
 print("\n%d of %d checks passed" % (N[0] - len(FAILS), N[0]))
 sys.exit(1 if FAILS else 0)

@@ -86,6 +86,11 @@ const COCI = {
     [4, "x1", "CT", "9", "Not one of CT's colleges", 3, "C", "", "", "", ""], [0, "x2", "CTE", "1", "Another code", 3, "C", "", "", "", ""],
     [0, "x3", "CARP", "1", "Carpentry I", 3, "C", "", "", "", ""]]
 };
+/* CT's courses as kb/_statewide_subject_codes.py files them, under C (S722): the page reads this, never the state list. */
+const CODE_COURSES_C = { columns: ["college", "subject", "number", "title", "band", "top"], codes: { CT: {
+  colleges: ["Alpha College", "Beta College", "Gamma College", "Delta College"],
+  rows: [[0, "", "101", "Framing", "C", "0952.10"], [0, "", "102", "Roofing", "C", "0952.10"], [0, "", "103", "Stairs", "C", "0952.10"],
+    [1, "", "10", "Blueprints", "C", "0952.00"], [1, "", "20", "Codes", "N", "0952.00"], [2, "", "1", "Safety", "C", "0952.00"], [3, "", "5", "Tools", "C", "0952.00"]] } } };
 const CT_COURSES = ["Alpha College|CT 101", "Alpha College|CT 102", "Alpha College|CT 103", "Beta College|CT 10", "Beta College|CT 20", "Gamma College|CT 1", "Delta College|CT 5"];
 const FILES = {
   "kb/status/commons.json": JSON.parse(fs.readFileSync("kb/status/commons.json", "utf8")),
@@ -94,7 +99,8 @@ const FILES = {
   "kb/reference/industry_credential_skills.json": JSON.parse(fs.readFileSync("kb/reference/industry_credential_skills.json", "utf8")),
   "kb/status/local_subject_titles.json": JSON.parse(fs.readFileSync("tests/fixtures/local_subject_titles_fixture.json", "utf8")),
   "kb/status/statewide_subject_codes.json": SW,
-  "kb/status/mq_view.json": MQV
+  "kb/status/mq_view.json": MQV,
+  "kb/status/statewide_code_courses/C.json": CODE_COURSES_C
 };
 const REST = "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/kb_curation";
 
@@ -257,13 +263,15 @@ async function group(n, fn) {
     x = load("#commons/subjects/mq/code/CNST");
     await x.M.boot(); await settle();
     d = x.d;
-    check("(4) the state course list is not read before a Courses count is pressed", x.scripts.indexOf("coci_lookup_data.js") < 0);
+    check("(4) a code's course file is not read before a Courses count is pressed", x.fetched.indexOf("kb/status/statewide_code_courses/C.json") < 0);
     const ctCount = d.querySelector('#csb-side-1 button[data-csb-second="courses"][data-csb-local="CT"]');
     check("(4) a code's Courses figure is a word that opens what it counts", !!ctCount && txt(ctCount) === "7" && /The 7 courses under CT in COCI/.test(ctCount.getAttribute("aria-label")));
     ctCount.click(); await settle();
     const second = d.getElementById("csb-side-2");
     const listed = Array.from(d.querySelectorAll("#csb-side-2 table tbody tr")).map((r) => r.getAttribute("data-course"));
-    check("(4) ⭐ the count opens a second sidebar listing exactly the courses it counts", second && same(listed, CT_COURSES) && x.scripts.indexOf("coci_lookup_data.js") >= 0, listed);
+    check("(4) ⭐ the count opens a second sidebar listing exactly the courses it counts", second && same(listed, CT_COURSES) && x.fetched.indexOf("kb/status/statewide_code_courses/C.json") >= 0, listed);
+    check("(4) ⭐ S722: it reads its code's small course file, never the 17 MB state list", x.scripts.indexOf("coci_lookup_data.js") < 0
+      && x.fetched.filter((u) => u.indexOf("statewide_code_courses/") >= 0).length === 1, x.scripts);
     check("(4) ⭐ the first sidebar stays open beside it, and the address names both", !!d.getElementById("csb-side-1") && x.S.address() === "commons/subjects/mq/code/CNST/courses/CT"
       && d.getElementById("commons-root").getAttribute("data-csb-stack") === "beside");
     const s1 = d.getElementById("csb-side-1"), s2 = d.getElementById("csb-side-2"), croot = d.getElementById("commons-root");
