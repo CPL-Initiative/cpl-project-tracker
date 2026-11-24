@@ -101,7 +101,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "one_option_of_shared_page",
+    "label": "The program is one option of a page several programs share; the record holds every option the page prints, so its units are the whole group's, not the program's own.",
+    "words": "The extracted page prints no program title heading; section_heading uses the 'Required Courses' table heading. The table appears to be the general CNIT A.S. degree with six options (Choose option 1, 2, 3, 4, 5, or 6, Units 9.0-10.0); the named program 'Front End Web Development' corresponds to OPTION 2. All six options are recorded as one option_group. Reviewer should confirm whether the award is the option-2 path only."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 50
+  }
  },
  "record": {
   "program": {

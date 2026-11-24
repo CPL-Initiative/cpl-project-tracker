@@ -108,7 +108,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_no_total",
+    "label": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+    "words": "'Required Units 37.0' is printed at the top of the Required Courses table; it equals exactly the sum of the 13 required courses (1 + 12×3), so it was recorded as that block's stated total rather than the major total. The two choice blocks add 3 + 2 units (major would sum to 42), but the catalog prints no overall major total, so total_units is null."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

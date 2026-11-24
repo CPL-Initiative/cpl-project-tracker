@@ -104,7 +104,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The supplied text begins mid-section on page 186; the Spanish Certificate of Achievement heading, program summary, learning outcomes and the start of the requirements are on a prior page not supplied. The section heading recorded is inferred, not printed in the text."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

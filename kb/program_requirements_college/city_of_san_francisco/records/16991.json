@@ -105,7 +105,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pool_figure_not_read",
+    "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
+    "words": "The first-level option (printed 5.0-6.0), second-level option (printed 5.0-6.0) and ITAL 3A/3B (6.0) sit under a wrapper 'Choose 15 units from the following Units 15.0'; completing all three yields 16-18 units, more than 15, so the wrapper reads as a minimum. Recorded as option-group blocks plus a required ITAL 3A/3B block; reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

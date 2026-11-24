@@ -192,6 +192,35 @@ MAY_CONTINUE_MISSES = ("Taft College 44006", "Santa Rosa Junior College 45477", 
 MAY_CONTINUE_NEXT = ("a matcher with a held-answer test is the next step; a rough pattern missed %s"
                      % ", ".join(MAY_CONTINUE_MISSES))
 MAY_CONTINUE_CAP = 50
+# S720 at City College of San Francisco (kb/_program_piles_s720_ccsf.py): the gaps a reviewed list names from each
+# record's own notes, never a pattern. lists_not_closed and noted_figures_differ are #3753's (S720 at Fullerton), with
+# the same sentence and score; setdefault keeps this block a no-op beside #3753's GAPS lines once both have merged.
+for _g, _s, _a in (
+        ("lists_not_closed", "A choice list prints no unit figure of its own, one that depends on another choice, or "
+                             "also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),
+        ("noted_figures_differ", "The reader's notes quote two figures from the catalog page that disagree, and the "
+                                 "record's units add to one and state the other; no page read has settled which the "
+                                 "program requires.", 40),
+        ("pool_figure_not_read", "The catalog prints one figure over several lists or nested options together, and the "
+                                 "record adds the parts instead, so its units cannot be checked against that figure.",
+         40),
+        ("one_option_of_shared_page", "The program is one option of a page several programs share; the record holds "
+                                      "every option the page prints, so its units are the whole group's, not the "
+                                      "program's own.", 30),
+        ("pair_read_as_alternatives", "The catalog prints two courses taken together as one option, and the record "
+                                      "reads them as separate alternatives, so its low end falls short of the printed "
+                                      "total.", 50),
+        # The reviewed-list forms of total_not_printed and section_cut_off: those two names are filed only by their
+        # own procedures (kb/program_total_not_printed.json; CUT_OFF_COLLEGES), which tests/program_named_gaps_test.py
+        # and tests/program_piles_s713_test.py hold them to.
+        ("noted_no_total", "The reader's note says the catalog prints no total for this program, so its units cannot "
+                           "be checked against one; no page read has confirmed it.", 40),
+        ("noted_section_cut_off", "The reader's note says the program's section runs onto a page the read did not "
+                                  "hold, so part of its requirements is missing from the record.", 20)):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
@@ -220,7 +249,9 @@ def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok:
     else:
         ge = 50 if (prog.get("ge_pattern") and S._span(prog.get("ge_units")) is None) else 100
     clm = None if share is None else int(round(float(share) * 100))
-    if clm is not None and (may_continue(filed) or gap == "section_cut_off"):
+    # S720 (#3755's reader): noted_section_cut_off, section_cut_off's reviewed-list form, takes the same cap here, so
+    # a recompute through confidence() (fill's keep_named_gaps, #3756) keeps the plan's filed score.
+    if clm is not None and (may_continue(filed) or gap in ("section_cut_off", "noted_section_cut_off")):
         # A record whose section runs past the read (S713) places the courses it read, not the program's list.
         clm = min(clm, MAY_CONTINUE_CAP)
     return {"unit_arithmetic": 100 if a.get("pass") else ARITH_SCORE.get(gap, 0),

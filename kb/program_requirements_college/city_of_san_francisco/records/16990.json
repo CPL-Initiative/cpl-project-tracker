@@ -105,7 +105,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "The section is headed 'Choose 18 units from the following courses Units 18.0'; the required third-level option (FREN 3, or FREN 3A and FREN 3B, 5.0-6.0) counts toward the 18, and Electives fill the remainder. The catalog prints no unit figure for the Electives block, so its minimum is left null (the remainder would be 12-13 units, not stated)."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

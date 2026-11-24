@@ -106,7 +106,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The provided text begins on page 253 partway through the Health Information Clerk I section; its heading, program summary, learning outcomes, careers and the start of the required course list are on page 252 and are not in the text. The section heading is inferred from the program name, and the first block's name is assumed."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

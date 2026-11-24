@@ -1,0 +1,49 @@
+{
+  "_what": "S720 (lane 2, City College of San Francisco): the reconcile_steps and reconcile_then_load levers of the committed census (run 45319725062) at the college, frozen: kb/_program_piles_s720_ccsf.py planned from them.",
+  "written_at": "2026-11-24 03:32Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "City College of San Francisco",
+      "programs": 20,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "05482",
+        "16990",
+        "16991",
+        "17614",
+        "17615",
+        "17616",
+        "17617",
+        "17618",
+        "17619",
+        "19037",
+        "32079",
+        "33208",
+        "37781",
+        "38267",
+        "38907",
+        "38909",
+        "39727",
+        "40157",
+        "41315",
+        "41361"
+      ]
+    },
+    {
+      "lever": "reconcile_then_load",
+      "scope": "City College of San Francisco",
+      "programs": 1,
+      "kind": "free",
+      "what": "the saved record fails: a team session writes correction rules from the catalog's own wording, rescores the record, then loads it into the database",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "17954"
+      ]
+    }
+  ]
+}
