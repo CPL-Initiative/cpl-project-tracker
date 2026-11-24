@@ -1,4 +1,4 @@
--- S721A lane 2's cheap piles at Palo Verde (named gaps 17). Each row's checks become the
+-- S721A lane 2's cheap piles at Palo Verde (named gaps 15). Each row's checks become the
 -- college load's image of its committed record (load_rows): checks.gaps and checks.confidence added; the
 -- record unchanged. Receipt: kb/receipts/program_requirement_records_piles_s721_paloverde_2026-11-24_s721a.json (before_image per row).
 -- Compact pre-read, read-only: one SELECT, one JSON value; md5 of each image's jsonb text
@@ -15,12 +15,10 @@ with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) a
   (9, 'Palo Verde College', '41224', 39852997888, 'cbea0385af5bd8650cf1d888b1348e6e', '726c0943e12218600a348c72bf68e080', 'b118ee604ed16fa4a46a9eec8cde47b6'),
   (10, 'Palo Verde College', '41225', 39852997888, 'dd57acdccc31c1d26e9b93495894f7a3', '0ae709925199e4be6ceebc0c8939f52c', 'b19b99faf7dd3403a51439e771c4cba5'),
   (11, 'Palo Verde College', '41226', 39852997888, '433742d713ae897013b06771ee855cb5', '2efd1426b83a79da0a0f0776d66a41ee', 'df3f716020a05de12f6d2cee9255f12f'),
-  (12, 'Palo Verde College', '41227', 39852997888, 'e44e4cc12ca749ee192b93f3e1bf7cfd', '2efd1426b83a79da0a0f0776d66a41ee', '037b701ca542e18140778f989e77209a'),
-  (13, 'Palo Verde College', '41241', 39852997888, '7d530b670c2c7eaba043575f487468d9', '2efd1426b83a79da0a0f0776d66a41ee', 'df3f716020a05de12f6d2cee9255f12f'),
-  (14, 'Palo Verde College', '41242', 39852997888, '21980fea8e65fb13cea4f68cb2fca39c', '41dd3c24e382cabef390df2f06e936e2', 'a1b89b57c9dae1ed4fe064107ffc2b64'),
-  (15, 'Palo Verde College', '41243', 39852997888, '1be1073fde7e27f7acf682b0d2a222dc', '2efd1426b83a79da0a0f0776d66a41ee', 'df3f716020a05de12f6d2cee9255f12f'),
-  (16, 'Palo Verde College', '41250', 39852997888, '2ab834f23cf73e87994b8eee8c424d1c', '2efd1426b83a79da0a0f0776d66a41ee', 'df3f716020a05de12f6d2cee9255f12f'),
-  (17, 'Palo Verde College', '41260', 39852997888, 'c6cfa620f39b9b4a06acc403c60073ef', '726c0943e12218600a348c72bf68e080', 'b118ee604ed16fa4a46a9eec8cde47b6'))
+  (12, 'Palo Verde College', '41241', 39852997888, '7d530b670c2c7eaba043575f487468d9', '2efd1426b83a79da0a0f0776d66a41ee', 'df3f716020a05de12f6d2cee9255f12f'),
+  (13, 'Palo Verde College', '41243', 39852997888, '1be1073fde7e27f7acf682b0d2a222dc', '2efd1426b83a79da0a0f0776d66a41ee', 'df3f716020a05de12f6d2cee9255f12f'),
+  (14, 'Palo Verde College', '41250', 39852997888, '2ab834f23cf73e87994b8eee8c424d1c', '2efd1426b83a79da0a0f0776d66a41ee', 'df3f716020a05de12f6d2cee9255f12f'),
+  (15, 'Palo Verde College', '41260', 39852997888, 'c6cfa620f39b9b4a06acc403c60073ef', '726c0943e12218600a348c72bf68e080', 'b118ee604ed16fa4a46a9eec8cde47b6'))
 select json_build_object(
   'listed', (select count(*) from v),
   'on_run', count(*) filter (where r.extracted_run = v.extracted_run),

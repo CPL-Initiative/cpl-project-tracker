@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T11:04:20Z",
+ "written_at": "2026-11-24T11:39:18Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17244,
-  "gap": 5091,
+  "passing": 17242,
+  "gap": 5093,
   "with_gap": 118,
   "cost_usd": 1341.01,
   "passed_at_read": 16357,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16794,
-  "gap": 5091,
-  "collected_with_gaps": 450,
+  "gap": 5093,
+  "collected_with_gaps": 448,
   "discontinued": 0
  },
  "census_live": {
@@ -9081,12 +9081,12 @@
    "harvested": true,
    "slug": "palo_verde",
    "programs": 69,
-   "passing": 61,
-   "gap": 8,
+   "passing": 59,
+   "gap": 10,
    "causes": {
     "no_closed_list": 1,
     "page_not_found": 2,
-    "unknown_without_live": 5
+    "unknown_without_live": 7
    },
    "census_causes": {
     "no_closed_list": 1,
@@ -9141,7 +9141,7 @@
    "read_seconds": 527.3,
    "run": "39852997888",
    "levers": {
-    "reconcile_steps": 5,
+    "reconcile_steps": 7,
     "reader_page_search": 2,
     "program_course_file_check": 1
    },

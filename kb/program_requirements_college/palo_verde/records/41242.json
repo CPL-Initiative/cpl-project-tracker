@@ -106,21 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "figure_within_variable_units",
-    "label": "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
-    "words": "The certificate total is 'Credits: 30.0' as printed, which matches 17.25 required plus 12.75 elective credits."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 60,
-   "course_list_match": 99,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {
