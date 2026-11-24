@@ -176,14 +176,14 @@ const press = (w, el) => el.dispatchEvent(new w.Event("click", { bubbles: true }
   check("(9) the count is a control that names what it opens", attBtn && /^3 codes need attention at Alpha College\. Show them\.$/.test(attBtn.getAttribute("aria-label")));
   const words = txt(d.getElementById("root"));
   check("(9) ⭐ no words say a person or a curator settles a code", !/curator settles|person settles|settled by a person|\bSettle\b/i.test(words)
-    && /A code is settled once that score is Confident/.test(words) && /Sky reads the codes not read yet in the nightly data collection/.test(words));
+    && /A code is settled once that score is Confident/.test(words) && /The nightly data collection reads the codes not read yet/.test(words));
   press(x.w, attBtn); await settle();
   check("(9) ⭐ it opens that college's codes that need attention", Array.from(d.querySelectorAll(".csb-codes tbody tr")).map((r) => r.getAttribute("data-code")).join(",") === "MATH,WELD,ZZZ"
     && /Showing the 3 codes that need attention, of 4\./.test(txt(d.getElementById("csb-pick"))));
   press(x.w, d.querySelector('.csb-codes tr[data-code="MATH"] button[data-csb-edit="yes"]')); await settle();
   const act = d.getElementById("csb-act"), pin = d.getElementById("csb-panel").querySelector(".csb-panel-in");
   check("(9) ⭐ the panel leads with Act on it, and says why", act && pin.querySelector("section") === act
-    && /Sky’s call for its common subject code, MATH Mathematics, is 80% Likely, below Confident\./.test(txt(d.getElementById("csb-act-why"))));
+    && /The model’s call for its common subject code, MATH Mathematics, is 80% Likely, below Confident\./.test(txt(d.getElementById("csb-act-why"))));
   const ws = d.getElementById("csb-act-search");
   check("(9) ⭐ Search the web names the college, the code and its first course, in a new tab", ws && txt(ws) === "Search the web" && ws.getAttribute("data-query") === "Alpha College MATH 1 Algebra"
     && ws.getAttribute("href") === "https://www.google.com/search?q=" + encodeURIComponent("Alpha College MATH 1 Algebra") && ws.getAttribute("target") === "_blank" && /noopener/.test(ws.getAttribute("rel")));

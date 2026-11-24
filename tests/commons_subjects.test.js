@@ -84,7 +84,10 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(2) the titles to check open their list, each reason counted", by("3 titles to check") && by("3 titles to check").getAttribute("href") === "#commons/subjects/disagree"
     && /\(1 not in catalog, 2 not read yet, 0 blocked\)/.test(txt(first)) && !/on hold/.test(txt(first)));
   check("(2) Step a's figure opens the Common Subjects Reference", links.some((l) => l.getAttribute("href") === "#canonical-subj4" && /disciplines settled/.test(txt(l))));
-  check("(2) the card names who does each check", /Owner: the Courses bot/.test(txt(first)) && /Who: Sky/.test(txt(first)) && /(Owner: a curator|Done: all)/.test(txt(first)));
+  const shown = (() => { const c = d.body.cloneNode(true); c.querySelectorAll("script, style").forEach((n) => n.remove()); return txt(c).replace(/SkyView/g, ""); })();
+  check("(2) ⭐ S722 (Sam, 2026-11-24: \"no one outside of the map team knows we call you sky\"): the Commons never names Sky in rendered text",
+    !/\bSky\b/.test(shown) && shown.length > 500);
+  check("(2) the card names who does each check", /Owner: the Courses bot/.test(txt(first)) && /Who: the nightly data collection/.test(txt(first)) && /(Owner: a curator|Done: all)/.test(txt(first)));
   /* Sam's mock of 2026-11-23: the share of courses under a Confident code, then four checks under Collect, Curate and
      Connect, each with a Where to act line. */
   const stages = Array.from(first.querySelectorAll(".cmf-stage")).map(txt);
@@ -139,7 +142,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
     && !/print/i.test(Array.from(d.querySelectorAll(".csb-table thead th")).map(txt).join(" ")));
   const chip = math.children[2].querySelector(".csb-chip");
   check("(7) ⭐ a code in COCI and nowhere in the catalog carries the Not in catalog chip, a note a screen reader reads",
-    chip && txt(chip) === "Not in catalog" && chip.getAttribute("role") === "note" && /Sky recommends a title, and a person’s save confirms it/.test(chip.getAttribute("aria-label")));
+    chip && txt(chip) === "Not in catalog" && chip.getAttribute("role") === "note" && /The model recommends a title, and a person’s save confirms it/.test(chip.getAttribute("aria-label")));
   check("(7) a titled row carries no chip", !d.querySelector('.csb-codes tr[data-code="ENGL"] .csb-chip'));
   check("(4) the common code shows with its discipline title where the maps give one, blank where not", txt(d.querySelector('.csb-codes tr[data-code="ENGL"]').children[3]) === "ENGL English" && txt(zzz.children[3]) === "");
   /* (8) the recommendations (S700, #3655): a note beside a row with no title or no common code, never a value */

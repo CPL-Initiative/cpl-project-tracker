@@ -267,6 +267,9 @@ nobody finds; `unreferenced_offload` flags any that stop being.
   `college_report_generator.js`; `annual_report.js` polish), the docx footers,
   Sierra's built-in instructions (`NAMING_RULE` in cpl-chat; Sheet 132, 2026-10-26),
   and the public KB's `claude/CLAUDE.md`. Historical titles/quotes stay verbatim.
+- **"Sky" is the MAP team's name for Claude, never rendered (Sam, 2026-11-24):** *"no one outside of the map team knows
+  we call you sky."* A page names the actor plainly: *the model*, *the nightly data collection*, *a web search*.
+  Handoffs, lanes and chat keep it; *SkyView* is a product name and stays. The Commons is guarded.
 - **CO style guide (Sam, 2026-09-30):** governs our writing and CO colors and
   identity, never CCC or CCCCO; no UI change from it:
   [`reference-cccco-style-guide`](docs/kb-notes/reference-cccco-style-guide.md).
