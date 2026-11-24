@@ -13,7 +13,7 @@
 //   (4) the Collect / Curate / Connect headers are larger, and each card sits under its own.
 //   (5) the Plan card lists Phases 1, 2 and 3, each with Collected, Curated, Connected and Left.
 //   (6) ⭐ no "Counting Method" survives; "...(more)" is a button with aria-expanded that reads "(less)" when open.
-//   (7) ⭐ the chart: a solid line of records a day, a dashed pace-needed line, a dotted trend, a cost panel on the same
+//   (7) ⭐ the chart: a solid line of records a day, a dashed pace-needed line, a dotted trend (S723: no cost panel), the same
 //       dates, a readout the arrow keys move, and the table beside it.
 //   (8) ⭐ the College Data Collection card: one line per dataset, each count a link to College Data Collection
 //       filtered to those colleges (the filter counts the same colleges), the one fix that reaches the most colleges,
@@ -221,7 +221,8 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
   check("(7) ⭐ a solid line of records a day, a dashed pace-needed line, a dotted trend", !!x.d.querySelector(".cmf-plot path.cmf-l-actual") && !!x.d.querySelector(".cmf-plot line.cmf-l-need") && !!x.d.querySelector(".cmf-plot line.cmf-l-trend")
     && /\.cmf-l-need \{[^}]*stroke-dasharray:8 5/.test(SRC) && /\.cmf-l-trend \{[^}]*stroke-dasharray:2 4/.test(SRC));
   const colCol = x.d.getElementById("cmf-eta-collect"), curCol = x.d.getElementById("cmf-eta-curate");
-  check("(7) ⭐ the cost panel sits under the collection graph on the same dates", colCol.querySelectorAll(".cmf-plot").length === 2 && colCol.querySelectorAll(".cmf-plot-cost rect.cmf-b-cost").length > 0);
+  /* Sam, S723, 2026-11-24: "delete the bar graph on collection widget. we just need the trend line". */
+  check("(7) ⭐ no cost bars on the page: each column is its line graph alone", !x.d.querySelector(".cmf-plot-cost, rect.cmf-b-cost") && colCol.querySelectorAll(".cmf-plot").length === 1);
   /* S723 (Sam, 2026-11-24): "put the collection stuff all on the left, including the line graph and the curation stuff
      to the right of it, and make the bar graph match the line graph of the collection side". */
   const etaCols = Array.from(x.d.querySelectorAll(".cmf-dates > .cmf-eta-col"));
@@ -231,11 +232,10 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
   check("(7) ⭐ the curation graph matches the collection graph: the same lines, the same 30 days, and no cost panel of its own",
     !!curCol.querySelector(".cmf-plot path.cmf-l-actual") && curCol.querySelectorAll(".cmf-plot").length === 1 && !curCol.querySelector(".cmf-plot-cost")
     && curCol.querySelectorAll(".cmf-table tbody tr").length === 30 && /^Items curated a day, up to /.test(txt(curCol.querySelector(".cmf-axis"))) && x.d.getElementById("cmf-plots-cur"));
-  check("(7) ⭐ the bar panel is as tall as the line panel", /var D = o\.days, n = D\.length, W = 600, H1 = 120, H2 = 120/.test(SRC) && !/\.cmf-plot-cost \{ height/.test(SRC));
-  check("(7) the legend says each line in words", /Solid line/.test(txt(x.d.querySelector(".cmf-legend"))) && /Dashed line: daily pace needed/.test(txt(x.d.querySelector(".cmf-legend"))) && /Dotted line: trend/.test(txt(x.d.querySelector(".cmf-legend"))) && /cost per day/.test(txt(x.d.querySelector(".cmf-legend"))));
+  check("(7) the legend says each line in words", /Solid line/.test(txt(x.d.querySelector(".cmf-legend"))) && /Dashed line: daily pace needed/.test(txt(x.d.querySelector(".cmf-legend"))) && /Dotted line: trend/.test(txt(x.d.querySelector(".cmf-legend"))) && !/cost per day/.test(txt(x.d.querySelector(".cmf-legend"))));
   const plots = x.d.getElementById("cmf-plots"), ro = x.d.getElementById("cmf-readout"), r0 = txt(ro);
   plots.dispatchEvent(new x.w.KeyboardEvent("keydown", { key: "ArrowLeft", bubbles: true, cancelable: true }));
-  check("(7) ⭐ the keyboard reads one day at a time: the readout moves and is a live region", plots.getAttribute("tabindex") === "0" && ro.getAttribute("aria-live") === "polite" && txt(ro) !== r0 && /program records|no count/.test(txt(ro)) && /cost/.test(txt(ro)), r0 + " -> " + txt(ro));
+  check("(7) ⭐ the keyboard reads one day at a time: the readout moves and is a live region", plots.getAttribute("tabindex") === "0" && ro.getAttribute("aria-live") === "polite" && txt(ro) !== r0 && /program records|no count/.test(txt(ro)) && !/cost/.test(txt(ro)), r0 + " -> " + txt(ro));
   const trows = colCol.querySelectorAll(".cmf-chart .cmf-table tbody tr");
   check("(7) the table holds every day's figures, with scoped headers", trows.length === 30 && Array.from(x.d.querySelectorAll(".cmf-chart .cmf-table th")).every((t) => t.hasAttribute("scope")));
   check("(7) the plots scale to the width, with no fixed pixel width", /\.cmf-plot \{ width:100%/.test(SRC) && !/\.cmf-plot \{[^}]*width:\d+px/.test(SRC));

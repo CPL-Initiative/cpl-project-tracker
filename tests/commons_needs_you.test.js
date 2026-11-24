@@ -81,7 +81,7 @@ function baseFiles() {
   return f;
 }
 /* A COBI page with the panes a Needs you link opens, as both HTMLs draw them: a pane, its main container, its root. */
-const PANES = ["commons", "exhibits", "cr-reference", "coci-lookup"];
+const PANES = ["commons", "exhibits", "cr-reference", "coci-lookup", "program-requirements", "canonical-subj4"];
 function load(hash, opts) {
   opts = opts || {};
   const body = PANES.map((t) => '<div class="cpl-tab-pane" id="tab-' + t + '" data-tab="' + t + '"><div class="main-container"><div id="' + t + '-root">Loading</div></div></div>').join("");
@@ -294,6 +294,30 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   await go(away, "#cr-reference/names");
   await go(away, "#exhibits");
   check("(B) leaving the tab a Needs you link opened drops the link", !away.d.getElementById("cpl-back-needs"));
+
+  /* Sam, 2026-11-24 (S723): "the 417 link goes to Courses and Programs, which is good, but there's no link back to
+     commons, so user gets stranded". Every link from a Commons card into another tab carries the way back. */
+  {
+    const cx = load("#commons");
+    await cx.M.boot(); await settle();
+    const outs = Array.from(cx.d.querySelectorAll(".cmf-card a[href^='#']")).filter((l) => !l.hasAttribute("data-onpage") && !/^#(commons|collect)(\/|$)/.test(l.getAttribute("href")));
+    const bad = [];
+    for (const href of Array.from(new Set(outs.map((l) => l.getAttribute("href"))))) {
+      const y = load("#commons");
+      await y.M.boot(); await settle();
+      const l = Array.from(y.d.querySelectorAll(".cmf-card a")).find((a) => a.getAttribute("href") === href);
+      l.dispatchEvent(new y.w.MouseEvent("click", { bubbles: true, cancelable: true }));
+      await go(y, href);
+      const tab = href.slice(1).split("/")[0], pane = y.d.getElementById("tab-" + tab);
+      const back = pane && pane.querySelector(":scope > #cpl-back-needs a");
+      if (!back || txt(back) !== "Back to CPL Commons" || back.getAttribute("href") !== "#commons") { bad.push(href); continue; }
+      /* The tab draws itself on arrival and clears its pane: the link comes back. */
+      pane.innerHTML = '<div class="main-container"><div id="' + tab + '-root">Drawn</div></div>';
+      await settle();
+      if (!pane.querySelector(":scope > #cpl-back-needs a")) bad.push(href + " (lost on the tab's redraw)");
+    }
+    check("(B) ⭐ every Commons card link into another tab carries Back to CPL Commons at its top", outs.length > 5 && !bad.length, bad.join(" "));
+  }
 
   // #commons/needs-you
   const ny = load("#commons/needs-you");
