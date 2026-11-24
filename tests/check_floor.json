@@ -158,6 +158,7 @@
     "cpl_funding_section_titles.test.js": 19,
     "cpl_funding_selector_focus.test.js": 16,
     "cpl_funding_shell.test.js": 49,
+    "cpl_funding_simple_view.test.js": 35,
     "cpl_funding_statewide_expand.test.js": 40,
     "cpl_funding_statutory_goals.test.js": 49,
     "cpl_funding_sticky.test.js": 9,
