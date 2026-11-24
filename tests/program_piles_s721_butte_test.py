@@ -182,7 +182,7 @@ f12 = W._load("01312")
 a12 = f12["score"]["arithmetic"]
 check(a12["computed"] == [60.0, 61.0] and a12["stated"] == [62.0, 69.0] and not W.within_map(f12),
       "01312's sum falls short of the map's range: not inside it")
-check("degree_electives_not_printed" not in NG.GAPS, "#3762's kind is not on this branch: 01312 holds")
+check("01312" not in W.REVIEWED, "01312 holds for a later run under #3762's degree_electives_not_printed")
 f79 = W._load("33579")
 check(f79["score"]["arithmetic"]["computed"] == [26.0, 26.0] and "33579" not in W.REVIEWED
       and any("within List A" in n for n in W._notes(f79)), "33579 holds on the map's List A reading")
