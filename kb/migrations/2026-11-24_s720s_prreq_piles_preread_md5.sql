@@ -1,4 +1,4 @@
--- S720S lane 2's cheap piles at Santa Monica (named gaps 22). Each row's checks become the
+-- S720S lane 2's cheap piles at Santa Monica (named gaps 21). Each row's checks become the
 -- college load's image of its committed record (load_rows): checks.gaps and checks.confidence added; the
 -- record unchanged. Receipt: kb/receipts/program_requirement_records_piles_smc_2026-11-24_s720s.json (before_image per row).
 -- Compact pre-read, read-only: one SELECT, one JSON value; md5 of each image's jsonb text
@@ -22,10 +22,9 @@ with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) a
   (16, 'Santa Monica College', '39680', 39567439681, 'ee0b20d77ab1818653cc992029b2ecd8', 'be095b039bb1c195485474eb04b82f58', '0ecdb8d13da8b1664e86a5c5e5a4e020'),
   (17, 'Santa Monica College', '43655', 39567439681, '308086db755c2bb659dd36f43df5b04d', 'dfde00127a538f508c28565d7c2b6fb6', '90862a34a707b1788bc7ed855a7775c7'),
   (18, 'Santa Monica College', '43743', 39567439681, '865b01a20a9dd479408ad229a8d0e57b', '16260182f27048bd5418fbe24f7d4746', '63eb195a838fb0002efa723b3b3dd3b6'),
-  (19, 'Santa Monica College', '43767', 39567439681, '8d9cef83f4fa4f891c7ce7229e764c7c', 'e1a3324dd22ec61d0d53c3ad11321f10', 'd5d79fc34db304057aa9eb3354a283a1'),
-  (20, 'Santa Monica College', '44004', 39567439681, '58f8b04dc80745d38a2261e341bf20ed', '3c81834a38a33a73170c8fc53655fda9', '70b9577b32d0655b5729f1a78fd5765e'),
-  (21, 'Santa Monica College', '44720', 39567439681, 'a0606c9d783eb2401fb9ebbc64b46482', 'c34a5582e6c0a6741c6da26def4a4775', '139be4ad4e32e26f4acb1c81b8d678f1'),
-  (22, 'Santa Monica College', '46189', 44739378155, 'c134d7a24f00520a421225e5c9ba08bf', '788ee0293bdb78bb388760da1bbc39c5', 'f5d33e6731faf1be01181d61314d634d'))
+  (19, 'Santa Monica College', '44004', 39567439681, '58f8b04dc80745d38a2261e341bf20ed', '3c81834a38a33a73170c8fc53655fda9', '70b9577b32d0655b5729f1a78fd5765e'),
+  (20, 'Santa Monica College', '44720', 39567439681, 'a0606c9d783eb2401fb9ebbc64b46482', 'c34a5582e6c0a6741c6da26def4a4775', '139be4ad4e32e26f4acb1c81b8d678f1'),
+  (21, 'Santa Monica College', '46189', 44739378155, 'c134d7a24f00520a421225e5c9ba08bf', '788ee0293bdb78bb388760da1bbc39c5', 'f5d33e6731faf1be01181d61314d634d'))
 select json_build_object(
   'listed', (select count(*) from v),
   'on_run', count(*) filter (where r.extracted_run = v.extracted_run),
