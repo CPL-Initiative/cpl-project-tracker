@@ -5654,6 +5654,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         if platform == "curriqunet":
             urls = []
             pages = cq_pages(reader, start, report)
+            # A site_pages pin on a curriQunet catalog (S721) binds on an entry the index walk read (its view
+            # address, prefix + aliaspath), and is refused as not read otherwise.
+            site_pins = site_pin_entries(college)
             print("%s: %d programs (%d with a course list), %d curriQunet program pages, %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(pages), delay / 1000), flush=True)
         elif platform == "elumen":
@@ -5661,6 +5664,11 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             if not pages:
                 # The publish calls gave no program: read the menu's pages rendered.
                 urls = el_pages(reader, start, cache, report)
+            # A site_pages pin on an eLumen catalog (S721): the publish calls read every page the menu lists, so a
+            # pin binds on a page among them and is refused as not read otherwise; the rendered road queues it.
+            site_pins = site_pin_entries(college)
+            if urls:
+                urls += [pin["url"] for _, pin in sorted(site_pins.items()) if pin["url"] not in urls]
             print("%s: %d programs (%d with a course list), %d eLumen program pages (%s), %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(pages) or len(urls),
                      "publish/content" if pages else "rendered", delay / 1000), flush=True)
