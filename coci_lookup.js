@@ -121,6 +121,26 @@
     // Accept on a band in Common subject in doubt (S723): an underlined word, 24px tall, like the band's links.
     ".ccl-band-accept { font:inherit; background:none; border:0; padding:0; cursor:pointer; color:var(--accent-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; }",
     ".ccl-band-accept:focus-visible { outline:2px solid var(--focus-ring); outline-offset:2px; }",
+    // The Move panel under a band in doubt (S724): the courses ticked, a common subject, then a table to pick from.
+    ".ccl-move { display:grid; gap:10px; }",
+    ".ccl-move-bar, .ccl-move-acts, .ccl-move-ctrls { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:end; }",
+    ".ccl-move-n, .ccl-move-h { font-weight:600; color:var(--text-strong); }",
+    ".ccl-move-panel { display:grid; gap:10px; }",
+    ".ccl-move-f { display:grid; gap:4px; min-width:0; font-weight:600; color:var(--text-strong); }",
+    ".ccl-move-f select { max-width:min(100%,46rem); }",
+    // Sam, S724: "make the words in title box wider".
+    ".ccl-move-words { width:min(100%,28rem); }",
+    ".ccl-move-mq { display:grid; gap:4px; }",
+    ".ccl-move-mq p { margin:0; max-width:var(--cpl-measure,none); }",
+    ".ccl-move-wrap { overflow:auto; max-height:420px; border:1px solid var(--border-subtle); border-radius:4px; }",
+    ".ccl-move-table { border-collapse:collapse; width:100%; table-layout:fixed; font-variant-numeric:tabular-nums; }",
+    ".ccl-move-table th, .ccl-move-table td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--border-subtle); vertical-align:top; white-space:normal; }",
+    ".ccl-move-table th { position:sticky; top:0; background:var(--surface-muted); color:var(--text-strong); }",
+    ".ccl-move-table tbody tr { cursor:pointer; }",
+    ".ccl-move-table tr.ccl-move-on td { background:var(--surface-muted); }",
+    ".ccl-move-t { display:block; font-weight:600; color:var(--text-strong); }",
+    ".ccl-move-d { display:block; font-size:.8rem; line-height:1.35; color:var(--text-muted); margin-top:2px; }",
+    ".cplcoci-vh { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }",
     ".ccl-band-said { color: var(--text-body); font-size:.82rem; }",
     // Accept and Move on a course row (S723): words in a row of their own under the identity chips.
     ".ccl-row-acts { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:center; margin-top:4px; }",
@@ -434,7 +454,7 @@
      token and stops if a row stands; then it inserts with resolution=ignore-duplicates, so a row another reviewer saved
      in between is left alone and the answer comes back empty. A person changes an assignment by taking it back first. */
   function assignSave(r, target) {
-    if (ASSIGN.busy) return;
+    if (ASSIGN.busy) return Promise.resolve();
     ASSIGN.busy = true; ASSIGN.said[r.ctrl] = "Saving…"; ccRedraw();
     var key = "CN:" + r.ctrl, one = function (token) { return REST + "/kb_curation?" + assignSelect(token) + "&field=eq.merge_into&course_id=eq." + encodeURIComponent(key); };
     function done(words) { ASSIGN.busy = false; ASSIGN.said[r.ctrl] = words; LIST.memo = null; ccRedraw(); }
@@ -442,7 +462,7 @@
       ASSIGN.rows = ASSIGN.rows || {}; ASSIGN.rows[assignKey(r.ctrl)] = assignRow(x, sess.access_token);
       done("Nothing was saved: " + (x.reviewer_email || "a reviewer") + " already assigned this course to " + x.value + ". Take it back first to change it.");
     }
-    ccFresh().then(function (sess) {
+    return ccFresh().then(function (sess) {
       if (!sess) { done("Your sign-in has ended. Sign in again, then assign."); return null; }
       var auth = { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token };
       return fetch(one(sess.access_token), { headers: auth }).then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); })
@@ -844,7 +864,7 @@
      SkyView write), and Accept says it belongs here. Accept writes kb_curation CN:<control number> mid_member_confirm
      <M-ID> under the reviewer's name (mapped DR-25). Once every course of a card in doubt is accepted or moved, the
      card's own Keep is saved, as the panel's Keep is, and the card leaves the list. Read live, a page at a time. */
-  var MEMB = { rows: null, loading: false, busy: false, said: {}, open: {}, pick: {}, kept: {} }, MEMB_FIELD = "mid_member_confirm";
+  var MEMB = { rows: null, loading: false, busy: false, said: {}, open: {}, pick: {}, subj: {}, words: {}, panel: {}, said2: {}, kept: {} }, MEMB_FIELD = "mid_member_confirm";
   function loadMembers() {
     if (MEMB.loading) return Promise.resolve();
     MEMB.loading = true;
@@ -866,24 +886,176 @@
   }
   function membersOf(mid) { return listBuild().rows.filter(function (x) { return (x.mids || []).indexOf(mid) >= 0; }); }
   function memberSettled(x, mid) { var a = assignedOf(x.ctrl); return (MEMB.rows && MEMB.rows[assignKey(x.ctrl)] === mid) || (a && a.to && a.to !== mid); }
-  /* The common courses a course could move to: its closest matches when the scorer has them, then the common courses
-     in the card's signal subjects whose titles share the most words with the course's title. */
-  function moveChoices(r, mid) {
-    var out = [], seen = {}; seen[mid] = 1;
-    (r.rec && r.rec.top || []).forEach(function (t) { if (!seen[t[0]]) { seen[t[0]] = 1; out.push(t[0]); } });
-    var card = JOBS.doubt && JOBS.doubt.map.get(mid), subs = {};
-    if (card) { subs[card.discipline] = 1; (card.desc || []).forEach(function (d) { subs[d[0]] = 1; }); Object.keys(card.votes || {}).forEach(function (d) { subs[d] = 1; }); }
-    var words = String(r.title || "").toLowerCase().split(/[^a-z]+/).filter(function (w) { return w.length > 3; });
-    var scored = [];
+  /* The common subjects a course could move to: the card's signals first (the colleges' TOP votes, most first, then
+     where the description reads, then the scorer's closest common courses' subjects, then its own), then every other
+     common subject A to Z by code. */
+  function moveSubjects(r, mid) {
+    var card = JOBS.doubt && JOBS.doubt.map.get(mid), home = (card && card.discipline) || ((CC.byId && CC.byId.get(mid)) || {}).disc || "";
+    var first = [], seen = {}, add = function (d) { if (d && !seen[d]) { seen[d] = 1; first.push(d); } };
+    if (card) {
+      Object.keys(card.votes || {}).sort(function (a, b) { return card.votes[b] - card.votes[a] || (a < b ? -1 : 1); }).forEach(add);
+      (card.desc || []).forEach(function (d) { add(d[0]); });
+    }
+    (r.rec && r.rec.top || []).forEach(function (t) { var c = CC.byId && CC.byId.get(t[0]); if (c) add(c.disc); });
+    add(home);
+    var rest = [];
+    if (CC.byId) CC.byId.forEach(function (c) { if (c.disc && !seen[c.disc]) { seen[c.disc] = 1; rest.push(c.disc); } });
+    rest.sort(function (a, b) { var x = ccName(a), y = ccName(b); return x < y ? -1 : x > y ? 1 : 0; });
+    return { first: first, rest: rest, home: home };
+  }
+  /* Every common course in a common subject but the one the course sits in, those sharing words with the course's title
+     first; words typed keep only the titles holding all of them. */
+  function moveCourses(subj, r, mid, typed) {
+    var own = String(r.title || "").toLowerCase().split(/[^a-z]+/).filter(function (w) { return w.length > 3; });
+    var want = String(typed || "").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean), out = [];
     if (CC.byId) CC.byId.forEach(function (c, id) {
-      if (seen[id] || !subs[c.disc]) return;
-      var t = String(c.title || "").toLowerCase(), n = words.filter(function (w) { return t.indexOf(w) >= 0; }).length;
-      if (n) scored.push([n, id]);
+      if (id === mid || c.disc !== subj || (c.kind && c.kind !== "Course")) return;
+      var t = String(c.title || "").toLowerCase();
+      if (want.some(function (w) { return t.indexOf(w) < 0 && id.toLowerCase().indexOf(w) < 0; })) return;
+      out.push([own.filter(function (w) { return t.indexOf(w) >= 0; }).length, String(c.title || ""), id]);
     });
-    scored.sort(function (a, b) { return b[0] - a[0] || (a[1] < b[1] ? -1 : 1); }).slice(0, 12).forEach(function (x) { out.push(x[1]); });
+    out.sort(function (a, b) { return b[0] - a[0] || (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0); });
+    return out.map(function (x) { return x[2]; });
+  }
+  function unitsWords(c) {
+    var lo = c.umin, hi = c.umax;
+    if (lo != null && hi != null && lo !== hi) return fmt(lo) + " to " + fmt(hi) + " units";
+    var u = c.units != null ? c.units : lo;
+    return u == null ? "units not listed" : fmt(u) + (u === 1 ? " unit" : " units");
+  }
+  function moveLabel(id) {
+    var c = (CC.byId && CC.byId.get(id)) || {}, X = listBuild().X, n = X && X.size.get(id);
+    return id + (c.title ? ", " + c.title : "") + ", " + unitsWords(c) + (n ? ", " + fmt(n) + (n === 1 ? " local course" : " local courses") : "");
+  }
+  /* The minimum qualifications of each common subject (kb/status/mq_view.json, the MQ view's own file): its list and
+     any provision of its own, in words without the regulation's numbers (Sam, S724, 2026-11-24: "note which of the 3
+     mq quals they are and add a note for the special apprentice or licenses ones"; "take off the CCR citations but add
+     if they are for noncredit"; a subject whose name says Noncredit carries no second word for it). */
+  var MQV = { map: null, asked: false };
+  var MQ_TYPE = { masters: "Master's", specific: "Specific degree", any: "Any degree" };
+  var MQ_NOTE = { license_53410_1: "a California license can substitute", dsps_53414: "DSPS qualifications", apprenticeship_53413: "apprenticeship qualifications",
+    learning_assistance_53415: "learning assistance qualifications", work_experience_53416: "work experience qualifications", credential_required: "a license or certificate is required" };
+  function mqLoad() {
+    if (MQV.map || MQV.asked || typeof fetch !== "function") return;
+    MQV.asked = true;
+    fetch("kb/status/mq_view.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (V) {
+      if (!V || !Array.isArray(V.rows)) return;
+      var P = V.provisions || {}, m = {};
+      V.rows.forEach(function (row) {
+        var notes = [], lines = [];
+        if ((row.noncredit || (row.provisions || []).indexOf("noncredit_53412") >= 0) && !/noncredit/i.test(row.our_name || row.key)) notes.push("noncredit");
+        (row.provisions || []).forEach(function (pv) {
+          if (MQ_NOTE[pv]) notes.push(MQ_NOTE[pv]);
+          var w = ((P[pv] || {}).disciplines || {})[row.key] || (P[pv] || {}).words || "";
+          w = String(w).replace(/\(?\b(CCR )?5341\d(\.\d)?(\([a-z0-9]+\))*\)?:?\s*/g, "").trim();
+          if (w) lines.push(w.charAt(0).toUpperCase() + w.slice(1));
+        });
+        var e = { t: (row.types || []).map(function (t) { return MQ_TYPE[t] || t; }).join(" or "), notes: notes, lines: lines, k: row.key };
+        m[row.key] = e; if (row.our_name) m[row.our_name] = e;
+      });
+      MQV.map = m; ccRedraw();
+    }, function () { /* the subjects read without their qualifications */ });
+  }
+  function mqTag(d) { var e = MQV.map && MQV.map[d]; return e ? ", " + e.t + (e.notes.length ? "; " + e.notes.join("; ") : "") : ""; }
+  /* Each common course's catalog description, read once a Move panel opens (the Unified Courses file). */
+  var UCD = { asked: false };
+  function ucDetails() {
+    if (window.CPL_UC_DETAILS || UCD.asked || !(window.CPL_TABS && CPL_TABS.loadScript)) return;
+    UCD.asked = true;
+    CPL_TABS.loadScript("unified_courses_details.js", "CPL_UC_DETAILS", function () { ccRedraw(); });
+  }
+  function ucDesc(id) { var d = window.CPL_UC_DETAILS && window.CPL_UC_DETAILS[id]; return d && d.d ? String(d.d) : ""; }
+  function idSafe(id) { return String(id).replace(/[^A-Za-z0-9]+/g, "-"); }
+  /* The Move panel under a band in doubt (Sam, S724, 2026-11-24, on the mock: "layout b looks good"; "add the
+     description in small font next to the title"; "it's unclear to me which of the 2 courses I'm moving"; "add a
+     selector box to each and one on the mid"). The courses ticked move together, one saved move each. */
+  function movePanel(mid, members, h) {
+    var chosen = members.filter(function (x) { return h.sel(x) && !memberSettled(x, mid); });
+    var said = MEMB.said2[mid];
+    if (!chosen.length) { if (said) return el("p", { "class": "cplcoci-meta", role: "status" }, [said]); MEMB.panel[mid] = false; return null; }
+    ccLoad(); mqLoad();
+    if (!MEMB.rows && !MEMB.loading) loadMembers().then(ccRedraw);
+    var one = chosen.length === 1, names = chosen.map(function (x) { return x.subj + " " + x.num; });
+    var out = el("div", { "class": "ccl-move" }, []);
+    var bar = el("div", { "class": "ccl-move-bar" }, [el("span", { "class": "ccl-move-n" }, [fmt(chosen.length) + (one ? " course chosen" : " courses chosen")])]);
+    function act(text, label, fn) { var b = el("button", { type: "button", "class": "ccl-band-accept", "aria-label": label }, [text]); b.addEventListener("click", fn); return b; }
+    bar.appendChild(act("Accept the chosen", "Accept " + names.join(" and ") + " under " + mid, function () {
+      chosen.forEach(function (x) { memberSave(x, mid); }); MEMB.said2[mid] = ""; }));
+    if (!MEMB.panel[mid]) bar.appendChild(act("Move the chosen", "Move " + names.join(" and ") + " to another common course", function () { MEMB.panel[mid] = true; MEMB.pick[mid] = ""; ccRedraw(); }));
+    if (said) bar.appendChild(el("span", { "class": "ccl-band-said", role: "status" }, [said]));
+    out.appendChild(bar);
+    if (!MEMB.panel[mid]) return out;
+    ucDetails();
+    var sid = "ccl-mv-subj-" + idSafe(mid), wid = "ccl-mv-words-" + idSafe(mid), hid = "ccl-mv-h-" + idSafe(mid);
+    var first = chosen[0], S = moveSubjects(first, mid);
+    if (!MEMB.subj[mid]) MEMB.subj[mid] = S.first.filter(function (d) { return d !== S.home; })[0] || S.first[0] || S.rest[0] || "";
+    var heading = "Moving " + chosen.map(function (x) { return x.subj + " " + x.num + " " + x.title + " at " + x.college + " (" + (x.units == null ? "units not listed" : fmt(x.units) + (x.units === 1 ? " unit" : " units")) + ")"; })
+      .reduce(function (acc, t, i, all) { return acc + (i === 0 ? "" : i === all.length - 1 ? " and " : ", ") + t; }, "") + " to:";
+    var panel = el("div", { "class": "ccl-move-panel", role: "group", "aria-labelledby": hid }, [el("p", { id: hid, "class": "ccl-move-h" }, [heading])]);
+    var subj = el("select", { id: sid, "class": "ccl-cc-in ccl-move-subj" });
+    function group(label, list) {
+      if (!list.length) return;
+      var g = el("optgroup", { label: label }, []);
+      list.forEach(function (d) { var o = el("option", { value: d }, [ccName(d) + (d === S.home ? " (its common subject now)" : "") + mqTag(d)]); if (MEMB.subj[mid] === d) o.selected = true; g.appendChild(o); });
+      subj.appendChild(g);
+    }
+    group(one ? "Suggested by this course" : "Suggested by these courses", S.first);
+    group("Every other common subject", S.rest);
+    subj.addEventListener("change", function () { MEMB.subj[mid] = subj.value; MEMB.pick[mid] = ""; ccRedraw(); var n = document.getElementById(sid); if (n) n.focus(); });
+    var words = el("input", { id: wid, type: "search", "class": "ccl-cc-in ccl-move-words", placeholder: "Words in the title", value: MEMB.words[mid] || "" });
+    words.addEventListener("input", function () { var at = words.selectionStart; MEMB.words[mid] = words.value; ccRedraw(); var n = document.getElementById(wid); if (n) { n.focus(); try { n.setSelectionRange(at, at); } catch (e) {} } });
+    [subj, words].forEach(function (n) { n.addEventListener("keydown", function (e) { e.stopPropagation(); }); });
+    var list = moveCourses(MEMB.subj[mid], first, mid, MEMB.words[mid] || "").filter(function (id) { return !chosen.some(function (x) { return x.mid === id; }); }), cap = 200;
+    panel.appendChild(el("div", { "class": "ccl-move-ctrls" }, [
+      el("label", { "class": "ccl-move-f", "for": sid }, [el("span", {}, ["Common subject, with its minimum qualifications list"]), subj]),
+      el("label", { "class": "ccl-move-f", "for": wid }, [el("span", {}, ["Words in the title"]), words]),
+      el("span", { "class": "cplcoci-meta", role: "status" }, [list.length > cap ? "Showing " + fmt(cap) + " of " + fmt(list.length) + "; type words to narrow." : fmt(list.length) + (list.length === 1 ? " common course in " : " common courses in ") + ccName(MEMB.subj[mid]) + "."])]));
+    var mq = MQV.map && MQV.map[MEMB.subj[mid]], note = el("div", { "class": "ccl-move-mq" }, []);
+    if (mq) {
+      note.appendChild(el("p", {}, ["Minimum qualifications: " + mq.t + " list, as " + mq.k + " in the 20th-edition handbook."]));
+      mq.lines.forEach(function (w) { note.appendChild(el("p", {}, [w])); });
+    }
+    note.appendChild(el("p", { "class": "cplcoci-meta" }, ["Apprenticeship and a required California license or certificate attach to a course or program, never to a whole subject. Check the course itself for either."]));
+    panel.appendChild(note);
+    var body = el("tbody", {}, []), X = listBuild().X, gname = "ccl-mv-pick-" + idSafe(mid);
+    list.slice(0, cap).forEach(function (id) {
+      var c = (CC.byId && CC.byId.get(id)) || {}, n = X && X.size.get(id), d = ucDesc(id);
+      var radio = el("input", { type: "radio", name: gname, value: id, "aria-label": id + ", " + (c.title || "") });
+      radio.checked = MEMB.pick[mid] === id;
+      var choose = function () { MEMB.pick[mid] = id; ccRedraw(); };
+      radio.addEventListener("change", choose);
+      var tr = el("tr", { "class": MEMB.pick[mid] === id ? "ccl-move-on" : null }, [el("td", {}, [radio]), el("td", {}, [id]),
+        el("td", {}, [el("span", { "class": "ccl-move-t" }, [c.title || ""]), el("span", { "class": "ccl-move-d" }, [d || (window.CPL_UC_DETAILS ? "No catalog description in this build." : "Reading the description…")])]),
+        el("td", {}, [unitsWords(c)]), el("td", {}, [n ? fmt(n) : ""])]);
+      tr.addEventListener("click", function (e) { if (e.target !== radio) choose(); });
+      body.appendChild(tr);
+    });
+    panel.appendChild(el("div", { "class": "ccl-move-wrap", role: "region", tabindex: "0", "aria-label": "Common courses to move " + names.join(" and ") + " to" }, [
+      el("table", { "class": "ccl-move-table" }, [
+        el("colgroup", {}, [el("col", { style: "width:2.5rem" }), el("col", { style: "width:8rem" }), el("col", {}), el("col", { style: "width:7.5rem" }), el("col", { style: "width:6rem" })]),
+        el("thead", {}, [el("tr", {}, [el("th", { scope: "col" }, [el("span", { "class": "cplcoci-vh" }, ["Pick"])]), el("th", { scope: "col" }, ["Common course"]),
+          el("th", { scope: "col" }, ["Title and description"]), el("th", { scope: "col" }, ["Units"]), el("th", { scope: "col" }, ["Local courses"])])]), body])]));
+    var acts = el("div", { "class": "ccl-move-acts" }, []);
+    acts.appendChild(act(one ? "Move " + names[0] + " here" : "Move these " + fmt(chosen.length) + " courses here", "Move " + names.join(" and ") + " to the chosen common course", function () {
+      var id = MEMB.pick[mid];
+      if (!id) { MEMB.said2[mid] = "Choose a common course first."; ccRedraw(); return; }
+      if (!(X && X.size.has(id))) { MEMB.said2[mid] = "No common course " + id + " is in today's identity file. Nothing was saved."; ccRedraw(); return; }
+      if (!ASSIGN.rows) { MEMB.said2[mid] = "The list of moved courses has not loaded yet, so nothing was saved. Try again in a moment."; ccRedraw(); return; }
+      MEMB.panel[mid] = false; MEMB.said2[mid] = "Moving " + names.join(" and ") + " to " + id + "…"; ccRedraw();
+      chosen.reduce(function (p, x) { return p.then(function () { return assignSave(x, id); }); }, Promise.resolve()).then(function () {
+        var api = listApi(), L = api && api.state && api.state();
+        if (L) chosen.forEach(function (x) { delete L.sel[x.ut]; });
+        var moved = chosen.filter(function (x) { var a = assignedOf(x.ctrl); return a && a.to === id; }).length;
+        MEMB.said2[mid] = moved === chosen.length ? "Moved " + names.join(" and ") + " to " + id + "; the nightly build lists " + (one ? "it" : "them") + " there."
+          : fmt(moved) + " of " + fmt(chosen.length) + " moved; each course's own line says why the rest did not.";
+        afterMember(mid); ccRedraw();
+      });
+    }));
+    acts.appendChild(act("Cancel", "Cancel the move", function () { MEMB.panel[mid] = false; ccRedraw(); }));
+    panel.appendChild(acts);
+    out.appendChild(panel);
     return out;
   }
-  function moveLabel(id) { var c = CC.byId && CC.byId.get(id); return id + (c && c.title ? ", " + c.title : "") + (c && c.disc ? " (" + ccName(c.disc) + ")" : ""); }
   function rowActs(r) {
     var mid = rowDoubtMid(r), sess = ccSession();
     if (!mid || !sess) return [];
@@ -897,26 +1069,13 @@
     box.addEventListener("click", stop);
     if (MEMB.rows && MEMB.rows[k] === mid) box.appendChild(el("span", { "class": "ccl-band-said" }, ["Accepted under " + mid]));
     else if (a && a.to && a.to !== mid) box.appendChild(el("span", { "class": "ccl-band-said" }, ["Moved to " + a.to + "; the nightly build lists it there"]));
-    else if (MEMB.open[k]) {
-      var opts = moveChoices(r, mid), sel = el("select", { "class": "ccl-cc-in ccl-move-pick", "aria-label": "Move " + r.subj + " " + r.num + " at " + r.college + " to another common course" });
-      sel.appendChild(el("option", { value: "" }, ["Choose a common course"]));
-      opts.forEach(function (id) { var o = el("option", { value: id }, [moveLabel(id)]); if (MEMB.pick[k] === id) o.selected = true; sel.appendChild(o); });
-      var other = el("option", { value: "other" }, ["Another common course, by its id"]); if (MEMB.pick[k] === "other") other.selected = true; sel.appendChild(other);
-      var typed = el("input", { type: "text", "class": "ccl-cc-in ccl-move-id", "aria-label": "The common course's id, such as KINE M1344", hidden: MEMB.pick[k] === "other" ? null : true });
-      sel.addEventListener("change", function () { MEMB.pick[k] = sel.value; if (sel.value === "other") typed.removeAttribute("hidden"); else typed.setAttribute("hidden", ""); });
-      [sel, typed].forEach(function (n) { n.addEventListener("click", stop); n.addEventListener("keydown", stop); });
-      box.appendChild(sel); box.appendChild(typed);
-      box.appendChild(btn("Move here", "Move " + r.subj + " " + r.num + " to the chosen common course", function () {
-        var id = sel.value === "other" ? String(typed.value || "").trim().replace(/\s+/g, " ").toUpperCase() : sel.value, X = listBuild().X;
-        if (!id) { MEMB.said[k] = "Choose a common course first."; ccRedraw(); return; }
-        if (!(X && X.size.has(id))) { MEMB.said[k] = "No common course " + id + " is in today's identity file. Nothing was saved."; ccRedraw(); return; }
-        if (!ASSIGN.rows) { MEMB.said[k] = "The list of moved courses has not loaded yet, so nothing was saved. Try again in a moment."; ccRedraw(); return; }
-        MEMB.said[k] = ""; MEMB.open[k] = false; assignSave(r, id);
-      }));
-      box.appendChild(btn("Cancel", "Cancel the move", function () { MEMB.open[k] = false; ccRedraw(); }));
-    } else {
+    else {
       box.appendChild(btn("Accept", "Accept " + r.subj + " " + r.num + " at " + r.college + " under " + mid, function () { memberSave(r, mid); }));
-      box.appendChild(btn("Move", "Move " + r.subj + " " + r.num + " at " + r.college + " to another common course", function () { MEMB.open[k] = true; ccRedraw(); }));
+      box.appendChild(btn("Move", "Move " + r.subj + " " + r.num + " at " + r.college + " to another common course", function () {
+        var api = listApi(), L = api && api.state && api.state();
+        if (L) { membersOf(mid).forEach(function (x) { delete L.sel[x.ut]; }); L.sel[r.ut] = true; }
+        MEMB.panel[mid] = true; MEMB.pick[mid] = ""; ccRedraw();
+      }));
     }
     if (said) box.appendChild(el("span", { "class": "ccl-band-said", role: "status" }, [said]));
     return out;
@@ -1703,7 +1862,10 @@
       bands: { key: function (r) { return r.mid; }, by: "M-ID", label: "Bands by M-ID", none: "Not in a group",
         name: function (id, members) { var t = bandTitle(members); return id + (t ? ", " + t : ""); },
         facts: function (id, members) { return bandFacts(members, id); },
-        acts: function (id) { return [skyLink(id)]; } },
+        acts: function (id) { return [skyLink(id)]; },
+        // A card in doubt, signed in: a box on its band ticks every course under it, and the courses ticked move together.
+        select: function (id) { return !!(ccSession() && JOBS.doubt && JOBS.doubt.map.has(id) && !ruledCard(id)); },
+        after: function (id, members, h) { return ccSession() && JOBS.doubt && JOBS.doubt.map.has(id) && !ruledCard(id) ? movePanel(id, members, h) : null; } },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       filters: LIST_FILTERS, counts: function () { return Object.assign({}, listBuild().counts, jobCounts()); },
       // The jobs first, in the order to act on them, then the census words (Sam, 2026-11-09, issue 2997: "put them

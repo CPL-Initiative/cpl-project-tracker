@@ -72,6 +72,10 @@ const DOUBT = { schema: 1, discipline: "English", counts: { description: 1, top_
     why: ["description"], desc: [["Communication Studies", 0.21], ["Journalism", 0.12]], desc_kind: "desc_differs_clear", votes: {} },
   { id: "CNST M1009", title: "Tool and Equipment Applications", discipline: "Construction", colleges: 1, members: 1, verdict: "unsettled",
     why: ["top"], desc: [["Construction", 0.3]], desc_kind: "desc_agrees_clear", votes: { Welding: 2, Construction: 1 } }] };
+// The MQ view's file (kb/status/mq_view.json): Welding carries a license provision; its regulation numbers never render.
+const MQVIEW = { types: {}, provisions: { license_53410_1: { disciplines: {}, words: "Professional license as an alternative (CCR 53410.1): a bachelor's plus a valid California license." } },
+  rows: [{ key: "Welding", our_name: "Welding", types: ["any"], provisions: ["license_53410_1"], noncredit: false },
+    { key: "English", our_name: "English", types: ["masters"], provisions: [], noncredit: false }] };
 const RULED = [{ course_id: "_CCR_PROCEDURE_REQUEST::2026-11-09T03:00:00Z-CNST_M1009", reviewer_email: "sam@rccd.edu", reviewed_at: "2026-11-09T03:00:00Z",
   value: JSON.stringify({ mid: "CNST M1009", discipline_was: "Construction", ruling: "keep", words: "Shop tools are taught for the trade.", similar: true }) }];
 
@@ -101,12 +105,14 @@ function tab(opts) {
       if (opts.nohome) D.cards.find((c) => c.id === opts.nohome).discipline = "";
       return ok(D);
     }
+    if (/mq_view\.json/.test(url)) return ok(MQVIEW);
     if (/row_audit\/latest\.json/.test(url)) return ok({ rows: [] });
     if (/csr_out\/latest\.json/.test(url)) return ok({ _mid_codes: { strays: [] } });
     return ok([]);
   };
   w.CPL_TABS = { loadScript: function (s, name, cb) {
     if (s === "commons_list.js") { const e = w.document.createElement("script"); e.textContent = LIST_SRC; w.document.body.appendChild(e); }
+    if (s === "unified_courses_details.js") w.CPL_UC_DETAILS = { "WELD M1109": { d: "Shielded metal arc welding in flat and horizontal positions." } };
     if (s === "unified_courses_members.js") w.CPL_UC_MEMBERS = JSON.parse(JSON.stringify(MEMBERS));
     if (s === "unified_courses_data.js") {
       w.CPL_UNIFIED_COURSES = JSON.parse(JSON.stringify(UC));
@@ -446,27 +452,73 @@ function rule(t, value, words, similar) {
     check("(13) ⭐ each course row in doubt carries Accept and Move; the M-ID heading carries none",
       wordsIn(rowOf("College Composition")).join("|") === "Accept|Move" && wordsIn(rowOf("Tool and Equipment Applications")).join("|") === "Accept|Move"
       && !Array.from(t.d.querySelectorAll("tr[class*='band'] .ccl-band-accept")).length, wordsIn(rowOf("College Composition")).join("|"));
-    // Move opens a dropdown in the row; another common course by its id moves it (the merge_into row Assign writes).
+    // S724 (Sam, 2026-11-24, on the mock): "layout b looks good"; "add the description in small font next to the
+    // title"; "it's unclear to me which of the 2 courses I'm moving"; "add a selector box to each and one on the mid";
+    // "note which of the 3 mq quals they are"; "take off the CCR citations". No id is typed.
+    const band = () => Array.from(t.d.querySelectorAll("tr.ccl-band")).find((tr) => /ENGL M1001/.test(txt(tr)));
+    const bandBox = () => band().querySelector("input.ccl-bandbox");
+    check("(13) ⭐ a band in doubt carries a box that ticks every course under it", !!bandBox(), band() && band().innerHTML.slice(0, 300));
     Array.from(rowOf("College Composition").querySelectorAll(".ccl-row-acts button")).find((b) => txt(b) === "Move").click();
-    await until(() => !!rowOf("College Composition").querySelector("select.ccl-move-pick"));
-    const sel = rowOf("College Composition").querySelector("select.ccl-move-pick");
-    check("(13) ⭐ Move shows its dropdown right in the row, ending with another common course by its id",
-      !!sel && sel.options[0].value === "" && sel.options[sel.options.length - 1].value === "other");
-    sel.value = "other"; sel.dispatchEvent(new t.w.Event("change"));
-    const typed = rowOf("College Composition").querySelector("input.ccl-move-id");
-    typed.value = "weld m1109";
-    Array.from(rowOf("College Composition").querySelectorAll(".ccl-row-acts button")).find((b) => txt(b) === "Move here").click();
+    await until(() => !!t.d.querySelector(".ccl-move-panel"));
+    const panelH = () => txt(t.d.querySelector(".ccl-move-h"));
+    check("(13) ⭐ Move on a row opens the panel under the band, naming that one course with its college and units",
+      /^Moving ENGL 300 College Composition at American River College \(4 units\) to:$/.test(panelH()), panelH());
+    check("(13) and it ticks that row's box alone", bandBox().indeterminate && !bandBox().checked);
+    await until(() => /Any degree; a California license can substitute/.test(txt(t.d.querySelector(".ccl-move-subj"))));
+    const subj = t.d.querySelector(".ccl-move-subj");
+    const groups = Array.from(subj.querySelectorAll("optgroup")).map((g) => g.label + ": " + Array.from(g.querySelectorAll("option")).map((o) => o.value).join(","));
+    check("(13) ⭐ the common subject comes first: the card's signals, then every other common subject",
+      groups.join(" | ") === "Suggested by this course: Communication Studies,Journalism,English | Every other common subject: Construction,Welding", groups.join(" | "));
+    const wOpt = txt(subj.querySelector("option[value='Welding']"));
+    check("(13) ⭐ each common subject names its minimum qualifications list and provision, with no regulation number",
+      /Welding, Any degree; a California license can substitute$/.test(wOpt) && /\(its common subject now\), Master's$/.test(txt(subj.querySelector("option[value='English']"))) && !/CCR|5341/.test(txt(subj)), wOpt);
+    subj.value = "Welding"; subj.dispatchEvent(new t.w.Event("change"));
+    await until(() => /Shielded metal arc/.test(txt(t.d.querySelector(".ccl-move-table") || t.d.body)));
+    const mq = txt(t.d.querySelector(".ccl-move-mq"));
+    check("(13) ⭐ the chosen subject shows its handbook line and the provision's own words, no citation",
+      /Minimum qualifications: Any degree list, as Welding in the 20th-edition handbook\./.test(mq) && /Professional license as an alternative a bachelor's/.test(mq) && !/CCR|5341/.test(mq) && /Apprenticeship and a required California license/.test(mq), mq);
+    const trs = () => Array.from(t.d.querySelectorAll(".ccl-move-table tbody tr")).map(txt);
+    check("(13) ⭐ then a table of that subject's common courses: id, title with its description in small type, units, local courses",
+      trs().join("|") === "WELD M1109Welding IShielded metal arc welding in flat and horizontal positions.3 units3", trs().join("|"));
+    const words = t.d.querySelector(".ccl-move-words");
+    words.value = "pipe"; words.dispatchEvent(new t.w.Event("input"));
+    check("(13) words typed narrow the table", trs().length === 0 && /0 common courses in WELD Welding|0 common courses in Welding/.test(txt(t.d.querySelector(".ccl-move-ctrls"))), txt(t.d.querySelector(".ccl-move-ctrls")));
+    const w2 = t.d.querySelector(".ccl-move-words"); w2.value = ""; w2.dispatchEvent(new t.w.Event("input"));
+    t.d.querySelector(".ccl-move-table tbody tr td:nth-child(3)").click();
+    await until(() => !!t.d.querySelector(".ccl-move-table tr.ccl-move-on"));
+    const moveBtn = () => Array.from(t.d.querySelectorAll(".ccl-move-acts button")).find((b) => /^Move /.test(txt(b)));
+    check("(13) the button names the course it moves", txt(moveBtn()) === "Move ENGL 300 here", txt(moveBtn()));
+    moveBtn().click();
     await until(() => bodies().some((b) => b.field === "merge_into"));
     const mv = bodies().find((b) => b.field === "merge_into");
     check("(13) ⭐ Move here writes the course's own re-home, never the card's common subject", mv.course_id === "CN:CCC1" && mv.value === "WELD M1109"
       && !bodies().some((b) => b.field === "ccr_procedure_request"), JSON.stringify(mv));
+    // The band's box ticks the courses left; one press moves them together, one saved move each.
+    await until(() => /Moved ENGL 300 to WELD M1109/.test(txt(t.d.body)));
+    bandBox().click();
+    await until(() => /2 courses chosen/.test(txt(t.d.querySelector(".ccl-move-bar") || t.d.body)));
+    check("(13) ⭐ the band's box chooses every course still to settle", /2 courses chosen/.test(txt(t.d.querySelector(".ccl-move-bar"))), txt(t.d.querySelector(".ccl-move-bar") || t.d.body).slice(0, 200));
+    Array.from(t.d.querySelectorAll(".ccl-move-bar button")).find((b) => txt(b) === "Move the chosen").click();
+    await until(() => !!t.d.querySelector(".ccl-move-panel"));
+    check("(13) ⭐ the panel names every course it will move",
+      /^Moving ENGL 101 Composition and Reading at Rio Hondo College \(3 units\) and ENGL 100 Freshman Composition at Cypress College \(4 units\) to:$/.test(panelH()), panelH());
+    const s2 = t.d.querySelector(".ccl-move-subj"); s2.value = "Welding"; s2.dispatchEvent(new t.w.Event("change"));
+    await until(() => !!t.d.querySelector(".ccl-move-table tbody tr"));
+    t.d.querySelector(".ccl-move-table tbody tr input[type=radio]").click();
+    await until(() => /^Move these 2 courses here$/.test(txt(moveBtn() || t.d.body)));
+    moveBtn().click();
+    await until(() => bodies().filter((b) => b.field === "merge_into").length >= 3);
+    const mvs = bodies().filter((b) => b.field === "merge_into").map((b) => b.course_id + ">" + b.value).sort();
+    check("(13) ⭐ Move these 2 courses here writes one move per course", mvs.join(",") === "CN:CCC1>WELD M1109,CN:CCC2>WELD M1109,CN:CCC3>WELD M1109", mvs.join(","));
     // Accept on the only course of a card: its own row, then the card's Keep, and the card leaves the list.
     Array.from(rowOf("Tool and Equipment Applications").querySelectorAll(".ccl-row-acts button")).find((b) => txt(b) === "Accept").click();
     await until(() => bodies().some((b) => b.field === "mid_member_confirm"));
     const ac = bodies().find((b) => b.field === "mid_member_confirm");
     check("(13) ⭐ Accept writes that one course's place under its common course", ac.course_id === "CN:CCC4" && ac.value === "CNST M1009" && !!ac.reviewer_email, JSON.stringify(ac));
-    await until(() => bodies().some((b) => b.field === "ccr_procedure_request"));
-    const kp = JSON.parse(bodies().find((b) => b.field === "ccr_procedure_request").value);
+    const keepOf = (id) => bodies().filter((b) => b.field === "ccr_procedure_request").map((b) => JSON.parse(b.value)).find((v) => v.mid === id);
+    await until(() => !!keepOf("CNST M1009"));
+    const kp = keepOf("CNST M1009");
+    check("(13) ⭐ a card whose every course moved saves its own Keep too", !!keepOf("ENGL M1001"));
     check("(13) ⭐ with every course of the card accepted, the card's own Keep is saved", kp.mid === "CNST M1009" && kp.ruling === "keep", JSON.stringify(kp));
     await until(() => !rowOf("Tool and Equipment Applications"));
     check("(13) and the card leaves the list", !rowOf("Tool and Equipment Applications"));
