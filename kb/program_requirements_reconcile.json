@@ -2292,25 +2292,25 @@
    "steps": [],
    "pdf_pages": {
     "11909": {
-     "page": 131,
+     "page": 406,
      "words": "Construction Administration for Public Works, AS A.S. Degree Major",
      "until": "Control Number: 11909",
-     "evidence": "Construction Management A.S. 11909: the catalog prints each program's control number after its section, and 'Control Number: 11909' closes 'Construction Administration for Public Works, AS' on PDF p.131, the program's current name; its list prints 8 of the 9 listed courses (BUS 222 in place of BUS 90). The filed record was read from the section above it (college-page-read run 45341735139)."
+     "evidence": "Construction Management A.S. 11909: the catalog prints each program's control number after its section, and 'Control Number: 11909' closes 'Construction Administration for Public Works, AS' on PDF p.406, the program's current name; its list prints 8 of the 9 listed courses (BUS 222 in place of BUS 90). The filed record was read from the section above it (college-page-read run 45352138673, of SCC_2026_2027_Catalog_accessible.pdf, the file the registry row names since paid read 45350768246 found it; first pinned on the 374-page file's pp.131 and 134 from run 45341735139)."
     },
     "21673": {
-     "page": 131,
+     "page": 407,
      "words": "Construction Administration for Public Works, CA Certificate of Achievement",
      "until": "Control Number: 21673",
-     "evidence": "Construction Management certificate 21673: 'Control Number: 21673' closes 'Construction Administration for Public Works, CA' on PDF p.131; its list prints 8 of the 9 listed courses. The filed record was read from the A.S.'s section (college-page-read run 45341735139)."
+     "evidence": "Construction Management certificate 21673: 'Control Number: 21673' closes 'Construction Administration for Public Works, CA' on PDF p.407; its list prints 8 of the 9 listed courses. The filed record was read from the A.S.'s section (college-page-read run 45352138673, of SCC_2026_2027_Catalog_accessible.pdf, the file the registry row names since paid read 45350768246 found it; first pinned on the 374-page file's pp.131 and 134 from run 45341735139)."
     },
     "42990": {
-     "page": 134,
+     "page": 415,
      "words": "Public Administration, AS A.S. Degree Major",
      "until": "Control Number: 42990",
-     "evidence": "Public Administration A.S. 42990: 'Control Number: 42990' closes 'Public Administration, AS' on PDF p.134; it prints PASV 150 to 153 and 155 with PBLC 154, which the course-id route reads as the state's PBLC codes (S652's PASV pair, retired to the route in S653). The filed record was read from the certificate of proficiency above it (college-page-read run 45341735139)."
+     "evidence": "Public Administration A.S. 42990: 'Control Number: 42990' closes 'Public Administration, AS' on PDF p.415; it prints PASV 150 to 153 and 155 with PBLC 154, which the course-id route reads as the state's PBLC codes (S652's PASV pair, retired to the route in S653). The filed record was read from the certificate of proficiency above it (college-page-read run 45352138673, of SCC_2026_2027_Catalog_accessible.pdf, the file the registry row names since paid read 45350768246 found it; first pinned on the 374-page file's pp.131 and 134 from run 45341735139)."
     }
    },
-   "pdf_pages_why": "S720 (lever, the gap census's reader_page_assignment lever, run 45319725062): each program's extraction placed none of the state's listed courses, because the picker handed it a sibling award's section, the department's list of awards or the course descriptions. Each is pinned to its own section in the college's 2026-27 catalog PDF (the file the capture reads, the same byte count), read page for page by college-page-read run 45341735139: the page and words its heading opens on, `through` the page its section ends on, and `until` the words the next section opens on, so the window holds that section alone. The others on the lever are named gaps (named_gaps_s720.json)."
+   "pdf_pages_why": "S720 (lever, the gap census's reader_page_assignment lever, run 45319725062): each program's extraction placed none of the state's listed courses, because the picker handed it a sibling award's section, the department's list of awards or the course descriptions. Each is pinned to its own section in the college's 2026-27 catalog PDF (the file the capture reads), read page for page by college-page-read run 45341735139 (Santiago Canyon: run 45352138673, its accessible file of 1,165 pages): the page and words its heading opens on, `through` the page its section ends on, and `until` the words the next section opens on, so the window holds that section alone. The others on the lever are named gaps (named_gaps_s720.json)."
   },
   "American River College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BMET n, SWCD n where the state's Program Course File lists ET n, HSER n, the same number and title in every case kb/_prefix_alias_census.py could title (BMET for ET, 6 courses; SWCD for HSER, 7 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
@@ -2396,7 +2396,7 @@
      "words": "Gerontology: Administrative Certificate This program provides a broad overview",
      "through": 643,
      "until": "Career Information",
-     "evidence": "Gerontology: Administrative certificate 20134: its heading prints on PDF p.642 with its Certificate Requirements and 'Total Units: 36'; its outcomes run onto p.643, and the window ends at its Career Information. The page prints SWCD 300 and 310 where the state lists HSER 300 and 310, so the record is collected with that gap (13 of 17 placed). The filed record was read from p.630 of the retired file, the A.A.'s section (college-page-read run 45344701810)."
+     "evidence": "Gerontology: Administrative certificate 20134: its heading prints on PDF p.642 with its Certificate Requirements and 'Total Units: 36'; its outcomes run onto p.643, and the window ends at its Career Information. The page prints SWCD codes where the state's file lists HSER ones; the Program Course File's ids (SWCD300, SWCD310, SWCD330) let the course-id route read them, and the window places 15 of the 17 listed courses (the second reader of #3752), so the record is collected with the rest named. The filed record was read from p.630 of the retired file, the A.A.'s section (college-page-read run 45344701810)."
     },
     "44412": {
      "page": 421,

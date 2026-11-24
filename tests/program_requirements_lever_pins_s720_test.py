@@ -17,8 +17,8 @@ lever's members are pinned here, never read from the live census (p-test-pins-ce
      not the page the filed record was read from (on Santiago Canyon's, which prints each program's control number
      after it, the window ends at the program's own number).
   2. A degree and its certificate keep their own pages: Mendocino's Administration of Justice A.S. 03454 (p.91) and
-     certificate 21973 (p.92); Santiago Canyon's Construction Administration A.S. 11909 and certificate 21673, one page
-     apart on p.131 and each closed by its own printed control number.
+     certificate 21973 (p.92); Santiago Canyon's Construction Administration A.S. 11909 (p.406) and certificate 21673
+     (p.407) of its accessible file, each closed by its own printed control number.
   3. Santiago Canyon's Public Administration A.S. 42990 prints PASV 150 to 153 and 155 for the state's PBLC codes: the
      course-id route (the Program Course File's own ids) reads them, so its window carries all six.
      3b. Under Santiago Canyon's uniform pdf_numbers_after, capture_pdf itself reads the 3 pins: each source is
@@ -126,11 +126,11 @@ check(deg and cert and deg[0]["pages"] == [91] and cert[0]["pages"] == [92]
       and "Total units required for Certificate 30" in cert[1] and "Total Major Units" not in cert[1],
       "Administration of Justice: the A.S. reads p.91 and its 18 major units, the certificate p.92 and its 30")
 deg, cert = windows.get((SCC, "11909")), windows.get((SCC, "21673"))
-check(deg and cert and deg[0]["pages"] == cert[0]["pages"] == [131]
+check(deg and cert and deg[0]["pages"] == [406] and cert[0]["pages"] == [407]
       and flat(deg[1]).startswith("Construction Administration for Public Works, AS")
       and flat(cert[1]).startswith("Construction Administration for Public Works, CA")
       and "Control Number" not in deg[1] and "Control Number" not in cert[1] and ", CA" not in deg[1],
-      "Construction Administration: the A.S. and the certificate share p.131, each cut at its own control number")
+      "Construction Administration: the A.S. reads p.406 and the certificate p.407 of the accessible file, each cut at its own control number")
 
 # ── 3. the course-id route reads 42990's PASV codes ──────────────────────────────────────────
 pa = windows.get((SCC, "42990"))
