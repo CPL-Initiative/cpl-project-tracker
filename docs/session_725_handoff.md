@@ -78,7 +78,12 @@ All verbatim in `docs/commons_lessons.md`, S724. **RULED:** `r-sidebar-narrow-bo
    Sam: *"the saved filters might come in handy for auto combining"*: a saved filter can run nightly, gathering new
    matches that clear a confidence score and listing the rest for review (the same low-impact saves, each undoable).
    Sam: *"could the filter look in either the title or description or both on a toggle?"* (mock v4): a *Look in*
-   toggle, Title, Description or Both, saved with the filter; each row shows its description in small type.
+   toggle, saved with the filter; each row shows its description in small type. Then (mock v5): *"integrate in the
+   slos and objective on the course rows with a show slos and objectives link to expand"*, the toggle searching them
+   too (Title, Description, SLOs and objectives, All three); and *"if there are no slos or objectives, the link could
+   say that and offer another bottom bar to drop them in manually"*: *Add them* opens a bar to paste SLOs and
+   objectives with their source. A manual save to `course_outcomes` is a new write surface: governance map and a
+   rollback receipt first (Rule 10 a3). Only 14 of the 203 loose adapt courses carry outcomes today.
    Sam then: *"els will be a similar case of big mid consolidation into just a few"*: build Gather for both; read
    `docs/reference/lanes/esl-packaging.md` (the comprehensives and carve-outs) before designing it.
 1. **The anchor-page build, step 2:** the Common courses / Local courses toggle on the Courses List.
