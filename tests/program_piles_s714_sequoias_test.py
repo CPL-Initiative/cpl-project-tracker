@@ -86,7 +86,9 @@ check(conf["steps"][0].get("from_heading") is True, "the fill reads from the pro
 
 # ── the self-recall, on the run's filed records ──
 pr = Q.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 22 and pr["right"] == 22 and not pr["wrong"] and pr["by_answer"] == {"passes": 13, "none": 9},
+# S721's plan s721p passes 35415 under the pooled reading (kb/_program_pooled_s721.py); this hand reading held it for
+# a reread, so the rule now reads it passing.
+check(pr["read"] == 22 and pr["right"] == 21 and pr["wrong"] == [["35415", "none", "passes"]] and pr["by_answer"] == {"passes": 13, "none": 9},
       "precision: %r" % pr)
 cc = Q.claim_checks(CENSUS_AT_PLAN)
 check(not cc["not_standing"] and "against" not in cc["notes"] and cc["capture"] == {"stands": 13},

@@ -82,6 +82,12 @@
   },
   {
    "college": "Ventura College",
+   "control_number": "06957",
+   "moves_to": "passes",
+   "page": "https://catalog.vcccd.edu/ventura/programs-courses/engineering/engineering-as/"
+  },
+  {
+   "college": "Ventura College",
    "control_number": "20576",
    "moves_to": "passes",
    "page": "https://catalog.vcccd.edu/ventura/programs-courses/engineering/engineering-coa/"
@@ -236,12 +242,16 @@
   },
   {
    "college": "Ventura College",
+   "control_number": "06957"
+  },
+  {
+   "college": "Ventura College",
    "control_number": "20576"
   }
  ],
  "self_recall_counts": {
-  "fail_to_pass": 27,
-  "fail_to_fail": 5,
+  "fail_to_pass": 28,
+  "fail_to_fail": 4,
   "pass_to_pass": 1
  },
  "self_recall_by_college": {
@@ -255,13 +265,12 @@
    "Modesto Junior College": 12,
    "Rio Hondo College": 3,
    "Santa Monica College": 2,
-   "Ventura College": 1
+   "Ventura College": 2
   },
   "fail_to_fail": {
    "Cuyamaca College": 1,
    "Modesto Junior College": 2,
-   "Santa Ana College": 1,
-   "Ventura College": 1
+   "Santa Ana College": 1
   },
   "pass_to_pass": {
    "Modesto Junior College": 1

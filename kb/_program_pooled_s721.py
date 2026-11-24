@@ -55,6 +55,7 @@ import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s713 as P  # noqa: E402
 import _program_piles_s714_ccsf as C  # noqa: E402
 import _program_piles_s714_fullerton as F  # noqa: E402
+import _program_requirements_rescore as RS  # noqa: E402
 import _program_requirements_score as S  # noqa: E402
 
 ROOT = os.path.dirname(HERE)
@@ -103,7 +104,10 @@ HELD_ANSWERS = {
     ("El Camino College", "02517"): "passes_untexted_fill", ("El Camino College", "02528"): "unmoved",
     ("Santa Monica College", "03263"): "passes", ("Santa Monica College", "32792"): "passes",
     ("Santa Monica College", "08970"): "unmoved", ("Santa Monica College", "21007"): "unmoved",
-    ("Ventura College", "20576"): "passes", ("Ventura College", "06957"): "fails",
+    ("Ventura College", "20576"): "passes",
+    # 06957: its major adds up once Lists B and C read their 9, and its major and general education run past the
+    # degree total by its 6 double-counted units, which Sam's ruling 1 of 2026-11-17 passes as overlap.
+    ("Ventura College", "06957"): "passes",
     ("Ventura College", "45731"): "unmoved",
     ("City College of San Francisco", "16991"): "unmoved", ("City College of San Francisco", "38909"): "unmoved",
     ("Clovis Community College", "33489"): "passes", ("College of the Sequoias", "35415"): "passes",
@@ -114,15 +118,22 @@ HELD_ANSWERS = {
 
 
 # ── the rescore ───────────────────────────────────────────────────────────
+def current(filed: dict, arith: dict) -> dict:
+    """The arithmetic under the rescore's current verdicts (kb/_program_requirements_rescore.py: Sam's rulings of
+    2026-11-17 and the Sheet 81, 82 and 120 readings of a stored sum), as a filed record carries them."""
+    return RS.rescore(dict(filed, score=dict(filed.get("score") or {}, arithmetic=arith))) or arith
+
+
 def arithmetic(filed: dict) -> tuple[dict, dict]:
-    """(the arithmetic with the pooled reading off, with it on), against the record's own state list, no text."""
+    """(the arithmetic with the pooled reading off, with it on), against the record's own state list, no text, each
+    under the rescore's current verdicts (current)."""
     saved = S.POOLED_ON
     S.POOLED_ON = False
     try:
         off = C.fresh_score(filed)["arithmetic"]
     finally:
         S.POOLED_ON = saved
-    return off, C.fresh_score(filed)["arithmetic"]
+    return current(filed, off), current(filed, C.fresh_score(filed)["arithmetic"])
 
 
 def exact(filed_arith: dict, off: dict) -> bool:

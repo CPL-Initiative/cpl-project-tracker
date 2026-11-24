@@ -75,7 +75,9 @@ check("FHORT2" in sc["coverage"]["missing"], "where the list carries HORT 002 F 
 
 # ── the self-recall ──
 pr = F.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 24 and pr["right"] == 24 and not pr["wrong"] and pr["by_answer"] == {"passes": 11, "none": 13},
+# S721's plan s721p passes 18163 under the pooled reading (kb/_program_pooled_s721.py); this hand reading held it for
+# a reread, so the rule now reads it passing.
+check(pr["read"] == 24 and pr["right"] == 23 and pr["wrong"] == [["18163", "none", "passes"]] and pr["by_answer"] == {"passes": 11, "none": 13},
       "precision: %r" % pr)
 check({cn for cn, w in F.HAND_HELD.items() if w.startswith("passes")} == PASS, "the eleven passing answers")
 with open(RECEIPT, encoding="utf-8") as fh:

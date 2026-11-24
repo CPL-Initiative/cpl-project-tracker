@@ -34,8 +34,8 @@ HELD = {'35654', '44994', '45427', '39995', '08253', '44995', '32578', '06948', 
 # pool. MOVED_S721P: the scorer now passes them, so S720's reading files no gap on them, and s721p moves their live rows
 # to passing with no gap. RESCORED_S721P: the reading moves the sum and the record still fails, so its filed gap and
 # its image stand while S720's reading of the old sum no longer does.
-MOVED_S721P = {'20576'}
-RESCORED_S721P = {'06957'}
+MOVED_S721P = {'06957', '20576'}
+RESCORED_S721P = set()
 LEFT_S721P = MOVED_S721P | RESCORED_S721P
 with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_pooled_s721_2026-11-24_s721p.json"),
           encoding="utf-8") as fh:
@@ -104,7 +104,11 @@ check(all(W.on_live_run(W._load(cn)) for cn in ROWS) and not any(W.on_live_run(W
                                                                for cn in ("06973", "31298", "32834")),
       "the rows are on their live runs; 06973, 31298 and 32834 are not")
 
-check(all(W.scorer_passes(W._load(cn)) for cn in MOVED_S721P), "the pooled reading passes the rows s721p moves")
+# 06957 passes on the rescore's overlap (Sam's ruling 1 of 2026-11-17: its major adds up once Lists B and C read their
+# 9), which the scorer alone does not read; its committed score carries that pass.
+check(W.scorer_passes(W._load("20576")) and W._load("06957")["score"]["arithmetic"]["pass"] is True
+      and W._load("06957")["score"]["arithmetic"]["major"]["status"] == "equal",
+      "the pooled reading passes the rows s721p moves")
 
 print("%d checks, %d failures" % (checks[0], len(failures)))
 for m in failures:

@@ -124,9 +124,9 @@ check(set(rcpt["elsewhere_left_for_next_run"]) == {"Cuyamaca College", "Golden W
 
 rows = {(r["college"], r["control_number"]): r["moves_to"] for r in fx["rows"]}
 got = {(r["college"], r["control_number"]): r["moves_to"] for r in rcpt["records"]}
-check(got == rows and rcpt["moved"] == len(rows) == 14, "the receipt names the fixture's 14 rows")
-check(sum(1 for v in rows.values() if v == "passes") == 13 and rows[(W.MODESTO, "06642")] == W.GAP,
-      "13 rows pass, and Modesto 06642 takes pool_figure_not_read")
+check(got == rows and rcpt["moved"] == len(rows) == 15, "the receipt names the fixture's 15 rows")
+check(sum(1 for v in rows.values() if v == "passes") == 14 and rows[(W.MODESTO, "06642")] == W.GAP,
+      "14 rows pass, and Modesto 06642 takes pool_figure_not_read")
 check({(h["college"], h["control_number"]) for h in rcpt["held"]}
       == {(h["college"], h["control_number"]) for h in fx["held"]}, "the receipt holds the fixture's keys")
 check(set(rcpt["colleges"]) == set(W.LANE) and all(c in W.LANE for c, _ in rows), "rows at the eight colleges only")
@@ -134,9 +134,9 @@ for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for _, cn in rows)
-          and not any("'%s'" % h["control_number"] in sql for h in fx["held"]), "%s names exactly the 14" % part)
+          and not any("'%s'" % h["control_number"] in sql for h in fx["held"]), "%s names exactly the 15" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (14))" in sql, "the apply guards a confirm")
+        check("confirm guard" in sql and "e(expect) as (values (15))" in sql, "the apply guards a confirm")
 check(not os.path.exists(os.path.join(ROOT, "kb", "migrations", ".apply"))
       or "s721p" not in open(os.path.join(ROOT, "kb", "migrations", ".apply"), encoding="utf-8").read(),
       "the plan does not write .apply (d-conductor-owns-applies-s720)")

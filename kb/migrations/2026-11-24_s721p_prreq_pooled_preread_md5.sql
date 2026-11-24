@@ -1,4 +1,4 @@
--- S721P lane 1's pooled figures at eight colleges (14 rows: passes 13, pool_figure_not_read 1). Each row's checks become the college
+-- S721P lane 1's pooled figures at eight colleges (15 rows: passes 14, pool_figure_not_read 1). Each row's checks become the college
 -- load's image of its rescored record (load_rows); the record unchanged. Receipt: kb/receipts/program_requirement_records_pooled_s721_2026-11-24_s721p.json (before_image per
 -- row).
 -- Compact pre-read, read-only: one SELECT, one JSON value; md5 of each image's jsonb text
@@ -17,7 +17,8 @@ with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) a
   (11, 'Modesto Junior College', '35277', 38477845911, '50d7a8f053172edcd5a4088aaa094391', '3c81834a38a33a73170c8fc53655fda9', '279c9a68d28e4b814ce5679cf3fb61b5'),
   (12, 'Santa Monica College', '03263', 39567439681, 'aae7a022448b5e33c3a2844dab8463df', '0340dd2940ab3c336c57360beddb7a41', '18a75525e8cdee0e9347ce768b17e7f4'),
   (13, 'Santa Monica College', '32792', 39567439681, '470c47cedbeaad6f60f3c2a09963e40a', '4e9c354c317ff21b974e74c8ceb054b5', 'ec1dbe6e79247269ba8afcd6d2872493'),
-  (14, 'Ventura College', '20576', 38756014587, '2cc7e5378f748ce0c13dac3027190cd2', 'dd3be177675d4331b44b8247ee2eb19e', '0cd7b60aaa7473943434ea5064ba984c'))
+  (14, 'Ventura College', '06957', 38756014587, '92ca3f407fd7991d2ce7d1e6132a31fc', 'd35baa903dd37a7c76e698c4d991853b', '0cd7b60aaa7473943434ea5064ba984c'),
+  (15, 'Ventura College', '20576', 38756014587, '2cc7e5378f748ce0c13dac3027190cd2', 'dd3be177675d4331b44b8247ee2eb19e', '0cd7b60aaa7473943434ea5064ba984c'))
 select json_build_object(
   'listed', (select count(*) from v),
   'on_run', count(*) filter (where r.extracted_run = v.extracted_run),

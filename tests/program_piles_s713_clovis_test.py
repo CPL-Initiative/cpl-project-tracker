@@ -161,7 +161,10 @@ for r in rows:
 
 # ── the self-recall ──
 pr = C.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 17 and pr["right"] == 17 and pr["wrong"] == 0 and pr["not_hand_held"] == 0
+# S721's plan s721p passes 33489 under the pooled reading (kb/_program_pooled_s721.py); this hand reading held it for
+# a reread, so the rule now reads it passing.
+check(pr["read"] == 17 and pr["right"] == 16 and pr["wrong"] == 1 and pr["not_hand_held"] == 0
+      and [(k["control_number"], k["hand"], k["rule"]) for k in pr["wrong_keys"]] == [("33489", "none", "passes")]
       and pr["by_answer"] == {"passes": 6, "none": 11}, "precision against the hand reading: %r" % pr)
 cc = C.claim_checks(CENSUS_AT_PLAN)
 check(cc == {"lab_pairs": {"stands": 3}, "also_from": {"stands": 2}, "course_renumbers": {"stands": 2},

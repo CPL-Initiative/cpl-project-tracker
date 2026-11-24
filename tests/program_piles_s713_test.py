@@ -115,7 +115,11 @@ check(NG.confidence(rec([CUT_NOTE]), "section_cut_off")["course_list_match"] == 
 
 # ── the self-recall ──
 pr = P.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 53 and pr["right"] == 53 and pr["wrong"] == 0 and pr["not_hand_held"] == 0,
+# S721's plan s721p passes Santa Monica 03263 and 32792 under the pooled reading (kb/_program_pooled_s721.py); this hand reading held it for
+# a reread, so the rule now reads it passing.
+check(pr["read"] == 53 and pr["right"] == 51 and pr["wrong"] == 2 and pr["not_hand_held"] == 0
+      and sorted((k["control_number"], k["hand"], k["rule"]) for k in pr["wrong_keys"])
+      == [("03263", "none", "passes"), ("32792", "none", "passes")],
       "precision against the hand reading: read %(read)d, right %(right)d, wrong %(wrong)d" % pr)
 check(pr["by_answer"] == {"none": 38, "passes": 5, "section_cut_off": 10}, "the hand answers: %r" % pr["by_answer"])
 check(not NG.section_cut_off(rec([CUT_NOTE], comp=(20.0, 20.0), st=(None, None), status="incomplete")),
