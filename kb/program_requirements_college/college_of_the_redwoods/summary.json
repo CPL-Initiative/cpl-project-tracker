@@ -5,16 +5,19 @@
  "found": 73,
  "extracted": 73,
  "errors": 0,
- "passed_machine_checks": 59,
+ "passed_machine_checks": 63,
  "failed": {
-  "coverage": 7,
+  "coverage": 4,
   "invented": 1,
-  "arithmetic": 13,
+  "arithmetic": 9,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 5.41,
- "cost_per_program": 0.0741,
+ "cost_usd_run": 0.25,
+ "cost_usd_filed": 5.45,
+ "cost_per_program": 0.0747,
+ "extract_calls": 3,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "46337",
@@ -40,7 +43,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "46338",
@@ -48,8 +52,9 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "43018781168"
+ "run": "45390207374"
 }

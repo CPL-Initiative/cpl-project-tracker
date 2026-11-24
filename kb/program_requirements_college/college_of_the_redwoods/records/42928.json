@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Aquaculture Technology",
  "award": "A.S. Degree",
- "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-ca-fall-2023",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8438,
+  "input_tokens": 8376,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8438,
-    "output_tokens": 2005,
+    "input_tokens": 8376,
+    "output_tokens": 3412,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,104 +30,118 @@
     "model": null
    }
   ],
-  "output_tokens": 2005,
+  "output_tokens": 3412,
   "output_tokens_details": {
-   "thinking_tokens": 552
+   "thinking_tokens": 1134
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07385,
- "ms": 16729,
- "seconds": 17.1,
+ "cost_usd": 0.10174,
+ "ms": 26639,
+ "seconds": 27.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 17,
    "listed": 20,
-   "share": 0.0,
+   "share": 0.85,
    "missing": [
-    "AG32",
-    "AQUA1",
-    "AQUA2",
-    "AQUA3",
-    "AQUA4",
-    "BIOL3",
-    "BIOL4",
-    "BUS10",
-    "CE41",
-    "CHEM2",
-    "CHEM3",
-    "GEOL1",
-    "MATH25",
-    "MATH30",
     "MATHC2210",
-    "OCEAN10",
-    "OCEAN10L",
-    "PHYS2A",
     "STATC1000",
     "STATC1000E"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "MATH15",
+    "MATH16",
+    "MATH50A"
+   ],
+   "flagged": [
+    "MATH15",
+    "MATH16",
+    "MATH50A"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    29.0,
+    35.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    25.0,
+    28.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 29.0-35.0; the catalog states 25.0-28.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     50.0,
+     56.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     4.0,
+     10.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Aquaculture Technology, CA",
+   "section_heading": "AQUA Tech A.S.",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 28
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -136,107 +150,302 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Evaluate the historical and current state of aquaculture in the world within legal, social, economic, and environmental contexts.",
+    "Apply aquaculture techniques to breed, grow, and harvest high-quality finfish and shellfish while considering physiological needs, water quality parameters, and environmental conditions for optimal rearing and growth.",
+    "Understand business and entrepreneurial concepts to contribute to the successful operation of an aquaculture enterprise.",
+    "Exhibit professional work habits that promote a safe, productive, and environmentally conscious work environment."
+   ],
+   "careers": [
+    "aquaculture",
+    "management of aquatic ecosystems",
+    "Environmental Science and Protection Technicians, Including Health",
+    "Life, Physical, and Social Science Technicians, All Other"
+   ],
+   "degree_total_minimum": true
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "AQUA Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "AQUA1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AQUA2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AQUA3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Bio Core",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "MATH Core",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH16",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH50A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH30",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BIOL3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Or both of the following towards the restricted elective total:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "OCEAN10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OCEAN10L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Optional Employment-based Focus: Take up to 3 units below towards the restricted elective total:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AG32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AQUA4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CE41",
+      "units": 0.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "AG 32",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "AQUA 1",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "AQUA 2",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "AQUA 3",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "AQUA 4",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "BIOL 3",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "BIOL 4",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "BUS 10",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "CE41",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "CHEM 2",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "CHEM 3",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "GEOL 1",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "MATH 25",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "MATH 30",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "MATH C2210",
-    "why": "not in the text"
-   },
-   {
-    "code": "OCEAN 10",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "OCEAN 10L",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
-    "code": "PHYS 2A",
-    "why": "A.S. section not in text; listed only in the Certificate of Achievement"
-   },
-   {
     "code": "STAT C1000",
-    "why": "not in the text (certificate lists MATH15 - Introduction to Statistics instead)"
+    "why": "not in the text; catalog lists MATH15 Introduction to Statistics instead (likely renumbered equivalent)"
    },
    {
     "code": "STAT C1000E",
-    "why": "not in the text (certificate lists MATH16 - Introduction to Statistics with Support instead)"
+    "why": "not in the text; catalog lists MATH16 Introduction to Statistics with Support instead (likely renumbered equivalent)"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog lists MATH50A Differential Calculus instead (possible renumbered equivalent)"
    }
   ],
   "notes": [
-   "The catalog text is the page for the Aquaculture Technology Certificate of Achievement (19.0 - 23.0 Credits), not the A.S. Degree; no A.S. section, degree total, GE pattern or major total appears in the text, so no blocks are recorded for the A.S.",
-   "The certificate prints Core (Total 13): AQUA1 3, AQUA2 4, AQUA3 3, BUS10 3; Restricted Electives (Total 6 - 10) from AG32, AQUA4, BIOL3, BIOL4, CE41 (0.5 - 3), CHEM2, CHEM3, PHYS2A, GEOL1, with alternative groups of MATH15, MATH16, MATH25, MATH30 (0-5) and OCEAN10, OCEAN10L (0-4) 'instead of 3-4 credits from above'. A reviewer should locate the separate A.S. Degree page.",
-   "The page prints four Program Learning Outcomes and career text (careers in aquaculture and management of aquatic ecosystems; employment in private aquaculture facilities, government hatcheries, entrepreneurial ventures; Career Information: Environmental Science and Protection Technicians, Including Health; Life, Physical, and Social Science Technicians, All Other) for the certificate; they are not recorded because the text does not show they belong to the A.S. Degree.",
-   "Closed list includes MATH C2210, STAT C1000 and STAT C1000E, which do not appear in the certificate text, suggesting the A.S. requirements differ from the certificate."
+   "Catalog prints codes without a space (AQUA1, BIOL3, etc.); matched to closed-list codes AQUA 1, BIOL 3, etc.",
+   "Header prints 'A.S. Degree (60.0 Credits)', recorded as degree_total; no GE pattern or GE units are named on the page.",
+   "The OCEAN10 + OCEAN10L pair and the Optional Employment-based Focus (up to 3 units) both count toward the Restricted Electives total of 7-9 units; they are recorded as separate blocks as printed, so the Restricted Electives block's 7-unit minimum may be met partly from them. Reviewer should check how these sub-blocks combine.",
+   "BIOL3 and BIOL4 appear in both Bio Core and Restricted Electives; presumably the course used for Bio Core cannot also count as a restricted elective.",
+   "Optional Employment-based Focus has 'Complete the following number of credits: 0-3'; recorded minimum 0.",
+   "Recommended Sequence lists AQUA3 in both Term 1 and Term 3; sequence not recorded as a block since it repeats the requirements.",
+   "Career Information occupations (Environmental Science and Protection Technicians, Including Health; Life, Physical, and Social Science Technicians, All Other) recorded as careers from the program page's Career Information heading.",
+   "Source URL references 'fall-2023' though catalog year is 2026-2027; verify currency."
   ]
  },
- "extracted_run": "38979396148"
+ "extracted_run": "45390207374",
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "A.S. Degree (\n60.0 Credits\n) (https://www.redwoods.edu/services/counseling/FINAL.%2026.27%20CRGE%20pattern%20Redwoods%20and%20list%20of%20titles..pdf: Redwoods local degree pages print their total in the title line, 'A.S. Degree ( 60.0 Credits )' (Personal Wellness 44463; college page read 43015726456), and no general education units. The college's 2026-2027 CRGE pattern sheet, linked from its counseling page: 'CRGE Units Required 21' (Areas 1A, 1B, 2, 3, 4, 5 and 6, 3 units each; college page read 43013608134; found by COBIx, #3096))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "A.S. Degree (\n60.0 Credits\n) (https://www.redwoods.edu/services/counseling/FINAL.%2026.27%20CRGE%20pattern%20Redwoods%20and%20list%20of%20titles..pdf: The same sheet: 'Major Requirements and Elective Units 18+', 'Minimum Degree Units for Associate 60' and 'Complete a minimum of 60 semester units of degree applicable coursework': the 60 a local degree's title prints is a floor that electives make up. A degree whose title prints another total (Registered Nursing 78.0 - 81.0, Construction Technology 63.5) keeps it as printed)"
+  }
+ ]
 }

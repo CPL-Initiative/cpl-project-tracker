@@ -151,20 +151,21 @@
    "AT35"
   ],
   "source": {
-   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-ca-fall-2024",
-   "title": "Advanced Automotive Technology, CA",
-   "h1": "Advanced Automotive Technology, CA",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-technology-fall-2024",
+   "title": "Automotive Technology",
+   "h1": "Automotive Technology",
    "text_from": "innerText",
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
+    "section": "as",
+    "section_line": "automotive technology a.s. degree (",
+    "section_fit": 1.0
+   },
+   "pinned": true
   },
   "listed": 10,
-  "text_chars": 3841
+  "text_chars": 3727
  },
  {
   "control_number": "01818",
@@ -1111,20 +1112,21 @@
    "AT35"
   ],
   "source": {
-   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-technology-fall-2024",
-   "title": "Automotive Technology",
-   "h1": "Automotive Technology",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-ca-fall-2024",
+   "title": "Advanced Automotive Technology, CA",
+   "h1": "Advanced Automotive Technology, CA",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced automotive technology, ca certificate of achievement (",
+    "section_fit": 0.75
+   },
+   "pinned": true
   },
   "listed": 10,
-  "text_chars": 3727
+  "text_chars": 3841
  },
  {
   "control_number": "22673",
@@ -2421,20 +2423,21 @@
    "PHYS2A"
   ],
   "source": {
-   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-ca-fall-2023",
-   "title": "Aquaculture Technology, CA",
-   "h1": "Aquaculture Technology, CA",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
+   "title": "Aquaculture Technology",
+   "h1": "Aquaculture Technology",
    "text_from": "innerText",
    "label": {
     "award": 0,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
+    "section": "as",
+    "section_line": "aquaculture technology a.s. degree (",
+    "section_fit": 1.0
+   },
+   "pinned": true
   },
   "listed": 20,
-  "text_chars": 5021
+  "text_chars": 5009
  },
  {
   "control_number": "44179",
