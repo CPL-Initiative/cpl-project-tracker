@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-24_s720r_prreq_cut_window_gaps_apply.sql
-name=s720r_prreq_cut_window_gaps_apply
+file=kb/migrations/2026-11-24_s718_cpl_memory_rows.sql
+name=s718_cpl_memory_rows
