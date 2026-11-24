@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "repeat_read_once",
+    "label": "The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.",
+    "words": "MUSIC 49 (2 units) is printed twice under Required Courses (4 units), meaning the course is taken twice; it is recorded once in the block, so the block's course units (2) are half its stated 4 units."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

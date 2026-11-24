@@ -102,7 +102,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pair_read_as_alternatives",
+    "label": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.",
+    "words": "Required Core: the alternative to ANTHRO 35s is the pair ERTHSC 88A and ERTHSC 88B taken together (1 + 2 units), not either one alone."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

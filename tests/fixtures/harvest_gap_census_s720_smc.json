@@ -1,0 +1,43 @@
+{
+  "_what": "S720 (lane 2, Santa Monica): the reconcile_steps lever of the committed census (run 45319725062) at the college, frozen: kb/_program_piles_s720_smc.py planned from it.",
+  "written_at": "2026-11-24 03:32Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "Santa Monica College",
+      "programs": 26,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "03256",
+        "03263",
+        "03272",
+        "03281",
+        "03282",
+        "03302",
+        "08970",
+        "10345",
+        "21007",
+        "21026",
+        "32792",
+        "33270",
+        "33271",
+        "33339",
+        "35284",
+        "37452",
+        "39671",
+        "39680",
+        "41797",
+        "43655",
+        "43743",
+        "43765",
+        "43767",
+        "44004",
+        "44720",
+        "46189"
+      ]
+    }
+  ]
+}

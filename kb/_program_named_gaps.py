@@ -1027,6 +1027,30 @@ RECORD_RULES = (("major_total_differs", major_total_differs), ("total_not_printe
     (("no_units_printed", no_units_printed),) if NO_UNITS_PRINTED_ON else ()) + (("no_units_read", no_units_read),)
 
 
+# S720 at Santa Monica (kb/_program_piles_s720_smc.py): the gaps its reviewed list names from each record's own notes.
+# lists_not_closed and noted_figures_differ are #3753's (S720 at Fullerton), pool_figure_not_read and
+# pair_read_as_alternatives #3755's (S720 at City College of San Francisco), each with the same sentence and score;
+# repeat_read_once is new here. setdefault keeps this block a no-op beside those PRs' lines once all have merged.
+for _g, _s, _a in (
+        ("lists_not_closed", "A choice list prints no unit figure of its own, one that depends on another choice, or "
+                             "also takes courses from another list, so the lists alone cannot add the program's units.",
+         30),
+        ("noted_figures_differ", "The reader's notes quote two figures from the catalog page that disagree, and the "
+                                 "record's units add to one and state the other; no page read has settled which the "
+                                 "program requires.", 40),
+        ("pool_figure_not_read", "The catalog prints one figure over several lists or nested options together, and the "
+                                 "record adds the parts instead, so its units cannot be checked against that figure.",
+         40),
+        ("pair_read_as_alternatives", "The catalog prints two courses taken together as one option, and the record "
+                                      "reads them as separate alternatives, so its low end falls short of the printed "
+                                      "total.", 50),
+        ("repeat_read_once", "The catalog prints a course the program takes more than once, and the record counts it "
+                             "once, so its units fall short of the printed total by the repeats.", 60)):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def answer(filed: dict) -> tuple[str, str] | None:
     """The first record rule that names a gap, whether or not the record already files one."""
     for name, fn in RECORD_RULES:

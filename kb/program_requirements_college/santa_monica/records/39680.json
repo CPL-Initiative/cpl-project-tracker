@@ -102,7 +102,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pool_figure_not_read",
+    "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
+    "words": "Each language track (Chinese, Japanese, Korean) is printed as one option of 'Select 1 Language Track' with '(10 units minimum)'; each track is recorded as two blocks (the required culture course plus a choose-7-units list) sharing option_group 'Language Track'. A reviewer should read the option as the pair of blocks for one language, not any single block."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
