@@ -67,7 +67,7 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from _program_requirements_score import arithmetic_note, degree_verdict, program_verdict  # noqa: E402
+from _program_requirements_score import arithmetic_note, degree_verdict, program_verdict, window_cut  # noqa: E402
 import _program_requirements_reconcile as R  # noqa: E402
 
 ROOT = os.path.dirname(HERE)
@@ -116,8 +116,11 @@ def _verdict(filed: dict) -> dict | None:
         # Sam's ruling 1 of 2026-11-17: the major counts toward general education for a local degree too.
         prog = dict(prog, ge_overlap=True)
     if against == "degree":
+        # A fill over a window the reader cut off stays refused (S720): the record's own words decide it, unless its
+        # major adds up to the major total the page prints (then the electives fill the degree after a whole major).
+        major_whole = (arith.get("major") or {}).get("pass") is True
         v = degree_verdict(prog, (float(stated[0]), float(stated[1])), float(comp[0]), float(comp[1]),
-                           filed.get("award"))
+                           filed.get("award"), None if major_whole else window_cut(filed.get("record") or {}))
     else:
         # Record shape 6 (a page printing the major's total and the degree's): the degree check
         # rides as `degree`; where it fails, a passing major still leaves the record failing.

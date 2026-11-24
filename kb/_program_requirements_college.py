@@ -7449,14 +7449,16 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 for old in filed.get("reconciled") or []:
                     if old not in notes and R.statewide_note_stands(old, new):
                         notes = notes + [old]
+                fresh = keep_rescored_marker(filed.get("control_number"), filed.get("score"),
+                                             S.score(new, src["closed_list"], src["text"],
+                                                     filed.get("award") or src.get("award"),
+                                                     R.prefix_aliases(college, year=filed.get("catalog_year")),
+                                                     R.packed_codes(college)),
+                                             dict(filed, record=new))
                 filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
                              extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,
-                             score=keep_rescored_marker(filed.get("control_number"), filed.get("score"),
-                                                        S.score(new, src["closed_list"], src["text"],
-                                                                filed.get("award") or src.get("award"),
-                                                                R.prefix_aliases(college, year=filed.get("catalog_year")),
-                                                                R.packed_codes(college)),
-                                                        dict(filed, record=new)))
+                             score=keep_named_gaps(filed.get("control_number"), filed.get("score"), fresh,
+                                                   dict(filed, record=new)))
                 changed.append(filed["control_number"])
                 a = filed["score"]["arithmetic"]
                 print("%-6s reconciled %s; arith %s" % (filed["control_number"],
@@ -7469,6 +7471,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
                                 R.prefix_aliases(college, year=filed.get("catalog_year")), R.packed_codes(college))
                 fresh = keep_rescored_marker(filed.get("control_number"), filed.get("score"), fresh, filed)
+                fresh = keep_named_gaps(filed.get("control_number"), filed.get("score"), fresh, filed)
                 if fresh != filed.get("score"):
                     filed = dict(filed, score=fresh, read_run=filed.get("extracted_run"),
                                  extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id)
@@ -7591,6 +7594,64 @@ def keep_rescored_marker(cn, filed_score: dict | None, fresh: dict, scored: dict
         print("::warning::%s: the fresh arithmetic fails where the ruling's rescore (%s) passed, and the rule no "
               "longer passes it" % (cn, fa["rescored"]), flush=True)
     return fresh
+
+
+def named_gap_holds(name: str, now: dict):
+    """Whether the named gap still holds on a record as now scored: the words its own record rule gives (the rule
+    found through by_measure, so no_hours_read is no_units_read's on an hours program), True for #3502's planned
+    catalog_figures_differ where the record still meets the gap's own sentence (figures_differ_fails), None where it
+    no longer holds, and False for a name no rule or check reads (kept as filed)."""
+    import _program_named_gaps as NG
+    for rule, fn in NG.RECORD_RULES:
+        if rule == name or NG.by_measure(rule, now) == name:
+            return fn(now) or None
+    if name == "catalog_figures_differ":
+        a = (now.get("score") or {}).get("arithmetic") or {}
+        ok = (not a.get("pass") and NG.collectable(now.get("score") or {}) and NG.figures_differ_fails(now) is None)
+        return True if ok else None
+    return False
+
+
+def keep_named_gaps(cn, filed_score: dict | None, fresh: dict, scored: dict) -> dict:
+    """The named gaps a filed score carries (score.gaps, score.confidence; kb/_program_named_gaps.py) survive a
+    reconcile's rescore (S720, f-rescore-drops-ge-units-not-read-gaps-s714: S.score writes neither, so three Los Rios
+    reconciles dropped 16 named ge_units_not_read gaps). scored is the filed record with the record this run made.
+    A fresh score that passes as the live table counts it needs no gap, so it stands alone. A fresh score that fails
+    keeps each filed gap that still holds on the record as now scored (named_gap_holds: its record rule's words now,
+    or catalog_figures_differ's own sentence), and a name no rule reads, as filed; the confidence is read again for
+    the first gap kept, its catalog year and source carried from the filed scores. A gap that no longer holds is
+    dropped, said aloud, so a reconcile never files a gap the record no longer has; the named-gaps wave names the
+    record's gap again (an hours sum that now reads unequal is hours_total_differs, never no_hours_read)."""
+    if not isinstance(fresh, dict) or not (filed_score or {}).get("gaps"):
+        return fresh
+    if pass_grade(fresh):
+        return fresh
+    import _program_named_gaps as NG
+    now = dict(scored, score=fresh)
+    kept = []
+    for g in filed_score["gaps"]:
+        name = g.get("gap") if isinstance(g, dict) else g
+        holds = named_gap_holds(name, now)
+        if holds is None:
+            print("::warning::%s: the named gap %s no longer holds on the rescored record; dropped" % (cn, name),
+                  flush=True)
+        elif isinstance(holds, str) and isinstance(g, dict):
+            kept.append(dict(g, words=holds))
+        else:
+            kept.append(g)
+    if not kept:
+        return fresh
+    out = dict(fresh, gaps=kept)
+    was = (filed_score or {}).get("confidence") or {}
+    first = kept[0].get("gap") if isinstance(kept[0], dict) else kept[0]
+    conf = NG.confidence(now, first)
+    for k in ("catalog_year", "source"):
+        if k in was:
+            conf[k] = was[k]
+    out["confidence"] = conf
+    if (filed_score or {}).get("confidence_notes"):
+        out["confidence_notes"] = filed_score["confidence_notes"]
+    return out
 
 
 def held_summary(dest: str, prior: dict) -> dict:
