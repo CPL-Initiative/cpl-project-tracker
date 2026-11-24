@@ -2,16 +2,34 @@
  "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Los Angeles Southwest College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
  "college": "Los Angeles Southwest College",
  "questions": {
-  "code_nrshca": "Does this page name Los Angeles Southwest College's NRS HCA, and under what heading?"
+  "code_afroam": "Does this page name Los Angeles Southwest College's AFRO AM, and under what heading?",
+  "code_basicskills": "Does this page name Los Angeles Southwest College's BASIC SKILLS, and under what heading?",
+  "code_famcs": "Does this page name Los Angeles Southwest College's FAM & CS, and under what heading?"
  },
  "keywords": [
-  "NRS\\ HCA"
+  "AFRO\\ AM",
+  "BASIC\\ SKILLS",
+  "FAM\\ \\&\\ CS"
  ],
  "pages": [
   {
-   "url": "https://www.lasc.edu/academics/aos/nursing/cna-hha-careers",
+   "url": "https://lasc.edu/academics/aos/esaas",
    "answers": [
-    "code_nrshca"
+    "code_afroam"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lasc.edu/sites/lasc.edu/files/2022-07/basic-skills-023.pdf",
+   "answers": [
+    "code_basicskills"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.lasc.edu/academics/aos/nutrition",
+   "answers": [
+    "code_famcs"
    ],
    "source": "web_search"
   }

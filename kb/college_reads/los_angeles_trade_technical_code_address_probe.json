@@ -2,25 +2,43 @@
  "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Los Angeles Trade-Technical College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
  "college": "Los Angeles Trade-Technical College",
  "questions": {
-  "code_pub": "Does this page name Los Angeles Trade-Technical College's PUB, and under what heading?",
-  "code_refac": "Does this page name Los Angeles Trade-Technical College's REF A/C, and under what heading?"
+  "code_elecl": "Does this page name Los Angeles Trade-Technical College's ELECL, and under what heading?",
+  "code_eleclnm": "Does this page name Los Angeles Trade-Technical College's ELECLNM, and under what heading?",
+  "code_hlthhoc": "Does this page name Los Angeles Trade-Technical College's HLTHHOC, and under what heading?",
+  "code_tutor": "Does this page name Los Angeles Trade-Technical College's TUTOR, and under what heading?"
  },
  "keywords": [
-  "PUB",
-  "REF\\ A/C"
+  "ELECL",
+  "ELECLNM",
+  "HLTHHOC",
+  "TUTOR"
  ],
  "pages": [
   {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/marketing_and_public_relations.pdf",
+   "url": "https://www.lattc.edu/academics/aos/powerline-mechanic",
    "answers": [
-    "code_pub"
+    "code_elecl"
    ],
    "source": "web_search"
   },
   {
-   "url": "https://lattc.edu/academics/aos/heating-ventilating-air-conditioning-hvac",
+   "url": "https://www.lattc.edu/academics/aos/electrical-line-worker",
    "answers": [
-    "code_refac"
+    "code_eleclnm"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lattc.edu/sites/lattc.edu/files/2025-03/Health%20Foundation%20Career%20Program%20Cert%20%282022%29.pdf",
+   "answers": [
+    "code_hlthhoc"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.lattc.edu/academic-services/academic-connections-tutoring",
+   "answers": [
+    "code_tutor"
    ],
    "source": "web_search"
   }

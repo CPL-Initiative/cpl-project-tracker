@@ -1,0 +1,28 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Los Angeles Pierce College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "Los Angeles Pierce College",
+ "questions": {
+  "code_indtek": "Does this page name Los Angeles Pierce College's IND TEK, and under what heading?",
+  "code_kin": "Does this page name Los Angeles Pierce College's KIN, and under what heading?"
+ },
+ "keywords": [
+  "IND\\ TEK",
+  "KIN"
+ ],
+ "pages": [
+  {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+   "answers": [
+    "code_indtek"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://www.lapc.edu/academics/departments/kinesiology-dept",
+   "answers": [
+    "code_kin"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

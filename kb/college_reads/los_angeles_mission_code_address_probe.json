@@ -2,16 +2,115 @@
  "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Los Angeles Mission College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
  "college": "Los Angeles Mission College",
  "questions": {
-  "code_nrshca": "Does this page name Los Angeles Mission College's NRS HCA, and under what heading?"
+  "code_aldhth": "Does this page name Los Angeles Mission College's ALD HTH, and under what heading?",
+  "code_chdev": "Does this page name Los Angeles Mission College's CH DEV, and under what heading?",
+  "code_chicano": "Does this page name Los Angeles Mission College's CHICANO, and under what heading?",
+  "code_esl": "Does this page name Los Angeles Mission College's E.S.L., and under what heading?",
+  "code_egdtek": "Does this page name Los Angeles Mission College's EGD TEK, and under what heading?",
+  "code_engsup": "Does this page name Los Angeles Mission College's ENG SUP, and under what heading?",
+  "code_eslcvcs": "Does this page name Los Angeles Mission College's ESLCVCS, and under what heading?",
+  "code_hthtek": "Does this page name Los Angeles Mission College's HTHTEK, and under what heading?",
+  "code_multimd": "Does this page name Los Angeles Mission College's MULTIMD, and under what heading?",
+  "code_nrshca": "Does this page name Los Angeles Mission College's NRS-HCA, and under what heading?",
+  "code_nursing": "Does this page name Los Angeles Mission College's NURSING, and under what heading?",
+  "code_phrmctk": "Does this page name Los Angeles Mission College's PHRMCTK, and under what heading?"
  },
  "keywords": [
-  "NRS\\ HCA"
+  "ALD\\ HTH",
+  "CH\\ DEV",
+  "CHICANO",
+  "E\\.S\\.L\\.",
+  "EGD\\ TEK",
+  "ENG\\ SUP",
+  "ESLCVCS",
+  "HTHTEK",
+  "MULTIMD",
+  "NRS\\-HCA",
+  "NURSING",
+  "PHRMCTK"
  ],
  "pages": [
+  {
+   "url": "https://www.lamission.edu:443/sites/lamc.edu/files/2022-08/AH021%2CCPR%2CSp2020.pdf",
+   "answers": [
+    "code_aldhth"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lamission.edu/sites/lamc.edu/files/2024-02/Major%20Sheets%20-%20Child%20Development%20LAMC.pdf",
+   "answers": [
+    "code_chdev"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lamission.edu/academics/aos/chicano-studies",
+   "answers": [
+    "code_chicano"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lamission.edu/academics/pathways/scc/global-languages-and-society/esl-program",
+   "answers": [
+    "code_esl"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lamission.edu/academics/aos/drafting",
+   "answers": [
+    "code_egdtek"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lamission.edu/academics/aos/land-surveying",
+   "answers": [
+    "code_engsup"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lamission.edu/academics/pathways/scc/global-languages-and-society/ESL-program/sequence",
+   "answers": [
+    "code_eslcvcs"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lamission.edu/academics/aos/medical-billing-and-coding",
+   "answers": [
+    "code_hthtek"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lamission.edu/Multimedia/Home.aspx",
+   "answers": [
+    "code_multimd"
+   ],
+   "source": "web_search"
+  },
   {
    "url": "https://lamission.edu:443/academics/aos/nursing-assitant-hha",
    "answers": [
     "code_nrshca"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lamission.edu/academics/aos/vocational-nursing",
+   "answers": [
+    "code_nursing"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lamission.edu/academics/aos/pharm-tech",
+   "answers": [
+    "code_phrmctk"
    ],
    "source": "web_search"
   }
