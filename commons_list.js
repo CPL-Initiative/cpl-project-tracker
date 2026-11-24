@@ -105,7 +105,8 @@
 //                      cell(row, key) -> text or node, note, sort: { col, dir } to open on a column other than the
 //                      first, A to Z }; its sort lasts the visit in L.pnSort[id]), h.fold(id, summary, kids) (a fold
 //                      that stays open or shut as the reader left it, L.pnFold[id]) and h.open(key) (show another
-//                      row's panel). L.panel holds the open row's key.
+//                      row's panel). L.panel holds the open row's key. panel.below draws it as a bottom bar under the
+//                      List; panel.tabs(r) -> [[id, label]] and panel.tab(r, id, h) give it tabs (the first is body).
 //   trail              { home: [[words, href]], name }: the panel's trail (Sam's Commons rulings, 2026-11-08, #2921;
 //                      COBIx's filter contract): above the panel's bar, home's links, then the List's name, then the open
 //                      filter's word when one is on, then the row, separated by " / ". The List's word (or the filter's,
@@ -854,7 +855,7 @@
         word("Clear the selection", function () { L.sel = {}; redrawList(); }), wrapBtn,
         !S.fr || frState().open ? null : word("Find and replace", function () {
           frState().open = true; render(); var n = document.getElementById(FP + "find"); if (n) n.focus(); }, { id: FP + "open" }), dl]),
-        (function () { var pn = listPanel(); return pn ? el("div", { cls: P + "split" }, [region, pn]) : region; })()]);
+        (function () { var pn = listPanel(); return pn ? el("div", { cls: P + (S.panel.below ? "stackb" : "split") }, [region, pn]) : region; })()]);
       var selKeys = Object.keys(L.sel);
       if (gi && selKeys.length) out.appendChild(listMovePanel(selKeys));
       if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
@@ -1132,6 +1133,23 @@
       if (fl && !fl.contains(document.activeElement)) fl.parentNode.replaceChild(listFilterBar(), fl);
     }
     /* The panel's shared parts (the hook's h): what every List's panel draws the same way. */
+    /* A panel table's column grip: drag the header's right edge, or focus it and use the arrow keys. */
+    function pnGrip(id, i, name, WD) {
+      var g = el("span", { cls: P + "pn-grip", role: "separator", "aria-orientation": "vertical", tabindex: "0", "aria-label": "Resize the " + name + " column" });
+      function set(px) { WD[i] = Math.max(48, Math.round(px)); redrawList(); var n = document.querySelectorAll("#" + P + "pn-" + id + " ." + P + "pn-grip")[i]; if (n) n.focus(); }
+      g.addEventListener("keydown", function (e) {
+        var th = g.parentNode, w = WD[i] || (th && th.getBoundingClientRect().width) || 120;
+        if (e.key === "ArrowRight") { e.preventDefault(); set(w + 16); } else if (e.key === "ArrowLeft") { e.preventDefault(); set(w - 16); }
+      });
+      g.addEventListener("pointerdown", function (e) {
+        var th = g.parentNode, x0 = e.clientX, w0 = th.getBoundingClientRect().width, last = w0;
+        if (g.setPointerCapture) g.setPointerCapture(e.pointerId);
+        function mv(ev) { last = Math.max(48, w0 + ev.clientX - x0); th.style.width = last + "px"; }
+        function up() { g.removeEventListener("pointermove", mv); g.removeEventListener("pointerup", up); WD[i] = Math.round(last); redrawList(); }
+        g.addEventListener("pointermove", mv); g.addEventListener("pointerup", up);
+      });
+      return g;
+    }
     function panelHelp(close) {
       var L = listState();
       function focusId(id) { var n = document.getElementById(id); if (n) n.focus(); }
@@ -1142,7 +1160,14 @@
         table: function (o) {
           var sorts = L.pnSort || (L.pnSort = {}), S2 = sorts[o.id] || (sorts[o.id] = { col: o.sort ? o.sort.col : 0, dir: o.sort ? o.sort.dir : 1 });
           var cols = o.cols, k = cols[S2.col] ? cols[S2.col][0] : cols[0][0], num = !!(cols[S2.col] || [])[2];
-          var rows = (o.rows || []).slice().sort(function (a, b) {
+          /* Sam, S724, 2026-11-24: "as with all our list views make the columns sortable, resizable, filterable". A
+             filter row under the headers (words a cell must hold, per column, for the visit) and a grip on each header's
+             right edge (drag, or the arrow keys) join the sort. */
+          var FT = (L.pnFilt || (L.pnFilt = {}))[o.id] || (L.pnFilt[o.id] = {}), WD = (L.pnW || (L.pnW = {}))[o.id] || (L.pnW[o.id] = {});
+          var hay = function (row, c) { var v = o.text ? o.text(row, c[0]) : row[c[0]]; return v == null || typeof v === "object" ? "" : String(v).toLowerCase(); };
+          var rows = (o.rows || []).filter(function (row) {
+            return cols.every(function (c, i) { var w = String(FT[i] || "").trim().toLowerCase(); return !w || c[3] || hay(row, c).indexOf(w) >= 0; });
+          }).sort(function (a, b) {
             var x = a[k], y = b[k], c = num ? (+x || 0) - (+y || 0) : String(x == null ? "" : x).localeCompare(String(y == null ? "" : y));
             return c * S2.dir;
           });
@@ -1154,8 +1179,19 @@
               S2.dir = S2.col === i ? -S2.dir : 1; S2.col = i; redrawList();
               var nb = document.querySelectorAll("#" + P + "pn-" + o.id + " th button")[i]; if (nb) nb.focus();
             });
-            return el("th", { scope: "col", "aria-sort": on ? (up ? "ascending" : "descending") : "none" }, [b]);
+            var th = el("th", { scope: "col", "aria-sort": on ? (up ? "ascending" : "descending") : "none" }, [b]);
+            th.appendChild(pnGrip(o.id, i, c[1], WD));
+            return th;
           }));
+          var frow = el("tr", { cls: P + "pn-f" }, cols.map(function (c, i) {
+            if (c[3]) return el("td");
+            var fid = P + "pnf-" + o.id + "-" + i, inp = el("input", { type: "search", id: fid, cls: P + "pn-fin", placeholder: "Filter", "aria-label": "Filter " + c[1] });
+            inp.value = FT[i] || "";
+            inp.addEventListener("input", function () { var at = inp.selectionStart; FT[i] = inp.value; redrawList(); var n = document.getElementById(fid); if (n) { n.focus(); try { n.setSelectionRange(at, at); } catch (e) {} } });
+            inp.addEventListener("keydown", function (e) { e.stopPropagation(); });
+            return el("td", null, [inp]);
+          }));
+          var cg = el("colgroup", null, cols.map(function (c, i) { return el("col", WD[i] ? { style: "width:" + WD[i] + "px" } : (c[4] ? { style: "width:" + c[4] } : null)); }));
           var body = el("tbody", null, rows.map(function (row) {
             return el("tr", o.rowAttrs ? o.rowAttrs(row) : null, cols.map(function (c) {
               var v = o.cell ? o.cell(row, c[0]) : row[c[0]];
@@ -1167,7 +1203,8 @@
           var kids = [];
           if (o.note) kids.push(el("p", { cls: CL.muted + " " + CL.small, text: o.note }));
           kids.push(el("div", { id: P + "pn-" + o.id, cls: P + "pn-wrap", role: "region", tabindex: "0", "aria-label": o.label },
-            [el("table", { cls: P + "pn-table" }, [el("thead", null, [head]), body])]));
+            [el("table", { cls: P + "pn-table" + (Object.keys(WD).length || cols.some(function (c) { return c[4]; }) ? " " + P + "pn-fixed" : "") }, [cg, el("thead", null, [head, frow]), body])]));
+          if (o.rows && o.rows.length && !rows.length) kids.push(el("p", { cls: CL.muted + " " + CL.small, role: "status", text: "No row holds the words in the filters." }));
           return el("div", null, kids);
         },
         fold: function (id, summary, kids) {
@@ -1199,12 +1236,35 @@
         // Before the panel's first fold among its own children: a fold nested deeper (a checks list's details) is no anchor.
         if (dbox.firstChild) body.insertBefore(dbox, Array.prototype.filter.call(body.children, function (c) { return c.tagName === "DETAILS"; })[0] || null);
       }
-      var aside = el("aside", { id: P + "panel", cls: P + "panel", "aria-labelledby": P + "panel-t" }, [
+      /* panel.below + panel.tabs(r) (Sam, S724, 2026-11-24, r-sidebar-narrow-bottom-bar-wide and
+         r-bottom-bar-tabs-act-and-inform): the selected row's views in a bar under the List at its full width, as tall as
+         its content, one tab per view; each tab acts as well as informs. The tab chosen stays as the reader steps from
+         row to row (L.ptab), and the first tab (panel.body and the title's drawer) is the row's details. */
+      var tabs = S.panel.tabs ? (S.panel.tabs(r) || []) : null, tablist = null;
+      var focusId = function (id) { var n = document.getElementById(id); if (n) n.focus(); };
+      if (tabs && tabs.length) {
+        var ids = tabs.map(function (t) { return t[0]; });
+        if (ids.indexOf(L.ptab) < 0) L.ptab = ids[0];
+        tablist = el("div", { cls: P + "ptabs", role: "tablist", "aria-label": "Views of " + listTitle(r) }, tabs.map(function (t, i) {
+          var on = L.ptab === t[0], b = el("button", { type: "button", role: "tab", id: P + "ptab-" + t[0], cls: P + "ptab", "aria-selected": on ? "true" : "false",
+            "aria-controls": P + "pbody", tabindex: on ? "0" : "-1", text: t[1] });
+          b.addEventListener("click", function () { L.ptab = t[0]; redrawList(); focusId(P + "ptab-" + t[0]); });
+          b.addEventListener("keydown", function (e) {
+            var j = e.key === "ArrowRight" ? (i + 1) % ids.length : e.key === "ArrowLeft" ? (i + ids.length - 1) % ids.length : e.key === "Home" ? 0 : e.key === "End" ? ids.length - 1 : -1;
+            if (j < 0) return; e.preventDefault(); L.ptab = ids[j]; redrawList(); focusId(P + "ptab-" + ids[j]);
+          });
+          return b;
+        }));
+        if (L.ptab !== ids[0]) body = el("div", { cls: P + "pbody" }, S.panel.tab(r, L.ptab, panelHelp(close)) || []);
+        body.id = P + "pbody"; body.setAttribute("role", "tabpanel"); body.setAttribute("aria-labelledby", P + "ptab-" + L.ptab);
+      }
+      var aside = el(S.panel.below ? "section" : "aside", { id: P + "panel", cls: P + "panel" + (S.panel.below ? " " + P + "below" : ""), "aria-labelledby": P + "panel-t" }, [
         panelTrail(r, close),
         el("div", { cls: P + "pbar" }, [el("span", { id: P + "panel-t", cls: P + "pt", tabindex: "-1", text: S.panel.label ? S.panel.label(r) : listTitle(r) }),
           word("Close", close, { "aria-label": "Close the panel for " + listTitle(r) })]),
-        body]);
+        tablist, body]);
       aside.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.stopPropagation(); close(); } });
+      if (S.panel.below) return aside;
       panelSize(aside);
       aside.insertBefore(panelGrip(aside), aside.firstChild);
       return aside;
@@ -1515,6 +1575,14 @@
         "." + P + "split{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}",
         "." + P + "split > ." + P + "wrap{flex:999 1 480px;min-width:0}",
         "." + P + "rowedit>td{cursor:pointer}",
+        // The bottom bar (panel.below): under the List at its full width, as tall as its content; the page scrolls.
+        "." + P + "stackb{display:grid;gap:14px}",
+        "." + P + "panel." + P + "below{position:static;max-height:none;max-width:none;flex:none;width:auto;overflow:visible;border-top:2px solid var(--border-strong)}",
+        "." + P + "panel." + P + "below > ." + P + "pbody{overflow:visible}",
+        "." + P + "ptabs{display:flex;flex-wrap:wrap;gap:4px 20px;padding:0 16px;border-bottom:1px solid var(--border)}",
+        "." + P + "ptab{font:inherit;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;padding:6px 0;min-height:32px;color:var(--cobalt);cursor:pointer}",
+        "." + P + "ptab[aria-selected=true]{color:var(--text-strong);font-weight:700;border-bottom-color:var(--cobalt)}",
+        "." + P + "ptab:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
         // The panel holds its place in the window while the page scrolls, and its top (the trail and the bar with Close)
         // stays put while its body scrolls inside it: one scroller (Sam, 2026-11-22, r-sidebars-resize-and-frozen-top-sam-2026-11-22:
         // "Side bar top rows all need to be frozen so the close button doesn't get lost on scroll").
@@ -1542,6 +1610,12 @@
         "." + P + "pn-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:8px}",
         "." + P + "pn-table{width:100%;border-collapse:collapse;font-size:.86rem}",
         "." + P + "pn-table th{text-align:left;padding:6px 8px;background:var(--surface-subtle);border-bottom:1px solid var(--border-strong)}",
+        "." + P + "pn-table th{position:relative}",
+        "." + P + "pn-fixed{table-layout:fixed}",
+        "." + P + "pn-grip{position:absolute;right:0;top:0;bottom:0;width:8px;cursor:col-resize;touch-action:none}",
+        "." + P + "pn-grip:hover,." + P + "pn-grip:focus-visible{background:var(--border-strong)}",
+        "." + P + "pn-f td{padding:4px 6px;background:var(--surface-opaque);border-bottom:1px solid var(--border)}",
+        "." + P + "pn-fin{width:100%;box-sizing:border-box;min-height:24px;font:inherit;font-size:.78rem}",
         "." + P + "pn-table td{padding:6px 8px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-body);overflow-wrap:anywhere}",
         "." + P + "pn-n{text-align:right;font-variant-numeric:tabular-nums}",
         "." + P + "pn-fold{margin-top:16px}",
