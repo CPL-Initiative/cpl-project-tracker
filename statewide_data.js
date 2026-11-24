@@ -389535,6 +389535,90 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPPRA-AAAP-1-001",
+      "exhibit_ids": [
+        "MAPPRA-AAAP-1-001"
+      ],
+      "title": "AI-1 and AI-3 Portfolio Review KG 11/23/26",
+      "unified_title": "AI-1 and AI-3 Portfolio Review KG 11/23/26",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AI-1 and AI-3 Portfolio Review KG 11/23/26"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "334"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Chaffey College"
+      ],
+      "potential": 17,
+      "potential_names": [
+        "Calbright College Non-Credit",
+        "Folsom Lake College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Southwest College",
+        "Mission College",
+        "Mt. San Antonio College",
+        "Palomar College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "Santa Ana College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 18,
+      "credit_recs": [
+        {
+          "course": "AI 1",
+          "credit": "3 hours in Artificial Intelligence: Prompt Engineering and AI Systems"
+        },
+        {
+          "course": "AI 3",
+          "credit": "3 hours in Ethics in AI and Technology"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-AAAP-1-001",
+          "title": "AI-1 and AI-3 Portfolio Review KG 11/23/26",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Chaffey College": 6.0
+      },
+      "adopter_lines": {
+        "Chaffey College": 2
+      },
+      "adopter_rec_idx": {
+        "Chaffey College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 6.0
+    },
+    {
       "exhibit_id": "MAPSAS-D:A-1-001|MAPSAS-DA1-1-001|MAPSAS-DA2-1-001|MAPSAS-DE-A-1-001",
       "exhibit_ids": [
         "MAPSAS-D:A-1-001",
@@ -449324,8 +449408,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Chaffey College",
-        "credit_recs": 563,
-        "exhibits": 468,
+        "credit_recs": 565,
+        "exhibits": 469,
         "disciplines": 18,
         "ccc_collaborative": 89,
         "industry_certs": 142,
@@ -450280,9 +450364,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Information Technology",
-        "credit_recs": 541,
-        "exhibits": 315,
-        "courses": 331,
+        "credit_recs": 543,
+        "exhibits": 316,
+        "courses": 332,
         "colleges": 58,
         "ccc_collaborative": 133,
         "pct": 3.1
@@ -450465,8 +450549,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 467,
-        "exhibits": 392,
+        "credit_recs": 469,
+        "exhibits": 393,
         "colleges": 36,
         "pct": 2.7
       },
@@ -450495,8 +450579,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 3552,
-        "exhibits": 639,
+        "credit_recs": 3554,
+        "exhibits": 640,
         "colleges": 48,
         "pct": 20.2
       },
@@ -450560,8 +450644,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 15701,
-        "exhibits": 7135,
+        "credit_recs": 15703,
+        "exhibits": 7136,
         "colleges": 100,
         "disciplines": 23,
         "pct": 89.4
@@ -450986,8 +451070,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-24T00:03:44",
-  "total_credit_recs": 17567,
+  "generated_at": "2026-11-24T06:19:56",
+  "total_credit_recs": 17569,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

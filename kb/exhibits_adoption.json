@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's credential panel, \"Who could adopt it?\" (kb/_build_exhibits_review.py): Exhibit Adoption's per-credential view. Per canonical credential: a = college index -> [units, [[course, credit recommendation]]] for each college that articulated it; c = college index -> [[course, \"\", units]] for each college that already teaches a course mapped to its M-ID identity (statewide_prescriptive.js; never the TOP or C-ID program overlap); w = colleges withheld because the identity is over-merged; x = [[exhibit id, MAP title, units]]; s = the CIP sector; p = the median articulating college's units (the peer benchmark).",
- "written_at": "2026-11-24T00:12:58Z",
+ "written_at": "2026-11-24T06:26:12Z",
  "sources": {
-  "statewide": "2026-11-24T00:03:44"
+  "statewide": "2026-11-24T06:19:56"
  },
  "cip_sectors": {
   "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
