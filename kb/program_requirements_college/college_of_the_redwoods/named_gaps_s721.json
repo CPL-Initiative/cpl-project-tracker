@@ -1,0 +1,28 @@
+{
+ "_readme": "S721 (lever), the gap census's reader_page_assignment lever (run 45371224551): 2 programs of College of the Redwoods whose filed record places none of the state's listed courses because the 2026-27 catalog prints the program under another award. Free page read 45381629186 read each program's page and the catalog's menu; the college's other 3 programs on the lever are pinned in its reconcile entry (kb/program_requirements_reconcile.json, site_pages). These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. They are the college's to settle in COCI.",
+ "college": "College of the Redwoods",
+ "written": "2026-11-24T11:17:30Z",
+ "capture": "43018781168",
+ "page_reads": [
+  "45381629186"
+ ],
+ "reasons": {
+  "catalog_award_differs": "The state lists the program as a Certificate of Achievement, and the 2026-27 catalog prints its page, the only one under its title, as an A.S. Degree: the extraction, asked for the certificate, finds no certificate section and records no list."
+ },
+ "programs": [
+  {
+   "control_number": "13559",
+   "title": "Early Childhood Education",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) units",
+   "reason": "catalog_award_differs",
+   "note": "early-childhood-education-fall-2018 prints 'Early Childhood Education' over 'A.S. Degree ( 27.0 Credits )', a Required Core of 24 units (ECE 1, 2, 5, 6, 7, 9, 10, 18) and 3 units of restricted electives; the menu lists no other Early Childhood page beside the A.S.-T's (31662). The filed record's notes say it found the A.S. section and no certificate section."
+  },
+  {
+   "control_number": "30811",
+   "title": "North Coast Paramedic",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) units",
+   "reason": "catalog_award_differs",
+   "note": "north-coast-paramedic-summer-2019 prints 'North Coast Paramedic' over 'A.S. Degree ( 39.0 - 45.0 Credits )', HO 170A to 170D, BIOL 1 and a PSYCH or SOC choice, with HO-159 named as a prerequisite; the menu lists no other North Coast Paramedic page. The filed record's notes say it found the A.S. section and no certificate section."
+  }
+ ]
+}

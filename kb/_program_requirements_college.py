@@ -5513,7 +5513,53 @@ def site_heading_names(pg: dict, program: dict) -> tuple[bool, str]:
     title0 = ((pg.get("title") or (pg.get("got") or {}).get("title") or "").split("|")[0]).strip()
     heads = [x for x in ((h1 or "").strip(), title0) if x]
     named = any(RC.heading_line([x], program.get("title"), program.get("award")) >= 0 for x in heads)
+    if not named:
+        # A heading that prints the title alone, its award on the line under it (S721).
+        for x in heads:
+            sub = site_award_subheading(pg, x, program)
+            if sub:
+                return True, "%s / %s" % (x, sub)
     return named, (heads[0] if heads else "")
+
+
+# College of the Redwoods' eLumen pages head a degree with its title alone and print the award on the next line
+# ("Automotive Technology" over "A.S. Degree ( 60.0 Credits )", page read 45381629186, S721), where a certificate's
+# heading carries it ("Advanced Automotive Technology, CA"). The line under the heading binds only when it prints the
+# award and nothing else (the award's words, Degree or of Achievement, a credits figure), so a department page whose
+# heading is the department's name and whose next line names one of its programs with its award never stands in.
+SITE_OPENING = 6             # the page's first lines, where its heading prints
+SITE_AWARD_FIGURE = re.compile(r"\(\s*\d+(?:\.\d+)?(?:\s*-\s*\d+(?:\.\d+)?)?\s*(?:credits?|units?|hours?)\s*\)", re.I)
+# The words an award line may print beside the award pattern's match: a transfer degree's line reads "A.A. Degree for
+# Transfer", where the pattern matches "for Transfer" and leaves the A.A.; rule A still refuses a local degree on it.
+SITE_AWARD_REST = {"degree", "of", "in", "achievement", "accomplishment", "proficiency", "a", "s", "t", "aa", "as",
+                   "associate", "arts", "science", "for", "transfer"}
+
+
+def site_award_line(line: str, award: str | None) -> bool:
+    """Whether a line prints the program's award and nothing else."""
+    arx = RC.award_pattern(award)
+    if arx is None or not arx.search(line or ""):
+        return False
+    rest = SITE_AWARD_FIGURE.sub(" ", arx.sub(" ", line))
+    return set(re.findall(r"[a-z]+", rest.lower())) <= SITE_AWARD_REST
+
+
+def site_award_subheading(pg: dict, head: str, program: dict) -> str | None:
+    """The award line under a heading that prints the program's title alone, or None: the heading must print in the
+    page's opening lines and pass rule A without its award, and the line directly under it must print the award alone
+    and pass rule A with the heading."""
+    title, award = program.get("title"), program.get("award")
+    if RC.heading_line([head], title, None) < 0:
+        return None
+    body = pg.get("body") if "body" in pg else (pg.get("got") or {}).get("body")
+    lines = [ln.strip() for ln in (body or "").split("\n") if ln.strip()][:SITE_OPENING]
+    key = lambda s: re.sub(r"\s+", " ", s).strip().lower()  # noqa: E731
+    for j, ln in enumerate(lines):
+        if key(ln) != key(head):
+            continue
+        sub = lines[j + 1] if j + 1 < len(lines) else ""
+        return sub if site_award_line(sub, award) and RC.heading_line([head, sub], title, award) >= 0 else None
+    return None
 
 
 def site_pinned(programs: list[dict], pages: list[dict], pins: dict[str, dict]) -> dict[str, dict]:
@@ -5544,9 +5590,16 @@ def site_pinned(programs: list[dict], pages: list[dict], pins: dict[str, dict]) 
             out[cn] = {"why": "the pinned page's heading (%r) does not print the program's title with its award"
                               % head}
             continue
+        # Its heading names it, so rule B's general-education check stands aside for this page (RC.PIN_HEADING, S721).
+        prog = dict(prog, **{RC.PIN_HEADING: True})
         cands = candidates(prog, [pg], programs, {})
         if not cands:
-            out[cn] = {"why": "the pinned page is no candidate: %s" % ((near_miss(prog, [pg]) or {}).get("why") or "")}
+            why = None
+            if RC.applies(prog):
+                body = (pg.get("got") or {}).get("body") or pg.get("body") or ""
+                _, why = RC.site_page(pg, prog, body, P.find_codes(body, prog.get("closed_list") or []), "innerText")
+            out[cn] = {"why": "the pinned page is no candidate: %s"
+                              % (why or (near_miss(prog, [pg]) or {}).get("why") or "")}
             continue
         out[cn] = {"best": dict(cands[0], pinned=True)}
     return out
@@ -5654,6 +5707,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         if platform == "curriqunet":
             urls = []
             pages = cq_pages(reader, start, report)
+            # A site_pages pin on a curriQunet catalog (S721) binds on an entry the index walk read (its view
+            # address, prefix + aliaspath), and is refused as not read otherwise.
+            site_pins = site_pin_entries(college)
             print("%s: %d programs (%d with a course list), %d curriQunet program pages, %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(pages), delay / 1000), flush=True)
         elif platform == "elumen":
@@ -5661,6 +5717,11 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             if not pages:
                 # The publish calls gave no program: read the menu's pages rendered.
                 urls = el_pages(reader, start, cache, report)
+            # A site_pages pin on an eLumen catalog (S721): the publish calls read every page the menu lists, so a
+            # pin binds on a page among them and is refused as not read otherwise; the rendered road queues it.
+            site_pins = site_pin_entries(college)
+            if urls:
+                urls += [pin["url"] for _, pin in sorted(site_pins.items()) if pin["url"] not in urls]
             print("%s: %d programs (%d with a course list), %d eLumen program pages (%s), %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(pages) or len(urls),
                      "publish/content" if pages else "rendered", delay / 1000), flush=True)

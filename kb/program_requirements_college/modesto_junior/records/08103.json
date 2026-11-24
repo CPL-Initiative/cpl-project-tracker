@@ -60,18 +60,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    23.0,
-    32.0
+    29.0,
+    29.0
    ],
    "stated": [
     29.0,
     29.0
    ],
-   "why": [
-    "the blocks sum to 23.0-32.0; the catalog states 29.0-29.0"
+   "against": "program",
+   "why": [],
+   "pooled": [
+    {
+     "blocks": [
+      "AGRICULTURE SCIENCE BREADTH COURSES",
+      "AGRICULTURE SCIENCE BREADTH COURSES",
+      "AGRICULTURE SCIENCE BREADTH COURSES"
+     ],
+     "figure": [
+      9.0,
+      9.0
+     ],
+     "minimum": false,
+     "parts": [
+      3.0,
+      12.0
+     ],
+     "read": [
+      9.0,
+      9.0
+     ],
+     "words": "AGRICULTURE SCIENCE BREADTH COURSES - COMPLETE 9 UNITS (Total 9) is split into three sub-blocks: 3-6 units from ANSC 200/NR 200, 0-3 units from AGM 200/AGM 235, and 0-3 units from AGEC 225/AGEC 210/AGEC 200; together they must total 9 units."
+    }
    ]
   },
   "repeated": {
@@ -93,7 +115,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

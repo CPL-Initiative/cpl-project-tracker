@@ -157,17 +157,21 @@
    "CA221"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
-   "title": "Computer Applications Cert",
-   "h1": "Computer Applications Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
+   "title": "Computer Applications AS",
+   "h1": "Computer Applications AS",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   },
+   "pinned": true
   },
   "listed": 11,
-  "text_chars": 4740
+  "text_chars": 6492
  },
  {
   "control_number": "02147",
@@ -228,17 +232,21 @@
    "ELTE254"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
-   "title": "Electronics Technology Cert",
-   "h1": "Electronics Technology Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026",
+   "title": "Electronics Technology AS",
+   "h1": "Electronics Technology AS",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   },
+   "pinned": true
   },
   "listed": 13,
-  "text_chars": 4964
+  "text_chars": 5902
  },
  {
   "control_number": "02150",
@@ -320,17 +328,21 @@
    "ELTE254"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
-   "title": "General Aircraft Maintenance Cert",
-   "h1": "General Aircraft Maintenance Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
+   "title": "General Aircraft Maintenance AS",
+   "h1": "General Aircraft Maintenance AS",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   },
+   "pinned": true
   },
   "listed": 9,
-  "text_chars": 5080
+  "text_chars": 5994
  },
  {
   "control_number": "02155",
@@ -1131,17 +1143,21 @@
    "AERO231"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-cert-fall-2026",
-   "title": "Aircraft Airframe Cert",
-   "h1": "Aircraft Airframe Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026",
+   "title": "Aircraft Airframe AS",
+   "h1": "Aircraft Airframe AS",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   },
+   "pinned": true
   },
   "listed": 2,
-  "text_chars": 4294
+  "text_chars": 4318
  },
  {
   "control_number": "11648",
@@ -1155,17 +1171,21 @@
    "AERO241"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
-   "title": "Aircraft Powerplant Cert",
-   "h1": "Aircraft Powerplant Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026",
+   "title": "Aircraft Powerplant AS",
+   "h1": "Aircraft Powerplant AS",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   },
+   "pinned": true
   },
   "listed": 2,
-  "text_chars": 4236
+  "text_chars": 4470
  },
  {
   "control_number": "12137",
@@ -1231,17 +1251,21 @@
    "DM298"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-cert-fall-2025",
-   "title": "Computer Animation Cert",
-   "h1": "Computer Animation Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026",
+   "title": "Computer Animation AA",
+   "h1": "Computer Animation AA",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   },
+   "pinned": true
   },
   "listed": 18,
-  "text_chars": 4101
+  "text_chars": 5081
  },
  {
   "control_number": "13167",
@@ -1324,17 +1348,21 @@
    "ELEC250"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-cert-fall-2025",
-   "title": "Electrical Technology Cert",
-   "h1": "Electrical Technology Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026",
+   "title": "Electrical Technology AS",
+   "h1": "Electrical Technology AS",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   },
+   "pinned": true
   },
   "listed": 9,
-  "text_chars": 4756
+  "text_chars": 5267
  },
  {
   "control_number": "14790",
@@ -1414,17 +1442,21 @@
    "AFAB210"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
-   "title": "Aircraft Fabrication & Assembly Technician Cert",
-   "h1": "Aircraft Fabrication & Assembly Technician Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026",
+   "title": "Aircraft Fabrication and Assembly Technician AS",
+   "h1": "Aircraft Fabrication and Assembly Technician AS",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
-   }
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   },
+   "pinned": true
   },
   "listed": 5,
-  "text_chars": 4906
+  "text_chars": 5776
  },
  {
   "control_number": "16468",

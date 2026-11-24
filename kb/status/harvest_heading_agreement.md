@@ -1,10 +1,10 @@
 # Harvest heading agreement
 
-A dated snapshot of main at commit 21ebe65d6c84 (2026-11-24; the newest capture it reads started 2026-11-24), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
+A dated snapshot of main at commit db49ae3996a9 (2026-11-24; the newest capture it reads started 2026-11-24), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
 
-All colleges: 18968 records, 15466 agree, 269 disagree (168 of them pass on the committed files), 3233 cannot tell (264 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
+All colleges: 18968 records, 15477 agree, 260 disagree (169 of them pass on the committed files), 3231 cannot tell (262 say the heading is not in their text; 74 name an award and none of the program's title words, 70 of them passing, set aside).
 
-The heading check (a heading that names another award type and some of the program's title) would fail 136 records that pass on the committed files (passes_live), 31 of them a transfer degree and a local degree crossed. It is in no pass rule.
+The heading check (a heading that names another award type and some of the program's title) would fail 137 records that pass on the committed files (passes_live), 31 of them a transfer degree and a local degree crossed. It is in no pass rule.
 
 A window bound to the next program (`after`) opens on the program's own control-number line and then names another program's title and award: the catalog prints the number after its program, and the reader cut the page from it. Seen only where the capture kept each pick's opening.
 
@@ -55,7 +55,7 @@ A suspect record has a heading that disagrees with its program, or was read from
 | College | Would fail | Transfer and local crossed | Set aside: award, no title word (passing) |
 |---|---:|---:|---:|
 | Antelope Valley College | 38 | 0 | 0 |
-| MiraCosta College | 18 | 0 | 0 |
+| MiraCosta College | 19 | 0 | 0 |
 | Fresno City College | 17 | 0 | 0 |
 | Santa Rosa Junior College | 9 | 0 | 0 |
 | San Bernardino Valley College | 7 | 0 | 0 |

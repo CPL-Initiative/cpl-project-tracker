@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Electrical Technology",
  "award": "A.S. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-cert-fall-2025",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7836,
+  "input_tokens": 8104,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7836,
-    "output_tokens": 868,
+    "input_tokens": 8104,
+    "output_tokens": 1615,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 868,
+  "output_tokens": 1615,
   "output_tokens_details": {
-   "thinking_tokens": 408
+   "thinking_tokens": 507
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0487,
- "ms": 9777,
- "seconds": 10.1,
+ "cost_usd": 0.06472,
+ "ms": 13439,
+ "seconds": 13.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "ELEC110",
-    "ELEC115",
-    "ELEC120",
-    "ELEC130",
-    "ELEC140",
-    "ELEC150",
-    "ELEC160",
-    "ELEC220",
-    "ELEC250"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -71,112 +61,201 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    34.0,
+    34.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     26.0,
+     26.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     0.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Electrical Technology Cert",
+   "section_heading": "Electrical Technology AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "AVC GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
+    "min": 26,
+    "max": 26
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Calculate values for voltage, current, resistance, and power, and contrast these values with measured values to determine the proper operation of a variety of electrical circuits.",
+    "Analyze, evaluate, troubleshoot, and repair residential, commercial and industrial electrical systems to meet industry standards and the National Electric Code.",
+    "Read and interpret blueprints, architectural drawings and schematics to install, maintain and repair electrical systems.",
+    "Evaluate the operation of various motor control systems, including programmable control systems, and modify or repair as necessary."
+   ],
+   "careers": [
+    "Electrician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 34,
+     "max": 34
+    },
+    "courses": [
+     {
+      "code": "ELEC 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Major total 34 printed both as '(Total 34)' and 'Required Major Total 34 Units'; 'Total Degree Units 60 Units' recorded as degree_total.",
+   "Page prints 'Completion of General Education requirements, plus electives as needed to reach 60 units. 26 units' — the 26 units combine GE and electives, so ge_units left null and electives_fill_degree set true.",
+   "ge_pattern 'AVC GE' inferred from the Recommended Pathway entries ('Any AVC GE Area 5' etc.); the requirements text says only 'General Education requirements'.",
+   "Catalog prints codes both as 'ELEC110' (program requirements) and 'ELEC 110' (requirements table); recorded with a space.",
+   "'Program Goals and Objectives' are not learning outcomes and were not recorded as outcomes.",
+   "Text is cut off after the Program Outcomes list ('Program ...'); check for further content.",
+   "Description also mentions 'supervisory and management positions' as promotional opportunities; not recorded as a career title."
+  ]
+ },
+ "extracted_run": "45399693231",
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
-  },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ELEC 110",
-    "why": "named only in the certificate section; no A.S. section in the text"
+   "now": {
+    "min": 26,
+    "max": 26
    },
-   {
-    "code": "ELEC 115",
-    "why": "named only in the certificate section; no A.S. section in the text"
-   },
-   {
-    "code": "ELEC 120",
-    "why": "named only in the certificate section; no A.S. section in the text"
-   },
-   {
-    "code": "ELEC 130",
-    "why": "named only in the certificate section; no A.S. section in the text"
-   },
-   {
-    "code": "ELEC 140",
-    "why": "named only in the certificate section; no A.S. section in the text"
-   },
-   {
-    "code": "ELEC 150",
-    "why": "named only in the certificate section; no A.S. section in the text"
-   },
-   {
-    "code": "ELEC 160",
-    "why": "named only in the certificate section; no A.S. section in the text"
-   },
-   {
-    "code": "ELEC 220",
-    "why": "named only in the certificate section; no A.S. section in the text"
-   },
-   {
-    "code": "ELEC 250",
-    "why": "named only in the certificate section; no A.S. section in the text"
-   }
-  ],
-  "notes": []
- },
- "extracted_run": "38979725726"
+   "words": "Completion of General Education requirements, plus electives as needed to reach 60 units.\n26"
+  }
+ ]
 }

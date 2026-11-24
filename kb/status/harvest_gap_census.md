@@ -1,12 +1,12 @@
 # Harvest gap census
 
-Written by `kb/_harvest_gap_census.py` (2026-11-24 11:33Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
+Written by `kb/_harvest_gap_census.py` (2026-11-24 14:26Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
 
-Universe 20282 · passing 15498 · without a passing record 4350.
+Universe 20282 · passing 15524 · without a passing record 4289.
 
 Of the passing, 54 counts as passing on the tab; the scorer's own test fails (listed in the JSON, not counted as gaps).
 
-Collected with a named gap, out of the gap: 434 (catalog_figures_differ 20, degree_summary_ge_none 14, double_count_noted 1, ge_units_not_read 131, hours_total_differs 11, hours_total_not_read 32, hours_within_printed_range 7, lists_not_closed 16, lists_past_their_figure 17, nested_award_not_read 3, no_hours_read 51, no_own_page_total 1, no_units_read 22, noted_figures_differ 19, noted_no_total 1, noted_section_cut_off 3, noted_unit_floor 1, one_option_of_shared_page 6, pair_read_as_alternatives 9, pool_figure_not_read 16, prerequisites_counted 3, repeat_read_once 4, section_cut_off 20, total_differs 12, total_not_printed 7, unit_line_not_read 7).
+Collected with a named gap, out of the gap: 469 (catalog_figures_differ 20, degree_electives_not_printed 2, degree_summary_ge_none 14, degree_within_map_range 4, double_count_noted 1, figure_within_variable_units 12, ge_units_not_read 131, hours_total_differs 11, hours_total_not_read 32, hours_within_printed_range 7, lists_not_closed 19, lists_past_their_figure 17, nested_award_not_read 3, no_hours_read 51, no_own_page_total 1, no_units_read 22, noted_figures_differ 23, noted_no_total 10, noted_section_cut_off 4, noted_unit_floor 1, one_option_of_shared_page 6, pair_read_as_alternatives 9, pool_figure_not_read 15, prerequisites_counted 3, repeat_read_once 5, section_cut_off 20, total_differs 12, total_not_printed 7, unit_line_not_read 7).
 
 Read by the harvest but outside the universe: Active - Teachout Only 630, Approved 1423.
 
@@ -22,13 +22,13 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | no closed list in the Program Course File | 1747 |
 | page not found | 1097 |
 | page found, never extracted | 18 |
-| extracted, places none of its courses | 163 |
+| extracted, places none of its courses | 151 |
 | extracted, not loaded | 1 |
 | extracted, no score (an error) | 4 |
-| live, coverage fails | 156 |
+| live, coverage fails | 155 |
 | live, a course added | 3 |
-| live, units unequal | 790 |
-| live, units incomplete | 277 |
+| live, units unequal | 753 |
+| live, units incomplete | 266 |
 
 ## Top levers
 
@@ -54,24 +54,22 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | 18 | a reader change finds the program's page (a free page read first) | Allan Hancock College | 23 | free |  |
 | 19 | a reader change finds the program's page (a free page read first) | West Los Angeles College | 23 | free |  |
 | 20 | a reader change finds the program's page (a free page read first) | Foothill College | 21 | free |  |
-| 21 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Modesto Junior College | 21 | free |  |
-| 22 | a reader change finds the program's page (a free page read first) | Los Angeles Trade Technical College | 20 | free |  |
-| 23 | a reader change finds the program's page (a free page read first) | Sierra College | 20 | free |  |
-| 24 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | College of the Canyons | 20 | free |  |
-| 25 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Palo Verde College | 20 | free |  |
+| 21 | a reader change finds the program's page (a free page read first) | Los Angeles Trade Technical College | 20 | free |  |
+| 22 | a reader change finds the program's page (a free page read first) | Sierra College | 20 | free |  |
+| 23 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | College of the Canyons | 20 | free |  |
+| 24 | a reader change finds the program's page (a free page read first) | Laney College | 19 | free |  |
+| 25 | a reader change finds the program's page (a free page read first) | North Orange Continuing Education | 19 | free |  |
 
 ## Next wave: one college per catalog host
 
 | College | Host | Programs a read would gain | Estimate | Read before |
 |---|---|---:|---:|---|
 | College of the Desert | catalog.collegeofthedesert.edu | 23 | $1.83 | yes |
-| Antelope Valley College | avc.elumenapp.com | 10 | $0.73 | yes |
 | Orange Coast College | catalog.cccd.edu | 8 | $0.58 | yes |
 | Saddleback College | saddleback.curriqunet.com | 7 | $0.56 | yes |
-| College of the Redwoods | redwoods.elumenapp.com | 5 | $0.37 | yes |
-| MiraCosta College | catalog.miracosta.edu | 5 | $0.43 | yes |
 | El Camino College | catalog.elcamino.edu | 4 | $0.26 | yes |
 | Los Angeles Southwest College | lasc.edu | 4 | $0.26 | yes |
+| MiraCosta College | catalog.miracosta.edu | 4 | $0.34 | yes |
 | North Orange Continuing Education | catalog.nocccd.edu | 4 | $0.18 | yes |
 | Sacramento City College | scc.losrios.edu | 4 | $0.36 | yes |
 | Shasta College | scmainweb.s3.us-west-1.amazonaws.com | 4 | $0.38 | yes |
@@ -84,3 +82,5 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | Pasadena City College | curriculum.pasadena.edu | 3 | $0.21 | yes |
 | Santiago Canyon College | sccollege.edu | 3 | $0.22 | yes |
 | Southwestern College | catalog.swccd.edu | 3 | $0.19 | yes |
+| West Valley College | westvalley.edu | 3 | $0.25 | yes |
+| Antelope Valley College | avc.elumenapp.com | 2 | $0.15 | yes |

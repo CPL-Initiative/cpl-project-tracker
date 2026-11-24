@@ -76,18 +76,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    29.0,
-    35.0
+    32.0,
+    32.0
    ],
    "stated": [
     32.0,
     32.0
    ],
-   "why": [
-    "the blocks sum to 29.0-35.0; the catalog states 32.0-32.0"
+   "against": "program",
+   "why": [],
+   "pooled": [
+    {
+     "blocks": [
+      "AGRICULTURE SCIENCE BREADTH COURSES",
+      "AGRICULTURE SCIENCE BREADTH COURSES"
+     ],
+     "figure": [
+      9.0,
+      9.0
+     ],
+     "minimum": false,
+     "parts": [
+      6.0,
+      12.0
+     ],
+     "read": [
+      9.0,
+      9.0
+     ],
+     "words": "The Agriculture Science Breadth section requires 9 units total, split into a 6-9 unit sub-block (PLSC/NR/AGEC courses) and a 0-3 unit sub-block (AGM 200, AGM 235); the 0-3 sub-block is recorded with minimum 0."
+    }
    ]
   },
   "repeated": {
@@ -109,7 +130,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
