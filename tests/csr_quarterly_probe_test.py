@@ -99,8 +99,12 @@ check("the workflow runs the comparison", "kb/_csr_quarterly_probe.py --compare"
 # ── comparison mode ──────────────────────────────────────────────────────────
 base = probe.load_baseline()
 check("the baseline names every target", {t["key"] for t in probe.TARGETS} <= set(base), str(sorted(base)))
-check("the handbook baseline is the 19th edition with a PDF hash",
-      base["mq_page"]["edition"] == 19 and len(base["mq_page"]["document_sha256"]) == 64)
+# The baseline is the handbook the repo was read from (S719: the 20th edition, kb/reference/mq_handbook_20th.json), so a
+# re-baseline that leaves the two apart fails here rather than at January's compare.
+_hb = json.load(open(os.path.join(ROOT, "kb", "reference", "mq_handbook_20th.json")))["_source"]
+check("the handbook baseline is the edition and PDF hash the committed handbook was read from",
+      base["mq_page"]["edition"] == _hb["edition"] and base["mq_page"]["document_sha256"] == _hb["sha256"]
+      and len(base["mq_page"]["document_sha256"]) == 64, str({k: base["mq_page"].get(k) for k in ("edition", "document_sha256")}))
 pdf_sha = __import__("hashlib").sha256(PDF).hexdigest()
 fixture_base = {"edition": 19, "document_sha256": pdf_sha, "read_at": "2026-10-20"}
 check("the same PDF and edition read as same", probe.compare(r, fixture_base)["verdict"] == "same")
