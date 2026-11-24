@@ -461,6 +461,13 @@ function rule(t, value, words, similar) {
     Array.from(rowOf("College Composition").querySelectorAll(".ccl-row-acts button")).find((b) => txt(b) === "Move").click();
     await until(() => !!t.d.querySelector(".ccl-move-panel"));
     const panelH = () => txt(t.d.querySelector(".ccl-move-h"));
+    // S724 (Sam, 2026-11-24, on the tabbed mock: "looks great, let's go with it"): the selected course's views sit in a
+    // bottom bar of tabs under the List, at its full width; Move is one tab, opened by the row's own Move.
+    const bar = () => t.d.querySelector("section.ccl-panel.ccl-below");
+    const tabsNow = () => Array.from(t.d.querySelectorAll(".ccl-ptabs [role=tab]")).map(txt);
+    check("(14) ⭐ Move on a row opens the bottom bar under the List, on its Move tab",
+      !!bar() && !t.d.querySelector("aside.ccl-panel") && tabsNow().join("|") === "Course|Move|Its common course|Catalog|History"
+      && txt(t.d.querySelector(".ccl-ptabs [aria-selected=true]")) === "Move" && bar().previousElementSibling && /ccl-wrap/.test(bar().previousElementSibling.className), tabsNow().join("|"));
     check("(13) ⭐ Move on a row opens the panel under the band, naming that one course with its college and units",
       /^Moving ENGL 300 College Composition at American River College \(4 units\) to:$/.test(panelH()), panelH());
     check("(13) and it ticks that row's box alone", bandBox().indeterminate && !bandBox().checked);
@@ -498,7 +505,6 @@ function rule(t, value, words, similar) {
     bandBox().click();
     await until(() => /2 courses chosen/.test(txt(t.d.querySelector(".ccl-move-bar") || t.d.body)));
     check("(13) ⭐ the band's box chooses every course still to settle", /2 courses chosen/.test(txt(t.d.querySelector(".ccl-move-bar"))), txt(t.d.querySelector(".ccl-move-bar") || t.d.body).slice(0, 200));
-    Array.from(t.d.querySelectorAll(".ccl-move-bar button")).find((b) => txt(b) === "Move the chosen").click();
     await until(() => !!t.d.querySelector(".ccl-move-panel"));
     check("(13) ⭐ the panel names every course it will move",
       /^Moving ENGL 101 Composition and Reading at Rio Hondo College \(3 units\) and ENGL 100 Freshman Composition at Cypress College \(4 units\) to:$/.test(panelH()), panelH());
@@ -509,6 +515,19 @@ function rule(t, value, words, similar) {
     moveBtn().click();
     await until(() => bodies().filter((b) => b.field === "merge_into").length >= 3);
     const mvs = bodies().filter((b) => b.field === "merge_into").map((b) => b.course_id + ">" + b.value).sort();
+    // The tabs act as well as inform (r-bottom-bar-tabs-act-and-inform): History shows the move with Take it back;
+    // Its common course lists every local course with its state; the tab chosen follows the reader from row to row.
+    Array.from(t.d.querySelectorAll(".ccl-ptabs [role=tab]")).find((b) => txt(b) === "History").click();
+    await until(() => /Moved to WELD M1109/.test(txt(bar())));
+    check("(14) ⭐ History shows the saved move with Take it back", /Moved to WELD M1109/.test(txt(bar())) && Array.from(bar().querySelectorAll("button")).some((b) => txt(b) === "Take it back"), txt(bar()).slice(0, 300));
+    check("(14) and its table sorts, filters and resizes (r-lists-sort-resize-filter-act-on-row)",
+      !!bar().querySelector(".ccl-pn-f input[type=search]") && !!bar().querySelector(".ccl-pn-grip[role=separator]") && !!bar().querySelector("th button"));
+    Array.from(t.d.querySelectorAll(".ccl-ptabs [role=tab]")).find((b) => txt(b) === "Its common course").click();
+    await until(() => /Local courses under ENGL M1001/.test((bar().querySelector("[role=region]") || {}).getAttribute ? bar().querySelector("[role=region]").getAttribute("aria-label") : ""));
+    check("(14) ⭐ Its common course lists each local course with what was done to it", /Moved to WELD M1109/.test(txt(bar())), txt(bar()).slice(0, 300));
+    rowOf("Tool and Equipment Applications").querySelector("button.ccl-tlink, td button").click();
+    await until(() => /Tool and Equipment Applications/.test(txt(t.d.querySelector(".ccl-pt"))));
+    check("(14) the tab chosen stays as the reader selects another row", txt(t.d.querySelector(".ccl-ptabs [aria-selected=true]")) === "Its common course", tabsNow().join("|"));
     check("(13) ⭐ Move these 2 courses here writes one move per course", mvs.join(",") === "CN:CCC1>WELD M1109,CN:CCC2>WELD M1109,CN:CCC3>WELD M1109", mvs.join(","));
     // Accept on the only course of a card: its own row, then the card's Keep, and the card leaves the list.
     Array.from(rowOf("Tool and Equipment Applications").querySelectorAll(".ccl-row-acts button")).find((b) => txt(b) === "Accept").click();
