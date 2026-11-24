@@ -55,6 +55,15 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   Ventura, Shasta and De Anza. Then the census's next wording-rule piles (Contra Costa 22, El Camino 22, Ventura 22,
   Cabrillo 21). No lane 2 plan passes a record through the program-level fill before `fill` merges.
 
+## Split changes during the run
+
+- 06:24Z to 06:26Z: `fill`, `lever` and `piles` started on Opus 5.5 at high effort.
+- 06:29Z to 06:43Z: the display build `abf1f6396156` (18,666 records): Glendale gate 45340786385 (242 rows), whole
+  build 45341895811 (18,423 rows); live 18,665 at the build, the same 32 at older builds; #3754.
+- 06:38Z: `lever`'s page read 45341735139 (its push) and American River's free read 45341899083 on #3752.
+- 06:52Z: Fullerton's plan on #3753 (9 collected with named gaps, 4 held) went to a second reader; `piles` took City
+  College of San Francisco.
+
 Off the queue tonight (Sam's routine prompt: *"No new UI, tooling or governance work in conductor runs."*): the brief's
 section 1 slimming items and section 4 go to a plain session, as section 4 item 3 provides
 (`d-slimming-left-to-plain-session-s720`).
