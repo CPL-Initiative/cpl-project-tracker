@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "The certificate's whole list is printed as 'Choose a minimum of 16 units from the following courses 16.0-18.0', combining the required third-level option and the electives; the electives block prints no separate unit minimum, so its minimum is left null (the remainder needed after the third-level option is not printed)."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

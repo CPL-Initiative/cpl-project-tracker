@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pair_read_as_alternatives",
+    "label": "The catalog prints two courses taken together as one option, and the record reads them as separate alternatives, so its low end falls short of the printed total.",
+    "words": "Level choices are printed as 'CHIN 3 (5.0) OR Both of the following: CHIN 3A AND CHIN 3B (6.0)'; recorded as CHIN 3 with alternatives CHIN 3A and CHIN 3B, where 3A and 3B must both be taken together to substitute. Same for CHIN 2 / 2A+2B and CHIN 4 / 4A+4B. Printed sub-totals: third-level 5.0-6.0, second-level 5.0-6.0, fourth-level 5.0-6.0; 'One of the following' CHIN 1 or CHIN 1B 3.0-5.0."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

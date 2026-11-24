@@ -109,7 +109,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "one_option_of_shared_page",
+    "label": "The program is one option of a page several programs share; the record holds every option the page prints, so its units are the whole group's, not the program's own.",
+    "words": "The option group is printed as 'Units 9.0-10.0'; Option 1 totals 10 units (1-unit lab choice printed with 1.0 beside the heading row), other options 9 units, though Option 6 could reach 12 under its 3.0-6.0 choice."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
