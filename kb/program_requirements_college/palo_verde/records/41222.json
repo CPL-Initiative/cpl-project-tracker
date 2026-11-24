@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "figure_within_variable_units",
+    "label": "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
+    "words": "Required Courses block is stated as 13.25 credits, but the listed courses sum to 5.5 at their minimum units (17.75 at maximum, since FST 090 is printed as 0.25-12 and EMS 161 as 1-1.5); the 13.25 total presumably assumes specific variable-unit enrollments. Reviewer should check."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

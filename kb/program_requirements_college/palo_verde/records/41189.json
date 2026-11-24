@@ -100,7 +100,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "figure_within_variable_units",
+    "label": "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
+    "words": "Required block states 'Total 11 Credits', but the printed course units sum to 3.25-15.5 (FST 090 is printed as 0.25-12 credits); reviewer should check how the 11 credits are met."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 99,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
