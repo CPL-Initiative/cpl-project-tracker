@@ -71,6 +71,10 @@ All verbatim in `docs/commons_lessons.md`, S724. **RULED:** `r-sidebar-narrow-bo
    (common and local subjects, keywords, etc."*. Build it as one tool: words (space = all, comma or *or* = either,
    minus = leave out, quotes = a phrase; a word matches its start), the common subject, the local subject codes, the
    target, each in the view's address so a gather can be linked and rerun.
+   Sam then asked *"can we have the option to save a word filter we like?"* (mock v3): **Saved filters**, named, each
+   holding its words, common subject and local subjects, saved under the reviewer's name for the whole team and opened
+   from its own address. A deliberate save, so it sits outside *Tabs never remember a filter*. Storing it is a new
+   field on a shared table: map it in `kb/governance_surface_map.json` before it ships (Rule 10 a3).
    Sam then: *"els will be a similar case of big mid consolidation into just a few"*: build Gather for both; read
    `docs/reference/lanes/esl-packaging.md` (the comprehensives and carve-outs) before designing it.
 1. **The anchor-page build, step 2:** the Common courses / Local courses toggle on the Courses List.
