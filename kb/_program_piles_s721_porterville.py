@@ -206,13 +206,14 @@ def shared_with(cn: str) -> list[str]:
 _POSTED = None
 
 
-def posted_runs() -> dict:
+def posted_runs(skip: tuple = ()) -> dict:
     """{control number: [(at, extracted_run), ...]} the committed receipts posted to the college's live rows: a load
     (program_requirement_records_college_<slug>_<run>.json: inserted_keys under its extracted_runs), a reread
     (..._college_reread_<slug>_<run>.json: replaced_keys and carried_keys under its extracted_run) and every guarded
-    plan's records (each guarded on the row's live run)."""
+    plan's records (each guarded on the row's live run). skip names plan tags whose receipts are left out (the test
+    reads the receipts as they stood before this plan's own s721c apply); a skip is never cached."""
     global _POSTED
-    if _POSTED is not None:
+    if _POSTED is not None and not skip:
         return _POSTED
     import glob
     out: dict = {}
@@ -240,6 +241,8 @@ def posted_runs() -> dict:
             # A plan's rows reached the live table only when its migration receipt was filed (an unapplied plan,
             # this module's own receipt among them, posts nothing).
             tag = name[:-len(".json")].rsplit("_", 1)[-1]
+            if tag in skip:
+                continue
             if not glob.glob(os.path.join(NG.RECEIPTS, "migration_%s_prreq_*.json" % tag)):
                 continue
             rows = d.get("records") if isinstance(d.get("records"), list) else d.get("moved")
@@ -254,7 +257,8 @@ def posted_runs() -> dict:
     for k, at, run in kept:
         if k not in out:
             out[k] = [(at, run)]
-    _POSTED = out
+    if not skip:
+        _POSTED = out
     return out
 
 

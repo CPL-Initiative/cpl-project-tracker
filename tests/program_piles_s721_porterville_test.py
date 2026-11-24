@@ -129,9 +129,16 @@ check(W.renamed(other) is None, "the rename is 43554's alone (45517 lists CGRA P
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS if ROWS[cn] != W.PASSES),
       "the scorer passes none of the gap rows (#3753's MAJOR)")
 check(all(W.on_live_run(W._load(cn)) for cn in ROWS), "every row is on its live run")
-check(W.posted_runs().get("30235") == [("2026-11-19T14:34:06Z", "44477695238")]
-      and W.posted_runs().get("36704") == [("2026-11-19T14:34:06Z", "44477695238")],
+# Read as the receipts stood before this plan's own apply (its s721c receipts post its rows once migrated).
+before = W.posted_runs(skip=("s721c",))
+check(before.get("30235") == [("2026-11-19T14:34:06Z", "44477695238")]
+      and before.get("36704") == [("2026-11-19T14:34:06Z", "44477695238")],
       "the reread's kept keys post 30235 and 36704 at its run")
+check(all(max(before[cn])[1] == W._load(cn)["extracted_run"] for cn in ROWS),
+      "before the apply, every row's latest posted run is its committed run")
+# After the apply, the plan's own rows post the same run, never another.
+check(all(max(W.posted_runs()[cn])[1] == r["extracted_run"] for r in rec["records"] for cn in [r["control_number"]]),
+      "the posted run is the plan's run, applied or not")
 check(W.shared_with("06797") == ["43554"] and W.shared_with("45626") == ["45517"], "the shared pages are read")
 e = dict(W.REVIEWED["06797"])
 saved = W.REVIEWED["06797"]
