@@ -63,6 +63,13 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 06:38Z: `lever`'s page read 45341735139 (its push) and American River's free read 45341899083 on #3752.
 - 06:52Z: Fullerton's plan on #3753 (9 collected with named gaps, 4 held) went to a second reader; `piles` took City
   College of San Francisco.
+- 07:00Z to 07:20Z: #3754 merged (`79a534fb`); the census dispatched on `main`. Fullerton's reader, FIX THEN APPLY
+  (35174 read from a shared page; 33680 and 42143 pass under the printed floor): 6 rows, round 2 APPLY. #3756's
+  reader, FIX THEN MERGE (four findings). #3752's reader, DISPATCH, merge after three fixes.
+- 07:18Z to 07:31Z: applied and confirmed live: Fullerton 6 (migrate 45346957909), College of the Sequoias 7
+  (45347712879), Clovis 3 (45348350867). Mendocino's paid read 45348021173 landed; Los Angeles Southwest's dispatched.
+- 07:3xZ: East Los Angeles's pre-read found 02456's live row on an older extraction than its committed record: held,
+  the plan rebuilt at 3 (`p-preread-catches-older-live-extraction-s720`).
 
 Off the queue tonight (Sam's routine prompt: *"No new UI, tooling or governance work in conductor runs."*): the brief's
 section 1 slimming items and section 4 go to a plain session, as section 4 item 3 provides
