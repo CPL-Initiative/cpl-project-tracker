@@ -103,6 +103,9 @@ check("D2: the fixture's figure is not a round thousand (" + exact + ")", Math.r
 check("D2: the public row prints the exact earned figure in whole dollars (" + (pubFig || "none") + " for " + exact + ")",
   pubFig === exact);
 check("D2: the curator row prints the same figure (" + exact + ")", privFig === exact);
+// No public figure reads "<$1,000" any more: the old floor is gone everywhere on the page.
+check("D2: no figure on the public page prints the retired <$1,000 floor",
+  !/<\$1,000/.test(pubDoc.getElementById("cplFundingMount").textContent));
 
 // 3. Caps stay exact on the public page — they are size allocations, not
 // measures — so the max-award figure is IDENTICAL in both views and never
