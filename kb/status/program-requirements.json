@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-24T03:51:16Z",
-  "session": 719,
-  "moniker": "SkyShearwater",
-  "run": "Sam's session",
+  "written_at": "2026-11-24T09:24:42Z",
+  "session": 720,
+  "moniker": "SkyEider",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_720_handoff.md",
+  "handoff": "docs/session_721_handoff.md",
   "next_step": {
-    "title": "The renames read from print, and a courses file for the MQ view",
-    "text": "Two likely renames wait on their printed lines: Los Angeles Trade-Technical's IT 077 to 079, formerly MICROTK, and Mt. San Antonio's DSPS, now Access (ACCS); Southwestern's PE codes wait on Sam's word or a printed source. Then a small per-code courses file, so the MQ view's courses sidebar no longer loads the 17 MB course list."
+    "title": "The display build for tonight's records, then the census and the follow-up rules",
+    "text": "Build the display page carrying the 144 records collected tonight once #3758 merges, gate one college, apply the whole build, then run the census on main. Then the night's one follow-up: the pooled-figure, recommended-list and own-option readings that pass records free, and the San Bernardino Valley page the general-education rule refuses."
   },
   "calls": [
     {
@@ -337,6 +337,26 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-24T06:43:00Z",
+      "text": "The display page now carries every filed record: 18,665 programs at build abf1f6396156, after a first apply at Glendale."
+    },
+    {
+      "at": "2026-11-24T08:02:00Z",
+      "text": "The scorer no longer passes a program through its electives total when the catalog page cuts off part of the course list. Fifteen records that passed that way now read failing, and a reconcile keeps the gaps it has named."
+    },
+    {
+      "at": "2026-11-24T08:49:00Z",
+      "text": "Nine Los Rios programs whose catalog tables are cut off are collected with that gap named, and American River's Theatre Arts degree, which had passed through a cut-off table, now reads failing with the gap named."
+    },
+    {
+      "at": "2026-11-24T08:45:00Z",
+      "text": "101 held programs at eleven colleges are collected with their gap named and a lower confidence instead of a reread: Fullerton, College of the Sequoias, Clovis, East Los Angeles, Glendale, City College of San Francisco, Santa Monica, Ventura, Cabrillo, Contra Costa and El Camino."
+    },
+    {
+      "at": "2026-11-24T09:10:00Z",
+      "text": "34 programs now have records from their own catalog pages, 32 of them passing: San Bernardino Valley 15, Mendocino 6, Los Angeles Southwest 5, American River 5 and Santiago Canyon 3, for $2.01 of reads."
+    },
     {
       "at": "2026-11-23T15:19:00Z",
       "text": "Thirty-seven Los Rios programs now have records, from their own pages in each college's 2026-27 catalog: Sacramento City 18, Cosumnes River 16 and Folsom Lake 3, and 35 of them pass. Seven more are named gaps where the catalog prints no section of their own. American River's five wait on a fresh copy of its catalog file."
@@ -948,6 +968,12 @@
       "active": 20282,
       "complete": 15467,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-24",
+      "active": 20282,
+      "complete": 15498,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -956,7 +982,7 @@
     "at": "2026-11-24T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-23",
+    "day": "2026-11-24",
     "gaps": 3393,
     "parts": {
       "links": {
@@ -978,7 +1004,7 @@
         20282
       ],
       "coci": [
-        17182,
+        17216,
         20282
       ],
       "outcomes": {
@@ -987,12 +1013,12 @@
           88736
         ],
         "plo": [
-          17182,
+          17216,
           20282
         ]
       },
       "careers": [
-        16204,
+        16238,
         20282
       ]
     }
