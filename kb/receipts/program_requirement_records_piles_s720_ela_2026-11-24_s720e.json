@@ -1,0 +1,1192 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S720: East Los Angeles's 9 records S714 held, collected with their gaps named where one is honest (no reread)",
+ "at": "2026-11-24T07:20:41Z",
+ "college": "East Los Angeles College",
+ "census": {
+  "file": "kb/status/harvest_gap_census.json",
+  "levers": [
+   "reconcile_steps"
+  ],
+  "person": [],
+  "members": [
+   "02430",
+   "02456",
+   "08252",
+   "21157",
+   "31017",
+   "33013",
+   "37510",
+   "38168",
+   "41231"
+  ]
+ },
+ "gaps": {
+  "nested_award_not_read": "The program counts another award as one line, and the catalog prints that award's courses in its own section, so the record holds the line without its courses.",
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "unit_line_not_read": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total."
+ },
+ "moved": 5,
+ "by": {
+  "nested_award_not_read": 3,
+  "unit_line_not_read": 1,
+  "noted_figures_differ": 1
+ },
+ "precision": {
+  "read": 9,
+  "right": 9,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "nested_award_not_read": 3,
+   "unit_line_not_read": 1,
+   "none": 4,
+   "noted_figures_differ": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 5
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 5,
+   "the stated total one unit off right": 5,
+   "coverage failing right": 5
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "control_number": "31017",
+   "why": "held: its movement-based list reads three courses at up to 4 units (major 20-33 against 20-27): a reread",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "33013",
+   "why": "held (a person's key): the page's figures (9-10, 3, 6, 3-4) add to 21-23 under 'TOTAL UNITS FOR MAJOR: 22-24' and the record reads 21-24, so neither figures kind's sentence holds",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "37510",
+   "why": "held: its arithmetic reads 'unstated' (0 units per noncredit course, no hours), which the Commons counts passing once posted: no gap",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "41231",
+   "why": "held: the low end reads 39 against the printed 41-45, a sequence read one course short: a reread",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "East Los Angeles College",
+   "control_number": "02430",
+   "award": "A.A. Degree",
+   "extracted_run": "39063389278",
+   "moves_to": "nested_award_not_read",
+   "words": "The degree's major includes the Certificate of Achievement in Architectural Design (21 units), which itself includes the Skills Certificate in Architectural Design (12 units) plus ARC 201, ARC 202, ARC 261. The Skills Certificate course list falls on the previous page and is not in the text; its 12 units are not represented in any block.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 58,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/east_los_angeles/records/02430.json",
+   "before_image": {
+    "program_title": "Architectural Design",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Architectural Design, Associate in Arts Degree (Academic Plan E002430C)",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "LACCD General Education Plan",
+      "degree_total": {
+       "min": 60,
+       "max": 61
+      },
+      "ge_units": {
+       "min": 27,
+       "max": 27
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Analyze and discuss effectively the impact of theoretical, social, political, economic and cultural concepts that affect our built environment.",
+       "Appraise and compare traditional architectural techniques along with CAD (Computer-Aided Design) design process.",
+       "Create complex professional multi-media presentations as a means to communicate design intent."
+      ],
+      "careers": [
+       "architectural office",
+       "environmental design",
+       "related design-focused industry"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Certificate of Achievement in Architectural Design: Complete the following additional courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "ARC 201",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 202",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARC 261",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Complete the following additional courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 20,
+        "max": 21
+       },
+       "courses": [
+        {
+         "code": "ARC 132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 161",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 164",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 172",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ARC 223",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 262",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ARC 221",
+           "units": 2,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 241",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MATH 241S",
+           "units": 4,
+           "catalog_addition": true
+          },
+          {
+           "code": "MATH 260",
+           "units": 5,
+           "catalog_addition": true
+          },
+          {
+           "code": "MATH 260S",
+           "units": 5,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 7,
+     "listed": 12
+    },
+    "extracted_run": "39063389278"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 7,
+     "listed": 12,
+     "gaps": [
+      "nested_award_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 58,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "East Los Angeles College",
+   "control_number": "02456",
+   "award": "A.S. Degree",
+   "extracted_run": 45176404274,
+   "moves_to": "unit_line_not_read",
+   "words": "The Required Core (48-50) includes 'Completion of Intermediate Algebra or its equivalent or higher Math course 3-5', which has no course code and is not recorded as a course; the listed courses sum to 45 units, plus 3-5 math units gives 48-50.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/east_los_angeles/records/02456.json",
+   "before_image": {
+    "program_title": "Medical Assistant",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=84",
+    "measure": "units",
+    "total_min": 48,
+    "total_max": 50,
+    "record": {
+     "program": {
+      "section_heading": "(Academic Plan E002456C)",
+      "measure": "units",
+      "total_units": {
+       "min": 48,
+       "max": 50
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "LACCD General Education Plan",
+      "degree_total": {
+       "min": 63,
+       "max": 65
+      },
+      "ge_units": {
+       "min": 27,
+       "max": 27
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Communicate and collaborate professionally and effectively with patients, healthcare team, and third-party providers in diverse environments.",
+       "Demonstrate a mastery of a complex body of knowledge and specialized skills in the cognitive (knowledge), psychomotor (skills), and affective (behavior) learning domains.",
+       "Demonstrate and practice behavior consistent with the legal and ethical standards of the profession.",
+       "Demonstrate standard, quality, safety, and risk-reduction precautions in the healthcare setting.",
+       "Prepare students to display professionalism and cultural sensitivity while interacting and communicating with providers, staff and patients.",
+       "Provide competent medical assisting care, in variety of settings, based on the entry-level competencies for a Medical Assistant."
+      ],
+      "careers": [
+       "medical assistant"
+      ],
+      "ge_overlap": true
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED CORE",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 48,
+        "max": 50
+       },
+       "courses": [
+        {
+         "code": "ALD HTH 057",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CAOT 082",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HLTHOCC 054",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTHOCC 040",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTHOCC 061",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTHOCC 051",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTHOCC 052",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTHOCC 053",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTHOCC 055",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTHOCC 056",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTHOCC 059",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTHOCC 060",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HTHTEK 133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHYSIOL 006",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11
+    },
+    "extracted_run": "45176404274"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11,
+     "gaps": [
+      "unit_line_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "East Los Angeles College",
+   "control_number": "08252",
+   "award": "A.A. Degree",
+   "extracted_run": "39063389278",
+   "moves_to": "nested_award_not_read",
+   "words": "The degree's major includes the 'Certificate of Achievement in Architectural Technology . . . 22' as a single line; its courses are printed in the certificate's section, not here, so they are not placed in blocks. Reviewer should check the certificate section for ARC 110, 115, 151, 161, 162, 164 and others.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 40,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/east_los_angeles/records/08252.json",
+   "before_image": {
+    "program_title": "Architectural Technology",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=103",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "(Academic Plan E008252C)",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "LACCD General Education Plan",
+      "degree_total": {
+       "min": 61,
+       "max": 61
+      },
+      "ge_units": {
+       "min": 27,
+       "max": 27
+      },
+      "electives_fill_degree": true,
+      "outcomes": [
+       "Appraise and compare traditional architectural techniques along with CAD (Computer Aided Design) design process.",
+       "Create complex professional multi-media presentations as a means to communicate design intent."
+      ],
+      "careers": [
+       "construction management"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "COMPLETE THE FOLLOWING ADDITIONAL COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "ARC 165",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 211",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 223",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST A: COMPLETE THE COURSE BELOW NOT COMPLETED AS PART OF THE ARCHITECTURAL TECHNOLOGY CERTIFICATE OF ACHIEVEMENT",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ARC 271",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ARC 272",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 4,
+     "listed": 10
+    },
+    "extracted_run": "39063389278"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 4,
+     "listed": 10,
+     "gaps": [
+      "nested_award_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 40,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "East Los Angeles College",
+   "control_number": "21157",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39063389278",
+   "moves_to": "nested_award_not_read",
+   "words": "The Skills Certificate in Architectural Technology (14 units) is required but its courses are not printed in this excerpt; it is recorded as an empty block with stated 14. Reviewer should check the Skills Certificate section (likely previous page) for its course list.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 33,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/east_los_angeles/records/21157.json",
+   "before_image": {
+    "program_title": "Architectural Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102",
+    "measure": "units",
+    "total_min": 22,
+    "total_max": 22,
+    "record": {
+     "program": {
+      "section_heading": "Architectural Technology, Certificate of Achievement (Academic Plan E021157D)",
+      "measure": "units",
+      "total_units": {
+       "min": 22,
+       "max": 22
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Analyze and examine traditional architectural techniques along with CAD (Computer-Aided Design) design process.",
+       "Create complex professional multi-media presentations as a means to communicate design intent."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Skills Certificate in Architectural Technology",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 14,
+        "max": 14
+       },
+       "courses": []
+      },
+      {
+       "name": "COMPLETE THE FOLLOWING ADDITIONAL COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 8,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "ARC 115",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 151",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARC 271",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ARC 272",
+           "units": 3,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 2,
+     "listed": 6
+    },
+    "extracted_run": "39063389278"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 2,
+     "listed": 6,
+     "gaps": [
+      "nested_award_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 33,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "East Los Angeles College",
+   "control_number": "38168",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "39063389278",
+   "moves_to": "noted_figures_differ",
+   "words": "The last block's heading says 'COMPLETE FOUR UNITS' but prints '2-3' as its block total; minimum recorded as 4 from the heading, stated as printed 2-3. Printed block totals 8+2+3+(2-3)+4 sum to the printed 19-20, suggesting the '2-3' is a misprint.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 74,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/east_los_angeles/records/38168.json",
+   "before_image": {
+    "program_title": "Commercial Music: Instrumental/Vocal Performer",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 20,
+    "record": {
+     "program": {
+      "section_heading": "Commercial Music: Performance (Academic Plan E038168D)",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 20
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Recognize applications of music theory via analysis and performance.",
+       "Perform assigned repertoire at a polished level.",
+       "Employ appropriate technologies and contextual knowledge in the production and marketing of commercial music."
+      ],
+      "careers": [
+       "music performance"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "COMPLETE THE FOLLOWING FOUR REQUIRED COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 8,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "MUSIC 205",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUSIC 280",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUSIC 783-1",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MUSIC 783-2",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "COMPLETE TWO UNITS FROM THE FOLLOWING (COURSES MAY BE REPEATED)",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "MUSIC 561",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 721",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 745",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 775",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "COMPLETE THREE UNITS FROM THE FOLLOWING (ONE CLASS FROM THE FOLLOWING COURSES)",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "MUSIC 111",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 116",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 118",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 121",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 122",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 141",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "COMPLETE TWO TO THREE UNITS FROM THE FOLLOWING (ONE CLASS FROM THE FOLLOWING COURSES)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "MUSIC 161",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 165",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 248",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 365-1",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "COMPLETE FOUR UNITS FROM THE FOLLOWING (DEPENDING ON THE AREA OF INTEREST)",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "MUSIC 321",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 322",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 323",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 324",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 411",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 412",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 413",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 414",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 611",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 612",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 613",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 614",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 651",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 652",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 653",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSIC 654",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 29,
+     "listed": 39
+    },
+    "extracted_run": "39063389278"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 29,
+     "listed": 39,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 74,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 5
+  }
+ ],
+ "shared_pages": {
+  "02430": [
+   "21157"
+  ],
+  "21157": [
+   "02430"
+  ],
+  "38168": [
+   "38169",
+   "38206"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score; checks.arithmetic, coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found. The capture keeps no page text, so a note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'East Los Angeles College', '02430', 39063389278, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARC 202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 261\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Certificate of Achievement in Architectural Design: Complete the following additional courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 161\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 164\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARC 172\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 223\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ARC 221\",\"units\":2}],\"catalog_addition\":true,\"code\":\"ARC 262\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH 241S\",\"units\":4},{\"catalog_addition\":true,\"code\":\"MATH 260\",\"units\":5},{\"catalog_addition\":true,\"code\":\"MATH 260S\",\"units\":5}],\"catalog_addition\":true,\"code\":\"MATH 241\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following additional courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":21,\"min\":20}}],\"program\":{\"careers\":[\"architectural office\",\"environmental design\",\"related design-focused industry\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":61,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"LACCD General Education Plan\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and discuss effectively the impact of theoretical, social, political, economic and cultural concepts that affect our built environment.\",\"Appraise and compare traditional architectural techniques along with CAD (Computer-Aided Design) design process.\",\"Create complex professional multi-media presentations as a means to communicate design intent.\"],\"section_heading\":\"Architectural Design, Associate in Arts Degree (Academic Plan E002430C)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":7}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":58,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"nested_award_not_read\"],\"invented\":true,\"listed\":12,\"placed\":7}'::jsonb),\n  (2, 'East Los Angeles College', '02456', 45176404274, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ALD HTH 057\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CAOT 082\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 054\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 040\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 061\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 051\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 052\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 053\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 055\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 056\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 059\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HLTHOCC 060\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HTHTEK 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIOL 006\",\"units\":6,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED CORE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":50,\"min\":48}}],\"program\":{\"careers\":[\"medical assistant\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":65,\"min\":63},\"electives_fill_degree\":false,\"ge_overlap\":true,\"ge_pattern\":\"LACCD General Education Plan\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Communicate and collaborate professionally and effectively with patients, healthcare team, and third-party providers in diverse environments.\",\"Demonstrate a mastery of a complex body of knowledge and specialized skills in the cognitive (knowledge), psychomotor (skills), and affective (behavior) learning domains.\",\"Demonstrate and practice behavior consistent with the legal and ethical standards of the profession.\",\"Demonstrate standard, quality, safety, and risk-reduction precautions in the healthcare setting.\",\"Prepare students to display professionalism and cultural sensitivity while interacting and communicating with providers, staff and patients.\",\"Provide competent medical assisting care, in variety of settings, based on the entry-level competencies for a Medical Assistant.\"],\"section_heading\":\"(Academic Plan E002456C)\",\"total_units\":{\"max\":50,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (3, 'East Los Angeles College', '08252', 39063389278, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 165\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 223\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE THE FOLLOWING ADDITIONAL COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ARC 272\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ARC 271\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"LIST A: COMPLETE THE COURSE BELOW NOT COMPLETED AS PART OF THE ARCHITECTURAL TECHNOLOGY CERTIFICATE OF ACHIEVEMENT\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"construction management\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":61,\"min\":61},\"electives_fill_degree\":true,\"ge_pattern\":\"LACCD General Education Plan\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Appraise and compare traditional architectural techniques along with CAD (Computer Aided Design) design process.\",\"Create complex professional multi-media presentations as a means to communicate design intent.\"],\"section_heading\":\"(Academic Plan E008252C)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":4}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":40,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"nested_award_not_read\"],\"invented\":true,\"listed\":10,\"placed\":4}'::jsonb),\n  (4, 'East Los Angeles College', '21157', 39063389278, '{\"blocks\":[{\"courses\":[],\"minimum\":null,\"name\":\"Skills Certificate in Architectural Technology\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":14,\"min\":14}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 115\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ARC 272\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ARC 271\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE THE FOLLOWING ADDITIONAL COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and examine traditional architectural techniques along with CAD (Computer-Aided Design) design process.\",\"Create complex professional multi-media presentations as a means to communicate design intent.\"],\"section_heading\":\"Architectural Technology, Certificate of Achievement (Academic Plan E021157D)\",\"total_units\":{\"max\":22,\"min\":22}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":2}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":33,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"nested_award_not_read\"],\"invented\":true,\"listed\":6,\"placed\":2}'::jsonb),\n  (5, 'East Los Angeles College', '38168', 39063389278, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 280\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 783-1\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 783-2\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE THE FOLLOWING FOUR REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 561\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 721\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 745\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 775\",\"units\":1,\"units_max\":null}],\"minimum\":2,\"name\":\"COMPLETE TWO UNITS FROM THE FOLLOWING (COURSES MAY BE REPEATED)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 141\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"COMPLETE THREE UNITS FROM THE FOLLOWING (ONE CLASS FROM THE FOLLOWING COURSES)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 161\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 165\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 248\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 365-1\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"COMPLETE TWO TO THREE UNITS FROM THE FOLLOWING (ONE CLASS FROM THE FOLLOWING COURSES)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 321\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 322\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 323\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 324\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 411\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 412\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 413\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 414\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 611\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 612\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 613\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 614\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 651\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 652\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 653\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 654\",\"units\":2,\"units_max\":null}],\"minimum\":4,\"name\":\"COMPLETE FOUR UNITS FROM THE FOLLOWING (DEPENDING ON THE AREA OF INTEREST)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":2}}],\"program\":{\"careers\":[\"music performance\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Recognize applications of music theory via analysis and performance.\",\"Perform assigned repertoire at a polished level.\",\"Employ appropriate technologies and contextual knowledge in the production and marketing of commercial music.\"],\"section_heading\":\"Commercial Music: Performance (Academic Plan E038168D)\",\"total_units\":{\"max\":20,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":39,\"placed\":29}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":74,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":39,\"placed\":29}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'East Los Angeles College', '02430', 39063389278, '1a14d248ea43d9602d1b6328b745c276', '96cfd147b96e2ed622e8eb80dddaaff7', 'fb83fbd2d18002371789efbd44799ca9'),\n  (2, 'East Los Angeles College', '02456', 45176404274, 'e64c42c97becd9bfd1955f22ea66e25b', '025f5967e09072e40425565d0b8c2cce', '020c7c6a0be88acee2a620e8505f3fb0'),\n  (3, 'East Los Angeles College', '08252', 39063389278, 'd143ee9c32a593ac6f2927050f19b8d5', '0c577c47fb947d6c0003a362e0a582e0', '0522daae9ae7b9a9ba1a409efb588f96'),\n  (4, 'East Los Angeles College', '21157', 39063389278, '85a10ac2b1855d45d72a79b5a1e0fd5f', 'ef8748a4053763697e7a544b5a8f38e6', 'cb9acaf80b782942ea06fa6da12036e5'),\n  (5, 'East Los Angeles College', '38168', 39063389278, '223603c727b1a5456e6309abdf14eea9', '14d1d3b7757da4f1f1e5e4d4b4d43c0c', '1095f7daf40ab6e82887e24f6af0edd0'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'East Los Angeles College', '02430', 39063389278, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARC 202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 261\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Certificate of Achievement in Architectural Design: Complete the following additional courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 161\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 164\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARC 172\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 223\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ARC 221\",\"units\":2}],\"catalog_addition\":true,\"code\":\"ARC 262\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH 241S\",\"units\":4},{\"catalog_addition\":true,\"code\":\"MATH 260\",\"units\":5},{\"catalog_addition\":true,\"code\":\"MATH 260S\",\"units\":5}],\"catalog_addition\":true,\"code\":\"MATH 241\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following additional courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":21,\"min\":20}}],\"program\":{\"careers\":[\"architectural office\",\"environmental design\",\"related design-focused industry\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":61,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"LACCD General Education Plan\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and discuss effectively the impact of theoretical, social, political, economic and cultural concepts that affect our built environment.\",\"Appraise and compare traditional architectural techniques along with CAD (Computer-Aided Design) design process.\",\"Create complex professional multi-media presentations as a means to communicate design intent.\"],\"section_heading\":\"Architectural Design, Associate in Arts Degree (Academic Plan E002430C)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":7}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":58,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"nested_award_not_read\"],\"invented\":true,\"listed\":12,\"placed\":7}'::jsonb),\n  (2, 'East Los Angeles College', '02456', 45176404274, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ALD HTH 057\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CAOT 082\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 054\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 040\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 061\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 051\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 052\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 053\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 055\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 056\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 059\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HLTHOCC 060\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HTHTEK 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIOL 006\",\"units\":6,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED CORE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":50,\"min\":48}}],\"program\":{\"careers\":[\"medical assistant\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":65,\"min\":63},\"electives_fill_degree\":false,\"ge_overlap\":true,\"ge_pattern\":\"LACCD General Education Plan\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Communicate and collaborate professionally and effectively with patients, healthcare team, and third-party providers in diverse environments.\",\"Demonstrate a mastery of a complex body of knowledge and specialized skills in the cognitive (knowledge), psychomotor (skills), and affective (behavior) learning domains.\",\"Demonstrate and practice behavior consistent with the legal and ethical standards of the profession.\",\"Demonstrate standard, quality, safety, and risk-reduction precautions in the healthcare setting.\",\"Prepare students to display professionalism and cultural sensitivity while interacting and communicating with providers, staff and patients.\",\"Provide competent medical assisting care, in variety of settings, based on the entry-level competencies for a Medical Assistant.\"],\"section_heading\":\"(Academic Plan E002456C)\",\"total_units\":{\"max\":50,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (3, 'East Los Angeles College', '08252', 39063389278, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 165\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 223\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE THE FOLLOWING ADDITIONAL COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ARC 272\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ARC 271\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"LIST A: COMPLETE THE COURSE BELOW NOT COMPLETED AS PART OF THE ARCHITECTURAL TECHNOLOGY CERTIFICATE OF ACHIEVEMENT\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"construction management\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":61,\"min\":61},\"electives_fill_degree\":true,\"ge_pattern\":\"LACCD General Education Plan\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Appraise and compare traditional architectural techniques along with CAD (Computer Aided Design) design process.\",\"Create complex professional multi-media presentations as a means to communicate design intent.\"],\"section_heading\":\"(Academic Plan E008252C)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":4}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":40,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"nested_award_not_read\"],\"invented\":true,\"listed\":10,\"placed\":4}'::jsonb),\n  (4, 'East Los Angeles College', '21157', 39063389278, '{\"blocks\":[{\"courses\":[],\"minimum\":null,\"name\":\"Skills Certificate in Architectural Technology\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":14,\"min\":14}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 115\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ARC 272\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ARC 271\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE THE FOLLOWING ADDITIONAL COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and examine traditional architectural techniques along with CAD (Computer-Aided Design) design process.\",\"Create complex professional multi-media presentations as a means to communicate design intent.\"],\"section_heading\":\"Architectural Technology, Certificate of Achievement (Academic Plan E021157D)\",\"total_units\":{\"max\":22,\"min\":22}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":2}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":33,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"nested_award_not_read\"],\"invented\":true,\"listed\":6,\"placed\":2}'::jsonb),\n  (5, 'East Los Angeles College', '38168', 39063389278, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 280\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 783-1\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 783-2\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE THE FOLLOWING FOUR REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 561\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 721\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 745\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 775\",\"units\":1,\"units_max\":null}],\"minimum\":2,\"name\":\"COMPLETE TWO UNITS FROM THE FOLLOWING (COURSES MAY BE REPEATED)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 141\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"COMPLETE THREE UNITS FROM THE FOLLOWING (ONE CLASS FROM THE FOLLOWING COURSES)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 161\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 165\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 248\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 365-1\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"COMPLETE TWO TO THREE UNITS FROM THE FOLLOWING (ONE CLASS FROM THE FOLLOWING COURSES)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 321\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 322\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 323\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 324\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 411\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 412\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 413\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 414\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 611\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 612\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 613\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 614\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 651\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 652\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 653\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 654\",\"units\":2,\"units_max\":null}],\"minimum\":4,\"name\":\"COMPLETE FOUR UNITS FROM THE FOLLOWING (DEPENDING ON THE AREA OF INTEREST)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":2}}],\"program\":{\"careers\":[\"music performance\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Recognize applications of music theory via analysis and performance.\",\"Perform assigned repertoire at a polished level.\",\"Employ appropriate technologies and contextual knowledge in the production and marketing of commercial music.\"],\"section_heading\":\"Commercial Music: Performance (Academic Plan E038168D)\",\"total_units\":{\"max\":20,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":39,\"placed\":29}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":74,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":39,\"placed\":29}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s720e piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s720e piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'East Los Angeles College', '02430', 39063389278, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARC 202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 261\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Certificate of Achievement in Architectural Design: Complete the following additional courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 161\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 164\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ARC 172\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 223\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ARC 221\",\"units\":2}],\"catalog_addition\":true,\"code\":\"ARC 262\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"MATH 241S\",\"units\":4},{\"catalog_addition\":true,\"code\":\"MATH 260\",\"units\":5},{\"catalog_addition\":true,\"code\":\"MATH 260S\",\"units\":5}],\"catalog_addition\":true,\"code\":\"MATH 241\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Complete the following additional courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":21,\"min\":20}}],\"program\":{\"careers\":[\"architectural office\",\"environmental design\",\"related design-focused industry\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":61,\"min\":60},\"electives_fill_degree\":true,\"ge_pattern\":\"LACCD General Education Plan\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and discuss effectively the impact of theoretical, social, political, economic and cultural concepts that affect our built environment.\",\"Appraise and compare traditional architectural techniques along with CAD (Computer-Aided Design) design process.\",\"Create complex professional multi-media presentations as a means to communicate design intent.\"],\"section_heading\":\"Architectural Design, Associate in Arts Degree (Academic Plan E002430C)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":7}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":58,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"nested_award_not_read\"],\"invented\":true,\"listed\":12,\"placed\":7}'::jsonb),\n  (2, 'East Los Angeles College', '02456', 45176404274, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ALD HTH 057\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CAOT 082\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 054\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 040\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 061\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 051\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 052\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 053\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 055\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 056\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTHOCC 059\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HLTHOCC 060\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HTHTEK 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSIOL 006\",\"units\":6,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED CORE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":50,\"min\":48}}],\"program\":{\"careers\":[\"medical assistant\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":65,\"min\":63},\"electives_fill_degree\":false,\"ge_overlap\":true,\"ge_pattern\":\"LACCD General Education Plan\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Communicate and collaborate professionally and effectively with patients, healthcare team, and third-party providers in diverse environments.\",\"Demonstrate a mastery of a complex body of knowledge and specialized skills in the cognitive (knowledge), psychomotor (skills), and affective (behavior) learning domains.\",\"Demonstrate and practice behavior consistent with the legal and ethical standards of the profession.\",\"Demonstrate standard, quality, safety, and risk-reduction precautions in the healthcare setting.\",\"Prepare students to display professionalism and cultural sensitivity while interacting and communicating with providers, staff and patients.\",\"Provide competent medical assisting care, in variety of settings, based on the entry-level competencies for a Medical Assistant.\"],\"section_heading\":\"(Academic Plan E002456C)\",\"total_units\":{\"max\":50,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (3, 'East Los Angeles College', '08252', 39063389278, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 165\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 223\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE THE FOLLOWING ADDITIONAL COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ARC 272\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ARC 271\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"LIST A: COMPLETE THE COURSE BELOW NOT COMPLETED AS PART OF THE ARCHITECTURAL TECHNOLOGY CERTIFICATE OF ACHIEVEMENT\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"construction management\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":61,\"min\":61},\"electives_fill_degree\":true,\"ge_pattern\":\"LACCD General Education Plan\",\"ge_units\":{\"max\":27,\"min\":27},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Appraise and compare traditional architectural techniques along with CAD (Computer Aided Design) design process.\",\"Create complex professional multi-media presentations as a means to communicate design intent.\"],\"section_heading\":\"(Academic Plan E008252C)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":4}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":40,\"ge_pattern\":100,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"nested_award_not_read\"],\"invented\":true,\"listed\":10,\"placed\":4}'::jsonb),\n  (4, 'East Los Angeles College', '21157', 39063389278, '{\"blocks\":[{\"courses\":[],\"minimum\":null,\"name\":\"Skills Certificate in Architectural Technology\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":14,\"min\":14}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 115\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARC 151\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"ARC 272\",\"units\":3}],\"catalog_addition\":true,\"code\":\"ARC 271\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE THE FOLLOWING ADDITIONAL COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze and examine traditional architectural techniques along with CAD (Computer-Aided Design) design process.\",\"Create complex professional multi-media presentations as a means to communicate design intent.\"],\"section_heading\":\"Architectural Technology, Certificate of Achievement (Academic Plan E021157D)\",\"total_units\":{\"max\":22,\"min\":22}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":2}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":33,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"nested_award_not_read\"],\"invented\":true,\"listed\":6,\"placed\":2}'::jsonb),\n  (5, 'East Los Angeles College', '38168', 39063389278, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 280\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 783-1\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 783-2\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE THE FOLLOWING FOUR REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":8,\"min\":8}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 561\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 721\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 745\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 775\",\"units\":1,\"units_max\":null}],\"minimum\":2,\"name\":\"COMPLETE TWO UNITS FROM THE FOLLOWING (COURSES MAY BE REPEATED)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 111\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 116\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 121\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 122\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 141\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"COMPLETE THREE UNITS FROM THE FOLLOWING (ONE CLASS FROM THE FOLLOWING COURSES)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 161\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 165\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 248\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MUSIC 365-1\",\"units\":2,\"units_max\":null}],\"minimum\":1,\"name\":\"COMPLETE TWO TO THREE UNITS FROM THE FOLLOWING (ONE CLASS FROM THE FOLLOWING COURSES)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 321\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 322\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 323\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 324\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 411\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 412\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 413\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 414\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 611\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 612\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 613\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 614\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 651\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 652\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 653\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSIC 654\",\"units\":2,\"units_max\":null}],\"minimum\":4,\"name\":\"COMPLETE FOUR UNITS FROM THE FOLLOWING (DEPENDING ON THE AREA OF INTEREST)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":2}}],\"program\":{\"careers\":[\"music performance\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Recognize applications of music theory via analysis and performance.\",\"Perform assigned repertoire at a polished level.\",\"Employ appropriate technologies and contextual knowledge in the production and marketing of commercial music.\"],\"section_heading\":\"Commercial Music: Performance (Academic Plan E038168D)\",\"total_units\":{\"max\":20,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":39,\"placed\":29}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":74,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":39,\"placed\":29}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s720e piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

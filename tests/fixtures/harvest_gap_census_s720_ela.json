@@ -1,0 +1,26 @@
+{
+  "_what": "S720 (lane 2, East Los Angeles): the reconcile_steps lever of the committed census (run 45319725062) at the college, frozen: kb/_program_piles_s720_ela.py planned from it.",
+  "written_at": "2026-11-24 07:08Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "East Los Angeles College",
+      "programs": 9,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "02430",
+        "02456",
+        "08252",
+        "21157",
+        "31017",
+        "33013",
+        "37510",
+        "38168",
+        "41231"
+      ]
+    }
+  ]
+}
