@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 125,
  "with_closed_list": 123,
- "started": "2026-11-19T06:57:19Z",
+ "started": "2026-11-24T07:27:29Z",
  "pdf": {
   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf",
   "access": "ok",
@@ -26,6 +26,39 @@
    "after_mode": false,
    "gated": false,
    "read": "heading"
+  },
+  "pinned": {
+   "03454": {
+    "page": 91,
+    "bound": true,
+    "until_page": 91
+   },
+   "03461": {
+    "page": 205,
+    "bound": true,
+    "until_page": 205
+   },
+   "12278": {
+    "page": 143,
+    "bound": true,
+    "through": 144,
+    "until_page": 144
+   },
+   "18732": {
+    "page": 208,
+    "bound": true,
+    "until_page": 208
+   },
+   "21973": {
+    "page": 92,
+    "bound": true,
+    "until_page": 92
+   },
+   "43366": {
+    "page": 159,
+    "bound": true,
+    "until_page": 159
+   }
   },
   "picks": [
    {
@@ -129,14 +162,15 @@
    {
     "control_number": "03454",
     "pages": [
-     89
+     91
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 89] A.S.-T Administration of Justice A.S. Administration of Justice Certificate of Achievement Administration of Justice ASSOCIATE IN SCIENCE IN ADMINISTRATION OF JUSTICE FOR TRANSFER Administration of Justi"
+    "opens": "[page 91] ADMINISTRATION OF JUSTICE ASSOCIATE OF SCIENCE The Administration of Justice major leads to the Associate of Science degree and prepares the student for transfer to a four-year institution. Students completin",
+    "pinned": true
    },
    {
     "control_number": "03455",
@@ -172,19 +206,20 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 0.6,
-    "opens": "[page 156] ETHNIC STUDIES Lori Thomas • 707.468.3019 Degrees A.A. Ethnic Studies ETHNIC STUDIES ASSOCIATE OF ARTS Ethnic Studies major leads to the Associate of Arts degree and prepares the student for transfer to "
+    "opens": "[page 156] A.A. Ethnic Studies ETHNIC STUDIES ASSOCIATE OF ARTS Ethnic Studies major leads to the Associate of Arts degree and prepares the student for transfer to a four-year institution. Students completing the bac"
    },
    {
     "control_number": "03461",
     "pages": [
-     203
+     205
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 203] A.A.-T Psychology A.A. Psychology ASSOCIATE IN ARTS IN PSYCHOLOGY FOR TRANSFER Psychology is defined as the scientific study of human behavior (including thoughts and emotions). The many and varied cours"
+    "opens": "[page 205] PSYCHOLOGY ASSOCIATE OF ARTS The Psychology major leads to an Associate of Arts Degree in Psychology. Psychology is defined as the scientific study of human behavior (including thoughts and emotions). The ma",
+    "pinned": true
    },
    {
     "control_number": "03462",
@@ -328,14 +363,16 @@
    {
     "control_number": "12278",
     "pages": [
-     141
+     143,
+     144
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 141] Culinary Arts Management Certificate of Achievement Culinary Arts Management Certificate of Skills Beginning Baker Intermediate Line Cook Line Cook CULINARY ARTS MANAGEMENT ASSOCIATE OF SCIENCE The hos"
+    "opens": "[page 143] CULINARY ARTS MANAGEMENT CERTIFICATE OF ACHIEVEMENT This one-year certificate program is intended to provide students with the skills and competencies necessary to achieve success in the growing North Coast ",
+    "pinned": true
    },
    {
     "control_number": "12660",
@@ -418,14 +455,15 @@
    {
     "control_number": "18732",
     "pages": [
-     206
+     208
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 206] A.S. Real Estate Certificate of Achievement Real Estate REAL ESTATE ASSOCIATE OF SCIENCE The Real Estate Associate (A.S.) Degree prepares the student for a career in such fields as real estate sales, land "
+    "opens": "[page 208] REAL ESTATE CERTIFICATE OF ACHIEVEMENT The Real Estate Certificate of Achievement program prepares a student for a career in real estate sales, land development, real estate marketing, finance, mortgage lend",
+    "pinned": true
    },
    {
     "control_number": "18733",
@@ -495,14 +533,15 @@
    {
     "control_number": "21973",
     "pages": [
-     89
+     92
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 89] A.S. Administration of Justice Certificate of Achievement Administration of Justice ASSOCIATE IN SCIENCE IN ADMINISTRATION OF JUSTICE FOR TRANSFER Administration of Justice is the scientific study of law "
+    "opens": "[page 92] ADMINISTRATION OF JUSTICE CERTIFICATE OF ACHIEVEMENT The Administration of Justice Certificate of Achievement provides students with a broad-based education in the areas of law enforcement, corrections and th",
+    "pinned": true
    },
    {
     "control_number": "30501",
@@ -527,7 +566,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 212] SOCIOLOGY Vivian Varela • 707.467.1024 Degrees A.A.-T Sociology ASSOCIATE IN ARTS IN SOCIOLOGY FOR TRANSFER Sociology is a social science that involves the systematic study of the social lives of people,"
+    "opens": "[page 212] A.A.-T Sociology ASSOCIATE IN ARTS IN SOCIOLOGY FOR TRANSFER Sociology is a social science that involves the systematic study of the social lives of people, groups, and societies as well as the study of ou"
    },
    {
     "control_number": "30672",
@@ -653,7 +692,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 160] GEOLOGY Steve Cardimona • 707.468.3219 Degrees A.S.-T Geology ASSOCIATE IN SCIENCE IN GEOLOGY FOR TRANSFER The Associate in Science in Geology for Transfer degree is designed to prepare students for a se"
+    "opens": "[page 160] A.S.-T Geology ASSOCIATE IN SCIENCE IN GEOLOGY FOR TRANSFER The Associate in Science in Geology for Transfer degree is designed to prepare students for a seamless transfer into the CSU system to complete a"
    },
    {
     "control_number": "31447",
@@ -1273,14 +1312,15 @@
    {
     "control_number": "43366",
     "pages": [
-     157
+     159
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 157] A.S. Fire Science Certificate of Achievement Fire Science FIRE SCIENCE ASSOCIATE OF SCIENCE The Fire Science Associate of Science program prepares students for a career in fire prevention and protection. "
+    "opens": "[page 159] FIRE SCIENCE CERTIFICATE OF ACHIEVEMENT This certificate program provides a comprehensive understanding of the skills necessary for successful employment in the Fire Service industry. This program is designe",
+    "pinned": true
    },
    {
     "control_number": "43562",
@@ -1389,8 +1429,8 @@
    }
   ],
   "page_checks": {
-   "read": 24,
-   "own_page": 17,
+   "read": 11,
+   "own_page": 4,
    "no_own_page": 7,
    "not_printed": 0
   },
@@ -1399,7 +1439,7 @@
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 61.7,
+ "seconds": 77.9,
  "found": 107,
  "by_method": {
   "no_closed_list": 2,
@@ -1407,19 +1447,6 @@
   "pdf_pages": 107
  },
  "shared_pages": {
-  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89": [
-   "03454",
-   "21973",
-   "31447"
-  ],
-  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157": [
-   "03457",
-   "43366"
-  ],
-  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=203": [
-   "03461",
-   "32089"
-  ],
   "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=87": [
    "03462",
    "21972"
@@ -1437,17 +1464,9 @@
    "10593",
    "32084"
   ],
-  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=141": [
-   "12278",
-   "39213"
-  ],
   "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=161": [
    "15174",
    "33796"
-  ],
-  "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=206": [
-   "18732",
-   "18733"
   ],
   "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=128": [
    "30672",
@@ -1495,7 +1514,8 @@
    "award": "A.A. Degree",
    "near_miss": {
     "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=220",
-    "coverage": 0.308
+    "coverage": 0.308,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1506,7 +1526,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -1526,7 +1547,8 @@
    "award": "A.A. Degree",
    "near_miss": {
     "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=220",
-    "coverage": 0.225
+    "coverage": 0.225,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1537,7 +1559,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -1568,7 +1591,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -1589,7 +1613,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -1600,7 +1625,9 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "plain_named": true,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1610,7 +1637,8 @@
    "award": "A.A- T Degree",
    "near_miss": {
     "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=86",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1620,7 +1648,8 @@
    "award": "A.A- T Degree",
    "near_miss": {
     "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=86",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1631,7 +1660,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1642,7 +1672,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Approved"
   }
@@ -1656,48 +1687,120 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/mendocino",
-  "kept": 87,
+  "kept": 93,
   "kept_moved": 0,
-  "programs": 15,
+  "programs": 6,
   "list": [
    {
-    "control_number": "03458",
-    "title": "Ethnic Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=156",
-    "coverage": 0.6,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
-    "was_coverage": 0.6,
+    "control_number": "03454",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=91",
+    "coverage": 1.0,
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
     "control_number": "03461",
     "title": "Psychology",
     "award": "A.A. Degree",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=203",
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=205",
     "coverage": 1.0,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=203",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "16539",
-    "title": "Registered Nurse",
-    "award": "A.S. Degree",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=193",
-    "coverage": 1.0,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=194",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21969",
-    "title": "Business-Management",
+    "control_number": "12278",
+    "title": "Culinary Arts Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=121",
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=143",
     "coverage": 1.0,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=117",
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=141",
     "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18732",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=208",
+    "coverage": 1.0,
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=206",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21973",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=92",
+    "coverage": 1.0,
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43366",
+    "title": "Fire Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=159",
+    "coverage": 1.0,
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "03458",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=156",
+    "coverage": 0.6,
+    "was_coverage": 0.6
+   }
+  ],
+  "held_opens_on_list": [],
+  "only": [
+   "03454",
+   "03461",
+   "12278",
+   "18732",
+   "21973",
+   "43366"
+  ],
+  "not_named": [
+   {
+    "control_number": "07780",
+    "title": "Computer Applications and Office Administration",
+    "award": "A.S. Degree",
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=129",
+    "coverage": 1.0,
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=129",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10578",
+    "title": "Computer Applications & Office Administration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=133",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10593",
+    "title": "Music - Instrumental",
+    "award": "A.A. Degree",
+    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=185",
+    "coverage": 0.562,
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=185",
+    "was_coverage": 0.562,
     "was_method": "pdf_pages"
    },
    {
@@ -1706,38 +1809,8 @@
     "award": "A.A- T Degree",
     "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=212",
     "coverage": 1.0,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=212",
     "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30677",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=183",
-    "coverage": 0.857,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31424",
-    "title": "Business Administration",
-    "award": "A.S. T Degree",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
-    "coverage": 0.875,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31425",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=201",
-    "coverage": 0.688,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=201",
-    "was_coverage": 0.625,
     "was_method": "pdf_pages"
    },
    {
@@ -1746,97 +1819,9 @@
     "award": "A.S. T Degree",
     "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=160",
     "coverage": 1.0,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=147",
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=160",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31959",
-    "title": "Liberal Arts and Sciences in Social Science",
-    "award": "A.A. Degree",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=180",
-    "coverage": 0.714,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=180",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32708",
-    "title": "Recording Arts and Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=191",
-    "coverage": 1.0,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=189",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35168",
-    "title": "LVN to RN",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=197",
-    "coverage": 1.0,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=195",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41511",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
-    "coverage": 1.0,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
-    "was_coverage": 0.889,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "43158",
-    "title": "Intermediate ESL Preparation",
-    "award": "Noncredit program",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=153",
-    "coverage": 1.0,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=154",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "43563",
-    "title": "Network Defense",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=136",
-    "coverage": 1.0,
-    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=131",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   }
-  ],
-  "held_worse_window": [
-   {
-    "control_number": "10593",
-    "title": "Music - Instrumental",
-    "award": "A.A. Degree",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=185",
-    "coverage": 0.562,
-    "was_coverage": 1.0
-   }
-  ],
-  "held_no_gain": [
-   {
-    "control_number": "07780",
-    "title": "Computer Applications and Office Administration",
-    "award": "A.S. Degree",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=129",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10578",
-    "title": "Computer Applications & Office Administration",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=133",
-    "coverage": 1.0,
-    "was_coverage": 1.0
    },
    {
     "control_number": "43562",
@@ -1844,7 +1829,9 @@
     "award": "A.S. Degree",
     "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=129",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=129",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "43565",
@@ -1852,10 +1839,11 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=134",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=134",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    }
   ],
-  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1889,8 +1877,8 @@
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=103"
   },
   "03454": {
-   "sha256": "be5b6fadfc3179dc0a759a2d79b83cd695983e00fc2e2122543556a81df7e81c",
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89"
+   "sha256": "7e7072058594fad34a9cff630c506abb2bd5691ebe805064aad8cb76f66ffee8",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=91"
   },
   "03455": {
    "sha256": "9a32d3e96bd325da8c493341be0ed4c70c32bcd8b6441de9c1d14127d7d92bc0",
@@ -1901,12 +1889,12 @@
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157"
   },
   "03458": {
-   "sha256": "d2622c46329eb96a94b814da08e87bdb74bc5bd60f35210f82cb3e68e0cb17a8",
+   "sha256": "3cc5c17f0e55c4d073d39875c4ea0c236bd80f8dedcf7fac26b085c3fc593640",
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=156"
   },
   "03461": {
-   "sha256": "329d260a67d9534fd258045007b921015ae4f904bf50f224ecc26ad57d7711a6",
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=203"
+   "sha256": "7b21f2116fa54957e9709ef7c2122889140c09cb8e343057c97c985cb4c96aee",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=205"
   },
   "03462": {
    "sha256": "ef267c2a9d58fdb51d5d833691f0b77ff2a60a7c054c6c09d36bcc1cf2f2526b",
@@ -1949,8 +1937,8 @@
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=185"
   },
   "12278": {
-   "sha256": "d93e65f9b906c806ced85ba9e078823aebd50e34c3cba954b34f6310eac21e05",
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=141"
+   "sha256": "679b09412de433f0dcdfadb81dcf745866c2158cef7f6d8b9c43d7faa172c643",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=143"
   },
   "12660": {
    "sha256": "e8c9b99b79b9f26df1047af4834c9f7dd8c9f83527e4f41e5783d9b1970b6dd3",
@@ -1977,8 +1965,8 @@
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=147"
   },
   "18732": {
-   "sha256": "6f1778a965fba6574e3b300d2837e11b0139f441fd522051d311fc12ddfbab06",
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=206"
+   "sha256": "b675db485da6072ee9e55362d9db2c748f14d11e72de1f570b855e9c1385d319",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=208"
   },
   "18733": {
    "sha256": "6f1778a965fba6574e3b300d2837e11b0139f441fd522051d311fc12ddfbab06",
@@ -2001,15 +1989,15 @@
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=87"
   },
   "21973": {
-   "sha256": "2337bc575d957b5e56dc47f9791abd18be8f3e531bd831605ee713a539f2a34f",
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89"
+   "sha256": "79281e2df8b3d76edc3ba9896ef6d77a1f31b51f26990dc6b71b307cb1d6cf1b",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=92"
   },
   "30501": {
    "sha256": "d752731769b33791d57f6f81673bc11071491f4a7f8b90412ade684a4e3069f6",
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=155"
   },
   "30601": {
-   "sha256": "df7394ce13b6b02efe1614e7db7e0a4bffa33f41aac3ff0f237e7a2c8a298bc2",
+   "sha256": "bde1d184dc02bf925876bbe98736679229690a7ae8415e94af2b319fd22ed192",
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=212"
   },
   "30672": {
@@ -2049,7 +2037,7 @@
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=201"
   },
   "31446": {
-   "sha256": "d278ee0f6e2cb457b59da6c8c4b3be6c118d90836af5c5d417e5b7a5fdef4380",
+   "sha256": "2cb0db4291cc23d7a03691fd4c95399152e7cb98ba40c8a43c862283b856ac98",
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=160"
   },
   "31447": {
@@ -2253,8 +2241,8 @@
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=153"
   },
   "43366": {
-   "sha256": "e37315e23b83db864279744b9535ccf320ca3caeed71c1ba22c78e69e6f724f0",
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157"
+   "sha256": "c1ed62fb4cd5b2be9b96f669e0450f6184cc159300fea982b0fd77378d7a3a1e",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=159"
   },
   "43562": {
    "sha256": "3fa77914619266594e1397c362ef5441ec940502df437c82f9e348100b92ee81",
@@ -2289,5 +2277,5 @@
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=166"
   }
  },
- "run": "44474793355"
+ "run": "45348021173"
 }
