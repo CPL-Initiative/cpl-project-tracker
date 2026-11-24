@@ -125,21 +125,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "unit_line_not_read",
-    "label": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total.",
-    "words": "The Required Core (48-50) includes 'Completion of Intermediate Algebra or its equivalent or higher Math course 3-5', which has no course code and is not recorded as a course; the listed courses sum to 45 units, plus 3-5 math units gives 48-50."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 40,
-   "course_list_match": 100,
-   "ge_pattern": 100,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": false
  },
  "record": {
   "program": {

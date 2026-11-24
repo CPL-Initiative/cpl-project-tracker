@@ -17,14 +17,17 @@ gap-filed, and the receipt lists each row's shared_pages. The kinds, reused befo
                          own section (02430, 08252, 21157). No existing kind fits: noted_section_cut_off says the
                          program's own section runs past the read, and here the section is whole and names the other
                          award by one line.
-  unit_line_not_read     (new, 40) 'Completion of Intermediate Algebra or ... higher Math course 3-5', a units line
+  unit_line_not_read     (new, 40; held tonight, see 02456 in HAND) 'Completion of Intermediate Algebra or ... higher Math course 3-5', a units line
                          with no course, left out (02456). No existing kind fits: no list or figure disagrees, and the
                          record's courses plus the line give the printed 48-50 exactly, which the entry checks.
+
+THE LIVE-RUN GUARD (the conductor's pre-read, 02456): a record whose committed extracted_run is not the run the
+latest applied receipt posted to its live row takes no gap (on_live_run).
 
 THE OWN-PAGE GUARD (#3753's, by East Los Angeles's second reader): a record whose capture page shared_pages lists
 another program on holds unless a note names its own section (REVIEWED's own_section words); 38168 is held so.
 
-Held (5): 38168 (its identity is unconfirmed: see HAND); 31017 (its movement list is read as three courses of up to 4 units: a reread); 41231 (a sequence read one
+Held (6): 02456 (the live row is an older extraction: see HAND); 38168 (its identity is unconfirmed: see HAND); 31017 (its movement list is read as three courses of up to 4 units: a reread); 41231 (a sequence read one
 course short: a reread); 37510 (its arithmetic reads 'unstated', which the Commons counts passing once posted: no
 gap); 33013 (a person's key: the page's own figures add to 21-23 under 22-24 and the record reads 21-24, so neither
 figures kind's sentence holds).
@@ -72,13 +75,13 @@ REVIEWED = {
               "words": "The Skills Certificate in Architectural Technology (14 units) is required but its courses are "
                        "not printed in this excerpt", "courses": ["ARC110"],
               "own_section": "The Skills Certificate in Architectural Technology (14 units) is required"},
-    # A negative "less" adds the units line: the courses' 45 plus the line's 3-5 is the printed 48-50.
-    "02456": {"gap": "unit_line_not_read", "computed": [45, 45], "stated": [48, 50],
-              "words": "'Completion of Intermediate Algebra or its equivalent or higher Math course 3-5', which has no "
-                       "course code", "less": [-3, -5]},
 }
 HAND = {cn: e["gap"] for cn, e in REVIEWED.items()}
 HAND.update({
+    # The conductor's pre-read (S720): the live row is an older extraction than the committed record.
+    "02456": "held: its live row is on extracted_run 39063389278 (the S408 reread), and the committed record is the "
+             "free reconcile 45176404274's, which never reached the live row; it needs the committed record loaded "
+             "first (on_live_run)",
     # East Los Angeles's second reader (BLOCKER): 38168 shares #page=288 with 38169 and 38206, and its note says no
     # section carries its title; it was read as the matching award by its courses, so its identity is unconfirmed.
     "38168": "held: titled Instrumental/Vocal Performer but read from the 'Commercial Music: Performance' section on "
@@ -159,6 +162,58 @@ def shared_with(cn: str) -> list[str]:
     return sorted({str(m) for v in sp.values() if str(cn) in [str(x) for x in v] for m in v if str(m) != str(cn)})
 
 
+_POSTED = None
+
+
+def posted_runs() -> dict:
+    """{control number: [(at, extracted_run), ...]} the committed receipts posted to the college's live rows: a load
+    (program_requirement_records_college_<slug>_<run>.json: inserted_keys under its extracted_runs), a reread
+    (..._college_reread_<slug>_<run>.json: replaced_keys and carried_keys under its extracted_run) and every guarded
+    plan's records (each guarded on the row's live run)."""
+    global _POSTED
+    if _POSTED is not None:
+        return _POSTED
+    import glob
+    out: dict = {}
+    for path in glob.glob(os.path.join(NG.RECEIPTS, "program_requirement_records_*.json")):
+        name = os.path.basename(path)
+        try:
+            with open(path, encoding="utf-8") as fh:
+                d = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        if not isinstance(d, dict):
+            continue
+        at = str(d.get("at") or "")
+        if name.startswith("program_requirement_records_college_reread_%s_" % SLUG):
+            for k in (d.get("replaced_keys") or []) + (d.get("carried_keys") or []):
+                out.setdefault(str(k), []).append((at, str(d.get("extracted_run"))))
+        elif name.startswith("program_requirement_records_college_%s_" % SLUG):
+            runs = [str(r) for r in d.get("extracted_runs") or []]
+            for k in d.get("inserted_keys") or []:
+                if len(runs) == 1:
+                    out.setdefault(str(k), []).append((at, runs[0]))
+        else:
+            # A plan's rows reached the live table only when its migration receipt was filed (an unapplied plan,
+            # this module's own receipt among them, posts nothing).
+            tag = name[:-len(".json")].rsplit("_", 1)[-1]
+            if not glob.glob(os.path.join(NG.RECEIPTS, "migration_%s_prreq_*.json" % tag)):
+                continue
+            rows = d.get("records") if isinstance(d.get("records"), list) else d.get("moved")
+            for r in rows if isinstance(rows, list) else []:
+                if isinstance(r, dict) and r.get("college") == COLLEGE and r.get("extracted_run"):
+                    out.setdefault(str(r.get("control_number")), []).append((at, str(r["extracted_run"])))
+    _POSTED = out
+    return out
+
+
+def on_live_run(filed: dict) -> bool:
+    """The committed record's run is the run the latest committed receipt posted for the row (the pre-read class of
+    East Los Angeles 02456: a reconcile rewrote the file, and its run never reached the live row)."""
+    rows = posted_runs().get(str(filed.get("control_number"))) or []
+    return bool(rows) and max(rows)[1] == str(filed.get("extracted_run"))
+
+
 def gap_noted(filed: dict, reviewed: dict | None = None) -> tuple[str, str] | None:
     """(gap, words) where a reviewed entry stands on the record as it is filed; else None."""
     e = (REVIEWED if reviewed is None else reviewed).get(str(filed.get("control_number")))
@@ -172,6 +227,8 @@ def gap_noted(filed: dict, reviewed: dict | None = None) -> tuple[str, str] | No
     if not _same(a.get("computed"), e["computed"]) or not _same(a.get("stated"), e["stated"]):
         return None
     if scorer_passes(filed):
+        return None
+    if not on_live_run(filed):
         return None
     if e.get("repeats") and not repeats_close(filed, e):
         return None
