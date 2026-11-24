@@ -155,7 +155,7 @@ Los Rios, 34 loaded from own pages (32 passing); American River 04544 corrected 
 (step 11's queue is empty). Headline at step 12: 15,498 of 20,282 active programs pass the machine checks (15,467
 on 2026-11-23), 118 colleges.
 
-CENSUS_LINE
+**The census on `main`:** run 45371224551, dispatched at 10:04Z after #3758 merged, was still running at sign-off; read its numbers in `kb/status/harvest_gap_census.md`. The morning's run 45345225943 (07:08Z) read 4,495 of 20,282 active programs without a passing record. Step 12's headline at 09:24Z: 15,498 pass the machine checks (15,467 on 2026-11-23).
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
 `docs/program_requirements_harvest_lessons.md`, *S720*; `docs/reference/conductor_mode.md`, *What went wrong in S720*;
