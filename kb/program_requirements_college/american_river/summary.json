@@ -2,21 +2,21 @@
  "college": "American River College",
  "programs": 371,
  "with_closed_list": 368,
- "found": 358,
+ "found": 357,
  "extracted": 358,
  "errors": 0,
- "passed_machine_checks": 319,
+ "passed_machine_checks": 324,
  "failed": {
-  "coverage": 5,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 35,
+  "arithmetic": 30,
   "repeated": 0,
   "outcomes": 6
  },
- "cost_usd_run": 12.44,
- "cost_usd_filed": 29.45,
- "cost_per_program": 0.0823,
- "extract_calls": 143,
+ "cost_usd_run": 0.3,
+ "cost_usd_filed": 29.49,
+ "cost_per_program": 0.0824,
+ "extract_calls": 5,
  "extract_failed": [],
  "not_found": [
   {
@@ -26,9 +26,20 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
+  },
+  {
+   "control_number": "20107",
+   "title": "Technical Communications",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=412",
+    "coverage": 0.364
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "30341",
@@ -37,7 +48,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -47,7 +59,8 @@
    "award": "A.S. T Degree",
    "near_miss": {
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=117",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -58,7 +71,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -68,7 +82,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=154",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -78,7 +93,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=154",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -88,7 +104,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=154",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -98,7 +115,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=179",
-    "coverage": 0.429
+    "coverage": 0.429,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -108,7 +126,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=219",
-    "coverage": 0.143
+    "coverage": 0.143,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -118,10 +137,11 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=154",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   }
  ],
- "run": "44535418752"
+ "run": "45353541681"
 }

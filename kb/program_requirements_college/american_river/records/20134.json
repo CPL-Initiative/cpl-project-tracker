@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Gerontology: Administrative",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=642",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11782,
+  "input_tokens": 7643,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11782,
-    "output_tokens": 1314,
+    "input_tokens": 7643,
+    "output_tokens": 2368,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,47 +30,51 @@
     "model": null
    }
   ],
-  "output_tokens": 1314,
+  "output_tokens": 2368,
   "output_tokens_details": {
-   "thinking_tokens": 528
+   "thinking_tokens": 410
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07341,
- "ms": 12852,
- "seconds": 13.3,
+ "cost_usd": 0.07793,
+ "ms": 17514,
+ "seconds": 18.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 17,
    "listed": 17,
-   "share": 0.0,
-   "missing": [
-    "BUS100",
-    "BUS105",
-    "BUS300",
-    "BUS350",
-    "COMM321",
-    "COMM325",
-    "GERON303",
-    "GERON305",
-    "GERON306",
-    "GERON490",
-    "GERON498",
-    "HSER300",
-    "HSER310",
-    "HSER330",
-    "MATH300",
-    "PSYC365",
-    "PSYC375"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM321",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD300",
+     "listed": "HSER300",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD310",
+     "listed": "HSER310",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD330",
+     "listed": "HSER330",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -79,30 +83,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    36.0,
+    36.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 15,
    "courses": 0,
-   "count": 0,
+   "count": 15,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -113,15 +118,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Gerontology: Administrative Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 36,
+    "max": 36
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -138,86 +143,205 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "associate social conditions in the current and recent past with their potential impact on future aging cohorts.",
+    "evaluate the impact of diversity in terms of race, ethnicity, religion, sex, gender and sexual orientation, and citizenship on well-being during aging and on aging outcomes.",
+    "generalize knowledge about cognition and memory during aging to how people learn and remember at any age.",
+    "recognize macro, mezzo, and micro-level ageism messages that marginalize and stigmatize older people.",
+    "enumerate the functions of social service delivery systems.",
+    "synthesize knowledge of existing California professional codes of ethics for the helping professions.",
+    "analyze legal and ethical issues related to aging, including the mandatory reporting of abuse, neglect, and exploitation, value imposition, and end-of-life decisions.",
+    "demonstrate ease, confidence, rapport, and listening skills during interactions with older adults at various levels of function.",
+    "differentiate between aging-related changes and the effects of social conditions and deprivations, and physical and mental diseases, disorders, deficits, injuries, and disabilities.",
+    "assess the impacts of the social determinants of health on the biopsychosocial domains of function during aging.",
+    "apply biopsychosocial gerontological knowledge to case studies and real-life situations.",
+    "list services for older people and adults with disabilities available within a community.",
+    "compose sentences and paragraphs in business documents using critical thinking to paraphrase, summarize, and make attribution.",
+    "demonstrate accuracy, neatness, thoroughness, and speed when adding, subtracting, multiplying, and dividing whole numbers, fractions, and decimals; solving written application problems, using formulas, variables, and equations; and creating and interpreting graphs.",
+    "describe the key management functions of planning, organizing, leading, and controlling, including ethical, regulatory/legal, social, and cultural factors."
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SWCD 330",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC 365",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 375",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 490",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWCD 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GERON 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 9 units from the following:",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BUS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 300",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 350",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "BUS 100",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
-    "code": "BUS 105",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
-    "code": "BUS 300",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
-    "code": "BUS 350",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
     "code": "COMM 321",
-    "why": "certificate section not in the text; the A.A. section prints COMM C1004 Interpersonal Communication instead"
-   },
-   {
-    "code": "COMM 325",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
-    "code": "GERON 303",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
-    "code": "GERON 305",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
-    "code": "GERON 306",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
-    "code": "GERON 490",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
-    "code": "GERON 498",
-    "why": "certificate section not in the text; named only in the A.A. section"
+    "why": "not in the text; catalog prints COMM C1004 Interpersonal Communication instead (likely renumbered)"
    },
    {
     "code": "HSER 300",
-    "why": "not in the text; the A.A. section prints SWCD 300 Introduction to Social Work"
+    "why": "not in the text; catalog prints SWCD 300 Introduction to Social Work instead (likely renumbered)"
    },
    {
     "code": "HSER 310",
-    "why": "not in the text; the A.A. section prints SWCD 310 Ethical Issues and Client's Rights"
+    "why": "not in the text; catalog prints SWCD 310 Ethical Issues and Client's Rights instead (likely renumbered)"
    },
    {
     "code": "HSER 330",
-    "why": "not in the text; the A.A. section prints SWCD 330 Issues of Diverse Populations"
-   },
-   {
-    "code": "MATH 300",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
-    "code": "PSYC 365",
-    "why": "certificate section not in the text; named only in the A.A. section"
-   },
-   {
-    "code": "PSYC 375",
-    "why": "certificate section not in the text; named only in the A.A. section"
+    "why": "not in the text; catalog prints SWCD 330 Issues of Diverse Populations instead (likely renumbered)"
    }
   ],
-  "notes": []
+  "notes": [
+   "COMM C1004, SWCD 300, SWCD 310 and SWCD 330 are not on the closed list but appear to be renumberings of COMM 321, HSER 300, HSER 310 and HSER 330 (same titles).",
+   "The 9-unit choose block offers three 3-unit choices (BUS 100; BUS 105 or MATH 300; BUS 300 or BUS 350), so in effect all three choices are required.",
+   "GERON 498 is variable unit (0.5-4); student must complete a minimum of 3 units.",
+   "Student learning outcomes span pages 642-643; recorded as one continuous list."
+  ]
  },
- "extracted_run": "44535418752",
+ "extracted_run": "45353541681",
  "catalog_year": "2026-2027",
- "source_sha": "11f18c86c9fe624e",
+ "source_sha": "30b89b551a8d6a39",
  "source_codes": [
   "BUS100",
   "BUS105",

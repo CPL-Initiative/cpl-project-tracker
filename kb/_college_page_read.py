@@ -649,6 +649,7 @@ def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = 
                     from _program_requirements_pilot import PAGE_JS
                     page = reader.page.evaluate(PAGE_JS)
                     out["text"], out["capture_view"] = capture_text(page), True
+                    out["h1"] = page.get("h1")   # the heading a site_pages pin binds on (S720)
                     out["tab_panels"] = [[(t.get("label") or t.get("id") or "")[:60], len(t.get("text") or "")]
                                          for t in page.get("tabPanels") or []]
                     out["dropped_panels"] = dropped_panels(page)
@@ -722,7 +723,7 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
     print("\n##### PAGE %d · answers: %s%s" % (n, ", ".join(rec.get("answers") or []),
           (" · %s page %d" % (how, rec["from"])) if rec.get("from") else ""))
     for k in ("url", "final_url", "status", "access", "kind", "content_type", "chars",
-              "sha256", "bytes", "extractor", "title", "expanded", "error"):
+              "sha256", "bytes", "extractor", "title", "h1", "expanded", "error"):
         if rec.get(k) not in (None, ""):
             print("%s: %s" % (k, rec[k]))
     if rec.get("links_shown"):

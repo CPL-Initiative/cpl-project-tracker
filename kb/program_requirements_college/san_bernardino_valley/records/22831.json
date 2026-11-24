@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Library Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-certificate-achievement/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10324,
+  "input_tokens": 8159,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10324,
-    "output_tokens": 1273,
+    "input_tokens": 8159,
+    "output_tokens": 1538,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1273,
+  "output_tokens": 1538,
   "output_tokens_details": {
-   "thinking_tokens": 325
+   "thinking_tokens": 411
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06676,
- "ms": 10872,
- "seconds": 11.2,
+ "cost_usd": 0.0634,
+ "ms": 12760,
+ "seconds": 12.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 12,
    "listed": 12,
-   "share": 0.0,
-   "missing": [
-    "LIB110",
-    "LIB62",
-    "LIB63",
-    "LIB64",
-    "LIB65",
-    "LIB66",
-    "LIB67",
-    "LIB70",
-    "LIB71",
-    "LIB72",
-    "LIB73",
-    "LIB98"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -73,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    17.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    17.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 7,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Library Technology",
+   "section_heading": "Library Technology Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 17,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -132,75 +121,149 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Utilize the correct technology and media for library services.",
+    "Classify library materials in a variety of library environments such as schools, specialized, public and academic.",
+    "Apply the fundamentals of public services and technical services.",
+    "Describe the purposes, processes, and goals of the different departments within a library, including technical, public, and reference services."
+   ],
    "careers": [
-    "library paraprofessionals",
-    "school library specialists",
-    "library technicians",
-    "clerks",
-    "pages",
-    "catalogers",
-    "billing specialists"
+    "libraries",
+    "information management"
    ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "LIB 110",
-    "why": "Certificate requirements not in the text; appears only in the overview and the Courses tab."
+    "name": "Required Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LIB 063",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 064",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 065",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 066",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 067",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 070",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "LIB 62",
-    "why": "Certificate requirements not in the text; printed as LIB 062 in the overview (as an elective hybrid class) and the Courses tab only."
+    "name": "One course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LIB 062",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 071",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 072",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIB 073",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "LIB 63",
-    "why": "Certificate requirements not in the text; printed as LIB 063 in the Courses tab only."
-   },
-   {
-    "code": "LIB 64",
-    "why": "Certificate requirements not in the text; printed as LIB 064 in the Courses tab only."
-   },
-   {
-    "code": "LIB 65",
-    "why": "Certificate requirements not in the text; printed as LIB 065 in the Courses tab only."
-   },
-   {
-    "code": "LIB 66",
-    "why": "Certificate requirements not in the text; printed as LIB 066 in the Courses tab only."
-   },
-   {
-    "code": "LIB 67",
-    "why": "Certificate requirements not in the text; printed as LIB 067 in the Courses tab only."
-   },
-   {
-    "code": "LIB 70",
-    "why": "Certificate requirements not in the text; printed as LIB 070 in the Courses tab only."
-   },
-   {
-    "code": "LIB 71",
-    "why": "Certificate requirements not in the text; printed as LIB 071 in the Courses tab only."
-   },
-   {
-    "code": "LIB 72",
-    "why": "Certificate requirements not in the text; printed as LIB 072 in the Courses tab only."
-   },
-   {
-    "code": "LIB 73",
-    "why": "Certificate requirements not in the text; printed as LIB 073 in the Courses tab only."
-   },
-   {
-    "code": "LIB098",
-    "why": "Certificate requirements not in the text; printed as LIB 098 (0.5-4 units) in the Courses tab only."
+    "name": "Work Experience - Complete one unit from the following:",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LIB 098",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text holds only the Library Technology program overview and the Courses tab; the Certificate of Achievement's own requirements section (linked in the navigation as 'Library Technology Certificate of Achievement') is not included, so no blocks, total, or outcomes could be recorded. A reviewer should fetch the certificate's own page.",
-   "The overview mentions LIB 062 as an elective hybrid class, suggesting an elective list exists, but the requirement list itself is absent.",
-   "Careers were taken from the program overview, which describes both the certificate and the A.A. degree.",
-   "Copyright line reads 2024 although the requested catalog year is 2026-2027."
+   "Catalog prints codes zero-padded (LIB 063, LIB 098); matched to closed-list LIB 63, LIB098 etc., so catalog_addition false.",
+   "LIB 066 is printed in the required list with no title and no units; units recorded as null (closed list stores 2).",
+   "The '1' after LIB 098's title is a footnote marker: LIB 098 may be waived if the student has been employed in a library for at least one year full-time (or equivalent); see Department Chair.",
+   "Program Learning Outcomes are taken from the page's outcomes tab for this certificate.",
+   "Careers taken from description: 'careers in libraries or information management'; description also mentions entry level employment in public, school, academic, or special libraries or an information center."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": "45355976381",
+ "catalog_year": "2026-2027"
 }

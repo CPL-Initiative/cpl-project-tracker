@@ -2,328 +2,33 @@
  "college": "San Bernardino Valley College",
  "programs": 236,
  "with_closed_list": 232,
- "found": 221,
+ "found": 226,
  "extracted": 221,
  "errors": 0,
- "passed_machine_checks": 171,
+ "passed_machine_checks": 183,
  "failed": {
-  "coverage": 17,
+  "coverage": 3,
   "invented": 2,
-  "arithmetic": 48,
+  "arithmetic": 36,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 1.87,
- "cost_usd_filed": 15.19,
- "cost_per_program": 0.0687,
- "extract_calls": 20,
+ "cost_usd_run": 0.93,
+ "cost_usd_filed": 15.2,
+ "cost_per_program": 0.0688,
+ "extract_calls": 15,
  "extract_failed": [],
  "not_found": [
   {
-   "control_number": "04922",
-   "title": "Geology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/geology/geology-ast-degree/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.318,
-    "body": 0.318,
-    "content": 0.0,
-    "net": 7,
-    "listed": 22,
-    "why": "coarse net: the page's code tokens name 7 of 22 listed courses",
-    "error": null,
-    "chars": {
-     "body": 8038,
-     "content": 16032,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      766
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "09378",
-   "title": "Career Specialist",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/bookkeeping-certificate-achievement/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 12,
-    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5945,
-     "content": 13722,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      536
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "16966",
-   "title": "Manual Lathe and Milling Machine Operator",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "22803",
-   "title": "Computer Numerical Control: CAD/CAM",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/computer-numerical-control-operator-certificate-achievement/",
-    "label": {
-     "award": 1,
-     "title": 0.6
-    },
-    "field": "innerText",
-    "coverage": 0.5,
-    "body": 0.5,
-    "content": 0.0,
-    "net": 5,
-    "listed": 10,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 5923,
-     "content": 14127,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      988
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "22806",
-   "title": "Machinist Standard",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/machinist-standard-as-degree/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 4,
-    "listed": 4,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 6069,
-     "content": 14727,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      1439
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "22809",
-   "title": "Tool & Die",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "31858",
-   "title": "Administration of Justice",
+   "control_number": "32317",
+   "title": "Early Childhood Education",
    "award": "A.S. T Degree",
    "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aat-degree/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.286,
-    "net": 28,
-    "listed": 28,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 9040,
-     "content": 17413,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      1159
-     ]
-    ]
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/early-childhood-education-ast-degree/",
+    "why": "the reconcile entry's site_pages pin is refused: the pinned page is no candidate: a candidate, lost to a program the page names more fully",
+    "page_checks": true
    },
    "status": "Active"
-  },
-  {
-   "control_number": "39236",
-   "title": "Social Media Narrative Production",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/social-media-field-production-certificate-achievement/",
-    "label": {
-     "award": 1,
-     "title": 0.75
-    },
-    "field": "innerText",
-    "coverage": 0.4,
-    "body": 0.4,
-    "content": 0.0,
-    "net": 2,
-    "listed": 5,
-    "why": "coverage 0.40 in innerText, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 4775,
-     "content": 13562,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      1364
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
   },
   {
    "control_number": "39611",
@@ -344,8 +49,8 @@
     "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
     "error": null,
     "chars": {
-     "body": 6869,
-     "content": 14748,
+     "body": 6844,
+     "content": 14723,
      "tabs": 0
     },
     "tab_panels": [
@@ -374,5 +79,5 @@
    "status": "Active - Teachout Only"
   }
  ],
- "run": "44481529632"
+ "run": "45355976381"
 }

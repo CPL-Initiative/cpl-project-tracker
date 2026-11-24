@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-24T09:11:46Z",
+ "written_at": "2026-11-24T09:25:02Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17195,
-  "gap": 5140,
+  "passing": 17227,
+  "gap": 5108,
   "with_gap": 118,
-  "cost_usd": 1340.94,
-  "passed_at_read": 16325,
+  "cost_usd": 1341.01,
+  "passed_at_read": 16357,
   "cost_receipts": 118,
   "spent_usd": 1236.15,
   "spent_runs": 199,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16762,
-  "gap": 5140,
+  "passing": 16794,
+  "gap": 5108,
   "collected_with_gaps": 433,
   "discontinued": 0
  },
@@ -324,12 +324,11 @@
    "harvested": true,
    "slug": "american_river",
    "programs": 371,
-   "passing": 333,
-   "gap": 38,
+   "passing": 338,
+   "gap": 33,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 10,
-    "places_none": 5,
     "unknown_without_live": 20
    },
    "census_causes": {
@@ -353,10 +352,10 @@
    "outcomes_file": "kb/status/commons_data_programs/american_river.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T13:05:57Z",
+   "read_at": "2026-11-24T08:09:33Z",
    "read_kind": "capture",
-   "cost_usd": 29.45,
-   "passed_at_read": 319,
+   "cost_usd": 29.49,
+   "passed_at_read": 324,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -373,13 +372,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 368,
-   "found": 358,
+   "found": 357,
    "extracted": 358,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 35,
+    "arithmetic": 30,
     "repeated": 0,
     "outcomes": 6
    },
@@ -389,12 +388,11 @@
    "capture_root": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 674.2,
-   "run": "44535418752",
+   "read_seconds": 631.0,
+   "run": "45353541681",
    "levers": {
     "reconcile_steps": 20,
     "reader_page_search": 10,
-    "reader_page_assignment": 5,
     "program_course_file_check": 3
    },
    "collection": {
@@ -403,13 +401,13 @@
      "models": {
       "claude-opus-5-5": 358
      },
-     "run": "44535418752",
-     "at": "2026-11-19T13:05:57Z",
-     "cost_usd": 29.45,
+     "run": "45353541681",
+     "at": "2026-11-24T08:09:33Z",
+     "cost_usd": 29.49,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 344,
+    "plo_programs": 349,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -6848,12 +6846,12 @@
    "harvested": true,
    "slug": "los_angeles_southwest",
    "programs": 136,
-   "passing": 76,
-   "gap": 60,
+   "passing": 81,
+   "gap": 55,
    "causes": {
     "no_closed_list": 40,
     "page_not_found": 2,
-    "places_none": 10,
+    "places_none": 5,
     "unknown_without_live": 8
    },
    "census_causes": {
@@ -6878,10 +6876,10 @@
    "outcomes_file": "kb/status/commons_data_programs/los_angeles_southwest.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T19:17:43Z",
+   "read_at": "2026-11-24T07:40:02Z",
    "read_kind": "capture",
-   "cost_usd": 6.0,
-   "passed_at_read": 69,
+   "cost_usd": 6.01,
+   "passed_at_read": 74,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6890,13 +6888,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 96,
-   "found": 94,
+   "found": 90,
    "extracted": 94,
    "errors": 0,
    "failed_checks": {
-    "coverage": 16,
+    "coverage": 11,
     "invented": 6,
-    "arithmetic": 19,
+    "arithmetic": 14,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6906,12 +6904,12 @@
    "capture_root": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 62.0,
-   "run": "39061735776",
+   "read_seconds": 75.5,
+   "run": "45349617908",
    "levers": {
     "program_course_file_check": 40,
-    "reader_page_assignment": 10,
     "reconcile_steps": 8,
+    "reader_page_assignment": 5,
     "reader_page_search": 2
    },
    "collection": {
@@ -6920,13 +6918,13 @@
      "models": {
       "claude-opus-5-5": 94
      },
-     "run": "39061735776",
-     "at": "2026-10-17T19:17:43Z",
-     "cost_usd": 6.0,
+     "run": "45349617908",
+     "at": "2026-11-24T07:40:02Z",
+     "cost_usd": 6.01,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 83,
+    "plo_programs": 88,
     "ppm_member": {
      "host": "programmap.lasc.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -7336,12 +7334,12 @@
    "harvested": true,
    "slug": "mendocino",
    "programs": 125,
-   "passing": 87,
-   "gap": 38,
+   "passing": 93,
+   "gap": 32,
    "causes": {
     "no_closed_list": 2,
     "page_not_found": 16,
-    "places_none": 7,
+    "places_none": 1,
     "unknown_without_live": 13
    },
    "census_causes": {
@@ -7367,10 +7365,10 @@
    "outcomes_file": "kb/status/commons_data_programs/mendocino.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T06:57:19Z",
+   "read_at": "2026-11-24T07:27:29Z",
    "read_kind": "capture",
-   "cost_usd": 6.72,
-   "passed_at_read": 79,
+   "cost_usd": 6.76,
+   "passed_at_read": 85,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -7383,9 +7381,9 @@
    "extracted": 107,
    "errors": 0,
    "failed_checks": {
-    "coverage": 8,
+    "coverage": 2,
     "invented": 1,
-    "arithmetic": 27,
+    "arithmetic": 21,
     "repeated": 0,
     "outcomes": 0
    },
@@ -7395,14 +7393,14 @@
    "capture_root": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 61.7,
-   "run": "44474793355",
+   "read_seconds": 77.9,
+   "run": "45348021173",
    "levers": {
     "reader_page_search": 16,
     "reconcile_steps": 11,
-    "reader_page_assignment": 7,
     "program_course_file_check": 2,
     "ge_units_steps": 1,
+    "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
    },
    "collection": {
@@ -7411,13 +7409,13 @@
      "models": {
       "claude-opus-5-5": 107
      },
-     "run": "44474793355",
-     "at": "2026-11-19T06:57:19Z",
-     "cost_usd": 6.72,
+     "run": "45348021173",
+     "at": "2026-11-24T07:27:29Z",
+     "cost_usd": 6.76,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 85,
+    "plo_programs": 91,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -10035,14 +10033,13 @@
    "harvested": true,
    "slug": "san_bernardino_valley",
    "programs": 236,
-   "passing": 187,
-   "gap": 49,
+   "passing": 200,
+   "gap": 36,
    "causes": {
-    "found_not_extracted": 1,
     "no_closed_list": 4,
     "page_not_found": 11,
-    "places_none": 15,
-    "unknown_without_live": 18
+    "places_none": 1,
+    "unknown_without_live": 20
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -10069,10 +10066,10 @@
    "outcomes_file": "kb/status/commons_data_programs/san_bernardino_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T08:06:59Z",
+   "read_at": "2026-11-24T08:26:34Z",
    "read_kind": "capture",
-   "cost_usd": 15.19,
-   "passed_at_read": 171,
+   "cost_usd": 15.2,
+   "passed_at_read": 183,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -10091,13 +10088,13 @@
     "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
    },
    "listed_closed": 232,
-   "found": 221,
+   "found": 226,
    "extracted": 221,
    "errors": 0,
    "failed_checks": {
-    "coverage": 17,
+    "coverage": 3,
     "invented": 2,
-    "arithmetic": 48,
+    "arithmetic": 36,
     "repeated": 0,
     "outcomes": 0
    },
@@ -10107,29 +10104,28 @@
    "capture_root": "https://catalog.valleycollege.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1522.7,
-   "run": "44481529632",
+   "read_seconds": 1500.5,
+   "run": "45355976381",
    "levers": {
-    "reconcile_steps": 17,
-    "reader_page_assignment": 15,
+    "reconcile_steps": 18,
     "reader_page_search": 11,
     "program_course_file_check": 4,
-    "ge_units_steps": 1,
-    "paid_read": 1
+    "ge_units_steps": 2,
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
-     "records": 220,
+     "records": 221,
      "models": {
-      "claude-opus-5-5": 220
+      "claude-opus-5-5": 221
      },
-     "run": "44481529632",
-     "at": "2026-11-19T08:06:59Z",
-     "cost_usd": 15.19,
+     "run": "45355976381",
+     "at": "2026-11-24T08:26:34Z",
+     "cost_usd": 15.2,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 205,
+    "plo_programs": 219,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -11215,12 +11211,12 @@
    "harvested": true,
    "slug": "santiago_canyon",
    "programs": 260,
-   "passing": 192,
-   "gap": 68,
+   "passing": 195,
+   "gap": 65,
    "causes": {
     "no_closed_list": 30,
     "page_not_found": 8,
-    "places_none": 6,
+    "places_none": 3,
     "unknown_without_live": 24
    },
    "census_causes": {
@@ -11248,10 +11244,10 @@
     "curriqunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-13T07:46:13Z",
+   "read_at": "2026-11-24T09:09:31Z",
    "read_kind": "capture",
-   "cost_usd": 16.03,
-   "passed_at_read": 191,
+   "cost_usd": 16.0,
+   "passed_at_read": 195,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -11270,30 +11266,30 @@
     "why": "5 agree, 0 differ, 0 unreachable"
    },
    "listed_closed": 230,
-   "found": 204,
+   "found": 210,
    "extracted": 222,
    "errors": 0,
    "failed_checks": {
-    "coverage": 10,
+    "coverage": 7,
     "invented": 4,
-    "arithmetic": 24,
+    "arithmetic": 22,
     "repeated": 0,
     "outcomes": 0
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
-   "catalog_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
-   "capture_root": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+   "catalog_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf",
+   "capture_root": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 63.2,
-   "run": "43693830334",
+   "read_seconds": 40.2,
+   "run": "45362372486",
    "levers": {
     "program_course_file_check": 30,
     "reconcile_steps": 16,
     "reader_page_search": 8,
     "scorer_noncredit_hours": 8,
-    "reader_page_assignment": 6
+    "reader_page_assignment": 3
    },
    "collection": {
     "program_reader": {
@@ -11301,9 +11297,9 @@
      "models": {
       "claude-opus-5-5": 222
      },
-     "run": "43693830334",
-     "at": "2026-11-13T07:46:13Z",
-     "cost_usd": 16.03,
+     "run": "45362372486",
+     "at": "2026-11-24T09:09:31Z",
+     "cost_usd": 16.0,
      "platform": "pdf"
     },
     "slo_read": {

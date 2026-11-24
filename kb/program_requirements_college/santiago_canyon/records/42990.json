@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Public Administration",
  "award": "A.S. Degree",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=134",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=415",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7569,
+  "input_tokens": 6301,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7569,
-    "output_tokens": 1200,
+    "input_tokens": 6301,
+    "output_tokens": 1152,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,36 +30,56 @@
     "model": null
    }
   ],
-  "output_tokens": 1200,
+  "output_tokens": 1152,
   "output_tokens_details": {
-   "thinking_tokens": 405
+   "thinking_tokens": 527
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05428,
- "ms": 11290,
- "seconds": 11.4,
+ "cost_usd": 0.04824,
+ "ms": 10424,
+ "seconds": 13.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 6,
    "listed": 6,
-   "share": 0.0,
-   "missing": [
-    "PBLC150",
-    "PBLC151",
-    "PBLC152",
-    "PBLC153",
-    "PBLC154",
-    "PBLC155"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "PASV150",
+     "listed": "PBLC150",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "PASV151",
+     "listed": "PBLC151",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "PASV152",
+     "listed": "PBLC152",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "PASV153",
+     "listed": "PBLC153",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "PASV155",
+     "listed": "PBLC155",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -68,17 +88,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -95,7 +116,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 7,
    "not_verbatim": [],
    "pass": true
   },
@@ -105,15 +126,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found in the text (only \"Public Administration, CA\" Certificate of Achievement is printed)",
+   "section_heading": "Public Administration, AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -131,49 +152,107 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "public sector",
+    "civil service",
+    "community relations",
+    "education",
+    "health care",
+    "nonprofits",
+    "any governmental agency (federal, state, county, or city)"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Program Rules: Public Administration, AS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PASV150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PASV151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PASV152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PASV153",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PBLC154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PASV155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "PBLC 150",
-    "why": "A.S. section not in the text; printed only as PASV150 in the Certificate of Achievement section"
+    "why": "catalog prints this title as PASV150"
    },
    {
     "code": "PBLC 151",
-    "why": "A.S. section not in the text; printed only as PASV151 in the Certificate of Achievement section"
+    "why": "catalog prints this title as PASV151"
    },
    {
     "code": "PBLC 152",
-    "why": "A.S. section not in the text; printed only as PASV152 in the Certificate of Achievement section and as PBLC152 in the Public Works certificate"
+    "why": "catalog prints this title as PASV152"
    },
    {
     "code": "PBLC 153",
-    "why": "A.S. section not in the text; printed only as PASV153 in the Certificate of Achievement section and as PBLC153 in the Public Works certificate"
-   },
-   {
-    "code": "PBLC 154",
-    "why": "A.S. section not in the text; printed only in the Certificate of Achievement section"
+    "why": "catalog prints this title as PASV153"
    },
    {
     "code": "PBLC 155",
-    "why": "A.S. section not in the text; printed only as PASV155 in the Certificate of Achievement section"
+    "why": "catalog prints this title as PASV155"
    }
   ],
-  "notes": [
-   "The excerpt (page 134) contains no Public Administration A.S. Degree section. It prints only the Public Administration Certificate of Achievement (Control Number 42990), followed by the Public Works Certificate of Proficiency and the Real Estate CCAM certificate. The A.S. section may be on another page.",
-   "The Certificate of Achievement section requires all six courses, 18.0 units total. The catalog prints five of them under the PASV prefix (PASV150, PASV151, PASV152, PASV153, PASV155) and PBLC154 under the PBLC prefix. A reviewer should check whether the A.S. Degree uses the same requirements.",
-   "The certificate description names employment areas: civil service, community relations, education, health care, nonprofits, and any governmental agency (federal, state, county, or city). These were not recorded as careers because they belong to the certificate's section, not to the A.S. Degree.",
-   "No program learning outcomes are printed in the excerpt."
-  ]
+  "notes": []
  },
- "extracted_run": "43339249633",
- "source_sha": "97af176c35265a85",
+ "extracted_run": "45362372486",
+ "catalog_year": "2026-2027",
+ "source_sha": "e4583536b5d35ebb",
  "source_codes": [
+  "PBLC150",
+  "PBLC151",
   "PBLC152",
   "PBLC153",
-  "PBLC154"
+  "PBLC154",
+  "PBLC155"
  ],
- "source_coverage": 0.5
+ "source_coverage": 1.0
 }

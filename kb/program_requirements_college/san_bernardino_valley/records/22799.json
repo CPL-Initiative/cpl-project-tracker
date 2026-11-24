@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Avionics Technology",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-certificate-achievement/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8637,
+  "input_tokens": 8633,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8637,
-    "output_tokens": 810,
+    "input_tokens": 8633,
+    "output_tokens": 1846,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,82 +30,53 @@
     "model": null
    }
   ],
-  "output_tokens": 810,
+  "output_tokens": 1846,
   "output_tokens_details": {
-   "thinking_tokens": 436
+   "thinking_tokens": 432
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05075,
- "ms": 7747,
- "seconds": 8.1,
+ "cost_usd": 0.07145,
+ "ms": 13800,
+ "seconds": 13.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 15,
    "listed": 15,
-   "share": 0.0,
-   "missing": [
-    "AERO21",
-    "AERO40",
-    "ELECTR110",
-    "ELECTR111",
-    "ELECTR115",
-    "ELECTR116",
-    "ELECTR155",
-    "ELECTR220C",
-    "ELECTR235",
-    "ELECTR250C",
-    "ELECTR257C",
-    "ELECTR265",
-    "ELECTR266",
-    "ELECTR270",
-    "TECALC87"
-   ],
-   "unexplained": [
-    "AERO21",
-    "AERO40",
-    "ELECTR110",
-    "ELECTR111",
-    "ELECTR115",
-    "ELECTR116",
-    "ELECTR155",
-    "ELECTR220C",
-    "ELECTR235",
-    "ELECTR250C",
-    "ELECTR257C",
-    "ELECTR265",
-    "ELECTR266",
-    "ELECTR270",
-    "TECALC87"
-   ],
-   "none_placed": true,
-   "pass": false
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ELECTR230"
+   ],
+   "flagged": [
+    "ELECTR230"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    52.0,
+    52.0
    ],
    "stated": [
     52.0,
     52.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 0.0-0.0; the catalog states 52.0-52.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -122,18 +93,18 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Avionics Technology Associate of Science Degree",
+   "section_heading": "Avionics Technology Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 52,
@@ -161,12 +132,151 @@
     "Effectively communicate with and advise customers and co-workers, both written and orally, regarding the progress of and decisions made concerning test and repair procedures.",
     "Sit for industry/Federal-style examinations on the theory and procedures of avionics technology."
    ],
-   "careers": []
+   "careers": [
+    "aircraft electricity",
+    "maintenance",
+    "installation",
+    "field service",
+    "networking",
+    "apprenticeship in the field of avionics technology"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "TECALC 087",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 116",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECTR 235",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 265",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 266",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 270",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 040",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 220C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 250C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 257C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [],
-  "notes": []
+  "notes": [
+   "Footnote 1 (on AERO 021): 'AERO 052 & AERO 053 can be substituted for AERO 021 & AERO 040.' The substitution is stated as a pair, not course-for-course, so AERO 052 and AERO 053 (not in the closed list) are not recorded as alternatives; reviewer may wish to add them.",
+   "ELECTR 230 Semiconductor Devices (3) is printed as required but is not in the closed list; recorded as catalog addition.",
+   "Catalog prints codes with leading zeros (TECALC 087, AERO 021, AERO 040), corresponding to closed-list TECALC 87, AERO 21, AERO 40.",
+   "Printed course units sum to the stated total of 52.",
+   "Program learning outcomes come from the page's outcomes tab; the first outcome refers to transfer, which suggests the list may be shared with the A.S. degree."
+  ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": "45355976381",
+ "catalog_year": "2026-2027"
 }

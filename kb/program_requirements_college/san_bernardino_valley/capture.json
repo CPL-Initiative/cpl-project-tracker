@@ -5,111 +5,122 @@
  "catalog_year": "2026-2027",
  "programs": 236,
  "with_closed_list": 232,
- "started": "2026-11-19T08:06:59Z",
+ "started": "2026-11-24T08:26:34Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.valleycollege.edu/sitemap.xml",
   "status": 200,
-  "listed": 429,
+  "listed": 432,
   "nested": 0,
-  "program_pages": 301,
+  "program_pages": 304,
   "refused": null,
   "errors": null,
-  "failed": null
+  "failed": null,
+  "challenged": null
  },
  "listing_failed": 0,
  "pages_read": 304,
  "pages_listed": 304,
  "pages_answered": 304,
- "child_pages": 3,
+ "child_pages": 0,
  "banner_h1": null,
+ "site_pins": {
+  "04881": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-certificate-achievement/",
+   "bound": true
+  },
+  "09267": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-as-degree/",
+   "bound": true
+  },
+  "19002": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-certificate-achievement/",
+   "bound": true
+  },
+  "22732": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-certificate-achievement/",
+   "bound": true
+  },
+  "22754": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-certificate-achievement/",
+   "bound": true
+  },
+  "22756": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-certificate-achievement/",
+   "bound": true
+  },
+  "22768": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-certificate-achievement/",
+   "bound": true
+  },
+  "22784": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-certificate-achievement/",
+   "bound": true
+  },
+  "22787": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-certificate-achievement/",
+   "bound": true
+  },
+  "22792": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-certificate-achievement/",
+   "bound": true
+  },
+  "22799": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-certificate-achievement/",
+   "bound": true
+  },
+  "22816": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-certificate-achievement/",
+   "bound": true
+  },
+  "22818": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-technology-certificate-achievement/",
+   "bound": true
+  },
+  "22831": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-certificate-achievement/",
+   "bound": true
+  },
+  "32317": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/early-childhood-education-ast-degree/",
+   "bound": false,
+   "why": "the pinned page is no candidate: a candidate, lost to a program the page names more fully"
+  },
+  "41789": {
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-certificate/",
+   "bound": true
+  }
+ },
  "catalog_lookup": {
   "self_test": {
-   "tested": 176,
-   "hits": 153,
-   "recall": 0.869,
-   "false": 4,
-   "false_off_own": 4,
-   "false_no_claims": 4,
-   "shared": 42,
+   "tested": 198,
+   "hits": 177,
+   "recall": 0.894,
+   "false": 1,
+   "false_off_own": 1,
+   "false_no_claims": 1,
+   "shared": 22,
    "false_matches": [
-    {
-     "control_number": "22816",
-     "title": "Inspection Technology",
-     "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-certificate-achievement/"
-    },
-    {
-     "control_number": "22818",
-     "title": "Welding Technology",
-     "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-technology-certificate-achievement/"
-    },
     {
      "control_number": "22821",
      "title": "Pharmacy Technology",
      "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/pharmacy-technology-certificate-achievement/"
     },
     {
-     "control_number": "22831",
-     "title": "Library Technology",
-     "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-certificate-achievement/"
-    },
-    {
-     "control_number": "22816",
-     "title": "Inspection Technology",
-     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-     "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-certificate-achievement/",
-     "h1": "Inspection Technology Certificate of Achievement"
-    },
-    {
-     "control_number": "22818",
-     "title": "Welding Technology",
-     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-     "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-technology-certificate-achievement/",
-     "h1": "Welding Technology Certificate of Achievement"
-    },
-    {
      "control_number": "22821",
      "title": "Pharmacy Technology",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/pharmacy-technology-certificate-achievement/",
      "h1": "Pharmacy Technology Certificate of Achievement"
-    },
-    {
-     "control_number": "22831",
-     "title": "Library Technology",
-     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-     "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-certificate-achievement/",
-     "h1": "Library Technology Certificate of Achievement"
     }
    ],
    "no_claims_matches": [
     {
-     "control_number": "22816",
-     "title": "Inspection Technology",
-     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-     "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-certificate-achievement/",
-     "h1": "Inspection Technology Certificate of Achievement"
-    },
-    {
-     "control_number": "22818",
-     "title": "Welding Technology",
-     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-     "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-technology-certificate-achievement/",
-     "h1": "Welding Technology Certificate of Achievement"
-    },
-    {
      "control_number": "22821",
      "title": "Pharmacy Technology",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/pharmacy-technology-certificate-achievement/",
      "h1": "Pharmacy Technology Certificate of Achievement"
-    },
-    {
-     "control_number": "22831",
-     "title": "Library Technology",
-     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-     "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-certificate-achievement/",
-     "h1": "Library Technology Certificate of Achievement"
     }
    ],
    "searches": false,
@@ -131,7 +142,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 153 of 176 closed-list programs on their own page, 4 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 177 of 198 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "38986",
@@ -162,35 +173,19 @@
   "yield_unjudged": 0,
   "yield_refused_passing": 0
  },
- "loads": 308,
- "seconds": 1522.7,
- "found": 221,
+ "loads": 306,
+ "seconds": 1500.5,
+ "found": 226,
  "by_method": {
   "no_closed_list": 4,
-  "not_found": 9,
-  "page_claimed": 2,
-  "sitemap_page": 221
+  "not_found": 2,
+  "page_claimed": 4,
+  "sitemap_page": 226
  },
  "shared_pages": {
-  "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-aa-degree/": [
-   "04864",
-   "22732"
-  ],
-  "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-as-degree/": [
-   "04875",
-   "22754"
-  ],
   "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/computer-engineering-technology-as-degree/": [
    "04878",
    "22759"
-  ],
-  "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/": [
-   "04880",
-   "22768"
-  ],
-  "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-as-degree/": [
-   "04881",
-   "33760"
   ],
   "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/basic-automotive-collision-repair-refinishing-as-degree/": [
    "04883",
@@ -200,12 +195,6 @@
    "04907",
    "22822"
   ],
-  "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/": [
-   "09267",
-   "14523",
-   "22756",
-   "22799"
-  ],
   "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electric-power-technology-as-degree/": [
    "09268",
    "22765"
@@ -214,21 +203,13 @@
    "09269",
    "22761"
   ],
-  "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-as-degree/": [
-   "09271",
-   "22787"
-  ],
   "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/engine-performance-as-degree/": [
    "09273",
    "22778"
   ],
-  "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-as-degree/": [
-   "09274",
-   "22784"
-  ],
-  "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-as-degree/": [
-   "09276",
-   "22792"
+  "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/machinist-standard-as-degree/": [
+   "09279",
+   "22806"
   ],
   "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/hospitality-aa-degree/": [
    "09372",
@@ -238,9 +219,10 @@
    "09374",
    "09375"
   ],
-  "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-aa-degree/": [
-   "19002",
-   "19003"
+  "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/": [
+   "16966",
+   "22803",
+   "22809"
   ],
   "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/": [
    "31886",
@@ -250,10 +232,6 @@
    "32458",
    "45758"
   ],
-  "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-as-degree/": [
-   "41789",
-   "43140"
-  ],
   "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/flight-operations-professional-pilot-as-degree/": [
    "45402",
    "45420"
@@ -261,310 +239,15 @@
  },
  "not_found": [
   {
-   "control_number": "04922",
-   "title": "Geology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/geology/geology-ast-degree/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.318,
-    "body": 0.318,
-    "content": 0.0,
-    "net": 7,
-    "listed": 22,
-    "why": "coarse net: the page's code tokens name 7 of 22 listed courses",
-    "error": null,
-    "chars": {
-     "body": 8038,
-     "content": 16032,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      766
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "09378",
-   "title": "Career Specialist",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/bookkeeping-certificate-achievement/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 12,
-    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5945,
-     "content": 13722,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      536
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "16966",
-   "title": "Manual Lathe and Milling Machine Operator",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "22803",
-   "title": "Computer Numerical Control: CAD/CAM",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/computer-numerical-control-operator-certificate-achievement/",
-    "label": {
-     "award": 1,
-     "title": 0.6
-    },
-    "field": "innerText",
-    "coverage": 0.5,
-    "body": 0.5,
-    "content": 0.0,
-    "net": 5,
-    "listed": 10,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 5923,
-     "content": 14127,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      988
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "22806",
-   "title": "Machinist Standard",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/machinist-standard-as-degree/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 4,
-    "listed": 4,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 6069,
-     "content": 14727,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      1439
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "22809",
-   "title": "Tool & Die",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "31858",
-   "title": "Administration of Justice",
+   "control_number": "32317",
+   "title": "Early Childhood Education",
    "award": "A.S. T Degree",
    "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aat-degree/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.286,
-    "net": 28,
-    "listed": 28,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 9040,
-     "content": 17413,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      1159
-     ]
-    ]
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/early-childhood-education-ast-degree/",
+    "why": "the reconcile entry's site_pages pin is refused: the pinned page is no candidate: a candidate, lost to a program the page names more fully",
+    "page_checks": true
    },
    "status": "Active"
-  },
-  {
-   "control_number": "39236",
-   "title": "Social Media Narrative Production",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/social-media-field-production-certificate-achievement/",
-    "label": {
-     "award": 1,
-     "title": 0.75
-    },
-    "field": "innerText",
-    "coverage": 0.4,
-    "body": 0.4,
-    "content": 0.0,
-    "net": 2,
-    "listed": 5,
-    "why": "coverage 0.40 in innerText, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 4775,
-     "content": 13562,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Financial Aid",
-      123
-     ],
-     [
-      "Academic & Career Programs",
-      151
-     ],
-     [
-      "Students",
-      321
-     ],
-     [
-      "About SBVC",
-      250
-     ],
-     [
-      "PROGRAM LEARNING OUTCOMES",
-      1364
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
   },
   {
    "control_number": "39611",
@@ -585,8 +268,8 @@
     "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
     "error": null,
     "chars": {
-     "body": 6869,
-     "content": 14748,
+     "body": 6844,
+     "content": 14723,
      "tabs": 0
     },
     "tab_panels": [
@@ -627,6 +310,16 @@
    "status": "Active - Teachout Only"
   },
   {
+   "control_number": "04922",
+   "title": "Geology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.valleycollege.edu/degree-certificate-program-index/environmental-science/environmental-science-as-degree/",
+    "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/liberal-arts-aa-degree/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
    "control_number": "09286",
    "title": "Tool & Die",
    "award": "A.S. Degree",
@@ -636,188 +329,270 @@
     "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/computer-numerical-control-operator-certificate-achievement/"
    ],
    "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "09378",
+   "title": "Career Specialist",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/human-services-certificate-achievement/",
+    "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/human-services-aa-degree/"
+   ],
+   "status": "Active - Teachout Only"
   }
  ],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 1,
-  "0.8-1.0": 7,
-  "1.0": 213
+  "0.5-0.8": 0,
+  "0.8-1.0": 8,
+  "1.0": 218
  },
  "would_extract": {
   "against": "kb/program_requirements_college/san_bernardino_valley",
-  "kept": 201,
+  "kept": 203,
   "kept_moved": 0,
-  "programs": 20,
+  "programs": 15,
   "list": [
    {
-    "control_number": "04880",
-    "title": "Heating, Ventilation, Air Conditioning and Refrigeration",
-    "award": "A.S. Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "04926",
-    "title": "Administration of Justice",
-    "award": "A.A. Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aa-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aa-degree/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "15503",
-    "title": "Case Management in the Public Sector",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/case-management-public-sector-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/case-management-public-sector-certificate-achievement/",
-    "was_coverage": 0.867,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "17767",
-    "title": "Administration of Justice - Corrections",
+    "control_number": "04881",
+    "title": "Heavy/Medium Duty Truck Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/adjus-corrections-certificate-achievement/",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/adjus-corrections-certificate-achievement/",
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-as-degree/",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "18530",
-    "title": "Liberal Arts - Humanities & Fine Arts",
-    "award": "A.A. Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/humanities-fine-arts/",
-    "coverage": 0.994,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/humanities-fine-arts/",
-    "was_coverage": 0.988,
+    "control_number": "09267",
+    "title": "Electronics Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-as-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "18531",
-    "title": "Liberal Arts - Social & Behavioral Science",
-    "award": "A.A. Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/social-behavioral-sciences/",
+    "control_number": "19002",
+    "title": "Child Development - Early Intervention and Inclusion",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/social-behavioral-sciences/",
-    "was_coverage": 0.99,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-aa-degree/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22732",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-aa-degree/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22754",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-as-degree/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22756",
+    "title": "Electronics Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
     "control_number": "22768",
     "title": "Heating, Ventilation, Air Conditioning and Refrigeration",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-certificate-achievement/",
     "coverage": 1.0,
     "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "22833",
-    "title": "Administration of Justice",
+    "control_number": "22784",
+    "title": "Automotive Wheel Alignment and Brakes",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-jusitce-certificate-achievement/",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-jusitce-certificate-achievement/",
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-as-degree/",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "31823",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/english/english-aat-degree/",
+    "control_number": "22787",
+    "title": "Advanced Automotive Collision Repair and Refinishing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/english/english-aat-degree/",
-    "was_coverage": 0.96,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-as-degree/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "31886",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/",
+    "control_number": "22792",
+    "title": "Aviation Maintenance Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/",
-    "was_coverage": 0.8,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-as-degree/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "32309",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/",
+    "control_number": "22799",
+    "title": "Avionics Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/",
-    "was_coverage": 0.9,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "32595",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/geography/geography-aat-degree/",
+    "control_number": "22816",
+    "title": "Inspection Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/geography/geography-aat-degree/",
-    "was_coverage": 0.909,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "39404",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/",
+    "control_number": "22818",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-technology-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/",
-    "was_coverage": 0.833,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "40833",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/history/history-aa-t-degree/",
-    "coverage": 0.81,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/history/history-aa-t-degree/",
-    "was_coverage": 0.667,
+    "control_number": "22831",
+    "title": "Library Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41789",
+    "title": "Automotive Clean Vehicle Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-certificate/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-as-degree/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "only": [
+   "04881",
+   "09267",
+   "19002",
+   "22732",
+   "22754",
+   "22756",
+   "22768",
+   "22784",
+   "22787",
+   "22792",
+   "22799",
+   "22816",
+   "22818",
+   "22831",
+   "41789"
+  ],
+  "not_named": [
+   {
+    "control_number": "16966",
+    "title": "Manual Lathe and Milling Machine Operator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "22803",
+    "title": "Computer Numerical Control: CAD/CAM",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "22806",
+    "title": "Machinist Standard",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/machinist-standard-as-degree/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "22809",
+    "title": "Tool & Die",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31858",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aat-degree/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39236",
+    "title": "Social Media Narrative Production",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "41756",
     "title": "Child and Adolescent Development",
     "award": "A.A- T Degree",
     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-adolescent-development-aat-degree/",
-    "coverage": 0.696,
+    "coverage": 0.826,
     "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-adolescent-development-aat-degree/",
-    "was_coverage": 0.609,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41865",
-    "title": "Global Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/global-studies/global-studies-aat-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/global-studies/global-studies-aat-degree/",
-    "was_coverage": 0.917,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43049",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/",
-    "was_coverage": 0.9,
+    "was_coverage": 0.696,
     "was_method": "sitemap_page"
    },
    {
@@ -825,45 +600,22 @@
     "title": "Social Work and Human Services",
     "award": "A.A- T Degree",
     "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/social-work-human-services-aat-degree/",
-    "coverage": 0.884,
+    "coverage": 0.907,
     "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/social-work-human-services-aat-degree/",
-    "was_coverage": 0.814,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44225",
-    "title": "Administration of Justice - Corrections",
-    "award": "A.S. Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-corrections-as-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-corrections-as-degree/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44567",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/education/ete-aat-degree/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/education/ete-aat-degree/",
-    "was_coverage": 0.973,
+    "was_coverage": 0.884,
     "was_method": "sitemap_page"
    }
   ],
-  "held_worse_window": [],
-  "held_no_gain": [],
-  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
  "fingerprints": {
   "04857": {
-   "sha256": "721062b5119cd2de37e98da01c412394c9aed24fd6cc9ef0e0771f77f16d4c0a",
+   "sha256": "1457678d029200a19e2b874c0c1b2c0a32621165b2288483c77573a783860178",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-aa-degree/"
   },
   "04860": {
-   "sha256": "506f86e53b7ec52ddb9f105b239e0283adc3e742b22dbc8a37505cd863f5b0da",
+   "sha256": "cee23f2cb626795e610c4a96a97f3aeed746a91b93aaf9cbf86ee34b0447a51f",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/biology/biology-as-degree/"
   },
   "04863": {
@@ -879,7 +631,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/real-estate/real-estate-aa-degree/"
   },
   "04873": {
-   "sha256": "5575ca944c9c1abda9732fe2f7b4ed9faf5c04491b252b0e7dc7c28a691ff04a",
+   "sha256": "6cfcf3f9610ae395cdd57d8b3e144ef8a11e21dc19f535d761e4508200d14862",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/audio-production-aa-degree/"
   },
   "04875": {
@@ -891,12 +643,12 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/computer-engineering-technology-as-degree/"
   },
   "04880": {
-   "sha256": "dbc5557cea48a7a6e821af81451250552622480dada9f84761c130568ab8bcd0",
+   "sha256": "fe941bceb327e09b269cca7be6246960fec27be558b8624db3b3f99ba20eae67",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/"
   },
   "04881": {
-   "sha256": "c432441be275994f590fb26433196c87c363df59dc57bc65b640a4ed540ebb78",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-as-degree/"
+   "sha256": "2efd623ab712509f186ee65ef960dc6459153a97bc40b645a5b2b5456d52fd3f",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-certificate-achievement/"
   },
   "04882": {
    "sha256": "f08ad3dd4cd5fa0485549ffdba8c4e8bb71a1b1bc764773fa9ddbbd85710dfe8",
@@ -907,7 +659,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/basic-automotive-collision-repair-refinishing-as-degree/"
   },
   "04891": {
-   "sha256": "30b72d6455a91a1d140fdfef2cf0bb08f311a47d2a0efd1095ed0d76be50f09b",
+   "sha256": "0457df4b446e4d81e182eb0eec0f47078d5688ffc7bd41581ff4dafe4d2a18b6",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-technology-as-degree/"
   },
   "04893": {
@@ -923,7 +675,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/graphic-design-aa-degree/"
   },
   "04907": {
-   "sha256": "47b7a9607d320beb779cfb9efb277c3d51e0e4a770f7421bcbbe867670a01c7b",
+   "sha256": "392f5233889606753300ea874ce5f844ed67a8b9283f575d89d5d3e3d48d5bed",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/psychiatric-technology/psytch-as-degree/"
   },
   "04920": {
@@ -931,7 +683,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/physics/physics-as-degree/"
   },
   "04921": {
-   "sha256": "b3630a5188626f8f38c9c0cd235aa3bec0bf40b7f6a1d7a7b188f1d3f10822ec",
+   "sha256": "a40a463af7453a0a6dc59b3fb0e474d6a3e4fbc57027405527af0f1e4cf109e3",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/chemistry/chemistry-as-degree/"
   },
   "04925": {
@@ -939,7 +691,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/human-services-aa-degree/"
   },
   "04926": {
-   "sha256": "1ee088b67c6fe22409815aeb48e1c310d8fe7dcb96694bbe497a0b9dfc088e4e",
+   "sha256": "2160426081c6ad53bcb111be11a6e5df754ac71170cb3ec57dea5fa51f9bf6a0",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aa-degree/"
   },
   "04927": {
@@ -959,19 +711,19 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-information-technology/administrative-assistant-certificate-achievement/"
   },
   "09255": {
-   "sha256": "599a58d30eb36674b6621c4034a4404b03374bf706ed183b7ace25642f45eb00",
+   "sha256": "391b3f497fff246a7323cf8fcb12e313af962179cc99fd9117f5a9ae5065d98c",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/television-aa-degree/"
   },
   "09267": {
-   "sha256": "48fe9df1d1a045cea241bc1e5f97efd2734631cb60018ee0897aa11fcdef964d",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/"
+   "sha256": "f37cf14eba8a8429b42680b537d16580bafc2a0f9d676a10fed11a8d7e3feb03",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-as-degree/"
   },
   "09268": {
    "sha256": "ab89f3115a279a8880293ef4a84ad4f29706ba1558b49f812d9c326321d6d488",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electric-power-technology-as-degree/"
   },
   "09269": {
-   "sha256": "cdb18beee801c963fab3e5dfe73eff6198734c1e6cf1ec1da5dd987dbfce5e10",
+   "sha256": "47b7c8518226957255c563697161de8effa3dacefbb5ef61cf9e81b7ecbcad43",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/communication-engineering-technology-as-degree/"
   },
   "09270": {
@@ -1023,19 +775,19 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-school-age-certificate-achievement/"
   },
   "09372": {
-   "sha256": "19d76c30d1c2382bc6eaa7c213072b10282d8e11fb41f6d59930db49fa8dc690",
+   "sha256": "b02a30ec0e2b92f07b3441830befc1753719a89ad29b8055b08603f8c833b090",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/hospitality-aa-degree/"
   },
   "09373": {
-   "sha256": "cf8fb92fb49c926327709c6db835953305bc5afde7e13bb98f52616f690844f8",
+   "sha256": "e737989c3e66ac96b7a9b162dacf207984e7380de44ce9000ed6364ddc00114a",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/restaurant-service-certificate-achievement/"
   },
   "09374": {
-   "sha256": "6d3a1c67a098212b7179b328fa736724d96f564daef0669b1c679d2f4fd585d3",
+   "sha256": "122ed149de4ca473ceca94185a3b6950d2bd8e6ec25a46dd87cb1f1840b59cf6",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/hospitality-certificate-achievement/"
   },
   "09375": {
-   "sha256": "6d3a1c67a098212b7179b328fa736724d96f564daef0669b1c679d2f4fd585d3",
+   "sha256": "122ed149de4ca473ceca94185a3b6950d2bd8e6ec25a46dd87cb1f1840b59cf6",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/hospitality-certificate-achievement/"
   },
   "09376": {
@@ -1075,7 +827,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/film-aa-degree/"
   },
   "16545": {
-   "sha256": "98acbeb0e103e4a7b16c845e25c35003b05d568f424928e153b66efeaaaef0e6",
+   "sha256": "9da6ff993ba7df68de171ca5988bd56536bbdd63cee6b4462e271eb2b0a023ef",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/foods-nutrition/dietetic-service-supervisor-certificate-achievement/"
   },
   "16606": {
@@ -1083,7 +835,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/powerplant-maintenance-technician-certificate-achievement/"
   },
   "16607": {
-   "sha256": "21b1e201165354f014454f8970027f6c72a8b8fbb59601d604b9756959fd7953",
+   "sha256": "0a931ec4a2572e453a45e0dc242b29b99fa62a111d63912568f4ad86faba05f3",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/airframe-maintenance-technician-certificate-achievement/"
   },
   "16822": {
@@ -1094,6 +846,10 @@
    "sha256": "11724b5c61233ca299de1c40780e8f346bf69578b070c01883212ba96d080b72",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/business-administration/business-administration-certificate-achievement/"
   },
+  "16966": {
+   "sha256": "f4ac3bccf749d2acb82a4936950c3f77494650ab7f5b8489359776fb512f1018",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/"
+  },
   "17044": {
    "sha256": "7202249df01f86fab96f48987343febe07f8c552437d3a4a36bbfdf970dfa1a0",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-family-child-care-provider-certificate-achievement/"
@@ -1103,7 +859,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/general-electrician-certificate-achievement/"
   },
   "17767": {
-   "sha256": "9f659bcae7dc8b18d511bc259154bde490c8d54a02d881001981a3d7b8191203",
+   "sha256": "30cf996de8929b7bad4caf5f5f399e314c0d7cd0296c409a7972ab4926385444",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/adjus-corrections-certificate-achievement/"
   },
   "17829": {
@@ -1115,7 +871,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/liberal-arts-aa-degree/"
   },
   "18530": {
-   "sha256": "32f2f2b55004969e7432f8ae3398b03f54fc96d7416e5ba60b9e977dbd5b8034",
+   "sha256": "6f1164da7de55bac3987b0969d44f53840d98046d5b7a5cfcb19082268f930b3",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/humanities-fine-arts/"
   },
   "18531": {
@@ -1123,35 +879,35 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/social-behavioral-sciences/"
   },
   "19002": {
-   "sha256": "e91fd9881a703e848e8fda12ac265b324bb749abec52446e487ac2237b7b7262",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-aa-degree/"
+   "sha256": "1d2a168da4745bd24f1f7b4d58a5d8ff83910198b5b00079a29e10a3af0a8e58",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-certificate-achievement/"
   },
   "19003": {
    "sha256": "e91fd9881a703e848e8fda12ac265b324bb749abec52446e487ac2237b7b7262",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-aa-degree/"
   },
   "22732": {
-   "sha256": "d99d54e800c8fc2e7cff266d1aba7d91af569ced14a068ff2a938ab4fc23edfb",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-aa-degree/"
+   "sha256": "22052fb43b5c8ea5b32eb45f70605953041d77dbb5873e4dabf1bab641dd1e4d",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/accounting/accounting-certificate-achievement/"
   },
   "22733": {
    "sha256": "7119b4cacf83b4c2b8660575a23d4e7c50430942d6e5f18d5a12497b48af56e7",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/real-estate/real-estate-certificate-achievement/"
   },
   "22754": {
-   "sha256": "45776d5d201067c2669fe7822427e8e6045f76a9c1fe9004b02bd3f36eafdc5d",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-as-degree/"
+   "sha256": "c65f005bbe9ef38d0ab01c8ff0c2ec95c8cd064c4447608ce62ecbcb45aac421",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-certificate-achievement/"
   },
   "22756": {
-   "sha256": "48fe9df1d1a045cea241bc1e5f97efd2734631cb60018ee0897aa11fcdef964d",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/"
+   "sha256": "bf2e1aabf6fb0167717e45dd8ac2cb4202379b05a50494a394fcee88513d630f",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electronics-technology-certificate-achievement/"
   },
   "22759": {
    "sha256": "b9c6e8b33a28dbac15c2a51bb38d73da9ca168c6835037f13325e55625d8bcb1",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/computer-engineering-technology-as-degree/"
   },
   "22761": {
-   "sha256": "cdb18beee801c963fab3e5dfe73eff6198734c1e6cf1ec1da5dd987dbfce5e10",
+   "sha256": "47b7c8518226957255c563697161de8effa3dacefbb5ef61cf9e81b7ecbcad43",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/communication-engineering-technology-as-degree/"
   },
   "22765": {
@@ -1159,8 +915,8 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/electric-power-technology-as-degree/"
   },
   "22768": {
-   "sha256": "dbc5557cea48a7a6e821af81451250552622480dada9f84761c130568ab8bcd0",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/"
+   "sha256": "416fcc2f9c826f26a86a7723497351bf4d7139e15a731b5cf4c27d3a51506ae5",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-certificate-achievement/"
   },
   "22771": {
    "sha256": "fbfad1cd9bf7c53519c3dc51b0b5a130f5ce5f86c240cd751bff7717f35fc09d",
@@ -1175,32 +931,44 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/engine-performance-as-degree/"
   },
   "22784": {
-   "sha256": "faf92f41ee9fd0536f639a58d1fe186db7fd9c6fae9cfdbe6a61c5442ebd583e",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-as-degree/"
+   "sha256": "39164c3169e2978e8e08ff2f30c59c7c8993f4990e1c47773e8cd339c0f4b22c",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/wheel-alignment-brakes-certificate-achievement/"
   },
   "22787": {
-   "sha256": "d6348f19204b6227f754474582bfe39ba363d9d2a814580bc1faee1f4ab3bda3",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-as-degree/"
+   "sha256": "b71dab426af7e4c1f71ee961577e894844afab4970aeefa4c8cf5bd727e6d148",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-certificate-achievement/"
   },
   "22788": {
    "sha256": "67cf3e435df0517543fb8785e7296b7a123e395b193bfb720950c585a599e863",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/basic-automotive-collision-repair-refinishing-as-degree/"
   },
   "22792": {
-   "sha256": "bd046a5a9a733803eea2a037946bdf5a207f8fdb9ee3228cc7ce3e843ec866cc",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-as-degree/"
+   "sha256": "f6f8e0173347ad4827c60729f6afcdaf625d7effbc1f3180f620591b53b6111c",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-certificate-achievement/"
   },
   "22799": {
-   "sha256": "53944421398ba9a69f7a23f998a70a357efaa35b826cb634fdbdc2ac27bb047e",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-as-degree/"
+   "sha256": "faafe23ee73689b7aa207617f88cb4fde20399ddcf76d62bd1b24876577c2e17",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/avionics-technology-certificate-achievement/"
+  },
+  "22803": {
+   "sha256": "f4ac3bccf749d2acb82a4936950c3f77494650ab7f5b8489359776fb512f1018",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/"
+  },
+  "22806": {
+   "sha256": "9950b8b24b39585e8c2ee94eba648371805854cc5280e7f17fce7ba75c8d41f3",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/machinist-standard-as-degree/"
+  },
+  "22809": {
+   "sha256": "f4ac3bccf749d2acb82a4936950c3f77494650ab7f5b8489359776fb512f1018",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/"
   },
   "22816": {
-   "sha256": "60a5af906db8f260fdd3b81a13a04e340416feaf659ec110dc239698be4aafce",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/"
+   "sha256": "6a27dd7c7689d5b38e3cd878e49ca7090337892278ced049a1a1000f8955a63e",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-certificate-achievement/"
   },
   "22818": {
-   "sha256": "3c7937f1c4c2f9c3420ba458a38b3f19d38577927a152a285bd33ce2efdd345f",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/"
+   "sha256": "bfc1752c2be69a420f6c023fccc857c119d5ce71cc92381237da49cc273e1f2d",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-technology-certificate-achievement/"
   },
   "22819": {
    "sha256": "963639f04f2d7baf21ae3e8e2315d1eed68c2fb83fe5273ad20823d2aa8075b6",
@@ -1215,23 +983,23 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/pharmacy-technology/"
   },
   "22822": {
-   "sha256": "47b7a9607d320beb779cfb9efb277c3d51e0e4a770f7421bcbbe867670a01c7b",
+   "sha256": "392f5233889606753300ea874ce5f844ed67a8b9283f575d89d5d3e3d48d5bed",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/psychiatric-technology/psytch-as-degree/"
   },
   "22830": {
-   "sha256": "5b4deebecb3012636a18f2defffbf365719cb0459e53bb261c7b9fb7fdbd7dfc",
+   "sha256": "c60ecf722cdde9d01f827a45d781288b37b683b95fbfd76f70af2b25d5bfbcfd",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/hospitality-aa-degree/"
   },
   "22831": {
-   "sha256": "6bd71243875b2b8f767fbd70e26bf28ede3fa14f8c4d296a5770ebd24a09ee5a",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/"
+   "sha256": "3efdabc4a8e59b5bd1ad878e1436b0d9620b30b2b854dcd85c7cee9895b6aa0b",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/library-technology/library-technology-certificate-achievement/"
   },
   "22832": {
    "sha256": "5e58a188b918db5bf4fa3950d44dd81bf5fef60085a2dfed1019fe069ada08e0",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/human-services-certificate-achievement/"
   },
   "22833": {
-   "sha256": "b41ca09d00c23d442c4de1811a712533505f8ab9311451adc85cbc5e764e9f09",
+   "sha256": "c9eada8e0c1a659a3d6ada82ef943f8b606539718e7c3ae02c5f567017680655",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-jusitce-certificate-achievement/"
   },
   "30461": {
@@ -1250,6 +1018,10 @@
    "sha256": "4d99c340b413e330c029f1e92d6667bfd75432d0fea882bcc30f000379f5ad83",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/english/english-aat-degree/"
   },
+  "31858": {
+   "sha256": "95c11cb5814ec4f63492421f5e16d4affcdfbe5cb567d20e8d7417adbd642cb0",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aat-degree/"
+  },
   "31886": {
    "sha256": "660321c035d16c5f0e75e00b484b994ff7a60446606b1dca608306825548f05c",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/"
@@ -1265,10 +1037,6 @@
   "32309": {
    "sha256": "c66b9f2c0b9c2b8c3e86d238ead7505926c9c7e5e5aea828eb78ae7dab2dccbe",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/"
-  },
-  "32317": {
-   "sha256": "bc536d915cff44cd798c90be2537671c0006c9da15df84eda91b6a5fe9f41615",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/"
   },
   "32366": {
    "sha256": "43279907ca4c48ccef3d169b9f8c939499d9b560b34ba7b8015d11009f6192a7",
@@ -1339,11 +1107,11 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/geographic-information-systems-gis/geographic-information-systems-certificate-achievement/"
   },
   "35885": {
-   "sha256": "2574ea00c413c80464c96ba2166328f9cf63d8e3b05e725bfbd1f7db2995424c",
+   "sha256": "9171418d2e284dd5e641cbe9ea02ac0e718a9e39ca0e4679343b619675a76185",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-inspection-technology-certificate-achievement/"
   },
   "35891": {
-   "sha256": "88c2c2906acae990aa95e2617d8876af2f36ae531bb4ca78b5a8651e4a571490",
+   "sha256": "68dcfaf4372ffc799bc12e5c233f4185a569253814273f646bd608c29e34b44c",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/kinesiology-health/kinesiology-aat-degree/"
   },
   "35893": {
@@ -1355,7 +1123,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/flight-operations-certificate-achievement/"
   },
   "36059": {
-   "sha256": "abc3849408532b9e4cf13b8fc7661255d451281d5f5cbe7a1f578f78e43f6700",
+   "sha256": "e7e3d8c43f057ceed9f90701f4d5c7ca79d21e05e547995c22e3baa2c0d90a54",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/flight-operations-management-as-degree/"
   },
   "36070": {
@@ -1367,19 +1135,19 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-engine-and-fuel-injection-technology-certificate-achievement/"
   },
   "36164": {
-   "sha256": "c374f25c3decbdccc873297a407ed64823cd214505c84f965bb58de5ff67ec4b",
+   "sha256": "e3984fc11ebd91b9f64c2d48ffb02406e2b57c6caaf919596da6cd6f3db77f53",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/kinesiology-health/kinesiology-aa-degree/"
   },
   "36165": {
-   "sha256": "db387af536f30ee4e6b59322be4238d66580c7cea3031128750116f4b67b08b9",
+   "sha256": "6ca9c1e4706860140880575af70eb4eb46e485fca63d87642f27f9b52dae6bfc",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/baking-certificate-achievement/"
   },
   "36196": {
-   "sha256": "d43ec28f29268a6b101f4c74393bd0962082b8033f2a373dc330dac5fbeab3f4",
+   "sha256": "becfec24234c691fbb64d1577d98373a2c7113b0c44fa015e41fd446229e819d",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/professional-baking-management-aa-degree/"
   },
   "36197": {
-   "sha256": "710cd151c7ba8543aca94698be2667d1774147681cc9749acfbb0809de1427cf",
+   "sha256": "9ae57938d48c3e4367b345aa3f0c39660b79f3634a875d7737fb000d15fb73b4",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/baking-business-certificate-achievement/"
   },
   "36434": {
@@ -1415,7 +1183,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/english-second-language-esl/esl-integrated-skills-beginning-certificate-completion/"
   },
   "37801": {
-   "sha256": "d6f934cb67c8eef27a7c5c1e5f0ccea1a4d51d8142d6b94373ab09aad3fe995d",
+   "sha256": "fdc29c12fe54f6eeb7c119f3879e2e5a4af44517a47a9e90336e520cc7bbc4ed",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/flux-cored-arc-welding-fcaw-certificate-achievement/"
   },
   "37922": {
@@ -1431,11 +1199,11 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-job-readiness-certificate-completion/"
   },
   "38013": {
-   "sha256": "6a90f33b722262f04d05e42c2ff8b5eee1b1196a2b594d32be9c526ad957123f",
+   "sha256": "98364ff052cfb44df8a3cea067e3a20c2265a76fe8cf16a3acd845ec79e4137d",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/steel-rod-construction-certificate-completion/"
   },
   "38014": {
-   "sha256": "66ea76058ea9468e774724f560111114775f06e886f06adbb4aa3bc424fc1cde",
+   "sha256": "110467bf4ce275408739a5ddd1a94fa0a996c55a88448fd6fdc6191a0abf5a97",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/automotive-interiors-certificate-completion/"
   },
   "38015": {
@@ -1443,23 +1211,23 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-noncredit-certificate-completion/"
   },
   "38122": {
-   "sha256": "998e70aff9bc0e27c90527e5128cbe8f895c3529d61105cfb883ceba4a5f010f",
+   "sha256": "e1036cd44d387959c6798777a3d5b7cb700e006752f227e9b4572e1f60eb6354",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/gas-metal-arc-welding-gmaw-certificate-achievement/"
   },
   "38123": {
-   "sha256": "ac9644b73e51052742d30338242512214874f43e0cdf77df02dbfb7b46ee6a7b",
+   "sha256": "0effe8a91758c3cb7946ac1ad470f28ef84b796fec0a42c5db48c9e096c138bf",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/gas-tungsten-arc-welding-gtaw-certificate-achivement/"
   },
   "38124": {
-   "sha256": "2965f30666afd27ba19f23bf4841342065902b27ac4cc69bc0790fdb1a23fc13",
+   "sha256": "27fa512eed7ed7c888062db74917de6d6ff04fa7995d448fbd8793495fe39163",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/pipe-welding-certificate-achievement/"
   },
   "38125": {
-   "sha256": "11408fe1c1a5b9c1df0e161faa4eacfab33499bb1ca610cf76f968132b3877bf",
+   "sha256": "f63881bdf14fd562fbe79be1a30248070ca3246b597b92f411fdf7146c05f571",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/shielded-metal-arc-welding-smaw-certificate-achievement/"
   },
   "38126": {
-   "sha256": "49d4878250726cd0ec1627a6adbd9de399760def1994b90dded59c0ded92606c",
+   "sha256": "9b6499ad2b88ab2b8373c7c383a4e0e6e5804a01a376126bf0fd001692f94c5d",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/computer-numerical-control-operator-certificate-achievement/"
   },
   "38127": {
@@ -1491,7 +1259,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/nursing/nursing-as-degree/"
   },
   "39191": {
-   "sha256": "7e3eacde0179963581ae57e310b8eae4012f7b030228214750b181646020c340",
+   "sha256": "02f72c71d7353078794b0539a5cffe3d26931e8e96d25018e16cb24906315d51",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/smart-systems-automation-technology-certificate-completion/"
   },
   "39192": {
@@ -1519,8 +1287,12 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/production-certificate-achievement/"
   },
   "39235": {
-   "sha256": "bd5565cb1062901a541fc01ac956dcaeeffa7ced38396a8f13adc7cac4690156",
+   "sha256": "ef10a6c1c3c30dd45ace8a7d71d362964d92cd8af3f475ded24b67b64d113e8a",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/social-media-field-production-certificate-achievement/"
+  },
+  "39236": {
+   "sha256": "747db660c19cf7127b26e720fb906bb985397cee6710ceb08c7873655cc0fbdf",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/"
   },
   "39237": {
    "sha256": "92e40742f0317b035e0d2a67f12c1b0c0bb763e93d9197d27fbdfe30cfc6a7bb",
@@ -1543,7 +1315,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-as-t-degree/"
   },
   "39246": {
-   "sha256": "2337ea3d0e1ad37d5237a195fc90d4e953a99e450e2e7bc01a8ff90521e2ea6c",
+   "sha256": "3e3c7c82ace8b48715ff263292606a3ceffb00d057153df7a4b8b22e3ec00415",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/chemistry/chemistry-as-t-degree/"
   },
   "39381": {
@@ -1567,7 +1339,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/environmental-science/environmental-science-as-t-degree/"
   },
   "39609": {
-   "sha256": "d97f8bb90ca894841f8b03ac4dc665e5250147db3633d97d9f4932abe9c571f0",
+   "sha256": "068d6a588e644a3ebe74fce99f4ed44f5a7f5a5c7457e292c049eecad0f3c155",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/zero-net-energy-certificate-achievement/"
   },
   "39610": {
@@ -1579,7 +1351,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/foods-nutrition/dietetic-aide-certificate-achievement/"
   },
   "40280": {
-   "sha256": "5ed21bb6d92b33ae32f8c9ae788a1b535f21aa9dd3ee3ef0f0300818827b7561",
+   "sha256": "96e0ce7012f96f0160fbf7e909cc8f1f19ec95999e0c760bb73dd29d3aff38b9",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/flight-operations-certificate-completion/"
   },
   "40832": {
@@ -1599,7 +1371,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/cdl-certificate/"
   },
   "41756": {
-   "sha256": "d2d8e68301946e10839d6811f2b557296cf0566586478bc77644e9754df23260",
+   "sha256": "5d4ca7a8241d23b4cc4443717421c13e35dc041175ffe34fbfa48941f7a4862b",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-adolescent-development-aat-degree/"
   },
   "41787": {
@@ -1607,12 +1379,12 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/audio-broadcasting-certificate/"
   },
   "41788": {
-   "sha256": "5a319640dbff8f3b65e10e4333984fd96376999bde84b10228a703cc0a217530",
+   "sha256": "f4935f9be12521e0d03f643c98625a3cf3d8a45d6b08a7300adf9e198acc85ea",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/video-broadcasting-certificate/"
   },
   "41789": {
-   "sha256": "8e33f2fff6d594c708ba73bbc8962702135725c678a45243b92e86d08a68a089",
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-as-degree/"
+   "sha256": "fb63533df0a78cf1e5be543b97c8ea32c1eacd79cc9ab56e58aa5fe8b609ac04",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-certificate/"
   },
   "41865": {
    "sha256": "feb9eede9cd03aec3e1aa54f161f890d0ac63953d153317dc53066f58787bf2c",
@@ -1651,7 +1423,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-technology/automotive-clean-vehicle-as-degree/"
   },
   "43141": {
-   "sha256": "7610395bac2f6e7dd132fb81431e16c800b53c7eed4f568bdd1cec495fa531be",
+   "sha256": "6d63ffbc327625f12256b8a0104d8531ec255cb8d4146d8dbc2bf0313dd01885",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-clean-vehicle-technology-as-degree/"
   },
   "43218": {
@@ -1671,7 +1443,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-information-technology/aws-certificate-achievement/"
   },
   "44225": {
-   "sha256": "ebe86d236838187e536fd023a818a3ad314f97e7ad23508d0529bd481e144d89",
+   "sha256": "cf92b6ecfc015a5e6b444b35df473636cd81f7b918a6f694805383ab78855962",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-corrections-as-degree/"
   },
   "44567": {
@@ -1679,7 +1451,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/education/ete-aat-degree/"
   },
   "44750": {
-   "sha256": "c3015bfa72705169f645a4ebab062d3ccc1f4cb1ba6f7772f21f814d2f9a9a3f",
+   "sha256": "36c610ee81ec0ffb82176cbe2e31b30c95382dee06a2d846771fba5ad56c8ad8",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/education/education-society-human-development-aa-degree/"
   },
   "44819": {
@@ -1699,11 +1471,11 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/architecture-environmental-design/urban-planning-certificate/"
   },
   "45402": {
-   "sha256": "32de30b0e80f734f7abe1e26cc3b34085b579d5d5e520482c2dea88148094e51",
+   "sha256": "16ab00160b5570ed8f81507c1499c9e1b13c89128f4ad1f80e7e3da1cd112e93",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/flight-operations-professional-pilot-as-degree/"
   },
   "45420": {
-   "sha256": "32de30b0e80f734f7abe1e26cc3b34085b579d5d5e520482c2dea88148094e51",
+   "sha256": "16ab00160b5570ed8f81507c1499c9e1b13c89128f4ad1f80e7e3da1cd112e93",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/flight-operations-professional-pilot-as-degree/"
   },
   "45509": {
@@ -1719,7 +1491,7 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/physics/physics-ast-degree/"
   },
   "45878": {
-   "sha256": "3048617cc9950c86b7f66134e6179b9ec4f60602001554177082189019c46cd7",
+   "sha256": "dce303a99f34d60b68a3c9b793f73bbfcb3c63a3e47bca744868b23861b73cae",
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/sociology/mindfulness-certificate/"
   },
   "46163": {
@@ -1743,5 +1515,5 @@
    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/wrm-bs-degree/"
   }
  },
- "run": "44481529632"
+ "run": "45355976381"
 }

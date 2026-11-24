@@ -356,25 +356,21 @@
    "ADJ207"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
-   "title": "A.S.-T Administration of Justice",
-   "h1": "A.S.-T Administration of Justice",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=91",
+   "title": "ADMINISTRATION OF JUSTICE ASSOCIATE OF SCIENCE",
+   "h1": "ADMINISTRATION OF JUSTICE ASSOCIATE OF SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    89
+    91
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 89,
-    "share": 1.0
-   },
-   "text_sha": "7179ae2f5cca0e3d"
+   "pinned": true,
+   "text_sha": "ed5be9db475afbde"
   },
   "listed": 10,
-  "text_chars": 2514
+  "text_chars": 2239
  },
  {
   "control_number": "03455",
@@ -511,25 +507,21 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=203",
-   "title": "A.A.-T Psychology",
-   "h1": "A.A.-T Psychology",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=205",
+   "title": "PSYCHOLOGY ASSOCIATE OF ARTS",
+   "h1": "PSYCHOLOGY ASSOCIATE OF ARTS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    203
+    205
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 203,
-    "share": 1.0
-   },
-   "text_sha": "defaf3dbe4fd3294"
+   "pinned": true,
+   "text_sha": "d134af83465ca3df"
   },
   "listed": 12,
-  "text_chars": 1826
+  "text_chars": 2336
  },
  {
   "control_number": "03462",
@@ -983,25 +975,22 @@
    "WEE196"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=141",
-   "title": "Culinary Arts Management",
-   "h1": "Culinary Arts Management",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=143",
+   "title": "CULINARY ARTS MANAGEMENT CERTIFICATE OF ACHIEVEMENT",
+   "h1": "CULINARY ARTS MANAGEMENT CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    141
+    143,
+    144
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 141,
-    "share": 1.0
-   },
-   "text_sha": "d43ac8b3e4640a5d"
+   "pinned": true,
+   "text_sha": "c52fcf0f2c7819e7"
   },
   "listed": 27,
-  "text_chars": 2034
+  "text_chars": 3090
  },
  {
   "control_number": "12660",
@@ -1302,25 +1291,21 @@
    "RLS74"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=206",
-   "title": "A.S. Real Estate",
-   "h1": "A.S. Real Estate",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=208",
+   "title": "REAL ESTATE CERTIFICATE OF ACHIEVEMENT",
+   "h1": "REAL ESTATE CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    206
+    208
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 206,
-    "share": 1.0
-   },
-   "text_sha": "3d98a6aa2c04c5e8"
+   "pinned": true,
+   "text_sha": "508eb2546c2238f8"
   },
   "listed": 17,
-  "text_chars": 1763
+  "text_chars": 2021
  },
  {
   "control_number": "18733",
@@ -1551,25 +1536,21 @@
    "ADJ207"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
-   "title": "A.S. Administration of Justice",
-   "h1": "A.S. Administration of Justice",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=92",
+   "title": "ADMINISTRATION OF JUSTICE CERTIFICATE OF ACHIEVEMENT",
+   "h1": "ADMINISTRATION OF JUSTICE CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    89
+    92
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 89,
-    "share": 1.0
-   },
-   "text_sha": "b6952a11cbd58459"
+   "pinned": true,
+   "text_sha": "1dd233456a4db27f"
   },
   "listed": 10,
-  "text_chars": 2480
+  "text_chars": 1223
  },
  {
   "control_number": "30501",
@@ -3925,25 +3906,21 @@
    "WEE196"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157",
-   "title": "A.S. Fire Science",
-   "h1": "A.S. Fire Science",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=159",
+   "title": "FIRE SCIENCE CERTIFICATE OF ACHIEVEMENT",
+   "h1": "FIRE SCIENCE CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    157
+    159
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 157,
-    "share": 1.0
-   },
-   "text_sha": "2b3d89b3cf9b670c"
+   "pinned": true,
+   "text_sha": "eced19a690b92191"
   },
   "listed": 12,
-  "text_chars": 2162
+  "text_chars": 2350
  },
  {
   "control_number": "43562",

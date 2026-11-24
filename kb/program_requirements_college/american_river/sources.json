@@ -5525,37 +5525,35 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
    "CISS310",
-   "CISS315"
+   "CISS315",
+   "CISS350",
+   "CISS360"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
-   "title": "Computer Information Security Essentials Certificate",
-   "h1": "Computer Information Security Essentials Certificate",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=448",
+   "title": "Computer Information Security",
+   "h1": "Computer Information Security",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    428,
-    429
+    448,
+    449
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 428,
-    "share": 0.5
-   },
+   "pinned": true,
    "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
+    "fetched_by": "S720 lever (a worker of SkyEider, the CPL Queue routine's run of 2026-11-24), filing the file the college's address serves; the runner fetches it with the hand-filed-copy user agent and its pin step fixes the hash",
+    "fetched_at": "2026-11-24",
+    "sha256": "5a86716d570e32ecdbeb75a1fa03c45e1b33888b70156f17a04f0461d5342035"
    },
-   "text_sha": "2a4904f4ae4277c9"
+   "text_sha": "1b1315ddad868482"
   },
   "listed": 4,
-  "text_chars": 5891
+  "text_chars": 2546
  },
  {
   "control_number": "16948",
@@ -6037,30 +6035,27 @@
    "DCDT150"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=491",
-   "title": "A.S. in Diesel Technology",
-   "h1": "A.S. in Diesel Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=499",
+   "title": "Diesel Technology Certificate",
+   "h1": "Diesel Technology Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    491
+    499,
+    500
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 491,
-    "share": 1.0
-   },
+   "pinned": true,
    "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
+    "fetched_by": "S720 lever (a worker of SkyEider, the CPL Queue routine's run of 2026-11-24), filing the file the college's address serves; the runner fetches it with the hand-filed-copy user agent and its pin step fixes the hash",
+    "fetched_at": "2026-11-24",
+    "sha256": "5a86716d570e32ecdbeb75a1fa03c45e1b33888b70156f17a04f0461d5342035"
    },
-   "text_sha": "3e0b12a68041bc6b"
+   "text_sha": "ef400004b0fb31eb"
   },
   "listed": 6,
-  "text_chars": 2725
+  "text_chars": 989
  },
  {
   "control_number": "18845",
@@ -6786,42 +6781,41 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
    "CISN300",
    "CISN340",
    "CISN341",
    "CISS310",
    "CISS315",
-   "CISS330"
+   "CISS316",
+   "CISS321",
+   "CISS330",
+   "CISS350",
+   "CISS360"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
-   "title": "Cybersecurity and Information Assurance Certificate",
-   "h1": "Cybersecurity and Information Assurance Certificate",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=449",
+   "title": "Cybersecurity and Information",
+   "h1": "Cybersecurity and Information",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    428,
-    429,
-    430
+    449,
+    450
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 428,
-    "share": 0.3
-   },
+   "pinned": true,
    "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
+    "fetched_by": "S720 lever (a worker of SkyEider, the CPL Queue routine's run of 2026-11-24), filing the file the college's address serves; the runner fetches it with the hand-filed-copy user agent and its pin step fixes the hash",
+    "fetched_at": "2026-11-24",
+    "sha256": "5a86716d570e32ecdbeb75a1fa03c45e1b33888b70156f17a04f0461d5342035"
    },
-   "text_sha": "050d7538b3ad415a"
+   "text_sha": "7085a386dc172dc9"
   },
   "listed": 10,
-  "text_chars": 9415
+  "text_chars": 2879
  },
  {
   "control_number": "20110",
@@ -7883,33 +7877,27 @@
    "PSYC375"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
-   "title": "A.A. in Gerontology: Administrative",
-   "h1": "A.A. in Gerontology: Administrative",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=642",
+   "title": "Gerontology: Administrative Certificate",
+   "h1": "Gerontology: Administrative Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    630,
-    631,
-    632,
-    633
+    642,
+    643
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 630,
-    "share": 1.0
-   },
+   "pinned": true,
    "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
+    "fetched_by": "S720 lever (a worker of SkyEider, the CPL Queue routine's run of 2026-11-24), filing the file the college's address serves; the runner fetches it with the hand-filed-copy user agent and its pin step fixes the hash",
+    "fetched_at": "2026-11-24",
+    "sha256": "5a86716d570e32ecdbeb75a1fa03c45e1b33888b70156f17a04f0461d5342035"
    },
-   "text_sha": "11f18c86c9fe624e"
+   "text_sha": "30b89b551a8d6a39"
   },
   "listed": 17,
-  "text_chars": 15659
+  "text_chars": 4202
  },
  {
   "control_number": "20135",
@@ -16305,7 +16293,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.9,
   "codes_found": [
    "ACCT301",
    "ACCT341",
@@ -16314,36 +16302,30 @@
    "BUS310",
    "BUS312",
    "BUS330",
-   "BUS498",
    "BUSTEC332",
    "COMM325"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=408",
-   "title": "BUS 498 Work Experience in Business",
-   "h1": "BUS 498 Work Experience in Business",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=421",
+   "title": "Business Information Professional II",
+   "h1": "Business Information Professional II",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    408,
-    409
+    421
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 408,
-    "share": 1.0
-   },
+   "pinned": true,
    "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
+    "fetched_by": "S720 lever (a worker of SkyEider, the CPL Queue routine's run of 2026-11-24), filing the file the college's address serves; the runner fetches it with the hand-filed-copy user agent and its pin step fixes the hash",
+    "fetched_at": "2026-11-24",
+    "sha256": "5a86716d570e32ecdbeb75a1fa03c45e1b33888b70156f17a04f0461d5342035"
    },
-   "text_sha": "08ec337a0df16fda"
+   "text_sha": "a4dcd8fad0aeaa54"
   },
   "listed": 10,
-  "text_chars": 8039
+  "text_chars": 1902
  },
  {
   "control_number": "44413",
