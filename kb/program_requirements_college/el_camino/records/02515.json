@@ -108,7 +108,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "pool_figure_not_read",
+    "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
+    "words": "Catalog states: 'Additional courses from List A or List B must be completed to achieve 18 total units.' Beyond the 5-unit core, 4-unit List A minimum and 3-unit List B minimum (12 units), the student takes 6 more units from either list."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 94,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
