@@ -225,9 +225,9 @@ del _g, _s, _a
 # sample term map prints, with the degree's units as read strictly inside it. No existing kind fits
 # (hours_within_printed_range names a program measured in hours); its score is that kind's 50.
 GAPS.setdefault("degree_within_map_range",
-                "The degree total is the range the page's sample term map prints; the major adds up to its printed "
-                "major total, and the degree's units as read fall inside the map's range and match neither end, so "
-                "no figure on the page settles what the degree requires.")
+                "The record takes the degree total from the sample map's range, whose low end is the 60 units the "
+                "page prints as needed to graduate; the major adds up to its printed major total, and the degree's "
+                "units as read fall inside the map's range and match neither end.")
 ARITH_SCORE.setdefault("degree_within_map_range", 50)
 
 

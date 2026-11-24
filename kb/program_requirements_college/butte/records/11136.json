@@ -121,21 +121,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "degree_within_map_range",
-    "label": "The degree total is the range the page's sample term map prints; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end, so no figure on the page settles what the degree requires.",
-    "words": "degree_total 61-68 comes from the Butte GE map's 'Total : 61.00- 68.00'. The map prints no single GE total, only per-area choices, so ge_units is null."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 50,
-   "course_list_match": 100,
-   "ge_pattern": 100,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {

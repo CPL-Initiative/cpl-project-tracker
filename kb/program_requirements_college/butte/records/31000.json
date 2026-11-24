@@ -126,7 +126,7 @@
    {
     "gap": "pool_figure_not_read",
     "label": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure.",
-    "words": "List B says 'Select one course from each group' (6.00 overall), but Group 1 prints 6.00 and Group 2 prints 9.00, which are the sums of the listed courses rather than the 3 units required; recorded as printed in stated. Each group requires one course (3 units)."
+    "words": "List B says 'Select one course from each group' (6.00 overall), but Group 1 prints 6.00 and Group 2 prints 9.00, which are the sums of the listed courses rather than the 3 units required"
    }
   ],
   "confidence": {

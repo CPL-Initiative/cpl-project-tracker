@@ -11,25 +11,32 @@ THE REVIEWED LIST (REVIEWED below, a hand reading of each record's own notes and
 Camino and Contra Costa piles and tonight's Gavilan), with the three guards: scorer_passes, on_live_run and the
 own-section guard (14583's page is the one shared page). Each entry carries a check on the record's own figures:
 
-  degree_within_map_range  (new, 50) 13 degrees whose major adds up to its printed major total and whose degree
-                           total is the range the page's sample term map prints ('Map (Butte GE)' or 'Map
-                           (Cal-GETC)': 'Units: 60.00- 64.00', 'Total : 60.00- 64.00'); the degree's units as read
-                           (the major, the general education pattern's units from the catalog's GE guide, and the
-                           map's elective line where the reader kept it) fall inside that range and match neither
-                           end. The scorer passes a sum that meets the range's low end (meets, short_high) or a
+  degree_within_map_range  (new, 50) four degrees (01305, 01358, 07258, 45652) whose major adds up to its printed
+                           major total and whose record takes the degree total from the sample term map's range
+                           ('Map (Butte GE)' or 'Map (Cal-GETC)': 'Units: 60.00- 64.00'), whose low end is the 60
+                           units the page prints as needed to graduate; the degree's units as read (the major, the
+                           general education pattern's units from the catalog's GE guide, and the map's elective
+                           line where the reader kept it) fall inside that range and match neither end, and no
+                           reading of the elective line as fill passes them. The scorer passes a sum that meets the range's low end (meets, short_high) or a
                            range that holds the printed figure (within); a sum strictly inside a printed range it
                            fails by design (program_verdict: "any total inside the span would pass 738"). No
                            existing kind fits: hours_within_printed_range names a program measured in hours, and
                            every other kind names a list or a figure these records read right. Its score is
                            hours_within_printed_range's 50 (the same reading for units). The "within" check: the
-                           major's own check equal, the degree a printed range, the record's computed inside it and
-                           off both ends, and the cited note quoting the map and the range.
+                           major's own check equal, the degree a printed range from 60, the record's computed inside
+                           it and off both ends, the cited note quoting the map and the range, and the elective
+                           line's fill reading failing. The filed words are the cited clause of the note (split at
+                           '; '), so a clause the GE step made untrue ('so ge_units is null') stays out.
   pool_figure_not_read     (#3755) 31000: List B prints '(6.00 overall)' over 'Select one course from each group',
                            and the record adds its two groups at their printed 6.00 and 9.00. With List B at its
                            6.00 the page's figures (the core's two courses, 6; List A's two 'Select one' groups, 3
                            each) add to the printed 18 exactly (the "closes" check).
 
-Held (3): 01312 (the major adds up, and the degree's 60-61 falls short of the map's 62-69; the map's 2-unit
+Held (12): the nine of THE NEXT LEVER (01362, 07269, 11136, 31042, 31941, 32469, 33199, 40923, 43453; the second
+reader, S721 round 1, BLOCKER): each record counts the map's 'Only necessary if the 60 units needed to graduate have
+not been completed' line at its printed figure, and read as electives that fill the degree each passes today's
+scorer, so the page's 60 settles the total and the failure is the record's misread; they stay on the census's
+reconcile_steps lever for a reconcile. 01312 (the major adds up, and the degree's 60-61 falls short of the map's 62-69; the map's 2-unit
 Graduation Requirement line closes the low end only, and Butte's reconcile step keeps that line out by S636's call:
 nearest #3762's degree_electives_not_printed, which is not on main); 14583 (an incomplete read whose page
 shared_pages lists with 43185, and whose section heading names program code 43185: the own-section guard, and
@@ -38,14 +45,13 @@ the map lists them inside List A; read inside List A the figures add to the prin
 26: a reread settles which).
 
 THE NEXT LEVER (measured here, written nowhere): Butte's map prints its elective line as 'Only necessary if the 60
-units needed to graduate have not been completed', and the reader kept that figure as degree_elective_units on nine
-of the 13. A Butte reconcile step reading that line as electives that fill the degree (degree_elective_units null,
+units needed to graduate have not been completed', and the reader kept that figure as degree_elective_units. A Butte reconcile step reading that line as electives that fill the degree (degree_elective_units null,
 electives_fill_degree true) passes those nine on today's scorer (ELECTIVE_LINE_PASSES, checked by the test); it
 changes the record, so it is a reconcile run's work, not this plan's.
 
 THE CLAIM CHECK (p-claim-check-reads-current-capture-s713): every course an entry names is among the codes today's
 capture (sources.json) found. THE SELF-RECALL: HAND is the hand reading of the 17; precision runs the rule and the
-claim check over each; the "within" shape over every census member, right where it names the hand reading's 13 and
+claim check over each; the "within" shape over every census member, right where it names the hand reading's 4 and
 none else; boundary readings: the note's words gone, the stated total one unit off, coverage failing, and each
 entry's own figure check moved one unit.
 
@@ -102,8 +108,19 @@ _C = {"01305": [63, 63], "01358": [61, 61], "01362": [61, 61], "07258": [63, 63]
 _ST = {"01305": [60, 64], "01358": [60, 62], "01362": [60, 66], "07258": [60, 64], "07269": [60, 66],
        "11136": [61, 68], "31042": [60, 69], "31941": [60, 68], "32469": [60, 71], "33199": [60, 70],
        "40923": [60, 67], "43453": [60, 68], "45652": [60, 64]}
+# The nine (the second reader, S721, round 1): the record counts the map's conditional elective line at its printed
+# figure, and read as electives that fill the degree each passes today's scorer, so the page's 60 settles the total
+# and the failure is the record's misread. Held, left on the census's reconcile_steps lever for a reconcile.
+ELECTIVE_LINE_PASSES = ("01362", "07269", "11136", "31042", "31941", "32469", "33199", "40923", "43453")
+ELECTIVE_LINE_WORDS = "only necessary if the 60 units"
+# The floor the page prints: the elective line's own words name the 60 units needed to graduate.
+FLOOR, FLOOR_WORDS = 60.0, "60 units"
+ELECTIVE_LINE_HELD = ("held: the record counts the map's 'Only necessary if the 60 units needed to graduate have not "
+                      "been completed' line at its printed figure; read as electives that fill the degree it passes "
+                      "today's scorer, so the page's 60 settles the total and the failure is the record's misread: it "
+                      "stays on the census's reconcile_steps lever for a Butte reconcile step")
 REVIEWED = {cn: {"gap": WITHIN, "computed": _C[cn], "stated": _ST[cn], "within": True, "words": w}
-            for cn, w in _W.items()}
+            for cn, w in _W.items() if cn not in ELECTIVE_LINE_PASSES}
 REVIEWED["31000"] = {
     "gap": "pool_figure_not_read", "computed": [27, 27], "stated": [18, 18],
     # The page's figures, the pool once: the core's courses (block 0, no figure of its own), List A's two
@@ -124,9 +141,7 @@ HAND.update({
              "them inside List A; inside List A the figures add to the printed 23, apart to the record's 26: a "
              "reread settles which",
 })
-# The next lever's nine (THE NEXT LEVER): degree_elective_units is the map's conditional elective line.
-ELECTIVE_LINE_PASSES = ("01362", "07269", "11136", "31042", "31941", "32469", "33199", "40923", "43453")
-ELECTIVE_LINE_WORDS = "only necessary if the 60 units"
+HAND.update({cn: ELECTIVE_LINE_HELD for cn in ELECTIVE_LINE_PASSES})
 
 
 def census_members(path: str = CENSUS) -> list[str]:
@@ -257,7 +272,9 @@ def on_live_run(filed: dict, posted: dict | None = None) -> bool:
 def within_map(filed: dict, e: dict | None = None) -> bool:
     """degree_within_map_range's figures, on the record itself: checked against the degree, the major's own check
     equal, the degree total a printed range, the record's computed inside it and off both ends, and a note quoting
-    the map and the range's two ends as the degree total."""
+    the map and the range's two ends as the degree total; the range's low end is the 60 units a note says the page
+    prints as needed to graduate; and the record's conditional elective line, read as electives that fill the degree,
+    does not pass it (the second reader's nine: there the page's 60 settles the total, and the record misread it)."""
     a = (filed.get("score") or {}).get("arithmetic") or {}
     major = a.get("major") or {}
     if a.get("against") != "degree" or major.get("status") != "equal" or not major.get("pass"):
@@ -268,9 +285,20 @@ def within_map(filed: dict, e: dict | None = None) -> bool:
         return False
     if not (st[0] + NG.FIG_EPS < comp[0] and comp[1] < st[1] - NG.FIG_EPS):
         return False
+    if abs(st[0] - FLOOR) > NG.FIG_EPS or not any(FLOOR_WORDS in n.lower() for n in _notes(filed)):
+        return False
+    if elective_line_passes(filed):
+        return False
     rng = "%s-%s" % (_fig(st[0]), _fig(st[1]))
     notes = [n for n in _notes(filed) if (e is None or e["words"] in n)]
     return any("degree_total " + rng in n and "map" in n.lower() for n in notes)
+
+
+def _clause(note: str, words: str) -> str:
+    """The clause of the note (split at '; ') that holds the entry's words: the filed words keep the reader's quote
+    of the figures and leave out a clause the reconcile has since made untrue ('so ge_units is null') or one that
+    asks a reviewer to confirm."""
+    return next((c for c in note.split("; ") if words in c), note).rstrip(".")
 
 
 def pool_closes(filed: dict, e: dict) -> bool:
@@ -326,7 +354,7 @@ def gap_noted(filed: dict, reviewed: dict | None = None) -> tuple[str, str] | No
         return None
     if e.get("closes") and not pool_closes(filed, e):
         return None
-    return e["gap"], words
+    return e["gap"], _clause(words, e["words"])
 
 
 def _sources() -> dict:

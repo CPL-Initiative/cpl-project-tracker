@@ -121,8 +121,8 @@
   "gaps": [
    {
     "gap": "degree_within_map_range",
-    "label": "The degree total is the range the page's sample term map prints; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end, so no figure on the page settles what the degree requires.",
-    "words": "degree_total 60-64 is taken from the 'Map (Butte GE)' section ('Units: 60.00- 64.00', 'Total : 60.00- 64.00'), which includes Butte Local GE area choices; no GE unit total is printed, so ge_units is null."
+    "label": "The record takes the degree total from the sample map's range, whose low end is the 60 units the page prints as needed to graduate; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end.",
+    "words": "degree_total 60-64 is taken from the 'Map (Butte GE)' section ('Units: 60.00- 64.00', 'Total : 60.00- 64.00'), which includes Butte Local GE area choices"
    }
   ],
   "confidence": {

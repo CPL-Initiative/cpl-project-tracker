@@ -121,8 +121,8 @@
   "gaps": [
    {
     "gap": "degree_within_map_range",
-    "label": "The degree total is the range the page's sample term map prints; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end, so no figure on the page settles what the degree requires.",
-    "words": "degree_total 60-64 is taken from the Cal-GETC term map ('Required Courses: Units: 60.00- 64.00', 'Total : 60.00- 64.00'); reviewer should confirm a sample map total is acceptable as the degree total."
+    "label": "The record takes the degree total from the sample map's range, whose low end is the 60 units the page prints as needed to graduate; the major adds up to its printed major total, and the degree's units as read fall inside the map's range and match neither end.",
+    "words": "degree_total 60-64 is taken from the Cal-GETC term map ('Required Courses: Units: 60.00- 64.00', 'Total : 60.00- 64.00')"
    }
   ],
   "confidence": {
