@@ -1743,6 +1743,26 @@ for _g, _s, _a in (
 del _g, _s, _a
 
 
+# S721 at Palo Verde (kb/_program_piles_s721_paloverde.py): two kinds no existing one fits, each named from a reviewed
+# record's own notes. figure_within_variable_units takes lists_past_their_figure's 60 (in both, the printed figures
+# add to the printed total); degree_electives_not_printed takes ge_units_not_read's 50 (in both, the major adds up and
+# a part the page leaves unprinted is missing). noted_figures_differ is #3753's, unchanged.
+for _g, _s, _a in (
+        ('noted_figures_differ',
+         "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+         40),  # #3753
+        ('figure_within_variable_units',
+         "A required list's printed figure falls inside the range its variable-unit courses carry, and the page does not say how many units each takes; counting each list at its printed figure, the figures add to the printed total.",
+         60),  # Palo Verde's branch
+        ('degree_electives_not_printed',
+         "The degree's major and general education add to less than the printed degree total, and the page prints no figure for electives and does not say they fill the rest.",
+         50),  # Palo Verde's branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+
+
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     """The gap's own claim, that the figures add to the printed total while a list's courses pass its figure,
     measured on the records of its shape (_lists_shape; #3678 and #3679 second readers, finding 2) with keys the
