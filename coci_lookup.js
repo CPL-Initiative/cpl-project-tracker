@@ -1605,11 +1605,23 @@
     });
     return best;
   }
-  function bandFacts(members) {
+  function bandFacts(members, id) {
     var col = {};
     members.forEach(function (r) { col[r.college] = 1; });
-    var nc = Object.keys(col).length;
-    return fmt(members.length) + " local courses at " + fmt(nc) + (nc === 1 ? " college" : " colleges");
+    var nc = Object.keys(col).length, why = id ? bandDoubtWhy(id) : "";
+    return fmt(members.length) + " local courses at " + fmt(nc) + (nc === 1 ? " college" : " colleges") + (why ? ". " + why : "");
+  }
+  /* Why a band's common subject is in doubt, in one line on the band (Sam's queue, S724): the panel keeps the full
+     reason; the band says which signal put it there. Gone once the card is ruled on. */
+  function bandDoubtWhy(id) {
+    var card = JOBS.doubt && JOBS.doubt.map.get(id);
+    if (!card || ruledCard(id)) return "";
+    var home = card.discipline, desc = (card.desc || []).filter(function (d) { return d[0] !== home; });
+    if ((card.why || []).indexOf("description") >= 0 && desc.length)
+      return "Common subject in doubt: its catalog description reads closest to " + ccName(desc[0][0]) + ".";
+    var votes = Object.keys(card.votes || {}).sort(function (a, b) { return card.votes[b] - card.votes[a] || (a < b ? -1 : 1); });
+    if (votes.length) return "Common subject in doubt: its colleges' TOP codes split, " + votes.map(function (d) { return ccName(d) + " " + card.votes[d]; }).join(", ") + ".";
+    return "Common subject in doubt: none of its colleges' TOP codes maps to a common subject.";
   }
   /* Learning outcomes and the catalog description, filled as each arrives (the Title drawer). */
   function titleDrawer(r, h) {
@@ -1690,7 +1702,7 @@
       titleLink: true,
       bands: { key: function (r) { return r.mid; }, by: "M-ID", label: "Bands by M-ID", none: "Not in a group",
         name: function (id, members) { var t = bandTitle(members); return id + (t ? ", " + t : ""); },
-        facts: function (id, members) { return bandFacts(members); },
+        facts: function (id, members) { return bandFacts(members, id); },
         acts: function (id) { return [skyLink(id)]; } },
       /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
       filters: LIST_FILTERS, counts: function () { return Object.assign({}, listBuild().counts, jobCounts()); },
