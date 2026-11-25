@@ -350,20 +350,40 @@
    "nav_id": 49146
   },
   {
-   "code": "POLS",
-   "title": "Political Science (POSCI) and",
+   "code": "POSCI",
+   "title": "Political Science",
    "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
    "where": "catalog",
    "method": "subject heading",
-   "nav_id": 49719
+   "nav_id": 49719,
+   "note": "one heading prints both codes: 'Political Science (POSCI) and (POLS)'"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49719,
+   "note": "one heading prints both codes: 'Political Science (POSCI) and (POLS)'"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49147,
+   "note": "one heading prints both codes: 'Psychology (PSYC) and (PSYCH)'"
   },
   {
    "code": "PSYCH",
-   "title": "Psychology (PSYC) and",
+   "title": "Psychology",
    "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
    "where": "catalog",
    "method": "subject heading",
-   "nav_id": 49147
+   "nav_id": 49147,
+   "note": "one heading prints both codes: 'Psychology (PSYC) and (PSYCH)'"
   },
   {
    "code": "RADSC",
