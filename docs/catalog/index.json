@@ -16778,7 +16778,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-20"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-08-28",
@@ -16869,7 +16869,7 @@
      ],
      "title": "NC / Learning Partners \u2014 lane state",
      "type": null,
-     "updated": "2026-10-22"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-08-28",
@@ -17589,8 +17589,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 688,
+   "count": 689,
    "docs": [
+    {
+     "created": "2026-11-25",
+     "governs": [],
+     "n": 735,
+     "path": "docs/session_735_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 735 handoff (from SkyAlvord, S735, a side session of 2026-11-25: Adult Education CPL Starting Points)",
+     "type": null,
+     "updated": "2026-11-25"
+    },
     {
      "created": "2026-11-25",
      "governs": [],
@@ -28995,5 +29009,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1583
+ "total": 1584
 }
