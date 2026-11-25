@@ -1,0 +1,11 @@
+{
+ "applied_at": "2026-11-25",
+ "cohort_reviewer_email": "gather-adapt-s726@bot",
+ "inserted": 167,
+ "merges": 34,
+ "moves": 133,
+ "skipped_standing": 0,
+ "plan": "kb/gather_out/2026-11-25_adapt/plan.json",
+ "rollback": "delete from kb_curation where reviewer_email = 'gather-adapt-s726@bot' and field = 'merge_into' and value = 'PEDS M1029';",
+ "lands": "the next daily run rebuilds unified_courses_*.js with the merges (merge chains flattened)"
+}
