@@ -1,0 +1,31 @@
+{
+ "_readme": "S727 lever, Orange Coast College's second read: college-page-read run 45562337640 found Fitness Specialist: Health Fitness Instructor/Personal Trainer A.S. 03970 and its certificate 22389 each on a page of its own (each prints its Control Number), linked from the Kinesiology department page, and read them only as a followed link (the visible text, no tab panels). This plan reads both as the capture reads them (capture_view: innerText with the tab panels appended), so a session checks each site_pages pin against the text the capture will read and a test pins it. No model call, nothing written.",
+ "college": "Orange Coast College",
+ "questions": {
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total, on the visible text or a tab panel."
+ },
+ "keywords": [
+  "certificate of achievement[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}units?",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "03970",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/fitness-specialist-associate-science-degree/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22389",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/fitness-specialist-certificate-achievement/",
+   "capture_view": true
+  }
+ ]
+}

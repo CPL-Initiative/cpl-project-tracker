@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T09:40:49Z",
+ "written_at": "2026-11-25T09:43:00Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17353,
-  "gap": 4982,
+  "passing": 17361,
+  "gap": 4974,
   "with_gap": 118,
-  "cost_usd": 1341.06,
-  "passed_at_read": 16381,
+  "cost_usd": 1341.08,
+  "passed_at_read": 16388,
   "cost_receipts": 118,
   "spent_usd": 1239.91,
   "spent_runs": 212,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16847,
-  "gap": 4982,
+  "passing": 16855,
+  "gap": 4974,
   "collected_with_gaps": 506,
   "discontinued": 0
  },
@@ -8043,12 +8043,12 @@
    "harvested": true,
    "slug": "moorpark",
    "programs": 151,
-   "passing": 124,
-   "gap": 27,
+   "passing": 125,
+   "gap": 26,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 6,
-    "places_none": 3,
+    "places_none": 2,
     "unknown_without_live": 12
    },
    "census_causes": {
@@ -8073,10 +8073,10 @@
    "outcomes_file": "kb/status/commons_data_programs/moorpark.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T08:18:08Z",
+   "read_at": "2026-11-25T08:21:02Z",
    "read_kind": "capture",
-   "cost_usd": 10.15,
-   "passed_at_read": 124,
+   "cost_usd": 10.14,
+   "passed_at_read": 125,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8085,13 +8085,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 145,
-   "found": 139,
+   "found": 144,
    "extracted": 139,
    "errors": 0,
    "failed_checks": {
-    "coverage": 4,
+    "coverage": 3,
     "invented": 1,
-    "arithmetic": 14,
+    "arithmetic": 13,
     "repeated": 0,
     "outcomes": 0
    },
@@ -8101,13 +8101,13 @@
    "capture_root": "https://catalog.vcccd.edu/moorpark/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1420.1,
-   "run": "44481524745",
+   "read_seconds": 1385.3,
+   "run": "45575123718",
    "levers": {
     "reconcile_steps": 12,
     "program_course_file_check": 6,
     "reader_page_search": 6,
-    "reader_page_assignment": 3
+    "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
@@ -8115,13 +8115,13 @@
      "models": {
       "claude-opus-5-5": 139
      },
-     "run": "44481524745",
-     "at": "2026-11-19T08:18:08Z",
-     "cost_usd": 10.15,
+     "run": "45575123718",
+     "at": "2026-11-25T08:21:02Z",
+     "cost_usd": 10.14,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 136,
+    "plo_programs": 137,
     "ppm_member": {
      "host": "programmap.moorparkcollege.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -8864,12 +8864,12 @@
    "harvested": true,
    "slug": "orange_coast",
    "programs": 328,
-   "passing": 242,
-   "gap": 86,
+   "passing": 245,
+   "gap": 83,
    "causes": {
     "no_closed_list": 27,
     "page_not_found": 30,
-    "places_none": 8,
+    "places_none": 5,
     "unknown_without_live": 21
    },
    "census_causes": {
@@ -8897,10 +8897,10 @@
     "courseleaf"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-20T13:08:33Z",
+   "read_at": "2026-11-25T07:21:17Z",
    "read_kind": "capture",
    "cost_usd": 19.77,
-   "passed_at_read": 221,
+   "passed_at_read": 224,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8913,9 +8913,9 @@
    "extracted": 271,
    "errors": 0,
    "failed_checks": {
-    "coverage": 12,
+    "coverage": 9,
     "invented": 3,
-    "arithmetic": 39,
+    "arithmetic": 36,
     "repeated": 0,
     "outcomes": 8
    },
@@ -8925,13 +8925,13 @@
    "capture_root": "https://catalog.cccd.edu/orange-coast/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2331.0,
-   "run": "44747523200",
+   "read_seconds": 2323.9,
+   "run": "45567337117",
    "levers": {
     "reader_page_search": 30,
     "program_course_file_check": 27,
     "reconcile_steps": 20,
-    "reader_page_assignment": 8,
+    "reader_page_assignment": 5,
     "ge_units_steps": 1
    },
    "collection": {
@@ -8940,8 +8940,8 @@
      "models": {
       "claude-opus-5-5": 271
      },
-     "run": "44747523200",
-     "at": "2026-11-20T13:08:33Z",
+     "run": "45567337117",
+     "at": "2026-11-25T07:21:17Z",
      "cost_usd": 19.77,
      "platform": "courseleaf"
     },
@@ -8952,7 +8952,7 @@
      "source_kind": "course_outline",
      "file": "kb/course_outcomes/cccd/read_42585338847_p4of4.json"
     },
-    "plo_programs": 261,
+    "plo_programs": 262,
     "ppm_member": {
      "host": "programmap.orangecoastcollege.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -9287,12 +9287,12 @@
    "harvested": true,
    "slug": "pasadena_city",
    "programs": 367,
-   "passing": 276,
-   "gap": 91,
+   "passing": 278,
+   "gap": 89,
    "causes": {
     "no_closed_list": 49,
     "page_not_found": 19,
-    "places_none": 3,
+    "places_none": 1,
     "unknown_without_live": 20
    },
    "census_causes": {
@@ -9317,10 +9317,10 @@
    "outcomes_file": "kb/status/commons_data_programs/pasadena_city.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-20T06:35:51Z",
+   "read_at": "2026-11-25T08:45:31Z",
    "read_kind": "capture",
    "cost_usd": 21.08,
-   "passed_at_read": 253,
+   "passed_at_read": 255,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -9333,9 +9333,9 @@
    "extracted": 299,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
+    "coverage": 1,
     "invented": 0,
-    "arithmetic": 46,
+    "arithmetic": 44,
     "repeated": 0,
     "outcomes": 0
    },
@@ -9345,14 +9345,14 @@
    "capture_root": "https://curriculum.pasadena.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1926.2,
-   "run": "44688457642",
+   "read_seconds": 1985.8,
+   "run": "45575677400",
    "levers": {
     "program_course_file_check": 49,
     "reader_page_search": 19,
     "reconcile_steps": 15,
     "scorer_noncredit_hours": 5,
-    "reader_page_assignment": 3
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
@@ -9360,13 +9360,13 @@
      "models": {
       "claude-opus-5-5": 299
      },
-     "run": "44688457642",
-     "at": "2026-11-20T06:35:51Z",
+     "run": "45575677400",
+     "at": "2026-11-25T08:45:31Z",
      "cost_usd": 21.08,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 290,
+    "plo_programs": 292,
     "ppm_member": {
      "host": "pasadena-city.programmapper.ws",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -10023,12 +10023,11 @@
    "harvested": true,
    "slug": "san_bernardino_valley",
    "programs": 236,
-   "passing": 200,
-   "gap": 36,
+   "passing": 201,
+   "gap": 35,
    "causes": {
     "no_closed_list": 4,
     "page_not_found": 11,
-    "places_none": 1,
     "unknown_without_live": 20
    },
    "census_causes": {
@@ -10052,10 +10051,10 @@
    "outcomes_file": "kb/status/commons_data_programs/san_bernardino_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-24T08:26:34Z",
+   "read_at": "2026-11-25T06:32:58Z",
    "read_kind": "capture",
-   "cost_usd": 15.2,
-   "passed_at_read": 183,
+   "cost_usd": 15.21,
+   "passed_at_read": 184,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -10074,13 +10073,13 @@
     "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
    },
    "listed_closed": 232,
-   "found": 226,
+   "found": 227,
    "extracted": 221,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
+    "coverage": 2,
     "invented": 2,
-    "arithmetic": 36,
+    "arithmetic": 35,
     "repeated": 0,
     "outcomes": 0
    },
@@ -10090,14 +10089,13 @@
    "capture_root": "https://catalog.valleycollege.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1500.5,
-   "run": "45355976381",
+   "read_seconds": 1484.5,
+   "run": "45561301147",
    "levers": {
     "reconcile_steps": 18,
     "reader_page_search": 11,
     "program_course_file_check": 4,
-    "ge_units_steps": 2,
-    "reader_page_assignment": 1
+    "ge_units_steps": 2
    },
    "collection": {
     "program_reader": {
@@ -10105,13 +10103,13 @@
      "models": {
       "claude-opus-5-5": 221
      },
-     "run": "45355976381",
-     "at": "2026-11-24T08:26:34Z",
-     "cost_usd": 15.2,
+     "run": "45561301147",
+     "at": "2026-11-25T06:32:58Z",
+     "cost_usd": 15.21,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 219,
+    "plo_programs": 220,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -11763,12 +11761,12 @@
    "harvested": true,
    "slug": "southwestern",
    "programs": 272,
-   "passing": 192,
-   "gap": 80,
+   "passing": 193,
+   "gap": 79,
    "causes": {
     "no_closed_list": 39,
     "page_not_found": 24,
-    "places_none": 3,
+    "places_none": 2,
     "unknown_without_live": 14
    },
    "census_causes": {
@@ -11794,7 +11792,7 @@
    "objectives_printed": null,
    "read_at": "2026-11-19T10:53:34Z",
    "read_kind": "capture",
-   "cost_usd": 13.36,
+   "cost_usd": 13.38,
    "passed_at_read": 190,
    "slo_queue": null,
    "scout": {
@@ -11829,12 +11827,12 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 2210.5,
-   "run": "44529722751",
+   "run": "45567354959",
    "levers": {
     "program_course_file_check": 39,
     "reader_page_search": 24,
     "reconcile_steps": 14,
-    "reader_page_assignment": 3
+    "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
@@ -11842,13 +11840,13 @@
      "models": {
       "claude-opus-5-5": 209
      },
-     "run": "44529722751",
+     "run": "45567354959",
      "at": "2026-11-19T10:53:34Z",
-     "cost_usd": 13.36,
+     "cost_usd": 13.38,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 169,
+    "plo_programs": 170,
     "ppm_member": null,
     "maps": {
      "held": 0,

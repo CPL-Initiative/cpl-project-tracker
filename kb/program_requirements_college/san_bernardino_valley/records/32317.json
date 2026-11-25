@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Early Childhood Education",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/early-childhood-education-ast-degree/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11941,
+  "input_tokens": 8157,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11941,
-    "output_tokens": 1080,
+    "input_tokens": 8157,
+    "output_tokens": 2110,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1080,
+  "output_tokens": 2110,
   "output_tokens_details": {
-   "thinking_tokens": 245
+   "thinking_tokens": 779
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06936,
- "ms": 10784,
- "seconds": 11.2,
+ "cost_usd": 0.07483,
+ "ms": 17892,
+ "seconds": 21.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 11,
    "listed": 11,
-   "share": 0.0,
-   "missing": [
-    "CD108",
-    "CD111",
-    "CD113",
-    "CD114",
-    "CD115",
-    "CD126",
-    "CD138",
-    "CD185",
-    "CD205",
-    "CDEVC1000",
-    "CDEVC1000H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,126 +61,197 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    28.0,
+    28.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "[Tab: COURSES]",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 28
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 1,
+    "max": 1
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Integrate understanding of the needs, the characteristics and multiple influences on development of children birth to age eight as related to high quality care and education of young children.",
+    "Design, implement and evaluate environments and activities that support positive, developmental play and learning outcomes for all young children.",
+    "Analyze and apply effective guidance and interaction strategies that support all children's social learning, identity and self-confidence.",
+    "Develop strategies that promote partnerships between programs, teachers, families and their communities.",
+    "Analyze and apply ethical standards and professional behaviors that demonstrate understanding and knowledge, deepening the commitment to the Early Care and Education profession.",
+    "Analyze, describe and use inclusive, equitable, antibias and antiracist teaching practices and family interactions for working with children and families."
+   ],
+   "careers": [
+    "teaching in early care and education settings"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CD 108",
-    "why": "No A.S.-T requirements section in the text; appears only as course description CDEV 108"
-   },
-   {
-    "code": "CD 111",
-    "why": "No A.S.-T requirements section in the text; appears only as course description CDEV 111"
-   },
-   {
-    "code": "CD 113",
-    "why": "No A.S.-T requirements section in the text; appears only as course description CDEV 113"
-   },
-   {
-    "code": "CD 114",
-    "why": "No A.S.-T requirements section in the text; appears only as course description CDEV 114"
-   },
-   {
-    "code": "CD 115",
-    "why": "No A.S.-T requirements section in the text; appears only as course description CDEV 115"
-   },
-   {
-    "code": "CD 126",
-    "why": "No A.S.-T requirements section in the text; appears only as course description CDEV 126"
-   },
-   {
-    "code": "CD 138",
-    "why": "No A.S.-T requirements section in the text; appears only as course description CDEV 138"
-   },
-   {
-    "code": "CD 185",
-    "why": "No A.S.-T requirements section in the text; CDEV 185 heading appears only where the course list is cut off"
-   },
-   {
-    "code": "CD 205",
-    "why": "Not in the text"
-   },
-   {
-    "code": "CDEVC1000",
-    "why": "No A.S.-T requirements section in the text; appears only as course description CDEV C1000"
-   },
-   {
-    "code": "CDEVC1000H",
-    "why": "No A.S.-T requirements section in the text; appears only as course description CDEV C1000H"
+    "name": "Required Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV 185",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 205",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text contains only the site's language menu, footer, and the COURSES tab of the Child Development page; the program requirements tab for the Early Childhood Education A.S.-T is not included, so no blocks, totals, outcomes or careers could be recorded.",
-   "The course list is cut off after the heading 'CDEV 185 3 Units'.",
-   "The catalog now prints course codes with the CDEV subject (e.g., CDEV 108, formerly CD 108); the closed list uses the older CD codes.",
-   "The page footer reads 'Copyright © 2024'; reviewer should confirm the page reflects the 2026-2027 catalog.",
-   "Reviewer should fetch the program requirements tab of the source page to complete this record."
+   "The page's program title heading is not in the extracted text; section_heading uses the printed 'REQUIREMENTS' tab label for the Early Childhood Education AS-T page.",
+   "The catalog prints the subject as 'CDEV' (e.g., CDEV 108) while the closed list uses 'CD' (e.g., CD 108); titles match exactly, so these were treated as the same closed-list courses (catalog_addition false). A reviewer should confirm the prefix mapping. CDEV C1000/C1000H match closed-list CDEVC1000/CDEVC1000H.",
+   "Units for the alternatives CDEV C1000H and CDEV 185 are not printed beside them in the catalog, so they are null.",
+   "The page is titled as an A.S.-T (Associate in Science) degree but the body text refers to an 'AA-T' (Associate in Arts for Transfer) degree; likely a catalog wording inconsistency.",
+   "Course list prints Major Total Units 28, Total Double-Counted Units 3, Cal-GETC 34, Elective Units 1, Total Units 60. The 1 elective unit is recorded as degree_elective_units (outside the major, counted toward the 60-unit degree).",
+   "Program Learning Outcomes come from the page's outcomes tab for this award."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": "45561301147",
+ "catalog_year": "2026-2027"
 }

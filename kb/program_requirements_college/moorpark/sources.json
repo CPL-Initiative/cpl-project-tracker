@@ -5749,8 +5749,8 @@
    "ACCTM62"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/accounting-coa/",
-   "title": "Accounting II, Certificate of Achievement < Moorpark College",
+   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/accounting-one-coa/",
+   "title": "Accounting I, Certificate of Achievement < Moorpark College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
@@ -5759,10 +5759,11 @@
     "section": "coa",
     "section_line": "accounting i, certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 3,
-  "text_chars": 3481
+  "text_chars": 2908
  },
  {
   "control_number": "43512",

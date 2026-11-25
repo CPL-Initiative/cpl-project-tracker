@@ -661,6 +661,13 @@ jobs:
       - name: Program requirements lever pins (S721)
         if: matrix.shard == 4
         run: python3 tests/program_requirements_lever_pins_s721_test.py
+      # S727: Orange Coast's 3 pins bind on their own pages (two of them general-education pages to rule B), a page
+      # title's site name is cut at " < " as at a bar, the forced re-reads' windows carry the REQUIREMENTS tab, and
+      # the named gaps state only what their pages print; the Next wave's pins at Moorpark and Pasadena City and
+      # named gaps at Moorpark and North Orange Continuing Education likewise. Pure stdlib.
+      - name: Program requirements lever pins (S727)
+        if: matrix.shard == 4
+        run: python3 tests/program_requirements_lever_pins_s727_test.py
       # S727 plan s727v: Antelope Valley 43028 (a Cal-GETC degree whose page prints only CSU GE and IGETC figures),
       # collected with its gap named. Pure stdlib.
       - name: Program requirements GE figures of another pattern (S727 s727v)
