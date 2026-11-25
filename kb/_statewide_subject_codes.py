@@ -68,7 +68,10 @@ OUT = os.path.join("kb", "status", "statewide_subject_codes.json")
 # The courses under each code, one file per first character of the code (S722): the MQ view's and the statewide list's
 # Courses count opens these, so the page never loads the 17 MB state list for a sidebar.
 COURSES_DIR = os.path.join("kb", "status", "statewide_code_courses")
-COURSE_COLUMNS = ["college", "subject", "number", "title", "band", "top"]
+# mid: the M-ID the course is a member of (unified_courses_members.js), blank where it holds none. Its four letters name
+# the common code it was minted under, so the CSR's Local subjects sidebar can say which course sits under another
+# subject (S733; Sam, 2026-11-25: row "A" has "one course (interdisciplinary studies) incorrectly associated with").
+COURSE_COLUMNS = ["college", "subject", "number", "title", "band", "top", "mid"]
 MINTED = os.path.join("kb", "coci_minted_courses.json")
 TITLES = os.path.join("kb", "status", "local_subject_titles.json")
 TOP_ONLY = {"top_code", "top_division"}
@@ -165,6 +168,13 @@ def build(root=ROOT, courses_out=None):
         at that college, so one subject is one pair (Sam, 2026-11-23)."""
         return sd.map_key(SCH.resolve(hist, B.college_key(college), code, by="by_college"))
 
+    # Each course's M-ID, for the course files: the first M-ID in sorted order where a course sits in two.
+    mid_of = {}
+    for mid in sorted(members):
+        for x in members[mid]:
+            s, n = R.split_code(x["code"])
+            mid_of.setdefault((B.college_key(college_name(R.sd_clean(x["college"]))), sd.map_key(s), B.num_key(n)), mid)
+
     # Each course's voting M-ID discipline, as a common code.
     vote_of, why_no = {}, collections.Counter()
     for mid, rows in members.items():
@@ -207,7 +217,8 @@ def build(root=ROOT, courses_out=None):
         e["spellings"][B.code_key(r[2])] += 1
         if courses_out is not None:
             courses_out.setdefault(kn, []).append((names[r[0]], str(r[2] or "").strip(), str(r[3] or ""), str(r[4] or ""),
-                                                   r[6] or "", str(r[7] or "").split(":")[0].strip()))
+                                                   r[6] or "", str(r[7] or "").split(":")[0].strip(),
+                                                   mid_of.get((B.college_key(names[r[0]]), k, B.num_key(r[3])), "")))
         e["colleges"][names[r[0]]] += 1
         e["courses"] += 1
         e["credit" if r[6] == "C" else "noncredit"] += 1

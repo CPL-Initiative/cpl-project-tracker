@@ -458,6 +458,34 @@ async function seedCsrLocal(page, theme) {
   await page.waitForTimeout(200);
 }
 
+/* The Local subjects courses sidebar (S733): row A's Courses opens its courses statewide beside the list, signed in
+   with a placeholder session (never a real token), so the boxes, the move controls and the frozen top row are measured.
+   No write runs: the seed only opens the panel. */
+async function seedCsrLocalSide(page, theme) {
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "aaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc", refresh_token: "seed",
+        email: "seed@example.org", exp: Date.now() + 9e6, expires_at: Math.floor(Date.now() / 1000) + 9000 }));
+    } catch (e) { /* storage blocked */ }
+  });
+  await seedCsrLocal(page, theme);
+  /* The tab read its session when it opened; hand it the placeholder and draw the view again. */
+  await page.evaluate(() => {
+    const T = window.CPL_CANONICAL_SUBJ4;
+    try { T._state.sess = JSON.parse(sessionStorage.getItem("cpl_sb")); } catch (e) { /* storage blocked */ }
+    T.applyView("local");
+  });
+  await page.waitForSelector("#tab-canonical-subj4 .csls-table tbody tr", { timeout: 60000 });
+  await page.evaluate(() => {
+    const rows = Array.from(document.querySelectorAll("#tab-canonical-subj4 .csls-table tbody tr"));
+    const r = rows.find((tr) => /^A$/.test(((tr.children[1] || {}).textContent || "").trim())) || rows[0];
+    const b = r && r.querySelector("td:nth-child(5) button.csls-open");
+    if (b) b.click();
+  });
+  await page.waitForSelector("#csls-side .csls-side-tbl tbody tr", { timeout: 30000 });
+  await page.waitForTimeout(300);
+}
+
 /* The docked Sierra, full screen with a conversation (S349). Seeded through
    the real path: the reader's role is confirmed on the chip, only the chat
    function's stream is stubbed, and six questions are asked, so the first one
@@ -4408,6 +4436,22 @@ module.exports = {
     routes: [{ hash: "canonical-subj4/local", name: "local-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCsrLocal(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "canonical-subj4-local-side": {
+    file: "index.html",
+    title: "Common Subjects Reference: Local subjects, a code's courses in the sidebar with the move",
+    routes: [{ hash: "canonical-subj4/local", name: "local-side" }],
+    widths: [390, 768, 1440],
+    seed: (page) => seedCsrLocalSide(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "canonical-subj4-local-side-dark": {
+    file: "index.html",
+    title: "Common Subjects Reference: Local subjects, the courses sidebar, dark",
+    routes: [{ hash: "canonical-subj4/local", name: "local-side-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCsrLocalSide(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "canonical-subj4-list-dark": {
