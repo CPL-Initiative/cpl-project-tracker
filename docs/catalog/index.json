@@ -17032,7 +17032,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-24"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-08-28",
@@ -17558,8 +17558,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 683,
+   "count": 684,
    "docs": [
+    {
+     "created": "2026-11-25",
+     "governs": [],
+     "n": 730,
+     "path": "docs/session_730_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 730 handoff (from SkyCurlew, S729, Sam's plain session of 2026-11-25: the adapt gather landed, the Commons fold in place)",
+     "type": null,
+     "updated": "2026-11-25"
+    },
     {
      "created": "2026-11-25",
      "governs": [],
@@ -28894,5 +28908,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1576
+ "total": 1577
 }

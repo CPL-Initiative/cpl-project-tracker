@@ -189,6 +189,11 @@ range while the lockfile stays ignored. ⚠️ **A red run whose failure names a
 package rather than a test is almost never the PR's** — check whether the base
 branch fails the same way before debugging your own diff.
 
+**A transitive range can race the registry too (S729, #3817).** `npm error code ETARGET` for
+`tldts-core@^7.5.6` killed every job: tldts 7.5.6 was published before its core reached the
+registry. A pin on our direct dependency does not reach that range; one `rerun_failed_jobs`
+some minutes later cleared it.
+
 ### docx library errors
 - Local `docx.min.js` is v8.0.4 UMD, 334KB. CDN versions were unreliable — do
   **not** switch back to CDN. To refresh the local copy:

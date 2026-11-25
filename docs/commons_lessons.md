@@ -716,6 +716,10 @@ COBI on owed fixes. Then the Back link lost on Courses and Programs, and the dou
 - `[hidden]` loses to a class's `display:grid`; the fold hides its sections with one `.cmf > [hidden]` rule marked important.
 - A press that moves the address with `pushState` fires no `hashchange`, so the page tells commons.js the new address itself (`onCard`), and browser Back reaches commons.js through the tab router's visit.
 
+**The checkpoint (SkyCurlew, S729):** merged as #3817 (squash `023f21f7`). The adapt gather landed in the 06:24Z daily run: none of the 34 merged M-IDs keeps its own member list, and PEDS M1029 holds 293 local courses at 0 to 4 units (S726 estimated about 283). **FACT** `f-adapt-gather-landed-s729`. Not browser-verified; no `npm run a11y` and no phone-width look yet.
+- **Pitfall:** every job on #3817's first attempt died at `npm install` with `ETARGET` for `tldts-core@^7.5.6` (tldts published before its core reached the registry; no lockfile). One `rerun_failed_jobs` cleared it. A failure that names a package is not the PR's.
+- **Pattern:** a worker could not use a worktree the conductor made under `/home/user`; give a worker `isolation: worktree`, which works only from inside the repo's cwd.
+
 ## S726 (SkyAvocet, Sam's plain session, 2026-11-25): Gather's saved filters; Rows on the Courses List
 
 **Shipped:** `gather_filters` and its two functions (DR-36), and the Saved filters card at the top of Gather: the team's live filters, Open, Copy its address, Retire on your own, and Save this filter with a name and a note; `#coci-lookup/gather?f=<slug>` opens one. A filter saves no merge. **DECIDED** `d-gather-saved-filters-s726`. Then the anchor page's step 2: Rows on the Courses view, Common courses or Local courses (`#coci-lookup/courses/common`). **DECIDED** `d-courses-rows-common-s726`. ESL measured: 10 common courses, nothing large left for Gather. Then the adapt gather, at Sam's go: 34 merges and 133 moves into PEDS M1029 (#3806, receipt `kb/gather_out/2026-11-25_adapt/`), and the anchor page's step 3, first slice: a card's title opens its own list (#3813).
