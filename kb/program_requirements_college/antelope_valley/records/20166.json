@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Air Conditioning & Refrigeration Specialist",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-as-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-cert-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9682,
+  "input_tokens": 8583,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9682,
-    "output_tokens": 1418,
+    "input_tokens": 8583,
+    "output_tokens": 1770,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1418,
+  "output_tokens": 1770,
   "output_tokens_details": {
-   "thinking_tokens": 951
+   "thinking_tokens": 723
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06709,
- "ms": 13872,
- "seconds": 14.2,
+ "cost_usd": 0.06973,
+ "ms": 16097,
+ "seconds": 26.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "ACRV112",
-    "ACRV113",
-    "ACRV122",
-    "ACRV123",
-    "ACRV212",
-    "ACRV213",
-    "ACRV222",
-    "ACRV223"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -70,17 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    40.0,
+    40.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    40.0,
+    40.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -104,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Air Conditioning & Refrigeration Specialist AS",
+   "section_heading": "Air Conditioning & Refrigeration Specialist Cert",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 40,
+    "max": 40
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -132,43 +124,121 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ACRV 112",
-    "why": "named only in the AS section; text prints no Certificate of Achievement section"
+    "name": "Basic Refrigeration",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ACRV112",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACRV113",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ACRV 113",
-    "why": "named only in the AS section; text prints no Certificate of Achievement section"
+    "name": "Residential Air Conditioning",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ACRV122",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACRV123",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ACRV 122",
-    "why": "named only in the AS section; text prints no Certificate of Achievement section"
+    "name": "Commercial Refrigeration",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ACRV212",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACRV213",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ACRV 123",
-    "why": "named only in the AS section; text prints no Certificate of Achievement section"
-   },
-   {
-    "code": "ACRV 212",
-    "why": "named only in the AS section; text prints no Certificate of Achievement section"
-   },
-   {
-    "code": "ACRV 213",
-    "why": "named only in the AS section; text prints no Certificate of Achievement section"
-   },
-   {
-    "code": "ACRV 222",
-    "why": "named only in the AS section; text prints no Certificate of Achievement section"
-   },
-   {
-    "code": "ACRV 223",
-    "why": "named only in the AS section; text prints no Certificate of Achievement section"
+    "name": "Commercial Air Conditioning",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ACRV222",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACRV223",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program total of 40 units is printed both as '(Total 40)' and 'Required Major Total 40 units / Total Units 40 units'.",
+   "Outcomes left empty: the page's 'Program Goals and Objectives' lists outcomes labeled for the component 'Refrigeration Specialist Cert' and 'Air Conditioning Spec Cert', not for this combined award, and several of them are cut off mid-sentence (e.g. '...hand tools, meters,'). The 'Program Outcomes' section likewise lists only 'Air Conditioning Spec Cert' outcomes and is truncated at the end of the text. A reviewer should decide whether the combined certificate shares these outcomes.",
+   "Page includes internal eLumen workflow/checklist text (Recommended Pathway, Workflow Agreement) that is not a requirement; the pathway courses match the required blocks.",
+   "Codes are recorded as printed in the Program Requirements section ('ACRV112'); a later table prints them with a space ('ACRV 112')."
+  ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": "45574354887",
+ "catalog_year": "2026-2027"
 }
