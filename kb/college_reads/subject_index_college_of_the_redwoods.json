@@ -1,31 +1,426 @@
 {
- "_readme": "S730 title hunt (elumen group), 2026-11-25, round 2. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code; kb/subject_title_hunt/README.md, r-no-mid-on-a-stray-code-sam-2026-11-25). Round 1 (run 45623983494): the menu names departments and the Courses view lists courses with no subject heading; this read loads View All Departments and one department page, to see whether either prints a department's codes. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (kb/subject_title_hunt/README.md, r-no-mid-on-a-stray-code-sam-2026-11-25). Rounds 1 and 2 (runs 45623983494, 45625568851): the catalog prints no code beside a subject name; View All Departments links one page per department, each listing its courses. This read loads each of those pages through its light content call (publish/content, about 2 KB, the call the catalog's own menu makes; S380), one per page, so each heading prints with the codes of the courses under it. No model call, writes nothing.",
  "college": "College of the Redwoods",
  "questions": {
-  "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
+  "subject_index": "The heading each page prints and the subject codes of the courses listed under it."
  },
  "keywords": [
-  " - [A-Z]{2,6}\\b",
-  "\\([A-Z]{2,6}\\)",
-  "[Ss]ubjects?",
-  "[Dd]isciplines?",
-  "[Pp]refix",
-  "[Dd]epartments?"
+  " - [A-Z]{2,6}\\b"
  ],
  "pages": [
   {
-   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/departments",
-   "links": "department",
-   "links_cap": 400,
    "answers": [
     "subject_index"
-   ]
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,addiction-studies?tenant=redwoods.elumenapp.com"
   },
   {
-   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/department/addiction-studies",
    "answers": [
     "subject_index"
-   ]
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,administration-of-justice?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,agriculture?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,anthropology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,aquaculture?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,art?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,astronomy?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,automotive-technology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,biology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,business?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,chemistry?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,cinema?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,communication-studies?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,computer-information-systems?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,computers-electronics-tech?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,construction-technology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,cooperative-education?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,dental-assisting?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,drafting-technology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,drama?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,early-childhood-education?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,economics?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,education?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,engineering?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,english?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,english-as-second-language?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,environmental-science?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,ethnic-studies?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,fire-technology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,forestry-natural-resources?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,french?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,general-studies?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,geography?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,geology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,guidance?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,health-education?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,health-occupations?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,history?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,hupa?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,industrial-technology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,kinesiology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,liberal-arts?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,library?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,licensed-vocational-nursing?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,mathematics?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,medical-assistant?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,music?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,native-american-studies?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,noncredit?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,nursing?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,oceanography?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,philosophy?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,physical-education?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,physics?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,political-science?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,psychiatric-technician?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,psychology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,reading?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,recreation?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,senior?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,sign-language?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,social-work-human-services?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,sociology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,spanish?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,tolowa-dee-ni?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,vocational-training?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,welding-technology?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,work-experience-workability?tenant=redwoods.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,yurok?tenant=redwoods.elumenapp.com"
   }
  ]
 }
