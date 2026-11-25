@@ -1,0 +1,42 @@
+{
+ "_readme": "S727 lever, Allan Hancock College's second read: page read 45562584495's navigation data lists an entry of its own for Viticulture Level 2 (30923), Viticulture Level 3 (30922) and Agricultural Science A.S. (31144), where the capture had handed 42208 Level 1's entry (30924), 42210 the Winemaking certificate's (31644) and 43770 an entry shared with 38584 (31148). It reads each entry through the capture's curriQunet view (cq_view, catalog 9, as capture 38843474519 read it). This plan reads each as the capture reads it, so a session checks each site_pages pin against the text the capture will read and a test pins it. No model call, nothing written.",
+ "college": "Allan Hancock College",
+ "questions": {
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total, on the visible text or a tab panel."
+ },
+ "keywords": [
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "42208",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30923",
+   "cq_view": true,
+   "cq_catalog": 9
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "42210",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30922",
+   "cq_view": true,
+   "cq_catalog": 9
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "43770",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31144",
+   "cq_view": true,
+   "cq_catalog": 9
+  }
+ ]
+}

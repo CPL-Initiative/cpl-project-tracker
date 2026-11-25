@@ -58,9 +58,9 @@
   },
   "program_titles": {
    "one or mixed": {
-    "right": 241,
-    "asked": 438,
-    "share": 0.55,
+    "right": 242,
+    "asked": 439,
+    "share": 0.551,
     "level": "Low"
    },
    "several agree": {
@@ -570,7 +570,7 @@
        },
        {
         "title": "Business Information Worker I",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -1315,7 +1315,7 @@
        },
        {
         "title": "Digital Art and Design",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -2317,7 +2317,7 @@
        },
        {
         "title": "ESL Milestone - Language Arts, Oral Communication",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -2417,7 +2417,7 @@
        },
        {
         "title": "Dietetic Service Supervisor",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -3084,7 +3084,7 @@
        },
        {
         "title": "Medical Assistant Training",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -3309,7 +3309,7 @@
        },
        {
         "title": "Chicana/O Studies, Latina/O Studies",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -3974,7 +3974,7 @@
      "title": {
       "title": "Certified Nurse Assistant and Home Health Aide",
       "level": "Low",
-      "confidence": 0.55,
+      "confidence": 0.551,
       "from": "program_titles",
       "why": "program titles: 1 of 1 programs (one or mixed, right 55% of the time). Another source reads differently.",
       "also": [
@@ -3986,7 +3986,7 @@
       "candidates": [
        {
         "title": "Certified Nurse Assistant and Home Health Aide",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -4017,14 +4017,14 @@
      "title": {
       "title": "Vocational Nursing Training Program",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.976,
       "from": "district",
       "why": "district: 3 of 4 colleges in the district (mixed, right 88% of the time); program titles: 1 of 1 programs (one or mixed, right 55% of the time); web search: the college's own site gives a department or program label (set at 55%, not measured). The sources agree.",
       "also": [],
       "candidates": [
        {
         "title": "Vocational Nursing Training Program",
-        "confidence": 0.975,
+        "confidence": 0.976,
         "level": "High",
         "from": [
          "district",
@@ -4452,7 +4452,7 @@
        },
        {
         "title": "Agriculture Animal Sciences",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -5022,7 +5022,7 @@
        },
        {
         "title": "Acting",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -6164,7 +6164,7 @@
        },
        {
         "title": "Auto & Related Technology: Transmission Repair",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -6218,7 +6218,7 @@
        },
        {
         "title": "Weatherization and Energy Auditor",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -6319,7 +6319,7 @@
        },
        {
         "title": "Amazon Web Services",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -6763,14 +6763,14 @@
      "title": {
       "title": "Electrical Lineman Apprenticeship",
       "level": "Low",
-      "confidence": 0.55,
+      "confidence": 0.551,
       "from": "program_titles",
       "why": "program titles: 1 of 1 programs (one or mixed, right 55% of the time).",
       "also": [],
       "candidates": [
        {
         "title": "Electrical Lineman Apprenticeship",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -7103,14 +7103,14 @@
      "title": {
       "title": "Motorcycle Repair Mechanics",
       "level": "Low",
-      "confidence": 0.55,
+      "confidence": 0.551,
       "from": "program_titles",
       "why": "program titles: 1 of 1 programs (one or mixed, right 55% of the time).",
       "also": [],
       "candidates": [
        {
         "title": "Motorcycle Repair Mechanics",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -8417,7 +8417,7 @@
        },
        {
         "title": "ESL Milestone - Pathway to Language Arts / Spoken Communication",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -11689,7 +11689,7 @@
        },
        {
         "title": "Emergency Medical Technician",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -11785,7 +11785,7 @@
        },
        {
         "title": "Aircraft Power Plant Technician",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"
@@ -12264,7 +12264,7 @@
        },
        {
         "title": "Fundamentals of Medical Assisting",
-        "confidence": 0.55,
+        "confidence": 0.551,
         "level": "Low",
         "from": [
          "program_titles"

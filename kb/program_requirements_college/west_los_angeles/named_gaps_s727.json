@@ -1,0 +1,19 @@
+{
+ "_readme": "S727 (plan s727f, lane 2): 1 program(s) of West Los Angeles College held for a person, collected as named gaps with no record (COBIx's brief of 2026-11-25 on Sam's collect-with-gaps ruling). Each has no live row and a record that places none of its courses, or no record at all, so no load posts it; the reason names what the page leaves open. No model call, no Supabase write. Built by kb/_program_piles_s727_persons.py.",
+ "college": "West Los Angeles College",
+ "written": "2026-11-25T08:27:36Z",
+ "capture": "44883863572",
+ "page_reads": [],
+ "reasons": {
+  "no_own_page_found": "The capture found no page that prints the program's own section: the page it read prints a generic or another program's heading, and its read places none of the state's listed courses. Which page holds the program, or whether the catalog prints it, is the college's to say."
+ },
+ "programs": [
+  {
+   "control_number": "46261",
+   "title": "Spanish for the Workplace Fundamentals",
+   "award": "Noncredit program",
+   "reason": "no_own_page_found",
+   "note": "The re-read 44883863572 took PDF p.266, whose heading is 'NONCREDIT PROGRAMS & COURSES', and placed 0 of the 2 listed courses; no committed file shows p.266 is the program's own."
+  }
+ ]
+}

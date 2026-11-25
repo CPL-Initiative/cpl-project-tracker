@@ -1,0 +1,25 @@
+{
+ "_readme": "S727 lever (the gap census's reader_page_assignment lever, census of 2026-11-25 01:39Z, Next wave): Pasadena City College's 3 noncredit programs whose filed record places none of the state's listed courses (capture 44688457642): Adult High School Diploma 31599, Adult Basic Education 33404 and Personal Care Attendant 33699 were each handed a noncredit course-description page (noncredit-courses/ahsd/, abe/, pcan/), where the college's other noncredit programs print under noncredit-division/<area>/. This plan reads each guessed own address as the capture reads it (capture_view: innerText with the tab panels appended), then each department or area page's links under it, following up to five award pages, so a session sees which programs have a page of their own and what the capture reads there, and a test pins it. No model call, nothing written.",
+ "college": "Pasadena City College",
+ "questions": {
+  "department": "Which pages the department or area page links under it, and which is each program's own (its heading with its award and its requirement list)."
+ },
+ "keywords": [
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "department"
+   ],
+   "why": "31599 Adult High School Diploma, 33404 Adult Basic Education, 33699 Personal Care Attendant: the Noncredit Division's index",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/",
+   "links": "noncredit\\-division/.",
+   "links_cap": 80,
+   "follow": "noncredit\\-division/[a-z0-9_-]*(?:high-school|adult-basic|personal-care|basic-education|diploma)"
+  }
+ ]
+}

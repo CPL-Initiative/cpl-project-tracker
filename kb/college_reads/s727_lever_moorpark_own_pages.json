@@ -1,0 +1,23 @@
+{
+ "_readme": "S727 lever, Moorpark College's second read: page read 45562584495 found Accounting I certificate 43405's own page (accounting-one-coa/, 'Accounting I, Certificate of Achievement') among the Business Administration department's links, where the capture had handed it Accounting II's page (accounting-coa/, shared with 35659). It reads the page with capture_view. This plan reads each as the capture reads it, so a session checks each site_pages pin against the text the capture will read and a test pins it. No model call, nothing written.",
+ "college": "Moorpark College",
+ "questions": {
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total, on the visible text or a tab panel."
+ },
+ "keywords": [
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "43405",
+   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/accounting-one-coa/",
+   "capture_view": true
+  }
+ ]
+}

@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 725,
-  "moniker": "SkyPlover",
+  "session": 726,
+  "moniker": "SkyAvocet",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_726_handoff.md",
+  "handoff": "docs/session_727_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,11 +103,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-25T01:42:12Z",
+  "written_at": "2026-11-25T08:26:46Z",
   "project": "course",
   "next_step": {
-    "title": "Sam runs the adapt gather, then Gather's saved filters",
-    "text": "Gather is live in Courses and Programs: Sam opens the adapt gather into PEDS M1029, unticks what does not belong and saves. Then saved filters, the SLOs and objectives look-in and the add bars, each with its governance entry and rollback receipt, and ESL on the same tool."
+    "title": "Check the adapt gather landed, then the Commons fold in place",
+    "text": "After the next daily run PEDS M1029 should hold about 283 local courses at 0 to 4 units. Then the anchor page's step 3: the cards fold into a trail above the card's own list on the same page, and step 4, Needs you as the one ranked queue."
   },
   "changes": [
     {
@@ -253,6 +253,22 @@
     {
       "at": "2026-11-25T00:44Z",
       "text": "Gather: a view of Courses and Programs that finds common courses and local courses by their words and saves them into one common course, each save undoable."
+    },
+    {
+      "at": "2026-11-25T02:35Z",
+      "text": "Gather saves named filters the team opens from their own address; a reviewer changes or retires only their own."
+    },
+    {
+      "at": "2026-11-25T03:00Z",
+      "text": "The Courses List carries Rows: Common courses, one row each, or Local courses under their common course."
+    },
+    {
+      "at": "2026-11-25T03:04Z",
+      "text": "The adapt gather saved: 34 common courses merge and 133 local courses move into PEDS M1029, each row undoable."
+    },
+    {
+      "at": "2026-11-25T08:25Z",
+      "text": "A Commons card's title opens that card's own list."
     }
   ]
 }

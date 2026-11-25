@@ -5,18 +5,18 @@
  "found": 299,
  "extracted": 299,
  "errors": 0,
- "passed_machine_checks": 253,
+ "passed_machine_checks": 255,
  "failed": {
-  "coverage": 3,
+  "coverage": 1,
   "invented": 0,
-  "arithmetic": 46,
+  "arithmetic": 44,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.22,
+ "cost_usd_run": 0.09,
  "cost_usd_filed": 21.08,
  "cost_per_program": 0.0705,
- "extract_calls": 3,
+ "extract_calls": 2,
  "extract_failed": [],
  "not_found": [
   {
@@ -105,7 +105,8 @@
    "title": "PRE-APPRENTICESHIP IN BUILDING TRADES AND CONSTRUCTION INDUSTRY",
    "award": null,
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -159,10 +160,10 @@
    "title": "Special Education Assistant - Level 1",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/basic-bookkeeping-assistant-cert-completion/",
+    "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development--special-education-assistant-occupational-skills-cert/",
     "label": {
      "award": 1,
-     "title": 0.667
+     "title": 1.0
     },
     "field": "innerText",
     "coverage": 0.0,
@@ -173,8 +174,8 @@
     "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
     "error": null,
     "chars": {
-     "body": 3956,
-     "content": 31036,
+     "body": 8024,
+     "content": 32808,
      "tabs": 0
     },
     "tab_panels": [
@@ -272,5 +273,5 @@
    "status": "Active"
   }
  ],
- "run": "44688457642"
+ "run": "45575677400"
 }

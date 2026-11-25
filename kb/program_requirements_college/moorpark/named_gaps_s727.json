@@ -1,0 +1,29 @@
+{
+ "_readme": "S727 (lever), the gap census's reader_page_assignment lever (census of 2026-11-25 01:39Z): 2 programs of Moorpark College whose filed record places none of the state's listed courses. Free page read 45562584495 read the Design department page and the graduation requirements index and the pages they link. The college's third on the lever, Accounting I certificate 43405, has a page of its own (accounting-one-coa/) and is read separately. These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Moorpark College",
+ "written": "2026-11-25T06:59:44Z",
+ "capture": "44481524745",
+ "page_reads": [
+  "45562584495"
+ ],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading of its own: the department's list of degrees and certificates does not list it.",
+  "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design (the census's named gap, kb/_harvest_gap_census.py NAMED_GAPS)."
+ },
+ "programs": [
+  {
+   "control_number": "12383",
+   "title": "Media Arts",
+   "award": "A.S. Degree",
+   "reason": "credit_not_in_catalog",
+   "note": "The Design department page links 'Design, Associate of Science' (design-as/) and 'Media Arts, Certificate of Achievement' (media-arts-coa/, 22109's), and no Media Arts A.S.; design/media-arts-as/ answers 404."
+  },
+  {
+   "control_number": "45352",
+   "title": "California General Education Transfer Curriculum (CaI-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "The state's file lists 265 courses for it, the Cal-GETC pattern's course list; the filed record was read from the General Studies Pattern I page."
+  }
+ ]
+}

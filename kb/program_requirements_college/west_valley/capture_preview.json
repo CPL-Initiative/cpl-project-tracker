@@ -1,0 +1,718 @@
+{
+ "college": "West Valley College",
+ "catalog_url": "https://www.westvalley.edu/catalog/",
+ "platform": "custom_html",
+ "catalog_year": "2026-2027",
+ "programs": 145,
+ "with_closed_list": 142,
+ "started": "2026-11-12T02:37:11Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://www.westvalley.edu/sitemap.xml",
+  "status": 200,
+  "listed": 0,
+  "nested": 0,
+  "program_pages": 0,
+  "refused": null,
+  "errors": null
+ },
+ "index_fallback": 147,
+ "pages_read": 147,
+ "child_pages": 0,
+ "banner_h1": "Catalog 2026-2027",
+ "loads": 150,
+ "seconds": 807.6,
+ "found": 136,
+ "by_method": {
+  "no_closed_list": 3,
+  "not_found": 3,
+  "page_claimed": 3,
+  "sitemap_page": 136
+ },
+ "shared_pages": {
+  "https://www.westvalley.edu/catalog/programs/psychology-associate-in-arts-degree-for-transfer.html": [
+   "06274",
+   "31033"
+  ],
+  "https://www.westvalley.edu/catalog/programs/communication-studies-2-0-associate-in-arts-degree-for-transfer.html": [
+   "30976",
+   "43024"
+  ],
+  "https://www.westvalley.edu/catalog/programs/public-health-associate-in-science-degree-for-transfer.html": [
+   "37882",
+   "45153"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "40773",
+   "title": "Communication, Digital Skills and Leadership for the Workplace",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44070",
+   "title": "iOS App Development with Swift",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44126",
+   "title": "Web Programming",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "40699",
+   "title": "Theater Arts: Stage Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://www.westvalley.edu/catalog/programs/theater-arts-associate-in-arts-degree.html",
+    "https://www.westvalley.edu/catalog/programs/theater-arts-associate-in-arts-degree-for-transfer.html"
+   ]
+  },
+  {
+   "control_number": "41133",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://www.westvalley.edu/catalog/programs/physics-2-0-associate-in-science-degree-for-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/chemistry-associate-in-science-degree-for-uc-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/mathematics-2-0-associate-in-science-degree-for-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/economics-associate-in-arts-degree-for-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/biology-associate-in-science-degree-for-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/geology-associate-in-science-degree-for-transfer.html",
+    "https://www.westvalley.edu/catalog/programs/applied-physics-associate-in-science-degree.html",
+    "https://www.westvalley.edu/catalog/programs/liberal-arts-associate-in-arts-degree.html",
+    "https://www.westvalley.edu/catalog/programs/mathematics-associate-in-science-degree.html",
+    "https://www.westvalley.edu/catalog/programs/engineering-associate-in-science-degree.html",
+    "https://www.westvalley.edu/catalog/programs/ecology-biodiversity-and-conservation-associate-in-science-degree.html",
+    "https://www.westvalley.edu/catalog/programs/data-science-associate-in-science-degree.html"
+   ]
+  },
+  {
+   "control_number": "42951",
+   "title": "Stylist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://www.westvalley.edu/catalog/programs/apparel-design-level-2-certificate-of-achievement.html",
+    "https://www.westvalley.edu/catalog/programs/apparel-design-associate-in-science-degree.html",
+    "https://www.westvalley.edu/catalog/programs/liberal-arts-associate-in-arts-degree.html"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 1,
+  "0.8-1.0": 9,
+  "1.0": 126
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/west_valley",
+  "kept": 133,
+  "kept_moved": 0,
+  "programs": 2,
+  "list": [
+   {
+    "control_number": "06276",
+    "title": "Administration of Justice: Law Enforcement",
+    "award": "A.S. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/administration-of-justice-law-enforcement-associate-in-science-degree.html",
+    "coverage": 1.0,
+    "was_url": "https://www.westvalley.edu/catalog/programs/administration-of-justice-law-enforcement-associate-in-science-degree.html",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32021",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/administration-of-justice-associate-in-science-degree-for-transfer.html",
+    "coverage": 1.0,
+    "was_url": "https://www.westvalley.edu/catalog/programs/administration-of-justice-associate-in-science-degree-for-transfer.html",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "only": [
+   "06276",
+   "32021"
+  ],
+  "not_named": [
+   {
+    "control_number": "35588",
+    "title": "Liberal Arts",
+    "award": "A.A. Degree",
+    "url": "https://www.westvalley.edu/catalog/programs/liberal-arts-associate-in-arts-degree.html",
+    "coverage": 0.987,
+    "was_url": "https://www.westvalley.edu/catalog/programs/liberal-arts-associate-in-arts-degree.html",
+    "was_coverage": 0.987,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "06241": {
+   "sha256": "64bbc56777c0e5a0f0dc55d60c34d7855a9e76bbad34b71c1a4eb7e7a9901ec0",
+   "url": "https://www.westvalley.edu/catalog/programs/architecture-associate-in-science-degree.html"
+  },
+  "06242": {
+   "sha256": "cf14c79c00b3ecac7f2df390d48671f73584632e09ec928b4dfd0eda9767997f",
+   "url": "https://www.westvalley.edu/catalog/programs/interior-design-fundamentals-associate-in-science-degree.html"
+  },
+  "06243": {
+   "sha256": "eb1b42bf2450699cf7691eee46ce6ab453e3cd12c632719d2ba4e64b62b9e80f",
+   "url": "https://www.westvalley.edu/catalog/programs/biological-sciences-associate-in-science-degree.html"
+  },
+  "06252": {
+   "sha256": "7c7e5f353ba08b4f3f47afdbfca9c24c3a08792ea3cc1f88a05261c0f182e0bc",
+   "url": "https://www.westvalley.edu/catalog/programs/kinesiology-associate-in-arts-degree.html"
+  },
+  "06257": {
+   "sha256": "4d5a29052910817ddc35fa41618ab2d030ecdac8c7fb56f0e57df867fc7caea8",
+   "url": "https://www.westvalley.edu/catalog/programs/theater-arts-associate-in-arts-degree.html"
+  },
+  "06258": {
+   "sha256": "afac3cc98a41420beb313dd4733a2ff513c3320781cde980c62340ebe73722d7",
+   "url": "https://www.westvalley.edu/catalog/programs/french-associate-in-arts-degree.html"
+  },
+  "06261": {
+   "sha256": "9258e030f10c76744be6e67a981297bb7cbdbae6ec237bbc107d3cee53a2b260",
+   "url": "https://www.westvalley.edu/catalog/programs/spanish-associate-in-arts-degree.html"
+  },
+  "06263": {
+   "sha256": "a0fbbd07f57d708ff950e99e0fbf919adbb74fa24add9aeb1da444ccf16f0e1f",
+   "url": "https://www.westvalley.edu/catalog/programs/medical-assistant-associate-in-science-degree.html"
+  },
+  "06264": {
+   "sha256": "c748c45ad9d19dedfe41eeff5d89a29cd929a38634cce0e184547f19b85c5bdc",
+   "url": "https://www.westvalley.edu/catalog/programs/apparel-design-level-1-certificate-of-achievement.html"
+  },
+  "06266": {
+   "sha256": "f25b8f51e65036ae8735072ba55882bb0925e7346e64a2152ca789074afcc072",
+   "url": "https://www.westvalley.edu/catalog/programs/english-associate-in-arts-degree.html"
+  },
+  "06267": {
+   "sha256": "ce858f1520001bb827581fe5b9b6cc7af45d11465c784feca8bb3427bb100566",
+   "url": "https://www.westvalley.edu/catalog/programs/communication-studies-associate-in-arts-degree.html"
+  },
+  "06269": {
+   "sha256": "6be0672f53f20b739e6aaec79f51a9c14232f06af03bb18023dcf87c22061e19",
+   "url": "https://www.westvalley.edu/catalog/programs/mathematics-associate-in-science-degree.html"
+  },
+  "06271": {
+   "sha256": "743cff1420e95e17427f0fd63fb44a4b24c06a2d0bae22b7134317bcc9523a60",
+   "url": "https://www.westvalley.edu/catalog/programs/applied-physics-associate-in-science-degree.html"
+  },
+  "06274": {
+   "sha256": "ebbc029edc29aea56283e1c4f26737c0b35731b92fc5817d632ce7a9ee180fee",
+   "url": "https://www.westvalley.edu/catalog/programs/psychology-associate-in-arts-degree-for-transfer.html"
+  },
+  "06275": {
+   "sha256": "3b0d44a140f5e401728549c51272b5d910d28211f27a78c3d85cad3cf601e1e1",
+   "url": "https://www.westvalley.edu/catalog/programs/park-management-associate-in-science-degree.html"
+  },
+  "06276": {
+   "sha256": "777442e395c7ff1d1c69952cf0573be1ba1420a778ac35a6018b8830e046d3fe",
+   "url": "https://www.westvalley.edu/catalog/programs/administration-of-justice-law-enforcement-associate-in-science-degree.html"
+  },
+  "06277": {
+   "sha256": "1d8f52f58e7577f38b3be8f8a81cb94a19ca0b514b22898b749f4430b9559bff",
+   "url": "https://www.westvalley.edu/catalog/programs/early-childhood-education-associate-in-science-degree.html"
+  },
+  "06279": {
+   "sha256": "8223a5d8692d0f6432c07b40caf83e2938f6bdd39f5d35fc00c0ea00341d2d93",
+   "url": "https://www.westvalley.edu/catalog/programs/women-gender-and-queer-studies-associate-in-arts-degree.html"
+  },
+  "06280": {
+   "sha256": "f1b150045ed1220681e9aefcd5c490e5f8a7f4bf0efa880c407b3505283d590c",
+   "url": "https://www.westvalley.edu/catalog/programs/history-associate-in-arts-degree.html"
+  },
+  "06281": {
+   "sha256": "7b094356eeacc1b881f2deb41d79ef13397d3cb7c254ab7405113d5347c0be17",
+   "url": "https://www.westvalley.edu/catalog/programs/political-science-associate-in-arts-degree.html"
+  },
+  "06282": {
+   "sha256": "7e482cb957394077f51590a5acd93ab36a4a28a02f2789996d1fd1a6925d335a",
+   "url": "https://www.westvalley.edu/catalog/programs/sociology-associate-in-arts-degree.html"
+  },
+  "07457": {
+   "sha256": "2a637c39d69ebc103f3fdd2fb95d2d39679d01f35cba980b8c7405ed882c1ba6",
+   "url": "https://www.westvalley.edu/catalog/programs/business-administration-associate-in-science-degree.html"
+  },
+  "07478": {
+   "sha256": "900ac60024fa99a3e7facc5a69ee156a4e99940b2e8a7769828eb4c4a604a1b9",
+   "url": "https://www.westvalley.edu/catalog/programs/insurance-billing-specialist-certificate-of-achievement.html"
+  },
+  "07479": {
+   "sha256": "68422ef2fb73ed223354035a3cf69c1561b9f382487eadb080d3ef9644f4e0e9",
+   "url": "https://www.westvalley.edu/catalog/programs/clinical-assistant-certificate-of-achievement.html"
+  },
+  "07484": {
+   "sha256": "527d41c55438220ad379859dd7b8ef6268cdb48d452cfe4caba1eaf32fee893e",
+   "url": "https://www.westvalley.edu/catalog/programs/paralegal-associate-in-science-degree.html"
+  },
+  "07487": {
+   "sha256": "08bd1ab1865c6a9deb4c8a43a6035d957bd8cc9765c12c7d0a1bf7945a9f5da0",
+   "url": "https://www.westvalley.edu/catalog/programs/anthropology-associate-in-arts-degree.html"
+  },
+  "07618": {
+   "sha256": "1b6ca8280ba65dbd768787c390878af5ca759d1807cd00a70ab2e3ea4dfb756f",
+   "url": "https://www.westvalley.edu/catalog/programs/economics-associate-in-arts-degree.html"
+  },
+  "07619": {
+   "sha256": "09a526666c08e951e9de425d23c627c3f0a2a57eae02d3d71be199450d5d47de",
+   "url": "https://www.westvalley.edu/catalog/programs/geography-associate-in-arts-degree.html"
+  },
+  "10325": {
+   "sha256": "6b4d373615ad474c2901317caa739be657b3f948589f38ed21e1ac08afcf477f",
+   "url": "https://www.westvalley.edu/catalog/programs/film-studies-associate-in-arts-degree.html"
+  },
+  "11734": {
+   "sha256": "eb7dfa461f81cc08f14dae89666499bf16c1e4ed7378d9bf89b717256438515d",
+   "url": "https://www.westvalley.edu/catalog/programs/communication-design-associate-in-arts-degree.html"
+  },
+  "12290": {
+   "sha256": "1bda20868766ed9a14f2a6aa0436547b4d1c0b93be845495e28262e189682bdc",
+   "url": "https://www.westvalley.edu/catalog/programs/apparel-design-associate-in-science-degree.html"
+  },
+  "13523": {
+   "sha256": "7d83675213d79d0f439037ee685d9adff3bcf6915d2d60bde4e16a271ab461ec",
+   "url": "https://www.westvalley.edu/catalog/programs/computer-aided-drafting-and-design-certificate-of-achievement.html"
+  },
+  "14231": {
+   "sha256": "d99676c4a59eeed294ca3bfd066f01293f66be9738df36a884f7895cfb3cf821",
+   "url": "https://www.westvalley.edu/catalog/programs/medical-administrative-assistant-certificate-of-achievement.html"
+  },
+  "15303": {
+   "sha256": "ff717eda5b4b77fffdf8cc8d0c2357d5512e16b3263c5bf839885e125ea80b9a",
+   "url": "https://www.westvalley.edu/catalog/programs/geospatial-technology-certificate-of-achievement.html"
+  },
+  "16443": {
+   "sha256": "8342d4261d04804fd9735e09f6f50da366f6a70d5704a9d1bf6134fefe743f7e",
+   "url": "https://www.westvalley.edu/catalog/programs/graphic-design-certificate-of-achievement.html"
+  },
+  "17305": {
+   "sha256": "61f48ec4cf9ddbbbc05bd886de56450446e947faa110360f2586d18e4276eb9c",
+   "url": "https://www.westvalley.edu/catalog/programs/orthopedic-technician-certificate-of-achievement.html"
+  },
+  "20271": {
+   "sha256": "eba80272884de8c75edbcf9d00b6f878f475d5d50225a1fba98195ea666e2dd3",
+   "url": "https://www.westvalley.edu/catalog/programs/park-management-certificate-of-achievement.html"
+  },
+  "20272": {
+   "sha256": "7a5b2e35cd936f525d6c9675efa555141eef57277e1e49db926460d4457b8508",
+   "url": "https://www.westvalley.edu/catalog/programs/architecture-certificate-of-achievement.html"
+  },
+  "20278": {
+   "sha256": "e3563c851feb1a1cae3a17a024f1f9975e17f63823f39d80c94422967d63674e",
+   "url": "https://www.westvalley.edu/catalog/programs/ux-design-certificate-of-achievement.html"
+  },
+  "20284": {
+   "sha256": "387ba88ab9c5a0c9deab05d49485aaa209909f2a37f4b2aa479fb07042e7b46b",
+   "url": "https://www.westvalley.edu/catalog/programs/computer-science-certificate-of-achievement.html"
+  },
+  "20307": {
+   "sha256": "afa059723ee491158c34fda21d44c6d9e2456a4739b656c9eeb21c5bce0eb41a",
+   "url": "https://www.westvalley.edu/catalog/programs/medical-assistant-certificate-of-achievement.html"
+  },
+  "20309": {
+   "sha256": "8c6d3f154a11841432ed691708afaac1a7900b574593c6500d8a088f45e7b70a",
+   "url": "https://www.westvalley.edu/catalog/programs/interior-design-fundamentals-certificate-of-achievement.html"
+  },
+  "20314": {
+   "sha256": "902cc08e5e5e0028bda69205ff7202f4403502d3af195ec27569abf18555dbc1",
+   "url": "https://www.westvalley.edu/catalog/programs/apparel-design-level-2-certificate-of-achievement.html"
+  },
+  "20322": {
+   "sha256": "d2da6c46f022b0a109bd55bf8ca41df377805f2f3626800daf19acc69fcb3864",
+   "url": "https://www.westvalley.edu/catalog/programs/paralegal-certificate-of-achievement.html"
+  },
+  "30066": {
+   "sha256": "6014013660e6851dce2a4d3d5f888887a4e85246116d8c4995dc6776ca81d0ea",
+   "url": "https://www.westvalley.edu/catalog/programs/early-childhood-program-director-certificate-of-achievement.html"
+  },
+  "30972": {
+   "sha256": "194af56a67d57abffee984e6337e11486ec4304c878e3947b74c23e8c96c1dc5",
+   "url": "https://www.westvalley.edu/catalog/programs/sociology-associate-in-arts-degree-for-transfer.html"
+  },
+  "30976": {
+   "sha256": "b27aa902e4c4bd063eeda8548aeea10ebebe250071efdbea22294e7c920076fc",
+   "url": "https://www.westvalley.edu/catalog/programs/communication-studies-2-0-associate-in-arts-degree-for-transfer.html"
+  },
+  "31033": {
+   "sha256": "ebbc029edc29aea56283e1c4f26737c0b35731b92fc5817d632ce7a9ee180fee",
+   "url": "https://www.westvalley.edu/catalog/programs/psychology-associate-in-arts-degree-for-transfer.html"
+  },
+  "31991": {
+   "sha256": "c81aa4981501af00804f1a666c3ed7cfab7a86e4d1845a58bb974e27f21286a9",
+   "url": "https://www.westvalley.edu/catalog/programs/mathematics-2-0-associate-in-science-degree-for-transfer.html"
+  },
+  "31992": {
+   "sha256": "dd08db2e1ca344f2d6f679dc7a6963fc5ba0ad9dabd4208db46b64afb510f83d",
+   "url": "https://www.westvalley.edu/catalog/programs/early-childhood-education-associate-in-science-degree-for-transfer.html"
+  },
+  "32021": {
+   "sha256": "cdd2bdffa5e050e25062b2d9681ac344e4b96c488b4c539c94c5af35abd0c07c",
+   "url": "https://www.westvalley.edu/catalog/programs/administration-of-justice-associate-in-science-degree-for-transfer.html"
+  },
+  "32022": {
+   "sha256": "8892375ed6ebbdc9fbfeb44b56acfefc4b8f402dd01299678819b944f910d7ed",
+   "url": "https://www.westvalley.edu/catalog/programs/political-science-associate-in-arts-degree-for-transfer.html"
+  },
+  "32023": {
+   "sha256": "9ec3eb07475a62c8597ae392172936788f5bfe4d8905c7c0da4f95e4a771f716",
+   "url": "https://www.westvalley.edu/catalog/programs/art-history-associate-in-arts-degree-for-transfer.html"
+  },
+  "32024": {
+   "sha256": "10b848e46392791499ad8a8b14a8e2ec33973b07241ea6e03513b0c74f252f21",
+   "url": "https://www.westvalley.edu/catalog/programs/studio-arts-associate-in-arts-degree-for-transfer.html"
+  },
+  "32025": {
+   "sha256": "d22f0500c46ebd912a56c5420b2190dfc14d78384f20d2b76ef755ca2dab1bc6",
+   "url": "https://www.westvalley.edu/catalog/programs/english-associate-in-arts-degree-for-transfer.html"
+  },
+  "32026": {
+   "sha256": "1732f64df07b7c56f1e3e0944d7981168a1e594e79d1df2905251cf570ce3d89",
+   "url": "https://www.westvalley.edu/catalog/programs/theater-arts-associate-in-arts-degree-for-transfer.html"
+  },
+  "32090": {
+   "sha256": "f014e04d210d977e1c5b0fe672c2a8ec57b2cdd25abbe51337fbc13002e43322",
+   "url": "https://www.westvalley.edu/catalog/programs/anthropology-associate-in-arts-degree-for-transfer.html"
+  },
+  "32091": {
+   "sha256": "f5ba9f8d1e1643c9ba2a3f259693c9d8ecf37b867841929407485960abf0219e",
+   "url": "https://www.westvalley.edu/catalog/programs/history-associate-in-arts-degree-for-transfer.html"
+  },
+  "32169": {
+   "sha256": "24f3304bf5893c841698a5aa248ebdbd21c171da67dbf0e9c257dd0c41ed32ac",
+   "url": "https://www.westvalley.edu/catalog/programs/music-associate-in-arts-degree-for-transfer.html"
+  },
+  "32435": {
+   "sha256": "7712bae75e9e5fb4e9bfc6862b620377c4c1b52fd09fce8a88e6eb8960343399",
+   "url": "https://www.westvalley.edu/catalog/programs/physics-2-0-associate-in-science-degree-for-transfer.html"
+  },
+  "32442": {
+   "sha256": "966e28e8ee29ada6e44d2d20c04405352e72b5029d57e7c70923e193bf3b4bdc",
+   "url": "https://www.westvalley.edu/catalog/programs/geology-associate-in-science-degree-for-transfer.html"
+  },
+  "32509": {
+   "sha256": "08e967cf4caccb4ec5d4248c8e688b7bf9d552415f0e51ea46ae0453047932d3",
+   "url": "https://www.westvalley.edu/catalog/programs/geography-associate-in-arts-degree-for-transfer.html"
+  },
+  "32623": {
+   "sha256": "e9b1e9ba34f5b52c666a9ac7dc761ad8b7c9495cb2d301b89eb38186fb5fb313",
+   "url": "https://www.westvalley.edu/catalog/programs/philosophy-associate-in-arts-degree-for-transfer.html"
+  },
+  "32652": {
+   "sha256": "cdc759bb898a2f7971c7ac4a5609a90720f1ed1fe6c2faeb8c6f2e2ff893e4ac",
+   "url": "https://www.westvalley.edu/catalog/programs/spanish-associate-in-arts-degree-for-transfer.html"
+  },
+  "32802": {
+   "sha256": "ff56cd7019f42897ee5ada564d15bccea4068cab40315e41444c39e0fbd3e0a9",
+   "url": "https://www.westvalley.edu/catalog/programs/kinesiology-associate-in-arts-degree-for-transfer.html"
+  },
+  "33023": {
+   "sha256": "a63bb7697ef55da50a145cb00d2ac586c831b4cbfe14adb9843ed55fcb186132",
+   "url": "https://www.westvalley.edu/catalog/programs/economics-associate-in-arts-degree-for-transfer.html"
+  },
+  "33351": {
+   "sha256": "8c0702f7927cd9978a276900db55375744922f571550d31f1ef0ec098c7f8045",
+   "url": "https://www.westvalley.edu/catalog/programs/commercial-music-certificate-of-achievement.html"
+  },
+  "35310": {
+   "sha256": "84f0cde2ad0d33299d4e9b7e3195e021af0386370e249dcd1c09b37c4ce41f80",
+   "url": "https://www.westvalley.edu/catalog/programs/pilates-instructor-certificate-of-achievement.html"
+  },
+  "35402": {
+   "sha256": "71fbfac75684f9037ad05089ad80d3b436c8fd8cb2e21bd8b7bdcf923f05f0c8",
+   "url": "https://www.westvalley.edu/catalog/programs/music-professional-associate-in-arts-degree.html"
+  },
+  "35490": {
+   "sha256": "ba1ad7e8718b0c8fc67295e18c96c87b0e23cd55c68c79d1b8740699215714e8",
+   "url": "https://www.westvalley.edu/catalog/programs/drone-technology-certificate-of-achievement.html"
+  },
+  "35557": {
+   "sha256": "da6486ca2b810d2d330a622f2638840ba06730c429f331febd246e567ad2993a",
+   "url": "https://www.westvalley.edu/catalog/programs/nutrition-and-dietetics-associate-in-science-degree-for-transfer.html"
+  },
+  "35588": {
+   "sha256": "1df1cf715b61985f17921b6eaa3873edbf21300645bb7ea2acb93dd27e8dc5b9",
+   "url": "https://www.westvalley.edu/catalog/programs/liberal-arts-associate-in-arts-degree.html"
+  },
+  "35615": {
+   "sha256": "e7751f5b3c23cb38bc23e7f024265f1f7ecd96e8174bf4646c477df253977be6",
+   "url": "https://www.westvalley.edu/catalog/programs/social-justice-studies-general-studies-associate-in-arts-degree-for-transfer.html"
+  },
+  "35662": {
+   "sha256": "4e71dc8536ba258905f92bb16003ff511b27252a42024dc084055b78c5a293e2",
+   "url": "https://www.westvalley.edu/catalog/programs/ecology-biodiversity-and-conservation-associate-in-science-degree.html"
+  },
+  "36700": {
+   "sha256": "ef26a369ca3f509e3b2f3cf5d6527b83f00ff9757c4613134f7eaedaea27cfdd",
+   "url": "https://www.westvalley.edu/catalog/programs/biology-associate-in-science-degree-for-transfer.html"
+  },
+  "36707": {
+   "sha256": "ac6e3fe5a203d97ccccffaf752700ca9037a05280bb656ee00af282793d1759e",
+   "url": "https://www.westvalley.edu/catalog/programs/accounting-assistant-certificate-of-achievement.html"
+  },
+  "37882": {
+   "sha256": "000cb5a5a15b9cc13e48604f6e9eb2cae72d0ef23c52377bf242f00b946d61ba",
+   "url": "https://www.westvalley.edu/catalog/programs/public-health-associate-in-science-degree-for-transfer.html"
+  },
+  "38027": {
+   "sha256": "2f8bff744fe8dd99fd0e71c01f9fff54bdceb01339eb1f9c3eef252583aeee69",
+   "url": "https://www.westvalley.edu/catalog/programs/early-childhood-teacher-level-2-certificate-of-achievement.html"
+  },
+  "38029": {
+   "sha256": "34661888ba79dfec49340d3c4164dcd3cbfad834704b9fb263c48300f06fad2b",
+   "url": "https://www.westvalley.edu/catalog/programs/early-childhood-teacher-level-1-certificate-of-achievement.html"
+  },
+  "38033": {
+   "sha256": "6d82d6959d8e5ef00af21af3c2d30370a88e31d9ec4b52ebbb52f602f8c6e610",
+   "url": "https://www.westvalley.edu/catalog/programs/bookkeeping-certification-certificate-of-completion.html"
+  },
+  "38034": {
+   "sha256": "06450e8afc9541c45e02828a632698cfbec60d9df6874faf81a7907624266e6b",
+   "url": "https://www.westvalley.edu/catalog/programs/small-business-essentials-certificate-of-completion.html"
+  },
+  "39462": {
+   "sha256": "ff7bc316c1979bc6a2f30399ec8f2d5a1b0ba206346066f3914e3d0e4da5be86",
+   "url": "https://www.westvalley.edu/catalog/programs/proofreading-certificate-of-completion.html"
+  },
+  "39478": {
+   "sha256": "4b7c1ed16625205f0dd6e64dc3de356f5a28b267bc4cdf755d4e3954dc532d34",
+   "url": "https://www.westvalley.edu/catalog/programs/court-reporting-certificate-of-completion.html"
+  },
+  "39479": {
+   "sha256": "5d4354a64307d50ac531bd2cf00b87645985e271b853df13c1647859c5e22974",
+   "url": "https://www.westvalley.edu/catalog/programs/educational-captioning-certificate-of-completion.html"
+  },
+  "39480": {
+   "sha256": "4ad18f5c89dc306c85f5006fc21b9ce809453ecbd96cd117a19591a2385a12f6",
+   "url": "https://www.westvalley.edu/catalog/programs/transcription-and-office-support-machine-writing-certificate-of-completion.html"
+  },
+  "39481": {
+   "sha256": "498b8342c0dd9653b1c046747bbdbd7a1bb6557995216be083167eb0b414ad62",
+   "url": "https://www.westvalley.edu/catalog/programs/transcription-and-office-support-voice-writing-certificate-of-completion.html"
+  },
+  "39548": {
+   "sha256": "cf336b691f77d8b44763570f50a7d5d6ebcfe34fbcbf864e1eeeb7a57a5c7f89",
+   "url": "https://www.westvalley.edu/catalog/programs/law-public-policy-and-society-associate-in-arts-degree-for-transfer.html"
+  },
+  "39638": {
+   "sha256": "8fb52e1ace9195bae9656f50bbe38354ba5bd153c5945a6e9f00cde8eaaea93f",
+   "url": "https://www.westvalley.edu/catalog/programs/scoping-certificate-of-completion.html"
+  },
+  "39654": {
+   "sha256": "eaef796e0a317443cb589b4bacb4e13b1f26e1c7bbc7596273b1bba3226bd846",
+   "url": "https://www.westvalley.edu/catalog/programs/professional-and-workplace-communication-certificate-of-achievement.html"
+  },
+  "39673": {
+   "sha256": "d639108916e61f6e325e512c4a6bf7d40105656eb2310b66843190bb6fc9193e",
+   "url": "https://www.westvalley.edu/catalog/programs/film-television-and-electronic-media-associate-in-science-degree-for-transfer.html"
+  },
+  "39674": {
+   "sha256": "422d726293fc9bf62c345982ae8680bafc4ee90e5ff64aff5458495e2094f05a",
+   "url": "https://www.westvalley.edu/catalog/programs/child-and-adolescent-development-associate-in-arts-degree-for-transfer.html"
+  },
+  "39849": {
+   "sha256": "30dc4db086be8ec30b56bebbfcaa6eb0b5c69d4d9baf27c0970bbf2db74c2dee",
+   "url": "https://www.westvalley.edu/catalog/programs/musical-theater-certificate-of-achievement.html"
+  },
+  "40757": {
+   "sha256": "6667219879fc0bbd5581c7f412be42df00a0bb1b7d493bf1103d325b4846ef1b",
+   "url": "https://www.westvalley.edu/catalog/programs/portfolio-development-in-studio-arts-certificate-of-achievement.html"
+  },
+  "40771": {
+   "sha256": "c6b0c17a416b8cd2e1b7f7bd75bd9a193cfe2d84212f31dae160aae64014f71f",
+   "url": "https://www.westvalley.edu/catalog/programs/esl-careers-in-early-childhood-education-certificate-of-competency.html"
+  },
+  "40772": {
+   "sha256": "8ef4195909cd92b4e5d29eb0dd06aca5a3dbf7dd7957a9e4fc78e88a8fb67cc8",
+   "url": "https://www.westvalley.edu/catalog/programs/esl-careers-in-healthcare-certificate-of-competency.html"
+  },
+  "40857": {
+   "sha256": "d4c89bd96a7c771fc01f95951b7404dc09964874777e364f44c568954acf9b46",
+   "url": "https://www.westvalley.edu/catalog/programs/italian-associate-in-arts-degree.html"
+  },
+  "41134": {
+   "sha256": "c9c76d116e90665c4ca4018fc86e05cf97b4bf4c17e8e96ef86f82852495f067",
+   "url": "https://www.westvalley.edu/catalog/programs/chemistry-associate-in-science-degree-for-uc-transfer.html"
+  },
+  "41144": {
+   "sha256": "e6d3b164b50d2728320b565700e60f5e2e6d9ebc6440ab13dea5f20325877e17",
+   "url": "https://www.westvalley.edu/catalog/programs/business-administration-2-0-associate-in-science-degree-for-transfer.html"
+  },
+  "41316": {
+   "sha256": "7345cefc909e6b85cf974255c8b7f8592c498e08c4117fb60812e7210db95a89",
+   "url": "https://www.westvalley.edu/catalog/programs/interior-design-professional-certificate-of-achievement.html"
+  },
+  "41317": {
+   "sha256": "55a6574303955fddb2ec6d076bf2ca8612dc05a7493dfa88699c1037ca8a3b3b",
+   "url": "https://www.westvalley.edu/catalog/programs/regenerative-agriculture-certificate-of-achievement.html"
+  },
+  "41318": {
+   "sha256": "cdbf85362ce37568c00e8ac4836c79dc70611f40a6cb827cd2a57c376b46a7a3",
+   "url": "https://www.westvalley.edu/catalog/programs/drone-technology-associate-in-science-degree.html"
+  },
+  "41802": {
+   "sha256": "a1f83bf468bbc70f09a3814075ea73cd454c7712487a385f800da9ccc6b7e69e",
+   "url": "https://www.westvalley.edu/catalog/programs/microsoft-office-basics-certificate-of-completion.html"
+  },
+  "42066": {
+   "sha256": "2dd3815c6ae64e467703353f03a9ad4fb718e184a5420c6d1b454960d151e37c",
+   "url": "https://www.westvalley.edu/catalog/programs/spanish-for-medical-professionals-certificate-of-completion.html"
+  },
+  "42121": {
+   "sha256": "9e02ce855e54c61cd16139a3eae706887519c4080a3265359c1908dea7bbafcb",
+   "url": "https://www.westvalley.edu/catalog/programs/inclusion-teacher-assistant-certificate-of-achievement.html"
+  },
+  "43024": {
+   "sha256": "b27aa902e4c4bd063eeda8548aeea10ebebe250071efdbea22294e7c920076fc",
+   "url": "https://www.westvalley.edu/catalog/programs/communication-studies-2-0-associate-in-arts-degree-for-transfer.html"
+  },
+  "43026": {
+   "sha256": "68a60794d5d2edf78d25c1d8d3dd5730261a5e4a7a26a878160bf99c50ba5b21",
+   "url": "https://www.westvalley.edu/catalog/programs/data-science-associate-in-science-degree.html"
+  },
+  "43034": {
+   "sha256": "547564f49bac5214b6ef8b315bad67f61030056c5d30b7397f2daa6595f413b0",
+   "url": "https://www.westvalley.edu/catalog/programs/real-estate-broker-license-certificate-of-completion.html"
+  },
+  "43035": {
+   "sha256": "925fce20bca4abe50077ed18b795a1f3cad5ee043490fac8741f7a9ef4d948ef",
+   "url": "https://www.westvalley.edu/catalog/programs/real-estate-salesperson-license-certificate-of-completion.html"
+  },
+  "43092": {
+   "sha256": "a1c730073f64b2ca3a5db08e584215ddfabff44162766cd23a6d4fa974013f1f",
+   "url": "https://www.westvalley.edu/catalog/programs/google-data-analytics-certificate-of-completion.html"
+  },
+  "43093": {
+   "sha256": "a135c62faac1fe23cdbb00a38e2f1ad31b7d20e54cfb46c1df51658d5e130735",
+   "url": "https://www.westvalley.edu/catalog/programs/google-it-automation-with-python-certificate-of-completion.html"
+  },
+  "43094": {
+   "sha256": "41b9c77b8a82b76b20543cf65b0de8ad20cbbfcaf899c9b07c03f52c45daabf1",
+   "url": "https://www.westvalley.edu/catalog/programs/google-it-support-certificate-of-completion.html"
+  },
+  "43212": {
+   "sha256": "33155121b35c27885c7d0b6072e1e06a794278404e90c99e4dcc5037b131bb67",
+   "url": "https://www.westvalley.edu/catalog/programs/real-estate-salesperson-license-certificate-of-achievement.html"
+  },
+  "43213": {
+   "sha256": "f3e0c20c89d374575e692021b719fb1f8d9e5306d9f7a1fc85cb95cfbd8966e0",
+   "url": "https://www.westvalley.edu/catalog/programs/real-estate-broker-license-certificate-of-achievement.html"
+  },
+  "43766": {
+   "sha256": "be50347bc536b2d6a5413b17c2d6d2a5e11dad1ee415b03a27317c285b9f1353",
+   "url": "https://www.westvalley.edu/catalog/programs/mathematics-certificate-of-achievement.html"
+  },
+  "44049": {
+   "sha256": "0e4c6ed1d51508a4ede50e811666910a19c5b8a47220b4832e32d6f38cd365fc",
+   "url": "https://www.westvalley.edu/catalog/programs/small-business-fundamentals-and-growth-certificate-of-completion.html"
+  },
+  "44050": {
+   "sha256": "ac33ab00009d95e1e7adc50525a6d924be22109f1f911f5b32c3ebef1cb99ff1",
+   "url": "https://www.westvalley.edu/catalog/programs/academic-esl-high-beginning-level-certificate-of-competency.html"
+  },
+  "44051": {
+   "sha256": "01e63082f59c57e0e2689d448e20196a75f7eddee4c590f6b38c013ab1e91953",
+   "url": "https://www.westvalley.edu/catalog/programs/academic-esl-advanced-level-certificate-of-competency.html"
+  },
+  "44052": {
+   "sha256": "a754870f57712f247e89696cf9111750cd551136594a244a970d44c711c864f9",
+   "url": "https://www.westvalley.edu/catalog/programs/integrated-esl-low-intermediate-level-certificate-of-competency.html"
+  },
+  "44053": {
+   "sha256": "5aa35373ee8b847ad2f84874c28250adaea7679c404ef78f01bda1daf83f7c18",
+   "url": "https://www.westvalley.edu/catalog/programs/american-culture-and-civics-certificate-of-competency.html"
+  },
+  "44054": {
+   "sha256": "e20284a2ae255c5b9d018f8fa0f9ad81127be941ac333e68fcb11f2520e1c70c",
+   "url": "https://www.westvalley.edu/catalog/programs/integrated-esl-low-beginning-level-certificate-of-competency.html"
+  },
+  "44071": {
+   "sha256": "89a481d19c1c5337cb7983eb738b04ca3fdeb3a49198553e7a97e22be41b670a",
+   "url": "https://www.westvalley.edu/catalog/programs/google-digital-marketing-and-e-commerce-certificate-of-completion.html"
+  },
+  "44072": {
+   "sha256": "06fda431a3a749d93ce3d006cef5a116be328ee9f2adb4a8b31cbfedf6bb1957",
+   "url": "https://www.westvalley.edu/catalog/programs/academic-esl-intermediate-level-certificate-of-competency.html"
+  },
+  "44125": {
+   "sha256": "bd4809b77d6bb0071d56671ebe6fcc8ba949b1ae8b09c8bcaf21297b8bd92c47",
+   "url": "https://www.westvalley.edu/catalog/programs/enrolled-agent-exam-preparation-certificate-of-completion.html"
+  },
+  "44903": {
+   "sha256": "30d6b97d2d9d27e6119cb4c8ebecddcb025ef0ae7183b46b558be723750170be",
+   "url": "https://www.westvalley.edu/catalog/programs/engineering-associate-in-science-degree.html"
+  },
+  "44928": {
+   "sha256": "8ffbf059b186ce1fa2286a26f1d1e27edd123d8a6af3d0843c34a33e9fbd70e5",
+   "url": "https://www.westvalley.edu/catalog/programs/cisco-certified-network-associate-certificate-of-achievement.html"
+  },
+  "44930": {
+   "sha256": "8aaa2cb85d968251cf249d1e4b71f21c6b74a0fc506e6164b3b76c5770bdf8e3",
+   "url": "https://www.westvalley.edu/catalog/programs/child-development-permit-preparation-certificate-of-achievement.html"
+  },
+  "45050": {
+   "sha256": "a2fb6f53d4836f9317f87a37d1e362db97364fa7159cb03831c9dc8d61a259ae",
+   "url": "https://www.westvalley.edu/catalog/programs/computer-science-associate-in-science-degree-for-transfer.html"
+  },
+  "45153": {
+   "sha256": "e8ccea93c7ced28545ab59ffdbe203224e0d8dc0d7351f2d2f7179a4325275e1",
+   "url": "https://www.westvalley.edu/catalog/programs/public-health-associate-in-science-degree-for-transfer.html"
+  },
+  "45221": {
+   "sha256": "aeb426eca285abee6eb610b7f17bd5920af2426c5d7ba29de6fefcb7086b24dd",
+   "url": "https://www.westvalley.edu/catalog/programs/google-cybersecurity-certificate-of-completion.html"
+  },
+  "45222": {
+   "sha256": "47396e53a88c1dc43b5056063f1af786f4df2324e750bc12f4b2640e4296e9aa",
+   "url": "https://www.westvalley.edu/catalog/programs/affordable-housing-management-certificate-of-completion.html"
+  },
+  "46357": {
+   "sha256": "564fbbc370ff8b0298a91cfbac096d0158f307175f674753b74c56038451d530",
+   "url": "https://www.westvalley.edu/catalog/programs/google-advanced-data-analytics-certificate-of-completion.html"
+  },
+  "46358": {
+   "sha256": "4884d1a00cb5338eedb25a270245c857b576a68ddc43f89cce6e3a16b81a722c",
+   "url": "https://www.westvalley.edu/catalog/programs/community-caregiver-certificate-of-completion.html"
+  },
+  "46359": {
+   "sha256": "8e4f2dc99218dd47b588610f3ec8d27b3a37b32e720b98e46a4e019b9c67c8dd",
+   "url": "https://www.westvalley.edu/catalog/programs/google-ux-design-certificate-of-completion.html"
+  },
+  "46466": {
+   "sha256": "986b602bea547b5022f05c33aaa215e3383fd88289b67c7aa8f764baedc0f440",
+   "url": "https://www.westvalley.edu/catalog/programs/industrial-design-associate-in-science-degree.html"
+  },
+  "46475": {
+   "sha256": "7e0d7726a28b3e08eaffc982aded528f7718046b293bbf707544bfbe8a12e8b1",
+   "url": "https://www.westvalley.edu/catalog/programs/land-steward-certificate-of-achievement.html"
+  },
+  "46476": {
+   "sha256": "6af0afea98f73d2b55b014ca23facf5691d5a733b8be7b069c3e18a540befbc1",
+   "url": "https://www.westvalley.edu/catalog/programs/industrial-design-certificate-of-achievement.html"
+  }
+ },
+ "staged_from": {
+  "run": "43142245126",
+  "proof": "the filed account equal but for its run, and 3 programs at their address and coverage",
+  "pages_loaded": 0
+ },
+ "run": "45574056664"
+}

@@ -1,0 +1,36 @@
+{
+  "_what": "S727 (lane 2, American River): the reconcile_steps lever of the committed census (written 2026-11-25 01:39Z) at the college, frozen: kb/_program_piles_s727_arc.py planned from it.",
+  "written_at": "2026-11-25 01:39Z",
+  "levers": [
+    {
+      "lever": "reconcile_steps",
+      "scope": "American River College",
+      "programs": 19,
+      "kind": "free",
+      "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+      "estimate_usd": null,
+      "over_college_limit": false,
+      "members": [
+        "07206",
+        "07207",
+        "12180",
+        "12191",
+        "12238",
+        "12250",
+        "20130",
+        "30023",
+        "30024",
+        "30595",
+        "31390",
+        "31466",
+        "32643",
+        "33273",
+        "37899",
+        "39341",
+        "39731",
+        "39732",
+        "43381"
+      ]
+    }
+  ]
+}

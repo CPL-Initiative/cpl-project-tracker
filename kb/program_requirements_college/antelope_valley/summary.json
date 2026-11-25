@@ -2,79 +2,23 @@
  "college": "Antelope Valley College",
  "programs": 199,
  "with_closed_list": 197,
- "found": 191,
+ "found": 193,
  "extracted": 195,
  "errors": 0,
- "passed_machine_checks": 170,
+ "passed_machine_checks": 179,
  "failed": {
-  "coverage": 5,
+  "coverage": 2,
   "invented": 0,
-  "arithmetic": 25,
+  "arithmetic": 16,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.56,
- "cost_usd_filed": 14.26,
- "cost_per_program": 0.0731,
- "extract_calls": 8,
+ "cost_usd_run": 0.77,
+ "cost_usd_filed": 14.2,
+ "cost_per_program": 0.0728,
+ "extract_calls": 11,
  "extract_failed": [],
  "not_found": [
-  {
-   "control_number": "20166",
-   "title": "Air Conditioning & Refrigeration Specialist",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-cert-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 8,
-    "listed": 8,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 10736,
-     "content": 10736,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Approved"
-  },
-  {
-   "control_number": "20186",
-   "title": "Welding",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aerospace-welding-cert-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.3,
-    "body": 0.3,
-    "content": 0.3,
-    "net": 3,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 3 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3706,
-     "content": 3706,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Approved"
-  },
   {
    "control_number": "33786",
    "title": "Yoga Instructor",
@@ -162,9 +106,9 @@
    "title": "All Automotive Systems",
    "award": "A.S. Degree",
    "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-cert-fall-2025",
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
     "label": {
-     "award": 0,
+     "award": 1,
      "title": 1.0
     },
     "field": "innerText",
@@ -176,8 +120,8 @@
     "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 4199,
-     "content": 4199,
+     "body": 5178,
+     "content": 5178,
      "tabs": 0
     },
     "tab_panels": [],
@@ -186,5 +130,5 @@
    "status": "Approved"
   }
  ],
- "run": "45399693231"
+ "run": "45574354887"
 }

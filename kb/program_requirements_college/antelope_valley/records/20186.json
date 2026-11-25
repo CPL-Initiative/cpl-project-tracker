@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Welding",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-as-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-cert-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8445,
+  "input_tokens": 8062,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8445,
-    "output_tokens": 1314,
+    "input_tokens": 8062,
+    "output_tokens": 1581,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1314,
+  "output_tokens": 1581,
   "output_tokens_details": {
-   "thinking_tokens": 415
+   "thinking_tokens": 421
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06006,
- "ms": 12116,
- "seconds": 12.4,
+ "cost_usd": 0.06387,
+ "ms": 13342,
+ "seconds": 13.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "WELD110",
-    "WELD120",
-    "WELD130",
-    "WELD135",
-    "WELD137",
-    "WELD212",
-    "WELD230",
-    "WELD240",
-    "WELD260",
-    "WELD265"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    28.0,
+    28.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Welding AS",
+   "section_heading": "Welding Cert",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 28
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -131,59 +121,110 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Demonstrate proper techniques for repairing, fabricating, or cutting metal components or structures using gas welding processes.",
+    "Demonstrate proper techniques for repairing, fabricating, or cutting metal components or structures using arc welding processes.",
+    "Inspect and evaluate welds to assure that they meet industry standards.",
+    "Analyze and evaluate the welding area to assure safe work practices, proper equipment usage, and proper use of personal protective"
+   ],
+   "careers": [
+    "welding field"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "WELD 110",
-    "why": "named only in the Welding AS section; no certificate section in the text"
-   },
-   {
-    "code": "WELD 120",
-    "why": "named only in the Welding AS section; no certificate section in the text"
-   },
-   {
-    "code": "WELD 130",
-    "why": "named only in the Welding AS section; no certificate section in the text"
-   },
-   {
-    "code": "WELD 135",
-    "why": "named only in the Welding AS section; no certificate section in the text"
-   },
-   {
-    "code": "WELD 137",
-    "why": "named only in the Welding AS section; no certificate section in the text"
-   },
-   {
-    "code": "WELD 212",
-    "why": "named only in the Welding AS section; no certificate section in the text"
-   },
-   {
-    "code": "WELD 230",
-    "why": "named only in the Welding AS section; no certificate section in the text"
-   },
-   {
-    "code": "WELD 240",
-    "why": "named only in the Welding AS section; no certificate section in the text"
-   },
-   {
-    "code": "WELD 260",
-    "why": "named only in the Welding AS section; no certificate section in the text"
-   },
-   {
-    "code": "WELD 265",
-    "why": "named only in the Welding AS section; no certificate section in the text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "WELD 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 135",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 137",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 212",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 265",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The requested award is a Certificate of Achievement (16 to fewer than 30 units), but the source page (URL 'welding-as-fall-2026') prints only the Welding AS degree. No certificate section appears in the text, so no blocks were recorded for this award.",
-   "The Welding AS section requires all ten closed-list courses, totaling 28 units: WELD 110, 120, 130, 135, 137 (2 units each), WELD 212, 260 and 265 (4 units each), and WELD 230 and 240 (3 units each). It prints a degree total of 60 units, with GE plus electives at 32 units. The 28 units fall in the certificate's unit range, so the certificate may share this course list. The certificate's own catalog page should be checked to confirm.",
-   "Program outcomes and the career text ('welding inspection and management positions') are printed for Welding AS only. They were not recorded for the certificate. A reviewer should confirm whether the certificate shares them.",
-   "The AS section prints two differing outcome lists, 'Program Goals and Objectives' and 'Program Outcomes'. It also gives WELD 110 two titles: 'Oxyacetylene Welding and Cutting' and 'Oxyacetylene Welding, Cutting and Brazing'."
+   "The page prints the requirements twice: an eLumen 'Program Requirements' list (codes written without a space, e.g. 'WELD110', total 28) and a 'Requirements' table ('Required Courses (28 units)', 'Required Major Total 28 units', 'TOTAL Units 28 units'). Both agree; codes recorded in the table's spaced form.",
+   "The 'Program Outcomes' list is cut off at the end of the text: outcome 4 ends mid-sentence ('...proper use of personal protective'). It is recorded as printed; there may be further outcomes not captured.",
+   "A separate 'Program Goals and Objectives' list (5 items, worded differently, including 'Read and properly interpret industry standard blueprints and architectural drawings') appears in what looks like eLumen proposal/workflow content; it was not recorded as program outcomes. A reviewer may wish to check which list is authoritative.",
+   "The page includes eLumen curriculum-workflow text (checklist, workflow agreement), suggesting it may be a program proposal view rather than the published catalog page.",
+   "WELD 110 is titled 'Oxyacetylene Welding and Cutting' in one list and 'Oxyacetylene Welding, Cutting and Brazing' in the other."
   ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": "45574354887",
+ "catalog_year": "2026-2027"
 }
