@@ -24,6 +24,9 @@ S652's review rule: a new rule runs first against records whose answer is alread
     lists_claim flags 28 of them (all but Los Angeles Trade Technical 08479, held by key alone), and its counts on
     the census's records of the gap's shape are pinned;
   * the plain recall on every failing record stays wrong 0;
+  * a later plan's record is right in either state (p-test-asserts-other-pr-absent-s721): Long Beach City 41220 sat
+    off the gap's shape as S703 read it, and S731's plan s731c rescored it and collected it with this gap, which adds
+    one to stands and one to the recall's gap count; each state is pinned whole, and any other move fails;
   * the s703w plan names only programs the committed census lists as units_unequal, none held out, and its
     pre-read, guarded UPDATE and rollback name exactly the plan's rows;
   * the colleges held from tonight's plan (lane 1's six, worker levers' five, worker peralta's four) and the parked
@@ -174,19 +177,43 @@ check(lr["held"] > 20000 and lr["right"] == lr["held"] and lr["wrong"] == 0
 bd = lr["by_boundary"]
 check(bd.get("past_by_half", 0) > 1000 and bd.get("total_by_half", 0) > 1000 and bd.get("cross_list", 0) > 1000,
       "the boundary readings ran, each right: %s" % bd)
+# A later plan's record, right in either state (p-test-asserts-other-pr-absent-s721). As S703 read it, Long Beach City
+# 41220 filed no gap and sat off the gap's shape (its arithmetic named no comparison). S731's plan s731c
+# (kb/_program_piles_s731_lbcc.py, migrate 45612147342) rescored it with today's scorer and collected it with this
+# gap, so it now reads the gap's shape with its claim standing: one more record stands, and one more failing record
+# holds the gap in the recall. Each state is pinned whole; a third state, or any other record's move, fails below.
+LATER_KEY = ("Long Beach City College", "41220")
+with open(os.path.join(ROOT, "kb", "program_requirements_college", C.slug_of(LATER_KEY[0]), "records",
+                       LATER_KEY[1] + ".json"), encoding="utf-8") as fh:
+    later = json.load(fh)
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_s731_lbcc_2026-11-25_s731c.json"),
+          encoding="utf-8") as fh:
+    later_rows = [r for r in json.load(fh)["records"] if (r["college"], str(r["control_number"])) == LATER_KEY]
+later_gaps = [g.get("gap") for g in (later.get("score") or {}).get("gaps") or [] if isinstance(g, dict)]
+as_s703 = not later_gaps and NG._lists_shape(later) is None and NG.held_answer(later) is None
+collected = (later_gaps == [GAP] and len(later_rows) == 1 and later_rows[0]["moves_to"] == GAP
+             and later_rows[0]["after_image"]["checks"].get("gaps") == [GAP]
+             and LATER_KEY in NG.census_keys(("units_unequal",), CENSUS_AT_PLAN)
+             and NG._lists_shape(later) is not None and NG.lists_claim(later) == "stands"
+             and NG.held_answer(later) == GAP)
+check(as_s703 or collected, "Long Beach City 41220 reads as S703 read it or as s731c collected it (gaps %s)"
+      % later_gaps)
+plus = 1 if collected else 0
+
 lp = res["lists_precision"]
 check((lp["stands"], lp["lists_meet_figure"], lp["prints_other_total"], lp["course_optional"],
-       lp["note_names_difference"], lp["within_printed_range"]) == (18, 8, 4, 5, 5, 6),
-      "lists_claim on the census's 46 records of the gap's shape: stands 18, meet 8, other total 4, optional 5, "
-      "names the difference 5, inside a range 6 (%s)" % lp)
+       lp["note_names_difference"], lp["within_printed_range"]) == (18 + plus, 8, 4, 5, 5, 6),
+      "lists_claim on the census's %d records of the gap's shape: stands %d, meet 8, other total 4, optional 5, "
+      "names the difference 5, inside a range 6 (%s)" % (46 + plus, 18 + plus, lp))
 check(lp["hand_held"] == 29 and lp["hand_held_flagged_by_lists_claim"] == 28
       and lp["hand_held_not_flagged"] == ["Los Angeles Trade Technical College 08479"],
       "lists_claim flags %d of the 29 hand-held records (%s)" % (lp["hand_held_flagged_by_lists_claim"],
                                                                 lp["hand_held_not_flagged"]))
 check(not any(m["college"] in HELD_S703 for m in res["moved"]), "the dry run moves no record at a held college")
 rc = res["recall"]
-check(rc["wrong"] == 0 and rc["by_answer"].get(GAP, 0) == 21,
-      "the plain recall with the new rule: right %d, wrong %d, the gap held on 21 (%d)" % (rc["right"], rc["wrong"], rc["by_answer"].get(GAP, 0)))
+check(rc["wrong"] == 0 and rc["by_answer"].get(GAP, 0) == 21 + plus,
+      "the plain recall with the new rule: right %d, wrong %d, the gap held on %d (%d)"
+      % (rc["right"], rc["wrong"], 21 + plus, rc["by_answer"].get(GAP, 0)))
 
 with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-22_s703w.json"),
           encoding="utf-8") as fh:

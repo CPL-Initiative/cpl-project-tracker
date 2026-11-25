@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 722,
-  "moniker": "SkyCormorant",
+  "session": 730,
+  "moniker": "SkyDunlin",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_723_handoff.md",
+  "handoff": "docs/session_731_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-24T14:41:07Z",
+  "written_at": "2026-11-25T13:12:18Z",
   "project": "subjects",
   "next_step": {
-    "title": "Derived titles in the titles build",
-    "text": "A title COBI rates 80 or more now stands as a derived title on the page; the next step writes those titles into the titles file as their own column, so the Subjects card's committed count agrees with the page, then measures how often a web search's title is right."
+    "title": "Load COBIx's local subject titles, then send the stray codes' courses back to Needs an M-ID",
+    "text": "COBIx collects the printed title for each college and local subject code with none, with its source. Load them, rescore the 88 stray codes' local subjects with the title leading, then run the re-mint as a dry run for Sam before it applies."
   },
   "changes": [
     {
@@ -228,6 +228,10 @@
     {
       "at": "2026-11-24T14:40:00Z",
       "text": "Confidence shows as one 0 to 100 bar; a web search on the college's own site counts as a candidate, so Clovis MECH reads Mechatronics/Industrial Automation; a sidebar resize leaves 360 pixels of the view."
+    },
+    {
+      "at": "2026-11-25T13:10Z",
+      "text": "A list of 8,786 college and local subject codes with no title went to COBIx, each with a recommended title and its measured confidence; Sam ruled that no M-ID is minted on a local code."
     }
   ]
 }

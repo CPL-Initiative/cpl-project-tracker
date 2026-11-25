@@ -101,7 +101,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "option_lists_read_apart",
+    "label": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
+    "words": "The student completes one specialty area (14-15 units, printed under 'Completion of One Specialty Area'). Each specialty is two blocks (Required Courses + Restricted Electives 8-9 units); all twelve specialty blocks share option_group 'Specialty Area', but a student completes both blocks of one specialty, not one block."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

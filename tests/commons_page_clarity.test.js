@@ -96,9 +96,9 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
   const before = x.w.location.hash;
   click(x.w, toSubj); await settle();
   const A = x.d.activeElement;
-  check("(1) ⭐ a jump unfolds the card and its stage, and lands on the check's link, highlighted, and the address stays", !subj.classList.contains("cmf-folded")
+  check("(1) ⭐ a jump unfolds the card and its stage, and lands on the check's link, highlighted, and the address is that card's fold on this page (S730, step 4: a Needs you link folds to its card)", !subj.classList.contains("cmf-folded")
     && !x.d.getElementById("cmf-subj-check-3").closest("[hidden]") && A && A.tagName === "A" && A.getAttribute("href") === "#commons/subjects/held"
-    && A.classList.contains("cmf-hl") && x.d.getElementById("cmf-subj-check-3").contains(A) && x.w.location.hash === before, A && A.outerHTML);
+    && A.classList.contains("cmf-hl") && x.d.getElementById("cmf-subj-check-3").contains(A) && before === "#commons" && x.w.location.hash === "#commons/card/subjects", x.w.location.hash + " " + (A && A.outerHTML));
   // the same for a college's outline item: its card's college link takes the focus
   click(x.w, one[0].querySelector("a")); await settle();
   check("(1) ⭐ an outline item lands on its college's link in the card, highlighted", x.d.activeElement && x.d.activeElement.getAttribute("href") === one[0].querySelector("a").getAttribute("data-onpage-to")

@@ -17558,7 +17558,7 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 686,
+   "count": 687,
    "docs": [
     {
      "created": "2026-11-25",
@@ -17571,6 +17571,20 @@
       "session"
      ],
      "title": "Session 732 handoff (from SkyFrigatebird, S731, the CPL Queue routine's collection run of 2026-11-25, from 10:55Z)",
+     "type": null,
+     "updated": "2026-11-25"
+    },
+    {
+     "created": "2026-11-25",
+     "governs": [],
+     "n": 731,
+     "path": "docs/session_731_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 731 handoff (from SkyDunlin, S730, Sam's plain session of 2026-11-25: Needs you folds to its card, the doubt count live, the fold measured, the stray codes and the title hunt)",
      "type": null,
      "updated": "2026-11-25"
     },
@@ -28936,5 +28950,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1579
+ "total": 1580
 }
