@@ -1,5 +1,5 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 2. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 1 (run 45624782074) loaded each courses view whole; its log ran past what a session reads back. This read prints only what names a subject: the catalog's current edition (round 1 found the registry's 24-25 catalog is not published). No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 2 (run 45627200036): the 24-25 and current catalogs are not published. This read: the catalog root, to see which catalog it opens. No model call, writes nothing.",
  "college": "Mission College",
  "questions": {
   "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
@@ -9,20 +9,20 @@
   "\\([A-Z]{2,6}\\)",
   "[Ss]ubjects?",
   "[Pp]refix",
-  "[Aa]bbreviation"
+  "[Dd]epartment"
  ],
  "pages": [
   {
    "answers": [
     "subject_index"
    ],
-   "url": "https://mission.elumenapp.com/catalog/current/home",
+   "url": "https://mission.elumenapp.com/catalog",
+   "links": "catalog",
+   "links_cap": 60,
    "network": true,
    "network_hosts": [
     "api-prod.elumenapp.com"
-   ],
-   "links": "prefix|abbrev|subject|descript|disciplin|department|catalog|course",
-   "links_cap": 120
+   ]
   }
  ],
  "outside_hosts": {

@@ -1,5 +1,5 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 2. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 1 (run 45624782074) loaded each courses view whole; its log ran past what a session reads back. This read prints only what names a subject: the two lines above each subject's first course in the courses view (subject_context), and the links that name a subject, prefix or department. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 2 (run 45627200036): the courses view renders 1,855 characters while its publish call carries 2.1 MB. This read: the courses view with its collapsed sections opened, the lines above each subject's first course, and the publish call's markup around two subject words. No model call, writes nothing.",
  "college": "College of the Siskiyous",
  "questions": {
   "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
@@ -9,7 +9,7 @@
   "\\([A-Z]{2,6}\\)",
   "[Ss]ubjects?",
   "[Pp]refix",
-  "[Aa]bbreviation"
+  "[Dd]epartment"
  ],
  "pages": [
   {
@@ -17,13 +17,16 @@
     "subject_index"
    ],
    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/courses",
+   "expand": true,
    "capture_view": true,
    "network": true,
    "network_hosts": [
     "api-prod.elumenapp.com"
    ],
-   "links": "prefix|abbrev|subject|descript|disciplin|department",
-   "links_cap": 150
+   "network_find": [
+    "Accounting",
+    "ENGL"
+   ]
   }
  ],
  "outside_hosts": {
@@ -31,6 +34,6 @@
  },
  "subject_context": {
   "heading": "^(?P<subj>[A-Z][A-Z&]{0,7}) (?P<num>[A-Z]?\\d{1,4}[A-Z]{0,4}) [-\u2013] (?P<title>.+)$",
-  "before": 2
+  "before": 3
  }
 }

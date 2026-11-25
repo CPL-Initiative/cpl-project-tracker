@@ -1,5 +1,5 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 2. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 1 (run 45624782074) loaded each courses view whole; its log ran past what a session reads back. This read prints only what names a subject: the two lines above each subject's first course in the courses view (subject_context), and the links that name a subject, prefix or department. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 2 (run 45627200036): the courses view under catalog/current is not published. This read: the catalog's start page, its links that name a subject, department or course, and its menu call around 'department'. No model call, writes nothing.",
  "college": "College of Marin",
  "questions": {
   "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
@@ -9,28 +9,27 @@
   "\\([A-Z]{2,6}\\)",
   "[Ss]ubjects?",
   "[Pp]refix",
-  "[Aa]bbreviation"
+  "[Dd]epartment"
  ],
  "pages": [
   {
    "answers": [
     "subject_index"
    ],
-   "url": "https://marin.elumenapp.com/catalog/current/courses",
-   "capture_view": true,
+   "url": "https://marin.elumenapp.com/catalog/current/home",
+   "links": "department|subject|course|disciplin|prefix",
+   "links_cap": 200,
    "network": true,
    "network_hosts": [
     "api-prod.elumenapp.com"
    ],
-   "links": "prefix|abbrev|subject|descript|disciplin|department",
-   "links_cap": 150
+   "network_find": [
+    "department",
+    "Department"
+   ]
   }
  ],
  "outside_hosts": {
   "api-prod.elumenapp.com": "eLumen's own API host: the catalog's scripts fetch every view from it (kb/_program_requirements_college.py, the eLumen note; S380)."
- },
- "subject_context": {
-  "heading": "^(?P<subj>[A-Z][A-Z&]{0,7}) (?P<num>[A-Z]?\\d{1,4}[A-Z]{0,4}) [-\u2013] (?P<title>.+)$",
-  "before": 2
  }
 }

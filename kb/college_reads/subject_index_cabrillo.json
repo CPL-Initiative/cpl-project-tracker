@@ -1,5 +1,5 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 2. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 1 (run 45624782074) loaded each courses view whole; its log ran past what a session reads back. This read prints only what names a subject: the two lines above each subject's first course in the courses view (subject_context), and the links that name a subject, prefix or department. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 2 (run 45627200036): the 2026-2027 courses view is not published; the side menu links departments. This read: the start page's department links, and the Accounting department page's lines above each subject's first course. No model call, writes nothing.",
  "college": "Cabrillo College",
  "questions": {
   "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
@@ -9,21 +9,31 @@
   "\\([A-Z]{2,6}\\)",
   "[Ss]ubjects?",
   "[Pp]refix",
-  "[Aa]bbreviation"
+  "[Dd]epartment"
  ],
  "pages": [
   {
    "answers": [
     "subject_index"
    ],
-   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/courses",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "links": "department",
+   "links_cap": 200
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/department/accounting",
    "capture_view": true,
    "network": true,
    "network_hosts": [
     "api-prod.elumenapp.com"
    ],
-   "links": "prefix|abbrev|subject|descript|disciplin|department",
-   "links_cap": 150
+   "network_find": [
+    "ACCTG",
+    "Accounting"
+   ]
   }
  ],
  "outside_hosts": {
@@ -31,6 +41,6 @@
  },
  "subject_context": {
   "heading": "^(?P<subj>[A-Z][A-Z&]{0,7}) (?P<num>[A-Z]?\\d{1,4}[A-Z]{0,4}) [-\u2013] (?P<title>.+)$",
-  "before": 2
+  "before": 3
  }
 }
