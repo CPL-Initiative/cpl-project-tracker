@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3: the subject link list round 2 named under Course Descriptions (run 45625223321), one navigation call; the one sdccd read in this commit. Catalog 69.",
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 4: the Course Descriptions node (15848) that round 3 (run 45626743727) found; the one sdccd read in this commit. Catalog 69.",
  "college": "San Diego City College",
  "questions": {
   "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
@@ -12,7 +12,8 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15846"
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15848"
   }
- ]
+ ],
+ "capture_lines": 2000
 }

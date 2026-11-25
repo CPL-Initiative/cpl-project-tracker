@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3: the subject link lists round 2 named under the course section (run 45625223321), each one navigation call. Catalog 27.",
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 4: round 3 (run 45626743727) printed 50 of the subject list's items, its answer past the reader's whole-page size; this read prints the same call through the capture view, line for line. Catalog 27.",
  "college": "Palomar College",
  "questions": {
   "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
@@ -12,13 +12,9 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385"
-  },
-  {
-   "answers": [
-    "cq_subjects"
-   ],
-   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33552"
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "capture_view": true
   }
- ]
+ ],
+ "capture_lines": 2000
 }
