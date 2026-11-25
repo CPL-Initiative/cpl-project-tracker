@@ -139,21 +139,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "noted_unit_floor",
-    "label": "The catalog requires a variable-unit course at a minimum above the units printed beside it; with that minimum the courses add to the printed total.",
-    "words": "Capstone block 'Required electives: Capstone (needs only one unit of WE-186MEA)' recorded as 'all' (MEA-295 plus one unit of WE-186MEA); this reading makes the blocks sum to the stated 29 units (6+2+15+3+3). Reviewer should confirm it is not a choose-one rule."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 70,
-   "course_list_match": 46,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": false
  },
  "record": {
   "program": {

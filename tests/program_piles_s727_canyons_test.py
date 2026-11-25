@@ -9,16 +9,20 @@ person is collected with its gap named and a lower confidence. Pinned here:
   * each kind the plan files carries a sentence and a unit-arithmetic score in kb/_program_named_gaps.py, and the new
     heading_not_in_text takes the other-page source cap of 50;
   * precision 21 of 21 against the hand reading of the census members pinned in the fixture
-    (p-test-pins-census-members-s714) and 43388: 9 collected, 12 held;
-  * each entry's own figures: 02277's nine-unit line, 15477's one unit of WE-186MEA, 32896's open list, each named gap's
-    words in its record's own notes (p-named-gap-asserts-only-the-page-s721);
+    (p-test-pins-census-members-s714) and 43388: 7 collected, 14 held;
+  * a record a cheaper lever passes stays on it (p-gap-filing-leaves-census-lever-s721; the second reader, round 1):
+    02277's nine-unit line and 15477's one unit of WE-186MEA each close the sum, and today's scorer passes each record
+    once the rule rewrites it, so neither is gap-filed;
+  * 32896's open list, and each named gap's words in its record's own notes (p-named-gap-asserts-only-the-page-s721);
   * the claim check holds 41576 (the capture did not find MUSIC 189 or 190), a record whose capture holds the page its
     note says the read lacked, and a shared page without its own-section words; every boundary reading names no gap;
-  * on_live_run reads S691's committed live read for 15477, and 43388 has no posted row, both read as the receipts
-    stood before this plan's own s727a apply (p-test-reads-own-apply-receipt-s721), so the test holds after it too;
-  * the plan: 9 rows (8 UPDATE, 1 INSERT) named exactly by the receipt and the four SQL files, the confirm and insert
-    guards, a second run plans none; the load's image of each committed record is its receipt's after-image, the
-    UPDATE records unchanged, and 43388 moved from held_for_person/ to records/.
+  * a plan's rows post only once a migrate receipt of its apply returned rows and no rollback receipt did (an aborted
+    apply posts nothing); 43388 has no posted row, read as the receipts stood before this plan's own s727a apply
+    (p-test-reads-own-apply-receipt-s721), so the test holds after it too;
+  * the plan: 7 rows (6 UPDATE, 1 INSERT) named exactly by the receipt and the four SQL files, the confirm and insert
+    guards, a rollback that keeps an inserted row a person checked or left a verdict on, with the delete's own expect
+    line; a second run plans none; the load's image of each committed record is its receipt's after-image, the UPDATE
+    records unchanged, and 43388 moved from held_for_person/ to records/.
 
 Run from repo root: python3 tests/program_piles_s727_canyons_test.py
 """
@@ -36,13 +40,14 @@ import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s727_canyons as W  # noqa: E402
 
 COLLEGE = "College of the Canyons"
-ROWS = {"02277": "unit_line_not_read", "10312": "noted_figures_differ", "15477": "noted_unit_floor",
-        "16962": "noted_section_cut_off", "32896": "lists_not_closed", "37648": "pool_figure_not_read",
-        "40383": "noted_figures_differ", "43549": "noted_figures_differ", "43388": "heading_not_in_text"}
-HELD = {"10302", "19386", "32723", "33814", "40090", "44260", "44657", "32815", "36793", "40384", "45528", "41576"}
+ROWS = {"10312": "noted_figures_differ", "16962": "noted_section_cut_off", "32896": "lists_not_closed",
+        "37648": "pool_figure_not_read", "40383": "noted_figures_differ", "43549": "noted_figures_differ",
+        "43388": "heading_not_in_text"}
+HELD = {"10302", "19386", "32723", "33814", "40090", "44260", "44657", "32815", "36793", "40384", "45528", "41576",
+        "02277", "15477"}
 OTHER_LEVER = {"30837", "31356", "37868", "45284"}
-SCORES = {"unit_line_not_read": 40, "noted_figures_differ": 40, "noted_unit_floor": 70, "noted_section_cut_off": 20,
-          "lists_not_closed": 30, "pool_figure_not_read": 40, "heading_not_in_text": 20}
+SCORES = {"noted_figures_differ": 40, "noted_section_cut_off": 20, "lists_not_closed": 30, "pool_figure_not_read": 40,
+          "heading_not_in_text": 20}
 checks, failures = [0], []
 
 
@@ -69,11 +74,34 @@ check(W.keys(CENSUS_AT_PLAN) == members + ["43388"] and W.FROM_HELD == ("43388",
 check(not OTHER_LEVER & set(members), "the other levers' records are left alone")
 pr = W.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 21 and pr["right"] == 21 and not pr["wrong"], "precision 21 of 21: %s" % pr["wrong"])
-check(pr["by_answer"].get("none") == 12, "12 held: %s" % pr["by_answer"])
+check(pr["by_answer"].get("none") == 14, "14 held: %s" % pr["by_answer"])
+
+# A cheaper lever passes 02277 and 15477: the entry's figures close, and today's scorer passes the rewritten record.
+check(set(W.ON_LEVER) == {"02277", "15477"} and not set(W.ON_LEVER) & set(W.REVIEWED), "the two stay on the lever")
+f = W._load("02277")
+e = W.ON_LEVER["02277"]
+check(any(e["words"] in n for n in W._notes(f)) and W.line_closes(f, e) and e["line"]["adds"] == 9,
+      "02277: MATH-211 plus the printed nine-unit line is the list's 14, and 37-38 closes")
+g = copy.deepcopy(f)
+for b in g["record"]["blocks"]:
+    if b.get("name") == e["line"]["block"]:
+        b["courses"].append({"code": "CMPSCI-NINE", "units": 9, "units_max": None, "alternatives": [],
+                             "catalog_addition": True})
+check(not W.scorer_passes(f) and W.scorer_passes(g), "02277: the scorer passes it with the nine units in its list")
+f = W._load("15477")
+e = W.ON_LEVER["15477"]
+check(any(e["words"] in n for n in W._notes(f)) and W.takes_closes(f, e), "15477: one unit of WE-186MEA closes 29")
+g = copy.deepcopy(f)
+for c in W._course(g, "WE-186MEA"):
+    c["units"], c["units_max"] = 1, None
+check(not W.scorer_passes(f) and W.scorer_passes(g), "15477: the scorer passes it with WE-186MEA at one unit")
+for cn in W.ON_LEVER:
+    check(W.HAND[cn].startswith("held: a cheaper lever passes it") and W.gap_noted(W._load(cn)) is None,
+          "%s: held, never gap-filed" % cn)
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 9, "a named course not found": 1}
-      and cc["not_standing"] == [["41576", "a named course not found"]], "9 claims stand, 41576 holds: %s" % cc)
+check(cc["counts"] == {"stands": 7, "a named course not found": 1}
+      and cc["not_standing"] == [["41576", "a named course not found"]], "7 claims stand, 41576 holds: %s" % cc)
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2["16962"]["source"] = dict(s2["16962"]["source"], pages=[83, 84])
@@ -84,9 +112,9 @@ s2["43388"]["source"] = dict(s2["43388"]["source"], pages=[327, 328])
 check(W.claim(W._load("43388"), s2) == "the capture holds the page the note says the read lacked",
       "a capture holding page 327 holds 43388")
 s2 = copy.deepcopy(src)
-s2["15477"]["codes_found"] = [c for c in s2["15477"]["codes_found"] if c != "WE186MEA"]
-check(W.claim(W._load("15477"), s2) == "a named course not found", "a named course the capture lacks holds 15477")
-for cn in ("02277", "15477", "16962", "32896", "40383", "43388"):
+s2["43388"]["codes_found"] = []
+check(W.claim(W._load("43388"), s2) == "a named course not found", "a named course the capture lacks holds 43388")
+for cn in ("16962", "32896", "40383", "43388"):
     saved = W.REVIEWED[cn]
     W.REVIEWED[cn] = {k: v for k, v in saved.items() if k != "own_section"}
     check(W.claim(W._load(cn)) == "the page is shared and no note names the record's own section",
@@ -97,37 +125,43 @@ for cn in ("32815", "40384", "45528"):
     check(W.shared_with(cn) and cn not in W.REVIEWED, "%s holds on its shared page" % cn)
 
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 10 * 3 + 6, "every boundary reading names no gap: %s" % bd)
-
-# Each entry's own figures, on the record as filed.
-e = W.REVIEWED["02277"]
-f = W._load("02277")
-check(W.line_closes(f, e) and e["line"]["adds"] == 9, "02277: MATH-211 plus the nine-unit line is the printed 14")
-check(W.takes_closes(W._load("15477"), W.REVIEWED["15477"]), "15477: one unit of WE-186MEA closes 29 at both ends")
+check(not bd["wrong"] and sum(bd["counts"].values()) == 8 * 3 + 3, "every boundary reading names no gap: %s" % bd)
 check(W.list_open(W._load("32896"), W.REVIEWED["32896"]), "32896: the option-dependent list is one choose-units list")
 for cn, e in W.REVIEWED.items():
     check(any(e["words"] in n for n in W._notes(W._load(cn))), "%s: the gap's words are its own note's" % cn)
 
+# A plan posts only once its apply returned rows, and a rollback that returned rows takes that back.
+ok = '[{"returned":{"returned":9,"keys":[1,2,3,4,5,6,7,8,9],"skipped_checked":[]}}]'
+aborted = '{"message":"Failed to run sql query: ERROR:  22P02: invalid input syntax for type integer"}'
+check(W._returned_rows(json.loads(ok)) and not W._returned_rows(json.loads(aborted)), "an aborted apply wrote nothing")
+check(W._returned_rows([{"returned": {"returned": 0, "keys": [], "inserted": ["43388"]}}])
+      and not W._returned_rows([{"returned": {"returned": 0, "keys": [], "inserted": []}}]), "an insert alone writes")
+check(W.plan_applied("s721a") and W.plan_applied("s720r") and not W.plan_applied("s727zz"),
+      "applied plans read applied (s720r's aborted first try beside its applied second)")
+
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
 got = {r["control_number"]: r["moves_to"] for r in rec["records"]}
-check(got == ROWS and rec["moved"] == 9 and rec["updates"] == 8 and rec["inserts"] == 1,
-      "the receipt names the 9 rows and their answers")
+check(got == ROWS and rec["moved"] == 7 and rec["updates"] == 6 and rec["inserts"] == 1,
+      "the receipt names the 7 rows and their answers")
 check({r["control_number"] for r in rec["records"] if r["write"] == "insert"} == {"43388"}, "43388 is the insert")
-check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 12")
+check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 14")
 check(rec["census"]["members"] == members, "the receipt's keys are the fixture's")
 for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for cn in ROWS) and not any("'%s'" % cn in sql for cn in HELD | OTHER_LEVER),
-          "%s names exactly the 9" % part)
+          "%s names exactly the 7" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (8))" in sql and "insert guard" in sql
+        check("confirm guard" in sql and "e(expect) as (values (6))" in sql and "insert guard" in sql
               and "on conflict (college, control_number) do nothing" in sql and statements(sql) == 1,
               "the apply is one statement guarding a confirm and its insert")
     if part == "rollback":
-        check("delete guard" in sql and "r.checked is not true" in sql and statements(sql) == 1,
-              "the rollback deletes only an unchecked inserted row, in one statement")
+        check("delete guard" in sql and "r.checked is not true" in sql and statements(sql) == 1
+              and "de(expect) as (values (1))" in sql and "(select count(*) from del) <> de.expect - nc.n" in sql
+              and sql.count("exists (select 1 from public.program_record_verdicts pv") == 2
+              and "and not exists (select 1 from public.program_record_verdicts pv" in sql,
+              "the rollback keeps an inserted row a person checked or left a verdict on, with its own expect line")
     if part.startswith("preread"):
         check("'insert_present'" in sql and "'insert_verdicts'" in sql, "%s counts the insert's absence" % part)
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
@@ -138,7 +172,8 @@ for r in rec["records"]:
     if r["write"] == "update":
         check(img["checks"] == r["after_image"]["checks"], "%s: the load posts the after-image" % r["control_number"])
         check(img["record"] == r["before_image"]["record"], "%s: the record is unchanged" % r["control_number"])
-        check(str(r["before_image"]["extracted_run"]) == str(r["extracted_run"]), "%s: the plan keeps its run" % r["control_number"])
+        check(str(r["before_image"]["extracted_run"]) == str(r["extracted_run"]),
+              "%s: the plan keeps its run" % r["control_number"])
     else:
         check({k: img[k] for k in r["after_image"]} == r["after_image"], "43388: the load posts the inserted image")
 check(os.path.isfile(W._path("43388")) and not os.path.exists(W._held_path("43388")),

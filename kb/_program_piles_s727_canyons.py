@@ -14,14 +14,9 @@ standing guards: scorer_passes (a record today's scorer passes is never gap-file
 record's run must be its live row's), and the own-section guard (a record whose page capture.json's shared_pages lists
 another program on holds unless a note names its own section). The kinds, all existing but one:
 
-  unit_line_not_read      (40) 02277's non-transfer path prints "MATH-211 AND Nine additional units from the above
-                          CMPSCI courses", and the record leaves the nine-unit line out; with it the courses add to the
-                          printed 37-38 at both ends.
   noted_figures_differ    (40) the page's total leaves out the work-experience minimum its own list requires, and the
                           note quotes both figures: 10312 (18 against 20), 40383 (36 against 37), 43549 (22.5 against
                           23). The record adds to one and states the other.
-  noted_unit_floor        (70) 15477's capstone "needs only one unit of WE-186MEA", printed at 0.05-4.0; at one unit
-                          the courses add to the printed 29 at both ends.
   noted_section_cut_off   (20) 16962's text begins on page 84, and its heading, total and the first part of its list
                           sit on page 83, which the capture did not hold. Course-list match is capped at 50.
   lists_not_closed        (30) 32896's third list takes three units after Option 1 and six after Option 2.
@@ -33,7 +28,9 @@ another program on holds unless a note names its own section). The kinds, all ex
                           and no total was read), and the source takes the cap of 50 that the kinds read from another
                           award's page take (OTHER_PAGE_GAPS in kb/_program_named_gaps.py).
 
-Held (12), each reason in HAND: 41576 (repeat_read_once's shape, MUSIC-189 and MUSIC-190 at 1 unit taken four times
+Held (14), each reason in HAND: 02277 and 15477 (a cheaper lever passes them, ON_LEVER below: today's scorer passes
+02277 once the nine units go into its non-transfer list, 37-38 against 37-38, and 15477 once WE-186MEA is read at the
+one unit its block prints, 29 against 29; p-gap-filing-leaves-census-lever-s721, the second reader's round 1); 41576 (repeat_read_once's shape, MUSIC-189 and MUSIC-190 at 1 unit taken four times
 each, but the claim check holds it: today's capture did not find either code on its pages); 10302, 19386, 32723, 33814, 40090, 44260 and 44657 (coverage fails, and today's
 scorer passes the arithmetic: a rename or prefix alias is their lever); 32815 (its page is shared with the Spanish
 A.A. and no note names its section; its substitution list adds no units, a wording rule); 36793 (its 19-22 falls inside
@@ -82,19 +79,23 @@ HELD_DIR = "held_for_person"
 # Collected from held_for_person/ (no live row: the plan inserts one), beside the census's members.
 FROM_HELD = ("43388",)
 
-REVIEWED = {
-    "02277": {"gap": "unit_line_not_read", "computed": [28, 38], "stated": [37, 38],
+# Records a wording rule on the reconcile_steps lever passes, so neither is gap-filed: each entry's figures close the
+# record's sum to its printed total at both ends (line_closes, takes_closes), which is today's scorer passing it once
+# the rule rewrites the record (the second reader, S727 round 1).
+ON_LEVER = {
+    "02277": {"computed": [28, 38], "stated": [37, 38],
               "words": "Nine additional units from the above CMPSCI courses that have not already been taken",
-              "line": {"block": "Plus 14 units from the following (for non-transfer students)", "adds": 9},
-              "own_section": "The A.S. section prints no general education pattern or degree total"},
+              "line": {"block": "Plus 14 units from the following (for non-transfer students)", "adds": 9}},
+    "15477": {"computed": [28.05, 32], "stated": [29, 29],
+              "words": "Capstone block 'Required electives: Capstone (needs only one unit of WE-186MEA)'",
+              "takes": {"block": "Required electives: Capstone (needs only one unit of WE-186MEA)",
+                        "code": "WE-186MEA", "printed": [0.05, 4], "units": 1}},
+}
+
+REVIEWED = {
     "10312": {"gap": "noted_figures_differ", "computed": [20, 20], "stated": [18, 18],
               "words": "The page states 'Units Required: 18', but the seven required courses sum to 18 units and the "
                        "degree also requires a minimum of 2 units of WE-186HOSP, which would give 20 units"},
-    "15477": {"gap": "noted_unit_floor", "computed": [28.05, 32], "stated": [29, 29],
-              "words": "Capstone block 'Required electives: Capstone (needs only one unit of WE-186MEA)'",
-              "takes": {"block": "Required electives: Capstone (needs only one unit of WE-186MEA)",
-                        "code": "WE-186MEA", "printed": [0.05, 4], "units": 1},
-              "courses": ["WE186MEA"], "own_section": "No career titles named in the Filmmaking section"},
     "16962": {"gap": "noted_section_cut_off", "computed": [8, 8], "stated": None,
               "words": "The catalog text begins mid-section on page 84", "not_page": 83,
               "own_section": "the Automotive Technology A.S. Degree heading, description, outcomes, units required and "
@@ -128,6 +129,12 @@ _COVERAGE = ("held: %s; today's scorer passes its arithmetic (scorer_passes), so
              "never gap-filed: a rename or prefix alias that places those courses is its lever")
 HAND = {cn: e["gap"] for cn, e in REVIEWED.items()}
 HAND.update({
+    "02277": "held: a cheaper lever passes it: with the non-transfer path's printed 'Nine additional units from the "
+             "above CMPSCI courses' in its list (14 = MATH-211's 5 plus 9) today's scorer reads 37-38 against the "
+             "printed 37-38; a wording rule on reconcile_steps, never a named gap",
+    "15477": "held: a cheaper lever passes it: with WE-186MEA read at the one unit its capstone block prints ('needs "
+             "only one unit'), today's scorer reads 29 against the printed 29; a wording rule on reconcile_steps, "
+             "never a named gap",
     "41576": "held: the claim check: today's capture did not find MUSIC 189 or MUSIC 190 among the codes on its pages "
              "(22 of the file's 30), so the repeat its note names is not corroborated; repeat_read_once (20 plus the "
              "six repeats is the printed 26) waits on a page read",
@@ -284,6 +291,45 @@ def shared_with(cn: str) -> list[str]:
 _POSTED = None
 
 
+def _returned_rows(obj) -> bool:
+    """The migrate response wrote rows: a guarded statement's 'returned' count above 0, or a non-empty 'inserted' or
+    'deleted' list, at any depth of the response the runner filed."""
+    if isinstance(obj, list):
+        return any(_returned_rows(x) for x in obj)
+    if not isinstance(obj, dict):
+        return False
+    for k in ("inserted", "deleted"):
+        if isinstance(obj.get(k), list) and obj[k]:
+            return True
+    r = obj.get("returned")
+    if isinstance(r, bool):
+        return False
+    if isinstance(r, (int, float)):
+        return r > 0
+    return any(_returned_rows(v) for v in obj.values() if isinstance(v, (dict, list)))
+
+
+def plan_applied(tag: str) -> bool:
+    """A plan's rows reached the live table: a filed migrate receipt of its apply answered 2xx with rows written, and
+    no filed receipt of its rollback did (the second reader, S727 round 1: an aborted or rolled-back apply posts
+    nothing). A receipt whose file name names neither counts as an apply."""
+    applied = rolled = False
+    for path in glob.glob(os.path.join(NG.RECEIPTS, "migration_%s_prreq_*.json" % tag)):
+        try:
+            with open(path, encoding="utf-8") as fh:
+                d = json.load(fh)
+            resp = json.loads(d.get("response") or "null")
+        except (OSError, ValueError, TypeError, AttributeError):
+            continue
+        if not str(d.get("status") or "").startswith("2") or not _returned_rows(resp):
+            continue
+        if "_rollback" in os.path.basename(path):
+            rolled = True
+        else:
+            applied = True
+    return applied and not rolled
+
+
 def posted_runs(skip: tuple = ()) -> dict:
     """{control number: [(at, extracted_run), ...]} the committed receipts posted to the college's live rows: a load
     (program_requirement_records_college_<slug>_<run>.json: inserted_keys under its one extracted run), a reread
@@ -318,7 +364,7 @@ def posted_runs(skip: tuple = ()) -> dict:
             tag = name[:-len(".json")].rsplit("_", 1)[-1]
             if tag in skip:
                 continue
-            if not glob.glob(os.path.join(NG.RECEIPTS, "migration_%s_prreq_*.json" % tag)):
+            if not plan_applied(tag):
                 continue
             rows = d.get("records") if isinstance(d.get("records"), list) else d.get("moved")
             for r in rows if isinstance(rows, list) else []:
@@ -631,32 +677,42 @@ def apply_sql(updates: list[dict], inserts: list[dict], tag: str) -> str:
 
 def rollback_sql(updates: list[dict], inserts: list[dict], tag: str) -> str:
     """NG.rollback_sql over the UPDATE rows, with a guarded DELETE of the inserted rows in the same statement: only a
-    row still at its inserted image and unchecked; a row a person checked is skipped and listed."""
+    row still at its inserted image that no person has touched. A row a person checked, or one carrying any verdict
+    (program_record_verdicts references the row, so deleting it would fail the whole statement on the foreign key),
+    is kept and listed as skipped_touched_inserts, and the UPDATE restores still run. The delete has its own expect
+    line (de), so a rollback after a reread moved an inserted row can be told to delete fewer (the second reader, S727
+    round 1)."""
     sql = NG.rollback_sql(updates, tag)
     if not inserts:
         return sql
+    touched = ("exists (select 1 from public.program_record_verdicts pv\n"
+               "                     where pv.college = n.college and pv.control_number = n.control_number)")
     dl = ("n(%s) as (values\n%s),\n"
+          "-- A partial rollback of the inserted rows: set the delete's expect below to the smaller count you mean.\n"
+          "de(expect) as (values (%d)),\n"
           "nc as (select coalesce(json_agg(n.control_number order by n.control_number), '[]'::json) as keys, "
           "count(*) as n\n"
           "        from n join public.program_requirement_records r\n"
-          "          on r.college = n.college and r.control_number = n.control_number where r.checked is true),\n"
+          "          on r.college = n.college and r.control_number = n.control_number\n"
+          "       where r.checked is true or %s),\n"
           "del as (\n"
           "delete from public.program_requirement_records r\n"
           " using n\n"
           " where r.college = n.college and r.control_number = n.control_number and r.extracted_run = n.extracted_run\n"
           "   and r.record = n.record and r.checks = n.checks and r.checked is not true\n"
-          "returning r.control_number),\n" % (N_COLS, _insert_values(inserts)))
+          "   and not %s\n"
+          "returning r.control_number),\n" % (N_COLS, _insert_values(inserts), len(inserts), touched, touched))
     sql = _splice(sql, "s as (select count(*) as n", dl + "s as (select count(*) as n")
     sql = _splice(sql, "select case when s.n = e.expect - c.n\n",
-                  "select case when (select count(*) from del) <> %d - nc.n\n"
+                  "select case when (select count(*) from del) <> de.expect - nc.n\n"
                   "            then ('%s delete guard: the DELETE matched ' || (select count(*) from del) || ' rows, the "
-                  "plan names ' || (%d - nc.n))::int::text::json\n"
-                  "            when s.n = e.expect - c.n\n" % (len(inserts), tag, len(inserts)))
+                  "plan names ' || (de.expect - nc.n))::int::text::json\n"
+                  "            when s.n = e.expect - c.n\n" % tag)
     sql = _splice(sql, "json_build_object('returned', s.n, 'keys', s.keys,",
                   "json_build_object('returned', s.n, 'keys', s.keys, 'deleted', "
                   "(select coalesce(json_agg(control_number order by control_number), '[]'::json) from del), "
-                  "'skipped_checked_inserts', nc.keys,")
-    return _splice(sql, "  from s, c, e;", "  from s, c, e, nc;")
+                  "'skipped_touched_inserts', nc.keys,")
+    return _splice(sql, "  from s, c, e;", "  from s, c, e, nc, de;")
 
 
 def _insert_counts(inserts: list[dict]) -> str:
@@ -770,8 +826,9 @@ def main(argv=None) -> int:
                       "-- a person checked (listed as skipped_checked) and inserts its %d rows, or a row holds a\n"
                       "-- matching confirm.\n" % (len(ups), len(ins)) + body["apply"]),
         "rollback.sql": ("-- Rollback, NOT applied: the before-image's checks back where the row still holds the\n"
-                         "-- after-image, and each inserted row deleted where it still holds its inserted image,\n"
-                         "-- skipping and listing a row a person checked. A rollback lasts only until the next load of\n"
+                         "-- after-image, and each inserted row deleted where it still holds its inserted image and no\n"
+                         "-- person has checked it or left a verdict on it (such a row is kept and listed), skipping and\n"
+                         "-- listing a row a person checked. A rollback lasts only until the next load of\n"
                          "-- that college: revert the record files too (git revert of this plan's commit).\n"
                          + body["rollback"]),
     }
