@@ -60,22 +60,25 @@ members = W.census_members(CENSUS_AT_PLAN)
 check(set(members) == set(ROWS) | HELD and len(members) == 19 and not set(W.PERSON) & set(members),
       "the fixture gives the 19 keys")
 check(not OTHER_LEVER & set(members), "the reader_page_search records are another lever")
-# S731 (kb/_program_piles_s731_pooled.py): the scorer's POOLED_S731 reads Porterville's 18 over Groups I and II, so
-# this plan's rule is pinned under the reading it was written with (POOLED_S731 off). Plan s731p takes 30235 forward
-# (it passes; its file is s731p's, so this rule names no gap on it and its image is s731p's to check); 06773 keeps
-# this plan's gap (the conductor, d-porterville-06773-keeps-s721c-gap-s731).
-S.POOLED_S731 = False
+# S731 (kb/_program_piles_s731_pooled.py): the scorer's POOLED_S731 reads Porterville's 18 over Groups I and II.
+# Plan s731p takes 30235 forward (it passes; its file is s731p's, so its image is s731p's to check). 06773 is the
+# exception: today's scorer passes its arithmetic, and a decision keeps this plan's gap on it (NG.GAP_HELD; the
+# conductor, d-porterville-06773-keeps-s721c-gap-s731), so this plan's rule names no gap on either.
 with open(os.path.join(ROOT, "tests", "fixtures", "pooled_s731.json"), encoding="utf-8") as fh:
     LATER = {r["control_number"] for r in json.load(fh)["rows"] if r["college"] == COLLEGE}
 check(LATER == {"30235"}, "s731p takes 30235 forward (%s)" % sorted(LATER))
+KEPT = {cn for (c, cn) in NG.GAP_HELD if c == COLLEGE}
+check(KEPT == {"06773"} and NG.GAP_HELD[(COLLEGE, "06773")]["gap"] == ROWS["06773"],
+      "06773 keeps this plan's gap by decision (NG.GAP_HELD)")
+MOVED = LATER | KEPT
 pr = W.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 19 and pr["right"] == 19 - len(LATER)
-      and sorted(pr["wrong"]) == sorted([cn, "pool_figure_not_read", "none"] for cn in LATER),
-      "precision 19 of 19, less the one s731p moved: %s" % pr["wrong"])
+check(pr["read"] == 19 and pr["right"] == 19 - len(MOVED)
+      and sorted(pr["wrong"]) == sorted([cn, "pool_figure_not_read", "none"] for cn in MOVED),
+      "precision 19 of 19, less 30235 (s731p) and 06773 (the scorer passes it; its gap kept): %s" % pr["wrong"])
 check(pr["by_answer"].get("none") == 4 and pr["by_answer"].get(W.PASSES) == 1, "4 held, 1 passed")
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 15 - len(LATER)} and not cc["not_standing"], "14 claims stand: %s" % cc)
+check(cc["counts"] == {"stands": 15 - len(MOVED)} and not cc["not_standing"], "13 claims stand: %s" % cc)
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2["40122"]["codes_found"] = [c for c in s2["40122"]["codes_found"] if c != "MUSCP108"]
@@ -90,7 +93,7 @@ check(W.claim(W._load("43554"), s2) == "the capture found the listed code on the
       "a capture that found CGRA P152 itself holds the rename")
 
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == (14 - len(LATER)) * 3 + 1 + 3,
+check(not bd["wrong"] and sum(bd["counts"].values()) == (14 - len(MOVED)) * 3 + 1 + 3,
       "every boundary reading names no gap: %s" % bd)
 
 with open(RECEIPT, encoding="utf-8") as fh:
@@ -139,8 +142,9 @@ check(W.renamed(unscored, {"43554": dict(W.RENAMED["43554"], listed="CGRAP153")}
 other = dict(unscored, control_number="45517")
 check(W.renamed(other) is None, "the rename is 43554's alone (45517 lists CGRA P152 too)")
 
-check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS if ROWS[cn] != W.PASSES and cn not in LATER),
-      "the scorer passes none of the gap rows (#3753's MAJOR)")
+check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS if ROWS[cn] != W.PASSES and cn not in MOVED),
+      "the scorer passes none of the gap rows but 06773, whose gap a decision keeps (#3753's MAJOR)")
+check(all(W.scorer_passes(W._load(cn)) for cn in KEPT), "06773: the scorer passes it, so only the hold keeps its gap")
 check(all(W.on_live_run(W._load(cn)) for cn in ROWS), "every row is on its live run")
 # Read as the receipts stood before this plan's own apply (its s721c receipts post its rows once migrated; s731p's
 # post 30235 once it is migrated).

@@ -248,6 +248,29 @@ ARITH_SCORE.setdefault("ge_figures_other_pattern", 50)
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
+# S731 (kb/_program_piles_s731_pooled.py; the conductor, d-porterville-06773-keeps-s721c-gap-s731): a record a
+# decision keeps collected with its filed gap although today's scorer passes its arithmetic. A reconcile's rescore
+# drops every gap from a passing score (keep_named_gaps, kb/_program_requirements_college.py), so it reads this list
+# and keeps the named gap on such a record. Porterville 06773: the pooled reading adds its 18 over Groups I and II,
+# but its read opens mid-section on page 81 with no heading in the text, so the list is the program's by its title
+# alone, and it keeps the pool_figure_not_read plan s721c filed.
+GAP_HELD = {
+    ("Porterville College", "06773"): {
+        "gap": "pool_figure_not_read",
+        "why": "its read opens mid-section on page 81 with no heading in the text; it keeps s721c's gap "
+               "(d-porterville-06773-keeps-s721c-gap-s731)"},
+}
+
+
+def held_gaps(filed: dict, filed_score: dict | None) -> list:
+    """The filed gaps a decision keeps on the record (GAP_HELD), whatever the fresh score; [] for every other."""
+    held = GAP_HELD.get((filed.get("college"), str(filed.get("control_number"))))
+    if not held:
+        return []
+    return [g for g in (filed_score or {}).get("gaps") or []
+            if (g.get("gap") if isinstance(g, dict) else g) == held["gap"]]
+
+
 def may_continue(filed: dict) -> str | None:
     """The reviewed note saying the record's list may continue (MAY_CONTINUE_REVIEWED), only where the record still
     carries those words; None for every other record."""

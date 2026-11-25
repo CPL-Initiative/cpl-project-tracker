@@ -94,6 +94,13 @@ note = ("The two elective blocks sit under a parent group 'ELECTIVE COURSES - CO
         "complete 6 elective units combined.")
 check(figs(rec(cont, [note], (18, 18))) == [([1, 2], (6.0, 6.0))], "a continued heading goes on the heading before it")
 check(off(lambda: figs(rec(cont, [note], (18, 18)))) == [], "with POOLED_S731 off, none")
+check(figs(rec(cont[:2] + [blk("Degree Requirements (continued)", "choose_units", 0, {"min": 0, "max": 3}, (1, 1))],
+               [note], (18, 18))) == [],
+      "a continued heading under another heading's first word joins nothing")
+check(figs(rec(groups, ["At least 18 combined units from Groups I and II must be completed in residence."],
+               (18, 18))) == [], "a residency sentence names no pool")
+check(figs(rec(groups, ["Choose a minimum of 18 units from either list; the remaining 10 units may be taken at the "
+                        "college."], (18, 18))) == [], "a sentence on where units are taken names no pool")
 series = [blk("Biology - select one series (A)", "all", units=(5, 5), group="series"),
           blk("Biology - select one series (B)", "all", units=(5, 5, 5), group="series")]
 check(figs(rec(series, ["The Biology requirement prints a combined total of 10-15 units for 'select one series'."],
@@ -104,6 +111,9 @@ rc = M.self_recall()
 check(rc["differ"] == len(M.S731_FIRES) == 18 and rc["right"] == 18 and not rc["wrong"] and not rc["missed"],
       "the reading differs on the 18 hand-held records, every one right: %s %s" % (rc["wrong"], rc["missed"]))
 check(all(M.S731_FIRES[k] for k in M.S731_FIRES), "every hand answer is a real pool")
+cj = M.continued_joins()
+check(cj["right"] == 4 and not cj["wrong"] and cj["refused"] == 27,
+      "a continued heading joins only a heading with its first word: 4 right, 0 wrong, 27 refused (%s)" % cj)
 check(not rc["pass_to_fail"] and not rc["moved_outside"], "no pass-to-fail, no move outside the plan: %s"
       % rc["moved_outside"])
 check({(c, cn) for c, cn, _, _ in rc["moved"]} == {(M.CUY, "18628"), (M.MODESTO, "38869"), (M.MODESTO, "43164"),
@@ -155,6 +165,18 @@ f = M.load((M.POR, "06773"))
 check([g["gap"] for g in f["score"].get("gaps") or []] == ["pool_figure_not_read"]
       and not f["score"]["arithmetic"].get("pooled"),
       "Porterville 06773: held, it keeps s721c's gap (d-porterville-06773-keeps-s721c-gap-s731)")
+# A reconcile's rescore keeps that gap although the fresh score passes (NG.GAP_HELD read by keep_named_gaps), and
+# drops it from any record no decision holds.
+import _program_requirements_college as RC  # noqa: E402
+fresh = M.fresh(f, None)
+check(RC.pass_grade(fresh), "Porterville 06773: today's scorer passes it fresh")
+kept = RC.keep_named_gaps("06773", f["score"], fresh, f)
+check([g["gap"] for g in kept.get("gaps") or []] == ["pool_figure_not_read"]
+      and kept.get("confidence") == f["score"].get("confidence") and kept["arithmetic"] == fresh["arithmetic"],
+      "Porterville 06773: a reconcile keeps its gap and confidence")
+other = dict(f, control_number="99999")
+check(not RC.keep_named_gaps("99999", f["score"], fresh, other).get("gaps"),
+      "a passing fresh score on a record no decision holds carries no gap")
 for cn in ("18634", "18635", "18636"):
     a = M.arithmetic(M.load((M.CUY, cn)))["on"]
     check((a.get("major") or {}).get("status") == "equal" and a.get("computed") == [52.0, 52.0]

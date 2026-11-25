@@ -239,7 +239,9 @@ def own_page(filed: dict) -> bool:
     and the record's own heading names the program's award (W.own_page's reading); or the page's h1 prints every word
     of the record's title and a word no other program read from it carries in its title (Modesto 43164's
     "Communication Studies 2.0" on the page whose h1 is "Communication Studies for Transfer Degree 2.0", which the
-    pre-2.0 award 30643 was also read from: the page is 43164's, and 30643, its title lacking "2.0", is not)."""
+    pre-2.0 award 30643 was also read from: the page is 43164's, and 30643, its title lacking "2.0", is not). Over the
+    183 shared-page records it passes 43164 alone. Every word counts, stopwords too, since a stopword can be the word
+    that tells two titles apart ("and" against "&")."""
     college, cn = filed.get("college"), str(filed.get("control_number"))
     others = shared_with(college, cn)
     if not others:
@@ -377,6 +379,33 @@ def plan(write: bool) -> dict:
 def _figs(record: dict) -> set:
     return {int(p["figure"][0]) if float(p["figure"][0]).is_integer() else p["figure"][0]
             for p in S.pooled_figures(record)}
+
+
+# The continued-heading joins across two different headings that are right, by hand (the second reader's recall,
+# S731 round 1): Modesto 38869's "ELECTIVES CONTINUED" under Elective Courses, 08109's and 45983's Career Courses
+# "CONT." sub-list, Palo Verde 40017's continued list.
+CONTINUED_RIGHT = {(MODESTO, "38869"), (MODESTO, "08109"), (MODESTO, "45983"), ("Palo Verde College", "40017")}
+
+
+def continued_joins(every: list | None = None) -> dict:
+    """Every place a heading the page marks continued follows a block with a different heading, over every committed
+    record: joined (the first words agree, so the reading joins them) and refused (they do not). right: the joined
+    records in CONTINUED_RIGHT; wrong: any other joined record."""
+    every = every if every is not None else W.every_record()
+    joined, refused = set(), 0
+    for _, f in every:
+        b = (f.get("record") or {}).get("blocks") or []
+        for i in range(len(b) - 1):
+            n = str(b[i + 1].get("name") or "")
+            st = S._stem(b[i].get("name"))
+            if not st or not S.CONTINUED_HEADING.search(n) or S._stem(n) == st:
+                continue
+            if S._first_word(S._stem(n)) == S._first_word(st):
+                joined.add((f.get("college"), str(f.get("control_number"))))
+            else:
+                refused += 1
+    return {"joined": sorted(joined), "right": len(joined & CONTINUED_RIGHT),
+            "wrong": sorted(joined - CONTINUED_RIGHT), "refused": refused}
 
 
 def self_recall(every: list | None = None) -> dict:

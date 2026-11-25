@@ -817,12 +817,24 @@ FIGURE_OVER_S731 = [(re.compile(p, re.I), least, fill) for p, least, fill in (
 POOL_COMPLETES_S731 = re.compile(r"\b\d+(?:\.\d+)?\s+combined\s+units?\s+from\b", re.I)
 _STEM_TAIL_S731 = re.compile(r"\s*[-–]\s*(?:SELECT|CHOOSE)\b.*$", re.I)
 CONTINUED_HEADING = re.compile(r"\bCONT(?:INUED\b|\.)", re.I)
+# A continued heading joins only the heading whose first word it shares (a plural aside): the second reader's recall
+# over the corpus found 26 joins by position alone, 4 right (Modesto 38869, 08109, 45983; Palo Verde 40017) and 22
+# wrong (a choice list joined to "Degree/Program Requirements (continued)", Laney 41930's "Continued Fundamentals").
+# The new figure shapes never read a sentence about residency or where the units are taken ("At least 12 combined
+# units from Lists A and B must be completed in residence"): it names no pool.
+RESIDENCE_S731 = re.compile(r"\bin\s+residence\b|\bat\s+the\s+college\b", re.I)
+
+
+def _first_word(stem: str) -> str | None:
+    w = str(stem or "").split()
+    return w[0].rstrip("S") if w else None
 
 
 def _pool_figures(sentence: str) -> list[tuple]:
     """Every figure the sentence prints, as (start, end, lo, hi, minimum, fill, words), in order."""
     out = []
-    for rx, least, fill in FIGURE_OVER + (FIGURE_OVER_S731 if POOLED_S731 else []):
+    s731 = FIGURE_OVER_S731 if POOLED_S731 and not RESIDENCE_S731.search(sentence) else []
+    for rx, least, fill in FIGURE_OVER + s731:
         for m in rx.finditer(sentence):
             n = float(m.group("n"))
             top = _num(m.groupdict().get("m")) or n
@@ -877,7 +889,8 @@ def pooled_figures(record: dict) -> list[dict]:
         st = _stem(blocks[i].get("name"))
         while j + 1 < len(blocks) and st and (
                 _stem(blocks[j + 1].get("name")) == st
-                or (POOLED_S731 and CONTINUED_HEADING.search(str(blocks[j + 1].get("name") or "")))):
+                or (POOLED_S731 and CONTINUED_HEADING.search(str(blocks[j + 1].get("name") or ""))
+                    and _first_word(_stem(blocks[j + 1].get("name"))) == _first_word(st))):
             j += 1
         # S731: a run whose blocks sit in an option group is a choice among them, never a pool (pools_read refuses
         # it too; College of Marin 46068's two Biology series, one heading once its "- select one series" tail goes).
