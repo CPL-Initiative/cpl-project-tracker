@@ -1,0 +1,9 @@
+{
+ "college": "Ventura College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:57:36Z",
+ "run": "45625357434,45628396996",
+ "plan": "kb/college_reads/subject_index_ventura.json",
+ "titles": [],
+ "not_read": "The district catalog (catalog.vcccd.edu) has no course-descriptions index and no prefix legend. Its Programs & Courses index names each subject page in words only (Accounting), and the code shows only on each page's Courses tab as course numbers (ACCT V01A), under no heading that prints the code with a title. A page name is a department label, and pairing it with a code means reading every subject page (about 70 loads a college); this hunt read as little as possible and stopped. A follow-up read of the subject pages, if wanted, files department labels, never subject headings."
+}
