@@ -661,6 +661,11 @@ jobs:
       - name: Program requirements lever pins (S721)
         if: matrix.shard == 4
         run: python3 tests/program_requirements_lever_pins_s721_test.py
+      # S727: Orange Coast's 3 pins bind on their own pages (two of them general-education pages to rule B), a page
+      # title's site name is cut at " < " as at a bar, the forced re-reads' windows carry the REQUIREMENTS tab, and
+      # the 5 named gaps state only what their pages print. Pure stdlib.
+      - name: Program requirements lever pins (S727)
+        run: python3 tests/program_requirements_lever_pins_s727_test.py
       # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
       # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
       - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)
