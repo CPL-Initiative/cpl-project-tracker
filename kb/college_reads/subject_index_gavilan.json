@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 1: the catalog's top navigation (catalog 19344, the id the harvest capture read), to find the node that lists course subjects by name. One JSON call, no model call, writes nothing.",
+ "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 2: round 1 (run 45625175975) found the catalog's Courses node; this read lists that node's children, which should be the subjects titled by name and code. One JSON call, no model call, writes nothing.",
  "college": "Gavilan College",
  "questions": {
   "cq_subjects": "Which navigation node lists the catalog's course subjects with their names."
@@ -15,7 +15,7 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&navigationtypeId=1"
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4259"
   }
  ]
 }
