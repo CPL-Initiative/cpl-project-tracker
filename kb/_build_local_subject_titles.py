@@ -378,7 +378,7 @@ def build(root=ROOT):
              "not_read": sum(1 for r in out if r[7] == "not_read"), "blocked": sum(1 for r in out if r[7] == "blocked"),
              "not_in_catalog": sum(1 for r in out if r[7] == "not_in_catalog"),
              "noncredit_only": sum(1 for r in out if r[12] and not r[11]), "credit_and_noncredit": sum(1 for r in out if r[12] and r[11]),
-             "pages_not_read": sum(1 for r in out if r[10] and not r[2] and r[10] not in read_urls),
+             "pages_not_read": 0 if c.get("headings_only") else sum(1 for r in out if r[10] and not r[2] and r[10] not in read_urls),
              "named_by_person": sum(1 for r in out if r[7] == "person"),
              "common_by_person": sum(1 for r in out if r[17] == "person"),
              "common_by_statewide_filing": sum(1 for r in out if r[17] == "statewide_filing")}

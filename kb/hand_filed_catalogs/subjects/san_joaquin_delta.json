@@ -1,0 +1,1422 @@
+{
+ "_what": "The subjects San Joaquin Delta College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "San Joaquin Delta College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:50:22Z",
+ "run": "45626064651, 45627087073",
+ "source": [
+  "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "A-CON",
+   "heading": "Construction Technology: Apprenticeship",
+   "heading_printed": "Construction Technology: Apprenticeship",
+   "rule": "index",
+   "codes": [
+    "A-CON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "A-ELE",
+   "heading": "Electrical Technology: Apprenticeship",
+   "heading_printed": "Electrical Technology: Apprenticeship",
+   "rule": "index",
+   "codes": [
+    "A-ELE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "AERO",
+   "heading": "Aeronautics",
+   "heading_printed": "Aeronautics",
+   "rule": "index",
+   "codes": [
+    "AERO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "AGBUS",
+   "heading": "Agriculture Business",
+   "heading_printed": "Agriculture Business",
+   "rule": "index",
+   "codes": [
+    "AGBUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "AGEGR",
+   "heading": "Agriculture Engineering",
+   "heading_printed": "Agriculture Engineering",
+   "rule": "index",
+   "codes": [
+    "AGEGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "A-IND",
+   "heading": "Industrial Technology: Apprenticeship",
+   "heading_printed": "Industrial Technology: Apprenticeship",
+   "rule": "index",
+   "codes": [
+    "A-IND"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ALTW",
+   "heading": "Adaptive Learning Transition to Work",
+   "heading_printed": "Adaptive Learning Transition to Work",
+   "rule": "index",
+   "codes": [
+    "ALTW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "A-MEC",
+   "heading": "Mechanical Technology: Apprenticeship",
+   "heading_printed": "Mechanical Technology: Apprenticeship",
+   "rule": "index",
+   "codes": [
+    "A-MEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architectural Drafting",
+   "heading_printed": "Architectural Drafting",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ASCI",
+   "heading": "Animal Science",
+   "heading_printed": "Animal Science",
+   "rule": "index",
+   "codes": [
+    "ASCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ASTRO",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTRO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ATH",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "A-TRN",
+   "heading": "Apprenticeship Transportation",
+   "heading_printed": "Apprenticeship Transportation",
+   "rule": "index",
+   "codes": [
+    "A-TRN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "AUTOMECH",
+   "heading": "Auto Mechanics",
+   "heading_printed": "Auto Mechanics",
+   "rule": "index",
+   "codes": [
+    "AUTOMECH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "BIM",
+   "heading": "Business Information Management",
+   "heading_printed": "Business Information Management",
+   "rule": "index",
+   "codes": [
+    "BIM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "BIOT",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "index",
+   "codes": [
+    "BIOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "CAT",
+   "heading": "Caterpillar: Apprenticeship",
+   "heading_printed": "Caterpillar: Apprenticeship",
+   "rule": "index",
+   "codes": [
+    "CAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "CNT",
+   "heading": "Computer Network Technology",
+   "heading_printed": "Computer Network Technology",
+   "rule": "index",
+   "codes": [
+    "CNT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "COMM DIS",
+   "heading": "Communication Disorders",
+   "heading_printed": "Communication Disorders",
+   "rule": "index",
+   "codes": [
+    "COMM DIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "CSA",
+   "heading": "Computer Science Applications",
+   "heading_printed": "Computer Science Applications",
+   "rule": "index",
+   "codes": [
+    "CSA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "CSN",
+   "heading": "Computer Science Networking",
+   "heading_printed": "Computer Science Networking",
+   "rule": "index",
+   "codes": [
+    "CSN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "CSP",
+   "heading": "Computer Science Programming",
+   "heading_printed": "Computer Science Programming",
+   "rule": "index",
+   "codes": [
+    "CSP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "CSW",
+   "heading": "Computer Science Web Design",
+   "heading_printed": "Computer Science Web Design",
+   "rule": "index",
+   "codes": [
+    "CSW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "CUL ART",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CUL ART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "DIESL",
+   "heading": "Diesel Technology",
+   "heading_printed": "Diesel Technology",
+   "rule": "index",
+   "codes": [
+    "DIESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "DMEDIA",
+   "heading": "Digital Media",
+   "heading_printed": "Digital Media",
+   "rule": "index",
+   "codes": [
+    "DMEDIA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "DRAMA",
+   "heading": "Dramatic Arts",
+   "heading_printed": "Dramatic Arts",
+   "rule": "index",
+   "codes": [
+    "DRAMA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "DV ED",
+   "heading": "Developmental Education",
+   "heading_printed": "Developmental Education",
+   "rule": "index",
+   "codes": [
+    "DV ED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ELEC",
+   "heading": "Electrical Technology",
+   "heading_printed": "Electrical Technology",
+   "rule": "index",
+   "codes": [
+    "ELEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ELECT",
+   "heading": "Electronics Technology",
+   "heading_printed": "Electronics Technology",
+   "rule": "index",
+   "codes": [
+    "ELECT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "E M",
+   "heading": "Electron Microscopy",
+   "heading_printed": "Electron Microscopy",
+   "rule": "index",
+   "codes": [
+    "E M"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "E TECH",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "E TECH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ETHNS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHNS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "FCS",
+   "heading": "Family and Consumer Sciences",
+   "heading_printed": "Family and Consumer Sciences",
+   "rule": "index",
+   "codes": [
+    "FCS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "GRART",
+   "heading": "Graphic Arts",
+   "heading_printed": "Graphic Arts",
+   "rule": "index",
+   "codes": [
+    "GRART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "H ED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "H ED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "index",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "H S",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "H S"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "HVACR",
+   "heading": "Heating, Ac, Refrigeration",
+   "heading_printed": "Heating, AC, Refrigeration",
+   "rule": "index",
+   "codes": [
+    "HVACR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ID",
+   "heading": "Interior Design",
+   "heading_printed": "Interior Design",
+   "rule": "index",
+   "codes": [
+    "ID"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "INDUS",
+   "heading": "Industrial Technology",
+   "heading_printed": "Industrial Technology",
+   "rule": "index",
+   "codes": [
+    "INDUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "JAPAN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "LIBRY",
+   "heading": "Library Skills",
+   "heading_printed": "Library Skills",
+   "rule": "index",
+   "codes": [
+    "LIBRY"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "LS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "MACH",
+   "heading": "Machine Technology",
+   "heading_printed": "Machine Technology",
+   "rule": "index",
+   "codes": [
+    "MACH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "MCOM",
+   "heading": "Mass Communication",
+   "heading_printed": "Mass Communication",
+   "rule": "index",
+   "codes": [
+    "MCOM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "N R",
+   "heading": "Natural Resources",
+   "heading_printed": "Natural Resources",
+   "rule": "index",
+   "codes": [
+    "N R"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "NURSADN",
+   "heading": "Nursing A.d.n.",
+   "heading_printed": "Nursing A.D.N.",
+   "rule": "index",
+   "codes": [
+    "NURSADN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "NURSPT",
+   "heading": "Nursing Psychiatric Technician",
+   "heading_printed": "Nursing Psychiatric Technician",
+   "rule": "index",
+   "codes": [
+    "NURSPT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "PEACTIV",
+   "heading": "P E Activities",
+   "heading_printed": "P E Activities",
+   "rule": "index",
+   "codes": [
+    "PEACTIV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "PHILO",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHILO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "PHSCI",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "PHYSC",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "PLANT",
+   "heading": "Plant Science",
+   "heading_printed": "Plant Science",
+   "rule": "index",
+   "codes": [
+    "PLANT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "RAD",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "index",
+   "codes": [
+    "RAD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "REAL",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "REAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "RELGN",
+   "heading": "Religion",
+   "heading_printed": "Religion",
+   "rule": "index",
+   "codes": [
+    "RELGN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "SL",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "index",
+   "codes": [
+    "SL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "SOCIO",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCIO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651, 45627087073)",
+   "run": "45626064651, 45627087073"
+  }
+ ],
+ "subjects": 88,
+ "with_heading": 88
+}

@@ -1,0 +1,2224 @@
+{
+ "_what": "The subjects Pasadena City College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Pasadena City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45625259489,45626788039",
+ "source": [
+  "https://curriculum.pasadena.edu/course-descriptions/acct/",
+  "https://curriculum.pasadena.edu/course-descriptions/agps/",
+  "https://curriculum.pasadena.edu/course-descriptions/aj/",
+  "https://curriculum.pasadena.edu/course-descriptions/anat/",
+  "https://curriculum.pasadena.edu/course-descriptions/anth/",
+  "https://curriculum.pasadena.edu/course-descriptions/arbc/",
+  "https://curriculum.pasadena.edu/course-descriptions/arch/",
+  "https://curriculum.pasadena.edu/course-descriptions/armn/",
+  "https://curriculum.pasadena.edu/course-descriptions/art/",
+  "https://curriculum.pasadena.edu/course-descriptions/arth/",
+  "https://curriculum.pasadena.edu/course-descriptions/asl/",
+  "https://curriculum.pasadena.edu/course-descriptions/astr/",
+  "https://curriculum.pasadena.edu/course-descriptions/at/",
+  "https://curriculum.pasadena.edu/course-descriptions/auto/",
+  "https://curriculum.pasadena.edu/course-descriptions/biol/",
+  "https://curriculum.pasadena.edu/course-descriptions/bit/",
+  "https://curriculum.pasadena.edu/course-descriptions/bldg/",
+  "https://curriculum.pasadena.edu/course-descriptions/bus/",
+  "https://curriculum.pasadena.edu/course-descriptions/chdv/",
+  "https://curriculum.pasadena.edu/course-descriptions/chem/",
+  "https://curriculum.pasadena.edu/course-descriptions/chin/",
+  "https://curriculum.pasadena.edu/course-descriptions/cine/",
+  "https://curriculum.pasadena.edu/course-descriptions/cis/",
+  "https://curriculum.pasadena.edu/course-descriptions/coll/",
+  "https://curriculum.pasadena.edu/course-descriptions/comm/",
+  "https://curriculum.pasadena.edu/course-descriptions/cosm/",
+  "https://curriculum.pasadena.edu/course-descriptions/coun/",
+  "https://curriculum.pasadena.edu/course-descriptions/course-descriptions.pdf",
+  "https://curriculum.pasadena.edu/course-descriptions/cs/",
+  "https://curriculum.pasadena.edu/course-descriptions/da/",
+  "https://curriculum.pasadena.edu/course-descriptions/danc/",
+  "https://curriculum.pasadena.edu/course-descriptions/dh/",
+  "https://curriculum.pasadena.edu/course-descriptions/dma/",
+  "https://curriculum.pasadena.edu/course-descriptions/dt/",
+  "https://curriculum.pasadena.edu/course-descriptions/econ/",
+  "https://curriculum.pasadena.edu/course-descriptions/educ/",
+  "https://curriculum.pasadena.edu/course-descriptions/eltn/",
+  "https://curriculum.pasadena.edu/course-descriptions/elty/",
+  "https://curriculum.pasadena.edu/course-descriptions/emed/",
+  "https://curriculum.pasadena.edu/course-descriptions/engl/",
+  "https://curriculum.pasadena.edu/course-descriptions/engr/",
+  "https://curriculum.pasadena.edu/course-descriptions/envs/",
+  "https://curriculum.pasadena.edu/course-descriptions/esl/",
+  "https://curriculum.pasadena.edu/course-descriptions/eth/",
+  "https://curriculum.pasadena.edu/course-descriptions/fash/",
+  "https://curriculum.pasadena.edu/course-descriptions/fire/",
+  "https://curriculum.pasadena.edu/course-descriptions/flng/",
+  "https://curriculum.pasadena.edu/course-descriptions/frnc/",
+  "https://curriculum.pasadena.edu/course-descriptions/geog/",
+  "https://curriculum.pasadena.edu/course-descriptions/geol/",
+  "https://curriculum.pasadena.edu/course-descriptions/gero/",
+  "https://curriculum.pasadena.edu/course-descriptions/glbl/",
+  "https://curriculum.pasadena.edu/course-descriptions/grmn/",
+  "https://curriculum.pasadena.edu/course-descriptions/hed/",
+  "https://curriculum.pasadena.edu/course-descriptions/hist/",
+  "https://curriculum.pasadena.edu/course-descriptions/hlsc/",
+  "https://curriculum.pasadena.edu/course-descriptions/hosp/",
+  "https://curriculum.pasadena.edu/course-descriptions/hse/",
+  "https://curriculum.pasadena.edu/course-descriptions/hum/",
+  "https://curriculum.pasadena.edu/course-descriptions/ital/",
+  "https://curriculum.pasadena.edu/course-descriptions/japn/",
+  "https://curriculum.pasadena.edu/course-descriptions/jour/",
+  "https://curriculum.pasadena.edu/course-descriptions/kath/",
+  "https://curriculum.pasadena.edu/course-descriptions/kina/",
+  "https://curriculum.pasadena.edu/course-descriptions/kint/",
+  "https://curriculum.pasadena.edu/course-descriptions/lasr/",
+  "https://curriculum.pasadena.edu/course-descriptions/latn/",
+  "https://curriculum.pasadena.edu/course-descriptions/lib/",
+  "https://curriculum.pasadena.edu/course-descriptions/ling/",
+  "https://curriculum.pasadena.edu/course-descriptions/ma/",
+  "https://curriculum.pasadena.edu/course-descriptions/mach/",
+  "https://curriculum.pasadena.edu/course-descriptions/math/",
+  "https://curriculum.pasadena.edu/course-descriptions/micr/",
+  "https://curriculum.pasadena.edu/course-descriptions/mit/",
+  "https://curriculum.pasadena.edu/course-descriptions/mrkt/",
+  "https://curriculum.pasadena.edu/course-descriptions/musc/",
+  "https://curriculum.pasadena.edu/course-descriptions/musp/",
+  "https://curriculum.pasadena.edu/course-descriptions/nurs/",
+  "https://curriculum.pasadena.edu/course-descriptions/nutr/",
+  "https://curriculum.pasadena.edu/course-descriptions/phca/",
+  "https://curriculum.pasadena.edu/course-descriptions/phil/",
+  "https://curriculum.pasadena.edu/course-descriptions/phot/",
+  "https://curriculum.pasadena.edu/course-descriptions/phrm/",
+  "https://curriculum.pasadena.edu/course-descriptions/phsc/",
+  "https://curriculum.pasadena.edu/course-descriptions/phys/",
+  "https://curriculum.pasadena.edu/course-descriptions/plgl/",
+  "https://curriculum.pasadena.edu/course-descriptions/plmb/",
+  "https://curriculum.pasadena.edu/course-descriptions/pols/",
+  "https://curriculum.pasadena.edu/course-descriptions/port/",
+  "https://curriculum.pasadena.edu/course-descriptions/psyc/",
+  "https://curriculum.pasadena.edu/course-descriptions/pyso/",
+  "https://curriculum.pasadena.edu/course-descriptions/rdt/",
+  "https://curriculum.pasadena.edu/course-descriptions/rdtc/",
+  "https://curriculum.pasadena.edu/course-descriptions/relg/",
+  "https://curriculum.pasadena.edu/course-descriptions/russ/",
+  "https://curriculum.pasadena.edu/course-descriptions/slpa/",
+  "https://curriculum.pasadena.edu/course-descriptions/soc/",
+  "https://curriculum.pasadena.edu/course-descriptions/sosc/",
+  "https://curriculum.pasadena.edu/course-descriptions/span/",
+  "https://curriculum.pasadena.edu/course-descriptions/spch/",
+  "https://curriculum.pasadena.edu/course-descriptions/spsv/",
+  "https://curriculum.pasadena.edu/course-descriptions/stat/",
+  "https://curriculum.pasadena.edu/course-descriptions/swhs/",
+  "https://curriculum.pasadena.edu/course-descriptions/tech/",
+  "https://curriculum.pasadena.edu/course-descriptions/thrt/",
+  "https://curriculum.pasadena.edu/course-descriptions/tvr/",
+  "https://curriculum.pasadena.edu/course-descriptions/weld/",
+  "https://curriculum.pasadena.edu/course-descriptions/wexp/",
+  "https://curriculum.pasadena.edu/course-descriptions/wft/",
+  "https://curriculum.pasadena.edu/noncredit-courses/abe/",
+  "https://curriculum.pasadena.edu/noncredit-courses/ahsd/",
+  "https://curriculum.pasadena.edu/noncredit-courses/bldn/",
+  "https://curriculum.pasadena.edu/noncredit-courses/busn/",
+  "https://curriculum.pasadena.edu/noncredit-courses/chdn/",
+  "https://curriculum.pasadena.edu/noncredit-courses/cstn/",
+  "https://curriculum.pasadena.edu/noncredit-courses/dsps/",
+  "https://curriculum.pasadena.edu/noncredit-courses/esln/",
+  "https://curriculum.pasadena.edu/noncredit-courses/eslv/",
+  "https://curriculum.pasadena.edu/noncredit-courses/evst/",
+  "https://curriculum.pasadena.edu/noncredit-courses/grfn/",
+  "https://curriculum.pasadena.edu/noncredit-courses/hlsc/",
+  "https://curriculum.pasadena.edu/noncredit-courses/hsn/",
+  "https://curriculum.pasadena.edu/noncredit-courses/imme/",
+  "https://curriculum.pasadena.edu/noncredit-courses/jamn/",
+  "https://curriculum.pasadena.edu/noncredit-courses/lac/",
+  "https://curriculum.pasadena.edu/noncredit-courses/matn/",
+  "https://curriculum.pasadena.edu/noncredit-courses/olad/",
+  "https://curriculum.pasadena.edu/noncredit-courses/par/",
+  "https://curriculum.pasadena.edu/noncredit-courses/pcan/",
+  "https://curriculum.pasadena.edu/noncredit-courses/trln/",
+  "https://curriculum.pasadena.edu/noncredit-courses/wrkp/"
+ ],
+ "rows": [
+  {
+   "code": "ABE",
+   "heading": "Adult Basic Education",
+   "heading_printed": "ADULT BASIC EDUCATION",
+   "rule": "index",
+   "codes": [
+    "ABE"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/abe/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "ACCOUNTING",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/acct/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "AGPS",
+   "heading": "Agriculture Plant Science",
+   "heading_printed": "AGRICULTURE PLANT SCIENCE",
+   "rule": "index",
+   "codes": [
+    "AGPS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/agps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "AHSD",
+   "heading": "Adult High School Diploma",
+   "heading_printed": "ADULT HIGH SCHOOL DIPLOMA",
+   "rule": "index",
+   "codes": [
+    "AHSD"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/ahsd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "ADMINISTRATION OF JUSTICE",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/aj/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy",
+   "heading_printed": "ANATOMY",
+   "rule": "index",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/anat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "ANTHROPOLOGY",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ARBC",
+   "heading": "Arabic",
+   "heading_printed": "ARABIC",
+   "rule": "index",
+   "codes": [
+    "ARBC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/arbc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "ARCHITECTURE",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/arch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ARMN",
+   "heading": "Armenian",
+   "heading_printed": "ARMENIAN",
+   "rule": "index",
+   "codes": [
+    "ARMN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/armn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "ART HISTORY",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "ASTRONOMY",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/astr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "AT",
+   "heading": "Anesthesia Technology",
+   "heading_printed": "ANESTHESIA TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "AT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/at/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "AUTOMOTIVE TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "BIOLOGY",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "BIT",
+   "heading": "Business Information Technology",
+   "heading_printed": "BUSINESS INFORMATION TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "BIT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/bit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "BLDG",
+   "heading": "Building Construction",
+   "heading_printed": "BUILDING CONSTRUCTION",
+   "rule": "index",
+   "codes": [
+    "BLDG"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/bldg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "BLDN",
+   "heading": "Building Construction Noncred",
+   "heading_printed": "BUILDING CONSTRUCTION NONCRED",
+   "rule": "index",
+   "codes": [
+    "BLDN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/bldn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "BUSINESS",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/bus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "BUSN",
+   "heading": "Business Noncredit",
+   "heading_printed": "BUSINESS NONCREDIT",
+   "rule": "index",
+   "codes": [
+    "BUSN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/busn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "CHDN",
+   "heading": "Child Development Noncredit",
+   "heading_printed": "CHILD DEVELOPMENT NONCREDIT",
+   "rule": "index",
+   "codes": [
+    "CHDN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/chdn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "CHDV",
+   "heading": "Child Development",
+   "heading_printed": "CHILD DEVELOPMENT",
+   "rule": "index",
+   "codes": [
+    "CHDV"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/chdv/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "CHEMISTRY",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "CHINESE",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/chin/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "CINE",
+   "heading": "Cinema",
+   "heading_printed": "CINEMA",
+   "rule": "index",
+   "codes": [
+    "CINE"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/cine/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "COMPUTER INFORMATION SYSTEMS",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "COLL",
+   "heading": "College",
+   "heading_printed": "COLLEGE",
+   "rule": "index",
+   "codes": [
+    "COLL"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/coll/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication",
+   "heading_printed": "COMMUNICATION",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "COSMETOLOGY",
+   "rule": "index",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/cosm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "COUNSELING",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/coun/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "COMPUTER SCIENCE",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/cs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "CSTN",
+   "heading": "Central Sterile Processing Technician",
+   "heading_printed": "CENTRAL STERILE PROCESSING TECHNICIAN",
+   "rule": "index",
+   "codes": [
+    "CSTN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/cstn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "DA",
+   "heading": "Dental Assisting",
+   "heading_printed": "DENTAL ASSISTING",
+   "rule": "index",
+   "codes": [
+    "DA"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/da/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "DANCE",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/danc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "DH",
+   "heading": "Dental Hygiene",
+   "heading_printed": "DENTAL HYGIENE",
+   "rule": "index",
+   "codes": [
+    "DH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/dh/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "DMA",
+   "heading": "Design Media Art",
+   "heading_printed": "DESIGN MEDIA ART",
+   "rule": "index",
+   "codes": [
+    "DMA"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/dma/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "DSPS",
+   "heading": "Disabled Student Programs & Services",
+   "heading_printed": "DISABLED STUDENT PROGRAMS & SERVICES",
+   "rule": "index",
+   "codes": [
+    "DSPS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/dsps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "DT",
+   "heading": "Design Technology",
+   "heading_printed": "DESIGN TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "DT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/dt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "ECONOMICS",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "EDUCATION",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/educ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ELTN",
+   "heading": "Electronics",
+   "heading_printed": "ELECTRONICS",
+   "rule": "index",
+   "codes": [
+    "ELTN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/eltn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ELTY",
+   "heading": "Electricity",
+   "heading_printed": "ELECTRICITY",
+   "rule": "index",
+   "codes": [
+    "ELTY"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/elty/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "EMED",
+   "heading": "Emergency Medical Tech",
+   "heading_printed": "EMERGENCY MEDICAL TECH",
+   "rule": "index",
+   "codes": [
+    "EMED"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/emed/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "ENGLISH",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "ENGINEERING",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Studies",
+   "heading_printed": "ENVIRONMENTAL STUDIES",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/envs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ESLN",
+   "heading": "ESL Noncredit",
+   "heading_printed": "ESL NONCREDIT",
+   "rule": "index",
+   "codes": [
+    "ESLN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/esln/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ESLV",
+   "heading": "ESL Vocational Noncredit",
+   "heading_printed": "ESL VOCATIONAL NONCREDIT",
+   "rule": "index",
+   "codes": [
+    "ESLV"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/eslv/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ETH",
+   "heading": "Ethnic Studies",
+   "heading_printed": "ETHNIC STUDIES",
+   "rule": "index",
+   "codes": [
+    "ETH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/eth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "EVST",
+   "heading": "Electric Vehicle Charging Station Technician",
+   "heading_printed": "ELECTRIC VEHICLE CHARGING STATION TECHNICIAN",
+   "rule": "index",
+   "codes": [
+    "EVST"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/evst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "FASH",
+   "heading": "Fashion",
+   "heading_printed": "FASHION",
+   "rule": "index",
+   "codes": [
+    "FASH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/fash/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Technology",
+   "heading_printed": "FIRE TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/fire/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "FLNG",
+   "heading": "Foreign Language",
+   "heading_printed": "FOREIGN LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "FLNG"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/flng/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "FRNC",
+   "heading": "French",
+   "heading_printed": "FRENCH",
+   "rule": "index",
+   "codes": [
+    "FRNC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/frnc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "GEOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "GEOLOGY",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/geol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "GERO",
+   "heading": "Gerontology",
+   "heading_printed": "GERONTOLOGY",
+   "rule": "index",
+   "codes": [
+    "GERO"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/gero/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "GLBL",
+   "heading": "Global Studies",
+   "heading_printed": "GLOBAL STUDIES",
+   "rule": "index",
+   "codes": [
+    "GLBL"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/glbl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "GRFN",
+   "heading": "Graphic Design Noncredit",
+   "heading_printed": "GRAPHIC DESIGN NONCREDIT",
+   "rule": "index",
+   "codes": [
+    "GRFN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/grfn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "GRMN",
+   "heading": "German",
+   "heading_printed": "GERMAN",
+   "rule": "index",
+   "codes": [
+    "GRMN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/grmn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "HED",
+   "heading": "Health Education",
+   "heading_printed": "HEALTH EDUCATION",
+   "rule": "index",
+   "codes": [
+    "HED"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/hed/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "HLSC",
+   "heading": "Health Science",
+   "heading_printed": "HEALTH SCIENCE",
+   "rule": "index",
+   "codes": [
+    "HLSC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/hlsc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "HLTN",
+   "heading": "Health Noncredit",
+   "heading_printed": "HEALTH NONCREDIT",
+   "rule": "index",
+   "codes": [
+    "HLTN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/hlsc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality",
+   "heading_printed": "HOSPITALITY",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/hosp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "HSE",
+   "heading": "High School Equivalency Preparation",
+   "heading_printed": "HIGH SCHOOL EQUIVALENCY PREPARATION",
+   "rule": "index",
+   "codes": [
+    "HSE"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/hse/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "HSN",
+   "heading": "High School Noncredt",
+   "heading_printed": "HIGH SCHOOL NONCREDT",
+   "rule": "index",
+   "codes": [
+    "HSN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/hsn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "HUMANITIES",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/hum/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "IMME",
+   "heading": "Immigrant Education",
+   "heading_printed": "IMMIGRANT EDUCATION",
+   "rule": "index",
+   "codes": [
+    "IMME"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/imme/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "ITALIAN",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/ital/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "JAMN",
+   "heading": "Jam - College Readiness Noncredit",
+   "heading_printed": "JAM - COLLEGE READINESS NONCREDIT",
+   "rule": "index",
+   "codes": [
+    "JAMN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/jamn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "JAPANESE",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/japn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "JOURNALISM",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/jour/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "KATH",
+   "heading": "Kinesiology Athletics",
+   "heading_printed": "KINESIOLOGY ATHLETICS",
+   "rule": "index",
+   "codes": [
+    "KATH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/kath/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "KINA",
+   "heading": "Kinesiology Activity",
+   "heading_printed": "KINESIOLOGY ACTIVITY",
+   "rule": "index",
+   "codes": [
+    "KINA"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/kina/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "KINT",
+   "heading": "Kinesiology Theory",
+   "heading_printed": "KINESIOLOGY THEORY",
+   "rule": "index",
+   "codes": [
+    "KINT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/kint/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "LAC",
+   "heading": "Learning Assistance",
+   "heading_printed": "LEARNING ASSISTANCE",
+   "rule": "index",
+   "codes": [
+    "LAC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/lac/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "LASR",
+   "heading": "Laser Technology",
+   "heading_printed": "LASER TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "LASR"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/lasr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "LATN",
+   "heading": "Latin",
+   "heading_printed": "LATIN",
+   "rule": "index",
+   "codes": [
+    "LATN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/latn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library",
+   "heading_printed": "LIBRARY",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/lib/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "LINGUISTICS",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/ling/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "MA",
+   "heading": "Medical Assisting",
+   "heading_printed": "MEDICAL ASSISTING",
+   "rule": "index",
+   "codes": [
+    "MA"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/ma/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "MACH",
+   "heading": "Machine Shop",
+   "heading_printed": "MACHINE SHOP",
+   "rule": "index",
+   "codes": [
+    "MACH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/mach/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "MATHEMATICS",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "MATN",
+   "heading": "Mathematics - Noncredit",
+   "heading_printed": "MATHEMATICS - NONCREDIT",
+   "rule": "index",
+   "codes": [
+    "MATN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/matn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "MICR",
+   "heading": "Microbiology",
+   "heading_printed": "MICROBIOLOGY",
+   "rule": "index",
+   "codes": [
+    "MICR"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/micr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "MIT",
+   "heading": "Manufacturing & Industrial Tech",
+   "heading_printed": "MANUFACTURING & INDUSTRIAL TECH",
+   "rule": "index",
+   "codes": [
+    "MIT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/mit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "MRKT",
+   "heading": "Marketing",
+   "heading_printed": "MARKETING",
+   "rule": "index",
+   "codes": [
+    "MRKT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/mrkt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "MUSC",
+   "heading": "Music",
+   "heading_printed": "MUSIC",
+   "rule": "index",
+   "codes": [
+    "MUSC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/musc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "MUSP",
+   "heading": "Popular Music",
+   "heading_printed": "POPULAR MUSIC",
+   "rule": "index",
+   "codes": [
+    "MUSP"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/musp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "NURSING",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/nurs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "NUTRITION",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/nutr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "OLAD",
+   "heading": "Older Adults",
+   "heading_printed": "OLDER ADULTS",
+   "rule": "index",
+   "codes": [
+    "OLAD"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/olad/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PAR",
+   "heading": "Parent Education",
+   "heading_printed": "PARENT EDUCATION",
+   "rule": "index",
+   "codes": [
+    "PAR"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/par/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PCAN",
+   "heading": "Personal Care Attendant NC",
+   "heading_printed": "PERSONAL CARE ATTENDANT NC",
+   "rule": "index",
+   "codes": [
+    "PCAN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/pcan/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PDF",
+   "heading": "Download Page",
+   "heading_printed": "Download Page",
+   "rule": "index",
+   "codes": [
+    "PDF"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/course-descriptions.pdf",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PHCA",
+   "heading": "Personal Health Care Assistant",
+   "heading_printed": "PERSONAL HEALTH CARE ASSISTANT",
+   "rule": "index",
+   "codes": [
+    "PHCA"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/phca/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "PHILOSOPHY",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "PHOTOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/phot/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PHRM",
+   "heading": "Pharmacology",
+   "heading_printed": "PHARMACOLOGY",
+   "rule": "index",
+   "codes": [
+    "PHRM"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/phrm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Science",
+   "heading_printed": "PHYSICAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/phsc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "PHYSICS",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PLGL",
+   "heading": "Paralegal Studies",
+   "heading_printed": "PARALEGAL STUDIES",
+   "rule": "index",
+   "codes": [
+    "PLGL"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/plgl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PLMB",
+   "heading": "Pipefitting/Plumbing",
+   "heading_printed": "PIPEFITTING/PLUMBING",
+   "rule": "index",
+   "codes": [
+    "PLMB"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/plmb/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PORT",
+   "heading": "Portuguese",
+   "heading_printed": "PORTUGUESE",
+   "rule": "index",
+   "codes": [
+    "PORT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/port/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "PSYCHOLOGY",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "PYSO",
+   "heading": "Physiology",
+   "heading_printed": "PHYSIOLOGY",
+   "rule": "index",
+   "codes": [
+    "PYSO"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/pyso/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "RDT",
+   "heading": "Restorative Dental Technology",
+   "heading_printed": "RESTORATIVE DENTAL TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "RDT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/rdt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "RDTC",
+   "heading": "Radiologic Technology",
+   "heading_printed": "RADIOLOGIC TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "RDTC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/rdtc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "RELG",
+   "heading": "Religious Studies",
+   "heading_printed": "RELIGIOUS STUDIES",
+   "rule": "index",
+   "codes": [
+    "RELG"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/relg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "RUSS",
+   "heading": "Russian",
+   "heading_printed": "RUSSIAN",
+   "rule": "index",
+   "codes": [
+    "RUSS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/russ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "SLPA",
+   "heading": "Speech Language Pathology Assistant",
+   "heading_printed": "SPEECH LANGUAGE PATHOLOGY ASSISTANT",
+   "rule": "index",
+   "codes": [
+    "SLPA"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/slpa/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "SOSC",
+   "heading": "Social Sciences",
+   "heading_printed": "SOCIAL SCIENCES",
+   "rule": "index",
+   "codes": [
+    "SOSC"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/sosc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "SPANISH",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "SPCH",
+   "heading": "Speech Communication",
+   "heading_printed": "SPEECH COMMUNICATION",
+   "rule": "index",
+   "codes": [
+    "SPCH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/spch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "SPSV",
+   "heading": "Special Services",
+   "heading_printed": "SPECIAL SERVICES",
+   "rule": "index",
+   "codes": [
+    "SPSV"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/spsv/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "STATISTICS",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "SWHS",
+   "heading": "Social Work and Human Services",
+   "heading_printed": "SOCIAL WORK AND HUMAN SERVICES",
+   "rule": "index",
+   "codes": [
+    "SWHS"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/swhs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "TECH",
+   "heading": "Technical Education",
+   "heading_printed": "TECHNICAL EDUCATION",
+   "rule": "index",
+   "codes": [
+    "TECH"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/tech/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "THRT",
+   "heading": "Theater Arts",
+   "heading_printed": "THEATER ARTS",
+   "rule": "index",
+   "codes": [
+    "THRT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/thrt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "TRLN",
+   "heading": "Translation",
+   "heading_printed": "TRANSLATION",
+   "rule": "index",
+   "codes": [
+    "TRLN"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/trln/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "TVR",
+   "heading": "Television and Radio",
+   "heading_printed": "TELEVISION AND RADIO",
+   "rule": "index",
+   "codes": [
+    "TVR"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/tvr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "WELDING",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/weld/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "WEXP",
+   "heading": "Work Experience/Internship",
+   "heading_printed": "WORK EXPERIENCE/INTERNSHIP",
+   "rule": "index",
+   "codes": [
+    "WEXP"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/wexp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "WFT",
+   "heading": "Wildland Fire Technology",
+   "heading_printed": "WILDLAND FIRE TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "WFT"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/course-descriptions/wft/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  },
+  {
+   "code": "WRKP",
+   "heading": "Workforce Preparation",
+   "heading_printed": "WORKFORCE PREPARATION",
+   "rule": "index",
+   "codes": [
+    "WRKP"
+   ],
+   "candidate": null,
+   "address": "https://curriculum.pasadena.edu/noncredit-courses/wrkp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489,45626788039)",
+   "run": "45625259489,45626788039"
+  }
+ ],
+ "subjects": 130,
+ "with_heading": 130
+}

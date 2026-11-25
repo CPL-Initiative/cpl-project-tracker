@@ -10,7 +10,8 @@ date and the finder. Those ride on each row as `address` (the source), `where`, 
 RULES.
   - A row already filed for a code is never replaced: a heading already in the record (a runner's earlier read, or a
     person's) stands, and the find is counted as agreeing or differing in the report.
-  - A find with no title, or one that only repeats its code, is not filed.
+  - A find with no title, or one that only repeats its code, is not filed; nor is a code the find prints under two
+    different headings, which is left for a person.
   - A heading is saved in Title Case (subject_title_case), with the catalog's own spelling in `heading_printed`.
   - `--backfill` adds where, method, found_on and found_by to the rows filed before S730, from the file's own run and
     rule, and changes nothing else.
@@ -69,7 +70,18 @@ def file_one(found, dry):
                "source": sorted({t.get("url") for t in titles if t.get("url")}), "rows": []}
     have = {code_key(r.get("code")): r for r in doc.get("rows") or []}
     added = agree = differ = skipped = 0
+    # A code the find prints under two different headings (Santa Monica prints sections without codes) is left for a
+    # person: neither heading is filed, and the leftovers list names it.
+    seen = {}
     for t in titles:
+        k = code_key(t.get("code"))
+        if k and str(t.get("title") or "").strip():
+            seen.setdefault(k, set()).add(title_case(str(t["title"]).strip()).lower())
+    split = {k for k, v in seen.items() if len(v) > 1}
+    for t in titles:
+        if code_key(t.get("code")) in split:
+            skipped += 1
+            continue
         code, printed = str(t.get("code") or "").strip(), str(t.get("title") or "").strip()
         k = code_key(code)
         if not k or not printed or code_key(printed) == k:

@@ -1,0 +1,1596 @@
+{
+ "_what": "The subjects College of the Desert's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "College of the Desert",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45626788039",
+ "source": [
+  "https://catalog.collegeofthedesert.edu/courses/a/",
+  "https://catalog.collegeofthedesert.edu/courses/abe/",
+  "https://catalog.collegeofthedesert.edu/courses/acr/",
+  "https://catalog.collegeofthedesert.edu/courses/act/",
+  "https://catalog.collegeofthedesert.edu/courses/agbu/",
+  "https://catalog.collegeofthedesert.edu/courses/ageh/",
+  "https://catalog.collegeofthedesert.edu/courses/agps/",
+  "https://catalog.collegeofthedesert.edu/courses/ais/",
+  "https://catalog.collegeofthedesert.edu/courses/anth/",
+  "https://catalog.collegeofthedesert.edu/courses/arch/",
+  "https://catalog.collegeofthedesert.edu/courses/art/",
+  "https://catalog.collegeofthedesert.edu/courses/arth/",
+  "https://catalog.collegeofthedesert.edu/courses/asl/",
+  "https://catalog.collegeofthedesert.edu/courses/auto/",
+  "https://catalog.collegeofthedesert.edu/courses/bcot/",
+  "https://catalog.collegeofthedesert.edu/courses/bffa/",
+  "https://catalog.collegeofthedesert.edu/courses/bi/",
+  "https://catalog.collegeofthedesert.edu/courses/bit/",
+  "https://catalog.collegeofthedesert.edu/courses/bpot/",
+  "https://catalog.collegeofthedesert.edu/courses/buac/",
+  "https://catalog.collegeofthedesert.edu/courses/bufi/",
+  "https://catalog.collegeofthedesert.edu/courses/buhm/",
+  "https://catalog.collegeofthedesert.edu/courses/buma/",
+  "https://catalog.collegeofthedesert.edu/courses/cart/",
+  "https://catalog.collegeofthedesert.edu/courses/cde/",
+  "https://catalog.collegeofthedesert.edu/courses/ch/",
+  "https://catalog.collegeofthedesert.edu/courses/cis/",
+  "https://catalog.collegeofthedesert.edu/courses/cj/",
+  "https://catalog.collegeofthedesert.edu/courses/cm/",
+  "https://catalog.collegeofthedesert.edu/courses/coll/",
+  "https://catalog.collegeofthedesert.edu/courses/comm/",
+  "https://catalog.collegeofthedesert.edu/courses/coun/",
+  "https://catalog.collegeofthedesert.edu/courses/cs/",
+  "https://catalog.collegeofthedesert.edu/courses/csfm/",
+  "https://catalog.collegeofthedesert.edu/courses/danc/",
+  "https://catalog.collegeofthedesert.edu/courses/ddp/",
+  "https://catalog.collegeofthedesert.edu/courses/dra/",
+  "https://catalog.collegeofthedesert.edu/courses/dsps/",
+  "https://catalog.collegeofthedesert.edu/courses/econ/",
+  "https://catalog.collegeofthedesert.edu/courses/educ/",
+  "https://catalog.collegeofthedesert.edu/courses/emp/",
+  "https://catalog.collegeofthedesert.edu/courses/emr/",
+  "https://catalog.collegeofthedesert.edu/courses/emt/",
+  "https://catalog.collegeofthedesert.edu/courses/emtp/",
+  "https://catalog.collegeofthedesert.edu/courses/eng/",
+  "https://catalog.collegeofthedesert.edu/courses/engr/",
+  "https://catalog.collegeofthedesert.edu/courses/engt/",
+  "https://catalog.collegeofthedesert.edu/courses/entr/",
+  "https://catalog.collegeofthedesert.edu/courses/esl/",
+  "https://catalog.collegeofthedesert.edu/courses/esln/",
+  "https://catalog.collegeofthedesert.edu/courses/esys/",
+  "https://catalog.collegeofthedesert.edu/courses/ethn/",
+  "https://catalog.collegeofthedesert.edu/courses/film/",
+  "https://catalog.collegeofthedesert.edu/courses/fire/",
+  "https://catalog.collegeofthedesert.edu/courses/fr/",
+  "https://catalog.collegeofthedesert.edu/courses/g/",
+  "https://catalog.collegeofthedesert.edu/courses/geog/",
+  "https://catalog.collegeofthedesert.edu/courses/ger/",
+  "https://catalog.collegeofthedesert.edu/courses/gis/",
+  "https://catalog.collegeofthedesert.edu/courses/golf/",
+  "https://catalog.collegeofthedesert.edu/courses/gs/",
+  "https://catalog.collegeofthedesert.edu/courses/hist/",
+  "https://catalog.collegeofthedesert.edu/courses/hs/",
+  "https://catalog.collegeofthedesert.edu/courses/hsad/",
+  "https://catalog.collegeofthedesert.edu/courses/ics/",
+  "https://catalog.collegeofthedesert.edu/courses/j/",
+  "https://catalog.collegeofthedesert.edu/courses/jpn/",
+  "https://catalog.collegeofthedesert.edu/courses/kine/",
+  "https://catalog.collegeofthedesert.edu/courses/lis/",
+  "https://catalog.collegeofthedesert.edu/courses/makr/",
+  "https://catalog.collegeofthedesert.edu/courses/math/",
+  "https://catalog.collegeofthedesert.edu/courses/mc/",
+  "https://catalog.collegeofthedesert.edu/courses/mesa/",
+  "https://catalog.collegeofthedesert.edu/courses/mus/",
+  "https://catalog.collegeofthedesert.edu/courses/n/",
+  "https://catalog.collegeofthedesert.edu/courses/nna/",
+  "https://catalog.collegeofthedesert.edu/courses/nr/",
+  "https://catalog.collegeofthedesert.edu/courses/nvn/",
+  "https://catalog.collegeofthedesert.edu/courses/ph/",
+  "https://catalog.collegeofthedesert.edu/courses/phil/",
+  "https://catalog.collegeofthedesert.edu/courses/ps/",
+  "https://catalog.collegeofthedesert.edu/courses/psy/",
+  "https://catalog.collegeofthedesert.edu/courses/pta/",
+  "https://catalog.collegeofthedesert.edu/courses/red/",
+  "https://catalog.collegeofthedesert.edu/courses/rtv/",
+  "https://catalog.collegeofthedesert.edu/courses/sjs/",
+  "https://catalog.collegeofthedesert.edu/courses/soc/",
+  "https://catalog.collegeofthedesert.edu/courses/span/",
+  "https://catalog.collegeofthedesert.edu/courses/stat/",
+  "https://catalog.collegeofthedesert.edu/courses/ta/",
+  "https://catalog.collegeofthedesert.edu/courses/vsm/",
+  "https://catalog.collegeofthedesert.edu/courses/vso/",
+  "https://catalog.collegeofthedesert.edu/courses/vsw/",
+  "https://catalog.collegeofthedesert.edu/courses/weg/",
+  "https://catalog.collegeofthedesert.edu/courses/weld/"
+ ],
+ "rows": [
+  {
+   "code": "A",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "A"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/a/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ABE",
+   "heading": "Adult Basic Education",
+   "heading_printed": "Adult Basic Education",
+   "rule": "index",
+   "codes": [
+    "ABE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/abe/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ACR",
+   "heading": "Air Conditioning/HVAC",
+   "heading_printed": "Air Conditioning/HVAC",
+   "rule": "index",
+   "codes": [
+    "ACR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/acr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ACT",
+   "heading": "Applied Construction Technology",
+   "heading_printed": "Applied Construction Technology",
+   "rule": "index",
+   "codes": [
+    "ACT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/act/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AGBU",
+   "heading": "Agriculture/Business",
+   "heading_printed": "Agriculture/Business",
+   "rule": "index",
+   "codes": [
+    "AGBU"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/agbu/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AGEH",
+   "heading": "Agriculture/Environmental Horticulture",
+   "heading_printed": "Agriculture/Environmental Horticulture",
+   "rule": "index",
+   "codes": [
+    "AGEH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/ageh/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AGPS",
+   "heading": "Agriculture/Plant Science",
+   "heading_printed": "Agriculture/Plant Science",
+   "rule": "index",
+   "codes": [
+    "AGPS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/agps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AIS",
+   "heading": "Applications & Information Systems",
+   "heading_printed": "Applications & Information Systems",
+   "rule": "index",
+   "codes": [
+    "AIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/ais/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/anth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/arch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/asl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/auto/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BCOT",
+   "heading": "Basic Correctional Officer Training",
+   "heading_printed": "Basic Correctional Officer Training",
+   "rule": "index",
+   "codes": [
+    "BCOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/bcot/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BFFA",
+   "heading": "Basic Fire Fighter Academy",
+   "heading_printed": "Basic Fire Fighter Academy",
+   "rule": "index",
+   "codes": [
+    "BFFA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/bffa/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BI",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/bi/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BIT",
+   "heading": "Building Inspection Technology",
+   "heading_printed": "Building Inspection Technology",
+   "rule": "index",
+   "codes": [
+    "BIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/bit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BPOT",
+   "heading": "Basic Peace Officer Training",
+   "heading_printed": "Basic Peace Officer Training",
+   "rule": "index",
+   "codes": [
+    "BPOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/bpot/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BUAC",
+   "heading": "Business/Accounting",
+   "heading_printed": "Business/Accounting",
+   "rule": "index",
+   "codes": [
+    "BUAC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/buac/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BUFI",
+   "heading": "Business/Finance",
+   "heading_printed": "Business/Finance",
+   "rule": "index",
+   "codes": [
+    "BUFI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/bufi/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BUHM",
+   "heading": "Business/Hotel & Restaurant Management",
+   "heading_printed": "Business/Hotel & Restaurant Management",
+   "rule": "index",
+   "codes": [
+    "BUHM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/buhm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BUMA",
+   "heading": "Business/Management",
+   "heading_printed": "Business/Management",
+   "rule": "index",
+   "codes": [
+    "BUMA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/buma/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CART",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/cart/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CDE",
+   "heading": "Child Development & Education",
+   "heading_printed": "Child Development & Education",
+   "rule": "index",
+   "codes": [
+    "CDE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/cde/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CH",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/ch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/cis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CJ",
+   "heading": "Criminal Justice",
+   "heading_printed": "Criminal Justice",
+   "rule": "index",
+   "codes": [
+    "CJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/cj/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CM",
+   "heading": "Construction Management",
+   "heading_printed": "Construction Management",
+   "rule": "index",
+   "codes": [
+    "CM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/cm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "COLL",
+   "heading": "College",
+   "heading_printed": "College",
+   "rule": "index",
+   "codes": [
+    "COLL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/coll/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/coun/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/cs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CSFM",
+   "heading": "California State Fire Marshal",
+   "heading_printed": "California State Fire Marshal",
+   "rule": "index",
+   "codes": [
+    "CSFM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/csfm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/danc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "DDP",
+   "heading": "Digital Design & Production",
+   "heading_printed": "Digital Design & Production",
+   "rule": "index",
+   "codes": [
+    "DDP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/ddp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "DRA",
+   "heading": "Drafting, General & CAD",
+   "heading_printed": "Drafting, General & CAD",
+   "rule": "index",
+   "codes": [
+    "DRA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/dra/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "DSPS",
+   "heading": "Disabled Students",
+   "heading_printed": "Disabled Students",
+   "rule": "index",
+   "codes": [
+    "DSPS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/dsps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/educ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "EMP",
+   "heading": "Employability Skills",
+   "heading_printed": "Employability Skills",
+   "rule": "index",
+   "codes": [
+    "EMP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/emp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "EMR",
+   "heading": "Emergency Medical Responder",
+   "heading_printed": "Emergency Medical Responder",
+   "rule": "index",
+   "codes": [
+    "EMR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/emr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technology",
+   "heading_printed": "Emergency Medical Technology",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/emt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "EMTP",
+   "heading": "Emergency Medical Technician Paramedics",
+   "heading_printed": "Emergency Medical Technician Paramedics",
+   "rule": "index",
+   "codes": [
+    "EMTP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/emtp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENG",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/eng/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering, General",
+   "heading_printed": "Engineering, General",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/engr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENGT",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "ENGT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/engt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENTR",
+   "heading": "Entrepreneurship",
+   "heading_printed": "Entrepreneurship",
+   "rule": "index",
+   "codes": [
+    "ENTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/entr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English As A Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ESLN",
+   "heading": "English as a Second Language Noncredit",
+   "heading_printed": "English As A Second Language Noncredit",
+   "rule": "index",
+   "codes": [
+    "ESLN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/esln/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ESYS",
+   "heading": "Energy Systems Technology",
+   "heading_printed": "Energy Systems Technology",
+   "rule": "index",
+   "codes": [
+    "ESYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/esys/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/ethn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/fire/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "FR",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/fr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "G",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "G"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/g/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GER",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GER"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/ger/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GIS",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "index",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/gis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GOLF",
+   "heading": "Golf Management",
+   "heading_printed": "Golf Management",
+   "rule": "index",
+   "codes": [
+    "GOLF"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/golf/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GS",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/gs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HS",
+   "heading": "Health Sciences",
+   "heading_printed": "Health Sciences",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/hs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HSAD",
+   "heading": "Human Services/Alcohol Drug",
+   "heading_printed": "Human Services/Alcohol Drug",
+   "rule": "index",
+   "codes": [
+    "HSAD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/hsad/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ICS",
+   "heading": "Fire Technology, Incident Command System",
+   "heading_printed": "Fire Technology, Incident Command System",
+   "rule": "index",
+   "codes": [
+    "ICS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/ics/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "J",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "J"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/j/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "JPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JPN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/jpn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "KINE",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/kine/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "LIS",
+   "heading": "Library & Information Studies",
+   "heading_printed": "Library & Information Studies",
+   "rule": "index",
+   "codes": [
+    "LIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/lis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MAKR",
+   "heading": "Makerspace",
+   "heading_printed": "Makerspace",
+   "rule": "index",
+   "codes": [
+    "MAKR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/makr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MC",
+   "heading": "Mass Communication",
+   "heading_printed": "Mass Communication",
+   "rule": "index",
+   "codes": [
+    "MC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/mc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MESA",
+   "heading": "Mathematics, Engineering & Science Achievement",
+   "heading_printed": "Mathematics, Engineering & Science Achievement",
+   "rule": "index",
+   "codes": [
+    "MESA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/mesa/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/mus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "N",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "N"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/n/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "NNA",
+   "heading": "Nursing Assistant",
+   "heading_printed": "Nursing Assistant",
+   "rule": "index",
+   "codes": [
+    "NNA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/nna/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "NR",
+   "heading": "Natural Resources",
+   "heading_printed": "Natural Resources",
+   "rule": "index",
+   "codes": [
+    "NR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/nr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "NVN",
+   "heading": "Nursing, Vocational",
+   "heading_printed": "Nursing, Vocational",
+   "rule": "index",
+   "codes": [
+    "NVN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/nvn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PH",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/ph/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/ps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/psy/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PTA",
+   "heading": "Physical Therapy Assistant",
+   "heading_printed": "Physical Therapy Assistant",
+   "rule": "index",
+   "codes": [
+    "PTA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/pta/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "RED",
+   "heading": "Real Estate Development",
+   "heading_printed": "Real Estate Development",
+   "rule": "index",
+   "codes": [
+    "RED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/red/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "RTV",
+   "heading": "Radio-Television",
+   "heading_printed": "Radio-Television",
+   "rule": "index",
+   "codes": [
+    "RTV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/rtv/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SJS",
+   "heading": "Social Justice Studies",
+   "heading_printed": "Social Justice Studies",
+   "rule": "index",
+   "codes": [
+    "SJS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/sjs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/stat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "TA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "TA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/ta/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "VSM",
+   "heading": "Varsity Sports, Men",
+   "heading_printed": "Varsity Sports, Men",
+   "rule": "index",
+   "codes": [
+    "VSM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/vsm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "VSO",
+   "heading": "Varsity Sports, Off-Season",
+   "heading_printed": "Varsity Sports, Off-Season",
+   "rule": "index",
+   "codes": [
+    "VSO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/vso/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "VSW",
+   "heading": "Varsity Sports, Women",
+   "heading_printed": "Varsity Sports, Women",
+   "rule": "index",
+   "codes": [
+    "VSW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/vsw/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WEG",
+   "heading": "Work Experience, General",
+   "heading_printed": "Work Experience, General",
+   "rule": "index",
+   "codes": [
+    "WEG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/weg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.collegeofthedesert.edu/courses/weld/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  }
+ ],
+ "subjects": 93,
+ "with_heading": 93
+}

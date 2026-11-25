@@ -1,0 +1,1262 @@
+{
+ "_what": "The subjects Skyline College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Skyline College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:30:20Z",
+ "run": "45623798209",
+ "source": [
+  "https://catalog.skylinecollege.edu/current/courses/"
+ ],
+ "rows": [
+  {
+   "code": "ACTG",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACTG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ADAP",
+   "heading": "Kinesiology – Adaptive Physical Education",
+   "heading_printed": "Kinesiology – Adaptive Physical Education",
+   "rule": "index",
+   "codes": [
+    "ADAP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ADMJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADMJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ARBC",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "index",
+   "codes": [
+    "ARBC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "BARB",
+   "heading": "Barbering",
+   "heading_printed": "Barbering",
+   "rule": "index",
+   "codes": [
+    "BARB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "BCM.",
+   "heading": "Business Computer Systems and Management",
+   "heading_printed": "Business Computer Systems and Management",
+   "rule": "index",
+   "codes": [
+    "BCM."
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "BTEC",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "index",
+   "codes": [
+    "BTEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "BUS.",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS."
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CDEV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Science",
+   "heading_printed": "Computer Information Science",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "COMB",
+   "heading": "Kinesiology – Combatives",
+   "heading_printed": "Kinesiology – Combatives",
+   "rule": "index",
+   "codes": [
+    "COMB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "index",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "CRER",
+   "heading": "Career and Personal Development",
+   "heading_printed": "Career and Personal Development",
+   "rule": "index",
+   "codes": [
+    "CRER"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "DANC",
+   "heading": "Kinesiology – Dance",
+   "heading_printed": "Kinesiology – Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "DMAD",
+   "heading": "Digital Media and Design",
+   "heading_printed": "Digital Media and Design",
+   "rule": "index",
+   "codes": [
+    "DMAD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "DRAM",
+   "heading": "Drama",
+   "heading_printed": "Drama",
+   "rule": "index",
+   "codes": [
+    "DRAM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ECE.",
+   "heading": "Education/Child Development",
+   "heading_printed": "Education/Child Development",
+   "rule": "index",
+   "codes": [
+    "ECE."
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "EDAC",
+   "heading": "Educational Access",
+   "heading_printed": "Educational Access",
+   "rule": "index",
+   "codes": [
+    "EDAC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ELEC",
+   "heading": "Electronics Technology",
+   "heading_printed": "Electronics Technology",
+   "rule": "index",
+   "codes": [
+    "ELEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "EMC.",
+   "heading": "Emergency Medical Care",
+   "heading_printed": "Emergency Medical Care",
+   "rule": "index",
+   "codes": [
+    "EMC."
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Science and Technology",
+   "heading_printed": "Environmental Science and Technology",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ESOL",
+   "heading": "English for Speakers of Other Languages",
+   "heading_printed": "English for Speakers of Other Languages",
+   "rule": "index",
+   "codes": [
+    "ESOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ESTI",
+   "heading": "Esthetics",
+   "heading_printed": "Esthetics",
+   "rule": "index",
+   "codes": [
+    "ESTI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "FILI",
+   "heading": "Filipino",
+   "heading_printed": "Filipino",
+   "rule": "index",
+   "codes": [
+    "FILI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "FITN",
+   "heading": "Kinesiology – Fitness",
+   "heading_printed": "Kinesiology – Fitness",
+   "rule": "index",
+   "codes": [
+    "FITN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "GBST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GBST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "HSCI",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "HTM.",
+   "heading": "Hospitality and Tourism Management",
+   "heading_printed": "Hospitality and Tourism Management",
+   "rule": "index",
+   "codes": [
+    "HTM."
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "IDST",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "IDST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "INDV",
+   "heading": "Kinesiology - Individual Sports",
+   "heading_printed": "Kinesiology - Individual Sports",
+   "rule": "index",
+   "codes": [
+    "INDV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "KINE",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "LEGL",
+   "heading": "Paralegal Studies",
+   "heading_printed": "Paralegal Studies",
+   "rule": "index",
+   "codes": [
+    "LEGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "LIT.",
+   "heading": "Literature",
+   "heading_printed": "Literature",
+   "rule": "index",
+   "codes": [
+    "LIT."
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "LSKL",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LSKL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "MEDA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MEDA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "index",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "MUS.",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS."
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "NETX",
+   "heading": "Network Engineering Technologies",
+   "heading_printed": "Network Engineering Technologies",
+   "rule": "index",
+   "codes": [
+    "NETX"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "OCEN",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "index",
+   "codes": [
+    "OCEN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "P.E.",
+   "heading": "Kinesiology – Physical Education",
+   "heading_printed": "Kinesiology – Physical Education",
+   "rule": "index",
+   "codes": [
+    "P.E."
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "R.E.",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "R.E."
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "RPTH",
+   "heading": "Respiratory Care",
+   "heading_printed": "Respiratory Care",
+   "rule": "index",
+   "codes": [
+    "RPTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "SJS",
+   "heading": "Social Justice Studies",
+   "heading_printed": "Social Justice Studies",
+   "rule": "index",
+   "codes": [
+    "SJS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "SOSC",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SOSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "SURG",
+   "heading": "Surgical Careers",
+   "heading_printed": "Surgical Careers",
+   "rule": "index",
+   "codes": [
+    "SURG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "TEAM",
+   "heading": "Kinesiology - Team Sports",
+   "heading_printed": "Kinesiology - Team Sports",
+   "rule": "index",
+   "codes": [
+    "TEAM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "VARS",
+   "heading": "Kinesiology - Varsity Sports",
+   "heading_printed": "Kinesiology - Varsity Sports",
+   "rule": "index",
+   "codes": [
+    "VARS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "WELL",
+   "heading": "Wellness",
+   "heading_printed": "Wellness",
+   "rule": "index",
+   "codes": [
+    "WELL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  },
+  {
+   "code": "WORK",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WORK"
+   ],
+   "candidate": null,
+   "address": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623798209)",
+   "run": "45623798209"
+  }
+ ],
+ "subjects": 78,
+ "with_heading": 78
+}
