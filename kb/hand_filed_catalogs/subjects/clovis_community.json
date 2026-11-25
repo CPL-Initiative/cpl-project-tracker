@@ -20,7 +20,11 @@
    ],
    "candidate": null,
    "label": "ACCOUNTING (ACCTG)",
-   "catalog_page": 187
+   "catalog_page": 187,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "AG",
@@ -32,7 +36,11 @@
    ],
    "candidate": null,
    "label": "AGRICULTURE (AG)",
-   "catalog_page": 188
+   "catalog_page": 188,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ANTH",
@@ -44,7 +52,11 @@
    ],
    "candidate": null,
    "label": "ANTHROPOLOGY (ANTH, Formerly ANTHRO)",
-   "catalog_page": 194
+   "catalog_page": 194,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ARM",
@@ -56,7 +68,11 @@
    ],
    "candidate": null,
    "label": "AUTOMATION ROBOTICS MECHATRONICS (ARM)",
-   "catalog_page": 200
+   "catalog_page": 200,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ART",
@@ -68,7 +84,11 @@
    ],
    "candidate": null,
    "label": "ART (ART)",
-   "catalog_page": 195
+   "catalog_page": 195,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ARTH",
@@ -80,7 +100,11 @@
    ],
    "candidate": null,
    "label": "ART HISTORY (ARTH)",
-   "catalog_page": 199
+   "catalog_page": 199,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ASL",
@@ -92,7 +116,11 @@
    ],
    "candidate": null,
    "label": "AMERICAN SIGN LANGUAGE (ASL)",
-   "catalog_page": 193
+   "catalog_page": 193,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "BA",
@@ -104,7 +132,11 @@
    ],
    "candidate": null,
    "label": "BUSINESS ADMINISTRATION (BA)",
-   "catalog_page": 205
+   "catalog_page": 205,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "BIOL",
@@ -116,7 +148,11 @@
    ],
    "candidate": null,
    "label": "BIOLOGY (BIOL)",
-   "catalog_page": 202
+   "catalog_page": 202,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "CHDEV",
@@ -128,7 +164,11 @@
    ],
    "candidate": null,
    "label": "CHILD DEVELOPMENT (CHDEV) - also see Early Childhood Education (ECE)",
-   "catalog_page": 209
+   "catalog_page": 209,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "CHEM",
@@ -140,7 +180,11 @@
    ],
    "candidate": null,
    "label": "CHEMISTRY (CHEM)",
-   "catalog_page": 208
+   "catalog_page": 208,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "CHIN",
@@ -152,7 +196,11 @@
    ],
    "candidate": null,
    "label": "CHINESE (CHIN)",
-   "catalog_page": 210
+   "catalog_page": 210,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "COMM",
@@ -164,7 +212,11 @@
    ],
    "candidate": null,
    "label": "COMMUNICATION (COMM)",
-   "catalog_page": 210
+   "catalog_page": 210,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "COUN",
@@ -176,7 +228,11 @@
    ],
    "candidate": null,
    "label": "COUNSELING (COUN)",
-   "catalog_page": 212
+   "catalog_page": 212,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "CRIM",
@@ -188,7 +244,11 @@
    ],
    "candidate": null,
    "label": "CRIMINOLOGY (CRIM)",
-   "catalog_page": 213
+   "catalog_page": 213,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "CSCI",
@@ -200,7 +260,11 @@
    ],
    "candidate": null,
    "label": "COMPUTER SCIENCE (CSCI)",
-   "catalog_page": 212
+   "catalog_page": 212,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "DANCE",
@@ -212,7 +276,11 @@
    ],
    "candidate": null,
    "label": "DANCE (DANCE)",
-   "catalog_page": 215
+   "catalog_page": 215,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ECE",
@@ -224,7 +292,11 @@
    ],
    "candidate": null,
    "label": "EARLY CHILDHOOD EDUCATION (ECE) (Formerly Child Development)",
-   "catalog_page": 216
+   "catalog_page": 216,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ECON",
@@ -236,7 +308,11 @@
    ],
    "candidate": null,
    "label": "ECONOMICS (ECON)",
-   "catalog_page": 220
+   "catalog_page": 220,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "EDUC",
@@ -248,7 +324,11 @@
    ],
    "candidate": null,
    "label": "EDUCATION (EDUC)",
-   "catalog_page": 220
+   "catalog_page": 220,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ENGL",
@@ -260,7 +340,11 @@
    ],
    "candidate": null,
    "label": "ENGLISH (ENGL)",
-   "catalog_page": 223
+   "catalog_page": 223,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ENGR",
@@ -272,7 +356,11 @@
    ],
    "candidate": null,
    "label": "ENGINEERING (ENGR)",
-   "catalog_page": 222
+   "catalog_page": 222,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ESC",
@@ -284,7 +372,11 @@
    ],
    "candidate": null,
    "label": "EDUCATIONAL STRATEGIES COURSES (ESC)",
-   "catalog_page": 221
+   "catalog_page": 221,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ESL",
@@ -296,7 +388,11 @@
    ],
    "candidate": null,
    "label": "ENGLISH AS A SECOND LANGUAGE (ESL)",
-   "catalog_page": 227
+   "catalog_page": 227,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "ETHNST",
@@ -308,7 +404,11 @@
    ],
    "candidate": null,
    "label": "ETHNIC STUDIES (ETHNST)",
-   "catalog_page": 227
+   "catalog_page": 227,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "FILM",
@@ -320,7 +420,11 @@
    ],
    "candidate": null,
    "label": "FILM (FILM)",
-   "catalog_page": 229
+   "catalog_page": 229,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "FN",
@@ -332,7 +436,11 @@
    ],
    "candidate": null,
    "label": "FOODS AND NUTRITION (FN)",
-   "catalog_page": 230
+   "catalog_page": 230,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "FRENCH",
@@ -344,7 +452,11 @@
    ],
    "candidate": null,
    "label": "FRENCH (FRENCH)",
-   "catalog_page": 230
+   "catalog_page": 230,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "GEOG",
@@ -356,7 +468,11 @@
    ],
    "candidate": null,
    "label": "GEOGRAPHY (GEOG)",
-   "catalog_page": 231
+   "catalog_page": 231,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "GEOL",
@@ -368,7 +484,11 @@
    ],
    "candidate": null,
    "label": "GEOLOGY (GEOL)",
-   "catalog_page": 232
+   "catalog_page": 232,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "GERMAN",
@@ -380,7 +500,11 @@
    ],
    "candidate": null,
    "label": "GERMAN (GERMAN)",
-   "catalog_page": 233
+   "catalog_page": 233,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "HCA",
@@ -392,7 +516,11 @@
    ],
    "candidate": null,
    "label": "HEALTH CARE ANCILLARIES (HCA)",
-   "catalog_page": 234
+   "catalog_page": 234,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "HIST",
@@ -404,7 +532,11 @@
    ],
    "candidate": null,
    "label": "HISTORY (HIST)",
-   "catalog_page": 235
+   "catalog_page": 235,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "HLTH",
@@ -416,7 +548,11 @@
    ],
    "candidate": null,
    "label": "HEALTH SCIENCE (HLTH)",
-   "catalog_page": 234
+   "catalog_page": 234,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "HONORS",
@@ -428,7 +564,11 @@
    ],
    "candidate": null,
    "label": "HONORS (HONORS)",
-   "catalog_page": 237
+   "catalog_page": 237,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "HOSP",
@@ -440,7 +580,11 @@
    ],
    "candidate": null,
    "label": "HOSPITALITY MANAGEMENT (HOSP)",
-   "catalog_page": 238
+   "catalog_page": 238,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "HS",
@@ -452,7 +596,11 @@
    ],
    "candidate": null,
    "label": "HUMAN SERVICES (HS)",
-   "catalog_page": 238
+   "catalog_page": 238,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "INTDS",
@@ -464,7 +612,11 @@
    ],
    "candidate": null,
    "label": "INTERDISCIPLINARY STUDIES (INTDS)",
-   "catalog_page": 242
+   "catalog_page": 242,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "IS",
@@ -476,7 +628,11 @@
    ],
    "candidate": null,
    "label": "INFORMATION SYSTEMS (IS)",
-   "catalog_page": 239
+   "catalog_page": 239,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "JOURN",
@@ -488,7 +644,11 @@
    ],
    "candidate": null,
    "label": "JOURNALISM (JOURN)",
-   "catalog_page": 243
+   "catalog_page": 243,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "KINES",
@@ -500,7 +660,11 @@
    ],
    "candidate": null,
    "label": "KINESIOLOGY (KINES)",
-   "catalog_page": 243
+   "catalog_page": 243,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "LIBSKL",
@@ -512,7 +676,11 @@
    ],
    "candidate": null,
    "label": "LIBRARY SKILLS (LIBSKL)",
-   "catalog_page": 243
+   "catalog_page": 243,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "LING",
@@ -524,7 +692,11 @@
    ],
    "candidate": null,
    "label": "LINGUISTICS (LING)",
-   "catalog_page": 243
+   "catalog_page": 243,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "MATH",
@@ -536,7 +708,11 @@
    ],
    "candidate": null,
    "label": "MATHEMATICS (MATH)",
-   "catalog_page": 244
+   "catalog_page": 244,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "MKTG",
@@ -548,7 +724,11 @@
    ],
    "candidate": null,
    "label": "MARKETING (MKTG)",
-   "catalog_page": 244
+   "catalog_page": 244,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "MUS",
@@ -560,7 +740,11 @@
    ],
    "candidate": null,
    "label": "MUSIC (MUS)",
-   "catalog_page": 247
+   "catalog_page": 247,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "MUSCO",
@@ -572,7 +756,11 @@
    ],
    "candidate": null,
    "label": "COMMERCIAL MUSIC (MUSCO)",
-   "catalog_page": 250
+   "catalog_page": 250,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "OT",
@@ -584,7 +772,11 @@
    ],
    "candidate": null,
    "label": "OFFICE TECHNOLOGY (OT)",
-   "catalog_page": 255
+   "catalog_page": 255,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "OTA",
@@ -596,7 +788,11 @@
    ],
    "candidate": null,
    "label": "OCCUPATIONAL THERAPY ASSISTANT (OTA)",
-   "catalog_page": 251
+   "catalog_page": 251,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "PE",
@@ -608,7 +804,11 @@
    ],
    "candidate": null,
    "label": "PHYSICAL EDUCATION (PE)",
-   "catalog_page": 257
+   "catalog_page": 257,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "PHIL",
@@ -620,7 +820,11 @@
    ],
    "candidate": null,
    "label": "PHILOSOPHY (PHIL)",
-   "catalog_page": 255
+   "catalog_page": 255,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "PHOTO",
@@ -632,7 +836,11 @@
    ],
    "candidate": null,
    "label": "PHOTOGRAPHY (PHOTO)",
-   "catalog_page": 256
+   "catalog_page": 256,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "PHYS",
@@ -644,7 +852,11 @@
    ],
    "candidate": null,
    "label": "PHYSICS (PHYS)",
-   "catalog_page": 260
+   "catalog_page": 260,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "PLS",
@@ -656,7 +868,11 @@
    ],
    "candidate": null,
    "label": "PLANT SCIENCE (PLS)",
-   "catalog_page": 261
+   "catalog_page": 261,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "POLS",
@@ -668,7 +884,11 @@
    ],
    "candidate": null,
    "label": "POLITICAL SCIENCE (POLS) FORMERLY POLSCI",
-   "catalog_page": 262
+   "catalog_page": 262,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "PSYC",
@@ -680,7 +900,11 @@
    ],
    "candidate": null,
    "label": "PSYCHOLOGY (PSYC) FORMERLY PSY",
-   "catalog_page": 263
+   "catalog_page": 263,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "SCI",
@@ -692,7 +916,11 @@
    ],
    "candidate": null,
    "label": "SCIENCE (SCI)",
-   "catalog_page": 265
+   "catalog_page": 265,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "SOCI",
@@ -704,7 +932,11 @@
    ],
    "candidate": null,
    "label": "SOCIOLOGY (SOCI, Formerly SOC)",
-   "catalog_page": 265
+   "catalog_page": 265,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "SPAN",
@@ -716,7 +948,11 @@
    ],
    "candidate": null,
    "label": "SPANISH (SPAN)",
-   "catalog_page": 266
+   "catalog_page": 266,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "STAT",
@@ -728,7 +964,11 @@
    ],
    "candidate": null,
    "label": "STATISTICS (STAT)",
-   "catalog_page": 268
+   "catalog_page": 268,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "WKEXP",
@@ -740,7 +980,11 @@
    ],
    "candidate": null,
    "label": "WORK EXPERIENCE EDUCATION (WKEXP) (Formerly Cooperative Work Experience (COTR)",
-   "catalog_page": 269
+   "catalog_page": 269,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   },
   {
    "code": "WTD",
@@ -752,7 +996,11 @@
    ],
    "candidate": null,
    "label": "WATER TREATMENT AND DISTRIBUTION (WTD)",
-   "catalog_page": 268
+   "catalog_page": 268,
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23"
   }
  ]
 }

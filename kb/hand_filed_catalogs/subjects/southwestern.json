@@ -19,7 +19,11 @@
    ],
    "candidate": null,
    "label": "Accounting (ACCT)",
-   "address": "https://catalog.swccd.edu/course-descriptions/acct/"
+   "address": "https://catalog.swccd.edu/course-descriptions/acct/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ADN",
@@ -31,7 +35,11 @@
    ],
    "candidate": null,
    "label": "Associate Degree Nursing (ADN)",
-   "address": "https://catalog.swccd.edu/course-descriptions/adn/"
+   "address": "https://catalog.swccd.edu/course-descriptions/adn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AERO",
@@ -43,7 +51,11 @@
    ],
    "candidate": null,
    "label": "Aeronautics (AERO)",
-   "address": "https://catalog.swccd.edu/course-descriptions/aero/"
+   "address": "https://catalog.swccd.edu/course-descriptions/aero/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AFRO",
@@ -55,7 +67,11 @@
    ],
    "candidate": null,
    "label": "African-American Studies (AFRO)",
-   "address": "https://catalog.swccd.edu/course-descriptions/afro/"
+   "address": "https://catalog.swccd.edu/course-descriptions/afro/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AJ",
@@ -67,7 +83,11 @@
    ],
    "candidate": null,
    "label": "Criminal Justice (AJ)",
-   "address": "https://catalog.swccd.edu/course-descriptions/aj/"
+   "address": "https://catalog.swccd.edu/course-descriptions/aj/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ANTH",
@@ -79,7 +99,11 @@
    ],
    "candidate": null,
    "label": "Anthropology (ANTH)",
-   "address": "https://catalog.swccd.edu/course-descriptions/anth/"
+   "address": "https://catalog.swccd.edu/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARCH",
@@ -91,7 +115,11 @@
    ],
    "candidate": null,
    "label": "Architecture (ARCH)",
-   "address": "https://catalog.swccd.edu/course-descriptions/arch/"
+   "address": "https://catalog.swccd.edu/course-descriptions/arch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ART",
@@ -103,7 +131,11 @@
    ],
    "candidate": null,
    "label": "Art (ART)",
-   "address": "https://catalog.swccd.edu/course-descriptions/art/"
+   "address": "https://catalog.swccd.edu/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARTH",
@@ -115,7 +147,11 @@
    ],
    "candidate": null,
    "label": "Art (ARTH)",
-   "address": "https://catalog.swccd.edu/course-descriptions/arth/"
+   "address": "https://catalog.swccd.edu/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ASIA",
@@ -127,7 +163,11 @@
    ],
    "candidate": null,
    "label": "Asian-American Studies (ASIA)",
-   "address": "https://catalog.swccd.edu/course-descriptions/asia/"
+   "address": "https://catalog.swccd.edu/course-descriptions/asia/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ASL",
@@ -139,7 +179,11 @@
    ],
    "candidate": null,
    "label": "American Sign Language (ASL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/asl/"
+   "address": "https://catalog.swccd.edu/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ASTR",
@@ -151,7 +195,11 @@
    ],
    "candidate": null,
    "label": "Astronomy (ASTR)",
-   "address": "https://catalog.swccd.edu/course-descriptions/astr/"
+   "address": "https://catalog.swccd.edu/course-descriptions/astr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AT",
@@ -163,7 +211,11 @@
    ],
    "candidate": null,
    "label": "Automotive Technology (AT)",
-   "address": "https://catalog.swccd.edu/course-descriptions/at/"
+   "address": "https://catalog.swccd.edu/course-descriptions/at/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BIOL",
@@ -175,7 +227,11 @@
    ],
    "candidate": null,
    "label": "Biology (BIOL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/biol/"
+   "address": "https://catalog.swccd.edu/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BUS",
@@ -187,7 +243,11 @@
    ],
    "candidate": null,
    "label": "Business (BUS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/bus/"
+   "address": "https://catalog.swccd.edu/course-descriptions/bus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CA",
@@ -199,7 +259,11 @@
    ],
    "candidate": null,
    "label": "Culinary Arts (CA)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ca/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ca/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CAD",
@@ -211,7 +275,11 @@
    ],
    "candidate": null,
    "label": "Computer Aided Design and Drafting (CAD)",
-   "address": "https://catalog.swccd.edu/course-descriptions/cad/"
+   "address": "https://catalog.swccd.edu/course-descriptions/cad/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CBE",
@@ -223,7 +291,11 @@
    ],
    "candidate": null,
    "label": "Automotive Technology (CBE)",
-   "address": "https://catalog.swccd.edu/course-descriptions/atcbe/"
+   "address": "https://catalog.swccd.edu/course-descriptions/atcbe/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CD",
@@ -235,7 +307,11 @@
    ],
    "candidate": null,
    "label": "Family Studies (CD)",
-   "address": "https://catalog.swccd.edu/course-descriptions/cd/"
+   "address": "https://catalog.swccd.edu/course-descriptions/cd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CHEM",
@@ -247,7 +323,11 @@
    ],
    "candidate": null,
    "label": "Chemistry (CHEM)",
-   "address": "https://catalog.swccd.edu/course-descriptions/chem/"
+   "address": "https://catalog.swccd.edu/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CHIN",
@@ -259,7 +339,11 @@
    ],
    "candidate": null,
    "label": "Chinese (CHIN)",
-   "address": "https://catalog.swccd.edu/course-descriptions/chin/"
+   "address": "https://catalog.swccd.edu/course-descriptions/chin/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CI",
@@ -271,7 +355,11 @@
    ],
    "candidate": null,
    "label": "Construction Inspection (CI)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ci/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CIS",
@@ -283,7 +371,11 @@
    ],
    "candidate": null,
    "label": "Computer Information Systems (CIS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/cis/"
+   "address": "https://catalog.swccd.edu/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CL",
@@ -295,7 +387,11 @@
    ],
    "candidate": null,
    "label": "Computer Literacy (CL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/cl/"
+   "address": "https://catalog.swccd.edu/course-descriptions/cl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CNA",
@@ -307,7 +403,11 @@
    ],
    "candidate": null,
    "label": "Certified Nursing Assistant (CNA)",
-   "address": "https://catalog.swccd.edu/course-descriptions/cna/"
+   "address": "https://catalog.swccd.edu/course-descriptions/cna/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COMM",
@@ -319,7 +419,11 @@
    ],
    "candidate": null,
    "label": "Communication (COMM)",
-   "address": "https://catalog.swccd.edu/course-descriptions/comm/"
+   "address": "https://catalog.swccd.edu/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DANC",
@@ -331,7 +435,11 @@
    ],
    "candidate": null,
    "label": "Dance (DANC)",
-   "address": "https://catalog.swccd.edu/course-descriptions/danc/"
+   "address": "https://catalog.swccd.edu/course-descriptions/danc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DH",
@@ -343,7 +451,11 @@
    ],
    "candidate": null,
    "label": "Dental Hygiene (DH)",
-   "address": "https://catalog.swccd.edu/course-descriptions/dh/"
+   "address": "https://catalog.swccd.edu/course-descriptions/dh/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ECON",
@@ -355,7 +467,11 @@
    ],
    "candidate": null,
    "label": "Economics (ECON)",
-   "address": "https://catalog.swccd.edu/course-descriptions/econ/"
+   "address": "https://catalog.swccd.edu/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ED",
@@ -367,7 +483,11 @@
    ],
    "candidate": null,
    "label": "Education (ED)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ed/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ed/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EHMT",
@@ -379,7 +499,11 @@
    ],
    "candidate": null,
    "label": "Environmental Hazardous Materials Technology (EHMT)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ehmt/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ehmt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ELEC",
@@ -391,7 +515,11 @@
    ],
    "candidate": null,
    "label": "Electronics (ELEC)",
-   "address": "https://catalog.swccd.edu/course-descriptions/elec/"
+   "address": "https://catalog.swccd.edu/course-descriptions/elec/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EMT",
@@ -403,7 +531,11 @@
    ],
    "candidate": null,
    "label": "Emergency Medical Technology (EMT)",
-   "address": "https://catalog.swccd.edu/course-descriptions/emt/"
+   "address": "https://catalog.swccd.edu/course-descriptions/emt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EMTP",
@@ -415,7 +547,11 @@
    ],
    "candidate": null,
    "label": "Emergency Medical Technology and Paramedic (EMTP)",
-   "address": "https://catalog.swccd.edu/course-descriptions/emtp/"
+   "address": "https://catalog.swccd.edu/course-descriptions/emtp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENGL",
@@ -427,7 +563,11 @@
    ],
    "candidate": null,
    "label": "English (ENGL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/engl/"
+   "address": "https://catalog.swccd.edu/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENGR",
@@ -439,7 +579,11 @@
    ],
    "candidate": null,
    "label": "Engineering (ENGR)",
-   "address": "https://catalog.swccd.edu/course-descriptions/engr/"
+   "address": "https://catalog.swccd.edu/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ES/A",
@@ -451,7 +595,11 @@
    ],
    "candidate": null,
    "label": "Exercise Science/Activity (ES/A)",
-   "address": "https://catalog.swccd.edu/course-descriptions/es_a/"
+   "address": "https://catalog.swccd.edu/course-descriptions/es_a/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ES/I",
@@ -463,7 +611,11 @@
    ],
    "candidate": null,
    "label": "Exercise Science/Intercollegiate (ES/I)",
-   "address": "https://catalog.swccd.edu/course-descriptions/es_i/"
+   "address": "https://catalog.swccd.edu/course-descriptions/es_i/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ES/S",
@@ -475,7 +627,11 @@
    ],
    "candidate": null,
    "label": "Exercise Science/Specialized (ES/S)",
-   "address": "https://catalog.swccd.edu/course-descriptions/es_s/"
+   "address": "https://catalog.swccd.edu/course-descriptions/es_s/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ES/T",
@@ -487,7 +643,11 @@
    ],
    "candidate": null,
    "label": "Exercise Science/Theory (ES/T)",
-   "address": "https://catalog.swccd.edu/course-descriptions/es_t/"
+   "address": "https://catalog.swccd.edu/course-descriptions/es_t/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ESL",
@@ -499,7 +659,11 @@
    ],
    "candidate": null,
    "label": "English as a Second Language (ESL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/esl/"
+   "address": "https://catalog.swccd.edu/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EVNT",
@@ -511,7 +675,11 @@
    ],
    "candidate": null,
    "label": "Event and Convention Planning (EVNT)",
-   "address": "https://catalog.swccd.edu/course-descriptions/evnt/"
+   "address": "https://catalog.swccd.edu/course-descriptions/evnt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FARS",
@@ -523,7 +691,11 @@
    ],
    "candidate": null,
    "label": "Farsi (FARS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/fars/"
+   "address": "https://catalog.swccd.edu/course-descriptions/fars/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FIL",
@@ -535,7 +707,11 @@
    ],
    "candidate": null,
    "label": "Filipino (FIL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/fil/"
+   "address": "https://catalog.swccd.edu/course-descriptions/fil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FREN",
@@ -547,7 +723,11 @@
    ],
    "candidate": null,
    "label": "French (FREN)",
-   "address": "https://catalog.swccd.edu/course-descriptions/fren/"
+   "address": "https://catalog.swccd.edu/course-descriptions/fren/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FS",
@@ -559,7 +739,11 @@
    ],
    "candidate": null,
    "label": "Fire Science Technology (FS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/fs/"
+   "address": "https://catalog.swccd.edu/course-descriptions/fs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FTMA",
@@ -571,7 +755,11 @@
    ],
    "candidate": null,
    "label": "Film, Television, and Media Arts (FTMA)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ftma/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ftma/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GEOG",
@@ -583,7 +771,11 @@
    ],
    "candidate": null,
    "label": "Geography (GEOG)",
-   "address": "https://catalog.swccd.edu/course-descriptions/geog/"
+   "address": "https://catalog.swccd.edu/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GEOL",
@@ -595,7 +787,11 @@
    ],
    "candidate": null,
    "label": "Geology (GEOL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/geol/"
+   "address": "https://catalog.swccd.edu/course-descriptions/geol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HIST",
@@ -607,7 +803,11 @@
    ],
    "candidate": null,
    "label": "History (HIST)",
-   "address": "https://catalog.swccd.edu/course-descriptions/hist/"
+   "address": "https://catalog.swccd.edu/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HLTH",
@@ -619,7 +819,11 @@
    ],
    "candidate": null,
    "label": "Health (HLTH)",
-   "address": "https://catalog.swccd.edu/course-descriptions/hlth/"
+   "address": "https://catalog.swccd.edu/course-descriptions/hlth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HTM",
@@ -631,7 +835,11 @@
    ],
    "candidate": null,
    "label": "Hospitality and Tourism Management (HTM)",
-   "address": "https://catalog.swccd.edu/course-descriptions/htm/"
+   "address": "https://catalog.swccd.edu/course-descriptions/htm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HUM",
@@ -643,7 +851,11 @@
    ],
    "candidate": null,
    "label": "Humanities (HUM)",
-   "address": "https://catalog.swccd.edu/course-descriptions/hum/"
+   "address": "https://catalog.swccd.edu/course-descriptions/hum/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "INS",
@@ -655,7 +867,11 @@
    ],
    "candidate": null,
    "label": "Insurance (INS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ins/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ins/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ITAL",
@@ -667,7 +883,11 @@
    ],
    "candidate": null,
    "label": "Italian (ITAL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ital/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ital/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "JOUR",
@@ -679,7 +899,11 @@
    ],
    "candidate": null,
    "label": "Journalism (JOUR)",
-   "address": "https://catalog.swccd.edu/course-descriptions/jour/"
+   "address": "https://catalog.swccd.edu/course-descriptions/jour/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "JPN",
@@ -691,7 +915,11 @@
    ],
    "candidate": null,
    "label": "Japanese (JPN)",
-   "address": "https://catalog.swccd.edu/course-descriptions/jpn/"
+   "address": "https://catalog.swccd.edu/course-descriptions/jpn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LA",
@@ -703,7 +931,11 @@
    ],
    "candidate": null,
    "label": "Landscape Architecture (LA)",
-   "address": "https://catalog.swccd.edu/course-descriptions/la/"
+   "address": "https://catalog.swccd.edu/course-descriptions/la/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LDR",
@@ -715,7 +947,11 @@
    ],
    "candidate": null,
    "label": "Leadership (LDR)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ldr/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ldr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LEGL",
@@ -727,7 +963,11 @@
    ],
    "candidate": null,
    "label": "Legal (LEGL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/legl/"
+   "address": "https://catalog.swccd.edu/course-descriptions/legl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LIB",
@@ -739,7 +979,11 @@
    ],
    "candidate": null,
    "label": "Library (LIB)",
-   "address": "https://catalog.swccd.edu/course-descriptions/lib/"
+   "address": "https://catalog.swccd.edu/course-descriptions/lib/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LNT",
@@ -751,7 +995,11 @@
    ],
    "candidate": null,
    "label": "Landscape and Nursery Technology (LNT)",
-   "address": "https://catalog.swccd.edu/course-descriptions/lnt/"
+   "address": "https://catalog.swccd.edu/course-descriptions/lnt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LS",
@@ -763,7 +1011,11 @@
    ],
    "candidate": null,
    "label": "Learning Skills (LS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ls/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ls/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MAS",
@@ -775,7 +1027,11 @@
    ],
    "candidate": null,
    "label": "Mexican-American Studies (MAS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/mas/"
+   "address": "https://catalog.swccd.edu/course-descriptions/mas/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MATH",
@@ -787,7 +1043,11 @@
    ],
    "candidate": null,
    "label": "Mathematics (MATH)",
-   "address": "https://catalog.swccd.edu/course-descriptions/math/"
+   "address": "https://catalog.swccd.edu/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MEDOP",
@@ -799,7 +1059,11 @@
    ],
    "candidate": null,
    "label": "Medical Office Professional (MEDOP)",
-   "address": "https://catalog.swccd.edu/course-descriptions/medop/"
+   "address": "https://catalog.swccd.edu/course-descriptions/medop/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MLT",
@@ -811,7 +1075,11 @@
    ],
    "candidate": null,
    "label": "Medical Laboratory Technician (MLT)",
-   "address": "https://catalog.swccd.edu/course-descriptions/mlt/"
+   "address": "https://catalog.swccd.edu/course-descriptions/mlt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MUS",
@@ -823,7 +1091,11 @@
    ],
    "candidate": null,
    "label": "Music (MUS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/mus/"
+   "address": "https://catalog.swccd.edu/course-descriptions/mus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "NAIS",
@@ -835,7 +1107,11 @@
    ],
    "candidate": null,
    "label": "Native American & Indigenous Studies (NAIS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/nais/"
+   "address": "https://catalog.swccd.edu/course-descriptions/nais/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "NC",
@@ -847,7 +1123,11 @@
    ],
    "candidate": null,
    "label": "Noncredit (NC)",
-   "address": "https://catalog.swccd.edu/course-descriptions/nc/"
+   "address": "https://catalog.swccd.edu/course-descriptions/nc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ORN",
@@ -859,7 +1139,11 @@
    ],
    "candidate": null,
    "label": "Operating Room Nurse (ORN)",
-   "address": "https://catalog.swccd.edu/course-descriptions/orn/"
+   "address": "https://catalog.swccd.edu/course-descriptions/orn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PA",
@@ -871,7 +1155,11 @@
    ],
    "candidate": null,
    "label": "Public Administration (PA)",
-   "address": "https://catalog.swccd.edu/course-descriptions/public-administration/"
+   "address": "https://catalog.swccd.edu/course-descriptions/public-administration/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PD",
@@ -883,7 +1171,11 @@
    ],
    "candidate": null,
    "label": "Personal Development (PD)",
-   "address": "https://catalog.swccd.edu/course-descriptions/pd/"
+   "address": "https://catalog.swccd.edu/course-descriptions/pd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHIL",
@@ -895,7 +1187,11 @@
    ],
    "candidate": null,
    "label": "Philosophy (PHIL)",
-   "address": "https://catalog.swccd.edu/course-descriptions/phil/"
+   "address": "https://catalog.swccd.edu/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHS",
@@ -907,7 +1203,11 @@
    ],
    "candidate": null,
    "label": "Physical Science (PHS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/phs/"
+   "address": "https://catalog.swccd.edu/course-descriptions/phs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHYS",
@@ -919,7 +1219,11 @@
    ],
    "candidate": null,
    "label": "Physics (PHYS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/phys/"
+   "address": "https://catalog.swccd.edu/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "POLS",
@@ -931,7 +1235,11 @@
    ],
    "candidate": null,
    "label": "Political Science (POLS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/pols/"
+   "address": "https://catalog.swccd.edu/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PORT",
@@ -943,7 +1251,11 @@
    ],
    "candidate": null,
    "label": "Portuguese (PORT)",
-   "address": "https://catalog.swccd.edu/course-descriptions/port/"
+   "address": "https://catalog.swccd.edu/course-descriptions/port/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PS",
@@ -955,7 +1267,11 @@
    ],
    "candidate": null,
    "label": "Political Science (PS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ps/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PSYC",
@@ -967,7 +1283,11 @@
    ],
    "candidate": null,
    "label": "Psychology (PSYC)",
-   "address": "https://catalog.swccd.edu/course-descriptions/psyc/"
+   "address": "https://catalog.swccd.edu/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "RA&T",
@@ -979,7 +1299,11 @@
    ],
    "candidate": null,
    "label": "Recording Arts & Technology (RA&T)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ra_t/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ra_t/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "RDG",
@@ -991,7 +1315,11 @@
    ],
    "candidate": null,
    "label": "Reading (RDG)",
-   "address": "https://catalog.swccd.edu/course-descriptions/rdg/"
+   "address": "https://catalog.swccd.edu/course-descriptions/rdg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "RE",
@@ -1003,7 +1331,11 @@
    ],
    "candidate": null,
    "label": "Real Estate (RE)",
-   "address": "https://catalog.swccd.edu/course-descriptions/re/"
+   "address": "https://catalog.swccd.edu/course-descriptions/re/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "REC",
@@ -1015,7 +1347,11 @@
    ],
    "candidate": null,
    "label": "Recreation and Leisure Studies (REC)",
-   "address": "https://catalog.swccd.edu/course-descriptions/rec/"
+   "address": "https://catalog.swccd.edu/course-descriptions/rec/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SES",
@@ -1027,7 +1363,11 @@
    ],
    "candidate": null,
    "label": "Sustainable Energy Studies (SES)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ses/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SOC",
@@ -1039,7 +1379,11 @@
    ],
    "candidate": null,
    "label": "Sociology (SOC)",
-   "address": "https://catalog.swccd.edu/course-descriptions/soc/"
+   "address": "https://catalog.swccd.edu/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SPAN",
@@ -1051,7 +1395,11 @@
    ],
    "candidate": null,
    "label": "Spanish (SPAN)",
-   "address": "https://catalog.swccd.edu/course-descriptions/span/"
+   "address": "https://catalog.swccd.edu/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ST",
@@ -1063,7 +1411,11 @@
    ],
    "candidate": null,
    "label": "Surgical Technology (ST)",
-   "address": "https://catalog.swccd.edu/course-descriptions/st/"
+   "address": "https://catalog.swccd.edu/course-descriptions/st/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "STAT",
@@ -1075,7 +1427,11 @@
    ],
    "candidate": null,
    "label": "Mathematics (STAT)",
-   "address": "https://catalog.swccd.edu/course-descriptions/stat/"
+   "address": "https://catalog.swccd.edu/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SWHS",
@@ -1087,7 +1443,11 @@
    ],
    "candidate": null,
    "label": "Social Work and Human Services (SWHS)",
-   "address": "https://catalog.swccd.edu/course-descriptions/swhs/"
+   "address": "https://catalog.swccd.edu/course-descriptions/swhs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "T&T",
@@ -1099,7 +1459,11 @@
    ],
    "candidate": null,
    "label": "Travel and Tourism (T&T)",
-   "address": "https://catalog.swccd.edu/course-descriptions/t_t/"
+   "address": "https://catalog.swccd.edu/course-descriptions/t_t/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "TA",
@@ -1111,7 +1475,11 @@
    ],
    "candidate": null,
    "label": "Theatre Arts (TA)",
-   "address": "https://catalog.swccd.edu/course-descriptions/ta/"
+   "address": "https://catalog.swccd.edu/course-descriptions/ta/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "VN",
@@ -1123,7 +1491,11 @@
    ],
    "candidate": null,
    "label": "Vocational Nursing (VN)",
-   "address": "https://catalog.swccd.edu/course-descriptions/vn/"
+   "address": "https://catalog.swccd.edu/course-descriptions/vn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   }
  ],
  "code_address_tried": [

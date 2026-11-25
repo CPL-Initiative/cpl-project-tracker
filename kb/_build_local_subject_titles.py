@@ -29,6 +29,7 @@ file untouched; --check compares the same fingerprint.
   python3 kb/_build_local_subject_titles.py --if-changed   the daily run: write only when the content changed
   python3 kb/_build_local_subject_titles.py --check        exit 1 if the committed file is behind its inputs
 """
+import glob
 import gzip
 import hashlib
 import json
@@ -136,6 +137,25 @@ def read_subjects(root, slug):
             "blocked": {code_key(c) for c in d.get("blocked") or []}}
 
 
+def headings_only(root, index):
+    """The colleges whose subject headings are filed (kb/hand_filed_catalogs/subjects/) with no printed course list here
+    (S730, Sam, 2026-11-25: the title hunt files a catalog's subject index straight into the record). Each is listed by its
+    headings alone, so its codes take their titles from the catalog's own index without a full course read."""
+    have = {c["slug"] for c in index.get("colleges") or []}
+    out = []
+    for path in sorted(glob.glob(os.path.join(root, SUBJECTS, "*.json"))):
+        slug = os.path.basename(path)[:-5]
+        if slug in have:
+            continue
+        with open(path, encoding="utf-8") as f:
+            d = json.load(f)
+        if not d.get("college") or not any(r.get("heading") for r in d.get("rows") or []):
+            continue
+        out.append({"slug": slug, "college": d["college"], "catalog_year": d.get("catalog_year"),
+                    "read_at": d.get("read_at"), "file": None, "headings_only": True})
+    return out
+
+
 def read_departments(root, slug):
     """A college's department list, keyed by code; None where none is filed."""
     path = os.path.join(root, DEPARTMENTS, slug + ".json")
@@ -195,9 +215,12 @@ def build(root=ROOT):
          "noncredit_only": 0, "credit_and_noncredit": 0, "pages_not_read": 0,
          "colleges_named": 0, "colleges_not_in_state_list": 0, "named_by_person": 0, "common_by_person": 0,
          "common_by_statewide_filing": 0}
-    for c in sorted(index.get("colleges") or [], key=lambda x: x["slug"]):
-        with gzip.open(os.path.join(root, CATALOGS, c["file"]), "rt", encoding="utf-8") as f:
-            doc = json.load(f)
+    for c in sorted(index.get("colleges") or [], key=lambda x: x["slug"]) + headings_only(root, index):
+        if c.get("file"):
+            with gzip.open(os.path.join(root, CATALOGS, c["file"]), "rt", encoding="utf-8") as f:
+                doc = json.load(f)
+        else:
+            doc = {}   # a college filed by its subject headings alone (S730): no printed course rows, its titles from its headings
         rows = doc.get("rows") or []
         # The pages that were read, and the codes each page prints its courses under: a subject the index lists as
         # A&P whose page prints AP 120 was read, and its courses sit under the other code (S700).

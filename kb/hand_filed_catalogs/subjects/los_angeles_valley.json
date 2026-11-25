@@ -24,7 +24,11 @@
     "COURSE DESCRIPTIONS",
     "ACCOUNTING (ACCTG)"
    ],
-   "first_course": "ACCTG 001 Introductory Accounting I"
+   "first_course": "ACCTG 001 Introductory Accounting I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ADM JUS",
@@ -60,7 +64,11 @@
     "60 UNITS NEEDED FOR ADMISSION TO THE UC.",
     "ARCHITECTURE (ARC)"
    ],
-   "first_course": "ARC 172 Architectural Drawing I (3)"
+   "first_course": "ARC 172 Architectural Drawing I (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ART",
@@ -96,7 +104,11 @@
     "ASTRONOMY",
     "(ASTRON)"
    ],
-   "first_course": "ASTRON 001 Elementary Astronomy (3)"
+   "first_course": "ASTRON 001 Elementary Astronomy (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "BIOLOGY",
@@ -114,7 +126,11 @@
     "universe.",
     "BIOLOGY (BIOLOGY)"
    ],
-   "first_course": "BIOLOGY 003 Introduction to Biology"
+   "first_course": "BIOLOGY 003 Introduction to Biology",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "BOTH FRENCH",
@@ -222,7 +238,11 @@
     "REGIONALLY ACCREDITED INSTITUTION.",
     "CHEMISTRY (CHEM)"
    ],
-   "first_course": "CHEM 051 Fundamentals of Chemistry I"
+   "first_course": "CHEM 051 Fundamentals of Chemistry I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CHICANO",
@@ -258,7 +278,11 @@
     "CINEMA (CINEMA)",
     "(Please also see Animation and Media Arts)"
    ],
-   "first_course": "CINEMA 101 Beginning Film Production"
+   "first_course": "CINEMA 101 Beginning Film Production",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CIS",
@@ -312,7 +336,11 @@
     "COUNSELING",
     "(COUNSEL)"
    ],
-   "first_course": "COUNSEL 001 Introduction to College"
+   "first_course": "COUNSEL 001 Introduction to College",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CS",
@@ -492,7 +520,11 @@
     "COURSE DESCRIPTIONS",
     "ESL CIVICS (ESLCVCS)"
    ],
-   "first_course": "ESLCVCS 010CE ESL and Civics I (0)"
+   "first_course": "ESLCVCS 010CE ESL and Civics I (0)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "FINANCE",
@@ -510,7 +542,11 @@
     "Sciences requirement for General Education.",
     "FINANCE (FINANCE)"
    ],
-   "first_course": "FINANCE 002 Investments (3) CSU"
+   "first_course": "FINANCE 002 Investments (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "FIRETEK",
@@ -528,7 +564,11 @@
     "FIRE TECHNOLOGY",
     "(FIRETEK)"
    ],
-   "first_course": "FIRETEK 027 Wildland Firefighter (4)"
+   "first_course": "FIRETEK 027 Wildland Firefighter (4)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "FRENCH",
@@ -546,7 +586,11 @@
     "REGIONALLY ACCREDITED INSTITUTION.",
     "FRENCH (FRENCH)"
    ],
-   "first_course": "FRENCH 001 Elementary French I (5)"
+   "first_course": "FRENCH 001 Elementary French I (5)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "GEOG",
@@ -564,7 +608,11 @@
     "60 UNITS NEEDED FOR ADMISSION TO THE UC.",
     "GEOGRAPHY (GEOG)"
    ],
-   "first_course": "GEOG 001 Physical Geography (3)"
+   "first_course": "GEOG 001 Physical Geography (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "GEOLOGY",
@@ -582,7 +630,11 @@
     "COURSE DESCRIPTIONS",
     "GEOLOGY (GEOLOGY)"
    ],
-   "first_course": "GEOLOGY 001 Physical Geology (3)"
+   "first_course": "GEOLOGY 001 Physical Geology (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "GERMAN",
@@ -600,7 +652,11 @@
     "GEOLOGY 010 AND ENV SCI 007.",
     "GERMAN (GERMAN)"
    ],
-   "first_course": "GERMAN 001 Elementary German I (5)"
+   "first_course": "GERMAN 001 Elementary German I (5)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "HEALTH",
@@ -618,7 +674,11 @@
     "COURSE DESCRIPTIONS",
     "HEALTH (HEALTH)"
    ],
-   "first_course": "HEALTH 002 Health and Fitness (3)"
+   "first_course": "HEALTH 002 Health and Fitness (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "HEBREW",
@@ -636,7 +696,11 @@
     "management.",
     "HEBREW (HEBREW)"
    ],
-   "first_course": "HEBREW 001 Elementary Hebrew I (5)"
+   "first_course": "HEBREW 001 Elementary Hebrew I (5)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "HISTORY",
@@ -672,7 +736,11 @@
     "INTERNATIONAL",
     "BUSINESS (INTBUS)"
    ],
-   "first_course": "INTBUS 001 International Trade (3) CSU"
+   "first_course": "INTBUS 001 International Trade (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ITALIAN",
@@ -690,7 +758,11 @@
     "studied.",
     "ITALIAN (ITALIAN)"
    ],
-   "first_course": "ITALIAN 001 Elementary Italian I (5)"
+   "first_course": "ITALIAN 001 Elementary Italian I (5)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "JOURNAL",
@@ -762,7 +834,11 @@
     "evaluation, and management of athletic injuries.",
     "LAW (LAW)"
    ],
-   "first_course": "LAW 001 Business Law I (3) UC:CSU"
+   "first_course": "LAW 001 Business Law I (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "LIB SCI",
@@ -798,7 +874,11 @@
     "MARKETING",
     "(MARKET)"
    ],
-   "first_course": "MARKET 001 Principles of Selling (3)"
+   "first_course": "MARKET 001 Principles of Selling (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "MATH",
@@ -852,7 +932,11 @@
     "MANAGEMENT",
     "(MGMT)"
    ],
-   "first_course": "MGMT 001 Principles of Management"
+   "first_course": "MGMT 001 Principles of Management",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "MICRO",
@@ -870,7 +954,11 @@
     "MICROBIOLOGY",
     "(MICRO)"
    ],
-   "first_course": "MICRO 020 General Microbiology (4)"
+   "first_course": "MICRO 020 General Microbiology (4)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "MSCNC",
@@ -960,7 +1048,11 @@
     "OLDER ADULTS (OLD",
     "ADL)"
    ],
-   "first_course": "OLD ADL 060CE Senior Topics (0)"
+   "first_course": "OLD ADL 060CE Senior Topics (0)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PALEGAL",
@@ -996,7 +1088,11 @@
     "PHILOSOPHY",
     "(PHILOS)"
    ],
-   "first_course": "PHILOS 001 Introduction to Philosophy"
+   "first_course": "PHILOS 001 Introduction to Philosophy",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PHOTO",
@@ -1014,7 +1110,11 @@
     "PHOTOGRAPHY",
     "(PHOTO)"
    ],
-   "first_course": "PHOTO 010 Beginning Photography (3)"
+   "first_course": "PHOTO 010 Beginning Photography (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PHYS SC",
@@ -1032,7 +1132,11 @@
     "PHYSICAL SCIENCE",
     "(PHYS SC)"
    ],
-   "first_course": "PHYS SC 001 Physical Science I (3)"
+   "first_course": "PHYS SC 001 Physical Science I (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PHYSICS",
@@ -1050,7 +1154,11 @@
     "C-ID PHYS 140",
     "PHYSICS (PHYSICS)"
    ],
-   "first_course": "PHYSICS 005 Allied Health Physics (3)"
+   "first_course": "PHYSICS 005 Allied Health Physics (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PSYCH",
@@ -1086,7 +1194,11 @@
     "agencies will be discussed.",
     "REAL ESTATE (REAL ES)"
    ],
-   "first_course": "REAL ES 001 Real Estate Principles (3)"
+   "first_course": "REAL ES 001 Real Estate Principles (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "RESP TH",
@@ -1122,7 +1234,11 @@
     "REGIONALLY ACCREDITED INSTITUTION.",
     "SOCIOLOGY (SOC)"
    ],
-   "first_course": "SOC 001 Introduction to Sociology (3)"
+   "first_course": "SOC 001 Introduction to Sociology (3)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "SPANISH",
@@ -1140,7 +1256,11 @@
     "COURSE DESCRIPTIONS",
     "SPANISH (SPANISH)"
    ],
-   "first_course": "SPANISH 001 Elementary Spanish I (5)"
+   "first_course": "SPANISH 001 Elementary Spanish I (5)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "T & M",
@@ -1194,7 +1314,11 @@
     "LEARNING",
     "ASSISTANCE (TUTOR)"
    ],
-   "first_course": "TUTOR 001T Supervised Tutoring (0)"
+   "first_course": "TUTOR 001T Supervised Tutoring (0)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "VOC ED",

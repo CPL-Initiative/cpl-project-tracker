@@ -24,7 +24,11 @@
    ],
    "candidate": null,
    "label": "Accounting (ACCTG)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/acctg/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/acctg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ADJUS",
@@ -36,7 +40,11 @@
    ],
    "candidate": null,
    "label": "Administration of Justice (ADJUS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/adjus/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/adjus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ADMT",
@@ -48,7 +56,11 @@
    ],
    "candidate": null,
    "label": "Advanced Manufacturing Tech (ADMT)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/admt/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/admt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ADN",
@@ -60,7 +72,11 @@
    ],
    "candidate": null,
    "label": "Nursing, Associate Degree Nursing- RN (ADN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/adn/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/adn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AH",
@@ -72,7 +88,11 @@
    ],
    "candidate": null,
    "label": "Allied Health (AH)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ah/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ah/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AI",
@@ -84,7 +104,11 @@
    ],
    "candidate": null,
    "label": "Artificial Intelligence (AI)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ai/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ai/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ANAT",
@@ -96,7 +120,11 @@
    ],
    "candidate": null,
    "label": "Anatomy (ANAT)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/anat/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/anat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ANTH",
@@ -108,7 +136,11 @@
    ],
    "candidate": null,
    "label": "Anthropology (ANTH)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/anth/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ANTHR",
@@ -120,7 +152,11 @@
    ],
    "candidate": null,
    "label": "Anthropology (ANTHR)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/anthr/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/anthr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARCHT",
@@ -132,7 +168,11 @@
    ],
    "candidate": null,
    "label": "Architectural Design (ARCHT)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/archt/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/archt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ART",
@@ -144,7 +184,11 @@
    ],
    "candidate": null,
    "label": "Art (ART)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/art/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARTH",
@@ -156,7 +200,11 @@
    ],
    "candidate": null,
    "label": "Art History (ARTH)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/arth/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ASL",
@@ -168,7 +216,11 @@
    ],
    "candidate": null,
    "label": "American Sign Language (ASL)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/asl/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ASTR",
@@ -180,7 +232,11 @@
    ],
    "candidate": null,
    "label": "Astronomy (ASTR)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/astr/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/astr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ATCMHS",
@@ -192,7 +248,11 @@
    ],
    "candidate": null,
    "label": "Addiction Treatment Counseling & Mental Health Studies (ATCMHS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/atcmhs/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/atcmhs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AUTO",
@@ -204,7 +264,11 @@
    ],
    "candidate": null,
    "label": "Automotive Technology (AUTO)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/auto/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BAKE",
@@ -216,7 +280,11 @@
    ],
    "candidate": null,
    "label": "Baking (BAKE)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/bake/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/bake/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BCOM",
@@ -228,7 +296,11 @@
    ],
    "candidate": null,
    "label": "Business, Communications (BCOM)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/bcom/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/bcom/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BIO",
@@ -240,7 +312,11 @@
    ],
    "candidate": null,
    "label": "Biology (BIO)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/bio/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/bio/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BIOL",
@@ -252,7 +328,11 @@
    ],
    "candidate": null,
    "label": "Biology (BIOL)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/biol/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CAD",
@@ -264,7 +344,11 @@
    ],
    "candidate": null,
    "label": "Computer Aid Design (CAD)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cad/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cad/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CART",
@@ -277,7 +361,11 @@
    "candidate": null,
    "label": "Creative Arts (CART)",
    "address": "https://lbcc-public.courseleaf.com/course-descriptions/cart/",
-   "run": "45275042093"
+   "run": "45275042093",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CDECE",
@@ -289,7 +377,11 @@
    ],
    "candidate": null,
    "label": "Child Development-Early Childhood Education (CDECE)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdece/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdece/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CDEV",
@@ -301,7 +393,11 @@
    ],
    "candidate": null,
    "label": "Child Development (CDEV)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdev/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdev/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CDFDC",
@@ -313,7 +409,11 @@
    ],
    "candidate": null,
    "label": "Child Development-Family Day Care (CDFDC)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdfdc/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdfdc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CDLL",
@@ -325,7 +425,11 @@
    ],
    "candidate": null,
    "label": "Child Development-Learning Lab (CDLL)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdll/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdll/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CDPE",
@@ -337,7 +441,11 @@
    ],
    "candidate": null,
    "label": "Child Development-Parent Education (CDPE)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdpe/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdpe/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CDSED",
@@ -349,7 +457,11 @@
    ],
    "candidate": null,
    "label": "Child Development-Special Education (CDSED)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdsed/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdsed/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CHEM",
@@ -361,7 +473,11 @@
    ],
    "candidate": null,
    "label": "Chemistry (CHEM)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/chem/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CHIN",
@@ -373,7 +489,11 @@
    ],
    "candidate": null,
    "label": "World Language, Chinese (CHIN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/chin/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/chin/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CISCO",
@@ -385,7 +505,11 @@
    ],
    "candidate": null,
    "label": "Computer Academy CISCO Networking (CISCO)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cisco/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cisco/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CMUSIC",
@@ -397,7 +521,11 @@
    ],
    "candidate": null,
    "label": "Music, Commercial (CMUSIC)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cmusic/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cmusic/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COMM",
@@ -409,7 +537,11 @@
    ],
    "candidate": null,
    "label": "Communication Studies (COMM)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/comm/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CONST",
@@ -421,7 +553,11 @@
    ],
    "candidate": null,
    "label": "Construction Technology (CONST)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/const/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/const/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COSA",
@@ -433,7 +569,11 @@
    ],
    "candidate": null,
    "label": "Computer & Office Studies, Application Software (COSA)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosa/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosa/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COSE",
@@ -445,7 +585,11 @@
    ],
    "candidate": null,
    "label": "Computer & Office Studies, Work Experience (COSE)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cose/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cose/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COSK",
@@ -457,7 +601,11 @@
    ],
    "candidate": null,
    "label": "Computer & Office Studies, Keyboarding (COSK)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosk/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosk/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COSN",
@@ -469,7 +617,11 @@
    ],
    "candidate": null,
    "label": "Computer & Office Studies, Networking & OS (COSN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosn/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COSP",
@@ -481,7 +633,11 @@
    ],
    "candidate": null,
    "label": "Computer & Office Studies, Programming (COSP)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosp/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COSS",
@@ -493,7 +649,11 @@
    ],
    "candidate": null,
    "label": "Computer & Office Studies, Security (COSS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/coss/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/coss/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COSW",
@@ -505,7 +665,11 @@
    ],
    "candidate": null,
    "label": "Computer & Office Studies, Web Development (COSW)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosw/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosw/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COUNS",
@@ -517,7 +681,11 @@
    ],
    "candidate": null,
    "label": "Counseling/Guidance (COUNS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/couns/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/couns/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CS",
@@ -529,7 +697,11 @@
    ],
    "candidate": null,
    "label": "Computer Science (CS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cs/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CULAR",
@@ -541,7 +713,11 @@
    ],
    "candidate": null,
    "label": "Culinary Arts (CULAR)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cular/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cular/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DANCE",
@@ -553,7 +729,11 @@
    ],
    "candidate": null,
    "label": "Dance (DANCE)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/dance/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/dance/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DMA",
@@ -565,7 +745,11 @@
    ],
    "candidate": null,
    "label": "Digital Media Arts (DMA)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/dma/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/dma/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DMI",
@@ -577,7 +761,11 @@
    ],
    "candidate": null,
    "label": "Diagnostic Medical Imaging (DMI)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/dmi/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/dmi/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DSGN",
@@ -589,7 +777,11 @@
    ],
    "candidate": null,
    "label": "Design (DSGN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/design/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/design/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ECON",
@@ -601,7 +793,11 @@
    ],
    "candidate": null,
    "label": "Economics (ECON)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/econ/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EDEV",
@@ -613,7 +809,11 @@
    ],
    "candidate": null,
    "label": "Educational Development (EDEV)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/edev/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/edev/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EDUC",
@@ -625,7 +825,11 @@
    ],
    "candidate": null,
    "label": "Education (EDUC)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/educ/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/educ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ELECT",
@@ -637,7 +841,11 @@
    ],
    "candidate": null,
    "label": "Electricity (ELECT)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/elect/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/elect/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EMT",
@@ -649,7 +857,11 @@
    ],
    "candidate": null,
    "label": "Emergency Medical Technology (EMT)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/emt/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/emt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENGL",
@@ -661,7 +873,11 @@
    ],
    "candidate": null,
    "label": "English (ENGL)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/engl/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENGR",
@@ -673,7 +889,11 @@
    ],
    "candidate": null,
    "label": "Engineering (ENGR)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/engr/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENVRS",
@@ -685,7 +905,11 @@
    ],
    "candidate": null,
    "label": "Environmental Science (ENVRS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/envrs/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/envrs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ESL",
@@ -697,7 +921,11 @@
    ],
    "candidate": null,
    "label": "English as a Second Language (ESL)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/esl/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ESLLC",
@@ -709,7 +937,11 @@
    ],
    "candidate": null,
    "label": "English as a Second Language, Learning Center (ESLLC)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/esllc/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/esllc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ETEC",
@@ -721,7 +953,11 @@
    ],
    "candidate": null,
    "label": "Engineering Technology (ETEC)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/etec/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/etec/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ETHST",
@@ -733,7 +969,11 @@
    ],
    "candidate": null,
    "label": "Ethnic Studies (ETHST)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ethst/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ethst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EWRC",
@@ -745,7 +985,11 @@
    ],
    "candidate": null,
    "label": "English, Writing Reading Center (EWRC)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ewrc/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ewrc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FASH",
@@ -757,7 +1001,11 @@
    ],
    "candidate": null,
    "label": "Fashion (FASH)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fash/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fash/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FILM",
@@ -769,7 +1017,11 @@
    ],
    "candidate": null,
    "label": "Film (FILM)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/film/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/film/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FIRE",
@@ -781,7 +1033,11 @@
    ],
    "candidate": null,
    "label": "Fire Science (FIRE)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fire/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fire/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FLO",
@@ -793,7 +1049,11 @@
    ],
    "candidate": null,
    "label": "Floral Design (FLO)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/flo/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/flo/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FREN",
@@ -805,7 +1065,11 @@
    ],
    "candidate": null,
    "label": "World Language, French (FREN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fren/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fren/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FS",
@@ -817,7 +1081,11 @@
    ],
    "candidate": null,
    "label": "Foundation Skills Development (FS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fs/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FSA",
@@ -829,7 +1097,11 @@
    ],
    "candidate": null,
    "label": "Fire Academy (FSA)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fsa/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fsa/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FT",
@@ -841,7 +1113,11 @@
    ],
    "candidate": null,
    "label": "Food Technology (FT)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ft/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ft/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GBUS",
@@ -853,7 +1129,11 @@
    ],
    "candidate": null,
    "label": "Business, General (GBUS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/gbus/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/gbus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GED/HSET",
@@ -865,7 +1145,11 @@
    ],
    "candidate": null,
    "label": "GED/HiSET Preparation (GED/HSET)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ged-hset/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ged-hset/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GEOG",
@@ -877,7 +1161,11 @@
    ],
    "candidate": null,
    "label": "Geography (GEOG)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/geog/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GEOL",
@@ -889,7 +1177,11 @@
    ],
    "candidate": null,
    "label": "Geology (GEOL)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/geol/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/geol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GER",
@@ -901,7 +1193,11 @@
    ],
    "candidate": null,
    "label": "World Language, German (GER)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ger/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ger/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GLST",
@@ -913,7 +1209,11 @@
    ],
    "candidate": null,
    "label": "Global Studies (GLST)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/glst/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/glst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HIST",
@@ -925,7 +1225,11 @@
    ],
    "candidate": null,
    "label": "History (HIST)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hist/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HLED",
@@ -937,7 +1241,11 @@
    ],
    "candidate": null,
    "label": "Health Education (HLED)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hled/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hled/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HORT",
@@ -949,7 +1257,11 @@
    ],
    "candidate": null,
    "label": "Horticulture (HORT)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hort/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hort/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HSA",
@@ -961,7 +1273,11 @@
    ],
    "candidate": null,
    "label": "Homeland Security Admin (HSA)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hsa/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hsa/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HUMAN",
@@ -973,7 +1289,11 @@
    ],
    "candidate": null,
    "label": "Humanities (HUMAN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/human/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/human/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "IBUS",
@@ -985,7 +1305,11 @@
    ],
    "candidate": null,
    "label": "Business, International (IBUS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ibus/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ibus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ITAL",
@@ -997,7 +1321,11 @@
    ],
    "candidate": null,
    "label": "World Language, Italian (ITAL)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ital/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ital/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "JAPAN",
@@ -1009,7 +1337,11 @@
    ],
    "candidate": null,
    "label": "World Language, Japanese (JAPAN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/japan/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/japan/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "JOURN",
@@ -1021,7 +1353,11 @@
    ],
    "candidate": null,
    "label": "Journalism (JOURN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/journ/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/journ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "KHMER",
@@ -1033,7 +1369,11 @@
    ],
    "candidate": null,
    "label": "World Language, Khmer (KHMER)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/khmer/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/khmer/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "KINA",
@@ -1045,7 +1385,11 @@
    ],
    "candidate": null,
    "label": "Kinesiology, Adapted (KINA)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kina/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kina/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "KING",
@@ -1057,7 +1401,11 @@
    ],
    "candidate": null,
    "label": "Kinesiology, General (KING)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/king/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/king/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "KINIA",
@@ -1069,7 +1417,11 @@
    ],
    "candidate": null,
    "label": "Kinesiology, Intercollegiate Athletics (KINIA)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kinia/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kinia/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "KINPF",
@@ -1081,7 +1433,11 @@
    ],
    "candidate": null,
    "label": "Kinesiology, Physical Fitness (KINPF)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kinpf/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kinpf/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "KINPP",
@@ -1093,7 +1449,11 @@
    ],
    "candidate": null,
    "label": "Kinesiology, Professional Preparation (KINPP)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kinpp/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kinpp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LAW",
@@ -1105,7 +1465,11 @@
    ],
    "candidate": null,
    "label": "Business, Law (LAW)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/law/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/law/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LEARN",
@@ -1117,7 +1481,11 @@
    ],
    "candidate": null,
    "label": "Learning and Academic Resources (LEARN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/learn/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/learn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LIB",
@@ -1129,7 +1497,11 @@
    ],
    "candidate": null,
    "label": "Library (LIB)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/lib/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/lib/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LING",
@@ -1141,7 +1513,11 @@
    ],
    "candidate": null,
    "label": "Linguistics (LING)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ling/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ling/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MA",
@@ -1153,7 +1529,11 @@
    ],
    "candidate": null,
    "label": "Medical Assisting (MA)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ma/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ma/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MATH",
@@ -1165,7 +1545,11 @@
    ],
    "candidate": null,
    "label": "Mathematics (MATH)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/math/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MGMT",
@@ -1177,7 +1561,11 @@
    ],
    "candidate": null,
    "label": "Business, Management (MGMT)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/mgmt/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/mgmt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MKTG",
@@ -1189,7 +1577,11 @@
    ],
    "candidate": null,
    "label": "Business, Marketing (MKTG)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/mktg/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/mktg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MONEY",
@@ -1201,7 +1593,11 @@
    ],
    "candidate": null,
    "label": "Money Management (MONEY)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/money/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/money/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MTFAB",
@@ -1213,7 +1609,11 @@
    ],
    "candidate": null,
    "label": "Metal Fabrication (MTFAB)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/mtfab/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/mtfab/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MUSIC",
@@ -1225,7 +1625,11 @@
    ],
    "candidate": null,
    "label": "Music (MUSIC)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/music/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/music/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "NUTR",
@@ -1237,7 +1641,11 @@
    ],
    "candidate": null,
    "label": "Nutrition & Dietetics (NUTR)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/nutr/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/nutr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "OSHA",
@@ -1249,7 +1657,11 @@
    ],
    "candidate": null,
    "label": "Occupational Safety Health Administration (OSHA)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/osha/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/osha/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PGEOG",
@@ -1261,7 +1673,11 @@
    ],
    "candidate": null,
    "label": "Geography, Physical (PGEOG)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/pgeog/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/pgeog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PH",
@@ -1273,7 +1689,11 @@
    ],
    "candidate": null,
    "label": "Public Health (PH)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ph/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ph/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHIL",
@@ -1285,7 +1705,11 @@
    ],
    "candidate": null,
    "label": "Philosophy (PHIL)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/phil/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHOT",
@@ -1297,7 +1721,11 @@
    ],
    "candidate": null,
    "label": "Photography (PHOT)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/phot/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/phot/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHYS",
@@ -1309,7 +1737,11 @@
    ],
    "candidate": null,
    "label": "Physics (PHYS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/phys/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHYSI",
@@ -1321,7 +1753,11 @@
    ],
    "candidate": null,
    "label": "Physiology (PHYSI)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/physi/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/physi/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "POLS",
@@ -1333,7 +1769,11 @@
    ],
    "candidate": null,
    "label": "Political Science (POLS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/pols/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "POLSC",
@@ -1345,7 +1785,11 @@
    ],
    "candidate": null,
    "label": "Political Science (POLSC)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/polsc/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/polsc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PSYC",
@@ -1357,7 +1801,11 @@
    ],
    "candidate": null,
    "label": "Psychology (PSYC)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/psyc/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PSYCH",
@@ -1369,7 +1817,11 @@
    ],
    "candidate": null,
    "label": "Psychology (PSYCH)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/psych/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/psych/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PSY_TS",
@@ -1381,7 +1833,11 @@
    ],
    "candidate": null,
    "label": "Psychology Trauma Studies (PSY_TS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/psy_ts/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/psy_ts/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PUBAD",
@@ -1393,7 +1849,11 @@
    ],
    "candidate": null,
    "label": "Public Administration (PUBAD)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/pubad/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/pubad/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "READ",
@@ -1405,7 +1865,11 @@
    ],
    "candidate": null,
    "label": "Reading (READ)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/read/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/read/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "REAL",
@@ -1417,7 +1881,11 @@
    ],
    "candidate": null,
    "label": "Real Estate (REAL)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/real/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/real/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SOCI",
@@ -1429,7 +1897,11 @@
    ],
    "candidate": null,
    "label": "Sociology (SOCI)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/soci/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/soci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SOCIO",
@@ -1441,7 +1913,11 @@
    ],
    "candidate": null,
    "label": "Sociology (SOCIO)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/socio/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/socio/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SOCSC",
@@ -1453,7 +1929,11 @@
    ],
    "candidate": null,
    "label": "Social Science (SOCSC)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/socsc/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/socsc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SPAN",
@@ -1465,7 +1945,11 @@
    ],
    "candidate": null,
    "label": "World Language, Spanish (SPAN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/span/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "STAT",
@@ -1477,7 +1961,11 @@
    ],
    "candidate": null,
    "label": "Statistics (STAT)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/stat/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SW",
@@ -1489,7 +1977,11 @@
    ],
    "candidate": null,
    "label": "Social Work (SW)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/social-work/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/social-work/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "TART",
@@ -1501,7 +1993,11 @@
    ],
    "candidate": null,
    "label": "Theatre Arts (TART)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/tart/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/tart/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "TEAS",
@@ -1513,7 +2009,11 @@
    ],
    "candidate": null,
    "label": "TEAS Preparation (TEAS)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/teas/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/teas/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "TV",
@@ -1525,7 +2025,11 @@
    ],
    "candidate": null,
    "label": "Television & Emerging Media (TV)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/tv/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/tv/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "VN",
@@ -1537,7 +2041,11 @@
    ],
    "candidate": null,
    "label": "Nursing, Vocational Nursing (VN)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/vn/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/vn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "WELD",
@@ -1549,7 +2057,11 @@
    ],
    "candidate": null,
    "label": "Welding (WELD)",
-   "address": "https://lbcc-public.courseleaf.com/course-descriptions/weld/"
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/weld/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   }
  ],
  "code_address_tried": [
