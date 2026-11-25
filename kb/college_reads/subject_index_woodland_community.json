@@ -1,12 +1,11 @@
 {
- "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: the catalog's Academic Programs & Courses section (from PDF page 85) heads each subject's courses 'ANTHROPOLOGY COURSES' above course lines 'ANTHR2 Cultural Anthropology 3.0 units' (run 45626565022, page 109); print the lines above each code's first course. No model call.",
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 5: PE's first course printed no COURSES heading above it (run 45629430201); print its page. No model call.",
  "college": "Woodland Community College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "contents",
-  "course descriptions"
+  "(?:^|\\n)PE10MR\\b"
  ],
  "pages": [
   {
@@ -16,11 +15,10 @@
    ]
   }
  ],
- "subject_context": {
-  "heading": "^(?P<subj>[A-Z]{2,6}?)C?\\d{1,4}[A-Z]{0,2} (?!.*\\. \\.)",
-  "units": "\\d\\.\\d units?$",
-  "units_inline": "\\d\\.\\d units?$",
-  "before": 3,
-  "start_page": 85
- }
+ "pdf_span": [
+  200,
+  212
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
 }

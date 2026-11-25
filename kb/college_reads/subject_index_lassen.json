@@ -1,11 +1,11 @@
 {
- "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: sixteen codes had no heading above a first course (run 45627807594), and three sat under a prerequisite line; print the course pages that name them. No model call.",
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 5: VN's first course sits under the nursing admission note (run 45629430201); print its page. No model call.",
  "college": "Lassen College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "(?:^|\\n)(?:CMS|CORS|COT|CS|DRA|ENGR|FOLK|FREN|GS|GSS|HE|PGT|PLSC|READ|SOSC|SPAN|PSYC|SOC|NURS) ?C?\\d"
+  "(?:^|\\n)VN 50\\b"
  ],
  "pages": [
   {
@@ -16,9 +16,9 @@
   }
  ],
  "pdf_span": [
-  102,
-  162
+  140,
+  160
  ],
- "pdf_page_cap": 24,
+ "pdf_page_cap": 14,
  "pdf_unfolded": true
 }
