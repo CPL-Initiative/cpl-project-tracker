@@ -1,0 +1,513 @@
+{
+ "college": "Moreno Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:14:17Z",
+ "run": "45631683919",
+ "plan": "kb/college_reads/subject_index_moreno_valley.json",
+ "titles": [
+  {
+   "code": "ACC",
+   "title": "Accounting",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4795
+  },
+  {
+   "code": "ADJ",
+   "title": "Administration of Justice",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4796
+  },
+  {
+   "code": "ADM",
+   "title": "Applied Digital Media",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4797
+  },
+  {
+   "code": "ALR",
+   "title": "Academic Literacy and Reading",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4799
+  },
+  {
+   "code": "ANT",
+   "title": "Anthropology",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4800
+  },
+  {
+   "code": "APP",
+   "title": "Apprenticeship",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4801
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4802
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4798
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4803
+  },
+  {
+   "code": "AST",
+   "title": "Astronomy",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4804
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4805
+  },
+  {
+   "code": "BUS",
+   "title": "Business Administration",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4806
+  },
+  {
+   "code": "CAT",
+   "title": "Computer Applications and Office Technology",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4807
+  },
+  {
+   "code": "CDL",
+   "title": "Commercial Driver's License",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4808
+  },
+  {
+   "code": "CHE",
+   "title": "Chemistry",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4809
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4810
+  },
+  {
+   "code": "CMI",
+   "title": "Community Interpretation",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4811
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4812
+  },
+  {
+   "code": "DAN",
+   "title": "Dance",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4813
+  },
+  {
+   "code": "DEA",
+   "title": "Dental Assistant",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4814
+  },
+  {
+   "code": "DEH",
+   "title": "Dental Hygiene",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4815
+  },
+  {
+   "code": "EAR",
+   "title": "Early Childhood Education",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4816
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4817
+  },
+  {
+   "code": "EDU",
+   "title": "Education",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4818
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4819
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4820
+  },
+  {
+   "code": "ENP",
+   "title": "Entrepreneurship",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4821
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4822
+  },
+  {
+   "code": "ETS",
+   "title": "Ethnic Studies",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4823
+  },
+  {
+   "code": "FIT",
+   "title": "Fire Technology",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4824
+  },
+  {
+   "code": "FST",
+   "title": "Film Studies",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4825
+  },
+  {
+   "code": "GEG",
+   "title": "Geography",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4826
+  },
+  {
+   "code": "GUI",
+   "title": "Guidance",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4827
+  },
+  {
+   "code": "HES",
+   "title": "Health Science",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4828
+  },
+  {
+   "code": "HET",
+   "title": "Healthcare Technician",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4829
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4830
+  },
+  {
+   "code": "HLS",
+   "title": "Homeland Security",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4831
+  },
+  {
+   "code": "HMS",
+   "title": "Social Work, Human Services & Counseling Practices",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4832
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4833
+  },
+  {
+   "code": "IAT",
+   "title": "Industrial Automation",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4834
+  },
+  {
+   "code": "ILA",
+   "title": "Interdisciplinary Studies",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4835
+  },
+  {
+   "code": "JOU",
+   "title": "Journalism",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4836
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4837
+  },
+  {
+   "code": "LIB",
+   "title": "Library",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4838
+  },
+  {
+   "code": "MAG",
+   "title": "Management",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4839
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4840
+  },
+  {
+   "code": "MDA",
+   "title": "Medical Assistant",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4841
+  },
+  {
+   "code": "MIS",
+   "title": "Commercial Music (Music Industry Studies)",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4725
+  },
+  {
+   "code": "MKT",
+   "title": "Marketing",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4842
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4843
+  },
+  {
+   "code": "PDS",
+   "title": "Professional Development Studies",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4844
+  },
+  {
+   "code": "PHI",
+   "title": "Philosophy",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4845
+  },
+  {
+   "code": "PHO",
+   "title": "Photography",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4846
+  },
+  {
+   "code": "PHY",
+   "title": "Physics",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4848
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4849
+  },
+  {
+   "code": "PSF",
+   "title": "Public Safety",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 6336
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4850
+  },
+  {
+   "code": "RLE",
+   "title": "Real Estate",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4851
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4853
+  },
+  {
+   "code": "SPA",
+   "title": "Spanish",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4854
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4722
+  },
+  {
+   "code": "THE",
+   "title": "Theater Arts",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4855
+  },
+  {
+   "code": "WKX",
+   "title": "Work Experience",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4856
+  }
+ ]
+}

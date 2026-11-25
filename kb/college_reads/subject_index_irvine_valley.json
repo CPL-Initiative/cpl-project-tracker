@@ -1,0 +1,23 @@
+{
+ "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 5: round 4 (run 45628061061) found the subject node holds one link list; this read lists its items whole. One JSON call, no model call, writes nothing.",
+ "college": "Irvine Valley College",
+ "questions": {
+  "cq_subjects": "Which navigation node lists the catalog's course subjects with their names."
+ },
+ "keywords": [
+  "[Cc]ourse [Dd]escriptions?",
+  "[Cc]ourses",
+  "[Ss]ubjects?",
+  "[Dd]isciplines?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cq_subjects"
+   ],
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "capture_view": true
+  }
+ ],
+ "capture_lines": 4000
+}

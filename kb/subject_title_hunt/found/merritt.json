@@ -1,0 +1,448 @@
+{
+ "college": "Merritt College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:06:37Z",
+ "run": "45630333350",
+ "plan": "kb/college_reads/subject_index_merritt.json",
+ "titles": [
+  {
+   "code": "ADJUS",
+   "title": "Administration of Justice",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49122
+  },
+  {
+   "code": "AFRAM",
+   "title": "African American Studies",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49176
+  },
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49123
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49124
+  },
+  {
+   "code": "ASAME",
+   "title": "Asian & Asian American Studies",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49704
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49705
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49706
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49125
+  },
+  {
+   "code": "BIOSC",
+   "title": "Bioscience",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49126
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49127
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49703
+  },
+  {
+   "code": "CHDEV",
+   "title": "Child Development",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49128
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49130
+  },
+  {
+   "code": "COSER",
+   "title": "Community Social Service",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49131
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49129
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49132
+  },
+  {
+   "code": "COPED",
+   "title": "Cooperative Work Experience Education",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49707
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49734
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49133
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technician",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49134
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49721
+  },
+  {
+   "code": "ESOL",
+   "title": "English for Speakers of Other Languages",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49136
+  },
+  {
+   "code": "FISCI",
+   "title": "Fire Science",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49137
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49708
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49709
+  },
+  {
+   "code": "HLTED",
+   "title": "Health Education",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49710
+  },
+  {
+   "code": "HLTOC",
+   "title": "Health Professions and Occupations",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49711
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49712
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49713
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49714
+  },
+  {
+   "code": "LANHT",
+   "title": "Landscape Horticulture",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49138
+  },
+  {
+   "code": "LRNRE",
+   "title": "Learning Resources",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49140
+  },
+  {
+   "code": "LIS",
+   "title": "Library Information Studies",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49139
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49141
+  },
+  {
+   "code": "MEDAS",
+   "title": "Medical Assisting",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49142
+  },
+  {
+   "code": "M/LAT",
+   "title": "Mexican & Latin American Studies",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49715
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49716
+  },
+  {
+   "code": "NATAM",
+   "title": "Native American Studies",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49717
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49143
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition & Dietetics",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49144
+  },
+  {
+   "code": "PARLG",
+   "title": "Paralegal Studies",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49145
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49718
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49146
+  },
+  {
+   "code": "POSCI",
+   "title": "Political Science",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49719,
+   "note": "one heading prints both codes: 'Political Science (POSCI) and (POLS)'"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49719,
+   "note": "one heading prints both codes: 'Political Science (POSCI) and (POLS)'"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49147,
+   "note": "one heading prints both codes: 'Psychology (PSYC) and (PSYCH)'"
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49147,
+   "note": "one heading prints both codes: 'Psychology (PSYC) and (PSYCH)'"
+  },
+  {
+   "code": "RADSC",
+   "title": "Radiologic Science",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49148
+  },
+  {
+   "code": "RLEST",
+   "title": "Real Estate",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49149
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49150
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49720
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 49738
+  },
+  {
+   "code": "ENVMT",
+   "title": "Environmental Management & Technology",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": null,
+   "note": "one heading prints both codes: 'Environmental Management & Technology (ENVMT/ENVST)'"
+  },
+  {
+   "code": "ENVST",
+   "title": "Environmental Management & Technology",
+   "url": "https://mc.curriqunet.com/Catalog/_getNavigation?id=10549&parentId=49121",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": null,
+   "note": "one heading prints both codes: 'Environmental Management & Technology (ENVMT/ENVST)'"
+  }
+ ],
+ "note": "Some headings end ' - Courses Only' (a subject with no program); that listing note is dropped from the title."
+}

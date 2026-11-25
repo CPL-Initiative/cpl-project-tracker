@@ -1,0 +1,585 @@
+{
+ "college": "Gavilan College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:48:57Z",
+ "run": "45627124597",
+ "plan": "kb/college_reads/subject_index_gavilan.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4261
+  },
+  {
+   "code": "AE",
+   "title": "Adult Education [Vocational Preparation - Disability]",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4262
+  },
+  {
+   "code": "AH",
+   "title": "Allied Health",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4263
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4264
+  },
+  {
+   "code": "AMT",
+   "title": "Aviation Maintenance Technician",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4265
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4266
+  },
+  {
+   "code": "APE",
+   "title": "Adapted Physical Education",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4267
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4268
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4376
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4269
+  },
+  {
+   "code": "ATH",
+   "title": "Athletics",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4270
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4271
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4375
+  },
+  {
+   "code": "BIOT",
+   "title": "Biotechnology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4272
+  },
+  {
+   "code": "BOT",
+   "title": "Business Office Technology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4273
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4274
+  },
+  {
+   "code": "CD",
+   "title": "Child Development",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4275
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4276
+  },
+  {
+   "code": "CHN",
+   "title": "Chinese",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4277
+  },
+  {
+   "code": "CMGT",
+   "title": "Construction Management",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4278
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4358
+  },
+  {
+   "code": "CMUN",
+   "title": "Communication Studies",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4279
+  },
+  {
+   "code": "COS",
+   "title": "Cosmetology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4280
+  },
+  {
+   "code": "CSIS",
+   "title": "Computer Science & Information Systems [Business Department]",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4281
+  },
+  {
+   "code": "CSIS",
+   "title": "Computer Science & Information System [Disability Resource Center Department]",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4282
+  },
+  {
+   "code": "CWE",
+   "title": "Cooperative Work Experience",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4283
+  },
+  {
+   "code": "CUL",
+   "title": "Culinary",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4333
+  },
+  {
+   "code": "DM",
+   "title": "Digital Media",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4284
+  },
+  {
+   "code": "ECOL",
+   "title": "Ecology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4285
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4286
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4287
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4288
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Science",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4289
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4290
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4291
+  },
+  {
+   "code": "FRNH",
+   "title": "French",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4292
+  },
+  {
+   "code": "FTVE",
+   "title": "Film, Television and Electronic Media",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4306
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4293
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4294
+  },
+  {
+   "code": "GUID",
+   "title": "Guidance [Counseling Department]",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4295
+  },
+  {
+   "code": "GUID",
+   "title": "Guidance [Accessible Education Center Department]",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4296
+  },
+  {
+   "code": "HE",
+   "title": "Health Education",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4297
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4298
+  },
+  {
+   "code": "HTM",
+   "title": "Hospitality and Tourism Management",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4299
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4300
+  },
+  {
+   "code": "HVAC",
+   "title": "Heating, Ventilation and Air Conditioning",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4301
+  },
+  {
+   "code": "JFT",
+   "title": "Joint Powers Authority - Fire Technology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4302
+  },
+  {
+   "code": "JLE",
+   "title": "Joint Powers Authority - Law Enforcement",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4303
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4304
+  },
+  {
+   "code": "JPN",
+   "title": "Japanese",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4305
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4307
+  },
+  {
+   "code": "LIB",
+   "title": "Library",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4308
+  },
+  {
+   "code": "LIFE",
+   "title": "Life",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4309
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4310
+  },
+  {
+   "code": "MCTV",
+   "title": "Film & Television",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4311
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4312
+  },
+  {
+   "code": "MKTG",
+   "title": "Marketing",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4313
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4314
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4374
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4315
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4362
+  },
+  {
+   "code": "PSCI",
+   "title": "Physical Science",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4317
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4316
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4401
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4318
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4319
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4320
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4321
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4359
+  },
+  {
+   "code": "THEA",
+   "title": "Theatre Arts",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4322
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4323
+  },
+  {
+   "code": "WTRM",
+   "title": "Water Resources Management",
+   "url": "https://gavilan.curriqunet.com/Catalog/_getNavigation?id=19344&parentId=4260",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 4324
+  }
+ ]
+}

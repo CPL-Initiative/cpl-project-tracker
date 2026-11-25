@@ -1,0 +1,585 @@
+{
+ "college": "Irvine Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:06:37Z",
+ "run": "45630333350",
+ "plan": "kb/college_reads/subject_index_irvine_valley.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50913
+  },
+  {
+   "code": "AESL",
+   "title": "Adult ESL",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50917
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50921
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50925
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50929
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50933
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50935
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50937
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50939
+  },
+  {
+   "code": "BIOT",
+   "title": "Biotechnology",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50941
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50943
+  },
+  {
+   "code": "CHI",
+   "title": "Chinese",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50945
+  },
+  {
+   "code": "CIM",
+   "title": "Computer Information Management",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50947
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50949
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50951
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50953
+  },
+  {
+   "code": "DMA",
+   "title": "Digital Media Art",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50957
+  },
+  {
+   "code": "DMP",
+   "title": "Design Model Making",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50959
+  },
+  {
+   "code": "DNCE",
+   "title": "Dance",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50961
+  },
+  {
+   "code": "DR",
+   "title": "Drafting",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50963
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50965
+  },
+  {
+   "code": "ELEC",
+   "title": "Electrical Technology",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50967
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50969
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50971
+  },
+  {
+   "code": "ENTR",
+   "title": "Entrepreneurship",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50973
+  },
+  {
+   "code": "ENV",
+   "title": "Environmental Science",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50975
+  },
+  {
+   "code": "ERTH",
+   "title": "Earth Science",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50977
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50979
+  },
+  {
+   "code": "ET",
+   "title": "Electronic Technology",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50981
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50983
+  },
+  {
+   "code": "FILM",
+   "title": "FILM",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50985
+  },
+  {
+   "code": "FN",
+   "title": "Food and Nutrition",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50987
+  },
+  {
+   "code": "FR",
+   "title": "French",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50989
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50991
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50993
+  },
+  {
+   "code": "GLBL",
+   "title": "Global Studies",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50995
+  },
+  {
+   "code": "GS",
+   "title": "Gender Studies",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50997
+  },
+  {
+   "code": "HD",
+   "title": "Human Development",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50999
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51001
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51003
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51005
+  },
+  {
+   "code": "IA",
+   "title": "Intercollegiate Athletics",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51007
+  },
+  {
+   "code": "IMA",
+   "title": "Interactive Media Art",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51009
+  },
+  {
+   "code": "JA",
+   "title": "Japanese",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51011
+  },
+  {
+   "code": "JRNL",
+   "title": "Journalism",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51013
+  },
+  {
+   "code": "KNEA",
+   "title": "Adapted Kinesiology",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51015
+  },
+  {
+   "code": "KNES",
+   "title": "Kinesiology",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51017
+  },
+  {
+   "code": "LANG",
+   "title": "Language",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51019
+  },
+  {
+   "code": "LGL",
+   "title": "Legal",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51021
+  },
+  {
+   "code": "LIB",
+   "title": "Library",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51023
+  },
+  {
+   "code": "LIT",
+   "title": "Literature",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51025
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51027
+  },
+  {
+   "code": "MEDA",
+   "title": "Medical Assisting",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51542
+  },
+  {
+   "code": "MGT",
+   "title": "Management",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51029
+  },
+  {
+   "code": "MS",
+   "title": "Marine Science",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51031
+  },
+  {
+   "code": "MSS",
+   "title": "Math: Special Services",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51033
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51035
+  },
+  {
+   "code": "NUT",
+   "title": "Nutrition",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51037
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51039
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51041
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51043
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50918
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51045
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51048
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51050
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51052
+  },
+  {
+   "code": "SRM",
+   "title": "Sustainable Resource Management",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51054
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50930
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51056
+  },
+  {
+   "code": "TU",
+   "title": "Tutoring",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51058
+  },
+  {
+   "code": "WEE",
+   "title": "Work Experience Education",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50955
+  },
+  {
+   "code": "WR",
+   "title": "Writing",
+   "url": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 51060
+  }
+ ]
+}
