@@ -1,0 +1,10 @@
+-- Receipt: cpl_memory rows written by SkyAlvord (S735, a side session) at its checkpoint, 2026-11-25, through the
+-- Supabase MCP. INSERT ... ON CONFLICT (slug) DO NOTHING; all four returned. Two are Sam's rulings (verified), two the
+-- session's own (proposed). The six earlier rows of this session landed through kb/migrations/
+-- 2026-11-25_adult_ed_cpl_starting_points_library.sql (#3861).
+-- ROLLBACK: delete from public.cpl_memory where author = 'SkyAlvord (S735)' and slug in (
+--   'r-library-publish-prefills-public-summary-sam-2026-11-25','r-library-sidebar-matches-list-sam-2026-11-25',
+--   'p-library-check-needs-pages-url-2026-11-25','f-library-publish-now-scope-2026-11-25');
+-- Slugs written: r-library-publish-prefills-public-summary-sam-2026-11-25 (decision, verified, Sam),
+-- r-library-sidebar-matches-list-sam-2026-11-25 (decision, verified, Sam),
+-- p-library-check-needs-pages-url-2026-11-25 (pitfall, proposed), f-library-publish-now-scope-2026-11-25 (fact, proposed).

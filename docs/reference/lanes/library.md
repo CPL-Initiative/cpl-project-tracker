@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-20
+updated: 2026-11-25
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -17,6 +17,32 @@ for, and the source that rebuilds it. And the rule behind it: **the files live i
 CPLLibrary folder on the MAP team's SharePoint site; the repos keep only the source.**
 
 ## Status
+
+**The check run checks a piece only at its own Pages address (S735 SkyAlvord, 2026-11-25).** `scripts/library_check.py`
+plans a record only when its url is its own Pages copy (`on_pages`); a piece whose record still names claude.ai waits
+with no check row and no progress line. Adult Education CPL Starting Points (`adult-ed-cpl-starting-points`) waited
+that way until its url moved to `library/adult-ed-cpl-starting-points/` (guarded update, rollback beside the receipt;
+memory `p-library-check-needs-pages-url-2026-11-25`). **Publish now** shows only on a card holding an approved
+card-drafted revision, so a piece built in a session and copied with `library_page.py` never sees it
+(`f-library-publish-now-scope-2026-11-25`); its listing is the run's after a passing check and a public summary.
+**RULED (Sam, 2026-11-25):** *"can you have library auto add a summary I can edit so if I forget and click publish,
+we'll still have a summary?"* (`r-library-publish-prefills-public-summary-sam-2026-11-25`) and *"the libraries sidebar
+should be same height as the listview and use same font type and size. height should be optimized to window hight"*
+(`r-library-sidebar-matches-list-sam-2026-11-25`). Both, with the top Publish button's form drawn in sight for an
+uncertified piece, are in draft **#3865** (`claude/library-pubtop-fix`). A page under `library/` carries the vault's
+canonical header (`public-header/apply.py --tracker-logos ../../sierra/`), never the Catalog's adapted copy
+(`tests/library_pages.test.js`).
+
+**PITFALL (S735): a session cannot write `public_summary` or any other public field.** `cpl_library_guard_public`
+refuses every write of a piece's public fields except through `cpl_library_set_public()` with the team phrase or a
+reviewer sign-in, the service role's migration included (migrate run 45719960204: *"Listing in the public library
+needs the team phrase or a reviewer sign-in"*). The S735 summary migration was withdrawn from #3864, so
+`adult-ed-cpl-starting-points` holds `public_summary` NULL; a person signed in adds it from the card's *Publish to
+Public Library* form, which #3865 prefills from the internal summary.
+
+**NEXT (S735):** review and merge #3865; merge #3864 (filter, search, 25 more credentials, the record's url on Pages),
+then dispatch `library-publish.yml` so the piece gets its check row; once the check passes, Sam (or anyone signed in)
+types or accepts the public summary in the card's Publish to Public Library form, which lists it.
 
 **LIVE: Publish now shows one status line (#3562, `0159aacb`; Sam's test of Nov 19, COBIx on #3560).** Publishing,
 Deploying, Live (only once the page's own address answers), or Failed with the function's reason (`not_configured`,
@@ -38,10 +64,7 @@ Deploying, Live (only once the page's own address answers), or Failed with the f
 
 ✅ **The public library is built** (2026-10-20): one record and a switch, never a copy; `cpl_library_set_public()` lists, `cpl_library_public()` (anon) serves `library/` and the Admin tab's panel. Schema `kb/supabase_cpl_library_public.sql`; test `tests/public_library.test.js`; `npm run a11y -- public-library public-library-dark` (a bare `library` is not a target). The paragraph as it stood: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
 
-✅ **The page in Malone's look (Sam, 2026-10-24, S467):** map.rccd.edu/CPL-AI's look, Light by default (dark only from
-the reader's own Dark click), eleven hero photos cycling with *Pause photos*; CLAUDE.md's First Light rule names it as its
-one departure. The full record, his words and the photo list moved verbatim to
-[`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S483, later)*.
+✅ **The page in Malone's look, the box's line beside its field, the public 25px target floor, the CPL Initiative overview, the JST guide, version stamps off Pages, Create as one form and DSP Version 3:** moved verbatim to [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S735 checkpoint)*.
 
 ✅ **The team phrase lists publicly too** (Sam, 2026-10-23; `cpl_library_set_public()` takes `team_pass_ok()` or `is_allowed_reviewer()`): moved verbatim to the lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
 
@@ -109,8 +132,6 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   not-yet-evaluated credentials carry a CPL-AI course match chip by folded title and issuer (Certiport's Swift row held
   out; never from CIP alone). **NEXT:** COBIx's next step, scoring the 185 unreviewed credentials with issuer skill
   areas against harvested outcomes in `kb/_build_adopt_align.py` (a chip only for a clear standout at 0.20).
-- **The JST guide (S642):** record `7ca43e3c`, Version 1 (commit `41eeb44a`); `public_listed` false: Publish to Public Library
-  is the team's press once its check passes, linked from the funding dashboard's 75% JST condition.
 - **Publish now and one queue check (S642, S643, S648):** shipped and deployed; detail moved verbatim to
   [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S669)*.
 - **Pictures in a piece (Sam, 2026-11-11, #3095):** `cpl_library_pictures`, placed by `pictures.mjs`, checked on the card, written to `library/<slug>/img/`; tests `library_pictures`. The record: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
@@ -119,23 +140,9 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   `kb/receipts`; Leave it out on a published picture opens a request that replaces the public copy (the file stays
   served until the piece's next publish); a replace-at-once draft with pictures shows the box and a publish step (the
   run skips it every pass); the box's line counts the pictures kept (`fresh.length`), not found.
-- **A draft read off Pages drops its version stamps** (#3097; `unstamp`): lessons, *Moved from the lane (S653b)*.
-- **The box says what it did beside its field (Sam, 2026-11-11, #3097):** *"the text showing they uploaded is below
-  the window of view and I thought nothing happened when I first clicked"*. The line shows inside the card's box under
-  the document field; a file added twice says so and saves its words and pictures once.
-- **Create is one form** (Sam, 2026-11-06): lessons, *Moved from the lane (S653b)*.
-- DSP Credit Starting Points, Version 3 in public (S641, #3151): lessons, *Moved from the lane (S646)*.
-- **Public targets have a 25px floor (S641, #3151).** Eight targets at exactly `min-height:24px` measured 23.9 at 90% and
-  133% browser zoom: the shared header's Links, Light and Dark, and five Request Adopt links. The floor sits in the vault
-  sources (public header, the agency visual, tabs; CPLBrain `0e4b1091`), and seven other public pages, `library/index.html`
-  and `library/adopt/` took the header's lengths. Guard `tests/public_target_floor.test.js`. A new public page takes the
-  header's lengths, never `24px`.
 - **The Veteran map and the Fact Sheet carry the public header** (S653b; `sam-fact-sheet-no-header-logo-2026-11-14`, `sam-fact-sheet-controls-into-header-2026-11-14`; guards `tests/veteran_map_public_header.test.js`, `tests/factsheet_public_header.test.js`). **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own *CPL Fact Sheet* link opens a second copy, and that test checks the links against the Veteran map's copy. The bullet as it stood: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
-- **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the
-  overview"*): in the public library's look, figures live from `live_metrics.json`; its own source, so revise it on its card.
-  Every public page's header leads its Links with it (`header.html`; guarded in `tests/public_library.test.js`).
 - **Four open rows, each waiting on a person (S650; DECIDED `d-library-four-wait-on-people-s650`).** Ally Barker's
   "How to confirm and qualify for CPL funding": Draft 2 (`b18c5759`, S647, #3216) is stored on `...mwdvs6l1`, her card,
   and waits on her *Publish it*; `...mwdv9pl5` is its superseded duplicate, and retiring it is her press. Receipt
