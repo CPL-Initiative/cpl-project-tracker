@@ -262,6 +262,32 @@
    },
    "pdf_pages_why": "S703 (f-clovis-19-left-s697): five Business and Social Science degrees read from the wrong page, or from too few pages, are pinned to the page their section opens on, named with the words it opens on there (college-page-read run 45016537664), never found by a pattern over the catalog's text (S650, Cosumnes River). General Business 33433's core starts on the page before the one the capture took; Management 33487 and Small Business Management 33491 list one course (ACCTG 40), which the Business Administration degree's core prints too, so the picker took that page. Entrepreneur 33432 and Social Science 33492 run across a page break, so each pin names its last page (through, the S703 follow-up's reader change): 33432's core page (p.106) does not print the title word 'Entrepreneur', which p.107 prints, and 33492's total prints on p.149, which names no listed course. A pin binds only while the catalog prints the words on its page and every title word on its pages; otherwise the program gets no fresh text and its filed record stands. Reversible by deleting this entry."
   },
+   "Pasadena City College": {
+    "why": "S727 (lever): the entry holds the reader_page_assignment lever's own pages; no reconcile step yet.",
+    "steps": [],
+    "site_pages": {
+     "33404": {
+      "url": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-basic-education-cert-competency/",
+      "evidence": "Adult Basic Education 33404: its own page, linked from the Noncredit Division's index (college-page-read run 45562584495), read as the capture reads it (run 45564881318): the title 'Adult Basic Education - Certificate of Competency', its 2 listed courses and 'Total hours: 108'. The filed record was read from the ABE course-description page (noncredit-courses/abe/), so it placed none of its listed courses."
+     },
+     "33699": {
+      "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/personal-care-attendant-cert-completion/",
+      "evidence": "Personal Care Attendant 33699: its own page, linked from the Noncredit Division's index (college-page-read run 45562584495), read as the capture reads it (run 45564881318): the title 'Personal Care Attendant - Certificate of Completion', its 2 listed courses and 'Total Hours: 106'. The filed record was read from the PCAN course-description page (noncredit-courses/pcan/), so it placed none of its listed courses."
+     }
+    },
+    "site_pages_why": "S727 (lever, the gap census's reader_page_assignment lever, census of 2026-11-25 01:39Z): Pasadena City's noncredit programs print under noncredit-division/<area>/, and the capture handed these two a noncredit course-description page, so extraction placed none of their listed courses. Each is pinned to its own page, which the Noncredit Division's index links. Adult High School Diploma 31599's own page prints no award word beside its title, so rule A refuses it and it waits on a reader change. Reversible by deleting this entry."
+   },
+   "Moorpark College": {
+    "why": "S727 (lever): the entry holds the reader_page_assignment lever's own pages; no reconcile step yet.",
+    "steps": [],
+    "site_pages": {
+     "43405": {
+      "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/accounting-one-coa/",
+      "evidence": "Accounting I certificate 43405: its own page, linked from the Business Administration department page (college-page-read run 45562584495), read as the capture reads it (run 45564881318): the title 'Accounting I, Certificate of Achievement', its course list on the REQUIREMENTS tab (its 3 listed courses) and 'Total Hours 9'. The filed record was read from Accounting II's page (accounting-coa/, 35659's, which capture.json's shared_pages lists with it), so it placed none of its listed courses."
+     }
+    },
+    "site_pages_why": "S727 (lever, the gap census's reader_page_assignment lever, census of 2026-11-25 01:39Z): Moorpark's CourseLeaf catalog gives each award a page of its own, and the capture handed Accounting I its sister certificate's page, so extraction placed none of its listed courses. It is pinned to its own page, which the department page links. The lever's other two are named gaps (kb/program_requirements_college/moorpark/named_gaps_s727.json). Reversible by deleting this entry."
+   },
   "Sacramento City College": {
    "why": "S714 (rios): the entry holds the 18 programs' own pages and the HVAC pair their tables need; no reconcile step yet.",
    "steps": [],

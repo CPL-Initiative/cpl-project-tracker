@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T01:40:30Z",
+ "written_at": "2026-11-25T07:26:17Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17291,
-  "gap": 5044,
+  "passing": 17292,
+  "gap": 5043,
   "with_gap": 118,
-  "cost_usd": 1341.14,
-  "passed_at_read": 16371,
+  "cost_usd": 1341.15,
+  "passed_at_read": 16372,
   "cost_receipts": 118,
   "spent_usd": 1239.05,
   "spent_runs": 210,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16820,
-  "gap": 5044,
+  "passing": 16821,
+  "gap": 5043,
   "collected_with_gaps": 471,
   "discontinued": 0
  },
@@ -10026,12 +10026,11 @@
    "harvested": true,
    "slug": "san_bernardino_valley",
    "programs": 236,
-   "passing": 200,
-   "gap": 36,
+   "passing": 201,
+   "gap": 35,
    "causes": {
     "no_closed_list": 4,
     "page_not_found": 11,
-    "places_none": 1,
     "unknown_without_live": 20
    },
    "census_causes": {
@@ -10057,10 +10056,10 @@
    "outcomes_file": "kb/status/commons_data_programs/san_bernardino_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-24T08:26:34Z",
+   "read_at": "2026-11-25T06:32:58Z",
    "read_kind": "capture",
-   "cost_usd": 15.2,
-   "passed_at_read": 183,
+   "cost_usd": 15.21,
+   "passed_at_read": 184,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -10079,13 +10078,13 @@
     "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
    },
    "listed_closed": 232,
-   "found": 226,
+   "found": 227,
    "extracted": 221,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
+    "coverage": 2,
     "invented": 2,
-    "arithmetic": 36,
+    "arithmetic": 35,
     "repeated": 0,
     "outcomes": 0
    },
@@ -10095,14 +10094,13 @@
    "capture_root": "https://catalog.valleycollege.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1500.5,
-   "run": "45355976381",
+   "read_seconds": 1484.5,
+   "run": "45561301147",
    "levers": {
     "reconcile_steps": 18,
     "reader_page_search": 11,
     "program_course_file_check": 4,
-    "ge_units_steps": 2,
-    "reader_page_assignment": 1
+    "ge_units_steps": 2
    },
    "collection": {
     "program_reader": {
@@ -10110,13 +10108,13 @@
      "models": {
       "claude-opus-5-5": 221
      },
-     "run": "45355976381",
-     "at": "2026-11-24T08:26:34Z",
-     "cost_usd": 15.2,
+     "run": "45561301147",
+     "at": "2026-11-25T06:32:58Z",
+     "cost_usd": 15.21,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 219,
+    "plo_programs": 220,
     "ppm_member": null,
     "maps": {
      "held": 0,

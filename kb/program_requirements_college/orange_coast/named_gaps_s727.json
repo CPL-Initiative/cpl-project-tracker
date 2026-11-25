@@ -1,7 +1,7 @@
 {
  "_readme": "S727 (lever), the gap census's reader_page_assignment lever (census of 2026-11-25 01:39Z): 5 programs of Orange Coast College whose filed record places none of the state's listed courses and whose own page, read as the capture reads it (college-page-read runs 45562337640 and 45563142044), gives a read too few of them to place, or prints another program. The college's other 3 on the lever are pinned in its reconcile entry (kb/program_requirements_reconcile.json, site_pages: 22394, 04007, 33569). These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
  "college": "Orange Coast College",
- "written": "2026-11-25T06:52:52Z",
+ "written": "2026-11-25T07:22:38Z",
  "capture": "44747523200",
  "page_reads": [
   "45562337640",
@@ -9,7 +9,7 @@
  ],
  "reasons": {
   "list_printed_as_range": "The program's own page prints part of its list as a course range, and the state's file lists the range's courses one by one, so the page names fewer than half of the state's listed courses by code and the capture refuses it as the program's page.",
-  "catalog_list_differs": "The 2026-27 catalog prints the program's own section and course list, and the list names fewer than half of the state's listed courses: the Program Course File's list and the catalog's differ, so a read of the section would place too few of them to count.",
+  "list_by_reference": "The program's own page prints its required courses and names other awards whose lists complete it ('Complete a specialization certificate listed below'), and the state's file lists those awards' courses as the program's own, so the page names fewer than half of the state's listed courses by code and the capture refuses it as the program's page.",
   "successor_printed": "The 2026-27 catalog prints no page for the program: the department's list of degrees names one page under its title and award, and that page prints another program's Control Number."
  },
  "programs": [
@@ -31,15 +31,29 @@
    "control_number": "42115",
    "title": "Child Development Lead Teacher",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "reason": "catalog_list_differs",
-   "note": "Its own page (child-development-lead-teacher-coa/, 'Control Number: 42115') prints 12 required courses, 'Complete a specialization certificate listed below: 9-12', five specialization certificates by name, and 'Total Units 43.5-46.5'; it names 12 of the state's 30 listed courses (0.40, under the capture's 0.50)."
+   "reason": "list_by_reference",
+   "by_reference": [
+    "42081",
+    "42109",
+    "42118",
+    "42119",
+    "42134"
+   ],
+   "note": "Its own page (child-development-lead-teacher-coa/, 'Control Number: 42115') prints 12 required courses, 'Complete a specialization certificate listed below: 9-12', five specialization certificates by name, and 'Total Units 43.5-46.5'; it names 12 of the state's 30 listed courses (0.40, under the capture's 0.50), and the other 18 are the listed courses of the five specialization certificates it names (42081, 42109, 42118, 42119, 42134; their filed sources' codes)."
   },
   {
    "control_number": "42117",
    "title": "Child Development Lead Teacher",
    "award": "A.S. Degree",
-   "reason": "catalog_list_differs",
-   "note": "Its own page (child-development-lead-teacher-as/, 'Control Number: 42117') prints the certificate's 12 required courses and its specialization line, 'Total Major Units 43.5 - 46.5'; it names 12 of the state's 30 listed courses (0.40, under the capture's 0.50)."
+   "reason": "list_by_reference",
+   "by_reference": [
+    "42081",
+    "42109",
+    "42118",
+    "42119",
+    "42134"
+   ],
+   "note": "Its own page (child-development-lead-teacher-as/, 'Control Number: 42117') prints the certificate's 12 required courses and its specialization line, 'Total Major Units 43.5 - 46.5'; it names 12 of the state's 30 listed courses (0.40, under the capture's 0.50), and the other 18 are the listed courses of the five specialization certificates (42081, 42109, 42118, 42119, 42134)."
   },
   {
    "control_number": "32235",
