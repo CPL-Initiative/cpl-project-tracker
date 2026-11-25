@@ -1,5 +1,5 @@
 {
- "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 3: pass 2 (run 45626565022) found no line starting 'ANTH n'; print the first pages in the back of the catalog that name an ANTH course anywhere on a line. No model call.",
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: the catalog heads each subject 'Anthropology (ANTH)' above its first course (run 45627807594, page 403); print each such heading line with the line above it. No model call.",
  "college": "Santa Rosa Junior College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
@@ -15,10 +15,9 @@
    ]
   }
  ],
- "pdf_span": [
-  300,
-  571
- ],
- "pdf_page_cap": 2,
- "pdf_unfolded": true
+ "subject_context": {
+  "heading": "^(?:.*\\S )?\\((?P<subj>[A-Z]{1,6})(?:\\s?[/,&]\\s?[A-Z]{1,6})*\\)$",
+  "before": 2,
+  "start_page": 300
+ }
 }

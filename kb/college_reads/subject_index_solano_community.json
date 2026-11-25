@@ -1,12 +1,11 @@
 {
- "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 3: pass 2 (run 45626565022) found only program pages; print the table of contents to learn whether the catalog prints course descriptions or a prefix legend at all. No model call.",
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: the contents pages print in an unreadable font (run 45627807594) and pages 150 to 430 hold programs only; print the first pages after them that print a course line, if any. No model call.",
  "college": "Solano Community College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "contents",
-  "course descriptions"
+  "(?:^|\\n)(?:ANTH|ACCT|ENGL|ART|BIO|HIST) ?C?\\d{1,4}[A-Z]? "
  ],
  "pages": [
   {
@@ -17,8 +16,8 @@
   }
  ],
  "pdf_span": [
-  1,
-  8
+  430,
+  459
  ],
  "pdf_page_cap": 2,
  "pdf_unfolded": true

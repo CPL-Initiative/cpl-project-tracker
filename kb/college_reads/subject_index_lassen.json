@@ -1,15 +1,11 @@
 {
- "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 3: the catalog heads each subject with its name in capitals above the first course (run 45626565022); a course line now admits a C-number course (ENGL C1000). No model call.",
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: sixteen codes had no heading above a first course (run 45627807594), and three sat under a prerequisite line; print the course pages that name them. No model call.",
  "college": "Lassen College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "course prefix",
-  "subject abbreviation",
-  "course abbreviation",
-  "prefix(?:es)? (?:and|&) (?:subject|discipline)",
-  "course descriptions"
+  "(?:^|\\n)(?:CMS|CORS|COT|CS|DRA|ENGR|FOLK|FREN|GS|GSS|HE|PGT|PLSC|READ|SOSC|SPAN|PSYC|SOC|NURS) ?C?\\d"
  ],
  "pages": [
   {
@@ -19,9 +15,10 @@
    ]
   }
  ],
- "subject_context": {
-  "heading": "^(?P<subj>[A-Z]{1,6}) C?\\d{1,4}[A-Z]{0,2}\\b",
-  "before": 4,
-  "start_page": 102
- }
+ "pdf_span": [
+  102,
+  162
+ ],
+ "pdf_page_cap": 24,
+ "pdf_unfolded": true
 }

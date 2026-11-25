@@ -1,5 +1,5 @@
 {
- "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 3: the catalog heads each subject 'NAME (CODE)' (run 45626565022); print each such heading line once, from PDF page 119. No model call.",
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: a heading may name two codes (POLITICAL SCIENCE (POLI/POLS)) or wrap; print each line that ends in its code or codes in parentheses, with the line above it. No model call.",
  "college": "Compton College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
@@ -20,8 +20,8 @@
   }
  ],
  "subject_context": {
-  "heading": "^[A-Z][A-Z0-9 ,&'\u2019/.:()\u2013-]*[A-Z.)] \\((?P<subj>[A-Z]{1,6})\\)$",
-  "before": 1,
+  "heading": "^(?:.*\\S )?\\((?P<subj>[A-Z]{1,6})(?:\\s?[/,&]\\s?[A-Z]{1,6})*\\)$",
+  "before": 2,
   "start_page": 119
  }
 }
