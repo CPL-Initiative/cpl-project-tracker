@@ -1,6 +1,7 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 2 (run 45627200036): the start page links no subject list; round 1 (run 45624782074) found the courses view lists each course as 'AG 011 - Title' with no subject heading. This read: the courses view's publish call around two course codes, to see whether its markup names each subject. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 4. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 3 (run 45628601616): the courses view's markup names no subject either; each course is a 'CODE NUM - Title' link. This read: the Course Numbering page, whole, in case it holds a prefix legend. No model call, writes nothing.",
  "college": "Lemoore College",
+ "capture_lines": 6000,
  "questions": {
   "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
  },
@@ -16,22 +17,8 @@
    "answers": [
     "subject_index"
    ],
-   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/courses",
-   "network": true,
-   "network_hosts": [
-    "api-prod.elumenapp.com"
-   ],
-   "network_find": [
-    "AGBUS 010",
-    "AOJ 001"
-   ]
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/course-numbering",
+   "capture_view": true
   }
- ],
- "outside_hosts": {
-  "api-prod.elumenapp.com": "eLumen's own API host: the catalog's scripts fetch every view from it (kb/_program_requirements_college.py, the eLumen note; S380)."
- },
- "subject_context": {
-  "heading": "^(?P<subj>[A-Z][A-Z&]{0,7}) (?P<num>[A-Z]?\\d{1,4}[A-Z]{0,4}) [-\u2013] (?P<title>.+)$",
-  "before": 3
- }
+ ]
 }

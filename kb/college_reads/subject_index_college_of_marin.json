@@ -1,6 +1,7 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 2 (run 45627200036): the courses view under catalog/current is not published. This read: the catalog's start page, its links that name a subject, department or course, and its menu call around 'department'. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 4. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 3 (run 45628601616): the start page links Program and Course Descriptions. This read: that page and its links. No model call, writes nothing.",
  "college": "College of Marin",
+ "capture_lines": 6000,
  "questions": {
   "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
  },
@@ -16,20 +17,10 @@
    "answers": [
     "subject_index"
    ],
-   "url": "https://marin.elumenapp.com/catalog/current/home",
-   "links": "department|subject|course|disciplin|prefix",
-   "links_cap": 200,
-   "network": true,
-   "network_hosts": [
-    "api-prod.elumenapp.com"
-   ],
-   "network_find": [
-    "department",
-    "Department"
-   ]
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "capture_view": true,
+   "links": "catalog/current/",
+   "links_cap": 400
   }
- ],
- "outside_hosts": {
-  "api-prod.elumenapp.com": "eLumen's own API host: the catalog's scripts fetch every view from it (kb/_program_requirements_college.py, the eLumen note; S380)."
- }
+ ]
 }

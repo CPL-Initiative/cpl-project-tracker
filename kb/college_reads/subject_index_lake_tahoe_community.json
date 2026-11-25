@@ -1,6 +1,7 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 2 (run 45627200036): the 2026-2027 courses view is not published. This read: the catalog's start page, its links that name a subject, department or course, and its menu call around 'department'. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 4. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 3 (run 45628601616): the menu's Courses section links departments by name only (department/<slug>), some covering several codes (World Languages). This read: two department pages, World Languages and Art, whole, to see how each names its subjects. No model call, writes nothing.",
  "college": "Lake Tahoe Community College",
+ "capture_lines": 6000,
  "questions": {
   "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
  },
@@ -16,20 +17,15 @@
    "answers": [
     "subject_index"
    ],
-   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog",
-   "links": "department|subject|course|disciplin|prefix",
-   "links_cap": 200,
-   "network": true,
-   "network_hosts": [
-    "api-prod.elumenapp.com"
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/world-languages",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
    ],
-   "network_find": [
-    "department",
-    "Department"
-   ]
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/art",
+   "capture_view": true
   }
- ],
- "outside_hosts": {
-  "api-prod.elumenapp.com": "eLumen's own API host: the catalog's scripts fetch every view from it (kb/_program_requirements_college.py, the eLumen note; S380)."
- }
+ ]
 }
