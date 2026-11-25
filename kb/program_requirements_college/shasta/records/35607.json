@@ -117,7 +117,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "List B is printed as '0-9 units' with 'Any course not already used OR AGMA 42'; recorded as choose_units with minimum 0 and stated 0-9. The rule is ambiguous; any course not already used may also satisfy List B."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
