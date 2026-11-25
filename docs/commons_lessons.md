@@ -758,3 +758,6 @@ List writes), so a ruling moves Needs you, the Courses and M-IDs card and Ruling
 - A test that clicks a node it looked up must check that the node exists. In the mutation run, a missing trail link
   crashed the test before it reported, so the guard failed by exit code alone and named nothing.
 - Never mutation-check while a background suite reads the same file: the run reads whichever copy is on disk.
+
+**The checkpoint (SkyDunlin, S730):** #3824 (squash `d012b203`) and #3826 (squash `d077c4ff`, `npm run a11y` on the fold:
+the h2 above the folded card, 24px card titles, quick-link bullets on their first line). Handoff 731.
