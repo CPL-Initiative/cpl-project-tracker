@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 367,
  "with_closed_list": 318,
- "started": "2026-11-20T06:35:51Z",
+ "started": "2026-11-25T08:45:31Z",
  "scope": null,
  "sitemap": {
   "url": "https://curriculum.pasadena.edu/sitemap.xml",
@@ -24,6 +24,16 @@
  "pages_answered": 386,
  "child_pages": 0,
  "banner_h1": "2026-2027 ACADEMIC CATALOG",
+ "site_pins": {
+  "33404": {
+   "url": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-basic-education-cert-competency/",
+   "bound": true
+  },
+  "33699": {
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/personal-care-attendant-cert-completion/",
+   "bound": true
+  }
+ },
  "catalog_lookup": {
   "self_test": {
    "tested": 118,
@@ -45,7 +55,7 @@
      "control_number": "33404",
      "title": "ADULT BASIC EDUCATION",
      "award": "Noncredit program",
-     "page": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-basic-education-cert-competency/",
+     "page": "https://curriculum.pasadena.edu/noncredit-courses/abe/",
      "h1": ""
     },
     {
@@ -75,7 +85,7 @@
      "control_number": "33404",
      "title": "ADULT BASIC EDUCATION",
      "award": "Noncredit program",
-     "page": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-basic-education-cert-competency/",
+     "page": "https://curriculum.pasadena.edu/noncredit-courses/abe/",
      "h1": ""
     },
     {
@@ -503,7 +513,7 @@
   "yield_refused_passing": 0
  },
  "loads": 404,
- "seconds": 1926.2,
+ "seconds": 1985.8,
  "found": 299,
  "by_method": {
   "no_closed_list": 49,
@@ -955,7 +965,8 @@
    "title": "PRE-APPRENTICESHIP IN BUILDING TRADES AND CONSTRUCTION INDUSTRY",
    "award": null,
    "near_miss": {
-    "why": "no page read names the program"
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1009,10 +1020,10 @@
    "title": "Special Education Assistant - Level 1",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/basic-bookkeeping-assistant-cert-completion/",
+    "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development--special-education-assistant-occupational-skills-cert/",
     "label": {
      "award": 1,
-     "title": 0.667
+     "title": 1.0
     },
     "field": "innerText",
     "coverage": 0.0,
@@ -1023,8 +1034,8 @@
     "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
     "error": null,
     "chars": {
-     "body": 3956,
-     "content": 31036,
+     "body": 8024,
+     "content": 32808,
      "tabs": 0
     },
     "tab_panels": [
@@ -1222,44 +1233,39 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/pasadena_city",
-  "kept": 296,
+  "kept": 297,
   "kept_moved": 0,
-  "programs": 3,
+  "programs": 2,
   "list": [
    {
-    "control_number": "03160",
-    "title": "Administration of Justice",
-    "award": "A.S. Degree",
-    "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-as-cert-achievement/",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "22651",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-as-cert-achievement/",
+    "control_number": "33404",
+    "title": "ADULT BASIC EDUCATION",
+    "award": "Noncredit program",
+    "url": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-basic-education-cert-competency/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_url": "https://curriculum.pasadena.edu/noncredit-courses/abe/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "31143",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-ast/",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "control_number": "33699",
+    "title": "PERSONAL CARE ATTENDANT",
+    "award": null,
+    "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/personal-care-attendant-cert-completion/",
+    "coverage": 1.0,
+    "was_url": "https://curriculum.pasadena.edu/noncredit-courses/pcan/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    }
   ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "33404",
+   "33699"
+  ],
+  "not_named": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1781,8 +1787,8 @@
    "url": "https://curriculum.pasadena.edu/noncredit-courses/esln/"
   },
   "33404": {
-   "sha256": "e11a47d5d24157ace9abd713c968d2b59b103665f087d45831f4f4c5b0c60ca5",
-   "url": "https://curriculum.pasadena.edu/noncredit-courses/abe/"
+   "sha256": "bc7518056e3649fc72ddc6e0d2b002bd31ed43de7f369a1bce40a56bf46aef98",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-basic-education-cert-competency/"
   },
   "33405": {
    "sha256": "0aed7bfed8a69f4103818ad8a7040810fff893b0714503105d2e359cf592ecce",
@@ -1813,8 +1819,8 @@
    "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/general-office-clerk-cert-competency/"
   },
   "33699": {
-   "sha256": "5e14359479cfd16bbfb7b18d9457e3f35c6e1e709998246c3489b1c73d6c7833",
-   "url": "https://curriculum.pasadena.edu/noncredit-courses/pcan/"
+   "sha256": "dd5ffe07ad71a5752317a4415409b800f33a8a758736818535fb6286c89a80be",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/personal-care-attendant-cert-completion/"
   },
   "33744": {
    "sha256": "5dbe2fc16d87c07f828ae28fac1308fc0b44dbe8a710c0d4fce1c63451871237",
@@ -2461,5 +2467,5 @@
    "url": "https://curriculum.pasadena.edu/academic-programs/kinesiology/personal-training-as-cert-achievement/"
   }
  },
- "run": "44688457642"
+ "run": "45575677400"
 }
