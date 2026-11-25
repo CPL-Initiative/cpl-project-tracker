@@ -1,0 +1,1359 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S727: the records held for a person, collected with each gap named (COBIx's brief of 2026-11-25)",
+ "at": "2026-11-25T08:27:36Z",
+ "colleges": [
+  "Cerritos College",
+  "Clovis Community College",
+  "Contra Costa College",
+  "De Anza College",
+  "East Los Angeles College",
+  "Glendale Community College",
+  "Los Angeles City College",
+  "Los Angeles Harbor College",
+  "Napa Valley College",
+  "Santa Monica College",
+  "Ventura College",
+  "West Los Angeles College"
+ ],
+ "keys": [
+  [
+   "De Anza College",
+   "45499"
+  ],
+  [
+   "Santa Monica College",
+   "03281"
+  ],
+  [
+   "Santa Monica College",
+   "10345"
+  ],
+  [
+   "Santa Monica College",
+   "43765"
+  ],
+  [
+   "Glendale Community College",
+   "44488"
+  ],
+  [
+   "Clovis Community College",
+   "33501"
+  ],
+  [
+   "Clovis Community College",
+   "36326"
+  ],
+  [
+   "Clovis Community College",
+   "39539"
+  ],
+  [
+   "East Los Angeles College",
+   "33013"
+  ],
+  [
+   "Cerritos College",
+   "44984"
+  ],
+  [
+   "Contra Costa College",
+   "01417"
+  ],
+  [
+   "West Los Angeles College",
+   "46261"
+  ],
+  [
+   "West Los Angeles College",
+   "38677"
+  ],
+  [
+   "Napa Valley College",
+   "19126"
+  ],
+  [
+   "Napa Valley College",
+   "31158"
+  ],
+  [
+   "Napa Valley College",
+   "36528"
+  ],
+  [
+   "Los Angeles Harbor College",
+   "44947"
+  ],
+  [
+   "Los Angeles City College",
+   "32832"
+  ],
+  [
+   "Ventura College",
+   "45355"
+  ]
+ ],
+ "gaps": {
+  "entry_path_range": "The page prints the major as a range over entry paths (a licensed student enters later in the sequence), and the record holds the full path, which matches the range's top; which path a student takes is the college's admission.",
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "noted_no_total": "The reader's note says the catalog prints no total for this program, so its units cannot be checked against one; no page read has confirmed it.",
+  "unit_line_not_read": "The catalog prints a requirement as a line of units with no course named, and the record leaves the line out; with it the courses add to the printed total."
+ },
+ "moved": 5,
+ "by": {
+  "unit_line_not_read": 1,
+  "noted_no_total": 1,
+  "lists_not_closed": 2,
+  "entry_path_range": 1
+ },
+ "updates": 5,
+ "inserts": 0,
+ "precision": {
+  "read": 19,
+  "right": 19,
+  "wrong": [],
+  "by_answer": {
+   "unit_line_not_read": 1,
+   "none": 8,
+   "noted_no_total": 1,
+   "lists_not_closed": 2,
+   "entry_path_range": 1,
+   "named: no_own_page_found": 6
+  }
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 6,
+   "the stated total one unit off right": 6,
+   "coverage failing right": 6,
+   "another college right": 6,
+   "the major one unit off right": 1,
+   "the lower division short right": 1,
+   "not a bachelor's right": 1,
+   "the open list prints a figure right": 2,
+   "the second note gone right": 1,
+   "the other list gone right": 1,
+   "the sum spans the range right": 1,
+   "no note names the paths right": 1,
+   "the record places a course right": 6
+  },
+  "wrong": []
+ },
+ "held": [
+  {
+   "college": "Clovis Community College",
+   "control_number": "36326",
+   "why": "held: the own-page guard: capture.json's shared_pages lists 44475 on the page it was read from, and no note names its own section; lists_not_closed (List B also takes 'Any course from List A not already used') stands once a read names it",
+   "claim": "the page is shared and no note names the record's own section"
+  }
+ ],
+ "records": [
+  {
+   "college": "De Anza College",
+   "control_number": "45499",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "extracted_run": "43056325121",
+   "moves_to": "unit_line_not_read",
+   "words": "General B.S. requirements also describe 60 upper-division units, 90 lower-division units meeting associate degree requirements, and 30 additional lower-division units.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/de_anza/records/45499.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Automotive Technology Management",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "catalog_year": "2026-2027",
+    "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-technology-management-fall-2025",
+    "measure": "units",
+    "total_min": 60,
+    "total_max": 60,
+    "record": {
+     "program": {
+      "section_heading": "Program Requirements",
+      "measure": "units",
+      "total_units": {
+       "min": 60,
+       "max": 60
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "De Anza General Education pattern or Cal-GETC",
+      "degree_total": {
+       "min": 180,
+       "max": 180
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": true,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core - Upper-Division Major",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 45,
+        "max": 45
+       },
+       "courses": [
+        {
+         "code": "ATMG 601",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ATMG 602",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ATMG 603",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ATMG 604",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ATMG 605",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ATMG 606",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ATMG 607",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ATMG 608",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ATMG 609",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core - Upper-Division General Education",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 15,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "BUS 615",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS 620",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EWRT 610",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 12,
+     "listed": 12
+    },
+    "extracted_run": "43056325121"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 12,
+     "listed": 12,
+     "gaps": [
+      "unit_line_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "10345",
+   "award": "A.S. Degree",
+   "extracted_run": "39567439681",
+   "moves_to": "noted_no_total",
+   "words": "No major total or degree total is printed for this award; only the prerequisite block total (18 units) is stated. total_units left null.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/santa_monica/records/10345.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "LVN to ADN, Career Ladder Curriculum",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=175",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "LVN-ADN Advanced Placement Career Ladder Curriculum Option - (For LVNS Only)",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "SMC Associate Degree General Education",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Students who complete the Nursing program will use theoretical concepts of leadership and management to administer and design plans of care that integrate knowledge and skills pertinent to the role of manager of care of a group of patients and members of the health care team. Graduates will also utilize delegation, priority-setting skills, and knowledge of legal-ethical issues and health care delivery systems to design and coordinate a plan of nursing care for a group of patients."
+      ],
+      "careers": [
+       "Registered Nurse"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Prerequisite Requirements",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "ENGL C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANATMY 1",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MCRBIO 1",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 3",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 19",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Nursing courses (no heading printed; list follows a '-----' separator)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "NURSNG 4",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 4L",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 5",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 5L",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 6",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 6L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 7",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 7L",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 8",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 8L",
+         "units": 2.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 9",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURSNG 9L",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 17,
+     "listed": 17
+    },
+    "extracted_run": "39567439681"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 17,
+     "listed": 17,
+     "gaps": [
+      "noted_no_total"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "43765",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39567439681",
+   "moves_to": "lists_not_closed",
+   "words": "Salon Experience Courses: the catalog says 'Any combination of Salon classes is acceptable' and states no minimum units; minimum left null. The listed required courses total 25.5 units, which would leave 1 unit of Salon Experience to reach 26.5, but this is not stated. Prerequisite: all Level 1 classes completed.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 88,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/santa_monica/records/43765.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Barbering",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=120",
+    "measure": "units",
+    "total_min": 26.5,
+    "total_max": 26.5,
+    "record": {
+     "program": {
+      "section_heading": "Barbering, Associate Degree or Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 26.5,
+       "max": 26.5
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Upon completion of the program, students will be able to demonstrate entry level skills in hair cutting, hair coloring, hair styling, shaving with a razor, men’s styling and chemical texture.",
+       "Students will be eligible to take the State Board of Barbering and Cosmetology licensure exam.",
+       "Students will be able to recognize and demonstrate the importance of and practice of ethical behavior in a professional work setting.",
+       "Apply theories, principles, and concepts of skills learned that apply to Barbering and follow the State Board of Barbering and Cosmetology Rules and Regulations."
+      ],
+      "careers": [
+       "platform artist",
+       "educator",
+       "barber",
+       "colorist",
+       "salon owner",
+       "sales representative",
+       "cruise ships",
+       "television and film industries"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Level 1 Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COSM 10A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 10B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 11A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 11B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 11C",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 11D",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Level 2 Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COSM 20",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 21A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 21B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 21C",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 21E",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "COSM 42",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Level 3 Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COSM 30",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 31A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 31C",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 31E",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 77",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Level 4 Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COSM 11C",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 78",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required State Board Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COSM 49R",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 50R",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Salon Experience Courses",
+       "rule": "choose_units",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COSM 95A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 95B",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COSM 95C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 22,
+     "listed": 25
+    },
+    "extracted_run": "39567439681"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 22,
+     "listed": 25,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 88,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "33501",
+   "award": "A.S. T Degree",
+   "extracted_run": "44522071814",
+   "moves_to": "lists_not_closed",
+   "words": "List B minimum is a combined rule: List A and List B courses must total a minimum of 6 units; since List A's only course is 5 units, List B needs at least one more course. List B minimum left null because no List B-only unit count is printed. MATH 17 is printed both in Required Core Courses and as the only course in List A; likely a catalog layout error. Recorded as printed. Total Units 23 is consistent either way (core 14 or 19 units plus List A/B).",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/clovis_community/records/33501.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Mathematics",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=174",
+    "measure": "units",
+    "total_min": 23,
+    "total_max": 23,
+    "record": {
+     "program": {
+      "section_heading": "MATHEMATICS ASSOCIATE IN SCIENCE IN MATHEMATICS FOR TRANSFER DEGREE (Major #C.6200.AS-T)",
+      "measure": "units",
+      "total_units": {
+       "min": 23,
+       "max": 23
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Communicate mathematics with understanding (read, write, listen, speak).",
+       "Use critical thinking and mathematical reasoning to solve a variety of problems.",
+       "Apply mathematical models to real world situations.",
+       "Use technology, when appropriate, to enhance their mathematical understanding, critical thinking, and problem-solving skills.",
+       "Demonstrate the ability to use symbolic, graphical, numerical, and written representations of mathematical ideas."
+      ],
+      "careers": [
+       "mathematics",
+       "engineering",
+       "statistics",
+       "actuarial science",
+       "business and management",
+       "law enforcement",
+       "government",
+       "education"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MATH C2210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH C2220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 6",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 17",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "List A: Select one course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MATH 17",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "LIST B: Select additional courses/ units so that List A and List B courses total a minimum of 6 units.",
+       "rule": "choose_units",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CSCI 26",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI 40",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR 40",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BA 23",
+           "units": 4,
+           "catalog_addition": false
+          },
+          {
+           "code": "PSYC 42",
+           "units": 4,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS 4A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 8,
+     "listed": 8
+    },
+    "extracted_run": "44522071814"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 8,
+     "listed": 8,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Contra Costa College",
+   "control_number": "01417",
+   "award": "A.S. Degree",
+   "extracted_run": "38979730323",
+   "moves_to": "entry_path_range",
+   "words": "LVN/LPN to RN transition students enter the second year and enroll in NURS-255 and NURS-256 only (plus 4th semester). LPT students enter the second semester. The 1st semester requirement may be met by LVN/LPN or LPT licensure and admission. This explains the major range of 24.3 / 48.9 units printed in the Unit Summary.",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/contra_costa/records/01417.json",
+   "write": "update",
+   "before_image": {
+    "program_title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/registered-nursing-fall-2020",
+    "measure": "units",
+    "total_min": 24.3,
+    "total_max": 48.9,
+    "record": {
+     "program": {
+      "section_heading": "Registered Nursing - A.S. Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 24.3,
+       "max": 48.9
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": [
+       "Registered Nurse"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "1st semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "NURS210",
+         "units": 12,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS211",
+         "units": 0.6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "2nd semester and 3rd semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "NURS235",
+         "units": 11,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS236",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS255",
+         "units": 11,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS256",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "4th semester",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "NURS275",
+         "units": 12,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NURS276",
+         "units": 0.3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 7,
+     "listed": 7
+    },
+    "extracted_run": "38979730323"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 7,
+     "listed": 7,
+     "gaps": [
+      "entry_path_range"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 5
+  }
+ ],
+ "hand": {
+  "De Anza College 45499": "unit_line_not_read",
+  "Santa Monica College 10345": "noted_no_total",
+  "Santa Monica College 43765": "lists_not_closed",
+  "Clovis Community College 33501": "lists_not_closed",
+  "Contra Costa College 01417": "entry_path_range",
+  "West Los Angeles College 46261": "named: no_own_page_found",
+  "Napa Valley College 19126": "named: no_own_page_found",
+  "Napa Valley College 31158": "named: no_own_page_found",
+  "Napa Valley College 36528": "named: no_own_page_found",
+  "Los Angeles Harbor College 44947": "named: no_own_page_found",
+  "Ventura College 45355": "named: no_own_page_found",
+  "Santa Monica College 03281": "held: a gap collects only where coverage and invented pass (collected_with_gaps, kb/_harvest_gap_census.py); coverage places 12 of 27 and invented fails on the catalog's 'NURSING 6/6L/7/7L' misprints and NURSNG 19, and its note says the Registered Nursing section's start is on the preceding page; its lever is a misprint alias and a read of page 174",
+  "Glendale Community College 44488": "held: a gap collects only where coverage and invented pass (collected_with_gaps, kb/_harvest_gap_census.py); invented fails on ESL 156 (not in the state's file) and MATH 102+, the page's 'MATH 102/102+' row against the file's one MATH 102 row titled 'Trigonometry with Support'; which course that row names is the college's to say in COCI, and the arithmetic already passes",
+  "Cerritos College 44984": "held: the live row holds run 37961137169 and its arithmetic is unequal (the conductor's live read); both committed reads pass (records/ at 38064252862 and held_for_person/ at 44540824017), so no gap is honest: its lever is a reload of a passing committed read",
+  "Los Angeles City College 32832": "held: a live row holds run 39006380342 and fails (incomplete, the conductor's live read); the reconcile 44511401763 dropped its record file and today's capture finds no page (method not_found), so no image of its record can be built here",
+  "Clovis Community College 39539": "held (S713c's reason): the prerequisite list adds to 22-23 against its printed 26-27 and Year 1 Fall to 12 against 11; with the prerequisites at 26-27 it still reads 70.5-71.5 against 69.5-70.5. Its note names a missing heading, not missing requirements, so no cut-off kind is honest: the catalog's own figures, for a reread",
+  "East Los Angeles College 33013": "held (S720e's reason): the page's figures (9-10, 3, 6, 3-4) add to 21-23 under 'TOTAL UNITS FOR MAJOR: 22-24', and with the 9-10 pool on one block the record still reads 21-24 against 22-24, so neither the pool kind nor a figures kind's sentence holds",
+  "West Los Angeles College 38677": "collected: it passes, and the load 44545925357 inserted it (its two runs name none per key; the record's 44475503054 is the run that read it new)",
+  "Clovis Community College 36326": "held: the own-page guard: capture.json's shared_pages lists 44475 on the page it was read from, and no note names its own section; lists_not_closed (List B also takes 'Any course from List A not already used') stands once a read names it"
+ },
+ "named": {
+  "files": [
+   "kb/program_requirements_college/los_angeles_harbor/named_gaps_s727.json",
+   "kb/program_requirements_college/napa_valley/named_gaps_s727.json",
+   "kb/program_requirements_college/ventura/named_gaps_s727.json",
+   "kb/program_requirements_college/west_los_angeles/named_gaps_s727.json"
+  ],
+  "programs": {
+   "West Los Angeles College 46261": "no_own_page_found",
+   "Napa Valley College 19126": "no_own_page_found",
+   "Napa Valley College 31158": "no_own_page_found",
+   "Napa Valley College 36528": "no_own_page_found",
+   "Los Angeles Harbor College 44947": "no_own_page_found",
+   "Ventura College 45355": "no_own_page_found"
+  }
+ },
+ "for_a_person": {
+  "Contra Costa College 01417": "which entry path the record counts is the college's admission rule",
+  "Santa Monica College 43765": "'COSM 11C, Salon Management (2)' in Level 4, likely COSM 64",
+  "Clovis Community College 33501": "MATH 17 printed in the core and as List A's one course"
+ },
+ "representation": "UPDATE rows: checks.gaps and checks.confidence added as the load reads the filed score; checks.arithmetic, coverage, invented and the record unchanged",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'De Anza College', '45499', 43056325121, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 601\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 602\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 603\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 604\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 605\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 606\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 607\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 608\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 609\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core - Upper-Division Major\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":45,\"min\":45}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 615\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 620\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EWRT 610\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core - Upper-Division General Education\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":180,\"min\":180},\"electives_fill_degree\":true,\"ge_pattern\":\"De Anza General Education pattern or Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Program Requirements\",\"total_units\":{\"max\":60,\"min\":60}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb),\n  (2, 'Santa Monica College', '10345', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANATMY 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MCRBIO 1\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 3\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 19\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Prerequisite Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 4\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 4L\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 5\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 5L\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 6\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 6L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 7\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 7L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 8\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 8L\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 9\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 9L\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Nursing courses (no heading printed; list follows a ''-----'' separator)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Registered Nurse\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"SMC Associate Degree General Education\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students who complete the Nursing program will use theoretical concepts of leadership and management to administer and design plans of care that integrate knowledge and skills pertinent to the role of manager of care of a group of patients and members of the health care team. Graduates will also utilize delegation, priority-setting skills, and knowledge of legal-ethical issues and health care delivery systems to design and coordinate a plan of nursing care for a group of patients.\"],\"section_heading\":\"LVN-ADN Advanced Placement Career Ladder Curriculum Option - (For LVNS Only)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_no_total\"],\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb),\n  (3, 'Santa Monica College', '43765', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 10A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 10B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11D\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 1 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 20\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 21A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 21B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 21C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COSM 21E\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 42\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 2 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 30\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 31A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 31C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 31E\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 77\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 3 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11C\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 78\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 4 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 49R\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 50R\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required State Board Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 95A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 95B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 95C\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Salon Experience Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"platform artist\",\"educator\",\"barber\",\"colorist\",\"salon owner\",\"sales representative\",\"cruise ships\",\"television and film industries\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Upon completion of the program, students will be able to demonstrate entry level skills in hair cutting, hair coloring, hair styling, shaving with a razor, men’s styling and chemical texture.\",\"Students will be eligible to take the State Board of Barbering and Cosmetology licensure exam.\",\"Students will be able to recognize and demonstrate the importance of and practice of ethical behavior in a professional work setting.\",\"Apply theories, principles, and concepts of skills learned that apply to Barbering and follow the State Board of Barbering and Cosmetology Rules and Regulations.\"],\"section_heading\":\"Barbering, Associate Degree or Certificate of Achievement\",\"total_units\":{\"max\":26.5,\"min\":26.5}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb),\n  (4, 'Clovis Community College', '33501', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 6\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 17\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 17\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 26\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGR 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4},{\"catalog_addition\":true,\"code\":\"PSYC 42\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 4A\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"LIST B: Select additional courses/ units so that List A and List B courses total a minimum of 6 units.\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"mathematics\",\"engineering\",\"statistics\",\"actuarial science\",\"business and management\",\"law enforcement\",\"government\",\"education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Communicate mathematics with understanding (read, write, listen, speak).\",\"Use critical thinking and mathematical reasoning to solve a variety of problems.\",\"Apply mathematical models to real world situations.\",\"Use technology, when appropriate, to enhance their mathematical understanding, critical thinking, and problem-solving skills.\",\"Demonstrate the ability to use symbolic, graphical, numerical, and written representations of mathematical ideas.\"],\"section_heading\":\"MATHEMATICS ASSOCIATE IN SCIENCE IN MATHEMATICS FOR TRANSFER DEGREE (Major #C.6200.AS-T)\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (5, 'Contra Costa College', '01417', 38979730323, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS210\",\"units\":12,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"NURS211\",\"units\":0.6,\"units_max\":null}],\"minimum\":null,\"name\":\"1st semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS235\",\"units\":11,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS236\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS255\",\"units\":11,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS256\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"2nd semester and 3rd semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS275\",\"units\":12,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS276\",\"units\":0.3,\"units_max\":null}],\"minimum\":null,\"name\":\"4th semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Registered Nurse\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Registered Nursing - A.S. Degree\",\"total_units\":{\"max\":48.9,\"min\":24.3}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"entry_path_range\"],\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'De Anza College', '45499', 43056325121, '6d2956000c8ec638519574a23637ba7d', '8fd0a9378506bd00405b5cf1ecb0628d', '29366291bfb44ff088a5d9b8b9ce97d8'),\n  (2, 'Santa Monica College', '10345', 39567439681, '93ca74463f246afea4ccd9ccf165115a', 'e6dc2db0903ea1bdee923dfafbc1258b', '487cf01dd90ee6d54ef9616375b3b578'),\n  (3, 'Santa Monica College', '43765', 39567439681, 'eea0fd78dd81e117849f38aef411c5ec', '687245fbbcb76ffb696e8d39dc31eba0', 'faaf6f5be0e51a0103d850d33f7df030'),\n  (4, 'Clovis Community College', '33501', 44522071814, '908a9a868a11a7ef95386700c0d7ce58', '24ddfa68326ccb5cf0a8142c92f04809', '6fc858c99b11fad873d126f9b46f4c71'),\n  (5, 'Contra Costa College', '01417', 38979730323, '40b2eefd41abc798d701cf7ba833ccb1', '6670455651f81e1d04b6fdc803860ecc', '7bc2f18f6a7bdc81f5200fe5b1c6afa7'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'De Anza College', '45499', 43056325121, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 601\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 602\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 603\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 604\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 605\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 606\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 607\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 608\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 609\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core - Upper-Division Major\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":45,\"min\":45}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 615\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 620\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EWRT 610\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core - Upper-Division General Education\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":180,\"min\":180},\"electives_fill_degree\":true,\"ge_pattern\":\"De Anza General Education pattern or Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Program Requirements\",\"total_units\":{\"max\":60,\"min\":60}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb),\n  (2, 'Santa Monica College', '10345', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANATMY 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MCRBIO 1\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 3\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 19\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Prerequisite Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 4\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 4L\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 5\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 5L\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 6\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 6L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 7\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 7L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 8\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 8L\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 9\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 9L\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Nursing courses (no heading printed; list follows a ''-----'' separator)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Registered Nurse\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"SMC Associate Degree General Education\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students who complete the Nursing program will use theoretical concepts of leadership and management to administer and design plans of care that integrate knowledge and skills pertinent to the role of manager of care of a group of patients and members of the health care team. Graduates will also utilize delegation, priority-setting skills, and knowledge of legal-ethical issues and health care delivery systems to design and coordinate a plan of nursing care for a group of patients.\"],\"section_heading\":\"LVN-ADN Advanced Placement Career Ladder Curriculum Option - (For LVNS Only)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_no_total\"],\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb),\n  (3, 'Santa Monica College', '43765', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 10A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 10B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11D\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 1 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 20\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 21A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 21B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 21C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COSM 21E\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 42\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 2 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 30\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 31A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 31C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 31E\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 77\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 3 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11C\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 78\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 4 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 49R\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 50R\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required State Board Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 95A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 95B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 95C\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Salon Experience Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"platform artist\",\"educator\",\"barber\",\"colorist\",\"salon owner\",\"sales representative\",\"cruise ships\",\"television and film industries\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Upon completion of the program, students will be able to demonstrate entry level skills in hair cutting, hair coloring, hair styling, shaving with a razor, men’s styling and chemical texture.\",\"Students will be eligible to take the State Board of Barbering and Cosmetology licensure exam.\",\"Students will be able to recognize and demonstrate the importance of and practice of ethical behavior in a professional work setting.\",\"Apply theories, principles, and concepts of skills learned that apply to Barbering and follow the State Board of Barbering and Cosmetology Rules and Regulations.\"],\"section_heading\":\"Barbering, Associate Degree or Certificate of Achievement\",\"total_units\":{\"max\":26.5,\"min\":26.5}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb),\n  (4, 'Clovis Community College', '33501', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 6\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 17\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 17\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 26\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGR 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4},{\"catalog_addition\":true,\"code\":\"PSYC 42\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 4A\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"LIST B: Select additional courses/ units so that List A and List B courses total a minimum of 6 units.\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"mathematics\",\"engineering\",\"statistics\",\"actuarial science\",\"business and management\",\"law enforcement\",\"government\",\"education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Communicate mathematics with understanding (read, write, listen, speak).\",\"Use critical thinking and mathematical reasoning to solve a variety of problems.\",\"Apply mathematical models to real world situations.\",\"Use technology, when appropriate, to enhance their mathematical understanding, critical thinking, and problem-solving skills.\",\"Demonstrate the ability to use symbolic, graphical, numerical, and written representations of mathematical ideas.\"],\"section_heading\":\"MATHEMATICS ASSOCIATE IN SCIENCE IN MATHEMATICS FOR TRANSFER DEGREE (Major #C.6200.AS-T)\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (5, 'Contra Costa College', '01417', 38979730323, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS210\",\"units\":12,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"NURS211\",\"units\":0.6,\"units_max\":null}],\"minimum\":null,\"name\":\"1st semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS235\",\"units\":11,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS236\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS255\",\"units\":11,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS256\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"2nd semester and 3rd semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS275\",\"units\":12,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS276\",\"units\":0.3,\"units_max\":null}],\"minimum\":null,\"name\":\"4th semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Registered Nurse\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Registered Nursing - A.S. Degree\",\"total_units\":{\"max\":48.9,\"min\":24.3}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"entry_path_range\"],\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s727f piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s727f piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'De Anza College', '45499', 43056325121, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 601\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 602\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 603\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 604\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 605\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 606\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 607\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 608\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ATMG 609\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core - Upper-Division Major\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":45,\"min\":45}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 615\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS 620\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EWRT 610\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core - Upper-Division General Education\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":180,\"min\":180},\"electives_fill_degree\":true,\"ge_pattern\":\"De Anza General Education pattern or Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Program Requirements\",\"total_units\":{\"max\":60,\"min\":60}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"unit_line_not_read\"],\"invented\":true,\"listed\":12,\"placed\":12}'::jsonb),\n  (2, 'Santa Monica College', '10345', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANATMY 1\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MCRBIO 1\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 3\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 19\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Prerequisite Requirements\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 4\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 4L\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 5\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 5L\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 6\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 6L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 7\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 7L\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 8\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 8L\",\"units\":2.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 9\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURSNG 9L\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Nursing courses (no heading printed; list follows a ''-----'' separator)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Registered Nurse\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"SMC Associate Degree General Education\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students who complete the Nursing program will use theoretical concepts of leadership and management to administer and design plans of care that integrate knowledge and skills pertinent to the role of manager of care of a group of patients and members of the health care team. Graduates will also utilize delegation, priority-setting skills, and knowledge of legal-ethical issues and health care delivery systems to design and coordinate a plan of nursing care for a group of patients.\"],\"section_heading\":\"LVN-ADN Advanced Placement Career Ladder Curriculum Option - (For LVNS Only)\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_no_total\"],\"invented\":true,\"listed\":17,\"placed\":17}'::jsonb),\n  (3, 'Santa Monica College', '43765', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 10A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 10B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11D\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 1 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 20\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 21A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 21B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 21C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"COSM 21E\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 42\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 2 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 30\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 31A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 31C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 31E\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 77\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 3 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 11C\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 78\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Level 4 Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 49R\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 50R\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required State Board Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 95A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 95B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COSM 95C\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Salon Experience Courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"platform artist\",\"educator\",\"barber\",\"colorist\",\"salon owner\",\"sales representative\",\"cruise ships\",\"television and film industries\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Upon completion of the program, students will be able to demonstrate entry level skills in hair cutting, hair coloring, hair styling, shaving with a razor, men’s styling and chemical texture.\",\"Students will be eligible to take the State Board of Barbering and Cosmetology licensure exam.\",\"Students will be able to recognize and demonstrate the importance of and practice of ethical behavior in a professional work setting.\",\"Apply theories, principles, and concepts of skills learned that apply to Barbering and follow the State Board of Barbering and Cosmetology Rules and Regulations.\"],\"section_heading\":\"Barbering, Associate Degree or Certificate of Achievement\",\"total_units\":{\"max\":26.5,\"min\":26.5}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb),\n  (4, 'Clovis Community College', '33501', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 6\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 17\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH 17\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 26\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGR 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4},{\"catalog_addition\":true,\"code\":\"PSYC 42\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS 4A\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"LIST B: Select additional courses/ units so that List A and List B courses total a minimum of 6 units.\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"mathematics\",\"engineering\",\"statistics\",\"actuarial science\",\"business and management\",\"law enforcement\",\"government\",\"education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Communicate mathematics with understanding (read, write, listen, speak).\",\"Use critical thinking and mathematical reasoning to solve a variety of problems.\",\"Apply mathematical models to real world situations.\",\"Use technology, when appropriate, to enhance their mathematical understanding, critical thinking, and problem-solving skills.\",\"Demonstrate the ability to use symbolic, graphical, numerical, and written representations of mathematical ideas.\"],\"section_heading\":\"MATHEMATICS ASSOCIATE IN SCIENCE IN MATHEMATICS FOR TRANSFER DEGREE (Major #C.6200.AS-T)\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (5, 'Contra Costa College', '01417', 38979730323, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS210\",\"units\":12,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"NURS211\",\"units\":0.6,\"units_max\":null}],\"minimum\":null,\"name\":\"1st semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS235\",\"units\":11,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS236\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS255\",\"units\":11,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS256\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"2nd semester and 3rd semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS275\",\"units\":12,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NURS276\",\"units\":0.3,\"units_max\":null}],\"minimum\":null,\"name\":\"4th semester\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Registered Nurse\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Registered Nursing - A.S. Degree\",\"total_units\":{\"max\":48.9,\"min\":24.3}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"entry_path_range\"],\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (5)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s727f piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "local_proof": {
+  "at": "2026-11-25T08:29:24Z",
+  "on": "a throwaway local Postgres 16 database seeded with the 5 before-images and one bystander row",
+  "pre_read_md5": "listed 5, on_run 5, record_is_before 5, checks_is_before 5, already_after 0, checked_now 0, confirm_matches 0",
+  "apply": "returned 5, keys 1-5, the after-images exactly the receipt's",
+  "rerun": "aborts: the guard matched 0 rows, the plan names 5",
+  "rollback": "returned 5; every row's checks back to the before-image (table md5 equal)",
+  "confirm": "a matching confirm verdict on one row: the apply aborts on the confirm guard and writes nothing"
+ }
+}

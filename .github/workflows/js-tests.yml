@@ -840,6 +840,11 @@ jobs:
       - name: Cheap piles S721 at Palo Verde (named gaps, the plan)
         if: matrix.shard == 2
         run: python3 tests/program_piles_s721_paloverde_test.py
+      # S727 plan s727f: the records held for a person at twelve colleges, collected with each gap named (two new
+      # kinds), seven named gaps with no record; the plan.
+      - name: Cheap piles S727, the records held for a person (named gaps, the plan)
+        if: matrix.shard == 2
+        run: python3 tests/program_piles_s727_persons_test.py
       # S721 at Porterville: the census's 19 wording-rule records, one passed by its catalog's misprint, 14
       # collected with named gaps, 4 held; the plan.
       - name: Cheap piles S721 at Porterville (a misprint rename, named gaps, the plan)
