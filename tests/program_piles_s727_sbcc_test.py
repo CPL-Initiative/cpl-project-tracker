@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""S727, lane 2's cheap piles at Santa Barbara City: the census's 18 wording-rule records, 7 passed by a rescore and 6
+"""S727, lane 2's cheap piles at Santa Barbara City: the census's 18 wording-rule records, 6 passed by a rescore and 6
 collected with named gaps (kb/_program_piles_s727_sbcc.py).
 
 WHY. Sam's ruling of 2026-11-17 (sam-collect-with-gaps-2026-11-17): never drop a record for failing; collect it with
@@ -8,19 +8,19 @@ its gaps noted and confidence scores. A record today's scorer passes is rescored
   * the one new kind (required_list_outside_total, 70) and each kind filed carry a sentence and a unit-arithmetic
     score in kb/_program_named_gaps.py;
   * precision 18 of 18 against the hand reading of the census members pinned in the fixture
-    (p-test-pins-census-members-s714): 7 passed, 6 with named gaps, 5 held;
-  * the rescore moves a record only by its one reading: with that reading off the scorer fails it, with it on it
-    passes (the floor on six, option_parts on 05934);
-  * 05934's claim: the capture's code finder never reads the first code of a slash cross-listing, measured over every
-    Santa Barbara City record; every boundary reading names no gap and passes none;
-  * the plan: 13 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none;
+    (p-test-pins-census-members-s714): 6 passed, 6 with named gaps, 6 held (05934 on S714's hold);
+  * the rescore moves a record only by the floor: with it off the scorer fails it, with it on it passes;
+  * the record-rule guard: a row the record rules (NG.RECORD_RULES) name under another kind is refused, and 08565
+    takes the kind they name, no_units_read;
+  * the capture's code finder never reads the first code of a slash cross-listing, measured over every Santa Barbara
+    City record (the fix 05934 waits on); every boundary reading names no gap and passes none;
+  * the plan: 12 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none;
     the load's image of each committed record is its receipt's after-image.
 Every answer comes from the hand reading or a live derivation, never from the receipt (p-test-reads-own-apply-receipt-
 s721), so the test holds before and after the plan's own apply.
 
 Run from repo root: python3 tests/program_piles_s727_sbcc_test.py
 """
-import copy
 import json
 import os
 import sys
@@ -37,12 +37,12 @@ import _program_requirements_score as S  # noqa: E402
 
 COLLEGE = "Santa Barbara City College"
 FLOOR = ("05913", "10661", "19099", "31338", "38595", "43539")
-PASSED = dict({cn: "floor" for cn in FLOOR}, **{"05934": "option_parts"})
+PASSED = {cn: "floor" for cn in FLOOR}
 GAPPED = dict({cn: "repeat_read_once" for cn in ("05902", "10889", "10890", "10894")},
-              **{"08565": "pool_figure_not_read", "05924": "required_list_outside_total"})
+              **{"08565": "no_units_read", "05924": "required_list_outside_total"})
 ROWS = dict({cn: "passes" for cn in PASSED}, **GAPPED)
-HELD = {"19012", "46520", "30746", "43553", "45452"}
-SCORES = {"repeat_read_once": 60, "pool_figure_not_read": 40, "required_list_outside_total": 70}
+HELD = {"05934", "19012", "46520", "30746", "43553", "45452"}
+SCORES = {"repeat_read_once": 60, "no_units_read": 20, "required_list_outside_total": 70}
 checks, failures = [0], []
 
 
@@ -64,45 +64,44 @@ check({cn: e["reading"] for cn, e in W.PASSED.items()} == PASSED and set(W.REVIE
 pr = W.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 18 and pr["right"] == 18 and not pr["wrong"], "precision 18 of 18: %s" % pr["wrong"])
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 13} and not cc["not_standing"], "13 claims stand: %s" % cc)
+check(cc["counts"] == {"stands": 12} and not cc["not_standing"], "13 claims stand: %s" % cc)
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 13 * 3 + 6 + 2 + 4 + 1 + 2,
+check(not bd["wrong"] and sum(bd["counts"].values()) == 6 * 4 + 5 + 6 * 2 + 4 + 6 + 2 + 1,
       "every boundary reading names no gap and passes none: %s" % bd)
 
 # The rescore: each passed record moves by its one reading, on its own state list.
 for cn, reading in PASSED.items():
     f = W._load(cn)
     check(W.reading_moves(f, reading), "%s: with %s off the scorer fails it, on it passes" % (cn, reading))
-    other = "option_parts" if reading == "floor" else "floor"
-    check(W.arithmetic(f, (other,)).get("status") == "equal", "%s: %s alone does not move it" % (cn, other))
+    check(W.arithmetic(f, ("option_parts",)).get("status") == "equal", "%s: option_parts does not move it" % cn)
     check(S.passes_live(f["score"]) and f["score"]["arithmetic"] == W.arithmetic(f),
           "%s: the committed score passes, its arithmetic today's" % cn)
     check(not (f["score"].get("gaps")), "%s: a passed record carries no gap" % cn)
 
-# 05934's claim: the capture's code finder reads the second code of a slash cross-listing, never the first.
+# The capture fix 05934 waits on: find_codes reads the second code of a slash cross-listing, never the first.
 check(PL.find_codes("ENVS/HIST 112", [{"code": "ENVS 112"}, {"code": "HIST 112"}]) == {"HIST112": [5]},
       "find_codes reads HIST 112 and not ENVS 112 in 'ENVS/HIST 112'")
 sl = W.slash_recall()
-check(not sl.get("first found") and sl.get("first not found", 0) >= 90 and not sl.get("second not found"),
-      "over every Santa Barbara City record the capture finds no first code of a slash listing: %s" % sl)
-f = W._load("05934")
-src = W._sources()
-check(W.claim(f, src) == "stands", "05934's claim stands with its slash note")
-s2 = copy.deepcopy(src)
-s2["05934"]["codes_found"] = [c for c in W._found(src["05934"]) if c != "HIST112"]
-listed = {S.norm_code(c.get("code")) for c in W.C.closed_list(COLLEGE, "05934")}
-check(not W.slash_settles(f, "ENVS 112", W._found(s2["05934"]), listed),
-      "ENVS 112 stays unsettled where the capture misses HIST 112 too")
-check(W.slash_settles(f, "ENVS 115", W._found(src["05934"]), listed) and "ERTH115" not in listed,
-      "ENVS 115 settles: ERTH 115 is not on the state's list")
+check(not sl.get("first found") and sl.get("first not found", 0) >= 90 and not sl.get("second not found")
+      and sl.get("second found", 0) >= 90, "the capture finds no first code of a slash listing, every second: %s" % sl)
+check("05934" not in W.PASSED and W.passes_noted(W._load("05934")) is None, "05934 stays on S714's hold")
+
+# The record-rule guard: a kind the record rules name under another name refuses the row; 08565 takes theirs.
+for cn in GAPPED:
+    check(W.refused_by_other_rule(W._load(cn)), "%s: a record rule naming another kind refuses it" % cn)
+f = W._load("08565")
+bare = {k: v for k, v in f["score"].items() if k not in ("gaps", "confidence")}
+rr = NG.answer(dict(f, score=bare))
+check(rr and rr[0] == "no_units_read" and W.gap_noted(f) == rr, "08565: the record rules name no_units_read: %s" % (rr,))
+check(not any(NG.answer(dict(W._load(cn), score={k: v for k, v in W._load(cn)["score"].items()
+                                                 if k not in ("gaps", "confidence")}))
+              for cn in GAPPED if cn != "08565"), "the record rules name none of the other gap rows")
 
 # The named gaps, on the record: the repeats close the sum, the pool and the outside list close it.
 for cn in ("05902", "10889", "10890", "10894"):
     f = W._load(cn)
     check(len(W._course(f, "EH 290")) == 1 and "printed twice" in " ".join(W._notes(f)),
           "%s: EH 290 is read once and the notes say it prints twice" % cn)
-f = W._load("08565")
-check(W.pool_closes(f, W.REVIEWED["08565"]), "08565: List A at its printed 3-5 closes the sum to 54-62")
 f = W._load("05924")
 check(W.outside_closes(f, W.REVIEWED["05924"]), "05924: without the graduation list the paths add to 24.5-36")
 check(not {"COMMC1000", "PSYCC1000", "SOC101"} & {S.norm_code(c.get("code"))
@@ -112,8 +111,8 @@ check(not {"COMMC1000", "PSYCC1000", "SOC101"} & {S.norm_code(c.get("code"))
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
 got = {r["control_number"]: r["moves_to"] for r in rec["records"]}
-check(got == ROWS and rec["moved"] == 13, "the receipt names the 13 rows and their answers")
-check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 5")
+check(got == ROWS and rec["moved"] == 12, "the receipt names the 12 rows and their answers")
+check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 6")
 check(rec["census"]["members"] == members, "the receipt's keys are the fixture's")
 check(not rec["shared_pages"], "no row sits on a shared page")
 for r in rec["records"]:
@@ -127,9 +126,9 @@ for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for cn in ROWS) and not any("'%s'" % cn in sql for cn in HELD),
-          "%s names exactly the 13" % part)
+          "%s names exactly the 12" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (13))" in sql, "the apply guards a confirm")
+        check("confirm guard" in sql and "e(expect) as (values (12))" in sql, "the apply guards a confirm")
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:
@@ -150,8 +149,9 @@ check(all("substitut" in why.get(cn, "") for cn in ("19012", "46520")), "19012 a
 check("PSY 200" in why.get("30746", ""), "30746 holds: coverage, PSY 200")
 check("two gaps" in why.get("45452", ""), "45452 holds: two gaps at once")
 check("no note" in why.get("43553", ""), "43553 holds: no note closes it")
+check("S714" in why.get("05934", ""), "05934 holds on S714's hold")
 check(all(W.gap_noted(W._load(cn)) is None and W.passes_noted(W._load(cn)) is None for cn in HELD),
-      "the held five take no answer")
+      "the held six take no answer")
 
 print("%d checks, %d failures" % (checks[0], len(failures)))
 for m in failures:

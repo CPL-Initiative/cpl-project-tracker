@@ -96,7 +96,7 @@ PERSON = ()
 PASSES = "passes"
 OUTSIDE = "required_list_outside_total"
 
-# The seven the rescore passes: the one reading that moves each, and the reader's note that says what the reading
+# The six the rescore passes: the one reading that moves each, and the reader's note that says what the reading
 # reads (the list prints a figure and no units beside its courses).
 PASSED = {
     "05913": {"reading": "floor",
@@ -115,6 +115,7 @@ PASSED = {
     "43539": {"reading": "floor",
               "words": "List A prints no units beside individual courses; the block total 6-8 units is recorded as "
                        "stated."},
+}
 
 _EH = {"gap": "repeat_read_once", "repeats": [["EH 290", 2]], "courses": ["EH290"]}
 REVIEWED = {
@@ -128,7 +129,6 @@ REVIEWED = {
                   words="EH 290 (2-4 units) is printed twice in the Required Core; recorded once."),
     # A record rule's gap: its words are the rule's own (NG.RECORD_RULES), and the guard requires the rule to name it.
     "08565": {"gap": "no_units_read", "rule": True, "computed": [55, 62], "stated": [54, 62]},
-
     "05924": {"gap": OUTSIDE, "computed": [33.5, 47], "stated": [24.5, 36],
               "block": "Other Course Requirements for Graduation from the Nursing program RN, BSN",
               "outside_courses": ["COMMC1000", "PSYCC1000", "SOC101"],
@@ -373,7 +373,8 @@ def slash_pairs(filed: dict) -> list[tuple[str, str, str]]:
 
 def slash_recall() -> dict:
     """Over every Santa Barbara City record: of the slash cross-listings its notes name whose code the record holds,
-    as a course or an alternative, how many first codes and second codes the capture found (SLASH_RECALL)."""
+    as a course or an alternative, and the state's list for the program names (the capture reports only codes on that
+    list), how many first codes and second codes the capture found (SLASH_RECALL)."""
     src = _sources()
     out = collections.Counter()
     for p in sorted(glob.glob(os.path.join(NG.COLLEGE_DIR, SLUG, "records", "*.json"))):
@@ -385,9 +386,10 @@ def slash_recall() -> dict:
         found = _found(e)
         held = {S.norm_code(a.get("code")) for b in f["record"].get("blocks") or [] for c in b.get("courses") or []
                 for a in [c] + list(S.alternatives(c))}
+        listed = {S.norm_code(c.get("code")) for c in C.closed_list(COLLEGE, f.get("control_number"))}
         for _, first, second in slash_pairs(f):
             for which, code in (("first", first), ("second", second)):
-                if code in held:
+                if code in held and code in listed:
                     out["%s %s" % (which, "found" if code in found else "not found")] += 1
     return dict(out)
 

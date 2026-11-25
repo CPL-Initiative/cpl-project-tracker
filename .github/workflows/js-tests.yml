@@ -845,8 +845,8 @@ jobs:
       - name: Cheap piles S721 at Gavilan (named gaps, the plan)
         if: matrix.shard == 4
         run: python3 tests/program_piles_s721_gavilan_test.py
-      # S727 at Santa Barbara City: the census's 18 wording-rule records, 7 passed by a rescore under the floor or
-      # option_parts, 6 collected with named gaps (one new kind), 5 held; the plan.
+      # S727 at Santa Barbara City: the census's 18 wording-rule records, 6 passed by a rescore under the floor,
+      # 6 collected with named gaps (one new kind), 6 held; the plan.
       - name: Cheap piles S727 at Santa Barbara City (a rescore, named gaps, the plan)
         if: matrix.shard == 1
         run: python3 tests/program_piles_s727_sbcc_test.py
