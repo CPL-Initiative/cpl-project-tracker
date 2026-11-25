@@ -94,7 +94,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   const stages = Array.from(first.querySelectorAll(".cmf-stage")).map(txt);
   const checks = Array.from(first.querySelectorAll(".cmf-check-h > strong")).map(txt);
   check("(2) ⭐ four checks under Collect, Curate and Connect, each with its Where to act line",
-    stages.join(",") === "Collect,Curate,Connect" && checks.join("|") === "1. Each college’s own subject titles|2. A Confident common code for every local code|3. No course held for want of a code|4. Re-mint scopes ready"
+    stages.join(",") === "Collect,Curate,Connect" && checks.join("|") === "1. Each college’s own subject titles|2. A common code at 90 or better for every local code|3. No course held for want of a code|4. Re-mint scopes ready"
     && first.querySelectorAll(".cmf-act").length === 4 && Array.from(first.querySelectorAll(".cmf-act")).every((p) => /^Where to act:/.test(txt(p)) && p.querySelector("a")), stages + " " + checks);
   /* (11) the quick links and the folded stages (S718) */
   const quick = first.querySelector("#cmf-subj-quick");

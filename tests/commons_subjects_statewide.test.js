@@ -4,16 +4,20 @@
 //
 // WHAT THIS GUARDS (each a way the view would mislead the person settling codes, or write the wrong row):
 //   (1) ⭐ the address opens the view, which reads its file only then, and reports the address;
-//   (2) ⭐ the default shows the calls at 90% or better that a person can file and has not, each with its colleges,
-//       its call, its confidence in words, the runner-up and why; a chip shows every code, and the counts are on the
-//       chips;
+//   (2) ⭐ the default shows the calls at 90 or better that a person can file and has not, each with its colleges,
+//       its call, its confidence bar, the runner-up and why; a chip shows every code, and the counts are on the
+//       chips; the pairs count in 0-100 bands keyed by threshold;
 //   (3) ⭐ signed out, no control writes and the page says to sign in;
 //   (4) ⭐ signed in, Confirm writes one statewide filing: course_id _SUBJ_DISC::<CODE>, field
 //       subject_discipline_confirm, the MQ discipline as plain text, under the reviewer's own email;
 //   (5) ⭐ the bulk confirm asks first, names its count, and writes every shown 90%+ call in batches of 200;
 //   (6) a noncredit code offers no statewide filing (its category settles it at each college); a filed code shows
 //       Filed and its discipline; another code can be filed from the row's list of the common codes;
-//   (7) the table carries th scope, a labelled region, and the view stores nothing.
+//   (7) the table carries th scope, a labelled region, and the view stores nothing;
+//   (8) ⭐ Sam, 2026-11-25 (r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25): "i want to use confidence bars
+//       0-100 rather than low, med, high throughout all commons procedures". Every unfiled row's Confidence cell draws
+//       CPL_COMMONS.confBar with its number from the file's 0-1 confidence, and no level word (Confident, Likely,
+//       Leaning, Unsure) renders anywhere on the view.
 // A count in a row (Colleges past three, Courses) is a word that opens a sidebar and writes nothing (S719), so the
 // checks for a writing control set those aside.
 //
@@ -99,19 +103,29 @@ const rowCodes = (d) => Array.from(d.querySelectorAll(".csw-table tbody tr")).ma
   const top = rowCodes(d);
   check("(2) ⭐ the default shows the 90%+ calls a person can file and has not, 200 at a time",
     top.length === 200 && top.indexOf("MAT") >= 0 && top.indexOf("ONE") >= 0 && top.indexOf("LOW") < 0 && top.indexOf("ESLNC") < 0 && top.indexOf("DONE") < 0, top.slice(0, 6));
-  check("(2) the chips carry their counts", /Calls at 90% or better \(207\)/.test(txt(d.getElementById("csw-f-top"))) && /All \(210\)/.test(txt(d.getElementById("csw-f-all"))));
+  check("(2) the chips carry their counts", /Calls at 90 or better \(207\)/.test(txt(d.getElementById("csw-f-top"))) && /All \(210\)/.test(txt(d.getElementById("csw-f-all"))));
   const mat = d.querySelector('.csw-table tr[data-code="MAT"]');
-  check("(2) ⭐ a row shows its colleges, its call, its confidence in words, the runner-up and why",
+  check("(2) ⭐ a row shows its colleges, its call, its confidence bar, the runner-up and why",
     /Alpha College; Beta College/.test(txt(mat.children[1])) && /MATH/.test(txt(mat.children[3])) && /Mathematics/.test(txt(mat.children[3]))
-    && txt(mat.children[4]) === "100% Confident" && txt(mat.children[5]) === "PHYS 1%" && /100% of 4 peer votes say MATH/.test(txt(mat.children[6])), txt(mat));
-  check("(2) the pairs are counted by the four confidence levels, a filed code as Confident",
-    /Confident 417 · Likely 0 · Leaning 0 · Unsure 2/.test(txt(d.getElementById("csw-levels"))), txt(d.getElementById("csw-levels")));
+    && txt(mat.children[4]) === "100" && !!mat.children[4].querySelector('.cmn-cbar[data-conf="100"]') && txt(mat.children[5]) === "PHYS 1 of 100" && /100% of 4 peer votes say MATH/.test(txt(mat.children[6])), txt(mat));
+  check("(2) the pairs are counted by the 0-100 bands, a filed code at 90 or better",
+    /90 to 100: 417 · 75 to 89: 0 · 50 to 74: 0 · under 50: 2/.test(txt(d.getElementById("csw-levels"))), txt(d.getElementById("csw-levels")));
   check("(2) the summary names the scale and the measured accuracy", /210 local subject codes at 118 colleges/.test(txt(d.getElementById("csw-sum"))) && /right 97% of the time/.test(txt(d.getElementById("csw-sum"))));
   check("(3) ⭐ signed out, no control writes and the page says to sign in", !d.querySelector(".csw-table tbody button:not([data-csb-second]), .csw-table tbody select") && !d.getElementById("csw-bulk")
     && /Sign in as a reviewer/.test(txt(d.querySelector(".csw"))) && posts(x).length === 0);
   d.getElementById("csw-f-all").click(); await settle();
   const low = d.querySelector('.csw-table tr[data-code="LOW"]');
-  check("(2) All shows every code, a 5% call with its confidence", rowCodes(d).length === 200 && !!low && txt(low.children[4]) === "5% Unsure");
+  check("(2) All shows every code, a 5 of 100 call with its bar", rowCodes(d).length === 200 && !!low && txt(low.children[4]) === "5"
+    && /confidence 5 of 100$/.test(low.children[4].querySelector(".cmn-cbar").getAttribute("aria-label")) && low.children[4].querySelector(".cmn-cbar-fill").style.width === "5%");
+  {
+    const LEVEL_WORD = /\b(Confident|Likely|Leaning|Unsure)\b/;
+    /* Each text node apart, so words in adjacent cells never run together ("Likely" beside "PHYS"). */
+    const shown = (() => { const b = d.body.cloneNode(true); b.querySelectorAll("script, style").forEach((s) => s.remove()); const out = [], tw = d.createTreeWalker(b, 4); while (tw.nextNode()) out.push(tw.currentNode.nodeValue); return out.join(" ").replace(/\s+/g, " ").trim(); })();
+    const cells = Array.from(d.querySelectorAll(".csw-table tbody tr")).map((r) => r.children[4]).filter((c) => c && txt(c) !== "Filed");
+    check("(8) ⭐ every unfiled row's Confidence cell draws CPL_COMMONS.confBar with its number", cells.length > 100
+      && cells.every((c) => { const b = c.querySelector(".cmn-cbar"); return b && txt(c) === b.getAttribute("data-conf"); }), cells.length);
+    check("(8) ⭐ no level word renders on the statewide view", shown.length > 500 && !LEVEL_WORD.test(shown), (shown.match(/.{60}\b(Confident|Likely|Leaning|Unsure)\b.{30}/) || [])[0]);
+  }
   d.getElementById("csw-more").click(); await settle();
   check("(2) Show more shows the rest", rowCodes(d).length === 210);
   check("(7) every header cell carries a scope; the table scrolls inside a labelled region; nothing is stored",
