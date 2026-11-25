@@ -201,7 +201,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A provenance tier must encode what you could NOT check](../kb-notes/methodology-a-tier-must-encode-what-you-could-not-check.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A published asset with zero uptake is an outreach worklist, not a build backlog](../kb-notes/methodology-dormant-asset-worklist.md) | methodology | published | 2026-08-05 | 2026-08-05 |
 | [A ranking rule is a claim about where variance lives — re-derive it per corpus](../kb-notes/methodology-a-ranking-rule-is-a-claim-about-where-variance-lives.md) | methodology | internal | 2026-09-21 |  |
-| [A reader fix moves rows it was not aimed at, so compare each full read row by row](../kb-notes/methodology-a-reader-fix-moves-rows-it-was-not-aimed-at.md) | methodology | published | 2026-10-03 | 2026-10-03 |
+| [A reader fix moves rows it was not aimed at, so compare each full read row by row](../kb-notes/methodology-a-reader-fix-moves-rows-it-was-not-aimed-at.md) | methodology | published | 2026-10-03 | 2026-11-25 |
 | [A rebuild runs the same build script, never an imitation of the runner](../kb-notes/methodology-a-rebuild-runs-the-same-build-script.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A receipt measures a worklist once; a lane recomputes it every build](../kb-notes/methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [A receipt too large for the connector applies from the runner](../kb-notes/methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner.md) | methodology | published | 2026-10-10 | 2026-11-13 |
