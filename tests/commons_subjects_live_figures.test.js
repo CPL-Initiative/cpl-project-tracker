@@ -9,9 +9,9 @@
 //   (3) ⭐ Take it back moves every one of them back;
 //   (4) ⭐ the held codes subtract the held courses a fresh save releases by the mint's rule: ordinary titles only,
 //       a shell title stays held; a save the build already carried subtracts nothing;
-//   (5) ⭐ the statewide view's level counts raise the saved college-and-code pair to Confident;
+//   (5) ⭐ the statewide view's level counts raise the saved college-and-code pair to 90 or better;
 //   (6) ⭐ the Commons front's Subjects card reads the same live figures as the tab, its headline (the share of courses
-//       under a Confident common code) included;
+//       under a common code at 90 or better) included;
 //   (7) ⭐ a college the statewide list spells with other punctuation is the same college to levels() (S719).
 // Run from repo root: `npm test` (or `node tests/commons_subjects_live_figures.test.js`).
 const fs = require("fs");
@@ -145,8 +145,8 @@ async function listed(x, pick) {
 
   /* (5) the statewide levels */
   x.X().open("statewide"); await settle();
-  check("(5) ⭐ the saved college-and-code pair counts as Confident; the other keeps its level",
-    /Confident 1 · Likely 0 · Leaning 0 · Unsure 1/.test(txt(x.d.getElementById("csw-levels"))), txt(x.d.getElementById("csw-levels")));
+  check("(5) ⭐ the saved college-and-code pair counts at 90 or better; the other keeps its band",
+    /90 to 100: 1 · 75 to 89: 0 · 50 to 74: 0 · under 50: 1/.test(txt(x.d.getElementById("csw-levels"))), txt(x.d.getElementById("csw-levels")));
 
   /* (6) the Commons front card, same visit */
   const F = await x.X().liveFigures();
@@ -158,9 +158,12 @@ async function listed(x, pick) {
     fm && /^4 local titles at 1 of 2 colleges/.test(txt(fm)) && /2 titles to check/.test(txt(fm))
     && fh && /^7 courses the M-ID mint holds wait on 2 local subject codes/.test(txt(fh)), txt(fm) + " | " + txt(fh));
   const card = x.d.querySelector('.cmf-card[data-key="subjects"]');
-  check("(6) ⭐ the card's headline and level line read the live levels: the saved pair is Confident",
-    txt(card.querySelector(".cmf-big")) === "60%" && /of courses sit under a local code with a Confident common code/.test(txt(card.querySelector(".cmf-rest")))
-    && txt(x.d.getElementById("cmf-subj-levels")) === "Confident 1 · Likely 0 · Leaning 0 · Unsure 1", txt(card.querySelector(".cmf-headline")) + " | " + txt(x.d.getElementById("cmf-subj-levels")));
+  check("(6) ⭐ the card's headline and level line read the live bands: the saved pair is at 90 or better",
+    txt(card.querySelector(".cmf-big")) === "60%" && /of courses sit under a local code whose common code scores 90 or better/.test(txt(card.querySelector(".cmf-rest")))
+    && txt(x.d.getElementById("cmf-subj-levels")) === "90 to 100: 1 · 75 to 89: 0 · 50 to 74: 0 · under 50: 1", txt(card.querySelector(".cmf-headline")) + " | " + txt(x.d.getElementById("cmf-subj-levels")));
+  /* r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25: the card counts in 0-100 bands, never level words. */
+  check("(6) ⭐ the Subjects card renders no level word, its stack's label included",
+    !/\b(Confident|Likely|Leaning|Unsure)\b/.test(txt(card) + " " + Array.from(card.querySelectorAll("[aria-label]")).map((e) => e.getAttribute("aria-label")).join(" ")), txt(card).slice(0, 300));
 
   /* (3) Take it back */
   x = load("#commons/subjects/alpha/MATH", { sess: ME });
@@ -201,12 +204,12 @@ async function listed(x, pick) {
   await x.M.boot(); await settle();
   x.d.getElementById("csb-ed-save").click(); await settle();
   x.X().open("statewide"); await settle();
-  check("(7) ⭐ a save at a college the statewide list spells with punctuation lifts its pair to Confident",
-    /Confident 1 · Likely 0 · Leaning 0 · Unsure 1/.test(txt(x.d.getElementById("csw-levels"))), txt(x.d.getElementById("csw-levels")));
+  check("(7) ⭐ a save at a college the statewide list spells with punctuation lifts its pair to 90 or better",
+    /90 to 100: 1 · 75 to 89: 0 · 50 to 74: 0 · under 50: 1/.test(txt(x.d.getElementById("csw-levels"))), txt(x.d.getElementById("csw-levels")));
   x.w.history.replaceState(null, "", "#commons");
   await x.M.boot(); await settle();
-  check("(7) ⭐ the Commons card's level line agrees with the statewide view",
-    txt(x.d.getElementById("cmf-subj-levels")) === "Confident 1 · Likely 0 · Leaning 0 · Unsure 1", txt(x.d.getElementById("cmf-subj-levels")));
+  check("(7) ⭐ the Commons card’s band line agrees with the statewide view",
+    txt(x.d.getElementById("cmf-subj-levels")) === "90 to 100: 1 · 75 to 89: 0 · 50 to 74: 0 · under 50: 1", txt(x.d.getElementById("cmf-subj-levels")));
   FILES["kb/status/statewide_subject_codes.json"] = SW;
 
   let fail = 0;

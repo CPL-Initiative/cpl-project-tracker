@@ -1057,14 +1057,16 @@
   /* One card: title, pill, headline (its number stays when folded), meter, body (clamped to six lines), "...(more)"
      (which un-clamps the body and opens the notes under it) and the reserved link row. Every card has an id, so a
      Needs you link can jump to it (item 1). */
-  /* ── The Subjects card (Sam's mock of 2026-11-23, artboards Main and Colleges): the share of courses under a Confident
-     common code, then four checks under Collect, Curate and Connect, each with a "Where to act" line. Sam's ruling
-     r-confidence-not-person-settled-sam-2026-11-23 sets the measure: a call is settled when it is Confident, whether
-     the data took it there or a person's confirm did. Every figure is drawn first from the status files, then again
+  /* ── The Subjects card (Sam's mock of 2026-11-23, artboards Main and Colleges): the share of courses under a common
+     code at 90 or better, then four checks under Collect, Curate and Connect, each with a "Where to act" line. Sam's
+     ruling r-confidence-not-person-settled-sam-2026-11-23 sets the measure: a call is settled at 90 or better, whether
+     the data took it there or a person's confirm did; r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25 counts
+     it in 0-100 bands keyed by threshold, never level words. The bands come from commons_subjects.js's levels(). Every figure is drawn first from the status files, then again
      from commons_subjects.js's own figures with the live saves on top (subjectsLive), so the card answers an edit at
      once and never disagrees with the Subjects tab ("when I make edits or decisions, they are immediately reflected
      in the numbers"). ── */
-  var LEVEL_WORDS = ["Confident", "Likely", "Leaning", "Unsure"];
+  var BANDS_DEFAULT = [["90", "90 to 100"], ["75", "75 to 89"], ["50", "50 to 74"], ["0", "under 50"]];
+  function bandsOf(L) { return (L && L.bands) || BANDS_DEFAULT; }
   function share(n, of) { return of ? Math.round(n / of * 100) : 0; }
   function stage(name) { return el("h4", { cls: "cmf-stage", text: name }); }
   /* Every card of checks opens on its top section, with Collect, Curate and Connect folded (Sam, 2026-11-23: "With the
@@ -1106,7 +1108,7 @@
   }
   function subjQuick(L, LT, HC, R, all) {
     return quickLinks("subj", [
-      { check: 2, n: L && L.codes ? L.codes.Unsure : null, text: "local codes with an Unsure common code", to: "#commons/subjects/statewide" },
+      { check: 2, n: L && L.codes ? L.codes["0"] : null, text: "local codes whose common code scores under 50", to: "#commons/subjects/statewide" },
       { check: 1, n: LT ? LT.untitled : null, text: "titles to check", to: "#commons/subjects/disagree" },
       { check: 3, n: HC ? HC.held : null, text: "courses the M-ID mint holds", to: "#commons/subjects/held" },
       { check: 1, n: LT && all ? all - LT.collegesNamed : null, text: "colleges with no catalog read yet", to: "#collect" },
@@ -1119,7 +1121,7 @@
     return el("p", { cls: "cmf-act" }, kids);
   }
   /* A card of checks (Sam's mock of 2026-11-23, the Subjects card's design carried to every card but the Plan): the
-     headline, Needs action first, the short list (Why, Finished when, Confident where the card reads a measured score,
+     headline, Needs action first, the short list (Why, Finished when, Settled where the card reads a measured score,
      Scale), then Collect, Curate and Connect, folded, each holding numbered checks. A check is { ref, name, fig, meter,
      line, extra, next, act }: its figure (TBA when unread), a meter where a share exists, one plain line, a Next line
      where the lane names one, and a Where to act line whose links open the place that holds those items. Checks number
@@ -1153,8 +1155,9 @@
   function lead(word, rest) { return [el("strong", { text: word + " " }), rest]; }
   function stack(L) {
     var T = L.totalPairs || 0;
-    return el("div", { cls: "cmf-stack", role: "img", "aria-label": "Of " + fmt(T) + " college-and-code pairs: " + LEVEL_WORDS.map(function (k) { return fmt(L.pairs[k]) + " " + k; }).join(", ") },
-      LEVEL_WORDS.slice(0, 3).map(function (k, i) { return el("i", { cls: "cmf-stack-" + i, style: "width:" + (T ? (L.pairs[k] / T * 100) : 0).toFixed(1) + "%" }); }));
+    var B = bandsOf(L);
+    return el("div", { cls: "cmf-stack", role: "img", "aria-label": "Of " + fmt(T) + " college-and-code pairs, by confidence from 0 to 100: " + B.map(function (b) { return fmt(L.pairs[b[0]]) + " at " + b[1]; }).join(", ") },
+      B.slice(0, 3).map(function (b, i) { return el("i", { cls: "cmf-stack-" + i, style: "width:" + (T ? (L.pairs[b[0]] / T * 100) : 0).toFixed(1) + "%" }); }));
   }
   function subjTitleKids(LT) {
     return LT ? [a("#commons/subjects", fmt(LT.named) + " local titles"), " at ", a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges"),
@@ -1172,12 +1175,12 @@
   function subjectsParts(M) {
     var S = M.subjects, LT = M.localTitles, HC = M.heldCodes, L = M.subjLevels, SW = M.subjStatewide || {}, R = M.readiness, P = M.platforms || {};
     var sOf = !!S && S.of != null, all = SW.colleges || M.allColleges || null;
-    var big = L ? share(L.courses.Confident, L.totalCourses) + "%" : M.subjLevelsError ? "TBA" : "…";
-    var rest = [L || M.subjLevelsError ? " of courses sit under a local code with a Confident common code" : " Reading the confidence levels…"];
+    var big = L ? share(L.courses["90"], L.totalCourses) + "%" : M.subjLevelsError ? "TBA" : "…";
+    var rest = [L || M.subjLevelsError ? " of courses sit under a local code whose common code scores 90 or better" : " Reading the confidence scores…"];
     var body = [subjQuick(L, LT, HC, R, all),
       ul([lead("Why:", "every M-ID starts with a common subject code (ELEC M9012), and each college’s local code (Cerritos AED) must point to the right one."),
-        lead("Finished when:", "every college’s local codes carry the college’s own title and a Confident common code."),
-        lead("Confident:", "90% or better, from the data or from a person’s confirm."),
+        lead("Finished when:", "every college’s local codes carry the college’s own title and a common code that scores 90 or better."),
+        lead("Settled:", "90 or better on the 0-100 confidence bar, from the data or from a person’s confirm."),
         SW.codes ? lead("Scale:", fmt(SW.colleges) + " colleges, " + fmt(SW.codes) + " local codes, " + fmt(SW.pairs) + " college-and-code pairs, " + fmt(SW.courses) + " active and approved COCI courses.") : null])].concat(stageFold("subj", "Collect", [checkBox("subj", 1, [
       checkHead(1, "Each college’s own subject titles", LT && all ? [el("strong", { text: fmt(LT.collegesNamed) }), " of " + fmt(all) + " colleges"] : ["TBA"]),
       LT && all ? meter(share(LT.collegesNamed, all), fmt(LT.collegesNamed) + " of " + fmt(all) + " colleges, " + share(LT.collegesNamed, all) + " percent") : null,
@@ -1191,16 +1194,16 @@
         "COCI and the MIS reports carry no subject names.",
         "Who: the nightly data collection."]),
       act([["The colleges and their titles", "#commons/subjects"], ["Titles to check", "#commons/subjects/disagree"], ["Hand over a file or link", "#collect"]])])]), stageFold("subj", "Curate", [checkBox("subj", 2, [
-      checkHead(2, "A Confident common code for every local code", L ? [el("strong", { text: fmt(L.pairs.Confident) }), " of " + fmt(L.totalPairs) + " pairs"] : ["TBA"]),
+      checkHead(2, "A common code at 90 or better for every local code", L ? [el("strong", { text: fmt(L.pairs["90"]) }), " of " + fmt(L.totalPairs) + " pairs"] : ["TBA"]),
       L ? stack(L) : null,
-      L ? el("p", { cls: "cmf-sub", id: "cmf-subj-levels", text: LEVEL_WORDS.map(function (k) { return k + " " + fmt(L.pairs[k]); }).join(" · ") }) : null,
-      ul([L ? "Next: COBI raises the " + fmt(L.codes.Unsure) + " Unsure codes with their titles and a web search." : null,
+      L ? el("p", { cls: "cmf-sub", id: "cmf-subj-levels", text: bandsOf(L).map(function (b) { return b[1] + ": " + fmt(L.pairs[b[0]]); }).join(" · ") }) : null,
+      ul([L ? "Next: COBI raises the " + fmt(L.codes["0"]) + " codes under 50 with their titles and a web search." : null,
         sOf ? [S.settled === S.of ? "Done: all " : "", a("#canonical-subj4", fmt(S.settled) + " of " + fmt(S.of) + " disciplines settled"),
           " in the Common Subjects Reference" + (S.settled === S.of ? ", each with its common code." : ". Owner: a curator.")] : "Disciplines with a settled common code: TBA."]),
       act([["Every local code, statewide", "#commons/subjects/statewide"], ["Noncredit subject titles", "#commons/subjects/noncredit"], ["The MQ disciplines", "#commons/subjects/mq"]])])]), stageFold("subj", "Connect", [checkBox("subj", 3, [
       checkHead(3, "No course held for want of a code", HC ? [el("strong", { text: fmt(HC.held) }), " held"] : ["TBA"]),
       el("p", { id: "cmf-subj-held" }, subjHeldKids(HC)),
-      ul(["Next: the mint takes Confident calls, so a course under a Confident code is placed."]),
+      ul(["Next: the mint takes calls at 90 or better, so a course under such a code is placed."]),
       act([["Codes the mint holds on", "#commons/subjects/held"]])]), checkBox("subj", 4, [
       checkHead(4, "Re-mint scopes ready", R ? [el("strong", { text: fmt(R.ready) }), " of " + fmt(R.mids) + " M-IDs (" + R.code + ")"] : ["TBA"]),
       R ? meter(share(R.ready, R.mids), fmt(R.ready) + " of " + fmt(R.mids) + " M-IDs ready, " + share(R.ready, R.mids) + " percent") : null,
@@ -1222,7 +1225,7 @@
   function subjectsCard(M) {
     var P = subjectsParts(M);
     return card({ key: "subjects", title: "Subjects", list: "#commons/subjects", cls: "cmf-checks cmf-unclamped", pill: "In progress", big: P.big, rest: P.rest, body: P.body,
-      method: [p(["A college-and-code pair is one local code at one college. Its level comes from the statewide list (kb/status/statewide_subject_codes.json): the subject map’s draft, the M-IDs its courses joined at three or more colleges, its course titles, and a noncredit code’s COCI category. A person’s statewide filing, or a common subject code saved at that college, makes the pair Confident at once. "
+      method: [p(["A college-and-code pair is one local code at one college. Its confidence comes from the statewide list (kb/status/statewide_subject_codes.json): the subject map’s draft, the M-IDs its courses joined at three or more colleges, its course titles, and a noncredit code’s COCI category. A person’s statewide filing, or a common subject code saved at that college, settles the pair at once. "
         + "The headline counts the active and approved COCI courses under each pair. The local titles come from the catalogs filed so far; a title is the catalog’s own subject heading, saved in Title Case. The common subject code beside a local code comes from the subject map, each discipline’s settled code, or a person’s save, never from a TOP code."])],
       links: [["Open the subjects list", "#commons/subjects"], ["Codes the mint holds on", "#commons/subjects/held"], ["Common Subjects Reference", "#canonical-subj4"]] });
   }
@@ -1402,7 +1405,7 @@
      unmeasured one reads TBA. The Why and Next words come from the card's own lane file (lanes/commons.md and the
      lanes its tab belongs to). Each card's quick links run in the order of what most needs action: what waits on a
      person or a fix first, then the largest remaining count. Only the Courses and M-IDs card reads a measured
-     0-to-1 score, so it alone carries a Confident line (the Subjects scale: Confident at 0.9 or better). */
+     score, so it alone carries a Settled line (the Subjects scale: settled at 90 or better of 100). */
   /* The held titles' line on the Exhibit titles card: the live read's count, and the saves waiting on the nightly
      build, which no one needs to act on. */
   function heldLine(M, E) {
@@ -1505,15 +1508,15 @@
     var curate = [
       subjectsCard(M),
       checksCard({ key: "courses", list: "#coci-lookup/courses", title: "Courses and M-IDs", pill: "In progress",
-        big: fmt(Cd.ready) + " of " + fmt(Cd.total), rest: [" cards the automatic check scores as ready (0.85 or better)"],
+        big: fmt(Cd.ready) + " of " + fmt(Cd.total), rest: [" cards the automatic check scores as ready (85 or better of 100)"],
         after: [meter(pct(Cd.ready, Cd.total), fmt(Cd.ready) + " of " + fmt(Cd.total) + " ready, " + Math.round(pct(Cd.ready, Cd.total)) + " percent")],
         quick: [{ ref: "ready", n: Cd.repair, one: "card that needs repair", many: "cards that need repair" },
           { ref: "doubt", n: M.doubtN, one: "card whose common subject is in doubt", many: "cards whose common subject is in doubt", to: "#coci-lookup/list/doubt" },
           { ref: "mid", n: ASKED.missingMembership, one: "card missing from the membership list", many: "cards missing from the membership list" },
           { ref: "ready", n: Cd.review, one: "card that needs review", many: "cards that need review" }],
         defs: [["Why", "each common course carries one shared course ID (an M-ID), so a local course at any college points to the same course."],
-          ["Finished when", "every card scores Confident on the automatic check, and every course in an Active program sits under an M-ID."],
-          ["Confident", "0.9 or better on the automatic check’s 0-to-1 score, from the data or from a person’s confirm. The count at 0.9 is TBA; the headline counts 0.85 or better."],
+          ["Finished when", "every card scores 90 or better on the automatic check, and every course in an Active program sits under an M-ID."],
+          ["Settled", "90 or better on the automatic check’s 0-100 score, from the data or from a person’s confirm. The count at 90 is TBA; the headline counts 85 or better."],
           ["Scale", fmt(Cd.total) + " cards, each one common course and its local courses."]],
         stages: {
           Curate: [
