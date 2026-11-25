@@ -1,0 +1,542 @@
+{
+ "college": "Glendale Community College",
+ "catalog_year": "2025-2026",
+ "read_at": "2026-11-25T14:06:08Z",
+ "run": "45630110282",
+ "plan": "kb/college_reads/subject_index_glendale_community.json",
+ "titles": [
+  {
+   "code": "ACCTG",
+   "title": "ACCOUNTING",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADMJ",
+   "title": "ADMINISTRATION OF JUSTICE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=130",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADST",
+   "title": "ALCOHOL/DRUG STUDIES",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=131",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "AMERICAN SIGN LANGUAGE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=133",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTHR",
+   "title": "ANTHROPOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=133",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "ARCHITECTURE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=135",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARMEN",
+   "title": "ARMENIAN",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=137",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "ART",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=138",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "ART HISTORY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=145",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTRO",
+   "title": "ASTRONOMY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=147",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHPE",
+   "title": "ATHLETICS AND PHYSICAL EDUCATION",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=147",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AT",
+   "title": "AVIATION & TRANSPORTATION",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=152",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "BIOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUSAD",
+   "title": "BUSINESS ADMINISTRATION",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=159",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "CHEMISTRY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=161",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHLDV",
+   "title": "CHILD DEVELOPMENT",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=163",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "CHINESE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=167",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "COMMUNICATION STUDIES",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=167",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CAM",
+   "title": "COMPUTER AIDED MANUFACTURING",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CABOT",
+   "title": "COMPUTER APPLICATION & BUSINESS OFFICE TECHNOLOGIES",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CO ED",
+   "title": "COOPERATIVE EDUCATION",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=175",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CULIN",
+   "title": "CULINARY ARTS",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=176",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANCE",
+   "title": "DANCE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=177",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "ECONOMICS",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=180",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECT",
+   "title": "ELECTRONICS & COMPUTER TECHNOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=181",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "EMERGENCY MEDICAL SERVICES",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=182",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMT",
+   "title": "EMERGENCY MEDICAL TECHNOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=183",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "ENGINEERING",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=184",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "ENGLISH",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=187",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "ENGLISH AS A SECOND LANGUAGE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=191",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENTRE",
+   "title": "ENTREPRENEURSHIP",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=194",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETH S",
+   "title": "ETHNIC STUDIES",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=195",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIL",
+   "title": "FILIPINO",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=196",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FTVM",
+   "title": "FILM TELEVISION AND MEDIA",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=196",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "FIRE TECHNOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=201",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "FRENCH",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=202",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "GEOGRAPHY AND ENVIRONMENT",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=203",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "GEOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=205",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLTH",
+   "title": "HEALTH",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=206",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "HISTORY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=207",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HRM",
+   "title": "HOTEL RESTAURANT MANAGEMENT",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=210",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMAN",
+   "title": "HUMANITIES",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=211",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INT",
+   "title": "INTERNSHIP",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=214",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "ITALIAN",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=214",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPAN",
+   "title": "JAPANESE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=215",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOURN",
+   "title": "JOURNALISM",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=215",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "KINESIOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=217",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KOREA",
+   "title": "KOREAN",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=219",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIB",
+   "title": "LIBRARY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=219",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LING",
+   "title": "LINGUISTICS",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=219",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MACH",
+   "title": "MACHINE TECHNOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=220",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MCOMM",
+   "title": "MASS COMMUNICATIONS",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=221",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "MATHEMATICS",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=222",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MOA",
+   "title": "MEDICAL OFFICE ADMINISTRATION",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=226",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MTLGY",
+   "title": "METALLURGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=228",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSIC",
+   "title": "MUSIC",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=228",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NS",
+   "title": "NURSING SCIENCE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=236",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "NUTRITION",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=238",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEAN",
+   "title": "OCEANOGRAPHY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=239",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHILO",
+   "title": "PHILOSOPHY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=239",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOTO",
+   "title": "PHOTOGRAPHY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=240",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "PHYSICAL EDUCATION",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=243",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHY",
+   "title": "PHYSICS",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=247",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "POLITICAL SCIENCE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=248",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "PSYCHOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=250",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RE",
+   "title": "REAL ESTATE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=252",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC S",
+   "title": "SOCIAL SCIENCE",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=253",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "SOCIOLOGY",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=255",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "SPANISH",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=257",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ST DV",
+   "title": "STUDENT DEVELOPMENT",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=259",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THTR",
+   "title": "THEATRE ARTS",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=262",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "WELDING",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=266",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ABSE",
+   "title": "ADULT BASIC AND SECONDARY EDUCATION",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=274",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LLS",
+   "title": "LIFELONG LEARNING SEMINARS",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=282",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PARED",
+   "title": "PARENT EDUCATION - CHILD OBSERVATION",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=284",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STV",
+   "title": "SHORT TERM VOCATIONAL",
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=285",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "note": "The newest PDF the college's catalogs page links is the 2025-2026 catalog; the 2026-2027 catalog is published only in the Coursedog app. Headings print in capitals and are kept so."
+}
