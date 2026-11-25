@@ -1,0 +1,26 @@
+{
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 3 of this plan (pass 2 read run 45625671325): pass 2 printed the department headers (once each) but took a program list's course mention for a code's first course. This read keeps a course heading only where a Units: or Hours: line follows within four lines, credit (ADMJUS 101) and noncredit (NC.APE-002) alike, and prints the twelve lines above each code's first course. No model call.",
+ "college": "College of the Canyons",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "Units:"
+ ],
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf",
+   "answers": [
+    "subject_titles"
+   ]
+  }
+ ],
+ "subject_context": {
+  "heading": "^(?P<subj>NC\\.[A-Z]{2,6}|[A-Z]{2,8})[ -](?P<num>\\d{1,3}[A-Z]{0,2})\\b",
+  "before": 12,
+  "start_page": 64,
+  "units": "^(Units|Hours):",
+  "within": 4
+ }
+}

@@ -1,0 +1,415 @@
+{
+ "college": "Cerro Coso Community College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:05:47Z",
+ "run": "45629589579",
+ "plan": "kb/college_reads/subject_index_cerro_coso_community.json",
+ "titles": [
+  {
+   "code": "ACAD",
+   "title": "Academy",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=131",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADST",
+   "title": "Addiction Counseling Studies",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=132",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=135",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AERO",
+   "title": "Aerodynamics",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=138",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=140",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=140",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BSAD",
+   "title": "Business Administration",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=145",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BSOT",
+   "title": "Business Office Technology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=147",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=147",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHDV",
+   "title": "Child Development",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=148",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COLL",
+   "title": "College Success",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=152",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CTD",
+   "title": "Commercial Truck Driving",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=152",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=154",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMA",
+   "title": "Digital Media Arts",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=154",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRFT",
+   "title": "Drafting",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=156",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=156",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMTC",
+   "title": "Emergency Medical Technology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=156",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=157",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENSL",
+   "title": "English as a Second Language",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=160",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=160",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FFT",
+   "title": "Fire Fighter Technology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=160",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FRCC",
+   "title": "Forestry, Climate, and Conservation",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=162",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=163",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=163",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=163",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HCRS",
+   "title": "Health Careers",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=164",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSCI",
+   "title": "Health Science",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=169",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEAV",
+   "title": "Heavy Machinery",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDE",
+   "title": "Industrial Engineering",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=171",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IT",
+   "title": "Information Technology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=171",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINS",
+   "title": "Kinesiology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=177",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LATN",
+   "title": "Latin",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=180",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=180",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MCTL",
+   "title": "Machine Tool Technology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=181",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=181",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MIDW",
+   "title": "Midwifery",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=183",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSC",
+   "title": "Music",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=187",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PARA",
+   "title": "Paralegal Studies",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=189",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Science",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=191",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=192",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=192",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=193",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PTEC",
+   "title": "Process Technology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=194",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOSC",
+   "title": "Social Sciences",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=194",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work and Human Services",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=194",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=195",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=196",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=196",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SORL",
+   "title": "Sustainable Outdoor Recreation Leadership",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=197",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=197",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

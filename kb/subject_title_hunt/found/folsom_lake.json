@@ -1,0 +1,674 @@
+{
+ "college": "Folsom Lake College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:29:00Z",
+ "run": "45623555503",
+ "plan": "kb/college_reads/subject_index_folsom_lake.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AH",
+   "title": "Allied Health",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUSTEC",
+   "title": "Business Technology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISA",
+   "title": "Computer Information Sciences - Applications",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISC",
+   "title": "Computer Information Sciences - Core",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISD",
+   "title": "Computer Information Sciences - Data Science",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISN",
+   "title": "Computer Information Sciences - Network",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISP",
+   "title": "Computer Information Sciences - Programming",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISS",
+   "title": "Computer Information Sciences - Security",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISW",
+   "title": "Computer Information Sciences - Web",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance Studies",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DEAF",
+   "title": "Deaf Culture and American Sign Language Studies",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGCW",
+   "title": "English - Creative Writing",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGED",
+   "title": "English - Education",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGLB",
+   "title": "English - Laboratory",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGLT",
+   "title": "English - Literature",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGRD",
+   "title": "English - Reading",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGWR",
+   "title": "English - Writing",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENVT",
+   "title": "Environmental Technology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLG",
+   "title": "English as a Second Language - Grammar",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLL",
+   "title": "English as a Second Language - Listening",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLP",
+   "title": "English as a Second Language - Pronunciation",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLR",
+   "title": "English as a Second Language - Reading",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLW",
+   "title": "English as a Second Language - Writing",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ETHNS",
+   "title": "Ethnic Studies",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FITNS",
+   "title": "Fitness",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GENSCI",
+   "title": "General Science",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GERON",
+   "title": "Gerontology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HCD",
+   "title": "Human/Career Development",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HEED",
+   "title": "Health Education",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "IMAGE",
+   "title": "Imaging",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "INDIS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "KINES",
+   "title": "Kinesiology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LTAT",
+   "title": "Learning, Tutoring, and Academic Technology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MAKR",
+   "title": "Modern Making",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATHS",
+   "title": "Mathemetics Support",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MEDTEC",
+   "title": "Medical Technology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MITECH",
+   "title": "Manufacturing and Industrial Technology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MKT",
+   "title": "Marketing",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUFHL",
+   "title": "Music - Fundamentals, History, and Literature",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUIVI",
+   "title": "Music - Instrumental/Voice Instruction",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUP",
+   "title": "Music - Performance",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUSM",
+   "title": "Music - Specializations in Music",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NATR",
+   "title": "Natural Resources",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NURSE",
+   "title": "Nursing",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NUTRI",
+   "title": "Nutrition",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PACT",
+   "title": "Personal Activities",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PRJMGT",
+   "title": "Project Management",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PS",
+   "title": "Physical Science",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RADTEC",
+   "title": "Radiology Technology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SILA",
+   "title": "Sign Language Studies",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SGVT",
+   "title": "Student Government",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPORT",
+   "title": "Sports",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work/Human Services",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TAFILM",
+   "title": "Theatre Arts Film",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TAP",
+   "title": "Theatre Arts Performance",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TMACT",
+   "title": "Team Activities",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "VITI",
+   "title": "Viticulture",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WEXP",
+   "title": "Work Experience",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=118",
+   "where": "catalog",
+   "method": "prefix legend"
+  }
+ ]
+}
