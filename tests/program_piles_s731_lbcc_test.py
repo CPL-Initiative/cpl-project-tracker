@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
-"""S731, lane 2's cheap piles at Long Beach City: the census's 16 wording-rule records, 3 passed and 10 collected with named gaps (kb/_program_piles_s731_lbcc.py).
+"""S731, lane 2's cheap piles at Long Beach City: the census's 16 wording-rule records, 3 passed and 9 collected with named gaps (kb/_program_piles_s731_lbcc.py).
 
 WHY. Sam's ruling of 2026-11-17 (sam-collect-with-gaps-2026-11-17): never drop a record for failing; collect it with
 its gaps noted and confidence scores, a gap noted instead of a reread. Pinned here:
 
   * each kind the plan files carries a sentence and a unit-arithmetic score in kb/_program_named_gaps.py (no new kind);
   * precision 16 of 16 against the hand reading of the census members pinned in the fixture
-    (p-test-pins-census-members-s714): 3 passed, 10 collected, 3 held;
+    (p-test-pins-census-members-s714): 3 passed, 9 collected, 4 held;
   * the rescore: each of the three passes under its one reading (short_high, meets), and with that reading off today's
     scorer gives the filed arithmetic ("against" aside);
   * each named gap's own reading closes the record at the printed total under today's scorer, and every boundary
     reading names no gap;
   * on_live_run: the loads that inserted the rows held two and three runs; the rows are on their live run through each
     record file's commit history (FILE_HISTORY), and with that history gone every row holds;
-  * the holds: 43021 on the own-page guard (its page is 02677's), 37213 (another award's page), 44848 (cut off, no
+  * the holds: 42970 (no_units_printed stays off and no_units_read refuses it, d-lbcc-42970-no-units-read-or-hold-s731),
+    43021 on the own-page guard (its page is 02677's), 37213 (another award's page), 44848 (cut off, no
     total);
-  * the plan: 13 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none;
+  * the plan: 12 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none;
     the load's image of each committed record is its receipt's after-image;
   * every row is on its live run both as the receipts stood before this plan's own apply (posted_runs(skip=...)) and
     after it, so the test holds before and after the conductor's apply (p-test-reads-own-apply-receipt-s721).
@@ -39,13 +40,12 @@ COLLEGE = "Long Beach City College"
 PASSED = {"02678": "short_high", "20940": "short_high", "30650": "meets"}
 GAPS = {"02618": "option_lists_read_apart", "02683": "prerequisites_counted", "20937": "prerequisites_counted",
         "08834": "unit_line_not_read", "32634": "repeat_read_once", "41220": "lists_past_their_figure",
-        "33390": "noted_figures_differ", "42970": "no_units_printed", "33302": "lists_not_closed",
+        "33390": "noted_figures_differ", "33302": "lists_not_closed",
         "35803": "lists_not_closed"}
 ROWS = dict(GAPS, **{cn: W.PASSES for cn in PASSED})
-HELD = {"43021", "37213", "44848"}
+HELD = {"42970", "43021", "37213", "44848"}
 SCORES = {"option_lists_read_apart": 40, "prerequisites_counted": 70, "unit_line_not_read": 40,
-          "repeat_read_once": 60, "lists_past_their_figure": 60, "noted_figures_differ": 40, "no_units_printed": 40,
-          "lists_not_closed": 30}
+          "repeat_read_once": 60, "lists_past_their_figure": 60, "noted_figures_differ": 40, "lists_not_closed": 30}
 checks, failures = [0], []
 
 
@@ -65,9 +65,9 @@ check(set(members) == set(ROWS) | HELD and len(members) == 16 and not set(W.PERS
 pr = W.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 16 and pr["right"] == 16 and not pr["wrong"], "precision 16 of 16: %s" % pr["wrong"])
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 13} and not cc["not_standing"], "13 claims stand: %s" % cc)
+check(cc["counts"] == {"stands": 12} and not cc["not_standing"], "12 claims stand: %s" % cc)
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 3 * 3 + 9 + 10 * 2 + 9, "every boundary reading names no "
+check(not bd["wrong"] and sum(bd["counts"].values()) == 3 * 3 + 8 + 9 * 2 + 8, "every boundary reading names no "
       "gap: %s" % bd)
 
 # The rescore: one reading moves each, and with it off today's scorer gives the filed arithmetic.
@@ -109,7 +109,12 @@ check(not W.on_live_run(W._load("33390"), skip=(W.TAG,)) and W.on_live_run(W._lo
       "33390: S529's commit after its load counts only as a commit that keeps the run")
 W.KEEPS_RUN, W._POSTED = saved_keep, None
 
-# The holds.
+# The holds. 42970: no_units_printed stays off, and no_units_read's own check refuses the row as filed and as today's
+# scorer adds it (the state's list gives BCOM 15 its 3 units).
+f42970 = W._load("42970")
+check(NG.NO_UNITS_PRINTED_ON is False and "42970" not in W.REVIEWED, "42970: no_units_printed stays off, no entry")
+check(NG.no_units_read(f42970) is None and NG.no_units_read(dict(f42970, score=dict(
+    f42970["score"], arithmetic=W.arithmetic(f42970)))) is None, "42970: no_units_read refuses it")
 check(W.shared_with("43021") == ["02677"] and W.scorer_passes(W._load("43021")), "43021: today's scorer passes it, "
       "and its page is 02677's")
 check(any("not the CSU GE-Breadth certificate" in n for n in W._notes(W._load("37213"))), "37213: its note says the "
@@ -119,8 +124,8 @@ check(W._load("44848")["score"]["arithmetic"]["status"] == "incomplete"
       "44848: cut off, its arithmetic incomplete")
 
 got = {r["control_number"]: r["moves_to"] for r in rec["records"]}
-check(got == ROWS and rec["moved"] == 13, "the receipt names the 13 rows and their kinds")
-check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 3")
+check(got == ROWS and rec["moved"] == 12, "the receipt names the 12 rows and their kinds")
+check({h["control_number"] for h in rec["held"]} == HELD, "the receipt holds the 4")
 check(rec["census"]["members"] == members, "the receipt's keys are the fixture's")
 check(rec["shared_pages"] == {}, "no planned row was read from a page another program was")
 for r in rec["records"]:
@@ -131,9 +136,9 @@ for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for cn in ROWS) and not any("'%s'" % cn in sql for cn in HELD | set(W.PERSON)),
-          "%s names exactly the 13" % part)
+          "%s names exactly the 12" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (13))" in sql, "the apply guards a confirm")
+        check("confirm guard" in sql and "e(expect) as (values (12))" in sql, "the apply guards a confirm")
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:
@@ -148,6 +153,7 @@ check(W.precision(CENSUS_AT_PLAN, skip=(W.TAG,))["right"] == 16, "precision hold
 
 why = {h["control_number"]: h["why"] for h in rec["held"]}
 check("02677" in why.get("43021", ""), "43021 holds on the own-page guard")
+check("S681" in why.get("42970", "") and NG.HOLD_NO_UNITS_PRINTED in why.get("42970", ""), "42970 holds on S681's reason")
 check("page search" in why.get("37213", ""), "37213 holds for its page")
 check("45290" in why.get("44848", ""), "44848 holds as El Camino 45290 did")
 

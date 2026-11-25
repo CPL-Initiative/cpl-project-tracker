@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""S731, lane 2's cheap piles at Long Beach City: the census's 16 wording-rule records, 3 passed, 10 with named gaps.
+"""S731, lane 2's cheap piles at Long Beach City: the census's 16 wording-rule records, 3 passed, 9 with named gaps.
 
 The census on main (kb/status/harvest_gap_census.json, run 45586922147, written 2026-11-25 09:39Z) lists 16 Long Beach
 City College records under the reconcile_steps lever ("a team session writes correction rules from the catalog's own
@@ -42,15 +42,13 @@ scorer to give the printed total at both ends (or, for an open list, that the li
                             the printed 29.
   noted_figures_differ      (40) Philosophy A.A.-T 33390: the Required Core prints 'Subtotal Units 12' over two 3-unit
                             courses; the record adds to 24 and states the printed 18, which the core at 6 gives.
-  no_units_printed          (40) Administrative Assistant certificate 42970: the catalog prints no units beside BCOM 15
-                            and prints 'Total Units 5', which BCOM 260, 262 and 263 make; the record adds BCOM 15's 3
-                            from the state's list to 8. Its note says the catalog prints none (the statewide matcher
-                            stays off; this is a reviewed entry).
   lists_not_closed          (30) Spanish A.A.-T 33302: Option 2 prints a list of courses with no selection rule, count or
                             units; Theatre Arts A.A.-T 35803: LIST A's 9 units must include the core course not taken
                             in the core, a figure that depends on another choice.
 
-Held (3), each reason in HAND: 43021 (today's scorer passes it, short_high at 63 against 63-64, but its page is shared
+Held (4), each reason in HAND: 42970 (the second reader's round 1, d-lbcc-42970-no-units-read-or-hold-s731:
+no_units_printed stays off statewide, since its matcher failed its own self-recall, and no_units_read's own check refuses
+the row, since the scorer reads BCOM 15's 3 units from the state's list; S681's hold, the page read free first); 43021 (today's scorer passes it, short_high at 63 against 63-64, but its page is shared
 with 02677, the same Registered Nursing A.S. the state's file lists twice, and no note names its own section); 37213
 (CSU GE-Breadth read from the LBCC-GE Plan A page, which its own note says is not the program's page: a page search is
 its lever); 44848 (the Cal-GETC certificate: its text is cut off mid-Area 4 and it reads no total, so its arithmetic is
@@ -113,7 +111,7 @@ LOAD_COMMITS = {"38168152744": "11bd19ad3f8ebceb8c9dcda0305c91173ba506f4",
 _L1, _L2 = LOAD_COMMITS["38168152744"], LOAD_COMMITS["38200167207"]
 _S529 = "5689d97f33b4eb5de6f512123853fedf73886a0e"
 FILE_HISTORY = {cn: [_L1] for cn in ("02618", "02678", "02683", "08834", "20937", "30650", "32634", "33302", "35803",
-                                     "41220", "42970")}
+                                     "41220")}
 FILE_HISTORY.update({"20940": [_L2, _L1], "33390": [_S529, _L2, _L1]})
 # A commit after the load that rewrote the file and kept its run: its receipt names the key at that run.
 KEEPS_RUN = {_S529: "kb/receipts/program_requirement_records_floor_rescore_2026-10-30_s529.json"}
@@ -144,8 +142,6 @@ REVIEWED = {
     "33390": {"gap": "noted_figures_differ", "computed": [24, 24], "stated": [18, 18],
               "words": "The Required Core prints 'Subtotal Units 12' although two 3-unit courses total 6",
               "at_courses": "REQUIRED CORE COURSES", "courses": ["PHIL6", "PHIL22"]},
-    "42970": {"gap": "no_units_printed", "computed": [8, 8], "stated": [5, 5],
-              "words": "The catalog prints no units beside BCOM 15", "unprinted": "BCOM 15", "courses": ["BCOM15"]},
     "33302": {"gap": "lists_not_closed", "computed": [23, 23], "stated": [21, 23],
               "words": "Option 2 under 'Select 1 of 2 Options' prints only a list of courses",
               "open": "REQUIRED CORE COURSES - Option 2"},
@@ -156,6 +152,9 @@ REVIEWED = {
 HAND = {cn: PASSES for cn in PASSED}
 HAND.update({cn: e["gap"] for cn, e in REVIEWED.items()})
 HAND.update({
+    "42970": ("held: no_units_printed is off statewide (NG.NO_UNITS_PRINTED_ON: its matcher failed its own self-recall) "
+              "and no_units_read's own check refuses it (the scorer reads BCOM 15's 3 units from the state's list): "
+              "S681's reason, '%s' (d-lbcc-42970-no-units-read-or-hold-s731)" % NG.HOLD_NO_UNITS_PRINTED),
     "43021": ("held: the own-page guard: today's scorer passes it (short_high, 63 against the printed 63-64), but its "
               "page is the one 02677 was read from, the same Registered Nursing A.S. the state's file lists twice, and "
               "no note names the record's own section: which control number the page is is the inventory's call"),

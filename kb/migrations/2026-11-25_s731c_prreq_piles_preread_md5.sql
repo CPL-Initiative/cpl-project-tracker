@@ -1,4 +1,4 @@
--- S731C lane 2's cheap piles at Long Beach City (13 rows: lists_not_closed 2, lists_past_their_figure 1, no_units_printed 1, noted_figures_differ 1, option_lists_read_apart 1, passes 3, prerequisites_counted 2, repeat_read_once 1, unit_line_not_read 1). Each row's checks become the college
+-- S731C lane 2's cheap piles at Long Beach City (12 rows: lists_not_closed 2, lists_past_their_figure 1, noted_figures_differ 1, option_lists_read_apart 1, passes 3, prerequisites_counted 2, repeat_read_once 1, unit_line_not_read 1). Each row's checks become the college
 -- load's image of its committed record (load_rows): checks.gaps and checks.confidence added, or
 -- checks.arithmetic to equal for a rescore; the record unchanged. Receipt: kb/receipts/program_requirement_records_piles_s731_lbcc_2026-11-25_s731c.json
 -- (before_image per row).
@@ -16,8 +16,7 @@ with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) a
   (9, 'Long Beach City College', '33302', 38152016534, '5bc7fc066f8065d6fe4e5f753fd203d5', 'df1f46dda28f904ad5c64f462c51773e', '6434bfe56c0f6e51af755d307dec125c'),
   (10, 'Long Beach City College', '33390', 38185403454, '1553cf300d95d54de8d6326dce4c8249', '972ce3267c8b9670b117327200b82b48', 'e9fa5c488a27df9f47dba4cde2012b6f'),
   (11, 'Long Beach City College', '35803', 38152016534, 'd1862e1286dcac22379bdab03b17af85', 'b167e014df6b97bdebba96ca16afce51', '9c3dd0c6001c56373d76c68dac7bedae'),
-  (12, 'Long Beach City College', '41220', 38152016534, 'e7446d4d9efd1c577ee92548f7d5ec25', '025f5967e09072e40425565d0b8c2cce', '5469ca49c9d4b1f60cb372c833c75e1d'),
-  (13, 'Long Beach City College', '42970', 38152016534, '8ef99c80f3118fdddfd592f17ccc9665', 'ac494dfcba30dea86a379ccb62116a42', 'c5ba2c5e473b19ef178eb99edba015da'))
+  (12, 'Long Beach City College', '41220', 38152016534, 'e7446d4d9efd1c577ee92548f7d5ec25', '025f5967e09072e40425565d0b8c2cce', '5469ca49c9d4b1f60cb372c833c75e1d'))
 select json_build_object(
   'listed', (select count(*) from v),
   'on_run', count(*) filter (where r.extracted_run = v.extracted_run),
