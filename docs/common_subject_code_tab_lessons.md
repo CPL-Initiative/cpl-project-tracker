@@ -859,3 +859,23 @@ the Credit siblings).
 **The stray-code rescore (S730):** with titles at 92 of the 116 stray local subjects, the title named a discipline for
 24 and agreed with no filing in 2 cases where a filing existed (FJMP, CSC): a statewide filing keyed on letters still
 needs the title's check. 56 have neither a title that names a discipline nor a filing, which is the list for Sam.
+
+## S733 (SkyGodwit, 2026-11-25): COBIx's titles filed, the rescore scored 0 to 100, the dry run
+
+**Ruled:** `r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25` (*"i want to use confidence bars 0-100 rather
+than low, med, high throughout all commons procedures"*): worklists, rescores and dry-run scopes carry a 0-100 score
+and a threshold. **Shipped:** #3841 (`--csv` import, 911 titles, rescore rerun), #3843 (dry run), #3846 (0-100 score,
+scope at 90). **Decided:** `d-stray-remint-retire-not-rekey-s733`.
+
+**Lessons:**
+- A CSV-filed find has no workflow run, and the subject headings record's own check requires one: name the filled file
+  as its run (`subject_headings_filer_test.py` caught it in CI, not locally; run it before a push that files titles).
+- A confidence score is assembled from measured rates, each named in the scorer's docstring: the statewide model's
+  calibrated probability, a floor where the college's own heading names the discipline (9 of 9 on Sam's 30), a cap
+  where no title of the college's own checks a letters-only call. The threshold comes from the model's self-recall
+  (97% at 0.9 or more), never from a picked number.
+- Moving from levels to a threshold moved six rows across the line (five continuing-education codes whose noncredit
+  categories all read Older Adults came in; Contra Costa's Library Studies went out), so a dry run's pins must be
+  refrozen whenever its scope rule changes.
+- Retire, not re-key: the List already counts a course with no M-ID as Needs an M-ID, and a retired id reads dead in
+  the alias chain, which is true; a merged shell is the exception and takes an alias to its target.
