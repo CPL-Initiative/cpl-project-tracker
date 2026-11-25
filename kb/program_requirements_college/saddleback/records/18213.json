@@ -46,36 +46,45 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 32,
    "listed": 32,
-   "share": 0.844,
-   "missing": [
-    "COMM5",
-    "HIST17",
-    "MATH3A",
-    "MATH3AH",
-    "MATH3B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM5",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST17",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH3A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210H",
+     "listed": "MATH3AH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH3B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
-   "codes": [
-    "COMMC1004",
-    "HISTC1002",
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "HISTC1002",
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -475,5 +484,6 @@
    "Course List at the end is cut off at MATH 124; course list descriptions were not used for requirements."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

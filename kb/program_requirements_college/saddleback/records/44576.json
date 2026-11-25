@@ -46,30 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 12,
    "listed": 12,
-   "share": 0.75,
-   "missing": [
-    "MATH3A",
-    "MATH3AH",
-    "MATH3B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH3A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210H",
+     "listed": "MATH3AH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH3B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -261,5 +266,6 @@
    "No specific careers are named; the summary mentions only 'professional careers' in general."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

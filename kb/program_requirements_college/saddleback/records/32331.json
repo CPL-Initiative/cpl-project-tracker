@@ -46,26 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 22,
    "listed": 23,
-   "share": 0.913,
+   "share": 0.957,
    "missing": [
-    "CDE7",
     "HISTC1001"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDE7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
-    "CDEVC1000",
     "ENG25H",
     "HIST16"
    ],
    "flagged": [
-    "CDEVC1000",
     "ENG25H",
     "HIST16"
    ],
@@ -362,5 +366,6 @@
    "No careers are named; the summary mentions only 'professional careers' generically and teaching at the elementary school level as a foundation."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

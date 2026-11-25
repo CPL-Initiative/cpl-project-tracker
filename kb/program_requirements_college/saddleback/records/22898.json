@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 32,
    "listed": 32,
-   "share": 0.969,
-   "missing": [
-    "CDE7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDE7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CDEVC1000"
-   ],
-   "flagged": [
-    "CDEVC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -436,5 +437,6 @@
    "No careers or job titles are named in the program's own section; the Child Development Permit Teacher level is a permit, not recorded as a career."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

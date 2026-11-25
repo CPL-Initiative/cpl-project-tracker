@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 8,
    "listed": 8,
-   "share": 0.875,
-   "missing": [
-    "CDE7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDE7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CDEVC1000"
-   ],
-   "flagged": [
-    "CDEVC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -227,5 +228,6 @@
    "Careers taken from the summary: 'prepare students to be teachers and caregivers for young children ages 0-8'."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

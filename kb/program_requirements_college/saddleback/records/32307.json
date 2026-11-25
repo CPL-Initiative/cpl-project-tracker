@@ -72,9 +72,7 @@
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-30.0; the catalog states 18.0-18.0"
-   ],
+   "why": [],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -382,5 +380,6 @@
    "No specific careers are named; the summary refers only generally to 'professional careers'."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

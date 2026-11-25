@@ -61,20 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    17.0,
-    18.0
+    18.0,
+    19.0
    ],
    "stated": [
     18.0,
     19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 17.0-18.0; the catalog states 18.0-19.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -101,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -169,7 +167,8 @@
       "units": 1,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      },
      {
       "code": "ETT 101",
@@ -271,5 +270,16 @@
    "GE: page refers to the Graduation Requirements or the Cal-GETC pattern; no GE units printed."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "reconciled": [
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "ETT 142": 2
+   },
+   "words": "The following course must be taken twice for a total of two units:\n2.0\nETT 142"
+  }
+ ],
+ "read_run": "38843470509"
 }

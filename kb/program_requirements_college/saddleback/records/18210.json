@@ -46,39 +46,50 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 123,
+   "placed": 129,
    "listed": 129,
-   "share": 0.953,
-   "missing": [
-    "ARTH26",
-    "ENG25",
-    "ENG25H",
-    "MATH3A",
-    "MATH3AH",
-    "MATH3B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1200",
+     "listed": "ARTH26",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENG25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002H",
+     "listed": "ENG25H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH3A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210H",
+     "listed": "MATH3AH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH3B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
-   "codes": [
-    "ARTHC1200",
-    "ENGLC1002",
-    "ENGLC1002H",
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "ARTHC1200",
-    "ENGLC1002",
-    "ENGLC1002H",
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -1131,5 +1142,6 @@
    "Course List section is cut off at BUS 10; course descriptions not used for requirements."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

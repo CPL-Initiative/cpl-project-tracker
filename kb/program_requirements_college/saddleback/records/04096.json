@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 22,
    "listed": 22,
-   "share": 0.909,
-   "missing": [
-    "ENG25",
-    "ENG25H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENG25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002H",
+     "listed": "ENG25H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ENGLC1002",
-    "ENGLC1002H"
-   ],
-   "flagged": [
-    "ENGLC1002",
-    "ENGLC1002H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -331,5 +334,6 @@
    "ENGL C1002 and ENGL C1002H are not in the closed list and are marked as catalog additions."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

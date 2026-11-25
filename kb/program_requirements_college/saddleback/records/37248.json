@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 18,
    "listed": 18,
-   "share": 0.889,
-   "missing": [
-    "ECON2",
-    "ECON4"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON4",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON2",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -307,5 +310,6 @@
    "Learning outcomes are printed for the program page as a whole; this award shares them."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

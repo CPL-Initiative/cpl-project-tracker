@@ -100,17 +100,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true,
-  "confidence": {
-   "unit_arithmetic": 56,
-   "course_list_match": 100,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 100
-  },
-  "confidence_notes": {
-   "unit_arithmetic": "Passed by units rule A5, right on 69 of 123 held answers in its self-check."
-  }
+  "pass": true
  },
  "record": {
   "program": {
@@ -278,7 +268,7 @@
    "In the careers sentence, 'entry‐level' precedes the whole list ('as entry‐level hotel, motel and restaurant managers, ...'); it was left off the first entry because it modifies all of them. A reviewer may prefer to keep it."
   ]
  },
- "extracted_run": "38843470509",
+ "extracted_run": 45606980427,
  "reconciled": [
   {
    "rule": "A5",
@@ -286,5 +276,6 @@
    "words": "'List B: Complete two courses from the following or any course from List A not already used (6-7 units)' says any course from List A: 4 courses added as options (HRM 154, CUL 176, HRM 157, CUL 101)",
    "statewide": "units_rules_A5"
   }
- ]
+ ],
+ "read_run": "38843470509"
 }

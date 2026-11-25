@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 25,
    "listed": 25,
-   "share": 0.92,
-   "missing": [
-    "ANTH1",
-    "ANTH1H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ANTHC1001",
+     "listed": "ANTH1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ANTHC1001H",
+     "listed": "ANTH1H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ANTHC1001",
-    "ANTHC1001H"
-   ],
-   "flagged": [
-    "ANTHC1001",
-    "ANTHC1001H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -389,5 +392,6 @@
    "The catalog text is cut off mid-description at GEOL 20 in the course list; the requirements section appears complete."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

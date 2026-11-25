@@ -46,30 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 22,
    "listed": 22,
-   "share": 0.864,
-   "missing": [
-    "ECON4",
-    "MATH3A",
-    "MATH3AH"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON4",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH3A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210H",
+     "listed": "MATH3AH",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "ECONC2001",
-    "MATHC2210",
-    "MATHC2210H"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "MATHC2210",
-    "MATHC2210H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -458,5 +463,6 @@
    "'Environmental scientists' is taken from the program summary describing what environmental scientists do; reviewer may confirm it counts as a named career."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

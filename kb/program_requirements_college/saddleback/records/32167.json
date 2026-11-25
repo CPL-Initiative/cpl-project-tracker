@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 17,
    "listed": 17,
-   "share": 0.882,
-   "missing": [
-    "MATH3A",
-    "MATH3AH"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH3A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210H",
+     "listed": "MATH3AH",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "MATHC2210",
-    "MATHC2210H"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2210H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -353,5 +356,6 @@
    "GEOG 110 and GIS 110 are cross-listed; credit for only one."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

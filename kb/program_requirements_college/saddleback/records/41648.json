@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 5,
    "listed": 5,
-   "share": 0.8,
-   "missing": [
-    "CDE7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDE7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CDEVC1000"
-   ],
-   "flagged": [
-    "CDEVC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -197,5 +198,6 @@
    "The Associate Teacher Permit is mentioned as a permit, not recorded as a career; no careers named."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

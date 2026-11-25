@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 69,
+   "placed": 70,
    "listed": 70,
-   "share": 0.986,
-   "missing": [
-    "BIO20"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIO20",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "BIOLC1000"
-   ],
-   "flagged": [
-    "BIOLC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -894,5 +895,6 @@
    "The career entry comes from 'promotion in a variety of jobs within the field of Kinesiology'; no specific job titles are named."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

@@ -46,30 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 8,
    "listed": 8,
-   "share": 0.625,
-   "missing": [
-    "MATH3A",
-    "MATH3AH",
-    "MATH3B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH3A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210H",
+     "listed": "MATH3AH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH3B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -260,5 +265,6 @@
    "The summary mentions entry-level employment or promotion but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 13,
    "listed": 13,
-   "share": 0.846,
-   "missing": [
-    "ANTH1",
-    "ANTH1H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ANTHC1001",
+     "listed": "ANTH1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ANTHC1001H",
+     "listed": "ANTH1H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ANTHC1001",
-    "ANTHC1001H"
-   ],
-   "flagged": [
-    "ANTHC1001",
-    "ANTHC1001H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -287,5 +290,6 @@
    "Careers: 'anthropology' is taken from 'professional careers in anthropology', which the page says require a baccalaureate or higher degree; the other four are entry-level positions named for the associate degree."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

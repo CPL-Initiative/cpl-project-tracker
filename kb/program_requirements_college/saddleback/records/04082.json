@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 25,
    "listed": 25,
-   "share": 0.96,
-   "missing": [
-    "COMM5"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM5",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "COMMC1004"
-   ],
-   "flagged": [
-    "COMMC1004"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -386,5 +387,6 @@
    "Section heading 'Eligible for Entry into Nursing Clinical Sequence: Units: 46.0' covers Semesters I-IV (15+13+7+11)."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

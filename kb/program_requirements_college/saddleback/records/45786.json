@@ -46,33 +46,40 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 18,
    "listed": 18,
-   "share": 0.778,
-   "missing": [
-    "BIO20",
-    "CDE7",
-    "ENG25",
-    "ENG25H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIO20",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEVC1000",
+     "listed": "CDE7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENG25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002H",
+     "listed": "ENG25H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "BIOLC1000",
-    "CDEVC1000",
-    "ENGLC1002",
-    "ENGLC1002H"
-   ],
-   "flagged": [
-    "BIOLC1000",
-    "CDEVC1000",
-    "ENGLC1002",
-    "ENGLC1002H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -329,5 +336,6 @@
    "CDEV C1000, BIOL C1000, ENGL C1002 and ENGL C1002H are new common-course-numbered codes replacing CDE 7, BIO 20, ENG 25 and ENG 25H in the closed list."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

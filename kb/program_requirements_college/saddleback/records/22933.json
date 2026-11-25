@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 17,
-   "share": 0.941,
-   "missing": [
-    "BIO20"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIO20",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "BIOLC1000"
-   ],
-   "flagged": [
-    "BIOLC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -325,5 +326,6 @@
    "Program is for students who already hold an associate or higher degree."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

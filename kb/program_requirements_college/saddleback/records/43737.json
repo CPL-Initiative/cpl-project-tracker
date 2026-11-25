@@ -46,30 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 44,
+   "placed": 47,
    "listed": 47,
-   "share": 0.936,
-   "missing": [
-    "ECON2",
-    "ECON4",
-    "HIST17"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON4",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST17",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1002"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -600,5 +605,6 @@
    "Catalog text is cut off at the end of the course description list (ENGL C1000H); requirements section appears complete."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }

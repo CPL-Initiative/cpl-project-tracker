@@ -64,7 +64,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    373.5,
+    398.4,
     448.2
    ],
    "stated": [
@@ -73,7 +73,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 373.5-448.2; the catalog states 199.2-448.2"
+    "the blocks sum to 398.4-448.2; the catalog states 199.2-448.2"
    ]
   },
   "repeated": {
@@ -103,7 +103,7 @@
    {
     "gap": "hours_within_printed_range",
     "label": "A program measured in hours: its courses' hours as read fall within the printed range of hours rather than matching it.",
-    "words": "the courses' hours add to 373.5-448.2, within the printed 199.2-448.2 hours"
+    "words": "the courses' hours add to 398.4-448.2, within the printed 199.2-448.2 hours"
    }
   ],
   "confidence": {
@@ -312,5 +312,6 @@
    "No careers named; text mentions only 'potential job advancement'."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "read_run": "38843470509"
 }
