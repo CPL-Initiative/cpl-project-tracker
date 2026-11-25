@@ -1,0 +1,849 @@
+{
+ "college": "City College of San Francisco",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:03Z",
+ "run": "45627438096",
+ "plan": "kb/college_reads/subject_index_city_of_san_francisco.json",
+ "titles": [
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=452",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AFAM",
+   "title": "African American Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=458",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AMSL",
+   "title": "American Sign Language",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=461",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AMS",
+   "title": "American Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=462",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=462",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APPR",
+   "title": "Apprenticeship",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=465",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=466",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=469",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=482",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASAM",
+   "title": "Asian American Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=482",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASIA",
+   "title": "Asian Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=486",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=490",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=492",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=496",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BTEC",
+   "title": "Biotechnology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=504",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BCST",
+   "title": "Broadcast Electronic Media",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=508",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIM",
+   "title": "Building Information Modeling",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=514",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BSEN",
+   "title": "Business English",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=514",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BSL",
+   "title": "Business Law",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=514",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BOSS",
+   "title": "Business Office Support Skills",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=514",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CVT",
+   "title": "Cardiovascular Technician",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CRER",
+   "title": "Career Development",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=517",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=518",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Dev/Family Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=519",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=532",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CINE",
+   "title": "Cinema",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=539",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CLAS",
+   "title": "Classics",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=544",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=544",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLTH",
+   "title": "Community & Public Health",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=546",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CAD",
+   "title": "Computer Aided Drafting",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=559",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MABS",
+   "title": "Computer Applications",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=560",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMP",
+   "title": "Computer Applications for Business",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=563",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNIT",
+   "title": "Comp. Networking & Infor.Tech",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=576",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CM",
+   "title": "Construction Management",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=580",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNST",
+   "title": "Construction Trades",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=582",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CAHS",
+   "title": "Cul Arts & Hospitality Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=585",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CABT",
+   "title": "Culinary Arts Basic Training",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=592",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSST",
+   "title": "Culinary Service Skills Trng",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=593",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TICU",
+   "title": "Custodial",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=593",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=594",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DENT",
+   "title": "Dental Assisting",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=605",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMI",
+   "title": "Diagnostic Medical Imaging",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=607",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DSPS",
+   "title": "Disability Services & Programs for Students",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=611",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECHO",
+   "title": "Echocardiography",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=615",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=616",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECGT",
+   "title": "Electrocardiogram Technology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=618",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELEC",
+   "title": "Electronics",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=618",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technician",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=620",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENRG",
+   "title": "Energy",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=621",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGN",
+   "title": "Engineering",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=622",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ET",
+   "title": "Engineering Technology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=624",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=626",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English As Second Language",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=634",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESLA",
+   "title": "ESL Academic - Noncredit",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=636",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESLN",
+   "title": "ESL - Noncredit",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=637",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENTR",
+   "title": "Entrepreneurship",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=647",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "O H",
+   "title": "Environmental Horticulture",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=648",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Science& Sustain",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=651",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=652",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=653",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIN",
+   "title": "Finance",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=658",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "F SC",
+   "title": "Fire Science Technology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=659",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "R F",
+   "title": "Floristry",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=666",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GNBS",
+   "title": "General Business",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=672",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=673",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=675",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HCT",
+   "title": "Health Care Technology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=677",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIT",
+   "title": "Health Information Technology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=679",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=681",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=685",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE A",
+   "title": "Intercollegiate Athletics",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=687",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IDST",
+   "title": "Interdisciplinary Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=692",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INTD",
+   "title": "Interior Design",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=697",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=698",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPA",
+   "title": "Japanese",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=700",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=704",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LBCS",
+   "title": "Labor & Community Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=707",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LACR",
+   "title": "Labor & Community Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=709",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LALS",
+   "title": "Latin Amer & Latino/a Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=710",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LERN",
+   "title": "Learning Assistance",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=715",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LGBT",
+   "title": "Lesbian, Gay, Bisexual & Transgender Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=717",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LI S",
+   "title": "Library Information Skills",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=725",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Information Tech.",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=725",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MAKR",
+   "title": "Maker Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=727",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGT",
+   "title": "Management",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=728",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MRKT",
+   "title": "Marketing",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=729",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=730",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MED",
+   "title": "Medical Assisting",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=734",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MOTO",
+   "title": "Motorcycle",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=736",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=737",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NAIS",
+   "title": "Native American and Indigenous Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=747",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VOCN",
+   "title": "Vocational Nursing - Licensed",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=747",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing--Registered",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=750",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCAN",
+   "title": "Oceanography",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=753",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OLAD",
+   "title": "Older Adults",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=753",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PLS",
+   "title": "Paralegal/Legal Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=755",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMTP",
+   "title": "Paramedic Training",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=757",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHTC",
+   "title": "Pharmacy Technician",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=759",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHST",
+   "title": "Philippine Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=760",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=763",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=764",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=773",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "P SC",
+   "title": "Physical Science",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=793",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYC",
+   "title": "Physics",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=793",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PIL",
+   "title": "Pilipino",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=797",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=797",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=799",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "R E",
+   "title": "Real Estate",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=803",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RUSS",
+   "title": "Russian",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=805",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SMBU",
+   "title": "Small Business",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=805",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=806",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=809",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=815",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TH A",
+   "title": "Theatre Arts",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=816",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TRST",
+   "title": "Transitional Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=823",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VMD",
+   "title": "Visual Media Design",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=830",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding--Engineering Tech",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=837",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WGST",
+   "title": "Women's and Gender Studies",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=838",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WKEX",
+   "title": "Work Experience -- Business",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=846",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

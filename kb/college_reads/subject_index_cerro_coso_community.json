@@ -1,13 +1,11 @@
 {
- "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 3 of this plan (pass 2 read run 45625671325): the pages of the course descriptions (from page 129) that name Administration of Justice, to learn how the catalog heads a subject; pass 2's keyword was anchored and hit nothing. No model call.",
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 4 of this plan (pass 3 read run 45627438096): the course descriptions (from page 129) head each subject with its name on the line above its first course ('Administration of Justice' over 'ADMJ C062 A 1.00 Unit', pass 3). This headings read prints the two lines above each code's first course, a course being a heading line that ends in its units. No model call.",
  "college": "Cerro Coso Community College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "ADMINISTRATION OF JUSTICE",
-  "\\(ADMJ\\)",
-  "ADMJ C?\\d{3}"
+  "Units?"
  ],
  "pdf_page_cap": 14,
  "pdf_unfolded": true,
@@ -20,8 +18,11 @@
    "hand_filed": true
   }
  ],
- "pdf_span": [
-  129,
-  212
- ]
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z]{2,5}) (?P<num>C?\\d{3,4}[A-Z]{0,2}) ",
+  "before": 2,
+  "start_page": 129,
+  "within": 3,
+  "units_inline": "\\d+\\.\\d{2}(?:-\\d+\\.\\d{2})? Units?$"
+ }
 }

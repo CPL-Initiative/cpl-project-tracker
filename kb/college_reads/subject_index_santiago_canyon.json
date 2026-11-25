@@ -1,11 +1,11 @@
 {
- "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 3 of this plan (pass 2 read run 45625671325): the course-description pages for ACCT 101 (any line naming it without a program's Total Units), past the program pages pass 2 found. No model call.",
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 4 of this plan (pass 3 read run 45627438096): the course section (CREDIT COURSES from page 448) heads each subject in capitals above its first course (ACCOUNTING over ACCT035, pass 3). This headings read prints the two lines above each code's first course, a course being a CODE+NUMBER line with a Units: line within three lines. No model call.",
  "college": "Santiago Canyon College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "ACCT\\s?-?\\s?101\\b(?![^\\n]*Total Units)"
+  "Units?"
  ],
  "pdf_page_cap": 14,
  "pdf_unfolded": true,
@@ -17,8 +17,11 @@
    ]
   }
  ],
- "pdf_span": [
-  282,
-  1165
- ]
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z]{2,6})(?P<num>\\d{3}[A-Z]{0,2})$",
+  "before": 2,
+  "start_page": 440,
+  "within": 3,
+  "units": "^Units:"
+ }
 }
