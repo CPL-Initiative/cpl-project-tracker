@@ -237,6 +237,14 @@ GAPS.setdefault("required_list_outside_total",
                 "The catalog prints a list the program requires apart from its printed total, and the record counts "
                 "that list; without it the courses add to the printed total.")
 ARITH_SCORE.setdefault("required_list_outside_total", 70)
+# S727 at Antelope Valley (kb/_program_ge_other_pattern_s727v.py): a Cal-GETC degree whose page prints general
+# education figures only for CSU GE and IGETC (43028, held out of ge_units_not_read by HELD_GE_FIGURE). Its score is
+# ge_units_not_read's 50: the major adds up, and the named pattern's units are all that is missing.
+GAPS.setdefault("ge_figures_other_pattern",
+                "The degree names one general education pattern, and the page prints general education figures only "
+                "for other patterns, so no units for the named pattern were read and the degree's units cannot be "
+                "added. Its major adds up to the printed major total.")
+ARITH_SCORE.setdefault("ge_figures_other_pattern", 50)
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
