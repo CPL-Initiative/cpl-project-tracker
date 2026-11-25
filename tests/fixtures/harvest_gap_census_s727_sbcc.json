@@ -1,6 +1,6 @@
 {
-  "_what": "S727 (lane 2, Santa Barbara City): the reconcile_steps lever of the committed census (written 2026-11-25 01:39Z from the live rows) at the college, frozen: kb/_program_piles_s727_sbcc.py planned from it.",
-  "written_at": "2026-11-25 07:13Z",
+  "_what": "S727 (lane 2, Santa Barbara City): the reconcile_steps lever of the committed census at the college as written at written_at (the census's own, from the live rows), frozen: kb/_program_piles_s727_sbcc.py planned from it.",
+  "written_at": "2026-11-25 01:39Z",
   "levers": [
     {
       "lever": "reconcile_steps",

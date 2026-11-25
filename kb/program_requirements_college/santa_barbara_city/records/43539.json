@@ -64,10 +64,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    29.0,
+    27.0,
     34.0
    ],
    "stated": [
@@ -75,7 +75,9 @@
     34.0
    ],
    "against": "program",
-   "why": []
+   "why": [
+    "the blocks sum to 27.0-34.0; the catalog states 29.0-34.0"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -102,7 +104,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
