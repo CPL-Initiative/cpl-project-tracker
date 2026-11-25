@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-24T23:34:59Z",
-  "session": 724,
-  "moniker": "SkySandpiper",
+  "written_at": "2026-11-25T01:42:12Z",
+  "session": 725,
+  "moniker": "SkyPlover",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_725_handoff.md",
+  "handoff": "docs/session_726_handoff.md",
   "next_step": {
     "title": "The display build for tonight's records, then the census",
     "text": "Build the display page carrying the 65 records collected tonight once the pooled reading's pull request merges, gate one college, apply the whole build, then run the census on main. Then the pooled reading's next records, the eLumen sister-award reader fix and the census's next piles."
@@ -1014,6 +1014,12 @@
       "active": 20282,
       "complete": 15524,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-25",
+      "active": 20282,
+      "complete": 15524,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -1022,7 +1028,7 @@
     "at": "2026-11-25T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-24",
+    "day": "2026-11-25",
     "gaps": 3379,
     "parts": {
       "links": {

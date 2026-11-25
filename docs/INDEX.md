@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-24
+updated: 2026-11-25
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 110 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 681 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1574** | |
+| Session handoffs | 682 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1575** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-25 (S725 SkyPlover, Sam's plain session, light checkpoint): #3799 (Gather, the first slice: the Gather view of Courses and Programs; words, subjects and target in its address; insert-only merge_into saves with Take it back). Handoff 726.
 - 2026-11-24 (S724 SkySandpiper, Sam's plain session, full checkpoint): #3790 (a why line on each band in doubt; Cabrillo KIN 38A to KINE M1344, one receipted row), #3792 (Blocked on COBI), #3793 (tick courses or the M-ID, move them with MQ notes, descriptions and units), #3794 and #3796 (sidebar for narrow work, bottom bar for wide work; tabs act as well as inform), #3797 (the Courses List's tabbed bottom bar; panel tables sort, filter and resize). Six mocks; the anchor-page build approved. Handoff 725.
 - 2026-11-24 (S723 SkyBooby, Sam's plain session, light checkpoint): #3778 (the Commons top section: two ETA columns, Needs you as links only, links land highlighted on card links), #3781 (Rulings to find, the doubt list in Needs you, COBIx never rendered), #3784 (no cost bars; the way back survives a tab's redraw), #3785 (Common subject in doubt: full lists with codes, Accept on the band, Local subject column). Two CLAUDE.md naming rules. Handoff 724.
 - 2026-11-24 (S722 SkyCormorant, Sam's plain session, full checkpoint): #3768 (a Courses count reads its code's own course file, never the 17 MB state list), #3771 (Titles to check: a derived title stands at 80+, Accept on the row and per title, the 0-100 confidence bar as one component, sidebars never cover the view, quick links land on a link, the Commons names COBI, never Sky); #3770 withdrawn in #3771. KB note: `methodology-a-source-that-only-checks-the-winner-never-wins`.
@@ -131,4 +132,3 @@ Authoritative external sources we've cached:
 - 2026-11-24 (S720 SkyEider, the CPL Queue routine's collection run, conductor, full checkpoint): #3754 (display build `abf1f6396156`, 18,665 rows live), #3753 (Fullerton's 6 collected with named gaps), #3756 (no electives fill over a cut-off window; a reconcile keeps named gaps); applied and live in open PRs: #3758 (ten colleges' piles, 95 named-gap records), #3759 (American River 04544 corrected; nine `section_cut_off` gaps at Los Rios), #3752 (the reader-page lever, 16 passing at Mendocino, Los Angeles Southwest and American River). Handoff 721; the harvest lane rebuilt under 20,000 bytes; lessons S691 and S697 moved to archive 8.
 - 2026-11-24 (S719 SkyShearwater, Sam's plain session, full checkpoint): #3740 (the Subjects card matches a college's name as the table does), #3741 (the web-search pass for all 205 untitled codes with no filed search; a program label only where the page lists the code's courses), #3743 (every Commons card but Plan in the Subjects card's checks design), #3744 (the quarterly MQ baseline on the 20th edition, its test tied to the handbook file), #3745 (the MQ view at `#commons/subjects/mq`, the second sidebar), #3748 open (the cards answer their own edits). The commons and CSR lanes compacted to archive 8. No new KB note; a fourth instance in methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh. Handoff 720 (SkyCormorant).
 - 2026-11-24 (S718 SkyPetrel, Sam's plain session, full checkpoint): #3730 (Estimating's common code reads ESTG), #3732 (the Subjects view by confidence: a Needs attention column after College, Act on it at the top of the panel, the card's quick links with its sections folded), #3733 and #3734 (a code the index omits read at its code's address, and the pages a filed search found read: Cerritos INST, Long Beach City CART), #3737 open (`check_generated.sh` covers every status file, with a guard). 1 new KB note (methodology-a-hand-listed-checklist-drifts-a-guard-on-the-unlisted-item-does-not). Handoff 719 (SkyShearwater).
-- 2026-11-23 (S717 SkyGannet, Sam's plain session, full checkpoint): #3724 (the Subjects tab's Colleges by source: all 118 colleges by way to look, from a new attempts register), #3725 (the course panel's move rows, Collapse all, the credit-then-noncredit picker), #3726 open (the 20th-edition MQ handbook read with its three list types and Title 5 provisions, the MQ view's data, and a Common SUBJ for the 95 MQ disciplines that had none), #3727 open (a sidebar opens beside the view); Sam's rulings on settled codes, the TOP vocational flag and the MQ view; KB note `methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached`; handoff 718.
