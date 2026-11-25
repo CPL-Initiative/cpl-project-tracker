@@ -53,7 +53,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01302",
@@ -482,7 +486,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01321",
@@ -494,7 +502,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01322",
@@ -556,7 +568,7 @@
    "AUT9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28225",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28225",
    "title": "AS Degree in Automotive Technology",
    "h1": "AS Degree in Automotive Technology",
    "text_from": "innerText",
@@ -581,7 +593,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01325",
@@ -614,7 +630,7 @@
    "WLD99"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28182/28349",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28182/28349",
    "title": "AS Degree in Welding Technology",
    "h1": "AS Degree in Welding Technology",
    "text_from": "innerText",
@@ -680,7 +696,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01339",
@@ -692,7 +712,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01340",
@@ -704,7 +728,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01342",
@@ -716,7 +744,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01343",
@@ -728,7 +760,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01348",
@@ -753,7 +789,7 @@
    "FASH99"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28124/28296",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28296",
    "title": "AS Degree in Fashion Merchandising",
    "h1": "AS Degree in Fashion Merchandising",
    "text_from": "innerText",
@@ -778,7 +814,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01355",
@@ -821,7 +861,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01357",
@@ -833,7 +877,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01358",
@@ -889,7 +937,7 @@
    "POLSC1000"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28126/28301",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28301",
    "title": "AS Degree in Fire Technology",
    "h1": "AS Degree in Fire Technology",
    "text_from": "innerText",
@@ -914,7 +962,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01370",
@@ -958,7 +1010,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "07257",
@@ -1049,7 +1105,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "07260",
@@ -1150,7 +1210,7 @@
    "COMMC1000"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28204",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28204",
    "title": "AS Degree in Administration of Justice",
    "h1": "AS Degree in Administration of Justice",
    "text_from": "innerText",
@@ -1227,7 +1287,7 @@
    "RTVF40"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28313",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28313",
    "title": "AS Degree in Multimedia Studies",
    "h1": "AS Degree in Multimedia Studies",
    "text_from": "innerText",
@@ -1252,7 +1312,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11126",
@@ -1264,7 +1328,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11128",
@@ -1370,7 +1438,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11136",
@@ -1397,7 +1469,7 @@
    "POS12"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28210",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28210",
    "title": "AS Degree in Court Personnel/Pre-law",
    "h1": "AS Degree in Court Personnel/Pre-law",
    "text_from": "innerText",
@@ -1422,7 +1494,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11138",
@@ -1434,7 +1510,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11139",
@@ -1446,7 +1526,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11140",
@@ -1637,7 +1721,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "17970",
@@ -1676,7 +1764,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19042",
@@ -1688,7 +1780,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19980",
@@ -2687,7 +2783,7 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28206",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28206",
    "title": "AS-T Degree in Administration of Justice",
    "h1": "AS-T Degree in Administration of Justice",
    "text_from": "innerText",
@@ -3130,7 +3226,7 @@
    "CDF80"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28252",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28252",
    "title": "AS-T Degree in Early Childhood Education",
    "h1": "AS-T Degree in Early Childhood Education",
    "text_from": "innerText",
@@ -3449,7 +3545,7 @@
    "MUS88"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28315",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28315",
    "title": "AA-T Degree in Music",
    "h1": "AA-T Degree in Music",
    "text_from": "innerText",
@@ -3585,7 +3681,7 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28140/28307",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28140/28307",
    "title": "AA-T Degree in Journalism",
    "h1": "AA-T Degree in Journalism",
    "text_from": "innerText",
@@ -3623,7 +3719,7 @@
    "RTVF30"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28316",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28316",
    "title": "AS Degree in Recording Arts",
    "h1": "AS Degree in Recording Arts",
    "text_from": "innerText",
@@ -4071,7 +4167,7 @@
    "AJLE100"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28217",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28217",
    "title": "AS Degree in Law Enforcement Academy - Basic/State Parks Emphasis",
    "h1": "AS Degree in Law Enforcement Academy - Basic/State Parks Emphasis",
    "text_from": "innerText",
@@ -4623,7 +4719,7 @@
    "MFG46"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28373",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28373",
    "title": "AS Degree in Advanced Manufacturing",
    "h1": "AS Degree in Advanced Manufacturing",
    "text_from": "innerText",
@@ -4742,7 +4838,7 @@
    "WLD18"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28229",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28229",
    "title": "AS Degree in Diesel Technology",
    "h1": "AS Degree in Diesel Technology",
    "text_from": "innerText",
@@ -4785,7 +4881,7 @@
    "AUT9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28227",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
    "title": "AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
    "h1": "AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
    "text_from": "innerText",
@@ -4977,7 +5073,7 @@
    "CSCI76"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/27600",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27600",
    "title": "AS Degree in Cyber-Security Practitioner",
    "h1": "AS Degree in Cyber-Security Practitioner",
    "text_from": "innerText",
@@ -5009,7 +5105,7 @@
    "PHIL8"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28402/27536",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28402/27536",
    "title": "AA-T Degree in Philosophy",
    "h1": "AA-T Degree in Philosophy",
    "text_from": "innerText",
@@ -5149,7 +5245,7 @@
    "NSG9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28380",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380",
    "title": "AS Degree in Accelerated Track Registered Nursing",
    "h1": "AS Degree in Accelerated Track Registered Nursing",
    "text_from": "innerText",
@@ -5186,7 +5282,7 @@
    "NSG9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28381",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28381",
    "title": "AS Degree in Accelerated Track Registered Nursing: LVN to ADN",
    "h1": "AS Degree in Accelerated Track Registered Nursing: LVN to ADN",
    "text_from": "innerText",
@@ -5286,7 +5382,7 @@
    "RTVF12"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28098/28257",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28257",
    "title": "AA-T Degree in Communication Studies 2.0",
    "h1": "AA-T Degree in Communication Studies 2.0",
    "text_from": "innerText",
@@ -5988,7 +6084,7 @@
    "MUS92"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/27601",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27601",
    "title": "AA Degree in Music",
    "h1": "AA Degree in Music",
    "text_from": "innerText",

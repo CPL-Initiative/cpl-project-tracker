@@ -48,6 +48,7 @@ THE NEXT LEVER (measured here, written nowhere): Butte's map prints its elective
 units needed to graduate have not been completed', and the reader kept that figure as degree_elective_units. A Butte reconcile step reading that line as electives that fill the degree (degree_elective_units null,
 electives_fill_degree true) passes those nine on today's scorer (ELECTIVE_LINE_PASSES, checked by the test); it
 changes the record, so it is a reconcile run's work, not this plan's.
+S727 builds it: Butte's clear_conditional step and kb/_program_reconcile_s727_butte.py.
 
 THE CLAIM CHECK (p-claim-check-reads-current-capture-s713): every course an entry names is among the codes today's
 capture (sources.json) found. THE SELF-RECALL: HAND is the hand reading of the 17; precision runs the rule and the

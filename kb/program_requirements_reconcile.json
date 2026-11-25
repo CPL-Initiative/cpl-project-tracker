@@ -3,6 +3,7 @@
  "_kinds": {
   "fill": "pattern's min (and max) fill program.<field> when it is empty; only_without / only_with name a field that must be empty / set; skip_if_equal names a field that already holds the same figure (no double count); fills_degree_rest takes the first match whose figure is the degree total less the major's total (S713, Antelope Valley)",
   "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
+  "clear_conditional": "a figure the reader took from a line the page prints as needed only when the degree's units fall short (pattern; Butte's 'Only necessary if the 60 units needed to graduate have not been completed', S727) is cleared, where the record reads electives_fill_degree and a degree total and one of its own notes names the field, prints its figure and quotes the line (note_words, a regex, letter case aside), the major and general education at their least come short of the degree total's low end, and the figure lies inside what the electives fill (no less than the low end less the major and general education at their most, no more than the top less them at their least); hold names records the step leaves alone",
   "order": "steps run in order: a clear runs before the fills that depend on it",
   "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE); 'noncredit': a noncredit program by the state file's award (S644: the no-colon hours total's flag, San Bernardino Valley and Coalinga)",
   "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without names a field that must be empty, only_with one that must be set (Los Angeles City, S639: a heading's 'Minimum of 60' is a floor only where the record holds that total; Victor Valley's Cal-GETC, only_with degree_total). A set of electives_fill_words files the catalog's own sentence that electives fill the total, where the page never prints the word elective (Grossmont, East Los Angeles, S644): the scorer's electives guard reads it, and only where the text prints it. A step with was replaces a field holding exactly that figure (East Los Angeles, S714: a high-unit major's waived general education areas take the LACCD plan's 27 to 21); hold names records the step leaves alone, with why",
@@ -1842,6 +1843,14 @@
      "value": true,
      "awards": "associate",
      "pattern": "Only\\s+necessary\\s+if\\s+the\\s+60\\s+units\\s+needed\\s+to\\s+graduate\\s+have\\s+not\\s+been\\s+completed"
+    },
+    {
+     "kind": "clear_conditional",
+     "field": "degree_elective_units",
+     "awards": "associate",
+     "pattern": "Only\\s+necessary\\s+if\\s+the\\s+60\\s+units\\s+needed\\s+to\\s+graduate\\s+have\\s+not\\s+been\\s+completed",
+     "note_words": "only\\s+necessary\\s+if\\s+the\\s+60\\s+units\\s+needed\\s+to\\s+graduate",
+     "why": "S727 (SkyTropicbird's lane 2, f-butte-nine-pass-on-elective-line-s721): the map's elective line is the electives that fill the degree to 60, which the step above already reads as electives_fill_degree; where the reader also kept that line's figure as degree_elective_units (its own note names the field, the figure and the line), the figure is cleared, as 44 of the 71 Butte records quoting the line already read it; only where the major and general education fall short of the degree's low end and the figure lies inside what the electives fill (14 of the 27 that keep a figure, the nine among them). Self-recall: kb/_program_reconcile_s727_butte.py; reversible by deleting this step."
     },
     {
      "kind": "set",
