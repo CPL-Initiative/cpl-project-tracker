@@ -1,0 +1,21 @@
+{
+ "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 1: the catalog's front page, its links to a course index printed, and the course index followed once, so the read prints every subject heading the index lists. No model call.",
+ "college": "Moorpark College",
+ "questions": {
+  "subjects": "Every subject heading the catalog's course index prints, with its code."
+ },
+ "keywords": [
+  "\\([A-Z&]{1,8}\\)"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.vcccd.edu/moorpark/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "(?i)course|subject|prefix|descriptions",
+   "links_cap": 120,
+   "follow": "(?i)^\\s*(course descriptions|courses|courses a-z|course index|all courses|course listings?)\\s*$|/(course-?descriptions|courses)/?(index\\.html?)?$"
+  }
+ ]
+}
