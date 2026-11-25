@@ -1,0 +1,375 @@
+{
+ "college": "Columbia College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:06:25Z",
+ "run": "45630168042",
+ "plan": "kb/college_reads/subject_index_columbia.json",
+ "titles": [
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Art (ART) (ARTH)"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "shared_heading": "Art (ART) (ARTH)"
+  },
+  {
+   "code": "ASTRO",
+   "title": "Astronomy",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AT",
+   "title": "Automotive Technology",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUSAD",
+   "title": "Business Administration",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHILD",
+   "title": "Child Development",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMP",
+   "title": "Computer Programming and Information Systems",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRAMA",
+   "title": "Drama",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESC",
+   "title": "Earth Science",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELL",
+   "title": "English Language Learning",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENTRE",
+   "title": "Entrepreneurship",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FNR",
+   "title": "Forestry and Natural Resources",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOGR",
+   "title": "Geography",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GUIDE",
+   "title": "Guidance",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HHP",
+   "title": "Health and Human Performance",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HPMGT",
+   "title": "Hospitality Management",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Sciences",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Mathematics (STAT) (MATH)"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Mathematics (STAT) (MATH)"
+  },
+  {
+   "code": "MEDIA",
+   "title": "Media",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURSE",
+   "title": "Nurse",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHILO",
+   "title": "Philosophy",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSCI",
+   "title": "Physical Science",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYCS",
+   "title": "Physics",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Political Science (POLS) (POLSC)"
+  },
+  {
+   "code": "POLSC",
+   "title": "Political Science",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Political Science (POLS) (POLSC)"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Psychology (PSYC) (PSYCH)"
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Psychology (PSYC) (PSYCH)"
+  },
+  {
+   "code": "SIGN",
+   "title": "Sign Language",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SKLDV",
+   "title": "Skills Development",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work and Human Services",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCIO",
+   "title": "Sociology",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TUTOR",
+   "title": "Tutor",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WKEXP",
+   "title": "Work Experience",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WT",
+   "title": "Welding Technology",
+   "url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "note": "Each title is a subject heading on the Courses page, printed as 'Name (CODE)' and linked to its subject page (2026-2027-Catalog/courses/<slug>). Four headings carry two codes; shared_heading keeps each as printed. The page's own note reads '(ART) (ARTH) will list both Art (ART) and Art History (ARTH) courses.', so ARTH is filed as Art History from that note (method prefix legend). Read by run 45630168042 at commit dfbb61eb (round 4 of the plan)."
+}

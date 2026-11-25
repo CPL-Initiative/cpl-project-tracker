@@ -1,0 +1,536 @@
+{
+ "college": "Cabrillo College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:53Z",
+ "run": "45628601616",
+ "plan": "kb/college_reads/subject_index_cabrillo.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADAPT",
+   "title": "Adaptive Physical Education",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ALH",
+   "title": "Allied Health",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AH",
+   "title": "Art History",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Art History - AH/ARTH"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Art History - AH/ARTH"
+  },
+  {
+   "code": "AP",
+   "title": "Art Photography",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTRO",
+   "title": "Astronomy",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATH",
+   "title": "Athletics",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer and Information Systems",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CABT",
+   "title": "Computer Applications and Business Technology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CEM",
+   "title": "Construction and Energy Management",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CG",
+   "title": "Counseling and Guidance",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CJ",
+   "title": "Criminal Justice",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CAHM",
+   "title": "Culinary Arts and Hospitality Management",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DH",
+   "title": "Dental Hygiene",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMCP",
+   "title": "Digital Management Career Preparation",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DM",
+   "title": "Digital Media",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETECH",
+   "title": "Engineering Technology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ES",
+   "title": "Environmental Science",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIN",
+   "title": "Finance",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FT",
+   "title": "Fire Technology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FR",
+   "title": "French",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WS",
+   "title": "Gender and Women's Studies",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GRMN",
+   "title": "German",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HS",
+   "title": "Health Science",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HONRS",
+   "title": "Honors",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HORT",
+   "title": "Horticulture",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSERV",
+   "title": "Human Services",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WORK",
+   "title": "Internships and Work Experience",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPAN",
+   "title": "Japanese",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOURN",
+   "title": "Journalism",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LS",
+   "title": "Learning Skills",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Science",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Mathematics - MATH/STAT"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Mathematics - MATH/STAT"
+  },
+  {
+   "code": "MA",
+   "title": "Medical Assisting",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "N",
+   "title": "Nursing",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEAN",
+   "title": "Oceanography",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHILO",
+   "title": "Philosophy",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PS",
+   "title": "Political Science",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Political Science - PS/POLS"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Political Science - PS/POLS"
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Psychology - PSYCH/PSYC"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "Psychology - PSYCH/PSYC"
+  },
+  {
+   "code": "RT",
+   "title": "Radiologic Technology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPED",
+   "title": "Special Education",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "W",
+   "title": "Welding",
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "note": "Each title is the catalog's side-menu entry 'Name - CODE', the same text as the department page's own heading (the Accounting page's h2 reads 'Accounting - ACCT', read in the same run). A heading naming two codes (Art History - AH/ARTH, Mathematics - MATH/STAT, Political Science - PS/POLS, Psychology - PSYCH/PSYC) gives each code its title and keeps the heading as printed in shared_heading. Read by run 45628601616 at commit d05ca7bb (round 3 of the plan)."
+}

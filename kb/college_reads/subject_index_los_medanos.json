@@ -1,5 +1,5 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 4. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 3 (run 45628601616): the degrees page links some 60 department pages by '> catalog' buttons, and the Art page prints no subject heading above its courses. This read: the Appendices page, whole, in case it holds a prefix legend. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 5. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 4 (run 45630168042): the Appendices page holds no prefix legend; the degrees page links 55 department pages. This read: every department page the degrees page links, printing only the lines above each code's first course (subject_context), so each code is filed under the department page that lists it (a department label). No model call, writes nothing.",
  "college": "Los Medanos College",
  "capture_lines": 6000,
  "questions": {
@@ -17,10 +17,390 @@
    "answers": [
     "subject_index"
    ],
-   "url": "https://lmc.elumenapp.com/catalog/26-27/appendices",
-   "capture_view": true,
-   "links": "catalog/26-27/",
-   "links_cap": 100
+   "url": "https://lmc.elumenapp.com/catalog/26-27/academicandcareersuccess",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/administrationofjustice",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/anthropology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/art",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/astronomy",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/automotivetechnology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/automotivetechnologynoncredit",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/biologicalscience",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/business",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/businessnoncredit",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/chemistry",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/communicationstudies",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/computerscience",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/constructionnoncredit",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/counseling",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/counselingnoncredit",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/drama",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/economics",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/childdevelopment/earlychildhoodeducation",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/electrical/instrumentationtechnology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/emergencymedicalservices",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/engineering",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/english",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/englishasasecondlanguageesl",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/ethnicstudies",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/firetechnology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/history",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/humanities",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/journalism",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/kinesiology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/kinesiologyintercollegiateathletics",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/liberalarts",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/managementandsupervision",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/mathematics",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/mathematicsnoncredit",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/music",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/nursingregistered",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/nursingvocational",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/nutrition",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/philosophy",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/physicalscience",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/physics",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/politicalscience",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/processtechnology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/psychology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/recordingarts",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/socialjusticestudies",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/sociology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/uasdroneoperationsnoncredit",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/weldingtechnology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/signlanguage",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/italian",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/spanish",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/french",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/workexperienceeducation",
+   "capture_view": true
   }
- ]
+ ],
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z][A-Z&]{0,7}) (?P<num>[A-Z]?\\d{1,4}[A-Z]{0,4}) [-\u2013] (?P<title>.+)$",
+  "before": 3
+ }
 }
