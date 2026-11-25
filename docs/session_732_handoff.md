@@ -106,6 +106,20 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 11:44Z: #3825 merged (`9a5deb35`) without a final update from `main`, which had moved only by the plain session's
   #3824, touching none of its files (`d-display-merged-without-main-update-s731`); the census dispatched on `main`.
 
+- 11:43Z: Antelope Valley's read 45603949086 failed in its `read` job after uploading its artifact (15017413156);
+  `elumen2` resumed to find why from the log (never a blind rerun), push its commit, and fix the reader's MAJOR (43150 is
+  inserted only when it passes `passes_live`). 11:47Z: `pooled` (s731p) started on Opus 5.5 at high effort.
+- 11:55Z: s730b's Opus reader said APPLY: MAJOR 1, its test asserts the seven `repeat` holds still fail, which the
+  repeat branch changes, so the test accepts either state before the land; MINOR 2, `waived_course_counted` keeps 50
+  (**DECIDED** `d-waived-course-counted-keeps-50-s731`: the figure closes only for a student who holds the waiver);
+  MINOR 3, the waiver shape misses six worded otherwise (Saddleback 42644, 19551, 22933; Orange Coast 42331; Madera
+  39862; Reedley 18957), for the follow-up. 11:57Z: clean md5 pre-read (8 of 8); migrate 45609196483 returned 8, none
+  skipped; `.apply` restored (`a354854b`).
+- 11:59Z: s731c (Long Beach City, `claude/s731-piles-lbcc` `6d9d3a92`): 13 rows, 3 passing on a rescore (02678, 20940
+  `short_high`; 30650 `meets`) and 10 named gaps; 3 held (43021, 37213, 44848); no new kind. Its loads held two and
+  three runs, so the worker proved each row's run from its record file's history on `main`
+  (`d-multi-run-load-history-proves-run-s731c`); to a Sonnet reader.
+
 [[S731 FILL: the run's log]]
 
 Spend: [[S731 FILL]]
