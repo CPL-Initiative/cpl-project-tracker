@@ -39,6 +39,11 @@ crossed the bar), step 7 (no re-mint applied, no roadmap row moved); step 12 ref
 - He asked when the Commons numbers change: the Subjects card reads the committed status files, live since #3841's
   Pages deploy; Needs an M-ID and the recommendations refresh in the 06:17Z daily build; the stray-code counts move
   only after the apply.
+- On the CSR Local subjects view (row A, one Interdisciplinary Studies course under Astronomy): *"the edit button
+  isn't working right and the sidebar showing the courses does not allow me to move a course to another common
+  subject"*, then *"there should at least be a side bar that allows me to move one or more courses to another
+  subject"*. Built in #3851.
+- *"keep rolling"*: the apply, the seeder fix and the 0-100 recommender followed.
 
 ## What shipped
 
@@ -54,6 +59,20 @@ crossed the bar), step 7 (no re-mint applied, no roadmap row moved); step 12 ref
   person (`kb/subject_title_hunt/20261125_stray_codes_a_person_picks.md`). Dry run: **92 retire, 48 held, Needs an M-ID
   1,819 to 1,918** (`kb/stray_code_remint_out/2026-11-25/report.md`).
 
+- **#3851** (`9bc58ecc`): CSR Local subjects, a sidebar listing a code's courses with their M-IDs; check one or more,
+  pick a Common SUBJ, "Move the checked courses" (`course_subject_decision`, shared from `commons_subjects.js`), with
+  take-back; Edit also changes the filing. `kb/_statewide_subject_codes.py` adds an `mid` column to the course files.
+- **#3853** (`a0a709de`): **the stray-code re-mint applied.** 60 retired, 20 merged shells aliased (registered in
+  `kb/alias_chain.py`), 35 held as unfiled; 27 bot `kb_curation` rows deleted live at 19:40Z (27 matched, 27 deleted;
+  restore SQL in `kb/stray_code_remint_out/2026-11-25/applied/`). Needs an M-ID 1,819 to 1,881. Second reader: FIX
+  THEN APPLY (the post-apply chain's re-seed had dropped 99 assigned codes; main's seed kept). Daily build dispatched.
+- **#3857** (`584eaa08`): `kb/_seed_canonical_subj4.py` carries curator-set entries and stamps forward; guard
+  `tests/csr_seed_keeps_codes_test.py`.
+- **#3858** (`864ed8d4`): `tests/honors_of_rows_check_test.py` case 5 tolerates a moved payload (main was red).
+- **#3859** (`8f01d33c`): the local-subject recommender scores 0-100 (caps: thin 59, program titles 89, disagreement
+  89; agreement joins `1 - prod(1 - p)` to 99); totals `*_90_plus`, `*_60_to_89`, `*_under_60`; the Subjects panel
+  draws `CPL_COMMONS.confBar`.
+
 ## Read in order
 
 1. `docs/reference/lanes/common-subjects-reference.md`, "The stray codes and the title hunt".
@@ -63,20 +82,18 @@ crossed the bar), step 7 (no re-mint applied, no roadmap row moved); step 12 ref
 
 ## Open work, in order
 
-0. **The stray-code apply** (common-subjects-reference NEXT): build `--apply` in `kb/_stray_code_remint.py` under the
-   playbook: refuse without `--receipt` and `--fresh-read`; a fresh live read of `kb_curation` for every retiring id
-   (a person's row holds its id); remove the ids from `kb/coci_minted_courses.json`, `coci_minted_singletons.json`,
-   `coci_minted_memberships.json` with `retire.json` as the receipt; the 24-ish merged shells' aliases registered in
-   `kb/alias_chain.py` ALIAS_MAPS; a second reader before the dispatch; then the daily build. Sam saw the dry run's
-   numbers and said keep rolling.
-1. **The 50 local subjects under 90**: Sam picks from the list; a pick files the common subject and rescores the row.
+0. **The statewide-codes view and MQ chip to 0-100:** a worker was converting `levelOf`/`confWords` (Confident,
+   Likely, Leaning, Unsure) in `commons_subjects.js` on `claude/s733-statewide-0-100` at sign-off; check the branch, open
+   its PR, merge on green.
+1. **The 35 held and the 50 under 90**: file their common subjects (Sam's picks list, or courses moved in the #3851
+   sidebar), then rerun `kb/_stray_code_rescore.py` and the dry run for the rest.
+1a. **The S653 honors plan needs a redraw** (`kb/_honors_of_s653_dryrun.py`): the new alias map makes it stale.
+1b. **COBIx's CSV format:** new subject-title CSVs carry a 0-100 `title_confidence`, no `title_level`
+   (`kb/subject_title_hunt/README.md`); tell COBIx when Sam resumes check-ins.
 2. **The rest of the common-subjects NEXT:** the re-point of the folded local codes (a re-mint, dry run first); ECONMT
    and Electricity's adult-education codes.
 3. **Commons lane NEXT** (handoff 731's items 1 to 6): step 4's remaining Needs you items; step 3's Courses mount;
    Gather; Subjects, CRs and Exhibits on the anchor pattern; CI's second half; ESL after 2026-11-29.
-4. **0-100 everywhere:** each Commons procedure that still prints Low/Medium/High (the recommender's `_levels` in
-   `kb/_build_local_subject_recommendations.py`, the subject-title CSV's `title_level`) converts at its next pass.
-
 Beside the queue: **program-requirements-harvest** is the CPL Queue routine's (handoff 732); **implementation-funding**
 waits on the team. A plain session "Simplified funding page refinements" holds `funding-model/` and `cpl_funding.js`.
 
@@ -118,9 +135,10 @@ file stays yours. What landed, all on the public page (lane `implementation-fund
 
 ## Let go
 
-At sign-off: no PR watch remains (#3841, #3843 and #3846 merged and unsubscribed; this checkpoint's PR merges at
-sign-off); the 18:04Z check-in fired and is spent; no artifact watch; no COBIx watcher; the dry-run worker finished.
+At sign-off: no PR watch remains (#3841, #3843, #3846, #3851, #3853, #3857, #3858 and #3859 merged and unsubscribed;
+this checkpoint's PR merges at sign-off); the 18:04Z check-in is spent; no artifact watch; no COBIx watcher; the
+statewide 0-100 worker may still be finishing on its branch (item 0).
 
-Spend: not available; 2026-11-25T17:04Z to 2026-11-25T18:20Z.
+Spend: not available; 2026-11-25T17:04Z to 2026-11-25T22:15Z.
 
 Opening line: *Greetings, you are SkyWhimbrel (Session 735), see SkyGodwit's handoff — `docs/session_734_handoff.md` — let's keep rolling with our queue.*

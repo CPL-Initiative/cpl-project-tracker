@@ -148,9 +148,11 @@ COBIx. **RULED** `r-collect-curate-connect-grow-automatic-sam-2026-11-25`. **The
 100 by `kb/_stray_code_rescore.py` (**RULED** `r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25`: no Low,
 Medium or High in a Commons procedure): 66 of 116 local subjects at 90 or more, after COBIx's leftover titles (#3837,
 #3838) filed through `kb/_file_found_subject_titles.py --csv` (911 titles; 96 department labels kept as hints). The 50
-under 90 are one list for a person: `kb/subject_title_hunt/20261125_stray_codes_a_person_picks.md`. **DRY RUN**
-(#3843, rescoped S733): `kb/_stray_code_remint.py`, 92 M-IDs retire, 48 held, Needs an M-ID 1,819 to 1,918
-(`kb/stray_code_remint_out/2026-11-25/report.md`). **NEXT:** the apply, under the playbook.
+under 90 are one list for a person: `kb/subject_title_hunt/20261125_stray_codes_a_person_picks.md`. **APPLIED** (#3853, S733): 60 stray M-IDs retired, 20 merged shells aliased to their targets (`kb/alias_chain.py`),
+35 held until their local subject's common subject is filed; 27 bot `kb_curation` rows deleted live (restore:
+`kb/stray_code_remint_out/2026-11-25/applied/kb_curation_restore.sql`); Needs an M-ID 1,819 to 1,881. The seeder no
+longer drops assigned codes (#3857). **NEXT:** file common subjects for the 35 held and the 50 under 90 (Sam picks, or
+moves courses in the Local subjects sidebar, #3851), then rerun the dry run for the rest.
 
 ## NEXT
 
