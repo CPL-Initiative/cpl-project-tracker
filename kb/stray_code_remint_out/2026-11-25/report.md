@@ -1,4 +1,4 @@
-# The stray-code re-mint, High and Medium: dry run 2026-11-25
+# The stray-code re-mint, confidence 90 or more: dry run 2026-11-25
 
 The ruling: Sam, 2026-11-25 (r-no-mid-on-a-stray-code-sam-2026-11-25): "i should have never minted those 88 codes and left the courses in a holding pen"; the stray codes go back to Needs an M-ID once their local subjects carry a common subject. The re-mint runs under the playbook (docs/coursecontrolnumber_remint.md, docs/reference/mid_lifecycle.md). Nothing is applied.
 
@@ -12,9 +12,9 @@ Why: the ruling's own words send the courses back to Needs an M-ID. A re-key wou
 
 ## What moves
 
-Of the 251 M-IDs on the 88 stray codes that hold any, 89 retire, 45 are held, and 117 have no course on the 62 in-scope local subjects and stay for a later pass. The 89 retiring M-IDs hold 98 local courses.
+Of the 251 M-IDs on the 88 stray codes that hold any, 92 retire, 48 are held, and 111 have no course on the 66 in-scope local subjects and stay for a later pass. The 92 retiring M-IDs hold 100 local courses.
 
-The Courses List's Needs an M-ID reads **1,819** today and would read **1,916** after the apply and the next daily build (+97). On a stray identity code reads 247 courses today and 149 after. 1 of the retiring ids' courses keep another identity (a C-ID, a CCN, another M-ID) or are kept, not counted, so they do not join the pile.
+The Courses List's Needs an M-ID reads **1,819** today and would read **1,918** after the apply and the next daily build (+99). On a stray identity code reads 247 courses today and 147 after. 1 of the retiring ids' courses keep another identity (a C-ID, a CCN, another M-ID) or are kept, not counted, so they do not join the pile.
 
 Measured by kb/_stray_code_remint.py from unified_courses_members.js, coci_lookup_data.js and kb/coci_not_applicable.json (rebuilt with kb/_build_not_applicable.py for the after count).
 
@@ -29,20 +29,20 @@ Measured by kb/_stray_code_remint.py from unified_courses_members.js, coci_looku
 | FTVE+HUMA | 2 | 0 |
 | HUMA | 1 | 3 |
 | INDD | 2 | 2 |
-| LIBR | 5 | 6 |
-| OLAD | 12 | 13 |
+| LIBR | 4 | 5 |
+| OLAD | 16 | 16 |
 | PHOT | 15 | 17 |
 | VOCE | 2 | 2 |
 | WEXP | 2 | 2 |
 
 An M-ID counted under two subjects joined by + holds courses on two in-scope local subjects whose proposed common subjects differ; each course returns under its own, so its courses count in those rows. One course can sit in two retiring M-IDs, so a row can show fewer courses than M-IDs.
 
-**13 local subjects carry the rescore's proposal and no filing yet**; the ruling says the re-mint waits until local subjects carry a common subject, so the apply files these first or holds their ids: Allan Hancock College OLDR (OLAD); College of the Canyons NC.VOC (VOCE); College of the Redwoods WORK (WEXP); Contra Costa College LIBST (LIBR); De Anza College PHTG (PHOT); Diablo Valley College IDSGN (INDD); Foothill College HUMN (HUMA); Las Positas College HUMN (HUMA); Los Angeles Pierce College LIB SCI (LIBR); Los Angeles Pierce College OLD ADL (OLAD); Los Angeles Southwest College LIB SCI (LIBR); West Los Angeles College LIB SCI (LIBR); Yuba College LIBSC (LIBR).
+**14 local subjects carry the rescore's proposal and no filing yet**; the ruling says the re-mint waits until local subjects carry a common subject, so the apply files these first or holds their ids: Allan Hancock College OLDR (OLAD); College of the Canyons NC.VOC (VOCE); College of the Redwoods WORK (WEXP); De Anza College PHTG (PHOT); Diablo Valley College IDSGN (INDD); Foothill College HUMN (HUMA); Las Positas College HUMN (HUMA); Los Angeles Pierce College LIB SCI (LIBR); Los Angeles Pierce College OLD ADL (OLAD); Los Angeles Southwest College LIB SCI (LIBR); Saddleback College EPHO (OLAD); San Diego College of Continuing Education ARTX (OLAD); West Los Angeles College LIB SCI (LIBR); Yuba College LIBSC (LIBR).
 
-## Held (45)
+## Held (48)
 
-- 24: merged into an M-ID that stays, so its courses already have an M-ID
-- 10: mixed scope: courses on an in-scope local subject and on one outside it
+- 23: merged into an M-ID that stays, so its courses already have an M-ID
+- 14: mixed scope: courses on an in-scope local subject and on one outside it
 - 9: an honors or merge pointer joins it to an M-ID that stays
 - 2: MAP articulations name it
 
@@ -55,13 +55,17 @@ A merged M-ID whose target stays is a shell: the List shows its courses under th
 | ARTG M10AH | Intermediate Exhibition Production | merged into ARTH M1039, which stays: its courses already count there |
 | ARTG M10AL | Page Layout and Typography | merged into MART M1004, which stays: its courses already count there |
 | ARTI M10AE | Illustration 1 - Rendering Techniques | merged into ARTS M1407, which stays: its courses already count there |
+| ARTX M9001 | Drawing and Painting 1-2 - Oa | mixed scope: courses on San Diego College of Continuing Education ARTX (in) and San Diego College of Continuing Education Credit ARTX (out) |
 | ATXX M1001 | Introduction Flight Attendant Training | AT M10DL, which stays, points at it (merge_into) |
 | ATXX M1002 | Introduction to Travel Careers | AT M10AO, which stays, points at it (merge_into) |
 | BUST M10AZ | MS Publisher Comprehensive | MAP articulations name it (1 in kb/coci_articulations.json) |
 | CMPE M10AO | Remote Pilot (Drone) FAA Certification Prep | MAP articulations name it (1 in kb/coci_articulations.json) |
 | CMRT M1001 | Commercial Layout and Design | mixed scope: courses on Porterville College CMRT (in) and Porterville College CMRTP (out) |
+| CRAE M9007 | China Painting for Older Adult | mixed scope: courses on North Orange Continuing Education CRAE, North Orange Continuing Education EMER (in) and North Orange Continuing Education Credit CRAE, North Orange Continuing Education Credit EMER (out) |
+| CRAE M90AA | Needlecraft, Knit, Crochet OA | mixed scope: courses on North Orange Continuing Education CRAE (in) and North Orange Continuing Education Credit CRAE (out) |
 | CTVR M10AE | Cinematic Storytelling | merged into BRDC M1045, which stays: its courses already count there |
 | DBAX M1001 | Beginning Radio Station Operations | DBA M10AC, which stays, points at it (merge_into) |
+| EMER M9015 | Mobile Information Literacy | mixed scope: courses on North Orange Continuing Education EMER (in) and North Orange Continuing Education Credit EMER (out) |
 | ESTI M10AE | Esthetics Fundamentals 1 | merged into COSM M1003, which stays: its courses already count there |
 | FLTE M1002 | Photogrammetry | mixed scope: courses on Sacramento City College FLTEC (in) and Sacramento City College SURVY (out) |
 | FLTE M10AE | Commercial Pilot-Helicopter Flight Techniques | merged into AVIA M1051, which stays: its courses already count there |
@@ -69,14 +73,13 @@ A merged M-ID whose target stays is a shell: the List shows its courses under th
 | FTVM M10AJ | Documentary Film Aesthetics | merged into BRDC M1062, which stays: its courses already count there |
 | FTVM M10AT | Honors Documentary Film Aesthetics | the honors twin of BRDC M1062, which stays |
 | FTVM M10AU | Honors Film Genres | the honors twin of FTVE M1074, which stays |
-| HOSM M9003 | Customer Care: Airline/Travel | mixed scope: courses on Cypress College ATC (in) and North Orange Continuing Education HOSM, North Orange Continuing Education Credit HOSM (out) |
+| HOSM M9003 | Customer Care: Airline/Travel | mixed scope: courses on Cypress College ATC, North Orange Continuing Education HOSM (in) and North Orange Continuing Education Credit HOSM (out) |
 | HUMN M1002 | Honors Introduction to Popular Culture | the honors twin of COMM M1067, which stays |
 | HUMN M1005 | Video Games & Popular Culture | MUSI M10RW, which stays, points at it (merge_into) |
 | HUMN M10BG | Trauma & the Arts | SOCS M10CQ, which stays, points at it (honors_of) |
 | INFO M1003 | Researching in the Digital Age | mixed scope: courses on Golden West College LIBR (in) and Santa Ana College INFO, Santiago Canyon College INFO (out) |
 | LIBS M1002 | Information and Computer Literacy | mixed scope: courses on Fresno City College LITEC (in) and Madera College LIBSKL, Reedley College LIBSKL (out) |
 | LIBS M1004 | Information Literacy and Research Skills | mixed scope: courses on Diablo Valley College LT, San Diego City College LIBS, San Diego Mesa College LIBS, San Diego Miramar College LIBS (in) and Sierra College SKDV (out) |
-| LIBS M10AG | Library and Information Research Skills | merged into LIBR M1019, which stays: its courses already count there |
 | MART M1004 | Digital Page Layout | mixed scope: courses on CaÃ±ada College MART, Los Angeles Trade Technical College VISCOM, Monterey Peninsula College ARTG (in) and Palomar College GCIP, Palomar College GCMW (out) |
 | NCTH M9001 | Business of Acting | mixed scope: courses on Las Positas College THEA (in) and College of the Canyons NC.THTR (out) |
 | OLDR M90AA | Art: Botanical Illustration | merged into OLAD M9047, which stays: its courses already count there |
@@ -96,7 +99,7 @@ A merged M-ID whose target stays is a shell: the List shows its courses under th
 | TOUR M1002 | Travel Destinations: Europe, Africa, and the Middle East | mixed scope: courses on Cypress College ATC (in) and Saddleback College TOUR, Southwestern College T&T (out) |
 | TOUR M1003 | Destinations- Americas and Europe | mixed scope: courses on Cypress College ATC (in) and Saddleback College TOUR (out) |
 
-## Retiring (89)
+## Retiring (92)
 
 | M-ID | Title | Common subject | Courses |
 |---|---|---|---|
@@ -113,6 +116,7 @@ A merged M-ID whose target stays is a shell: the List shows its courses under th
 | ARTI M10AF | Illustration 2, Digital Techniques | ARTS | 1 |
 | ARTN M1004 | Digital Prepress | ARTS | 2 |
 | ARTN M10AG | Comic Book Development and Structure | ARTS | 1 |
+| ARTX M90AB | Introductory Ceramics–Older Adults | OLAD | 1 |
 | BSAD M10AS | Principles of Organizational Communication | BUSI | 1 |
 | CGRA M10AE | Film Theory | ARTS | 1 |
 | CTVR M10AL | History and Appreciation of Television Broadcasting | FTVE | 1 |
@@ -122,6 +126,9 @@ A merged M-ID whose target stays is a shell: the List shows its courses under th
 | DGME M10AH | Radio and Podcast Production Lab | ARTS | 1 |
 | DGME M10AI | Radio and Podcast Production Lab 2 | ARTS | 1 |
 | DSGN M10AF | Digital Media 1 | ARTS | 1 |
+| EPHO M9001 | Fundamentals of Digital Show Presentations (Ei) | OLAD | 2 |
+| EPHO M90AD | Fundamentals of Digital Show Presentations (Ei) | OLAD | 1 |
+| EPHO M90AF | Intermediate Digital Show Presentations (Ei) | OLAD | 1 |
 | ESTI M1001 | Esthetics Intermediate Concepts Ll | COSM | 2 |
 | ESTI M10AF | Esthetics Fundamentals Ll | COSM | 1 |
 | ESTI M10AG | Esthetics Intermediate Concepts L | COSM | 1 |
@@ -142,7 +149,6 @@ A merged M-ID whose target stays is a shell: the List shows its courses under th
 | IDSG M10AE | Introduction to Industrial and Product Design | INDD | 1 |
 | LIBS M1006 | Library Research Methods | LIBR | 2 |
 | LIBS M10AB | Basic Research Skills | LIBR | 1 |
-| LIBS M10AD | Finding Information on Line and in Print | LIBR | 1 |
 | LIBS M10AE | Information Literacy:Search Strategies, Tools, and Resources | LIBR | 1 |
 | LIBS M10AF | Internet Research Methods | LIBR | 1 |
 | MMDI M90AA | Design Studio Practice | ARTS | 1 |
@@ -193,7 +199,7 @@ A merged M-ID whose target stays is a shell: the List shows its courses under th
 ## Validation
 
 - **V0_pinned_set**: pass
-- **V1_levels_in_scope**: pass
+- **V1_confidence_in_scope**: pass
 - **V2_every_retired_id_on_a_stray_code**: pass
 - **V3_no_retired_id_has_an_out_of_scope_course**: pass
 

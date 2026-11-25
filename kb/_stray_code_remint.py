@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The stray-code re-mint, High and Medium: a DRY RUN of retiring the M-IDs minted on stray local codes (Rule 7).
+"""The stray-code re-mint, confidence 90 or more: a DRY RUN of retiring the M-IDs minted on stray local codes (Rule 7).
 
 Sam ruled on 2026-11-25 (r-no-mid-on-a-stray-code-sam-2026-11-25): "i should have never minted those 88 codes and
 left the courses in a holding pen." An M-ID is minted only under a common subject. The 88 stray identity codes
@@ -7,8 +7,9 @@ left the courses in a holding pen." An M-ID is minted only under a common subjec
 blank. They go back to Needs an M-ID, through a re-mint with its receipt, once their local subjects carry a common
 subject. Lane: docs/reference/lanes/common-subjects-reference.md, "The stray codes and the title hunt".
 
-SCOPE. The local subjects of kb/subject_title_hunt/20261125_stray_code_rescore.csv at level High or Medium (62 of
-116). Low and None stay out: a person picks those (kb/subject_title_hunt/20261125_stray_codes_a_person_picks.md).
+SCOPE. The local subjects of kb/subject_title_hunt/20261125_stray_code_rescore.csv whose confidence is at or above
+kb/_stray_code_rescore.py THRESHOLD (90 of 100; Sam, 2026-11-25: confidence is 0-100 in every Commons procedure,
+r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25). The rest stay out: a person picks those (kb/subject_title_hunt/20261125_stray_codes_a_person_picks.md).
 
 DECIDED (S733, 2026-11-25): each in-scope M-ID is RETIRED, and its courses return to Needs an M-ID under the common
 subject the rescore proposes for their local subject. Why retire and not re-key:
@@ -57,8 +58,8 @@ from curation_pointers import POINTER_FIELDS  # noqa: E402
 
 OUT_ROOT = os.environ.get("STRAY_CODE_REMINT_OUT") or os.path.join(HERE, "stray_code_remint_out")
 RESCORE = "kb/subject_title_hunt/20261125_stray_code_rescore.csv"
-LEVELS = ("High", "Medium")
-SCOPE = "stray-codes-high-medium"
+from _stray_code_rescore import THRESHOLD  # noqa: E402
+SCOPE = "stray-codes-confidence-90"
 RULING = ('Sam, 2026-11-25 (r-no-mid-on-a-stray-code-sam-2026-11-25): "i should have never minted those 88 codes and '
           'left the courses in a holding pen"; the stray codes go back to Needs an M-ID once their local subjects '
           'carry a common subject')
@@ -92,6 +93,7 @@ PINS = {
     'ARTI M10AF': ('Illustration 2, Digital Techniques', 'ARTS'),
     'ARTN M1004': ('Digital Prepress', 'ARTS'),
     'ARTN M10AG': ('Comic Book Development and Structure', 'ARTS'),
+    'ARTX M90AB': ('Introductory Ceramics–Older Adults', 'OLAD'),
     'BSAD M10AS': ('Principles of Organizational Communication', 'BUSI'),
     'CGRA M10AE': ('Film Theory', 'ARTS'),
     'CTVR M10AL': ('History and Appreciation of Television Broadcasting', 'FTVE'),
@@ -101,6 +103,9 @@ PINS = {
     'DGME M10AH': ('Radio and Podcast Production Lab', 'ARTS'),
     'DGME M10AI': ('Radio and Podcast Production Lab 2', 'ARTS'),
     'DSGN M10AF': ('Digital Media 1', 'ARTS'),
+    'EPHO M9001': ('Fundamentals of Digital Show Presentations (Ei)', 'OLAD'),
+    'EPHO M90AD': ('Fundamentals of Digital Show Presentations (Ei)', 'OLAD'),
+    'EPHO M90AF': ('Intermediate Digital Show Presentations (Ei)', 'OLAD'),
     'ESTI M1001': ('Esthetics Intermediate Concepts Ll', 'COSM'),
     'ESTI M10AF': ('Esthetics Fundamentals Ll', 'COSM'),
     'ESTI M10AG': ('Esthetics Intermediate Concepts L', 'COSM'),
@@ -121,7 +126,6 @@ PINS = {
     'IDSG M10AE': ('Introduction to Industrial and Product Design', 'INDD'),
     'LIBS M1006': ('Library Research Methods', 'LIBR'),
     'LIBS M10AB': ('Basic Research Skills', 'LIBR'),
-    'LIBS M10AD': ('Finding Information on Line and in Print', 'LIBR'),
     'LIBS M10AE': ('Information Literacy:Search Strategies, Tools, and Resources', 'LIBR'),
     'LIBS M10AF': ('Internet Research Methods', 'LIBR'),
     'MMDI M90AA': ('Design Studio Practice', 'ARTS'),
@@ -173,11 +177,23 @@ PINS = {
 
 
 # ── reads ──────────────────────────────────────────────────────────────────────
-def read_scope(path, levels=LEVELS):
-    """(college, local subject) -> its rescore row, for the levels in scope."""
+def proposal(row):
+    """The common subject a row's courses go back under: the rescore's proposal, else its scored suggestion."""
+    return row.get("proposed_common_subject") or row.get("suggested_common_subject") or ""
+
+
+def in_scope(row, threshold=THRESHOLD):
+    try:
+        return int(row.get("confidence") or 0) >= threshold
+    except ValueError:
+        return False
+
+
+def read_scope(path, threshold=THRESHOLD):
+    """(college, local subject) -> its rescore row, for the rows at or above the threshold."""
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
-    return ({(r["college"].strip(), r["local_subject"].strip()): r for r in rows if r["level"] in levels},
+    return ({(r["college"].strip(), r["local_subject"].strip()): r for r in rows if in_scope(r, threshold)},
             {(r["college"].strip(), r["local_subject"].strip()): r for r in rows})
 
 
@@ -313,7 +329,7 @@ def compute_plan(inp, scope, all_rows, pins=None):
 
     # Pins: the live set must match what was frozen.
     def target(k):
-        subs = sorted({scope[p]["proposed_common_subject"] for p in info[k]["in_pairs"]})
+        subs = sorted({proposal(scope[p]) for p in info[k]["in_pairs"]})
         return "+".join(subs)
 
     v0 = []
@@ -336,8 +352,8 @@ def compute_plan(inp, scope, all_rows, pins=None):
         rec = courses.get(k) or singletons.get(k)
         plan["retire"][k] = {
             "title": info[k]["title"], "target": target(k), "source": info[k]["source"],
-            "courses": [dict(r, common_subject=scope[(r["college"], r["subject"])]["proposed_common_subject"],
-                             level=scope[(r["college"], r["subject"])]["level"],
+            "courses": [dict(r, common_subject=proposal(scope[(r["college"], r["subject"])]),
+                             confidence=int(scope[(r["college"], r["subject"])]["confidence"]),
                              filed=bool(scope[(r["college"], r["subject"])]["filed_common"]))
                         for r in info[k]["courses"]],
             # the receipt: everything the apply removes, so a rollback restores it byte for byte
@@ -347,7 +363,7 @@ def compute_plan(inp, scope, all_rows, pins=None):
     plan["validation"] = {
         "V0_pinned_set": {"pass": pins is not None and not v0, "problems": v0[:20], "pinned": len(pins or {}),
                           "retiring": len(retire)},
-        "V1_levels_in_scope": {"pass": all(r["level"] in LEVELS for r in scope.values())},
+        "V1_confidence_in_scope": {"pass": all(in_scope(r) for r in scope.values())},
         "V2_every_retired_id_on_a_stray_code": {"pass": all(k.split(" ")[0] in inp["stray_codes"] for k in retire)},
         "V3_no_retired_id_has_an_out_of_scope_course": {"pass": not any(info[k]["out_pairs"] for k in retire)},
     }
@@ -408,7 +424,7 @@ def render_report(plan, before, after, moved_rows, today, rel_out):
         by_subj_ids[v["target"]] += 1
         for c in v["courses"]:
             by_subj_courses[c["common_subject"]].add((c["college"], c["cn"]))
-    L = [f"# The stray-code re-mint, High and Medium: dry run {today}", "",
+    L = [f"# The stray-code re-mint, confidence {THRESHOLD} or more: dry run {today}", "",
          f"The ruling: {RULING}. The re-mint runs under the playbook (docs/coursecontrolnumber_remint.md, "
          "docs/reference/mid_lifecycle.md). Nothing is applied.", "", f"**{DECIDED}**", "",
          "Why: the ruling's own words send the courses back to Needs an M-ID. A re-key would keep clusters a machine "
