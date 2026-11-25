@@ -64,35 +64,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    72.0,
-    72.0
+    29.5,
+    29.5
    ],
    "stated": [
-    60.0,
-    63.0
+    29.5,
+    29.5
    ],
-   "against": "degree",
-   "ge": [
-    21.0,
-    21.0
-   ],
+   "against": "program",
    "why": [],
-   "fill": null,
-   "major": {
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     29.5,
-     29.5
+     72.0,
+     72.0
     ],
     "stated": [
-     29.5,
-     29.5
+     60.0,
+     63.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "overlap": true
    },
-   "overlap": true,
    "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
@@ -267,7 +266,7 @@
    "Program Learning Outcomes are printed for the program as a whole; the A.S. degree is the only award on the page."
   ]
  },
- "extracted_run": 42973457189,
+ "extracted_run": 45576373568,
  "reconciled": [
   {
    "field": "ge_units",
@@ -295,5 +294,5 @@
    "statewide": "local_degree_ge_overlap"
   }
  ],
- "read_run": "38981247046"
+ "read_run": 42973457189
 }

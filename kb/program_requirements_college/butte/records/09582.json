@@ -77,8 +77,8 @@
     "pass": true,
     "status": "equal",
     "computed": [
-     60.0,
-     60.0
+     54.0,
+     54.0
     ],
     "stated": [
      60.0,
@@ -91,8 +91,8 @@
     ],
     "why": [],
     "fill": [
-     0.0,
-     8.0
+     6.0,
+     14.0
     ]
    }
   },
@@ -130,8 +130,8 @@
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": 6,
-    "max": 6
+    "min": null,
+    "max": null
    },
    "ge_pattern": "Butte Local",
    "degree_total": {
@@ -314,26 +314,20 @@
    "No careers are named explicitly; the outcomes mention 'freelance designer' and 'the design industry' only within an outcome statement, so careers left empty for reviewer check."
   ]
  },
- "extracted_run": 42973457189,
+ "extracted_run": 45576373568,
  "reconciled": [
   {
-   "field": "ge_units",
+   "field": "degree_elective_units",
    "was": {
+    "min": 6,
+    "max": 6
+   },
+   "now": {
     "min": null,
     "max": null
    },
-   "now": {
-    "min": 21,
-    "max": 21
-   },
-   "words": "GE Pattern(s): Butte Local (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+   "words": "Only necessary if the 60 units needed to graduate have not been completed (the reader's note: The map's 6-unit elective ('any course numbered 1-199 or C1000-C2999') is marked 'Only necessary if the 60 units needed to graduate have not been completed'; recorded as degree_elective_units 6 but it is conditional.)"
   }
  ],
- "read_run": "38981247046"
+ "read_run": 42973457189
 }

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 192,
  "with_closed_list": 168,
- "started": "2026-11-22T11:18:06Z",
+ "started": "2026-11-25T08:28:11Z",
  "curriqunet": {
   "catalog": 14,
   "view_prefix": "https://butte.curriqunet.com/catalog/iq/",
@@ -695,13 +695,13 @@
  "banner_h1": null,
  "catalog_lookup": {
   "self_test": {
-   "tested": 159,
-   "hits": 141,
-   "recall": 0.887,
+   "tested": 157,
+   "hits": 139,
+   "recall": 0.885,
    "false": 0,
    "false_off_own": 7,
    "false_no_claims": 7,
-   "shared": 6,
+   "shared": 8,
    "false_matches": [
     {
      "control_number": "17970",
@@ -822,7 +822,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01320",
@@ -830,7 +830,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01321",
@@ -838,7 +838,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01324",
@@ -846,7 +846,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01334",
@@ -854,7 +854,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01339",
@@ -862,7 +862,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01340",
@@ -870,7 +870,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01342",
@@ -878,7 +878,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01343",
@@ -886,7 +886,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01349",
@@ -894,7 +894,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01356",
@@ -902,7 +902,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01357",
@@ -910,7 +910,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01363",
@@ -918,7 +918,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "01372",
@@ -926,7 +926,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "07259",
@@ -934,7 +934,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11122",
@@ -942,7 +942,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11126",
@@ -950,7 +950,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11133",
@@ -958,7 +958,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11137",
@@ -966,7 +966,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11138",
@@ -974,7 +974,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "11139",
@@ -982,7 +982,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "17935",
@@ -990,7 +990,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18988",
@@ -998,7 +998,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "19042",
@@ -1006,7 +1006,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 139 of 157 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -1014,7 +1014,7 @@
   "yield_refused_passing": 0
  },
  "loads": 1171,
- "seconds": 5505.0,
+ "seconds": 5571.8,
  "found": 165,
  "by_method": {
   "no_closed_list": 24,
@@ -1034,6 +1034,10 @@
   "https://butte.curriqunet.com/catalog/iq/25398/28146/28526": [
    "31953",
    "46541"
+  ],
+  "https://butte.curriqunet.com/catalog/iq/25398/28144/28374": [
+   "37939",
+   "39882"
   ]
  },
  "not_found": [
@@ -1113,19 +1117,8 @@
   "against": "kb/program_requirements_college/butte",
   "kept": 162,
   "kept_moved": 0,
-  "programs": 1,
-  "list": [
-   {
-    "control_number": "39882",
-    "title": "Advanced Manufacturing Level I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/27584",
-    "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28374",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   }
-  ],
+  "programs": 0,
+  "list": [],
   "held_worse_window": [
    {
     "control_number": "31953",
@@ -1144,13 +1137,17 @@
     "url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538",
     "coverage": 1.0,
     "was_coverage": 1.0
+   },
+   {
+    "control_number": "39882",
+    "title": "Advanced Manufacturing Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28374",
+    "coverage": 1.0,
+    "was_coverage": 1.0
    }
   ],
   "held_opens_on_list": [],
-  "only": [
-   "39882"
-  ],
-  "not_named": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1644,8 +1641,8 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227"
   },
   "39882": {
-   "sha256": "c3e25674658f4c46267a0be41c2e0d2354398a6e1800a9c0497069584e8702a6",
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/27584"
+   "sha256": "115793221d1ac301e769b24c12a4dde78293924bd2c182524239c2b95fd6ee16",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28374"
   },
   "39883": {
    "sha256": "07c0adfac5e13711c46ea96617788e140029f9058232975d302e67ecb9c8d526",
@@ -1816,10 +1813,5 @@
    "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28548"
   }
  },
- "staged_from": {
-  "run": "45016561973",
-  "proof": "text sha256 of 165 programs",
-  "pages_loaded": 0
- },
- "run": "45025068740"
+ "run": "45576373568"
 }
