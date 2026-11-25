@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T13:37:20Z",
+ "written_at": "2026-11-25T13:54:58Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,10 +168,10 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17399,
-  "gap": 4936,
+  "passing": 17400,
+  "gap": 4935,
   "with_gap": 118,
-  "cost_usd": 1341.24,
+  "cost_usd": 1341.14,
   "passed_at_read": 16402,
   "cost_receipts": 118,
   "spent_usd": 1240.39,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16870,
-  "gap": 4936,
+  "passing": 16871,
+  "gap": 4935,
   "collected_with_gaps": 529,
   "discontinued": 0
  },
@@ -428,12 +428,12 @@
    "harvested": true,
    "slug": "antelope_valley",
    "programs": 199,
-   "passing": 180,
-   "gap": 19,
+   "passing": 181,
+   "gap": 18,
    "causes": {
     "no_closed_list": 2,
     "page_not_found": 2,
-    "places_none": 2,
+    "places_none": 1,
     "unknown_without_live": 13
    },
    "census_causes": {
@@ -457,9 +457,9 @@
    "outcomes_file": "kb/status/commons_data_programs/antelope_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-25T08:14:53Z",
+   "read_at": "2026-11-25T12:19:48Z",
    "read_kind": "capture",
-   "cost_usd": 14.2,
+   "cost_usd": 14.11,
    "passed_at_read": 179,
    "slo_queue": {
     "state": "held",
@@ -473,11 +473,11 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 197,
-   "found": 193,
+   "found": 194,
    "extracted": 195,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
+    "coverage": 1,
     "invented": 0,
     "arithmetic": 16,
     "repeated": 0,
@@ -489,14 +489,14 @@
    "capture_root": "https://avc.elumenapp.com/catalog/2026-27/welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1169.0,
-   "run": "45574354887",
+   "read_seconds": 1168.5,
+   "run": "45612549421",
    "levers": {
     "reconcile_steps": 10,
     "ge_units_steps": 2,
     "program_course_file_check": 2,
-    "reader_page_assignment": 2,
     "reader_page_search": 2,
+    "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
    },
    "collection": {
@@ -505,13 +505,13 @@
      "models": {
       "claude-opus-5-5": 195
      },
-     "run": "45574354887",
-     "at": "2026-11-25T08:14:53Z",
-     "cost_usd": 14.2,
+     "run": "45612549421",
+     "at": "2026-11-25T12:19:48Z",
+     "cost_usd": 14.11,
      "platform": "elumen"
     },
     "slo_read": null,
-    "plo_programs": 130,
+    "plo_programs": 131,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -2775,9 +2775,9 @@
     "elumen"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-25T08:36:01Z",
+   "read_at": "2026-11-25T12:00:55Z",
    "read_kind": "capture",
-   "cost_usd": 5.43,
+   "cost_usd": 5.42,
    "passed_at_read": 64,
    "slo_queue": null,
    "scout": null,
@@ -2803,8 +2803,8 @@
    "capture_root": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 648.0,
-   "run": "45574359765",
+   "read_seconds": 639.8,
+   "run": "45609110977",
    "levers": {
     "reconcile_steps": 5,
     "program_course_file_check": 3,
@@ -2818,9 +2818,9 @@
      "models": {
       "claude-opus-5-5": 73
      },
-     "run": "45574359765",
-     "at": "2026-11-25T08:36:01Z",
-     "cost_usd": 5.43,
+     "run": "45609110977",
+     "at": "2026-11-25T12:00:55Z",
+     "cost_usd": 5.42,
      "platform": "elumen"
     },
     "slo_read": {

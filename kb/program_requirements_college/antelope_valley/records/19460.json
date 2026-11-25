@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Electronics Technology",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8386,
+  "input_tokens": 8016,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8386,
-    "output_tokens": 2303,
+    "input_tokens": 8016,
+    "output_tokens": 2038,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2303,
+  "output_tokens": 2038,
   "output_tokens_details": {
-   "thinking_tokens": 852
+   "thinking_tokens": 557
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0796,
- "ms": 19293,
- "seconds": 19.6,
+ "cost_usd": 0.07282,
+ "ms": 16004,
+ "seconds": 16.3,
  "parts": null,
  "error": null,
  "score": {
@@ -72,29 +72,7 @@
     30.0
    ],
    "against": "program",
-   "why": [],
-   "degree": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     51.0,
-     51.0
-    ],
-    "stated": [
-     60.0,
-     60.0
-    ],
-    "against": "degree",
-    "ge": [
-     21.0,
-     21.0
-    ],
-    "why": [],
-    "fill": [
-     9.0,
-     9.0
-    ]
-   }
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -111,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 7,
+   "count": 13,
    "not_verbatim": [],
    "pass": true
   },
@@ -122,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Electronics Technology AS",
+   "section_heading": "Electronics Technology Cert",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -133,26 +111,32 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "AVC GE",
+   "ge_pattern": null,
    "degree_total": {
-    "min": 60,
-    "max": 60
+    "min": null,
+    "max": null
    },
    "ge_units": {
-    "min": 21,
-    "max": 21
+    "min": null,
+    "max": null
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Analyze and evaluate critical aspects of the electronics industry related to safe work practices, standards and tolerances, standard shop practices, proper use of tools, test equipment, and personal protective equipment.",
     "Analyze, evaluate, troubleshoot, and repair electronics systems.",
     "Evaluate, read and properly interpret industry standard electronics schematics and technical manuals to assess, maintain, and repair electronics systems."
    ],
    "careers": [
-    "electronics technology",
-    "lead technician",
-    "supervisory positions",
-    "Electronics technicians",
+    "electronics technicians",
+    "test technicians",
+    "field service technicians",
+    "aviation/avionics",
+    "test instrumentation",
+    "communications systems",
+    "navigational systems",
+    "computer related electronics",
+    "robotics",
+    "biomedical equipment repair",
     "aerospace",
     "computers",
     "telecommunications"
@@ -170,35 +154,35 @@
     },
     "courses": [
      {
-      "code": "ELTE110",
+      "code": "ELTE 110",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ELTE125",
+      "code": "ELTE 125",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ELTE130",
+      "code": "ELTE 130",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ELTE135",
+      "code": "ELTE 135",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ELTE235",
+      "code": "ELTE 235",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -217,14 +201,14 @@
     },
     "courses": [
      {
-      "code": "ELTE140",
+      "code": "ELTE 140",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ELTE220",
+      "code": "ELTE 220",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -243,7 +227,7 @@
     },
     "courses": [
      {
-      "code": "ELTE180",
+      "code": "ELTE 180",
       "units": 6,
       "units_max": null,
       "alternatives": [],
@@ -252,7 +236,7 @@
     ]
    },
    {
-    "name": "Program Elective",
+    "name": "Program Electives",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -262,35 +246,35 @@
     },
     "courses": [
      {
-      "code": "ELTE105",
+      "code": "ELTE 105",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ELTE145",
+      "code": "ELTE 145",
       "units": 6,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ELTE199",
+      "code": "ELTE 199",
       "units": 1,
       "units_max": 8,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ELTE252",
+      "code": "ELTE 252",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ELTE254",
+      "code": "ELTE 254",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -302,13 +286,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The named award is a Certificate of Achievement, but the catalog text (and source URL) covers only the Electronics Technology AS degree; no certificate section is printed. Requirements, totals and outcomes were read from the AS section, which uses exactly the closed-list courses. A reviewer should confirm the certificate's requirements match the AS major.",
-   "Major total 30 (27 required + 3 program elective) is printed as 'Electronics Technology AS (Total 30)'; degree total 60 is the AS total, not a certificate total.",
-   "ge_units 21 is from the description sentence ('21 units of general education requirements'); the requirements table prints 30 units for GE plus electives combined. GE pattern named via 'Any AVC GE Area' in the pathway.",
-   "Second requirements table lists ELTE 180 as 'Microprocessor Systems II' and ELTE 140 misspelled 'Microproessor Systems I'; the first table titles were used for identification.",
-   "Program outcomes are printed for the AS; recorded here because the text prints no separate certificate outcomes."
+   "Codes printed both as 'ELTE110' (program requirements list) and 'ELTE 110' (requirements table); recorded with a space to match the closed list.",
+   "The secondary requirements table labels the 30-unit certificate total as 'Total Degree Units 30 Units' and lists 'Required Major Total 27 Units' plus 'Program Elective 3 units'; recorded 30 as the certificate total_units, not as a degree total.",
+   "The secondary table titles ELTE 180 'Microprocessor Systems II' and misspells ELTE 140 as 'Microproessor Systems I'; the main list titles ELTE 180 'Microprocessor Systems'.",
+   "Careers include the job titles in the description plus the fields listed as 'These positions include...' and industries from 'Electronics technicians can find employment in aerospace, computers and telecommunications'; reviewer may wish to confirm whether fields/industries should count.",
+   "ELTE 145 (6 units) and ELTE 199 (1-8 units) can exceed the 3-unit elective requirement."
   ]
  },
- "extracted_run": "38979725726",
+ "extracted_run": "45612549421",
  "catalog_year": "2026-2027"
 }

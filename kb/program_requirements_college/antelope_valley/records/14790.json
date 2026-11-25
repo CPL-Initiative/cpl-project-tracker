@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Computer Networking Multi-Platform",
  "award": "A.S. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-cert-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-as-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8158,
+  "input_tokens": 8503,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8158,
-    "output_tokens": 1868,
+    "input_tokens": 8503,
+    "output_tokens": 2083,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1868,
+  "output_tokens": 2083,
   "output_tokens_details": {
-   "thinking_tokens": 540
+   "thinking_tokens": 703
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06999,
- "ms": 16319,
- "seconds": 16.6,
+ "cost_usd": 0.07567,
+ "ms": 16614,
+ "seconds": 17.2,
  "parts": null,
  "error": null,
  "score": {
@@ -72,7 +72,29 @@
     31.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -94,16 +116,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Computer Networking Multi-Platform Cert",
+   "section_heading": "Computer Networking Multi-Platform AS",
    "measure": "units",
    "total_units": {
     "min": 31,
@@ -114,26 +133,26 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "AVC GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Demonstrate the ability to setup, configure, troubleshoot and maintain a microcomputer operating system.",
     "Demonstrate networking skills that include installing, configuring, and troubleshooting network devices, protocols, and services.",
     "Demonstrate networking administration skills related to server operating systems, network security, and directory services administration."
    ],
    "careers": [
-    "network administrators",
-    "systems technicians",
-    "infrastructure support specialists",
-    "network operations technicians"
+    "computer repair",
+    "service",
+    "maintenance",
+    "installation of computer network hardware and software"
    ]
   },
   "blocks": [
@@ -256,14 +275,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requested award is an A.S. Degree, but the source page (URL slug '...-cert-fall-2026') is the Computer Networking Multi-Platform Certificate; no A.S.-specific section, GE pattern or 60-unit degree total appears in the text. Requirements were read from the certificate section; reviewer should confirm whether the A.S. shares these major requirements.",
-   "The eLumen requirements table labels 31 as 'Total Degree Units' (Required Major Total 28 + Program Elective 3); since no general education is included, 31 is recorded as total_units and degree_total is left null.",
-   "Codes are printed as 'CA107' etc. in the Program Requirements list and 'CA 107' in the Requirements table; recorded with a space to match the latter.",
-   "Program Outcomes are printed under 'Computer Networking Multi Cert'; recorded for this record as the only outcomes list on the page.",
-   "Course codes were printed without spaces in the Program Requirements list (e.g., CA107); they are recorded with a space, as in the Requirements table and the closed list.",
-   "Intro text describes the Multi-Platform Certificate as including 'two more networking operating system courses and two computer networking electives', but the requirement lists show 28 required units plus one 3-unit elective (31 total); the lists were followed."
+   "The main requirements list prints codes without a space (e.g., 'CA107'); the later requirements table prints them with a space ('CA 107'). Codes are recorded in the spaced form to match the closed list.",
+   "Major total of 31 units is printed ('Total 31' and 'Required Major Total 31 Units'); 'Total Degree Units 60 Units' is recorded as degree_total.",
+   "ge_units of 21 comes from the description sentence ('21 units of general education requirements'). The requirements table separately prints 29 units for 'Completion of General Education requirements, plus electives (as needed to reach 60 units)', which combines GE and electives. Electives are therefore recorded as filling the degree, with no elective units computed.",
+   "The GE pattern is named only as 'AVC GE' areas in the Recommended Pathway. GE courses listed there (STATC1000, ENGLC1000, MUSC103, BUS212, COMMC1000, BIOL104) are examples and are not placed in blocks.",
+   "The closed list titles CA 159 'SUSE Linux Serve Administration'; the catalog prints 'SUSE Linux Server Administration'. This is the same course.",
+   "The page contains internal eLumen workflow and checklist text (Program Goals and Objectives, Checklist, Workflow Agreement), which was ignored for requirements.",
+   "The Program Outcomes are printed under the heading for this AS award."
   ]
  },
- "extracted_run": "38979725726",
+ "extracted_run": "45612549421",
  "catalog_year": "2026-2027"
 }

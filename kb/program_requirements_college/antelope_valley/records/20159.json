@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Computer Applications",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8584,
+  "input_tokens": 7891,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8584,
-    "output_tokens": 2255,
+    "input_tokens": 7891,
+    "output_tokens": 2038,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2255,
+  "output_tokens": 2038,
   "output_tokens_details": {
-   "thinking_tokens": 786
+   "thinking_tokens": 607
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07944,
- "ms": 18425,
- "seconds": 18.7,
+ "cost_usd": 0.07232,
+ "ms": 17034,
+ "seconds": 17.4,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 6,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Computer Applications AS",
+   "section_heading": "Computer Applications Cert",
    "measure": "units",
    "total_units": {
     "min": 28,
@@ -128,9 +128,6 @@
     "Demonstrate the ability to use a database management software application."
    ],
    "careers": [
-    "information technology",
-    "help desk support",
-    "general office computer management",
     "entry-level office positions",
     "office networking",
     "troubleshooting"
@@ -148,14 +145,14 @@
     },
     "courses": [
      {
-      "code": "CA103",
+      "code": "CA 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA221",
+      "code": "CA 221",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -174,35 +171,35 @@
     },
     "courses": [
      {
-      "code": "CA107",
+      "code": "CA 107",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA111",
+      "code": "CA 111",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA121",
+      "code": "CA 121",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA151",
+      "code": "CA 151",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA171",
+      "code": "CA 171",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -212,8 +209,8 @@
    },
    {
     "name": "Advanced Module",
-    "rule": "choose_units",
-    "minimum": 6,
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 6,
@@ -221,14 +218,14 @@
     },
     "courses": [
      {
-      "code": "CA131",
+      "code": "CA 131",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA157",
+      "code": "CA 157",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -237,7 +234,7 @@
     ]
    },
    {
-    "name": "Program Electives",
+    "name": "Program Elective",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -247,28 +244,28 @@
     },
     "courses": [
      {
-      "code": "CA103",
+      "code": "CA 103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA175",
+      "code": "CA 175",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA199",
+      "code": "CA 199",
       "units": 1,
       "units_max": 8,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA221",
+      "code": "CA 221",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -280,16 +277,16 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text is the Computer Applications AS page; no separate Certificate of Achievement section is printed. The AS description states the degree is satisfied by completing the Computer Applications certificate plus GE and electives, and the Program Goals section states 'This certificate requires a minimum of 28 units', so the AS program requirements (Total 28-30) were read as the certificate's requirements. Reviewer should confirm against the certificate's own page.",
-   "Degree-level figures (Total Degree Units 60, General Education + General Electives 30-32, 21 units of GE) belong to the AS, not this certificate, so degree_total, ge_units and ge_pattern were left null.",
-   "Program outcomes are printed under 'Computer Applications AS'; recorded on the assumption the certificate shares them.",
-   "Introductory Module is printed as 'Complete the following number of credits: 3-4' and elsewhere as 'Choose one: (3-4 units)'; recorded as choose one course.",
-   "CA103 and CA221 appear both in the Introductory Module and in Program Electives; presumably a course cannot count in both.",
-   "Advanced Module printed as 'Complete the following number of credits: 6' with two 3-unit courses, effectively both required.",
-   "The Program Goals table header reads 'Required Course (60 Units)', which appears to be a form artifact.",
-   "Careers taken from the AS description ('information technology, help desk support, and general office computer management') and the certificate goals ('entry-level office positions, office networking, and troubleshooting')."
+   "Totals conflict: description says 'a minimum of 28 units', the requirements header prints 'Total 28 - 30', and the requirements table prints 'Total Degree Units 28-29' (Required Major Total 25-26 + Program Electives 3-4). total_units recorded as 28-30 from the requirements header.",
+   "Required Courses (Total 25-26) is a parent grouping of the Introductory, Intermediate and Advanced Modules; not recorded as its own block.",
+   "Introductory Module printed as 'Complete the following number of credits: 3-4' and in the second table as 'Choose one: (3-4 units)' with CA 103 OR CA 221; recorded as choose 1 course.",
+   "CA 103 and CA 221 appear in both the Introductory Module and the Program Elective list; presumably the same course cannot satisfy both, but the text does not say so.",
+   "Catalog prints codes both as 'CA103' and 'CA 103'; recorded with a space.",
+   "Text states a maximum of 6 pass/no pass units will be accepted.",
+   "Recommended Pathway and Proposed Sequence are scheduling suggestions, not separate requirements; the Proposed Sequence labels the third term 'Year 1 Summer' while the pathway labels it 'Fall Semester'.",
+   "Page contains internal curriculum-workflow text (checklist, workflow agreement) that is not program requirements."
   ]
  },
- "extracted_run": "38979725726",
+ "extracted_run": "45612549421",
  "catalog_year": "2026-2027"
 }

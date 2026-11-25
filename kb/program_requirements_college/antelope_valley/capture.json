@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 199,
  "with_closed_list": 197,
- "started": "2026-11-25T08:14:53Z",
+ "started": "2026-11-25T12:19:48Z",
  "elumen": {
   "catalog": "2026-27",
   "read": "publish/content",
@@ -58,13 +58,17 @@
   "15404": {
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026",
    "bound": true
+  },
+  "43150": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
+   "bound": true
   }
  },
  "catalog_lookup": {
   "self_test": {
-   "tested": 187,
-   "hits": 115,
-   "recall": 0.615,
+   "tested": 188,
+   "hits": 116,
+   "recall": 0.617,
    "false": 0,
    "false_off_own": 0,
    "false_no_claims": 0,
@@ -98,7 +102,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 115 of 187 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 116 of 188 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -106,12 +110,12 @@
   "yield_refused_passing": 0
  },
  "loads": 278,
- "seconds": 1169.0,
- "found": 193,
+ "seconds": 1168.5,
+ "found": 194,
  "by_method": {
   "no_closed_list": 2,
-  "not_found": 4,
-  "sitemap_page": 193
+  "not_found": 3,
+  "sitemap_page": 194
  },
  "shared_pages": {
   "https://avc.elumenapp.com/catalog/2026-27/program/mathematics-2-0-as-t-fall-2026": [
@@ -209,34 +213,6 @@
     "page_checks": true
    },
    "status": "Active"
-  },
-  {
-   "control_number": "43150",
-   "title": "All Automotive Systems",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 10,
-    "listed": 10,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 5178,
-     "content": 5178,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Approved"
   }
  ],
  "page_claimed": [],
@@ -244,134 +220,23 @@
  "coverage_bands": {
   "0.5-0.8": 2,
   "0.8-1.0": 1,
-  "1.0": 190
+  "1.0": 191
  },
  "would_extract": {
   "against": "kb/program_requirements_college/antelope_valley",
-  "kept": 144,
+  "kept": 155,
   "kept_moved": 0,
-  "programs": 11,
+  "programs": 39,
   "list": [
-   {
-    "control_number": "02139",
-    "title": "General Business",
-    "award": "A.S. Degree",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-as-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-cert-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20148",
-    "title": "General Business",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-cert-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-as-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20165",
-    "title": "Air Conditioning Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-cert-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-as-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20166",
-    "title": "Air Conditioning & Refrigeration Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-cert-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-as-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20168",
-    "title": "Refrigeration Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-cert-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-as-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20171",
-    "title": "Automotive Collision Repair Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-cert-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-as-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20172",
-    "title": "Automotive Refinishing Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-cert-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-as-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20174",
-    "title": "Automotive Collision Repair and Refinishing Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-cert-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-as-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20177",
-    "title": "Aircraft Airframe",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-cert-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20184",
-    "title": "Electrical Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-cert-fall-2025",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20186",
-    "title": "Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-cert-fall-2026",
-    "coverage": 1.0,
-    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-as-fall-2026",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   }
-  ],
-  "held_worse_window": [],
-  "held_no_gain": [
    {
     "control_number": "02150",
     "title": "Air Conditioning & Refrigeration Specialist",
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-as-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-as-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "02152",
@@ -379,7 +244,9 @@
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-as-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-as-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "02155",
@@ -387,7 +254,9 @@
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-as-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-as-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "02160",
@@ -395,7 +264,9 @@
     "award": "A.A. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-aa-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-aa-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "02184",
@@ -403,7 +274,9 @@
     "award": "A.A. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-aa-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-aa-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "02185",
@@ -411,7 +284,9 @@
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-as-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-as-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "07242",
@@ -419,7 +294,9 @@
     "award": "A.A. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-aa-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-aa-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "07246",
@@ -427,7 +304,9 @@
     "award": "A.A. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-aa-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-aa-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "07247",
@@ -435,7 +314,9 @@
     "award": "A.A. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-aa-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-aa-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "07248",
@@ -443,7 +324,9 @@
     "award": "A.A. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-aa-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-aa-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "10234",
@@ -451,7 +334,9 @@
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-as-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-as-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "10235",
@@ -459,7 +344,9 @@
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-as-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-as-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "10237",
@@ -467,7 +354,9 @@
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-as-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-as-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "10238",
@@ -475,7 +364,9 @@
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-as-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-as-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "10241",
@@ -483,7 +374,9 @@
     "award": "A.A. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-aa-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-aa-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "12137",
@@ -491,7 +384,9 @@
     "award": "A.A. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-aa-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-aa-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "14790",
@@ -499,7 +394,9 @@
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-as-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-as-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "16468",
@@ -507,7 +404,9 @@
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-as-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-as-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19460",
@@ -515,7 +414,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19463",
@@ -523,7 +424,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-cert-fall-2025",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-cert-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19464",
@@ -531,7 +434,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-cert-fall-2025",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-cert-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19465",
@@ -539,7 +444,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-cert-fall-2025",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-cert-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19467",
@@ -547,7 +454,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-cert-fall-2025",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-cert-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19469",
@@ -555,7 +464,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-cert-fall-2025",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-cert-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19470",
@@ -563,7 +474,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-cert-fall-2025",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-cert-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19471",
@@ -571,7 +484,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "20149",
@@ -579,7 +494,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "20159",
@@ -587,7 +504,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "20162",
@@ -595,7 +514,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "20163",
@@ -603,7 +524,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "20175",
@@ -611,7 +534,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "20179",
@@ -619,7 +544,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "20181",
@@ -627,7 +554,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "20202",
@@ -635,7 +564,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "20203",
@@ -643,7 +574,19 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-cert-fall-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-cert-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43150",
+    "title": "All Automotive Systems",
+    "award": "A.S. Degree",
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-cert-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43151",
@@ -651,7 +594,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-cert-fall-2025",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-cert-fall-2025",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43843",
@@ -659,7 +604,9 @@
     "award": "A.S. Degree",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-as-spring-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-as-spring-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "45151",
@@ -667,12 +614,15 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-cert-spring-2026",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-cert-spring-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    }
   ],
+  "held_worse_window": [],
+  "held_no_gain": [],
   "held_opens_on_list": [],
   "only": [
-   "02139",
    "02150",
    "02152",
    "02155",
@@ -699,25 +649,16 @@
    "19469",
    "19470",
    "19471",
-   "20148",
    "20149",
    "20159",
    "20162",
    "20163",
-   "20165",
-   "20166",
-   "20168",
-   "20171",
-   "20172",
-   "20174",
    "20175",
-   "20177",
    "20179",
    "20181",
-   "20184",
-   "20186",
    "20202",
    "20203",
+   "43150",
    "43151",
    "43843",
    "45151"
@@ -1251,6 +1192,10 @@
    "sha256": "ef9ef63220b95c2a2467f9b5f3b7eca0725739b5f20ccebf5a3f4295d2961b18",
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/digital-marketing-cert-fall-2026"
   },
+  "43150": {
+   "sha256": "aefd247845a55a944904f1c2e646fe99aa8601d14dc65f45f338683c68823ed5",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026"
+  },
   "43151": {
    "sha256": "b54a168de36b279af95610c862866736425a5d5e1674b37c5f61613ae510e0b7",
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-cert-fall-2025"
@@ -1500,5 +1445,5 @@
    "url": "https://avc.elumenapp.com/catalog/2026-27/program/physics-2-0-as-t-fall-2026"
   }
  },
- "run": "45574354887"
+ "run": "45612549421"
 }
