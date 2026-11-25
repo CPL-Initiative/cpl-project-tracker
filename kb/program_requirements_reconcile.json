@@ -263,6 +263,17 @@
    },
    "pdf_pages_why": "S703 (f-clovis-19-left-s697): five Business and Social Science degrees read from the wrong page, or from too few pages, are pinned to the page their section opens on, named with the words it opens on there (college-page-read run 45016537664), never found by a pattern over the catalog's text (S650, Cosumnes River). General Business 33433's core starts on the page before the one the capture took; Management 33487 and Small Business Management 33491 list one course (ACCTG 40), which the Business Administration degree's core prints too, so the picker took that page. Entrepreneur 33432 and Social Science 33492 run across a page break, so each pin names its last page (through, the S703 follow-up's reader change): 33432's core page (p.106) does not print the title word 'Entrepreneur', which p.107 prints, and 33492's total prints on p.149, which names no listed course. A pin binds only while the catalog prints the words on its page and every title word on its pages; otherwise the program gets no fresh text and its filed record stands. Reversible by deleting this entry."
   },
+  "Allan Hancock College": {
+   "why": "S730 (lever): the entry holds the reader_page_assignment lever's own pages; no reconcile step yet.",
+   "steps": [],
+   "site_pages": {
+    "43770": {
+     "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31144",
+     "evidence": "Agricultural Science A.S. 43770: its own catalog entry (28876/31144), found in the catalog's navigation data by college-page-read run 45562584495 and read through the capture's curriQunet view by run 45564881318: the title 'Agricultural Science - Associate in Science', 'A major of 21 units is required for the degree', its six required courses (AG 125, AG 152, AG 157, AG 158, AG 161, CHEM 120, every one the state lists) and 'Total : 21.0'. The filed capture (run 38843474519) handed it Agricultural Business A.S.-T 38584's entry (28876/31148), so its record placed none of its 6 listed courses."
+    }
+   },
+   "site_pages_why": "S730 (lever, the gap census's reader_page_assignment lever, census of 2026-11-25 09:39Z): Allan Hancock's filed capture handed Agricultural Science 43770 another degree's entry. It is pinned to its own entry; a pin binds only where the capture's index walk reads that entry and its heading prints the title with its award, and a refused pin reads the program from no page. Viticulture Levels 2 and 3 (42208, 42210) are named gaps (allan_hancock/named_gaps_s730.json). Reversible by deleting this entry."
+  },
    "Pasadena City College": {
     "why": "S727 (lever): the entry holds the reader_page_assignment lever's own pages; no reconcile step yet.",
     "steps": [],
@@ -449,6 +460,13 @@
      "words": "Commercial Music: Live Sound Technician Certificate This certificate is designed to train students in live sound reinforcement",
      "until": "Commercial Music: Multimedia Music Composition Certificate",
      "evidence": "Commercial Music: Live Sound Technician 45568: its heading 'Commercial Music: Live Sound Technician Certificate' prints on PDF p.395, and its requirements and 'Total Units: 16.5' on p.395; the window ends where 'Commercial Music: Multimedia Music Composition Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.390 (the extraction: 'The excerpt (pages 390-392) names the Commercial Music: Live Sound Technician Certificate only in the list of program titles at the top of page 390; its require'), so it placed none of its 6 listed courses."
+    },
+    "38736": {
+     "page": 176,
+     "words": "A.A. in Business Analyst/Data Analytics The Business Analyst/Data Analytics program focuses on the skills and",
+     "through": 177,
+     "until": "A.A. in Business: General This program provides an overview",
+     "evidence": "S730 (lever): Business Analyst/Data Analytics 38736: its heading 'A.A. in Business Analyst/Data Analytics' and its first three required courses (ACCT 301, ACCT 311, ACCT 341) print at the foot of PDF p.176, and the rest of its requirements and 'Total Units: 36' on p.177; the window ends where 'A.A. in Business: General' opens the next section (the hand-filed catalog as S714's page read printed it; fixture tests/fixtures/program_requirements_folsom_38736_s730.json). The filed record (run 39046850071) was read from p.177 alone, and its own notes say the text 'begins mid-table at the top of page 177', so it summed 28 of the stated 36 units and placed 15 of its 18 listed courses."
     }
    },
    "pdf_pages_why": "S714 (rios, lane 1, the gap census's reader_page_assignment lever, run 45161770730): each program's extraction placed none of the state's listed courses, because the picker handed it a sibling award's section, the department's list of awards or the course descriptions. Each is pinned to its own section in the hand-filed 2026-27 catalog (kb/hand_filed_catalogs, sha256 pinned), read page for page by college-page-read run 45167465999: the page and words its heading opens on, `through` the page its section ends on, and `until` the words the next section opens on, so the window holds that section alone (d-rios-until-pin-s714). A pin binds only while the file prints the words, the until words after them and every title word between; otherwise the program gets no fresh text and its filed record stands. Reversible by deleting the entry."

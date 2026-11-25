@@ -668,6 +668,11 @@ jobs:
       - name: Program requirements lever pins (S727)
         if: matrix.shard == 4
         run: python3 tests/program_requirements_lever_pins_s727_test.py
+      # S730: Folsom Lake 38736's pdf_pages pin opens its window on p.176, where its heading and first three required
+      # courses print, so the read carries its whole list and its 36-unit total. Pure stdlib.
+      - name: Program requirements lever pins (S730)
+        if: matrix.shard == 4
+        run: python3 tests/program_requirements_lever_pins_s730_test.py
       # S727 plan s727v: Antelope Valley 43028 (a Cal-GETC degree whose page prints only CSU GE and IGETC figures),
       # collected with its gap named. Pure stdlib.
       - name: Program requirements GE figures of another pattern (S727 s727v)
