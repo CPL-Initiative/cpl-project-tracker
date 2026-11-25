@@ -182,12 +182,12 @@ const quickTexts = (d, k) => Array.from(cardOf(d, k).querySelectorAll(".cmf-quic
   function foldedOk(d, k, why) {
     const view = d.getElementById("cmf-foldview"), c = cardOf(d, k), trail = view && view.querySelector("nav.cmf-trail");
     const links = trail ? Array.from(trail.querySelectorAll("a")) : [];
-    const others = Array.from(wrapOf(d).children).filter((n) => n !== view);
+    const page = wrapOf(d);
     const bad = [];
     if (!view || view.hasAttribute("hidden")) bad.push("the fold view is hidden");
     if (!c || !view.contains(c)) bad.push("the card is not in the fold view");
     if (JSON.stringify(shownCards(d)) !== JSON.stringify([k])) bad.push("cards shown: " + shownCards(d).join(","));
-    if (!others.every((n) => n.hasAttribute("hidden"))) bad.push("a section stays in sight: " + others.filter((n) => !n.hasAttribute("hidden")).map((n) => n.className).join(","));
+    if (!page || page === view || !page.hasAttribute("hidden") || page.contains(view)) bad.push("the page stays in sight beside the fold");
     if (!trail || !/^CPL Commons: all cards \/ /.test(txt(trail)) || txt(trail).indexOf("/ " + txt(c.querySelector(".cmf-card-t"))) < 0) bad.push("trail reads " + txt(trail));
     if (!links[0] || links[0].getAttribute("href") !== "#commons" || txt(links[0]) !== "CPL Commons: all cards") bad.push("no all-cards link first");
     const full = links.filter((l) => txt(l) === "Open the full list")[0];
@@ -209,7 +209,7 @@ const quickTexts = (d, k) => Array.from(cardOf(d, k).querySelectorAll(".cmf-quic
   click(x.w, home);
   const back = cardOf(d, "courses-data");
   check("(7) ⭐ CPL Commons: all cards restores every card and the address", JSON.stringify(shownCards(d)) === JSON.stringify(before) && x.w.location.hash === "#commons"
-    && d.getElementById("cmf-foldview").hasAttribute("hidden") && !Array.from(wrapOf(d).children).some((n) => n.id !== "cmf-foldview" && n.hasAttribute("hidden")),
+    && d.getElementById("cmf-foldview").hasAttribute("hidden") && !wrapOf(d).hasAttribute("hidden") && !d.getElementById("cmf-foldview").children.length,
     shownCards(d).length + " of " + before.length + " cards, " + x.w.location.hash);
   check("(7) the card goes back to its own group, collapsed as the person left it, its title a fold control again",
     !!back.closest(".cmf-group-cards") && back.classList.contains("cmf-folded") && !!back.querySelector(".cmf-card-t a.cmf-card-tl[data-fold]") && d.activeElement === back.querySelector("a.cmf-card-tl"));

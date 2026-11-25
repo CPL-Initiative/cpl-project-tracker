@@ -102,7 +102,7 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   // The fold in place (S729, the anchor page step 3): #commons/card/<key> opens the front page folded to that card.
   // The round trip is in tests/commons_cards_checks.test.js (7).
   check("(E) ⭐ commons/card/<key> opens from its arrival and reports its address",
-    /a\[0\] === "card"/.test(COMMONS) && /FRONT\.card \? "commons\/card\/" \+ FRONT\.card/.test(COMMONS));
+    /a\[0\] === "card"/.test(COMMONS) && /if \(FRONT\.on && FRONT\.card && !FRONT\.course\) return "commons\/card\/" \+ FRONT\.card;/.test(COMMONS));
   // The Subjects list (S694): #commons/subjects, #commons/subjects/<college slug> and #commons/subjects/disagree.
   // The round trips are in tests/commons_subjects.test.js (4, 5).
   const SUBJJS = fs.readFileSync("commons_subjects.js", "utf8");

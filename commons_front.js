@@ -1681,12 +1681,11 @@
       p([el("strong", { text: "More collection detail. " }), "The ", a("#collect", fmt(M.colleges.total) + "-college list"), ", districts, the data dictionary, APIs, sharing, and integrations move here from the old College Data Collection page."], "cmf-line"),
       p(["Scorecard (coverage and student outcomes) fills in here once both are built."], "cmf-line cmf-muted")
     ]);
-    root.appendChild(el("div", { cls: "cmn-page cmf-page" }, [wrap]));
-    /* The fold in place (#commons/card/<key>): the page shows the trail and one card; the rest is hidden, never
-       removed, so a late live read still redraws a card behind the fold. */
-    var foldView = el("section", { cls: "cmf-foldview", id: "cmf-foldview", hidden: true, "aria-label": "One Commons card" });
-    wrap.insertBefore(foldView, wrap.firstChild);
-    var F = { key: "", mark: null, was: false, hid: [] };
+    /* The fold in place (#commons/card/<key>): the page shows the trail and one card, in a view beside the page's
+       own; the page is hidden, never removed, so a late live read still redraws a card behind the fold. */
+    var foldView = el("section", { cls: "cmn-wrap cmf cmf-foldview", id: "cmf-foldview", hidden: true, "aria-label": "One Commons card" });
+    root.appendChild(el("div", { cls: "cmn-page cmf-page" }, [wrap, foldView]));
+    var F = { key: "", mark: null, was: false };
     function byKey(k) { return all.filter(function (c) { return c.getAttribute("data-key") === k; })[0] || null; }
     /* The folded card: open whatever its own Collapse said, its Collapse hidden, its title plain text. */
     function focalize(c) {
@@ -1716,8 +1715,7 @@
         " ", el("span", { cls: "cmf-trail-here", "aria-current": "page", text: "/ " + c._title }), " ",
         el("a", { href: c._list, cls: "cmf-trail-list", text: "Open the full list", "aria-label": "Open the full " + c._title + " list" })]));
       foldView.appendChild(c);
-      F.hid = [];
-      Array.prototype.forEach.call(wrap.children, function (n) { if (n !== foldView && !n.hasAttribute("hidden")) { n.setAttribute("hidden", ""); F.hid.push(n); } });
+      wrap.setAttribute("hidden", "");
       foldView.removeAttribute("hidden");
       focalize(c);
       return true;
@@ -1730,10 +1728,10 @@
         if (F.mark && F.mark.parentNode) F.mark.parentNode.replaceChild(c, F.mark);
         if (F.was) setFold(c, true);
       }
-      F.hid.forEach(function (n) { n.removeAttribute("hidden"); });
+      wrap.removeAttribute("hidden");
       foldView.setAttribute("hidden", "");
       foldView.textContent = "";
-      F.key = ""; F.mark = null; F.hid = [];
+      F.key = ""; F.mark = null;
       later();
       return c;
     }
@@ -2196,7 +2194,7 @@
     ".cmf-unclamped .cmf-body { display:block; -webkit-line-clamp:unset; line-clamp:none; max-height:none; overflow:visible; }",
     ".cmf-links { margin-top:auto; min-height:3.4rem; display:flex; flex-wrap:wrap; align-content:flex-end; gap:4px 18px; font-size:.9rem; border-top:1px solid var(--cmn-line-soft); padding-top:8px; }",
     /* The fold in place: the trail strip, then one card at full width with its whole body. */
-    ".cmf > [hidden] { display:none !important; }",
+    ".cmf-page > [hidden] { display:none !important; }",
     ".cmf-foldview { display:grid; gap:12px; }",
     ".cmf-trail { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; background:var(--cmn-track); border-radius:8px; padding:6px 12px; font-size:.92rem; }",
     ".cmf-trail a { display:inline-block; min-height:24px; line-height:24px; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; font-weight:600; }",

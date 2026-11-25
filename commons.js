@@ -973,7 +973,9 @@
     if (SUBJ.on) return window.CPL_COMMONS_SUBJECTS ? CPL_COMMONS_SUBJECTS.address() : "commons/subjects";
     /* The collection view's address is #collect/...; inside the tab it reads commons/collect/..., which arrive() opens. */
     if (DATA.on) return "commons/" + (window.CPL_COMMONS_DATA ? CPL_COMMONS_DATA.address() : "collect");
-    if (FRONT.on) return FRONT.course ? "commons/course/" + FRONT.course : FRONT.card ? "commons/card/" + FRONT.card : FRONT.focus ? "commons/needs-you" : "commons";
+    /* A card the page is folded to (#commons/card/<key>), unless a course's panel is open over it. */
+    if (FRONT.on && FRONT.card && !FRONT.course) return "commons/card/" + FRONT.card;
+    if (FRONT.on) return FRONT.course ? "commons/course/" + FRONT.course : FRONT.focus ? "commons/needs-you" : "commons";
     if (RECORD.on) return "commons/details/decisions";
     if (BATCH.pin) return "commons/case/" + BATCH.pin;
     return show === "all" ? "commons/details" : "commons/" + show;
