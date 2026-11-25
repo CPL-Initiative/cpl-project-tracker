@@ -96,9 +96,14 @@ check("(5) a noncredit code takes its category's common code (ESLNC is ESLN)",
       eslnc is not None and eslnc["class"] == "noncredit" and eslnc["recommend"]["common"] == "ESLN", eslnc and eslnc["recommend"])
 named = [c for c in doc["codes"] if c["class"] == "named_code"]
 lawen = codes.get("LAWEN")
+# A person's statewide filing outranks the rule (person-settled wins, Sam 2026-11-16): LAWEN was filed CRIM by
+# 2026-11-25's daily build, so it reads `settled`. The rule still decides the other named codes; LAWEN keeps CRIM
+# either way, and only a person's filing may settle it.
+lawen_ok = lawen is not None and lawen["recommend"]["common"] == "CRIM" and (
+    lawen["class"] == "named_code"
+    or (lawen["class"] == "settled" and lawen["recommend"]["why"] == "a person filed it statewide"))
 check("(5) a code whose titles are another code's numbers takes that code's call (LAWEN's AJ courses are CRIM)",
-      bool(named) and lawen is not None and lawen["class"] == "named_code" and lawen["recommend"]["common"] == "CRIM",
-      lawen and lawen["recommend"])
+      bool(named) and lawen_ok, lawen and (lawen["class"], lawen["recommend"]))
 
 emls = codes.get("EMLS")
 check("(5) a noncredit code with credit courses carries a credit call beside its category call",
