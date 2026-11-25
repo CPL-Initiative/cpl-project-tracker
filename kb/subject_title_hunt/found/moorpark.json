@@ -1,0 +1,9 @@
+{
+ "college": "Moorpark College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:54:23Z",
+ "run": "45625052392, 45626310706, 45628145988",
+ "plan": "kb/college_reads/subject_index_moorpark.json",
+ "titles": [],
+ "not_read": "No course index with codes found in three reads. The college's front page (run 45625052392) links department pages under /programs-courses/ and no course index; /moorpark/course-descriptions/ (run 45626310706) and the district's /course-descriptions/ and /courses/ (run 45628145988) answer 404. A department page (Accounting, run 45626310706) heads its COURSES tab with the department's name above ACCT M01 and the rest: a department label, which informs a title and does not settle one, so none is filed. Each department page is one load if a later pass takes department labels."
+}

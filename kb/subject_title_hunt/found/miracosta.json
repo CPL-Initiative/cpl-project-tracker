@@ -1,0 +1,9 @@
+{
+ "college": "MiraCosta College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:48:36Z",
+ "run": "45623798209, 45626064651, 45627087073",
+ "plan": "kb/college_reads/subject_index_miracosta.json",
+ "titles": [],
+ "not_read": "No course index with codes found in three reads. The front page (run 45623798209) links Areas of Study & Courses and no course index; CourseLeaf's /coursedescriptions/ answers 404 (run 45626064651); /disciplines/ (run 45627087073) lists discipline names alone (Accounting, Administration of Justice ...), each linking a discipline page: a department label, which informs a title and does not settle one, so none is filed."
+}

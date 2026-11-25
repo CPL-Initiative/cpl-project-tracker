@@ -1,0 +1,682 @@
+{
+ "college": "San Joaquin Delta College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:50:22Z",
+ "run": "45626064651, 45627087073",
+ "plan": "kb/college_reads/subject_index_san_joaquin_delta.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ALTW",
+   "title": "Adaptive Learning Transition to Work",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AERO",
+   "title": "Aeronautics",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGBUS",
+   "title": "Agriculture Business",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGEGR",
+   "title": "Agriculture Engineering",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASCI",
+   "title": "Animal Science",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "A-TRN",
+   "title": "Apprenticeship Transportation",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architectural Drafting",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTRO",
+   "title": "Astronomy",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATH",
+   "title": "Athletics",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTOBODY",
+   "title": "Auto Body",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTOMECH",
+   "title": "Auto Mechanics",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOT",
+   "title": "Biotechnology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business Administration",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIM",
+   "title": "Business Information Management",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CAT",
+   "title": "Caterpillar: Apprenticeship",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM DIS",
+   "title": "Communication Disorders",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNT",
+   "title": "Computer Network Technology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSA",
+   "title": "Computer Science Applications",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSN",
+   "title": "Computer Science Networking",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSP",
+   "title": "Computer Science Programming",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSW",
+   "title": "Computer Science Web Design",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "A-CON",
+   "title": "Construction Technology: Apprenticeship",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CUL ART",
+   "title": "Culinary Arts",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DV ED",
+   "title": "Developmental Education",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DIESL",
+   "title": "Diesel Technology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMEDIA",
+   "title": "Digital Media",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRAMA",
+   "title": "Dramatic Arts",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELEC",
+   "title": "Electrical Technology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "A-ELE",
+   "title": "Electrical Technology: Apprenticeship",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "E M",
+   "title": "Electron Microscopy",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELECT",
+   "title": "Electronics Technology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "E TECH",
+   "title": "Engineering Technology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHNS",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FCS",
+   "title": "Family and Consumer Sciences",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FASHION",
+   "title": "Fashion",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GRART",
+   "title": "Graphic Arts",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "H ED",
+   "title": "Health Education",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "H S",
+   "title": "Health Science",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HVACR",
+   "title": "Heating, AC, Refrigeration",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HORT",
+   "title": "Horticulture",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDUS",
+   "title": "Industrial Technology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "A-IND",
+   "title": "Industrial Technology: Apprenticeship",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ID",
+   "title": "Interior Design",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPAN",
+   "title": "Japanese",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LAW",
+   "title": "Law",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LS",
+   "title": "Learning Skills",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBRY",
+   "title": "Library Skills",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MACH",
+   "title": "Machine Technology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MCOM",
+   "title": "Mass Communication",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "A-MEC",
+   "title": "Mechanical Technology: Apprenticeship",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "N R",
+   "title": "Natural Resources",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURSADN",
+   "title": "Nursing A.D.N.",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURSPT",
+   "title": "Nursing Psychiatric Technician",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PEACTIV",
+   "title": "P E Activities",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PETHEORY",
+   "title": "P E Theory",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHILO",
+   "title": "Philosophy",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSCI",
+   "title": "Physical Science",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYSC",
+   "title": "Physics",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PLANT",
+   "title": "Plant Science",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RAD",
+   "title": "Radiologic Technology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REAL",
+   "title": "Real Estate",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RELGN",
+   "title": "Religion",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SL",
+   "title": "Sign Language",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCIO",
+   "title": "Sociology",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELDING",
+   "title": "Welding",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "note": "Acalog course list on Course Information (navoid 1515), 15 pages: page 1 in run 45626064651, pages 2 to 15 in run 45627087073. Each course type's heading prints above its courses; all 96 types print, each over one prefix."
+}
