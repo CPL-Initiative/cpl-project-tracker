@@ -1,5 +1,5 @@
 {
- "_readme": "S730 subject-title hunt (group html_c), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 1: the Coursedog courses page, with the data its scripts fetch from app.coursedog.com (the vendor, as hartnell_course_units.json names it), to find where the catalog lists its subjects and their names. No model call.",
+ "_readme": "S730 subject-title hunt (group html_c), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: run 45625259489 found the courses page lists courses with no subject heading; this read loads the Departments page and prints the course-search configuration's filter options (search-configurations on app.coursedog.com), where a subject list would sit. No model call.",
  "college": "Hartnell College",
  "outside_hosts": {
   "app.coursedog.com": "Hartnell's catalog vendor: the catalog's own scripts call it (hartnell_course_units.json)."
@@ -14,23 +14,28 @@
  "capture_lines": 4000,
  "pages": [
   {
-   "url": "https://hartnell.catalog.prod.coursedog.com/courses",
+   "url": "https://hartnell.catalog.prod.coursedog.com/departments",
    "answers": [
     "subjects"
    ],
    "links": "\\([A-Z][A-Za-z0-9/&. -]{0,12}\\)\\s*$|course|subject|prefix",
    "links_cap": 400,
+   "capture_view": true
+  },
+  {
+   "url": "https://hartnell.catalog.prod.coursedog.com/courses?page=2",
+   "answers": [
+    "subjects"
+   ],
    "network": true,
    "network_hosts": [
     "app.coursedog.com"
    ],
    "network_find": [
-    "subjectCode",
-    "\"subject\"",
-    "departmentName",
-    "longName"
-   ],
-   "capture_view": true
+    "\"label\":\"Subject",
+    "subjectCode\",\"options",
+    "\"options\":[{"
+   ]
   }
  ]
 }

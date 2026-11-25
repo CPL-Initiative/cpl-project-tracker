@@ -1,5 +1,5 @@
 {
- "_readme": "S730 subject-title hunt (group html_c), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 1: the catalog's front page, its links to a course index printed, so the next read names the index. No model call.",
+ "_readme": "S730 subject-title hunt (group html_c), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: run 45625259489 found the front page linking Course Information at courses/index.php; this read loads that page. No model call.",
  "college": "Coalinga College",
  "questions": {
   "subjects": "Each subject the catalog's course index lists, with its printed title and code.",
@@ -11,12 +11,13 @@
  "capture_lines": 4000,
  "pages": [
   {
-   "url": "https://coalingacollege.edu/catalog/2026-2027/",
+   "url": "https://coalingacollege.edu/coalinga/catalog/2026-2027/courses/index.php",
    "answers": [
-    "index_address"
+    "subjects"
    ],
-   "links": "course|subject|prefix|descriptions",
-   "links_cap": 80
+   "links": "\\([A-Z][A-Za-z0-9/&. -]{0,12}\\)\\s*$|course|subject|prefix",
+   "links_cap": 400,
+   "capture_view": true
   }
  ]
 }
