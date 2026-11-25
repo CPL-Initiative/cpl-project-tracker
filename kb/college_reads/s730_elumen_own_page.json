@@ -1396,15 +1396,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-ca-fall-2026",
+    "extracted_run": "45609110977",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 6,
+     "listed": 6,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Psychiatric Technician, CA",
+    "total_units": 62.5,
+    "degree_total": null,
+    "ge_units": null
+   },
    "live": {
     "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-fall-2026",
     "extracted_run": "38979396148",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574359765: its filed record passes but was read from psychiatric-technician-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45609110977) passes as the live table counts it"
   },
   {
    "college": "College of the Redwoods",
@@ -1432,15 +1447,30 @@
     "ge_units": null
    },
    "degree_figures_on_certificate": false,
-   "own_record": null,
+   "own_record": {
+    "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-fall-2026",
+    "extracted_run": "45609110977",
+    "score": {
+     "passes_live": true,
+     "pass": true,
+     "placed": 6,
+     "listed": 6,
+     "arithmetic": "equal",
+     "invented": 0
+    },
+    "section_heading": "Psychiatric Technician A.S. Degree",
+    "total_units": 62.5,
+    "degree_total": 80.5,
+    "ge_units": 21
+   },
    "live": {
     "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-ca-fall-2026",
     "extracted_run": "38979396148",
     "checked": false
    },
    "person_settled": false,
-   "decision": "read_own_page",
-   "why": "held_no_gain in read 45574359765: its filed record passes but was read from psychiatric-technician-ca-fall-2026, so no own-page record exists; a forced read files one"
+   "decision": "replace",
+   "why": "its own-page record (read 45609110977) passes as the live table counts it"
   }
  ],
  "dispatch": [

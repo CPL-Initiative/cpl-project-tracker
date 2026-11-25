@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T10:05:48Z",
+ "written_at": "2026-11-25T12:14:59Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -171,7 +171,7 @@
   "passing": 17370,
   "gap": 4965,
   "with_gap": 118,
-  "cost_usd": 1341.08,
+  "cost_usd": 1341.07,
   "passed_at_read": 16397,
   "cost_receipts": 118,
   "spent_usd": 1239.91,
@@ -2775,9 +2775,9 @@
     "elumen"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-25T08:36:01Z",
+   "read_at": "2026-11-25T12:00:55Z",
    "read_kind": "capture",
-   "cost_usd": 5.43,
+   "cost_usd": 5.42,
    "passed_at_read": 64,
    "slo_queue": null,
    "scout": null,
@@ -2803,8 +2803,8 @@
    "capture_root": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 648.0,
-   "run": "45574359765",
+   "read_seconds": 639.8,
+   "run": "45609110977",
    "levers": {
     "reconcile_steps": 5,
     "program_course_file_check": 3,
@@ -2818,9 +2818,9 @@
      "models": {
       "claude-opus-5-5": 73
      },
-     "run": "45574359765",
-     "at": "2026-11-25T08:36:01Z",
-     "cost_usd": 5.43,
+     "run": "45609110977",
+     "at": "2026-11-25T12:00:55Z",
+     "cost_usd": 5.42,
      "platform": "elumen"
     },
     "slo_read": {
