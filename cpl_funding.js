@@ -6037,7 +6037,8 @@
       // MAP carries Calbright as "Calbright College Credit" / "Non-Credit";
       // either one is the Calbright row's contact (Sam, 2026-09-22: 116).
       var f = roster[shortName(row.college)] || (/^calbright/i.test(String(row.college || "")) ? "Calbright" : null);
-      // The Noncredit CPL Lead role on the college's MAP landing page (Sam, 2026-11-09): a boolean, never a name.
+      // The Noncredit CPL Lead in MAP (Sam, 2026-11-09): a boolean, never a name. Since 2026-11-25 the RPC answers yes
+      // for the lead in MAP's College Contacts report too ("Noncredit CPL Lead" or its email), beside the landing-page title.
       // Read before the early return below, which skips a second row for an institution already met.
       if (f && row.has_nc_cpl_lead === true) ELIG.ncLead[f] = true;
       if (f && row.nc_lead_title_near === true) ELIG.ncLeadNear[f] = true;
