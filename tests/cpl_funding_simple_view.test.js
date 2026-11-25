@@ -301,4 +301,11 @@ const hasHowAfter = (el) => !!(el.nextElementSibling && el.nextElementSibling.ma
     on === true && off === false);
 }
 
+{
+  // S12: signed in, the team keeps the As of / Ver. label (hidden only from readers who are not signed in).
+  const { doc } = page({ signedIn: true });
+  const ver = doc.querySelector(".cplh-end > .ver");
+  check("S12: signed in, the As of / Ver. label shows", !!ver && ver.hidden === false);
+}
+
 finish();
