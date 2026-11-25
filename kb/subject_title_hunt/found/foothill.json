@@ -1,0 +1,597 @@
+{
+ "college": "Foothill College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:42:17Z",
+ "run": "45625854349",
+ "plan": "kb/college_reads/subject_index_foothill.json",
+ "titles": [
+  {
+   "code": "ACTG",
+   "title": "Accounting",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ALCB",
+   "title": "Adaptive Learning: Community Based",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ALTW",
+   "title": "Adaptive Learning: Transition to Work",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AHS",
+   "title": "Allied Health Sciences",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AATA",
+   "title": "Apprenticeship: Aerospace",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APEL",
+   "title": "Apprenticeship: Electrician",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APPT",
+   "title": "Apprenticeship: Pipe Trades",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APPR",
+   "title": "Apprenticeship: Pipe Trades, Sheet Metal, Field Ironworkers",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APRT",
+   "title": "Apprenticeship: Pipe Trades, Sheet Metal, Field Ironworkers, Elevators",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APSM",
+   "title": "Apprenticeship: Sheet Metal",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APSC",
+   "title": "Apprenticeship: Sound & Communication",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUSI",
+   "title": "Business",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CRLP",
+   "title": "Career Life Planning",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHLD",
+   "title": "Child Development",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "C S",
+   "title": "Computer Science",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CWE",
+   "title": "Cooperative Work Experience Education",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNSL",
+   "title": "Counseling",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CRWR",
+   "title": "Creative Writing",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "D A",
+   "title": "Dental Assisting",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "D H",
+   "title": "Dental Hygiene",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMS",
+   "title": "Diagnostic Medical Sonography",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDAC",
+   "title": "Educational Access",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services (EMT/EMR/Paramedic)",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESLL",
+   "title": "English for Second-Language Learners",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HORT",
+   "title": "Environmental Horticulture & Design",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GIST",
+   "title": "Geospatial Technology & Data Science",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GID",
+   "title": "Graphics & Interactive Design",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMN",
+   "title": "Humanities",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IDS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITRN",
+   "title": "Internship",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JRNL",
+   "title": "Journalism",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JRYM",
+   "title": "Journeypersons",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINS",
+   "title": "Kinesiology",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "L A",
+   "title": "Language Arts",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LINC",
+   "title": "Learning in New Media Classrooms",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Science",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MDIA",
+   "title": "Media Studies",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MTEC",
+   "title": "Music Technology",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCBS",
+   "title": "Non-Credit: Basic Skills",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCBH",
+   "title": "Non-Credit: Biological & Health Sciences",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCCS",
+   "title": "Non-Credit: College Skills",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCEN",
+   "title": "Non-Credit: English",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCEL",
+   "title": "Non-Credit: English as a Second Language",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCLA",
+   "title": "Non-Credit: Language Arts",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCP",
+   "title": "Non-Credit: Parenting Education",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHT",
+   "title": "Pharmacy Technology",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHED",
+   "title": "Physical Education",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHDA",
+   "title": "Physical Education - Adaptive PE",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSE",
+   "title": "Physical Sciences & Engineering",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLI",
+   "title": "Political Science",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "R T",
+   "title": "Radiologic Technology",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RSPT",
+   "title": "Respiratory Therapy",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOSC",
+   "title": "Social Science",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THTR",
+   "title": "Theatre Arts",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "V T",
+   "title": "Veterinary Technology",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WMN",
+   "title": "Women's Studies",
+   "url": "https://catalog.foothill.edu/courses-az/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}
