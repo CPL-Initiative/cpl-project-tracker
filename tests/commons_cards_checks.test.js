@@ -12,7 +12,8 @@
 //       check that exists in its own card and focuses it;
 //   (3) ⭐ every id on the page is unique, so the helpers are keyed by card and never collide;
 //   (4) ⭐ a quick link whose figure is zero is left out (an injected zero), and the same figure above zero shows;
-//   (5) ⭐ the Subjects card keeps its ids: cmf-subj-check-1 to 4, cmf-subj-quick, cmf-subj-stage-collect.
+//   (5) ⭐ the Subjects card keeps its ids: cmf-subj-check-1 to 4, cmf-subj-quick, cmf-subj-stage-collect;
+//   (6) ⭐ a card's title opens that card's own list (the anchor page, step 3: the Commons as home base).
 // Fixtures: the figures the checks read are injected here (commons.json's facts for programs, courses, exhibits and
 // credentials; the subject titles fixture); the committed files only give the page its shape, and no check reads a
 // committed value.
@@ -155,6 +156,17 @@ const quickTexts = (d, k) => Array.from(cardOf(d, k).querySelectorAll(".cmf-quic
   check("(4) ⭐ a quick link whose figure is zero is left out", !quickTexts(d, "courses").some((t) => /need repair/.test(t)) && !quickTexts(d, "exhibit").some((t) => /common subject code/.test(t))
     && quickTexts(d, "courses").length >= 1, quickTexts(d, "courses").concat(quickTexts(d, "exhibit")).join(" | "));
   check("(4) the check itself still shows its zero", /0 with none/.test(txt(d.querySelector('.cmf-card[data-key="exhibit"] .cmf-check:last-of-type .cmf-check-fig'))) || Array.from(cardOf(d, "exhibit").querySelectorAll(".cmf-check-fig")).some((f) => txt(f) === "0 with none"));
+
+  // (6) the Commons is home base (the anchor page, step 3): a card's title opens that card's own list.
+  const LISTS = { subjects: "#commons/subjects", cdc: "#collect", colleges: "#collect", programs: "#program-requirements/list", "courses-data": "#coci-lookup/courses/common",
+    courses: "#coci-lookup/courses", exhibit: "#exhibits/list", credentials: "#exhibits/list", cr: "#cr-reference" };
+  Object.keys(LISTS).forEach((k) => {
+    const t = d.querySelector('.cmf-card[data-key="' + k + '"] .cmf-card-t'), l = t && t.querySelector("a.cmf-card-tl");
+    check("(6) ⭐ the " + k + " card's title opens its list", !!l && l.getAttribute("href") === LISTS[k] && txt(t) === txt(l) && /^Open the .+ list$/.test(l.getAttribute("aria-label")),
+      t ? t.outerHTML.slice(0, 200) : "no title");
+  });
+  const inter = d.querySelector('.cmf-card[data-key="interconnect"] .cmf-card-t');
+  check("(6) a card with no list of its own keeps a plain title", !!inter && !inter.querySelector("a"), inter && inter.outerHTML.slice(0, 160));
 
   let fail = 0;
   results.forEach(([n, ok, why]) => { if (!ok) fail++; console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); });

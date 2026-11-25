@@ -1101,7 +1101,7 @@
     return body.filter(Boolean);
   }
   function checksCard(o) {
-    return card({ key: o.key, id: o.id, title: o.title, cls: "cmf-checks", pill: o.pill, pillCls: o.pillCls, big: o.big, rest: o.rest,
+    return card({ key: o.key, id: o.id, title: o.title, list: o.list, cls: "cmf-checks", pill: o.pill, pillCls: o.pillCls, big: o.big, rest: o.rest,
       after: o.after, body: checksBody(o.key, o), method: o.method, links: o.links });
   }
   function figOf(n, rest) { return n == null ? ["TBA"] : [el("strong", { text: fmt(n) }), rest || ""]; }
@@ -1179,7 +1179,7 @@
   }
   function subjectsCard(M) {
     var P = subjectsParts(M);
-    return card({ key: "subjects", title: "Subjects", cls: "cmf-checks cmf-unclamped", pill: "In progress", big: P.big, rest: P.rest, body: P.body,
+    return card({ key: "subjects", title: "Subjects", list: "#commons/subjects", cls: "cmf-checks cmf-unclamped", pill: "In progress", big: P.big, rest: P.rest, body: P.body,
       method: [p(["A college-and-code pair is one local code at one college. Its level comes from the statewide list (kb/status/statewide_subject_codes.json): the subject map’s draft, the M-IDs its courses joined at three or more colleges, its course titles, and a noncredit code’s COCI category. A person’s statewide filing, or a common subject code saved at that college, makes the pair Confident at once. "
         + "The headline counts the active and approved COCI courses under each pair. The local titles come from the catalogs filed so far; a title is the catalog’s own subject heading, saved in Title Case. The common subject code beside a local code comes from the subject map, each discipline’s settled code, or a person’s save, never from a TOP code."])],
       links: [["Open the subjects list", "#commons/subjects"], ["Codes the mint holds on", "#commons/subjects/held"], ["Common Subjects Reference", "#canonical-subj4"]] });
@@ -1223,7 +1223,10 @@
   function card(o) {
     var art = el("article", { cls: "cmf-card" + (o.cls ? " " + o.cls : ""), "data-key": o.key, id: o.id || "cmf-card-" + o.key, "aria-labelledby": "cmf-t-" + o.key });
     var fold = el("button", { type: "button", cls: "cmn-word cmf-fold", "aria-expanded": "true", "aria-controls": "cmf-x-" + o.key, text: "Collapse" });
-    art.appendChild(el("div", { cls: "cmf-card-head" }, [el("h3", { id: "cmf-t-" + o.key, cls: "cmf-card-t", text: o.title }),
+    /* The Commons is home base (the anchor page, step 3; Sam on the mock https://claude.ai/artifact/35uJsJ2ahLQ6XcrvfMS8YE,
+       S725: "looks great, let's go with it"): a card's title opens that card's own list, whose trail leads back here. */
+    var tkids = o.list ? [el("a", { href: o.list, cls: "cmf-card-tl", text: o.title, "aria-label": "Open the " + o.title + " list" })] : null;
+    art.appendChild(el("div", { cls: "cmf-card-head" }, [el("h3", tkids ? { id: "cmf-t-" + o.key, cls: "cmf-card-t" } : { id: "cmf-t-" + o.key, cls: "cmf-card-t", text: o.title }, tkids),
       o.pill ? el("span", { cls: "cmn-pill cmf-pill" + (o.pillCls ? " " + o.pillCls : ""), text: o.pill }) : null, fold]));
     art.appendChild(el("p", { cls: "cmf-headline" }, [el("strong", { cls: "cmf-big", text: o.big }), el("span", { cls: "cmf-rest" }, o.rest)]));
     var x = el("div", { cls: "cmf-x", id: "cmf-x-" + o.key });
@@ -1274,7 +1277,7 @@
     movedKids.push(".");
     var districts = M.colleges && M.colleges.districts > 1 ? ", in " + fmt(M.colleges.districts) + " districts (" + fmt(M.colleges.districts - 1) + " plus Calbright)" : "";
     /* Needs action first: a college stuck on a person or a fix, then the colleges the one top fix reaches. */
-    return checksCard({ key: "cdc", title: "College Data Collection", pill: "In progress",
+    return checksCard({ key: "cdc", list: "#collect", title: "College Data Collection", pill: "In progress",
       big: fmt(C.catalogs.done) + " of " + fmt(C.all), rest: [" colleges and campuses with every catalog program passing"],
       quick: [{ ref: "catalogs", n: C.catalogs.stuck, one: "college whose catalog is stuck", many: "colleges whose catalogs are stuck" },
         { ref: "outlines", n: C.outlines.stuck, one: "college whose course outlines are stuck", many: "colleges whose course outlines are stuck" },
@@ -1373,7 +1376,7 @@
     var NM = needsModel(M), O = NM.outline, top = M.cdc && M.cdc.top, catLeft = NM.catalog.colleges.length;
     var noLink = Cl.registry != null && Cl.outlineLinks != null ? Cl.registry - Cl.outlineLinks : null;
     var collect = [
-      checksCard({ key: "colleges", title: "Colleges and catalogs", pill: "Catalog blocked: " + fmt(Cl.blocked), pillCls: Cl.blocked ? "cmn-pill-needs" : "cmn-pill-done",
+      checksCard({ key: "colleges", list: "#collect", title: "Colleges and catalogs", pill: "Catalog blocked: " + fmt(Cl.blocked), pillCls: Cl.blocked ? "cmn-pill-needs" : "cmn-pill-done",
         big: fmt(Cl.collected), rest: [" colleges with a collected catalog"],
         quick: [{ ref: "catalog", n: catLeft, one: "college with a blocked catalog", many: "colleges with a blocked catalog", to: NM.catalog.colleges[0] ? collegeTo(NM.catalog.colleges[0].college, NM.catalog.colleges[0].slug) : null },
           { ref: "catalog", n: ASKED.evergreen ? 1 : null, one: "catalog to read again for the newest year", many: "catalogs to read again for the newest year" },
@@ -1393,7 +1396,7 @@
             act: [["Outlines blocked", "#collect/outlines-blocked"], ["Hand over a file or link", "#collect"]] }] },
         method: [p(["“Collected” means we have saved a program-requirements catalog read for the college — the catalog has been read at least once. “Not collected yet” would mean no such saved read exists; today that count is " + fmt(Cl.total - Cl.collected) + ", and catalog blocked is " + fmt(Cl.blocked) + ". Some adoption lists also include " + fmt(Cl.ce) + " continuing-education campuses, which is why ASE coverage uses " + fmt(Cl.total + Cl.ce) + " names. The statewide district count is " + fmt(Cl.districts) + ": " + fmt(Cl.districts - 1) + " districts plus Calbright. Open the ", a("#collect", fmt(Cl.total) + "-college list"), " for the college-by-college view."])],
         links: [[fmt(Cl.total) + "-college list", "#collect"]] }),
-      checksCard({ key: "programs", title: "Programs", pill: "In progress",
+      checksCard({ key: "programs", list: "#program-requirements/list", title: "Programs", pill: "In progress",
         big: fmt(P.complete) + " of " + fmt(P.active), rest: [" Active programs complete at ", a("#collect", fmt(Cl.collected) + " colleges")],
         after: [meter(pct(P.complete, P.active), fmt(P.complete) + " of " + fmt(P.active) + " complete, " + Math.round(pct(P.complete, P.active)) + " percent")],
         quick: [{ ref: "record", n: P.unread, one: "Active program with no record yet", many: "Active programs with no record yet" },
@@ -1417,7 +1420,7 @@
               act: [["The programs list", "#program-requirements/list"]].concat(top ? [["The colleges the top fix reaches", "#collect/fix_" + top.key]] : []) }] },
         method: [p([fmt(P.complete) + " of " + fmt(P.active) + " is the live count of Active programs with a complete record. " + fmt(P.gap) + " have a gap noted; " + fmt(P.unread) + " have no record yet; " + fmt(P.confirmed) + " have been confirmed by a person, " + fmt(P.confirmedComplete) + " of them complete. A wider count of " + fmt(P.wider) + " of " + fmt(P.widerOf) + " adds Approved programs, which are approved but not yet offered (" + fmt(P.approved) + "), and Teachout programs, which are being phased out (" + fmt(P.teachout) + "). The collection target is every Active program in its college’s current catalog: " + fmt(P.active) + " minus the COCI-only programs, about " + fmt(P.target) + ", which leaves about " + fmt(P.left) + ". About " + fmt(P.cociOnly) + " COCI-only programs (active in the Chancellor’s Office curriculum inventory but not in the current catalog) are optional cleanup, not unfinished work, and are not part of that target. " + (P.doneN == null ? "" : "On pace, at about " + fmt(Math.round(P.pace)) + " a day, that target finishes " + longDate(P.doneN) + ". ") + "The older 72% “passing” card is cut from this page. ", a("#program-requirements/list", "Open the programs list"), "."]), p([LIVE_WORDS.programs])],
         links: [["Open Programs", "#program-requirements/list"]] }),
-      checksCard({ key: "courses-data", id: "courses-data", title: "Courses data", pill: "In progress",
+      checksCard({ key: "courses-data", list: "#coci-lookup/courses/common", id: "courses-data", title: "Courses data", pill: "In progress",
         big: fmt(Co.slo) + " of " + fmt(Co.active), rest: [" courses in active programs have student learning outcomes"],
         after: [meter(pct(Co.slo, Co.active), fmt(Co.slo) + " of " + fmt(Co.active) + " have SLOs, " + Math.round(pct(Co.slo, Co.active)) + " percent")],
         quick: [{ ref: "outlines", n: O ? O.courses : null, one: "course whose outline needs a person", many: "courses whose outline needs a person" },
@@ -1452,7 +1455,7 @@
     var unstamped = E.titles != null && E.stamped != null ? E.titles - E.stamped : null;
     var curate = [
       subjectsCard(M),
-      checksCard({ key: "courses", title: "Courses and M-IDs", pill: "In progress",
+      checksCard({ key: "courses", list: "#coci-lookup/courses", title: "Courses and M-IDs", pill: "In progress",
         big: fmt(Cd.ready) + " of " + fmt(Cd.total), rest: [" cards the automatic check scores as ready (0.85 or better)"],
         after: [meter(pct(Cd.ready, Cd.total), fmt(Cd.ready) + " of " + fmt(Cd.total) + " ready, " + Math.round(pct(Cd.ready, Cd.total)) + " percent")],
         quick: [{ ref: "ready", n: Cd.repair, one: "card that needs repair", many: "cards that need repair" },
@@ -1480,7 +1483,7 @@
               act: [["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }] },
         method: [p(["Of the " + fmt(Cd.total) + " cards, " + fmt(Cd.review) + " need review, " + fmt(Cd.repair) + " need repair, and " + fmt(Cd.notReady) + " are not ready. " + fmt(Cd.confirmed) + " have been confirmed by a person, " + fmt(Cd.confirmedReady) + " of them ready. The " + fmt(Cd.ready) + " ready cards are those the automatic check scores 0.85 or better. The M-ID gap is a placeholder; it is not the older 2,362 of 8,912 figure, which this page does not show. " + (M.doubtN ? fmt(M.doubtN) + (M.doubtN === 1 ? " card waits" : " cards wait") + " on a person's ruling in the Common subject in doubt list." : "")]), p([LIVE_WORDS.courses])],
         links: [["Open the Courses List", "#coci-lookup/courses"], ["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }),
-      checksCard({ key: "exhibit", title: "Exhibit titles", pill: "In progress",
+      checksCard({ key: "exhibit", list: "#exhibits/list", title: "Exhibit titles", pill: "In progress",
         big: fmt(E.stamped) + " of " + fmt(E.titles), rest: [" local titles reviewed"],
         after: [meter(pct(E.stamped, E.titles), fmt(E.stamped) + " of " + fmt(E.titles) + " reviewed, " + Math.round(pct(E.stamped, E.titles)) + " percent")],
         quick: [{ ref: "held", n: E.held, one: "held title to name", many: "held titles to name", to: "#exhibits/held" },
@@ -1524,7 +1527,7 @@
     ]);
     var skillsLeft = B.industry != null && B.skillsCreds != null ? B.industry - B.skillsCreds : null;
     var connect = [
-      checksCard({ key: "credentials", title: "Credentials", pill: "Design",
+      checksCard({ key: "credentials", list: "#exhibits/list", title: "Credentials", pill: "Design",
         big: fmt(K.credit) + " of " + fmt(K.of), rest: [" credentials: at least one college gives credit. The list will show how many colleges, never only a yes-or-no badge, so a student does not assume their own college gives credit."],
         quick: [{ ref: "skills", n: skillsLeft, one: "industry credential with no issuer-published skills yet", many: "industry credentials with no issuer-published skills yet" }],
         defs: [["Why", "one list, counted once per credential under one name and issuer, so a student sees how many colleges give credit, never only a yes or a no."],
@@ -1545,7 +1548,7 @@
               act: [["The ASE credentials", "#commons/ase"]] }] },
         method: [p([fmt(K.of) + " is the count of titles filed under one name. " + fmt(K.credit) + " of them have at least one college giving credit: " + fmt(K.one) + " at one college, " + fmt(K.two5) + " at 2–5, " + fmt(K.six10) + " at 6–10, and " + fmt(K.eleven) + " at 11 or more (max " + K.max + "), across " + fmt(K.lines) + " articulation lines. The other two statuses (“Has a credit recommendation” and “No credit recommendation yet”) are not yet counted once per credential; that split waits on a stable credential id and a link from each credential to its exhibits. ", a("#exhibits/list", "Open the list"), "."])],
         links: [["Open the credential list", "#exhibits/list"]] }),
-      checksCard({ key: "cr", title: "Credit Recommendations", pill: "In progress",
+      checksCard({ key: "cr", list: "#cr-reference", title: "Credit Recommendations", pill: "In progress",
         big: fmt(X.rows), rest: [" rows in the CR inventory ", el("span", { cls: "cmf-badge", text: "Preliminary" })],
         quick: [{ ref: "ace", n: X.ace, one: "row waiting on ACE’s recommendation text", many: "rows waiting on ACE’s recommendation text" },
           { ref: "rule", n: X.rule, one: "row a cleanup rule would settle", many: "rows a cleanup rule would settle" },
@@ -2021,6 +2024,9 @@
     ".cmf-card { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:18px 20px; display:flex; flex-direction:column; gap:10px; min-width:0; box-sizing:border-box; }",
     ".cmf-card-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; }",
     ".cmf-card-t { margin:0; flex:1 1 auto; font-family:var(--cmn-serif); font-size:1.25rem; line-height:1.2; color:var(--cmn-heading); }",
+    ".cmf-card-tl { color:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; }",
+    ".cmf-card-tl:hover { text-decoration-thickness:2px; }",
+    ".cmf-card-tl:focus-visible { outline:2px solid var(--cmn-heading); outline-offset:2px; }",
     ".cmf-headline { margin:0; color:var(--cmn-ink-2); font-size:.95rem; font-variant-numeric:tabular-nums; }",
     ".cmf-big { font-family:var(--cmn-serif); font-size:1.75rem; font-weight:700; color:var(--cmn-title); letter-spacing:-0.02em; margin-right:4px; }",
     ".cmf-badge { display:inline-block; margin-left:4px; padding:1px 8px; border-radius:999px; background:var(--cmn-ask-bg); color:var(--cmn-ask-fg); font-size:.76rem; font-weight:700; }",
