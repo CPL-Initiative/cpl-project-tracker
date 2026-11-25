@@ -506,6 +506,72 @@ def slug_award(url: str) -> str | None:
     return None
 
 
+# An eLumen heading's award, where the address names none (S727, f-elumen-sister-award-swap-s721). Antelope Valley
+# heads a degree "Computer Applications AS" and its certificate "Computer Applications Cert", and addresses them
+# computer-applications-as-fall-2026 and computer-applications-cert-fall-2026, whose term tail slug_awards() sets aside
+# (S689). Neither the address nor AWARD_WORDS read either award, so every sister pair tied on the label, the lower
+# control number kept the first page in the pages' order, and the other took its sister's: about 47 programs. College
+# of the Redwoods heads a certificate "Aquaculture Technology, CA" and its degree "Aquaculture Technology" over the
+# line "A.S. Degree (" (site_award_subheading), and handed 42895 and 45557 their degree's page and 45595 its
+# certificate's. The heading's closing abbreviation names the award (the address still decides first), and a heading
+# that prints the title alone names the award its next line prints alone. HEADING_AWARD_READ = False reads as before.
+HEADING_AWARD_READ = True
+HEADING_AWARD_TAIL = re.compile(r"(?:,\s*|\s)(A[AS]-T|AS|AA|BS|CA|COA|Cert)\.?\s*$")
+HEADING_TAIL_KINDS = {"AA-T": {"adt"}, "AS-T": {"adt"}, "AS": {"as"}, "AA": {"aa"}, "BS": {"bs"}, "CA": {"coa"},
+                      "COA": {"coa"}, "Cert": {"coa", "noncredit"}}   # "Cert" names a certificate, not which (SLUG_CERTIFICATE)
+AWARD_LINE_KINDS = {"as", "aa", "coa"}   # the awards Redwoods prints on the line under a title-alone heading
+
+
+def _page_heads(page: dict) -> list[str]:
+    """A page's heading and its title before the site's name, as site_heading_names() reads them."""
+    title0 = TITLE_SPLIT.split(page.get("title") or (page.get("got") or {}).get("title") or "")[0].strip()
+    return [x for x in ((page.get("h1") or "").strip(), title0) if x]
+
+
+def heading_award_tail(page: dict) -> set[str]:
+    """The awards a page's heading names by its closing abbreviation ("Welding AS", "Welding Cert", "Addiction Studies,
+    CA"), else its title's; empty when neither closes on one, or the line is in capitals (a shouted line reads "AS" as
+    a word)."""
+    for head in _page_heads(page):
+        letters = [c for c in head if c.isalpha()]
+        if letters and sum(c.isupper() for c in letters) > 0.6 * len(letters):
+            continue
+        m = HEADING_AWARD_TAIL.search(head)
+        if m:
+            return HEADING_TAIL_KINDS[m.group(1)]
+    return set()
+
+
+def page_award_subheading(page: dict, program: dict) -> str | None:
+    """The award line under a heading that prints the program's title alone (site_award_subheading), or None."""
+    for head in _page_heads(page):
+        sub = site_award_subheading(page, head, program)
+        if sub:
+            return sub
+    return None
+
+
+def heading_exact(page: dict, program: dict) -> int:
+    """1 when the page's award was read from its heading (heading_award_tail, page_award_subheading) and the heading's
+    words, its award set aside, are the program's title words exactly; else 0. candidates() ranks such a page above one
+    whose heading only holds the title, after the award and the title share: Antelope Valley's Refrigeration Specialist
+    A.S. (10234) finds every word of its title and every one of its four courses on the Air Conditioning & Refrigeration
+    Specialist AS page too, and Computer Networking (14791) on Computer Networking Multi-Platform Cert. page_winners()
+    reads no exactness: two state records of one catalog program still share its one page (Elementary Teacher
+    Education 43964 and Elementary Teacher Education: Integrated Programs 45736)."""
+    want = set(P.title_tokens(program.get("title") or ""))
+    if not want or not HEADING_AWARD_READ:
+        return 0
+    for head in _page_heads(page):
+        letters = [c for c in head if c.isalpha()]
+        m = HEADING_AWARD_TAIL.search(head)
+        if m and not (letters and sum(c.isupper() for c in letters) > 0.6 * len(letters)):
+            return int(set(P.title_tokens(head[:m.start()])) == want)
+        if site_award_subheading(page, head, program):
+            return int(set(P.title_tokens(head)) == want)
+    return 0
+
+
 def label_score(page: dict, program: dict) -> tuple[int, float]:
     """(1 when the page names the program's award, the share of the program's
     title words the page names) from its heading, title and address. An address
@@ -515,10 +581,15 @@ def label_score(page: dict, program: dict) -> tuple[int, float]:
                       urllib.parse.unquote(urllib.parse.urlparse(page.get("url") or "").path).replace("-", " ")]).lower()
     kind = P.award_kind(program.get("award"))
     named = slug_awards(page.get("url") or "")
+    tail = heading_award_tail(page) if HEADING_AWARD_READ and not named else set()
     if named:
         award_hit = int(kind in named)
+    elif tail:
+        award_hit = int(kind in tail)
     else:
         award_hit = int(any(re.search(p, words) for p in P.AWARD_WORDS.get(kind, [])))
+        if not award_hit and HEADING_AWARD_READ and kind in AWARD_LINE_KINDS:
+            award_hit = int(bool(page_award_subheading(page, program)))
     tokens = P.title_tokens(program.get("title") or "")
     hits = sum(1 for w in tokens if re.search(r"\b" + re.escape(w) + r"\b", words))
     return award_hit, round(hits / len(tokens), 3) if tokens else 0.0
@@ -804,15 +875,16 @@ def candidates(program: dict, pages: list[dict], programs: list | None = None,
         if len(want) < SMALL_LIST and title < 0.5:
             continue   # a list this short names its courses on many pages; the page must name the program too
         section, heading, fit = section_match(text, program, title)
+        exact = heading_exact(pg, program) if award_hit else 0
         out.append({"url": pg["url"], "group": pg.get("group") or pg["url"], "coverage": cov, "found": found,
                     "text": text, "field": field,
                     "got": pg["got"], "label": {"award": award_hit, "title": title, "section": section,
-                                                "section_line": heading, "section_fit": fit},
+                                                "section_line": heading, "section_fit": fit, "exact": exact},
                     "heading": pg.get("h1") or "", "one_program": bool(pg.get("code")),
                     "names_control_number": pg.get("control_number"),
                     "program": {"title": program.get("title") or "",
                                                                 "status": program.get("status")},
-                    "key": (award_hit, title, round(cov, 3))})
+                    "key": (award_hit, title, exact, round(cov, 3))})
     out.sort(key=lambda c: c["key"], reverse=True)
     return out
 
