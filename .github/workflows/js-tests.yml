@@ -1653,6 +1653,12 @@ jobs:
       - name: ETHS re-mint guard (kb/_eths_remint.py)
         if: matrix.shard == 3
         run: python3 tests/eths_remint_test.py
+      # The stray-code re-mint dry run (S733) — r-no-mid-on-a-stray-code-sam-2026-11-25:
+      # only the rescore's High and Medium local subjects in scope, a mixed-scope id
+      # held, a pointer across the line held, the dry run writing only its out dir.
+      - name: Stray-code re-mint guard (kb/_stray_code_remint.py)
+        if: matrix.shard == 3
+        run: python3 tests/stray_code_remint_test.py
       # Card 9 (open-asks sheet 4, Sam 2026-09-29): Grossmont's four KINE titles to
       # ATHL. The pinned four and their ETHS origins, the kept ETHS stamp, a second
       # apply refused, and the committed receipt resolving through the one chain.
