@@ -25,11 +25,14 @@ candidates() ranks a page whose heading prints the title exactly above one whose
      the codes filed from it, and assign() runs with the reading off and on. A program's own page is known where its
      address names its award once the term tail is set aside, or, at Redwoods, from S721's hand list of own pages.
      After the fix no such program binds another page or none; the binds that change are counted, and no college
-     outside Antelope Valley, Redwoods and Mission moves at all.
+     outside Antelope Valley, Redwoods and Mission moves at all. Its programs are marked as the capture marks them.
+  5. Off the eLumen road (every other platform's committed filed pages) no label and no rank changes: the readings
+     apply on elumenapp.com addresses alone (on_elumen; the second reader, round 1).
 The fixture is tests/fixtures/program_requirements_elumen_sister_award_s727.json.gz (sources.json as committed at
 f790f9f1) beside S721's tests/fixtures/program_requirements_lever_pins_s721.json.gz. Pure stdlib.
 """
 import collections
+import glob
 import gzip
 import json
 import os
@@ -170,6 +173,22 @@ check([C.heading_exact(page(X + "refrigeration-specialist-as-fall-2026", "Refrig
        C.heading_exact(page(X + "air-conditioning-refrigeration-specialist-as-fall-2026",
                             "Air Conditioning & Refrigeration Specialist AS", "x"), ref)] == [1, 0],
       "3 heading_exact: 'Refrigeration Specialist AS' prints 10234's title exactly, the Air Conditioning page holds it")
+bio = {"title": "Biology", "award": "A.S. Degree"}
+check(C.heading_exact(page(X + "biology-as-t-fall-2026", "Biology AS-T", "x"), bio) == 0
+      and C.heading_exact(page(X + "biology-as-fall-2026", "Biology AS", "x"), bio) == 1,
+      "3 heading_exact reads the program's own award: an A.S. is exact on 'Biology AS', never on 'Biology AS-T'")
+# Off an eLumen catalog nothing changes (the second reader, round 1, finding 1): El Camino's Acalog page heads an A.S.
+# and its certificate "Marketing, AS" over the title "Degree & Certificate: ...", and both keep the award as before.
+EC = "https://elcamino.smartcatalogiq.com/x/programs/marketing"
+mk_cert = {"title": "Marketing", "award": "Certificate of Achievement requiring 18 to fewer than 30 semester units"}
+mk_deg = {"title": "Marketing", "award": "A.S. Degree"}
+ec = page(EC, "Marketing, AS", "Marketing, AS\nx", title="Degree & Certificate: Marketing")
+C.HEADING_AWARD_READ = False
+ec_before = [C.label_score(ec, mk_cert), C.label_score(ec, mk_deg)]
+C.HEADING_AWARD_READ = True
+check(not C.on_elumen(ec) and [C.label_score(ec, mk_cert), C.label_score(ec, mk_deg)] == ec_before
+      and C.heading_award_tail(ec) == {"as"} and C.heading_exact(ec, mk_deg) == 0,
+      "3 off eLumen the heading's closing 'AS' changes no label and no rank (%s)" % ec_before)
 
 
 # ── 4. self-recall over every eLumen college's filed sources ─────────────────────────────────────────────────────
@@ -189,7 +208,9 @@ for college, part in sorted(S727["colleges"].items()):
         on_page[url] |= set(found)
     pages = [page(u, h1, (OPENINGS.get(u) or h1) + "\n" + "\n".join("%s - Course 3" % c for c in sorted(on_page[u])), title)
              for u, (h1, title) in sorted(part["pages"].items())]
-    progs = [prog(cn, title, award, found) for cn, title, award, url, found in part["programs"]]
+    # Marked as the capture marks them (RC.mark over the committed folder, p-pin-test-sets-production-mark-s721).
+    progs = marked([prog(cn, title, award, found) for cn, title, award, url, found in part["programs"]],
+                   part["slug"], "capture")
     filed = {cn: url for cn, title, award, url, found in part["programs"]}
     # The capture's page order decided each tie before the fix, and the filed page is what it decided. assign() runs
     # over the pages in both orders with the reading off and on: a bind the fix settles holds in either order.
@@ -231,6 +252,48 @@ check(all(on <= off for off, on in order_dep.values()) and order_dep["Antelope V
       % (order_dep["Antelope Valley College"], order_dep["College of the Redwoods"]))
 check({"42895", "45557", "45595"} <= set(moved["College of the Redwoods"]),
       "4 Redwoods' 42895, 45557 and 45595 are among the binds the reading moves (%s)" % moved["College of the Redwoods"])
+
+
+# ── 5. no other road moves ──────────────────────────────────────────────────────────────────────────────────────
+# Every committed filed page of every college off the eLumen road (sources.json as it stands; the readings are gated
+# by the address, so the snapshot does not matter): no page is on eLumen; every program's label on its own filed page
+# is the same with the reading off and on; and on each page whose heading closes on an award abbreviation, every
+# program at the college whose title the page names at least halfway keeps its label, and no page ranks it exact.
+off = collections.Counter()
+for cap_path in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "capture.json"))):
+    with open(cap_path, encoding="utf-8") as fh:
+        cap = json.load(fh)
+    if cap.get("platform") == "elumen":
+        continue
+    with open(os.path.join(os.path.dirname(cap_path), "sources.json"), encoding="utf-8") as fh:
+        src = json.load(fh)
+    pgs = {}
+    for s in src:
+        so = s.get("source") or {}
+        if so.get("url"):
+            pgs[so["url"]] = {"url": so["url"], "h1": so.get("h1") or "", "title": so.get("title") or "", "body": ""}
+    off["pages"] += len(pgs)
+    off["on eLumen"] += sum(C.on_elumen(pg) for pg in pgs.values())
+    tailed = [pg for pg in pgs.values() if C.heading_award_tail(pg)]
+    off["tailed pages"] += len(tailed)
+    for s in src:
+        pr = {"title": s["title"], "award": s["award"]}
+        own = pgs.get((s.get("source") or {}).get("url"))
+        for pg in ([own] if own else []) + tailed:
+            C.HEADING_AWARD_READ = True
+            new = C.label_score(pg, pr)
+            if pg is not own and new[1] < 0.5:
+                continue
+            exact = C.heading_exact(pg, pr)
+            C.HEADING_AWARD_READ = False
+            old = C.label_score(pg, pr)
+            C.HEADING_AWARD_READ = True
+            off["pairs"] += 1
+            off["changed"] += new != old or exact != 0
+print("off the eLumen road:", dict(off))
+check(off["pages"] >= 10000 and off["on eLumen"] == 0 and off["pairs"] >= off["pages"] and off["changed"] == 0,
+      "5 off the eLumen road, %d filed pages (%d close on an award abbreviation), %d labels read: %d change"
+      % (off["pages"], off["tailed pages"], off["pairs"], off["changed"]))
 
 print("\n%d checks, %d failed" % (N[0], len(FAILS)))
 sys.exit(1 if FAILS else 0)

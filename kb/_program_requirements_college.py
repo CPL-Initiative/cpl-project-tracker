@@ -515,11 +515,20 @@ def slug_award(url: str) -> str | None:
 # line "A.S. Degree (" (site_award_subheading), and handed 42895 and 45557 their degree's page and 45595 its
 # certificate's. The heading's closing abbreviation names the award (the address still decides first), and a heading
 # that prints the title alone names the award its next line prints alone. HEADING_AWARD_READ = False reads as before.
+# Both readings apply on an eLumen catalog alone (ELUMEN_HOST): El Camino's Acalog page heads an A.S. and its
+# certificate "Marketing, AS" over "Degree & Certificate: ...", and the closing "AS" took certificate 19861's award
+# away, so ten certificates read no page (S727 second reader, round 1, finding 1).
 HEADING_AWARD_READ = True
+ELUMEN_HOST = re.compile(r"(?:^|\.)elumenapp\.com$", re.I)
 HEADING_AWARD_TAIL = re.compile(r"(?:,\s*|\s)(A[AS]-T|AS|AA|BS|CA|COA|Cert)\.?\s*$")
 HEADING_TAIL_KINDS = {"AA-T": {"adt"}, "AS-T": {"adt"}, "AS": {"as"}, "AA": {"aa"}, "BS": {"bs"}, "CA": {"coa"},
                       "COA": {"coa"}, "Cert": {"coa", "noncredit"}}   # "Cert" names a certificate, not which (SLUG_CERTIFICATE)
 AWARD_LINE_KINDS = {"as", "aa", "coa"}   # the awards Redwoods prints on the line under a title-alone heading
+
+
+def on_elumen(page: dict) -> bool:
+    """Whether the page is an eLumen catalog's (its address's host is elumenapp.com), where the heading readings apply."""
+    return bool(ELUMEN_HOST.search(urllib.parse.urlparse(page.get("url") or "").hostname or ""))
 
 
 def _page_heads(page: dict) -> list[str]:
@@ -553,20 +562,23 @@ def page_award_subheading(page: dict, program: dict) -> str | None:
 
 def heading_exact(page: dict, program: dict) -> int:
     """1 when the page's award was read from its heading (heading_award_tail, page_award_subheading) and the heading's
-    words, its award set aside, are the program's title words exactly; else 0. candidates() ranks such a page above one
+    words, its award set aside, are the program's title words exactly, and the award it reads is the program's (S727
+    second reader, finding 2: unchecked, El Camino 19888 and 39056 ranked an AS-T or AA-T page first); else 0, and 0
+    off an eLumen catalog (on_elumen). candidates() ranks such a page above one
     whose heading only holds the title, after the award and the title share: Antelope Valley's Refrigeration Specialist
     A.S. (10234) finds every word of its title and every one of its four courses on the Air Conditioning & Refrigeration
     Specialist AS page too, and Computer Networking (14791) on Computer Networking Multi-Platform Cert. page_winners()
     reads no exactness: two state records of one catalog program still share its one page (Elementary Teacher
     Education 43964 and Elementary Teacher Education: Integrated Programs 45736)."""
     want = set(P.title_tokens(program.get("title") or ""))
-    if not want or not HEADING_AWARD_READ:
+    if not want or not HEADING_AWARD_READ or not on_elumen(page):
         return 0
+    kind = P.award_kind(program.get("award"))
     for head in _page_heads(page):
         letters = [c for c in head if c.isalpha()]
         m = HEADING_AWARD_TAIL.search(head)
         if m and not (letters and sum(c.isupper() for c in letters) > 0.6 * len(letters)):
-            return int(set(P.title_tokens(head[:m.start()])) == want)
+            return int(kind in HEADING_TAIL_KINDS[m.group(1)] and set(P.title_tokens(head[:m.start()])) == want)
         if site_award_subheading(page, head, program):
             return int(set(P.title_tokens(head)) == want)
     return 0
@@ -581,14 +593,15 @@ def label_score(page: dict, program: dict) -> tuple[int, float]:
                       urllib.parse.unquote(urllib.parse.urlparse(page.get("url") or "").path).replace("-", " ")]).lower()
     kind = P.award_kind(program.get("award"))
     named = slug_awards(page.get("url") or "")
-    tail = heading_award_tail(page) if HEADING_AWARD_READ and not named else set()
+    elumen = HEADING_AWARD_READ and on_elumen(page)
+    tail = heading_award_tail(page) if elumen and not named else set()
     if named:
         award_hit = int(kind in named)
     elif tail:
         award_hit = int(kind in tail)
     else:
         award_hit = int(any(re.search(p, words) for p in P.AWARD_WORDS.get(kind, [])))
-        if not award_hit and HEADING_AWARD_READ and kind in AWARD_LINE_KINDS:
+        if not award_hit and elumen and kind in AWARD_LINE_KINDS:
             award_hit = int(bool(page_award_subheading(page, program)))
     tokens = P.title_tokens(program.get("title") or "")
     hits = sum(1 for w in tokens if re.search(r"\b" + re.escape(w) + r"\b", words))
