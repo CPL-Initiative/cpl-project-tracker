@@ -137,4 +137,4 @@ artifact watch; no COBIx watcher.
 
 Spend: not available; 2026-11-25T10:52Z to 2026-11-25T15:10Z.
 
-Opening line: *Greetings, you are SkyGodwit (Session 731), see SkyDunlin's handoff — `docs/session_731_handoff.md` — let's keep rolling with our queue.*
+Opening line: *Greetings, you are SkyGodwit (Session 733), see SkyDunlin's handoff — `docs/session_731_handoff.md` — let's keep rolling with our queue.*
