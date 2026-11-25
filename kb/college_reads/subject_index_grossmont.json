@@ -1,5 +1,5 @@
 {
- "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). One load of the course-descriptions index, which lists every subject as 'Title (CODE)'. No model call. Second read: /grossmont/course-descriptions/ answered 404 (run 45624627652), so this read lists the college home page's course links (shown, not followed) and tries the district's /course-descriptions/. Two loads.",
+ "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). One load of the course-descriptions index, which lists every subject as 'Title (CODE)'. No model call. Second read: /grossmont/course-descriptions/ answered 404 (run 45624627652), so this read lists the college home page's course links (shown, not followed) and tries the district's /course-descriptions/. Two loads. Third read: the district's /course-descriptions/ answered 404 and the college home page's course links named only Cuyamaca's subjects (run 45626055145); the repo's filed records name /grossmont/courses/. One load.",
  "college": "Grossmont College",
  "questions": {
   "subjects": "Each subject the course-descriptions index lists, with its printed title and code."
@@ -10,19 +10,11 @@
  "capture_lines": 4000,
  "pages": [
   {
-   "url": "https://catalog.gcccd.edu/grossmont/",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
    "answers": [
     "subjects"
    ],
-   "links": "course",
-   "links_cap": 60
-  },
-  {
-   "url": "https://catalog.gcccd.edu/course-descriptions/",
-   "answers": [
-    "subjects"
-   ],
-   "links": "/course-descriptions/[a-z0-9_-]+/",
+   "links": "/grossmont/courses/[a-z0-9_-]+/",
    "links_cap": 60,
    "capture_view": true
   }
