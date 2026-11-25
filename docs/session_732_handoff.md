@@ -134,8 +134,9 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 12:19Z: `land` started: s730a, s730b (with its test fix `c9d3341c`) and s731c as one PR, `claude/s731-land`.
 
 - 12:35Z: #3830 opened (`claude/s731-land` `02bf74de`): s730a, s730b and s731c, each applied and live, `.apply` equal to
-  `main`'s. 12:41Z: `lints (4)` failed on S703's `tests/program_lists_past_figure_s703_test.py`, which pins LATTC 08479 as
-  held by hand; s730a collected it with `noted_figures_differ`. `land` fixes the test to accept either state
+  `main`'s. 12:41Z: `lints (4)` failed on S703's `tests/program_lists_past_figure_s703_test.py`: s731c moved Long Beach City
+  41220 into the shape that test pins (the log named LATTC 08479 among its counts, but 08479 reads the same before and
+  after s730a). `land` pinned 41220's two states whole; mutation runs show any other move still fails it
   (`p-test-asserts-other-pr-absent-s721`).
 - 12:38Z: `pooled` (s731p, `claude/s731-pooled` `5f9d346d`) changed the shared scorer behind a `POOLED_S731` flag (four
   new pooled phrasings, LIST and CONTINUED headings joined, no pooling inside an option group); self-recall over all
@@ -146,6 +147,16 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   `decide` replaced 37 and kept 16468 (its own-page record adds to 59 to 61 against a stated 60); load 45616752363
   inserted 43150 (passing); reread 45616970396 replaced exactly the 37. With Redwoods' 2, the eLumen follow-up collected
   40 records (1 new, 39 read again from their own pages) for $2.88 of paid reads; head `a2af6cf1`.
+
+- 13:05Z: s731p's Opus reader, round 1: FIX THEN APPLY. BLOCKER: its test sat on lints shard 5, which does not exist.
+  MAJOR: the CONTINUED-heading join went by position alone (26 joins, 4 right, 22 wrong); it now needs the first stem
+  word to match. MAJOR: 06773's strike would come undone at its next reconcile under the new scorer; it gets a hold the
+  reconcile honors. MAJOR: a conflict with `main` in `kb/status/commons_data.json`. One fix list to the worker; round 2
+  is the last.
+- 13:28Z: #3830 merged (`dafe74c6`; `test` green on `ac4038fa`; `main` had not moved since its base).
+- 13:30Z: `lever` told to finish Allan Hancock and wrap up: West Valley's read 45602612349 and load 45605020450 put
+  two records live; Folsom Lake 38736 and Allan Hancock 43770 pinned; three named gaps; Allan Hancock's read
+  45605429253 filed at 13:29Z.
 
 [[S731 FILL: the run's log]]
 
