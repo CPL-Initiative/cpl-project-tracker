@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "General Business",
  "award": "A.S. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-cert-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-as-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9636,
+  "input_tokens": 10584,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9636,
-    "output_tokens": 3474,
+    "input_tokens": 10584,
+    "output_tokens": 3585,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3474,
+  "output_tokens": 3585,
   "output_tokens_details": {
-   "thinking_tokens": 1059
+   "thinking_tokens": 1154
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10802,
- "ms": 27260,
- "seconds": 27.7,
+ "cost_usd": 0.11404,
+ "ms": 28420,
+ "seconds": 29.3,
  "parts": null,
  "error": null,
  "score": {
@@ -65,7 +65,7 @@
    "status": "unequal",
    "computed": [
     33.0,
-    41.0
+    39.0
    ],
    "stated": [
     39.0,
@@ -73,17 +73,34 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 33.0-41.0; the catalog states 39.0-42.0"
-   ]
+    "the blocks sum to 33.0-39.0; the catalog states 39.0-42.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     33.0,
+     39.0
+    ],
+    "stated": [
+     60.0,
+     61.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the AVC GE pattern, but no units for it"
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 4,
    "courses": 0,
-   "count": 3,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -91,21 +108,18 @@
    "pass": true
   },
   "careers": {
-   "count": 5,
+   "count": 9,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "General Business Certificate",
+   "section_heading": "General Business AS",
    "measure": "units",
    "total_units": {
     "min": 39,
@@ -116,27 +130,32 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "AVC GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 61
    },
    "ge_units": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
-    "Understand and apply ethics to effectively operate as a business manager within the global business environment.",
-    "Prepare and analyze basic financial statements, financial ratios, and tax forms to assess opportunities and risks for the purpose of formulating and implementing business strategies.",
-    "Demonstrate written, verbal, and nonverbal communication skills required for the workplace, including the effective use of appropriate technologies, written reports, and formal presentations."
+    "Understand and apply ethical principles to work effectively as a business manager in a diverse, globalized business setting.",
+    "Prepare and analyze basic financial statements, financial ratios, cash flow projections, and tax forms to assess opportunities and risks for the purpose of formulating and implementing business strategies.",
+    "Demonstrate written, verbal, and nonverbal communication skills required for the workplace, including effective use of appropriate technologies, preparation of written reports, and delivery of formal presentations.",
+    "Exhibit an understanding of the legal and social envi"
    ],
    "careers": [
-    "office management",
+    "accounting",
+    "business law",
+    "marketing",
+    "purchasing",
+    "retail",
     "sales",
     "customer service",
-    "human resources",
-    "entrepreneur"
+    "economics",
+    "entrepreneurship"
    ]
   },
   "blocks": [
@@ -238,6 +257,13 @@
       "catalog_addition": false
      },
      {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "MATH 116",
       "units": 4,
       "units_max": null,
@@ -246,13 +272,6 @@
      },
      {
       "code": "MATH 124",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STAT C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -297,14 +316,14 @@
     },
     "courses": [
      {
-      "code": "CA 111",
+      "code": "CA 121",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CA 121",
+      "code": "CA 111",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -364,8 +383,8 @@
      },
      {
       "code": "MKTG 199",
-      "units": 1,
-      "units_max": 8,
+      "units": 3,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      }
@@ -415,16 +434,16 @@
       "catalog_addition": false
      },
      {
-      "code": "MGT 201",
+      "code": "MGT 199",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MGT 199",
-      "units": 1,
-      "units_max": 8,
+      "code": "MGT 201",
+      "units": 3,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      }
@@ -434,15 +453,16 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The named award is an A.S. Degree, but the source page is the General Business Certificate (URL 'general-business-cert-fall-2026', heading 'General Business Cert'); no A.S. section appears in the text. The certificate requirements were recorded because they are the only requirements printed and they match the closed list exactly. A reviewer should confirm whether the award is mislabeled or whether a separate A.S. page exists.",
-   "The page's internal proposal table prints 'Required Major Total 30-33', 'Program Electives: 9' and 'Total Degree Units 39-42'. These figures equal the certificate total of 39-42 and include no general education, so degree_total was left null and total_units was set to 39-42.",
-   "The Marketing and Management concentrations are alternatives ('Select a Concentration (Marketing or Management)', 9 units). Each concentration's required pair and its choose-one list share option_group 'Concentration'.",
-   "MKTG 199 and MGT 199 print as 1-8 units in the main requirements list but as 3 units in the proposal table. The 1-8 range was recorded.",
-   "Course codes print without spaces in the main list (e.g., BUS101) and with spaces in the proposal table. The spaced form was used.",
-   "The Program Outcomes list is headed 'General Business Cert' and is cut off at outcome 4 ('Demonstrate an understanding of the legal and social ...'). Only the three complete outcomes were recorded; the truncated fourth outcome was omitted.",
-   "A Recommended Pathway / sequence is printed but describes the same requirements; it was not recorded as a recommended block."
+   "Concentration choice (9 units, Marketing or Management): the two Marketing blocks together form the Marketing option and the two Management blocks together form the Management option; all four share option_group 'Concentration' but a student completes both blocks of one concentration.",
+   "Total Major Units 39-42 recorded as total_units; 'Total Units 60-61' recorded as degree_total. The requirements table also heads 'Required Course (60-63 Units)', which conflicts with 60-61.",
+   "The line 'Completion of General Education requirements, plus electives as needed to reach 60 units. 18-21' combines GE and electives, so ge_units left null and electives_fill_degree set true.",
+   "GE pattern inferred from the pathway's 'AVC GE Area' references (local AVC GE); no GE unit total printed separately.",
+   "MKTG 199 and MGT 199 printed at 3 units in the catalog; the state file stores 1 unit (variable-unit work experience).",
+   "Program outcome 4 is cut off in the source text ('...legal and social envi'); recorded as printed, not completed. The outcomes list may continue beyond the truncation.",
+   "Codes printed without spaces in the first requirements list (e.g., BUS101) and with spaces in the second table (BUS 101); spaced form used.",
+   "Recommended Pathway courses (ENGL C1000, COMM C1000, BIOL 104, MUSC 102) are GE examples and not recorded in blocks."
   ]
  },
- "extracted_run": 45133183717,
- "read_run": "38979725726"
+ "extracted_run": "45574354887",
+ "catalog_year": "2026-2027"
 }
