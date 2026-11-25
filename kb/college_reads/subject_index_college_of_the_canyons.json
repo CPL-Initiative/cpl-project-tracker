@@ -1,17 +1,12 @@
 {
- "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 1: the catalog's prefix legend, if it prints one, and the first pages naming course descriptions, to learn how the catalog heads each subject. No model call.",
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 2 of this plan (pass 1 read run 45623555503): College of the Canyons prints no prefix legend (pass 1). Its Program/Course Descriptions section (pages 62 to 312, noncredit from 313) heads each department with the department's name, repeated as a running header under the line CREDIT PROGRAMS / COURSE DESCRIPTIONS. This headings read prints, once each, every all-caps line and the first course of every code, with the one line above it, so a session reads which header sits over each code's first course. No model call.",
  "college": "College of the Canyons",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "course prefix",
-  "subject abbreviation",
-  "course abbreviation",
-  "prefix(?:es)? (?:and|&) (?:subject|discipline)",
-  "course descriptions"
+  "Units:"
  ],
- "pdf_page_cap": 14,
  "pdf_unfolded": true,
  "pages": [
   {
@@ -20,5 +15,10 @@
     "subject_titles"
    ]
   }
- ]
+ ],
+ "subject_context": {
+  "heading": "^(?P<subj>NC\\.[A-Z]{2,6}(?= \\d{1,3}[A-Z]?\\b)|[A-Z]{2,8}(?= \\d{3}[A-Z]?\\b)|[A-Z][A-Z ,&'()-]{3,60}[A-Z)](?=$))",
+  "before": 1,
+  "start_page": 64
+ }
 }
