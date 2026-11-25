@@ -1,0 +1,1302 @@
+{
+ "college": "Saddleback College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:03:07Z",
+ "run": "45629512231",
+ "plan": "kb/college_reads/subject_index_saddleback.json",
+ "how": "The catalog's Courses section lists each subject under Credit, Noncredit, Adult Education and Emeritus Courses as a node titled with its name and its code in brackets; the run read those nodes through the catalog's own navigation JSON (_getNavigation), one call per list. The title keeps the words the heading prints after the code, such as (Noncredit); a trailing asterisk the heading prints is dropped. A heading that prints two codes with a slash, Biology [BIO/BIOL], files the title under each.",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Accounting [ACCT]",
+   "node": 48824
+  },
+  {
+   "code": "SL",
+   "title": "American Sign Language",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "American Sign Language [SL]",
+   "node": 48919
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Anthropology [ANTH] *",
+   "node": 48825
+  },
+  {
+   "code": "ARAB",
+   "title": "Arabic",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Arabic [ARAB]",
+   "node": 48826
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Architecture [ARCH]",
+   "node": 48827
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art [ART]",
+   "node": 48828
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art History [ARTH] *",
+   "node": 48829
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Astronomy [ASTR] *",
+   "node": 48830
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Automotive Technology [AUTO]",
+   "node": 48831
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Biology [BIO/BIOL] *",
+   "node": 48833
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Biology [BIO/BIOL] *",
+   "node": 48833
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Business [BUS]",
+   "node": 48834
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Chemistry [CHEM]",
+   "node": 48839
+  },
+  {
+   "code": "CDE",
+   "title": "Child Development and Education",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Child Development and Education [CDE/CDEV] *",
+   "node": 48838
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development and Education",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Child Development and Education [CDE/CDEV] *",
+   "node": 48838
+  },
+  {
+   "code": "CHI",
+   "title": "Chinese",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Chinese [CHI]",
+   "node": 48840
+  },
+  {
+   "code": "CTVR",
+   "title": "Cinema, Television, Radio",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Cinema, Television, Radio [CTVR]",
+   "node": 48854
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Communication Studies [COMM] *",
+   "node": 48436
+  },
+  {
+   "code": "CIM",
+   "title": "Computer and Information Management",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer and Information Management [CIM]",
+   "node": 48841
+  },
+  {
+   "code": "CIMA",
+   "title": "Computer Info Management Applications",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Info Management Applications [CIMA]",
+   "node": 48842
+  },
+  {
+   "code": "CIMN",
+   "title": "Computer Info Management Networking & Operating Systems",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Info Management Networking & Operating Systems [CIMN]",
+   "node": 48844
+  },
+  {
+   "code": "CIMP",
+   "title": "Computer Info Management Programming",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Info Management Programming [CIMP]",
+   "node": 48845
+  },
+  {
+   "code": "CIMS",
+   "title": "Computer Info Management Security",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Info Management Security [CIMS]",
+   "node": 48846
+  },
+  {
+   "code": "CIMW",
+   "title": "Computer Info Management Web Development",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Info Management Web Development [CIMW]",
+   "node": 48847
+  },
+  {
+   "code": "CMT",
+   "title": "Computer Maintenance Technology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Maintenance Technology [CMT]",
+   "node": 48848
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Science [CS]",
+   "node": 48853
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Counseling [COUN]",
+   "node": 48850
+  },
+  {
+   "code": "CUL",
+   "title": "Culinary",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Culinary [CUL]",
+   "node": 48950
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Dance [DANC]",
+   "node": 48836
+  },
+  {
+   "code": "DR",
+   "title": "Drafting",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Drafting [DR]",
+   "node": 48837
+  },
+  {
+   "code": "ECOL",
+   "title": "Ecological Restoration",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Ecological Restoration [ECOL]",
+   "node": 48855
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Economics [ECON] *",
+   "node": 48856
+  },
+  {
+   "code": "ET",
+   "title": "Electronic Technology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Electronic Technology [ET]",
+   "node": 48864
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emergency Medical Technology [EMT]",
+   "node": 48857
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Engineering [ENGR]",
+   "node": 48859
+  },
+  {
+   "code": "ENG",
+   "title": "English",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English [ENG/ENGL] *",
+   "node": 48456
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English [ENG/ENGL] *",
+   "node": 48456
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English as a Second Language [ESL]",
+   "node": 48862
+  },
+  {
+   "code": "ETT",
+   "title": "Entertainment and Theatre Technology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Entertainment and Theatre Technology [ETT]",
+   "node": 48865
+  },
+  {
+   "code": "ENV",
+   "title": "Environmental Studies",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Environmental Studies [ENV]",
+   "node": 48860
+  },
+  {
+   "code": "ES",
+   "title": "Ethnic Studies",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Ethnic Studies [ES]",
+   "node": 48861
+  },
+  {
+   "code": "FCS",
+   "title": "Family and Consumer Sciences",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Family and Consumer Sciences [FCS]",
+   "node": 48868
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Fashion [FASH]",
+   "node": 48867
+  },
+  {
+   "code": "FA",
+   "title": "Fine Arts",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Fine Arts [FA]",
+   "node": 48866
+  },
+  {
+   "code": "FR",
+   "title": "French",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "French [FR]",
+   "node": 48869
+  },
+  {
+   "code": "GSS",
+   "title": "Gender and Sexuality Studies",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Gender and Sexuality Studies [GSS]",
+   "node": 48877
+  },
+  {
+   "code": "GIS",
+   "title": "Geographic Information Systems",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geographic Information Systems [GIS]",
+   "node": 48875
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geography [GEOG]",
+   "node": 48872
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geology [GEOL]",
+   "node": 48873
+  },
+  {
+   "code": "GER",
+   "title": "German",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "German [GER]",
+   "node": 48874
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Global Studies [GLST]",
+   "node": 48876
+  },
+  {
+   "code": "GC",
+   "title": "Graphic Communication",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Graphic Communication [GC]",
+   "node": 48870
+  },
+  {
+   "code": "GD",
+   "title": "Graphic Design",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Graphic Design [GD]",
+   "node": 48871
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Health [HLTH]",
+   "node": 48881
+  },
+  {
+   "code": "HSC",
+   "title": "Health Science",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Health Science [HSC]",
+   "node": 48886
+  },
+  {
+   "code": "HEBR",
+   "title": "Hebrew",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Hebrew [HEBR]",
+   "node": 48878
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "History [HIST] *",
+   "node": 48879
+  },
+  {
+   "code": "HON",
+   "title": "Honors",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Honors [HON]",
+   "node": 48882
+  },
+  {
+   "code": "HORT",
+   "title": "Horticulture",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Horticulture [HORT]",
+   "node": 48883
+  },
+  {
+   "code": "HRM",
+   "title": "Hospitality & Restaurant Management",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Hospitality & Restaurant Management [HRM]",
+   "node": 48208
+  },
+  {
+   "code": "HS",
+   "title": "Human Services",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Human Services [HS]",
+   "node": 48884
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Humanities [HUM]",
+   "node": 48888
+  },
+  {
+   "code": "IA",
+   "title": "Intercollegiate Athletics",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Intercollegiate Athletics [IA]",
+   "node": 48889
+  },
+  {
+   "code": "INTS",
+   "title": "Interdisciplinary",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Interdisciplinary [INTS]",
+   "node": 48212
+  },
+  {
+   "code": "ID",
+   "title": "Interior Design",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Interior Design [ID]",
+   "node": 48890
+  },
+  {
+   "code": "ITA",
+   "title": "Italian",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Italian [ITA]",
+   "node": 48891
+  },
+  {
+   "code": "JA",
+   "title": "Japanese",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Japanese [JA]",
+   "node": 48892
+  },
+  {
+   "code": "JRN",
+   "title": "Journalism",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Journalism [JRN]",
+   "node": 48893
+  },
+  {
+   "code": "KNES",
+   "title": "Kinesiology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Kinesiology [KNES]",
+   "node": 48896
+  },
+  {
+   "code": "KNEA",
+   "title": "Kinesiology - Adapted",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Kinesiology - Adapted [KNEA]",
+   "node": 48894
+  },
+  {
+   "code": "KOR",
+   "title": "Korean",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Korean [KOR]",
+   "node": 48897
+  },
+  {
+   "code": "LIB",
+   "title": "Library",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Library [LIB]",
+   "node": 48898
+  },
+  {
+   "code": "MFG",
+   "title": "Manufacturing Technology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Manufacturing Technology [MFG]",
+   "node": 48901
+  },
+  {
+   "code": "MS",
+   "title": "Marine Science",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Marine Science [MS]",
+   "node": 48904
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mathematics [MATH/STAT] *",
+   "node": 48448
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mathematics [MATH/STAT] *",
+   "node": 48448
+  },
+  {
+   "code": "MA",
+   "title": "Medical Assisting",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Medical Assisting [MA]",
+   "node": 48899
+  },
+  {
+   "code": "MLT",
+   "title": "Medical Laboratory Technology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Medical Laboratory Technology [MLT]",
+   "node": 48902
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music [MUS]",
+   "node": 48905
+  },
+  {
+   "code": "N",
+   "title": "Nursing",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Nursing [N]",
+   "node": 48906
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Nutrition [NUTR]",
+   "node": 48908
+  },
+  {
+   "code": "PM",
+   "title": "Paramedic",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Paramedic [PM]",
+   "node": 48915
+  },
+  {
+   "code": "PRSN",
+   "title": "Persian",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Persian [PRSN]",
+   "node": 48917
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Philosophy [PHIL]",
+   "node": 48911
+  },
+  {
+   "code": "PHLB",
+   "title": "Phlebotomy",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Phlebotomy [PHLB]",
+   "node": 48912
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Photography [PHOT]",
+   "node": 48913
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physics [PHYS]",
+   "node": 48914
+  },
+  {
+   "code": "PS",
+   "title": "Political Science",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Political Science [PS/POLS] *",
+   "node": 48440
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Political Science [PS/POLS] *",
+   "node": 48440
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Psychology [PSYC] *",
+   "node": 48444
+  },
+  {
+   "code": "PH",
+   "title": "Public Health",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Public Health [PH]",
+   "node": 48909
+  },
+  {
+   "code": "PHIT",
+   "title": "Public Health Informatics and Technology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Public Health Informatics and Technology [PHIT]",
+   "node": 48880
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Real Estate [RE]",
+   "node": 48918
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Sociology [SOC/SOCI] *",
+   "node": 48920
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Sociology [SOC/SOCI] *",
+   "node": 48920
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Spanish [SPAN]",
+   "node": 48922
+  },
+  {
+   "code": "SURG",
+   "title": "Surgical Technology",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Surgical Technology [SURG]",
+   "node": 48464
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Theatre Arts [TA]",
+   "node": 48923
+  },
+  {
+   "code": "TOUR",
+   "title": "Travel and Tourism",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Travel and Tourism [TOUR]",
+   "node": 48925
+  },
+  {
+   "code": "CNA",
+   "title": "Certified Nursing Assistant (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Certified Nursing Assistant [CNA] (Noncredit)",
+   "node": 48851
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Information Systems [CIS] (Noncredit)",
+   "node": 48849
+  },
+  {
+   "code": "COS",
+   "title": "Cosmetology (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Cosmetology [COS] (Noncredit)",
+   "node": 48852
+  },
+  {
+   "code": "SPS",
+   "title": "Special Services (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Special Services [SPS] (Noncredit)",
+   "node": 48924
+  },
+  {
+   "code": "TU",
+   "title": "Tutoring (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Tutoring [TU] (Noncredit)",
+   "node": 48926
+  },
+  {
+   "code": "AEBE",
+   "title": "Adult Education Basic Education (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Adult Education Basic Education [AEBE] (Noncredit)",
+   "node": 48823
+  },
+  {
+   "code": "AEBT",
+   "title": "Adult Education Basic Technology (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Adult Education Basic Technology [AEBT] (Noncredit)",
+   "node": 48927
+  },
+  {
+   "code": "AESL",
+   "title": "Adult Education English as a Second Language (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Adult Education English as a Second Language [AESL] (Noncredit)",
+   "node": 48928
+  },
+  {
+   "code": "AEWD",
+   "title": "Adult Education with Disabilities (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Adult Education with Disabilities [AEWD] (Noncredit)",
+   "node": 48952
+  },
+  {
+   "code": "AEWP",
+   "title": "Adult Education Workforce Preparation (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Adult Education Workforce Preparation [AEWP] (Noncredit)",
+   "node": 48929
+  },
+  {
+   "code": "EACT",
+   "title": "Emeritus Accounting (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Accounting [EACT] (Noncredit)",
+   "node": 48428
+  },
+  {
+   "code": "EART",
+   "title": "Emeritus Art (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Art [EART] (Noncredit)",
+   "node": 48930
+  },
+  {
+   "code": "EBIO",
+   "title": "Emeritus Biology (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Biology [EBIO] (Noncredit)",
+   "node": 48931
+  },
+  {
+   "code": "ECIM",
+   "title": "Emeritus Computer Information & Management (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Computer Information & Management [ECIM] (Noncredit)",
+   "node": 48932
+  },
+  {
+   "code": "EECL",
+   "title": "Emeritus Ecology (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Ecology [EECL] (Noncredit)",
+   "node": 48933
+  },
+  {
+   "code": "EENG",
+   "title": "Emeritus English (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus English [EENG] (Noncredit)",
+   "node": 48934
+  },
+  {
+   "code": "EFSH",
+   "title": "Emeritus Fashion (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Fashion [EFSH] (Noncredit)",
+   "node": 48936
+  },
+  {
+   "code": "EFRN",
+   "title": "Emeritus French (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus French [EFRN] (Noncredit)",
+   "node": 48935
+  },
+  {
+   "code": "EGRO",
+   "title": "Emeritus Gerontology (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Gerontology [EGRO] (Noncredit)",
+   "node": 48937
+  },
+  {
+   "code": "EHEA",
+   "title": "Emeritus Health (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Health [EHEA] (Noncredit)",
+   "node": 48938
+  },
+  {
+   "code": "EHSC",
+   "title": "Emeritus Health Science (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Health Science [EHSC] (Noncredit)",
+   "node": 48939
+  },
+  {
+   "code": "EHST",
+   "title": "Emeritus History (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus History [EHST] (Noncredit)",
+   "node": 48941
+  },
+  {
+   "code": "EHSR",
+   "title": "Emeritus Human Services (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Human Services [EHSR] (Noncredit)",
+   "node": 48940
+  },
+  {
+   "code": "EHUM",
+   "title": "Emeritus Humanities (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Humanities [EHUM] (Noncredit)",
+   "node": 48942
+  },
+  {
+   "code": "EITA",
+   "title": "Emeritus Italian (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Italian [EITA] (Noncredit)",
+   "node": 48943
+  },
+  {
+   "code": "EMUS",
+   "title": "Emeritus Music (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Music [EMUS] (Noncredit)",
+   "node": 48944
+  },
+  {
+   "code": "EPHL",
+   "title": "Emeritus Philosophy (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Philosophy [EPHL] (Noncredit)",
+   "node": 48945
+  },
+  {
+   "code": "EPHO",
+   "title": "Emeritus Photography (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Photography [EPHO] (Noncredit)",
+   "node": 48946
+  },
+  {
+   "code": "EPOL",
+   "title": "Emeritus Political Science (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Political Science [EPOL] (Noncredit)",
+   "node": 48947
+  },
+  {
+   "code": "ESPA",
+   "title": "Emeritus Spanish (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Spanish [ESPA] (Noncredit)",
+   "node": 48948
+  },
+  {
+   "code": "ETHE",
+   "title": "Emeritus Theatre Arts (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emeritus Theatre Arts [ETHE] (Noncredit)",
+   "node": 48949
+  }
+ ],
+ "second_heading_for_a_code": [
+  {
+   "code": "STAT",
+   "printed": "Statistics [STAT] * -> See Mathematics",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "kept": "Mathematics"
+  },
+  {
+   "code": "AUTO",
+   "printed": "Automotive Technology [AUTO] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Automotive Technology"
+  },
+  {
+   "code": "BUS",
+   "printed": "Business [BUS] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Business"
+  },
+  {
+   "code": "CIM",
+   "printed": "Computer and Information Management [CIM] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Computer and Information Management"
+  },
+  {
+   "code": "CIMA",
+   "printed": "Computer Info Management Applications [CIMA] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Computer Info Management Applications"
+  },
+  {
+   "code": "EMT",
+   "printed": "Emergency Medical Technology [EMT] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Emergency Medical Technology"
+  },
+  {
+   "code": "ENG",
+   "printed": "English [ENG] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "English"
+  },
+  {
+   "code": "ESL",
+   "printed": "English as a Second Language [ESL] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "English as a Second Language"
+  },
+  {
+   "code": "HLTH",
+   "printed": "Health [HLTH] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Health"
+  },
+  {
+   "code": "HSC",
+   "printed": "Health Science [HSC] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Health Science"
+  },
+  {
+   "code": "HS",
+   "printed": "Human Services [HS] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Human Services"
+  },
+  {
+   "code": "KNEA",
+   "printed": "Kinesiology - Adapted [KNEA] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Kinesiology - Adapted"
+  },
+  {
+   "code": "MATH",
+   "printed": "Mathematics [MATH] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Mathematics"
+  },
+  {
+   "code": "MA",
+   "printed": "Medical Assisting [MA] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Medical Assisting"
+  },
+  {
+   "code": "MLT",
+   "printed": "Medical Laboratory Technology [MLT] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Medical Laboratory Technology"
+  },
+  {
+   "code": "N",
+   "printed": "Nursing [N] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Nursing"
+  },
+  {
+   "code": "PM",
+   "printed": "Paramedic [PM] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Paramedic"
+  },
+  {
+   "code": "PH",
+   "printed": "Public Health [PH] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Public Health"
+  },
+  {
+   "code": "PHIT",
+   "printed": "Public Health Informatics and Technology [PHIT] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Public Health Informatics and Technology"
+  },
+  {
+   "code": "SOC",
+   "printed": "Sociology [SOC] (Noncredit)",
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "kept": "Sociology"
+  }
+ ]
+}

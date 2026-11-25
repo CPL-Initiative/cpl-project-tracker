@@ -1,0 +1,667 @@
+{
+ "college": "San Diego Miramar College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:36:54Z",
+ "run": "45635425460",
+ "plan": "kb/college_reads/subject_index_san_diego_miramar.json",
+ "how": "The catalog's Course Descriptions section lists each subject as a node titled with its code and name; the run read those nodes through the catalog's own navigation JSON (_getNavigation).",
+ "titles": [
+  {
+   "code": "AAPI",
+   "title": "Asian American Pacific Islander Studies",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AAPI: Asian American Pacific Islander Studies",
+   "node": 20816
+  },
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ACCT: Accounting",
+   "node": 20817
+  },
+  {
+   "code": "AUDI",
+   "title": "Audio Production & Engineering",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AUDI: Audio Production & Engineering",
+   "node": 22057
+  },
+  {
+   "code": "ADJU",
+   "title": "Administration of Justice",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ADJU: Administration of Justice",
+   "node": 20818
+  },
+  {
+   "code": "AMSL",
+   "title": "American Sign Language/Interpreting",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AMSL: American Sign Language/Interpreting ",
+   "node": 20819
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ANTH: Anthropology",
+   "node": 20820
+  },
+  {
+   "code": "ARTF",
+   "title": "Art-Fine Art",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARTF: Art-Fine Art",
+   "node": 20821
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARTH: Art History",
+   "node": 22279
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASTR: Astronomy",
+   "node": 20822
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AUTO: Automotive Technology",
+   "node": 20823
+  },
+  {
+   "code": "AVIA",
+   "title": "Aviation",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AVIA: Aviation",
+   "node": 20824
+  },
+  {
+   "code": "AVIM",
+   "title": "Aviation Maintenance Technology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AVIM: Aviation Maintenance Technology",
+   "node": 20825
+  },
+  {
+   "code": "BANK",
+   "title": "Banking and Finance",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BANK: Banking and Finance",
+   "node": 20826
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BIOL: Biology",
+   "node": 20827
+  },
+  {
+   "code": "BLAS",
+   "title": "Black Studies",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BLAS: Black Studies",
+   "node": 20828
+  },
+  {
+   "code": "BLDC",
+   "title": "Building Construction Technology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BLDC: Building Construction Technology",
+   "node": 20829
+  },
+  {
+   "code": "BUSE",
+   "title": "Business",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUSE: Business",
+   "node": 20830
+  },
+  {
+   "code": "CBTE",
+   "title": "Computer Business Technology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CBTE: Computer Business Technology",
+   "node": 20831
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHEM: Chemistry",
+   "node": 20832
+  },
+  {
+   "code": "CHIC",
+   "title": "Chicana and Chicano Studies",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHIC: Chicana and Chicano Studies",
+   "node": 20833
+  },
+  {
+   "code": "CHIL",
+   "title": "Child Development",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHIL: Child Development ",
+   "node": 20834
+  },
+  {
+   "code": "CISC",
+   "title": "Computer and Information Sciences",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CISC: Computer and Information Sciences",
+   "node": 20835
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMM: Communication Studies",
+   "node": 21041
+  },
+  {
+   "code": "COMS",
+   "title": "Communication Studies",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMS: Communication Studies",
+   "node": 20836
+  },
+  {
+   "code": "DIES",
+   "title": "Diesel Technology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DIES: Diesel Technology",
+   "node": 20838
+  },
+  {
+   "code": "DFLM",
+   "title": "Digital Film Production",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DFLM: Digital Film Production",
+   "node": 20837
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECON: Economics",
+   "node": 20839
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EDUC: Education",
+   "node": 20840
+  },
+  {
+   "code": "ELAC",
+   "title": "English Language Acquisition",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ELAC: English Language Acquisition",
+   "node": 20841
+  },
+  {
+   "code": "EMGM",
+   "title": "Emergency Medical Technician",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EMGM: Emergency Medical Technician",
+   "node": 20842
+  },
+  {
+   "code": "ENGE",
+   "title": "Engineering",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGE: Engineering",
+   "node": 22056
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGL: English",
+   "node": 20843
+  },
+  {
+   "code": "EXSC",
+   "title": "Exercise Science",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EXSC: Exercise Science",
+   "node": 20844
+  },
+  {
+   "code": "FACD",
+   "title": "Fire Academy",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FACD: Fire Academy",
+   "node": 22209
+  },
+  {
+   "code": "FILI",
+   "title": "Filipino",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FILI: Filipino",
+   "node": 20845
+  },
+  {
+   "code": "FIPT",
+   "title": "Fire Protection Technology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FIPT: Fire Protection Technology",
+   "node": 20846
+  },
+  {
+   "code": "GEND",
+   "title": "Gender Studies",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEND: Gender Studies",
+   "node": 20847
+  },
+  {
+   "code": "GENR",
+   "title": "Generic Outlines",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GENR: Generic Outlines",
+   "node": 20848
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOG: Geography",
+   "node": 20849
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOL: Geology",
+   "node": 20850
+  },
+  {
+   "code": "GRFX",
+   "title": "Graphics",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GRFX: Graphics",
+   "node": 20851
+  },
+  {
+   "code": "HEAL",
+   "title": "Health Education",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HEAL: Health Education",
+   "node": 20852
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIST: History",
+   "node": 20853
+  },
+  {
+   "code": "HSEC",
+   "title": "Homeland Security",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HSEC: Homeland Security",
+   "node": 20854
+  },
+  {
+   "code": "HUMA",
+   "title": "Humanities",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUMA: Humanities",
+   "node": 20855
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "JOUR: Journalism",
+   "node": 20856
+  },
+  {
+   "code": "LFGD",
+   "title": "Lifeguarding",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LFGD: Lifeguarding",
+   "node": 20857
+  },
+  {
+   "code": "LIBS",
+   "title": "Library Science",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LIBS: Library Science",
+   "node": 20858
+  },
+  {
+   "code": "MARK",
+   "title": "Marketing",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MARK: Marketing",
+   "node": 20859
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MATH: Mathematics",
+   "node": 20860
+  },
+  {
+   "code": "MLTT",
+   "title": "Medical Laboratory Technician Training",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MLTT: Medical Laboratory Technician Training",
+   "node": 20861
+  },
+  {
+   "code": "MUSI",
+   "title": "Music",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUSI: Music",
+   "node": 20862
+  },
+  {
+   "code": "NAIS",
+   "title": "Native American and Indigenous Studies",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NAIS: Native American and Indigenous Studies ",
+   "node": 21918
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NUTR: Nutrition",
+   "node": 20863
+  },
+  {
+   "code": "OCEA",
+   "title": "Oceanography",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "OCEA: Oceanography",
+   "node": 20864
+  },
+  {
+   "code": "PADM",
+   "title": "Public Administration",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PADM: Public Administration",
+   "node": 20865
+  },
+  {
+   "code": "PARA",
+   "title": "Paralegal",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PARA: Paralegal",
+   "node": 20866
+  },
+  {
+   "code": "PERG",
+   "title": "Personal Growth",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PERG: Personal Growth",
+   "node": 20867
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHIL: Philosophy",
+   "node": 20868
+  },
+  {
+   "code": "PHYN",
+   "title": "Physical Science",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHYN: Physical Science",
+   "node": 20869
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHYS: Physics",
+   "node": 20870
+  },
+  {
+   "code": "POLI",
+   "title": "Political Science",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POLI: Political Science",
+   "node": 20871
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POLS: Political Science",
+   "node": 21043
+  },
+  {
+   "code": "PSMA",
+   "title": "Public Safety Management",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSMA: Public Safety Management",
+   "node": 22058
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSYC: Psychology",
+   "node": 20872
+  },
+  {
+   "code": "REAL",
+   "title": "Real Estate",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "REAL: Real Estate",
+   "node": 20873
+  },
+  {
+   "code": "SERV",
+   "title": "Service Learning",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SERV: Service Learning",
+   "node": 20874
+  },
+  {
+   "code": "SOCO",
+   "title": "Sociology",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOCO: Sociology",
+   "node": 20875
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SPAN: Spanish",
+   "node": 20876
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "STAT: Statistics",
+   "node": 21042
+  },
+  {
+   "code": "SUST",
+   "title": "Sustainability",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SUST: Sustainability",
+   "node": 20877
+  },
+  {
+   "code": "TAGA",
+   "title": "Tagalog",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "TAGA: Tagalog",
+   "node": 20878
+  },
+  {
+   "code": "WORK",
+   "title": "Work Experience",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=71&parentId=20815",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WORK: Work Experience",
+   "node": 20986
+  }
+ ]
+}

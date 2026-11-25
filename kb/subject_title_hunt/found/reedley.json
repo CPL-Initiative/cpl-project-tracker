@@ -1,0 +1,748 @@
+{
+ "college": "Reedley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:52:24Z",
+ "run": "45626743727",
+ "plan": "kb/college_reads/subject_index_reedley.json",
+ "how": "The catalog's course section lists each subject as a node titled with its code and name; the run read those nodes through the catalog's own navigation JSON (_getNavigation), one call per subject list.",
+ "titles": [
+  {
+   "code": "ACCTG",
+   "title": "Accounting",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Accounting (ACCTG)",
+   "node": 3552
+  },
+  {
+   "code": "FAME",
+   "title": "Advanced Manufacturing",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Advanced Manufacturing (FAME)",
+   "node": 3647
+  },
+  {
+   "code": "AFRAM",
+   "title": "African-American Studies",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "African-American Studies (AFRAM)",
+   "node": 3553
+  },
+  {
+   "code": "AG",
+   "title": "Agriculture",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture (AG)",
+   "node": 3554
+  },
+  {
+   "code": "AGBS",
+   "title": "Agriculture Business",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture Business (AGBS)",
+   "node": 3555
+  },
+  {
+   "code": "AGED",
+   "title": "Agriculture Education",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture Education (AGED)",
+   "node": 3556
+  },
+  {
+   "code": "AMIND",
+   "title": "American Indian Studies",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "American Indian Studies (AMIND)",
+   "node": 3557
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "American Sign Language (ASL)",
+   "node": 3563
+  },
+  {
+   "code": "AS",
+   "title": "Animal Science",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Animal Science (AS)",
+   "node": 3561
+  },
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Anthropology (ANTHR)",
+   "node": 3559
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art (ART)",
+   "node": 3560
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art History (ARTH)",
+   "node": 3658
+  },
+  {
+   "code": "ASAMER",
+   "title": "Asian-American Studies",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Asian-American Studies (ASAMER)",
+   "node": 3562
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Astronomy (ASTR)",
+   "node": 3564
+  },
+  {
+   "code": "AUTOT",
+   "title": "Automotive Technology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Automotive Technology (AUTOT)",
+   "node": 3565
+  },
+  {
+   "code": "AMT",
+   "title": "Aviation Maintenance Technology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Aviation Maintenance Technology (AMT)",
+   "node": 3558
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Biology (BIOL)",
+   "node": 3567
+  },
+  {
+   "code": "BA",
+   "title": "Business Administration",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Business Administration (BA)",
+   "node": 3566
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Chemistry (CHEM)",
+   "node": 3568
+  },
+  {
+   "code": "CLS",
+   "title": "Chicano-Latino Studies",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Chicano-Latino Studies (CLS)",
+   "node": 3569
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Communication (COMM)",
+   "node": 3570
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Science (CSCI)",
+   "node": 3574
+  },
+  {
+   "code": "CELA",
+   "title": "Continuing Education Learning Academy",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Continuing Education Learning Academy (CELA)",
+   "node": 3571
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Counseling (COUN)",
+   "node": 3572
+  },
+  {
+   "code": "CRIM",
+   "title": "Criminology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Criminology (CRIM)",
+   "node": 3573
+  },
+  {
+   "code": "DA",
+   "title": "Dental Assisting",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Dental Assisting (DA)",
+   "node": 3575
+  },
+  {
+   "code": "DEVSER",
+   "title": "Developmental Services",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Developmental Services (DEVSER)",
+   "node": 3576
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Early Childhood Education (ECE)",
+   "node": 3577
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Economics (ECON)",
+   "node": 3578
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Education (EDUC)",
+   "node": 3579
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Engineering (ENGR)",
+   "node": 3582
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English (ENGL)",
+   "node": 3581
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English as a Second Language (ESL)",
+   "node": 3583
+  },
+  {
+   "code": "EH",
+   "title": "Environmental Horticulture",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Environmental Horticulture (EH)",
+   "node": 3580
+  },
+  {
+   "code": "ETHNST",
+   "title": "Ethnic Studies",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Ethnic Studies (ETHNST)",
+   "node": 3584
+  },
+  {
+   "code": "FILM",
+   "title": "Film",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Film (FILM)",
+   "node": 3585
+  },
+  {
+   "code": "FLGHT",
+   "title": "Flight Science",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Flight Science (FLGHT)",
+   "node": 3586
+  },
+  {
+   "code": "FN",
+   "title": "Foods and Nutrition",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Foods and Nutrition (FN)",
+   "node": 3587
+  },
+  {
+   "code": "FOR",
+   "title": "Forestry",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Forestry (FOR)",
+   "node": 3588
+  },
+  {
+   "code": "FRENCH",
+   "title": "French",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "French (FRENCH)",
+   "node": 3589
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geography (GEOG)",
+   "node": 3590
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geology (GEOL)",
+   "node": 3591
+  },
+  {
+   "code": "HCI",
+   "title": "Health Care Interpreter",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Health Care Interpreter (HCI)",
+   "node": 3592
+  },
+  {
+   "code": "HLTH",
+   "title": "Health Science",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Health Science (HLTH)",
+   "node": 3594
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "History (HIST)",
+   "node": 3593
+  },
+  {
+   "code": "HONORS",
+   "title": "Honors",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Honors (HONORS)",
+   "node": 3595
+  },
+  {
+   "code": "INDST",
+   "title": "Individual Study",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Individual Study (INDST)",
+   "node": 3596
+  },
+  {
+   "code": "IT",
+   "title": "Industrial Technology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Industrial Technology (IT)",
+   "node": 3599
+  },
+  {
+   "code": "IS",
+   "title": "Information Systems",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Information Systems (IS)",
+   "node": 3598
+  },
+  {
+   "code": "INTDS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Interdisciplinary Studies (INTDS)",
+   "node": 3597
+  },
+  {
+   "code": "JOURN",
+   "title": "Journalism",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Journalism (JOURN)",
+   "node": 3600
+  },
+  {
+   "code": "KINES",
+   "title": "Kinesiology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Kinesiology (KINES)",
+   "node": 3601
+  },
+  {
+   "code": "LIBSKL",
+   "title": "Library Skills",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Library Skills (LIBSKL)",
+   "node": 3604
+  },
+  {
+   "code": "LITEC",
+   "title": "Library Technology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Library Technology (LITEC)",
+   "node": 3603
+  },
+  {
+   "code": "LING",
+   "title": "Linguistics",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Linguistics (LING)",
+   "node": 3602
+  },
+  {
+   "code": "MFGT",
+   "title": "Manufacturing Technology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Manufacturing Technology (MFGT)",
+   "node": 3607
+  },
+  {
+   "code": "MKTG",
+   "title": "Marketing",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Marketing (MKTG)",
+   "node": 3608
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mathematics (MATH)",
+   "node": 3606
+  },
+  {
+   "code": "MAG",
+   "title": "Mechanized Agriculture",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mechanized Agriculture (MAG)",
+   "node": 3605
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music (MUS)",
+   "node": 3609
+  },
+  {
+   "code": "NAT",
+   "title": "Nursing Assistant Training",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Nursing Assistant Training (NAT)",
+   "node": 3610
+  },
+  {
+   "code": "OT",
+   "title": "Office Technology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Office Technology (OT)",
+   "node": 3611
+  },
+  {
+   "code": "PATH",
+   "title": "Performing Arts and Theatre",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Performing Arts and Theatre (PATH)",
+   "node": 3612
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Philosophy (PHIL)",
+   "node": 3614
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Photography (PHOTO)",
+   "node": 3615
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Education (PE)",
+   "node": 3613
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physics (PHYS)",
+   "node": 3616
+  },
+  {
+   "code": "PLS",
+   "title": "Plant Science",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Plant Science (PLS)",
+   "node": 3617
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Political Science (POLS)",
+   "node": 3618
+  },
+  {
+   "code": "PYSC",
+   "title": "Psychology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Psychology (PYSC)",
+   "node": 3619
+  },
+  {
+   "code": "SCI",
+   "title": "Science",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Science (SCI)",
+   "node": 3620
+  },
+  {
+   "code": "SERV",
+   "title": "Service Learning",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Service Learning (SERV)",
+   "node": 3621
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Sociology (SOCI)",
+   "node": 3622
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Spanish (SPAN)",
+   "node": 3623
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Statistics (STAT)",
+   "node": 3625
+  },
+  {
+   "code": "ST",
+   "title": "Supervised Tutoring",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Supervised Tutoring (ST)",
+   "node": 3624
+  },
+  {
+   "code": "SURV",
+   "title": "Surveying",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Surveying (SURV)",
+   "node": 3626
+  },
+  {
+   "code": "VESL",
+   "title": "Vocational English as a Second Language",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Vocational English as a Second Language (VESL)",
+   "node": 3627
+  },
+  {
+   "code": "WELD",
+   "title": "Welding Technology",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Welding Technology (WELD)",
+   "node": 3628
+  },
+  {
+   "code": "WLF",
+   "title": "Wildland Fire",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Wildland Fire (WLF)",
+   "node": 3630
+  },
+  {
+   "code": "WGSS",
+   "title": "Women's Gender & Sexuality Studies",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Women's Gender & Sexuality Studies (WGSS)",
+   "node": 3629
+  },
+  {
+   "code": "WKEXP",
+   "title": "Work Experience Education",
+   "url": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Work Experience Education (WKEXP)",
+   "node": 3631
+  }
+ ]
+}

@@ -1,0 +1,1135 @@
+{
+ "college": "Allan Hancock College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:51:15Z",
+ "run": "45626743727",
+ "plan": "kb/college_reads/subject_index_allan_hancock.json",
+ "how": "The catalog's course section lists each subject as a node titled with its code and name; the run read those nodes through the catalog's own navigation JSON (_getNavigation), one call per subject list.",
+ "titles": [
+  {
+   "code": "AB",
+   "title": "Auto Body",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AB - Auto Body",
+   "node": 31332
+  },
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ACCT - Accounting",
+   "node": 31333
+  },
+  {
+   "code": "AG",
+   "title": "Agriculture",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AG - Agriculture",
+   "node": 31334
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AJ - Administration of Justice",
+   "node": 31335
+  },
+  {
+   "code": "AJN",
+   "title": "Administration of Justice (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AJN - Administration of Justice (NC)",
+   "node": 31336
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ANTH - Anthropology",
+   "node": 31337
+  },
+  {
+   "code": "APRN",
+   "title": "Apprenticeship Training",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APRN - Apprenticeship Training",
+   "node": 31338
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARCH - Architecture",
+   "node": 31339
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ART - Art",
+   "node": 31340
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASL - American Sign Language",
+   "node": 31341
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASTR - Astronomy",
+   "node": 31342
+  },
+  {
+   "code": "AT",
+   "title": "Automotive Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AT - Automotive Technology",
+   "node": 31343
+  },
+  {
+   "code": "ATH",
+   "title": "Athletic Training",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28854",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ATH - Athletic Training",
+   "node": 31344
+  },
+  {
+   "code": "CA",
+   "title": "Culinary Arts",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CA - Culinary Arts",
+   "node": 31323
+  },
+  {
+   "code": "CBIS",
+   "title": "Computer Business Information Systems",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CBIS - Computer Business Information Systems",
+   "node": 31324
+  },
+  {
+   "code": "CBOT",
+   "title": "Computer Business Office Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CBOT - Computer Business Office Technology",
+   "node": 31325
+  },
+  {
+   "code": "CCNC",
+   "title": "Computer Courses (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CCNC - Computer Courses (NC)",
+   "node": 31496
+  },
+  {
+   "code": "CEL",
+   "title": "Computer Electronics",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CEL - Computer Electronics",
+   "node": 31326
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHEM - Chemistry",
+   "node": 31327
+  },
+  {
+   "code": "CITZ",
+   "title": "Citizenship (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CITZ - Citizenship (NC)",
+   "node": 31328
+  },
+  {
+   "code": "CNET",
+   "title": "Computer Networking & Electronics Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CNET - Computer Networking & Electronics Technology",
+   "node": 31329
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMM - Communication Studies",
+   "node": 31330
+  },
+  {
+   "code": "COS",
+   "title": "Cosmetology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COS - Cosmetology",
+   "node": 31719
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28855",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CS - Computer Science",
+   "node": 31331
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECON - Economics",
+   "node": 31245
+  },
+  {
+   "code": "ECS",
+   "title": "Early Childhood Studies",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECS - Early Childhood Studies",
+   "node": 31246
+  },
+  {
+   "code": "ECSN",
+   "title": "Early Childhood Studies (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECSN - Early Childhood Studies (NC)",
+   "node": 31247
+  },
+  {
+   "code": "EDTC",
+   "title": "Educational Technologies",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EDTC - Educational Technologies",
+   "node": 31248
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EDUC - Education",
+   "node": 31249
+  },
+  {
+   "code": "EDUN",
+   "title": "Education (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EDUN - Education (NC)",
+   "node": 31695
+  },
+  {
+   "code": "EL",
+   "title": "Electronics",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EL - Electronics",
+   "node": 31250
+  },
+  {
+   "code": "ELD",
+   "title": "English Language Development",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ELD - English Language Development",
+   "node": 31251
+  },
+  {
+   "code": "ELDN",
+   "title": "English Language Development (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ELDN - English Language Development (NC)",
+   "node": 31252
+  },
+  {
+   "code": "ELDV",
+   "title": "English Language Development Vocational (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ELDV - English Language Development Vocational (NC)",
+   "node": 31253
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EMS - Emergency Medical Services",
+   "node": 31254
+  },
+  {
+   "code": "EMSP",
+   "title": "Emergency Medical Services Paramedic",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EMSP - Emergency Medical Services Paramedic",
+   "node": 31255
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGL - English",
+   "node": 31256
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGR - Engineering",
+   "node": 31257
+  },
+  {
+   "code": "ENTR",
+   "title": "Entrepreneurship",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENTR - Entrepreneurship",
+   "node": 31258
+  },
+  {
+   "code": "ENVT",
+   "title": "Environmental Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENVT - Environmental Technology",
+   "node": 31259
+  },
+  {
+   "code": "ES",
+   "title": "Ethnic Studies",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ES - Ethnic Studies",
+   "node": 31260
+  },
+  {
+   "code": "ET",
+   "title": "Engineering Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28858",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ET - Engineering Technology",
+   "node": 31262
+  },
+  {
+   "code": "BARB",
+   "title": "Barbering (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28859",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BARB - Barbering (NC)",
+   "node": 31489
+  },
+  {
+   "code": "BASK",
+   "title": "Basic Skills (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28859",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BASK - Basic Skills (NC)",
+   "node": 31242
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28859",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BIOL - Biology",
+   "node": 31243
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28859",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUS - Business",
+   "node": 31244
+  },
+  {
+   "code": "DA",
+   "title": "Dental Assisting",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DA - Dental Assisting",
+   "node": 31238
+  },
+  {
+   "code": "DAX",
+   "title": "Dental Assisting (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DAX - Dental Assisting (NC)",
+   "node": 31490
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DANC - Dance",
+   "node": 31239
+  },
+  {
+   "code": "DISA",
+   "title": "Adults with Disabilities (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DISA - Adults with Disabilities (NC)",
+   "node": 31240
+  },
+  {
+   "code": "DNCN",
+   "title": "Dance (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DNCN - Dance (NC)",
+   "node": 31488
+  },
+  {
+   "code": "DRMA",
+   "title": "Drama",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28860",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DRMA - Drama",
+   "node": 31241
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion Merchandising",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FASH - Fashion Merchandising",
+   "node": 31229
+  },
+  {
+   "code": "FASN",
+   "title": "Fashion Studies (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FASN - Fashion Studies (NC)",
+   "node": 31230
+  },
+  {
+   "code": "FCS",
+   "title": "Family & Consumer Science",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FCS - Family & Consumer Science",
+   "node": 31231
+  },
+  {
+   "code": "FILM",
+   "title": "Film",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FILM - Film",
+   "node": 31232
+  },
+  {
+   "code": "FRCH",
+   "title": "French",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FRCH - French",
+   "node": 31233
+  },
+  {
+   "code": "FSN",
+   "title": "Food Science & Nutrition",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FSN - Food Science & Nutrition",
+   "node": 31234
+  },
+  {
+   "code": "FT",
+   "title": "Fire Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FT - Fire Technology",
+   "node": 31235
+  },
+  {
+   "code": "FTEC",
+   "title": "Fire Tech",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FTEC - Fire Tech",
+   "node": 31236
+  },
+  {
+   "code": "FTNC",
+   "title": "Fire Technology (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28861",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FTNC - Fire Technology (NC)",
+   "node": 31237
+  },
+  {
+   "code": "HEAL",
+   "title": "Health & Safety (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HEAL - Health & Safety (NC)",
+   "node": 31221
+  },
+  {
+   "code": "HED",
+   "title": "Health Education",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HED - Health Education",
+   "node": 31222
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIST - History",
+   "node": 31223
+  },
+  {
+   "code": "HIT",
+   "title": "Health Information Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIT - Health Information Technology",
+   "node": 31224
+  },
+  {
+   "code": "HLCR",
+   "title": "Health Careers",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HLCR - Health Careers",
+   "node": 31463
+  },
+  {
+   "code": "HLTH",
+   "title": "Health (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HLTH - Health (NC)",
+   "node": 31225
+  },
+  {
+   "code": "HOEC",
+   "title": "Home Economics (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HOEC - Home Economics (NC)",
+   "node": 31226
+  },
+  {
+   "code": "HOSP",
+   "title": "Hospitality Management",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HOSP - Hospitality Management",
+   "node": 31408
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUM - Humanities",
+   "node": 31227
+  },
+  {
+   "code": "HUSV",
+   "title": "Human Services",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28862",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUSV - Human Services",
+   "node": 31228
+  },
+  {
+   "code": "GBST",
+   "title": "Global Studies",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28863",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GBST - Global Studies",
+   "node": 31217
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28863",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOG - Geography",
+   "node": 31218
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28863",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOL - Geology",
+   "node": 31219
+  },
+  {
+   "code": "GRPH",
+   "title": "Graphics",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28863",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GRPH - Graphics",
+   "node": 31220
+  },
+  {
+   "code": "INTD",
+   "title": "Interior Design",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28864",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "INTD - Interior Design",
+   "node": 31216
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28865",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "KIN - Kinesiology",
+   "node": 31215
+  },
+  {
+   "code": "OLDR",
+   "title": "Older Adults (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28866",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "OLDR - Older Adults (NC)",
+   "node": 31195
+  },
+  {
+   "code": "PARN",
+   "title": "Parenting (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PARN - Parenting (NC)",
+   "node": 31196
+  },
+  {
+   "code": "PD",
+   "title": "Personal Development",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PD - Personal Development",
+   "node": 31197
+  },
+  {
+   "code": "PDNC",
+   "title": "Personal Development (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PDNC - Personal Development (NC)",
+   "node": 31198
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PE - Physical Education",
+   "node": 31199
+  },
+  {
+   "code": "PEIA",
+   "title": "Physical Education Intercollegiate Athletics",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PEIA - Physical Education Intercollegiate Athletics",
+   "node": 31200
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHIL - Philosophy",
+   "node": 31201
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Science",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHSC - Physical Science",
+   "node": 31202
+  },
+  {
+   "code": "PHTO",
+   "title": "Photography",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHTO - Photography",
+   "node": 31203
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHYS - Physics",
+   "node": 31204
+  },
+  {
+   "code": "PLGL",
+   "title": "Paralegal Studies",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PLGL - Paralegal Studies",
+   "node": 31205
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POLS - Political Science",
+   "node": 31206
+  },
+  {
+   "code": "PROD",
+   "title": "Professional Development",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PROD - Professional Development",
+   "node": 31207
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28867",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSY - Psychology",
+   "node": 31208
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28868",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "RE - Real Estate",
+   "node": 31209
+  },
+  {
+   "code": "READ",
+   "title": "Reading",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28868",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "READ - Reading",
+   "node": 31210
+  },
+  {
+   "code": "REC",
+   "title": "Recreation",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28868",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "REC - Recreation",
+   "node": 31211
+  },
+  {
+   "code": "RT",
+   "title": "Radiological Technician",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28868",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "RT - Radiological Technician",
+   "node": 31462
+  },
+  {
+   "code": "SEWN",
+   "title": "Sewing (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SEWN - Sewing (NC)",
+   "node": 31491
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOC - Sociology",
+   "node": 31212
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SPAN - Spanish",
+   "node": 31213
+  },
+  {
+   "code": "STEM",
+   "title": "Science, Technology, Engineering, and Math",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "STEM - Science, Technology, Engineering, and Math",
+   "node": 31214
+  },
+  {
+   "code": "STMN",
+   "title": "Science, Technology, Engineering, and Math (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28869",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "STMN - Science, Technology, Engineering, and Math (NC)",
+   "node": 31492
+  },
+  {
+   "code": "LBRY",
+   "title": "Library Skills",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LBRY - Library Skills",
+   "node": 31190
+  },
+  {
+   "code": "LDER",
+   "title": "Leadership",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LDER - Leadership",
+   "node": 31191
+  },
+  {
+   "code": "LE",
+   "title": "Law Enforcement",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LE - Law Enforcement",
+   "node": 31192
+  },
+  {
+   "code": "LGBT",
+   "title": "Lesbian, Gay, Bi-sexual, Transgender and Queer",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LGBT - Lesbian, Gay, Bi-sexual, Transgender and Queer",
+   "node": 31193
+  },
+  {
+   "code": "LS",
+   "title": "Learning Skills",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28870",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LS - Learning Skills",
+   "node": 31194
+  },
+  {
+   "code": "MA",
+   "title": "Medical Assisting",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MA - Medical Assisting",
+   "node": 31184
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MATH - Mathematics",
+   "node": 31185
+  },
+  {
+   "code": "MB",
+   "title": "Medical Billing",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MB - Medical Billing",
+   "node": 31186
+  },
+  {
+   "code": "MMAC",
+   "title": "Multimedia Arts & Communication",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MMAC - Multimedia Arts & Communication",
+   "node": 31187
+  },
+  {
+   "code": "MT",
+   "title": "Machine Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MT - Machine Technology",
+   "node": 31188
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28871",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUS - Music",
+   "node": 31189
+  },
+  {
+   "code": "THEA",
+   "title": "Theatre",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28872",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "THEA - Theatre",
+   "node": 31174
+  },
+  {
+   "code": "TRCK",
+   "title": "Truck Driving (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28872",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "TRCK - Truck Driving (NC)",
+   "node": 31175
+  },
+  {
+   "code": "VEN",
+   "title": "Viticulture and Enology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28873",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "VEN - Viticulture and Enology",
+   "node": 31173
+  },
+  {
+   "code": "VOCE",
+   "title": "Vocational Community Ed (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28873",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "VOCE - Vocational Community Ed (NC)",
+   "node": 31176
+  },
+  {
+   "code": "VT",
+   "title": "Veterinary Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28873",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "VT - Veterinary Technology",
+   "node": 31177
+  },
+  {
+   "code": "WEE",
+   "title": "Work Experience Education",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WEE - Work Experience Education",
+   "node": 31178
+  },
+  {
+   "code": "WEEX",
+   "title": "Work Experience (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WEEX - Work Experience (NC)",
+   "node": 31464
+  },
+  {
+   "code": "WFT",
+   "title": "Wildland Fire Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WFT - Wildland Fire Technology",
+   "node": 31179
+  },
+  {
+   "code": "WFTL",
+   "title": "Wildland Fire Logistics",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WFTL - Wildland Fire Logistics",
+   "node": 31180
+  },
+  {
+   "code": "WFTO",
+   "title": "Wildland Fire Technology Operations",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WFTO - Wildland Fire Technology Operations",
+   "node": 31181
+  },
+  {
+   "code": "WKPR",
+   "title": "Workforce Preparation (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WKPR - Workforce Preparation (NC)",
+   "node": 31182
+  },
+  {
+   "code": "WLDT",
+   "title": "Welding Technology",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28874",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WLDT - Welding Technology",
+   "node": 31183
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28882",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NURS - Nursing",
+   "node": 31160
+  },
+  {
+   "code": "NURX",
+   "title": "Nursing (NC)",
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28882",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NURX - Nursing (NC)",
+   "node": 31161
+  }
+ ]
+}
