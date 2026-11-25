@@ -3628,7 +3628,7 @@
      ],
      "title": "A reader fix moves rows it was not aimed at, so compare each full read row by row",
      "type": "methodology",
-     "updated": "2026-11-25"
+     "updated": "2026-10-03"
     },
     {
      "created": "2026-11-12",
@@ -15606,7 +15606,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 8 (S687 onward)",
      "type": null,
-     "updated": "2026-11-25"
+     "updated": "2026-11-24"
     },
     {
      "created": "2026-11-12",
@@ -16890,7 +16890,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-25"
+     "updated": "2026-11-24"
     },
     {
      "created": "2026-08-28",
@@ -17145,7 +17145,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-25"
+     "updated": "2026-11-24"
     },
     {
      "created": "2026-08-29",
@@ -17563,14 +17563,14 @@
     {
      "created": "2026-11-25",
      "governs": [],
-     "n": 728,
-     "path": "docs/session_728_handoff.md",
+     "n": 727,
+     "path": "docs/session_727_handoff.md",
      "status": "internal",
      "tags": [
       "handoff",
       "session"
      ],
-     "title": "Session 728 handoff (from SkyTropicbird, S727, the CPL Queue routine's collection run of 2026-11-25, from 06:12Z)",
+     "title": "Session 727 handoff (from SkyAvocet, S726, Sam's plain session of 2026-11-25: Gather's saved filters, the adapt gather, Rows and card titles)",
      "type": null,
      "updated": "2026-11-25"
     },

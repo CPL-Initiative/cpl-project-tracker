@@ -1,0 +1,35 @@
+{
+ "_readme": "S727 lever (the gap census's reader_page_assignment lever, census of 2026-11-25 01:39Z, Next wave): Allan Hancock College's 3 programs whose filed record places none of the state's listed courses (capture 38843474519, catalog iq/28545): Viticulture Level 2 42208 was handed Viticulture Level 1's entry (28876/30924, shared with 19896), Viticulture Level 3 42210 the Winemaking certificate's entry (28876/31644, shared with 46134), and Agricultural Science A.S. 43770 an entry shared with 38584 (28876/31148). This plan reads the catalog's program list (28545/28876) with the data its own scripts fetch from its host, and prints every entry naming viticulture, winemaking or agricultural science, so a session sees whether each has an entry of its own. No model call, nothing written.",
+ "college": "Allan Hancock College",
+ "questions": {
+  "own_page": "Which entry, if any, is each program's own in the 2026-2027 catalog (its id, text and address)."
+ },
+ "keywords": [
+  "viticulture[^\"\\n]{0,80}",
+  "winemaking[^\"\\n]{0,80}",
+  "agricultural science[^\"\\n]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "42208 42210 43770",
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876",
+   "network": true,
+   "network_hosts": [
+    "hancockcollege.curriqunet.com"
+   ],
+   "network_find": [
+    "Viticulture",
+    "Winemaking",
+    "Agricultural Science"
+   ],
+   "links": "viticulture|winemaking|agricultur|28545/28876/",
+   "links_cap": 200
+  }
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "Allan Hancock College's own 2026-2027 catalog (hancockcollege.curriqunet.com), served on its catalog vendor's domain, whose navigation calls the page's own scripts fetch hold the program entries"
+ }
+}

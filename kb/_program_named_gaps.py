@@ -229,6 +229,22 @@ GAPS.setdefault("degree_within_map_range",
                 "page prints as needed to graduate; the major adds up to its printed major total, and the degree's "
                 "units as read fall inside the map's range and match neither end.")
 ARITH_SCORE.setdefault("degree_within_map_range", 50)
+# S727 at Santa Barbara City (kb/_program_piles_s727_sbcc.py): Nursing 05924 prints a list it requires for graduation
+# under both entry paths and outside each path's printed total, and the record counts the list. No existing kind fits
+# (prerequisites_counted names prerequisites); its score is that kind's 70, since in both the printed total leaves out
+# a list the record counts and the courses add to the total without it.
+GAPS.setdefault("required_list_outside_total",
+                "The catalog prints a list the program requires apart from its printed total, and the record counts "
+                "that list; without it the courses add to the printed total.")
+ARITH_SCORE.setdefault("required_list_outside_total", 70)
+# S727 at Antelope Valley (kb/_program_ge_other_pattern_s727v.py): a Cal-GETC degree whose page prints general
+# education figures only for CSU GE and IGETC (43028, held out of ge_units_not_read by HELD_GE_FIGURE). Its score is
+# ge_units_not_read's 50: the major adds up, and the named pattern's units are all that is missing.
+GAPS.setdefault("ge_figures_other_pattern",
+                "The degree names one general education pattern, and the page prints general education figures only "
+                "for other patterns, so no units for the named pattern were read and the degree's units cannot be "
+                "added. Its major adds up to the printed major total.")
+ARITH_SCORE.setdefault("ge_figures_other_pattern", 50)
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
@@ -243,7 +259,7 @@ def may_continue(filed: dict) -> str | None:
 # A gap that says the page prints a degree's general education as None or N/A (Contra Costa's second reader, S720):
 # such a record read no GE, so its GE score is ge_units_not_read's 50, never 100. Kept here, inside confidence(),
 # because the reconcile's keep_named_gaps recomputes every kept gap's scores through this function (#3756).
-GE_NOT_PRINTED = frozenset({"degree_summary_ge_none"})
+GE_NOT_PRINTED = frozenset({"degree_summary_ge_none", "entry_path_range"})
 GE_NOT_PRINTED_CAP = 50
 
 
@@ -269,7 +285,10 @@ def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok:
     clm = None if share is None else int(round(float(share) * 100))
     # S720 (#3755's reader): noted_section_cut_off, section_cut_off's reviewed-list form, takes the same cap here, so
     # a recompute through confidence() (fill's keep_named_gaps, #3756) keeps the plan's filed score.
-    if clm is not None and (may_continue(filed) or gap in ("section_cut_off", "noted_section_cut_off")):
+    # S727 (the second reader): heading_not_in_text takes it too, since a list read without the program's own
+    # heading cannot be confirmed as the program's list (p-cap-lives-in-confidence-s720).
+    if clm is not None and (may_continue(filed)
+                            or gap in ("section_cut_off", "noted_section_cut_off", "heading_not_in_text")):
         # A record whose section runs past the read (S713) places the courses it read, not the program's list.
         clm = min(clm, MAY_CONTINUE_CAP)
     return {"unit_arithmetic": 100 if a.get("pass") else ARITH_SCORE.get(gap, 0),
@@ -1174,6 +1193,19 @@ for _g, _s, _a in (
     GAPS.setdefault(_g, _s)
     ARITH_SCORE.setdefault(_g, _a)
 del _g, _s, _a
+# S727 (kb/_program_piles_s727_persons.py, plan s727f): the records held for a person, collected with their gaps
+# named. One kind no existing sentence fits: a printed range whose low end is another entry path (entry_path_range),
+# scored as ge_units_not_read's 50; its GE score is capped at 50 (GE_NOT_PRINTED: Contra Costa 01417's unit summary
+# prints general education as None and N/A).
+for _g, _s, _a in (
+        ("entry_path_range",
+         "The page prints the major as a range over entry paths (a licensed student enters later in the sequence), "
+         "and the record holds the full path, which matches the range's top; which path a student takes is the "
+         "college's admission.", 50),
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
 
 
 def labels(base: str = COLLEGE_DIR, skip: tuple = ()) -> list[dict]:
@@ -1769,6 +1801,38 @@ for _g, _s, _a in (
     GAPS.setdefault(_g, _s)
     ARITH_SCORE.setdefault(_g, _a)
 del _g, _s, _a
+
+
+# S727 at American River (kb/_program_piles_s727_arc.py): concentrations of two lists each, which the reading keeps in
+# one option group with every list its own alternative (the schema cannot nest; the reader's notes say so), so the
+# scorer counts one list where a concentration takes two. No existing kind fits: pair_read_as_alternatives names two
+# courses, pool_figure_not_read a sum of parts. Its score is pool_figure_not_read's 40: in both, the page prints one
+# figure over lists taken together and the record does not read them as one.
+GAPS.setdefault("option_lists_read_apart",
+                "An option the catalog prints takes more than one list under the option's own printed figure, and the "
+                "record's one option group holds each list as an alternative of its own, so the program's units "
+                "cannot be checked against the printed figures.")
+ARITH_SCORE.setdefault("option_lists_read_apart", 40)
+# S727 at American River (the second reader's round 1): a certificate whose requirements table ends at a page's foot,
+# the read stopping there, so its total line is cut off while every course is placed (Paramedic 20130).
+# noted_section_cut_off says requirements are missing and noted_no_total that the catalog prints none; its score is
+# noted_no_total's 40 (in both, no total is read), with no course-list cap (every course is placed).
+GAPS.setdefault("noted_total_cut_off",
+                "The reader's note says the program's total line runs onto a page the read did not hold; every course "
+                "is placed, so only the printed total is missing and its units cannot be checked against it.")
+ARITH_SCORE.setdefault("noted_total_cut_off", 40)
+# S727 at College of the Canyons (kb/_program_piles_s727_canyons.py): 43388, held for a person since S691 because its
+# read's heading shares no word with its title, collected with its gap named (COBIx's brief of 2026-11-24: a record
+# held for a person is collected with its gap named and a lower confidence). The page the read held prints a
+# requirements list and not the program's own heading. Unit arithmetic takes noted_section_cut_off's 20 (a required
+# course carries no hours and no total was read); the source takes OTHER_PAGE_SOURCE's cap of 50 in confidence(), as
+# the kinds read from another award's page do, since the page is not shown to be the program's own.
+GAPS.setdefault("heading_not_in_text",
+                "The page the read held prints a requirements list but not the program's own heading, which sits on a "
+                "page the read did not hold; the record takes the list as this program's by its title alone, and no "
+                "page read has confirmed it.")
+ARITH_SCORE.setdefault("heading_not_in_text", 20)
+OTHER_PAGE_GAPS = OTHER_PAGE_GAPS | {"heading_not_in_text"}
 
 
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:

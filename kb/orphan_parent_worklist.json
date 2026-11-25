@@ -3,10 +3,10 @@
   "_generated_by": "kb/_build_orphan_parent_worklist.py",
   "_read_this_first": "`decidable` is the column that matters. A false there means the payload holds nothing to check a proposed discipline against — the members disagree, or every signal rests on a one or two character subject code, or the row carries an approved identifier. Filling those from the modal member would reproduce the `ES`-reads-Ethnic-Studies error in reverse. ⚠ And `members_say` is what the colleges typed, never a verdict on the parent: AUTD M1040 Medium and Heavy Truck Drivetrain Service is recorded Diesel Mechanics while its members read Automotive Technology, and Diesel Mechanics is arguably the better answer. A decidable row is one a curator can settle from what is here, whichever way they settle it.",
   "_counts": {
-    "orphan_parents": 114,
-    "decidable": 19,
-    "undecidable": 95,
-    "members_disagree": 93,
+    "orphan_parents": 112,
+    "decidable": 15,
+    "undecidable": 97,
+    "members_disagree": 95,
     "short_codes_only": 2,
     "carries_an_approved_identifier": 0
   },
@@ -75,28 +75,6 @@
       "decidable": true,
       "why": "every member that resolves on a code longer than 2 characters reads Administration of Justice (1 of them)",
       "members_say": "Administration of Justice"
-    },
-    {
-      "id": "PEDS M1037",
-      "title": "Adapted Sport & Recreational Physical Activity",
-      "id_system": "M-ID",
-      "recorded_discipline": "Physical Education Disabled Students",
-      "members": 8,
-      "subject_codes": [
-        "KIN",
-        "KINE",
-        "PE"
-      ],
-      "member_disciplines": {
-        "Kinesiology": 2,
-        "Physical Education": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Kinesiology": 2
-      },
-      "decidable": true,
-      "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (2 of them)",
-      "members_say": "Kinesiology"
     },
     {
       "id": "DIES M1025",
@@ -182,48 +160,6 @@
       "decidable": true,
       "why": "every member that resolves on a code longer than 2 characters reads Physical Education (1 of them)",
       "members_say": "Physical Education"
-    },
-    {
-      "id": "PEDS M1020",
-      "title": "Adapted Swimming for Total Fitness",
-      "id_system": "M-ID",
-      "recorded_discipline": "Physical Education Disabled Students",
-      "members": 5,
-      "subject_codes": [
-        "ES",
-        "KINS"
-      ],
-      "member_disciplines": {
-        "Ethnic Studies": 1,
-        "Kinesiology": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Kinesiology": 1
-      },
-      "decidable": true,
-      "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (1 of them)",
-      "members_say": "Kinesiology"
-    },
-    {
-      "id": "PEDS M1040",
-      "title": "Adaptive Individual Sports: Bowling",
-      "id_system": "M-ID",
-      "recorded_discipline": "Physical Education Disabled Students",
-      "members": 5,
-      "subject_codes": [
-        "KIN",
-        "PE"
-      ],
-      "member_disciplines": {
-        "Kinesiology": 1,
-        "Physical Education": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Kinesiology": 1
-      },
-      "decidable": true,
-      "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (1 of them)",
-      "members_say": "Kinesiology"
     },
     {
       "id": "THTR M1355",
@@ -353,27 +289,6 @@
       "members_say": "Kinesiology"
     },
     {
-      "id": "PEDS M1022",
-      "title": "Adapted Swimming and Hydroexercise",
-      "id_system": "M-ID",
-      "recorded_discipline": "Physical Education Disabled Students",
-      "members": 2,
-      "subject_codes": [
-        "KIN",
-        "PE"
-      ],
-      "member_disciplines": {
-        "Kinesiology": 1,
-        "Physical Education": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Kinesiology": 1
-      },
-      "decidable": true,
-      "why": "every member that resolves on a code longer than 2 characters reads Kinesiology (1 of them)",
-      "members_say": "Kinesiology"
-    },
-    {
       "id": "THTR M1121",
       "title": "Irvine Valley Conservatory",
       "id_system": "M-ID",
@@ -414,6 +329,35 @@
       "decidable": true,
       "why": "every member that resolves on a code longer than 2 characters reads Dance (1 of them)",
       "members_say": "Dance"
+    },
+    {
+      "id": "PEDS M1029",
+      "title": "Adaptive Physical Education",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Education Disabled Students",
+      "members": 191,
+      "subject_codes": [
+        "ES",
+        "EXSC",
+        "KIN",
+        "KINA",
+        "KINE",
+        "KINES",
+        "KINS",
+        "PE"
+      ],
+      "member_disciplines": {
+        "Kinesiology": 5,
+        "Physical Education": 2,
+        "Ethnic Studies": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Kinesiology": 5,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Kinesiology and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
     },
     {
       "id": "ENGR 110",
@@ -2280,6 +2224,28 @@
       },
       "decidable": false,
       "why": "the members disagree among themselves (Humanities and Philosophy), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "KINE M1267",
+      "title": "Adapted: Beginning Stretching and Stress Reduction",
+      "id_system": "M-ID",
+      "recorded_discipline": "Physical Education Disabled Students",
+      "members": 3,
+      "subject_codes": [
+        "KIN",
+        "KINA"
+      ],
+      "member_disciplines": {
+        "Kinesiology": 1,
+        "Physical Education": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Kinesiology": 1,
+        "Physical Education": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Kinesiology and Physical Education), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
       "members_say": null
     },
     {

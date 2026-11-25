@@ -707,14 +707,25 @@ COBI on owed fixes. Then the Back link lost on Courses and Programs, and the dou
 - A panel's helper defined inside another helper (`focusId` inside `panelHelp`) is not in scope where the bar draws its tabs; the test caught it only once it clicked a tab.
 - The KINE M1267 PEDS ruling moved the whole card; a course in it that is not adapted (Cabrillo KIN 38A) needed its own move afterward. A card-level ruling can leave one misfit behind.
 
+## S729 (a worker for the conductor, 2026-11-25): the fold in place
+
+**Shipped:** a Commons card's title folds the page, on the same page, to the trail *CPL Commons: all cards / <card>* and that card whole (headline, checks, Where to act) at `#commons/card/<key>`, with *Open the full list* to the card's own tab; the trail's first link, or browser Back, restores every card. **DECIDED** `d-commons-fold-link-not-mount-s729`.
+
+**Lessons:**
+- A fold that hides the page keeps every card in the document: the late live reads redraw a card by `_swap`, which skips a card no longer in the document, so a removed card would come back stale.
+- `[hidden]` loses to a class's `display:grid`; the fold hides its sections with one `.cmf > [hidden]` rule marked important.
+- A press that moves the address with `pushState` fires no `hashchange`, so the page tells commons.js the new address itself (`onCard`), and browser Back reaches commons.js through the tab router's visit.
+
 ## S726 (SkyAvocet, Sam's plain session, 2026-11-25): Gather's saved filters; Rows on the Courses List
 
-**Shipped:** `gather_filters` and its two functions (DR-36), and the Saved filters card at the top of Gather: the team's live filters, Open, Copy its address, Retire on your own, and Save this filter with a name and a note; `#coci-lookup/gather?f=<slug>` opens one. A filter saves no merge. **DECIDED** `d-gather-saved-filters-s726`. Then the anchor page's step 2: Rows on the Courses view, Common courses or Local courses (`#coci-lookup/courses/common`). **DECIDED** `d-courses-rows-common-s726`. ESL measured: 10 common courses, nothing large left for Gather.
+**Shipped:** `gather_filters` and its two functions (DR-36), and the Saved filters card at the top of Gather: the team's live filters, Open, Copy its address, Retire on your own, and Save this filter with a name and a note; `#coci-lookup/gather?f=<slug>` opens one. A filter saves no merge. **DECIDED** `d-gather-saved-filters-s726`. Then the anchor page's step 2: Rows on the Courses view, Common courses or Local courses (`#coci-lookup/courses/common`). **DECIDED** `d-courses-rows-common-s726`. ESL measured: 10 common courses, nothing large left for Gather. Then the adapt gather, at Sam's go: 34 merges and 133 moves into PEDS M1029 (#3806, receipt `kb/gather_out/2026-11-25_adapt/`), and the anchor page's step 3, first slice: a card's title opens its own list (#3813).
 
 **Lessons:**
 - A view built once (`GATHER.api` in `coci_lookup.js`) reads its address only at create: an in-page link to another address of the same view would leave its state behind, so a saved filter opens from a word control, and its address is copied, never linked.
 - A second row set on the List is a second engine over the same spec shape, with its own state (`state.cls`): the job filters carry over unchanged when each common row's `mids` holds its own id.
 - A cached row build must key on every async input its words use: the common subject's code arrives after the rows, so the build's signature carries it, or the column keeps the bare name.
+- A session write can equal the page's own: boot the view in jsdom on today's data, press its save with a dry session, and capture the POST bodies as the plan.
+- A privacy guard can stop a command that only names a bot cohort address beside a person's name; it is not routed around: the person says retry.
 - A read that applies the address's filter must run once: after a save, the reload found no row for the new slug and overwrote the result line. The test caught it.
 
 ## S725 (SkyPlover, Sam's plain session, 2026-11-25): Gather, the first slice (#3799)

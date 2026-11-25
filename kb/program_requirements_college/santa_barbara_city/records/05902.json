@@ -97,7 +97,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "repeat_read_once",
+    "label": "The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.",
+    "words": "EH 290 (2-4 units) is printed twice in the Required Core, which matches the 28.00-32.00 total (8 x 3 + 2 x 2-4); it appears the course is taken twice for 4-8 units. Recorded once per the one-entry-per-block rule."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

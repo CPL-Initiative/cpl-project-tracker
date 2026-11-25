@@ -5,18 +5,18 @@
  "found": 271,
  "extracted": 271,
  "errors": 0,
- "passed_machine_checks": 221,
+ "passed_machine_checks": 224,
  "failed": {
-  "coverage": 12,
+  "coverage": 9,
   "invented": 3,
-  "arithmetic": 39,
+  "arithmetic": 36,
   "repeated": 0,
   "outcomes": 8
  },
- "cost_usd_run": 2.56,
+ "cost_usd_run": 0.22,
  "cost_usd_filed": 19.77,
  "cost_per_program": 0.073,
- "extract_calls": 21,
+ "extract_calls": 3,
  "extract_failed": [],
  "not_found": [
   {
@@ -267,5 +267,5 @@
    "status": "Active - Teachout Only"
   }
  ],
- "run": "44747523200"
+ "run": "45567337117"
 }

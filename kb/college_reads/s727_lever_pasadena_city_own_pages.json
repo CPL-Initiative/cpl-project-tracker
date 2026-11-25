@@ -1,0 +1,39 @@
+{
+ "_readme": "S727 lever, Pasadena City College's second read: page read 45562584495 found each of the 3 noncredit programs' own pages linked from the Noncredit Division's index, where the capture had handed each a noncredit course-description page. It reads them with capture_view. This plan reads each as the capture reads it, so a session checks each site_pages pin against the text the capture will read and a test pins it. No model call, nothing written.",
+ "college": "Pasadena City College",
+ "questions": {
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total, on the visible text or a tab panel."
+ },
+ "keywords": [
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "31599",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-high-school-diploma/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "33404",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-basic-education-cert-competency/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "33699",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/personal-care-attendant-cert-completion/",
+   "capture_view": true
+  }
+ ]
+}

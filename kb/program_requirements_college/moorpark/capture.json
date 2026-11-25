@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 151,
  "with_closed_list": 145,
- "started": "2026-11-19T08:18:08Z",
+ "started": "2026-11-25T08:21:02Z",
  "scope": "/moorpark/",
  "sitemap": {
   "url": "https://catalog.vcccd.edu/sitemap.xml",
@@ -15,7 +15,8 @@
   "program_pages": 262,
   "refused": null,
   "errors": null,
-  "failed": null
+  "failed": null,
+  "challenged": null
  },
  "listing_failed": 0,
  "pages_read": 262,
@@ -23,15 +24,21 @@
  "pages_answered": 262,
  "child_pages": 0,
  "banner_h1": "2026-2027\nAcademic Catalog",
+ "site_pins": {
+  "43405": {
+   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/accounting-one-coa/",
+   "bound": true
+  }
+ },
  "catalog_lookup": {
   "self_test": {
-   "tested": 125,
-   "hits": 111,
-   "recall": 0.888,
+   "tested": 127,
+   "hits": 113,
+   "recall": 0.89,
    "false": 0,
    "false_off_own": 4,
    "false_no_claims": 4,
-   "shared": 12,
+   "shared": 10,
    "false_matches": [
     {
      "control_number": "41402",
@@ -111,7 +118,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 111 of 125 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 113 of 127 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18128",
@@ -119,7 +126,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active - Teachout Only",
     "result": "not_searched",
-    "why": "the matcher found 111 of 125 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 113 of 127 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "18129",
@@ -135,7 +142,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 111 of 125 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 113 of 127 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "44794",
@@ -143,7 +150,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 111 of 125 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 113 of 127 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "44795",
@@ -151,21 +158,21 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 111 of 125 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 113 of 127 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
   "yield_unjudged": 0,
   "yield_refused_passing": 0
  },
- "loads": 268,
- "seconds": 1420.1,
- "found": 139,
+ "loads": 266,
+ "seconds": 1385.3,
+ "found": 144,
  "by_method": {
+  "link_search": 2,
   "no_closed_list": 6,
-  "not_found": 5,
   "page_claimed": 1,
-  "sitemap_page": 139
+  "sitemap_page": 142
  },
  "shared_pages": {
   "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/": [
@@ -184,124 +191,20 @@
    "33654",
    "45808"
   ],
-  "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/accounting-coa/": [
-   "35659",
-   "43405"
-  ],
   "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/business-administration-ast-2.0/": [
    "36061",
    "41375"
+  ],
+  "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/": [
+   "37450",
+   "40636"
+  ],
+  "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/": [
+   "39413",
+   "39414"
   ]
  },
- "not_found": [
-  {
-   "control_number": "37450",
-   "title": "Developmental Math Bridge",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39413",
-   "title": "UCTP Chemistry",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/chemistry/chemistry-uctp/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.062,
-    "body": 0.0,
-    "content": 0.188,
-    "net": 3,
-    "listed": 16,
-    "why": "coarse net: the page's code tokens name 3 of 16 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5099,
-     "content": 121816,
-     "tabs": 1029
-    },
-    "tab_panels": [
-     [
-      "Print Options",
-      343
-     ],
-     [
-      "REQUIREMENTS",
-      12628
-     ],
-     [
-      "PROGRAM STUDENT LEARNING OUTCOMES",
-      622
-     ]
-    ]
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39414",
-   "title": "UCTP Physics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/chemistry/chemistry-uctp/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.133,
-    "net": 2,
-    "listed": 15,
-    "why": "coarse net: the page's code tokens name 2 of 15 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5099,
-     "content": 121816,
-     "tabs": 1029
-    },
-    "tab_panels": [
-     [
-      "Print Options",
-      343
-     ],
-     [
-      "REQUIREMENTS",
-      12628
-     ],
-     [
-      "PROGRAM STUDENT LEARNING OUTCOMES",
-      622
-     ]
-    ]
-   },
-   "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "40636",
-   "title": "Solar Tech",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "42643",
-   "title": "Digital Public Relations",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   },
-   "status": "Active"
-  }
- ],
+ "not_found": [],
  "page_claimed": [
   {
    "control_number": "31900",
@@ -316,90 +219,85 @@
  ],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 5,
+  "0.5-0.8": 6,
   "0.8-1.0": 31,
-  "1.0": 103
+  "1.0": 107
  },
  "would_extract": {
   "against": "kb/program_requirements_college/moorpark",
-  "kept": 132,
+  "kept": 138,
   "kept_moved": 0,
-  "programs": 7,
+  "programs": 1,
   "list": [
    {
-    "control_number": "18398",
-    "title": "General Studies: Society, Human Behavior, and Culture",
-    "award": "A.A. Degree",
-    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/society-human-behavior-culture/",
-    "coverage": 0.983,
-    "was_url": "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/society-human-behavior-culture/",
-    "was_coverage": 0.974,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31117",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/administration-justice-ast/",
-    "coverage": 0.974,
-    "was_url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
-    "was_coverage": 0.684,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31614",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
-    "coverage": 0.833,
-    "was_url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
-    "was_coverage": 0.778,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32565",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/languages-world/spanish-aat/",
-    "coverage": 0.742,
-    "was_url": "https://catalog.vcccd.edu/moorpark/programs-courses/languages-world/spanish-aat/",
-    "was_coverage": 0.71,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37575",
-    "title": "Organizational Communication",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/organizational-communication-coa/",
+    "control_number": "43405",
+    "title": "Accounting I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/accounting-one-coa/",
     "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/organizational-communication-coa/",
-    "was_coverage": 0.875,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42992",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
-    "coverage": 0.938,
-    "was_url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
-    "was_coverage": 0.906,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45352",
-    "title": "California General Education Transfer Curriculum (CaI-GETC)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
-    "coverage": 0.925,
-    "was_url": "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
-    "was_coverage": 0.921,
+    "was_url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/accounting-coa/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    }
   ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "43405"
+  ],
+  "not_named": [
+   {
+    "control_number": "37450",
+    "title": "Developmental Math Bridge",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39413",
+    "title": "UCTP Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39414",
+    "title": "UCTP Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40636",
+    "title": "Solar Tech",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42643",
+    "title": "Digital Public Relations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/law-public-policy-society-aat/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -740,6 +638,10 @@
    "sha256": "8d6cb19b196c322fc929c7b9475f1a565cd448e9281617e057da16f40fca7d41",
    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/english-second-language-foundational-cocy/"
   },
+  "37450": {
+   "sha256": "65a04956f059bd9f3fcee1bde9cd374bd3e585f003fae65466cde0bd682690b9",
+   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/"
+  },
   "37575": {
    "sha256": "cb66870c8f129b8b877cf887ba071d475217aa7b5027ad5a74bdbceb933c5e09",
    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/organizational-communication-coa/"
@@ -763,6 +665,14 @@
   "39161": {
    "sha256": "ca23136c77c73e424083bb4b979624bf699329c0a4ba72048d3b698c46615242",
    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/cybersecurity-administration-coa/"
+  },
+  "39413": {
+   "sha256": "a2757ae2835727773c07a6ad1f991598d5f250538196a23350c23adc1df8be47",
+   "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+  },
+  "39414": {
+   "sha256": "a2757ae2835727773c07a6ad1f991598d5f250538196a23350c23adc1df8be47",
+   "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
   },
   "39958": {
    "sha256": "c638c33eff4597c9447b7b96df835b24711d69c6697660e018952e566fd0974c",
@@ -811,6 +721,10 @@
   "40537": {
    "sha256": "30c8d56c64fe0928a02015f3a60351a8ed572f5fbb274f269fb2072f314097d7",
    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/engineering-coa/"
+  },
+  "40636": {
+   "sha256": "c6c29d971a0f7342aaeb8de397b0cecd0bd867dcd82816b0abab789c57d16268",
+   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/"
   },
   "40816": {
    "sha256": "2cdf210683f98ed7d1733638a80fc94eb2cb4e2c85596d1d5cab03ad802f3b1c",
@@ -884,6 +798,10 @@
    "sha256": "db9aaea095ccbd5ad07c301775c4da29aeda97d83edb3e9fe802494b9c5bc271",
    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/design/web-design-basics/"
   },
+  "42643": {
+   "sha256": "0978211557aa7a71d4f1b82d9e49bb555f3dc1b8445ab1330ba3ecf6c7375871",
+   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/law-public-policy-society-aat/"
+  },
   "42647": {
    "sha256": "8b02345cc1d9a63bca009f2e212662fcd5bb2c0dd28b6d4c63ec8c096e3b0469",
    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/environmental-science/landscape-management-cert-of-completion/"
@@ -917,8 +835,8 @@
    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/ftma-screenwriting-coa/"
   },
   "43405": {
-   "sha256": "8be447a7ee6dad6f3dd56be1a90228e7d1e712343da5ab191e8e4d377bff67a9",
-   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/accounting-coa/"
+   "sha256": "6e930d82702f2d8cbe8432b3162fd61d00923f04e6c2d36084970e11593618e8",
+   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/accounting-one-coa/"
   },
   "43512": {
    "sha256": "d7444dae51d1f789be4c1527c46c99ea4fa3ce24de398b2fda129b257cbbd5d0",
@@ -961,5 +879,5 @@
    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/design/design-as/"
   }
  },
- "run": "44481524745"
+ "run": "45575123718"
 }

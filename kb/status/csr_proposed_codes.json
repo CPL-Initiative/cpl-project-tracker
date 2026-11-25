@@ -23,7 +23,7 @@
     "called": "BUSI",
     "colleges": 50,
     "courses": 639,
-    "filed": false
+    "filed": true
    },
    "note": "",
    "types": [
@@ -58,7 +58,7 @@
     "called": "COUN",
     "colleges": 2,
     "courses": 36,
-    "filed": false
+    "filed": true
    },
    "note": "",
    "types": [
@@ -78,7 +78,7 @@
     "called": "AVIA",
     "colleges": 7,
     "courses": 117,
-    "filed": false
+    "filed": true
    },
    "note": "AERO also prefixes nine Air Force ROTC M-IDs with no discipline (AS100 Heritage and Values); they belong with Military Studies (MILS).",
    "types": [
@@ -248,7 +248,7 @@
     "called": "BUSI",
     "colleges": 3,
     "courses": 64,
-    "filed": false
+    "filed": true
    },
    "note": "BUSE's three colleges use it for general business courses (Introduction to Business, Business Law), not for business teacher preparation.",
    "types": [
@@ -633,7 +633,7 @@
     "called": "CRIM",
     "colleges": 2,
     "courses": 5,
-    "filed": false
+    "filed": true
    },
    "note": "",
    "types": [
@@ -653,7 +653,7 @@
     "called": "CULN",
     "colleges": 20,
     "courses": 205,
-    "filed": false
+    "filed": true
    },
    "note": "C-ID's HOSP descriptors sit with Culinary Arts/Food Technology by majority (20 M-IDs, against 3 under Hotel and Motel Services and 3 under Restaurant Management), and HOSP is Culinary's primary C-ID chip. HOSP moves to Hotel and Motel Services as its code; Culinary keeps CULN.",
    "types": [
@@ -953,7 +953,7 @@
     "called": "AUTO",
     "colleges": 1,
     "courses": 7,
-    "filed": false
+    "filed": true
    },
    "note": "MOTO's one college mixes motorcycle courses with bicycle and custom metal work.",
    "types": [
@@ -1068,7 +1068,7 @@
     "called": "PHOT",
     "colleges": 3,
     "courses": 27,
-    "filed": false
+    "filed": true
    },
    "note": "",
    "types": [
@@ -1258,7 +1258,7 @@
     "called": "REAL",
     "colleges": 5,
     "courses": 36,
-    "filed": false
+    "filed": true
    },
    "note": "",
    "types": [
@@ -1278,7 +1278,7 @@
     "called": "RSPT",
     "colleges": 1,
     "courses": 27,
-    "filed": false
+    "filed": true
    },
    "note": "",
    "types": [

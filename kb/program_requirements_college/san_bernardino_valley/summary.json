@@ -2,34 +2,23 @@
  "college": "San Bernardino Valley College",
  "programs": 236,
  "with_closed_list": 232,
- "found": 226,
+ "found": 227,
  "extracted": 221,
  "errors": 0,
- "passed_machine_checks": 183,
+ "passed_machine_checks": 184,
  "failed": {
-  "coverage": 3,
+  "coverage": 2,
   "invented": 2,
-  "arithmetic": 36,
+  "arithmetic": 35,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.93,
- "cost_usd_filed": 15.2,
+ "cost_usd_run": 0.07,
+ "cost_usd_filed": 15.21,
  "cost_per_program": 0.0688,
- "extract_calls": 15,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
-  {
-   "control_number": "32317",
-   "title": "Early Childhood Education",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/early-childhood-education-ast-degree/",
-    "why": "the reconcile entry's site_pages pin is refused: the pinned page is no candidate: a candidate, lost to a program the page names more fully",
-    "page_checks": true
-   },
-   "status": "Active"
-  },
   {
    "control_number": "39611",
    "title": "Industrial Maintenance",
@@ -79,5 +68,5 @@
    "status": "Active - Teachout Only"
   }
  ],
- "run": "45355976381"
+ "run": "45561301147"
 }

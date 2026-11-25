@@ -6065,20 +6065,21 @@
    "ABE3002"
   ],
   "source": {
-   "url": "https://curriculum.pasadena.edu/noncredit-courses/abe/",
-   "title": "ADULT BASIC EDUCATION | Pasadena City College Academic Catalog",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-basic-education-cert-competency/",
+   "title": "Adult Basic Education - Certificate of Competency | Pasadena City College Academic Catalog",
    "h1": "2026-2027 ACADEMIC CATALOG",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "noncredit",
-    "section_line": "noncredit courses/ adult basic education (abe)",
-    "section_fit": 0.5
-   }
+    "section_line": "adult basic education - certificate of competency",
+    "section_fit": 1.0
+   },
+   "pinned": true
   },
   "listed": 2,
-  "text_chars": 2670
+  "text_chars": 2720
  },
  {
   "control_number": "33405",
@@ -6533,8 +6534,8 @@
    "PCAN3001"
   ],
   "source": {
-   "url": "https://curriculum.pasadena.edu/noncredit-courses/pcan/",
-   "title": "PERSONAL CARE ATTENDANT NONCREDIT | Pasadena City College Academic Catalog",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/personal-care-attendant-cert-completion/",
+   "title": "Personal Care Attendant – Certificate of Completion | Pasadena City College Academic Catalog",
    "h1": "2026-2027 ACADEMIC CATALOG",
    "text_from": "innerText",
    "label": {
@@ -6543,10 +6544,11 @@
     "section": null,
     "section_line": null,
     "section_fit": 0.0
-   }
+   },
+   "pinned": true
   },
   "listed": 2,
-  "text_chars": 2961
+  "text_chars": 2792
  },
  {
   "control_number": "33738",

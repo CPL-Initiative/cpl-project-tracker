@@ -6,7 +6,7 @@
   "the outcomes comparison ran on the current reads, and no strong or partial split waits on an answer"
  ],
  "_sources": {
-  "members": "unified_courses_members.js generated 2026-11-24 06:21",
+  "members": "unified_courses_members.js generated 2026-11-25 06:19",
   "courses": "kb/status/subject_courses/<slug>.json",
   "decisions": "kb/status/subject_decisions.json",
   "subject_map": "kb/reference/subject_discipline_map.json",

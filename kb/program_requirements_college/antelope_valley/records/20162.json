@@ -260,5 +260,6 @@
    "The catalog prints codes both as 'CA107' and 'CA 107'; recorded with a space to match the requirements table and closed list. CA 159 title printed as 'SUSE Linux Server Administration' (closed list: 'Serve')."
   ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": "38979725726",
+ "catalog_year": "2026-2027"
 }

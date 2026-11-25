@@ -108945,1029 +108945,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 19.0
     },
     {
-      "exhibit_id": "MAPICI-CA(-1-001|MAPICI-CA-1-001|MAPICI-CA1-1-001|MAPICI-CA3-1-001|MAPICI-CA4-1-001|MAPICI-CA5-1-001|MAPICI-CAC-1-001|MAPICI-CAC1-1-001|MAPICI-CAC2-1-001|MAPICI-CAC4-1-001|MAPICI-CAC5-1-001|MAPICI-CAC6-1-001|MAPICI-CAFC-1-001|MAPICS-I8-1-001",
-      "exhibit_ids": [
-        "MAPICI-CA(-1-001",
-        "MAPICI-CA-1-001",
-        "MAPICI-CA1-1-001",
-        "MAPICI-CA3-1-001",
-        "MAPICI-CA4-1-001",
-        "MAPICI-CA5-1-001",
-        "MAPICI-CAC-1-001",
-        "MAPICI-CAC1-1-001",
-        "MAPICI-CAC2-1-001",
-        "MAPICI-CAC4-1-001",
-        "MAPICI-CAC5-1-001",
-        "MAPICI-CAC6-1-001",
-        "MAPICI-CAFC-1-001",
-        "MAPICS-I8-1-001"
-      ],
-      "title": "CompTIA A+",
-      "unified_title": "CompTIA A+",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "COMPTIA A+ Certification",
-        "CompTIA A+",
-        "CompTIA A+ (CIS-25)",
-        "CompTIA A+ Certification",
-        "CompTIA A+ for CIS 040"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "11",
-      "top_codes": [
-        "28",
-        "29",
-        "35",
-        "36",
-        "37",
-        "48"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 23,
-      "adopter_names": [
-        "Cabrillo College",
-        "Chaffey College",
-        "Clovis Community College",
-        "College of the Desert",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "De Anza College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Los Angeles Mission College",
-        "Los Angeles Trade Technical College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Reedley College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Sierra College",
-        "West Los Angeles College"
-      ],
-      "potential": 83,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Calbright College Non-Credit",
-        "Cañada College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Diego College of Continuing Education",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Skyline College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Valley College"
-      ],
-      "total_addressable": 106,
-      "credit_recs": [
-        {
-          "course": "CIS 25",
-          "credit": "4 hours in Info Comm Tech Essentials"
-        },
-        {
-          "course": "CIS 212",
-          "credit": "3 hours in A+ Certification Preparation-Hardware"
-        },
-        {
-          "course": "CIS 213",
-          "credit": "3 hours in A+ Certification Preparation-Software"
-        },
-        {
-          "course": "CIMN 110",
-          "credit": "3 hours in NETWORKING ESSENTIALS AND TECHNOLOGIES FOR IT CYBERSECURITY"
-        },
-        {
-          "course": "CISHDSP 40",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIT 110",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CMPR 153",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CNT 51",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 222",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "INWT 100",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "COMP 42",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CMPR 155",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 71",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "IS 62",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 104",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "ITIS 40",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 132",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "Computer Information Systems (CIS) 062A",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 101",
-          "credit": "3 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "IT 0100",
-          "credit": "4 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 71",
-          "credit": "4 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "CIS 069A",
-          "credit": "4.5 hours in Technical Support Fundamentals"
-        },
-        {
-          "course": "CIS 069E",
-          "credit": "4.5 hours in IT Security: Defense Against the Digital Dark Arts"
-        },
-        {
-          "course": "CMPET 313",
-          "credit": "2.5 hours in IT Support Fundamentals 3"
-        },
-        {
-          "course": "CMPET 314",
-          "credit": "2.5 hours in IT Support Fundamentals 4"
-        },
-        {
-          "course": "MICROTK 160",
-          "credit": "2 hours in IT ESSENTIALS APPLICATION SOFTWARE FUNDAMENTALS"
-        },
-        {
-          "course": "MICROTK 162",
-          "credit": "4 hours in IT ESSENTIALS NETWORKING PERSONAL COMPUTERS"
-        },
-        {
-          "course": "MICROTK 164",
-          "credit": "5 hours in IT ESSENTIALS  MICROCOMPUTER THEORY AND SERVICING"
-        },
-        {
-          "course": "IS 80",
-          "credit": "6 hours in Information Technology Support Technician Training"
-        },
-        {
-          "course": "CIS 040",
-          "credit": "4 hours in Information and Communication Technology Essentials"
-        },
-        {
-          "course": "COMP 40",
-          "credit": "2 hours in Introduction to PC Hardware"
-        },
-        {
-          "course": "COMP 41",
-          "credit": "2 hours in PC Hardware (A+ Prep)"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Information and Communication Technology Essentials",
-          "cid": "ITIS 110",
-          "eids": [
-            "MAPICI-CAC1-1-001"
-          ]
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-CA(-1-001",
-          "title": "CompTIA A+ (CIS-25)",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CA-1-001",
-          "title": "CompTIA A+",
-          "units": 6.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-CA1-1-001",
-          "title": "CompTIA A+",
-          "units": 9.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-CA3-1-001",
-          "title": "CompTIA A+",
-          "units": 2.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CA4-1-001",
-          "title": "CompTIA A+",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CA5-1-001",
-          "title": "CompTIA A+",
-          "units": 5.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CAC-1-001",
-          "title": "COMPTIA A+ Certification",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CAC1-1-001",
-          "title": "CompTIA A+ Certification",
-          "units": 45.0,
-          "lines": 15
-        },
-        {
-          "id": "MAPICI-CAC2-1-001",
-          "title": "COMPTIA A+ Certification",
-          "units": 8.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-CAC4-1-001",
-          "title": "CompTIA A+ Certification",
-          "units": 5.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-CAC5-1-001",
-          "title": "CompTIA A+ Certification",
-          "units": 2.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CAC6-1-001",
-          "title": "CompTIA A+ Certification",
-          "units": 2.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CAFC-1-001",
-          "title": "CompTIA A+ for CIS 040",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICS-I8-1-001",
-          "title": "CompTIA A+ Certification",
-          "units": 6.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Cabrillo College": 7.0,
-        "Chaffey College": 6.0,
-        "Clovis Community College": 3.0,
-        "College of the Desert": 4.0,
-        "Columbia College": 7.0,
-        "Compton College": 3.0,
-        "Contra Costa College": 3.0,
-        "De Anza College": 9.0,
-        "Lake Tahoe Community College": 3.0,
-        "Las Positas College": 3.0,
-        "Los Angeles Mission College": 3.0,
-        "Los Angeles Trade Technical College": 11.0,
-        "Modesto Junior College": 5.0,
-        "Moreno Valley College": 4.0,
-        "Reedley College": 6.0,
-        "Riverside City College": 4.0,
-        "Saddleback College": 3.0,
-        "San Bernardino Valley College": 3.0,
-        "San Diego City College": 3.0,
-        "San Jose City College": 3.0,
-        "Santa Ana College": 6.0,
-        "Sierra College": 4.0,
-        "West Los Angeles College": 6.0
-      },
-      "adopter_lines": {
-        "Cabrillo College": 2,
-        "Chaffey College": 2,
-        "Clovis Community College": 1,
-        "College of the Desert": 1,
-        "Columbia College": 3,
-        "Compton College": 1,
-        "Contra Costa College": 1,
-        "De Anza College": 2,
-        "Lake Tahoe Community College": 1,
-        "Las Positas College": 1,
-        "Los Angeles Mission College": 1,
-        "Los Angeles Trade Technical College": 3,
-        "Modesto Junior College": 2,
-        "Moreno Valley College": 1,
-        "Reedley College": 1,
-        "Riverside City College": 1,
-        "Saddleback College": 1,
-        "San Bernardino Valley College": 1,
-        "San Diego City College": 1,
-        "San Jose City College": 1,
-        "Santa Ana College": 2,
-        "Sierra College": 1,
-        "West Los Angeles College": 2
-      },
-      "adopter_rec_idx": {
-        "Cabrillo College": [
-          12,
-          20
-        ],
-        "Chaffey College": [
-          4,
-          15
-        ],
-        "Clovis Community College": [
-          13
-        ],
-        "College of the Desert": [
-          29
-        ],
-        "Columbia College": [
-          10,
-          30,
-          31
-        ],
-        "Compton College": [
-          16
-        ],
-        "Contra Costa College": [
-          18
-        ],
-        "De Anza College": [
-          21,
-          22
-        ],
-        "Lake Tahoe Community College": [
-          14
-        ],
-        "Las Positas College": [
-          7
-        ],
-        "Los Angeles Mission College": [
-          8
-        ],
-        "Los Angeles Trade Technical College": [
-          25,
-          26,
-          27
-        ],
-        "Modesto Junior College": [
-          23,
-          24
-        ],
-        "Moreno Valley College": [
-          0
-        ],
-        "Reedley College": [
-          28
-        ],
-        "Riverside City College": [
-          0
-        ],
-        "Saddleback College": [
-          3
-        ],
-        "San Bernardino Valley College": [
-          5
-        ],
-        "San Diego City College": [
-          9
-        ],
-        "San Jose City College": [
-          17
-        ],
-        "Santa Ana College": [
-          6,
-          11
-        ],
-        "Sierra College": [
-          19
-        ],
-        "West Los Angeles College": [
-          1,
-          2
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 11.0,
-      "rec_units_total": 105.0
-    },
-    {
-      "exhibit_id": "MAPICI-CBIC1-1-001|MAPICI-CCNC-1-001|MAPICI-CN(-1-001|MAPICI-CN+-1-001|MAPICI-CN1-1-001|MAPICI-CN3-1-001|MAPICI-CNC-1-001|MAPICI-CNFC-1-001|MAPICI-CNP-1-001",
-      "exhibit_ids": [
-        "MAPICI-CBIC1-1-001",
-        "MAPICI-CCNC-1-001",
-        "MAPICI-CN(-1-001",
-        "MAPICI-CN+-1-001",
-        "MAPICI-CN1-1-001",
-        "MAPICI-CN3-1-001",
-        "MAPICI-CNC-1-001",
-        "MAPICI-CNFC-1-001",
-        "MAPICI-CNP-1-001"
-      ],
-      "title": "CompTIA Network+",
-      "unified_title": "CompTIA Network+",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "COMPTIA NETWORK+ (CIS-40A)",
-        "CompTIA Network +",
-        "CompTIA Network Plus",
-        "CompTIA Network+",
-        "CompTIA Network+ Certification",
-        "CompTIA n+ for CIS 053"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "11",
-      "top_codes": [
-        "28",
-        "29",
-        "35",
-        "36",
-        "37"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 23,
-      "adopter_names": [
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "College of Marin",
-        "College of the Desert",
-        "Columbia College",
-        "De Anza College",
-        "Glendale Community College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Diego City College",
-        "Santa Ana College",
-        "Sierra College",
-        "West Los Angeles College"
-      ],
-      "potential": 83,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Calbright College Non-Credit",
-        "Cañada College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Lassen College",
-        "Lemoore College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Riverside City College",
-        "Sacramento City College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Skyline College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Valley College"
-      ],
-      "total_addressable": 106,
-      "credit_recs": [
-        {
-          "course": "CIMN 120",
-          "credit": "3 hours in Network Fundamentals"
-        },
-        {
-          "course": "CIS 40A",
-          "credit": "3 hours in Network Fundamentals"
-        },
-        {
-          "course": "CIS 210",
-          "credit": "3 hours in Network Fundamentals"
-        },
-        {
-          "course": "CS/IS 190",
-          "credit": "3 hours in Network Fundamentals"
-        },
-        {
-          "course": "CIS 214",
-          "credit": "3 hours in Introduction to Network+"
-        },
-        {
-          "course": "CIS 66",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "INWT 100",
-          "credit": "3 hours in Computing Fundamentals (A+)"
-        },
-        {
-          "course": "INWT 120",
-          "credit": "3 hours in  Network Fundamentals (Network+)"
-        },
-        {
-          "course": "INWT 120",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "INWT 140",
-          "credit": "3 hours in Introduction Information Systems Security"
-        },
-        {
-          "course": "INWT 140",
-          "credit": "1.5 hours in Security Fundamentals (Security+)"
-        },
-        {
-          "course": "IS 52",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "ITIS 51",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "CIS 210",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "CIS 50",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "CMPR 138",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "CIS 210",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "INWT 120",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "CNIT 106",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "COSN 10",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "CIT 171",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "IS 63",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "CIS 110",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "CIS 105",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "CMPET 321",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "ITIS 50",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "IT 0105",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "CIS 067A",
-          "credit": "4 hours in Local Area Networks"
-        },
-        {
-          "course": "CIS 072",
-          "credit": "4 hours in Local Area Networks"
-        },
-        {
-          "course": "CNT 52",
-          "credit": "3 hours in Networking Fundamentals"
-        },
-        {
-          "course": "CIS 053",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "ITIS 10",
-          "credit": "3 hours in Introduction to Computer Information Systems"
-        },
-        {
-          "course": "ITIS 40",
-          "credit": "3 hours in Computer Hardware and CompTIA A+ Certification Preparation"
-        },
-        {
-          "course": "ITIS 50",
-          "credit": "3 hours in Introduction to Computer Networks"
-        },
-        {
-          "course": "ITIS 60",
-          "credit": "3 hours in Introduction to Systems & Network Cybersecurity"
-        },
-        {
-          "course": "COMP 61",
-          "credit": "3 hours in Windows Server Network Infrastructure"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Networking Fundamentals",
-          "cid": "ITIS 150",
-          "eids": [
-            "MAPICI-CCNC-1-001"
-          ]
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-CBIC1-1-001",
-          "title": "CompTIA Network+ Certification",
-          "units": 6.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-CCNC-1-001",
-          "title": "CompTIA Network+ Certification",
-          "units": 39.0,
-          "lines": 13
-        },
-        {
-          "id": "MAPICI-CN(-1-001",
-          "title": "COMPTIA NETWORK+ (CIS-40A)",
-          "units": 12.0,
-          "lines": 4
-        },
-        {
-          "id": "MAPICI-CN+-1-001",
-          "title": "CompTIA Network +",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CN1-1-001",
-          "title": "CompTIA Network+",
-          "units": 8.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-CN3-1-001",
-          "title": "CompTIA Network+",
-          "units": 12.0,
-          "lines": 4
-        },
-        {
-          "id": "MAPICI-CNC-1-001",
-          "title": "CompTIA Network+ Certification",
-          "units": 25.5,
-          "lines": 9
-        },
-        {
-          "id": "MAPICI-CNFC-1-001",
-          "title": "CompTIA n+ for CIS 053",
-          "units": 9.0,
-          "lines": 3
-        },
-        {
-          "id": "MAPICI-CNP-1-001",
-          "title": "CompTIA Network Plus",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Chaffey College": 21.0,
-        "City College of San Francisco": 3.0,
-        "Clovis Community College": 3.0,
-        "College of Marin": 3.0,
-        "College of the Desert": 3.0,
-        "Columbia College": 3.0,
-        "De Anza College": 4.0,
-        "Glendale Community College": 3.0,
-        "Lake Tahoe Community College": 3.0,
-        "Las Positas College": 6.0,
-        "Long Beach City College": 3.0,
-        "Los Angeles Mission College": 3.0,
-        "Los Angeles Southwest College": 9.0,
-        "Merritt College": 4.0,
-        "Modesto Junior College": 3.0,
-        "Moreno Valley College": 3.0,
-        "Reedley College": 3.0,
-        "Rio Hondo College": 3.0,
-        "Saddleback College": 3.0,
-        "San Diego City College": 16.5,
-        "Santa Ana College": 3.0,
-        "Sierra College": 3.0,
-        "West Los Angeles College": 3.0
-      },
-      "adopter_lines": {
-        "Chaffey College": 7,
-        "City College of San Francisco": 1,
-        "Clovis Community College": 1,
-        "College of Marin": 1,
-        "College of the Desert": 1,
-        "Columbia College": 1,
-        "De Anza College": 1,
-        "Glendale Community College": 1,
-        "Lake Tahoe Community College": 1,
-        "Las Positas College": 2,
-        "Long Beach City College": 1,
-        "Los Angeles Mission College": 1,
-        "Los Angeles Southwest College": 3,
-        "Merritt College": 1,
-        "Modesto Junior College": 1,
-        "Moreno Valley College": 1,
-        "Reedley College": 1,
-        "Rio Hondo College": 1,
-        "Saddleback College": 1,
-        "San Diego City College": 6,
-        "Santa Ana College": 1,
-        "Sierra College": 1,
-        "West Los Angeles College": 1
-      },
-      "adopter_rec_idx": {
-        "Chaffey College": [
-          12,
-          14,
-          25,
-          31,
-          32,
-          33,
-          34
-        ],
-        "City College of San Francisco": [
-          18
-        ],
-        "Clovis Community College": [
-          21
-        ],
-        "College of Marin": [
-          22
-        ],
-        "College of the Desert": [
-          30
-        ],
-        "Columbia College": [
-          35
-        ],
-        "De Anza College": [
-          27
-        ],
-        "Glendale Community College": [
-          3
-        ],
-        "Lake Tahoe Community College": [
-          23
-        ],
-        "Las Positas College": [
-          5,
-          29
-        ],
-        "Long Beach City College": [
-          19
-        ],
-        "Los Angeles Mission College": [
-          16
-        ],
-        "Los Angeles Southwest College": [
-          2,
-          13,
-          16
-        ],
-        "Merritt College": [
-          28
-        ],
-        "Modesto Junior College": [
-          24
-        ],
-        "Moreno Valley College": [
-          1
-        ],
-        "Reedley College": [
-          11
-        ],
-        "Rio Hondo College": [
-          20
-        ],
-        "Saddleback College": [
-          0
-        ],
-        "San Diego City College": [
-          6,
-          7,
-          8,
-          9,
-          10,
-          17
-        ],
-        "Santa Ana College": [
-          15
-        ],
-        "Sierra College": [
-          26
-        ],
-        "West Los Angeles College": [
-          4
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 21.0,
-      "rec_units_total": 108.5
-    },
-    {
       "exhibit_id": "MAPICA-PC-1-001|MAPICI-CP/P-1-001|MAPICI-CPL-1-001|MAPICI-KCET-1-001|MAPICI-PC1-1-001|MAPICI-PC3-1-001|MAPICI-PL1-1-001|MAPICI-PL2-1-001|MAPICI-PN(-1-001|MAPICI-PN2-1-001|MAPICI-SETP-1-001",
       "exhibit_ids": [
         "MAPICA-PC-1-001",
@@ -111776,6 +110753,1078 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-CA(-1-001|MAPICI-CA-1-001|MAPICI-CA1-1-001|MAPICI-CA3-1-001|MAPICI-CA4-1-001|MAPICI-CA5-1-001|MAPICI-CAC-1-001|MAPICI-CAC1-1-001|MAPICI-CAC2-1-001|MAPICI-CAC4-1-001|MAPICI-CAC5-1-001|MAPICI-CAC6-1-001|MAPICI-CAFC-1-001|MAPICS-I8-1-001",
+      "exhibit_ids": [
+        "MAPICI-CA(-1-001",
+        "MAPICI-CA-1-001",
+        "MAPICI-CA1-1-001",
+        "MAPICI-CA3-1-001",
+        "MAPICI-CA4-1-001",
+        "MAPICI-CA5-1-001",
+        "MAPICI-CAC-1-001",
+        "MAPICI-CAC1-1-001",
+        "MAPICI-CAC2-1-001",
+        "MAPICI-CAC4-1-001",
+        "MAPICI-CAC5-1-001",
+        "MAPICI-CAC6-1-001",
+        "MAPICI-CAFC-1-001",
+        "MAPICS-I8-1-001"
+      ],
+      "title": "CompTIA A+",
+      "unified_title": "CompTIA A+",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "COMPTIA A+ Certification",
+        "CompTIA A+",
+        "CompTIA A+ (CIS-25)",
+        "CompTIA A+ Certification",
+        "CompTIA A+ for CIS 040"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "28",
+        "29",
+        "35",
+        "36",
+        "37",
+        "48"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 24,
+      "adopter_names": [
+        "Cabrillo College",
+        "Chaffey College",
+        "Clovis Community College",
+        "College of the Desert",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "De Anza College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Mission College",
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Reedley College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "potential": 82,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Calbright College Non-Credit",
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Diego College of Continuing Education",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Skyline College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 106,
+      "credit_recs": [
+        {
+          "course": "CIS 25",
+          "credit": "4 hours in Info Comm Tech Essentials"
+        },
+        {
+          "course": "CIS 212",
+          "credit": "3 hours in A+ Certification Preparation-Hardware"
+        },
+        {
+          "course": "CIS 213",
+          "credit": "3 hours in A+ Certification Preparation-Software"
+        },
+        {
+          "course": "CIMN 110",
+          "credit": "3 hours in NETWORKING ESSENTIALS AND TECHNOLOGIES FOR IT CYBERSECURITY"
+        },
+        {
+          "course": "CISHDSP 40",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIT 110",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CMPR 153",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CNT 51",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 222",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "INWT 100",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "COMP 42",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CMPR 155",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 71",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "IS 62",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 104",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIT 011",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIT 012",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "ITIS 40",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 132",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "Computer Information Systems (CIS) 062A",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 101",
+          "credit": "3 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "IT 0100",
+          "credit": "4 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 71",
+          "credit": "4 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "CIS 069A",
+          "credit": "4.5 hours in Technical Support Fundamentals"
+        },
+        {
+          "course": "CIS 069E",
+          "credit": "4.5 hours in IT Security: Defense Against the Digital Dark Arts"
+        },
+        {
+          "course": "CMPET 313",
+          "credit": "2.5 hours in IT Support Fundamentals 3"
+        },
+        {
+          "course": "CMPET 314",
+          "credit": "2.5 hours in IT Support Fundamentals 4"
+        },
+        {
+          "course": "MICROTK 160",
+          "credit": "2 hours in IT ESSENTIALS APPLICATION SOFTWARE FUNDAMENTALS"
+        },
+        {
+          "course": "MICROTK 162",
+          "credit": "4 hours in IT ESSENTIALS NETWORKING PERSONAL COMPUTERS"
+        },
+        {
+          "course": "MICROTK 164",
+          "credit": "5 hours in IT ESSENTIALS  MICROCOMPUTER THEORY AND SERVICING"
+        },
+        {
+          "course": "IS 80",
+          "credit": "6 hours in Information Technology Support Technician Training"
+        },
+        {
+          "course": "CIS 040",
+          "credit": "4 hours in Information and Communication Technology Essentials"
+        },
+        {
+          "course": "COMP 40",
+          "credit": "2 hours in Introduction to PC Hardware"
+        },
+        {
+          "course": "COMP 41",
+          "credit": "2 hours in PC Hardware (A+ Prep)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Information and Communication Technology Essentials",
+          "cid": "ITIS 110",
+          "eids": [
+            "MAPICI-CAC1-1-001"
+          ]
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CA(-1-001",
+          "title": "CompTIA A+ (CIS-25)",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CA-1-001",
+          "title": "CompTIA A+",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-CA1-1-001",
+          "title": "CompTIA A+",
+          "units": 9.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-CA3-1-001",
+          "title": "CompTIA A+",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CA4-1-001",
+          "title": "CompTIA A+",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CA5-1-001",
+          "title": "CompTIA A+",
+          "units": 5.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CAC-1-001",
+          "title": "COMPTIA A+ Certification",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CAC1-1-001",
+          "title": "CompTIA A+ Certification",
+          "units": 51.0,
+          "lines": 17
+        },
+        {
+          "id": "MAPICI-CAC2-1-001",
+          "title": "COMPTIA A+ Certification",
+          "units": 8.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-CAC4-1-001",
+          "title": "CompTIA A+ Certification",
+          "units": 5.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-CAC5-1-001",
+          "title": "CompTIA A+ Certification",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CAC6-1-001",
+          "title": "CompTIA A+ Certification",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CAFC-1-001",
+          "title": "CompTIA A+ for CIS 040",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICS-I8-1-001",
+          "title": "CompTIA A+ Certification",
+          "units": 6.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Cabrillo College": 7.0,
+        "Chaffey College": 6.0,
+        "Clovis Community College": 3.0,
+        "College of the Desert": 4.0,
+        "Columbia College": 7.0,
+        "Compton College": 3.0,
+        "Contra Costa College": 3.0,
+        "De Anza College": 9.0,
+        "Lake Tahoe Community College": 3.0,
+        "Las Positas College": 3.0,
+        "Los Angeles Mission College": 3.0,
+        "Los Angeles Trade Technical College": 11.0,
+        "Mission College": 6.0,
+        "Modesto Junior College": 5.0,
+        "Moreno Valley College": 4.0,
+        "Reedley College": 6.0,
+        "Riverside City College": 4.0,
+        "Saddleback College": 3.0,
+        "San Bernardino Valley College": 3.0,
+        "San Diego City College": 3.0,
+        "San Jose City College": 3.0,
+        "Santa Ana College": 6.0,
+        "Sierra College": 4.0,
+        "West Los Angeles College": 6.0
+      },
+      "adopter_lines": {
+        "Cabrillo College": 2,
+        "Chaffey College": 2,
+        "Clovis Community College": 1,
+        "College of the Desert": 1,
+        "Columbia College": 3,
+        "Compton College": 1,
+        "Contra Costa College": 1,
+        "De Anza College": 2,
+        "Lake Tahoe Community College": 1,
+        "Las Positas College": 1,
+        "Los Angeles Mission College": 1,
+        "Los Angeles Trade Technical College": 3,
+        "Mission College": 2,
+        "Modesto Junior College": 2,
+        "Moreno Valley College": 1,
+        "Reedley College": 1,
+        "Riverside City College": 1,
+        "Saddleback College": 1,
+        "San Bernardino Valley College": 1,
+        "San Diego City College": 1,
+        "San Jose City College": 1,
+        "Santa Ana College": 2,
+        "Sierra College": 1,
+        "West Los Angeles College": 2
+      },
+      "adopter_rec_idx": {
+        "Cabrillo College": [
+          12,
+          22
+        ],
+        "Chaffey College": [
+          4,
+          17
+        ],
+        "Clovis Community College": [
+          13
+        ],
+        "College of the Desert": [
+          31
+        ],
+        "Columbia College": [
+          10,
+          32,
+          33
+        ],
+        "Compton College": [
+          18
+        ],
+        "Contra Costa College": [
+          20
+        ],
+        "De Anza College": [
+          23,
+          24
+        ],
+        "Lake Tahoe Community College": [
+          14
+        ],
+        "Las Positas College": [
+          7
+        ],
+        "Los Angeles Mission College": [
+          8
+        ],
+        "Los Angeles Trade Technical College": [
+          27,
+          28,
+          29
+        ],
+        "Mission College": [
+          15,
+          16
+        ],
+        "Modesto Junior College": [
+          25,
+          26
+        ],
+        "Moreno Valley College": [
+          0
+        ],
+        "Reedley College": [
+          30
+        ],
+        "Riverside City College": [
+          0
+        ],
+        "Saddleback College": [
+          3
+        ],
+        "San Bernardino Valley College": [
+          5
+        ],
+        "San Diego City College": [
+          9
+        ],
+        "San Jose City College": [
+          19
+        ],
+        "Santa Ana College": [
+          6,
+          11
+        ],
+        "Sierra College": [
+          21
+        ],
+        "West Los Angeles College": [
+          1,
+          2
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 11.0,
+      "rec_units_total": 111.0
+    },
+    {
+      "exhibit_id": "MAPICI-CBIC1-1-001|MAPICI-CCNC-1-001|MAPICI-CN(-1-001|MAPICI-CN+-1-001|MAPICI-CN1-1-001|MAPICI-CN3-1-001|MAPICI-CNC-1-001|MAPICI-CNC1-1-001|MAPICI-CNC2-1-001|MAPICI-CNC3-1-001|MAPICI-CNFC-1-001|MAPICI-CNP-1-001",
+      "exhibit_ids": [
+        "MAPICI-CBIC1-1-001",
+        "MAPICI-CCNC-1-001",
+        "MAPICI-CN(-1-001",
+        "MAPICI-CN+-1-001",
+        "MAPICI-CN1-1-001",
+        "MAPICI-CN3-1-001",
+        "MAPICI-CNC-1-001",
+        "MAPICI-CNC1-1-001",
+        "MAPICI-CNC2-1-001",
+        "MAPICI-CNC3-1-001",
+        "MAPICI-CNFC-1-001",
+        "MAPICI-CNP-1-001"
+      ],
+      "title": "CompTIA Network+",
+      "unified_title": "CompTIA Network+",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "COMPTIA NETWORK+ (CIS-40A)",
+        "CompTIA Network +",
+        "CompTIA Network Plus",
+        "CompTIA Network+",
+        "CompTIA Network+ Certification",
+        "CompTIA n+ for CIS 053"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "28",
+        "29",
+        "35",
+        "36",
+        "37"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 24,
+      "adopter_names": [
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of Marin",
+        "College of the Desert",
+        "Columbia College",
+        "De Anza College",
+        "Glendale Community College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "potential": 82,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Calbright College Non-Credit",
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Citrus College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Lassen College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Riverside City College",
+        "Sacramento City College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Skyline College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 106,
+      "credit_recs": [
+        {
+          "course": "CIMN 120",
+          "credit": "3 hours in Network Fundamentals"
+        },
+        {
+          "course": "CIS 40A",
+          "credit": "3 hours in Network Fundamentals"
+        },
+        {
+          "course": "CIS 210",
+          "credit": "3 hours in Network Fundamentals"
+        },
+        {
+          "course": "CS/IS 190",
+          "credit": "3 hours in Network Fundamentals"
+        },
+        {
+          "course": "CIS 214",
+          "credit": "3 hours in Introduction to Network+"
+        },
+        {
+          "course": "CIS 66",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "INWT 100",
+          "credit": "3 hours in Computing Fundamentals (A+)"
+        },
+        {
+          "course": "INWT 120",
+          "credit": "3 hours in  Network Fundamentals (Network+)"
+        },
+        {
+          "course": "INWT 120",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "INWT 140",
+          "credit": "3 hours in Introduction Information Systems Security"
+        },
+        {
+          "course": "INWT 140",
+          "credit": "1.5 hours in Security Fundamentals (Security+)"
+        },
+        {
+          "course": "IS 52",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "ITIS 51",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "CIS 210",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "CIS 50",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "CMPR 138",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "CIS 210",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "INWT 120",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "CNIT 106",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "COSN 10",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "CIT 171",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "IS 63",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "CIS 110",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "CIS 105",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "CMPET 321",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "ITIS 50",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "IT 0105",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "CIS 067A",
+          "credit": "4 hours in Local Area Networks"
+        },
+        {
+          "course": "CIS 072",
+          "credit": "4 hours in Local Area Networks"
+        },
+        {
+          "course": "CNT 52",
+          "credit": "3 hours in Networking Fundamentals"
+        },
+        {
+          "course": "CIS 053",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "ITIS 10",
+          "credit": "3 hours in Introduction to Computer Information Systems"
+        },
+        {
+          "course": "ITIS 40",
+          "credit": "3 hours in Computer Hardware and CompTIA A+ Certification Preparation"
+        },
+        {
+          "course": "ITIS 50",
+          "credit": "3 hours in Introduction to Computer Networks"
+        },
+        {
+          "course": "ITIS 60",
+          "credit": "3 hours in Introduction to Systems & Network Cybersecurity"
+        },
+        {
+          "course": "COMP 61",
+          "credit": "3 hours in Windows Server Network Infrastructure"
+        },
+        {
+          "course": "CIT 012",
+          "credit": "4 hours in Introduction to Networking"
+        },
+        {
+          "course": "CIT 021",
+          "credit": "4 hours in Introduction to Cisco Networks (Cisco-1)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Networking Fundamentals",
+          "cid": "ITIS 150",
+          "eids": [
+            "MAPICI-CCNC-1-001"
+          ]
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CBIC1-1-001",
+          "title": "CompTIA Network+ Certification",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-CCNC-1-001",
+          "title": "CompTIA Network+ Certification",
+          "units": 39.0,
+          "lines": 13
+        },
+        {
+          "id": "MAPICI-CN(-1-001",
+          "title": "COMPTIA NETWORK+ (CIS-40A)",
+          "units": 12.0,
+          "lines": 4
+        },
+        {
+          "id": "MAPICI-CN+-1-001",
+          "title": "CompTIA Network +",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CN1-1-001",
+          "title": "CompTIA Network+",
+          "units": 8.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-CN3-1-001",
+          "title": "CompTIA Network+",
+          "units": 12.0,
+          "lines": 4
+        },
+        {
+          "id": "MAPICI-CNC-1-001",
+          "title": "CompTIA Network+ Certification",
+          "units": 25.5,
+          "lines": 9
+        },
+        {
+          "id": "MAPICI-CNC1-1-001",
+          "title": "CompTIA Network+ Certification",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CNC2-1-001",
+          "title": "CompTIA Network+ Certification",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CNC3-1-001",
+          "title": "CompTIA Network+ Certification",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CNFC-1-001",
+          "title": "CompTIA n+ for CIS 053",
+          "units": 9.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPICI-CNP-1-001",
+          "title": "CompTIA Network Plus",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Chaffey College": 21.0,
+        "City College of San Francisco": 3.0,
+        "Clovis Community College": 3.0,
+        "College of Marin": 3.0,
+        "College of the Desert": 3.0,
+        "Columbia College": 3.0,
+        "De Anza College": 4.0,
+        "Glendale Community College": 3.0,
+        "Lake Tahoe Community College": 3.0,
+        "Las Positas College": 6.0,
+        "Long Beach City College": 3.0,
+        "Los Angeles Mission College": 3.0,
+        "Los Angeles Southwest College": 9.0,
+        "Merritt College": 4.0,
+        "Mission College": 8.0,
+        "Modesto Junior College": 3.0,
+        "Moreno Valley College": 3.0,
+        "Reedley College": 3.0,
+        "Rio Hondo College": 3.0,
+        "Saddleback College": 3.0,
+        "San Diego City College": 16.5,
+        "Santa Ana College": 3.0,
+        "Sierra College": 3.0,
+        "West Los Angeles College": 3.0
+      },
+      "adopter_lines": {
+        "Chaffey College": 7,
+        "City College of San Francisco": 1,
+        "Clovis Community College": 1,
+        "College of Marin": 1,
+        "College of the Desert": 1,
+        "Columbia College": 1,
+        "De Anza College": 1,
+        "Glendale Community College": 1,
+        "Lake Tahoe Community College": 1,
+        "Las Positas College": 2,
+        "Long Beach City College": 1,
+        "Los Angeles Mission College": 1,
+        "Los Angeles Southwest College": 3,
+        "Merritt College": 1,
+        "Mission College": 2,
+        "Modesto Junior College": 1,
+        "Moreno Valley College": 1,
+        "Reedley College": 1,
+        "Rio Hondo College": 1,
+        "Saddleback College": 1,
+        "San Diego City College": 6,
+        "Santa Ana College": 1,
+        "Sierra College": 1,
+        "West Los Angeles College": 1
+      },
+      "adopter_rec_idx": {
+        "Chaffey College": [
+          12,
+          14,
+          25,
+          31,
+          32,
+          33,
+          34
+        ],
+        "City College of San Francisco": [
+          18
+        ],
+        "Clovis Community College": [
+          21
+        ],
+        "College of Marin": [
+          22
+        ],
+        "College of the Desert": [
+          30
+        ],
+        "Columbia College": [
+          35
+        ],
+        "De Anza College": [
+          27
+        ],
+        "Glendale Community College": [
+          3
+        ],
+        "Lake Tahoe Community College": [
+          23
+        ],
+        "Las Positas College": [
+          5,
+          29
+        ],
+        "Long Beach City College": [
+          19
+        ],
+        "Los Angeles Mission College": [
+          16
+        ],
+        "Los Angeles Southwest College": [
+          2,
+          13,
+          16
+        ],
+        "Merritt College": [
+          28
+        ],
+        "Mission College": [
+          36,
+          37
+        ],
+        "Modesto Junior College": [
+          24
+        ],
+        "Moreno Valley College": [
+          1
+        ],
+        "Reedley College": [
+          11
+        ],
+        "Rio Hondo College": [
+          20
+        ],
+        "Saddleback College": [
+          0
+        ],
+        "San Diego City College": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          17
+        ],
+        "Santa Ana College": [
+          15
+        ],
+        "Sierra College": [
+          26
+        ],
+        "West Los Angeles College": [
+          4
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 21.0,
+      "rec_units_total": 116.5
     },
     {
       "exhibit_id": "CPLPRI-HET+-1-001",
@@ -179207,6 +179256,266 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-CC4-1-001",
+      "exhibit_ids": [
+        "MAPICI-CC4-1-001"
+      ],
+      "title": "CCNA Certification",
+      "unified_title": "CCNA Certification",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CCNA Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "36"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Mission College"
+      ],
+      "potential": 63,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Calbright College Non-Credit",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "West Los Angeles College",
+        "West Valley College"
+      ],
+      "total_addressable": 64,
+      "credit_recs": [
+        {
+          "course": "CIT 021",
+          "credit": "4 hours in Introduction to Cisco Networks (Cisco-1)"
+        },
+        {
+          "course": "CIT 022",
+          "credit": "4 hours in Switching, Routing, and Wireless Essentials"
+        },
+        {
+          "course": "CIT 023",
+          "credit": "4 hours in Enterprise Networking, Security, and Automation"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CC4-1-001",
+          "title": "CCNA Certification",
+          "units": 12.0,
+          "lines": 3
+        }
+      ],
+      "adopter_units": {
+        "Mission College": 12.0
+      },
+      "adopter_lines": {
+        "Mission College": 3
+      },
+      "adopter_rec_idx": {
+        "Mission College": [
+          0,
+          1,
+          2
+        ]
+      },
+      "peer_units_median": 12.0,
+      "peer_units_max": 12.0,
+      "rec_units_total": 12.0
+    },
+    {
+      "exhibit_id": "MAPMM-AC-N-1-001",
+      "exhibit_ids": [
+        "MAPMM-AC-N-1-001"
+      ],
+      "title": "ACE CR - Network Fundamentals",
+      "unified_title": "ACE CR - Network Fundamentals",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ACE CR - Network Fundamentals"
+      ],
+      "cpl_type": "Military",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "36"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Mission College"
+      ],
+      "potential": 63,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Calbright College Non-Credit",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palomar College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "West Los Angeles College",
+        "West Valley College"
+      ],
+      "total_addressable": 64,
+      "credit_recs": [
+        {
+          "course": "CIT 012",
+          "credit": "4 hours in Introduction to Networking"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPMM-AC-N-1-001",
+          "title": "ACE CR - Network Fundamentals",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Mission College": 4.0
+      },
+      "adopter_lines": {
+        "Mission College": 1
+      },
+      "adopter_rec_idx": {
+        "Mission College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
     },
     {
       "exhibit_id": "MAPSAS-C:IS-1-001|MAPSAS-CEIS1-1-001|MAPSAS-CIS(-1-001|MAPSAS-CIS--1-001|MAPSAS-CIS1-1-001|MAPSAS-CIS10-1-001|MAPSAS-CIS11-1-001|MAPSAS-CIS12-1-001|MAPSAS-CIS13-1-001|MAPSAS-CIS14-1-001|MAPSAS-CIS15-1-001|MAPSAS-CIS16-1-001|MAPSAS-CIS17-1-001|MAPSAS-CIS18-1-001|MAPSAS-CIS19-1-001|MAPSAS-CIS20-1-001|MAPSAS-CIS21-1-001|MAPSAS-CIS22-1-001|MAPSAS-CIS23-1-001|MAPSAS-CIS24-1-001|MAPSAS-CIS25-1-001|MAPSAS-CIS26-1-001|MAPSAS-CIS27-1-001|MAPSAS-CIS28-1-001|MAPSAS-CIS29-1-001|MAPSAS-CIS3-1-001|MAPSAS-CIS30-1-001|MAPSAS-CIS31-1-001|MAPSAS-CIS32-1-001|MAPSAS-CIS33-1-001|MAPSAS-CIS34-1-001|MAPSAS-CIS35-1-001|MAPSAS-CIS36-1-001|MAPSAS-CIS37-1-001|MAPSAS-CIS38-1-001|MAPSAS-CIS39-1-001|MAPSAS-CIS4-1-001|MAPSAS-CIS40-1-001|MAPSAS-CIS41-1-001|MAPSAS-CIS43-1-001|MAPSAS-CIS44-1-001|MAPSAS-CIS45-1-001|MAPSAS-CIS46-1-001|MAPSAS-CIS5-1-001|MAPSAS-CIS6-1-001|MAPSAS-CIS7-1-001|MAPSAS-CIS8-1-001|MAPSAS-CIS9-1-001|MAPSAS-CITS-1-001|MAPSAS-CITS1-1-001|MAPSAS-CITS2-1-001",
@@ -449404,7 +449713,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 4,
         "ccc_collaborative": 1,
         "industry_certs": 557,
-        "pct": 3.3
+        "pct": 3.2
       },
       {
         "college": "Chaffey College",
@@ -449605,6 +449914,15 @@ window.CPL_STATEWIDE = {
         "pct": 1.0
       },
       {
+        "college": "Mission College",
+        "credit_recs": 174,
+        "exhibits": 153,
+        "disciplines": 13,
+        "ccc_collaborative": 9,
+        "industry_certs": 13,
+        "pct": 1.0
+      },
+      {
         "college": "Golden West College",
         "credit_recs": 170,
         "exhibits": 148,
@@ -449638,15 +449956,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 12,
         "ccc_collaborative": 4,
         "industry_certs": 4,
-        "pct": 0.9
-      },
-      {
-        "college": "Mission College",
-        "credit_recs": 165,
-        "exhibits": 147,
-        "disciplines": 13,
-        "ccc_collaborative": 7,
-        "industry_certs": 5,
         "pct": 0.9
       },
       {
@@ -450324,7 +450633,7 @@ window.CPL_STATEWIDE = {
         "courses": 534,
         "colleges": 89,
         "ccc_collaborative": 35,
-        "pct": 40.7
+        "pct": 40.6
       },
       {
         "discipline": "Engineering and Industrial Technologies",
@@ -450364,11 +450673,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Information Technology",
-        "credit_recs": 543,
-        "exhibits": 316,
-        "courses": 332,
+        "credit_recs": 552,
+        "exhibits": 321,
+        "courses": 336,
         "colleges": 58,
-        "ccc_collaborative": 133,
+        "ccc_collaborative": 135,
         "pct": 3.1
       },
       {
@@ -450535,10 +450844,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 6207,
-        "exhibits": 1543,
+        "credit_recs": 6215,
+        "exhibits": 1547,
         "colleges": 85,
-        "pct": 35.3
+        "pct": 35.4
       },
       {
         "cpl_type": "Credit By Exam",
@@ -450556,8 +450865,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Military",
-        "credit_recs": 159,
-        "exhibits": 74,
+        "credit_recs": 160,
+        "exhibits": 75,
         "colleges": 38,
         "pct": 0.9
       },
@@ -450586,8 +450895,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 3179,
-        "exhibits": 1302,
+        "credit_recs": 3187,
+        "exhibits": 1306,
         "colleges": 80,
         "pct": 18.1
       },
@@ -450607,8 +450916,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Military training (M)",
-        "credit_recs": 230,
-        "exhibits": 91,
+        "credit_recs": 231,
+        "exhibits": 92,
         "colleges": 40,
         "pct": 1.3
       },
@@ -450644,15 +450953,15 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 15703,
-        "exhibits": 7136,
+        "credit_recs": 15710,
+        "exhibits": 7141,
         "colleges": 100,
         "disciplines": 23,
         "pct": 89.4
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1530,
+        "credit_recs": 1532,
         "exhibits": 197,
         "colleges": 71,
         "disciplines": 13,
@@ -451070,8 +451379,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-24T06:19:56",
-  "total_credit_recs": 17569,
+  "generated_at": "2026-11-25T06:17:36",
+  "total_credit_recs": 17578,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

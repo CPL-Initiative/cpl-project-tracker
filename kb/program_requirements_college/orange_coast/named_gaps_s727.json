@@ -1,0 +1,67 @@
+{
+ "_readme": "S727 (lever), the gap census's reader_page_assignment lever (census of 2026-11-25 01:39Z): 5 programs of Orange Coast College whose filed record places none of the state's listed courses and whose own page, read as the capture reads it (college-page-read runs 45562337640 and 45563142044), gives a read too few of them to place, or prints another program. The college's other 3 on the lever are pinned in its reconcile entry (kb/program_requirements_reconcile.json, site_pages: 22394, 04007, 33569). These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Orange Coast College",
+ "written": "2026-11-25T07:22:38Z",
+ "capture": "44747523200",
+ "page_reads": [
+  "45562337640",
+  "45563142044"
+ ],
+ "reasons": {
+  "list_printed_as_range": "The program's own page prints part of its list as a course range, and the state's file lists the range's courses one by one, so the page names fewer than half of the state's listed courses by code and the capture refuses it as the program's page.",
+  "list_by_reference": "The program's own page prints its required courses and names other awards whose lists complete it ('Complete a specialization certificate listed below'), and the state's file lists those awards' courses as the program's own, so the page names fewer than half of the state's listed courses by code and the capture refuses it as the program's page.",
+  "successor_printed": "The 2026-27 catalog prints no page for the program: the department's list of degrees names one page under its title and award, and that page prints another program's Control Number."
+ },
+ "programs": [
+  {
+   "control_number": "03970",
+   "title": "Fitness Specialist: Health Fitness Instructor/Pers. Trainer",
+   "award": "A.S. Degree",
+   "reason": "list_printed_as_range",
+   "note": "Its own page (fitness-specialist-associate-science-degree/, 'Control Number: 03970') prints six required courses (KIN A270 to A298), ten restricted electives and 'Any Kinesiology active participation course KIN A105-A159, A206-A259'; it names 4 of the state's 36 listed courses by code (KIN A105, A270, A271, A298), and 31 of the 32 it does not name are KIN courses in that range."
+  },
+  {
+   "control_number": "22389",
+   "title": "Fitness Specialist: Health Fitness Instructor/Personal Trainer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "list_printed_as_range",
+   "note": "Its own page (fitness-specialist-certificate-achievement/, 'Control Number: 22389') prints the A.S.'s list with 'Total Units 19-22' and 'Any Kinesiology active participation course KIN A105-A159, A206-A259'; it names 9 of the state's 36 listed courses by code, and 26 of the 27 it does not name are KIN courses in that range."
+  },
+  {
+   "control_number": "42115",
+   "title": "Child Development Lead Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "list_by_reference",
+   "by_reference": [
+    "42081",
+    "42109",
+    "42118",
+    "42119",
+    "42134"
+   ],
+   "note": "Its own page (child-development-lead-teacher-coa/, 'Control Number: 42115') prints 12 required courses, 'Complete a specialization certificate listed below: 9-12', five specialization certificates by name, and 'Total Units 43.5-46.5'; it names 12 of the state's 30 listed courses (0.40, under the capture's 0.50), and the other 18 are the listed courses of the five specialization certificates it names (42081, 42109, 42118, 42119, 42134; their filed sources' codes)."
+  },
+  {
+   "control_number": "42117",
+   "title": "Child Development Lead Teacher",
+   "award": "A.S. Degree",
+   "reason": "list_by_reference",
+   "by_reference": [
+    "42081",
+    "42109",
+    "42118",
+    "42119",
+    "42134"
+   ],
+   "note": "Its own page (child-development-lead-teacher-as/, 'Control Number: 42117') prints the certificate's 12 required courses and its specialization line, 'Total Major Units 43.5 - 46.5'; it names 12 of the state's 30 listed courses (0.40, under the capture's 0.50), and the other 18 are the listed courses of the five specialization certificates (42081, 42109, 42118, 42119, 42134)."
+  },
+  {
+   "control_number": "32235",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "reason": "successor_printed",
+   "successor": "46863",
+   "note": "The Mathematics department page links one transfer degree, 'Mathematics 2.0, Associate in Science for Transfer' (mathematics-associate-science-degree-transfer-ast/), whose page prints 'Control Number: 46863'; no page read prints 32235. 46863 is not in the harvest's program list for the college."
+  }
+ ]
+}

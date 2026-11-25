@@ -128,7 +128,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "required_list_outside_total",
+    "label": "The catalog prints a list the program requires apart from its printed total, and the record counts that list; without it the courses add to the printed total.",
+    "words": "The 'Other Course Requirements for Graduation' list (COMM/PSYC/SOC options) is printed identically under both tabs; recorded once. Its units are not included in either printed Total Units figure; reviewer should check whether it should count toward the major total."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

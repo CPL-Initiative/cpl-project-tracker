@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-24T06:20:51.488281+00:00",
+  "scraped_at": "2026-11-25T06:18:27.645310+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 32693,
+    "jst": 32724,
     "star_colleges": 71
   },
   "computed_star_colleges": 71,
@@ -32,12 +32,17 @@
     },
     "San Diego Mesa College": {
       "vets": 1151,
-      "jst": 1674,
+      "jst": 1684,
       "star": true
     },
     "San Diego City College": {
       "vets": 810,
-      "jst": 1574,
+      "jst": 1587,
+      "star": true
+    },
+    "San Diego Miramar College": {
+      "vets": 1172,
+      "jst": 1734,
       "star": true
     },
     "Moreno Valley College": {
@@ -45,14 +50,9 @@
       "jst": 1080,
       "star": true
     },
-    "San Diego Miramar College": {
-      "vets": 1172,
-      "jst": 1727,
-      "star": true
-    },
     "Bakersfield College": {
       "vets": 431,
-      "jst": 606,
+      "jst": 607,
       "star": true
     },
     "Norco College": {
@@ -262,7 +262,7 @@
     },
     "Golden West College": {
       "vets": 227,
-      "jst": 160,
+      "jst": 161,
       "star": false
     },
     "College of the Sequoias": {
@@ -395,15 +395,15 @@
       "jst": 11,
       "star": false
     },
-    "American River College": {
-      "vets": 311,
-      "jst": 90,
-      "star": false
-    },
     "College of the Redwoods": {
       "vets": 108,
       "jst": 90,
       "star": true
+    },
+    "American River College": {
+      "vets": 311,
+      "jst": 89,
+      "star": false
     },
     "Columbia College": {
       "vets": 43,

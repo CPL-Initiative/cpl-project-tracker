@@ -1,0 +1,45 @@
+{
+ "_readme": "S727 (lever), the gap census's reader_page_assignment lever (census of 2026-11-25 01:39Z): 4 programs of North Orange Continuing Education whose filed record places none of the state's listed courses. Free page read 45562584495 read the Business, English as a Second Language and Basic Skills area pages and the award pages they link; each award page prints its Program number ('Program #3P46252' for ESL for Office Assistants 46252). These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "North Orange Continuing Education",
+ "written": "2026-11-25T06:59:44Z",
+ "capture": "43342034608",
+ "page_reads": [
+  "45562584495"
+ ],
+ "reasons": {
+  "noncredit_not_in_catalog": "A noncredit program the 2026-27 catalog prints under no heading of its own: its area's list of noncredit certificates does not name it.",
+  "successor_printed": "The 2026-27 catalog prints no page for the program: the one page under its title prints another program's number, a program the state's file lists on its own and the harvest reads from that page."
+ },
+ "programs": [
+  {
+   "control_number": "38320",
+   "title": "Business Information Worker I",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog",
+   "note": "The Business area page links Bookkeeping, Classroom Essentials for Program Success, Customer Relations, Entrepreneurship, Human Resource Assistant, Management Program and Office Assistant (Introduction, Advanced), and no Business Information Worker."
+  },
+  {
+   "control_number": "46253",
+   "title": "ESL for Personal Care Aides",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog",
+   "note": "The English as a Second Language area page links 46 award pages, none whose title names personal care; the filed record was read from ESL for Office Assistants' page (Program #3P46252)."
+  },
+  {
+   "control_number": "39325",
+   "title": "ESL Specialty Courses",
+   "award": "Noncredit program",
+   "reason": "successor_printed",
+   "successor": "44168, 44169",
+   "note": "The English as a Second Language area page links two pages under the title, 'ESL Specialty Courses, Beginning' (Program #3P44168) and 'ESL Specialty Courses, Intermediate to Advanced' (Program #3P44169); the harvest reads 44168 and 44169 from those pages. No page prints 39325."
+  },
+  {
+   "control_number": "39625",
+   "title": "GED/HiSET Test Preparation",
+   "award": "Noncredit program",
+   "reason": "successor_printed",
+   "successor": "45936",
+   "note": "The Basic Skills area page links one page under the title, 'GED/HiSET Test Preparation' (ged-test-preparation/), which prints 'Program Code: 3P45936'; the harvest reads 45936 from that page. No page prints 39625."
+  }
+ ]
+}

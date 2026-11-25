@@ -1,0 +1,31 @@
+{
+ "_readme": "S727 lever, Southwestern College's second read: page read 45562584495 found the Psychology department's transfer page (psychology-transfer-aa/, 'Student Transfer Achievement Reform (STAR) Act (SB1440)', Major Code 01855) for Psychology A.A.-T 36634, and the Administration of Justice department links a page titled 'Administration of Justice' (aa/) that no filed source reads, the likely page of Administration of Justice A.S.-T 32693. It reads both with capture_view. This plan reads each as the capture reads it, so a session checks each site_pages pin against the text the capture will read and a test pins it. No model call, nothing written.",
+ "college": "Southwestern College",
+ "questions": {
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total, on the visible text or a tab panel."
+ },
+ "keywords": [
+  "certificate of (?:achievement|completion|competency)[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}(?:units?|hours?)",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "32693",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/aa/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "36634",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/psychology/psychology-transfer-aa/",
+   "capture_view": true
+  }
+ ]
+}
