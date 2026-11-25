@@ -76,7 +76,8 @@ const btn = (doc, re) => Array.from(doc.querySelectorAll("button")).find((b) => 
   let w = makeDom();
   let doc = w.document;
   const words = Array.from(doc.querySelectorAll(".cplcoci-viewseg button")).map(txt);
-  check("the views row reads Progress, Courses, Programs", words.join("|") === "Progress|Courses|Programs");
+  // S725 added Gather beside Courses (tests/commons_gather.test.js guards the view itself).
+  check("the views row reads Progress, Courses, Gather, Programs", words.join("|") === "Progress|Courses|Gather|Programs");
   check("the tab still opens on the Courses List", w.CPL_COCI_LOOKUP_TAB._state.view === "courses");
   btn(doc, /^Progress$/).click();
   await sleep(20);
