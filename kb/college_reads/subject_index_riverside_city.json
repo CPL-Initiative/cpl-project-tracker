@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 1: the catalog's top navigation (catalog 124, the id the harvest capture read), to find the node that lists course subjects by name. One JSON call, no model call, writes nothing.",
+ "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 2: round 1 (run 45626729422) found the catalog's Courses node; this read lists that node's children. One JSON call, no model call, writes nothing.",
  "college": "Riverside City College",
  "questions": {
   "cq_subjects": "Which navigation node lists the catalog's course subjects with their names."
@@ -15,7 +15,9 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=124&navigationtypeId=1"
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=124&parentId=5841",
+   "capture_view": true
   }
- ]
+ ],
+ "capture_lines": 4000
 }

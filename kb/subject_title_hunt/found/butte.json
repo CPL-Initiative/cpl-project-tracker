@@ -1,0 +1,668 @@
+{
+ "college": "Butte College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:48:57Z",
+ "run": "45627124597",
+ "plan": "kb/college_reads/subject_index_butte.json",
+ "titles": [
+  {
+   "code": "AB",
+   "title": "Agriculture Business",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27920
+  },
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27922
+  },
+  {
+   "code": "AET",
+   "title": "Agricultural Engineering Technology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27924
+  },
+  {
+   "code": "AGS",
+   "title": "Agriculture Science",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27926
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27928
+  },
+  {
+   "code": "AJLE",
+   "title": "Administration of Justice Law Enforcement",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27930
+  },
+  {
+   "code": "ALH",
+   "title": "Allied Health",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27932
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27934
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27936
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28487
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27938
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28488
+  },
+  {
+   "code": "AUT",
+   "title": "Automotive Technology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27940
+  },
+  {
+   "code": "BCIS",
+   "title": "Business Computer Information Systems",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27942
+  },
+  {
+   "code": "BIOL",
+   "title": "Biological Sciences",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27944
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27946
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28489
+  },
+  {
+   "code": "CDF",
+   "title": "Child Development and Family Relations",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27948
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27950
+  },
+  {
+   "code": "CLP",
+   "title": "Career Life Planning",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27954
+  },
+  {
+   "code": "CMST",
+   "title": "Communication Studies",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27956
+  },
+  {
+   "code": "CNST",
+   "title": "Construction",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27958
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27503
+  },
+  {
+   "code": "COS",
+   "title": "Cosmetology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27960
+  },
+  {
+   "code": "CPE",
+   "title": "Community Partners in Education",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27962
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27964
+  },
+  {
+   "code": "CSL",
+   "title": "Counseling",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27966
+  },
+  {
+   "code": "DFT",
+   "title": "Drafting",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27968
+  },
+  {
+   "code": "DRAM",
+   "title": "Drama",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27970
+  },
+  {
+   "code": "DSPS",
+   "title": "Disabled Students Programs and Services",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27972
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27974
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27976
+  },
+  {
+   "code": "EH",
+   "title": "Environmental Horticulture",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27978
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27980
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27982
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27984
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27986
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27500
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27988
+  },
+  {
+   "code": "FN",
+   "title": "Foods and Nutrition",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27990
+  },
+  {
+   "code": "FSC",
+   "title": "Fire Science",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27992
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27994
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27996
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27998
+  },
+  {
+   "code": "HAL",
+   "title": "Healthy Aging and Living",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28000
+  },
+  {
+   "code": "HIM",
+   "title": "Health Information Management",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28002
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28004
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28006
+  },
+  {
+   "code": "HVAC",
+   "title": "Heating, Ventilation, and Air Conditioning",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28008
+  },
+  {
+   "code": "ITEC",
+   "title": "Industrial Technology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28012
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28014
+  },
+  {
+   "code": "JPN",
+   "title": "Japanese",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28016
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28018
+  },
+  {
+   "code": "LIS",
+   "title": "Library and Information Science",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28022
+  },
+  {
+   "code": "LM",
+   "title": "Life Management",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28024
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28026
+  },
+  {
+   "code": "MCGS",
+   "title": "Multicultural and Gender Studies",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28028
+  },
+  {
+   "code": "MFG",
+   "title": "Manufacturing",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28030
+  },
+  {
+   "code": "MSP",
+   "title": "Multimedia Studies Program",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28032
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28034
+  },
+  {
+   "code": "NR",
+   "title": "Natural Resources",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28036
+  },
+  {
+   "code": "NSG",
+   "title": "Nursing",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28038
+  },
+  {
+   "code": "OLS",
+   "title": "Occupational and Life Skills",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28040
+  },
+  {
+   "code": "PAR",
+   "title": "Parenting",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27511
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28042
+  },
+  {
+   "code": "PHO",
+   "title": "Photography",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28044
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28046
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27507
+  },
+  {
+   "code": "POS",
+   "title": "Political Science",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28048
+  },
+  {
+   "code": "PSC",
+   "title": "Physical Science",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28050
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28052
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27509
+  },
+  {
+   "code": "RLS",
+   "title": "Real Estate",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28054
+  },
+  {
+   "code": "RT",
+   "title": "Respiratory Care",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28056
+  },
+  {
+   "code": "RTVF",
+   "title": "Radio, TV, Film",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28058
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28060
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28490
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28062
+  },
+  {
+   "code": "SPED",
+   "title": "Special Education Training",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28064
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27505
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work and Human Services",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 27513
+  },
+  {
+   "code": "WLD",
+   "title": "Welding",
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28400",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 28066
+  }
+ ],
+ "skipped_items": [
+  "Course Descriptions"
+ ]
+}
