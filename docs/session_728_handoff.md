@@ -98,3 +98,18 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   right, 0 wrong at 15 eLumen colleges; binds move at Antelope Valley 47, Redwoods 10, Mission 8), with plan s727v for
   43028 (a new kind, `ge_figures_other_pattern`), to an Opus reader before any read uses it. Of the 47 at Antelope
   Valley, 43 already have live rows read from the sister page; 20166, 20184, 20186 and 43150 have none.
+- 07:17Z: `lever`'s reader (Opus) said DISPATCH for Orange Coast's read, with three findings that gate #3811's merge
+  (a js-tests step without a shard; no committed self-recall for the title cut; 42115 and 42117 printed by reference,
+  not differing). Orange Coast's read 45567337117 (`only=04007,22394,33569`, `force=04007,33569`, about $0.22) and
+  Southwestern 33642's (45567354959, `sources_from=44529722751`, about $0.07) dispatched. The worker fixed all three
+  (`4d9f5ece`; `list_by_reference` for 42115 and 42117).
+- 07:20Z: American River's reader: FIX THEN APPLY (the own-page guard read a re-paginated capture, so 12238 holds;
+  12191 passes on a cheaper `unit_line` step, so it holds). Canyons's reader: FIX THEN APPLY (the rollback broke on a
+  verdict on the inserted 43388; the delete needed its own expect line; 02277 and 15477 pass on cheaper readings).
+  Shasta's reader (Sonnet): no blocker; its `commons_data.json` is regenerated at the land.
+- 07:27Z: Shasta's plan s727c applied after a clean md5 pre-read (migrate 45568232574, 4 live with named gaps);
+  `.apply` restored (`66790a5d`). Santa Barbara City's plan s727d (13: 7 passing, 6 named gaps, a new kind
+  `required_list_outside_total`) to an Opus reader; Butte's reconcile worker started.
+- 07:40Z: American River fixed at 12 rows (a second new kind, `noted_total_cut_off`, for 20130) to round 2 with its
+  reader. Canyons fixed at 7 rows; the conductor asked for a course-list cap of 50 on `heading_not_in_text` before
+  round 2, since 43388's list cannot be told from its page's other lists.
