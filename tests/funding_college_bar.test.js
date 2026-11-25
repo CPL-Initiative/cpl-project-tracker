@@ -60,6 +60,7 @@ const rowOf = (doc, name) => Array.from(doc.querySelectorAll("#cplFundTable tr.c
     links[0] === "How to Configure the College Landing Page=" + doc.getElementById("training-link").getAttribute("href") &&
     links[1] === "Configure Landing Page in MAP=https://mappingarticulatedpathways.azurewebsites.net/modules/security/Login.aspx" &&
     !!bar.querySelector(".cbar-close") && bar.querySelectorAll(".cbar-top a[target=_blank]").length === 2);
+  check("B5a: it opens on 65% of the window (" + B.height() + " of " + w.innerHeight + ")", B.height() === Math.round(w.innerHeight * 0.65));
   const grip = bar.querySelector(".cbar-grip");
   B.setHeight(400);
   grip.dispatchEvent(new w.KeyboardEvent("keydown", { key: "ArrowUp", bubbles: true }));

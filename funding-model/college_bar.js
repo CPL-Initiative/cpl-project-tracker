@@ -55,7 +55,9 @@
     return { framed: true, top: sy + visTop, height: Math.max(MIN_H, visBottom - visTop) };
   }
   function clampH(v) { return Math.max(MIN_H, Math.min(view().height, Math.round(v))); }
-  function defaultH() { return clampH(view().height * 0.62); }
+  // It opens on 65% of what the reader sees, the table keeping the top 35% (Sam, 2026-11-25: "have the top window
+  // shrink height by at least 60% when college clicked so the bottom bar comes into view").
+  function defaultH() { return clampH(view().height * 0.65); }
   function place() {
     if (!bar || bar.hidden) return;
     var v = view();
