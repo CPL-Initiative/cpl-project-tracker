@@ -40,7 +40,8 @@ with tempfile.TemporaryDirectory() as root:
             {"code": "AT", "title": "Flight Attendant", "url": "https://alpha.example/courses/", "where": "catalog", "method": "prefix legend"},
             {"code": "ART", "title": "ART", "url": "https://alpha.example/courses/"},
             {"code": "BIO", "title": "", "url": "https://alpha.example/courses/"},
-            {"code": "ERTH", "title": "Anthropology", "url": "u"}, {"code": "ERTH", "title": "Geology", "url": "u"}]})
+            {"code": "ERTH", "title": "Anthropology", "url": "u"}, {"code": "ERTH", "title": "Geology", "url": "u"},
+            {"code": "STAT", "title": "Mathematics", "url": "u", "note": "no heading of its own: its first course prints under the heading of MATH's courses"}]})
     r = F.file_one(os.path.join(F.FOUND, "alpha.json"), False)
     doc = json.load(open(os.path.join(F.SUBJECTS, "alpha.json")))
     rows = {x["code"]: x for x in doc["rows"]}
@@ -50,7 +51,7 @@ with tempfile.TemporaryDirectory() as root:
           and a.get("address") == "https://alpha.example/courses/" and a.get("where") == "catalog" and a.get("method") == "subject heading"
           and a.get("found_on") == "2026-11-25" and "111" in (a.get("found_by") or "") and rows["AT"]["method"] == "prefix legend", json.dumps(r))
     check("(3) a find that repeats its code, has no title, or names one code under two headings is not filed",
-          "ART" not in rows and "BIO" not in rows and "ERTH" not in rows and r["skipped"] == 4, json.dumps(r))
+          "ART" not in rows and "BIO" not in rows and "ERTH" not in rows and "STAT" not in rows and r["skipped"] == 5, json.dumps(r))
 
     put(os.path.join(F.SUBJECTS, "beta.json"), {"college": "Beta College", "run": "9", "rows": [
         {"code": "MATH", "heading": "Mathematics", "rule": "index", "codes": ["MATH"]}]})

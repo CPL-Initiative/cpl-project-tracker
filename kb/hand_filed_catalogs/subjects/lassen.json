@@ -1,0 +1,892 @@
+{
+ "_what": "The subjects Lassen College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Lassen College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:04:36Z",
+ "run": "45629430201",
+ "source": [
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=103",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=104",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=105",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=107",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=112",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=114",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=117",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=118",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=120",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=122",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=123",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=124",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=125",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=126",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=128",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=129",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=130",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=140",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=141",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=142",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=143",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=145",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=146",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=151",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=153",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=155",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=156",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=157",
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=160"
+ ],
+ "rows": [
+  {
+   "code": "AERO",
+   "heading": "Aviation",
+   "heading_printed": "AVIATION",
+   "rule": "index",
+   "codes": [
+    "AERO"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=120",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGR",
+   "heading": "Agriculture",
+   "heading_printed": "AGRICULTURE",
+   "rule": "index",
+   "codes": [
+    "AGR"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=112",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "ADMINISTRATION OF JUSTICE",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=103",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "ANTHROPOLOGY",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=114",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "ART HISTORY",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=117",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=114",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "ASTRONOMY",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AT",
+   "heading": "Automotive",
+   "heading_printed": "AUTOMOTIVE",
+   "rule": "index",
+   "codes": [
+    "AT"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=104",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "BIOLOGY",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=120",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "BS",
+   "heading": "Basic Skills",
+   "heading_printed": "BASIC SKILLS",
+   "rule": "index",
+   "codes": [
+    "BS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=104",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "BUSINESS",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=105",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CA",
+   "heading": "Computer Applications",
+   "heading_printed": "COMPUTER APPLICATIONS",
+   "rule": "index",
+   "codes": [
+    "CA"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CARS",
+   "heading": "Careers",
+   "heading_printed": "CAREERS",
+   "rule": "index",
+   "codes": [
+    "CARS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=105",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CD",
+   "heading": "Child Development",
+   "heading_printed": "CHILD DEVELOPMENT",
+   "rule": "index",
+   "codes": [
+    "CD"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=123",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CDL",
+   "heading": "Commercial Driver’s License",
+   "heading_printed": "COMMERCIAL DRIVER’S LICENSE",
+   "rule": "index",
+   "codes": [
+    "CDL"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=105",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CG",
+   "heading": "Counseling & Guidance",
+   "heading_printed": "COUNSELING & GUIDANCE",
+   "rule": "index",
+   "codes": [
+    "CG"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "CHEMISTRY",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=122",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "COMPUTER INFORMATION SYSTEMS",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communications",
+   "heading_printed": "COMMUNICATIONS",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "DA",
+   "heading": "Dental Assisting",
+   "heading_printed": "DENTAL ASSISTING",
+   "rule": "index",
+   "codes": [
+    "DA"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=126",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "DS",
+   "heading": "Developmental Studies",
+   "heading_printed": "DEVELOPMENTAL STUDIES",
+   "rule": "index",
+   "codes": [
+    "DS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "ECONOMICS",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=128",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ED",
+   "heading": "Education",
+   "heading_printed": "EDUCATION",
+   "rule": "index",
+   "codes": [
+    "ED"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=129",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technician or Responder",
+   "heading_printed": "EMERGENCY MEDICAL TECHNICIAN or RESPONDER",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=129",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "ENGLISH",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ES",
+   "heading": "Ethnic Studies",
+   "heading_printed": "ETHNIC STUDIES",
+   "rule": "index",
+   "codes": [
+    "ES"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=130",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FOR",
+   "heading": "Forestry",
+   "heading_printed": "FORESTRY",
+   "rule": "index",
+   "codes": [
+    "FOR"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=140",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FS",
+   "heading": "Fire Technology",
+   "heading_printed": "FIRE TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "FS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "GEOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "GEOLOGY",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "GIS",
+   "heading": "Geographical Information Systems",
+   "heading_printed": "GEOGRAPHICAL INFORMATION SYSTEMS",
+   "rule": "index",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "HEALTH",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=142",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HO",
+   "heading": "Health Occupations",
+   "heading_printed": "HEALTH OCCUPATIONS",
+   "rule": "index",
+   "codes": [
+    "HO"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=142",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "HUMANITIES",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HUS",
+   "heading": "Human Services",
+   "heading_printed": "HUMAN SERVICES",
+   "rule": "index",
+   "codes": [
+    "HUS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "IT",
+   "heading": "Industrial Technology",
+   "heading_printed": "INDUSTRIAL TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "IT"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "MATHEMATICS",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=107",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "MUSIC",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=145",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "NURSING",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=146",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "PHYSICAL EDUCATION",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PEAC",
+   "heading": "Physical Education Activities Courses",
+   "heading_printed": "PHYSICAL EDUCATION ACTIVITIES COURSES",
+   "rule": "index",
+   "codes": [
+    "PEAC"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "PHILOSOPHY",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Science",
+   "heading_printed": "PHYSICAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "PHYSICS",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "PSYCHOLOGY",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=156",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=156",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "TUTR",
+   "heading": "Tutoring",
+   "heading_printed": "TUTORING",
+   "rule": "index",
+   "codes": [
+    "TUTR"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=157",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "VN",
+   "heading": "Licensed Vocational Nursing",
+   "heading_printed": "Licensed Vocational Nursing",
+   "rule": "index",
+   "codes": [
+    "VN"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=151",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "WE",
+   "heading": "Work Experience",
+   "heading_printed": "WORK EXPERIENCE",
+   "rule": "index",
+   "codes": [
+    "WE"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=160",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "WT",
+   "heading": "Welding Technology",
+   "heading_printed": "WELDING TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "WT"
+   ],
+   "candidate": null,
+   "address": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=157",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  }
+ ],
+ "subjects": 53,
+ "with_heading": 53
+}

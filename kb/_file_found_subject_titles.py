@@ -79,7 +79,9 @@ def file_one(found, dry):
             seen.setdefault(k, set()).add(title_case(str(t["title"]).strip()).lower())
     split = {k for k, v in seen.items() if len(v) > 1}
     for t in titles:
-        if code_key(t.get("code")) in split:
+        # A title the catalog does not print over the code itself (a worker's "no heading of its own" note: the code's
+        # first course sits under another code's heading) is an inference, left for a person under the rule on #3655.
+        if code_key(t.get("code")) in split or str(t.get("note") or "").lower().startswith("no heading of its own"):
             skipped += 1
             continue
         code, printed = str(t.get("code") or "").strip(), str(t.get("title") or "").strip()
