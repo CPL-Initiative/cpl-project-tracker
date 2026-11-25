@@ -62,6 +62,13 @@ SCOPE = "stray-codes-high-medium"
 RULING = ('Sam, 2026-11-25 (r-no-mid-on-a-stray-code-sam-2026-11-25): "i should have never minted those 88 codes and '
           'left the courses in a holding pen"; the stray codes go back to Needs an M-ID once their local subjects '
           'carry a common subject')
+# The conductor's two calls on the worker's open points (S733, 2026-11-25), for the apply to carry out.
+DECIDED_UNFILED = ("DECIDED (S733 conductor): an in-scope local subject that carries only the rescore's proposal, with "
+                   "no common subject filed, keeps its ids held at the apply until its common subject is filed; the "
+                   "ruling retires an id once its local subject carries a common subject, and a proposal is not a filing.")
+DECIDED_MERGED = ("DECIDED (S733 conductor): an id held as merged into an M-ID that stays takes an alias to its merge "
+                  "target at the apply (fate a, a map registered in kb/alias_chain.py ALIAS_MAPS), since its courses "
+                  "already sit under a common-subject M-ID and have no Needs an M-ID to return to.")
 DECIDED = ("DECIDED (S733, 2026-11-25): retire each in-scope M-ID; its courses return to Needs an M-ID under the "
            "common subject the rescore proposes for their local subject. No id is re-keyed, so the receipt is a "
            "retire list and kb/alias_chain.py ALIAS_MAPS takes no new map.")
@@ -410,6 +417,7 @@ def render_report(plan, before, after, moved_rows, today, rel_out):
          "a course with no M-ID, C-ID or CCN as Needs an M-ID, so a retired id's courses land there after the next daily "
          "build with no other step. A retired id has no successor: kb/alias_chain.py leaves a stored copy unchanged and "
          "it reads dead, which is true, so the receipt is a retire list (retire.json) and ALIAS_MAPS takes no map.", "",
+         f"**{DECIDED_UNFILED}**", "", f"**{DECIDED_MERGED}**", "",
          "## What moves", "",
          f"Of the {plan['stray_ids']} M-IDs on the {len(set(k.split(' ')[0] for k in list(R) + list(H) + plan['out_of_scope']))} "
          f"stray codes that hold any, {len(R)} retire, {len(H)} are held, and {len(plan['out_of_scope'])} have no course "

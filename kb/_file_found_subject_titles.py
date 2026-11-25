@@ -161,7 +161,9 @@ def read_csv_finds(path):
             if not slug:
                 unknown.add(college)
                 continue
-            d = finds.setdefault(slug, {"college": college, "catalog_year": None, "read_at": None, "run": None,
+            # No workflow run reads a CSV: its `run` names the filled file, which is what the record's check needs.
+            d = finds.setdefault(slug, {"college": college, "catalog_year": None, "read_at": None,
+                                        "run": "csv " + os.path.relpath(path, ROOT),
                                         "csv": os.path.relpath(path, ROOT), "titles": []})
             d["titles"].append({"code": r.get("local_subject_code"), "title": title, "url": url,
                                 "where": (r.get("title_where") or "").strip() or "catalog",

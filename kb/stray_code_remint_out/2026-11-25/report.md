@@ -6,6 +6,10 @@ The ruling: Sam, 2026-11-25 (r-no-mid-on-a-stray-code-sam-2026-11-25): "i should
 
 Why: the ruling's own words send the courses back to Needs an M-ID. A re-key would keep clusters a machine drew on a code with no discipline, under a Common SUBJ number no step checked; on the pile each course meets its closest M-ID under its common subject (kb/coci_closest_mid.json) and the pile mint. The Courses List counts a course with no M-ID, C-ID or CCN as Needs an M-ID, so a retired id's courses land there after the next daily build with no other step. A retired id has no successor: kb/alias_chain.py leaves a stored copy unchanged and it reads dead, which is true, so the receipt is a retire list (retire.json) and ALIAS_MAPS takes no map.
 
+**DECIDED (S733 conductor): an in-scope local subject that carries only the rescore's proposal, with no common subject filed, keeps its ids held at the apply until its common subject is filed; the ruling retires an id once its local subject carries a common subject, and a proposal is not a filing.**
+
+**DECIDED (S733 conductor): an id held as merged into an M-ID that stays takes an alias to its merge target at the apply (fate a, a map registered in kb/alias_chain.py ALIAS_MAPS), since its courses already sit under a common-subject M-ID and have no Needs an M-ID to return to.**
+
 ## What moves
 
 Of the 251 M-IDs on the 88 stray codes that hold any, 89 retire, 45 are held, and 117 have no course on the 62 in-scope local subjects and stay for a later pass. The 89 retiring M-IDs hold 98 local courses.
