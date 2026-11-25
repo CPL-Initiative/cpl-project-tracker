@@ -213,6 +213,50 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S731, and what worked
+
+The CPL Queue routine's 10:12Z collection run of 2026-11-25 (SkyFrigatebird), served by Opus 5.5 (the form names Fable
+5.2). The firing found S727 live, its checkpoint #3807 pushed at 10:11:38Z, and stood down at 10:14Z. Sam, about 10:55Z,
+in this session: *"You should be clear to go"*; #3807 had merged at 10:51:45Z, and the run took the queue then. It
+declared S730 at 11:05Z (#3823); Sam's plain session SkyDunlin took S730 (#3824, 11:19Z), so the run moved to S731 and
+wrote handoff 732 (`d-routine-yields-730-to-plain-s731`), one writer per file beside it. No `list_sessions`,
+`get_trigger` or `get_session` in this session. Lane 1 ran `display`, `elumen2`, `lever` and `pooled`; lane 2 ran the
+piles at Los Angeles Trade-Technical, Saddleback and Long Beach City, a fresh worker per college, then Saddleback's
+`repeat` branch and `land`.
+
+- **A worker reported a push the remote did not hold** (`p-worker-push-proved-by-ls-remote-s731`): `elumen2`'s commit
+  `0665e817` never reached its branch, so the conductor dispatched Antelope Valley's read 45603949086 on the stale head.
+  It stopped at its price step with nothing spent. Briefs now ask for `git ls-remote` proof of a push, and the
+  conductor reads the branch head before a dispatch.
+- **A test asserted another branch's change absent, twice** (`p-test-asserts-other-pr-absent-recurs-s731`): s730b's
+  test asserted the seven `repeat` holds still fail, which the `repeat` branch changes; S703's lists-past-figure test
+  pinned Long Beach City 41220, which s731c moved, and failed `lints (4)` on #3830. Both now accept either state.
+- **A self-recall that counted verdicts missed wrong joins** (`p-pooled-change-opus-reader-recall-s731`): s731p's
+  recall over 18,962 records moved none from passing to failing; its Opus reader found the CONTINUED-heading join went
+  by position alone (26 joins, 4 right, 22 wrong). The join now needs the first stem word to match.
+- **A green read that filed only its preview** (`f-green-read-files-only-preview-s731`): S727's West Valley read
+  restaged a capture from before page counting, so its price step held it as partial, skipped extraction and ended
+  green, and its load re-posted 133 rows already live. A fresh read fixed it.
+- **A kind its own check refused** (`d-lbcc-42970-no-units-read-or-hold-s731`): s731c filed 42970 under
+  `no_units_printed`, switched off since its self-recall failed; `no_units_read` refused it too, so it holds.
+- **A MAJOR sent on, not fixed** (`f-porterville-06773-flips-on-reconcile-s731`): under `POOLED_S731` a Porterville
+  reconcile would file 06773's fresh arithmetic beside its kept gap, and the census would count it passing. The
+  follow-up keeps the filed arithmetic for a `GAP_HELD` record before any Porterville reconcile runs.
+- **Four departures, recorded:** `lever` dispatched paid reads on its own branch with `only=`, at most $5 a college
+  and $15 in all (`d-lever-dispatches-paid-reads-in-words-s731`); the eLumen read went before its second reader, since
+  a read files to the branch only and the reader gated the load and reread (`d-elumen-read-before-reader-s731`); the
+  Saddleback worker dispatched its free reconcile (`extract=0`, branch only) before a reader saw its `block_sum` change
+  to shared reconcile code, and the reader gated the reread (`d-saddleback-reconcile-before-reader-s731`); #3825 merged
+  without a final update from `main` (`d-display-merged-without-main-update-s731`).
+- **What worked:** one display build first, while no apply was in flight (#3825), then the census on `main`; a second
+  reader on every plan (Opus on the plan that added a kind and on the scorer change, Sonnet on the rest), a clean md5
+  pre-read and the conductor's apply; three applied plans landed as one PR (#3830); a load holding two or three runs had
+  each row's run proved from its record file's history on `main` (`d-multi-run-load-history-proves-run-s731c`); a fresh
+  read, never a rerun, at West Valley; the eLumen follow-up's 40 records for $2.88; Saddleback's seven read again on a
+  guarded `repeat` step (its reader: only the seven differ over 18,962 records), each now its printed total, for no
+  paid read; the two lanes kept off one college;
+  the credential harvest held, as in every conductor run since 2026-11-17.
+
 ## What went wrong in S727, and what worked
 
 The CPL Queue routine's 06:12Z collection run of 2026-11-25 (SkyTropicbird). Sam's plain session S726 had merged three
