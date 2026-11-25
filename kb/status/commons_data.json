@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T07:26:17Z",
+ "written_at": "2026-11-25T08:03:38Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17292,
-  "gap": 5043,
+  "passing": 17295,
+  "gap": 5040,
   "with_gap": 118,
   "cost_usd": 1341.15,
-  "passed_at_read": 16372,
+  "passed_at_read": 16375,
   "cost_receipts": 118,
   "spent_usd": 1239.05,
   "spent_runs": 210,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16821,
-  "gap": 5043,
+  "passing": 16824,
+  "gap": 5040,
   "collected_with_gaps": 471,
   "discontinued": 0
  },
@@ -8867,12 +8867,12 @@
    "harvested": true,
    "slug": "orange_coast",
    "programs": 328,
-   "passing": 242,
-   "gap": 86,
+   "passing": 245,
+   "gap": 83,
    "causes": {
     "no_closed_list": 27,
     "page_not_found": 30,
-    "places_none": 8,
+    "places_none": 5,
     "unknown_without_live": 21
    },
    "census_causes": {
@@ -8900,10 +8900,10 @@
     "courseleaf"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-20T13:08:33Z",
+   "read_at": "2026-11-25T07:21:17Z",
    "read_kind": "capture",
    "cost_usd": 19.77,
-   "passed_at_read": 221,
+   "passed_at_read": 224,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8916,9 +8916,9 @@
    "extracted": 271,
    "errors": 0,
    "failed_checks": {
-    "coverage": 12,
+    "coverage": 9,
     "invented": 3,
-    "arithmetic": 39,
+    "arithmetic": 36,
     "repeated": 0,
     "outcomes": 8
    },
@@ -8928,13 +8928,13 @@
    "capture_root": "https://catalog.cccd.edu/orange-coast/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2331.0,
-   "run": "44747523200",
+   "read_seconds": 2323.9,
+   "run": "45567337117",
    "levers": {
     "reader_page_search": 30,
     "program_course_file_check": 27,
     "reconcile_steps": 20,
-    "reader_page_assignment": 8,
+    "reader_page_assignment": 5,
     "ge_units_steps": 1
    },
    "collection": {
@@ -8943,8 +8943,8 @@
      "models": {
       "claude-opus-5-5": 271
      },
-     "run": "44747523200",
-     "at": "2026-11-20T13:08:33Z",
+     "run": "45567337117",
+     "at": "2026-11-25T07:21:17Z",
      "cost_usd": 19.77,
      "platform": "courseleaf"
     },
@@ -8955,7 +8955,7 @@
      "source_kind": "course_outline",
      "file": "kb/course_outcomes/cccd/read_42585338847_p4of4.json"
     },
-    "plo_programs": 261,
+    "plo_programs": 262,
     "ppm_member": {
      "host": "programmap.orangecoastcollege.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
