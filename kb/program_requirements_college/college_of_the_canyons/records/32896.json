@@ -103,7 +103,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_not_closed",
+    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+    "words": "The third block's minimum depends on the option chosen: 3 units if Option 1 is selected, 6 units if Option 2 is selected. Recorded minimum 3; reviewer should note Option 2 requires 6 units from this list (giving 18 units for Option 1 and 19 for Option 2, matching 'Units Required: 18-19')."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 96,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

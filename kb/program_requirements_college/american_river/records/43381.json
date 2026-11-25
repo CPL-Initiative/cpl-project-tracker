@@ -123,7 +123,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The extracted text begins mid-table on page 364; the section heading and the first rows of the Green Vehicle Technology A.S. requirements (likely on page 363) are missing. The visible courses sum to 31 of the stated 49 units, so about 18 units of courses are not shown; the unplaced closed-list courses (AT 100/103, 105, 110, 130, 180, 181) likely belong there but cannot be confirmed."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": 50,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

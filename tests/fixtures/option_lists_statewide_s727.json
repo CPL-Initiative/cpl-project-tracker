@@ -1,0 +1,430 @@
+{
+ "_what": "S727 (lane 2, American River): the blocks (name, rule, minimum, option_group, stated) of the five filed records option_lists_read_apart's shape check fires on statewide, frozen from main at 5ec6469b so tests/program_piles_s727_arc_test.py never reads another college's live records; each was read by hand as the shape (kb/_program_piles_s727_arc.py STATEWIDE).",
+ "records": [
+  {
+   "college": "American River College",
+   "control_number": "07207",
+   "path": "kb/program_requirements_college/american_river/records/07207.json",
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": 6,
+       "max": 6
+      }
+     },
+     {
+      "name": "C++ concentration",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 13,
+       "max": 15
+      }
+     },
+     {
+      "name": "Java concentration",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Java concentration: A minimum of 3 units from the following",
+      "rule": "choose_units",
+      "minimum": 3,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     }
+    ]
+   }
+  },
+  {
+   "college": "American River College",
+   "control_number": "12180",
+   "path": "kb/program_requirements_college/american_river/records/12180.json",
+   "record": {
+    "blocks": [
+     {
+      "name": "Certificate Requirements",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": 4,
+       "max": 4
+      }
+     },
+     {
+      "name": "C++ concentration",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 14,
+       "max": 16
+      }
+     },
+     {
+      "name": "C++ concentration: A minimum of 1 unit from the following",
+      "rule": "choose_units",
+      "minimum": 1,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 1,
+       "max": 1
+      }
+     },
+     {
+      "name": "Java concentration",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 14,
+       "max": 16
+      }
+     },
+     {
+      "name": "Java concentration: A minimum of 2 units from the following",
+      "rule": "choose_units",
+      "minimum": 2,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 2,
+       "max": 2
+      }
+     }
+    ]
+   }
+  },
+  {
+   "college": "American River College",
+   "control_number": "12238",
+   "path": "kb/program_requirements_college/american_river/records/12238.json",
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": 14,
+       "max": 15
+      }
+     },
+     {
+      "name": "CISCO Concentration",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 17.5,
+       "max": 18.5
+      }
+     },
+     {
+      "name": "CISCO Concentration: [CISN 110 and CISN 111] or CISN 119",
+      "rule": "choose_units",
+      "minimum": 3,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 3,
+       "max": 4
+      }
+     },
+     {
+      "name": "Linux Concentration",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 17,
+       "max": 17
+      }
+     },
+     {
+      "name": "Linux Concentration: A minimum of 3 units from the following",
+      "rule": "choose_units",
+      "minimum": 3,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     },
+     {
+      "name": "Windows Concentration",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 19,
+       "max": 19
+      }
+     },
+     {
+      "name": "Windows Concentration: A minimum of 3 units from the following",
+      "rule": "choose_units",
+      "minimum": 3,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     }
+    ]
+   }
+  },
+  {
+   "college": "Chabot College",
+   "control_number": "19286",
+   "path": "kb/program_requirements_college/chabot/records/19286.json",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core Courses (16 units):",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": 16,
+       "max": 16
+      }
+     },
+     {
+      "name": "Technical Theater Concentration - Required Courses 20 units):",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 20,
+       "max": 20
+      }
+     },
+     {
+      "name": "Acting Concentration - Required Courses (9 units):",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 9,
+       "max": 9
+      }
+     },
+     {
+      "name": "Acting Concentration - List A (Choose 3 Units):",
+      "rule": "choose_units",
+      "minimum": 3,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Acting Concentration - List B (Choose 3 Units):",
+      "rule": "choose_units",
+      "minimum": 3,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Acting Concentration - List C (Choose 3 Units):",
+      "rule": "choose_units",
+      "minimum": 3,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Strongly Recommended",
+      "rule": "recommended",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     }
+    ]
+   }
+  },
+  {
+   "college": "Santa Rosa Junior College",
+   "control_number": "44788",
+   "path": "kb/program_requirements_college/santa_rosa_junior/records/44788.json",
+   "record": {
+    "blocks": [
+     {
+      "name": "Music AA Requirement",
+      "rule": "all",
+      "minimum": null,
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Music Survey (one course)",
+      "rule": "choose_units",
+      "minimum": 3,
+      "option_group": null,
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     },
+     {
+      "name": "Piano Proficiency (two courses)",
+      "rule": "choose_units",
+      "minimum": 4,
+      "option_group": null,
+      "stated": {
+       "min": 4,
+       "max": 4
+      }
+     },
+     {
+      "name": "Instrumental Concentration: Theory and Musicianship (4 courses)",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Instrumental Concentration: Performance Ensemble (4 semesters)",
+      "rule": "choose_courses",
+      "minimum": 4,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Instrumental Concentration: Applied Music (4 semesters)",
+      "rule": "choose_courses",
+      "minimum": 4,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Instrumental Concentration: Instrumental Electives (4 unit minimum)",
+      "rule": "choose_units",
+      "minimum": 4,
+      "option_group": "Concentration",
+      "stated": {
+       "min": 4,
+       "max": 4
+      }
+     },
+     {
+      "name": "Vocal Concentration: Theory and Musicianship (4 courses)",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Vocal Concentration: Performance Ensemble (4 semesters)",
+      "rule": "choose_courses",
+      "minimum": 4,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Vocal Concentration: Applied Music (4 semesters)",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Vocal Concentration: Diction and Repertoire (take all 4 courses)",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Jazz Studies Concentration: Jazz Theory (take both courses)",
+      "rule": "all",
+      "minimum": null,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Jazz Studies Concentration: Performance Ensemble (4 semesters)",
+      "rule": "choose_courses",
+      "minimum": 4,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Jazz Studies Concentration: Applied Music (4 semesters)",
+      "rule": "choose_courses",
+      "minimum": 4,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Jazz Studies Concentration: Jazz Improvisation (2 semesters)",
+      "rule": "choose_courses",
+      "minimum": 2,
+      "option_group": "Concentration",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

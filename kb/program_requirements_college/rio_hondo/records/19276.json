@@ -107,19 +107,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    6.0,
-    6.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 6.0-6.0; the catalog states 18.0-18.0"
+   "why": [],
+   "pooled": [
+    {
+     "blocks": "all",
+     "figure": [
+      18.0,
+      18.0
+     ],
+     "minimum": false,
+     "parts": [
+      6.0,
+      6.0
+     ],
+     "read": [
+      18.0,
+      18.0
+     ],
+     "words": "Rule: at least one course from each of categories A and B, then additional courses from A and B to reach a combined total of 18 units; recorded as choose_courses minimum 1 per block, with the 18-unit total in total_units."
+    }
    ]
   },
   "repeated": {
@@ -147,7 +164,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
