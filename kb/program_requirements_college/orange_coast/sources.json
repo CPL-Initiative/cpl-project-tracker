@@ -1106,7 +1106,8 @@
     "section": "as",
     "section_line": "respiratory care respiratory care, associate in science degree",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 30,
   "text_chars": 6362
@@ -5042,8 +5043,8 @@
    "AMTA180"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-certificate-achievement/",
-   "title": "Airframe & Powerplant, Certificate of Achievement < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/powerplant-certificate-achievement/",
+   "title": "Powerplant, Certificate of Achievement < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
@@ -5052,10 +5053,11 @@
     "section": "coa",
     "section_line": "powerplant, associate in science degree powerplant, certificate of achievement",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 11,
-  "text_chars": 5281
+  "text_chars": 4562
  },
  {
   "control_number": "22395",
@@ -7499,7 +7501,8 @@
     "section": "adt",
     "section_line": "geology, associate in science degree for transfer (as-​t)",
     "section_fit": 0.5
-   }
+   },
+   "pinned": true
   },
   "listed": 11,
   "text_chars": 4993
