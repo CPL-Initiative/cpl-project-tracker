@@ -1,117 +1,117 @@
-college,local_subject,local_subject_title,proposed_common_subject,discipline,level,basis,filed_common,filed_by,courses,stray_mids,sample_course_titles
-Allan Hancock College,OLDR,Older Adults (NC),OLAD,Older Adults: Noncredit,High,the title names the discipline,,,10,"OLDR M9002, OLDR M90AB, OLDR M90AF, OLDR M90AG, OLDR M90AJ, OLDR M90AQ, OLDR M90AR, OLDR M90AS, OLDR M90AU",Painting in Oils and Acrylics; Painting in Oils and Acrylics; Art/Journaling
-Allan Hancock College,PHTO,Photography,PHOT,Photography,High,the title names the discipline,PHOT,statewide_filing,9,"PHTO M10AD, PHTO M10AG, PHTO M10AH, PHTO M10AI, PHTO M10AJ, PHTO M10AU, PHTO M90AA, PHTO M90AB, PHTO M90AD",Black And White Photo Lab 1; Color Photo Lab 1; Color Photo Lab 2
-Foothill College,HUMN,Humanities,HUMA,Humanities,High,the title names the discipline,,,5,"HUMN M1002, HUMN M1003, HUMN M1004, HUMN M1005, HUMN M10BG",HONORS INTRODUCTION TO POPULAR CULTURE; HONORS POPULAR CULTURE & UNITED STATES HISTORY; POPULAR CULTURE & UNITED STATES HISTORY
-De Anza College,PHTG,Photography,PHOT,Photography,High,the title names the discipline,,,5,"PHTG M1002, PHTG M1003, PHTG M10AA",Commercial Lighting I; Commercial Lighting I; Commercial Lighting II
-Los Angeles Pierce College,OLD ADL,Older Adults,OLAD,Older Adults: Noncredit,High,the title names the discipline,,,3,"OLDA M90AF, OLDA M90AI, OLDA M90AJ",Life Drawing for Seniors; Seeing and Understanding Art; Watercolor Painting for Seniors
-Cerritos College,MUS,Music,MUSI,Music,High,the title names the discipline,MUSI,statewide_filing,2,HUMN M1005,"Audio for Film, TV, and Games; Music for Film, TV, and Games"
-Diablo Valley College,IDSGN,Industrial Design,INDD,Industrial Design,High,the title names the discipline,,,2,"IDSG M10AB, IDSG M10AE",Color Visualization for Product Design; Introduction to Industrial and Product Design
-Porterville College,CMRT,Commercial Art,ARTD,Commercial Art,High,the title names the discipline,,,1,CMRT M1001,Commercial Layout and Design
-Napa Valley College,DANS,Dance,DANC,Dance,High,the title names the discipline,DANC,statewide_filing,1,DANS M10AC,Barre Fitness
-Fresno City College,MUS,Music,MUSI,Music,High,the title names the discipline,MUSI,statewide_filing,1,HUMN M1005,"Music for Film, Television, and Video Games"
-De Anza College,MUSI,Music,MUSI,Music,High,the title names the discipline,MUSI,statewide_filing,1,HUMN M1005,Music for Video Games and Film: History and Culture
-Las Positas College,HUMN,Humanities,HUMA,Humanities,High,the title names the discipline,,,1,HUMN M10AK,Global Cinemas
-Fresno City College,LITEC,Library Technology,LIBT,Library Technology,High,the title names the discipline,,,1,LIBS M1002,Information and Computer Literacy
-Diablo Valley College,LT,Library Technology,LIBT,Library Technology,High,the title names the discipline,,,1,LIBS M1004,Information Literacy and Research Skills
-San Diego City College,LIBS,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M1004,Information Literacy and Research Skills
-San Diego Mesa College,LIBS,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M1004,Information Literacy and Research Skills
-San Diego Miramar College,LIBS,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M1004,Information Literacy and Research Skills
-Los Angeles Southwest College,LIB SCI,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M1006,LIBRARY RESEARCH METHODS
-West Los Angeles College,LIB SCI,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M10AE,"INFORMATION LITERACY:SEARCH STRATEGIES, TOOLS, AND RESOURCES"
-Los Angeles Pierce College,LIB SCI,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M10AF,Internet Research Methods
-Las Positas College,THEA,Theater Arts,THTR,Drama/Theater Arts,High,the title names the discipline,THTR,statewide_filing,1,NCTH M9001,Business of Acting
-Las Positas College,PHTO,Photography,PHOT,Photography,High,the title names the discipline,PHOT,statewide_filing,1,PHTO M10AL,Individual Projects B
-Rio Hondo College,PHTO,Photography,PHOT,Photography,High,the title names the discipline,PHOT,statewide_filing,1,PHTO M10AR,Introduction to Lighting
-Citrus College,PHTO,Photography,PHOT,Photography,High,the title names the discipline,PHOT,statewide_filing,1,PHTO M10AX,Portraiture on Location
-Los Angeles Trade Technical College,SGNGRPH,Sign Graphics,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,7,"SGNG M10AA, SGNG M10AC, SGNG M10AE, SGNG M10AF, SGNG M10AG, SGNG M10AI, SGNG M10AJ",ADVANCE COMPUTER & DESIGN; EXTERIOR DISPLAY SIGNS; Individual Lettering
-Palomar College,ARTI,Art-Illustration,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,5,"ARTI M10AA, ARTI M10AB, ARTI M10AC, ARTI M10AD, ARTI M10AF",CONCEPT SKETCHING; DIGITAL 3D DESIGN AND ANIMATION; DIGITAL 3D DESIGN AND MODELING
-Sacramento City College,FLTEC,Flight Technology,AVIA,Aviation,Medium,"the filed common subject, with a title to check it by",AVIA,statewide_filing,5,"FLTE M1002, FLTE M10AF, FLTE M10AG, FLTE M10AH, FLTE M10AX",Photogrammetry; Drone Inspections; Experimental Offering in Flight Technology
-Glendale Community College,FTVM,Film Television and Media,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,5,"FTVM M10AD, FTVM M10AF, FTVM M10AS, FTVM M10AT, FTVM M10AU","American Independent Film; Beyond Hollywood: Gender, Race and Sex in Movies; Honors Beyond Hollywood: Gender, Race and Sex in Movies"
-Cypress College,ATC,Aviation and Travel Careers,AVIA,Aviation,Medium,"the filed common subject, with a title to check it by",AVIA,statewide_filing,4,"ATXX M1002, HOSM M9003, TOUR M1002, TOUR M1003",Introduction to Travel Careers; Customer Care:  Airline/Travel; Destinations Africa and Pacific
-Skyline College,ESTI,Esthetics,COSM,Cosmetology,Medium,"the filed common subject, with a title to check it by",COSM,statewide_filing,4,"ESTI M1001, ESTI M10AG, ESTI M10AI",Esthetics Fundamentals ll; Esthetics Intermediate Concepts ll; Esthetics Intermediate Concepts l
-Foothill College,MDIA,Media Studies,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,4,"HUMN M1002, HUMN M1003, HUMN M1004, HUMN M1005",HONORS INTRODUCTION TO POPULAR CULTURE; HONORS POPULAR CULTURE & UNITED STATES HISTORY; POPULAR CULTURE & UNITED STATES HISTORY
-Sacramento City College,TAFILM,Theatre Arts Film,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,4,"TAFI M1002, TAFI M1006, TAFI M1007, TAFI M10AH",Diversity in American Film; History of Film: 1880's through 1950's; History of Film: 1950's to Present
-Mt. San Antonio College,ARTC,Art: Graphic Design and Illustration,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,3,"ARTC M10AA, ARTC M10AD, ARTC M10AE",Contemporary Illustration; Digital Drawing for Commercial Art; Dynamic Sketching
-Glendale Community College,AT,Aviation & Transportation,AUTO,Automotive Technology,Medium,"the filed common subject, with a title to check it by",AUTO,statewide_filing,3,"ATXX M1001, ATXX M1002",FLIGHT ATTENDANT I; Introduction Flight Attendant Training; AIRLINE TRAVEL CAREERS
-Los Angeles Trade Technical College,VISCOM,Visual Communications,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,3,"MART M1004, VISC M10AI, VISC M10AL",DIGITAL PAGE LAYOUT; DIGITAL PREPRESS II; FLASH MOTION GRAPHICS (BEGINNING LEVEL)
-American River College,TAFILM,Theatre Arts Film,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,3,"TAFI M1002, TAFI M1006, TAFI M1007","Diversity in American Film; History of Film, 1880's through 1950's; History of Film: 1950's to Present"
-Folsom Lake College,TAFILM,Theatre Arts Film,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,3,"TAFI M1002, TAFI M1006, TAFI M1007",Diversity in American Film; History of Film: 1880's through 1950's; History of Film: 1950's to Present
-Mt. San Antonio College,ARTG,Art: Gallery & Professional Practices,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,2,"ARTG M10AQ, ARTG M10AT",Shop Practices for Art Careers and Exhibitions; Writing for Arts Careers
-American River College,ARTNM,Art New Media,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,2,"ARTN M1004, ARTN M10AG",Digital Prepress; Comic Book Development and Structure
-Palomar College,DBA,Digital Broadcast Arts,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,2,DBAX M1001,BASIC RADIO STATION OPERATIONS; BEGINNING RADIO STATION OPERATIONS
-College of San Mateo,DGME,Digital Media,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,2,DGME M1001,Radio and Podcast Production Lab; Radio and Podcast Production Lab II
-Mt. San Antonio College,ARTB,Art: Basic Studio Arts,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,ARTB M10AA,Basic Studio Arts
-Golden West College,DART,Digital Arts,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,ARTN M1004,Digital Prepress
-Bakersfield College,BSAD,Business Administration,BUSI,Business,Medium,"the filed common subject, with a title to check it by",BUSI,statewide_filing,1,BSAD M10AS,Principles of Organizational Communication
-Chaffey College,BUSTEC,Business Technology,BSOT,Office Technologies,Medium,"the filed common subject, with a title to check it by",BSOT,statewide_filing,1,BUST M10AZ,MS Publisher Comprehensive
-Porterville College,CGRA,Computer Graphics,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,CGRA M10AE,Film Theory
-Modesto Junior College,CMPET,Computer Electronics,ITIS,Computer Information Systems,Medium,"the filed common subject, with a title to check it by",ITIS,statewide_filing,1,CMPE M10AO,Remote Pilot (Drone) FAA Certification Prep
-Saddleback College,CTVR,"Cinema, Television, Radio",FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,1,CTVR M10AL,HISTORY AND APPRECIATION OF TELEVISION BROADCASTING
-Santa Monica College,DESIGN,Graphic Design,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,DESI M10AA,ART STUDIO PROG
-San Diego City College,DSGN,Design,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,DSGN M10AF,Digital Media I
-Golden West College,LIBR,Library,LIBR,Library Science,Medium,"the filed common subject, with a title to check it by",LIBR,statewide_filing,1,INFO M1003,Researching in the Digital Age
-Santa Monica College,LIBR,Library Studies,LIBR,Library Science,Medium,"the filed common subject, with a title to check it by",LIBR,statewide_filing,1,LIBS M1006,Library Research Methods
-CaÃ±ada College,MART,Digital Art and Animation,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,MART M1004,Digital Page Layout
-Monterey Peninsula College,ARTG,Art - Graphics,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,MART M1004,Page Layout and Typography
-Berkeley City College,MM/DI,Multimedia Arts Digital Imaging,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,MMDI M90AA,Design Studio Practice
-Diablo Valley College,FTVE,"Film, Television, and Electronic Media",FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,1,TAFI M1007,American Cinema 1950 to the Present
-San Diego City College,FJMP,"Film, Journalism, and Media Production",JOUR,Journalism,Low,title and filing disagree: a person picks,FTVE,statewide_filing,3,"FJMP M10AC, FJMP M10AS, FJMP M10AT",Broadcast News Workshop I; Radio and Podcast Workshop II; Radio and Podcast Workshop III
-Cerro Coso Community College,ARTC,,ARTS,Art,Low,"the filed common subject only, no title",ARTS,statewide_filing,1,ARTC M10AH,Survey of Western Art from Renaissance to Contemporary Honors
-Mendocino College,CSC,Computer Science,COMP,Computer Science,Low,title and filing disagree: a person picks,ITIS,statewide_filing,1,INFO M1001,AI Literacy
-Los Angeles Valley College,MEDIART,,FTVE,Film and Media Studies,Low,"the filed common subject only, no title",FTVE,statewide_filing,1,MEDI M10CS,"MYTHOLOGY, SPIRITUALITY, AND THE ART OF STORY"
-Saddleback College,TOUR,Travel and Tourism,,,None,no title and no filing: a person picks,,,8,"TOUR M1001, TOUR M1002, TOUR M1003, TOUR M1004, TOUR M10AC, TOUR M10AD, TOUR M10AE","ADVANCED AIRLINE COMPUTER TRAINING; AIRLINE COMPUTER TRAINING; WORLD DESTINATIONS-PACIFIC, ASIA, AFRICA, MIDDLE EAST"
-San Diego College of Continuing Education,ARTX,Arts Experimental,,,None,no title and no filing: a person picks,,,5,"ARTX M9001, ARTX M90AA, ARTX M90AB",DRAWING AND PAINTING 1-2 - OA; DRAWING AND PAINTING 1-2 - OA; Landscape Painting - OA
-Santiago Canyon College,INFO,Information Studies,,,None,no title and no filing: a person picks,,,5,"INFO M1001, INFO M1002, INFO M1003, INFO M10AB, INFO M10AC",AI Literacy; Library Research Fundamentals; Researching in the Digital Age
-North Orange Continuing Education,CRAE,Creative Arts,,,None,no title and no filing: a person picks,,,4,"CRAE M9007, CRAE M90AA, OLAD M9017","China Painting for Older Adult; China Painting for Older Adult; Needlecraft, Knit, Crochet OA"
-North Orange Continuing Education,EMER,Emeritus,,,None,no title and no filing: a person picks,,,4,"CRAE M9007, EMER M9015",China Painting for Older Adults; China Painting for Older Adults; Mobile Information Literacy
-Santa Ana College,INFO,Information Studies,,,None,no title and no filing: a person picks,,,4,"INFO M1001, INFO M1002, INFO M1003, INFO M10AA",AI Literacy; Library Research Fundamentals; Researching in the Digital Age
-Santa Ana College,JAMS,Journalism and Media Studies,,,None,no title and no filing: a person picks,,,4,"JAMS M10AA, JAMS M10AB, JAMS M10AL, JAMS M10AM",Advanced Intermediate Multimedia News Production; Advanced Multimedia News Production; Visual Reporting
-Coastline Community College,SPED,Special Education,,,None,no title and no filing: a person picks,,,4,"SPED M90AR, SPED M90AW, SPED M90BF, SPED M90BT",Exhibition; Guest Services Basics; Maintenance Basics
-San Jose City College,Art (ART),,,,None,no title and no filing: a person picks,,,3,"ARTA M10AA, ARTA M10AB, ARTA M10AF",Beginning Sculpture 1; Ceramic Scuplture 1; Representational Drawing and Perspective
-Palomar College,GCMW,Graphic Communications - Multimedia and Web,,,None,no title and no filing: a person picks,,,3,"GCMW M10AF, GCMW M10AI, MART M1004",MULTIMEDIA FOR SOCIAL NETWORKING; SEARCH ENGINE OPTIMIZATION (SEO) FOR WEB DESIGN; WEB PAGE LAYOUT I
-Reedley College,LIBSKL,Library Skills,,,None,no title and no filing: a person picks,,,3,"LIBS M1002, LIBS M10AA",Information and Computer Literacy; Information and Computer Literacy; AI Literacy: in Education and Employment
-College of the Canyons,NC.COMM,,,,None,no title and no filing: a person picks,,,3,"NCCO M90AG, NCCO M90AH, NCCO M90AI",Public Speaking for Interviews; Public Speaking for Social Media; Strategies and Tactics of Public Relations
-City College of San Francisco,TICU,Custodial,,,None,no title and no filing: a person picks,,,3,"TICU M9001, TICU M90AB",Custodial Training; Custodial Training; Custodial Training for Healthcare Workers
-Ohlone College,AF,,,,None,no title and no filing: a person picks,,,2,AFXX M1001,Evolution of the U.S. Air Force Air and Space Power; Foundations of the U.S. Air Force
-Orange Coast College,ARLN,Airline and Travel Careers,,,None,no title and no filing: a person picks,,,2,"ARLN M10AA, ARLN M10AC","Airline Service Excellence; Operations, Terminology & Safety"
-College of the Sequoias,CINA,Cinema Arts,,,None,no title and no filing: a person picks,,,2,"CINA M10AA, CINA M10AB",Film Appreciation-American; Film Appreciation-International
-North Orange Continuing Education Credit,COSY,,,,None,no title and no filing: a person picks,,,2,"COSY M90AA, COSY M90AB",MANICURIST/PEDICURIST; NEW CONCEPTS IN HAIR DESIGN
-Saddleback College,EPHO,Emeritus Photography (Noncredit),,,None,no title and no filing: a person picks,,,2,EPHO M9001,FUNDAMENTALS OF DIGITAL SHOW PRESENTATIONS (EI); INTERMEDIATE DIGITAL SHOW PRESENTATIONS (EI)
-Citrus College,ESTH,Esthetician,,,None,no title and no filing: a person picks,,,2,"ESTH M10AB, ESTH M10AC",Salon Success - Full-time; Salon Success Part I - Part-time
-North Orange Continuing Education,HOSM,Hospitality Management,,,None,no title and no filing: a person picks,,,2,HOSM M9003,CUSTOMER CARE: AIRLINE/TRAVEL; CUSTOMER CARE: AIRLINE/TRAVEL
-Las Positas College,NAVI,Noncredit Aviation,,,None,no title and no filing: a person picks,,,2,"NAVI M90AC, NAVI M90AD",FAA Remote Pilot Certificate Exam Preparation; Orientation to Drones and Unoccupied Aerial Systems
-West Valley College,NCID,,,,None,no title and no filing: a person picks,,,2,"NCID M90AA, NCID M90AB",Intro to Design for Advanced Manufacturing I; Introduction to Design for Advanced Manufacturing II
-College of the Canyons,NC.PHOT,,,,None,no title and no filing: a person picks,,,2,"NCPH M90AA, NCPH M90AD",Fundamentals of Digital Camera Equipment; Lab Practices for the Digital Darkroom
-College of the Canyons,NC.THTR,,,,None,no title and no filing: a person picks,,,2,"NCTH M9001, NCTH M90AA",Business of Acting; Auditioning Skills for Actors
-College of the Canyons,NC.VOC,,,,None,no title and no filing: a person picks,,,2,"NCVO M90AA, NCVO M90AD",Advanced Tools in Photoshop; Building on Photoshop Basics
-Antelope Valley College,FTV,,,,None,no title and no filing: a person picks,,,2,TAFI M1007,"History of Film, 1950-Present; History of Film, Pre 1950"
-American River College,TECCOM,,,,None,no title and no filing: a person picks,,,2,"TECC M10AA, TECC M10AC",Introduction to Technical/Professional Communication; Writing Technical Manuals
-Southwestern College,T&T,Travel and Tourism,,,None,no title and no filing: a person picks,,,2,"TOUR M1002, TOUR M1004","Travel Destinations: Europe, Africa, and the Middle East; Travel Destinations: Western Hemisphere"
-College of the Redwoods,WORK,,,,None,no title and no filing: a person picks,,,2,"WORK M90AN, WORK M90AO",Custodian: Basic Maintenance; Custodian Training
-Mt. San Antonio College,AIRT,Air Traffic Control,,,None,no title and no filing: a person picks,,,1,AIRT M10AE,Enroute Radar Laboratory
-Monterey Peninsula College,ARTV,Art - Video,,,None,no title and no filing: a person picks,,,1,ARTV M10AA,Introduction to Film/Video
-Mt. San Antonio College,ARTZ,Art: Special Studio Arts,,,None,no title and no filing: a person picks,,,1,ARTZ M10AA,Specialized Studio-Art Studies
-San Jose City College,Broadcasting (BROAD),Broadcasting,,,None,no title and no filing: a person picks,,,1,BROA M10AA,Intermediate Radio Production
-Porterville College,CMRTP,,,,None,no title and no filing: a person picks,,,1,CMRT M1001,Commercial Layout and Design
-MiraCosta College,DESN,,,,None,no title and no filing: a person picks,,,1,DESN M10AC,Fundamentals of Design
-San Joaquin Delta College,DMEDIA,Digital Media,,,None,no title and no filing: a person picks,,,1,DMED M10AD,Fundamentals of Audio Production
-Cosumnes River College,ENGWR,English - Writing,,,None,no title and no filing: a person picks,,,1,ENGW M10AQ,Introduction to Technical and Professional Writing
-Sacramento City College,SURVY,Surveying,,,None,no title and no filing: a person picks,,,1,FLTE M1002,Photogrammetry
-Moorpark College,FTMA,,,,None,no title and no filing: a person picks,,,1,FTMA M10AD,Directors and Genres
-Southwestern College,IDNM,,,,None,no title and no filing: a person picks,,,1,IDNM M10AB,TRENDS AND CAREERS IN NEW MEDIA
-Las Positas College,JAMS,Journalism and Media Studies,,,None,no title and no filing: a person picks,,,1,JAMS M10AG,Introduction to Media
-Allan Hancock College,LBRY,Library Skills,,,None,no title and no filing: a person picks,,,1,LBRY M10AA,Advanced Research
-Madera College,LIBSKL,Library Skills,,,None,no title and no filing: a person picks,,,1,LIBS M1002,Information and Computer Literacy
-Sierra College,SKDV,Skill Development,,,None,no title and no filing: a person picks,,,1,LIBS M1004,Information Literacy and Research Skills
-Yuba College,LIBSC,,,,None,no title and no filing: a person picks,,,1,LIBS M10AB,Basic Research Skills
-Contra Costa College,LIBST,,,,None,no title and no filing: a person picks,,,1,LIBS M10AD,Finding Information on Line and in Print
-Chabot College,LIBS,Library Studies,,,None,no title and no filing: a person picks,,,1,LIBS M10AH,Library Research and Information Literacy Skills via Popular Culture
-Los Angeles Valley College,LIB SCI,,,,None,no title and no filing: a person picks,,,1,LIBS M10AI,MEDIA AND INFORMATION LITERACY: RESEARCH STRATEGIES AND BEYOND
-Merced College,LRNR,,,,None,no title and no filing: a person picks,,,1,LRNR M10AF,Information Concepts and Research Skills
-Palomar College,GCIP,Graphic Communications - Imaging and Publishing,,,None,no title and no filing: a person picks,,,1,MART M1004,PAGE LAYOUT AND DESIGN I
-Bakersfield College,OFFT,Office Technology,,,None,no title and no filing: a person picks,,,1,OFFT M9004,Product Design
-Santa Monica College,IXD,Interaction Design,,,None,no title and no filing: a person picks,,,1,OFFT M9004,Product Design
-Rio Hondo College,RDIO,Radio,,,None,no title and no filing: a person picks,,,1,RDIO M10AB,Introduction to Radio News Writing
-Grossmont College,TELE,,,,None,no title and no filing: a person picks,,,1,TELE M10AA,FILM ADAPTATIONS OF LITERATURE
-Santiago Canyon College,VBUS,,,,None,no title and no filing: a person picks,,,1,VBUS M90BF,Introduction to Mobile and Social Media Tools
-Santiago Canyon College,VCST,,,,None,no title and no filing: a person picks,,,1,VCST M90AB,Custodial Technician
+college,local_subject,local_subject_title,proposed_common_subject,discipline,level,basis,filed_common,filed_by,courses,stray_mids,sample_course_titles,rescored
+Allan Hancock College,OLDR,Older Adults (NC),OLAD,Older Adults: Noncredit,High,the title names the discipline,,,10,"OLDR M9002, OLDR M90AB, OLDR M90AF, OLDR M90AG, OLDR M90AJ, OLDR M90AQ, OLDR M90AR, OLDR M90AS, OLDR M90AU",Painting in Oils and Acrylics; Painting in Oils and Acrylics; Art/Journaling,
+Allan Hancock College,PHTO,Photography,PHOT,Photography,High,the title names the discipline,PHOT,statewide_filing,9,"PHTO M10AD, PHTO M10AG, PHTO M10AH, PHTO M10AI, PHTO M10AJ, PHTO M10AU, PHTO M90AA, PHTO M90AB, PHTO M90AD",Black And White Photo Lab 1; Color Photo Lab 1; Color Photo Lab 2,
+Foothill College,HUMN,Humanities,HUMA,Humanities,High,the title names the discipline,,,5,"HUMN M1002, HUMN M1003, HUMN M1004, HUMN M1005, HUMN M10BG",HONORS INTRODUCTION TO POPULAR CULTURE; HONORS POPULAR CULTURE & UNITED STATES HISTORY; POPULAR CULTURE & UNITED STATES HISTORY,
+De Anza College,PHTG,Photography,PHOT,Photography,High,the title names the discipline,,,5,"PHTG M1002, PHTG M1003, PHTG M10AA",Commercial Lighting I; Commercial Lighting I; Commercial Lighting II,
+Los Angeles Pierce College,OLD ADL,Older Adults,OLAD,Older Adults: Noncredit,High,the title names the discipline,,,3,"OLDA M90AF, OLDA M90AI, OLDA M90AJ",Life Drawing for Seniors; Seeing and Understanding Art; Watercolor Painting for Seniors,
+Cerritos College,MUS,Music,MUSI,Music,High,the title names the discipline,MUSI,statewide_filing,2,HUMN M1005,"Audio for Film, TV, and Games; Music for Film, TV, and Games",
+Diablo Valley College,IDSGN,Industrial Design,INDD,Industrial Design,High,the title names the discipline,,,2,"IDSG M10AB, IDSG M10AE",Color Visualization for Product Design; Introduction to Industrial and Product Design,
+Porterville College,CMRT,Commercial Art,ARTD,Commercial Art,High,the title names the discipline,,,1,CMRT M1001,Commercial Layout and Design,
+Napa Valley College,DANS,Dance,DANC,Dance,High,the title names the discipline,DANC,statewide_filing,1,DANS M10AC,Barre Fitness,
+Fresno City College,MUS,Music,MUSI,Music,High,the title names the discipline,MUSI,statewide_filing,1,HUMN M1005,"Music for Film, Television, and Video Games",
+De Anza College,MUSI,Music,MUSI,Music,High,the title names the discipline,MUSI,statewide_filing,1,HUMN M1005,Music for Video Games and Film: History and Culture,
+Las Positas College,HUMN,Humanities,HUMA,Humanities,High,the title names the discipline,,,1,HUMN M10AK,Global Cinemas,
+Fresno City College,LITEC,Library Technology,LIBT,Library Technology,High,the title names the discipline,,,1,LIBS M1002,Information and Computer Literacy,
+Diablo Valley College,LT,Library Technology,LIBT,Library Technology,High,the title names the discipline,,,1,LIBS M1004,Information Literacy and Research Skills,
+San Diego City College,LIBS,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M1004,Information Literacy and Research Skills,
+San Diego Mesa College,LIBS,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M1004,Information Literacy and Research Skills,
+San Diego Miramar College,LIBS,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M1004,Information Literacy and Research Skills,
+Los Angeles Southwest College,LIB SCI,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M1006,LIBRARY RESEARCH METHODS,
+West Los Angeles College,LIB SCI,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M10AE,"INFORMATION LITERACY:SEARCH STRATEGIES, TOOLS, AND RESOURCES",
+Los Angeles Pierce College,LIB SCI,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M10AF,Internet Research Methods,
+Las Positas College,THEA,Theater Arts,THTR,Drama/Theater Arts,High,the title names the discipline,THTR,statewide_filing,1,NCTH M9001,Business of Acting,
+Las Positas College,PHTO,Photography,PHOT,Photography,High,the title names the discipline,PHOT,statewide_filing,1,PHTO M10AL,Individual Projects B,
+Rio Hondo College,PHTO,Photography,PHOT,Photography,High,the title names the discipline,PHOT,statewide_filing,1,PHTO M10AR,Introduction to Lighting,
+Citrus College,PHTO,Photography,PHOT,Photography,High,the title names the discipline,PHOT,statewide_filing,1,PHTO M10AX,Portraiture on Location,
+Los Angeles Trade Technical College,SGNGRPH,Sign Graphics,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,7,"SGNG M10AA, SGNG M10AC, SGNG M10AE, SGNG M10AF, SGNG M10AG, SGNG M10AI, SGNG M10AJ",ADVANCE COMPUTER & DESIGN; EXTERIOR DISPLAY SIGNS; Individual Lettering,
+Palomar College,ARTI,Art-Illustration,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,5,"ARTI M10AA, ARTI M10AB, ARTI M10AC, ARTI M10AD, ARTI M10AF",CONCEPT SKETCHING; DIGITAL 3D DESIGN AND ANIMATION; DIGITAL 3D DESIGN AND MODELING,
+Sacramento City College,FLTEC,Flight Technology,AVIA,Aviation,Medium,"the filed common subject, with a title to check it by",AVIA,statewide_filing,5,"FLTE M1002, FLTE M10AF, FLTE M10AG, FLTE M10AH, FLTE M10AX",Photogrammetry; Drone Inspections; Experimental Offering in Flight Technology,
+Glendale Community College,FTVM,Film Television and Media,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,5,"FTVM M10AD, FTVM M10AF, FTVM M10AS, FTVM M10AT, FTVM M10AU","American Independent Film; Beyond Hollywood: Gender, Race and Sex in Movies; Honors Beyond Hollywood: Gender, Race and Sex in Movies",
+Cypress College,ATC,Aviation and Travel Careers,AVIA,Aviation,Medium,"the filed common subject, with a title to check it by",AVIA,statewide_filing,4,"ATXX M1002, HOSM M9003, TOUR M1002, TOUR M1003",Introduction to Travel Careers; Customer Care:  Airline/Travel; Destinations Africa and Pacific,
+Skyline College,ESTI,Esthetics,COSM,Cosmetology,Medium,"the filed common subject, with a title to check it by",COSM,statewide_filing,4,"ESTI M1001, ESTI M10AG, ESTI M10AI",Esthetics Fundamentals ll; Esthetics Intermediate Concepts ll; Esthetics Intermediate Concepts l,
+Foothill College,MDIA,Media Studies,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,4,"HUMN M1002, HUMN M1003, HUMN M1004, HUMN M1005",HONORS INTRODUCTION TO POPULAR CULTURE; HONORS POPULAR CULTURE & UNITED STATES HISTORY; POPULAR CULTURE & UNITED STATES HISTORY,
+Sacramento City College,TAFILM,Theatre Arts Film,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,4,"TAFI M1002, TAFI M1006, TAFI M1007, TAFI M10AH",Diversity in American Film; History of Film: 1880's through 1950's; History of Film: 1950's to Present,
+Mt. San Antonio College,ARTC,Art: Graphic Design and Illustration,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,3,"ARTC M10AA, ARTC M10AD, ARTC M10AE",Contemporary Illustration; Digital Drawing for Commercial Art; Dynamic Sketching,
+Glendale Community College,AT,Aviation & Transportation,AUTO,Automotive Technology,Medium,"the filed common subject, with a title to check it by",AUTO,statewide_filing,3,"ATXX M1001, ATXX M1002",FLIGHT ATTENDANT I; Introduction Flight Attendant Training; AIRLINE TRAVEL CAREERS,
+Los Angeles Trade Technical College,VISCOM,Visual Communications,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,3,"MART M1004, VISC M10AI, VISC M10AL",DIGITAL PAGE LAYOUT; DIGITAL PREPRESS II; FLASH MOTION GRAPHICS (BEGINNING LEVEL),
+American River College,TAFILM,Theatre Arts Film,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,3,"TAFI M1002, TAFI M1006, TAFI M1007","Diversity in American Film; History of Film, 1880's through 1950's; History of Film: 1950's to Present",
+Folsom Lake College,TAFILM,Theatre Arts Film,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,3,"TAFI M1002, TAFI M1006, TAFI M1007",Diversity in American Film; History of Film: 1880's through 1950's; History of Film: 1950's to Present,
+Mt. San Antonio College,ARTG,Art: Gallery & Professional Practices,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,2,"ARTG M10AQ, ARTG M10AT",Shop Practices for Art Careers and Exhibitions; Writing for Arts Careers,
+American River College,ARTNM,Art New Media,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,2,"ARTN M1004, ARTN M10AG",Digital Prepress; Comic Book Development and Structure,
+Palomar College,DBA,Digital Broadcast Arts,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,2,DBAX M1001,BASIC RADIO STATION OPERATIONS; BEGINNING RADIO STATION OPERATIONS,
+College of San Mateo,DGME,Digital Media,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,2,DGME M1001,Radio and Podcast Production Lab; Radio and Podcast Production Lab II,
+Mt. San Antonio College,ARTB,Art: Basic Studio Arts,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,ARTB M10AA,Basic Studio Arts,
+Golden West College,DART,Digital Arts,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,ARTN M1004,Digital Prepress,
+Bakersfield College,BSAD,Business Administration,BUSI,Business,Medium,"the filed common subject, with a title to check it by",BUSI,statewide_filing,1,BSAD M10AS,Principles of Organizational Communication,
+Chaffey College,BUSTEC,Business Technology,BSOT,Office Technologies,Medium,"the filed common subject, with a title to check it by",BSOT,statewide_filing,1,BUST M10AZ,MS Publisher Comprehensive,
+Porterville College,CGRA,Computer Graphics,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,CGRA M10AE,Film Theory,
+Modesto Junior College,CMPET,Computer Electronics,ITIS,Computer Information Systems,Medium,"the filed common subject, with a title to check it by",ITIS,statewide_filing,1,CMPE M10AO,Remote Pilot (Drone) FAA Certification Prep,
+Saddleback College,CTVR,"Cinema, Television, Radio",FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,1,CTVR M10AL,HISTORY AND APPRECIATION OF TELEVISION BROADCASTING,
+Santa Monica College,DESIGN,Graphic Design,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,DESI M10AA,ART STUDIO PROG,
+San Diego City College,DSGN,Design,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,DSGN M10AF,Digital Media I,
+Golden West College,LIBR,Library,LIBR,Library Science,Medium,"the filed common subject, with a title to check it by",LIBR,statewide_filing,1,INFO M1003,Researching in the Digital Age,
+Santa Monica College,LIBR,Library Studies,LIBR,Library Science,Medium,"the filed common subject, with a title to check it by",LIBR,statewide_filing,1,LIBS M1006,Library Research Methods,
+CaÃ±ada College,MART,Digital Art and Animation,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,MART M1004,Digital Page Layout,
+Monterey Peninsula College,ARTG,Art - Graphics,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,MART M1004,Page Layout and Typography,
+Berkeley City College,MM/DI,Multimedia Arts Digital Imaging,ARTS,Art,Medium,"the filed common subject, with a title to check it by",ARTS,statewide_filing,1,MMDI M90AA,Design Studio Practice,
+Diablo Valley College,FTVE,"Film, Television, and Electronic Media",FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,1,TAFI M1007,American Cinema 1950 to the Present,
+San Diego City College,FJMP,"Film, Journalism, and Media Production",JOUR,Journalism,Low,title and filing disagree: a person picks,FTVE,statewide_filing,3,"FJMP M10AC, FJMP M10AS, FJMP M10AT",Broadcast News Workshop I; Radio and Podcast Workshop II; Radio and Podcast Workshop III,
+Cerro Coso Community College,ARTC,,ARTS,Art,Low,"the filed common subject only, no title",ARTS,statewide_filing,1,ARTC M10AH,Survey of Western Art from Renaissance to Contemporary Honors,
+Mendocino College,CSC,Computer Science,COMP,Computer Science,Low,title and filing disagree: a person picks,ITIS,statewide_filing,1,INFO M1001,AI Literacy,
+Los Angeles Valley College,MEDIART,,FTVE,Film and Media Studies,Low,"the filed common subject only, no title",FTVE,statewide_filing,1,MEDI M10CS,"MYTHOLOGY, SPIRITUALITY, AND THE ART OF STORY",
+Saddleback College,TOUR,Travel and Tourism,,,None,no title and no filing: a person picks,,,8,"TOUR M1001, TOUR M1002, TOUR M1003, TOUR M1004, TOUR M10AC, TOUR M10AD, TOUR M10AE","ADVANCED AIRLINE COMPUTER TRAINING; AIRLINE COMPUTER TRAINING; WORLD DESTINATIONS-PACIFIC, ASIA, AFRICA, MIDDLE EAST",
+San Diego College of Continuing Education,ARTX,Arts Experimental,,,None,no title and no filing: a person picks,,,5,"ARTX M9001, ARTX M90AA, ARTX M90AB",DRAWING AND PAINTING 1-2 - OA; DRAWING AND PAINTING 1-2 - OA; Landscape Painting - OA,
+Santiago Canyon College,INFO,Information Studies,,,None,no title and no filing: a person picks,,,5,"INFO M1001, INFO M1002, INFO M1003, INFO M10AB, INFO M10AC",AI Literacy; Library Research Fundamentals; Researching in the Digital Age,
+North Orange Continuing Education,CRAE,Creative Arts,,,None,no title and no filing: a person picks,,,4,"CRAE M9007, CRAE M90AA, OLAD M9017","China Painting for Older Adult; China Painting for Older Adult; Needlecraft, Knit, Crochet OA",
+North Orange Continuing Education,EMER,Emeritus,,,None,no title and no filing: a person picks,,,4,"CRAE M9007, EMER M9015",China Painting for Older Adults; China Painting for Older Adults; Mobile Information Literacy,
+Santa Ana College,INFO,Information Studies,,,None,no title and no filing: a person picks,,,4,"INFO M1001, INFO M1002, INFO M1003, INFO M10AA",AI Literacy; Library Research Fundamentals; Researching in the Digital Age,
+Santa Ana College,JAMS,Journalism and Media Studies,,,None,no title and no filing: a person picks,,,4,"JAMS M10AA, JAMS M10AB, JAMS M10AL, JAMS M10AM",Advanced Intermediate Multimedia News Production; Advanced Multimedia News Production; Visual Reporting,
+Coastline Community College,SPED,Special Education,,,None,no title and no filing: a person picks,,,4,"SPED M90AR, SPED M90AW, SPED M90BF, SPED M90BT",Exhibition; Guest Services Basics; Maintenance Basics,
+San Jose City College,Art (ART),,,,None,no title and no filing: a person picks,,,3,"ARTA M10AA, ARTA M10AB, ARTA M10AF",Beginning Sculpture 1; Ceramic Scuplture 1; Representational Drawing and Perspective,
+Palomar College,GCMW,Graphic Communications - Multimedia and Web,,,None,no title and no filing: a person picks,,,3,"GCMW M10AF, GCMW M10AI, MART M1004",MULTIMEDIA FOR SOCIAL NETWORKING; SEARCH ENGINE OPTIMIZATION (SEO) FOR WEB DESIGN; WEB PAGE LAYOUT I,
+Reedley College,LIBSKL,Library Skills,,,None,no title and no filing: a person picks,,,3,"LIBS M1002, LIBS M10AA",Information and Computer Literacy; Information and Computer Literacy; AI Literacy: in Education and Employment,
+College of the Canyons,NC.COMM,Communications Studies,COMM,Communication Studies (Speech Communication),Low,the title names a credit discipline on a noncredit code: a person picks,,,3,"NCCO M90AG, NCCO M90AH, NCCO M90AI",Public Speaking for Interviews; Public Speaking for Social Media; Strategies and Tactics of Public Relations,"S733: title filed from COBIx (#3837, #3838)"
+City College of San Francisco,TICU,Custodial,,,None,no title and no filing: a person picks,,,3,"TICU M9001, TICU M90AB",Custodial Training; Custodial Training; Custodial Training for Healthcare Workers,
+Ohlone College,AF,,,,None,no title and no filing: a person picks,,,2,AFXX M1001,Evolution of the U.S. Air Force Air and Space Power; Foundations of the U.S. Air Force,
+Orange Coast College,ARLN,Airline and Travel Careers,,,None,no title and no filing: a person picks,,,2,"ARLN M10AA, ARLN M10AC","Airline Service Excellence; Operations, Terminology & Safety",
+College of the Sequoias,CINA,Cinema Arts,,,None,no title and no filing: a person picks,,,2,"CINA M10AA, CINA M10AB",Film Appreciation-American; Film Appreciation-International,
+North Orange Continuing Education Credit,COSY,,,,None,no title and no filing: a person picks,,,2,"COSY M90AA, COSY M90AB",MANICURIST/PEDICURIST; NEW CONCEPTS IN HAIR DESIGN,
+Saddleback College,EPHO,Emeritus Photography (Noncredit),,,None,no title and no filing: a person picks,,,2,EPHO M9001,FUNDAMENTALS OF DIGITAL SHOW PRESENTATIONS (EI); INTERMEDIATE DIGITAL SHOW PRESENTATIONS (EI),
+Citrus College,ESTH,Esthetician,,,None,no title and no filing: a person picks,,,2,"ESTH M10AB, ESTH M10AC",Salon Success - Full-time; Salon Success Part I - Part-time,
+North Orange Continuing Education,HOSM,Hospitality Management,,,None,no title and no filing: a person picks,,,2,HOSM M9003,CUSTOMER CARE: AIRLINE/TRAVEL; CUSTOMER CARE: AIRLINE/TRAVEL,
+Las Positas College,NAVI,Noncredit Aviation,,,None,no title and no filing: a person picks,,,2,"NAVI M90AC, NAVI M90AD",FAA Remote Pilot Certificate Exam Preparation; Orientation to Drones and Unoccupied Aerial Systems,
+West Valley College,NCID,,,,None,no title and no filing: a person picks,,,2,"NCID M90AA, NCID M90AB",Intro to Design for Advanced Manufacturing I; Introduction to Design for Advanced Manufacturing II,
+College of the Canyons,NC.PHOT,Photography,PHOT,Photography,Low,the title names a credit discipline on a noncredit code: a person picks,,,2,"NCPH M90AA, NCPH M90AD",Fundamentals of Digital Camera Equipment; Lab Practices for the Digital Darkroom,"S733: title filed from COBIx (#3837, #3838)"
+College of the Canyons,NC.THTR,Theatre,THTR,Drama/Theater Arts,Low,the title names a credit discipline on a noncredit code: a person picks,,,2,"NCTH M9001, NCTH M90AA",Business of Acting; Auditioning Skills for Actors,"S733: title filed from COBIx (#3837, #3838)"
+College of the Canyons,NC.VOC,Vocational,VOCE,Vocational (short-term): Noncredit,High,the title names the discipline,,,2,"NCVO M90AA, NCVO M90AD",Advanced Tools in Photoshop; Building on Photoshop Basics,"S733: title filed from COBIx (#3837, #3838)"
+Antelope Valley College,FTV,Film and Television,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,2,TAFI M1007,"History of Film, 1950-Present; History of Film, Pre 1950","S733: title filed from COBIx (#3837, #3838)"
+American River College,TECCOM,,,,None,no title and no filing: a person picks,,,2,"TECC M10AA, TECC M10AC",Introduction to Technical/Professional Communication; Writing Technical Manuals,
+Southwestern College,T&T,Travel and Tourism,,,None,no title and no filing: a person picks,,,2,"TOUR M1002, TOUR M1004","Travel Destinations: Europe, Africa, and the Middle East; Travel Destinations: Western Hemisphere",
+College of the Redwoods,WORK,Work Experience/Workability,WEXP,Work Experience,High,the title names the discipline,,,2,"WORK M90AN, WORK M90AO",Custodian: Basic Maintenance; Custodian Training,"S733: title filed from COBIx (#3837, #3838)"
+Mt. San Antonio College,AIRT,Air Traffic Control,,,None,no title and no filing: a person picks,,,1,AIRT M10AE,Enroute Radar Laboratory,
+Monterey Peninsula College,ARTV,Art - Video,,,None,no title and no filing: a person picks,,,1,ARTV M10AA,Introduction to Film/Video,
+Mt. San Antonio College,ARTZ,Art: Special Studio Arts,,,None,no title and no filing: a person picks,,,1,ARTZ M10AA,Specialized Studio-Art Studies,
+San Jose City College,Broadcasting (BROAD),Broadcasting,,,None,no title and no filing: a person picks,,,1,BROA M10AA,Intermediate Radio Production,
+Porterville College,CMRTP,,,,None,no title and no filing: a person picks,,,1,CMRT M1001,Commercial Layout and Design,
+MiraCosta College,DESN,Design,ARCH,Architecture,Low,title and filing disagree: a person picks,ARCH,statewide_filing,1,DESN M10AC,Fundamentals of Design,"S733: title filed from COBIx (#3837, #3838)"
+San Joaquin Delta College,DMEDIA,Digital Media,,,None,no title and no filing: a person picks,,,1,DMED M10AD,Fundamentals of Audio Production,
+Cosumnes River College,ENGWR,English - Writing,,,None,no title and no filing: a person picks,,,1,ENGW M10AQ,Introduction to Technical and Professional Writing,
+Sacramento City College,SURVY,Surveying,,,None,no title and no filing: a person picks,,,1,FLTE M1002,Photogrammetry,
+Moorpark College,FTMA,Film Television Media Arts,FTVE,Film and Media Studies,Medium,"the filed common subject, with a title to check it by",FTVE,statewide_filing,1,FTMA M10AD,Directors and Genres,"S733: title filed from COBIx (#3837, #3838)"
+Southwestern College,IDNM,,,,None,no title and no filing: a person picks,,,1,IDNM M10AB,TRENDS AND CAREERS IN NEW MEDIA,
+Las Positas College,JAMS,Journalism and Media Studies,,,None,no title and no filing: a person picks,,,1,JAMS M10AG,Introduction to Media,
+Allan Hancock College,LBRY,Library Skills,,,None,no title and no filing: a person picks,,,1,LBRY M10AA,Advanced Research,
+Madera College,LIBSKL,Library Skills,,,None,no title and no filing: a person picks,,,1,LIBS M1002,Information and Computer Literacy,
+Sierra College,SKDV,Skill Development,,,None,no title and no filing: a person picks,,,1,LIBS M1004,Information Literacy and Research Skills,
+Yuba College,LIBSC,Library Science,LIBR,Library Science,High,the title names the discipline,,,1,LIBS M10AB,Basic Research Skills,"S733: title filed from COBIx (#3837, #3838)"
+Contra Costa College,LIBST,Library Studies,LIBR,Library Science,Medium,"the title is near a discipline, not its name: a person picks",,,1,LIBS M10AD,Finding Information on Line and in Print,"S733: title filed from COBIx (#3837, #3838)"
+Chabot College,LIBS,Library Studies,,,None,no title and no filing: a person picks,,,1,LIBS M10AH,Library Research and Information Literacy Skills via Popular Culture,
+Los Angeles Valley College,LIB SCI,,,,None,no title and no filing: a person picks,,,1,LIBS M10AI,MEDIA AND INFORMATION LITERACY: RESEARCH STRATEGIES AND BEYOND,
+Merced College,LRNR,Learning Resources,LSKL,Learning Assistance or Learning Skills,Low,"the title is near a discipline, not its name: a person picks",,,1,LRNR M10AF,Information Concepts and Research Skills,"S733: title filed from COBIx (#3837, #3838)"
+Palomar College,GCIP,Graphic Communications - Imaging and Publishing,,,None,no title and no filing: a person picks,,,1,MART M1004,PAGE LAYOUT AND DESIGN I,
+Bakersfield College,OFFT,Office Technology,,,None,no title and no filing: a person picks,,,1,OFFT M9004,Product Design,
+Santa Monica College,IXD,Interaction Design,,,None,no title and no filing: a person picks,,,1,OFFT M9004,Product Design,
+Rio Hondo College,RDIO,Radio,,,None,no title and no filing: a person picks,,,1,RDIO M10AB,Introduction to Radio News Writing,
+Grossmont College,TELE,,,,None,no title and no filing: a person picks,,,1,TELE M10AA,FILM ADAPTATIONS OF LITERATURE,
+Santiago Canyon College,VBUS,,,,None,no title and no filing: a person picks,,,1,VBUS M90BF,Introduction to Mobile and Social Media Tools,
+Santiago Canyon College,VCST,,,,None,no title and no filing: a person picks,,,1,VCST M90AB,Custodial Technician,

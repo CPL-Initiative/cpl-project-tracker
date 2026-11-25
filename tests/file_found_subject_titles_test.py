@@ -6,7 +6,9 @@ WHAT THIS GUARDS:
   (2) a heading already in the record is never replaced, and the find is counted as agreeing or differing;
   (3) a find that only repeats its code, or has no title, is not filed;
   (4) a college whose catalog was not read files nothing;
-  (5) the Subjects build lists a headings-only college, and never a college with a course file twice.
+  (5) the Subjects build lists a headings-only college, and never a college with a course file twice;
+  (6) `--csv` (S733): a filled leftovers row with a title and its source URL files with its own method, date and finder;
+      a row with no source URL, or a `department label` row, files nothing; a college with no slug is reported.
 Run from repo root: `python3 tests/file_found_subject_titles_test.py`.
 """
 import json
@@ -73,6 +75,29 @@ with tempfile.TemporaryDirectory() as root:
           [c["slug"] for c in got] == ["alpha"] and got[0]["college"] == "Alpha College" and got[0]["file"] is None, json.dumps(got))
 
 fail = 0
+with tempfile.TemporaryDirectory() as root:
+    F.FOUND = os.path.join(root, "kb", "subject_title_hunt", "found")
+    F.SUBJECTS = os.path.join(root, "kb", "hand_filed_catalogs", "subjects")
+    put(os.path.join(F.SUBJECTS, "beta.json"), {"college": "Beta College", "rows": []})
+    csvp = os.path.join(root, "left.csv")
+    with open(csvp, "w", encoding="utf-8") as f:
+        f.write("college,local_subject_code,local_subject_title,title_source_url,title_where,title_method,searched_on,found_by\n"
+                "Beta College,FTMA,Film Television Media Arts,https://beta.example/ftma/,catalog,subject heading,2026-11-25,COBIx\n"
+                "Beta College,NOSRC,No Source,,catalog,subject heading,2026-11-25,COBIx\n"
+                "Beta College,APP,Apprenticeship,https://beta.example/courses,catalog,department label,2026-11-25,COBIx\n"
+                "Gamma College,GX,Gamma Things,https://gamma.example/,catalog,subject heading,2026-11-25,COBIx\n")
+    finds, unknown = F.read_csv_finds(csvp)
+    check("csv: an unknown college is reported, never guessed", unknown == ["Gamma College"], unknown)
+    check("csv: a row with no source URL is not a find", [t["code"] for t in finds["beta"]["titles"]] == ["FTMA", "APP"], finds)
+    r = F.file_doc("beta", finds["beta"], False)
+    with open(os.path.join(F.SUBJECTS, "beta.json"), encoding="utf-8") as f:
+        rows = {x["code"]: x for x in json.load(f)["rows"]}
+    check("csv: the department label stays a hint", "APP" not in rows and r["skipped"] == 1, r)
+    ft = rows.get("FTMA") or {}
+    check("csv: the find files with its source, date and finder",
+          ft.get("address") == "https://beta.example/ftma/" and ft.get("found_on") == "2026-11-25"
+          and ft.get("found_by") == "COBIx" and ft.get("method") == "subject heading", ft)
+
 for n, ok, why in results:
     print(("PASS " if ok else "FAIL ") + n + ("" if ok else "\n     " + why))
     fail += 0 if ok else 1

@@ -1,0 +1,944 @@
+{
+ "_what": "The subjects Los Medanos College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Los Medanos College",
+ "catalog_year": null,
+ "read_at": null,
+ "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv",
+ "source": [
+  "https://web.archive.org/web/20240117153504/https://www.losmedanos.edu/catalog/LMC_Catalog2019.20Web.pdf#page=196",
+  "https://web.archive.org/web/20240813003129/https://www.losmedanos.edu/catalog/Catalog2022.23_MECHWeb2-edit.pdf#page=122",
+  "https://web.archive.org/web/20240813003129/https://www.losmedanos.edu/catalog/Catalog2022.23_MECHWeb2-edit.pdf#page=203",
+  "https://web.archive.org/web/20240813003129/https://www.losmedanos.edu/catalog/Catalog2022.23_MECHWeb2-edit.pdf#page=249",
+  "https://web.archive.org/web/20240813003129/https://www.losmedanos.edu/catalog/Catalog2022.23_MECHWeb2-edit.pdf#page=256",
+  "https://web.archive.org/web/20240813003129/https://www.losmedanos.edu/catalog/Catalog2022.23_MECHWeb2-edit.pdf#page=279",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=105",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=107",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=114",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=116",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=118",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=125",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=126",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=128",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=141",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=142",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=148",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=150",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=152",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=159",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=164",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=170",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=174",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=179",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=180",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=185",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=188",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=192",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=198",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=204",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=206",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=211",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=220",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=222",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=226",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=229",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=231",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=233",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=237",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=239",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=243",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=244",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=248",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=249",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=252",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=253",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=257",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=79",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=84",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=86",
+  "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=99"
+ ],
+ "rows": [
+  {
+   "code": "ACS",
+   "heading": "Academic and Career Success",
+   "heading_printed": "Academic and Career Success",
+   "rule": "index",
+   "codes": [
+    "ACS"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=79",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ADJUS",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADJUS"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=79",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ANTHR",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTHR"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=84",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ASTRO",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTRO"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=99",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=99",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BIOSC",
+   "heading": "Biological Science",
+   "heading_printed": "Biological Science",
+   "rule": "index",
+   "codes": [
+    "BIOSC"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=105",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=107",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CHDEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CHDEV"
+   ],
+   "candidate": null,
+   "address": "https://web.archive.org/web/20240813003129/https://www.losmedanos.edu/catalog/Catalog2022.23_MECHWeb2-edit.pdf#page=122",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=114",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=116",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COMSC",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "COMSC"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CONST",
+   "heading": "Construction Noncredit",
+   "heading_printed": "Construction Noncredit",
+   "rule": "index",
+   "codes": [
+    "CONST"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COUNS",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUNS"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=126",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "DRAMA",
+   "heading": "Dramatic Arts",
+   "heading_printed": "Dramatic Arts",
+   "rule": "index",
+   "codes": [
+    "DRAMA"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=128",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "DRONE",
+   "heading": "Uas/Drone Operations Noncredit",
+   "heading_printed": "UAS/Drone Operations Noncredit",
+   "rule": "index",
+   "codes": [
+    "DRONE"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=252",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=148",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENGIN",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGIN"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=152",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language Credit (ESL)",
+   "heading_printed": "English as a Second Language Credit (ESL)",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=159",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ESLN",
+   "heading": "English as a Second Language Noncredit (ESLN)",
+   "heading_printed": "English As A Second Language Noncredit (ESLN)",
+   "rule": "index",
+   "codes": [
+    "ESLN"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=164",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ETEC",
+   "heading": "Electrical / Instrumentation Technology",
+   "heading_printed": "Electrical / Instrumentation Technology",
+   "rule": "index",
+   "codes": [
+    "ETEC"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=142",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=174",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "FRNCH",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FRNCH"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=179",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=180",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=188",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "JOURN",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOURN"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=188",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "KINES",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINES"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=192",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "KNACT",
+   "heading": "Kinesiology-Activity (KNACT)",
+   "heading_printed": "KINESIOLOGY-ACTIVITY (KNACT)",
+   "rule": "index",
+   "codes": [
+    "KNACT"
+   ],
+   "candidate": null,
+   "address": "https://web.archive.org/web/20240813003129/https://www.losmedanos.edu/catalog/Catalog2022.23_MECHWeb2-edit.pdf#page=203",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "KNDAN",
+   "heading": "Kinesiology-Dance (KNDAN)",
+   "heading_printed": "KINESIOLOGY-DANCE (KNDAN)",
+   "rule": "index",
+   "codes": [
+    "KNDAN"
+   ],
+   "candidate": null,
+   "address": "https://web.archive.org/web/20240117153504/https://www.losmedanos.edu/catalog/LMC_Catalog2019.20Web.pdf#page=196",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "KNICA",
+   "heading": "Kinesiology-Intercollegiate Athletics",
+   "heading_printed": "Kinesiology-Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "KNICA"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=198",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MANGT",
+   "heading": "Management and Supervision",
+   "heading_printed": "Management and Supervision",
+   "rule": "index",
+   "codes": [
+    "MANGT"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=204",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=206",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NUTRI",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTRI"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=226",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=226",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=229",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHYSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHYSC"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=229",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=231",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "POLSC",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLSC"
+   ],
+   "candidate": null,
+   "address": "https://web.archive.org/web/20240813003129/https://www.losmedanos.edu/catalog/Catalog2022.23_MECHWeb2-edit.pdf#page=249",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "address": "https://web.archive.org/web/20240813003129/https://www.losmedanos.edu/catalog/Catalog2022.23_MECHWeb2-edit.pdf#page=256",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PTEC",
+   "heading": "Process Technology",
+   "heading_printed": "Process Technology",
+   "rule": "index",
+   "codes": [
+    "PTEC"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=233",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "RA",
+   "heading": "Recording Arts",
+   "heading_printed": "Recording Arts",
+   "rule": "index",
+   "codes": [
+    "RA"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=239",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "RNURS",
+   "heading": "Nursing - Registered",
+   "heading_printed": "Nursing - Registered",
+   "rule": "index",
+   "codes": [
+    "RNURS"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=220",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SIGN",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "index",
+   "codes": [
+    "SIGN"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=243",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SJS",
+   "heading": "Social Justice Studies",
+   "heading_printed": "Social Justice Studies",
+   "rule": "index",
+   "codes": [
+    "SJS"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=244",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SOCIO",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCIO"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=248",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=249",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SPTUT",
+   "heading": "Tutoring",
+   "heading_printed": "Tutoring",
+   "rule": "index",
+   "codes": [
+    "SPTUT"
+   ],
+   "candidate": null,
+   "address": "https://web.archive.org/web/20240813003129/https://www.losmedanos.edu/catalog/Catalog2022.23_MECHWeb2-edit.pdf#page=279",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "VONUR",
+   "heading": "Nursing - Vocational",
+   "heading_printed": "Nursing - Vocational",
+   "rule": "index",
+   "codes": [
+    "VONUR"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=222",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=253",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "WRKX",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WRKX"
+   ],
+   "candidate": null,
+   "address": "https://www.losmedanos.edu/schedule/25-26-LMC-Catalog.pdf#page=257",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  }
+ ],
+ "subjects": 55,
+ "with_heading": 55
+}

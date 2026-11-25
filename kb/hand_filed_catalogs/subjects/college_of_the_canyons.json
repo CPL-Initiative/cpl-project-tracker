@@ -97,6 +97,22 @@
    "run": "45627438096"
   },
   {
+   "code": "ARCHT",
+   "heading": "Architectural Drafting",
+   "heading_printed": "ARCHITECTURAL drafting",
+   "rule": "index",
+   "codes": [
+    "ARCHT"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=71",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
    "code": "ASTRON",
    "heading": "Astronomy",
    "heading_printed": "ASTRONOMY",
@@ -257,6 +273,38 @@
    "run": "45627438096"
   },
   {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "COMMUNICATION STUDIES",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=103",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CONST",
+   "heading": "Construction Management Technology",
+   "heading_printed": "CONSTRUCTION MANAGEMENT TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "CONST"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
    "code": "COUNS",
    "heading": "Counseling",
    "heading_printed": "COUNSELING",
@@ -337,6 +385,22 @@
    "run": "45627438096"
   },
   {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "ECONOMICS",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=134",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
    "code": "EDUC",
    "heading": "Education",
    "heading_printed": "EDUCATION",
@@ -367,6 +431,38 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "ENGINEERING",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=138",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENVRMT",
+   "heading": "Environmental Sciences",
+   "heading_printed": "ENVIRONMENTAL SCIENCES",
+   "rule": "index",
+   "codes": [
+    "ENVRMT"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=148",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ESL",
@@ -417,6 +513,22 @@
    "run": "45627438096"
   },
   {
+   "code": "FIRETC",
+   "heading": "Fire Technology",
+   "heading_printed": "FIRE TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "FIRETC"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=152",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
    "code": "FIRETL",
    "heading": "Fire Technology Advanced Training - Lifeguard",
    "heading_printed": "FIRE TECHNOLOGY ADVANCED TRAINING - LIFEGUARD",
@@ -431,6 +543,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "GEOGRPH",
+   "heading": "Geography",
+   "heading_printed": "GEOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "GEOGRPH"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "GIS",
@@ -495,6 +623,38 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "HLHSCI",
+   "heading": "Health Science",
+   "heading_printed": "HEALTH SCIENCE",
+   "rule": "index",
+   "codes": [
+    "HLHSCI"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=163",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality Management",
+   "heading_printed": "HOSPITALITY MANAGEMENT",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "HUMAN",
@@ -625,6 +785,22 @@
    "run": "45627438096"
   },
   {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "MATHEMATICS",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
    "code": "MEA",
    "heading": "Media Entertainment Arts",
    "heading_printed": "MEDIA ENTERTAINMENT ARTS",
@@ -671,6 +847,550 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "NC.ART",
+   "heading": "Art",
+   "heading_printed": "ART",
+   "rule": "index",
+   "codes": [
+    "NC.ART"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=319",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.CAWT",
+   "heading": "Computer Applications and Web Technologies",
+   "heading_printed": "COMPUTER APPLICATIONS AND WEB TECHNOLOGIES",
+   "rule": "index",
+   "codes": [
+    "NC.CAWT"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=328",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.CGSL",
+   "heading": "College Skills",
+   "heading_printed": "COLLEGE SKILLS",
+   "rule": "index",
+   "codes": [
+    "NC.CGSL"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=326",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.CITZ",
+   "heading": "Immigrant Education",
+   "heading_printed": "IMMIGRANT EDUCATION",
+   "rule": "index",
+   "codes": [
+    "NC.CITZ"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=345",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.COMM",
+   "heading": "Communications Studies",
+   "heading_printed": "COMMUNICATIONS STUDIES",
+   "rule": "index",
+   "codes": [
+    "NC.COMM"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=327",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.CONS",
+   "heading": "Construction Technology",
+   "heading_printed": "CONSTRUCTION TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "NC.CONS"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=331",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.COUN",
+   "heading": "Counseling",
+   "heading_printed": "COUNSELING",
+   "rule": "index",
+   "codes": [
+    "NC.COUN"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=332",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.CSEC",
+   "heading": "Csec Training",
+   "heading_printed": "CSEC TRAINING",
+   "rule": "index",
+   "codes": [
+    "NC.CSEC"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=330",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.CSKL",
+   "heading": "Career Skills",
+   "heading_printed": "CAREER SKILLS",
+   "rule": "index",
+   "codes": [
+    "NC.CSKL"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=321",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.CUL",
+   "heading": "Culinary Arts",
+   "heading_printed": "CULINARY ARTS",
+   "rule": "index",
+   "codes": [
+    "NC.CUL"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=332",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.DMS",
+   "heading": "Diagnostic Medical Sonography",
+   "heading_printed": "DIAGNOSTIC MEDICAL SONOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "NC.DMS"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=333",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.EDUC",
+   "heading": "Education",
+   "heading_printed": "EDUCATION",
+   "rule": "index",
+   "codes": [
+    "NC.EDUC"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=334",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.ENGL",
+   "heading": "English",
+   "heading_printed": "ENGLISH",
+   "rule": "index",
+   "codes": [
+    "NC.ENGL"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=338",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.ESL",
+   "heading": "English as a Second Language (ESL)",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE (ESL)",
+   "rule": "index",
+   "codes": [
+    "NC.ESL"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=338",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.ESPR",
+   "heading": "eSPORTS",
+   "heading_printed": "eSPORTS",
+   "rule": "index",
+   "codes": [
+    "NC.ESPR"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=342",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.GNST",
+   "heading": "General Studies",
+   "heading_printed": "general studies",
+   "rule": "index",
+   "codes": [
+    "NC.GNST"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=342",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.KPET",
+   "heading": "Sports Medicine",
+   "heading_printed": "SPORTS MEDICINE",
+   "rule": "index",
+   "codes": [
+    "NC.KPET"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=375",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.LSKL",
+   "heading": "Life Skills",
+   "heading_printed": "LIFE SKILLS",
+   "rule": "index",
+   "codes": [
+    "NC.LSKL"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=347",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.MATH",
+   "heading": "Mathematics",
+   "heading_printed": "MATHEMATICS",
+   "rule": "index",
+   "codes": [
+    "NC.MATH"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=348",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.NURS",
+   "heading": "Nursing",
+   "heading_printed": "NURSING",
+   "rule": "index",
+   "codes": [
+    "NC.NURS"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=352",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.OAD",
+   "heading": "Older Adult",
+   "heading_printed": "OLDER ADULT",
+   "rule": "index",
+   "codes": [
+    "NC.OAD"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=355",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.OTA",
+   "heading": "Occupational Therapy Assistant",
+   "heading_printed": "OCCUPATIONAL THERAPY ASSISTANT",
+   "rule": "index",
+   "codes": [
+    "NC.OTA"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=354",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.PHOT",
+   "heading": "Photography",
+   "heading_printed": "PHOTOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "NC.PHOT"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=358",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.PLGL",
+   "heading": "Paralegal",
+   "heading_printed": "PARALEGAL",
+   "rule": "index",
+   "codes": [
+    "NC.PLGL"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=356",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.PTA",
+   "heading": "Physical Therapist Assistant",
+   "heading_printed": "PHYSICAL THERAPIST ASSISTANT",
+   "rule": "index",
+   "codes": [
+    "NC.PTA"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=360",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.REAL",
+   "heading": "Real Estate",
+   "heading_printed": "REAL ESTATE",
+   "rule": "index",
+   "codes": [
+    "NC.REAL"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=372",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.REC",
+   "heading": "Recreation Management",
+   "heading_printed": "RECREATION MANAGEMENT",
+   "rule": "index",
+   "codes": [
+    "NC.REC"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=373",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.SIGN",
+   "heading": "Sign Language",
+   "heading_printed": "SIGN LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "NC.SIGN"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=374",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.SPAN",
+   "heading": "Spanish",
+   "heading_printed": "SPANISH",
+   "rule": "index",
+   "codes": [
+    "NC.SPAN"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=374",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.SURV",
+   "heading": "Land Surveying",
+   "heading_printed": "LAND SURVEYING",
+   "rule": "index",
+   "codes": [
+    "NC.SURV"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=345",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.THTR",
+   "heading": "Theatre",
+   "heading_printed": "THEATRE",
+   "rule": "index",
+   "codes": [
+    "NC.THTR"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=376",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.VOC",
+   "heading": "Vocational",
+   "heading_printed": "VOCATIONAL",
+   "rule": "index",
+   "codes": [
+    "NC.VOC"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=377",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.WELD",
+   "heading": "Welding",
+   "heading_printed": "WELDING",
+   "rule": "index",
+   "codes": [
+    "NC.WELD"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=380",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NC.YOGA",
+   "heading": "Yoga",
+   "heading_printed": "YOGA",
+   "rule": "index",
+   "codes": [
+    "NC.YOGA"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=380",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "NETECH",
@@ -753,6 +1473,38 @@
    "run": "45627438096"
   },
   {
+   "code": "PHILOS",
+   "heading": "Philosophy",
+   "heading_printed": "PHILOSOPHY",
+   "rule": "index",
+   "codes": [
+    "PHILOS"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=249",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "PHOTOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=252",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
    "code": "PHRMTEC",
    "heading": "Pharmacy Technology",
    "heading_printed": "PHARMACY TECHNOLOGY",
@@ -799,6 +1551,38 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45627438096)",
    "run": "45627438096"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=261",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "PSYCHOLOGY",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=263",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "PTA",
@@ -865,6 +1649,22 @@
    "run": "45627438096"
   },
   {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=292",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
    "code": "SURV",
    "heading": "Land Surveying",
    "heading_printed": "LAND SURVEYING",
@@ -913,6 +1713,22 @@
    "run": "45627438096"
   },
   {
+   "code": "WATER",
+   "heading": "Water Systems Technology",
+   "heading_printed": "WATER SYSTEMS TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "WATER"
+   ],
+   "candidate": null,
+   "address": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=303",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
    "code": "WELD",
    "heading": "Welding",
    "heading_printed": "WELDING",
@@ -945,6 +1761,6 @@
    "run": "45627438096"
   }
  ],
- "subjects": 55,
- "with_heading": 55
+ "subjects": 106,
+ "with_heading": 106
 }

@@ -57,6 +57,22 @@
    "run": "45626064651"
   },
   {
+   "code": "AGAT",
+   "heading": "Agriculture Systems",
+   "heading_printed": "Agriculture Systems",
+   "rule": "index",
+   "codes": [
+    "AGAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/agat-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
    "code": "AGEH",
    "heading": "Agriculture Environmental Science",
    "heading_printed": "Agriculture Environmental Science",
@@ -119,6 +135,22 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626064651)",
    "run": "45626064651"
+  },
+  {
+   "code": "AGT",
+   "heading": "Agriculture Systems, Noncredit",
+   "heading_printed": "Agriculture Systems, Noncredit",
+   "rule": "index",
+   "codes": [
+    "AGT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/agt-course",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   },
   {
    "code": "ALLH",
@@ -295,8 +327,1336 @@
    "found_on": "2026-11-25",
    "found_by": "COBI, a runner read (run 45626064651)",
    "run": "45626064651"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/biol-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-business-economics/courses/bus-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BUSN",
+   "heading": "Business, Noncredit",
+   "heading_printed": "Business, Noncredit",
+   "rule": "index",
+   "codes": [
+    "BUSN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-business-economics/courses/busn-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CADM",
+   "heading": "Computer-Aided Design & 3D Modeling",
+   "heading_printed": "Computer-Aided Design & 3D Modeling",
+   "rule": "index",
+   "codes": [
+    "CADM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/cadm-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/chem-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CLDV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CLDV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-education/courses/cldv-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COLL",
+   "heading": "College",
+   "heading_printed": "College",
+   "rule": "index",
+   "codes": [
+    "COLL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/student-services-courses/coll-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/comm-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CPSC",
+   "heading": "Computer Sciences",
+   "heading_printed": "Computer Sciences",
+   "rule": "index",
+   "codes": [
+    "CPSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/cpsc-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CRIM",
+   "heading": "Criminal Justice",
+   "heading_printed": "Criminal Justice",
+   "rule": "index",
+   "codes": [
+    "CRIM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-allied-health-public-safety/courses/crim-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CTIS",
+   "heading": "Computer Technology and Information Systems",
+   "heading_printed": "Computer Technology and Information Systems",
+   "rule": "index",
+   "codes": [
+    "CTIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/ctis-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CULN",
+   "heading": "Culinary",
+   "heading_printed": "Culinary",
+   "rule": "index",
+   "codes": [
+    "CULN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/culn-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "DRON",
+   "heading": "Drone Technology",
+   "heading_printed": "Drone Technology",
+   "rule": "index",
+   "codes": [
+    "DRON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/dron-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-business-economics/courses/econ-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "EDU",
+   "heading": "Education, Noncredit",
+   "heading_printed": "Education, Noncredit",
+   "rule": "index",
+   "codes": [
+    "EDU"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-education/courses/edu-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-education/courses/educ-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ELCT",
+   "heading": "Electricity -- Electronics",
+   "heading_printed": "Electricity -- Electronics",
+   "rule": "index",
+   "codes": [
+    "ELCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/elct-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "EMER",
+   "heading": "Emergency Medical Care",
+   "heading_printed": "Emergency Medical Care",
+   "rule": "index",
+   "codes": [
+    "EMER"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-allied-health-public-safety/courses/emer-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENG",
+   "heading": "English, Noncredit",
+   "heading_printed": "English, Noncredit",
+   "rule": "index",
+   "codes": [
+    "ENG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/eng-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/engl-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/engr-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/esl-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/ethn-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-allied-health-public-safety/courses/fire-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/fren-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GED",
+   "heading": "General Education, Noncredit",
+   "heading_printed": "General Education, Noncredit",
+   "rule": "index",
+   "codes": [
+    "GED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-education/courses/ged-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/geog-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/geol-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GERN",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GERN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/gern-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GUI",
+   "heading": "Guidance, Noncredit",
+   "heading_printed": "Guidance, Noncredit",
+   "rule": "index",
+   "codes": [
+    "GUI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-education/courses/gui-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GUID",
+   "heading": "Guidance",
+   "heading_printed": "Guidance",
+   "rule": "index",
+   "codes": [
+    "GUID"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/student-services-courses/guid-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/hist-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HLT",
+   "heading": "Health, Noncredit",
+   "heading_printed": "Health, Noncredit",
+   "rule": "index",
+   "codes": [
+    "HLT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-athletics-sport-sciences/courses/hlt-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-athletics-sport-sciences/courses/hlth-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HMNG",
+   "heading": "Hmong",
+   "heading_printed": "Hmong",
+   "rule": "index",
+   "codes": [
+    "HMNG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/hmng-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HMSV",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HMSV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/hmsv-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HNRS",
+   "heading": "Honors",
+   "heading_printed": "Honors",
+   "rule": "index",
+   "codes": [
+    "HNRS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/hrns-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HST",
+   "heading": "History, Noncredit",
+   "heading_printed": "History, Noncredit",
+   "rule": "index",
+   "codes": [
+    "HST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/hst-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/hum-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ICT",
+   "heading": "Computer Information Technology, Noncredit",
+   "heading_printed": "Computer Information Technology, Noncredit",
+   "rule": "index",
+   "codes": [
+    "ICT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/ict-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "INDT",
+   "heading": "Industrial Technology",
+   "heading_printed": "Industrial Technology",
+   "rule": "index",
+   "codes": [
+    "INDT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/indt-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "JPNS",
+   "heading": "Japamese",
+   "heading_printed": "Japamese",
+   "rule": "index",
+   "codes": [
+    "JPNS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/jpns-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "KINE",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-athletics-sport-sciences/courses/kine-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "LANG",
+   "heading": "Language, Noncredit",
+   "heading_printed": "Language, Noncredit",
+   "rule": "index",
+   "codes": [
+    "LANG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/lang-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "LAW",
+   "heading": "Law, Noncredit",
+   "heading_printed": "Law, Noncredit",
+   "rule": "index",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-business-economics/courses/law-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "LRNR",
+   "heading": "Learning Resources",
+   "heading_printed": "Learning Resources",
+   "rule": "index",
+   "codes": [
+    "LRNR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/student-services-courses/lrnr-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MAT",
+   "heading": "Mathematics, Noncredit",
+   "heading_printed": "Mathematics, Noncredit",
+   "rule": "index",
+   "codes": [
+    "MAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/mat-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/math-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MED",
+   "heading": "Medical, Noncredit",
+   "heading_printed": "Medical, Noncredit",
+   "rule": "index",
+   "codes": [
+    "MED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-allied-health-public-safety/courses/med-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "index",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-business-economics/courses/mgmt-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MKTG",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MKTG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-business-economics/courses/mkgt-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MUSA",
+   "heading": "Music, Applied",
+   "heading_printed": "Music, Applied",
+   "rule": "index",
+   "codes": [
+    "MUSA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/musa-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MUSE",
+   "heading": "Music, Ensemble",
+   "heading_printed": "Music, Ensemble",
+   "rule": "index",
+   "codes": [
+    "MUSE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/muse-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MUSG",
+   "heading": "Music General",
+   "heading_printed": "Music General",
+   "rule": "index",
+   "codes": [
+    "MUSG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/musg-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MUST",
+   "heading": "Music, Theory",
+   "heading_printed": "Music, Theory",
+   "rule": "index",
+   "codes": [
+    "MUST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/must-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/nutr-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/phil-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/phot-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/phsc-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/phys-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "POSC",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/posc-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/psyc-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "RADT",
+   "heading": "Radiologic Technology, Diagnostic",
+   "heading_printed": "Radiologic Technology, Diagnostic",
+   "rule": "index",
+   "codes": [
+    "RADT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-allied-health-public-safety/courses/radt-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "REAL",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "REAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-business-economics/courses/real-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "REGN",
+   "heading": "Registered Nursing",
+   "heading_printed": "Registered Nursing",
+   "rule": "index",
+   "codes": [
+    "REGN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-allied-health-public-safety/courses/regb-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SEW",
+   "heading": "Sewing, Noncredit",
+   "heading_printed": "Sewing, Noncredit",
+   "rule": "index",
+   "codes": [
+    "SEW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/sew-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SKLS",
+   "heading": "Skills for Daily Living, Noncredit",
+   "heading_printed": "Skills for Daily Living, Noncredit",
+   "rule": "index",
+   "codes": [
+    "SKLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-education/courses/skls-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SOCL",
+   "heading": "Social Living, Noncredit",
+   "heading_printed": "Social Living, Noncredit",
+   "rule": "index",
+   "codes": [
+    "SOCL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-education/courses/socl-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SONO",
+   "heading": "Sonography, Diagnostic Medical",
+   "heading_printed": "Sonography, Diagnostic Medical",
+   "rule": "index",
+   "codes": [
+    "SONO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-allied-health-public-safety/courses/sono-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-humanities-liberal-arts/courses/span-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/stat",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "STGV",
+   "heading": "Student Government",
+   "heading_printed": "Student Government",
+   "rule": "index",
+   "codes": [
+    "STGV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/student-services-courses/stgv-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "THTR",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-art-social-science/courses/thtr-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "TRK",
+   "heading": "Truck Driver Training, Noncredit",
+   "heading_printed": "Truck Driver Training, Noncredit",
+   "rule": "index",
+   "codes": [
+    "TRK"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/trk-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "TRNG",
+   "heading": "Training, Noncredit",
+   "heading_printed": "Training, Noncredit",
+   "rule": "index",
+   "codes": [
+    "TRNG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/trng-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "TUT",
+   "heading": "Tutoring, Noncredit",
+   "heading_printed": "Tutoring, Noncredit",
+   "rule": "index",
+   "codes": [
+    "TUT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-education/courses/tut-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "TUTR",
+   "heading": "Tutorial",
+   "heading_printed": "Tutorial",
+   "rule": "index",
+   "codes": [
+    "TUTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-education/courses/tutr-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "VIRT",
+   "heading": "Virtual Office",
+   "heading_printed": "Virtual Office",
+   "rule": "index",
+   "codes": [
+    "VIRT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-business-economics/courses/virt-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "VOCN",
+   "heading": "Vocational Nursing",
+   "heading_printed": "Vocational Nursing",
+   "rule": "index",
+   "codes": [
+    "VOCN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-allied-health-public-safety/courses/vocn-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/weld-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "WORK",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WORK"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-education/courses/work-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "WRK",
+   "heading": "Workforce Training, Noncredit",
+   "heading_printed": "Workforce Training, Noncredit",
+   "rule": "index",
+   "codes": [
+    "WRK"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-as-it/courses/wrk-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "WWT",
+   "heading": "Waste/Water Technology",
+   "heading_printed": "Waste/Water Technology",
+   "rule": "index",
+   "codes": [
+    "WWT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/schools/programs/school-stem/courses/wwt-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
   }
  ],
- "subjects": 18,
- "with_heading": 18
+ "subjects": 103,
+ "with_heading": 103
 }

@@ -1,0 +1,896 @@
+{
+ "_what": "The subjects Lake Tahoe Community College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Lake Tahoe Community College",
+ "catalog_year": null,
+ "read_at": null,
+ "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv",
+ "source": [
+  "https://www.ltcc.edu/_resources/pdfs/catalog/2016-17_catalog_021617_update.pdf#page=62",
+  "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+  "https://www.ltcc.edu/_resources/pdfs/schedule_of_classes/archived_course_catalogs/2010_catalog.pdf#page=57"
+ ],
+ "rows": [
+  {
+   "code": "ANT",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANT"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BIO",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BOT",
+   "heading": "Business Office Technology",
+   "heading_printed": "Business Office Technology",
+   "rule": "index",
+   "codes": [
+    "BOT"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BSN",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BSN"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CAO",
+   "heading": "Computer Applications",
+   "heading_printed": "Computer Applications",
+   "rule": "index",
+   "codes": [
+    "CAO"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CHM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHM"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer and Information Systems",
+   "heading_printed": "Computer and Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CNT",
+   "heading": "Construction Trades",
+   "heading_printed": "Construction Trades",
+   "rule": "index",
+   "codes": [
+    "CNT"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COM",
+   "heading": "Communications",
+   "heading_printed": "Communications",
+   "rule": "index",
+   "codes": [
+    "COM"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COU",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COU"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CRJ",
+   "heading": "Criminal & Administration of Justice",
+   "heading_printed": "Criminal & Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "CRJ"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CUL",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CUL"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "DMA",
+   "heading": "Digital Media Arts",
+   "heading_printed": "Digital Media Arts",
+   "rule": "index",
+   "codes": [
+    "DMA"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ECO",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECO"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "EDU",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDU"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENG",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENG"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ETH",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETH"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "EVS",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "EVS"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "FIR",
+   "heading": "Fire Science",
+   "heading_printed": "Fire Science",
+   "rule": "index",
+   "codes": [
+    "FIR"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "FOR",
+   "heading": "Forestry",
+   "heading_printed": "Forestry",
+   "rule": "index",
+   "codes": [
+    "FOR"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GEG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEG"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GEL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEL"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GES",
+   "heading": "General Studies",
+   "heading_printed": "General Studies",
+   "rule": "index",
+   "codes": [
+    "GES"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HEA",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "index",
+   "codes": [
+    "HEA"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HIS",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIS"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HRM",
+   "heading": "Hotel and Restaurant Management",
+   "heading_printed": "Hotel and Restaurant Management",
+   "rule": "index",
+   "codes": [
+    "HRM"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HSP",
+   "heading": "Hospitality Management",
+   "heading_printed": "Hospitality Management",
+   "rule": "index",
+   "codes": [
+    "HSP"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HTR",
+   "heading": "Hospitality, Tourism, Recreation, and Retail",
+   "heading_printed": "Hospitality, Tourism, Recreation, and Retail",
+   "rule": "index",
+   "codes": [
+    "HTR"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "JPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JPN"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "LAT",
+   "heading": "Latin",
+   "heading_printed": "Latin",
+   "rule": "index",
+   "codes": [
+    "LAT"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/schedule_of_classes/archived_course_catalogs/2010_catalog.pdf#page=57",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MAT"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MOA",
+   "heading": "Medical Office Assistant",
+   "heading_printed": "Medical Office Assistant",
+   "rule": "index",
+   "codes": [
+    "MOA"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PEA",
+   "heading": "Physical Education-Athletics",
+   "heading_printed": "Physical Education-Athletics",
+   "rule": "index",
+   "codes": [
+    "PEA"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PEF",
+   "heading": "Physical Education-Fitness",
+   "heading_printed": "Physical Education-Fitness",
+   "rule": "index",
+   "codes": [
+    "PEF"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PEH",
+   "heading": "Physical Education-Health",
+   "heading_printed": "Physical Education-Health",
+   "rule": "index",
+   "codes": [
+    "PEH"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PET",
+   "heading": "Physical Education-Theory",
+   "heading_printed": "Physical Education-Theory",
+   "rule": "index",
+   "codes": [
+    "PET"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHI",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHI"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHS",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHS"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHY",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHY"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "POL",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POL"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "REL",
+   "heading": "Religion",
+   "heading_printed": "Religion",
+   "rule": "index",
+   "codes": [
+    "REL"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "RES",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RES"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SNL",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "index",
+   "codes": [
+    "SNL"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2016-17_catalog_021617_update.pdf#page=62",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SPA",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPA"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SPE",
+   "heading": "Speech",
+   "heading_printed": "Speech",
+   "rule": "index",
+   "codes": [
+    "SPE"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "THE",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THE"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "WKX",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WKX"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "WLD",
+   "heading": "Wilderness Education and Outdoor Leadership",
+   "heading_printed": "Wilderness Education and Outdoor Leadership",
+   "rule": "index",
+   "codes": [
+    "WLD"
+   ],
+   "candidate": null,
+   "address": "https://www.ltcc.edu/_resources/pdfs/catalog/2020catalog_fnl_edit_7.24.20.pdf#page=77",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "Subjects",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  }
+ ],
+ "subjects": 55,
+ "with_heading": 55
+}

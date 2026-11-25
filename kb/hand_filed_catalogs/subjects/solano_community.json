@@ -1,0 +1,1119 @@
+{
+ "_what": "The subjects Solano Community College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Solano Community College",
+ "catalog_year": null,
+ "read_at": null,
+ "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv",
+ "source": [
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=108",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=113",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=119",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=124",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=128",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=133",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=143",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=146",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=150",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=166",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=173",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=179",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=182",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=184",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=186",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=191",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=200",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=204",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=211",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=218",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=224",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=233",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=237",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=245",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=251",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=255",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=258",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=260",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=263",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=268",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=272",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=277",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=280",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=285",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=288",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=290",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=293",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=298",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=301",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=305",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=310",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=313",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=322",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=324",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=332",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=334",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=337",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=344",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=348",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=353",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=363",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=376",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=383",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=385",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=388",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=392",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=401",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=405",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=410",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=415",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=419",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=425",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=435",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=441",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=444",
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=448"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=108",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ADVM",
+   "heading": "Advanced Manufacturing",
+   "heading_printed": "Advanced Manufacturing",
+   "rule": "index",
+   "codes": [
+    "ADVM"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=119",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "AERO",
+   "heading": "Aeronautics",
+   "heading_printed": "Aeronautics",
+   "rule": "index",
+   "codes": [
+    "AERO"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=128",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=344",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=146",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ATEC",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "ATEC"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ATHL",
+   "heading": "Intercollegiate Athletics",
+   "heading_printed": "Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "ATHL"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=313",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BIOT",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "index",
+   "codes": [
+    "BIOT"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=166",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BSOT",
+   "heading": "Office Technology/Business Information Worker",
+   "heading_printed": "Office Technology/Business Information Worker",
+   "rule": "index",
+   "codes": [
+    "BSOT"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=184",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=173",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CDFS",
+   "heading": "Child Development and Family Studies",
+   "heading_printed": "Child Development and Family Studies",
+   "rule": "index",
+   "codes": [
+    "CDFS"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=200",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=191",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Science",
+   "heading_printed": "Computer Information Science",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=211",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CJ",
+   "heading": "Criminal Justice",
+   "heading_printed": "Criminal Justice",
+   "rule": "index",
+   "codes": [
+    "CJ"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=113",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=204",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "index",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=224",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=233",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=218",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "DMA",
+   "heading": "Digital Media Arts",
+   "heading_printed": "Digital Media Arts",
+   "rule": "index",
+   "codes": [
+    "DMA"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=245",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "DRFT",
+   "heading": "Drafting",
+   "heading_printed": "Drafting",
+   "rule": "index",
+   "codes": [
+    "DRFT"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=251",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=255",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=258",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=260",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=268",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=263",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=272",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=277",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=285",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=348",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "FTV",
+   "heading": "Film and Television",
+   "heading_printed": "Film and Television",
+   "rule": "index",
+   "codes": [
+    "FTV"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=280",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=288",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=290",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HED"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=322",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=293",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "index",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=298",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HSW",
+   "heading": "Human Services and Social Work",
+   "heading_printed": "Human Services and Social Work",
+   "rule": "index",
+   "codes": [
+    "HSW"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=305",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "HUMN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMN"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=301",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=310",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "KINE",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINE"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=324",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "LR",
+   "heading": "Learning Resources",
+   "heading_printed": "Learning Resources",
+   "rule": "index",
+   "codes": [
+    "LR"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=334",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=337",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "index",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=179",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MKT",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MKT"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=182",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "MUSC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUSC"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=363",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=376",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=383",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "OCED",
+   "heading": "Occupational Education",
+   "heading_printed": "Occupational Education",
+   "rule": "index",
+   "codes": [
+    "OCED"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=385",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "OT",
+   "heading": "Office Technology",
+   "heading_printed": "Office Technology",
+   "rule": "index",
+   "codes": [
+    "OT"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=186",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=388",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=392",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=401",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=405",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=410",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=415",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=419",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SJS",
+   "heading": "Social Justice Studies",
+   "heading_printed": "Social Justice Studies",
+   "rule": "index",
+   "codes": [
+    "SJS"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=425",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=353",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "SPMD",
+   "heading": "Sports Medicine",
+   "heading_printed": "Sports Medicine",
+   "rule": "index",
+   "codes": [
+    "SPMD"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=332",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=435",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "TUTR",
+   "heading": "Tutoring",
+   "heading_printed": "Tutoring",
+   "rule": "index",
+   "codes": [
+    "TUTR"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=441",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "WATR",
+   "heading": "Water and Wastewater Technology",
+   "heading_printed": "Water and Wastewater Technology",
+   "rule": "index",
+   "codes": [
+    "WATR"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=444",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=448",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": "csv kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv"
+  }
+ ],
+ "subjects": 65,
+ "with_heading": 65
+}
