@@ -367,11 +367,15 @@
     return true;
   }
   /* ref names a check inside the card id names (data-ref), so a Needs you link reaches a check whatever its number. */
-  function jump(id, to, ref) {
+  function jump(id, to, ref, fold) {
     var t = document.getElementById(id);
     if (!t) return false;
-    if (PAGE.cur && PAGE.cur.key() && !PAGE.cur.view.contains(t)) unfoldCards({ push: true });
     var cardEl = t.closest ? t.closest(".cmf-card") : null;
+    /* A Needs you link (fold) folds the page to the card that holds its item, as the card's own title does, so the
+       one ranked queue opens each item on its card alone (the anchor page, step 4, S730); the trail or browser Back
+       returns to every card and Needs you. A card with no list of its own, or a decision, lands on the whole page. */
+    var key = fold && cardEl ? cardEl.getAttribute("data-key") : "";
+    if (!(key && foldCard(key, { push: true })) && PAGE.cur && PAGE.cur.key() && !PAGE.cur.view.contains(t)) unfoldCards({ push: true });
     if (cardEl && typeof cardEl._unfold === "function") cardEl._unfold();
     if (ref) { var c = t.querySelector('.cmf-check[data-ref="' + String(ref).replace(/(["\\])/g, "\\$1") + '"]'); if (c) t = c; }
     if (typeof t._unfold === "function") t._unfold();
@@ -679,6 +683,7 @@
     var l = onPage(it.land.id, it.label, "cmf-rank-t");
     if (it.land.ref) l.setAttribute("data-onpage-ref", it.land.ref);
     if (it.land.to) l.setAttribute("data-onpage-to", it.land.to);
+    l.setAttribute("data-onpage-fold", "");   /* lands folded to the card that holds it (step 4) */
     return l;
   }
   function drawRank(box, M, N, opts) {
@@ -899,6 +904,42 @@
     });
   }
 
+  /* ── the doubt rulings, read live (step 4 of the anchor page, S730): a ruling saved in the Courses List takes its card
+     off the in-doubt count at once ──
+     kb/ccr_doubt.json lists the cards in doubt at the last build. The Courses List saves a ruling as a kb_curation row,
+     field ccr_procedure_request under _CCR_PROCEDURE_REQUEST::<time>-<M-ID>, its value naming the card (mid) and the
+     ruling; a card with a ruling other than "unsure" leaves its Discipline in doubt filter (coci_lookup.js ruledCard).
+     The same test here: a card the file lists and a ruling names leaves the count, Needs you and Rulings to find. A
+     card the build already took off the file is never subtracted twice, since only the file's cards count. Read-only,
+     Range-paged (Rule 10 b), through the anon key the page already holds; a failed read keeps the file's count. */
+  var DOUBT = { url: "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/kb_curation", field: "ccr_procedure_request",
+    prefix: "_CCR_PROCEDURE_REQUEST::", page: 1000 };
+  function doubtLive(M) {
+    if (!M.doubtFile) return Promise.resolve(null);
+    var key = anonKey();
+    if (!key) return Promise.reject(new Error("COBI could not be reached from this page"));
+    var url = DOUBT.url + "?select=course_id,value,reviewed_at&field=eq." + DOUBT.field + "&course_id=like." + encodeURIComponent(DOUBT.prefix) + "%25&order=course_id.asc";
+    function page(from, acc) {
+      return fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": from + "-" + (from + DOUBT.page - 1) } })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(function (rows) { rows = rows || []; acc = acc.concat(rows); return rows.length < DOUBT.page ? acc : page(from + DOUBT.page, acc); });
+    }
+    return page(0, []).then(function (rows) {
+      var by = {};
+      rows.forEach(function (x) {
+        if (x.field && x.field !== DOUBT.field) return;
+        var v; try { v = JSON.parse(x.value); } catch (e) { return; }
+        if (v && v.mid) by[v.mid] = v;   /* ordered by key, whose time stamp sorts: the newest ruling on a card stands */
+      });
+      var left = M.doubtFile.filter(function (id) { var v = by[id]; return !(v && v.ruling && v.ruling !== "unsure"); });
+      return { left: left, ruled: M.doubtFile.length - left.length };
+    });
+  }
+  function setDoubt(M, ids) {
+    M.doubtIds = {}; ids.forEach(function (id) { M.doubtIds[id] = true; });
+    M.doubtN = ids.length;
+  }
+
   /* ── The cards answer their own edits (S719; Sam, 2026-11-23: "when I make edits or decisions, they are immediately
      reflected in the numbers (going in the right direction) shown in the links. Then I will want to apply the same
      process and principles to the other commons cards") ──
@@ -920,7 +961,7 @@
     coursesData: "A course handed over leaves the count of outlines a person must find at once, as it leaves Needs you.",
     cr: "Signed in, a wording a curator’s decision names on the Credit Recommendations tab counts as settled at once; signed out, the count is the last receipt’s.",
     programs: "These counts come from the program records, which refresh nightly: a hand-over or a save shows here after the next build.",
-    courses: "The automatic check scores the cards nightly, and an Assign in the Courses List lists its course under the common course at the next daily build, so these counts move then.",
+    courses: "The automatic check scores the cards nightly, and an Assign in the Courses List lists its course under the common course at the next daily build, so these counts move then. A ruling on a card in doubt, saved in the Courses List, takes that card off the in-doubt count and Needs you at once.",
     cdc: "A hand-over takes its item off Needs you at once; a college’s state here changes when a session loads what was handed over, at the next build."
   };
   function copyOf(o) { var x = {}; for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) x[k] = o[k]; return x; }
@@ -1827,7 +1868,7 @@
     return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills), titles, heldCodes, history, spend, readiness, doubt]).then(function (r) {
       var M = model(C, r[0], r[1], r[2], r[3], r[4], r[5], r[6]);
       /* Fixes owed reads the doubt list itself, so a carried ruling takes its card off Needs you (owedNow). */
-      if (r[8] && Array.isArray(r[8].cards)) { M.doubtIds = {}; M.doubtN = r[8].cards.length; r[8].cards.forEach(function (c) { if (c && c.id) M.doubtIds[c.id] = true; }); }
+      if (r[8] && Array.isArray(r[8].cards)) { M.doubtFile = r[8].cards.filter(function (c) { return c && c.id; }).map(function (c) { return c.id; }); setDoubt(M, M.doubtFile); M.doubtN = r[8].cards.length; }
       M.readiness = subjReadiness(r[7], r[3]);
       M.platforms = {}; M.allColleges = ((r[1] && r[1].colleges) || []).length || null;
       ((r[1] && r[1].colleges) || []).forEach(function (c) { if (c && c.platform) M.platforms[c.platform] = (M.platforms[c.platform] || 0) + 1; });
@@ -1862,8 +1903,16 @@
       if (F) { M.crLive = F; redrawCards(M, ["cr"]); }
       return F;
     }, function (e) { M.crLiveError = String(e && e.message || e); return null; });
-    M.ready = held; M.crReady = cr;
-    var round = M._round = { held: held, cr: cr, done: Promise.all([held, cr]).then(function () { M._round = null; }) };
+    var doubt = doubtLive(M).then(function (D) {
+      if (!D) return null;
+      var was = M.doubtN;
+      M.doubtRuled = D.ruled;
+      setDoubt(M, D.left);
+      if (M.doubtN !== was) { redrawNeeds(M); redrawCards(M, ["courses"]); }   /* the ranked link, Rulings to find and the card move together */
+      return D;
+    }, function (e) { M.doubtLiveError = String(e && e.message || e); return null; });
+    M.ready = held; M.crReady = cr; M.doubtReady = doubt;
+    var round = M._round = { held: held, cr: cr, doubt: doubt, done: Promise.all([held, cr, doubt]).then(function () { M._round = null; }) };
     return round;
   }
   /* The course panel (#commons/course/<control number>). A press on a course opens it in place: the address follows
@@ -1954,7 +2003,7 @@
   document.addEventListener("click", function (e) {
     var l = e.target && e.target.closest ? e.target.closest(".cmf a[data-onpage]") : null;
     if (!l || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (jump(l.getAttribute("data-onpage"), l.getAttribute("data-onpage-to"), l.getAttribute("data-onpage-ref"))) e.preventDefault();
+    if (jump(l.getAttribute("data-onpage"), l.getAttribute("data-onpage-to"), l.getAttribute("data-onpage-ref"), l.hasAttribute("data-onpage-fold"))) e.preventDefault();
   });
 
   /* #commons/needs-you (#3566): the front page scrolled to Needs you, its heading focused. */

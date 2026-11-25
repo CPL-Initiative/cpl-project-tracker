@@ -742,3 +742,19 @@ COBI on owed fixes. Then the Back link lost on Courses and Programs, and the dou
 - A light tint token exists only in dark mode (`--gold-soft`); in light it resolves to nothing. Measure a new tint in both themes, or let words carry the state.
 - An inline `//` comment inside a one-line object literal swallows the rest of the line; the test caught it as an undefined property.
 - Searching descriptions means reading every one (the shards and the common-course details, about 80 MB): it loads only when Look in asks for it.
+
+## S730 (SkyDunlin, 2026-11-25): Needs you as the one ranked queue, first slice
+
+**Shipped:** a Needs you link folds the page to the card that holds its item (`data-onpage-fold`, `jump(..., fold)`), the
+item's link focused and highlighted; a decision or a card with no list of its own lands on the whole page. The Common
+subject in doubt count reads the Courses List's saved rulings live (`doubtLive`, the `ccr_procedure_request` rows the
+List writes), so a ruling moves Needs you, the Courses and M-IDs card and Rulings to find at once. **DECIDED**
+`d-needs-you-folds-and-doubt-live-s730`. Guard `tests/commons_needs_you_queue.test.js` (11, mutation-checked);
+`tests/commons_page_clarity.test.js` (1) now expects the fold address where it pinned an unchanged one.
+
+**Lessons:**
+- A live count subtracts only from the file's own list (`M.doubtFile`), so a ruling the build already carried can never
+  come off twice. It is the same shape as the held titles and the hand-overs.
+- A test that clicks a node it looked up must check that the node exists. In the mutation run, a missing trail link
+  crashed the test before it reported, so the guard failed by exit code alone and named nothing.
+- Never mutation-check while a background suite reads the same file: the run reads whichever copy is on disk.
