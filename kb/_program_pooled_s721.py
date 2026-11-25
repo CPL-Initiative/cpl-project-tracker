@@ -332,6 +332,20 @@ POOLS_HELD = {
     ("Moreno Valley College", "37553"): set(), ("Mt. San Antonio College", "40154"): set(),   # restate the total
     ("Ohlone College", "41245"): set(), ("Santa Ana College", "39840"): set(), ("Yuba College", "36015"): set(),
     ("Laney College", "19057"): set(),   # one list, its own total
+    # S731 (kb/_program_piles_s731_pooled.py, POOLED_S731): the records the reading takes once it reads "choose a
+    # minimum of N units", "N combined units", "requires 'a minimum of N units'" and "totaling N units", a list
+    # heading's closing count and a continued heading. Each is a real pool by hand: Canada's selective-course umbrella
+    # over Lists A and B (and C), Marin 46243's List A over its two sub-lists, the University Studies and General
+    # Studies 18 over two or three lists (Cuyamaca, Grossmont), Porterville's 18 over Groups I and II, Modesto
+    # 38869's Elective Courses 6 and 43164's List A 9.
+    ("Cañada College", "30825"): {9}, ("Cañada College", "30834"): {9}, ("Cañada College", "32295"): {12},
+    ("Cañada College", "32452"): {12}, ("Cañada College", "43478"): {12}, ("Cañada College", "43537"): {15},
+    ("College of Marin", "46243"): {9},
+    ("Cuyamaca College", "18628"): {18}, ("Cuyamaca College", "18634"): {18}, ("Cuyamaca College", "18636"): {18},
+    ("Cuyamaca College", "18637"): {18},
+    ("Grossmont College", "19608"): {18}, ("Grossmont College", "19822"): {18}, ("Grossmont College", "19824"): {18},
+    (_M, "38869"): {6}, (_M, "43164"): {9},
+    ("Porterville College", "06773"): {18}, ("Porterville College", "30235"): {18},
 }
 # Each sentence says the lists complete the total, in words the whole-program pool does not take ("selected across the
 # listed disciplines", "applies to List A as a whole", "for a total of 18 units" over three areas), or hedges

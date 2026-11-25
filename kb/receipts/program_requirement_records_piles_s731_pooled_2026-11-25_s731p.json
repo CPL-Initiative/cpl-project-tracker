@@ -1,0 +1,2516 @@
+{
+ "rule": "S731 (lane 1, pooled): the pooled reading's next records at four colleges (f-porterville-cuyamaca-real-pools-refused-s727, f-cuyamaca-18635-wording-rule-s727); Sam, 2026-11-17, sam-collect-with-gaps-2026-11-17; p-gap-filing-leaves-census-lever-s721",
+ "at": "2026-11-25T12:44:12Z",
+ "colleges": [
+  "Cuyamaca College",
+  "El Camino College",
+  "Modesto Junior College",
+  "Porterville College"
+ ],
+ "scorer_change": "kb/_program_requirements_score.py POOLED_S731 (the shared pooled reading)",
+ "self_recall": {
+  "records": 18962,
+  "differ": 18,
+  "right": 18,
+  "wrong": [],
+  "missed": [],
+  "moved": [
+   [
+    "Cuyamaca College",
+    "18628",
+    "empty",
+    "pass"
+   ],
+   [
+    "Cuyamaca College",
+    "18628",
+    "none",
+    "pass"
+   ],
+   [
+    "Modesto Junior College",
+    "38869",
+    "empty",
+    "pass"
+   ],
+   [
+    "Modesto Junior College",
+    "38869",
+    "none",
+    "pass"
+   ],
+   [
+    "Modesto Junior College",
+    "43164",
+    "empty",
+    "pass"
+   ],
+   [
+    "Modesto Junior College",
+    "43164",
+    "none",
+    "pass"
+   ],
+   [
+    "Porterville College",
+    "06773",
+    "empty",
+    "pass"
+   ],
+   [
+    "Porterville College",
+    "30235",
+    "empty",
+    "pass"
+   ],
+   [
+    "Porterville College",
+    "30235",
+    "none",
+    "pass"
+   ]
+  ],
+  "moved_outside": [],
+  "pass_to_fail": []
+ },
+ "gaps": {
+  "option_lists_read_apart": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
+  "pool_figure_not_read": "The catalog prints one figure over several lists or nested options together, and the record adds the parts instead, so its units cannot be checked against that figure."
+ },
+ "moved": 7,
+ "by": {
+  "passes": 4,
+  "option_lists_read_apart": 1,
+  "pool_figure_not_read": 2
+ },
+ "by_college": {
+  "Cuyamaca College": 1,
+  "Modesto Junior College": 5,
+  "Porterville College": 1
+ },
+ "held": [
+  {
+   "college": "Cuyamaca College",
+   "control_number": "18634",
+   "why": "the major reads its 18 under the pooled reading (S731's 'choose a minimum of 18 units total'), and the degree adds to 52 (18 and Cal-GETC 34) against the printed 60. The page prints 'Complete 60 transferable units' and no electives line (its note); a Cuyamaca reconcile step filing that sentence as electives_fill_words, with electives_fill_degree, on a local degree with no degree_elective_units (as Grossmont's 'Complete transferable units as needed to reach 60' reads) is the cheaper lever, and it reads the page text, which this container cannot reach: not gap-filed (p-gap-filing-leaves-census-lever-s721), held for that step and a free reconcile"
+  },
+  {
+   "college": "Cuyamaca College",
+   "control_number": "18635",
+   "why": "the major reads its 18 under the pooled reading, and the degree adds to 52 (18 and Cal-GETC 34) against the printed 60. The page prints 'Complete 60 transferable units' and no electives line (its note); a Cuyamaca reconcile step filing that sentence as electives_fill_words, with electives_fill_degree, on a local degree with no degree_elective_units (as Grossmont's 'Complete transferable units as needed to reach 60' reads) is the cheaper lever, and it reads the page text, which this container cannot reach: not gap-filed (p-gap-filing-leaves-census-lever-s721), held for that step and a free reconcile"
+  },
+  {
+   "college": "Cuyamaca College",
+   "control_number": "18636",
+   "why": "the major reads its 18 under the pooled reading (S731's \"requires 'a minimum of 18 units'\"), and the degree adds to 52 (18 and Cal-GETC 34) against the printed 60. The page prints 'Complete 60 transferable units' and no electives line (its note); a Cuyamaca reconcile step filing that sentence as electives_fill_words, with electives_fill_degree, on a local degree with no degree_elective_units (as Grossmont's 'Complete transferable units as needed to reach 60' reads) is the cheaper lever, and it reads the page text, which this container cannot reach: not gap-filed (p-gap-filing-leaves-census-lever-s721), held for that step and a free reconcile"
+  },
+  {
+   "college": "Cuyamaca College",
+   "control_number": "18637",
+   "why": "the reading takes its 18, and the record was read from Grossmont College's page (its note: the source address is catalog.gcccd.edu/grossmont, its course list Grossmont's, coverage 64 of 92), with no units printed beside any course: it is not the program's own page"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02513",
+   "why": "the pool reads its 18, and the pass then rests on a degree electives fill (major 18 and ECC GE 24 against the printed 60) that the scorer checks against the page text; neither the capture nor this container holds it (catalog.elcamino.edu refused by the egress proxy). A free El Camino reconcile (extract=0, a page read under today's scorer) is the cheaper lever, so it is not gap-filed again: it stays collected with pool_figure_not_read (s720m)"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02515",
+   "why": "the pool reads its 18, and the pass then rests on a degree electives fill (major 18 and ECC GE 24 against the printed 60) that the scorer checks against the page text; neither the capture nor this container holds it (catalog.elcamino.edu refused by the egress proxy). A free El Camino reconcile (extract=0, a page read under today's scorer) is the cheaper lever, so it is not gap-filed again: it stays collected with pool_figure_not_read (s720m)"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02517",
+   "why": "the pool reads its 18, and the pass then rests on a degree electives fill (major 18 and ECC GE 24 against the printed 60) that the scorer checks against the page text; neither the capture nor this container holds it (catalog.elcamino.edu refused by the egress proxy). A free El Camino reconcile (extract=0, a page read under today's scorer) is the cheaper lever, so it is not gap-filed again: it stays collected with pool_figure_not_read (s720m)"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "19861",
+   "why": "the census's Next wave at El Camino (extracted, places none of its courses): a page read is the lever, and the catalog host is refused by this container's egress proxy, so no free reading reaches it here; a paid read (about $0.26 for the four) is a dispatch, outside this plan"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "19866",
+   "why": "the census's Next wave at El Camino (extracted, places none of its courses): a page read is the lever, and the catalog host is refused by this container's egress proxy, so no free reading reaches it here; a paid read (about $0.26 for the four) is a dispatch, outside this plan"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "38948",
+   "why": "the census's Next wave at El Camino (extracted, places none of its courses): a page read is the lever, and the catalog host is refused by this container's egress proxy, so no free reading reaches it here; a paid read (about $0.26 for the four) is a dispatch, outside this plan"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "43993",
+   "why": "the census's Next wave at El Camino (extracted, places none of its courses): a page read is the lever, and the catalog host is refused by this container's egress proxy, so no free reading reaches it here; a paid read (about $0.26 for the four) is a dispatch, outside this plan"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "06683",
+   "why": "its printed 75.5-77.5 includes a 15-unit general education block (MJC areas 1B, 2, 3, 6 and 7) the record leaves out (its note); with ge_units 15 the scorer's ge_included adds it to exactly the printed total, a reconcile fill from the page's own words; no gap kind names it"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "35127",
+   "why": "the page lays out two paths (non-native and native or heritage learners) that the eLumen structure does not encode (its note: 'reviewer should check'); its 23 is the range's top. No kind names a range over two learner paths (entry_path_range names a licensed entry), so it is held for a reviewed reading"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "42664",
+   "why": "its arithmetic is equal (30-35); its invented check fails on COMM 130 and PSYCH 121, catalog additions the closed list lacks, which no unit gap names and no pool reading moves"
+  },
+  {
+   "college": "Porterville College",
+   "control_number": "06773",
+   "why": "the reading takes its 18 over Groups I and II, but its read opens mid-section on page 81 and the program's heading is not in the text (its note), so the list is this program's by its title alone: it does not flip to passing, and it keeps the pool_figure_not_read s721c filed (the conductor, d-porterville-06773-keeps-s721c-gap-s731)"
+  }
+ ],
+ "records": [
+  {
+   "college": "Cuyamaca College",
+   "control_number": "18628",
+   "award": "A.A. Degree",
+   "extracted_run": "44752892297",
+   "moves_to": "passes",
+   "computed": [
+    [
+     6.0,
+     6.0
+    ],
+    [
+     18.0,
+     18.0
+    ]
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "pooled": [
+    {
+     "blocks": "all",
+     "figure": [
+      18.0,
+      18.0
+     ],
+     "minimum": true,
+     "words": "Rule: choose a minimum of 18 units total; at least 3 units from Communication and at least 3 units from Language Arts; the remaining 12 units may come from either list."
+    }
+   ],
+   "path": "kb/program_requirements_college/cuyamaca/records/18628.json",
+   "before_image": {
+    "program_title": "General Studies: Communication and Language Arts",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/general-studies-communication-language-arts/",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "General Studies: Communication and Language Arts",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "AS or AA General Education Requirements",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Organize thoughts and ideas in both oral and written format.",
+       "Communicate effectively with diverse audiences in a variety of media and/or contexts.",
+       "Navigate norms related to communicating in diverse environments, including professional, intercultural, and/or specialized settings."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Communication",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BUS-128",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-C1004",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-123",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-124",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-137",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM-145",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Language Arts",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ARAM-120",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARAM-121",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARAM-220",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC-120",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC-121",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC-122",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC-123",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC-220",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC-221",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC-250",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC-251",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC-254",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARBC-256",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL-120",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL-121",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL-220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASL-221",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUS-128",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-126",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL-131",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL-132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL-133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL-140",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL-141",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL-142",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL-143",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGL-201",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-202",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-217",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-221",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-222",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-231",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-232",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-236",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-238",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL-271",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETHN-236",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETHN-238",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KUMY-120",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KUMY-121",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KUMY-220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN-120",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN-121",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN-220",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN-221",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN-250",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN-251",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 49,
+     "listed": 49
+    },
+    "extracted_run": "44752892297"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 49,
+     "listed": 49
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "06655",
+   "award": "A.S. Degree",
+   "extracted_run": "38477845911",
+   "moves_to": "option_lists_read_apart",
+   "computed": [
+    [
+     9.0,
+     12.0
+    ],
+    [
+     9.0,
+     12.0
+    ]
+   ],
+   "stated": [
+    19.0,
+    21.0
+   ],
+   "pooled": [],
+   "path": "kb/program_requirements_college/modesto_junior/records/06655.json",
+   "words": "The student completes one of three options (Information Systems 21 units, Networking 19 units, Programming 21 units). Each option consists of two blocks (its required core plus its 9-unit electives); all six blocks share option_group 'Required option', and the block name prefix identifies which option each block belongs to.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before_image": {
+    "program_title": "Computer Science",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-science-mjc-fall-2026",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 21,
+    "record": {
+     "program": {
+      "section_heading": "COMPUTER SCIENCE, AS *",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 21
+      },
+      "open_elective_units": null,
+      "ge_pattern": null,
+      "outcomes": [
+       "Assist and provide training to employees in local area businesses.",
+       "Configure and utilize computer hardware and software to solve most entry level business application requirements.",
+       "Demonstrate a high level of communication skills.",
+       "Demonstrate preparedness to successfully enter local industry as a programming specialist, network specialist, or information systems specialist depending on degree option completed.",
+       "Make informed assessments of software implementations with regards to quality and effectiveness.",
+       "Plan, design, and implement solutions using standard computing problem solving techniques."
+      ],
+      "careers": [
+       "programming specialist",
+       "network specialist",
+       "information systems specialist"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "INFORMATION SYSTEMS OPTION - REQUIRED CORE - COMPLETE 12 UNITS",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Required option",
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "CSCI270",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI221",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI290",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "INFORMATION SYSTEMS OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSS WITH A FACULTY ADVISOR)",
+       "rule": "choose_units",
+       "minimum": 9,
+       "option_group": "Required option",
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "CSCI222",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI223",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI224",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI230",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CSCI231",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CSCI232",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI253",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "NETWORKING OPTION - REQUIRED CORE - COMPLETE 10 UNITS",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Required option",
+       "stated": {
+        "min": 10,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "CSCI240",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI270",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI290",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "NETWORKING OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSS WITH A FACULTY ADVISOR)",
+       "rule": "choose_units",
+       "minimum": 9,
+       "option_group": "Required option",
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "CSCI210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CSCI211",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI213",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI231",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CSCI232",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI241",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CSCI242",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "PROGRAMMING OPTION - REQUIRED CORE - COMPLETE 21 UNITS",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Required option",
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "CSCI270",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI271",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CSCI210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CSCI290",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "PROGRAMMING OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSSS WITH A FACULTY ADVISOR)",
+       "rule": "choose_units",
+       "minimum": 9,
+       "option_group": "Required option",
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "CSCI204",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI211",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI221",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI222",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI252",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI253",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI272",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI273",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CSCI274",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 16,
+     "listed": 16
+    },
+    "extracted_run": "38477845911"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 16,
+     "listed": 16,
+     "gaps": [
+      "option_lists_read_apart"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08109",
+   "award": "A.S. Degree",
+   "extracted_run": "38477845911",
+   "moves_to": "pool_figure_not_read",
+   "computed": [
+    [
+     23.0,
+     43.0
+    ],
+    [
+     26.0,
+     37.0
+    ]
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "pooled": [
+    {
+     "blocks": [
+      "AGRICULTURE SCIENCE BREADTH COURSES",
+      "AGRICULTURE SCIENCE BREADTH COURSES"
+     ],
+     "figure": [
+      9.0,
+      9.0
+     ],
+     "minimum": false,
+     "words": "Agriculture Science Breadth section requires 9 units total (printed 'Total 9') drawn from two sub-lists printed 'Complete at least one of the following rules' with totals 3-9 (ANSC200, NR200, PLSC200) and 3-6 (AGM200, AGM235)."
+    }
+   ],
+   "path": "kb/program_requirements_college/modesto_junior/records/08109.json",
+   "words": "The 'Total 5' is printed for the whole Agriculture Career Courses section (AG115 plus the CONT. sub-list); recorded on the AG115 block. Per the Award Instructions note, AG 115 is required plus an additional 4 units: AG 259D, or a combination of AG 259A-C, or a combination of AG 249 and AG 259A-B. The CONT. sub-list is recorded as choose 4 units; its printed total is 1-12.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before_image": {
+    "program_title": "Agriculture: Sales, Service",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-sales-service-mjc-fall-2025",
+    "measure": "units",
+    "total_min": 29,
+    "total_max": 29,
+    "record": {
+     "program": {
+      "section_heading": "Agriculture: Sales, Service A.S. Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 29,
+       "max": 29
+      },
+      "open_elective_units": null,
+      "ge_pattern": "MJC Associate Degree Requirements",
+      "outcomes": [
+       "Create a customer profile and employ a sales strategy based on that profile.",
+       "Evaluate market trends and create a marketing plan for an agricultural product or commodity.",
+       "Organize and prepare reports, presentations, and financial documents pertaining to agriculture business."
+      ],
+      "careers": [
+       "sales"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 5,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "AG115",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "AGRICULTURE COURSES CAREER COURSES CONT.",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": 1,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "AG249",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AG259A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AG259B",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AG259C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AG259D",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "AGRICULTURE SCIENCE BREADTH COURSES",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "ANSC200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NR200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLSC200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "AGRICULTURE SCIENCE BREADTH COURSES",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "AGM200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGM235",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "MAJOR REQUIRED COURSES - COMPLETE 12 UNITS",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "AGEC200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGEC210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGEC215",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGEC280",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "ELECTIVE COURSES - COMPLETE 3 UNITS",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "AG285",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGEC220",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGEC225",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 18,
+     "listed": 18
+    },
+    "extracted_run": "38477845911"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 18,
+     "listed": 18,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "10602",
+   "award": "A.S. Degree",
+   "extracted_run": "38477845911",
+   "moves_to": "pool_figure_not_read",
+   "computed": [
+    [
+     23.0,
+     35.0
+    ],
+    [
+     23.0,
+     35.0
+    ]
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "pooled": [],
+   "path": "kb/program_requirements_college/modesto_junior/records/10602.json",
+   "words": "'AGRICULTURE SCIENCE BREADTH COURSES - COMPLETE 9 UNITS' (Total 9) combines the 6-9 unit 'AGRICULTURE BREADTH COURSES' list and the 0-3 unit 'AGRICULTURE SCIENCE BREADTH COURSES' list; minimum 0 recorded for the 0-3 list.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 93,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before_image": {
+    "program_title": "Soil Science",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/soil-science-mjc-summer-2020",
+    "measure": "units",
+    "total_min": 29,
+    "total_max": 29,
+    "record": {
+     "program": {
+      "section_heading": "Soil Science",
+      "measure": "units",
+      "total_units": {
+       "min": 29,
+       "max": 29
+      },
+      "open_elective_units": null,
+      "ge_pattern": "MJC Associate Degree Requirements",
+      "outcomes": [
+       "Apply the principles of ecology, soil science, silviculture, cartography, and facilities maintenance and development to sustainable resources management problems.",
+       "Employ environmental stewardship as an operational philosophy for resource management, public education of natural resources, and wildlife management.",
+       "Employ the scientific method to solve problems in the laboratory and in the natural environment."
+      ],
+      "careers": [
+       "soil and water management",
+       "conservation",
+       "analysis",
+       "survey",
+       "farm management",
+       "range management",
+       "hydrology",
+       "irrigation",
+       "drainage",
+       "fertilization",
+       "rural and urban planning"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 5,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "AG 115",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "AGRICULTURE CAREER COURSES",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "AG 249",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AG 259A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "AG 259B",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AG 259C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "AG 259D",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "AGRICULTURE BREADTH COURSES",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "PLSC 200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANSC 200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGEC 200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGEC 210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGEC 225",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "AGRICULTURE SCIENCE BREADTH COURSES",
+       "rule": "choose_units",
+       "minimum": 0,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "AGM 200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AGM 235",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "COMPLETE 3 UNITS",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "NR 200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "COMPLETE 6 UNITS",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "AGM 235",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLSC 250",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PLSC 230",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PLSC 205",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PLSC 241",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "AGRICULTURE MAJOR ELECTIVES",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "NR 222",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "EHS 210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PLSC 255",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "AGRICULTURE MAJOR ELECTIVES",
+       "rule": "choose_units",
+       "minimum": 0,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "AGGE 146",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PLSC 260",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 15
+    },
+    "extracted_run": "38477845911"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 15,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 93,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "38869",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38477845911",
+   "moves_to": "passes",
+   "computed": [
+    [
+     15.0,
+     21.0
+    ],
+    [
+     18.0,
+     18.0
+    ]
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "pooled": [
+    {
+     "blocks": [
+      "ELECTIVE COURSES",
+      "ELECTIVES CONTINUED - CHOOSE 3"
+     ],
+     "figure": [
+      6.0,
+      6.0
+     ],
+     "minimum": false,
+     "words": "The two elective blocks sit under a parent group 'ELECTIVE COURSES - COMPLETE 6 UNITS' (Total 6): students complete 6 elective units combined, with 3-6 units from the BUSAD elective list and 0-3 units from the BIT list."
+    }
+   ],
+   "path": "kb/program_requirements_college/modesto_junior/records/38869.json",
+   "before_image": {
+    "program_title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/entrepreneurship-mjc-fall-2025",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Entrepreneurship Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "ge_pattern": null,
+      "outcomes": [
+       "Demonstrate knowledge of the basic skills, processes, and tools used in business start-up and development.",
+       "Recognize, analyze, and resolve ethical issues as they relate to the business environment.",
+       "Create a business plan covering the marketing, financial, human resource, and operational aspects of the business venture."
+      ],
+      "careers": [
+       "self-employed business owners"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES - COMPLETE 12 UNITS",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "BUSAD203",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD235",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD245",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD248",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "ELECTIVE COURSES",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "BUSAD210",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD230",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD238",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD240",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD264",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD274",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD351",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BUSAD377",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "ELECTIVES CONTINUED - CHOOSE 3",
+       "rule": "choose_units",
+       "minimum": 0,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "BIT250",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIT260",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIT270",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIT280",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIT316",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 16,
+     "listed": 16
+    },
+    "extracted_run": "38477845911"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 16,
+     "listed": 16
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "43164",
+   "award": "A.A- T Degree",
+   "extracted_run": "38477845911",
+   "moves_to": "passes",
+   "computed": [
+    [
+     15.0,
+     21.0
+    ],
+    [
+     18.0,
+     18.0
+    ]
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "pooled": [
+    {
+     "blocks": [
+      "LIST A - SELECT THREE",
+      "LIST A"
+     ],
+     "figure": [
+      9.0,
+      9.0
+     ],
+     "minimum": false,
+     "words": "LIST A is printed as a parent group totaling 9 units ('Complete the following number of credits: 9') containing two sub-lists: 'LIST A - SELECT THREE' (0-3 units, COMM 104/COMM 107) and a second 'LIST A' (6-9 units)."
+    }
+   ],
+   "path": "kb/program_requirements_college/modesto_junior/records/43164.json",
+   "before_image": {
+    "program_title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/communication-studies-for-transfer-degree-2-0-mjc-spring-2026",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Communication Studies for Transfer Degree 2.0",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "ge_pattern": "Cal-GETC",
+      "outcomes": [
+       "Construct speeches and other compositions demonstrating clarity of ideas, research skills, proper source citation, logical argument, awareness of audience, and proper outlining techniques.",
+       "Identify and apply principles of interpersonal communication theory to build functional relationships.",
+       "Demonstrate critical thinking in the analysis and production of communication.",
+       "Adequately debate others, present platform speeches, or perform works of literature in a classroom or outside venue."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED CORE - COMPLETE 6 UNITS",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST A - SELECT THREE",
+       "rule": "choose_units",
+       "minimum": 0,
+       "option_group": null,
+       "stated": {
+        "min": 0,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "COMM 104",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 107",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST A",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "COMM 106",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 120",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST B (SELECT ONE)",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "COMM 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 123",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 134",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 13,
+     "listed": 13
+    },
+    "extracted_run": "38477845911"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 13,
+     "listed": 13
+    }
+   },
+   "i": 6
+  },
+  {
+   "college": "Porterville College",
+   "control_number": "30235",
+   "award": "A.A. Degree",
+   "extracted_run": "44477695238",
+   "moves_to": "passes",
+   "computed": [
+    [
+     8.0,
+     8.0
+    ],
+    [
+     18.0,
+     18.0
+    ]
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "pooled": [
+    {
+     "blocks": "all",
+     "figure": [
+      18.0,
+      18.0
+     ],
+     "minimum": true,
+     "words": "Major requires at least 18 combined units from Groups I and II ('Total to a minimum of 18 combined units'), with at least one course (4 or more units) from each group; recorded total_units 18 and each group as choose_units minimum 4."
+    }
+   ],
+   "path": "kb/program_requirements_college/porterville/records/30235.json",
+   "before_image": {
+    "program_title": "Biological and Physical Science",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Biological and Physical Science Associate in Arts",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Porterville College General Education checklist or Cal-GETC Transfer Curriculum",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Students will apply the scientific method to analyze physical and biological processes; use scientific terminology appropriately; draw appropriate conclusions from laboratory activities; identify the relationships between natural science, human activities, and society; identify levels of organization within natural systems and relate to biological and/or physical processes; describe the structure and properties of matter, transfer of energy, and the relationships between matter and energy within biological and/or physical systems; explain basic physical, chemical, and/or biological processes; select the appropriate qualitative and quantitative methods to analyze physical systems."
+      ],
+      "careers": [
+       "nursing",
+       "physical therapy",
+       "physician assistant"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Group l - Biological Sciences",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL P115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ERSC P115",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL P119",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL P120",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL P135",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL P136",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL P160",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "NUTR P110",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Group II - Physical Sciences",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ASTR C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM P101A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM P101B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM P105",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CHEM P106",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ERSC P110",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL P110",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHSC P112",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS P102A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS P102B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS P104A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHYS P104B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 21,
+     "listed": 21,
+     "gaps": [
+      "pool_figure_not_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    },
+    "extracted_run": "44477695238"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 21,
+     "listed": 21
+    }
+   },
+   "i": 7
+  }
+ ],
+ "shared_pages": {
+  "43164": [
+   "30643"
+  ],
+  "30235": [
+   "38309"
+  ]
+ },
+ "supersedes": "none; s727p's holds Modesto 06655, 08109, 10602, 38869 and 43164 and s721c's gap row Porterville 30235 move here; 06773 keeps s721c's gap",
+ "representation": "checks.arithmetic, checks.gaps and checks.confidence as the load reads the rescored score; coverage, invented and the record unchanged",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Cuyamaca College', '18628', 44752892297, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-C1004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-123\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-124\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-137\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-145\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Communication\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARAM-120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARAM-121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARAM-220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-122\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-123\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-221\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-254\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-256\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-121\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-221\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-126\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-142\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-143\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-217\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-236\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-238\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-271\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN-236\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN-238\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KUMY-120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KUMY-121\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KUMY-220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-221\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-251\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Language Arts\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"AS or AA General Education Requirements\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Organize thoughts and ideas in both oral and written format.\",\"Communicate effectively with diverse audiences in a variety of media and/or contexts.\",\"Navigate norms related to communicating in diverse environments, including professional, intercultural, and/or specialized settings.\"],\"section_heading\":\"General Studies: Communication and Language Arts\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb),\n  (2, 'Modesto Junior College', '06655', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"INFORMATION SYSTEMS OPTION - REQUIRED CORE - COMPLETE 12 UNITS\",\"option_group\":\"Required option\",\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI223\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI224\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI253\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"INFORMATION SYSTEMS OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSS WITH A FACULTY ADVISOR)\",\"option_group\":\"Required option\",\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"NETWORKING OPTION - REQUIRED CORE - COMPLETE 10 UNITS\",\"option_group\":\"Required option\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI213\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI242\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"NETWORKING OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSS WITH A FACULTY ADVISOR)\",\"option_group\":\"Required option\",\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI271\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"PROGRAMMING OPTION - REQUIRED CORE - COMPLETE 21 UNITS\",\"option_group\":\"Required option\",\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI204\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI252\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI253\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI272\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI274\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"PROGRAMMING OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSSS WITH A FACULTY ADVISOR)\",\"option_group\":\"Required option\",\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[\"programming specialist\",\"network specialist\",\"information systems specialist\"],\"ge_pattern\":null,\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Assist and provide training to employees in local area businesses.\",\"Configure and utilize computer hardware and software to solve most entry level business application requirements.\",\"Demonstrate a high level of communication skills.\",\"Demonstrate preparedness to successfully enter local industry as a programming specialist, network specialist, or information systems specialist depending on degree option completed.\",\"Make informed assessments of software implementations with regards to quality and effectiveness.\",\"Plan, design, and implement solutions using standard computing problem solving techniques.\"],\"section_heading\":\"COMPUTER SCIENCE, AS *\",\"total_units\":{\"max\":21,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb),\n  (3, 'Modesto Junior College', '08109', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG115\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG249\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259D\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"AGRICULTURE COURSES CAREER COURSES CONT.\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":1}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANSC200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NR200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC200\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"AGRICULTURE SCIENCE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM235\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"AGRICULTURE SCIENCE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC280\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"MAJOR REQUIRED COURSES - COMPLETE 12 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG285\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC225\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"ELECTIVE COURSES - COMPLETE 3 UNITS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"sales\"],\"ge_pattern\":\"MJC Associate Degree Requirements\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Create a customer profile and employ a sales strategy based on that profile.\",\"Evaluate market trends and create a marketing plan for an agricultural product or commodity.\",\"Organize and prepare reports, presentations, and financial documents pertaining to agriculture business.\"],\"section_heading\":\"Agriculture: Sales, Service A.S. Degree\",\"total_units\":{\"max\":29,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb),\n  (4, 'Modesto Junior College', '10602', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 115\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 249\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AG 259A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 259B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AG 259C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AG 259D\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"AGRICULTURE CAREER COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANSC 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC 225\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"AGRICULTURE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM 235\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"AGRICULTURE SCIENCE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NR 200\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE 3 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM 235\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 241\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"COMPLETE 6 UNITS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"NR 222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"EHS 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC 255\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"AGRICULTURE MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGGE 146\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC 260\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"AGRICULTURE MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}}],\"program\":{\"careers\":[\"soil and water management\",\"conservation\",\"analysis\",\"survey\",\"farm management\",\"range management\",\"hydrology\",\"irrigation\",\"drainage\",\"fertilization\",\"rural and urban planning\"],\"ge_pattern\":\"MJC Associate Degree Requirements\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply the principles of ecology, soil science, silviculture, cartography, and facilities maintenance and development to sustainable resources management problems.\",\"Employ environmental stewardship as an operational philosophy for resource management, public education of natural resources, and wildlife management.\",\"Employ the scientific method to solve problems in the laboratory and in the natural environment.\"],\"section_heading\":\"Soil Science\",\"total_units\":{\"max\":29,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb),\n  (5, 'Modesto Junior College', '38869', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD203\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD235\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD245\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD248\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES - COMPLETE 12 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD238\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD240\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD264\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD274\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BUSAD351\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD377\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"ELECTIVE COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT250\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT260\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT270\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT280\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT316\",\"units\":1,\"units_max\":null}],\"minimum\":0,\"name\":\"ELECTIVES CONTINUED - CHOOSE 3\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}}],\"program\":{\"careers\":[\"self-employed business owners\"],\"ge_pattern\":null,\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate knowledge of the basic skills, processes, and tools used in business start-up and development.\",\"Recognize, analyze, and resolve ethical issues as they relate to the business environment.\",\"Create a business plan covering the marketing, financial, human resource, and operational aspects of the business venture.\"],\"section_heading\":\"Entrepreneurship Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb),\n  (6, 'Modesto Junior College', '43164', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 103\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED CORE - COMPLETE 6 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 107\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"LIST A - SELECT THREE\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 133\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"LIST A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 123\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 134\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B (SELECT ONE)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"ge_pattern\":\"Cal-GETC\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Construct speeches and other compositions demonstrating clarity of ideas, research skills, proper source citation, logical argument, awareness of audience, and proper outlining techniques.\",\"Identify and apply principles of interpersonal communication theory to build functional relationships.\",\"Demonstrate critical thinking in the analysis and production of communication.\",\"Adequately debate others, present platform speeches, or perform works of literature in a classroom or outside venue.\"],\"section_heading\":\"Communication Studies for Transfer Degree 2.0\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb),\n  (7, 'Porterville College', '30235', 44477695238, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ERSC P115\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BIOL P115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P119\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P135\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P136\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P160\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR P110\",\"units\":3,\"units_max\":null}],\"minimum\":4,\"name\":\"Group l - Biological Sciences\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P101A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P101B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P105\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P106\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERSC P110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL P110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHSC P112\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P102A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P102B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P104A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P104B\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"Group II - Physical Sciences\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"nursing\",\"physical therapy\",\"physician assistant\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Porterville College General Education checklist or Cal-GETC Transfer Curriculum\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will apply the scientific method to analyze physical and biological processes; use scientific terminology appropriately; draw appropriate conclusions from laboratory activities; identify the relationships between natural science, human activities, and society; identify levels of organization within natural systems and relate to biological and/or physical processes; describe the structure and properties of matter, transfer of energy, and the relationships between matter and energy within biological and/or physical systems; explain basic physical, chemical, and/or biological processes; select the appropriate qualitative and quantitative methods to analyze physical systems.\"],\"section_heading\":\"Biological and Physical Science Associate in Arts\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":21,\"placed\":21}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":21,\"placed\":21}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Cuyamaca College', '18628', 44752892297, '263db9e57d1fe2319736677712751159', '639e2f24726fec0b7145ccbb2fae568b', '6fff68f09b91d817b2092156573fb2e5'),\n  (2, 'Modesto Junior College', '06655', 38477845911, '6483a6a98959a8b50b57b691789ebef5', '972ce3267c8b9670b117327200b82b48', '4dd86e27051d5c9b73d3838b76510458'),\n  (3, 'Modesto Junior College', '08109', 38477845911, '25872c225cfe245e59cdd5e6d08023fc', 'ebd12c758ebab5aaeac4ca39249f2f79', '64a4bbf93f4a48da971b9c34cd6a3beb'),\n  (4, 'Modesto Junior College', '10602', 38477845911, '63d3340193769f0dbe3cc06bb3057a13', '9b1f1d670fff2ae1355332e88bab98c0', 'aa811a3ee44bdf6b9cf029c0bc0a8311'),\n  (5, 'Modesto Junior College', '38869', 38477845911, 'a348b2973e76f54650c3f7393a7fcab6', '972ce3267c8b9670b117327200b82b48', 'e56e4f55e2fd2e651d7274ecfc2d45b2'),\n  (6, 'Modesto Junior College', '43164', 38477845911, 'b0ba8a6d10ad916ba68a87b72ff1efcb', '63bb1716563187017be2c4ba1619b459', '69bb5a51ce9fbe2adb7fed3ba3404d43'),\n  (7, 'Porterville College', '30235', 44477695238, '0bf681b0221494f743f9dac74f906b67', '45b7478937c8fa0babaf83c650667d36', '072e959a821c97284ee3eff595bae498'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Cuyamaca College', '18628', 44752892297, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-C1004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-123\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-124\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-137\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-145\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Communication\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARAM-120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARAM-121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARAM-220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-122\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-123\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-221\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-254\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-256\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-121\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-221\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-126\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-142\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-143\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-217\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-236\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-238\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-271\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN-236\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN-238\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KUMY-120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KUMY-121\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KUMY-220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-221\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-251\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Language Arts\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"AS or AA General Education Requirements\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Organize thoughts and ideas in both oral and written format.\",\"Communicate effectively with diverse audiences in a variety of media and/or contexts.\",\"Navigate norms related to communicating in diverse environments, including professional, intercultural, and/or specialized settings.\"],\"section_heading\":\"General Studies: Communication and Language Arts\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb),\n  (2, 'Modesto Junior College', '06655', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"INFORMATION SYSTEMS OPTION - REQUIRED CORE - COMPLETE 12 UNITS\",\"option_group\":\"Required option\",\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI223\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI224\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI253\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"INFORMATION SYSTEMS OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSS WITH A FACULTY ADVISOR)\",\"option_group\":\"Required option\",\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"NETWORKING OPTION - REQUIRED CORE - COMPLETE 10 UNITS\",\"option_group\":\"Required option\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI213\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI242\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"NETWORKING OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSS WITH A FACULTY ADVISOR)\",\"option_group\":\"Required option\",\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI271\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"PROGRAMMING OPTION - REQUIRED CORE - COMPLETE 21 UNITS\",\"option_group\":\"Required option\",\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI204\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI252\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI253\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI272\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI274\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"PROGRAMMING OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSSS WITH A FACULTY ADVISOR)\",\"option_group\":\"Required option\",\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[\"programming specialist\",\"network specialist\",\"information systems specialist\"],\"ge_pattern\":null,\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Assist and provide training to employees in local area businesses.\",\"Configure and utilize computer hardware and software to solve most entry level business application requirements.\",\"Demonstrate a high level of communication skills.\",\"Demonstrate preparedness to successfully enter local industry as a programming specialist, network specialist, or information systems specialist depending on degree option completed.\",\"Make informed assessments of software implementations with regards to quality and effectiveness.\",\"Plan, design, and implement solutions using standard computing problem solving techniques.\"],\"section_heading\":\"COMPUTER SCIENCE, AS *\",\"total_units\":{\"max\":21,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb),\n  (3, 'Modesto Junior College', '08109', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG115\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG249\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259D\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"AGRICULTURE COURSES CAREER COURSES CONT.\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":1}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANSC200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NR200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC200\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"AGRICULTURE SCIENCE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM235\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"AGRICULTURE SCIENCE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC280\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"MAJOR REQUIRED COURSES - COMPLETE 12 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG285\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC225\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"ELECTIVE COURSES - COMPLETE 3 UNITS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"sales\"],\"ge_pattern\":\"MJC Associate Degree Requirements\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Create a customer profile and employ a sales strategy based on that profile.\",\"Evaluate market trends and create a marketing plan for an agricultural product or commodity.\",\"Organize and prepare reports, presentations, and financial documents pertaining to agriculture business.\"],\"section_heading\":\"Agriculture: Sales, Service A.S. Degree\",\"total_units\":{\"max\":29,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb),\n  (4, 'Modesto Junior College', '10602', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 115\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 249\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AG 259A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 259B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AG 259C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AG 259D\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"AGRICULTURE CAREER COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANSC 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC 225\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"AGRICULTURE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM 235\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"AGRICULTURE SCIENCE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NR 200\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE 3 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM 235\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 241\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"COMPLETE 6 UNITS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"NR 222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"EHS 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC 255\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"AGRICULTURE MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGGE 146\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC 260\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"AGRICULTURE MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}}],\"program\":{\"careers\":[\"soil and water management\",\"conservation\",\"analysis\",\"survey\",\"farm management\",\"range management\",\"hydrology\",\"irrigation\",\"drainage\",\"fertilization\",\"rural and urban planning\"],\"ge_pattern\":\"MJC Associate Degree Requirements\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply the principles of ecology, soil science, silviculture, cartography, and facilities maintenance and development to sustainable resources management problems.\",\"Employ environmental stewardship as an operational philosophy for resource management, public education of natural resources, and wildlife management.\",\"Employ the scientific method to solve problems in the laboratory and in the natural environment.\"],\"section_heading\":\"Soil Science\",\"total_units\":{\"max\":29,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb),\n  (5, 'Modesto Junior College', '38869', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD203\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD235\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD245\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD248\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES - COMPLETE 12 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD238\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD240\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD264\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD274\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BUSAD351\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD377\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"ELECTIVE COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT250\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT260\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT270\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT280\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT316\",\"units\":1,\"units_max\":null}],\"minimum\":0,\"name\":\"ELECTIVES CONTINUED - CHOOSE 3\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}}],\"program\":{\"careers\":[\"self-employed business owners\"],\"ge_pattern\":null,\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate knowledge of the basic skills, processes, and tools used in business start-up and development.\",\"Recognize, analyze, and resolve ethical issues as they relate to the business environment.\",\"Create a business plan covering the marketing, financial, human resource, and operational aspects of the business venture.\"],\"section_heading\":\"Entrepreneurship Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb),\n  (6, 'Modesto Junior College', '43164', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 103\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED CORE - COMPLETE 6 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 107\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"LIST A - SELECT THREE\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 133\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"LIST A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 123\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 134\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B (SELECT ONE)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"ge_pattern\":\"Cal-GETC\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Construct speeches and other compositions demonstrating clarity of ideas, research skills, proper source citation, logical argument, awareness of audience, and proper outlining techniques.\",\"Identify and apply principles of interpersonal communication theory to build functional relationships.\",\"Demonstrate critical thinking in the analysis and production of communication.\",\"Adequately debate others, present platform speeches, or perform works of literature in a classroom or outside venue.\"],\"section_heading\":\"Communication Studies for Transfer Degree 2.0\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb),\n  (7, 'Porterville College', '30235', 44477695238, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ERSC P115\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BIOL P115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P119\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P135\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P136\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P160\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR P110\",\"units\":3,\"units_max\":null}],\"minimum\":4,\"name\":\"Group l - Biological Sciences\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P101A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P101B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P105\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P106\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERSC P110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL P110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHSC P112\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P102A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P102B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P104A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P104B\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"Group II - Physical Sciences\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"nursing\",\"physical therapy\",\"physician assistant\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Porterville College General Education checklist or Cal-GETC Transfer Curriculum\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will apply the scientific method to analyze physical and biological processes; use scientific terminology appropriately; draw appropriate conclusions from laboratory activities; identify the relationships between natural science, human activities, and society; identify levels of organization within natural systems and relate to biological and/or physical processes; describe the structure and properties of matter, transfer of energy, and the relationships between matter and energy within biological and/or physical systems; explain basic physical, chemical, and/or biological processes; select the appropriate qualitative and quantitative methods to analyze physical systems.\"],\"section_heading\":\"Biological and Physical Science Associate in Arts\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":21,\"placed\":21}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":21,\"placed\":21}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (7)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s731p pooled confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s731p pooled guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Cuyamaca College', '18628', 44752892297, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-C1004\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-110\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-123\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-124\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-137\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM-145\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Communication\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARAM-120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARAM-121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARAM-220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-122\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-123\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-221\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-254\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARBC-256\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-121\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASL-221\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUS-128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-126\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-140\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-141\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-142\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGL-143\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-217\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-236\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-238\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGL-271\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN-236\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN-238\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KUMY-120\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KUMY-121\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KUMY-220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-121\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-220\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-221\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN-251\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Language Arts\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"AS or AA General Education Requirements\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Organize thoughts and ideas in both oral and written format.\",\"Communicate effectively with diverse audiences in a variety of media and/or contexts.\",\"Navigate norms related to communicating in diverse environments, including professional, intercultural, and/or specialized settings.\"],\"section_heading\":\"General Studies: Communication and Language Arts\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":49,\"placed\":49}'::jsonb),\n  (2, 'Modesto Junior College', '06655', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"INFORMATION SYSTEMS OPTION - REQUIRED CORE - COMPLETE 12 UNITS\",\"option_group\":\"Required option\",\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI223\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI224\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI253\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"INFORMATION SYSTEMS OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSS WITH A FACULTY ADVISOR)\",\"option_group\":\"Required option\",\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"NETWORKING OPTION - REQUIRED CORE - COMPLETE 10 UNITS\",\"option_group\":\"Required option\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI213\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI231\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI232\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI242\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"NETWORKING OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSS WITH A FACULTY ADVISOR)\",\"option_group\":\"Required option\",\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI270\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI271\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI290\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"PROGRAMMING OPTION - REQUIRED CORE - COMPLETE 21 UNITS\",\"option_group\":\"Required option\",\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI204\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI211\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI221\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI252\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI253\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI272\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI273\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI274\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"PROGRAMMING OPTION - ELECTIVES - COMPLETE 9 UNITS (DISCUSSS WITH A FACULTY ADVISOR)\",\"option_group\":\"Required option\",\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[\"programming specialist\",\"network specialist\",\"information systems specialist\"],\"ge_pattern\":null,\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Assist and provide training to employees in local area businesses.\",\"Configure and utilize computer hardware and software to solve most entry level business application requirements.\",\"Demonstrate a high level of communication skills.\",\"Demonstrate preparedness to successfully enter local industry as a programming specialist, network specialist, or information systems specialist depending on degree option completed.\",\"Make informed assessments of software implementations with regards to quality and effectiveness.\",\"Plan, design, and implement solutions using standard computing problem solving techniques.\"],\"section_heading\":\"COMPUTER SCIENCE, AS *\",\"total_units\":{\"max\":21,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"option_lists_read_apart\"],\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb),\n  (3, 'Modesto Junior College', '08109', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG115\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG249\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG259D\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"AGRICULTURE COURSES CAREER COURSES CONT.\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":12,\"min\":1}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANSC200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NR200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC200\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"AGRICULTURE SCIENCE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM235\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"AGRICULTURE SCIENCE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC215\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC280\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"MAJOR REQUIRED COURSES - COMPLETE 12 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG285\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC220\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC225\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"ELECTIVE COURSES - COMPLETE 3 UNITS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[\"sales\"],\"ge_pattern\":\"MJC Associate Degree Requirements\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Create a customer profile and employ a sales strategy based on that profile.\",\"Evaluate market trends and create a marketing plan for an agricultural product or commodity.\",\"Organize and prepare reports, presentations, and financial documents pertaining to agriculture business.\"],\"section_heading\":\"Agriculture: Sales, Service A.S. Degree\",\"total_units\":{\"max\":29,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":18,\"placed\":18}'::jsonb),\n  (4, 'Modesto Junior College', '10602', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 115\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 249\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AG 259A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AG 259B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AG 259C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"AG 259D\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"AGRICULTURE CAREER COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANSC 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGEC 225\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"AGRICULTURE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM 200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM 235\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"AGRICULTURE SCIENCE BREADTH COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NR 200\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"COMPLETE 3 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGM 235\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 250\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"PLSC 241\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"COMPLETE 6 UNITS\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"NR 222\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"EHS 210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC 255\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"AGRICULTURE MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AGGE 146\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PLSC 260\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"AGRICULTURE MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}}],\"program\":{\"careers\":[\"soil and water management\",\"conservation\",\"analysis\",\"survey\",\"farm management\",\"range management\",\"hydrology\",\"irrigation\",\"drainage\",\"fertilization\",\"rural and urban planning\"],\"ge_pattern\":\"MJC Associate Degree Requirements\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply the principles of ecology, soil science, silviculture, cartography, and facilities maintenance and development to sustainable resources management problems.\",\"Employ environmental stewardship as an operational philosophy for resource management, public education of natural resources, and wildlife management.\",\"Employ the scientific method to solve problems in the laboratory and in the natural environment.\"],\"section_heading\":\"Soil Science\",\"total_units\":{\"max\":29,\"min\":29}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":15,\"placed\":14}'::jsonb),\n  (5, 'Modesto Junior College', '38869', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD203\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD235\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD245\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD248\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES - COMPLETE 12 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD210\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD230\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD238\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD240\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD264\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD274\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BUSAD351\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD377\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"ELECTIVE COURSES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":6,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT250\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT260\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT270\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT280\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIT316\",\"units\":1,\"units_max\":null}],\"minimum\":0,\"name\":\"ELECTIVES CONTINUED - CHOOSE 3\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}}],\"program\":{\"careers\":[\"self-employed business owners\"],\"ge_pattern\":null,\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate knowledge of the basic skills, processes, and tools used in business start-up and development.\",\"Recognize, analyze, and resolve ethical issues as they relate to the business environment.\",\"Create a business plan covering the marketing, financial, human resource, and operational aspects of the business venture.\"],\"section_heading\":\"Entrepreneurship Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":16}'::jsonb),\n  (6, 'Modesto Junior College', '43164', 38477845911, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 103\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED CORE - COMPLETE 6 UNITS\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 104\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 107\",\"units\":3,\"units_max\":null}],\"minimum\":0,\"name\":\"LIST A - SELECT THREE\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":0}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 133\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"LIST A\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 123\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 134\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B (SELECT ONE)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"ge_pattern\":\"Cal-GETC\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Construct speeches and other compositions demonstrating clarity of ideas, research skills, proper source citation, logical argument, awareness of audience, and proper outlining techniques.\",\"Identify and apply principles of interpersonal communication theory to build functional relationships.\",\"Demonstrate critical thinking in the analysis and production of communication.\",\"Adequately debate others, present platform speeches, or perform works of literature in a classroom or outside venue.\"],\"section_heading\":\"Communication Studies for Transfer Degree 2.0\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb),\n  (7, 'Porterville College', '30235', 44477695238, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ERSC P115\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BIOL P115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P119\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P135\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P136\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL P160\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"NUTR P110\",\"units\":3,\"units_max\":null}],\"minimum\":4,\"name\":\"Group l - Biological Sciences\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASTR C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P101A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P101B\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P105\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CHEM P106\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ERSC P110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL P110\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHSC P112\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P102A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P102B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P104A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYS P104B\",\"units\":4,\"units_max\":null}],\"minimum\":4,\"name\":\"Group II - Physical Sciences\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"nursing\",\"physical therapy\",\"physician assistant\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Porterville College General Education checklist or Cal-GETC Transfer Curriculum\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will apply the scientific method to analyze physical and biological processes; use scientific terminology appropriately; draw appropriate conclusions from laboratory activities; identify the relationships between natural science, human activities, and society; identify levels of organization within natural systems and relate to biological and/or physical processes; describe the structure and properties of matter, transfer of energy, and the relationships between matter and energy within biological and/or physical systems; explain basic physical, chemical, and/or biological processes; select the appropriate qualitative and quantitative methods to analyze physical systems.\"],\"section_heading\":\"Biological and Physical Science Associate in Arts\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"pool_figure_not_read\"],\"invented\":true,\"listed\":21,\"placed\":21}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":21,\"placed\":21}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (7)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s731p pooled rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

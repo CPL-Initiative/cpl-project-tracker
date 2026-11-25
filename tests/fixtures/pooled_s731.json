@@ -1,0 +1,132 @@
+{
+  "why": "S731 plan s731p (kb/_program_piles_s731_pooled.py): the rows, the holds and the fail-to-pass the S731 reading adds to s721p's live flips, pinned from the receipt as written (never the live census).",
+  "receipt": "kb/receipts/program_requirement_records_piles_s731_pooled_2026-11-25_s731p.json",
+  "rows": [
+    {
+      "college": "Cuyamaca College",
+      "control_number": "18628",
+      "moves_to": "passes",
+      "page": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/general-studies-communication-language-arts/"
+    },
+    {
+      "college": "Modesto Junior College",
+      "control_number": "06655",
+      "moves_to": "option_lists_read_apart",
+      "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-science-mjc-fall-2026"
+    },
+    {
+      "college": "Modesto Junior College",
+      "control_number": "08109",
+      "moves_to": "pool_figure_not_read",
+      "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-sales-service-mjc-fall-2025"
+    },
+    {
+      "college": "Modesto Junior College",
+      "control_number": "10602",
+      "moves_to": "pool_figure_not_read",
+      "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/soil-science-mjc-summer-2020"
+    },
+    {
+      "college": "Modesto Junior College",
+      "control_number": "38869",
+      "moves_to": "passes",
+      "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/entrepreneurship-mjc-fall-2025"
+    },
+    {
+      "college": "Modesto Junior College",
+      "control_number": "43164",
+      "moves_to": "passes",
+      "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/communication-studies-for-transfer-degree-2-0-mjc-spring-2026"
+    },
+    {
+      "college": "Porterville College",
+      "control_number": "30235",
+      "moves_to": "passes",
+      "page": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80"
+    }
+  ],
+  "held": [
+    {
+      "college": "Cuyamaca College",
+      "control_number": "18634"
+    },
+    {
+      "college": "Cuyamaca College",
+      "control_number": "18635"
+    },
+    {
+      "college": "Cuyamaca College",
+      "control_number": "18636"
+    },
+    {
+      "college": "Cuyamaca College",
+      "control_number": "18637"
+    },
+    {
+      "college": "El Camino College",
+      "control_number": "02513"
+    },
+    {
+      "college": "El Camino College",
+      "control_number": "02515"
+    },
+    {
+      "college": "El Camino College",
+      "control_number": "02517"
+    },
+    {
+      "college": "El Camino College",
+      "control_number": "19861"
+    },
+    {
+      "college": "El Camino College",
+      "control_number": "19866"
+    },
+    {
+      "college": "El Camino College",
+      "control_number": "38948"
+    },
+    {
+      "college": "El Camino College",
+      "control_number": "43993"
+    },
+    {
+      "college": "Modesto Junior College",
+      "control_number": "06683"
+    },
+    {
+      "college": "Modesto Junior College",
+      "control_number": "35127"
+    },
+    {
+      "college": "Modesto Junior College",
+      "control_number": "42664"
+    },
+    {
+      "college": "Porterville College",
+      "control_number": "06773"
+    }
+  ],
+  "s721_fail_to_pass_added": [
+    {
+      "college": "Cuyamaca College",
+      "control_number": "18628"
+    },
+    {
+      "college": "Modesto Junior College",
+      "control_number": "38869"
+    },
+    {
+      "college": "Modesto Junior College",
+      "control_number": "43164"
+    },
+    {
+      "college": "Porterville College",
+      "control_number": "30235"
+    }
+  ],
+  "self_recall": {
+    "differ": 18,
+    "right": 18
+  }
+}

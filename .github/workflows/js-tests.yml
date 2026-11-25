@@ -852,6 +852,10 @@ jobs:
       - name: Pooled figures S727 (the rows, the holds, the plan)
         if: matrix.shard == 2
         run: python3 tests/program_piles_s727_pooled_test.py
+      # S731 lane 1: the pooled reading's next at four colleges; the scorer change POOLED_S731, its self-recall, the plan s731p.
+      - name: Pooled figures S731 (the reading, the self-recall, the rows, the holds, the plan)
+        if: matrix.shard == 3
+        run: python3 tests/program_piles_s731_pooled_test.py
       # S720 at Cabrillo: the census's 21 wording-rule records, 8 collected with named gaps; the plan.
       - name: Cheap piles S720 at Cabrillo (named gaps, the plan)
         if: matrix.shard == 4

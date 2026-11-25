@@ -68,7 +68,14 @@ for key, hand in sorted(M.REVIEWED.items()):
 # ── the holds ─────────────────────────────────────────────────────────────
 for key in sorted(M.HELD):
     check(M.outcome(key)[0] != "passes", "%s %s: does not pass under the reading alone" % key)
+# S731's plan s731p (tests/fixtures/pooled_s731.json) takes five of them forward: 38869 and 43164 pass under its
+# reading, 06655, 08109 and 10602 are collected with their gaps named; the rest stay as s727p left them.
+with open(os.path.join(ROOT, "tests", "fixtures", "pooled_s731.json"), encoding="utf-8") as fh:
+    s731 = {(r["college"], r["control_number"]): r["moves_to"] for r in json.load(fh)["rows"]}
 for cn in M.UNMOVED_S720J:
+    if s731.get((M.MODESTO, cn)) == "passes":
+        check(M.outcome((M.MODESTO, cn))[0] == "passes", "Modesto %s: passes, rescored by s731p" % cn)
+        continue
     f = M.load((M.MODESTO, cn))
     check(M.outcome((M.MODESTO, cn))[0] == "unmoved" and not M.scorer_passes(f),
           "Modesto %s: the reading moves nothing and today's scorer does not pass it" % cn)
