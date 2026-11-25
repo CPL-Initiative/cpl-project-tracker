@@ -1,12 +1,11 @@
 {
- "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 4 of this plan (pass 3 read run 45627438096): Yuba's catalog prints its courses inside Programs and Courses (page 49 on, its table of contents, pass 3), but no sample course matched with a plain space. This prints the pages naming LEARN 49 or LIBSC 1 with any separator, to learn how the catalog prints a course and heads a subject. No model call.",
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 5 of this plan (pass 4 read run 45629589579): Yuba prints each course as 'CODE NUMBER – Title' (KINES 1.26 – Body Toning, page 132). This headings read prints the three lines above each code's first course, a course being such a line with a Units line within three lines, from page 49 (Programs and Courses). No model call.",
  "college": "Yuba College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "LEARN\\W{0,3}49\\b",
-  "LIBSC\\W{0,3}1\\b"
+  "Units?"
  ],
  "pdf_page_cap": 14,
  "pdf_unfolded": true,
@@ -18,8 +17,11 @@
    ]
   }
  ],
- "pdf_span": [
-  49,
-  178
- ]
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z]{2,5}) (?P<num>\\d{1,3}(?:\\.\\d{1,2})?[A-Z]{0,2}) [–-] ",
+  "before": 3,
+  "start_page": 49,
+  "units": "\\b[Uu]nits?\\b",
+  "within": 3
+ }
 }

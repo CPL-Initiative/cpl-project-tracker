@@ -1,0 +1,338 @@
+{
+ "college": "Mendocino College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:05:47Z",
+ "run": "45629589579",
+ "plan": "kb/college_reads/subject_index_mendocino.json",
+ "titles": [
+  {
+   "code": "ARC",
+   "title": "ADDICTION AND RECOVERY COUNSELING",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=231",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADJ",
+   "title": "ADMINISTRATION OF JUSTICE",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=231",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGR",
+   "title": "AGRICULTURE",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=234",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "AMERICAN SIGN LANGUAGE",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANT",
+   "title": "ANTHROPOLOGY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AST",
+   "title": "ASTRONOMY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=245",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATH",
+   "title": "ATHLETICS",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=245",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUT",
+   "title": "AUTOMOTIVE TECHNOLOGY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=247",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BSK",
+   "title": "BASIC SKILLS",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=252",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIO",
+   "title": "BIOLOGICAL SCIENCES",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=252",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "BUSINESS",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=254",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDV",
+   "title": "CHILD DEVELOPMENT",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=258",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CLO",
+   "title": "CLOTHING",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=261",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSC",
+   "title": "COMPUTER SCIENCE",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=263",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CAM",
+   "title": "CULINARY ARTS MANAGEMENT",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=268",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DAM",
+   "title": "DIGITAL ARTS AND MEDIA",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=272",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRN",
+   "title": "DRONE STUDIES",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=273",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EAS",
+   "title": "EARTH SCIENCE",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=274",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDU",
+   "title": "EDUCATION",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=274",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "EMERGENCY MEDICAL SERVICES",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=276",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "ENGLISH",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=277",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "ENGLISH AS A SECOND LANGUAGE",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=279",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETH",
+   "title": "ETHNIC STUDIES",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=282",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FSC",
+   "title": "FIRE SCIENCE",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=283",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEO",
+   "title": "GEOGRAPHY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=287",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEL",
+   "title": "GEOLOGY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=287",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "HISTORY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=289",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSP",
+   "title": "HOSPITALITY MANAGEMENT",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=291",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUS",
+   "title": "HUMAN SERVICES",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=291",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITA",
+   "title": "ITALIAN",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=294",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "KINESIOLOGY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=294",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIB",
+   "title": "LIBRARY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=297",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LVN",
+   "title": "LICENSED VOCATIONAL NURSING",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=297",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MTH",
+   "title": "MATHEMATICS",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=298",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NAL",
+   "title": "NATIVE AMERICAN LANGUAGES",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=309",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUR",
+   "title": "NURSING",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=310",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHL",
+   "title": "PHILOSOPHY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=313",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PEA",
+   "title": "PHYSICAL EDUCATION - ADAPTIVE",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=313",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHY",
+   "title": "PHYSICS",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=320",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RLS",
+   "title": "REAL ESTATE",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=324",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SCI",
+   "title": "SCIENCE",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=326",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "SOCIOLOGY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=326",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPN",
+   "title": "SPANISH",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=326",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "STATISTICS",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=329",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SCT",
+   "title": "SUSTAINABLE CONSTRUCTION AND ENERGY TECHNOLOGY",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=330",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WLD",
+   "title": "WELDING",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=345",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WOD",
+   "title": "WOODWORKING",
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=346",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}
