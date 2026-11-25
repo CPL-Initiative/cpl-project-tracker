@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 3: round 2 (run 45628061061) found the Courses node holds one link list; this read lists its items whole. One JSON call, no model call, writes nothing.",
+ "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 4: round 3 (run 45630333350) found the Courses list holds a Course Listing node (6109); this read lists that node's children. One JSON call, no model call, writes nothing.",
  "college": "Riverside City College",
  "questions": {
   "cq_subjects": "Which navigation node lists the catalog's course subjects with their names."
@@ -15,7 +15,7 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=124&parentId=6315",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=124&parentId=6109",
    "capture_view": true
   }
  ],
