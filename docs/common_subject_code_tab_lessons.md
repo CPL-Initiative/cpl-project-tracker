@@ -879,3 +879,12 @@ scope at 90). **Decided:** `d-stray-remint-retire-not-rekey-s733`.
   refrozen whenever its scope rule changes.
 - Retire, not re-key: the List already counts a course with no M-ID as Needs an M-ID, and a retired id reads dead in
   the alias chain, which is true; a merged shell is the exception and takes an alias to its target.
+
+**S733, second half (apply, sidebar, 0-100):** #3851 (Local subjects sidebar: list a code's courses and move one or
+several, `course_subject_decision`), #3853 (the apply), #3857 (seeder keeps assigned codes), #3858 (honors test case 5
+tolerates a moved payload), #3859 (recommender 0-100, panel bars). Lessons: a post-apply chain can regenerate a seed
+from what has rows and silently drop what has none (99 assigned codes): diff every regenerated reference file against
+main before merging an apply. An apply's audit step can write a file over the 5 MB size limit; leave the cron's files
+to the cron. A new alias map changes the honors payload, so a test pinned to "rows unchanged" must tolerate a moved
+payload. The repo's Supabase guard refuses `DO` blocks: write a guarded delete as a CTE that deletes only when the
+match count is exact.

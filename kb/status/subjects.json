@@ -62,11 +62,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-25T18:10:35Z",
+  "written_at": "2026-11-25T22:09:34Z",
   "project": "subjects",
   "next_step": {
-    "title": "Apply the stray-code re-mint",
-    "text": "The dry run retires 92 M-IDs on the stray codes whose local subjects score 90 or more, and Needs an M-ID goes from 1,819 to 1,918. Next is the apply under the re-mint playbook: a fresh live read, a receipt that restores every removal, then the daily build. A person picks the 50 local subjects under 90."
+    "title": "File common subjects for the held stray codes",
+    "text": "The re-mint retired 60 stray M-IDs and holds 35 until their local subject carries a filed common subject. File those, and the 50 local subjects scored under 90, from the picks list or by moving courses in the Local subjects sidebar; then rerun the dry run for the rest."
   },
   "changes": [
     {
@@ -248,6 +248,18 @@
     {
       "at": "2026-11-25T18:10Z",
       "text": "The stray-code rescore scored 0 to 100 in place of levels; the dry run takes 90 or more: 66 local subjects, 92 M-IDs retire, 48 held (PR 3846)."
+    },
+    {
+      "at": "2026-11-25T19:03Z",
+      "text": "The Local subjects view opens a sidebar of a code's courses; a reviewer moves one or several to another common subject (PR 3851)."
+    },
+    {
+      "at": "2026-11-25T19:40Z",
+      "text": "The stray-code re-mint applied: 60 M-IDs retired, 20 merged shells aliased, 35 held; Needs an M-ID 1,819 to 1,881 (PR 3853)."
+    },
+    {
+      "at": "2026-11-25T22:09Z",
+      "text": "Local subject recommendations score 0 to 100 and the Subjects panel draws the confidence bar (PR 3859)."
     }
   ]
 }
