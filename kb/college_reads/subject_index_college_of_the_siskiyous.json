@@ -1,0 +1,31 @@
+{
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 5. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 4 (run 45630168042): the courses view is a hub linking Credit Courses and Non-Credit Courses. This read: those two pages, whole. No model call, writes nothing.",
+ "college": "College of the Siskiyous",
+ "capture_lines": 6000,
+ "questions": {
+  "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
+ },
+ "keywords": [
+  " - [A-Z]{2,6}\\b",
+  "\\([A-Z]{2,6}\\)",
+  "[Ss]ubjects?",
+  "[Pp]refix",
+  "[Dd]epartment"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "capture_view": true
+  }
+ ]
+}
