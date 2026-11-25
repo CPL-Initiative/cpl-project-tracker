@@ -229,6 +229,14 @@ GAPS.setdefault("degree_within_map_range",
                 "page prints as needed to graduate; the major adds up to its printed major total, and the degree's "
                 "units as read fall inside the map's range and match neither end.")
 ARITH_SCORE.setdefault("degree_within_map_range", 50)
+# S727 at Santa Barbara City (kb/_program_piles_s727_sbcc.py): Nursing 05924 prints a list it requires for graduation
+# under both entry paths and outside each path's printed total, and the record counts the list. No existing kind fits
+# (prerequisites_counted names prerequisites); its score is that kind's 70, since in both the printed total leaves out
+# a list the record counts and the courses add to the total without it.
+GAPS.setdefault("required_list_outside_total",
+                "The catalog prints a list the program requires apart from its printed total, and the record counts "
+                "that list; without it the courses add to the printed total.")
+ARITH_SCORE.setdefault("required_list_outside_total", 70)
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
