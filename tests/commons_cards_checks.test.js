@@ -13,7 +13,12 @@
 //   (3) ⭐ every id on the page is unique, so the helpers are keyed by card and never collide;
 //   (4) ⭐ a quick link whose figure is zero is left out (an injected zero), and the same figure above zero shows;
 //   (5) ⭐ the Subjects card keeps its ids: cmf-subj-check-1 to 4, cmf-subj-quick, cmf-subj-stage-collect;
-//   (6) ⭐ a card's title opens that card's own list (the anchor page, step 3: the Commons as home base).
+//   (6) ⭐ a card's title is the fold control for that card, and a card with no list of its own has none;
+//   (7) ⭐ the fold in place (the anchor page, step 3, S729; Sam on the mock, S725: "looks great, let's go with it"):
+//       a title press folds the page to the trail and that one card at #commons/card/<key>, every other card and
+//       section hidden, the card's "Open the full list" naming its list; "CPL Commons: all cards" restores every card
+//       and the address; the address lands folded on a reload; an unknown or list-less card's address lands on all
+//       cards; browser Back (the address leaving) unfolds.
 // Fixtures: the figures the checks read are injected here (commons.json's facts for programs, courses, exhibits and
 // credentials; the subject titles fixture); the committed files only give the page its shape, and no check reads a
 // committed value.
@@ -46,10 +51,10 @@ function commonsWith(over) {
   if ((C.building || []).concat(C.rows || []).some((x) => x.key === "skills")) Object.assign(facts("skills"), { with_issuer_skills: 8 });
   return C;
 }
-function load(over) {
+function load(over, hash) {
   over = over || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div class="cpl-tab-pane" id="tab-commons"><div class="main-container"><div id="commons-root">Loading</div></div></div></body></html>',
-    { url: "https://example.org/index.html#commons", runScripts: "dangerously", pretendToBeVisual: true });
+    { url: "https://example.org/index.html" + (hash || "#commons"), runScripts: "dangerously", pretendToBeVisual: true });
   const w = dom.window, store = {};
   Object.defineProperty(w, "localStorage", { value: { getItem: (k) => (k in store ? store[k] : null), setItem: (k, v) => { store[k] = String(v); }, removeItem: (k) => { delete store[k]; } }, configurable: true });
   w.scrolled = [];
@@ -157,16 +162,84 @@ const quickTexts = (d, k) => Array.from(cardOf(d, k).querySelectorAll(".cmf-quic
     && quickTexts(d, "courses").length >= 1, quickTexts(d, "courses").concat(quickTexts(d, "exhibit")).join(" | "));
   check("(4) the check itself still shows its zero", /0 with none/.test(txt(d.querySelector('.cmf-card[data-key="exhibit"] .cmf-check:last-of-type .cmf-check-fig'))) || Array.from(cardOf(d, "exhibit").querySelectorAll(".cmf-check-fig")).some((f) => txt(f) === "0 with none"));
 
-  // (6) the Commons is home base (the anchor page, step 3): a card's title opens that card's own list.
+  // (6) the Commons is home base (the anchor page, step 3): a card's title is its fold control.
   const LISTS = { subjects: "#commons/subjects", cdc: "#collect", colleges: "#collect", programs: "#program-requirements/list", "courses-data": "#coci-lookup/courses/common",
     courses: "#coci-lookup/courses", exhibit: "#exhibits/list", credentials: "#exhibits/list", cr: "#cr-reference" };
   Object.keys(LISTS).forEach((k) => {
     const t = d.querySelector('.cmf-card[data-key="' + k + '"] .cmf-card-t'), l = t && t.querySelector("a.cmf-card-tl");
-    check("(6) ⭐ the " + k + " card's title opens its list", !!l && l.getAttribute("href") === LISTS[k] && txt(t) === txt(l) && /^Open the .+ list$/.test(l.getAttribute("aria-label")),
-      t ? t.outerHTML.slice(0, 200) : "no title");
+    check("(6) ⭐ the " + k + " card's title folds the page to it", !!l && l.getAttribute("href") === "#commons/card/" + k && l.getAttribute("data-fold") === k
+      && txt(t) === txt(l) && l.getAttribute("aria-label") === "Open " + txt(l) + " on this page", t ? t.outerHTML.slice(0, 200) : "no title");
   });
-  const inter = d.querySelector('.cmf-card[data-key="interconnect"] .cmf-card-t');
-  check("(6) a card with no list of its own keeps a plain title", !!inter && !inter.querySelector("a"), inter && inter.outerHTML.slice(0, 160));
+  ["interconnect", "plan"].forEach((k) => {
+    const t = d.querySelector('.cmf-card[data-key="' + k + '"] .cmf-card-t');
+    check("(6) the " + k + " card, with no list of its own, has no fold control", !!t && !t.querySelector("a") && !cardOf(d, k).querySelector("[data-fold]"), t && t.outerHTML.slice(0, 160));
+  });
+
+  // (7) the fold in place.
+  const click = (w, n) => n.dispatchEvent(new w.MouseEvent("click", { bubbles: true, cancelable: true, button: 0 }));
+  const shownCards = (d) => Array.from(d.querySelectorAll(".cmf-card")).filter((c) => !c.closest("[hidden]")).map((c) => c.getAttribute("data-key"));
+  const wrapOf = (d) => d.querySelector(".cmn-wrap.cmf");
+  function foldedOk(d, k, why) {
+    const view = d.getElementById("cmf-foldview"), c = cardOf(d, k), trail = view && view.querySelector("nav.cmf-trail");
+    const links = trail ? Array.from(trail.querySelectorAll("a")) : [];
+    const others = Array.from(wrapOf(d).children).filter((n) => n !== view);
+    const bad = [];
+    if (!view || view.hasAttribute("hidden")) bad.push("the fold view is hidden");
+    if (!c || !view.contains(c)) bad.push("the card is not in the fold view");
+    if (JSON.stringify(shownCards(d)) !== JSON.stringify([k])) bad.push("cards shown: " + shownCards(d).join(","));
+    if (!others.every((n) => n.hasAttribute("hidden"))) bad.push("a section stays in sight: " + others.filter((n) => !n.hasAttribute("hidden")).map((n) => n.className).join(","));
+    if (!trail || !/^CPL Commons: all cards \/ /.test(txt(trail)) || txt(trail).indexOf("/ " + txt(c.querySelector(".cmf-card-t"))) < 0) bad.push("trail reads " + txt(trail));
+    if (!links[0] || links[0].getAttribute("href") !== "#commons" || txt(links[0]) !== "CPL Commons: all cards") bad.push("no all-cards link first");
+    const full = links.filter((l) => txt(l) === "Open the full list")[0];
+    if (!full || full.getAttribute("href") !== LISTS[k]) bad.push("Open the full list goes to " + (full && full.getAttribute("href")));
+    if (c && c.querySelector(".cmf-card-t a")) bad.push("the folded card's title is still a control");
+    if (c && (c.classList.contains("cmf-folded") || !c.querySelector(".cmf-check"))) bad.push("the folded card's body is not open");
+    check("(7) ⭐ " + why, !bad.length, bad.join(" | "));
+  }
+  x = load(); await x.M.boot(); await settle(); d = x.d;
+  const before = shownCards(d);
+  /* A card the person collapsed opens whole when folded to, and collapses again on the way back. */
+  cardOf(d, "courses-data")._fold.click();
+  click(x.w, cardOf(d, "courses-data").querySelector("a.cmf-card-tl"));
+  foldedOk(d, "courses-data", "a press on Courses data's title folds the page to the trail and that card");
+  check("(7) ⭐ the address names the folded card", x.w.location.hash === "#commons/card/courses-data", x.w.location.hash);
+  check("(7) the focus lands on the folded card's heading", d.activeElement && d.activeElement.id === "cmf-t-courses-data", d.activeElement && d.activeElement.id);
+  check("(7) the view reports the folded card's address", x.w.CPL_COMMONS_FRONT.foldedTo() === "courses-data");
+  const home = d.querySelector("#cmf-foldview a[data-fold-home]");
+  click(x.w, home);
+  const back = cardOf(d, "courses-data");
+  check("(7) ⭐ CPL Commons: all cards restores every card and the address", JSON.stringify(shownCards(d)) === JSON.stringify(before) && x.w.location.hash === "#commons"
+    && d.getElementById("cmf-foldview").hasAttribute("hidden") && !Array.from(wrapOf(d).children).some((n) => n.id !== "cmf-foldview" && n.hasAttribute("hidden")),
+    shownCards(d).length + " of " + before.length + " cards, " + x.w.location.hash);
+  check("(7) the card goes back to its own group, collapsed as the person left it, its title a fold control again",
+    !!back.closest(".cmf-group-cards") && back.classList.contains("cmf-folded") && !!back.querySelector(".cmf-card-t a.cmf-card-tl[data-fold]") && d.activeElement === back.querySelector("a.cmf-card-tl"));
+  /* Every card with a list folds the same way. */
+  Object.keys(LISTS).forEach((k) => {
+    click(x.w, cardOf(d, k).querySelector("a.cmf-card-tl"));
+    foldedOk(d, k, "the " + k + " card folds the same way");
+    click(x.w, d.querySelector("#cmf-foldview a[data-fold-home]"));
+  });
+  check("(7) after every fold and unfold, every card is in sight again", JSON.stringify(shownCards(d)) === JSON.stringify(before));
+  /* Browser Back: the address leaving the card's unfolds (commons.js on the visit the tab router announces). */
+  click(x.w, cardOf(d, "programs").querySelector("a.cmf-card-tl"));
+  x.w.history.replaceState(null, "", "#commons");
+  x.w.dispatchEvent(new x.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
+  await settle();
+  check("(7) ⭐ the address leaving a card's unfolds every card", JSON.stringify(shownCards(d)) === JSON.stringify(before), shownCards(d).join(","));
+  /* A quick link to a check behind the fold unfolds first. */
+  click(x.w, cardOf(d, "programs").querySelector("a.cmf-card-tl"));
+  const far = cardOf(d, "exhibit").querySelector(".cmf-quick a[data-onpage]");
+  click(x.w, far);
+  check("(7) a link to a card behind the fold unfolds first", !x.w.CPL_COMMONS_FRONT.foldedTo() && !cardOf(d, "exhibit").closest("[hidden]"));
+
+  /* The address round-trips: a reload on it lands folded. */
+  x = load({}, "#commons/card/courses-data"); await x.M.boot(); await settle(); d = x.d;
+  foldedOk(d, "courses-data", "a reload on #commons/card/courses-data lands folded");
+  check("(7) the reload keeps the address", x.w.location.hash === "#commons/card/courses-data", x.w.location.hash);
+  x = load({}, "#commons/card/interconnect"); await x.M.boot(); await settle(); d = x.d;
+  check("(7) a card with no list of its own never folds: its address lands on all cards", !x.w.CPL_COMMONS_FRONT.foldedTo() && shownCards(d).length === before.length && x.w.location.hash === "#commons", x.w.location.hash);
+  x = load({}, "#commons/card/nothing-here"); await x.M.boot(); await settle(); d = x.d;
+  check("(7) an unknown card's address lands on all cards", !x.w.CPL_COMMONS_FRONT.foldedTo() && shownCards(d).length === before.length);
 
   let fail = 0;
   results.forEach(([n, ok, why]) => { if (!ok) fail++; console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); });

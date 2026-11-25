@@ -370,6 +370,7 @@
   function jump(id, to, ref) {
     var t = document.getElementById(id);
     if (!t) return false;
+    if (PAGE.cur && PAGE.cur.key() && !PAGE.cur.view.contains(t)) unfoldCards({ push: true });
     var cardEl = t.closest ? t.closest(".cmf-card") : null;
     if (cardEl && typeof cardEl._unfold === "function") cardEl._unfold();
     if (ref) { var c = t.querySelector('.cmf-check[data-ref="' + String(ref).replace(/(["\\])/g, "\\$1") + '"]'); if (c) t = c; }
@@ -1224,8 +1225,13 @@
     var art = el("article", { cls: "cmf-card" + (o.cls ? " " + o.cls : ""), "data-key": o.key, id: o.id || "cmf-card-" + o.key, "aria-labelledby": "cmf-t-" + o.key });
     var fold = el("button", { type: "button", cls: "cmn-word cmf-fold", "aria-expanded": "true", "aria-controls": "cmf-x-" + o.key, text: "Collapse" });
     /* The Commons is home base (the anchor page, step 3; Sam on the mock https://claude.ai/artifact/35uJsJ2ahLQ6XcrvfMS8YE,
-       S725: "looks great, let's go with it"): a card's title opens that card's own list, whose trail leads back here. */
-    var tkids = o.list ? [el("a", { href: o.list, cls: "cmf-card-tl", text: o.title, "aria-label": "Open the " + o.title + " list" })] : null;
+       S725: "looks great, let's go with it"): a card's title folds the page, in place, to that card under a one-line
+       trail (CPL Commons: all cards / the card), at #commons/card/<key>; the trail's first link unfolds every card. A
+       card's list belongs to its own tab (Courses data's is the 17 MB COCI tab), so the folded card carries "Open the
+       full list" to it (S729: every card folds this way; none mounts its list in place yet). A card with no list of
+       its own keeps a plain title. */
+    var tkids = o.list ? [el("a", { href: "#commons/card/" + encodeURIComponent(o.key), cls: "cmf-card-tl", text: o.title, "data-fold": o.key,
+      "aria-label": "Open " + o.title + " on this page" })] : null;
     art.appendChild(el("div", { cls: "cmf-card-head" }, [el("h3", tkids ? { id: "cmf-t-" + o.key, cls: "cmf-card-t" } : { id: "cmf-t-" + o.key, cls: "cmf-card-t", text: o.title }, tkids),
       o.pill ? el("span", { cls: "cmn-pill cmf-pill" + (o.pillCls ? " " + o.pillCls : ""), text: o.pill }) : null, fold]));
     art.appendChild(el("p", { cls: "cmf-headline" }, [el("strong", { cls: "cmf-big", text: o.big }), el("span", { cls: "cmf-rest" }, o.rest)]));
@@ -1243,6 +1249,8 @@
     art.appendChild(x);
     art.appendChild(el("nav", { cls: "cmf-links", "aria-label": o.title + " links" }, (o.links || []).map(function (l) { return a(l[1], l[0]); })));
     art._fold = fold;
+    art._list = o.list || "";
+    art._title = o.title;
     return art;
   }
 
@@ -1674,6 +1682,62 @@
       p(["Scorecard (coverage and student outcomes) fills in here once both are built."], "cmf-line cmf-muted")
     ]);
     root.appendChild(el("div", { cls: "cmn-page cmf-page" }, [wrap]));
+    /* The fold in place (#commons/card/<key>): the page shows the trail and one card; the rest is hidden, never
+       removed, so a late live read still redraws a card behind the fold. */
+    var foldView = el("section", { cls: "cmf-foldview", id: "cmf-foldview", hidden: true, "aria-label": "One Commons card" });
+    wrap.insertBefore(foldView, wrap.firstChild);
+    var F = { key: "", mark: null, was: false, hid: [] };
+    function byKey(k) { return all.filter(function (c) { return c.getAttribute("data-key") === k; })[0] || null; }
+    /* The folded card: open whatever its own Collapse said, its Collapse hidden, its title plain text. */
+    function focalize(c) {
+      c.classList.add("cmf-focal");
+      c.style.minHeight = "";
+      var tl = c.querySelector(":scope > .cmf-card-head .cmf-card-tl");
+      if (tl) { c._tl = tl; tl.parentNode.replaceChild(document.createTextNode(c._title), tl); }
+    }
+    function plainAgain(c) {
+      c.classList.remove("cmf-focal");
+      var h = c.querySelector(":scope > .cmf-card-head .cmf-card-t");
+      if (c._tl && h) { h.textContent = ""; h.appendChild(c._tl); }
+      c._tl = null;
+    }
+    function foldTo(key) {
+      var c = byKey(key);
+      if (!c || !c._list) return false;
+      if (F.key === key) return true;
+      if (F.key) unfold();
+      F.key = key; F.was = c.classList.contains("cmf-folded");
+      if (F.was) setFold(c, false);
+      F.mark = document.createComment("cmf-fold");
+      c.parentNode.insertBefore(F.mark, c);
+      foldView.textContent = "";
+      foldView.appendChild(el("nav", { cls: "cmf-trail", "aria-label": "Trail" }, [
+        el("a", { href: "#commons", "data-fold-home": key, text: "CPL Commons: all cards", "aria-label": "Back to every Commons card" }),
+        " ", el("span", { cls: "cmf-trail-here", "aria-current": "page", text: "/ " + c._title }), " ",
+        el("a", { href: c._list, cls: "cmf-trail-list", text: "Open the full list", "aria-label": "Open the full " + c._title + " list" })]));
+      foldView.appendChild(c);
+      F.hid = [];
+      Array.prototype.forEach.call(wrap.children, function (n) { if (n !== foldView && !n.hasAttribute("hidden")) { n.setAttribute("hidden", ""); F.hid.push(n); } });
+      foldView.removeAttribute("hidden");
+      focalize(c);
+      return true;
+    }
+    function unfold() {
+      if (!F.key) return null;
+      var c = byKey(F.key);
+      if (c) {
+        plainAgain(c);
+        if (F.mark && F.mark.parentNode) F.mark.parentNode.replaceChild(c, F.mark);
+        if (F.was) setFold(c, true);
+      }
+      F.hid.forEach(function (n) { n.removeAttribute("hidden"); });
+      foldView.setAttribute("hidden", "");
+      foldView.textContent = "";
+      F.key = ""; F.mark = null; F.hid = [];
+      later();
+      return c;
+    }
+    PAGE.cur = { to: foldTo, home: unfold, key: function () { return F.key; }, view: foldView };
     /* Equal cards without empty space (COBIx's review of #3554): every expanded card takes the height of the tallest
        one at its clamped length, measured, so the rows line up across Collect / Curate / Connect. A card whose method
        is open grows on its own; a folded card and a phone's single column keep their own height. */
@@ -1688,6 +1752,7 @@
     for (var rk = 0; rk < Math.max(C.collect.length, C.curate.length, C.connect.length); rk++) rows.push([C.collect[rk], C.curate[rk], C.connect[rk]].filter(Boolean));
     function equalize() {
       all.forEach(function (c) { c.style.minHeight = ""; });
+      if (F.key) return;   /* folded to one card: it keeps its own height */
       /* Rows are real only while the groups sit three across, each one card wide; once they wrap (a tablet, a phone)
          or a group goes two cards wide (a very wide screen), cards keep their own height (COBIx on #3554). */
       if (tracks(groupsEl) !== 3 || !groupsEl.querySelectorAll(".cmf-group-cards").length
@@ -1741,6 +1806,7 @@
       rows.forEach(function (r) { var j = r.indexOf(old); if (j >= 0) r[j] = nu; });
       setFold(nu, old.classList.contains("cmf-folded"));
       wire(nu);
+      if (F.key === k) focalize(nu);
       if (sel && sel.focus) sel.focus();
       later();
       return true;
@@ -1771,6 +1837,8 @@
       /* The Subjects card's figures, with the live saves on top; a failed read keeps the status files' lines. */
       M.subjectsReady = subjectsLive(M).then(null, function (e) { M.subjectsLiveError = String(e && e.message || e); return null; });
       wireHandover(M, opts);
+      PAGE.noted = opts.onCard || null;
+      if (opts.card && !foldCard(opts.card)) setFoldAddress("", false);   /* an unknown card, or one with no list: all cards */
       if (opts.focus === "needs") focusNeeds();
       if (opts.course) openCourse(opts.course);
       NOW.M = M;
@@ -1805,7 +1873,8 @@
      when the address leaves (browser Back). */
   var COURSE = { noted: null };
   function setCourseAddress(key) {
-    var h = key ? "#commons/course/" + encodeURIComponent(key) : "#commons";
+    var f = PAGE.cur && PAGE.cur.key();
+    var h = key ? "#commons/course/" + encodeURIComponent(key) : f ? "#commons/card/" + encodeURIComponent(f) : "#commons";
     try { if (window.history && history.replaceState && location.hash !== h) history.replaceState(null, "", h); } catch (e) { /* the panel still opens */ }
     if (COURSE.noted) COURSE.noted(key || "");
   }
@@ -1841,6 +1910,48 @@
     if (openCourse(l.getAttribute("data-course"), l)) e.preventDefault();
   });
 
+  /* The fold in place (the anchor page, step 3, S729). render() hands PAGE.cur its fold; a title press folds to its
+     card and a trail press unfolds, each in place: the address follows (a history entry, so browser Back unfolds), and
+     commons.js opens the fold an arrival names and unfolds when the address leaves. Nothing is stored. */
+  var PAGE = { cur: null, noted: null };
+  function setFoldAddress(key, push) {
+    var h = key ? "#commons/card/" + encodeURIComponent(key) : "#commons";
+    try {
+      if (window.history && location.hash !== h) { if (push && history.pushState) history.pushState(null, "", h); else if (history.replaceState) history.replaceState(null, "", h); }
+    } catch (e) { /* the fold still happens */ }
+    if (PAGE.noted) PAGE.noted(key || "");
+  }
+  function foldCard(key, o) {
+    o = o || {};
+    if (!PAGE.cur || !document.documentElement.contains(PAGE.cur.view) || !PAGE.cur.to(String(key || ""))) return false;
+    if (o.push) setFoldAddress(key, true);
+    if (o.focus) {
+      var t = document.getElementById("cmf-t-" + key);
+      if (PAGE.cur.view.scrollIntoView) PAGE.cur.view.scrollIntoView({ block: "start" });
+      if (t) { t.setAttribute("tabindex", "-1"); if (t.focus) t.focus(); }
+    }
+    return true;
+  }
+  function unfoldCards(o) {
+    o = o || {};
+    if (!PAGE.cur || !PAGE.cur.key()) return false;
+    var c = PAGE.cur.home();
+    if (o.push) setFoldAddress("", true);
+    if (o.focus && c) {
+      var tl = c.querySelector(".cmf-card-tl");
+      if (c.scrollIntoView) c.scrollIntoView({ block: "center" });
+      if (tl && tl.focus) tl.focus();
+    }
+    return true;
+  }
+  function plainClick(e) { return !(e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey); }
+  document.addEventListener("click", function (e) {
+    var l = e.target && e.target.closest ? e.target.closest(".cmf a[data-fold], .cmf a[data-fold-home]") : null;
+    if (!l || !plainClick(e)) return;
+    var done = l.hasAttribute("data-fold") ? foldCard(l.getAttribute("data-fold"), { push: true, focus: true }) : unfoldCards({ push: true, focus: true });
+    if (done) e.preventDefault();
+  });
+
   /* A link to a card on this page (onPage): jump, never route. */
   document.addEventListener("click", function (e) {
     var l = e.target && e.target.closest ? e.target.closest(".cmf a[data-onpage]") : null;
@@ -1871,7 +1982,7 @@
     var t = String(h || "").replace(/^#/, "").split("/")[0];
     return t === "collect" ? "commons" : t;
   }
-  function atFront(h) { return /^#?(commons\/?|commons\/needs-you(\/.*)?|commons\/course\/.*)?$/.test(String(h || "")); }
+  function atFront(h) { return /^#?(commons\/?|commons\/needs-you(\/.*)?|commons\/course\/.*|commons\/card\/.*)?$/.test(String(h || "")); }
   /* College Data Collection or a Commons view other than the front page. */
   function commonsView(h) { var s = String(h || "").replace(/^#/, ""); return /^(commons\/)?collect(\/|$)/.test(s) || (/^commons\/./.test(s) && !atFront(s)); }
   function placeBack() {
@@ -2084,6 +2195,17 @@
     ".cmf-stuck { overflow-wrap:anywhere; }",
     ".cmf-unclamped .cmf-body { display:block; -webkit-line-clamp:unset; line-clamp:none; max-height:none; overflow:visible; }",
     ".cmf-links { margin-top:auto; min-height:3.4rem; display:flex; flex-wrap:wrap; align-content:flex-end; gap:4px 18px; font-size:.9rem; border-top:1px solid var(--cmn-line-soft); padding-top:8px; }",
+    /* The fold in place: the trail strip, then one card at full width with its whole body. */
+    ".cmf > [hidden] { display:none !important; }",
+    ".cmf-foldview { display:grid; gap:12px; }",
+    ".cmf-trail { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; background:var(--cmn-track); border-radius:8px; padding:6px 12px; font-size:.92rem; }",
+    ".cmf-trail a { display:inline-block; min-height:24px; line-height:24px; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; font-weight:600; }",
+    ".cmf-trail a:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
+    ".cmf-trail-here { color:var(--cmn-ink-2); }",
+    ".cmf-trail .cmf-trail-list { margin-left:auto; }",
+    ".cmf-focal .cmf-fold { display:none; }",
+    ".cmf-focal .cmf-body { display:block; -webkit-line-clamp:unset; line-clamp:none; max-height:none; overflow:visible; }",
+    "@media (max-width: 560px) { .cmf-trail .cmf-trail-list { margin-left:0; } }",
     /* Folded: the title and the headline number only. */
     ".cmf-card.cmf-folded { min-height:0; }",
     ".cmf-folded .cmf-x, .cmf-folded .cmf-links, .cmf-folded .cmf-pill, .cmf-folded .cmf-rest { display:none; }",
@@ -2098,7 +2220,7 @@
   }
 
   window.CPL_COMMONS_FRONT = { boot: boot, model: model, render: render, migrate: migrate, readFold: readFold, KEYS: KEYS,
-    focusNeeds: focusNeeds, openCourse: openCourse, closeCourse: closeCourse, heldLive: heldLive, heldLine: heldLine, owedNow: owedNow, owedAsk: owedAsk, jump: jump, placeBack: placeBack, markBack: markBack, BACK: BACK, LIVE: LIVE,
+    focusNeeds: focusNeeds, openCourse: openCourse, closeCourse: closeCourse, foldCard: foldCard, unfoldCards: unfoldCards, foldedTo: function () { return PAGE.cur ? PAGE.cur.key() : ""; }, heldLive: heldLive, heldLine: heldLine, owedNow: owedNow, owedAsk: owedAsk, jump: jump, placeBack: placeBack, markBack: markBack, BACK: BACK, LIVE: LIVE,
     exhibitsNow: exhibitsNow, crNow: crNow, crLive: crLive, crFigures: crFigures, redrawCards: redrawCards, CRL: CRL, LIVE_WORDS: LIVE_WORDS,
     FOLD_KEY: FOLD_KEY, ORDER_KEY: ORDER_KEY, DETAILS_ORDER_KEY: DETAILS_ORDER_KEY, DETAILS_FOLD_KEY: DETAILS_FOLD_KEY, FILES: FILES, ASKED: ASKED };
 })();
