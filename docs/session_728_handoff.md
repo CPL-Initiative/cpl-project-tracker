@@ -87,3 +87,14 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 06:58Z: College of the Canyons's plan s727a (9 collected with named gaps, 43388 inserted, a new kind
   `heading_not_in_text`; 12 held) to an Opus reader; Santa Barbara City's piles started. `lever`'s Orange Coast work
   (#3811: 3 pins, 5 named gaps, a reader change to `site_heading_names`) to an Opus reader before its paid read.
+- 06:59Z to 07:03Z: s727p's Sonnet reader said APPLY (one minor: the test also compares the load image with the
+  receipt's after-image; its independent checks stand); clean md5 pre-read (11 of 11), migrate 45564723291 returned 11,
+  all 11 live at their after-images; `.apply` restored (`ba6dbb2c`).
+- 06:58Z: San Bernardino Valley 32317's read filed (`5ab12497`, own page, 11 of 11 placed, passing, $0.075); its load
+  45565240210 (07:04Z to 07:05Z) put it live, passing.
+- 07:08Z: #3808 merged (`0b13c85c`); census 45565884062 on `main` (07:13Z): 15,536 of 20,282 pass, 4,277 without a
+  passing record, 469 collected with a named gap.
+- 07:10Z: `elumen`'s fix is ready (#3810, `682f216d`: `label_score()` reads the award from the heading; self-recall 1,043
+  right, 0 wrong at 15 eLumen colleges; binds move at Antelope Valley 47, Redwoods 10, Mission 8), with plan s727v for
+  43028 (a new kind, `ge_figures_other_pattern`), to an Opus reader before any read uses it. Of the 47 at Antelope
+  Valley, 43 already have live rows read from the sister page; 20166, 20184, 20186 and 43150 have none.
