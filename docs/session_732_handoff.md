@@ -48,10 +48,10 @@ and the college split below were written before any worker started.
 2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
-3. **Merge order at sign-off:** #3825 (`9a5deb35`) and #3830 (`dafe74c6`) merged. Land 2, #3827 (`claude/s730-lever`:
-   the lever, the eLumen follow-up and s731p), merges next, with one update from `main` right before its merge
-   ([[S731 FILL: final]]); then land 3, `claude/s731-saddleback-repeat` in its own PR after #3827 merges (its reread
-   is live; a `commons_data` conflict at its land; [[S731 FILL: final]]); then this checkpoint, #3823, at sign-off.
+3. **Merge order at sign-off:** every substantive PR of tonight's has merged: #3825 (`9a5deb35`), #3830 (`dafe74c6`),
+   #3827 (`334aa4f9`, land 2: the lever, the eLumen follow-up and s731p) and #3833 (`b3a23b5d`, land 3: Saddleback's
+   `repeat` steps). This checkpoint, #3823, merges at sign-off, with one update from `main` right before its merge. Open
+   PRs at sign-off: #3823 and dependabot's #3383, which waits.
    Dependabot's #3383 waits.
 
 ## The start (10:12Z firing, 2026-11-25)
@@ -219,8 +219,11 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   41423, 41425 and 41426 (MUS 50), each now its printed total and machine-passing. The worker had dispatched the free
   reconcile before a reader saw its `block_sum` change to shared reconcile code; the reader gated the reread
   (`d-saddleback-reconcile-before-reader-s731`). The branch lands in its own PR after #3827 merges (land 3).
-- [[S731 FILL: final]]: land 2's merge (#3827) and the closing census on `main`; then the memory rows, step 12's
-  stamp and the sign-off.
+- 14:29Z: #3827 merged (`334aa4f9`), land 2. 14:36Z: the memory rows applied (migrate 45634855263, 19 rows); `.apply`
+  restored (`ffe06247`). 15:00Z: #3833 merged (`b3a23b5d`), land 3. Its Secret scan's one finding is a false positive:
+  TruffleHog's Holistic detector paired the word in Saddleback 40320's URL (`pgrm_holistic_ca`) with that page's
+  sha256 in `sources.json` (verification unknown, no verified secret), and the same line may flag `main`'s push scan.
+  15:06Z: the closing census 45640364214 on `main` (`a8f27f67`). Then step 12's stamp and the sign-off.
 
 ## What shipped
 
@@ -236,7 +239,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
     `repeat` branch;
   - Long Beach City, s731c (45612147342): 12, 3 passing on a rescore (02678, 20940, 30650) and 9 named gaps; 4 held;
   - S703's lists-past-figure test now pins Long Beach City 41220's two states.
-- **#3827, land 2 (`claude/s730-lever`), [[S731 FILL: final]]:**
+- **#3827 `334aa4f9` (14:29Z), land 2 (`claude/s730-lever`):**
   - the eLumen follow-up (`claude/s730-elumen2`, `a2af6cf1`): Antelope Valley's read 45612549421 ($2.76), load
     45616752363 (43150 inserted, passing) and reread 45616970396 (37 replaced; 16468 kept); Redwoods' read 45609110977
     ($0.12) and reread 45612300989 (45557 and 45595 replaced): 40 records read from their own pages;
@@ -245,7 +248,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   - the lever: West Valley 06276 and 32021 (read 45602612349, $0.15; load 45605020450) and Allan Hancock 43770 (read
     45605429253, $0.08; load 45624313337) live, all passing; 3 named gaps for programs with no record (Allan Hancock
     42208 and 42210; East Los Angeles 45028); Folsom Lake 38736 pinned to p.176.
-- **Land 3 (`claude/s731-saddleback-repeat`), its own PR after #3827, [[S731 FILL: final]]:** Saddleback's `repeat`
+- **#3833 `b3a23b5d` (15:00Z), land 3 (`claude/s731-saddleback-repeat`):** Saddleback's `repeat`
   steps with the opt-in `block_sum` guard (self-recall over 321 Saddleback records: the seven alone): reconcile
   45606980427 (`extract=0`), keep-only, an Opus reader's REREAD, and reread 45632688186 (14:19Z): 19050, 19051,
   41420, 41422, 41423, 41425 and 41426 replaced, each now its printed total, all passing.
@@ -257,10 +260,10 @@ read again and all passing. Besides: 3 named gaps for programs
 with no record. 0 outline rows (step 11's queue is empty). Paid reads $3.11 (the eLumen follow-up $2.88, the lever
 $0.23).
 
-**The closing census on `main`:** [[S731 FILL: final]]. The latest at this writing, run 45606909979 (11:49Z,
-`d731f9b8`) after the display build: 15,562 of 20,282 active programs pass and 4,210 have no passing record (4,227 at
-this run's start, 17 fewer); 510 are collected with a named gap (504 at the start). Step 12's headline keeps that pair
-until the conductor stamps the closing one.
+**The closing census on `main`:** run 45640364214 (15:06Z, `a8f27f67`): 15,577 of 20,282 active programs pass and
+4,176 have no passing record (4,227 at this run's start, 51 fewer); 529 are collected with a named gap (504 at the
+start). The census after the display build, run 45606909979 (11:49Z, `d731f9b8`), read 15,562, 4,210 and 510. Step
+12's headline: 15,577 of 20,282 at 118 colleges (15,551 at the start).
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
 `docs/program_requirements_harvest_lessons.md`, *S731*; `docs/reference/conductor_mode.md`, *What went wrong in S731*;
@@ -442,12 +445,12 @@ $200 and planned no new worker after about $150.
 | #3823 (`claude/awesome-fermat-uods25`) | the declaration and this checkpoint | merges at sign-off |
 | #3825 (`claude/s730-display`) | merged `9a5deb35` (11:44Z); display build `2c8507c058b1` live | none |
 | #3830 (`claude/s731-land`) | merged `dafe74c6` (13:28Z): s730a, s730b and s731c, all applied and live | none |
-| #3827 (`claude/s730-lever`), land 2 | open at this writing: the lever's loads live (head `d28bf245`); it carries the eLumen follow-up and s731p | [[S731 FILL: final]] |
+| #3827 (`claude/s730-lever`), land 2 | merged `334aa4f9` (14:29Z): the lever, the eLumen follow-up and s731p, all live | none |
 | `claude/s730-elumen2` | head `a2af6cf1`; 40 records live | lands in #3827 |
 | `claude/s731-pooled` | s731p applied (migrate 45627220481, 7 rows) | lands in #3827 |
 | `claude/s730-piles-lattc`, `claude/s730-piles-saddleback`, `claude/s731-piles-lbcc` | landed in #3830 | none |
-| `claude/s731-saddleback-repeat` (land 3) | reconcile 45606980427 (11:42Z to 13:53Z), keep-only, an Opus reader's REREAD; reread 45632688186 (14:19Z): 7 replaced, all passing | its own PR after #3827 merges ([[S731 FILL: final]]) |
-| Harvest gap census on `main` | run 45606909979 (11:49Z): 15,562 pass, 4,210 without, 510 with a named gap; the closing run [[S731 FILL: final]] | the next after tonight's display build |
+| #3833 (`claude/s731-saddleback-repeat`), land 3 | merged `b3a23b5d` (15:00Z): reconcile 45606980427 (11:42Z to 13:53Z), keep-only, an Opus reader's REREAD; reread 45632688186 (14:19Z): 7 replaced, all passing | none |
+| Harvest gap census on `main` | run 45606909979 (11:49Z): 15,562 pass, 4,210 without, 510 with a named gap; the closing run 45640364214 (15:06Z): 15,577 pass, 4,176 without, 529 with a named gap | the next after tonight's display build |
 | #3824, #3826, #3828, #3831 | Sam's plain session SkyDunlin's, merged `d012b203` (11:19Z), `d077c4ff` (11:48Z), `1acd0659` (12:11Z), `87d745e2` (13:41Z) | none |
 | #3383 | dependabot's | waits |
 
@@ -458,8 +461,8 @@ Workers end with the session; each branch is pushed. The vault note for this run
 `CPLBrain/07-session-notes/2026-11-25-s731-skyfrigatebird-collection.md`, on the vault's branch
 `claude/pensive-archimedes-uods25` (draft PR samueltlee/CPLBrain#867, which merges on its checks).
 
-Spend: [[S731 FILL: final]] (so far about $150 at 13:55Z, a token-count estimate at list prices, all collection; the session from the 10:12Z firing, the queue from 10:55Z)
+Spend: $201 (a token-count estimate at list prices, kb/_spend_meter.py's rates; no cost readout here); collection $201; 2026-11-25T10:12Z to 2026-11-25T15:25Z. Opus 5.5 about $195 (the conductor about $31, 22 agents about $164), Sonnet $5.03 (readers), Haiku $0.57 (PR gates). The paid reads' own cost, about $3.11 on their meter, is listed apart. Stop rules: none fired (83 records, about $2.42 each; no outline rows; no rollback).
 
 Opening line: *Greetings, you are SkyOystercatcher (the next free session number at your start; Sam's plain sessions hold 730 and handoff 731), see SkyFrigatebird's (S731) handoff — `docs/session_732_handoff.md` — let's keep rolling with our queue.*
 
-Session cost about [[S731 FILL: final]] (a token-count estimate; get_session is not available here); [[S731 FILL: final]] records collected and live (83 at 14:19Z), plus 3 named gaps for programs with no record; 0 outline rows added; [[S731 FILL: final]] substantive PRs merged (#3825 and #3830 at this writing; land 2, #3827, and land 3 to come), not counting checkpoints.
+Session cost about $201 (a token-count estimate; get_session is not available here); 83 records collected and live, plus 3 named gaps for programs with no record; 0 outline rows added; 4 substantive PRs merged (#3825, #3830, #3827, #3833), not counting checkpoints.

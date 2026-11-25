@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-25T14:23:46Z",
+  "written_at": "2026-11-25T15:10:00Z",
   "session": 731,
   "moniker": "SkyFrigatebird",
   "run": "the CPL Queue routine",
@@ -380,6 +380,10 @@
     {
       "at": "2026-11-25T14:19:00Z",
       "text": "Saddleback: 7 programs read again with a new repeat step, each now its printed total and passing."
+    },
+    {
+      "at": "2026-11-25T15:06:00Z",
+      "text": "The closing census on main: 15,577 of 20,282 active programs have complete requirements (15,551 at this run's start), 4,176 have no passing record and 529 are collected with their gaps named."
     },
     {
       "at": "2026-11-25T06:40:00Z",
@@ -1102,14 +1106,14 @@
     {
       "day": "2026-11-25",
       "active": 20282,
-      "complete": 15562,
+      "complete": 15577,
       "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-25T12:12:00Z"
+    "at": "2026-11-25T16:12:00Z"
   },
   "harvest": {
     "day": "2026-11-25",
