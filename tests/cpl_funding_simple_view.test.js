@@ -18,7 +18,7 @@
 //   S9  the switch painted white on white (Sam, 2026-11-25): the header that holds it, the cards and the line
 //       read --seal-blue, which the page defines only where it scopes it; the header moved to .cplh and the scope
 //       did not follow.
-//   S11 the # column showing in Simple view because this browser remembered it on (the view hides the Columns menu).
+//   S11 the # or District column showing in Simple view because this browser remembered it on (the view hides the Columns menu).
 //   S10 no caret before a public row's pie, or one a screen reader announces, or one that does not turn when the
 //       row opens (Sam, 2026-11-25: "add a carat to each row to the left of the pie glyph").
 //
@@ -294,10 +294,10 @@ const hasHowAfter = (el) => !!(el.nextElementSibling && el.nextElementSibling.ma
   // A browser that turned # on in the Columns menu: its remembered set no longer names "order".
   const { w, doc, SV } = page({ signedIn: true, cols: { college: {} } });
   const T = w.CPL_FUNDING_TAB;
-  const on = T.isColHidden("order");
+  const on = T.isColHidden("order") && T.isColHidden("district");
   SV.set(false);
-  const off = T.isColHidden("order");
-  check("S11: Simple view hides # whatever the browser remembers, and turning it off defers to the browser (" + on + "," + off + ")",
+  const off = T.isColHidden("order") || T.isColHidden("district");
+  check("S11: Simple view hides # and District whatever the browser remembers, and turning it off defers to the browser (" + on + "," + off + ")",
     on === true && off === false);
 }
 

@@ -12893,9 +12893,11 @@
   })();
   function saveColPrefs() { try { localStorage.setItem(COLS_STORE, JSON.stringify(COL_PREFS)); } catch (e) {} }
   function hiddenCols() { return COL_PREFS.college || (COL_PREFS.college = {}); }
-  // Simple view takes the # column off whatever this browser remembers (Sam, 2026-11-25: "take off the college
-  // numbering column"): the view hides the Columns menu, so a # turned on earlier could not be turned off there.
-  function isColHidden(key) { return (key === "order" && !!state.simpleView) || !!hiddenCols()[key]; }
+  // Simple view takes the # and District columns off whatever this browser remembers (Sam, 2026-11-25: "take off
+  // the college numbering column", then "simple view should not show the district column"): the view hides the
+  // Columns menu, so a column turned on earlier could not be turned off there.
+  var SIMPLE_HIDDEN_COLS = { order: true, district: true };
+  function isColHidden(key) { return (!!state.simpleView && !!SIMPLE_HIDDEN_COLS[key]) || !!hiddenCols()[key]; }
   function idColKey() { return "college"; }
   function colHideStyleHtml() {
     // One row shape per institution (R6, 2026-08-31) — no paired-NC-row
