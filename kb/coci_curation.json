@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-24T06:21:02Z",
-  "count": 31056,
+  "_synced_at": "2026-11-25T06:18:39Z",
+  "count": 31216,
   "curations": {
     "AERO M1001": {
       "unified_title": "AS200 Leadership Laboratory C",
@@ -33114,15 +33114,650 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CN:CCC000005358": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000038984": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000081045": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000081600": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000087807": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000103069": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000110734": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000118589": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000149801": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000154200": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000161364": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000172206": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000187474": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000190613": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000198234": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000201693": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000225166": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000263468": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000268188": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000279243": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000279611": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000288594": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000290880": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000292082": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000292698": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000314272": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000316581": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000319548": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000335930": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000338321": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000339115": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000348013": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000367528": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000368078": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000373821": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000376643": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000391553": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000403278": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000407984": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000416710": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000438286": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000443726": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000451799": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000457394": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000459150": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000459339": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000497826": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000501611": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000507704": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000508312": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000508316": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000515259": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000515398": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000525109": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000526091": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000526093": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000528826": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000533359": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000544960": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000549508": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000549509": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000549512": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000549513": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000549514": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000549823": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000551240": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000551242": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000551452": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000552017": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000552018": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000552019": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000552230": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000553965": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000556350": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000556464": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000556465": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000564979": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000566627": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000567717": {
+      "merge_into": "KINE M1344",
+      "reviewed_by": "commons-s724@bot",
+      "reviewed_at": "2026-11-24T20:59:14.607685+00:00"
+    },
+    "CN:CCC000568106": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000569153": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000571814": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000572525": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000572871": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000573716": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000574933": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000574934": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000575005": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000575424": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000575742": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000575746": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000576228": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000577073": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000577074": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000580010": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000581538": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000581539": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000581541": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000581542": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000581707": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000581925": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000582369": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000582904": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000588202": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000588395": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000588396": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000591280": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000592448": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000594432": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000600914": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000605293": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000605294": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000605295": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000611977": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000615110": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000621907": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000621908": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000621909": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000621910": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000621911": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000621912": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
     "CN:CCC000625789": {
       "merge_into": "FIRE M1219",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-09-23T14:27:22.467749+00:00"
     },
+    "CN:CCC000627845": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000627846": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000627962": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000627963": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
     "CN:CCC000632628": {
       "merge_into": "FIRE M1219",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-09-23T14:27:22.467749+00:00"
+    },
+    "CN:CCC000637790": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000637936": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
     },
     "CN:CCC000640606": {
       "merge_into": "FIRE M1219",
@@ -33133,6 +33768,41 @@
       "merge_into": "FIRE M1219",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-09-23T14:27:22.467749+00:00"
+    },
+    "CN:CCC000647167": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000647203": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000647236": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000650519": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000654393": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000657074": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000658670": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
     },
     "CNMA M1001": {
       "unified_title": "Fundamentals of Masonry Construction",
@@ -112168,9 +112838,17 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1267": {
+      "discipline": "Physical Education Disabled Students",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-24T18:25:44.1812+00:00",
       "unified_title": "Adapted: Beginning Stretching and Stress Reduction",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "ruling": {
+        "ruling": "move",
+        "to": "Physical Education Disabled Students",
+        "at": "2026-11-24T19:33:17.901011+00:00"
+      },
+      "validated_at": "2026-11-24T18:25:44.1812+00:00",
+      "validated_by": "slee@cccco.edu"
     },
     "KINE M1270": {
       "unified_title": "Adaptive Circuit Endurance Training",
@@ -115335,9 +116013,17 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1481": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-24T19:35:56.262056+00:00",
       "unified_title": "Intermediate Aquatic Calisthenics",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "ruling": {
+        "ruling": "keep",
+        "to": null,
+        "at": "2026-11-24T19:35:56.02421+00:00"
+      },
+      "validated_at": "2026-11-24T19:35:56.262056+00:00",
+      "validated_by": "slee@cccco.edu"
     },
     "KINE M1482": {
       "unified_title": "Marathon Training Course for Run/Walk",
@@ -116273,9 +116959,17 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "KINE M1697": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-24T19:36:05.811596+00:00",
       "unified_title": "Elements of Swim Technique- Beginner Intermediate",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "ruling": {
+        "ruling": "keep",
+        "to": null,
+        "at": "2026-11-24T19:36:05.579135+00:00"
+      },
+      "validated_at": "2026-11-24T19:36:05.811596+00:00",
+      "validated_by": "slee@cccco.edu"
     },
     "KINE M1699": {
       "unified_title": "Body Conditioning Boot Camp: Beginning",
@@ -116961,9 +117655,17 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M1933": {
+      "discipline": "Physical Education Disabled Students",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-24T19:36:37.511794+00:00",
       "unified_title": "Core Strengthening and Flexibility",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "ruling": {
+        "ruling": "move",
+        "to": "Physical Education Disabled Students",
+        "at": "2026-11-24T19:36:37.349906+00:00"
+      },
+      "validated_at": "2026-11-24T19:36:37.511794+00:00",
+      "validated_by": "slee@cccco.edu"
     },
     "KINE M1934": {
       "unified_title": "Corrective Exercise Strategies for the Movement Professional",
@@ -135454,10 +136156,25 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PEDS M1001": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1002": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
     "PEDS M1003": {
       "merge_into": "KINE M1118",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PEDS M1004": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
     },
     "PEDS M1005": {
       "merge_into": "KINE M1128",
@@ -135485,64 +136202,167 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "PEDS M1010": {
-      "unified_title": "Adapted Exercise for Back Disorders",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00",
+      "unified_title": "Adapted Exercise for Back Disorders"
+    },
+    "PEDS M1011": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1012": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1013": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1014": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
     },
     "PEDS M1015": {
       "merge_into": "PEDS M1025",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PEDS M1016": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1017": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
     "PEDS M1018": {
       "unified_title": "Personalized Fitness Planning for Lifetime Wellness",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PEDS M1019": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
     "PEDS M1020": {
-      "unified_title": "Adapted Swimming for Total Fitness",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00",
+      "unified_title": "Adapted Swimming for Total Fitness"
+    },
+    "PEDS M1021": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
     },
     "PEDS M1022": {
-      "unified_title": "Adapted Swimming and Hydroexercise",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00",
+      "unified_title": "Adapted Swimming and Hydroexercise"
+    },
+    "PEDS M1023": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1024": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
     },
     "PEDS M1025": {
       "unified_title": "Advanced Stretching for Flexibility and Relaxation",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PEDS M1026": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1027": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1028": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1030": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1031": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1032": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M1033": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
     "PEDS M1034": {
-      "unified_title": "Physical Education - Adapted",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00",
+      "unified_title": "Physical Education - Adapted"
     },
     "PEDS M1035": {
       "merge_into": "PEDS M1020",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PEDS M1036": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
     "PEDS M1037": {
-      "unified_title": "Adapted Sport & Recreational Physical Activity",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00",
+      "unified_title": "Adapted Sport & Recreational Physical Activity"
     },
     "PEDS M1038": {
-      "unified_title": "Adapted Sports and Games",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00",
+      "unified_title": "Adapted Sports and Games"
     },
     "PEDS M1039": {
-      "unified_title": "Adapted Walk and Wheel",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00",
+      "unified_title": "Adapted Walk and Wheel"
     },
     "PEDS M1040": {
-      "unified_title": "Adaptive Individual Sports: Bowling",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00",
+      "unified_title": "Adaptive Individual Sports: Bowling"
+    },
+    "PEDS M1041": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
     },
     "PEDS M10AC": {
       "merge_into": "EDUC M1053",
@@ -135738,6 +136558,26 @@
       "unified_title": "Aquatic Fitness for Older Adults",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PEDS M9002": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M9003": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M9004": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "PEDS M9005": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "gather-adapt-s726@bot",
+      "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
     },
     "PEDS M90AB": {
       "merge_into": "KINE M9010",

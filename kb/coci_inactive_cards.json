@@ -12,15 +12,15 @@
 },
 "credential_reference":{
 "path":"credential_reference_data.js",
-"sha256":"40d253bce6d5eda43d216c5c18cc53acd39c56ba6d0ad09480d5f54fe59a913f"
+"sha256":"f6fa27d2a4a108f878fd8019dfd16c5861c0c4e26868fb6e9a5f02f1e8420463"
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"0ab1f936fb8a660e4745f857d8eef4c30e37b13222efe7fae5d01a43bdfdef82"
+"sha256":"a915f9f1a27e197674d00ed8b07481670f719a070fcf3dc64d200c8664a062cc"
 },
 "list_members":{
 "path":"unified_courses_members.js",
-"sha256":"49dae4dfdfd943f68b81bda0c25935135cb519de3c8065f543015845ab9000ec"
+"sha256":"777d3969a31e7d648edc2043cc3475088d8e364c8ae0e03841483c0d49660c78"
 },
 "memberships":{
 "path":"kb/coci_minted_memberships.json",
@@ -12309,6 +12309,19 @@
 "CCC000557222",
 [
 "BSOT 125 X"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"BSOT M10CT":{
+"former_courses":[
+[
+"Shasta College",
+"CCC000367528",
+[
+"PEDS M1029"
 ]
 ]
 ],
@@ -26583,6 +26596,19 @@
 "CCC000647944",
 [
 "HOSP 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"DANC M10FM":{
+"former_courses":[
+[
+"Saddleback College",
+"CCC000647203",
+[
+"PEDS M1029"
 ]
 ]
 ],
@@ -44448,6 +44474,19 @@
 ]
 ],
 "never_had_a_course":false
+},
+"IDST M10DY":{
+"former_courses":[
+[
+"Cabrillo College",
+"CCC000525109",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
 },
 "IDST M10NH":{
 "former_courses":[
@@ -64309,6 +64348,1150 @@
 ],
 "never_had_a_course":false
 },
+"PEDS M10AA":{
+"former_courses":[
+[
+"Glendale Community College",
+"CCC000575746",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AB":{
+"former_courses":[
+[
+"Pasadena City College",
+"CCC000391553",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AH":{
+"former_courses":[
+[
+"Orange Coast College",
+"CCC000314272",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AI":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000621909",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AJ":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000552230",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AK":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000621912",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AP":{
+"former_courses":[
+[
+"Saddleback College",
+"CCC000582369",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AV":{
+"former_courses":[
+[
+"Orange Coast College",
+"CCC000507704",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AW":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000621907",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AX":{
+"former_courses":[
+[
+"Santa Ana College",
+"CCC000581925",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AY":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000553965",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10AZ":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000621910",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BC":{
+"former_courses":[
+[
+"Santa Barbara City College",
+"CCC000572871",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BD":{
+"former_courses":[
+[
+"Santa Ana College",
+"CCC000581542",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BG":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000621908",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BH":{
+"former_courses":[
+[
+"Saddleback College",
+"CCC000544960",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BI":{
+"former_courses":[
+[
+"Santa Ana College",
+"CCC000581541",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BJ":{
+"former_courses":[
+[
+"San Joaquin Delta College",
+"CCC000588202",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BK":{
+"former_courses":[
+[
+"Yuba College",
+"CCC000582904",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BL":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000552017",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BN":{
+"former_courses":[
+[
+"Fresno City College",
+"CCC000316581",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BQ":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000621911",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BS":{
+"former_courses":[
+[
+"Hartnell College",
+"CCC000650519",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BU":{
+"former_courses":[
+[
+"Glendale Community College",
+"CCC000576228",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BV":{
+"former_courses":[
+[
+"Monterey Peninsula College",
+"CCC000571814",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BW":{
+"former_courses":[
+[
+"San Diego City College",
+"CCC000376643",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10BX":{
+"former_courses":[
+[
+"Golden West College",
+"CCC000187474",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CA":{
+"former_courses":[
+[
+"Monterey Peninsula College",
+"CCC000569153",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CC":{
+"former_courses":[
+[
+"College of the Desert",
+"CCC000290880",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CD":{
+"former_courses":[
+[
+"San Jose City College",
+"CCC000575005",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CF":{
+"former_courses":[
+[
+"Los Angeles City College",
+"CCC000637790",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CG":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000552019",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CI":{
+"former_courses":[
+[
+"El Camino College",
+"CCC000515398",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CK":{
+"former_courses":[
+[
+"American River College",
+"CCC000081600",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CL":{
+"former_courses":[
+[
+"American River College",
+"CCC000457394",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CN":{
+"former_courses":[
+[
+"Orange Coast College",
+"CCC000172206",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CO":{
+"former_courses":[
+[
+"College of the Desert",
+"CCC000338321",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CP":{
+"former_courses":[
+[
+"College of San Mateo",
+"CCC000005358",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CS":{
+"former_courses":[
+[
+"Foothill College",
+"CCC000551452",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CT":{
+"former_courses":[
+[
+"Southwestern College",
+"CCC000268188",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CU":{
+"former_courses":[
+[
+"Sierra College",
+"CCC000339115",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CV":{
+"former_courses":[
+[
+"Grossmont College",
+"CCC000154200",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10CZ":{
+"former_courses":[
+[
+"College of the Redwoods",
+"CCC000647236",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DB":{
+"former_courses":[
+[
+"Cabrillo College",
+"CCC000348013",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DC":{
+"former_courses":[
+[
+"Riverside City College",
+"CCC000279611",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DD":{
+"former_courses":[
+[
+"Sierra College",
+"CCC000201693",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DE":{
+"former_courses":[
+[
+"Lassen College",
+"CCC000591280",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DF":{
+"former_courses":[
+[
+"Foothill College",
+"CCC000556350",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DG":{
+"former_courses":[
+[
+"Foothill College",
+"CCC000533359",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DH":{
+"former_courses":[
+[
+"Riverside City College",
+"CCC000225166",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DI":{
+"former_courses":[
+[
+"Lassen College",
+"CCC000459339",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DJ":{
+"former_courses":[
+[
+"College of the Redwoods",
+"CCC000368078",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DK":{
+"former_courses":[
+[
+"Cabrillo College",
+"CCC000373821",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DR":{
+"former_courses":[
+[
+"San Jose City College",
+"CCC000574934",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DS":{
+"former_courses":[
+[
+"San Jose City College",
+"CCC000574933",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DT":{
+"former_courses":[
+[
+"Victor Valley College",
+"CCC000549514",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DU":{
+"former_courses":[
+[
+"Victor Valley College",
+"CCC000549509",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DV":{
+"former_courses":[
+[
+"Victor Valley College",
+"CCC000549512",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DW":{
+"former_courses":[
+[
+"Victor Valley College",
+"CCC000515259",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DX":{
+"former_courses":[
+[
+"Cerritos College",
+"CCC000551242",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DY":{
+"former_courses":[
+[
+"Victor Valley College",
+"CCC000549823",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10DZ":{
+"former_courses":[
+[
+"Cerritos College",
+"CCC000588396",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EA":{
+"former_courses":[
+[
+"Monterey Peninsula College",
+"CCC000279243",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EB":{
+"former_courses":[
+[
+"Cerritos College",
+"CCC000588395",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EC":{
+"former_courses":[
+[
+"Victor Valley College",
+"CCC000564979",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10ED":{
+"former_courses":[
+[
+"Victor Valley College",
+"CCC000292082",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EE":{
+"former_courses":[
+[
+"Victor Valley College",
+"CCC000549508",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EF":{
+"former_courses":[
+[
+"Cerritos College",
+"CCC000605295",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EI":{
+"former_courses":[
+[
+"Cerritos College",
+"CCC000573716",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EJ":{
+"former_courses":[
+[
+"Victor Valley College",
+"CCC000549513",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EL":{
+"former_courses":[
+[
+"Cerritos College",
+"CCC000605294",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EM":{
+"former_courses":[
+[
+"Cerritos College",
+"CCC000572525",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EN":{
+"former_courses":[
+[
+"Cabrillo College",
+"CCC000459150",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M10EO":{
+"former_courses":[
+[
+"Grossmont College",
+"CCC000451799",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AA":{
+"former_courses":[
+[
+"West Valley College",
+"CCC000556465",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AC":{
+"former_courses":[
+[
+"Coastline Community College",
+"CCC000526093",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AD":{
+"former_courses":[
+[
+"West Valley College",
+"CCC000556464",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AF":{
+"former_courses":[
+[
+"Saddleback College",
+"CCC000416710",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AG":{
+"former_courses":[
+[
+"West Valley College",
+"CCC000566627",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AH":{
+"former_courses":[
+[
+"Coastline Community College",
+"CCC000526091",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AI":{
+"former_courses":[
+[
+"West Valley College",
+"CCC000611977",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AJ":{
+"former_courses":[
+[
+"West Valley College",
+"CCC000568106",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AK":{
+"former_courses":[
+[
+"Santa Monica College",
+"CCC000438286",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AL":{
+"former_courses":[
+[
+"Modesto Junior College",
+"CCC000161364",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AR":{
+"former_courses":[
+[
+"Coastline Community College",
+"CCC000149801",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AS":{
+"former_courses":[
+[
+"Santa Rosa Junior College",
+"CCC000592448",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AT":{
+"former_courses":[
+[
+"Santa Rosa Junior College",
+"CCC000580010",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"PEDS M90AU":{
+"former_courses":[
+[
+"Mendocino College",
+"CCC000647167",
+[
+"PEDS M1029"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
 "PHIL M1005":{
 "former_courses":[
 [
@@ -83343,7 +84526,7 @@
 "never_had_a_course":false
 }
 },
-"count":3357,
+"count":3448,
 "never_had_a_course":2,
-"one_course_cards":2244
+"one_course_cards":2335
 }
