@@ -914,7 +914,7 @@ def check_plan(doc, root=ROOT, sql_only=False, fresh=True, overlay=None, receipt
         return 0
     if doc.get("alias_era") != alias_chain.ALIAS_MAPS[-1]:
         problems.append(f"an alias map landed after the plan ({doc.get('alias_era')} -> {alias_chain.ALIAS_MAPS[-1]}): "
-                        "redraw it")
+                        "redraw the plan")
     head = None
     if fresh:
         fp, head = freshness(root)

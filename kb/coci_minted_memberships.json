@@ -1,8 +1,8 @@
 {
   "_status": "PREVIEW — members carry College + CourseControlNumber (the re-key fix).",
   "_generated_at": "2026-05-22",
-  "count": 15516,
-  "member_courses_total": 63844,
+  "count": 15520,
+  "member_courses_total": 63856,
   "memberships": {
     "POLS M1007": [
       {
@@ -36872,6 +36872,15 @@
         "units": 2.0,
         "credit_status": "Credit",
         "top_code": "0956.30: Machining and Machine Tools"
+      },
+      {
+        "college": "Las Positas College",
+        "control_number": "CCC000589250",
+        "subject": "PHTO",
+        "course_number": "51A",
+        "units": 1.5,
+        "credit_status": "Credit",
+        "top_code": "1012.00"
       }
     ],
     "MACH M1043": [
@@ -52758,6 +52767,15 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "1002.10: Painting and Drawing"
+      },
+      {
+        "college": "Palomar College",
+        "control_number": "CCC000099027",
+        "subject": "ARTI",
+        "course_number": "210",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1013.00"
       }
     ],
     "ARTS M1134": [
@@ -55842,6 +55860,15 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "1013.00: Commercial Art"
+      },
+      {
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000574702",
+        "subject": "SGNGRPH",
+        "course_number": "205",
+        "units": 2.0,
+        "credit_status": "Credit",
+        "top_code": "1013.00"
       }
     ],
     "ARTS M1458": [
@@ -59805,6 +59832,15 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "1002.00: Art"
+      },
+      {
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000104873",
+        "subject": "SGNGRPH",
+        "course_number": "201",
+        "units": 2.0,
+        "credit_status": "Credit",
+        "top_code": "1013.00"
       }
     ],
     "ARTS M1414": [
@@ -69028,26 +69064,6 @@
         "top_code": "1013.00: Commercial Art"
       }
     ],
-    "ARTN M1004": [
-      {
-        "college": "American River College",
-        "control_number": "CCC000530837",
-        "subject": "ARTNM",
-        "course_number": "354",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0614.50: Desktop Publishing"
-      },
-      {
-        "college": "Golden West College",
-        "control_number": "CCC000385390",
-        "subject": "DART",
-        "course_number": "G179",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0614.50: Desktop Publishing"
-      }
-    ],
     "ARCH M1113": [
       {
         "college": "American River College",
@@ -77728,6 +77744,15 @@
         "units": 0.0,
         "credit_status": "Noncredit",
         "top_code": "3020.20: Piloting"
+      },
+      {
+        "college": "Sacramento City College",
+        "control_number": "CCC000531255",
+        "subject": "FLTEC",
+        "course_number": "354",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "3020.20"
       }
     ],
     "AUTO M1018": [
@@ -173189,6 +173214,15 @@
         "units": 0.0,
         "credit_status": "Noncredit Enhanced",
         "top_code": "3007.00: Cosmetology and Barbering"
+      },
+      {
+        "college": "Skyline College",
+        "control_number": "CCC000645963",
+        "subject": "ESTI",
+        "course_number": "701",
+        "units": 6.0,
+        "credit_status": "Credit",
+        "top_code": "3007.00"
       }
     ],
     "COSM M1006": [
@@ -300184,6 +300218,15 @@
         "units": 4.0,
         "credit_status": "Credit",
         "top_code": "0612.00: Film Studies"
+      },
+      {
+        "college": "Moorpark College",
+        "control_number": "CCC000459517",
+        "subject": "FTMA",
+        "course_number": "M104",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0612.00"
       }
     ],
     "FTVE M1068": [
@@ -301217,6 +301260,15 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0612.00: Film Studies"
+      },
+      {
+        "college": "Folsom Lake College",
+        "control_number": "CCC000644185",
+        "subject": "TAFILM",
+        "course_number": "480",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0612.10"
       }
     ],
     "FTVE M1083": [
@@ -301598,6 +301650,15 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "0604.20: Television (including combined TV/Film/Video)"
+      },
+      {
+        "college": "Glendale Community College",
+        "control_number": "CCC000640661",
+        "subject": "FTVM",
+        "course_number": "108",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0612.10"
       }
     ],
     "FTVE M1093": [
@@ -421890,6 +421951,15 @@
         "units": 2.0,
         "credit_status": "Credit",
         "top_code": "1030.00: Graphic Art and Design"
+      },
+      {
+        "college": "Monterey Peninsula College",
+        "control_number": "CCC000220492",
+        "subject": "ARTG",
+        "course_number": "12",
+        "units": 4.0,
+        "credit_status": "Credit",
+        "top_code": "0614.50"
       }
     ],
     "MULT M1076": [
@@ -516236,6 +516306,24 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "1012.00: Applied Photography"
+      },
+      {
+        "college": "Rio Hondo College",
+        "control_number": "CCC000645538",
+        "subject": "PHTO",
+        "course_number": "200",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1011.00"
+      },
+      {
+        "college": "Citrus College",
+        "control_number": "CCC000606676",
+        "subject": "PHTO",
+        "course_number": "207",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1011.00"
       }
     ],
     "PHOT M1098": [
@@ -563859,35 +563947,6 @@
         "top_code": "0612.00: Film Studies"
       }
     ],
-    "TAFI M1002": [
-      {
-        "college": "American River College",
-        "control_number": "CCC000572883",
-        "subject": "TAFILM",
-        "course_number": "307",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "1007.00: Dramatic Arts"
-      },
-      {
-        "college": "Folsom Lake College",
-        "control_number": "CCC000644008",
-        "subject": "TAFILM",
-        "course_number": "307",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0612.00: Film Studies"
-      },
-      {
-        "college": "Sacramento City College",
-        "control_number": "CCC000558926",
-        "subject": "TAFILM",
-        "course_number": "307",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0612.00: Film Studies"
-      }
-    ],
     "THTR M1068": [
       {
         "college": "Folsom Lake College",
@@ -564018,35 +564077,6 @@
         "units": 3.0,
         "credit_status": "Credit",
         "top_code": "1007.00: Dramatic Arts"
-      }
-    ],
-    "TAFI M1006": [
-      {
-        "college": "American River College",
-        "control_number": "CCC000574394",
-        "subject": "TAFILM",
-        "course_number": "303",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0612.10: Film History and Criticism"
-      },
-      {
-        "college": "Folsom Lake College",
-        "control_number": "CCC000602055",
-        "subject": "TAFILM",
-        "course_number": "303",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0612.10: Film History and Criticism"
-      },
-      {
-        "college": "Sacramento City College",
-        "control_number": "CCC000559129",
-        "subject": "TAFILM",
-        "course_number": "303",
-        "units": 3.0,
-        "credit_status": "Credit",
-        "top_code": "0612.10: Film History and Criticism"
       }
     ],
     "TAFI M1007": [
@@ -605594,6 +605624,92 @@
         "subject": "IDS",
         "top_code": "4930.09: Supervised Tutoring",
         "units": 0
+      }
+    ],
+    "ARTS M1577": [
+      {
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000440029",
+        "subject": "ARTG",
+        "course_number": "20",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1099.00"
+      },
+      {
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000551792",
+        "subject": "ARTG",
+        "course_number": "21",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1099.00"
+      }
+    ],
+    "ARTH M1039": [
+      {
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000551924",
+        "subject": "ARTG",
+        "course_number": "21B",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "1099.00"
+      }
+    ],
+    "BRDC M1045": [
+      {
+        "college": "Saddleback College",
+        "control_number": "CCC000568736",
+        "subject": "CTVR",
+        "course_number": "4",
+        "units": 3.0,
+        "credit_status": "Credit",
+        "top_code": "0612.10"
+      }
+    ],
+    "PHOT M1121": [
+      {
+        "college": "Allan Hancock College",
+        "control_number": "CCC000294992",
+        "subject": "PHTO",
+        "course_number": "381",
+        "units": 1.0,
+        "credit_status": "Credit",
+        "top_code": "1012.00"
+      }
+    ],
+    "PHOT M1134": [
+      {
+        "college": "Allan Hancock College",
+        "control_number": "CCC000648694",
+        "subject": "PHTO",
+        "course_number": "152",
+        "units": 2.0,
+        "credit_status": "Credit",
+        "top_code": "1012.00"
+      }
+    ],
+    "PHOT M1133": [
+      {
+        "college": "Allan Hancock College",
+        "control_number": "CCC000523909",
+        "subject": "PHTO",
+        "course_number": "179A",
+        "units": 2.0,
+        "credit_status": "Credit",
+        "top_code": "1012.00"
+      }
+    ],
+    "ARTS M1661": [
+      {
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000527027",
+        "subject": "SGNGRPH",
+        "course_number": "204",
+        "units": 2.0,
+        "credit_status": "Credit",
+        "top_code": "1013.00"
       }
     ]
   },

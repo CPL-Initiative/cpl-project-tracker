@@ -13,11 +13,11 @@
 "topics":"Not applicable: special or selected topics. What a course like this teaches changes from term to term, so it isn't one course shared across colleges. Kept for the record; nothing to do."
 },
 "_courses_shape":"college|control number -> [kind, title as the state's course list prints it]",
-"_ids_current_through":"kb/anchor_rekey_out/2026-11-08/alias_map.json",
+"_ids_current_through":"kb/stray_code_remint_out/2026-11-25/applied/alias_map.json",
 "_inputs":{
 "cards":{
 "path":"kb/coci_minted_courses.json",
-"sha256":"71586716d0d5f58165d02c981d6ea1819ed426795a5ecb79ebf863c4bb050b71"
+"sha256":"841936de333af82e4e5a0d85817c27582ac9e3a2c4253d9db940784188eba8ba"
 },
 "coci_courses":{
 "path":"coci_lookup_data.js",
@@ -25,7 +25,7 @@
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"a915f9f1a27e197674d00ed8b07481670f719a070fcf3dc64d200c8664a062cc"
+"sha256":"c3a7558bed92ff21be1c696ab4a5b460a8e10cb73c62577be0c93b9d5878035a"
 },
 "list_members":{
 "path":"unified_courses_members.js",
@@ -33,7 +33,7 @@
 },
 "one_course_cards":{
 "path":"kb/coci_minted_singletons.json",
-"sha256":"2f5d08359acd2dc7a9b93d72b583f0eecec7d9a359cd9811e84d72ebf9e0b030"
+"sha256":"c371486e55ddf421332c636033f64694b825c52e87837b2ec946ae58b6823c0b"
 }
 },
 "_person_note":"A person reviewed this shared course{on}, and their ruling stands, so it stays in the counts. The machine's note reads: {note}",
@@ -951,13 +951,6 @@
 "Independent Projects in Photography"
 ]
 },
-"PHTO M10AL":{
-"courses":1,
-"kind":"independent",
-"titles":[
-"Individual Projects B"
-]
-},
 "PHYS M10FX":{
 "courses":1,
 "kind":"independent",
@@ -1155,10 +1148,10 @@
 }
 },
 "counts":{
-"cards":156,
+"cards":155,
 "cards_by_kind":{
 "code_only":86,
-"independent":59,
+"independent":58,
 "internship":11
 },
 "courses":6281,

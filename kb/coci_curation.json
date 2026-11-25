@@ -2,7 +2,7 @@
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
   "_synced_at": "2026-11-25T06:18:39Z",
-  "count": 31216,
+  "count": 31189,
   "curations": {
     "AERO M1001": {
       "unified_title": "AS200 Leadership Laboratory C",
@@ -4919,26 +4919,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "ARTG M10AA": {
-      "merge_into": "ARTS M1577",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTG M10AB": {
-      "merge_into": "ARTS M1577",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTG M10AH": {
-      "merge_into": "ARTH M1039",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTG M10AL": {
-      "merge_into": "MART M1004",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "ARTH M1002": {
       "unified_title": "History of African American Art (Past to Present)",
       "reviewed_by": "map@rccd.edu",
@@ -5253,11 +5233,6 @@
     },
     "ARTH M1620": {
       "unified_title": "Introduction to Chicanx/Latinx Music in the U.S.",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ARTI M10AE": {
-      "merge_into": "ARTS M1407",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -44672,11 +44647,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "CTVR M10AE": {
-      "merge_into": "BRDC M1045",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "CULN M1002": {
       "cross_listed_disciplines": "Business",
       "reviewed_by": "MAP@rccd.edu",
@@ -51570,21 +51540,6 @@
     },
     "DESG M10AE": {
       "merge_into": "ARTS M1096",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "DGME M1001": {
-      "unified_title": "Radio and Podcast Production Lab 2",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "DGME M10AH": {
-      "merge_into": "DGME M1001",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "DGME M10AI": {
-      "merge_into": "DGME M1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -75058,28 +75013,8 @@
       "reviewed_at": "2026-09-27T11:56:48+00:00",
       "unified_title": "ESL - Writing A"
     },
-    "ESTI M1001": {
-      "unified_title": "Esthetics Intermediate Concepts Ll",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "ESTI M10AD": {
       "merge_into": "COSM M1003",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ESTI M10AE": {
-      "merge_into": "COSM M1003",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ESTI M10AF": {
-      "merge_into": "ESTI M1001",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "ESTI M10AH": {
-      "merge_into": "ESTI M1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
@@ -84001,11 +83936,6 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
-    "FLTE M10AE": {
-      "merge_into": "AVIA M1051",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "FMA M10AD": {
       "merge_into": "FTVE M1141",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -84771,11 +84701,6 @@
       "merge_into": "FREN M1048",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "FTMA M10AO": {
-      "merge_into": "FTVE M1067",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "FTVE M1002": {
       "unified_title": "History of Cinema (1950-Present)",
@@ -85925,14 +85850,6 @@
       "unified_title": "Survey of Film: Westerns and Musicals",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "FTVM M10AJ": {
-      "merge_into": "BRDC M1062",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "FTVM M10AS": {
-      "honors_of": "FTVM M10AF"
     },
     "FTVM M10AT": {
       "honors_of": "BRDC M1062"
@@ -138977,36 +138894,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "PHTO M10AB": {
-      "merge_into": "PHOT M1111",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "PHTO M10AE": {
-      "merge_into": "PHOT M1121",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "PHTO M10AK": {
-      "merge_into": "MACH M1046",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
-    },
-    "PHTO M10AM": {
-      "merge_into": "PHOT M1111",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "PHTO M10AQ": {
-      "merge_into": "PHOT M1134",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "PHTO M10AT": {
-      "merge_into": "PHOT M1133",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "PHYS M1012": {
       "unified_title": "Introduction to Physics 1 - Calculus Supplement",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -145291,21 +145178,6 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
-    "SGNG M10AB": {
-      "merge_into": "ARTS M1456",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "SGNG M10AD": {
-      "merge_into": "ARTS M1488",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "SGNG M10AH": {
-      "merge_into": "ARTS M1661",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
     "SLNA M1003": {
       "merge_into": "SLNA M1033",
       "reviewed_by": "automerge-v1@bot",
@@ -148683,11 +148555,6 @@
       "unified_title": "American Cinema 1950 to the Present",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
-    },
-    "TAFI M10AI": {
-      "merge_into": "FTVE M1078",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "TECC M10AB": {
       "merge_into": "BRDC M1048",
