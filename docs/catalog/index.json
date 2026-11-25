@@ -17558,8 +17558,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 682,
+   "count": 683,
    "docs": [
+    {
+     "created": "2026-11-25",
+     "governs": [],
+     "n": 728,
+     "path": "docs/session_728_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 728 handoff (from SkyTropicbird, S727, the CPL Queue routine's collection run of 2026-11-25, from 06:12Z)",
+     "type": null,
+     "updated": "2026-11-25"
+    },
     {
      "created": "2026-11-25",
      "governs": [],
@@ -28880,5 +28894,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1575
+ "total": 1576
 }
