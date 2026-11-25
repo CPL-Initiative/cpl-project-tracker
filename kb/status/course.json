@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 729,
-  "moniker": "SkyCurlew",
+  "session": 730,
+  "moniker": "SkyDunlin",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_730_handoff.md",
+  "handoff": "docs/session_731_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,11 +103,11 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-25T09:52:39Z",
+  "written_at": "2026-11-25T11:50:52Z",
   "project": "course",
   "next_step": {
-    "title": "Mount the Courses list under the Commons trail, then Needs you as one ranked queue",
-    "text": "A folded card shows its Open the full list link today; mount the Courses data list in place if a cheap mount path appears, else leave the link. Then the anchor page's step 4: Needs you as the one ranked queue, every change reaching its counts at once."
+    "title": "Needs you, the rest of step 4, then the Courses list under the trail",
+    "text": "Check each remaining Needs you item against its list's own save and read it live where it still waits for the nightly build. Then mount the Courses data list under the Commons trail if a cheap mount path appears, else leave the link."
   },
   "changes": [
     {
@@ -277,6 +277,14 @@
     {
       "at": "2026-11-25T08:25Z",
       "text": "A Commons card's title opens that card's own list."
+    },
+    {
+      "at": "2026-11-25T11:21Z",
+      "text": "A Needs you link folds the Commons page to the card holding its item, and a ruling saved on a card in doubt takes it off the in-doubt count at once."
+    },
+    {
+      "at": "2026-11-25T11:56Z",
+      "text": "The folded card sits under its own heading, card titles meet the 24 pixel target, and a wrapped quick link keeps its bullet on its first line."
     }
   ]
 }
