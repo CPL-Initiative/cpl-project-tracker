@@ -118,7 +118,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The certificate section lists no courses itself; it says requirements are met by the Required Courses and Elective Courses listed under the Associate degree in Fashion Merchandising. The blocks recorded are the portion of that A.S. list visible on page 183 (Semester III, Semester IV, Electives); Semesters I and II of the degree list are on the previous page and not in the text, so required courses are incomplete."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T11:48:53Z",
+ "written_at": "2026-11-25T12:21:20Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17370,
-  "gap": 4965,
+  "passing": 17376,
+  "gap": 4959,
   "with_gap": 118,
   "cost_usd": 1341.08,
   "passed_at_read": 16397,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16864,
-  "gap": 4965,
-  "collected_with_gaps": 506,
+  "gap": 4959,
+  "collected_with_gaps": 512,
   "discontinued": 0
  },
  "census_live": {
@@ -6943,13 +6943,13 @@
    "harvested": true,
    "slug": "los_angeles_trade_technical",
    "programs": 211,
-   "passing": 150,
-   "gap": 61,
+   "passing": 156,
+   "gap": 55,
    "causes": {
     "no_closed_list": 23,
     "page_not_found": 20,
     "places_none": 1,
-    "unknown_without_live": 17
+    "unknown_without_live": 11
    },
    "census_causes": {
     "coverage_fails": 8,
@@ -7006,7 +7006,7 @@
    "levers": {
     "program_course_file_check": 23,
     "reader_page_search": 20,
-    "reconcile_steps": 17,
+    "reconcile_steps": 11,
     "reader_page_assignment": 1
    },
    "collection": {
