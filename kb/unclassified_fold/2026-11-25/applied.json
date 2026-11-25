@@ -1,0 +1,24 @@
+{
+  "folded": [
+    {
+      "raw": "CCNA Certification",
+      "assigned": "Cisco Certified Network Associate (CCNA)",
+      "issuer": "Cisco",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-25T18:16:02.014845+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 1,
+  "unified_titles_count": 6253
+}

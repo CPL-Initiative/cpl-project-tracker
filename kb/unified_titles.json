@@ -67568,5 +67568,13 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-23T00:13:34.866152+00:00",
     "reviewed_by": "slee@cccco.edu"
+  },
+  "CCNA Certification": {
+    "unified_title": "Cisco Certified Network Associate (CCNA)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-25",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-25T18:16:02.014845+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

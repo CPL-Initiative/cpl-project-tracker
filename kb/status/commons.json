@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T18:16:15Z",
+ "written_at": "2026-11-25T20:02:00Z",
  "rows": [
   {
    "key": "requirements",
@@ -98,9 +98,9 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 3222,
+     "n": 3223,
      "of": 6256,
-     "words": "titles carry a review stamp (1,582 a person's, 1,640 a cohort's), counting 4 titles MAP carries with no entry yet; 2,970 credentials, 2,574 of 3,344 records stamped",
+     "words": "titles carry a review stamp (1,582 a person's, 1,641 a cohort's), counting 3 titles MAP carries with no entry yet; 2,970 credentials, 2,574 of 3,344 records stamped",
      "open": "#exhibits/list"
     },
     {
@@ -166,23 +166,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-25T18:16:01Z",
+    "at": "2026-11-25T19:54:58Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 6252,
-    "backlog": 4,
-    "stamped": 3222,
+    "titles": 6253,
+    "backlog": 3,
+    "stamped": 3223,
     "person": 1582,
-    "cohort": 1640,
+    "cohort": 1641,
     "credentials": 2970,
     "confirmed": 1582,
     "records": 3344,
     "records_stamped": 2574,
     "saved_at": "2026-11-25T18:16:01Z",
-    "fold_at": "2026-11-23T06:19:46Z",
+    "fold_at": "2026-11-25T19:54:58Z",
     "map_titles": 5444,
-    "unclassified": 4,
+    "unclassified": 3,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -225,13 +225,13 @@
    "pair": [
     {
      "n": 4004,
-     "of": 15876,
-     "words": "cards the auditor scores 0.85 or better; 9,673 at needs review, 2,199 at needs repair, 0 not ready",
+     "of": 15871,
+     "words": "cards the auditor scores 0.85 or better; 9,674 at needs review, 2,193 at needs repair, 0 not ready",
      "open": "#coci-lookup/courses"
     },
     {
-     "n": 292,
-     "of": 15876,
+     "n": 296,
+     "of": 15871,
      "words": "confirmed by a person, 145 of them ready; a person also confirmed 350 cards now kept for the record and left out of the counts (350 merged)",
      "open": "#coci-lookup/courses",
      "error": null
@@ -243,14 +243,14 @@
    ],
    "issues": [
     {
-     "n": 9729,
+     "n": 9726,
      "words": "common courses (cards) carry a discipline no seed has touched, capped at 0.79",
      "owner": "the Common Subjects reference",
      "carry": "no_procedure",
      "open": "#coci-lookup/list/seedless"
     },
     {
-     "n": 5,
+     "n": 4,
      "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
      "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
      "carry": "unsure",
@@ -265,7 +265,7 @@
      "open": "#coci-lookup/list/units"
     },
     {
-     "n": 5305,
+     "n": 5303,
      "words": "common courses (cards) with a blank catalog description",
      "owner": "the colleges' COCI entries",
      "carry": "routine",
@@ -275,7 +275,7 @@
    "procedures": [
     {
      "n": 16388,
-     "words": "identities and 33,417 stand-alone courses on the canvas (the 2026-11-06 layout); 33,424 stand-alone in today's build",
+     "words": "identities and 33,417 stand-alone courses on the canvas (the 2026-11-06 layout); 33,373 stand-alone in today's build",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
      "error": null
     },
@@ -293,14 +293,14 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-25T06:22:43+00:00",
+    "at": "2026-11-25T20:00:05+00:00",
     "every_hours": 24
    },
    "facts": {
-    "total": 15876,
+    "total": 15871,
     "ready": 4004,
-    "needs_review": 9673,
-    "needs_repair": 2199,
+    "needs_review": 9674,
+    "needs_repair": 2193,
     "not_ready": 0,
     "cap": 0.79,
     "kept_not_counted": {
@@ -309,16 +309,16 @@
      "not_applicable": 25,
      "retired": 7
     },
-    "confirmed": 292,
+    "confirmed": 296,
     "confirmed_ready": 145,
     "confirmed_kept": {
      "merged": 350
     },
     "tags": {
-     "blank_description": 5305,
+     "blank_description": 5303,
      "discipline_title_mismatch": 946,
-     "blank_discipline": 77,
-     "seed_untouched_discipline": 9729,
+     "blank_discipline": 72,
+     "seed_untouched_discipline": 9726,
      "top_discipline_disagreement": 1004,
      "unit_anomaly": 3200
     }
@@ -489,8 +489,8 @@
      "open": "#canonical-subj4/progress"
     },
     {
-     "n": 88,
-     "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 251 identities",
+     "n": 73,
+     "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 171 identities",
      "owner": "a re-mint under the playbook",
      "carry": "reaches",
      "open": "#coci-lookup/list/stray"
@@ -517,7 +517,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-25T06:18:40Z",
+    "at": "2026-11-25T19:54:54Z",
     "every_hours": 24
    },
    "facts": {
@@ -692,7 +692,7 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 9729,
+      "n": 9726,
       "words": "common courses (cards) carry a discipline no seed has touched, capped at 0.79",
       "owner": "the Common Subjects reference",
       "open": "#coci-lookup/list/seedless"
@@ -729,7 +729,7 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 5,
+      "n": 4,
       "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
       "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
       "open": "#coci-lookup/list/doubt"
@@ -758,8 +758,8 @@
      {
       "ref": "subjects",
       "title": "Common Subjects Reference",
-      "n": 88,
-      "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 251 identities",
+      "n": 73,
+      "words": "identity codes that are neither a Common SUBJ nor an umbrella code, on 171 identities",
       "owner": "a re-mint under the playbook",
       "open": "#coci-lookup/list/stray"
      }
@@ -815,7 +815,7 @@
    {
     "ref": "course",
     "title": "Common Course Reference",
-    "n": 5305,
+    "n": 5303,
     "words": "common courses (cards) with a blank catalog description",
     "owner": "the colleges' COCI entries",
     "open": "#coci-lookup/list/nodesc"
@@ -854,12 +854,12 @@
     {
      "name": "classifier",
      "placed": 980,
-     "untouched": 902,
+     "untouched": 903,
      "kept": 4,
      "renamed": 54,
      "moved": 0,
      "by_procedure": 19,
-     "left": 1,
+     "left": 0,
      "looked": 58
     },
     {
@@ -942,12 +942,12 @@
    ],
    "total": {
     "placed": 1508,
-    "untouched": 1369,
+    "untouched": 1370,
     "kept": 23,
     "renamed": 91,
     "moved": 0,
     "by_procedure": 24,
-    "left": 1,
+    "left": 0,
     "looked": 114
    }
   },
@@ -1049,7 +1049,7 @@
   {
    "kind": "job",
    "ref": "course",
-   "n": 5,
+   "n": 4,
    "title": "Common Course Reference",
    "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
    "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
@@ -1060,7 +1060,7 @@
  "next_batch": {
   "kind": "job",
   "ref": "course",
-  "n": 5,
+  "n": 4,
   "title": "Common Course Reference",
   "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
   "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",

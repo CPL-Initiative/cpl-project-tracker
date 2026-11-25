@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-25T06:18:27.645310+00:00",
+  "scraped_at": "2026-11-25T19:46:49.542259+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 32724,
+    "jst": 32739,
     "star_colleges": 71
   },
   "computed_star_colleges": 71,
@@ -40,19 +40,19 @@
       "jst": 1587,
       "star": true
     },
+    "Moreno Valley College": {
+      "vets": 938,
+      "jst": 1084,
+      "star": true
+    },
     "San Diego Miramar College": {
       "vets": 1172,
       "jst": 1734,
       "star": true
     },
-    "Moreno Valley College": {
-      "vets": 938,
-      "jst": 1080,
-      "star": true
-    },
     "Bakersfield College": {
       "vets": 431,
-      "jst": 607,
+      "jst": 609,
       "star": true
     },
     "Norco College": {
@@ -130,15 +130,15 @@
       "jst": 432,
       "star": false
     },
-    "Modesto Junior College": {
-      "vets": 223,
-      "jst": 156,
-      "star": false
-    },
     "Santa Ana College": {
       "vets": 392,
       "jst": 398,
       "star": true
+    },
+    "Modesto Junior College": {
+      "vets": 223,
+      "jst": 156,
+      "star": false
     },
     "Mt. San Jacinto College": {
       "vets": 639,
@@ -245,6 +245,11 @@
       "jst": 141,
       "star": true
     },
+    "Golden West College": {
+      "vets": 227,
+      "jst": 170,
+      "star": false
+    },
     "Solano Community College": {
       "vets": 293,
       "jst": 136,
@@ -259,11 +264,6 @@
       "vets": 60,
       "jst": 53,
       "star": true
-    },
-    "Golden West College": {
-      "vets": 227,
-      "jst": 161,
-      "star": false
     },
     "College of the Sequoias": {
       "vets": 266,
@@ -555,6 +555,11 @@
       "jst": 1,
       "star": false
     },
+    "Los Angeles Southwest College": {
+      "vets": 67,
+      "jst": 0,
+      "star": false
+    },
     "College of Marin": {
       "vets": 75,
       "jst": 1,
@@ -565,6 +570,11 @@
       "jst": 0,
       "star": false
     },
+    "Lake Tahoe Community College": {
+      "vets": 57,
+      "jst": 0,
+      "star": false
+    },
     "Cosumnes River College": {
       "vets": 138,
       "jst": 0,
@@ -572,16 +582,6 @@
     },
     "Folsom Lake College": {
       "vets": 80,
-      "jst": 0,
-      "star": false
-    },
-    "Lake Tahoe Community College": {
-      "vets": 57,
-      "jst": 0,
-      "star": false
-    },
-    "Los Angeles Southwest College": {
-      "vets": 67,
       "jst": 0,
       "star": false
     },

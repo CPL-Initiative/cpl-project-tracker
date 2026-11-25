@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 52778,
-  "pa": 47663,
-  "ppa": 129,
-  "p2": 3739,
-  "p3": 17060,
+  "pe": 52846,
+  "pa": 47731,
+  "ppa": 125,
+  "p2": 3741,
+  "p3": 17062,
   "pp": 7,
-  "ppe": 141,
+  "ppe": 137,
   "pac": 5469,
   "ptc": 4779,
-  "pe_u": 1669809.25,
-  "pa_u": 292726.2,
-  "ppa_u": 781.0,
-  "ppe_u": 7270.0,
+  "pe_u": 1670629.75,
+  "pa_u": 293008.7,
+  "ppa_u": 772.0,
+  "ppe_u": 7261.0,
   "pac_u": 40131.2,
   "ptc_u": 33624.95,
-  "p3_u": 87017.65,
+  "p3_u": 87040.65,
   "pp_u": 73.5,
   "nc_exh": 466,
   "nc_course": 0,
@@ -123,10 +123,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 71
   },
   "Bakersfield": {
-   "pe": 642,
-   "pe_u": 27783.0,
-   "pa": 633,
-   "pa_u": 9067.0,
+   "pe": 644,
+   "pe_u": 27861.0,
+   "pa": 635,
+   "pa_u": 9080.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 72.0,
@@ -308,16 +308,17 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 58
   },
   "Cerro Coso": {
-   "pe": 192,
-   "pe_u": 9537.5,
-   "pa": 188,
-   "pa_u": 1045.0,
+   "pe": 193,
+   "pe_u": 9578.0,
+   "pa": 189,
+   "pa_u": 1085.5,
    "ppa": 0,
    "ppa_u": 0.0,
-   "p2": 0,
+   "p2": null,
+   "p2_suppressed": true,
    "p3": null,
    "p3_suppressed": true,
-   "p3_u": 8.0,
+   "p3_u": 31.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": 0,
@@ -916,10 +917,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 128
   },
   "Golden West": {
-   "pe": 159,
-   "pe_u": 8019.0,
-   "pa": 159,
-   "pa_u": 894.0,
+   "pe": 168,
+   "pe_u": 8365.0,
+   "pa": 168,
+   "pa_u": 939.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
@@ -1489,10 +1490,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 27
   },
   "Moreno Valley": {
-   "pe": 2577,
-   "pe_u": 56465.0,
-   "pa": 2247,
-   "pa_u": 13758.0,
+   "pe": 2581,
+   "pe_u": 56665.0,
+   "pa": 2251,
+   "pa_u": 13786.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
@@ -2069,20 +2070,20 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 0
   },
   "Santa Ana": {
-   "pe": 517,
-   "pe_u": 17515.8,
-   "pa": 511,
-   "pa_u": 2319.5,
-   "ppa": 16,
-   "ppa_u": 49.0,
+   "pe": 569,
+   "pe_u": 17671.8,
+   "pa": 563,
+   "pa_u": 2475.5,
+   "ppa": 12,
+   "ppa_u": 40.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": 26,
    "p3_u": 353.2,
    "pp": 0,
    "pp_u": 0.0,
-   "ppe": 16,
-   "ppe_u": 73.0,
+   "ppe": 12,
+   "ppe_u": 64.0,
    "pac": 32,
    "pac_u": 422.2,
    "ptc": 26,
@@ -2653,8 +2654,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 589,
-    "pa": 584,
+    "pe": 591,
+    "pa": 586,
     "p3": 52
    }
   },
@@ -2775,11 +2776,20 @@ window.CPL_FUNDING_PERF = {
    }
   },
   "Cerro Coso": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
    "Military": {
-    "pe": 192,
-    "pa": 188,
+    "pe": null,
+    "pa": null,
     "p3": null,
-    "p3_suppressed": true
+    "p3_suppressed": true,
+    "pe_suppressed": true,
+    "pa_suppressed": true
    }
   },
   "Chabot": {
@@ -3106,8 +3116,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Golden West": {
    "Military": {
-    "pe": 159,
-    "pa": 159,
+    "pe": 168,
+    "pa": 168,
     "p3": 0
    }
   },
@@ -3631,8 +3641,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1058,
-    "pa": 1058,
+    "pe": 1062,
+    "pa": 1062,
     "p3": 999
    },
    "Standardized Assessment": {
@@ -4110,8 +4120,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santa Ana": {
    "Credit By Exam": {
-    "pe": 92,
-    "pa": 92,
+    "pe": 144,
+    "pa": 144,
     "p3": 12
    },
    "Credit By Exam | Military": {
@@ -4377,8 +4387,8 @@ window.CPL_FUNDING_PERF = {
  },
  "cpl_types_statewide": {
   "Credit By Exam": {
-   "pe": 11501,
-   "pa": 11144,
+   "pe": 11553,
+   "pa": 11196,
    "p3": 10673
   },
   "Credit By Exam | Industry Certification": {
@@ -4445,8 +4455,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 50
   },
   "Industry Certification": {
-   "pe": 1501,
-   "pa": 1477,
+   "pe": 1502,
+   "pa": 1478,
    "p3": 1240
   },
   "Industry Certification | Military": {
@@ -4500,9 +4510,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 31850,
-   "pa": 28517,
-   "p3": 2714
+   "pe": 31865,
+   "pa": 28532,
+   "p3": 2716
   },
   "Military | Other": {
    "pe": null,
@@ -4557,18 +4567,18 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1669809.25,
-   "pa_u": 292726.2,
-   "p3_u": 87017.65
+   "pe_u": 1670629.75,
+   "pa_u": 293008.7,
+   "p3_u": 87040.65
   },
   "map": {
-   "pe_u": 1677079.25,
-   "pa_u": 293507.2,
-   "p3_u": 87091.15
+   "pe_u": 1677890.75,
+   "pa_u": 293780.7,
+   "p3_u": 87114.15
   },
   "ratio": {
-   "pe_u": 1.0044,
-   "pa_u": 1.0027,
+   "pe_u": 1.0043,
+   "pa_u": 1.0026,
    "p3_u": 1.0008
   }
  },
@@ -4579,8 +4589,8 @@ window.CPL_FUNDING_PERF = {
   "San Francisco": true,
   "San Diego Mesa": true,
   "San Diego City": true,
-  "San Diego Miramar": true,
   "Moreno Valley": true,
+  "San Diego Miramar": true,
   "Bakersfield": true,
   "Norco College": true,
   "Cabrillo": true,
@@ -4597,8 +4607,8 @@ window.CPL_FUNDING_PERF = {
   "San Bernardino": false,
   "Desert": true,
   "Saddleback": false,
-  "Modesto": false,
   "Santa Ana": true,
+  "Modesto": false,
   "Mt. San Jacinto": true,
   "Barstow": true,
   "Cypress": true,
@@ -4620,10 +4630,10 @@ window.CPL_FUNDING_PERF = {
   "Ventura": true,
   "Victor Valley": true,
   "Evergreen Valley": true,
+  "Golden West": false,
   "Solano": false,
   "LA Mission": true,
   "Napa": true,
-  "Golden West": false,
   "Sequoias": false,
   "Citrus": true,
   "Las Positas": false,
@@ -4682,12 +4692,12 @@ window.CPL_FUNDING_PERF = {
   "Yuba": false,
   "Imperial": false,
   "Contra Costa": false,
+  "LA Swest": false,
   "Marin": false,
   "Palomar": false,
-  "Cosumnes River": false,
-  "Folsom Lake": false,
   "Lake Tahoe": false,
-  "LA Swest": false
+  "Cosumnes River": false,
+  "Folsom Lake": false
  },
  "vet_star_as_of": "2026-11-25",
  "vet_star_threshold": 0.75,
@@ -4723,20 +4733,20 @@ window.CPL_FUNDING_PERF = {
    "jst": 1587,
    "pct": 1.9593
   },
+  "Moreno Valley": {
+   "vets": 938,
+   "jst": 1084,
+   "pct": 1.1557
+  },
   "San Diego Miramar": {
    "vets": 1172,
    "jst": 1734,
    "pct": 1.4795
   },
-  "Moreno Valley": {
-   "vets": 938,
-   "jst": 1080,
-   "pct": 1.1514
-  },
   "Bakersfield": {
    "vets": 431,
-   "jst": 607,
-   "pct": 1.4084
+   "jst": 609,
+   "pct": 1.413
   },
   "Norco College": {
    "vets": 686,
@@ -4813,15 +4823,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 432,
    "pct": 0.5353
   },
-  "Modesto": {
-   "vets": 223,
-   "jst": 156,
-   "pct": 0.6996
-  },
   "Santa Ana": {
    "vets": 392,
    "jst": 398,
    "pct": 1.0153
+  },
+  "Modesto": {
+   "vets": 223,
+   "jst": 156,
+   "pct": 0.6996
   },
   "Mt. San Jacinto": {
    "vets": 639,
@@ -4928,6 +4938,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 141,
    "pct": 1.5326
   },
+  "Golden West": {
+   "vets": 227,
+   "jst": 170,
+   "pct": 0.7489
+  },
   "Solano": {
    "vets": 293,
    "jst": 136,
@@ -4942,11 +4957,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 60,
    "jst": 53,
    "pct": 0.8833
-  },
-  "Golden West": {
-   "vets": 227,
-   "jst": 161,
-   "pct": 0.7093
   },
   "Sequoias": {
    "vets": 266,
@@ -5237,6 +5247,11 @@ window.CPL_FUNDING_PERF = {
    "jst": null,
    "jst_suppressed": true
   },
+  "LA Swest": {
+   "vets": 67,
+   "jst": 0,
+   "pct": 0.0
+  },
   "Marin": {
    "vets": 75,
    "jst": null,
@@ -5247,6 +5262,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 0,
    "pct": 0.0
   },
+  "Lake Tahoe": {
+   "vets": 57,
+   "jst": 0,
+   "pct": 0.0
+  },
   "Cosumnes River": {
    "vets": 138,
    "jst": 0,
@@ -5254,16 +5274,6 @@ window.CPL_FUNDING_PERF = {
   },
   "Folsom Lake": {
    "vets": 80,
-   "jst": 0,
-   "pct": 0.0
-  },
-  "Lake Tahoe": {
-   "vets": 57,
-   "jst": 0,
-   "pct": 0.0
-  },
-  "LA Swest": {
-   "vets": 67,
    "jst": 0,
    "pct": 0.0
   }

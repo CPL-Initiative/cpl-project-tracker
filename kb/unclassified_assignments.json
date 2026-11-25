@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-23T06:19:46Z",
-  "count": 3072,
+  "_synced_at": "2026-11-25T19:54:57Z",
+  "count": 3073,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -5631,6 +5631,12 @@
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-11-03T15:33:09.620078+00:00",
       "unified_title": "OSHA 30 — Construction Industry Outreach (30-hour)"
+    },
+    "CCNA Certification": {
+      "issuing_agency": "Cisco",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-25T18:16:02.014845+00:00",
+      "unified_title": "Cisco Certified Network Associate (CCNA)"
     },
     "CDA National Credentialing Program--Preschool": {
       "issuing_agency": "Council for Professional Recognition",

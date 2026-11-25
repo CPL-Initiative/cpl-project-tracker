@@ -12,15 +12,15 @@
 },
 "credential_reference":{
 "path":"credential_reference_data.js",
-"sha256":"f6fa27d2a4a108f878fd8019dfd16c5861c0c4e26868fb6e9a5f02f1e8420463"
+"sha256":"a07599e2ca8dee2c7a8c6b7e6f683dd83e4283f5e081cb55e2ca8437fb810dc9"
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"c3a7558bed92ff21be1c696ab4a5b460a8e10cb73c62577be0c93b9d5878035a"
+"sha256":"d5d89d47e36268b5ca73341d2e2f7a775e84ec458e264a6a142bbe36e4c58262"
 },
 "list_members":{
 "path":"unified_courses_members.js",
-"sha256":"777d3969a31e7d648edc2043cc3475088d8e364c8ae0e03841483c0d49660c78"
+"sha256":"28f4101632774a0ce4f67e3086dba35b8249a81ca638db9535b0fb7f10060328"
 },
 "memberships":{
 "path":"kb/coci_minted_memberships.json",
@@ -50320,6 +50320,14 @@
 ],
 "never_had_a_course":false
 },
+"KINE M1952":{
+"former_courses":[],
+"never_had_a_course":true
+},
+"KINE M1953":{
+"former_courses":[],
+"never_had_a_course":true
+},
 "KINE M90CO":{
 "former_courses":[
 [
@@ -84526,7 +84534,7 @@
 "never_had_a_course":false
 }
 },
-"count":3448,
-"never_had_a_course":2,
+"count":3450,
+"never_had_a_course":4,
 "one_course_cards":2335
 }

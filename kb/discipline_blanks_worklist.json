@@ -3,10 +3,10 @@
   "_generated_by": "kb/_build_discipline_blanks_worklist.py",
   "_read_this_first": "`corroboration` is the column that matters. Where it says none, or a single row, there is nothing in the payload to check a proposed discipline against — that is why these are here.",
   "_counts": {
-    "blank_after_fill": 86,
-    "subject_codes": 45,
-    "codes_with_no_corroboration": 33,
-    "codes_corroborated_by_one_row": 5,
+    "blank_after_fill": 81,
+    "subject_codes": 41,
+    "codes_with_no_corroboration": 30,
+    "codes_corroborated_by_one_row": 4,
     "filled_from_the_subject_map": 0,
     "filled_from_the_identifier_reference": 0
   },
@@ -316,22 +316,6 @@
       "corroboration": "none — no other identity carries this prefix"
     },
     {
-      "subj4": "TAFI",
-      "identities_blank": 2,
-      "ids": [
-        "TAFI M1002",
-        "TAFI M1006"
-      ],
-      "titles": [
-        "Diversity in American Film",
-        "History of Film: 1880's Through 1950's"
-      ],
-      "same_prefix_identities": 1,
-      "they_are_filed_under": "Film and Media Studies",
-      "how_many_agree": 1,
-      "corroboration": "a single row, which is not a vote"
-    },
-    {
       "subj4": "AFXX",
       "identities_blank": 1,
       "ids": [
@@ -358,20 +342,6 @@
       "they_are_filed_under": "Agriculture",
       "how_many_agree": 4,
       "corroboration": "4 of 4 identities"
-    },
-    {
-      "subj4": "ARTN",
-      "identities_blank": 1,
-      "ids": [
-        "ARTN M1004"
-      ],
-      "titles": [
-        "Digital Prepress"
-      ],
-      "same_prefix_identities": 0,
-      "they_are_filed_under": null,
-      "how_many_agree": 0,
-      "corroboration": "none — no other identity carries this prefix"
     },
     {
       "subj4": "ARTX",
@@ -444,20 +414,6 @@
       "corroboration": "a single row, which is not a vote"
     },
     {
-      "subj4": "DGME",
-      "identities_blank": 1,
-      "ids": [
-        "DGME M1001"
-      ],
-      "titles": [
-        "Radio and Podcast Production Lab 2"
-      ],
-      "same_prefix_identities": 0,
-      "they_are_filed_under": null,
-      "how_many_agree": 0,
-      "corroboration": "none — no other identity carries this prefix"
-    },
-    {
       "subj4": "DMC",
       "identities_blank": 1,
       "ids": [
@@ -493,20 +449,6 @@
       ],
       "titles": [
         "Fundamentals of Digital Show Presentations (Ei)"
-      ],
-      "same_prefix_identities": 0,
-      "they_are_filed_under": null,
-      "how_many_agree": 0,
-      "corroboration": "none — no other identity carries this prefix"
-    },
-    {
-      "subj4": "ESTI",
-      "identities_blank": 1,
-      "ids": [
-        "ESTI M1001"
-      ],
-      "titles": [
-        "Esthetics Intermediate Concepts Ll"
       ],
       "same_prefix_identities": 0,
       "they_are_filed_under": null,

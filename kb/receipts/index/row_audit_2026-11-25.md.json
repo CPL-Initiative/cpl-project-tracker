@@ -2,12 +2,19 @@
  "name": "row_audit_2026-11-25.md",
  "kind": "row_audit",
  "bucket": "cpl-receipts",
- "object": "row_audit/row_audit_2026-11-25.md",
+ "object": "row_audit/e057ef584bc3/row_audit_2026-11-25.md",
  "build": null,
  "built": "2026-11-25",
- "bytes": 7124118,
- "sha256": "43bea4d84e53fab99574e012ffc45cd96feac74b03b5c40d37321ce66f6bfadc",
- "rows": 124717,
- "stored_at": "2026-11-25T06:22:54Z",
- "run": "45559142493"
+ "bytes": 7120485,
+ "sha256": "e057ef584bc375a251c3dae4eadc2dcfa5f60682c9172d4e5f64d467399f5477",
+ "rows": 124653,
+ "stored_at": "2026-11-25T20:00:19Z",
+ "run": "45687371701",
+ "supersedes": [
+  {
+   "object": "row_audit/row_audit_2026-11-25.md",
+   "sha256": "43bea4d84e53fab99574e012ffc45cd96feac74b03b5c40d37321ce66f6bfadc",
+   "seen_in": "index"
+  }
+ ]
 }

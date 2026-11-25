@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-25T06:18:27.344Z",
+  "scraped_at": "2026-11-25T19:46:49.071Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -18,17 +18,17 @@
       "colleges": [
         {
           "college": "Moreno Valley College",
-          "students": 2630,
-          "units": 13811.5,
-          "avgUnits": 5.251520912547528,
-          "transcriptionRate": 94.6,
-          "avgTranscribed": 4.969201520912548,
+          "students": 2634,
+          "units": 13839.5,
+          "avgUnits": 5.2541761579347,
+          "transcriptionRate": 94.4,
+          "avgTranscribed": 4.961655277145026,
           "criteriaMetCount": 5,
-          "militaryStudents": 1080,
+          "militaryStudents": 1084,
           "nonMilitaryStudents": 1569,
           "apprenticeStudents": 0,
-          "savings": 18452895,
-          "yearImpact": 74635556,
+          "savings": 18501335,
+          "yearImpact": 74805432,
           "transcribedUnits": 13069
         },
         {
@@ -228,17 +228,17 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 663,
-          "units": 9139,
-          "avgUnits": 13.784313725490197,
-          "transcriptionRate": 14.9,
-          "avgTranscribed": 2.049019607843137,
+          "students": 665,
+          "units": 9152,
+          "avgUnits": 13.762406015037595,
+          "transcriptionRate": 14.8,
+          "avgTranscribed": 2.0428571428571427,
           "criteriaMetCount": 3,
-          "militaryStudents": 607,
+          "militaryStudents": 609,
           "nonMilitaryStudents": 72,
           "apprenticeStudents": 0,
-          "savings": 16359542.5,
-          "yearImpact": 58869485.5,
+          "savings": 16382032.5,
+          "yearImpact": 58948356.5,
           "transcribedUnits": 1358.5
         },
         {
@@ -473,17 +473,17 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 648,
-          "units": 2368.5,
-          "avgUnits": 3.6550925925925926,
-          "transcriptionRate": 14.9,
-          "avgTranscribed": 0.5450617283950617,
+          "students": 644,
+          "units": 2515.5,
+          "avgUnits": 3.906055900621118,
+          "transcriptionRate": 14,
+          "avgTranscribed": 0.5484472049689441,
           "criteriaMetCount": 1,
           "militaryStudents": 398,
-          "nonMilitaryStudents": 251,
+          "nonMilitaryStudents": 247,
           "apprenticeStudents": 12,
-          "savings": 3558547.5,
-          "yearImpact": 13558770.000000002,
+          "savings": 3709087.5,
+          "yearImpact": 14297274.000000002,
           "transcribedUnits": 353.2
         },
         {
@@ -668,18 +668,18 @@
         },
         {
           "college": "Cerro Coso Community College",
-          "students": 193,
+          "students": 194,
           "units": 1045,
-          "avgUnits": 5.414507772020725,
-          "transcriptionRate": 0.8,
-          "avgTranscribed": 0.04145077720207254,
+          "avgUnits": 5.38659793814433,
+          "transcriptionRate": 3,
+          "avgTranscribed": 0.15979381443298968,
           "criteriaMetCount": 1,
           "militaryStudents": 193,
-          "nonMilitaryStudents": 0,
+          "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
           "savings": 1821690,
           "yearImpact": 6388551,
-          "transcribedUnits": 8
+          "transcribedUnits": 31
         },
         {
           "college": "Shasta College",
@@ -743,17 +743,17 @@
         },
         {
           "college": "Golden West College",
-          "students": 161,
-          "units": 900,
-          "avgUnits": 5.590062111801243,
+          "students": 170,
+          "units": 945,
+          "avgUnits": 5.5588235294117645,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 161,
+          "militaryStudents": 170,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1546620,
-          "yearImpact": 5423898,
+          "savings": 1624470,
+          "yearImpact": 5696913,
           "transcribedUnits": 0
         },
         {
@@ -1662,6 +1662,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Los Angeles Southwest College",
+          "students": 1,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 0,
+          "nonMilitaryStudents": 1,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
           "college": "College of Marin",
           "students": 1,
           "units": 0,
@@ -1678,6 +1693,21 @@
         },
         {
           "college": "Palomar College",
+          "students": 0,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 0,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
+          "college": "Lake Tahoe Community College",
           "students": 0,
           "units": 0,
           "avgUnits": 0,
@@ -1722,36 +1752,6 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Lake Tahoe Community College",
-          "students": 0,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 0,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Los Angeles Southwest College",
-          "students": 0,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 0,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
-          "transcribedUnits": 0
-        },
-        {
           "college": "California State University Los Angeles",
           "students": 0,
           "units": 0,
@@ -1772,15 +1772,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "61,251",
+      "value": "61,264",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "32,724"
+          "value": "32,739"
         },
         {
           "label": "Workforce/Other",
-          "value": "28,639"
+          "value": "28,637"
         },
         {
           "label": "Apprentice",
@@ -1795,7 +1795,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "150k"
+          "value": "151k"
         },
         {
           "label": "Workforce/Other",
@@ -1854,7 +1854,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "$881M"
+          "value": "$882M"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 61251,
-    "Units": 293507.2,
-    "TranscribedUnits": 87091.15,
-    "Savings": 419173216.75,
-    "YearImpact": 1692232371.8,
-    "MilitaryStudents": 32724,
-    "NonMilitaryStudents": 28639,
+    "Students": 61264,
+    "Units": 293740.2,
+    "TranscribedUnits": 87114.15,
+    "Savings": 419472536.75,
+    "YearImpact": 1693492637.8,
+    "MilitaryStudents": 32739,
+    "NonMilitaryStudents": 28637,
     "AprenticeStudents": 965,
-    "AverageUnits": 4.791876051003249,
-    "TranscribedAverage": 1.4218731122757178
+    "AverageUnits": 4.794662444502482,
+    "TranscribedAverage": 1.421946820318621
   }
 }

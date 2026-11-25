@@ -1,6 +1,6 @@
 {
  "_scanned_at": "2026-11-25",
- "_registry_synced_at": "2026-11-25T06:18:40Z",
+ "_registry_synced_at": "2026-11-25T19:54:54Z",
  "_disciplines": 246,
  "_official_ccn_prefixes": {
   "ANTH": 50,
@@ -30,12 +30,12 @@
   "SPAN": 0
  },
  "_mid_codes": {
-  "ids": 75582,
-  "codes": 271,
+  "ids": 75502,
+  "codes": 256,
   "canonical": 152,
   "umbrella": 31,
-  "stray_codes": 88,
-  "stray_ids": 251,
+  "stray_codes": 73,
+  "stray_ids": 171,
   "codes_seen": [
    "AERO",
    "AFXX",
@@ -59,10 +59,7 @@
    "ARTB",
    "ARTC",
    "ARTD",
-   "ARTG",
    "ARTH",
-   "ARTI",
-   "ARTN",
    "ARTS",
    "ARTV",
    "ARTX",
@@ -78,7 +75,6 @@
    "BIOT",
    "BRDC",
    "BROA",
-   "BSAD",
    "BSKL",
    "BSOT",
    "BUSI",
@@ -86,7 +82,6 @@
    "CARP",
    "CBIT",
    "CDEV",
-   "CGRA",
    "CHEM",
    "CHIN",
    "CINA",
@@ -105,21 +100,16 @@
    "CRIM",
    "CSIS",
    "CTRP",
-   "CTVR",
    "CULN",
    "DANC",
-   "DANS",
    "DART",
    "DBAX",
    "DENT",
    "DESG",
-   "DESI",
    "DESN",
-   "DGME",
    "DIES",
    "DMED",
    "DRAF",
-   "DSGN",
    "DSPS",
    "ECOL",
    "ECON",
@@ -168,7 +158,6 @@
    "FLTU",
    "FMED",
    "FREN",
-   "FTMA",
    "FTVE",
    "FTVM",
    "GCIP",
@@ -224,7 +213,6 @@
    "MEDI",
    "MGMT",
    "MILS",
-   "MMDI",
    "MORT",
    "MRKT",
    "MSCM",
@@ -255,7 +243,6 @@
    "PHSC",
    "PHTC",
    "PHTG",
-   "PHTO",
    "PHYS",
    "PLMB",
    "POLS",
@@ -274,7 +261,6 @@
    "RSPT",
    "RTVF",
    "RUSS",
-   "SGNG",
    "SLNA",
    "SLNG",
    "SLPA",
@@ -299,7 +285,6 @@
    "VETT",
    "VFPA",
    "VIET",
-   "VISC",
    "VNRS",
    "VOCE",
    "WELD",
@@ -310,13 +295,6 @@
    "WWKF"
   ],
   "strays": [
-   {
-    "code": "PHTO",
-    "ids": 18,
-    "disciplines": {
-     "(no discipline)": 18
-    }
-   },
    {
     "code": "LIBS",
     "ids": 12,
@@ -339,13 +317,6 @@
     }
    },
    {
-    "code": "SGNG",
-    "ids": 10,
-    "disciplines": {
-     "(no discipline)": 10
-    }
-   },
-   {
     "code": "JAMS",
     "ids": 8,
     "disciplines": {
@@ -353,45 +324,10 @@
     }
    },
    {
-    "code": "ESTI",
-    "ids": 7,
-    "disciplines": {
-     "(no discipline)": 7
-    }
-   },
-   {
     "code": "FJMP",
     "ids": 7,
     "disciplines": {
      "(no discipline)": 7
-    }
-   },
-   {
-    "code": "FTVM",
-    "ids": 7,
-    "disciplines": {
-     "(no discipline)": 7
-    }
-   },
-   {
-    "code": "ARTG",
-    "ids": 6,
-    "disciplines": {
-     "(no discipline)": 6
-    }
-   },
-   {
-    "code": "ARTI",
-    "ids": 6,
-    "disciplines": {
-     "(no discipline)": 6
-    }
-   },
-   {
-    "code": "FLTE",
-    "ids": 6,
-    "disciplines": {
-     "(no discipline)": 6
     }
    },
    {
@@ -416,21 +352,7 @@
     }
    },
    {
-    "code": "TAFI",
-    "ids": 5,
-    "disciplines": {
-     "(no discipline)": 5
-    }
-   },
-   {
     "code": "ARTA",
-    "ids": 4,
-    "disciplines": {
-     "(no discipline)": 4
-    }
-   },
-   {
-    "code": "ARTC",
     "ids": 4,
     "disciplines": {
      "(no discipline)": 4
@@ -451,14 +373,14 @@
     }
    },
    {
-    "code": "DGME",
+    "code": "EPHO",
     "ids": 3,
     "disciplines": {
      "(no discipline)": 3
     }
    },
    {
-    "code": "EPHO",
+    "code": "FTVM",
     "ids": 3,
     "disciplines": {
      "(no discipline)": 3
@@ -500,20 +422,6 @@
     }
    },
    {
-    "code": "ARTB",
-    "ids": 2,
-    "disciplines": {
-     "(no discipline)": 2
-    }
-   },
-   {
-    "code": "ARTN",
-    "ids": 2,
-    "disciplines": {
-     "(no discipline)": 2
-    }
-   },
-   {
     "code": "ATXX",
     "ids": 2,
     "disciplines": {
@@ -542,21 +450,7 @@
     }
    },
    {
-    "code": "CTVR",
-    "ids": 2,
-    "disciplines": {
-     "(no discipline)": 2
-    }
-   },
-   {
     "code": "ESTH",
-    "ids": 2,
-    "disciplines": {
-     "(no discipline)": 2
-    }
-   },
-   {
-    "code": "FTMA",
     "ids": 2,
     "disciplines": {
      "(no discipline)": 2
@@ -633,13 +527,6 @@
     }
    },
    {
-    "code": "VISC",
-    "ids": 2,
-    "disciplines": {
-     "(no discipline)": 2
-    }
-   },
-   {
     "code": "WORK",
     "ids": 2,
     "disciplines": {
@@ -675,6 +562,20 @@
     }
    },
    {
+    "code": "ARTB",
+    "ids": 1,
+    "disciplines": {
+     "(no discipline)": 1
+    }
+   },
+   {
+    "code": "ARTC",
+    "ids": 1,
+    "disciplines": {
+     "(no discipline)": 1
+    }
+   },
+   {
     "code": "ARTV",
     "ids": 1,
     "disciplines": {
@@ -696,21 +597,7 @@
     }
    },
    {
-    "code": "BSAD",
-    "ids": 1,
-    "disciplines": {
-     "(no discipline)": 1
-    }
-   },
-   {
     "code": "BUST",
-    "ids": 1,
-    "disciplines": {
-     "(no discipline)": 1
-    }
-   },
-   {
-    "code": "CGRA",
     "ids": 1,
     "disciplines": {
      "(no discipline)": 1
@@ -738,13 +625,6 @@
     }
    },
    {
-    "code": "DANS",
-    "ids": 1,
-    "disciplines": {
-     "(no discipline)": 1
-    }
-   },
-   {
     "code": "DART",
     "ids": 1,
     "disciplines": {
@@ -766,13 +646,6 @@
     }
    },
    {
-    "code": "DESI",
-    "ids": 1,
-    "disciplines": {
-     "(no discipline)": 1
-    }
-   },
-   {
     "code": "DESN",
     "ids": 1,
     "disciplines": {
@@ -787,13 +660,6 @@
     }
    },
    {
-    "code": "DSGN",
-    "ids": 1,
-    "disciplines": {
-     "(no discipline)": 1
-    }
-   },
-   {
     "code": "EMER",
     "ids": 1,
     "disciplines": {
@@ -802,6 +668,20 @@
    },
    {
     "code": "ENGW",
+    "ids": 1,
+    "disciplines": {
+     "(no discipline)": 1
+    }
+   },
+   {
+    "code": "ESTI",
+    "ids": 1,
+    "disciplines": {
+     "(no discipline)": 1
+    }
+   },
+   {
+    "code": "FLTE",
     "ids": 1,
     "disciplines": {
      "(no discipline)": 1
@@ -864,13 +744,6 @@
     }
    },
    {
-    "code": "MMDI",
-    "ids": 1,
-    "disciplines": {
-     "(no discipline)": 1
-    }
-   },
-   {
     "code": "MSCM",
     "ids": 1,
     "disciplines": {
@@ -900,6 +773,13 @@
    },
    {
     "code": "RTVF",
+    "ids": 1,
+    "disciplines": {
+     "(no discipline)": 1
+    }
+   },
+   {
+    "code": "TAFI",
     "ids": 1,
     "disciplines": {
      "(no discipline)": 1

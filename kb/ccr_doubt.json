@@ -6,7 +6,7 @@
    "desc": [
     [
      "Health Care Ancillaries",
-     0.1882
+     0.1883
     ],
     [
      "Fire Technology",
@@ -14,7 +14,7 @@
     ],
     [
      "Child Development/Early Childhood Education",
-     0.1537
+     0.1538
     ]
    ],
    "desc_kind": "desc_differs_close",
@@ -65,15 +65,15 @@
    "desc": [
     [
      "Physical Education Disabled Students",
-     0.3857
+     0.3842
     ],
     [
      "Kinesiology",
-     0.2848
+     0.3168
     ],
     [
      "Health and Safety: Noncredit",
-     0.2539
+     0.2522
     ]
    ],
    "desc_kind": "desc_differs_clear",
@@ -119,49 +119,19 @@
    ]
   },
   {
-   "colleges": 2,
-   "desc": [
-    [
-     "Physical Education Disabled Students",
-     0.2088
-    ],
-    [
-     "Kinesiology",
-     0.2064
-    ],
-    [
-     "History",
-     0.1551
-    ]
-   ],
-   "desc_kind": "desc_differs_thin",
-   "discipline": "Kinesiology",
-   "id": "KINE M1952",
-   "members": 2,
-   "title": "Heart Healthy Exercise",
-   "verdict": "for_a_curator",
-   "votes": {
-    "Physical Education Disabled Students": 2
-   },
-   "why": [
-    "description",
-    "top"
-   ]
-  },
-  {
    "colleges": 22,
    "desc": [
     [
      "Kinesiology",
-     0.2628
+     0.2756
     ],
     [
      "Counseling",
-     0.2388
+     0.2382
     ],
     [
      "Health and Safety: Noncredit",
-     0.2219
+     0.2213
     ]
    ],
    "desc_kind": "desc_agrees_close",
@@ -184,7 +154,7 @@
    "desc": [
     [
      "Kinesiology",
-     0.236
+     0.2427
     ],
     [
      "Counseling",
@@ -192,7 +162,7 @@
     ],
     [
      "Nutritional Science/Dietetics",
-     0.1918
+     0.1919
     ]
    ],
    "desc_kind": "desc_agrees_close",
@@ -214,15 +184,15 @@
    "desc": [
     [
      "Kinesiology",
-     0.1856
+     0.1936
     ],
     [
      "Nutritional Science/Dietetics",
-     0.1297
+     0.1293
     ],
     [
      "Gerontology",
-     0.1047
+     0.1053
     ]
    ],
    "desc_kind": "desc_agrees_clear",
@@ -243,18 +213,18 @@
    "desc": [
     [
      "Kinesiology",
-     0.1691
+     0.1904
     ],
     [
      "Addiction Paraprofessional Training",
-     0.1612
+     0.1616
     ],
     [
      "Health Information Technology",
-     0.1484
+     0.1485
     ]
    ],
-   "desc_kind": "desc_agrees_thin",
+   "desc_kind": "desc_agrees_close",
    "discipline": "Kinesiology",
    "id": "KINE M1656",
    "members": 2,
@@ -266,70 +236,11 @@
    "why": [
     "top"
    ]
-  },
-  {
-   "colleges": 2,
-   "desc": [
-    [
-     "Kinesiology",
-     0.2722
-    ],
-    [
-     "Nutritional Science/Dietetics",
-     0.1969
-    ],
-    [
-     "Physical Education Disabled Students",
-     0.187
-    ]
-   ],
-   "desc_kind": "desc_agrees_clear",
-   "discipline": "Kinesiology",
-   "id": "KINE M9023",
-   "members": 2,
-   "title": "Body Dynamics/Aging Process-Older Adults",
-   "verdict": "unsettled",
-   "votes": {
-    "Health": 1,
-    "Kinesiology": 1
-   },
-   "why": [
-    "top"
-   ]
-  },
-  {
-   "colleges": 1,
-   "desc": [
-    [
-     "Kinesiology",
-     0.2085
-    ],
-    [
-     "Physical Education Disabled Students",
-     0.1529
-    ],
-    [
-     "Health and Safety: Noncredit",
-     0.1351
-    ]
-   ],
-   "desc_kind": "desc_agrees_clear",
-   "discipline": "Kinesiology",
-   "id": "KINE M1953",
-   "members": 2,
-   "title": "Modified Resistive Exercise",
-   "verdict": "unsettled",
-   "votes": {
-    "Physical Education Disabled Students": 2
-   },
-   "why": [
-    "top"
-   ]
   }
  ],
  "counts": {
-  "description": 5,
-  "top_only": 6
+  "description": 4,
+  "top_only": 4
  },
  "discipline": "Kinesiology",
  "schema": 1

@@ -89962,580 +89962,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 95.0
     },
     {
-      "exhibit_id": "MAPICI-CCC3-1-001|MAPICI-CCC4-1-001|MAPICI-CCCC-1-001|MAPICI-CCNA-1-001|MAPICI-CCNA1-1-001|MAPICI-CCNA2-1-001|MAPICI-CCNA3-1-001|MAPICI-CCNA4-1-001|MAPICI-CCNA6-1-001|MAPICI-CCNA7-1-001|MAPICI-CCNA8-1-001|MAPICS-CCNA-1-001",
-      "exhibit_ids": [
-        "MAPICI-CCC3-1-001",
-        "MAPICI-CCC4-1-001",
-        "MAPICI-CCCC-1-001",
-        "MAPICI-CCNA-1-001",
-        "MAPICI-CCNA1-1-001",
-        "MAPICI-CCNA2-1-001",
-        "MAPICI-CCNA3-1-001",
-        "MAPICI-CCNA4-1-001",
-        "MAPICI-CCNA6-1-001",
-        "MAPICI-CCNA7-1-001",
-        "MAPICI-CCNA8-1-001",
-        "MAPICS-CCNA-1-001"
-      ],
-      "title": "Cisco Certified Network Associate (CCNA)",
-      "unified_title": "Cisco Certified Network Associate (CCNA)",
-      "is_classified": true,
-      "issuing_agency": "Cisco",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "CISCO CERTIFIED NETWORK ASSOCIATE",
-        "Cisco CCNA Certification",
-        "Cisco CCNA Certification, Cisco Introduction to Networks (Cisco Network Academy)",
-        "Cisco Certified Network Associate",
-        "Cisco Certified Network Associate (CCNA)",
-        "Cisco Certified Network Associate (CCNA) - CIS 210, 224 and 225",
-        "Cisco Certified Network Associate (CCNA) CIS 210 and 240",
-        "Cisco Certified Network Associate (CCNA) Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "11",
-      "top_codes": [
-        "28",
-        "29",
-        "334",
-        "35",
-        "36",
-        "48"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 18,
-      "adopter_names": [
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Crafton Hills College",
-        "De Anza College",
-        "Hartnell College",
-        "Las Positas College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Merritt College",
-        "Modesto Junior College",
-        "Reedley College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Diego City College",
-        "Santa Ana College"
-      ],
-      "potential": 88,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Calbright College Non-Credit",
-        "Cañada College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Citrus College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 106,
-      "credit_recs": [
-        {
-          "course": "CIS 26A",
-          "credit": "4 hours in Cisco Introduction to Networks"
-        },
-        {
-          "course": "CIS 26B",
-          "credit": "4 hours in Cisco Rtng and Swtchng Essntls"
-        },
-        {
-          "course": "CIS 26C",
-          "credit": "4 hours in Cisco Networking Academy 1C"
-        },
-        {
-          "course": "CIMN 160",
-          "credit": "3 hours in CISCO CCNA: ROUTING AND SWITCHING ESSENTIALS"
-        },
-        {
-          "course": "CIS 481NC",
-          "credit": "0 hours in CCNA 1 CISCO CERTIFIED NETWORK ASSOCIATE"
-        },
-        {
-          "course": "INWT 120",
-          "credit": "4 hours in Network Fundamentals (Network+)"
-        },
-        {
-          "course": "CSS 50",
-          "credit": "4 hours in Network Fundamentals (Network+)"
-        },
-        {
-          "course": "CIS 140",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "CIS 141",
-          "credit": "3 hours in Switching, Routing and Wireless Essentials"
-        },
-        {
-          "course": "CIS 142",
-          "credit": "3 hours in Network Security and Automation"
-        },
-        {
-          "course": "CMPR 138",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "CNT 8001",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "CNT 8002",
-          "credit": "3 hours in Switching, Routing and Wireless Essentials"
-        },
-        {
-          "course": "CNT 8003",
-          "credit": "3 hours in Network Security and Automation"
-        },
-        {
-          "course": "CNIT 202C",
-          "credit": "3 hours in Switching, Routing and Wireless Essentials"
-        },
-        {
-          "course": "CNIT 205C",
-          "credit": "3 hours in Network Security and Automation"
-        },
-        {
-          "course": "CTIS 15",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "CTIS 16",
-          "credit": "3 hours in Switching, Routing and Wireless Essentials"
-        },
-        {
-          "course": "IS 63",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "IS 64",
-          "credit": "3 hours in Network Security and Automation"
-        },
-        {
-          "course": "IS 52",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "IS 53",
-          "credit": "3 hours in Network Security and Automation"
-        },
-        {
-          "course": "IS 54",
-          "credit": "3 hours in Switching, Routing and Wireless Essentials"
-        },
-        {
-          "course": "CNIT 201C",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "ITIS 51",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "ITIS 52",
-          "credit": "3 hours in Network Security and Automation"
-        },
-        {
-          "course": "ITIS 53",
-          "credit": "3 hours in Switching, Routing and Wireless Essentials"
-        },
-        {
-          "course": "CIS 210",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "CSS 50",
-          "credit": "3 hours in Computer Network Fundamentals"
-        },
-        {
-          "course": "CSS 51",
-          "credit": "3 hours in Switching, Routing and Wireless Essentials"
-        },
-        {
-          "course": "CSS 52",
-          "credit": "3 hours in Network Security and Automation"
-        },
-        {
-          "course": "CIS 067A",
-          "credit": "4 hours in Local Area Networks"
-        },
-        {
-          "course": "CIS 072",
-          "credit": "4 hours in Local Area Networks"
-        },
-        {
-          "course": "CMPET 323",
-          "credit": "3 hours in Cisco Certified Network Associate (CCNA) Certification Prep"
-        },
-        {
-          "course": "MICROTK 078",
-          "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER II"
-        },
-        {
-          "course": "MICROTK 077",
-          "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER I"
-        },
-        {
-          "course": "MICROTK 079",
-          "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER III"
-        },
-        {
-          "course": "CIS 210",
-          "credit": "3 hours in Introduction to Computer Networking"
-        },
-        {
-          "course": "CIS 240",
-          "credit": "6 hours in Switching, Routing, WLANs, Security, and Enterprise Networking (CCNA Prep)"
-        },
-        {
-          "course": "CIS 224",
-          "credit": "3 hours in Routing and Switching Essentials"
-        },
-        {
-          "course": "CIS 225",
-          "credit": "3 hours in Enterprise Networking, Security, & Automation"
-        },
-        {
-          "course": "ITIS 16",
-          "credit": "3 hours in Internet Technologies and Security"
-        },
-        {
-          "course": "ITIS 51",
-          "credit": "4 hours in Cisco Internetworking I"
-        },
-        {
-          "course": "ITIS 52",
-          "credit": "4 hours in Cisco Internetworking II"
-        },
-        {
-          "course": "ITIS 53",
-          "credit": "4 hours in Cisco Internetworking III"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "4 hours in Network Fundamentals (Network+)",
-          "cid": "",
-          "eids": [
-            "MAPICI-CCNA2-1-001"
-          ]
-        },
-        {
-          "credit": "3 hours in Computer Network Fundamentals",
-          "cid": "ITIS 150",
-          "eids": [
-            "MAPICI-CCNA3-1-001"
-          ]
-        },
-        {
-          "credit": "3 hours in Switching, Routing and Wireless Essentials",
-          "cid": "ITIS 151",
-          "eids": [
-            "MAPICI-CCNA3-1-001"
-          ]
-        },
-        {
-          "credit": "3 hours in Network Security and Automation",
-          "cid": "",
-          "eids": [
-            "MAPICI-CCNA3-1-001"
-          ]
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-CCC3-1-001",
-          "title": "Cisco CCNA Certification",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CCC4-1-001",
-          "title": "Cisco CCNA Certification",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CCCC-1-001",
-          "title": "Cisco CCNA Certification, Cisco Introduction to Networks (Cisco Network Academy)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CCNA-1-001",
-          "title": "CISCO CERTIFIED NETWORK ASSOCIATE",
-          "units": 12.0,
-          "lines": 3
-        },
-        {
-          "id": "MAPICI-CCNA1-1-001",
-          "title": "Cisco Certified Network Associate (CCNA) Certification",
-          "units": 3.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-CCNA2-1-001",
-          "title": "Cisco Certified Network Associate (CCNA) Certification",
-          "units": 8.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-CCNA3-1-001",
-          "title": "Cisco Certified Network Associate (CCNA) Certification",
-          "units": 72.0,
-          "lines": 24
-        },
-        {
-          "id": "MAPICI-CCNA4-1-001",
-          "title": "Cisco Certified Network Associate (CCNA)",
-          "units": 8.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-CCNA6-1-001",
-          "title": "Cisco Certified Network Associate",
-          "units": 15.0,
-          "lines": 4
-        },
-        {
-          "id": "MAPICI-CCNA7-1-001",
-          "title": "Cisco Certified Network Associate (CCNA) CIS 210 and 240",
-          "units": 9.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-CCNA8-1-001",
-          "title": "Cisco Certified Network Associate (CCNA) - CIS 210, 224 and 225",
-          "units": 9.0,
-          "lines": 3
-        },
-        {
-          "id": "MAPICS-CCNA-1-001",
-          "title": "Cisco Certified Network Associate (CCNA) Certification",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Chaffey College": 24.0,
-        "City College of San Francisco": 9.0,
-        "Clovis Community College": 6.0,
-        "Crafton Hills College": 9.0,
-        "De Anza College": 4.0,
-        "Hartnell College": 13.0,
-        "Las Positas College": 9.0,
-        "Los Angeles Pierce College": 15.0,
-        "Los Angeles Southwest College": 6.0,
-        "Los Angeles Trade Technical College": 9.0,
-        "Merced College": 6.0,
-        "Merritt College": 4.0,
-        "Modesto Junior College": 3.0,
-        "Reedley College": 9.0,
-        "Riverside City College": 12.0,
-        "Saddleback College": 3.0,
-        "San Diego City College": 4.0,
-        "Santa Ana College": 3.0
-      },
-      "adopter_lines": {
-        "Chaffey College": 7,
-        "City College of San Francisco": 3,
-        "Clovis Community College": 2,
-        "Crafton Hills College": 3,
-        "De Anza College": 1,
-        "Hartnell College": 4,
-        "Las Positas College": 3,
-        "Los Angeles Pierce College": 4,
-        "Los Angeles Southwest College": 2,
-        "Los Angeles Trade Technical College": 3,
-        "Merced College": 2,
-        "Merritt College": 1,
-        "Modesto Junior College": 1,
-        "Reedley College": 3,
-        "Riverside City College": 3,
-        "Saddleback College": 2,
-        "San Diego City College": 1,
-        "Santa Ana College": 1
-      },
-      "adopter_rec_idx": {
-        "Chaffey College": [
-          24,
-          25,
-          26,
-          41,
-          42,
-          43,
-          44
-        ],
-        "City College of San Francisco": [
-          14,
-          15,
-          23
-        ],
-        "Clovis Community College": [
-          18,
-          19
-        ],
-        "Crafton Hills College": [
-          7,
-          8,
-          9
-        ],
-        "De Anza College": [
-          31
-        ],
-        "Hartnell College": [
-          6,
-          28,
-          29,
-          30
-        ],
-        "Las Positas College": [
-          11,
-          12,
-          13
-        ],
-        "Los Angeles Pierce College": [
-          37,
-          38,
-          39,
-          40
-        ],
-        "Los Angeles Southwest College": [
-          27,
-          37
-        ],
-        "Los Angeles Trade Technical College": [
-          34,
-          35,
-          36
-        ],
-        "Merced College": [
-          16,
-          17
-        ],
-        "Merritt College": [
-          32
-        ],
-        "Modesto Junior College": [
-          33
-        ],
-        "Reedley College": [
-          20,
-          21,
-          22
-        ],
-        "Riverside City College": [
-          0,
-          1,
-          2
-        ],
-        "Saddleback College": [
-          3,
-          4
-        ],
-        "San Diego City College": [
-          5
-        ],
-        "Santa Ana College": [
-          10
-        ]
-      },
-      "peer_units_median": 7.5,
-      "peer_units_max": 24.0,
-      "rec_units_total": 145.0
-    },
-    {
       "exhibit_id": "MAPSAS-D:EI-1-001|MAPSAS-DE-E-1-001|MAPSAS-DEIA-1-001|MAPSAS-DEIA1-1-001|MAPSAS-DEIA2-1-001",
       "exhibit_ids": [
         "MAPSAS-D:EI-1-001",
@@ -92834,6 +92260,607 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 6.0,
       "rec_units_total": 62.5
+    },
+    {
+      "exhibit_id": "MAPICI-CC4-1-001|MAPICI-CCC3-1-001|MAPICI-CCC4-1-001|MAPICI-CCCC-1-001|MAPICI-CCNA-1-001|MAPICI-CCNA1-1-001|MAPICI-CCNA2-1-001|MAPICI-CCNA3-1-001|MAPICI-CCNA4-1-001|MAPICI-CCNA6-1-001|MAPICI-CCNA7-1-001|MAPICI-CCNA8-1-001|MAPICS-CCNA-1-001",
+      "exhibit_ids": [
+        "MAPICI-CC4-1-001",
+        "MAPICI-CCC3-1-001",
+        "MAPICI-CCC4-1-001",
+        "MAPICI-CCCC-1-001",
+        "MAPICI-CCNA-1-001",
+        "MAPICI-CCNA1-1-001",
+        "MAPICI-CCNA2-1-001",
+        "MAPICI-CCNA3-1-001",
+        "MAPICI-CCNA4-1-001",
+        "MAPICI-CCNA6-1-001",
+        "MAPICI-CCNA7-1-001",
+        "MAPICI-CCNA8-1-001",
+        "MAPICS-CCNA-1-001"
+      ],
+      "title": "Cisco Certified Network Associate (CCNA)",
+      "unified_title": "Cisco Certified Network Associate (CCNA)",
+      "is_classified": true,
+      "issuing_agency": "Cisco",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "CCNA Certification",
+        "CISCO CERTIFIED NETWORK ASSOCIATE",
+        "Cisco CCNA Certification",
+        "Cisco CCNA Certification, Cisco Introduction to Networks (Cisco Network Academy)",
+        "Cisco Certified Network Associate",
+        "Cisco Certified Network Associate (CCNA)",
+        "Cisco Certified Network Associate (CCNA) - CIS 210, 224 and 225",
+        "Cisco Certified Network Associate (CCNA) CIS 210 and 240",
+        "Cisco Certified Network Associate (CCNA) Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "28",
+        "29",
+        "334",
+        "35",
+        "36",
+        "48"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 19,
+      "adopter_names": [
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Crafton Hills College",
+        "De Anza College",
+        "Hartnell College",
+        "Las Positas College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Modesto Junior College",
+        "Reedley College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College"
+      ],
+      "potential": 87,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Calbright College Non-Credit",
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Citrus College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College"
+      ],
+      "total_addressable": 106,
+      "credit_recs": [
+        {
+          "course": "CIS 26A",
+          "credit": "4 hours in Cisco Introduction to Networks"
+        },
+        {
+          "course": "CIS 26B",
+          "credit": "4 hours in Cisco Rtng and Swtchng Essntls"
+        },
+        {
+          "course": "CIS 26C",
+          "credit": "4 hours in Cisco Networking Academy 1C"
+        },
+        {
+          "course": "CIMN 160",
+          "credit": "3 hours in CISCO CCNA: ROUTING AND SWITCHING ESSENTIALS"
+        },
+        {
+          "course": "CIS 481NC",
+          "credit": "0 hours in CCNA 1 CISCO CERTIFIED NETWORK ASSOCIATE"
+        },
+        {
+          "course": "INWT 120",
+          "credit": "4 hours in Network Fundamentals (Network+)"
+        },
+        {
+          "course": "CSS 50",
+          "credit": "4 hours in Network Fundamentals (Network+)"
+        },
+        {
+          "course": "CIS 140",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "CIS 141",
+          "credit": "3 hours in Switching, Routing and Wireless Essentials"
+        },
+        {
+          "course": "CIS 142",
+          "credit": "3 hours in Network Security and Automation"
+        },
+        {
+          "course": "CMPR 138",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "CNT 8001",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "CNT 8002",
+          "credit": "3 hours in Switching, Routing and Wireless Essentials"
+        },
+        {
+          "course": "CNT 8003",
+          "credit": "3 hours in Network Security and Automation"
+        },
+        {
+          "course": "CNIT 202C",
+          "credit": "3 hours in Switching, Routing and Wireless Essentials"
+        },
+        {
+          "course": "CNIT 205C",
+          "credit": "3 hours in Network Security and Automation"
+        },
+        {
+          "course": "CTIS 15",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "CTIS 16",
+          "credit": "3 hours in Switching, Routing and Wireless Essentials"
+        },
+        {
+          "course": "IS 63",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "IS 64",
+          "credit": "3 hours in Network Security and Automation"
+        },
+        {
+          "course": "IS 52",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "IS 53",
+          "credit": "3 hours in Network Security and Automation"
+        },
+        {
+          "course": "IS 54",
+          "credit": "3 hours in Switching, Routing and Wireless Essentials"
+        },
+        {
+          "course": "CNIT 201C",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "ITIS 51",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "ITIS 52",
+          "credit": "3 hours in Network Security and Automation"
+        },
+        {
+          "course": "ITIS 53",
+          "credit": "3 hours in Switching, Routing and Wireless Essentials"
+        },
+        {
+          "course": "CIS 210",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "CSS 50",
+          "credit": "3 hours in Computer Network Fundamentals"
+        },
+        {
+          "course": "CSS 51",
+          "credit": "3 hours in Switching, Routing and Wireless Essentials"
+        },
+        {
+          "course": "CSS 52",
+          "credit": "3 hours in Network Security and Automation"
+        },
+        {
+          "course": "CIS 067A",
+          "credit": "4 hours in Local Area Networks"
+        },
+        {
+          "course": "CIS 072",
+          "credit": "4 hours in Local Area Networks"
+        },
+        {
+          "course": "CMPET 323",
+          "credit": "3 hours in Cisco Certified Network Associate (CCNA) Certification Prep"
+        },
+        {
+          "course": "MICROTK 078",
+          "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER II"
+        },
+        {
+          "course": "MICROTK 077",
+          "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER I"
+        },
+        {
+          "course": "MICROTK 079",
+          "credit": "3 hours in CISCO NETWORKING ACADEMY - SEMESTER III"
+        },
+        {
+          "course": "CIS 210",
+          "credit": "3 hours in Introduction to Computer Networking"
+        },
+        {
+          "course": "CIS 240",
+          "credit": "6 hours in Switching, Routing, WLANs, Security, and Enterprise Networking (CCNA Prep)"
+        },
+        {
+          "course": "CIS 224",
+          "credit": "3 hours in Routing and Switching Essentials"
+        },
+        {
+          "course": "CIS 225",
+          "credit": "3 hours in Enterprise Networking, Security, & Automation"
+        },
+        {
+          "course": "ITIS 16",
+          "credit": "3 hours in Internet Technologies and Security"
+        },
+        {
+          "course": "ITIS 51",
+          "credit": "4 hours in Cisco Internetworking I"
+        },
+        {
+          "course": "ITIS 52",
+          "credit": "4 hours in Cisco Internetworking II"
+        },
+        {
+          "course": "ITIS 53",
+          "credit": "4 hours in Cisco Internetworking III"
+        },
+        {
+          "course": "CIT 021",
+          "credit": "4 hours in Introduction to Cisco Networks (Cisco-1)"
+        },
+        {
+          "course": "CIT 022",
+          "credit": "4 hours in Switching, Routing, and Wireless Essentials"
+        },
+        {
+          "course": "CIT 023",
+          "credit": "4 hours in Enterprise Networking, Security, and Automation"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "4 hours in Network Fundamentals (Network+)",
+          "cid": "",
+          "eids": [
+            "MAPICI-CCNA2-1-001"
+          ]
+        },
+        {
+          "credit": "3 hours in Computer Network Fundamentals",
+          "cid": "ITIS 150",
+          "eids": [
+            "MAPICI-CCNA3-1-001"
+          ]
+        },
+        {
+          "credit": "3 hours in Switching, Routing and Wireless Essentials",
+          "cid": "ITIS 151",
+          "eids": [
+            "MAPICI-CCNA3-1-001"
+          ]
+        },
+        {
+          "credit": "3 hours in Network Security and Automation",
+          "cid": "",
+          "eids": [
+            "MAPICI-CCNA3-1-001"
+          ]
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-CC4-1-001",
+          "title": "CCNA Certification",
+          "units": 12.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPICI-CCC3-1-001",
+          "title": "Cisco CCNA Certification",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CCC4-1-001",
+          "title": "Cisco CCNA Certification",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CCCC-1-001",
+          "title": "Cisco CCNA Certification, Cisco Introduction to Networks (Cisco Network Academy)",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CCNA-1-001",
+          "title": "CISCO CERTIFIED NETWORK ASSOCIATE",
+          "units": 12.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPICI-CCNA1-1-001",
+          "title": "Cisco Certified Network Associate (CCNA) Certification",
+          "units": 3.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-CCNA2-1-001",
+          "title": "Cisco Certified Network Associate (CCNA) Certification",
+          "units": 8.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-CCNA3-1-001",
+          "title": "Cisco Certified Network Associate (CCNA) Certification",
+          "units": 72.0,
+          "lines": 24
+        },
+        {
+          "id": "MAPICI-CCNA4-1-001",
+          "title": "Cisco Certified Network Associate (CCNA)",
+          "units": 8.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-CCNA6-1-001",
+          "title": "Cisco Certified Network Associate",
+          "units": 15.0,
+          "lines": 4
+        },
+        {
+          "id": "MAPICI-CCNA7-1-001",
+          "title": "Cisco Certified Network Associate (CCNA) CIS 210 and 240",
+          "units": 9.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-CCNA8-1-001",
+          "title": "Cisco Certified Network Associate (CCNA) - CIS 210, 224 and 225",
+          "units": 9.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPICS-CCNA-1-001",
+          "title": "Cisco Certified Network Associate (CCNA) Certification",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Chaffey College": 24.0,
+        "City College of San Francisco": 9.0,
+        "Clovis Community College": 6.0,
+        "Crafton Hills College": 9.0,
+        "De Anza College": 4.0,
+        "Hartnell College": 13.0,
+        "Las Positas College": 9.0,
+        "Los Angeles Pierce College": 15.0,
+        "Los Angeles Southwest College": 6.0,
+        "Los Angeles Trade Technical College": 9.0,
+        "Merced College": 6.0,
+        "Merritt College": 4.0,
+        "Mission College": 12.0,
+        "Modesto Junior College": 3.0,
+        "Reedley College": 9.0,
+        "Riverside City College": 12.0,
+        "Saddleback College": 3.0,
+        "San Diego City College": 4.0,
+        "Santa Ana College": 3.0
+      },
+      "adopter_lines": {
+        "Chaffey College": 7,
+        "City College of San Francisco": 3,
+        "Clovis Community College": 2,
+        "Crafton Hills College": 3,
+        "De Anza College": 1,
+        "Hartnell College": 4,
+        "Las Positas College": 3,
+        "Los Angeles Pierce College": 4,
+        "Los Angeles Southwest College": 2,
+        "Los Angeles Trade Technical College": 3,
+        "Merced College": 2,
+        "Merritt College": 1,
+        "Mission College": 3,
+        "Modesto Junior College": 1,
+        "Reedley College": 3,
+        "Riverside City College": 3,
+        "Saddleback College": 2,
+        "San Diego City College": 1,
+        "Santa Ana College": 1
+      },
+      "adopter_rec_idx": {
+        "Chaffey College": [
+          24,
+          25,
+          26,
+          41,
+          42,
+          43,
+          44
+        ],
+        "City College of San Francisco": [
+          14,
+          15,
+          23
+        ],
+        "Clovis Community College": [
+          18,
+          19
+        ],
+        "Crafton Hills College": [
+          7,
+          8,
+          9
+        ],
+        "De Anza College": [
+          31
+        ],
+        "Hartnell College": [
+          6,
+          28,
+          29,
+          30
+        ],
+        "Las Positas College": [
+          11,
+          12,
+          13
+        ],
+        "Los Angeles Pierce College": [
+          37,
+          38,
+          39,
+          40
+        ],
+        "Los Angeles Southwest College": [
+          27,
+          37
+        ],
+        "Los Angeles Trade Technical College": [
+          34,
+          35,
+          36
+        ],
+        "Merced College": [
+          16,
+          17
+        ],
+        "Merritt College": [
+          32
+        ],
+        "Mission College": [
+          45,
+          46,
+          47
+        ],
+        "Modesto Junior College": [
+          33
+        ],
+        "Reedley College": [
+          20,
+          21,
+          22
+        ],
+        "Riverside City College": [
+          0,
+          1,
+          2
+        ],
+        "Saddleback College": [
+          3,
+          4
+        ],
+        "San Diego City College": [
+          5
+        ],
+        "Santa Ana College": [
+          10
+        ]
+      },
+      "peer_units_median": 9.0,
+      "peer_units_max": 24.0,
+      "rec_units_total": 157.0
     },
     {
       "exhibit_id": "MAPICI-C–CP-1-001",
@@ -179256,141 +179283,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPICI-CC4-1-001",
-      "exhibit_ids": [
-        "MAPICI-CC4-1-001"
-      ],
-      "title": "CCNA Certification",
-      "unified_title": "CCNA Certification",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "CCNA Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "11",
-      "top_codes": [
-        "36"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Mission College"
-      ],
-      "potential": 63,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Calbright College Non-Credit",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Ohlone College",
-        "Oxnard College",
-        "Palomar College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 64,
-      "credit_recs": [
-        {
-          "course": "CIT 021",
-          "credit": "4 hours in Introduction to Cisco Networks (Cisco-1)"
-        },
-        {
-          "course": "CIT 022",
-          "credit": "4 hours in Switching, Routing, and Wireless Essentials"
-        },
-        {
-          "course": "CIT 023",
-          "credit": "4 hours in Enterprise Networking, Security, and Automation"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-CC4-1-001",
-          "title": "CCNA Certification",
-          "units": 12.0,
-          "lines": 3
-        }
-      ],
-      "adopter_units": {
-        "Mission College": 12.0
-      },
-      "adopter_lines": {
-        "Mission College": 3
-      },
-      "adopter_rec_idx": {
-        "Mission College": [
-          0,
-          1,
-          2
-        ]
-      },
-      "peer_units_median": 12.0,
-      "peer_units_max": 12.0,
-      "rec_units_total": 12.0
     },
     {
       "exhibit_id": "MAPMM-AC-N-1-001",
@@ -451379,7 +451271,7 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-25T06:17:36",
+  "generated_at": "2026-11-25T19:45:53",
   "total_credit_recs": 17578,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",

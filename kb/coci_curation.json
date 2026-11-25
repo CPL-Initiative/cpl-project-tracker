@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-25T06:18:39Z",
-  "count": 31189,
+  "_synced_at": "2026-11-25T19:54:53Z",
+  "count": 31193,
   "curations": {
     "AERO M1001": {
       "unified_title": "AS200 Leadership Laboratory C",
@@ -33119,10 +33119,20 @@
       "reviewed_by": "gather-adapt-s726@bot",
       "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
     },
+    "CN:CCC000107834": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-25T12:29:21.573242+00:00"
+    },
     "CN:CCC000110734": {
       "merge_into": "PEDS M1029",
       "reviewed_by": "gather-adapt-s726@bot",
       "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000113883": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-25T12:29:19.460399+00:00"
     },
     "CN:CCC000118589": {
       "merge_into": "PEDS M1029",
@@ -33228,6 +33238,11 @@
       "merge_into": "PEDS M1029",
       "reviewed_by": "gather-adapt-s726@bot",
       "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000319616": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-25T12:37:46.701826+00:00"
     },
     "CN:CCC000335930": {
       "merge_into": "PEDS M1029",
@@ -33603,6 +33618,11 @@
       "merge_into": "PEDS M1029",
       "reviewed_by": "gather-adapt-s726@bot",
       "reviewed_at": "2026-11-25T03:04:23.85962+00:00"
+    },
+    "CN:CCC000583286": {
+      "merge_into": "PEDS M1029",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-25T12:24:58.303504+00:00"
     },
     "CN:CCC000588202": {
       "merge_into": "PEDS M1029",
@@ -117675,14 +117695,30 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "KINE M1952": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-25T12:37:48.455489+00:00",
       "unified_title": "Heart Healthy Exercise",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "ruling": {
+        "ruling": "keep",
+        "to": null,
+        "at": "2026-11-25T12:37:48.275119+00:00"
+      },
+      "validated_at": "2026-11-25T12:37:48.455489+00:00",
+      "validated_by": "slee@cccco.edu"
     },
     "KINE M1953": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-25T12:29:23.430262+00:00",
       "unified_title": "Modified Resistive Exercise",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "ruling": {
+        "ruling": "keep",
+        "to": null,
+        "at": "2026-11-25T12:29:23.224762+00:00"
+      },
+      "validated_at": "2026-11-25T12:29:23.430262+00:00",
+      "validated_by": "slee@cccco.edu"
     },
     "KINE M1954": {
       "unified_title": "Sports Officiating Fall",
@@ -118051,9 +118087,17 @@
       "validated_by": "slee@cccco.edu"
     },
     "KINE M9023": {
+      "discipline": "Kinesiology",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-25T12:38:46.084393+00:00",
       "unified_title": "Body Dynamics/Aging Process-Older Adults",
-      "reviewed_by": "automerge-titlelane-v1@bot",
-      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+      "ruling": {
+        "ruling": "keep",
+        "to": null,
+        "at": "2026-11-25T12:38:45.896668+00:00"
+      },
+      "validated_at": "2026-11-25T12:38:46.084393+00:00",
+      "validated_by": "slee@cccco.edu"
     },
     "KINE M9024": {
       "unified_title": "Beginning Swim for Fitness for Older Adults",
