@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-24T19:09:54Z",
+ "_generated_at": "2026-11-25T18:16:00Z",
  "procedures_hash": "75e72fb99f8c",
- "queue": 2,
+ "queue": 4,
  "saved_not_folded": 0,
- "waiting": 2,
- "proposed": 1,
- "needs_you_count": 2,
+ "waiting": 4,
+ "proposed": 3,
+ "needs_you_count": 3,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -21,8 +21,8 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 0,
-   "held": 0,
+   "settled": 1,
+   "held": 1,
    "sample": []
   },
   {
@@ -248,7 +248,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 0,
+   "held": 1,
    "sample": []
   },
   {
@@ -261,16 +261,21 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 0,
-   "held": 2,
-   "sample": []
+   "settled": 1,
+   "held": 3,
+   "sample": [
+    [
+     "CCNA Certification",
+     "Cisco Certified Network Associate (CCNA)"
+    ]
+   ]
   }
  ],
  "classifier_run": {
   "calls": 1,
   "answered": 1,
   "errors": [],
-  "cost_usd": 0.41,
+  "cost_usd": 0.39,
   "spend": {
    "estimate_usd": 5.83,
    "limit_usd": 40.0,
@@ -278,7 +283,7 @@
    "asked": 2,
    "remaining": 0,
    "ceiling_usd": 40.0,
-   "charge_usd": 0.40718,
+   "charge_usd": 0.3936,
    "in_flight_usd": 0.0,
    "stopped": false,
    "sent": 1,
@@ -286,6 +291,19 @@
   }
  },
  "needs_you": [
+  {
+   "raw_title": "ACE CR - Network Fundamentals",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Networking Fundamentals",
+    "issuer": "American Council on Education (ACE)",
+    "confidence": 0.8,
+    "note": "ACE credit recommendation (military CPL type) for a network fundamentals course; joined to the existing house family 'Networking Fundamentals' (ACE issuer). The branch is unknown, so the trainer is the generic U.S. Armed Forces."
+   },
+   "colleges": [
+    "Mission College"
+   ]
+  },
   {
    "raw_title": "AI-1 and AI-3 Portfolio Review KG 11/23/26",
    "why": "the classifier's title has a course code left in",

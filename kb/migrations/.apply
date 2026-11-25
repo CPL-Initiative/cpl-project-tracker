@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-25_gather_filters.sql
-name=gather_filters
+file=kb/migrations/2026-11-25_nc_lead_from_contacts.sql
+name=nc_lead_from_contacts
