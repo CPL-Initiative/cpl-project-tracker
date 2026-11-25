@@ -14,9 +14,13 @@ THE READING (kb/program_requirements_reconcile.json, Butte College; the kind cle
 kb/_program_requirements_reconcile.py, which only a college whose config names it runs): where the page's text prints
 the line, the record reads electives_fill_degree and a degree total, one of the record's own notes names
 degree_elective_units, prints its figure and quotes the line (conditional_note), and the major and general education at
-their least come short of the degree's low end (conditional_short, the "only necessary if" of the line), the figure is
-cleared and the electives fill the degree to its total. Where the major and general education already reach the low
-end the line asks for nothing, and the step leaves the record alone (01298, 01305, 07258, 07264, 31930, 32721).
+their least come short of the degree's low end (conditional_short, the "only necessary if" of the line), and the
+figure lies inside what the electives fill (conditional_fits: no less than the degree's low end less the major and
+general education at their most, no more than its top less them at their least), the figure is cleared and the
+electives fill the degree to its total. Where the major and general education already reach the low end the line asks
+for nothing, and the step leaves the record alone (01298, 01305, 07258, 07264, 31930, 32721); where the printed figure
+lies outside the fill it is no rest of the degree, and the step leaves it too (01370, 31306, 31307, 31950, 31954,
+43185, 43186; S727's second reader).
 
 THE SELF-RECALL (the S652 rule; p-self-recall-reads-rule-fields-s703): HAND is a hand reading of every Butte record
 whose notes quote the line with a figure kept as degree_elective_units (27), each answer written from the record's
@@ -34,10 +38,12 @@ program-requirements-college.yml with step=reconcile, extract=0, college "Butte 
 reads every page again and reconciles every filed record; this module's keep-only then puts every other record back as
 the base filed it (d-rios-reconcile-keeps-only-targets-s720) and checks each target: carried by the run, its own page
 (same_address on sources.json's url), its record changed in degree_elective_units alone, the step's note filed, and
-its arithmetic passing with the fill named. Then step=reread posts the nine.
+its arithmetic passing with the fill named. It refuses, writing nothing, unless all nine are kept and the base holds
+each one's figure from an earlier run, and refuses again if any other record still carries the run; then it runs
+both Commons builders under python3.12. Commit the records and the builders' output; then step=reread posts the nine.
 
     python3 kb/_program_reconcile_s727_butte.py                 # the self-recall and each target's expected outcome
-    python3 kb/_program_reconcile_s727_butte.py keep-only --run <reconcile run id> --base <commit before the run's>
+    python3 kb/_program_reconcile_s727_butte.py keep-only --run <reconcile run id> --base <the run's commit's parent>
 
 Guard: tests/program_reconcile_s727_butte_test.py.
 """
@@ -76,21 +82,29 @@ TARGETS = {"01362": 13, "07269": 7, "11136": 7, "31042": 9, "31941": 6, "32469":
 
 # The hand reading of the 27 Butte records whose notes quote the line and keep a figure as degree_elective_units: the
 # figure the note quotes, then "clear" and the verdict the record should carry once the figure is cleared (each of the
-# 21: the major and general education at their least come short of the map's low end of 60 or 61, so the line is
-# needed and the electives fill it), or "keep" and why.
+# 14: the major and general education at their least come short of the map's low end of 60 or 61, so the line is
+# needed, and the printed figure lies inside what the electives fill), or "keep" and why (13).
 _REACH = "keep: the major and general education at their least already reach the map's low end (%s), so the line asks for nothing"
+_OUT = "keep: the major and general education (%s) leave the electives %s to fill, and the line prints %s"
 HAND = {
     # The nine: failing today, passing once the line's figure fills.
     "01362": (13, "clear", True), "07269": (7, "clear", True), "11136": (7, "clear", True),
     "31042": (9, "clear", True), "31941": (6, "clear", True), "32469": (6, "clear", True),
     "33199": (12, "clear", True), "40923": (12, "clear", True), "43453": (12, "clear", True),
-    # Passing today and passing after: the line's figure brings the sum to the map's low end or past it on the
-    # overlap reading, and as fill it reads the same.
-    "01348": (3, "clear", True), "01370": (11, "clear", True), "09582": (6, "clear", True),
-    "31306": (2, "clear", True), "31307": (14, "clear", True), "31950": (8, "clear", True),
-    "31954": (14, "clear", True), "33222": (9, "clear", True), "40710": (8, "clear", True),
-    "43185": (14, "clear", True), "43186": (21.5, "clear", True), "44716": (7, "clear", True),
-    # Kept.
+    # Passing today and passing after: the line's figure lies inside what the electives fill, and as fill it reads
+    # the same.
+    "01348": (3, "clear", True), "09582": (6, "clear", True), "33222": (9, "clear", True),
+    "40710": (8, "clear", True), "44716": (7, "clear", True),
+    # Kept: the printed figure lies outside what the electives fill (S727's second reader), so the figure is not the
+    # rest of the degree.
+    "01370": (11, _OUT % ("26 and 21", "13-19", "11"), None),
+    "31306": (2, _OUT % ("35 and 21", "4-10", "2"), None),
+    "31307": (14, _OUT % ("23 and 21", "16-22", "14"), None),
+    "31950": (8, _OUT % ("25 and 34", "1-5", "8"), None),
+    "31954": (14, _OUT % ("19 and 34", "7-13", "14"), None),
+    "43185": (14, _OUT % ("37 and 21", "2-5", "14"), None),
+    "43186": (21.5, _OUT % ("29.5 and 21", "9.5-12.5", "21.5"), None),
+    # Kept: the line asks for nothing.
     "01298": (7, _REACH % "44 and 21 against 60-62", None),
     "01305": (1, _REACH % "41 and 21 against 60-64; S721's degree_within_map_range", None),
     "07258": (2, _REACH % "40 and 21 against 60-64; S721's degree_within_map_range", None),
@@ -268,6 +282,11 @@ def boundaries() -> dict:
         rest = R._span_of(prog["degree_total"])[0] - R._span_of(prog["ge_units"])[0]
         prog["total_units"] = {"min": rest, "max": R._span_of(prog["total_units"])[1] + rest}
         tally("the major raised to the low end", not run_step(g)[1], cn)
+        g = copy.deepcopy(f)
+        prog = g["record"]["program"]
+        room = R._span_of(prog["total_units"])[0] + R._span_of(prog["ge_units"])[0] + R._span_of(prog[FIELD])[0] - 0.5
+        prog["degree_total"] = {"min": R._span_of(prog["degree_total"])[0], "max": room}
+        tally("the figure past the fill's top", not run_step(g)[1], cn)
         tally("a text without the line", not run_step(f, text="Elective (any course numbered 1-199)")[1], cn)
         tally("held by the step", not run_step(f, st=dict(step(), hold={cn: "a test hold"}))[1], cn)
     return {"counts": dict(out), "wrong": wrong}
@@ -301,6 +320,11 @@ def check_target(cn: str, f: dict, b: dict | None) -> str | None:
     import _program_requirements_college as C
     if b is None:
         return "no base filing"
+    # The base is the filing before the run: it holds the line's figure the hand reads (S727's second reader: with the
+    # run's own commit as --base, every file "restored" still carried the run).
+    if not _same(((b.get("record") or {}).get("program") or {}).get(FIELD), TARGETS[cn]) \
+            or str(b.get("extracted_run")) == str(f.get("extracted_run")):
+        return "the base does not hold the line's figure from an earlier run: --base is not the filing before the run"
     note = reconciled_by_step(f)
     if not note or not _same(note["was"], TARGETS[cn]):
         return "the step's note is not filed, or names another figure"
@@ -316,37 +340,69 @@ def check_target(cn: str, f: dict, b: dict | None) -> str | None:
     return None
 
 
-def keep_only(run: str, base: str) -> dict:
+def keep_only_plan(run: str, current: dict, base: dict) -> dict:
+    """What keep-only writes, decided before anything is written. current is {control number: filed record} as the
+    branch holds it after the run; base is {control number: the base commit's file text, or None}. Every record the
+    run carried but the nine goes back to its base text, which must not carry the run itself; each of the nine must be
+    carried and pass check_target. held lists every refusal; keep-only writes nothing unless it is empty."""
+    held, kept, restore = [], [], {}
+    for cn, f in sorted(current.items()):
+        carried = str(f.get("extracted_run")) == str(run)
+        if cn in TARGETS:
+            if not carried:
+                held.append([cn, "the run did not carry it"])
+                continue
+            why = check_target(cn, f, json.loads(base[cn]) if base.get(cn) else None)
+            if why:
+                held.append([cn, why])
+            else:
+                kept.append(cn)
+        elif carried:
+            body = base.get(cn)
+            if body is None:
+                held.append([cn, "no base filing to restore"])
+            elif str(json.loads(body).get("extracted_run")) == str(run):
+                held.append([cn, "the base still carries the run: --base is not the filing before the run"])
+            else:
+                restore[cn] = body
+    held += [[cn, "no record file"] for cn in sorted(set(TARGETS) - set(current))]
+    return {"kept": kept, "restore": restore, "held": held}
+
+
+def keep_only(run: str, base: str, build: bool = True) -> dict:
     """After the reconcile run filed on this branch: every Butte record but the nine goes back to the base commit's
-    filing (d-rios-reconcile-keeps-only-targets-s720), and each target is checked. Refuses, writing nothing, when a
-    target is not as the reading says."""
-    held, kept, restored = [], [], []
+    filing (d-rios-reconcile-keeps-only-targets-s720), and each target is checked (keep_only_plan). Refuses, writing
+    nothing, unless all nine are kept and every restored file is free of the run; after writing, refuses again if any
+    record but the nine still carries the run. Then both Commons builders run under python3.12 (S727's second reader;
+    p-check-generated-misses-commons-data-s697), and their output joins the kept records' commit before the reread."""
+    current, base_text = {}, {}
     for p in sorted(glob.glob(os.path.join(COLLEGE_DIR, SLUG, "records", "*.json"))):
         cn = os.path.basename(p)[:-5]
         with open(p, encoding="utf-8") as fh:
-            f = json.load(fh)
-        if str(f.get("extracted_run")) != str(run):
-            continue
-        rel = os.path.relpath(p, ROOT)
-        was = subprocess.run(["git", "-C", ROOT, "show", "%s:%s" % (base, rel)], capture_output=True, text=True)
-        if cn not in TARGETS:
-            restored.append((p, was.stdout if was.returncode == 0 else None))
-            continue
-        why = check_target(cn, f, json.loads(was.stdout) if was.returncode == 0 else None)
-        if why:
-            held.append([cn, why])
-            restored.append((p, was.stdout))
-        else:
-            kept.append(cn)
-    if held:
-        raise SystemExit("keep-only refused, nothing written: %s" % held)
-    for p, body in restored:
-        if body is None:
-            os.remove(p)
-        else:
-            with open(p, "w", encoding="utf-8") as fh:
-                fh.write(body)
-    return {"run": run, "base": base, "kept": kept, "restored": len(restored)}
+            current[cn] = json.load(fh)
+        if cn in TARGETS or str(current[cn].get("extracted_run")) == str(run):
+            was = subprocess.run(["git", "show", "%s:%s" % (base, os.path.relpath(p, ROOT))],
+                                 capture_output=True, text=True, cwd=ROOT)
+            base_text[cn] = was.stdout if was.returncode == 0 else None
+    plan = keep_only_plan(run, current, base_text)
+    if plan["held"] or sorted(plan["kept"]) != sorted(TARGETS):
+        raise SystemExit("keep-only refused, nothing written: %s" % plan["held"])
+    for cn, body in plan["restore"].items():
+        with open(_path(cn), "w", encoding="utf-8") as fh:
+            fh.write(body)
+    still = []
+    for p in glob.glob(os.path.join(COLLEGE_DIR, SLUG, "records", "*.json")):
+        cn = os.path.basename(p)[:-5]
+        with open(p, encoding="utf-8") as fh:
+            if cn not in TARGETS and str(json.load(fh).get("extracted_run")) == str(run):
+                still.append(cn)
+    if still:
+        raise SystemExit("keep-only: records beside the nine still carry the run: %s" % sorted(still))
+    if build:
+        subprocess.run(["python3.12", "kb/_build_commons_status.py", "--quiet"], check=True, cwd=ROOT)
+        subprocess.run(["python3.12", "kb/_build_commons_data_status.py"], check=True, cwd=ROOT)
+    return {"run": run, "base": base, "kept": sorted(plan["kept"]), "restored": len(plan["restore"]),
+            "next": "commit the records and the Commons builders' output, then dispatch step=reread"}
 
 
 def main(argv=None) -> int:
@@ -354,10 +410,11 @@ def main(argv=None) -> int:
     sub = ap.add_subparsers(dest="cmd")
     k = sub.add_parser("keep-only")
     k.add_argument("--run", required=True)
-    k.add_argument("--base", required=True)
+    k.add_argument("--base", required=True, help="the commit before the run's own (the run's commit's parent)")
+    k.add_argument("--no-build", action="store_true", help="skip the Commons builders")
     a = ap.parse_args(argv)
     if a.cmd == "keep-only":
-        print(json.dumps(keep_only(a.run, a.base)))
+        print(json.dumps(keep_only(a.run, a.base, build=not a.no_build)))
         return 0
     rc, lr, bd, gd = recall(), loose_recall(), boundaries(), guards()
     print("recall: %s" % json.dumps({k: v for k, v in rc.items()}))

@@ -12,14 +12,17 @@ electives that fill the degree, each passes today's scorer. Butte's reconcile co
   * the config: Butte's step follows its electives_fill_degree set and reads the same line; no other college names
     the kind, so no other college's reconcile changes;
   * the self-recall over every committed record against the hand reading of the 27 Butte records that keep the line's
-    figure: 21 fire (the nine and 12 passing that still pass), 6 are kept, and no record elsewhere fires; a looser
+    figure: 14 fire (the nine and 5 passing that still pass), 13 are kept, and no record elsewhere fires; a looser
     note reading fires on none of the 52 conditional elective notes at six other colleges;
   * each boundary reading leaves the nine alone; the standing guards hold (own page by same_address on sources.json's
     url and no shared page, live run, no cut window, failing before);
   * each target's outcome passes with the fill named, before the run (the step on the committed record) and after it
     (the record the run filed): the test reads the record's own state, never a receipt;
   * check_target, keep-only's check, accepts the record the run would file and refuses one changed beyond
-    degree_elective_units, one read from another page, and one whose rescore does not pass.
+    degree_elective_units, one read from another page, and one whose rescore does not pass; keep_only_plan refuses
+    the run's own commit as base, a target the run did not carry and a missing one (S727's second reader, round 1);
+  * the fill: the figure must lie inside what the electives fill (conditional_fits), and _figure_in never reads a
+    range's end ("numbered 1-199"), a course number or the line's own 60.
 
 Run from repo root: python3 tests/program_reconcile_s727_butte_test.py
 """
@@ -35,7 +38,8 @@ import _program_requirements_reconcile as R  # noqa: E402
 import _program_requirements_score as S  # noqa: E402
 
 NINE = {"01362", "07269", "11136", "31042", "31941", "32469", "33199", "40923", "43453"}
-KEPT = {"01298", "01305", "07258", "07264", "31930", "32721"}
+KEPT = {"01298", "01305", "07258", "07264", "31930", "32721",
+        "01370", "31306", "31307", "31950", "31954", "43185", "43186"}
 
 checks = [0]
 failures = []
@@ -62,6 +66,22 @@ for bad, why in (("degree_elective_units 113 is taken", "113 is no 13"), ("degre
     check(not R.conditional_note(g, "degree_elective_units", W), why)
 check(R._figure_in(13, "Elective 13.00 units") and R._figure_in(11, "The 11-unit elective")
       and R._figure_in(21.5, "line 21.5") and not R._figure_in(21.5, "line 21.50x1"), "figures as the notes print them")
+# Anchored (S727's second reader): never a range's end, a course number or the line's own 60.
+check(not R._figure_in(1, "any course numbered 1-199 or C1000-C2999") and not R._figure_in(1000, "C1000")
+      and R._figure_in(1, "a 1.00-unit Elective (any course numbered 1-199"), "a range or a course number is no figure")
+check(R._figure_in(6, "electives 6-8 units", 8) and not R._figure_in(6, "electives 6 units", 8), "a range's two ends")
+g = copy.deepcopy(rec)
+g["program"]["degree_elective_units"] = {"min": 60, "max": 60}
+g["notes"] = ["degree_elective_units: the map's elective line is 'Only necessary if the 60 units needed to graduate'"]
+check(not R.conditional_note(g, "degree_elective_units", W), "the line's own 60 is not the field's figure")
+# The fill (S727's second reader): 27 and 21 leave 12-18 against 60-66.
+check(R.conditional_fits(rec["program"], "degree_elective_units"), "13 lies inside the 12-18 fill")
+for v, why in ((19, "19 past the fill's top"), (11, "11 short of the fill's low end")):
+    check(not R.conditional_fits(dict(rec["program"], degree_elective_units={"min": v, "max": v}),
+                                 "degree_elective_units"), why)
+check(R.conditional_fits(dict(rec["program"], degree_elective_units={"min": 12, "max": 18}), "degree_elective_units"),
+      "the fill's two ends themselves fit")
+check(not R.conditional_fits(dict(rec["program"], ge_units=None), "degree_elective_units"), "no GE units: no fit")
 g = copy.deepcopy(rec)
 g["program"]["degree_elective_units"] = {"min": 6, "max": 8}
 g["notes"] = ["degree_elective_units 6 from the line 'Only necessary if the 60 units needed to graduate'"]
@@ -96,16 +116,16 @@ check(rc["read"] > 18000 and rc["right"] == rc["read"] and not rc["wrong"], "the
 check(not rc["after_verdict_wrong"] and not rc["hand_not_seen"], "each fire's verdict is the hand's")
 check(set(rc["by_college"]) <= {"butte"}, "no other college's record fires")
 states = {cn: B.state(cn) for cn in NINE}
-fired_now = 21 - sum(1 for v in states.values() if v == "after")
-check(rc["fired"] == fired_now and rc["by_college"].get("butte") == fired_now, "21 fire, less those already filed")
+fired_now = 14 - sum(1 for v in states.values() if v == "after")
+check(rc["fired"] == fired_now and rc["by_college"].get("butte") == fired_now, "14 fire, less those already filed")
 check(set(rc["before_failing_after_passing"]) == {cn for cn, v in states.items() if v == "before"},
       "the nine still before the run are the ones it moves from failing to passing")
 check({cn for cn, h in B.HAND.items() if h[1] == "clear"} >= NINE and {cn for cn, h in B.HAND.items()
-      if h[1] != "clear"} == KEPT and len(B.HAND) == 27, "the hand reading: 21 clear, 6 kept")
+      if h[1] != "clear"} == KEPT and len(B.HAND) == 27, "the hand reading: 14 clear, 13 kept")
 lr = B.loose_recall()
 check(sum(lr["notes"].values()) >= 50 and not lr["fired"], "the looser note reading fires nowhere else")
 bd = B.boundaries()
-check(not bd["wrong"] and len(bd["counts"]) == 8 and all(v == 9 for v in bd["counts"].values()),
+check(not bd["wrong"] and len(bd["counts"]) == 9 and all(v == 9 for v in bd["counts"].values()),
       "every boundary reading: %s" % bd["wrong"][:4])
 gd = B.guards()
 check(set(gd) == NINE and all(all(v.values()) for v in gd.values()), "the standing guards: %s" % gd)
@@ -135,6 +155,32 @@ for cn in sorted(NINE):
         check(B.reconciled_by_step(f) and f["score"]["arithmetic"].get("pass") is True, "%s filed by the run" % cn)
 for cn in KEPT:
     check(not B.run_step(B._load(cn))[1], "%s: kept" % cn)
+
+# keep-only's plan (S727's second reader): it keeps all nine only from the filing before the run, refuses a base that
+# is the run's own commit, a target the run did not carry, and a restored file that still carries the run.
+if all(v == "before" for v in states.values()):
+    RUN = "777"
+    base, after = {}, {}
+    for cn in NINE:
+        f = B._load(cn)
+        new, notes = B.run_step(f)
+        after[cn] = dict(f, record=new, reconciled=notes, read_run=f["extracted_run"], extracted_run=RUN,
+                         score=S.score(new, [], None, f.get("award")))
+        base[cn] = json.dumps(f)
+    other = B._load("01298")
+    after["01298"] = dict(other, extracted_run=RUN)
+    base["01298"] = json.dumps(other)
+    plan = B.keep_only_plan(RUN, after, base)
+    check(not plan["held"] and sorted(plan["kept"]) == sorted(NINE) and list(plan["restore"]) == ["01298"],
+          "the plan keeps the nine and restores 01298: %s" % plan["held"][:3])
+    own = {cn: json.dumps(f) for cn, f in after.items()}
+    plan = B.keep_only_plan(RUN, after, own)
+    check(len(plan["held"]) == 10 and not plan["kept"], "the run's own commit as base: all ten refused")
+    one = dict(after, **{"01362": B._load("01362")})
+    plan = B.keep_only_plan(RUN, one, base)
+    check(["01362", "the run did not carry it"] in plan["held"], "a target the run did not carry is refused")
+    less = {cn: f for cn, f in after.items() if cn != "43453"}
+    check(["43453", "no record file"] in B.keep_only_plan(RUN, less, base)["held"], "a missing target is refused")
 
 print("%d checks, %d failures" % (checks[0], len(failures)))
 for m in failures:
