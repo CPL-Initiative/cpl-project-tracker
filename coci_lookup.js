@@ -2036,7 +2036,7 @@
 
     // Courses | Programs view toggle
     var seg = el("div", { "class": "cplcoci-viewseg" });
-    [["progress", "Progress"], ["courses", "Courses"], ["programs", "Programs"]].forEach(function (v) {
+    [["progress", "Progress"], ["courses", "Courses"], ["gather", "Gather"], ["programs", "Programs"]].forEach(function (v) {
       var b = el("button", { "class": "cplcoci-viewbtn" + (state.view === v[0] ? " on" : ""),
         type: "button", "aria-pressed": state.view === v[0] ? "true" : "false" }, [v[1]]);
       b.onclick = function () { if (state.view !== v[0]) { state.view = v[0]; renderShell(); } };
@@ -2047,6 +2047,9 @@
     if (state.view === "progress") {
       r.appendChild(el("div", { id: "cplcoci-progress" }, []));
       renderProgressView();
+    } else if (state.view === "gather") {
+      r.appendChild(el("div", { id: "cplcoci-gather-mount" }, []));
+      renderGatherView();
     } else if (state.view === "programs") {
       r.appendChild(el("div", { "class": "cplcoci-toolbar", id: "cplcoci-toolbar" }, []));
       r.appendChild(el("div", { id: "cplcoci-table-wrap", "class": "cplcoci-wrap" }, []));
@@ -2060,6 +2063,75 @@
   function setSub(text) {
     var s = document.getElementById("cplcoci-sub");
     if (s) { clearNode(s); s.appendChild(document.createTextNode(text)); }
+  }
+
+  /* ── Gather (S725): courses whose words match, into one common course ──────────
+     Sam, 2026-11-24: "move all the mids with adapt in the title to one mid" and the local courses with adapt in theirs,
+     after "a quick view to uncheck any that don't belong"; then "we can reuse this gather for other cases by changing
+     variables". commons_gather.js draws it from today's common courses (unified_courses_data.js), the Courses List's
+     rows with today's M-IDs (listBuild) and the catalog descriptions on request; its saves are kb_curation merge_into
+     rows, insert-only. Its words, subjects and target are its address (#coci-lookup/gather?w=...). */
+  var GATHER = { api: null, loading: false, failed: null, details: null };
+  function gatherCommons() {
+    var U = window.CPL_UNIFIED_COURSES;
+    if (GATHER.rows && GATHER.rows.U === U) return GATHER.rows.list;
+    var list = ((U && U.rows) || []).filter(function (c) { return c && c.id && c.kind === "Course"; }).map(function (c) {
+      return { id: c.id, title: c.title || "", disc: c.disc || "", units: c.units, umin: c.umin, umax: c.umax, members: c.members || 0 }; });
+    GATHER.rows = { U: U, list: list };
+    return list;
+  }
+  function gatherCcDesc(id, cb) {
+    var D0 = window.CPL_UC_DETAILS;
+    if (D0) { cb((D0[id] && D0[id].d) || ""); return; }
+    (GATHER.details = GATHER.details || []).push([id, cb]);
+    if (GATHER.details.length > 1) return;
+    var run = function () { var D1 = window.CPL_UC_DETAILS || {}, w = GATHER.details; GATHER.details = null; w.forEach(function (x) { x[1]((D1[x[0]] && D1[x[0]].d) || ""); }); };
+    if (window.CPL_TABS && CPL_TABS.loadScript) CPL_TABS.loadScript("unified_courses_details.js", "CPL_UC_DETAILS", run); else run();
+  }
+  function renderGatherView() {
+    setSub("gather courses whose words match into one common course");
+    var node = document.getElementById("cplcoci-gather-mount");
+    if (!node) return;
+    clearNode(node);
+    var ready = window.CPL_COMMONS_GATHER && window.CPL_UNIFIED_COURSES && window.CPL_UC_MEMBERS;
+    if (ready) {
+      if (!GATHER.api) GATHER.api = window.CPL_COMMONS_GATHER.create({
+        tab: TAB, rest: REST, anon: SUPABASE_ANON,
+        commons: gatherCommons,
+        locals: function () { return listBuild().rows; },
+        session: ccSession, fresh: ccFresh,
+        desc: withDesc, ccDesc: gatherCcDesc, outcomes: withOutcomes,
+        signIn: function (mount) {
+          var SI = window.CPL_REVIEWER_SIGNIN;
+          if (SI && typeof SI.mountInto === "function") SI.mountInto(mount, { title: "Sign in to gather courses",
+            blurb: "A reviewer signed in with the magic link saves a gather: one merge or move row per course, each one undoable.", returnTab: TAB });
+          else mount.appendChild(el("p", { "class": "cplcoci-meta" }, ["The sign-in box did not load here; sign in from the header, then come back."]));
+        },
+        onAddress: function (addr) { try { history.replaceState(null, "", "#" + addr); } catch (e) {} }
+      });
+      GATHER.api.render(node);
+      return;
+    }
+    var T = window.CPL_TABS;
+    if (GATHER.failed || !T || typeof T.loadScript !== "function") {
+      node.appendChild(el("div", { "class": "cplcoci-empty", role: "alert" }, ["Gather could not be loaded (" + (GATHER.failed || "no script loader") + "). Reload the tab to try again."]));
+      return;
+    }
+    node.appendChild(el("div", { "class": "cplcoci-empty", role: "status" }, ["Loading Gather, today's common courses and their local courses…"]));
+    if (GATHER.loading) return;
+    GATHER.loading = true;
+    var left = 3;
+    function done() {
+      if (--left) return;
+      GATHER.loading = false;
+      GATHER.failed = !window.CPL_COMMONS_GATHER ? "commons_gather.js did not arrive" : !window.CPL_UNIFIED_COURSES ? "unified_courses_data.js did not arrive"
+        : !window.CPL_UC_MEMBERS ? "unified_courses_members.js did not arrive" : null;
+      LIST.memo = null;
+      if (state.view === "gather") renderGatherView();
+    }
+    T.loadScript("commons_gather.js", "CPL_COMMONS_GATHER", done);
+    T.loadScript("unified_courses_data.js", "CPL_UNIFIED_COURSES", done);
+    T.loadScript("unified_courses_members.js", "CPL_UC_MEMBERS", done);
   }
 
   // ── Courses view: the Courses List ────────────────────────────────────────
@@ -2410,6 +2482,7 @@
        opens on the Courses List. */
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     if (parts[0] === TAB && (parts[1] === "progress" || parts[1] === "courses" || parts[1] === "programs")) state.view = parts[1];
+    if (parts[0] === TAB && /^gather(\?|$)/.test(parts[1] || "")) state.view = "gather";
     routeList();
     renderShell();
   }
@@ -2425,12 +2498,19 @@
     if (isJob(parts[2])) loadJobs();
     return true;
   }
-  window.addEventListener("hashchange", function () { if (_booted && state.data && routeList()) renderShell(); });
+  window.addEventListener("hashchange", function () {
+    if (!_booted || !state.data) return;
+    if (routeList()) { renderShell(); return; }
+    // A gather address opens Gather on its words (a linked or rerun gather); the view's own address writes never fire this.
+    var h = String(location.hash || "").replace(/^#/, ""), p = h.split("/");
+    if (p[0] === TAB && /^gather(\?|$)/.test(p[1] || "") && !(GATHER.api && GATHER.api.address() === h)) { GATHER.api = null; state.view = "gather"; renderShell(); }
+  });
   /* The view a sign-in link returns to (cpl_session.js viewAddress): the address routeFromHash reads, built from
      what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
     var f = state.ls && state.ls.f;
     if (state.view === "courses" && f && LIST_FILTERS.some(function (x) { return x[0] === f; })) return TAB + "/list/" + f;
+    if (state.view === "gather" && GATHER.api) return GATHER.api.address();
     return TAB + "/" + state.view;
   });
   // A new visit drops the List's filters, sort, selection and open drawer (tabs never remember a
