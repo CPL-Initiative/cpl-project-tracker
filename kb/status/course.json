@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 726,
-  "moniker": "SkyAvocet",
+  "session": 729,
+  "moniker": "SkyCurlew",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_727_handoff.md",
+  "handoff": "docs/session_730_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-25T08:26:46Z",
+  "written_at": "2026-11-25T09:52:39Z",
   "project": "course",
   "next_step": {
-    "title": "Check the adapt gather landed, then the Commons fold in place",
-    "text": "After the next daily run PEDS M1029 should hold about 283 local courses at 0 to 4 units. Then the anchor page's step 3: the cards fold into a trail above the card's own list on the same page, and step 4, Needs you as the one ranked queue."
+    "title": "Mount the Courses list under the Commons trail, then Needs you as one ranked queue",
+    "text": "A folded card shows its Open the full list link today; mount the Courses data list in place if a cheap mount path appears, else leave the link. Then the anchor page's step 4: Needs you as the one ranked queue, every change reaching its counts at once."
   },
   "changes": [
+    {
+      "at": "2026-11-25T06:24Z",
+      "text": "The adapt gather published: none of the 34 merged M-IDs keeps its own member list, and PEDS M1029 holds 293 local courses at 0 to 4 units."
+    },
+    {
+      "at": "2026-11-25T09:40Z",
+      "text": "A Commons card's title folds the page to a trail, CPL Commons: all cards and the card, with that card in full and Open the full list."
+    },
     {
       "at": "2026-11-24T21:12Z",
       "text": "Each band whose common subject is in doubt says why in one line; Cabrillo KIN 38A moved to KINE M1344 Yoga, Beginning."
