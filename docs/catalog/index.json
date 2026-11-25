@@ -14118,7 +14118,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-24"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-11-14",
@@ -17558,8 +17558,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 681,
+   "count": 682,
    "docs": [
+    {
+     "created": "2026-11-25",
+     "governs": [],
+     "n": 726,
+     "path": "docs/session_726_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 726 handoff (from SkyPlover, S725, Sam's plain session of 2026-11-25: Gather, the first slice)",
+     "type": null,
+     "updated": "2026-11-25"
+    },
     {
      "created": "2026-11-24",
      "governs": [],
@@ -28866,5 +28880,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1574
+ "total": 1575
 }

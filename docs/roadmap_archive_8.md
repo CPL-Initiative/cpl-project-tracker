@@ -109,3 +109,7 @@ The Subjects paragraph's S722 state, verbatim:
 ## INDEX update history, moved (S724 checkpoint)
 
 - 2026-11-23 (S715 SkyAlbatross, Sam's plain session, light checkpoint): #3717 (every Subjects figure counts the rows with the live saves on top, so a save moves it at once; the held line corrected: a decision releases only ordinary-title credit courses), #3718 (the Subjects card from the mock: 83% of courses under a Confident code, four checks with Where to act); two memory rows; handoff 717.
+
+## INDEX update history, moved (S725 checkpoint)
+
+- 2026-11-23 (S717 SkyGannet, Sam's plain session, full checkpoint): #3724 (the Subjects tab's Colleges by source: all 118 colleges by way to look, from a new attempts register), #3725 (the course panel's move rows, Collapse all, the credit-then-noncredit picker), #3726 open (the 20th-edition MQ handbook read with its three list types and Title 5 provisions, the MQ view's data, and a Common SUBJ for the 95 MQ disciplines that had none), #3727 open (a sidebar opens beside the view); Sam's rulings on settled codes, the TOP vocational flag and the MQ view; KB note `methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached`; handoff 718.
