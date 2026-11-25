@@ -120,7 +120,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The text begins mid-section: the AA-T heading, its required core courses, and the start of the TAP course list fall on the page before 940 and are not in the text. The section heading is taken from the descriptive sentence 'The Associate in Arts in Theatre Arts for Transfer (AA-T) degree'."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

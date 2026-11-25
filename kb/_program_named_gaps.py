@@ -1771,6 +1771,26 @@ for _g, _s, _a in (
 del _g, _s, _a
 
 
+# S727 at American River (kb/_program_piles_s727_arc.py): concentrations of two lists each, which the reading keeps in
+# one option group with every list its own alternative (the schema cannot nest; the reader's notes say so), so the
+# scorer counts one list where a concentration takes two. No existing kind fits: pair_read_as_alternatives names two
+# courses, pool_figure_not_read a sum of parts. Its score is pool_figure_not_read's 40: in both, the page prints one
+# figure over lists taken together and the record does not read them as one.
+GAPS.setdefault("option_lists_read_apart",
+                "An option the catalog prints takes more than one list under the option's own printed figure, and the "
+                "record's one option group holds each list as an alternative of its own, so the program's units "
+                "cannot be checked against the printed figures.")
+ARITH_SCORE.setdefault("option_lists_read_apart", 40)
+# S727 at American River (the second reader's round 1): a certificate whose requirements table ends at a page's foot,
+# the read stopping there, so its total line is cut off while every course is placed (Paramedic 20130).
+# noted_section_cut_off says requirements are missing and noted_no_total that the catalog prints none; its score is
+# noted_no_total's 40 (in both, no total is read), with no course-list cap (every course is placed).
+GAPS.setdefault("noted_total_cut_off",
+                "The reader's note says the program's total line runs onto a page the read did not hold; every course "
+                "is placed, so only the printed total is missing and its units cannot be checked against it.")
+ARITH_SCORE.setdefault("noted_total_cut_off", 40)
+
+
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     """The gap's own claim, that the figures add to the printed total while a list's courses pass its figure,
     measured on the records of its shape (_lists_shape; #3678 and #3679 second readers, finding 2) with keys the
