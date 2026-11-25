@@ -1752,7 +1752,9 @@
       c.parentNode.insertBefore(F.mark, c);
       foldView.textContent = "";
       foldView.appendChild(el("nav", { cls: "cmf-trail", "aria-label": "Trail" }, [
-        el("a", { href: "#commons", "data-fold-home": key, text: "CPL Commons: all cards", "aria-label": "Back to every Commons card" }),
+        /* The trail's first link is the folded view's h2, as the page's own "CPL Commons" is, so the card's h3 follows an
+           h2 (npm run a11y, S730: the fold hid the only h2 and the headings skipped h1 to h3). */
+        el("h2", { cls: "cmf-trail-h" }, [el("a", { href: "#commons", "data-fold-home": key, text: "CPL Commons: all cards", "aria-label": "Back to every Commons card" })]),
         " ", el("span", { cls: "cmf-trail-here", "aria-current": "page", text: "/ " + c._title }), " ",
         el("a", { href: c._list, cls: "cmf-trail-list", text: "Open the full list", "aria-label": "Open the full " + c._title + " list" })]));
       foldView.appendChild(c);
@@ -2182,7 +2184,7 @@
     ".cmf-card { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:18px 20px; display:flex; flex-direction:column; gap:10px; min-width:0; box-sizing:border-box; }",
     ".cmf-card-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; }",
     ".cmf-card-t { margin:0; flex:1 1 auto; font-family:var(--cmn-serif); font-size:1.25rem; line-height:1.2; color:var(--cmn-heading); }",
-    ".cmf-card-tl { color:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; }",
+    ".cmf-card-tl { display:inline-block; min-height:24px; line-height:24px; color:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:4px; }",
     ".cmf-card-tl:hover { text-decoration-thickness:2px; }",
     ".cmf-card-tl:focus-visible { outline:2px solid var(--cmn-heading); outline-offset:2px; }",
     ".cmf-headline { margin:0; color:var(--cmn-ink-2); font-size:.95rem; font-variant-numeric:tabular-nums; }",
@@ -2193,7 +2195,7 @@
     ".cmf-stage-b[aria-expanded='false']::after { content:' (show)'; } .cmf-stage-b[aria-expanded='true']::after { content:' (hide)'; }",
     ".cmf-stage-b:focus-visible, .cmf-check:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
     ".cmf .cmf-hl { background:var(--cmn-pill-bg); outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:3px; }",
-    ".cmf-check:focus { outline:none; } .cmf-quick { margin:6px 0 2px; } .cmf-quick a { display:inline-block; min-height:24px; line-height:24px; }",
+    ".cmf-check:focus { outline:none; } .cmf-quick { margin:6px 0 2px; } .cmf-quick a { display:inline-block; vertical-align:top; min-height:24px; line-height:24px; }",
     ".cmf-stage { margin:14px 0 6px; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:var(--cmn-muted); border-bottom:2px solid var(--cmn-gold); padding-bottom:4px; }",
     ".cmf-check-h { margin:6px 0 4px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; align-items:baseline; }",
     ".cmf-check-h > strong { color:var(--cmn-heading); }",
@@ -2249,6 +2251,7 @@
     ".cmf-trail a { display:inline-block; min-height:24px; line-height:24px; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; font-weight:600; }",
     ".cmf-trail a:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
     ".cmf-trail-here { color:var(--cmn-ink-2); }",
+    ".cmf-trail-h { margin:0; font:inherit; display:inline; }",
     ".cmf-trail .cmf-trail-list { margin-left:auto; }",
     ".cmf-focal .cmf-fold { display:none; }",
     ".cmf-focal .cmf-body { display:block; -webkit-line-clamp:unset; line-clamp:none; max-height:none; overflow:visible; }",
