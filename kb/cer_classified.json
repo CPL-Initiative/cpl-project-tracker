@@ -54,6 +54,25 @@
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
   },
+  "ACE CR - Network Fundamentals": {
+   "raw_title": "ACE CR - Network Fundamentals",
+   "unified_title": "Networking Fundamentals",
+   "issuing_agency": "American Council on Education (ACE)",
+   "training_agency": "U.S. Armed Forces",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 6",
+    "Rule 7"
+   ],
+   "_notes": "ACE credit recommendation (military CPL type) for a network fundamentals course; joined to the existing house family 'Networking Fundamentals' (ACE issuer). The branch is unknown, so the trainer is the generic U.S. Armed Forces.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-25"
+  },
   "ADJUS 23 Principles and Procedures of the Justice System": {
    "raw_title": "ADJUS 23 Principles and Procedures of the Justice System",
    "unified_title": "Principles and Procedures of the Justice System",
@@ -8782,6 +8801,24 @@
    "rules": "d20f2caab9db",
    "hints": "89d53fe577",
    "asked": "2026-11-03"
+  },
+  "CCNA Certification": {
+   "raw_title": "CCNA Certification",
+   "unified_title": "Cisco Certified Network Associate (CCNA)",
+   "issuing_agency": "Cisco",
+   "training_agency": null,
+   "confidence_title": 0.96,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 6",
+    "Rule 7"
+   ],
+   "_notes": "Hint mended: the title joins the house family 'Cisco Certified Network Associate (CCNA)', and the issuer uses the house spelling 'Cisco' rather than 'Cisco Systems, Inc.'.",
+   "rules": "75e72fb99f8c",
+   "hints": "c9bbd0823d",
+   "asked": "2026-11-25"
   },
   "CDA National Credentialing Program--Preschool": {
    "raw_title": "CDA National Credentialing Program--Preschool",

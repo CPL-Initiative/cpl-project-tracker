@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 111 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 687 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1581** | |
+| Session handoffs | 688 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1582** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-25 (S733 SkyGodwit, Sam's plain session, checkpoint with the lane moved): #3841 (COBIx's 911 leftover titles filed through `--csv`), #3843 (the stray-code re-mint dry run: retire, not re-key), #3846 (the rescore scored 0 to 100 on Sam's ruling; scope at 90: 92 retire, 48 held, Needs an M-ID 1,819 to 1,918). Handoff 734.
 - 2026-11-25 (S731 SkyFrigatebird, the CPL Queue routine's collection run, conductor, full checkpoint): #3825 (display build `2c8507c058b1`, 18,723 rows live), #3830 (the land PR: Los Angeles Trade-Technical 6, Saddleback 8 under a new gap kind, Long Beach City 12); applied and loaded on open branches: land 2, #3827 (the eLumen follow-up's 40, the pooled reading's 7, the lever's 3), and Saddleback's repeat steps' 7 for land 3; 83 records in all. KB note `methodology-a-self-check-must-see-what-the-rule-writes` gained an S731 section; the harvest lessons' S714 sections moved to archive 9. Handoff 732.
 - 2026-11-25 (S730 SkyDunlin, Sam's plain session, light checkpoint): #3824 (Needs you folds to its card; a doubt ruling moves the in-doubt count at once), #3826 (`npm run a11y` on the Commons fold: an h2 above the folded card, 24px card titles).  #3831 (Sam's stray-code ruling and the title hunt list), #3832 (runners read every college's catalog subject index: 103 colleges and 8,147 named codes, from 19 and 1,655; the CSV is the 2,500 leftovers). Handoff 731.
 - 2026-11-25 (S729 SkyCurlew, Sam's plain session, full checkpoint): #3817 (the Commons fold in place: a card's title folds the page to a trail and that card at `#commons/card/<key>`, with Open the full list); the adapt gather landed (PEDS M1029 holds 293 local courses); the commons lane compacted under 20 KB. Handoff 730.

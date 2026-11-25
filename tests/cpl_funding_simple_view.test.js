@@ -15,6 +15,12 @@
 //   S7  the setting: absent from the tab's Internal view, or not turning the
 //       package on for an anonymous reader.
 //   S8  the PDF note under the PDF button (gone for everyone).
+//   S9  the switch painted white on white (Sam, 2026-11-25): the header that holds it, the cards and the line
+//       read --seal-blue, which the page defines only where it scopes it; the header moved to .cplh and the scope
+//       did not follow.
+//   S11 the # or District column showing in Simple view because this browser remembered it on (the view hides the Columns menu).
+//   S10 no caret before a public row's pie, or one a screen reader announces, or one that does not turn when the
+//       row opens (Sam, 2026-11-25: "add a carat to each row to the left of the pie glyph").
 //
 // Windows: 5 booted. Run from repo root: `npm test` (or `node tests/cpl_funding_simple_view.test.js`).
 const fs = require("fs");
@@ -42,6 +48,7 @@ function page(opts) {
   w.scrollTo = function () {};
   w.Element.prototype.scrollIntoView = function () {};
   if (opts.signedIn) w.CPL_SESSION = session();
+  if (opts.cols) w.localStorage.setItem("cplfund_cols_v3", JSON.stringify(opts.cols));
   w.CPL_FUNDING_PERF = { as_of: "2026-11-01", suppress_below: 10, statewide: { pa_u: 300000 },
     colleges: { [QUAL]: { pa_u: 900 }, [HELD]: { pa_u: 600 } }, feeders: {}, unmatched: {},
     vet_star: { [QUAL]: true, [HELD]: false }, vet_star_as_of: "2026-11-01", vet_star_threshold: 0.75 };
@@ -246,6 +253,59 @@ const hasHowAfter = (el) => !!(el.nextElementSibling && el.nextElementSibling.ma
   const doc = H.boot(window);
   window.CPL_FUNDING_TAB.render();
   check("S7d: signed out, the tab offers no such setting", !doc.getElementById("cplFundSimpleLive"));
+}
+
+{
+  // S9: the scoped rule that defines --seal-blue covers every element the switch and the cards sit in.
+  const m = /([^{}]+)\{\s*--seal-blue:/.exec(html.replace(/\/\*[\s\S]*?\*\//g, ""));
+  const sels = m ? m[1].split(",").map((x) => x.trim()) : [];
+  const { doc } = page({ signedIn: true });
+  const covered = (el) => sels.some((sel) => sel && el.closest(sel));
+  check("S9: --seal-blue reaches the switch, the cards and the line under the header (" + sels.join(" ") + ")",
+    ["simpleBtn", "svCards", "simpleLine"].every((id) => covered(doc.getElementById(id))));
+}
+{
+  // S10: a caret leads each public row, before the pie; aria-hidden; it turns with the row's open class.
+  const { w, doc } = page({ signedIn: true });
+  const tr = doc.querySelector("#cplFundTable tr.cplfund-row[data-id]");
+  const lead = tr && tr.querySelector(".cf-lead");
+  const first = lead && lead.firstElementChild;
+  check("S10a: the caret is the first thing in the row's lead, before the pie, hidden from screen readers",
+    !!first && first.classList.contains("cf-chev") && first.getAttribute("aria-hidden") === "true" &&
+    !!first.nextElementSibling && first.nextElementSibling.classList.contains("cf-elig"));
+  const id = tr.getAttribute("data-id");
+  click(w, tr);
+  const again = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-row[data-id]")).filter((r) => r.getAttribute("data-id") === id)[0];
+  check("S10b: opening the row marks it open, which turns the caret down", !!again && again.classList.contains("cplfund-open"));
+  const css = Array.from(doc.querySelectorAll("style")).map((s) => s.textContent).join("\n");
+  check("S10c: the open row's caret rule exists", /tr\.cplfund-open \.cf-chev::before\s*\{[^}]*rotate\(45deg\)/.test(css));
+}
+{
+  // S10d: the COBI tab (not the public page) carries no caret.
+  const { window } = H.freshDom();
+  const doc = H.boot(window);
+  window.CPL_FUNDING_TAB.render();
+  check("S10d: the tab's own table has no caret", doc.querySelectorAll(".cf-chev").length === 0 &&
+    doc.querySelectorAll("tr.cplfund-row").length > 0);
+}
+
+{
+  // S11: a remembered # column stays off while Simple view is on, and returns with it off.
+  // A browser that turned # on in the Columns menu: its remembered set no longer names "order".
+  const { w, doc, SV } = page({ signedIn: true, cols: { college: {} } });
+  const T = w.CPL_FUNDING_TAB;
+  const on = T.isColHidden("order") && T.isColHidden("district");
+  SV.set(false);
+  const off = T.isColHidden("order") || T.isColHidden("district");
+  check("S11: Simple view hides # and District whatever the browser remembers, and turning it off defers to the browser (" + on + "," + off + ")",
+    on === true && off === false);
+}
+
+{
+  // S12: signed in, the team keeps the As of / Ver. label (hidden only from readers who are not signed in).
+  const { doc } = page({ signedIn: true });
+  const ver = doc.querySelector(".cplh-end > .ver");
+  check("S12: signed in, the As of / Ver. label shows", !!ver && ver.hidden === false);
 }
 
 finish();

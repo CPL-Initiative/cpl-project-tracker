@@ -54,8 +54,12 @@
    the embedded table leans on their fallbacks here (cpl_memory
    explainer-defines-only-its-own-tokens): on :root they painted its header
    navy behind body-colored text, 1.13:1 (npm run a11y, 2026-10-01). So they
-   are defined only where this page's own chrome and the Ask Sierra side bar read them. */
-.masthead, .sbar, .sbar-chip{
+   are defined only where this page's own chrome and the Ask Sierra side bar read them.
+   The public header (.cplh) holds the Simple view switch, and the count cards and the line under the header
+   paint with --seal-blue too (simple_view.js). The header moved from .masthead to .cplh with the public header,
+   so the switch read an undefined token and drew white on white: there, but invisible (Sam, 2026-11-25:
+   "the simple view toggle is not longer showing on the masthead"). */
+.masthead, .cplh, .sv-cards, .sv-line, .sbar, .sbar-chip{
   --seal-blue:#082B61; --on-accent:#FFFFFF; --surface:var(--surface-opaque);
 }
 /* The Ask Sierra side bar (../sierra/sidebar.js; Sam, Open Asks Sheet 126 card 1) paints with these, mapped onto
@@ -157,7 +161,7 @@ a:hover{text-decoration-thickness:2px}
 .ver abbr{text-decoration:none}
 /* The As of label sits on the Resource Links words' baseline (Sam, 2026-11-24): one baseline, one line box. */
 .cplh-end{align-items:baseline}
-.cplh-end > .ver{display:inline-flex; align-items:center; min-height:24px; line-height:1.2; padding:2px 0; box-sizing:border-box}
+.cplh-end > .ver:not([hidden]){display:inline-flex; align-items:center; min-height:24px; line-height:1.2; padding:2px 0; box-sizing:border-box}
 .mh-row{margin-top:0}
 .mh-actions{display:flex; flex-wrap:wrap; align-items:center; gap:4px 22px}
 .mh-actions .btn, .mh-actions .btn.primary, .cplh-links .btn{
@@ -1097,6 +1101,10 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // the scenario this page shows. Before the live config loads, or offline,
   // the date falls back to the model's version date.
   (function () {
+    // A reader who is not signed in sees no As of date or Ver. label, in either view (Sam, 2026-11-25: "hide the As
+    // of date and ver label in the masthead on public view (both simple and full)"). The team, signed in, keeps it.
+    var TR = window.CPL_FUNDING_TAB, verEl = document.querySelector(".cplh-end > .ver");
+    if (verEl) verEl.hidden = !(TR && typeof TR._reviewing === "function" && TR._reviewing());
     var asOf = "";
     var t = D.saved_at ? new Date(D.saved_at) : null;
     if (t && !isNaN(t.getTime())) {
@@ -2103,6 +2111,8 @@ window.CPL_SIERRA_SUGGESTED = [
 <!-- SIMPLE VIEW (Sam, 2026-11-24): the switch, the cards, the hiding and the folds.
      After the page's script, so it follows the page's paint. -->
 <script src="simple_view.js"></script>
+<!-- The college's CPL landing page in a bar along the window's bottom (Sam, 2026-11-25): a name in the table opens it. -->
+<script src="college_bar.js"></script>
 <script src="edit_page.js"></script>
 </body>
 </html>
