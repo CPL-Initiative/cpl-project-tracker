@@ -156,6 +156,12 @@ check(cpr.cq_view_ids("https://bcc.curriqunet.com/Catalog/_getPage?catalogId=103
       "a JSON call's address names no entry")
 
 plans = sorted(glob.glob(os.path.join(ROOT, "kb", "college_reads", "*.json")))
+# A file in the folder that no page read takes, each named with its reason; any other file is a plan and checked.
+NOT_A_PLAN = {"s730_elumen_own_page.json": "the eLumen follow-up's list of forced reads (kb/_elumen_own_page_s730.py), "
+                                           "checked by tests/program_requirements_elumen_own_page_s730_test.py"}
+check(all(os.path.exists(os.path.join(ROOT, "kb", "college_reads", n)) for n in NOT_A_PLAN),
+      "every file named as no plan is committed")
+plans = [p for p in plans if os.path.basename(p) not in NOT_A_PLAN]
 # ── a headings read (S698, #3655): the lines above each subject's first course ──
 print("subject_context")
 HEAD = r"^(?P<subj>[A-Z][A-Z &.]{0,11}?) (?P<num>\d{3}[A-Z]{0,3}) (?P<title>[A-Z].*)$"

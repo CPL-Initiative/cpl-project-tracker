@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Aircraft Powerplant",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7570,
+  "input_tokens": 7366,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7570,
-    "output_tokens": 1965,
+    "input_tokens": 7366,
+    "output_tokens": 1232,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1965,
+  "output_tokens": 1232,
   "output_tokens_details": {
-   "thinking_tokens": 980
+   "thinking_tokens": 347
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06958,
- "ms": 18483,
- "seconds": 18.8,
+ "cost_usd": 0.0541,
+ "ms": 11021,
+ "seconds": 11.3,
  "parts": null,
  "error": null,
  "score": {
@@ -72,29 +72,7 @@
     30.0
    ],
    "against": "program",
-   "why": [],
-   "degree": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     51.0,
-     51.0
-    ],
-    "stated": [
-     60.0,
-     60.0
-    ],
-    "against": "degree",
-    "ge": [
-     21.0,
-     21.0
-    ],
-    "why": [],
-    "fill": [
-     9.0,
-     9.0
-    ]
-   }
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -111,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 3,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
@@ -122,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Aircraft Powerplant AS",
+   "section_heading": "Aircraft Powerplant Cert",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -133,25 +111,27 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "AVC GE",
+   "ge_pattern": null,
    "degree_total": {
-    "min": 60,
-    "max": 60
+    "min": null,
+    "max": null
    },
    "ge_units": {
-    "min": 21,
-    "max": 21
+    "min": null,
+    "max": null
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Analyze and evaluate critical aspects of the aerospace industry related to safe work practices, standards and tolerances, standard shop practices, proper use of tools, power equipment, and personal protective equipment.",
-    "Analyze, evaluate, troubleshoot, and repair structural, propulsion, electrical, and guidance systems to meet airworthy standards.",
+    "Analyze, evaluate, troubleshoot, and repair structural, propulsion, electrical, and guidance systems to meet air worthy standards.",
     "Evaluate and apply Federal Aviation Regulations, technical maintenance data, and acceptable industry standards pertinent to proper maintenance and safety standards."
    ],
    "careers": [
-    "aviation maintenance",
-    "supervisory and management positions",
-    "powerplant repair and maintenance"
+    "aircraft powerplant mechanics",
+    "aviation maintenance technicians",
+    "aircraft engine inspectors",
+    "aviation maintenance support personnel",
+    "certificates aircraft mechanic"
    ]
   },
   "blocks": [
@@ -166,14 +146,14 @@
     },
     "courses": [
      {
-      "code": "AERO240",
+      "code": "AERO 240",
       "units": 15,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AERO241",
+      "code": "AERO 241",
       "units": 15,
       "units_max": null,
       "alternatives": [],
@@ -185,14 +165,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requested award is a Certificate of Achievement, but the supplied text, from the source URL ending 'aircraft-powerplant-as-fall-2026', contains only the Aircraft Powerplant AS section. No certificate section is printed. This record reads the AS section, the only one available; a reviewer should confirm that the certificate's requirements match the AS major (AERO 240 and AERO 241, 30 units).",
-   "degree_total (60), ge_units (21) and electives_fill_degree describe the AS degree and would not apply to a certificate.",
-   "ge_units 21 comes from the description sentence ('21 units of general education requirements'). The Requirements table instead prints 'Completion of General Education requirements, plus electives (as needed to reach 60 units) 30 units', and the Recommended Pathway lists about 23 GE units plus 7 general elective units.",
-   "Outcomes are shared program-level outcomes printed for the AS. They appear twice: under 'Program Learning Outcomes' and under 'Program Outcomes'. The second listing prints 'air worthy standards' where the first prints 'airworthy standards'; the first wording was recorded.",
-   "Course codes print as 'AERO240' / 'AERO241' in the Program Requirements and as 'AERO 240' / 'AERO 241' in the Requirements table.",
-   "The page includes internal curriculum-workflow text (Checklist, Workflow Agreement) that is not catalog requirement content; it was ignored."
+   "The Program Requirements section prints the codes without a space (AERO240, AERO241); the Requirements table prints them as AERO 240 and AERO 241. They are recorded with the space.",
+   "The certificate total of 30 appears as '(Total 30)' under Program Requirements and as 'Required Major Total 30 units'. The block's stated total of 30 comes from 'Required Courses 30 units'.",
+   "The Program Goals and Objectives section prints three 'Objective(s)' statements (for example, 'Upon completion of the certificate, the student will demonstrate...'). These were not recorded as outcomes. Only the 'Program Outcomes' list was recorded.",
+   "The goals and objectives text mentions structural and composite manuals and 'certificates aircraft mechanic' (sic). The phrasing looks shared with another AERO certificate.",
+   "The career 'certificates aircraft mechanic' is taken from the Program Goals and Objectives text, word for word including the apparent typo. A reviewer should confirm that it belongs in the careers list.",
+   "The page includes internal eLumen workflow and checklist content that is not part of the requirements."
   ]
  },
- "extracted_run": "38979725726",
+ "extracted_run": "45612549421",
  "catalog_year": "2026-2027"
 }

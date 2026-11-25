@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Fire Technology",
  "award": "A.S. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-cert-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-as-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7981,
+  "input_tokens": 8149,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7981,
-    "output_tokens": 2427,
+    "input_tokens": 8149,
+    "output_tokens": 2066,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2427,
+  "output_tokens": 2066,
   "output_tokens_details": {
-   "thinking_tokens": 721
+   "thinking_tokens": 433
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08046,
- "ms": 20271,
- "seconds": 20.6,
+ "cost_usd": 0.07392,
+ "ms": 16561,
+ "seconds": 34.5,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Fire Technology Cert",
+   "section_heading": "Fire Technology AS",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -114,7 +114,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "AVC GE",
    "degree_total": {
     "min": null,
     "max": null
@@ -126,7 +126,8 @@
    "electives_fill_degree": false,
    "outcomes": [],
    "careers": [
-    "fire fighting"
+    "fire fighting",
+    "supervisory and management positions"
    ]
   },
   "blocks": [
@@ -333,14 +334,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requested award is the A.S. Degree, but the source page (URL ending fire-technology-cert-fall-2026) prints only a section headed 'Fire Technology Cert' (Total 30). No A.S. Degree section, GE pattern, or degree total appears in the text. The requirements recorded here are the certificate's; a reviewer should confirm that the A.S. major uses the same 30-unit requirements, or locate the A.S. page.",
-   "The 'Program Goals and Objectives' text refers to 'the associate degree' even though the page is labeled as the certificate. This suggests shared content, but no degree-specific requirements are printed.",
-   "No program learning outcomes are printed. The 'Program Goals and Objectives' paragraph is a goals statement, not a list of outcomes, so outcomes is left empty.",
-   "The 'Recommended Pathway' is a term-by-term sequence of courses that are already required or listed as electives. It was not recorded as a recommended block.",
-   "The career entry 'fire fighting' comes from 'enhanced employability in the field of fire fighting'. The text also mentions 'supervisory and management positions' as promotional opportunities and 'professional firefighters' as the audience; neither was recorded.",
-   "Course codes are recorded as printed, without spaces (e.g. FTEC109); they correspond to the closed-list codes with spaces."
+   "Program total of 30 units is the major total printed under 'Fire Technology AS (Total 30)'; no degree total including GE is printed.",
+   "ge_pattern 'AVC GE' is inferred from the Recommended Pathway, which lists 'Any AVC GE Area ...' slots; the requirements section itself names no GE pattern and prints no GE units.",
+   "The Recommended Pathway lists 'General Elective' slots (3, 3, 2 units) and term totals summing to 60, but these are a suggested sequence, not stated requirements; open_elective_units and degree_total left null.",
+   "No program learning outcomes are printed; the 'Program Goals and Objectives' section repeats the description and was not recorded as outcomes.",
+   "Careers taken from the description: 'the field of fire fighting' and 'supervisory and management positions'; reviewer may wish to confirm whether the latter counts as a named career.",
+   "Course codes are printed without a space (e.g., 'FTEC109') and recorded as printed.",
+   "Text ends with a truncated 'Checklist Associate Degree for Tr' fragment."
   ]
  },
- "extracted_run": "38979725726",
+ "extracted_run": "45612549421",
  "catalog_year": "2026-2027"
 }

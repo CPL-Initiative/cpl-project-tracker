@@ -82,6 +82,7 @@
     71.5,
     71.5
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 81.5-81.5; the catalog states 71.5-71.5"
    ]
@@ -105,7 +106,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "prerequisites_counted",
+    "label": "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
+    "words": "The catalog's 'Total Units 71.5' covers the DMI program course schedule only; it excludes the 10 prerequisite units (ANAT 41, AH 60, AH 61), which are recorded as a separate prerequisite block and must be completed within five years before the first spring semester of the program."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 70,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

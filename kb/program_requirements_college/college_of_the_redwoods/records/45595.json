@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Psychiatric Technician",
  "award": "A.S. Degree",
- "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-ca-fall-2026",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6975,
+  "input_tokens": 8646,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6975,
-    "output_tokens": 1623,
+    "input_tokens": 8646,
+    "output_tokens": 1564,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1623,
+  "output_tokens": 1564,
   "output_tokens_details": {
-   "thinking_tokens": 658
+   "thinking_tokens": 640
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06036,
- "ms": 19689,
- "seconds": 19.9,
+ "cost_usd": 0.06586,
+ "ms": 13931,
+ "seconds": 15.1,
  "parts": null,
  "error": null,
  "score": {
@@ -72,7 +72,26 @@
     62.5
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     83.5,
+     83.5
+    ],
+    "stated": [
+     80.5,
+     80.5
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -89,21 +108,18 @@
    "pass": true
   },
   "careers": {
-   "count": 5,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Psychiatric Technician, CA — Certificate of Achievement (62.5 Credits)",
+   "section_heading": "Psychiatric Technician A.S. Degree",
    "measure": "units",
    "total_units": {
     "min": 62.5,
@@ -116,12 +132,12 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 80.5,
+    "max": 80.5
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
    "outcomes": [],
@@ -129,9 +145,9 @@
     "Psychiatric Technician",
     "corrections",
     "human services",
-    "Psychiatric Aides",
-    "Psychiatric Technicians"
-   ]
+    "Psychiatric Aides"
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -145,13 +161,6 @@
     },
     "courses": [
      {
-      "code": "HO110",
-      "units": 6,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "BIOL8",
       "units": 4,
       "units_max": null,
@@ -161,6 +170,13 @@
      {
       "code": "HO15",
       "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HO110",
+      "units": 6,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -204,14 +220,35 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Award mismatch: the requested award is an A.S. Degree, but the only section in the text is headed 'Certificate of Achievement (62.5 Credits)'. No A.S. section, general education pattern or degree total is printed. The blocks and the 62.5 total are read from the certificate section; a reviewer should confirm whether a separate A.S. page exists.",
-   "The 'Prerequisites' block (13) is counted inside the program total of 62.5 under 'Complete all of the following', so it is recorded as required.",
-   "The page says a current California CNA License can be used to waive the HO-110 prerequisite.",
-   "A 'Program Learning Outcomes' heading is printed, but no outcomes appear under it, so outcomes stay empty.",
-   "The careers 'Psychiatric Aides' and 'Psychiatric Technicians' come from the Career Information section. 'corrections' and 'human services' are the fields named in the description. The employers listed (hospitals, developmental centers, etc.) are not recorded as careers.",
-   "Course codes are recorded as printed, without a space (HO110, BIOL8, HO15, PTEC101-103). They match the closed-list courses HO 110, BIOL 8, HO 15 and PTEC 101-103."
+   "The page header prints 'A.S. Degree (80.5 Credits)', recorded as degree_total; Program Requirements print 'Psychiatric Technician (Total 62.5)', recorded as total_units.",
+   "A 'Program Learning Outcomes' heading is printed but no outcomes appear under it in the text; outcomes left empty.",
+   "The page names no general education pattern and prints no GE unit total. The Recommended Sequence lists GE areas (1A, 1B, 2, 3, 4, 6) with course options; these GE courses were not placed in blocks. ge_pattern and ge_units left null.",
+   "The Recommended Sequence labels the prerequisites 'Take one of the following' with 3.0-6.0 credit hours, which conflicts with Program Requirements, where it says 'Complete all of the following' (Total 13). The Program Requirements rule was used.",
+   "A current California CNA license can waive the HO-110 prerequisite, per the catalog note.",
+   "Careers: 'Psychiatric Aides' and 'Psychiatric Technicians' come from the Career Information section. 'corrections' and 'human services' are fields named in the description."
   ]
  },
- "extracted_run": "38979396148",
- "catalog_year": "2026-2027"
+ "extracted_run": "45609110977",
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "A.S. Degree (\n80.5 Credits\n) (https://www.redwoods.edu/services/counseling/FINAL.%2026.27%20CRGE%20pattern%20Redwoods%20and%20list%20of%20titles..pdf: Redwoods local degree pages print their total in the title line, 'A.S. Degree ( 60.0 Credits )' (Personal Wellness 44463; college page read 43015726456), and no general education units. The college's 2026-2027 CRGE pattern sheet, linked from its counseling page: 'CRGE Units Required 21' (Areas 1A, 1B, 2, 3, 4, 5 and 6, 3 units each; college page read 43013608134; found by COBIx, #3096))"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 62.5, the major total the catalog prints; the major and general education sum to 83.5 against the degree's 80.5 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

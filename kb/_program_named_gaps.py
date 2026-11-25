@@ -248,6 +248,29 @@ ARITH_SCORE.setdefault("ge_figures_other_pattern", 50)
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
+# S731 (kb/_program_piles_s731_pooled.py; the conductor, d-porterville-06773-keeps-s721c-gap-s731): a record a
+# decision keeps collected with its filed gap although today's scorer passes its arithmetic. A reconcile's rescore
+# drops every gap from a passing score (keep_named_gaps, kb/_program_requirements_college.py), so it reads this list
+# and keeps the named gap on such a record. Porterville 06773: the pooled reading adds its 18 over Groups I and II,
+# but its read opens mid-section on page 81 with no heading in the text, so the list is the program's by its title
+# alone, and it keeps the pool_figure_not_read plan s721c filed.
+GAP_HELD = {
+    ("Porterville College", "06773"): {
+        "gap": "pool_figure_not_read",
+        "why": "its read opens mid-section on page 81 with no heading in the text; it keeps s721c's gap "
+               "(d-porterville-06773-keeps-s721c-gap-s731)"},
+}
+
+
+def held_gaps(filed: dict, filed_score: dict | None) -> list:
+    """The filed gaps a decision keeps on the record (GAP_HELD), whatever the fresh score; [] for every other."""
+    held = GAP_HELD.get((filed.get("college"), str(filed.get("control_number"))))
+    if not held:
+        return []
+    return [g for g in (filed_score or {}).get("gaps") or []
+            if (g.get("gap") if isinstance(g, dict) else g) == held["gap"]]
+
+
 def may_continue(filed: dict) -> str | None:
     """The reviewed note saying the record's list may continue (MAY_CONTINUE_REVIEWED), only where the record still
     carries those words; None for every other record."""
@@ -1833,6 +1856,19 @@ GAPS.setdefault("heading_not_in_text",
                 "page read has confirmed it.")
 ARITH_SCORE.setdefault("heading_not_in_text", 20)
 OTHER_PAGE_GAPS = OTHER_PAGE_GAPS | {"heading_not_in_text"}
+# S730 at Saddleback (kb/_program_piles_s730_saddleback.py): a requirement the page prints at a range from zero, since
+# a student may meet it without the course (CUL 171 waived for a valid California ServSafe Certification; DR 100 for a
+# year of high school mechanical drafting), which the record counts at the course's units, so its sum matches the
+# printed range's top and not its low end. No existing kind fits: entry_path_range names an entry path a student is
+# admitted to, noted_unit_floor a minimum above the printed units, and the printed_total reconcile kind a test-out whose
+# units the page's own separate total counts. Its score is 50 (d-waived-course-counted-keeps-50-s731, S730's second
+# reader): the record's figure closes against the printed range only for a student who holds the waiver, so the
+# arithmetic is shown right for one of the two paths the page prints, not for both.
+GAPS.setdefault("waived_course_counted",
+                "The page prints a requirement at a range from zero units, since a student may meet it without the "
+                "course (a certification, an exam or earlier coursework), and the record counts the course, so its "
+                "units match the top of the printed range and not its low end.")
+ARITH_SCORE.setdefault("waived_course_counted", 50)
 
 
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:

@@ -830,3 +830,20 @@ The lane's check of Sam's eight steps (S425), verbatim:
 - **Forgotten along the way.** The validate stage has never been used (0 of 147 in five months); the scan was
   never scheduled and asked two settled questions at every run; the tab's C-ID index skipped 17 of the 65
   subjects; the Jev next step for the CSR (fix AUTB, the 2026-09-29 sheet's card 11) is still open.
+
+## S730 (SkyDunlin, 2026-11-25): the stray codes and the title hunt
+
+**Ruled:** `r-no-mid-on-a-stray-code-sam-2026-11-25`: no M-ID on a local code; the 88 stray codes' 247 courses go back
+to Needs an M-ID once their local subjects carry a common subject. **Procedure:**
+`p-subject-title-carries-its-source-sam-2026-11-25`. **Worklist:** `kb/subject_title_hunt/` for COBIx.
+
+**Lessons:**
+- A stray code is a blank discipline that the mint filled with the college's own letters. The fix comes before the
+  mint, never after it.
+- A statewide filing keyed on letters breaks where two colleges use one code for two subjects (AT, ATC, HOSM, DESN
+  among the strays). The local subject title tells them apart; the code cannot.
+- 1,496 of 10,282 college and code pairs carry a title, all at 19 colleges. The recommender's measured sources run
+  for every college once the unread colleges' courses are added to its course joins; course joins are its weakest
+  source (Diablo Valley's FTVE read Law).
+- Count Needs an M-ID through the List's own sources (`unified_courses_members.js`, `kb/coci_not_applicable.json`);
+  the state list's July M-ID column gives 19,267, and leaving out the kept courses gives 8,101 against the List's 1,819.

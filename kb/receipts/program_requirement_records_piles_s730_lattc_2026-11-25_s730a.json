@@ -1,0 +1,1705 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S730: Los Angeles Trade-Technical's 17 wording-rule records, collected with their gaps named where one is honest (no reread, no reconcile)",
+ "at": "2026-11-25T11:18:41Z",
+ "college": "Los Angeles Trade Technical College",
+ "census": {
+  "file": "kb/status/harvest_gap_census.json",
+  "run": "45586922147",
+  "levers": [
+   "reconcile_steps"
+  ],
+  "person": [],
+  "members": [
+   "02911",
+   "02925",
+   "08479",
+   "08482",
+   "18857",
+   "21849",
+   "21855",
+   "21867",
+   "31089",
+   "31090",
+   "31280",
+   "37706",
+   "38737",
+   "41011",
+   "41150",
+   "44344",
+   "45285"
+  ]
+ },
+ "gaps": {
+  "lists_not_closed": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
+  "noted_figures_differ": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+  "noted_section_cut_off": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record."
+ },
+ "moved": 6,
+ "by": {
+  "noted_section_cut_off": 2,
+  "noted_figures_differ": 3,
+  "lists_not_closed": 1
+ },
+ "precision": {
+  "read": 17,
+  "right": 17,
+  "wrong": [],
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 11,
+   "noted_section_cut_off": 2,
+   "noted_figures_differ": 3,
+   "lists_not_closed": 1
+  }
+ },
+ "claim_checks": {
+  "counts": {
+   "stands": 6
+  },
+  "not_standing": []
+ },
+ "boundaries": {
+  "counts": {
+   "the note's words gone right": 6,
+   "the stated total one unit off right": 6,
+   "coverage failing right": 6,
+   "the own-section words gone on a shared page right": 4,
+   "the capture holding the page the note says it lacked right": 2,
+   "the open list read as required right": 1,
+   "the open list printing a figure right": 1,
+   "the sum at the stated total right": 1
+  },
+  "wrong": []
+ },
+ "levers": {
+  "18857": {
+   "today": "unequal",
+   "lever": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "words": true
+  },
+  "38737": {
+   "today": "incomplete",
+   "lever": "equal",
+   "computed": [
+    11.0,
+    11.0
+   ],
+   "stated": [
+    11.0,
+    11.0
+   ],
+   "words": true
+  }
+ },
+ "held": [
+  {
+   "control_number": "02911",
+   "why": "held: today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed; coverage and invented fail on 'PLUMBING 028' printed for PLUMBNG 28, and PLUMBNG 145 and 246 not in the state's file: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "18857",
+   "why": "held: a cheaper lever passes it (p-gap-filing-leaves-census-lever-s721): the pooled reading (S.pooled_figures) reads its note's 'Complete 18 units' over the three lists once it reads 'with a minimum of 3 units from each' as pooled words, and today's scorer then passes it at 18 = 18; the pooled reading's next, never a named gap",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "21855",
+   "why": "held: today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed; coverage and invented fail on 'PLUMBING 028' printed for PLUMBNG 28 (the degree 02911's lists, page 144), and PLUMBNG 145 and 246 not in the state's file: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31089",
+   "why": "held: coverage and invented fail on BLDGTCQ 007, 008 and 009 printed for BLDGCTQ and PLUMBING 028 read as an alternative, so the record is not collectable; its arithmetic (37-38 against the printed 42, the note's required courses at 33 against the stated 38) waits on that rename",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31090",
+   "why": "held: today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed; coverage and invented fail on 'PLUMBING 028' printed for PLUMBNG 28; MATH 115 and BLDGCTQ 8 not in the state's file: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "31280",
+   "why": "held: today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed; coverage and invented fail on BLDGTCQ 014 printed for BLDGCTQ, 'Plumbing 028' for PLUMBNG 28, and REF A/C 100, 110 and 165 not placed: a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "37706",
+   "why": "held: the own-page guard: page 200 is shared with Pre-Health Professions I (38452), and no note names the record's own section; its heading's 18-19 and its table row's 16-19 ('T037706D C 16-19 - 16-19') differ, and the courses add to 16-17: a page read pins its section",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "38737",
+   "why": "held: a cheaper lever passes it (p-gap-filing-leaves-census-lever-s721): its text opens on the page's table row for its own state code, 'T038737D C - 11 - 11', which its note took as the preceding program's tail; a Los Angeles Trade-Technical fill step reading that row's major figure fills its empty total, and today's scorer then passes it at 11 = 11",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "41011",
+   "why": "held: a noncredit program whose arithmetic reads no total (unstated); coverage fails on VOC ED 454 and 455 printed without the file's CE and VOC ED 460 printed for the file's 463: a course renumber is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "41150",
+   "why": "held: today's scorer passes its arithmetic (scorer_passes), so it is never gap-filed; coverage and invented fail on DIGMD 100, 101 and 104 printed for the state file's DIGLMD (three courses of one number and title under one misprinted subject): a rename or prefix alias that places those courses is its lever",
+   "claim": "no entry stands"
+  },
+  {
+   "control_number": "45285",
+   "why": "held: coverage fails (53 of 99 placed): its text holds only page 65, the Cal-GETC pattern's Areas 4 to 6, and its note says the heading and Areas 1 to 3 are on earlier pages; a page pin with its section's own pages is its lever",
+   "claim": "no entry stands"
+  }
+ ],
+ "records": [
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "02925",
+   "award": "A.A. Degree",
+   "extracted_run": "39054673977",
+   "moves_to": "noted_section_cut_off",
+   "words": "The excerpt begins mid-section on page 179; the A.A. heading, any 'Major Units' line, program description, outcomes and careers likely appear on the preceding page and are not in the text. Reviewer should check page 178.",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 50,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/02925.json",
+   "before_image": {
+    "program_title": "Fashion Design",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=179",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Fashion Design — Associate in Arts Degree (heading not shown in excerpt; text begins with 'Requirements for the Associate in Arts degree in Fashion Design')",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 46,
+        "max": 46
+       },
+       "courses": [
+        {
+         "code": "FASHDSN 111",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 112",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 119A",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 120",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 122",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 125A",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 130",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 132",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 264",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 139",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 141",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 142",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "MAJOR ELECTIVES",
+       "rule": "choose_units",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "FASHDSN 118",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 119B",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 125B",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 126",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 137",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 140",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 147",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 148",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 151",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 201",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FASHDSN 202",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FASHDSN 203",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FASHDSN 206",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FASHDSN 941",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 020",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 025",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 050",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 26,
+     "listed": 26
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 26,
+     "listed": 26,
+     "gaps": [
+      "noted_section_cut_off"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 50,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "08479",
+   "award": "A.S. Degree",
+   "extracted_run": "39054673977",
+   "moves_to": "noted_figures_differ",
+   "words": "The required courses printed sum to 43 units (including CRPNTRY 401 at 9 units), while the text says 40 units of Required Courses; the semester plan's 'Elective' placeholders (2 + 3 = 5 units) give 48 total, versus the stated 8 units of Major Electives. Reviewer should check this discrepancy.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 93,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/08479.json",
+   "before_image": {
+    "program_title": "Carpentry - Construction Technologies",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+    "measure": "units",
+    "total_min": 48,
+    "total_max": 48,
+    "record": {
+     "program": {
+      "section_heading": "CARPENTRY - CONSTRUCTION TECHNOLOGIES — Associate in Arts Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 48,
+       "max": 48
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": 21,
+       "max": 21
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Use drawings and other related documents and graphics to communicate information effectively.",
+       "Use hand and power tools, testing equipment, and P.P.E required for performing work in the building construction industry in accordance with industry standards."
+      ],
+      "careers": [
+       "Carpenters",
+       "Helpers-Carpenters",
+       "Cement Masons",
+       "Entry Level Estimators",
+       "Carpenter"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 40,
+        "max": 40
+       },
+       "courses": [
+        {
+         "code": "CRPNTRY 105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 111A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 111B",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 111C",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 148",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 241",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 243",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 100",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 149",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 240",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 251",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 401",
+         "units": 9,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "MAJOR ELECTIVES",
+       "rule": "choose_units",
+       "minimum": 8,
+       "option_group": null,
+       "stated": {
+        "min": 8,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "BLDGCTQ 002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 007",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 008",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 009",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 012",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 014",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 102",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 921",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 931",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 941",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 114",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 117",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 126",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 170",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 941",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 28,
+     "listed": 30
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 28,
+     "listed": 30,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 93,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "08482",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "extracted_run": "39054673977",
+   "moves_to": "lists_not_closed",
+   "words": "The catalog prints 'Major Units: 24' and the eight listed ELECLNM courses (3 units each) already total 24; the 'Elective(s)' list (ELECLNM 709, ELECLNM 175) gives no number of courses or units required, so its minimum is left null. It is unclear whether electives are required or optional; reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/08482.json",
+   "before_image": {
+    "program_title": "Electrical Lineman Apprenticeship",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=159",
+    "measure": "units",
+    "total_min": 24,
+    "total_max": 24,
+    "record": {
+     "program": {
+      "section_heading": "ELECTRICAL LINEMAN APPRENTICESHIP — Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 24,
+       "max": 24
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Use hand and power tools to perform basic utility power-line work such as; hammers, saws, chain-saw, wrenches, and other related equipment.",
+       "Perform calculations and measurements commiserate to entry level power-line work.",
+       "Pole Climbing Competencies (Climbing with Confidence), demonstration of things such as; string and transfer overhead wire, set and remove utility poles, hang transformers, hang and remove cross-arms, install and remove cut-outs, etc."
+      ],
+      "careers": [
+       "journeyman"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ELECLNM 701A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ELECLNM 701B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ELECLNM 702A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ELECLNM 702B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ELECLNM 703A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ELECLNM 703B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ELECLNM 704A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ELECLNM 704B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Elective(s)",
+       "rule": "choose_courses",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ELECLNM 709",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ELECLNM 175",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 5,
+     "listed": 5
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 5,
+     "listed": 5,
+     "gaps": [
+      "lists_not_closed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 30,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "21849",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "extracted_run": "39054673977",
+   "moves_to": "noted_figures_differ",
+   "words": "The required courses printed sum to 43 units (including CRPNTRY 401 at 9 units), not the stated 40; the semester plan also shows 'Elective' rows of 2 and 3 units (5 total) versus the stated 8 units of major electives. 43 + 8 = 51, not the stated Major Units of 48. Reviewer should check.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 93,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/21849.json",
+   "before_image": {
+    "program_title": "Carpentry - Construction Technologies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=132",
+    "measure": "units",
+    "total_min": 48,
+    "total_max": 48,
+    "record": {
+     "program": {
+      "section_heading": "CARPENTRY - CONSTRUCTION TECHNOLOGIES ▌ Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 48,
+       "max": 48
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Use drawings and other related documents and graphics to communicate information effectively.",
+       "Use hand and power tools, testing equipment, and P.P.E required for performing work in the building construction industry in accordance with industry standards."
+      ],
+      "careers": [
+       "Carpenters",
+       "Helpers-Carpenters",
+       "Cement Masons",
+       "Entry Level Estimators"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CRPNTRY 105",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 111A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 111B",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 111C",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 148",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 241",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 243",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECONMT 100",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 149",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 240",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 251",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 401",
+         "units": 9,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "MAJOR ELECTIVES",
+       "rule": "choose_units",
+       "minimum": 8,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BLDGCTQ 002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 007",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 008",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 009",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 012",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 014",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 102",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 921",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 931",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BLDGCTQ 941",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 114",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 115",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 117",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 126",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 170",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRPNTRY 941",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 28,
+     "listed": 30
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 28,
+     "listed": 30,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 93,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "21867",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "39054673977",
+   "moves_to": "noted_section_cut_off",
+   "words": "The certificate section lists no courses itself; it says requirements are met by the Required Courses and Elective Courses listed under the Associate degree in Fashion Merchandising. The blocks recorded are the portion of that A.S. list visible on page 183 (Semester III, Semester IV, Electives); Semesters I and II of the degree list are on the previous page and not in the text, so required courses are incomplete.",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 50,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/21867.json",
+   "before_image": {
+    "program_title": "Fashion Merchandising",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=183",
+    "measure": "units",
+    "total_min": 38,
+    "total_max": 38,
+    "record": {
+     "program": {
+      "section_heading": "FASHION MERCHANDISING Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 38,
+       "max": 38
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "SEMESTER III",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FASHMER 001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 040",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 041",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 050",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "SEMESTER IV",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "FASHMER 941",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "ELECTIVE COURSES (SELECT 5 UNITS)",
+       "rule": "choose_units",
+       "minimum": 5,
+       "option_group": null,
+       "stated": {
+        "min": 5,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "FASHMER 021",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 015",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHMER 045",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 147",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FASHDSN 222",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "FASHDSN 119A",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "FASHDSN 125B",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DIGLMD 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DIGLMD 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 12,
+     "listed": 23
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 12,
+     "listed": 23,
+     "gaps": [
+      "noted_section_cut_off"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 50,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "control_number": "44344",
+   "award": "A.S. Degree",
+   "extracted_run": "39054673977",
+   "moves_to": "noted_figures_differ",
+   "words": "Printed course units sum to 24, but the catalog states Major Units: 23. VISCOM 100 is printed at 3 units in the catalog (titled 'Graphic Design Fundamentals') while the state file stores 2 units; this may explain the discrepancy.",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/44344.json",
+   "before_image": {
+    "program_title": "Game Art & Design Foundation",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=184",
+    "measure": "units",
+    "total_min": 23,
+    "total_max": 23,
+    "record": {
+     "program": {
+      "section_heading": "GAME ART & DESIGN FOUNDATION ▌ Associate in Science Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 23,
+       "max": 23
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": 21,
+       "max": 21
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Gain competency in the theory and artistic aspects of game design and the creation of interactive media.",
+       "Acquire the foundation skills in the application of digital tools to create virtual environments and worlds structured for intuitive user engagement."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "VISCOM 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "VISCOM 124",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GAD 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "VISCOM 131",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DIGLMD 118",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GAD 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DIGLMD 153",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GAD 103",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GAD 210-1",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9
+    },
+    "extracted_run": "39054673977"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9,
+     "gaps": [
+      "noted_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 6
+  }
+ ],
+ "shared_pages": {
+  "02925": [
+   "21865"
+  ],
+  "08479": [
+   "02909",
+   "21848",
+   "21849",
+   "42144"
+  ],
+  "21849": [
+   "02909",
+   "08479",
+   "21848",
+   "42144"
+  ],
+  "44344": [
+   "44345"
+  ]
+ },
+ "representation": "checks.gaps and checks.confidence added as the load reads the filed score; checks.arithmetic, coverage, invented and the record unchanged",
+ "claim_check_reads": "Today's capture (sources.json): every course an entry names among the codes it found, and a page a note says the read lacked not among the capture's pages. The capture keeps no page text, so a note's quoted figures are the reader's words, never re-read here.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Los Angeles Trade Technical College', '02925', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 111\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 112\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 119A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 122\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 125A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 130\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 132\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 264\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 139\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 141\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 142\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":46,\"min\":46}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 118\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 119B\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 125B\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 126\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 137\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 140\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 147\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 148\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 151\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 203\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 206\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 941\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 025\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 050\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Fashion Design — Associate in Arts Degree (heading not shown in excerpt; text begins with ''Requirements for the Associate in Arts degree in Fashion Design'')\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb),\n  (2, 'Los Angeles Trade Technical College', '08479', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111C\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 243\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 149\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CRPNTRY 401\",\"units\":9,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":40,\"min\":40}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 008\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 012\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 014\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 921\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 931\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 941\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 114\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 117\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 126\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 941\",\"units\":4,\"units_max\":null}],\"minimum\":8,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[\"Carpenters\",\"Helpers-Carpenters\",\"Cement Masons\",\"Entry Level Estimators\",\"Carpenter\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use drawings and other related documents and graphics to communicate information effectively.\",\"Use hand and power tools, testing equipment, and P.P.E required for performing work in the building construction industry in accordance with industry standards.\"],\"section_heading\":\"CARPENTRY - CONSTRUCTION TECHNOLOGIES — Associate in Arts Degree\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb),\n  (3, 'Los Angeles Trade Technical College', '08482', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 701A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 701B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 702A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 702B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 703A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 703B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 704A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 704B\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 709\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 175\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Elective(s)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"journeyman\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use hand and power tools to perform basic utility power-line work such as; hammers, saws, chain-saw, wrenches, and other related equipment.\",\"Perform calculations and measurements commiserate to entry level power-line work.\",\"Pole Climbing Competencies (Climbing with Confidence), demonstration of things such as; string and transfer overhead wire, set and remove utility poles, hang transformers, hang and remove cross-arms, install and remove cut-outs, etc.\"],\"section_heading\":\"ELECTRICAL LINEMAN APPRENTICESHIP — Certificate of Achievement\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":5,\"placed\":5}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":5,\"placed\":5}'::jsonb),\n  (4, 'Los Angeles Trade Technical College', '21849', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111C\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 243\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 149\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CRPNTRY 401\",\"units\":9,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 008\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 012\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 014\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 921\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 931\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 941\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 114\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 117\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 126\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 941\",\"units\":4,\"units_max\":null}],\"minimum\":8,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Carpenters\",\"Helpers-Carpenters\",\"Cement Masons\",\"Entry Level Estimators\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use drawings and other related documents and graphics to communicate information effectively.\",\"Use hand and power tools, testing equipment, and P.P.E required for performing work in the building construction industry in accordance with industry standards.\"],\"section_heading\":\"CARPENTRY - CONSTRUCTION TECHNOLOGIES ▌ Certificate of Achievement\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb),\n  (5, 'Los Angeles Trade Technical College', '21867', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 040\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 041\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 050\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"SEMESTER III\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 941\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"SEMESTER IV\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 015\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 045\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 147\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 222\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 119A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 125B\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 101\",\"units\":3,\"units_max\":null}],\"minimum\":5,\"name\":\"ELECTIVE COURSES (SELECT 5 UNITS)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":5}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"FASHION MERCHANDISING Certificate of Achievement\",\"total_units\":{\"max\":38,\"min\":38}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":23,\"placed\":12}'::jsonb),\n  (6, 'Los Angeles Trade Technical College', '44344', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"VISCOM 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"VISCOM 124\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"VISCOM 131\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 153\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 210-1\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Gain competency in the theory and artistic aspects of game design and the creation of interactive media.\",\"Acquire the foundation skills in the application of digital tools to create virtual environments and worlds structured for intuitive user engagement.\"],\"section_heading\":\"GAME ART & DESIGN FOUNDATION ▌ Associate in Science Degree\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "pre_read_md5": "with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) as (values\n  (1, 'Los Angeles Trade Technical College', '02925', 39054673977, '47d5ed9825f51aa9d8d85f54ade30d7d', 'df1f46dda28f904ad5c64f462c51773e', '2d7a39538198c55e62ded3e5119f277a'),\n  (2, 'Los Angeles Trade Technical College', '08479', 39054673977, 'a488693da8687a5a8188010d077f5ce4', '1fe736002e1d233c6440113f37203623', '8ab544d8cdaaa2e0fdd178ac7cd45339'),\n  (3, 'Los Angeles Trade Technical College', '08482', 39054673977, '1601b04f133f50cba7e34bc23a1f3c58', '0c5934c1eb7f9cfc19431ea49658eb24', 'baf11d8fcc7110c47f31d617544f3b26'),\n  (4, 'Los Angeles Trade Technical College', '21849', 39054673977, '082fdd2c745e2363a570c8bca6552169', '1fe736002e1d233c6440113f37203623', '8ab544d8cdaaa2e0fdd178ac7cd45339'),\n  (5, 'Los Angeles Trade Technical College', '21867', 39054673977, '90f5b439968c266c4ed536b1b0fea2af', '207996a2183e53f2b214a6a691e2a012', '2d76578484c9e7225e3040b40524eb58'),\n  (6, 'Los Angeles Trade Technical College', '44344', 39054673977, '6f0597f6238960b042e64b27d84b39ed', '88e2495efd06d1573c7fb0fe096e2788', '7416330c64d98f13e81585bc81a81116'))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.record::text) = v.rec_md5),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and md5(r.checks::text) = v.chk_md5),\n  'already_after', count(*) filter (where md5(r.checks::text) = v.after_md5),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Los Angeles Trade Technical College', '02925', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 111\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 112\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 119A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 122\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 125A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 130\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 132\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 264\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 139\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 141\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 142\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":46,\"min\":46}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 118\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 119B\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 125B\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 126\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 137\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 140\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 147\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 148\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 151\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 203\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 206\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 941\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 025\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 050\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Fashion Design — Associate in Arts Degree (heading not shown in excerpt; text begins with ''Requirements for the Associate in Arts degree in Fashion Design'')\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb),\n  (2, 'Los Angeles Trade Technical College', '08479', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111C\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 243\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 149\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CRPNTRY 401\",\"units\":9,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":40,\"min\":40}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 008\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 012\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 014\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 921\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 931\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 941\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 114\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 117\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 126\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 941\",\"units\":4,\"units_max\":null}],\"minimum\":8,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[\"Carpenters\",\"Helpers-Carpenters\",\"Cement Masons\",\"Entry Level Estimators\",\"Carpenter\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use drawings and other related documents and graphics to communicate information effectively.\",\"Use hand and power tools, testing equipment, and P.P.E required for performing work in the building construction industry in accordance with industry standards.\"],\"section_heading\":\"CARPENTRY - CONSTRUCTION TECHNOLOGIES — Associate in Arts Degree\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb),\n  (3, 'Los Angeles Trade Technical College', '08482', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 701A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 701B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 702A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 702B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 703A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 703B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 704A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 704B\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 709\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 175\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Elective(s)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"journeyman\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use hand and power tools to perform basic utility power-line work such as; hammers, saws, chain-saw, wrenches, and other related equipment.\",\"Perform calculations and measurements commiserate to entry level power-line work.\",\"Pole Climbing Competencies (Climbing with Confidence), demonstration of things such as; string and transfer overhead wire, set and remove utility poles, hang transformers, hang and remove cross-arms, install and remove cut-outs, etc.\"],\"section_heading\":\"ELECTRICAL LINEMAN APPRENTICESHIP — Certificate of Achievement\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":5,\"placed\":5}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":5,\"placed\":5}'::jsonb),\n  (4, 'Los Angeles Trade Technical College', '21849', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111C\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 243\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 149\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CRPNTRY 401\",\"units\":9,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 008\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 012\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 014\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 921\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 931\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 941\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 114\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 117\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 126\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 941\",\"units\":4,\"units_max\":null}],\"minimum\":8,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Carpenters\",\"Helpers-Carpenters\",\"Cement Masons\",\"Entry Level Estimators\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use drawings and other related documents and graphics to communicate information effectively.\",\"Use hand and power tools, testing equipment, and P.P.E required for performing work in the building construction industry in accordance with industry standards.\"],\"section_heading\":\"CARPENTRY - CONSTRUCTION TECHNOLOGIES ▌ Certificate of Achievement\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb),\n  (5, 'Los Angeles Trade Technical College', '21867', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 040\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 041\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 050\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"SEMESTER III\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 941\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"SEMESTER IV\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 015\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 045\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 147\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 222\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 119A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 125B\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 101\",\"units\":3,\"units_max\":null}],\"minimum\":5,\"name\":\"ELECTIVE COURSES (SELECT 5 UNITS)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":5}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"FASHION MERCHANDISING Certificate of Achievement\",\"total_units\":{\"max\":38,\"min\":38}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":23,\"placed\":12}'::jsonb),\n  (6, 'Los Angeles Trade Technical College', '44344', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"VISCOM 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"VISCOM 124\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"VISCOM 131\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 153\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 210-1\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Gain competency in the theory and artistic aspects of game design and the creation of interactive media.\",\"Acquire the foundation skills in the application of digital tools to create virtual environments and worlds structured for intuitive user engagement.\"],\"section_heading\":\"GAME ART & DESIGN FOUNDATION ▌ Associate in Science Degree\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (6)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s730a piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s730a piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Los Angeles Trade Technical College', '02925', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 111\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 112\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 119A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 120\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 122\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 125A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 130\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 132\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 264\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 139\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 141\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 142\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":46,\"min\":46}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 118\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 119B\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 125B\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 126\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 137\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 140\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 147\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 148\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 151\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 201\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 202\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 203\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 206\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 941\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 020\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 025\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 050\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":2,\"min\":2}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Fashion Design — Associate in Arts Degree (heading not shown in excerpt; text begins with ''Requirements for the Associate in Arts degree in Fashion Design'')\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":26,\"placed\":26}'::jsonb),\n  (2, 'Los Angeles Trade Technical College', '08479', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111C\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 243\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 149\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CRPNTRY 401\",\"units\":9,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":40,\"min\":40}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 008\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 012\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 014\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 921\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 931\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 941\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 114\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 117\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 126\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 941\",\"units\":4,\"units_max\":null}],\"minimum\":8,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":8,\"min\":8}}],\"program\":{\"careers\":[\"Carpenters\",\"Helpers-Carpenters\",\"Cement Masons\",\"Entry Level Estimators\",\"Carpenter\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use drawings and other related documents and graphics to communicate information effectively.\",\"Use hand and power tools, testing equipment, and P.P.E required for performing work in the building construction industry in accordance with industry standards.\"],\"section_heading\":\"CARPENTRY - CONSTRUCTION TECHNOLOGIES — Associate in Arts Degree\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb),\n  (3, 'Los Angeles Trade Technical College', '08482', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 701A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 701B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 702A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 702B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ELECLNM 703A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 703B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 704A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 704B\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 709\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ELECLNM 175\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Elective(s)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"journeyman\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use hand and power tools to perform basic utility power-line work such as; hammers, saws, chain-saw, wrenches, and other related equipment.\",\"Perform calculations and measurements commiserate to entry level power-line work.\",\"Pole Climbing Competencies (Climbing with Confidence), demonstration of things such as; string and transfer overhead wire, set and remove utility poles, hang transformers, hang and remove cross-arms, install and remove cut-outs, etc.\"],\"section_heading\":\"ELECTRICAL LINEMAN APPRENTICESHIP — Certificate of Achievement\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":5,\"placed\":5}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":30},\"coverage\":true,\"gaps\":[\"lists_not_closed\"],\"invented\":true,\"listed\":5,\"placed\":5}'::jsonb),\n  (4, 'Los Angeles Trade Technical College', '21849', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 105\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 111C\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 148\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 241\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 243\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECONMT 100\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 149\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 240\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 251\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CRPNTRY 401\",\"units\":9,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 007\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 008\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 009\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 012\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 014\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 102\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 921\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 931\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BLDGCTQ 941\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 114\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 115\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 117\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 126\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 170\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRPNTRY 941\",\"units\":4,\"units_max\":null}],\"minimum\":8,\"name\":\"MAJOR ELECTIVES\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Carpenters\",\"Helpers-Carpenters\",\"Cement Masons\",\"Entry Level Estimators\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Use drawings and other related documents and graphics to communicate information effectively.\",\"Use hand and power tools, testing equipment, and P.P.E required for performing work in the building construction industry in accordance with industry standards.\"],\"section_heading\":\"CARPENTRY - CONSTRUCTION TECHNOLOGIES ▌ Certificate of Achievement\",\"total_units\":{\"max\":48,\"min\":48}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":93,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":30,\"placed\":28}'::jsonb),\n  (5, 'Los Angeles Trade Technical College', '21867', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 040\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 041\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 050\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"SEMESTER III\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 941\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"SEMESTER IV\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 021\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 015\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHMER 045\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 147\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"FASHDSN 222\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 119A\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"FASHDSN 125B\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 101\",\"units\":3,\"units_max\":null}],\"minimum\":5,\"name\":\"ELECTIVE COURSES (SELECT 5 UNITS)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":5,\"min\":5}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"FASHION MERCHANDISING Certificate of Achievement\",\"total_units\":{\"max\":38,\"min\":38}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":12}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":50,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"noted_section_cut_off\"],\"invented\":true,\"listed\":23,\"placed\":12}'::jsonb),\n  (6, 'Los Angeles Trade Technical College', '44344', 39054673977, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"VISCOM 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"VISCOM 124\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"VISCOM 131\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 118\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DIGLMD 153\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 103\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GAD 210-1\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":21,\"min\":21},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Gain competency in the theory and artistic aspects of game design and the creation of interactive media.\",\"Acquire the foundation skills in the application of digital tools to create virtual environments and worlds structured for intuitive user engagement.\"],\"section_heading\":\"GAME ART & DESIGN FOUNDATION ▌ Associate in Science Degree\",\"total_units\":{\"max\":23,\"min\":23}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"noted_figures_differ\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (6)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s730a piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

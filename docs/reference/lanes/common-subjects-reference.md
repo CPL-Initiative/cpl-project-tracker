@@ -130,6 +130,20 @@ the AGRI residual (404 identities; a Jev sitting proposes a family each, Sam con
 
 Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577)*.
 
+## The stray codes and the title hunt (S730, Sam, 2026-11-25)
+
+**RULED** `r-no-mid-on-a-stray-code-sam-2026-11-25`: *"i should have never minted those 88 codes and left the courses in
+a holding pen."* An M-ID is minted only under a common subject; the 88 stray codes (251 M-IDs, 247 local courses) go
+back to Needs an M-ID, through a re-mint with its alias map, once their local subjects carry a common subject.
+**PROCEDURE** `p-subject-title-carries-its-source-sam-2026-11-25`: every collected local subject title records its
+source URL, where (catalog, college site, other), method (subject heading, prefix legend, department label, course
+pages), date and finder; only a catalog heading or prefix legend settles a title. The worklist is
+`kb/subject_title_hunt/` (8,786 college and code pairs with no title, tiered, each with a recommended title at its
+measured confidence), handed to COBIx. **FINDING:** one local code can mean two subjects at two colleges (Glendale's
+AT is Flight Attendant, filed statewide as Automotive), so a statewide filing should stop where a college's titles
+read otherwise. **NEXT:** load COBIx's titles into the Subjects titles, rescore the stray codes' local subjects with the
+title leading, then the dry-run re-mint for Sam.
+
 ## NEXT
 
 **NEXT (S719), in order:** (1) re-point the folded local codes, a re-mint under

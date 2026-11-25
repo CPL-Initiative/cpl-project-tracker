@@ -1,0 +1,19 @@
+{
+ "_readme": "S730 (lever), the gap census's reader_page_assignment lever (census of 2026-11-25 09:39Z): East Los Angeles College's Cal-GETC certificate, a general-education pattern certificate whose state listing is the pattern's course list, filed as a named gap and never sent to a paid read. Its filed record stays as filed (the load skips a record that places none). The college's two programs on the paid_read lever (38332, 45540) are read with only=. No model call, no Supabase write.",
+ "college": "East Los Angeles College",
+ "written": "2026-11-25T11:21:40Z",
+ "capture": "45176404274",
+ "page_reads": [],
+ "reasons": {
+  "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design (the census's named gap, kb/_harvest_gap_census.py NAMED_GAPS)."
+ },
+ "programs": [
+  {
+   "control_number": "45028",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "The state's file lists 278 courses for it, the Cal-GETC pattern's course list; the filed record was read from catalog pp.64-66, the General Studies degree's areas of emphasis, and its own notes say that text 'does not contain a section for the Cal-GETC Certificate of Achievement'."
+  }
+ ]
+}

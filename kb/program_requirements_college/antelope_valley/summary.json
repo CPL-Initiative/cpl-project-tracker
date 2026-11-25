@@ -2,21 +2,21 @@
  "college": "Antelope Valley College",
  "programs": 199,
  "with_closed_list": 197,
- "found": 193,
+ "found": 194,
  "extracted": 195,
  "errors": 0,
  "passed_machine_checks": 179,
  "failed": {
-  "coverage": 2,
+  "coverage": 1,
   "invented": 0,
   "arithmetic": 16,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.77,
- "cost_usd_filed": 14.2,
- "cost_per_program": 0.0728,
- "extract_calls": 11,
+ "cost_usd_run": 2.76,
+ "cost_usd_filed": 14.11,
+ "cost_per_program": 0.0723,
+ "extract_calls": 39,
  "extract_failed": [],
  "not_found": [
   {
@@ -100,35 +100,7 @@
     "page_checks": true
    },
    "status": "Active"
-  },
-  {
-   "control_number": "43150",
-   "title": "All Automotive Systems",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 1.0,
-    "net": 10,
-    "listed": 10,
-    "why": "a candidate, lost to a program the page names more fully",
-    "error": null,
-    "chars": {
-     "body": 5178,
-     "content": 5178,
-     "tabs": 0
-    },
-    "tab_panels": [],
-    "page_checks": true
-   },
-   "status": "Approved"
   }
  ],
- "run": "45574354887"
+ "run": "45612549421"
 }

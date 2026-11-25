@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "School-Aged Child Care",
  "award": "A.A. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-cert-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-aa-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8913,
+  "input_tokens": 8307,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8913,
-    "output_tokens": 2303,
+    "input_tokens": 8307,
+    "output_tokens": 2267,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2303,
+  "output_tokens": 2267,
   "output_tokens_details": {
-   "thinking_tokens": 588
+   "thinking_tokens": 660
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08171,
- "ms": 19378,
+ "cost_usd": 0.07857,
+ "ms": 18636,
  "seconds": 19.8,
  "parts": null,
  "error": null,
@@ -79,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 0,
    "courses": 0,
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "School-Aged Child Care Cert",
+   "section_heading": "School-Aged Child Care AA",
    "measure": "units",
    "total_units": {
     "min": 33,
@@ -114,7 +114,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "AVC GE",
    "degree_total": {
     "min": null,
     "max": null
@@ -124,13 +124,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Students will integrate needs, characteristics, and multiple influences on the development of children from birth to age eight as they develop, implement, and evaluate early childhood program practices.",
-    "Students will intentionally use systematic observations, documentation, and other assessment strategies in the design, implementation, and evaluation of environments, curricula, and activities that support learning through developmentally appropriate practices and positive learning outcomes."
-   ],
+   "outcomes": [],
    "careers": [
     "Early Childhood and School-Aged Child Care",
-    "early childhood education"
+    "childcare provider",
+    "teacher’s aide",
+    "program coordinator"
    ]
   },
   "blocks": [
@@ -145,70 +144,70 @@
     },
     "courses": [
      {
-      "code": "CFE 102",
+      "code": "CFE102",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 103",
+      "code": "CFE103",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 104",
+      "code": "CFE104",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 105",
+      "code": "CFE105",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 106",
+      "code": "CFE106",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 201",
+      "code": "CFE201",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 202",
+      "code": "CFE202",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 211",
+      "code": "CFE211",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 212",
+      "code": "CFE212",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 213",
+      "code": "CFE213",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -227,98 +226,98 @@
     },
     "courses": [
      {
-      "code": "CFE 107",
+      "code": "CFE107",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 109",
+      "code": "CFE109",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 110",
+      "code": "CFE110",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 111",
+      "code": "CFE111",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 113",
+      "code": "CFE113",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 114",
+      "code": "CFE114",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 115",
+      "code": "CFE115",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 116",
+      "code": "CFE116",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 150",
+      "code": "CFE150",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 151",
+      "code": "CFE151",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 152",
+      "code": "CFE152",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 157",
+      "code": "CFE157",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CFE 199",
-      "units": 1,
-      "units_max": 8,
+      "code": "CFE199",
+      "units": 4,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "NF 102",
+      "code": "NF102",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -330,13 +329,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requested award is the A.A. Degree, but the source page (URL and heading) is the School-Aged Child Care Certificate; no separate A.A. section appears in the text. The certificate's requirements were recorded; the text says the grade rule applies to 'the degree or certificate'. A reviewer should confirm the A.A. requirements match, and the A.A. degree total/GE pattern are not stated here.",
-   "Program outcomes are printed under 'School-Aged Child Care Certificate'; the text is cut off at outcome 3 ('3. Stude'), so only outcomes 1 and 2 were recorded.",
-   "CFE 199 is printed as 1 - 8 units in the Program Requirements list but as 4 units in the later Requirements table; recorded the range 1-8.",
-   "Course codes are printed both as 'CFE102' and 'CFE 102'; recorded with a space. CFE 111 title printed as 'Supervising Adults Child Care Settings'.",
-   "Recommended pathway suggests CFE 115 as the program elective; not a requirement."
+   "Total 33 is the printed Program Requirements total for the major; no degree total with GE is printed (the Recommended Pathway terms sum to 60 but no overall total is printed, so degree_total is null).",
+   "CFE199 Work Experience Education is printed with 4 units in the catalog; the state file stores 1 unit (variable-unit course likely).",
+   "CFE111 title printed as 'Supervising Adults Child Care Settings' (slightly different from state file title).",
+   "GE pattern inferred from Recommended Pathway references to 'AVC GE' areas; the page refers to Graduation/Associate Degree Requirements without naming GE units.",
+   "The 'Program Goals and Objectives' section lists benefits/goals rather than labeled program learning outcomes, and the text is cut off mid-item (item 5 'Regulatory Compliance: The'); no outcomes recorded. Reviewer should check whether PLOs appear elsewhere on the page.",
+   "Careers taken from the description and Program Goals item 3 ('such as childcare provider, teacher’s aide, or program coordinator in after-school programs, daycares, and recreational centers')."
   ]
  },
- "extracted_run": "38979725726",
+ "extracted_run": "45612549421",
  "catalog_year": "2026-2027"
 }

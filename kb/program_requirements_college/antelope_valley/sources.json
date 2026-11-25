@@ -5288,17 +5288,22 @@
    "AUTO280"
   ],
   "source": {
-   "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-cert-fall-2025",
-   "title": "All Automotive Systems Cert",
-   "h1": "All Automotive Systems Cert",
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
+   "title": "All Automotive Systems AS",
+   "h1": "All Automotive Systems AS",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 1.0
-   }
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0,
+    "exact": 1
+   },
+   "pinned": true
   },
   "listed": 10,
-  "text_chars": 3702
+  "text_chars": 5178
  },
  {
   "control_number": "43151",

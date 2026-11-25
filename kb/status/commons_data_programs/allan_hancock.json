@@ -1,4 +1,4 @@
-{"schema":1,"college":"Allan Hancock College","slug":"allan_hancock","basis":"live","census_at":"2026-11-25 09:39Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Allan Hancock College","slug":"allan_hancock","basis":"live","census_at":"2026-11-25 11:47Z","correction_rules":true,"programs":[
 {"cn":"05869","title":"","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"09515","title":"Applied Design/Media: Animation: Traditional Drawing","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"07177","title":"Apprenticeship: Operating","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -69,7 +69,7 @@
 {"cn":"45966","title":"Microsoft Office Basics","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"43479","title":"Personal Care Attendant","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"44658","title":"Spanish Literacy","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"43770","title":"Agricultural Science","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31148"},
+{"cn":"43770","title":"Agricultural Science","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31144"},
 {"cn":"42208","title":"Viticulture Level 2","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30924"},
 {"cn":"42210","title":"Viticulture Level 3","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31644"},
 {"cn":"05874","title":"Dental Assisting","award":"A.S. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31064","units":{"sum":[32.5,32.5],"printed":[60.0,67.5],"status":"incomplete","measure":"units","against":"degree"}},
