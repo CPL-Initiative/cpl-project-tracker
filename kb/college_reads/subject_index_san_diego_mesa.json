@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 4: the Course Descriptions node (18546) that round 3 (run 45633131736) found. Catalog 70 (the host's _getCatalogs list, read by San Diego City's round 1, run 45623736146). One call, the one sdccd read in this commit; no model call, writes nothing.",
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 5: the subject link list (17460) under Course Descriptions that round 4 (run 45634012782) found. Catalog 70 (the host's _getCatalogs list, read by San Diego City's round 1, run 45623736146). One call, the one sdccd read in this commit; no model call, writes nothing.",
  "college": "San Diego Mesa College",
  "questions": {
   "cq_subjects": "Which navigation node lists the course subjects with their names, and the names."
@@ -13,7 +13,7 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=70&parentId=18546",
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=70&parentId=17460",
    "capture_view": true
   }
  ]
