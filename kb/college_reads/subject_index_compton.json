@@ -1,5 +1,5 @@
 {
- "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 1: the catalog's prefix legend, if it prints one, and the first pages naming course descriptions, to learn how the catalog heads each subject. No model call.",
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 2: the course descriptions start on PDF page 119 (pass 1, run 45625006694); print only the lines above each subject's first course, which hold the catalog's subject heading. No model call.",
  "college": "Compton College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
@@ -11,8 +11,6 @@
   "prefix(?:es)? (?:and|&) (?:subject|discipline)",
   "course descriptions"
  ],
- "pdf_page_cap": 14,
- "pdf_unfolded": true,
  "pages": [
   {
    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf",
@@ -20,5 +18,10 @@
     "subject_titles"
    ]
   }
- ]
+ ],
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z]{1,6})[ -]?\\d{1,4}[A-Z]{0,2}\\b",
+  "before": 4,
+  "start_page": 119
+ }
 }
