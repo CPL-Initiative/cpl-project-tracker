@@ -668,6 +668,16 @@ jobs:
       - name: Program requirements lever pins (S727)
         if: matrix.shard == 4
         run: python3 tests/program_requirements_lever_pins_s727_test.py
+      # S727 plan s727v: Antelope Valley 43028 (a Cal-GETC degree whose page prints only CSU GE and IGETC figures),
+      # collected with its gap named. Pure stdlib.
+      - name: Program requirements GE figures of another pattern (S727 s727v)
+        if: matrix.shard == 4
+        run: python3 tests/program_ge_other_pattern_s727v_test.py
+      # S727: an eLumen heading's award ("Welding AS", "Welding Cert", "Addiction Studies, CA", a title over
+      # "A.S. Degree (") names the program's own page, so a degree and its certificate never take each other's.
+      - name: Program requirements eLumen sister awards (S727)
+        if: matrix.shard == 4
+        run: python3 tests/program_requirements_elumen_sister_award_s727_test.py
       # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
       # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
       - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)
@@ -847,6 +857,11 @@ jobs:
       - name: Cheap piles S721 at Palo Verde (named gaps, the plan)
         if: matrix.shard == 2
         run: python3 tests/program_piles_s721_paloverde_test.py
+      # S727 plan s727f: the records held for a person at twelve colleges, collected with each gap named (two new
+      # kinds), seven named gaps with no record; the plan.
+      - name: Cheap piles S727, the records held for a person (named gaps, the plan)
+        if: matrix.shard == 2
+        run: python3 tests/program_piles_s727_persons_test.py
       # S721 at Porterville: the census's 19 wording-rule records, one passed by its catalog's misprint, 14
       # collected with named gaps, 4 held; the plan.
       - name: Cheap piles S721 at Porterville (a misprint rename, named gaps, the plan)
@@ -871,6 +886,11 @@ jobs:
       - name: Cheap piles S727 at College of the Canyons (named gaps, an insert, the plan)
         if: matrix.shard == 1
         run: python3 tests/program_piles_s727_canyons_test.py
+      # S727 at Santa Barbara City: the census's 18 wording-rule records, 6 passed by a rescore under the floor,
+      # 6 collected with named gaps (one new kind), 6 held; the plan.
+      - name: Cheap piles S727 at Santa Barbara City (a rescore, named gaps, the plan)
+        if: matrix.shard == 1
+        run: python3 tests/program_piles_s727_sbcc_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

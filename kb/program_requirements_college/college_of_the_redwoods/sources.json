@@ -2381,20 +2381,21 @@
    "PHYS2A"
   ],
   "source": {
-   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
-   "title": "Aquaculture Technology",
-   "h1": "Aquaculture Technology",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-ca-fall-2023",
+   "title": "Aquaculture Technology, CA",
+   "h1": "Aquaculture Technology, CA",
    "text_from": "innerText",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "coa",
+    "section_line": "aquaculture technology, ca certificate of achievement (",
+    "section_fit": 0.667,
+    "exact": 1
    }
   },
   "listed": 19,
-  "text_chars": 5009
+  "text_chars": 5021
  },
  {
   "control_number": "42928",
@@ -2641,20 +2642,21 @@
    "PTEC103"
   ],
   "source": {
-   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-fall-2026",
-   "title": "Psychiatric Technician",
-   "h1": "Psychiatric Technician",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-ca-fall-2026",
+   "title": "Psychiatric Technician, CA",
+   "h1": "Psychiatric Technician, CA",
    "text_from": "innerText",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "coa",
+    "section_line": "psychiatric technician, ca certificate of achievement (",
+    "section_fit": 0.667,
+    "exact": 1
    }
   },
   "listed": 6,
-  "text_chars": 6236
+  "text_chars": 2857
  },
  {
   "control_number": "45595",
@@ -2672,20 +2674,21 @@
    "PTEC103"
   ],
   "source": {
-   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-ca-fall-2026",
-   "title": "Psychiatric Technician, CA",
-   "h1": "Psychiatric Technician, CA",
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-fall-2026",
+   "title": "Psychiatric Technician",
+   "h1": "Psychiatric Technician",
    "text_from": "innerText",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "as",
+    "section_line": "psychiatric technician a.s. degree (",
+    "section_fit": 1.0,
+    "exact": 1
    }
   },
   "listed": 6,
-  "text_chars": 2857
+  "text_chars": 6236
  },
  {
   "control_number": "45727",
