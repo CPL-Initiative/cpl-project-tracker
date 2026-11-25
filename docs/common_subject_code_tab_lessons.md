@@ -855,3 +855,7 @@ heading and stays a hint; a worker that joins wrapped headings or infers a code'
 leaves an inferred title out; read plans go in their own commit before the data, since a push re-reads the plans its
 last commit changes; and a list keyed on college names needs a folded name (Trade Technical against Trade-Technical,
 the Credit siblings).
+
+**The stray-code rescore (S730):** with titles at 92 of the 116 stray local subjects, the title named a discipline for
+24 and agreed with no filing in 2 cases where a filing existed (FJMP, CSC): a statewide filing keyed on letters still
+needs the title's check. 56 have neither a title that names a discipline nor a filing, which is the list for Sam.
