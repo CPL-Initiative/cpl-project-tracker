@@ -1,0 +1,1577 @@
+{
+ "_what": "The subjects Victor Valley College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Victor Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:40:25Z",
+ "run": "45625259489",
+ "source": [
+  "https://catalog.vvc.edu/course-descriptions/aeng/",
+  "https://catalog.vvc.edu/course-descriptions/agnr/",
+  "https://catalog.vvc.edu/course-descriptions/ahom/",
+  "https://catalog.vvc.edu/course-descriptions/aldh/",
+  "https://catalog.vvc.edu/course-descriptions/amus/",
+  "https://catalog.vvc.edu/course-descriptions/anim/",
+  "https://catalog.vvc.edu/course-descriptions/anth/",
+  "https://catalog.vvc.edu/course-descriptions/ape/",
+  "https://catalog.vvc.edu/course-descriptions/arch/",
+  "https://catalog.vvc.edu/course-descriptions/art/",
+  "https://catalog.vvc.edu/course-descriptions/arth/",
+  "https://catalog.vvc.edu/course-descriptions/asl/",
+  "https://catalog.vvc.edu/course-descriptions/astr/",
+  "https://catalog.vvc.edu/course-descriptions/athl/",
+  "https://catalog.vvc.edu/course-descriptions/auto/",
+  "https://catalog.vvc.edu/course-descriptions/ava/",
+  "https://catalog.vvc.edu/course-descriptions/badm/",
+  "https://catalog.vvc.edu/course-descriptions/bet/",
+  "https://catalog.vvc.edu/course-descriptions/biol/",
+  "https://catalog.vvc.edu/course-descriptions/bre/",
+  "https://catalog.vvc.edu/course-descriptions/bskl/",
+  "https://catalog.vvc.edu/course-descriptions/bsrt/",
+  "https://catalog.vvc.edu/course-descriptions/cart/",
+  "https://catalog.vvc.edu/course-descriptions/cdl/",
+  "https://catalog.vvc.edu/course-descriptions/chdv/",
+  "https://catalog.vvc.edu/course-descriptions/chem/",
+  "https://catalog.vvc.edu/course-descriptions/cis/",
+  "https://catalog.vvc.edu/course-descriptions/cj/",
+  "https://catalog.vvc.edu/course-descriptions/cmst/",
+  "https://catalog.vvc.edu/course-descriptions/comm/",
+  "https://catalog.vvc.edu/course-descriptions/cort/",
+  "https://catalog.vvc.edu/course-descriptions/cosm/",
+  "https://catalog.vvc.edu/course-descriptions/course-descriptions.pdf",
+  "https://catalog.vvc.edu/course-descriptions/ct/",
+  "https://catalog.vvc.edu/course-descriptions/ctmf/",
+  "https://catalog.vvc.edu/course-descriptions/ctmt/",
+  "https://catalog.vvc.edu/course-descriptions/ctpw/",
+  "https://catalog.vvc.edu/course-descriptions/dvst/",
+  "https://catalog.vvc.edu/course-descriptions/econ/",
+  "https://catalog.vvc.edu/course-descriptions/educ/",
+  "https://catalog.vvc.edu/course-descriptions/elct/",
+  "https://catalog.vvc.edu/course-descriptions/emc/",
+  "https://catalog.vvc.edu/course-descriptions/ems/",
+  "https://catalog.vvc.edu/course-descriptions/engd/",
+  "https://catalog.vvc.edu/course-descriptions/engl/",
+  "https://catalog.vvc.edu/course-descriptions/entr/",
+  "https://catalog.vvc.edu/course-descriptions/envt/",
+  "https://catalog.vvc.edu/course-descriptions/esl/",
+  "https://catalog.vvc.edu/course-descriptions/etc/",
+  "https://catalog.vvc.edu/course-descriptions/eth/",
+  "https://catalog.vvc.edu/course-descriptions/fire/",
+  "https://catalog.vvc.edu/course-descriptions/fren/",
+  "https://catalog.vvc.edu/course-descriptions/geog/",
+  "https://catalog.vvc.edu/course-descriptions/geol/",
+  "https://catalog.vvc.edu/course-descriptions/glst/",
+  "https://catalog.vvc.edu/course-descriptions/guid/",
+  "https://catalog.vvc.edu/course-descriptions/hist/",
+  "https://catalog.vvc.edu/course-descriptions/hlth/",
+  "https://catalog.vvc.edu/course-descriptions/hmsv/",
+  "https://catalog.vvc.edu/course-descriptions/jour/",
+  "https://catalog.vvc.edu/course-descriptions/kin/",
+  "https://catalog.vvc.edu/course-descriptions/kind/",
+  "https://catalog.vvc.edu/course-descriptions/libr/",
+  "https://catalog.vvc.edu/course-descriptions/math/",
+  "https://catalog.vvc.edu/course-descriptions/mnlo/",
+  "https://catalog.vvc.edu/course-descriptions/musc/",
+  "https://catalog.vvc.edu/course-descriptions/notr/",
+  "https://catalog.vvc.edu/course-descriptions/nurs/",
+  "https://catalog.vvc.edu/course-descriptions/ocea/",
+  "https://catalog.vvc.edu/course-descriptions/padm/",
+  "https://catalog.vvc.edu/course-descriptions/pal/",
+  "https://catalog.vvc.edu/course-descriptions/phil/",
+  "https://catalog.vvc.edu/course-descriptions/phle/",
+  "https://catalog.vvc.edu/course-descriptions/phot/",
+  "https://catalog.vvc.edu/course-descriptions/pht/",
+  "https://catalog.vvc.edu/course-descriptions/phys/",
+  "https://catalog.vvc.edu/course-descriptions/pols/",
+  "https://catalog.vvc.edu/course-descriptions/psci/",
+  "https://catalog.vvc.edu/course-descriptions/psyc/",
+  "https://catalog.vvc.edu/course-descriptions/pts/",
+  "https://catalog.vvc.edu/course-descriptions/rlst/",
+  "https://catalog.vvc.edu/course-descriptions/rmgt/",
+  "https://catalog.vvc.edu/course-descriptions/rspt/",
+  "https://catalog.vvc.edu/course-descriptions/soc/",
+  "https://catalog.vvc.edu/course-descriptions/soci/",
+  "https://catalog.vvc.edu/course-descriptions/span/",
+  "https://catalog.vvc.edu/course-descriptions/stat/",
+  "https://catalog.vvc.edu/course-descriptions/ta/",
+  "https://catalog.vvc.edu/course-descriptions/tutr/",
+  "https://catalog.vvc.edu/course-descriptions/wee/",
+  "https://catalog.vvc.edu/course-descriptions/weld/",
+  "https://catalog.vvc.edu/course-descriptions/wkpr/"
+ ],
+ "rows": [
+  {
+   "code": "AENG",
+   "heading": "English as a Second Language Noncredit",
+   "heading_printed": "English as a Second Language Noncredit",
+   "rule": "index",
+   "codes": [
+    "AENG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/aeng/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AGNR",
+   "heading": "Agriculture and Natural Resources",
+   "heading_printed": "Agriculture and Natural Resources",
+   "rule": "index",
+   "codes": [
+    "AGNR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/agnr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AHOM",
+   "heading": "Adult Education Home Economics",
+   "heading_printed": "Adult Education Home Economics",
+   "rule": "index",
+   "codes": [
+    "AHOM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/ahom/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ALDH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "index",
+   "codes": [
+    "ALDH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/aldh/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AMUS",
+   "heading": "Music Noncredit",
+   "heading_printed": "Music Noncredit",
+   "rule": "index",
+   "codes": [
+    "AMUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/amus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ANIM",
+   "heading": "3D Animation",
+   "heading_printed": "3D Animation",
+   "rule": "index",
+   "codes": [
+    "ANIM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/anim/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "APE",
+   "heading": "Adapted Physical Education",
+   "heading_printed": "Adapted Physical Education",
+   "rule": "index",
+   "codes": [
+    "APE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/ape/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/arch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ART",
+   "heading": "Art and Design",
+   "heading_printed": "Art and Design",
+   "rule": "index",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/astr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ATHL",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATHL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/athl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive",
+   "heading_printed": "Automotive",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AVA",
+   "heading": "Aviation",
+   "heading_printed": "Aviation",
+   "rule": "index",
+   "codes": [
+    "AVA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/ava/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "BADM",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BADM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/badm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "BET",
+   "heading": "Business Education Technologies",
+   "heading_printed": "Business Education Technologies",
+   "rule": "index",
+   "codes": [
+    "BET"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/bet/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biological Sciences",
+   "heading_printed": "Biological Sciences",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "BRE",
+   "heading": "Business Real Estate",
+   "heading_printed": "Business Real Estate",
+   "rule": "index",
+   "codes": [
+    "BRE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/bre/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "BSKL",
+   "heading": "Basic Skills",
+   "heading_printed": "Basic Skills",
+   "rule": "index",
+   "codes": [
+    "BSKL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/bskl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "BSRT",
+   "heading": "Bachelor of Science Respiratory Therapy",
+   "heading_printed": "Bachelor of Science Respiratory Therapy",
+   "rule": "index",
+   "codes": [
+    "BSRT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/bsrt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CART",
+   "heading": "Commercial Art",
+   "heading_printed": "Commercial Art",
+   "rule": "index",
+   "codes": [
+    "CART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/cart/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CDL",
+   "heading": "Commercial Drivers License",
+   "heading_printed": "Commercial Drivers License",
+   "rule": "index",
+   "codes": [
+    "CDL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/cdl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CHDV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CHDV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/chdv/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Science",
+   "heading_printed": "Computer Information Science",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CJ",
+   "heading": "Criminal Justice",
+   "heading_printed": "Criminal Justice",
+   "rule": "index",
+   "codes": [
+    "CJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/cj/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CMST",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "CMST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/cmst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CORT",
+   "heading": "Court Reporting",
+   "heading_printed": "Court Reporting",
+   "rule": "index",
+   "codes": [
+    "CORT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/cort/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "index",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/cosm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CT",
+   "heading": "Construction Technology",
+   "heading_printed": "Construction Technology",
+   "rule": "index",
+   "codes": [
+    "CT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/ct/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CTMF",
+   "heading": "Construction Technology Manufacturing",
+   "heading_printed": "Construction Technology Manufacturing",
+   "rule": "index",
+   "codes": [
+    "CTMF"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/ctmf/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CTMT",
+   "heading": "Construction Technology Maintenance",
+   "heading_printed": "Construction Technology Maintenance",
+   "rule": "index",
+   "codes": [
+    "CTMT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/ctmt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CTPW",
+   "heading": "Construction Technology Public Works",
+   "heading_printed": "Construction Technology Public Works",
+   "rule": "index",
+   "codes": [
+    "CTPW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/ctpw/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "DVST",
+   "heading": "Developmental Studies",
+   "heading_printed": "Developmental Studies",
+   "rule": "index",
+   "codes": [
+    "DVST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/dvst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/educ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ELCT",
+   "heading": "Electronics and Computer Technology",
+   "heading_printed": "Electronics and Computer Technology",
+   "rule": "index",
+   "codes": [
+    "ELCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/elct/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "EMC",
+   "heading": "Emergency Medical Certification",
+   "heading_printed": "Emergency Medical Certification",
+   "rule": "index",
+   "codes": [
+    "EMC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/emc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/ems/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ENGD",
+   "heading": "Engineering Drafting",
+   "heading_printed": "Engineering Drafting",
+   "rule": "index",
+   "codes": [
+    "ENGD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/engd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ENTR",
+   "heading": "Entrepreneurship",
+   "heading_printed": "Entrepreneurship",
+   "rule": "index",
+   "codes": [
+    "ENTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/entr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ENVT",
+   "heading": "Environmental Technology",
+   "heading_printed": "Environmental Technology",
+   "rule": "index",
+   "codes": [
+    "ENVT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/envt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ETC",
+   "heading": "Emergency Telecommunications",
+   "heading_printed": "Emergency Telecommunications",
+   "rule": "index",
+   "codes": [
+    "ETC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/etc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ETH",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/eth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/fire/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/fren/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geological Sciences",
+   "heading_printed": "Geological Sciences",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/geol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GLST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GLST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/glst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GUID",
+   "heading": "Guidance",
+   "heading_printed": "Guidance",
+   "rule": "index",
+   "codes": [
+    "GUID"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/guid/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/hlth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "HMSV",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HMSV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/hmsv/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/jour/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/kin/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "KIND",
+   "heading": "Kinesiology Dance",
+   "heading_printed": "Kinesiology Dance",
+   "rule": "index",
+   "codes": [
+    "KIND"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/kind/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/libr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MNLO",
+   "heading": "Manufacturing and Logistics",
+   "heading_printed": "Manufacturing and Logistics",
+   "rule": "index",
+   "codes": [
+    "MNLO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/mnlo/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MUSC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/musc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "NOTR",
+   "heading": "Notary Public",
+   "heading_printed": "Notary Public",
+   "rule": "index",
+   "codes": [
+    "NOTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/notr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/nurs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "OCEA",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "index",
+   "codes": [
+    "OCEA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/ocea/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PADM",
+   "heading": "Public Administration",
+   "heading_printed": "Public Administration",
+   "rule": "index",
+   "codes": [
+    "PADM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/padm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PAL",
+   "heading": "Paralegal Studies",
+   "heading_printed": "Paralegal Studies",
+   "rule": "index",
+   "codes": [
+    "PAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/pal/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PDF",
+   "heading": "Download Page",
+   "heading_printed": "Download Page",
+   "rule": "index",
+   "codes": [
+    "PDF"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/course-descriptions.pdf",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHLE",
+   "heading": "Phlebotomy",
+   "heading_printed": "Phlebotomy",
+   "rule": "index",
+   "codes": [
+    "PHLE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/phle/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/phot/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHT",
+   "heading": "Pharmacy Technician",
+   "heading_printed": "Pharmacy Technician",
+   "rule": "index",
+   "codes": [
+    "PHT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/pht/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PSCI",
+   "heading": "Physical Sciences",
+   "heading_printed": "Physical Sciences",
+   "rule": "index",
+   "codes": [
+    "PSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/psci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PTS",
+   "heading": "Physical Therapy Services",
+   "heading_printed": "Physical Therapy Services",
+   "rule": "index",
+   "codes": [
+    "PTS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/pts/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "RLST",
+   "heading": "Religious Studies",
+   "heading_printed": "Religious Studies",
+   "rule": "index",
+   "codes": [
+    "RLST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/rlst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "RMGT",
+   "heading": "Restaurant Management",
+   "heading_printed": "Restaurant Management",
+   "rule": "index",
+   "codes": [
+    "RMGT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/rmgt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "RSPT",
+   "heading": "Respiratory Therapy",
+   "heading_printed": "Respiratory Therapy",
+   "rule": "index",
+   "codes": [
+    "RSPT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/rspt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/soci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "TA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "TA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/ta/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "TUTR",
+   "heading": "Tutor",
+   "heading_printed": "Tutor",
+   "rule": "index",
+   "codes": [
+    "TUTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/tutr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "WEE",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WEE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/wee/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/weld/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "WKPR",
+   "heading": "Work Force Preparation",
+   "heading_printed": "Work Force Preparation",
+   "rule": "index",
+   "codes": [
+    "WKPR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vvc.edu/course-descriptions/wkpr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  }
+ ],
+ "subjects": 92,
+ "with_heading": 92
+}

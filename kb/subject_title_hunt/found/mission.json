@@ -1,0 +1,395 @@
+{
+ "college": "Mission College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:39:31Z",
+ "run": "45635829423",
+ "plan": "kb/college_reads/subject_index_mission.json",
+ "titles": [
+  {
+   "code": "ACC",
+   "title": "Accounting",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/acc",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ANT",
+   "title": "Anthropology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/ant",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ARB",
+   "title": "Modern Languages",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/spa",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/art",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/art",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "AST",
+   "title": "Astronomy",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/ast",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/bio",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/bus",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "CAP",
+   "title": "Computer Applications",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/cap",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "CHD",
+   "title": "Child Development",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/chd",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "CHI",
+   "title": "Modern Languages",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/spa",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "CHM",
+   "title": "Chemistry",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/chm",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/cis",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "CIT",
+   "title": "Computer Information Technology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/cit",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "COM",
+   "title": "Communication Studies",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/com",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/com",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ECN",
+   "title": "Economics",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/ecn",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/ecn",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "EGR",
+   "title": "Engineering",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/egr",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "EMSA",
+   "title": "Fire Protection Technology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/fpt",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ENG",
+   "title": "English",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/eng",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/eng",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language (ESL)",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/esl",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ETH",
+   "title": "Ethnic Studies",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/eth",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "FDR",
+   "title": "Hospitality Management",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/hmt",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "FPT",
+   "title": "Fire Protection Technology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/fpt",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "GDS",
+   "title": "Graphic Design and Multimedia",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/gds",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "GEO",
+   "title": "Geography",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/geo",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HIS",
+   "title": "History",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/his",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/his",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HMT",
+   "title": "Hospitality Management",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/hmt",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HOC",
+   "title": "Nursing",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/nur",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/hum",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "JPN",
+   "title": "Modern Languages",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/spa",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/kin",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "LIN",
+   "title": "Linguistics",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/lin",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "MAT",
+   "title": "Mathematics",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/mat",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "MTT",
+   "title": "Mechatronic Technology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/mtt",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/mus",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "NCE",
+   "title": "English as a Second Language (ESL)",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/esl",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "NCH",
+   "title": "Community Health Worker",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/chw",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "NTR",
+   "title": "Nutrition and Dietetics",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/ntr",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PHI",
+   "title": "Philosophy",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/phil",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PHT",
+   "title": "Pharmacy Tech",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/pht",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PHY",
+   "title": "Physics",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/phy",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "POL",
+   "title": "Political Science",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/pol",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/pol",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/psy",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/psy",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "RNB",
+   "title": "Nursing",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/nur",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/sjs",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/soc",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/soc",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "SPA",
+   "title": "Modern Languages",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/spa",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/mat",
+   "where": "catalog",
+   "method": "department label"
+  }
+ ],
+ "note": "The registry's courses view (24-25/courses) answers Catalog is not Published; the catalog lives at mission.elumenapp.com/catalog/24-25 under a 2026-2027 heading (the start page reads 'Mission College Catalog 2026-2027'). Its All Courses list prints no heading between codes. Each of the five area pages lists its SUBJECTS by name, each linked to a department page (24-25/department/<code>) that lists that subject's courses; a page can list several codes (Modern Languages: ARB, CHI, JPN, SPA). Each code is filed under the page that lists its first course (method department label, since one page carries several codes). The Administration of Justice and Public Health pages printed no course line the read could match, so neither code is filed. Read by run 45635829423 at e039cde7 (round 7 of the plan)."
+}

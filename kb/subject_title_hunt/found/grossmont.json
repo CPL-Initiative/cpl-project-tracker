@@ -1,0 +1,443 @@
+{
+ "college": "Grossmont College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:52:17Z",
+ "run": "45627459464",
+ "plan": "kb/college_reads/subject_index_grossmont.json",
+ "titles": [
+  {
+   "code": "AOJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARBC",
+   "title": "Arabic",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIO",
+   "title": "Biological Sciences",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biological Sciences",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BOT",
+   "title": "Business Office Technology",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CVTE",
+   "title": "Cardiovascular Technology",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CD",
+   "title": "Child Development",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSIS",
+   "title": "Computer Science Information Systems",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CA",
+   "title": "Culinary Arts",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ED",
+   "title": "Education",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ES",
+   "title": "Exercise Science",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FS",
+   "title": "Family Studies",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEND",
+   "title": "Gender Studies",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HED",
+   "title": "Health Education",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIB",
+   "title": "Library",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MCOM",
+   "title": "Media Communications",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OTA",
+   "title": "Occupational Therapy Assistant",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEA",
+   "title": "Oceanography",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OT",
+   "title": "Orthopedic Technology",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDSS",
+   "title": "Personal Dev-Success Services",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSC",
+   "title": "Physical Science",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYC",
+   "title": "Physics",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POSC",
+   "title": "Political Science",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RELG",
+   "title": "Religious Studies",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RESP",
+   "title": "Respiratory Therapy",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SCI",
+   "title": "Science",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THTR",
+   "title": "Theatre Arts",
+   "url": "https://catalog.gcccd.edu/grossmont/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

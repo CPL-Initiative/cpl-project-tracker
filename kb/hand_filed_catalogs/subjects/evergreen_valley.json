@@ -1,0 +1,1101 @@
+{
+ "_what": "The subjects Evergreen Valley College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Evergreen Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45626788039",
+ "source": [
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/acctg/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ai/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/aj/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/anth/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/art/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/arth/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/astro/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ath/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/athm/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/athw/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/auto/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/bim/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/biol/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/bis/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/bus/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/cadd/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/chem/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/cit/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/coms/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/comsc/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/couns/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/course-descriptions.pdf",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/dance/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/dlit/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/econ/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/edit/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/engl/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/engr/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/envir/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/esl/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/eth/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/fcs/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/fmt/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/geog/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/hed/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/hist/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/humnt/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ii/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/journ/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/kins/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/la/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/lib/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/math/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/mfgt/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/music/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/nurs/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ocean/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ped/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/phil/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/photo/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/phys/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/physc/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/polsc/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/psych/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/sl/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/soc/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/span/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/stat/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/theat/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ti/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/viet/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/we/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/woms/",
+  "https://catalog.evc.edu/course-descriptions-information/course-descriptions/wwt/"
+ ],
+ "rows": [
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/acctg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AI",
+   "heading": "Artificial Intelligence",
+   "heading_printed": "Artificial Intelligence",
+   "rule": "index",
+   "codes": [
+    "AI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ai/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/aj/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ASTRO",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTRO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/astro/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ATH",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ath/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ATHM",
+   "heading": "Athletics Intercollegiate Men",
+   "heading_printed": "Athletics Intercollegiate Men",
+   "rule": "index",
+   "codes": [
+    "ATHM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/athm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ATHW",
+   "heading": "Athletics Intercollegiate Women",
+   "heading_printed": "Athletics Intercollegiate Women",
+   "rule": "index",
+   "codes": [
+    "ATHW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/athw/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BIM",
+   "heading": "Building Information Modeling",
+   "heading_printed": "Building Information Modeling",
+   "rule": "index",
+   "codes": [
+    "BIM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/bim/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BIS",
+   "heading": "Business Information Systems",
+   "heading_printed": "Business Information Systems",
+   "rule": "index",
+   "codes": [
+    "BIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/bis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/bus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CADD",
+   "heading": "Computer Aided Design & Drafting",
+   "heading_printed": "Computer Aided Design & Drafting",
+   "rule": "index",
+   "codes": [
+    "CADD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/cadd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CIT",
+   "heading": "Computer & Information Technology",
+   "heading_printed": "Computer & Information Technology",
+   "rule": "index",
+   "codes": [
+    "CIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/cit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/coms/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "COMS",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/coms/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "COMSC",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "COMSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/comsc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "COUNS",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUNS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/couns/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "DLIT",
+   "heading": "Digital Literacy",
+   "heading_printed": "Digital Literacy",
+   "rule": "index",
+   "codes": [
+    "DLIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/dlit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "EDIT",
+   "heading": "Educational Instructional Technology",
+   "heading_printed": "Educational Instructional Technology",
+   "rule": "index",
+   "codes": [
+    "EDIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/edit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENVIR",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENVIR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/envir/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English As a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ETH",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/eth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "FCS",
+   "heading": "Family and Consumer Studies",
+   "heading_printed": "Family and Consumer Studies",
+   "rule": "index",
+   "codes": [
+    "FCS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/fcs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "FMT",
+   "heading": "Facilities Management Technology",
+   "heading_printed": "Facilities Management Technology",
+   "rule": "index",
+   "codes": [
+    "FMT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/fmt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/hed/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HUMNT",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMNT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/humnt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "II",
+   "heading": "Individualized Instruction",
+   "heading_printed": "Individualized Instruction",
+   "rule": "index",
+   "codes": [
+    "II"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ii/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "JOURN",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOURN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/journ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "KINS",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/kins/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "LA",
+   "heading": "Legal Assistant",
+   "heading_printed": "Legal Assistant",
+   "rule": "index",
+   "codes": [
+    "LA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/la/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library Studies",
+   "heading_printed": "Library Studies",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/lib/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MFGT",
+   "heading": "Manufacturing Technology",
+   "heading_printed": "Manufacturing Technology",
+   "rule": "index",
+   "codes": [
+    "MFGT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/mfgt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/nurs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "OCEAN",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "index",
+   "codes": [
+    "OCEAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ocean/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PDF",
+   "heading": "Download Page",
+   "heading_printed": "Download Page",
+   "rule": "index",
+   "codes": [
+    "PDF"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/course-descriptions.pdf",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PED",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ped/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/photo/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHYSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHYSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/physc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/polsc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "POLSC",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/polsc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/psych/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/psych/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SL",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "index",
+   "codes": [
+    "SL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/sl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "THEAT",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THEAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/theat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "TI",
+   "heading": "Translation and Interpretation",
+   "heading_printed": "Translation and Interpretation",
+   "rule": "index",
+   "codes": [
+    "TI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ti/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "VIET",
+   "heading": "Vietnamese",
+   "heading_printed": "Vietnamese",
+   "rule": "index",
+   "codes": [
+    "VIET"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/viet/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WE",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/we/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WOMS",
+   "heading": "Women's Studies",
+   "heading_printed": "Women's Studies",
+   "rule": "index",
+   "codes": [
+    "WOMS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/woms/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WWT",
+   "heading": "Water/Wastewater Technology",
+   "heading_printed": "Water/Wastewater Technology",
+   "rule": "index",
+   "codes": [
+    "WWT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/wwt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  }
+ ],
+ "subjects": 64,
+ "with_heading": 64
+}

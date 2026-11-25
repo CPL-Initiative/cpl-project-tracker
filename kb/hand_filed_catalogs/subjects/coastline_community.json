@@ -1,0 +1,1071 @@
+{
+ "_what": "The subjects Coastline Community College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Coastline Community College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:53:32Z",
+ "run": "45627908005",
+ "source": [
+  "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+  "https://catalog.cccd.edu/coastline/course-descriptions/noncredit-courses/"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "AGNG",
+   "heading": "Aging Studies",
+   "heading_printed": "Aging Studies",
+   "rule": "index",
+   "codes": [
+    "AGNG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ARAB",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "index",
+   "codes": [
+    "ARAB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "BC",
+   "heading": "Business Computing",
+   "heading_printed": "Business Computing",
+   "rule": "index",
+   "codes": [
+    "BC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "BCI",
+   "heading": "Building Codes Inspector",
+   "heading_printed": "Building Codes Inspector",
+   "rule": "index",
+   "codes": [
+    "BCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "BCT",
+   "heading": "Building Codes Technology",
+   "heading_printed": "Building Codes Technology",
+   "rule": "index",
+   "codes": [
+    "BCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "CJ",
+   "heading": "Criminal Justice",
+   "heading_printed": "Criminal Justice",
+   "rule": "index",
+   "codes": [
+    "CJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "CMST",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "CMST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "CYBR",
+   "heading": "Cybersecurity",
+   "heading_printed": "Cybersecurity",
+   "rule": "index",
+   "codes": [
+    "CYBR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "DMC",
+   "heading": "Digital Media Communications",
+   "heading_printed": "Digital Media Communications",
+   "rule": "index",
+   "codes": [
+    "DMC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "DMD",
+   "heading": "Digital Media Design",
+   "heading_printed": "Digital Media Design",
+   "rule": "index",
+   "codes": [
+    "DMD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ECOL",
+   "heading": "Ecology",
+   "heading_printed": "Ecology",
+   "rule": "index",
+   "codes": [
+    "ECOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ELL",
+   "heading": "English Language Learning",
+   "heading_printed": "English Language Learning",
+   "rule": "index",
+   "codes": [
+    "ELL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/noncredit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "EMGT",
+   "heading": "Emergency Management",
+   "heading_printed": "Emergency Management",
+   "rule": "index",
+   "codes": [
+    "EMGT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ETHS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "FN",
+   "heading": "Foods & Nutrition",
+   "heading_printed": "Foods & Nutrition",
+   "rule": "index",
+   "codes": [
+    "FN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "GERO",
+   "heading": "Gerontology",
+   "heading_printed": "Gerontology",
+   "rule": "index",
+   "codes": [
+    "GERO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "HSVC",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HSVC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ICS",
+   "heading": "Information Computer Sciences",
+   "heading_printed": "Information Computer Sciences",
+   "rule": "index",
+   "codes": [
+    "ICS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "IT",
+   "heading": "Information Technology",
+   "heading_printed": "Information Technology",
+   "rule": "index",
+   "codes": [
+    "IT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "index",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "MRSC",
+   "heading": "Marine Science",
+   "heading_printed": "Marine Science",
+   "rule": "index",
+   "codes": [
+    "MRSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "MS",
+   "heading": "Management & Supervision",
+   "heading_printed": "Management & Supervision",
+   "rule": "index",
+   "codes": [
+    "MS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "PSCI",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "PSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "PTEC",
+   "heading": "Process Technology",
+   "heading_printed": "Process Technology",
+   "rule": "index",
+   "codes": [
+    "PTEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "SM",
+   "heading": "Supply Management",
+   "heading_printed": "Supply Management",
+   "rule": "index",
+   "codes": [
+    "SM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "SPED",
+   "heading": "Special Education",
+   "heading_printed": "Special Education",
+   "rule": "index",
+   "codes": [
+    "SPED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "STAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theater Arts",
+   "heading_printed": "Theater Arts",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  },
+  {
+   "code": "VIET",
+   "heading": "Vietnamese",
+   "heading_printed": "Vietnamese",
+   "rule": "index",
+   "codes": [
+    "VIET"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627908005)",
+   "run": "45627908005"
+  }
+ ],
+ "subjects": 66,
+ "with_heading": 66
+}

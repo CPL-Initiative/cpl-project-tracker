@@ -1,0 +1,658 @@
+{
+ "college": "Madera College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:52:04Z",
+ "run": "45626743727",
+ "plan": "kb/college_reads/subject_index_madera.json",
+ "how": "The catalog's course section lists each subject as a node titled with its code and name; the run read those nodes through the catalog's own navigation JSON (_getNavigation), one call per subject list.",
+ "titles": [
+  {
+   "code": "ACCTG",
+   "title": "Accounting",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Accounting (ACCTG)",
+   "node": 1241
+  },
+  {
+   "code": "ADS",
+   "title": "Addiction Studies",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Addiction Studies (ADS)",
+   "node": 1242
+  },
+  {
+   "code": "AG",
+   "title": "Agriculture",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture (AG)",
+   "node": 1243
+  },
+  {
+   "code": "AGBS",
+   "title": "Agriculture Business",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture Business (AGBS)",
+   "node": 1244
+  },
+  {
+   "code": "AGED",
+   "title": "Agriculture Education",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture Education (AGED)",
+   "node": 1245
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "American Sign Language (ASL)",
+   "node": 1246
+  },
+  {
+   "code": "AS",
+   "title": "Animal Science",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Animal Science (AS)",
+   "node": 1247
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art (ART)",
+   "node": 1248
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art History (ARTH)",
+   "node": 1318
+  },
+  {
+   "code": "ASTRO",
+   "title": "Astronomy",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Astronomy (ASTRO)",
+   "node": 1249
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Astronomy (ASTR)",
+   "node": 1316
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Biology (BIOL)",
+   "node": 1250
+  },
+  {
+   "code": "BA",
+   "title": "Business Administration",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Business Administration (BA)",
+   "node": 1251
+  },
+  {
+   "code": "BT",
+   "title": "Business Technology",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Business Technology (BT)",
+   "node": 1325
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Chemistry (CHEM)",
+   "node": 1252
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Child Development (CDEV)",
+   "node": 1253
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Communication (COMM)",
+   "node": 1254
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Science (CSCI)",
+   "node": 1255
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Counseling (COUN)",
+   "node": 1256
+  },
+  {
+   "code": "CRIM",
+   "title": "Criminology",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Criminology (CRIM)",
+   "node": 1257
+  },
+  {
+   "code": "DEVSER",
+   "title": "Developmental Services",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Developmental Services (DEVSER)",
+   "node": 1258
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Economics (ECON)",
+   "node": 1259
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Education (EDUC)",
+   "node": 1260
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Engineering (ENGR)",
+   "node": 1261
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English (ENGL)",
+   "node": 1262
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English as a Second Language (ESL)",
+   "node": 1263
+  },
+  {
+   "code": "EH",
+   "title": "Environmental Horticulture",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Environmental Horticulture (EH)",
+   "node": 1264
+  },
+  {
+   "code": "ETHNST",
+   "title": "Ethnic Studies",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Ethnic Studies (ETHNST)",
+   "node": 1265
+  },
+  {
+   "code": "FILM",
+   "title": "Film",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Film (FILM)",
+   "node": 1266
+  },
+  {
+   "code": "FN",
+   "title": "Foods and Nutrition",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Foods and Nutrition (FN)",
+   "node": 1267
+  },
+  {
+   "code": "FSM",
+   "title": "Food Service Management",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Food Service Management (FSM)",
+   "node": 1268
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geography (GEOG)",
+   "node": 1269
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geology (GEOL)",
+   "node": 1270
+  },
+  {
+   "code": "HLTH",
+   "title": "Health Science",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Health Science (HLTH)",
+   "node": 1271
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "History (HIST)",
+   "node": 1272
+  },
+  {
+   "code": "HONORS",
+   "title": "Honors",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Honors (HONORS)",
+   "node": 1273
+  },
+  {
+   "code": "HSP",
+   "title": "Hospitality Management",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Hospitality Management (HSP)",
+   "node": 1274
+  },
+  {
+   "code": "HS",
+   "title": "Human Services",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Human Services (HS)",
+   "node": 1275
+  },
+  {
+   "code": "IT",
+   "title": "Industrial Technology",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Industrial Technology (IT)",
+   "node": 1276
+  },
+  {
+   "code": "IS",
+   "title": "Information Systems",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Information Systems (IS)",
+   "node": 1277
+  },
+  {
+   "code": "INTDS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Interdisciplinary Studies (INTDS)",
+   "node": 1278
+  },
+  {
+   "code": "JOURN",
+   "title": "Journalism",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Journalism (JOURN)",
+   "node": 1279
+  },
+  {
+   "code": "KINES",
+   "title": "Kinesiology",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Kinesiology (KINES)",
+   "node": 1280
+  },
+  {
+   "code": "LA",
+   "title": "Learning Assistance",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Learning Assistance (LA)",
+   "node": 1281
+  },
+  {
+   "code": "LIBSKL",
+   "title": "Library Skills",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Library Skills (LIBSKL)",
+   "node": 1282
+  },
+  {
+   "code": "LVN",
+   "title": "Licensed Vocational Nursing",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Licensed Vocational Nursing (LVN)",
+   "node": 1283
+  },
+  {
+   "code": "LING",
+   "title": "Linguistics",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Linguistics (LING)",
+   "node": 1284
+  },
+  {
+   "code": "MM",
+   "title": "Maintenance Mechanic",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Maintenance Mechanic (MM)",
+   "node": 1285
+  },
+  {
+   "code": "MFGT",
+   "title": "Manufacturing Technology",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Manufacturing Technology (MFGT)",
+   "node": 1286
+  },
+  {
+   "code": "MKTG",
+   "title": "Marketing",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Marketing (MKTG)",
+   "node": 1287
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mathematics (MATH)",
+   "node": 1288
+  },
+  {
+   "code": "MAG",
+   "title": "Mechanized Agriculture",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mechanized Agriculture (MAG)",
+   "node": 1289
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music (MUS)",
+   "node": 1290
+  },
+  {
+   "code": "NR",
+   "title": "Natural Resources",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Natural Resources (NR)",
+   "node": 1291
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Philosophy (PHIL)",
+   "node": 1292
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Photography (PHOTO)",
+   "node": 1293
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Education (PE)",
+   "node": 1294
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physics (PHYS)",
+   "node": 1295
+  },
+  {
+   "code": "PLS",
+   "title": "Plant Science",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Plant Science (PLS)",
+   "node": 1296
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Political Science (POLS)",
+   "node": 1297
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Psychology (PSYC)",
+   "node": 1298
+  },
+  {
+   "code": "PUNJABI",
+   "title": "Punjabi",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Punjabi (PUNJABI)",
+   "node": 1299
+  },
+  {
+   "code": "RN",
+   "title": "Registered Nursing",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Registered Nursing (RN)",
+   "node": 1300
+  },
+  {
+   "code": "SCI",
+   "title": "Science",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Science (SCI)",
+   "node": 1301
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Sociology (SOCI)",
+   "node": 1317
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Spanish (SPAN)",
+   "node": 1302
+  },
+  {
+   "code": "SLPA",
+   "title": "Speech Language Pathology Assistant",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Speech Language Pathology Assistant (SLPA)",
+   "node": 1303
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Statistics (STAT)",
+   "node": 1304
+  },
+  {
+   "code": "ST",
+   "title": "Supervised Tutoring",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Supervised Tutoring (ST)",
+   "node": 1305
+  },
+  {
+   "code": "TD",
+   "title": "Truck Driving",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Truck Driving (TD)",
+   "node": 1306
+  },
+  {
+   "code": "VESL",
+   "title": "Vocational English as a Second Language",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Vocational English as a Second Language (VESL)",
+   "node": 1307
+  },
+  {
+   "code": "WKEXP",
+   "title": "Work Experience Education",
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Work Experience Education (WKEXP)",
+   "node": 1308
+  }
+ ]
+}

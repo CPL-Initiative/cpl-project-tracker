@@ -1,0 +1,737 @@
+{
+ "college": "Cuesta College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:48:57Z",
+ "run": "45627124597",
+ "plan": "kb/college_reads/subject_index_cuesta.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29983
+  },
+  {
+   "code": "ASHS",
+   "title": "Addiction Studies, Social Work, & Human Services",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29990
+  },
+  {
+   "code": "AERO",
+   "title": "Aeronautical and Aviation Technology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 32737
+  },
+  {
+   "code": "AGAS",
+   "title": "Agriculture Animal Science",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 32524
+  },
+  {
+   "code": "AGB",
+   "title": "Agriculture Business",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29984
+  },
+  {
+   "code": "AGM",
+   "title": "Agriculture Mechanics",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29985
+  },
+  {
+   "code": "AGPS",
+   "title": "Agriculture Plant Science",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29986
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29991
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29987
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29988
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29989
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 32698
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29992
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29994
+  },
+  {
+   "code": "ABOD",
+   "title": "Auto Body Technology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29982
+  },
+  {
+   "code": "ATCH",
+   "title": "Automotive Technology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29993
+  },
+  {
+   "code": "AVMT",
+   "title": "Aviation Maintenance",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29995
+  },
+  {
+   "code": "BSHS",
+   "title": "Basic Skills High School",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29997
+  },
+  {
+   "code": "BSNC",
+   "title": "Basic Skills Noncredit",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29998
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29996
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 29999
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30001
+  },
+  {
+   "code": "CDFS",
+   "title": "Child Development and Family Studies",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30000
+  },
+  {
+   "code": "CSS",
+   "title": "College Success Studies",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30006
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30005
+  },
+  {
+   "code": "CNET",
+   "title": "Computer and Networking Tech",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30004
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30002
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 32585
+  },
+  {
+   "code": "CTCH",
+   "title": "Construction Technology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30007
+  },
+  {
+   "code": "CJ",
+   "title": "Criminal Justice",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30003
+  },
+  {
+   "code": "CUL",
+   "title": "Culinary Arts",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30008
+  },
+  {
+   "code": "DIST",
+   "title": "Distance",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30009
+  },
+  {
+   "code": "DRA",
+   "title": "Drama",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30010
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30012
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30013
+  },
+  {
+   "code": "EET",
+   "title": "Electronics & Electrical Tech",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30014
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30015
+  },
+  {
+   "code": "ECOL",
+   "title": "Emeritus College",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30011
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30017
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30016
+  },
+  {
+   "code": "ESL",
+   "title": "English Second Language",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30019
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Sciences",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30018
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30020
+  },
+  {
+   "code": "FTVE",
+   "title": "Film Television and Electronic Media",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30022
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 32765
+  },
+  {
+   "code": "FR",
+   "title": "French",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30021
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30023
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30024
+  },
+  {
+   "code": "GER",
+   "title": "German",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30025
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30026
+  },
+  {
+   "code": "HEED",
+   "title": "Health Education",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30027
+  },
+  {
+   "code": "HSCI",
+   "title": "Health Science",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 32503
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30028
+  },
+  {
+   "code": "HOSP",
+   "title": "Hospitality",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30029
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism and Digital Communication",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30030
+  },
+  {
+   "code": "KINA",
+   "title": "Kinesiology Activities",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30031
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology Theory",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30032
+  },
+  {
+   "code": "LGL",
+   "title": "Legal",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30033
+  },
+  {
+   "code": "LIBT",
+   "title": "Library/Info Technology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30034
+  },
+  {
+   "code": "LVN",
+   "title": "Licensed Vocational Nursing",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30035
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30037
+  },
+  {
+   "code": "MAST",
+   "title": "Medical Assisting",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30036
+  },
+  {
+   "code": "METE",
+   "title": "Meteorology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30038
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30039
+  },
+  {
+   "code": "NAWD",
+   "title": "Noncredit Adults With Disabilities",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30041
+  },
+  {
+   "code": "NAST",
+   "title": "Nursing Assistant",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30040
+  },
+  {
+   "code": "NRAD",
+   "title": "Nursing Registered Assoc. Deg.",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30042
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30043
+  },
+  {
+   "code": "OCEN",
+   "title": "Oceanography",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30044
+  },
+  {
+   "code": "PLGL",
+   "title": "Paralegal",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30050
+  },
+  {
+   "code": "PEDS",
+   "title": "Personal Development Studies",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30046
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30047
+  },
+  {
+   "code": "PHLB",
+   "title": "Phlebotomy",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30048
+  },
+  {
+   "code": "PSCI",
+   "title": "Physical Science",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30052
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30049
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30051
+  },
+  {
+   "code": "PDS",
+   "title": "Professional Development Studies",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30045
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30053
+  },
+  {
+   "code": "PSYT",
+   "title": "Psychiatric Technician",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30054
+  },
+  {
+   "code": "PHS",
+   "title": "Public Health Science",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 32504
+  },
+  {
+   "code": "REC",
+   "title": "Recreation Administration",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30055
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30056
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30057
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 32584
+  },
+  {
+   "code": "VESL",
+   "title": "Vocational ESL",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30058
+  },
+  {
+   "code": "VOCE",
+   "title": "Vocational Education",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30059
+  },
+  {
+   "code": "WATR",
+   "title": "Water Sciences and Operations",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30060
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30061
+  },
+  {
+   "code": "WELL",
+   "title": "Wellness",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30062
+  },
+  {
+   "code": "WEXP",
+   "title": "Work Experience",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30063
+  },
+  {
+   "code": "WKFP",
+   "title": "Workforce Preparation",
+   "url": "https://cuesta.curriqunet.com/Catalog/_getNavigation?id=15&parentId=29981",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 30064
+  }
+ ]
+}

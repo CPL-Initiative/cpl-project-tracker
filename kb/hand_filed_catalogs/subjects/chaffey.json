@@ -1,0 +1,1358 @@
+{
+ "_what": "The subjects Chaffey College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Chaffey College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:02:32Z",
+ "run": "45629512231",
+ "source": [
+  "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090"
+ ],
+ "rows": [
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ACCTGFS",
+   "heading": "Accounting and Financial Planning",
+   "heading_printed": "Accounting and Financial Planning",
+   "rule": "index",
+   "codes": [
+    "ACCTGFS"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AI",
+   "heading": "Artificial Intelligence",
+   "heading_printed": "Artificial Intelligence",
+   "rule": "index",
+   "codes": [
+    "AI"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AMT",
+   "heading": "Aviation Maintenance Technology",
+   "heading_printed": "Aviation Maintenance Technology",
+   "rule": "index",
+   "codes": [
+    "AMT"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ANTHRO",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTHRO"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ARTGD",
+   "heading": "Art: Graphic Design/Digital Media",
+   "heading_printed": "Art: Graphic Design/Digital Media",
+   "rule": "index",
+   "codes": [
+    "ARTGD"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ASTRON",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTRON"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AUTOTEC",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTOTEC"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BRDCAST",
+   "heading": "Broadcasting",
+   "heading_printed": "Broadcasting",
+   "rule": "index",
+   "codes": [
+    "BRDCAST"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BUSL",
+   "heading": "Business Legal Studies",
+   "heading_printed": "Business Legal Studies",
+   "rule": "index",
+   "codes": [
+    "BUSL"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BUSMGT",
+   "heading": "Business: Management",
+   "heading_printed": "Business: Management",
+   "rule": "index",
+   "codes": [
+    "BUSMGT"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BUSMKT",
+   "heading": "Business: Marketing",
+   "heading_printed": "Business: Marketing",
+   "rule": "index",
+   "codes": [
+    "BUSMKT"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BUSTEC",
+   "heading": "Business Technology",
+   "heading_printed": "Business Technology",
+   "rule": "index",
+   "codes": [
+    "BUSTEC"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CDE",
+   "heading": "Child Development and Education",
+   "heading_printed": "Child Development and Education",
+   "rule": "index",
+   "codes": [
+    "CDE"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CISGAME",
+   "heading": "Computer Information Systems: Game Development",
+   "heading_printed": "Computer Information Systems: Game Development",
+   "rule": "index",
+   "codes": [
+    "CISGAME"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CJ",
+   "heading": "Criminal Justice",
+   "heading_printed": "Criminal Justice",
+   "rule": "index",
+   "codes": [
+    "CJ"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "COMPSCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "COMPSCI"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "COMSTD",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMSTD"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CUL",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CUL"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "DRAFT",
+   "heading": "Drafting",
+   "heading_printed": "Drafting",
+   "rule": "index",
+   "codes": [
+    "DRAFT"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ED",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "ED"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EGTECH",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "EGTECH"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EMP",
+   "heading": "Employability Skills",
+   "heading_printed": "Employability Skills",
+   "rule": "index",
+   "codes": [
+    "EMP"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technician",
+   "heading_printed": "Emergency Medical Technician",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ENGIN",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGIN"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ESC",
+   "heading": "Earth Science",
+   "heading_printed": "Earth Science",
+   "rule": "index",
+   "codes": [
+    "ESC"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "FASHD",
+   "heading": "Fashion Design",
+   "heading_printed": "Fashion Design",
+   "rule": "index",
+   "codes": [
+    "FASHD"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "FASHM",
+   "heading": "Fashion Merchandising",
+   "heading_printed": "Fashion Merchandising",
+   "rule": "index",
+   "codes": [
+    "FASHM"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "FIRETEC",
+   "heading": "Fire Technology: Professional Firefighter",
+   "heading_printed": "Fire Technology: Professional Firefighter",
+   "rule": "index",
+   "codes": [
+    "FIRETEC"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "FR",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FR"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GERO",
+   "heading": "Gerontology",
+   "heading_printed": "Gerontology",
+   "rule": "index",
+   "codes": [
+    "GERO"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GUID",
+   "heading": "Guidance",
+   "heading_printed": "Guidance",
+   "rule": "index",
+   "codes": [
+    "GUID"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HOTFS",
+   "heading": "Hospitality Management",
+   "heading_printed": "Hospitality Management",
+   "rule": "index",
+   "codes": [
+    "HOTFS"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HS",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HVACR",
+   "heading": "Heating, Ventilation, Air Conditioning and Refrigeration",
+   "heading_printed": "Heating, Ventilation, Air Conditioning and Refrigeration",
+   "rule": "index",
+   "codes": [
+    "HVACR"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ID",
+   "heading": "Interior Design",
+   "heading_printed": "Interior Design",
+   "rule": "index",
+   "codes": [
+    "ID"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "IET",
+   "heading": "Industrial Electrical Technology",
+   "heading_printed": "Industrial Electrical Technology",
+   "rule": "index",
+   "codes": [
+    "IET"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "IETELMT",
+   "heading": "Industrial Electrical Technology: Electromechanical Technology",
+   "heading_printed": "Industrial Electrical Technology: Electromechanical Technology",
+   "rule": "index",
+   "codes": [
+    "IETELMT"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "IETMECH",
+   "heading": "Industrial Electrical Technology: Mechatronics",
+   "heading_printed": "Industrial Electrical Technology: Mechatronics",
+   "rule": "index",
+   "codes": [
+    "IETMECH"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ITIS",
+   "heading": "Information Technology and Information Systems",
+   "heading_printed": "Information Technology and Information Systems",
+   "rule": "index",
+   "codes": [
+    "ITIS"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "KINACT",
+   "heading": "Kinesiology: Activity",
+   "heading_printed": "Kinesiology: Activity",
+   "rule": "index",
+   "codes": [
+    "KINACT"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "KINLEC",
+   "heading": "Kinesiology: Lecture",
+   "heading_printed": "Kinesiology: Lecture",
+   "rule": "index",
+   "codes": [
+    "KINLEC"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "KINTM",
+   "heading": "Kinesiology: Team",
+   "heading_printed": "Kinesiology: Team",
+   "rule": "index",
+   "codes": [
+    "KINTM"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "NF",
+   "heading": "Nutrition and Food",
+   "heading_printed": "Nutrition and Food",
+   "rule": "index",
+   "codes": [
+    "NF"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "NURADN",
+   "heading": "Nursing: Associate Degree",
+   "heading_printed": "Nursing: Associate Degree",
+   "rule": "index",
+   "codes": [
+    "NURADN"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "NURAST",
+   "heading": "Nursing Assistant",
+   "heading_printed": "Nursing Assistant",
+   "rule": "index",
+   "codes": [
+    "NURAST"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "NURVN",
+   "heading": "Nursing: Vocational",
+   "heading_printed": "Nursing: Vocational",
+   "rule": "index",
+   "codes": [
+    "NURVN"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PH",
+   "heading": "Public Health",
+   "heading_printed": "Public Health",
+   "rule": "index",
+   "codes": [
+    "PH"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHLEB",
+   "heading": "Phlebotomy",
+   "heading_printed": "Phlebotomy",
+   "rule": "index",
+   "codes": [
+    "PHLEB"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHSCI",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHSCI"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PTA",
+   "heading": "Physical Therapy",
+   "heading_printed": "Physical Therapy",
+   "rule": "index",
+   "codes": [
+    "PTA"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "RADTEC",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "index",
+   "codes": [
+    "RADTEC"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SCSCI",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SCSCI"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SUCCESS",
+   "heading": "Success Centers",
+   "heading_printed": "Success Centers",
+   "rule": "index",
+   "codes": [
+    "SUCCESS"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SWHS",
+   "heading": "Social Work and Human Services",
+   "heading_printed": "Social Work and Human Services",
+   "rule": "index",
+   "codes": [
+    "SWHS"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "WORKEXP",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WORKEXP"
+   ],
+   "candidate": null,
+   "address": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  }
+ ],
+ "subjects": 84,
+ "with_heading": 84
+}

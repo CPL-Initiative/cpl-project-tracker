@@ -1,0 +1,9 @@
+{
+ "college": "Yuba College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:14:08Z",
+ "run": "45631163538",
+ "plan": "kb/college_reads/subject_index_yuba.json",
+ "titles": [],
+ "not_read": "Stopped after three failed attempts (runs 45625671325, 45627438096, 45629589579, 45631163538). The catalog PDF prints no prefix legend and no Course Descriptions section: its table of contents puts courses inside Programs and Courses (page 49 on), and the reads found only program pages and a kinesiology family-of-classes list (KINES 1.26 – Body Toning, page 132). A headings read keyed to 'CODE NUMBER – Title' with a Units line within three lines matched no course. A next read would print one subject's program-and-courses pages whole to learn its course layout."
+}

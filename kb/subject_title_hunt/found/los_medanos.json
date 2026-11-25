@@ -1,0 +1,400 @@
+{
+ "college": "Los Medanos College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:23:57Z",
+ "run": "45632402604",
+ "plan": "kb/college_reads/subject_index_los_medanos.json",
+ "titles": [
+  {
+   "code": "ACS",
+   "title": "Academic and Career Success",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/academicandcareersuccess",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ADJUS",
+   "title": "Administration of Justice",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/administrationofjustice",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/anthropology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/art",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ASTRO",
+   "title": "Astronomy",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/astronomy",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/automotivetechnology",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Automotive Technology Noncredit"
+   ]
+  },
+  {
+   "code": "BIOSC",
+   "title": "Biological Science",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/biologicalscience",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/business",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Business Noncredit"
+   ]
+  },
+  {
+   "code": "CHDEV",
+   "title": "Child Development/Early Childhood Education",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/childdevelopment/earlychildhoodeducation",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/chemistry",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "CNT",
+   "title": "Computer Science",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/computerscience",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/communicationstudies",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "COMSC",
+   "title": "Computer Science",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/computerscience",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "CONST",
+   "title": "Construction Noncredit",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/constructionnoncredit",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "COUNS",
+   "title": "Counseling",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/counseling",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Counseling Noncredit"
+   ]
+  },
+  {
+   "code": "DRAMA",
+   "title": "Drama",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/drama",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "DRONE",
+   "title": "UAS/Drone Operations Noncredit",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/uasdroneoperationsnoncredit",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ECE",
+   "title": "Child Development/Early Childhood Education",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/childdevelopment/earlychildhoodeducation",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/economics",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/emergencymedicalservices",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ENGIN",
+   "title": "Engineering",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/engineering",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/english",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ESL",
+   "title": "English As A Second Language (ESL)",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/englishasasecondlanguageesl",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ETEC",
+   "title": "Electrical/Instrumentation Technology",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/electrical/instrumentationtechnology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/ethnicstudies",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/firetechnology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "FRNCH",
+   "title": "French",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/french",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/history",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/humanities",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "JOURN",
+   "title": "Journalism",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/journalism",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "KINES",
+   "title": "Kinesiology",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/kinesiology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "KNACT",
+   "title": "Kinesiology",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/kinesiology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "KNDAN",
+   "title": "Kinesiology",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/kinesiology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "KNICA",
+   "title": "Kinesiology – Intercollegiate Athletics",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/kinesiologyintercollegiateathletics",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "MANGT",
+   "title": "Management And Supervision",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/managementandsupervision",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/mathematics",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Mathematics Noncredit"
+   ]
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/music",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "NUTRI",
+   "title": "Nutrition",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/nutrition",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/philosophy",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/physics",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PHYSC",
+   "title": "Physical Science",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/physicalscience",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/politicalscience",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/psychology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PTEC",
+   "title": "Process Technology",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/processtechnology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "RA",
+   "title": "Recording Arts",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/recordingarts",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "RNURS",
+   "title": "Nursing - Registered",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/nursingregistered",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "SIGN",
+   "title": "Sign Language",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/signlanguage",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/socialjusticestudies",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "SOCIO",
+   "title": "Sociology",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/sociology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/spanish",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/mathematics",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "VONUR",
+   "title": "Nursing - Vocational",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/nursingvocational",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/weldingtechnology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "WRKX",
+   "title": "Work Experience Education",
+   "url": "https://lmc.elumenapp.com/catalog/26-27/workexperienceeducation",
+   "where": "catalog",
+   "method": "department label"
+  }
+ ],
+ "note": "The catalog prints no subject heading and no prefix legend: the Understanding Catalog Information page says courses are listed alphabetically by department, and each department page (linked from the degrees page) lists its courses under the department's name. Each code is filed under the department page that lists its courses (method department label, weaker than a subject heading); a code also on a Noncredit department page keeps it in also_listed_under. The Italian page answered Catalog is not Published. Read by run 45632402604 at d4376cd7 (round 5 of the plan; the plan file now holds this round)."
+}

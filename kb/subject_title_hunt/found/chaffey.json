@@ -1,0 +1,820 @@
+{
+ "college": "Chaffey College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:02:32Z",
+ "run": "45629512231",
+ "plan": "kb/college_reads/subject_index_chaffey.json",
+ "how": "The catalog's Courses Index lists each subject as a node titled with its code and name; the run read those nodes through the catalog's own navigation JSON (_getNavigation).",
+ "titles": [
+  {
+   "code": "ACCTG",
+   "title": "Accounting",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ACCTG-Accounting",
+   "node": 18797
+  },
+  {
+   "code": "ACCTGFS",
+   "title": "Accounting and Financial Planning",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ACCTGFS-Accounting and Financial Planning",
+   "node": 20297
+  },
+  {
+   "code": "AI",
+   "title": "Artificial Intelligence",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AI-Artificial Intelligence",
+   "node": 20561
+  },
+  {
+   "code": "AMT",
+   "title": "Aviation Maintenance Technology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AMT-Aviation Maintenance Technology",
+   "node": 18798
+  },
+  {
+   "code": "ANTHRO",
+   "title": "Anthropology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ANTHRO-Anthropology",
+   "node": 20298
+  },
+  {
+   "code": "ARABIC",
+   "title": "Arabic",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARABIC-Arabic",
+   "node": 18799
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ART-Art",
+   "node": 20299
+  },
+  {
+   "code": "ARTGD",
+   "title": "Art: Graphic Design/Digital Media",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARTGD-Art: Graphic Design/Digital Media",
+   "node": 20456
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARTH-Art History",
+   "node": 18800
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASL-American Sign Language",
+   "node": 18801
+  },
+  {
+   "code": "ASTRON",
+   "title": "Astronomy",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASTRON-Astronomy",
+   "node": 20300
+  },
+  {
+   "code": "AUTOTEC",
+   "title": "Automotive Technology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AUTOTEC-Automotive Technology",
+   "node": 18802
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BIOL-Biology",
+   "node": 18803
+  },
+  {
+   "code": "BRDCAST",
+   "title": "Broadcasting",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BRDCAST-Broadcasting",
+   "node": 18804
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUS-Business",
+   "node": 20301
+  },
+  {
+   "code": "BUSL",
+   "title": "Business Legal Studies",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUSL-Business Legal Studies",
+   "node": 18805
+  },
+  {
+   "code": "BUSMGT",
+   "title": "Business: Management",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUSMGT-Business: Management",
+   "node": 20302
+  },
+  {
+   "code": "BUSMKT",
+   "title": "Business: Marketing",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUSMKT-Business: Marketing",
+   "node": 18806
+  },
+  {
+   "code": "BUSTEC",
+   "title": "Business Technology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUSTEC-Business Technology",
+   "node": 20303
+  },
+  {
+   "code": "CDE",
+   "title": "Child Development and Education",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CDE-Child Development and Education",
+   "node": 18807
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHEM-Chemistry",
+   "node": 20304
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHIN-Chinese",
+   "node": 18808
+  },
+  {
+   "code": "CINEMA",
+   "title": "Cinema",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CINEMA-Cinema",
+   "node": 20305
+  },
+  {
+   "code": "CISGAME",
+   "title": "Computer Information Systems: Game Development",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CISGAME-Computer Information Systems: Game Development",
+   "node": 18811
+  },
+  {
+   "code": "CJ",
+   "title": "Criminal Justice",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CJ-Criminal Justice",
+   "node": 20307
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMM & COMSTD-Communication Studies",
+   "node": 20308
+  },
+  {
+   "code": "COMSTD",
+   "title": "Communication Studies",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMM & COMSTD-Communication Studies",
+   "node": 20308
+  },
+  {
+   "code": "COMPSCI",
+   "title": "Computer Science",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMPSCI-Computer Science",
+   "node": 18814
+  },
+  {
+   "code": "CUL",
+   "title": "Culinary Arts",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CUL-Culinary Arts",
+   "node": 18816
+  },
+  {
+   "code": "DENTAL",
+   "title": "Dental",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DENTAL-Dental",
+   "node": 18817
+  },
+  {
+   "code": "DRAFT",
+   "title": "Drafting",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DRAFT-Drafting",
+   "node": 18818
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECON-Economics",
+   "node": 18819
+  },
+  {
+   "code": "ED",
+   "title": "Education",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ED-Education",
+   "node": 18820
+  },
+  {
+   "code": "EGTECH",
+   "title": "Engineering Technology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EGTECH-Engineering Technology",
+   "node": 18821
+  },
+  {
+   "code": "EMP",
+   "title": "Employability Skills",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EMP-Employability Skills",
+   "node": 18822
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technician",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EMT-Emergency Medical Technician",
+   "node": 18823
+  },
+  {
+   "code": "ENGIN",
+   "title": "Engineering",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGIN-Engineering",
+   "node": 18824
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGL-English",
+   "node": 18825
+  },
+  {
+   "code": "ESC",
+   "title": "Earth Science",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ESC-Earth Science",
+   "node": 18826
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ESL-English as a Second Language",
+   "node": 18827
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ETHN-Ethnic Studies",
+   "node": 19920
+  },
+  {
+   "code": "FASHD",
+   "title": "Fashion Design",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FASHD-Fashion Design",
+   "node": 20310
+  },
+  {
+   "code": "FASHM",
+   "title": "Fashion Merchandising",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FASHM-Fashion Merchandising",
+   "node": 18828
+  },
+  {
+   "code": "FIRETEC",
+   "title": "Fire Technology: Professional Firefighter",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FIRETEC-Fire Technology: Professional Firefighter",
+   "node": 18829
+  },
+  {
+   "code": "FR",
+   "title": "French",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FR-French",
+   "node": 18830
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOG-Geography",
+   "node": 18831
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOL-Geology",
+   "node": 18832
+  },
+  {
+   "code": "GERO",
+   "title": "Gerontology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GERO-Gerontology",
+   "node": 18833
+  },
+  {
+   "code": "GUID",
+   "title": "Guidance",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GUID-Guidance",
+   "node": 18834
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIST-History",
+   "node": 20311
+  },
+  {
+   "code": "HOTFS",
+   "title": "Hospitality Management",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HOTFS-Hospitality Management",
+   "node": 18835
+  },
+  {
+   "code": "HS",
+   "title": "Health Science",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HS-Health Science",
+   "node": 18836
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUMAN-Humanities",
+   "node": 18837
+  },
+  {
+   "code": "HVACR",
+   "title": "Heating, Ventilation, Air Conditioning and Refrigeration",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HVACR-Heating, Ventilation, Air Conditioning and Refrigeration",
+   "node": 18838
+  },
+  {
+   "code": "ID",
+   "title": "Interior Design",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ID-Interior Design",
+   "node": 18839
+  },
+  {
+   "code": "IET",
+   "title": "Industrial Electrical Technology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "IET-Industrial Electrical Technology",
+   "node": 18840
+  },
+  {
+   "code": "IETELMT",
+   "title": "Industrial Electrical Technology: Electromechanical Technology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "IETELMT-Industrial Electrical Technology: Electromechanical Technology",
+   "node": 18841
+  },
+  {
+   "code": "IETMECH",
+   "title": "Industrial Electrical Technology: Mechatronics",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "IETMECH-Industrial Electrical Technology: Mechatronics",
+   "node": 18842
+  },
+  {
+   "code": "ITIS",
+   "title": "Information Technology and Information Systems",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ITIS-Information Technology and Information Systems",
+   "node": 20562
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "JOUR-Journalism",
+   "node": 18843
+  },
+  {
+   "code": "KINACT",
+   "title": "Kinesiology: Activity",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "KINACT-Kinesiology:  Activity",
+   "node": 18844
+  },
+  {
+   "code": "KINLEC",
+   "title": "Kinesiology: Lecture",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "KINLEC-Kinesiology: Lecture",
+   "node": 18845
+  },
+  {
+   "code": "KINTM",
+   "title": "Kinesiology: Team",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "KINTM-Kinesiology: Team",
+   "node": 18846
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MATH-Mathematics",
+   "node": 18847
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUSIC-Music",
+   "node": 18848
+  },
+  {
+   "code": "NF",
+   "title": "Nutrition and Food",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NF-Nutrition and Food",
+   "node": 18849
+  },
+  {
+   "code": "NURADN",
+   "title": "Nursing: Associate Degree",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NURADN-Nursing: Associate Degree",
+   "node": 18850
+  },
+  {
+   "code": "NURAST",
+   "title": "Nursing Assistant",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NURAST-Nursing Assistant",
+   "node": 18851
+  },
+  {
+   "code": "NURVN",
+   "title": "Nursing: Vocational",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NURVN-Nursing: Vocational",
+   "node": 18852
+  },
+  {
+   "code": "PH",
+   "title": "Public Health",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PH-Public Health",
+   "node": 18853
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHIL-Philosophy",
+   "node": 18854
+  },
+  {
+   "code": "PHLEB",
+   "title": "Phlebotomy",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHLEB-Phlebotomy",
+   "node": 20412
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHOTO-Photography",
+   "node": 18855
+  },
+  {
+   "code": "PHSCI",
+   "title": "Physical Science",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHSCI-Physical Science",
+   "node": 18856
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHYS-Physics",
+   "node": 18857
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POLS & PS-Political Science",
+   "node": 18858
+  },
+  {
+   "code": "PS",
+   "title": "Political Science",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POLS & PS-Political Science",
+   "node": 18858
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSYC & PSYCH-Psychology",
+   "node": 18859
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSYC & PSYCH-Psychology",
+   "node": 18859
+  },
+  {
+   "code": "PTA",
+   "title": "Physical Therapy",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PTA-Physical Therapy",
+   "node": 20413
+  },
+  {
+   "code": "RADTEC",
+   "title": "Radiologic Technology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "RADTEC-Radiologic Technology",
+   "node": 18860
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "RE-Real Estate",
+   "node": 18861
+  },
+  {
+   "code": "SCSCI",
+   "title": "Social Science",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SCSCI-Social Science",
+   "node": 18862
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOC-Sociology",
+   "node": 18863
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SPAN-Spanish",
+   "node": 18864
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "STAT-Statistics",
+   "node": 18865
+  },
+  {
+   "code": "SUCCESS",
+   "title": "Success Centers",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SUCCESS-Success Centers",
+   "node": 20446
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work and Human Services",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SWHS-Social Work and Human Services",
+   "node": 20560
+  },
+  {
+   "code": "THEATRE",
+   "title": "Theatre",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "THEATRE-Theatre",
+   "node": 18866
+  },
+  {
+   "code": "WORKEXP",
+   "title": "Work Experience",
+   "url": "https://chaffey.curriqunet.com/catalog/_getNavigation?id=718&parentId=20090",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WORKEXP-Work Experience",
+   "node": 20379
+  }
+ ]
+}

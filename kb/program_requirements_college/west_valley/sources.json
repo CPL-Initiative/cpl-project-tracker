@@ -831,11 +831,12 @@
     "title": 1.0,
     "section": "as",
     "section_line": "administration of justice: law enforcement associate in science degree",
-    "section_fit": 1.0
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
-  "text_chars": 4604
+  "text_chars": 4597
  },
  {
   "control_number": "06277",
@@ -2370,11 +2371,12 @@
     "title": 1.0,
     "section": "adt",
     "section_line": "administration of justice associate in science degree for transfer",
-    "section_fit": 0.667
+    "section_fit": 0.667,
+    "exact": 0
    }
   },
   "listed": 21,
-  "text_chars": 4444
+  "text_chars": 4437
  },
  {
   "control_number": "32022",

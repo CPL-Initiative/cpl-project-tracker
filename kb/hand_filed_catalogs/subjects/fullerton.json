@@ -1,0 +1,1408 @@
+{
+ "_what": "The subjects Fullerton College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Fullerton College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:40:25Z",
+ "run": "45625259489",
+ "source": [
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/acct/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/aj/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/anat/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/anth/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/arch/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/art/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/arth/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/asl/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/auto/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/biol/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/bus/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cdes/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/chem/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/chin/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cis/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cisg/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/comm/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cosm/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/coun/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/course-descriptions.pdf",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/crtv/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/csci/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cstr/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cybr/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/danc/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/dart/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/draf/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/dron/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/econ/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/engl/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/engr/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/envs/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/esc/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/esl/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/eths/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/fash/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/food/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/fren/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/geog/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/germ/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/grfx/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hed/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hist/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hort/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hum/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/ides/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/ital/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/japn/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/jour/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/kor/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/lib/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mach/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/math/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/metl/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/micr/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mind/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mkt/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mus/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/musa/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/nutr/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/pe/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/phil/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/phot/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/phys/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/pleg/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/pols/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/port/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/posc/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/prnt/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/psy/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/psyc/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/re/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/read/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/soc/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/sosc/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/span/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/stat/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/tech/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/thea/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/weld/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/well/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/wkex/",
+  "https://catalog.nocccd.edu/fullerton-college/course-descriptions/wmns/"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/acct/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/aj/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy and Physiology",
+   "heading_printed": "Anatomy and Physiology",
+   "rule": "index",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/anat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/arch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive",
+   "heading_printed": "Automotive",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business Management",
+   "heading_printed": "Business Management",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/bus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CDES",
+   "heading": "Child Development and Educational Studies",
+   "heading_printed": "Child Development and Educational Studies",
+   "rule": "index",
+   "codes": [
+    "CDES"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cdes/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/chin/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CISG",
+   "heading": "Computer Information Systems-Gaming",
+   "heading_printed": "Computer Information Systems-Gaming",
+   "rule": "index",
+   "codes": [
+    "CISG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cisg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "index",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cosm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling and Guidance",
+   "heading_printed": "Counseling and Guidance",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/coun/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CRTV",
+   "heading": "Cinema, Radio and Television",
+   "heading_printed": "Cinema, Radio and Television",
+   "rule": "index",
+   "codes": [
+    "CRTV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/crtv/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/csci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CSTR",
+   "heading": "Construction Technology",
+   "heading_printed": "Construction Technology",
+   "rule": "index",
+   "codes": [
+    "CSTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cstr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CYBR",
+   "heading": "Cybersecurity",
+   "heading_printed": "Cybersecurity",
+   "rule": "index",
+   "codes": [
+    "CYBR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cybr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/danc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "DART",
+   "heading": "Digital Arts",
+   "heading_printed": "Digital Arts",
+   "rule": "index",
+   "codes": [
+    "DART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/dart/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "DRAF",
+   "heading": "Drafting Technology",
+   "heading_printed": "Drafting Technology",
+   "rule": "index",
+   "codes": [
+    "DRAF"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/draf/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "DRON",
+   "heading": "Drone",
+   "heading_printed": "Drone",
+   "rule": "index",
+   "codes": [
+    "DRON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/dron/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Sciences",
+   "heading_printed": "Environmental Sciences",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/envs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ESC",
+   "heading": "Earth Sciences",
+   "heading_printed": "Earth Sciences",
+   "rule": "index",
+   "codes": [
+    "ESC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/esc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ETHS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/eths/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "FASH",
+   "heading": "Fashion",
+   "heading_printed": "Fashion",
+   "rule": "index",
+   "codes": [
+    "FASH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/fash/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "FOOD",
+   "heading": "Foods",
+   "heading_printed": "Foods",
+   "rule": "index",
+   "codes": [
+    "FOOD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/food/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/fren/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/germ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GRFX",
+   "heading": "Graphic Design",
+   "heading_printed": "Graphic Design",
+   "rule": "index",
+   "codes": [
+    "GRFX"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/grfx/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "HED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hed/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "index",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hort/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hum/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "IDES",
+   "heading": "Interior Design",
+   "heading_printed": "Interior Design",
+   "rule": "index",
+   "codes": [
+    "IDES"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/ides/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/ital/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/japn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/jour/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "KOR",
+   "heading": "Korean",
+   "heading_printed": "Korean",
+   "rule": "index",
+   "codes": [
+    "KOR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/kor/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library Technology",
+   "heading_printed": "Library Technology",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/lib/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MACH",
+   "heading": "Machine Technology",
+   "heading_printed": "Machine Technology",
+   "rule": "index",
+   "codes": [
+    "MACH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mach/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "METL",
+   "heading": "Metallurgy",
+   "heading_printed": "Metallurgy",
+   "rule": "index",
+   "codes": [
+    "METL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/metl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MICR",
+   "heading": "Microbiology",
+   "heading_printed": "Microbiology",
+   "rule": "index",
+   "codes": [
+    "MICR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/micr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MIND",
+   "heading": "Mindfulness",
+   "heading_printed": "Mindfulness",
+   "rule": "index",
+   "codes": [
+    "MIND"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mind/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MKT",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MKT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mkt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MUSA",
+   "heading": "Music-Applied",
+   "heading_printed": "Music-Applied",
+   "rule": "index",
+   "codes": [
+    "MUSA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/musa/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition and Foods",
+   "heading_printed": "Nutrition and Foods",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/nutr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PDF",
+   "heading": "Download Page",
+   "heading_printed": "Download Page",
+   "rule": "index",
+   "codes": [
+    "PDF"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/course-descriptions.pdf",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/pe/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy and Religious Studies",
+   "heading_printed": "Philosophy and Religious Studies",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/phot/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PLEG",
+   "heading": "Paralegal Studies",
+   "heading_printed": "Paralegal Studies",
+   "rule": "index",
+   "codes": [
+    "PLEG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/pleg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PORT",
+   "heading": "Portuguese",
+   "heading_printed": "Portuguese",
+   "rule": "index",
+   "codes": [
+    "PORT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/port/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "POSC",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/posc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PRNT",
+   "heading": "Printing Technology",
+   "heading_printed": "Printing Technology",
+   "rule": "index",
+   "codes": [
+    "PRNT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/prnt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/psy/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/re/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "READ",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/read/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "SOSC",
+   "heading": "Social Sciences",
+   "heading_printed": "Social Sciences",
+   "rule": "index",
+   "codes": [
+    "SOSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/sosc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "TECH",
+   "heading": "Technology-Related Courses",
+   "heading_printed": "Technology-Related Courses",
+   "rule": "index",
+   "codes": [
+    "TECH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/tech/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/thea/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/weld/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "WELL",
+   "heading": "Wellness",
+   "heading_printed": "Wellness",
+   "rule": "index",
+   "codes": [
+    "WELL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/well/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "WKEX",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WKEX"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/wkex/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "WMNS",
+   "heading": "Women's Studies",
+   "heading_printed": "Women's Studies",
+   "rule": "index",
+   "codes": [
+    "WMNS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/wmns/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  }
+ ],
+ "subjects": 82,
+ "with_heading": 82
+}

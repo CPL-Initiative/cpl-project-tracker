@@ -1,0 +1,29 @@
+{
+ "_readme": "S730 (lever), the gap census's reader_page_assignment lever (census of 2026-11-25 09:39Z): 2 programs of Allan Hancock College whose filed record places none of the state's listed courses and whose own catalog entry, read through the capture's curriQunet view (college-page-read run 45564881318), prints that award's own courses and names the lower levels a student completes first, so the entry names fewer than half of the state's listed courses. The college's third program on the lever, Agricultural Science 43770, is pinned in its reconcile entry (kb/program_requirements_reconcile.json, site_pages). These are filed as named gaps and are never sent to a paid read. Their filed records stay as filed (the load skips a record that places none). No model call, no Supabase write. Each is the college's to settle in COCI or its catalog.",
+ "college": "Allan Hancock College",
+ "written": "2026-11-25T11:21:40Z",
+ "capture": "38843474519",
+ "page_reads": [
+  "45562584495",
+  "45564881318"
+ ],
+ "reasons": {
+  "list_by_reference": "The program's own page prints its required courses and names other awards whose lists complete it ('Complete a specialization certificate listed below'), and the state's file lists those awards' courses as the program's own, so the page names fewer than half of the state's listed courses by code and the capture refuses it as the program's page."
+ },
+ "programs": [
+  {
+   "control_number": "42208",
+   "title": "Viticulture Level 2",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "list_by_reference",
+   "note": "Its own entry (28876/30923, 'Viticulture Level 2 - Certificate of Achievement') prints 'A total of 34 units is required for the Level 2 certificate.', then 'Viticulture Level 1 Certificate of Achievement: 23 units', then its own core and electives ('Total : 34.0'); it names 6 of the state's 17 listed courses by code (AG 149, VEN 140, VEN 141, VEN 142, VEN 314, VEN 325), and 8 of the other 11 are the courses Level 1 19896's record lists (VEN 102, VEN 120, VEN 121, VEN 125, VEN 130, VEN 307, VEN 330, VEN 331)."
+  },
+  {
+   "control_number": "42210",
+   "title": "Viticulture Level 3",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "list_by_reference",
+   "note": "Its own entry (28876/30922, 'Viticulture Level 3 - Certificate of Achievement') prints 'A total of 11 units is required for the certificate.' and 'Total : 11.0', and its summary says it 'is designed for students who completed viticulture levels 1 and 2 certificates of achievement'; it names 7 of the state's 20 listed courses by code (AG 149, VEN 101, VEN 140, VEN 141, VEN 142, VEN 312, VEN 323), and 10 of the other 13 are the 8 courses Level 1 19896's record lists and the two Level 2 core courses its own entry prints (VEN 314, VEN 325)."
+  }
+ ]
+}

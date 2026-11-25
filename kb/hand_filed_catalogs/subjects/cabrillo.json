@@ -1,0 +1,1166 @@
+{
+ "_what": "The subjects Cabrillo College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Cabrillo College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:53Z",
+ "run": "45628601616",
+ "source": [
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ADAPT",
+   "heading": "Adaptive Physical Education",
+   "heading_printed": "Adaptive Physical Education",
+   "rule": "index",
+   "codes": [
+    "ADAPT"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "AH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "AH"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ALH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "index",
+   "codes": [
+    "ALH"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ANTHR",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTHR"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "AP",
+   "heading": "Art Photography",
+   "heading_printed": "Art Photography",
+   "rule": "index",
+   "codes": [
+    "AP"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ASTRO",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTRO"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ATH",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATH"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "BIO",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "CABT",
+   "heading": "Computer Applications and Business Technology",
+   "heading_printed": "Computer Applications and Business Technology",
+   "rule": "index",
+   "codes": [
+    "CABT"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "CAHM",
+   "heading": "Culinary Arts and Hospitality Management",
+   "heading_printed": "Culinary Arts and Hospitality Management",
+   "rule": "index",
+   "codes": [
+    "CAHM"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "CEM",
+   "heading": "Construction and Energy Management",
+   "heading_printed": "Construction and Energy Management",
+   "rule": "index",
+   "codes": [
+    "CEM"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "CG",
+   "heading": "Counseling and Guidance",
+   "heading_printed": "Counseling and Guidance",
+   "rule": "index",
+   "codes": [
+    "CG"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer and Information Systems",
+   "heading_printed": "Computer and Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "CJ",
+   "heading": "Criminal Justice",
+   "heading_printed": "Criminal Justice",
+   "rule": "index",
+   "codes": [
+    "CJ"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "DH",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "index",
+   "codes": [
+    "DH"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "DM",
+   "heading": "Digital Media",
+   "heading_printed": "Digital Media",
+   "rule": "index",
+   "codes": [
+    "DM"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "DMCP",
+   "heading": "Digital Management Career Preparation",
+   "heading_printed": "Digital Management Career Preparation",
+   "rule": "index",
+   "codes": [
+    "DMCP"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ES",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ES"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ETECH",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "ETECH"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "FIN",
+   "heading": "Finance",
+   "heading_printed": "Finance",
+   "rule": "index",
+   "codes": [
+    "FIN"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "FR",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FR"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "FT",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FT"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "GRMN",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GRMN"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "HONRS",
+   "heading": "Honors",
+   "heading_printed": "Honors",
+   "rule": "index",
+   "codes": [
+    "HONRS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "index",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "HS",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "HSERV",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HSERV"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "JAPAN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPAN"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "JOURN",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOURN"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "LS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "MA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MA"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "N",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "N"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "OCEAN",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "index",
+   "codes": [
+    "OCEAN"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "PHILO",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHILO"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "PS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "RT",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "index",
+   "codes": [
+    "RT"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "SPED",
+   "heading": "Special Education",
+   "heading_printed": "Special Education",
+   "rule": "index",
+   "codes": [
+    "SPED"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "STAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "TA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "TA"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "W",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "W"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "WORK",
+   "heading": "Internships and Work Experience",
+   "heading_printed": "Internships and Work Experience",
+   "rule": "index",
+   "codes": [
+    "WORK"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  },
+  {
+   "code": "WS",
+   "heading": "Gender and Women's Studies",
+   "heading_printed": "Gender and Women's Studies",
+   "rule": "index",
+   "codes": [
+    "WS"
+   ],
+   "candidate": null,
+   "address": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628601616)",
+   "run": "45628601616"
+  }
+ ],
+ "subjects": 72,
+ "with_heading": 72
+}

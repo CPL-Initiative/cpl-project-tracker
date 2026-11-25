@@ -2,43 +2,31 @@
  "college": "Allan Hancock College",
  "programs": 226,
  "with_closed_list": 179,
- "found": 156,
+ "found": 157,
  "extracted": 156,
  "errors": 0,
- "passed_machine_checks": 136,
+ "passed_machine_checks": 139,
  "failed": {
-  "coverage": 3,
+  "coverage": 2,
   "invented": 0,
-  "arithmetic": 20,
+  "arithmetic": 17,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 12.41,
- "cost_per_program": 0.0795,
+ "cost_usd_run": 0.08,
+ "cost_usd_filed": 12.42,
+ "cost_per_program": 0.0796,
+ "extract_calls": 1,
+ "extract_failed": [],
  "not_found": [
-  {
-   "control_number": "05898",
-   "title": "Cosmetology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19934",
-   "title": "Cosmetology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
   {
    "control_number": "24138",
    "title": "Interior/Exterior Maintenance Repair Technology Certificate",
    "award": null,
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24217",
@@ -64,7 +52,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "31100",
@@ -90,15 +79,91 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42208",
+   "title": "Viticulture Level 2",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31644",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.588,
+    "body": 0.588,
+    "content": 0.588,
+    "net": 10,
+    "listed": 17,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 9244,
+     "content": 9244,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42210",
+   "title": "Viticulture Level 3",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31644",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.55,
+    "body": 0.55,
+    "content": 0.55,
+    "net": 11,
+    "listed": 20,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 9244,
+     "content": 9244,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "43479",
    "title": "Personal Care Attendant",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31784",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7027,
+     "content": 7027,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "43741",
@@ -106,7 +171,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44646",
@@ -132,7 +198,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44658",
@@ -158,7 +225,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44659",
@@ -184,7 +252,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45282",
@@ -192,7 +261,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45964",
@@ -200,7 +270,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45965",
@@ -208,7 +279,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45966",
@@ -216,7 +288,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45967",
@@ -242,7 +315,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45968",
@@ -268,7 +342,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45970",
@@ -276,7 +351,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "46126",
@@ -284,7 +360,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "46368",
@@ -292,8 +369,9 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38843474519"
+ "run": "45605429253"
 }

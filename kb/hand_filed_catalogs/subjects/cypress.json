@@ -1,0 +1,1102 @@
+{
+ "_what": "The subjects Cypress College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Cypress College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:31:55Z",
+ "run": "45624360178",
+ "source": [
+  "https://catalog.nocccd.edu/cypress-college/course-descriptions/"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "AT",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "ATC",
+   "heading": "Aviation and Travel Careers",
+   "heading_printed": "Aviation and Travel Careers",
+   "rule": "index",
+   "codes": [
+    "ATC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "CE",
+   "heading": "Career Education",
+   "heading_printed": "Career Education",
+   "rule": "index",
+   "codes": [
+    "CE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling and Guidance",
+   "heading_printed": "Counseling and Guidance",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "CTRP",
+   "heading": "Court Reporting",
+   "heading_printed": "Court Reporting",
+   "rule": "index",
+   "codes": [
+    "CTRP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "DA",
+   "heading": "Dental Assistant",
+   "heading_printed": "Dental Assistant",
+   "rule": "index",
+   "codes": [
+    "DA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "DH",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "index",
+   "codes": [
+    "DH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "DMS",
+   "heading": "Diagnostic Medical Sonography",
+   "heading_printed": "Diagnostic Medical Sonography",
+   "rule": "index",
+   "codes": [
+    "DMS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "DSST",
+   "heading": "Disability Studies",
+   "heading_printed": "Disability Studies",
+   "rule": "index",
+   "codes": [
+    "DSST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "EDU",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDU"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "ENGT",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "ENGT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "EST",
+   "heading": "Energy and Sustainable Tech",
+   "heading_printed": "Energy and Sustainable Tech",
+   "rule": "index",
+   "codes": [
+    "EST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "ETHS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "HI",
+   "heading": "Health Information Technology",
+   "heading_printed": "Health Information Technology",
+   "rule": "index",
+   "codes": [
+    "HI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "HRC",
+   "heading": "Hotel, Restaurant, Culinary Arts",
+   "heading_printed": "Hotel, Restaurant, Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "HRC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "HS",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "HUSR",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HUSR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "INDS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "INDS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library Technology",
+   "heading_printed": "Library Technology",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "MAD",
+   "heading": "Media Arts Design",
+   "heading_printed": "Media Arts Design",
+   "rule": "index",
+   "codes": [
+    "MAD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "MORT",
+   "heading": "Mortuary Science",
+   "heading_printed": "Mortuary Science",
+   "rule": "index",
+   "codes": [
+    "MORT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "MUSA",
+   "heading": "Music-Applied",
+   "heading_printed": "Music-Applied",
+   "rule": "index",
+   "codes": [
+    "MUSA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy and Religious Studies",
+   "heading_printed": "Philosophy and Religious Studies",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "PHS",
+   "heading": "Public Health Science",
+   "heading_printed": "Public Health Science",
+   "rule": "index",
+   "codes": [
+    "PHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Sciences",
+   "heading_printed": "Physical Sciences",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "POSC",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "PT",
+   "heading": "Psychiatric Technology",
+   "heading_printed": "Psychiatric Technology",
+   "rule": "index",
+   "codes": [
+    "PT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "RADT",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "index",
+   "codes": [
+    "RADT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "REC",
+   "heading": "Recreation",
+   "heading_printed": "Recreation",
+   "rule": "index",
+   "codes": [
+    "REC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "SOSC",
+   "heading": "Social Sciences",
+   "heading_printed": "Social Sciences",
+   "rule": "index",
+   "codes": [
+    "SOSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "STSV",
+   "heading": "Student Support Services",
+   "heading_printed": "Student Support Services",
+   "rule": "index",
+   "codes": [
+    "STSV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624360178)",
+   "run": "45624360178"
+  }
+ ],
+ "subjects": 68,
+ "with_heading": 68
+}

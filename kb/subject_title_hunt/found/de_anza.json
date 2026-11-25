@@ -1,0 +1,682 @@
+{
+ "college": "De Anza College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:30:56Z",
+ "run": "45623983494",
+ "plan": "kb/college_reads/subject_index_de_anza.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/accounting-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ACCT - Accounting Courses"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/admj-administration-of-justice-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ADMJ - Administration of Justice Courses"
+  },
+  {
+   "code": "AFAM",
+   "title": "African American Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/afam-african-american-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AFAM - African American Studies Courses"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/anth-anthropology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ANTH - Anthropology Courses"
+  },
+  {
+   "code": "APRN",
+   "title": "Automotive Apprenticeship",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/aprn-automotive-apprenticeship-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APRN - Automotive Apprenticeship Courses"
+  },
+  {
+   "code": "ARTS",
+   "title": "Visual Arts and Design",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/arts-art-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARTS - Visual Arts and Design Courses"
+  },
+  {
+   "code": "ASAM",
+   "title": "Asian American and Asian Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/asam-asian-american-and-asian-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASAM - Asian American and Asian Studies Courses"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/astr-astronomy-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASTR - Astronomy Courses"
+  },
+  {
+   "code": "ATMG",
+   "title": "Auto Management",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/atmg-auto-management-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ATMG - Auto Management Courses"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/automotive-technology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AUTO - Automotive Technology Courses"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/biol-biology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BIOL - Biology Courses"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/bus-business-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUS - Business Courses"
+  },
+  {
+   "code": "CD",
+   "title": "Child Development",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/cd-child-development-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CD - Child Development Courses"
+  },
+  {
+   "code": "CETH",
+   "title": "Comparative Ethnic Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/ceth-comparative-ethnic-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CETH - Comparative Ethnic Studies Courses"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/chem-chemistry-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHEM - Chemistry Courses"
+  },
+  {
+   "code": "CHLX",
+   "title": "Chicanx/Latinx Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/chlx-chicanx-latinx-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHLX - Chicanx/Latinx Studies Courses"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Science and Information Systems",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/cis-computer-science-and-information-systems-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CIS - Computer Science and Information Systems Courses"
+  },
+  {
+   "code": "CLP",
+   "title": "Career Life Planning",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/clp-career-life-planning-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CLP - Career Life Planning Courses"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/comm-communication-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMM - Communication Studies Courses"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/coun-counseling-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COUN - Counseling Courses"
+  },
+  {
+   "code": "CTE",
+   "title": "Career Training",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/cte-career-training-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CTE - Career Training Courses"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/danc-dance-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DANC - Dance Courses"
+  },
+  {
+   "code": "DMT",
+   "title": "Design and Manufacturing Technologies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/dmt-design-and-manufacturing-technologies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DMT - Design and Manufacturing Technologies Courses"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/econ-economics-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECON - Economics Courses"
+  },
+  {
+   "code": "EDAC",
+   "title": "Educational Access",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/edac-educational-access-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EDAC - Educational Access Courses"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/educ-education-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EDUC - Education Courses"
+  },
+  {
+   "code": "ELIT",
+   "title": "English Literature",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/elit-english-literature-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ELIT - English Literature Courses"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/engl-english-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGL - English Courses"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/engr-engineering-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGR - Engineering Courses"
+  },
+  {
+   "code": "ES",
+   "title": "Environmental Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/es-environmental-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ES - Environmental Studies Courses"
+  },
+  {
+   "code": "ESCI",
+   "title": "Environmental Science",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/esci-environmental-science-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ESCI - Environmental Science Courses"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/esl-english-as-a-second-language-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ESL - English as a Second Language Courses"
+  },
+  {
+   "code": "EWRT",
+   "title": "English Writing",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/ewrt-english-writing-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EWRT - English Writing Courses"
+  },
+  {
+   "code": "F/TV",
+   "title": "Film and Television Production",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/ftv-film-and-television-production-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "F/TV - Film and Television Production Courses"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/fren-french-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FREN - French Courses"
+  },
+  {
+   "code": "GEO",
+   "title": "Geography",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/geo-geography-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEO - Geography Courses"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/geol-geology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOL - Geology Courses"
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/germ-german-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GERM - German Courses"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/hist-history-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIST - History Courses"
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/hlth-health-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HLTH - Health Courses"
+  },
+  {
+   "code": "HNDI",
+   "title": "Hindi",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/hndi-hindi-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HNDI - Hindi Courses"
+  },
+  {
+   "code": "HTEC",
+   "title": "Health Technologies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/htec-health-technologies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HTEC - Health Technologies Courses"
+  },
+  {
+   "code": "HUMA",
+   "title": "Human Development",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/huma-human-development-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUMA - Human Development Courses"
+  },
+  {
+   "code": "HUMI",
+   "title": "Humanities",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/humi-humanities-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUMI - Humanities Courses"
+  },
+  {
+   "code": "ICS",
+   "title": "Intercultural Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/ics-intercultural-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ICS - Intercultural Studies Courses"
+  },
+  {
+   "code": "INTL",
+   "title": "International Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/intl-international-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "INTL - International Studies Courses"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/ital-italian-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ITAL - Italian Courses"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/japn-japanese-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "JAPN - Japanese Courses"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/jour-journalism-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "JOUR - Journalism Courses"
+  },
+  {
+   "code": "KNES",
+   "title": "Kinesiology",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/knes-kinesiology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "KNES - Kinesiology Courses"
+  },
+  {
+   "code": "KORE",
+   "title": "Korean",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/kore-korean-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "KORE - Korean Courses"
+  },
+  {
+   "code": "LART",
+   "title": "Language Arts",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/lart-language-arts-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LART - Language Arts Courses"
+  },
+  {
+   "code": "LIB",
+   "title": "Library",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/lib-library-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LIB - Library Courses"
+  },
+  {
+   "code": "LING",
+   "title": "Linguistics",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/ling-linguistics-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LING - Linguistics Courses"
+  },
+  {
+   "code": "LRNA",
+   "title": "Learning Assistance",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/lrna-learning-assistance-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LRNA - Learning Assistance Courses"
+  },
+  {
+   "code": "LS",
+   "title": "Learning Strategies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/ls-learning-strategies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LS - Learning Strategies Courses"
+  },
+  {
+   "code": "MAND",
+   "title": "Mandarin",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/mand-mandarin-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MAND - Mandarin Courses"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/math-mathematics-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MATH - Mathematics Courses"
+  },
+  {
+   "code": "MET",
+   "title": "Meteorology",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/met-meteorology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MET - Meteorology Courses"
+  },
+  {
+   "code": "MUSI",
+   "title": "Music",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/musi-music-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUSI - Music Courses"
+  },
+  {
+   "code": "NAIS",
+   "title": "Native American and Indigenous Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/nais-native-american-and-indigenous-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NAIS - Native American and Indigenous Studies Courses"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/nurs-nursing-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NURS - Nursing Courses"
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/nutr-nutrition-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NUTR - Nutrition Courses"
+  },
+  {
+   "code": "PARA",
+   "title": "Paralegal Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/para-paralegal-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PARA - Paralegal Studies Courses"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/pe-physical-education-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PE - Physical Education Courses"
+  },
+  {
+   "code": "PEA",
+   "title": "Physical Education Adapted",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/pea-physical-education-adapted-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PEA - Physical Education Adapted Courses"
+  },
+  {
+   "code": "PERS",
+   "title": "Persian",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/pers-persian-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PERS - Persian Courses"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/phil-philosophy-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHIL - Philosophy Courses"
+  },
+  {
+   "code": "PHTG",
+   "title": "Photography",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/phtg-photography-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHTG - Photography Courses"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/phys-physics-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHYS - Physics Courses"
+  },
+  {
+   "code": "POLI",
+   "title": "Political Science",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/poli-political-science-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POLI - Political Science Courses"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/pols-political-science-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POLS - Political Science Courses"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/psyc-psychology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSYC - Psychology Courses"
+  },
+  {
+   "code": "READ",
+   "title": "Reading",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/read-reading-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "READ - Reading Courses"
+  },
+  {
+   "code": "REST",
+   "title": "Real Estate",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/rest-real-estate-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "REST - Real Estate Courses"
+  },
+  {
+   "code": "RUSS",
+   "title": "Russian",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/russ-russian-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "RUSS - Russian Courses"
+  },
+  {
+   "code": "SIGN",
+   "title": "Sign Language",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/sign-sign-language-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SIGN - Sign Language Courses"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/soc-sociology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOC - Sociology Courses"
+  },
+  {
+   "code": "SOSC",
+   "title": "Social Science",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/sosc-social-science-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOSC - Social Science Courses"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/span-spanish-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SPAN - Spanish Courses"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/stat-statistics-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "STAT - Statistics Courses"
+  },
+  {
+   "code": "THEA",
+   "title": "Theatre Arts",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/thea-theatre-arts-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "THEA - Theatre Arts Courses"
+  },
+  {
+   "code": "VIET",
+   "title": "Vietnamese Language",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/viet-vietnamese-language-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "VIET - Vietnamese Language Courses"
+  },
+  {
+   "code": "WMST",
+   "title": "Women's Studies",
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/wmst-womens-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WMST - Women's Studies Courses"
+  }
+ ],
+ "note": "The catalog's menu links one page per subject, 'CODE - Name Courses' (run 45623983494); the title drops the trailing word Courses ('printed' keeps the link as printed). The Noncredit Course Listings page (run 45626912350, plan round 3) lists 15 noncredit subjects by the same codes (ACCT, AUTO, BUS, CIS, DMT, EDAC, ESL, F/TV, HTEC, JOUR, LRNA, MAND, MATH, PHTG, REST), each already headed here, with shortened filter labels (Eng. as a Second Lang.); no noncredit code is new."
+}

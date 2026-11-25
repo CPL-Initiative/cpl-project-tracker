@@ -1,0 +1,27 @@
+{
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: a heading may wrap ('GEOGRAPHY AND GEOSPATIAL TECHNOLOGIES' / '(GEOG)'); print each line that ends in its code in parentheses, with the line above it. No model call.",
+ "college": "Shasta College",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "course prefix",
+  "subject abbreviation",
+  "course abbreviation",
+  "prefix(?:es)? (?:and|&) (?:subject|discipline)",
+  "course descriptions"
+ ],
+ "pages": [
+  {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
+   "answers": [
+    "subject_titles"
+   ]
+  }
+ ],
+ "subject_context": {
+  "heading": "^(?:.*\\S )?\\((?P<subj>[A-Z]{1,6})(?:\\s?[/,&]\\s?[A-Z]{1,6})*\\)$",
+  "before": 2,
+  "start_page": 106
+ }
+}

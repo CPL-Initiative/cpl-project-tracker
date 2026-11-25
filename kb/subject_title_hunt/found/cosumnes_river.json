@@ -1,0 +1,800 @@
+{
+ "college": "Cosumnes River College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:44:12Z",
+ "run": "45625671325",
+ "plan": "kb/college_reads/subject_index_cosumnes_river.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ADAPT",
+   "title": "Adapted Physical Education",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ADT",
+   "title": "Architectural Design Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AGB",
+   "title": "Agriculture Business",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AH",
+   "title": "Allied Health",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ANSC",
+   "title": "Animal Science",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTNM",
+   "title": "Art New Media",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AMT",
+   "title": "Automotive Mechanics Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIT",
+   "title": "Building Inspection Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUSTEC",
+   "title": "Business Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CAM",
+   "title": "Culinary Arts Management",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISA",
+   "title": "Computer Information Sciences - Applications",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISC",
+   "title": "Computer Information Sciences - Core",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISD",
+   "title": "Computer Information Sciences - Data",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISN",
+   "title": "Computer Information Sciences - Network",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISP",
+   "title": "Computer Information Sciences - Programming",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISS",
+   "title": "Computer Information Sciences - Security",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISW",
+   "title": "Computer Information Sciences - Web",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CMT",
+   "title": "Construction Management Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CONST",
+   "title": "Construction",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CSERV",
+   "title": "Community Services Education",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DEAF",
+   "title": "Deaf Culture and American Sign Language Studies",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=115",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education Studies",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGCW",
+   "title": "English - Creative Writing",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGED",
+   "title": "English - Education",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGLB",
+   "title": "English - Laboratory",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGLT",
+   "title": "English - Literature",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGRD",
+   "title": "English - Reading",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGWR",
+   "title": "English - Writing",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLG",
+   "title": "English as a Second Language - Grammar",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLL",
+   "title": "English as a Second Language - Listening",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLNC",
+   "title": "English as a Second Language - Noncredit",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLP",
+   "title": "English as a Second Language - Pronunciation",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLR",
+   "title": "English as a Second Language - Reading",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLW",
+   "title": "English as a Second Language - Writing",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ETHNS",
+   "title": "Ethnic Studies",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FCS",
+   "title": "Family and Consumer Science",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FFS",
+   "title": "Fire and Forestry Services",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FMS",
+   "title": "Film and Media Studies",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FT",
+   "title": "Fire Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FIRE",
+   "title": "Firefighter Training Center",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FITNS",
+   "title": "Fitness",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HCD",
+   "title": "Human/Career Development",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HEED",
+   "title": "Health Education",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HIT",
+   "title": "Health Information Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HMONG",
+   "title": "Hmong",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HORT",
+   "title": "Horticulture",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HSER",
+   "title": "Human Services",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "INDIS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "KINES",
+   "title": "Kinesiology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MAKR",
+   "title": "Modern Making",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MAT",
+   "title": "Mechanized Agriculture Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATHS",
+   "title": "Mathemetics Support",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MEDA",
+   "title": "Medical Assisting",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=116",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MKT",
+   "title": "Marketing",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUFHL",
+   "title": "Music - Fundamentals, History, and Literature",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUIVI",
+   "title": "Music - Instrumental/Voice Instruction",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUP",
+   "title": "Music - Performance",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUSM",
+   "title": "Music - Specializations in Music",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NUTRI",
+   "title": "Nutrition",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PACT",
+   "title": "Personal Activity",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHARM",
+   "title": "Pharmacy Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PLTS",
+   "title": "Plant Science",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RECR",
+   "title": "Recreation",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RLST",
+   "title": "Religious Studies",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RTVF",
+   "title": "Radio, Television and Film",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SGVT",
+   "title": "Student Government",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SOCSC",
+   "title": "Social Sciences",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SONOG",
+   "title": "Diagnostic Medical Sonography",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPORT",
+   "title": "Sports",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SURG",
+   "title": "Surgical Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work/Human Services",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TAP",
+   "title": "Theatre Arts Performance",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TMACT",
+   "title": "Team Activity",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "VT",
+   "title": "Veterinary Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "VIET",
+   "title": "Vietnamese",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WEXP",
+   "title": "Work Experience",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=117",
+   "where": "catalog",
+   "method": "prefix legend"
+  }
+ ]
+}

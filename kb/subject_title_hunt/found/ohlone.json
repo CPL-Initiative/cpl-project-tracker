@@ -1,0 +1,444 @@
+{
+ "college": "Ohlone College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:03Z",
+ "run": "45627438096",
+ "plan": "kb/college_reads/subject_index_ohlone.json",
+ "titles": [
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHS",
+   "title": "Chicano/Latino Studies",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DAID",
+   "title": "Digital Arts and Interactive Design",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECS",
+   "title": "Early Childhood Studies",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Studies",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FT",
+   "title": "Fire Technology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WS",
+   "title": "Gender and Women’s Studies",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ID",
+   "title": "Interior Design",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LE",
+   "title": "Law Enforcement",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AH",
+   "title": "Allied Health",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BA",
+   "title": "Business Administration",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NUR",
+   "title": "Nursing",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PTA",
+   "title": "Physical Therapist Assistant",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RT",
+   "title": "Respiratory Therapist",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WEX",
+   "title": "Work Experience Education",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BRDC",
+   "title": "Broadcasting",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESPTS",
+   "title": "Esports",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TD",
+   "title": "Theatre and Dance",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARBC",
+   "title": "Arabic",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "INT",
+   "title": "Deaf-Centered Interpreting Preparation Program",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DEAF",
+   "title": "Deaf Preparatory Program",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "JPNS",
+   "title": "Japanese",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LS",
+   "title": "Library Science",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIOT",
+   "title": "Biotechnology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CAOT",
+   "title": "Computer Applications and Occupational Technology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CNET",
+   "title": "Computers, Networks, and Emerging Technology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGI",
+   "title": "Engineering",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ETEC",
+   "title": "Engineering Technology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend"
+  }
+ ],
+ "note": "From the Academic Divisions page of chapter 8, Announcement of Courses (catalog page 166): each division lists its departments with the course prefix in parentheses. The registry's catalog address is chapter 7, Curriculum Guides; the catalog's own page names chapter 8 (run 45625671325)."
+}

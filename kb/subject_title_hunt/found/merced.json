@@ -1,0 +1,136 @@
+{
+ "college": "Merced College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:42:16Z",
+ "run": "45626064651",
+ "plan": "kb/college_reads/subject_index_merced.json",
+ "titles": [
+  {
+   "code": "ACTG",
+   "title": "Accounting",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AOM",
+   "title": "Administrative Office Management",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AGRI",
+   "title": "Agriculture",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AGAS",
+   "title": "Agriculture Animal Science",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AGAB",
+   "title": "Agriculture Business",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AGEH",
+   "title": "Agriculture Environmental Science",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AGMA",
+   "title": "Agriculture Mechanized Agriculture",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AGPS",
+   "title": "Agriculture Plant Science",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ALLH",
+   "title": "Allied Health",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASLG",
+   "title": "American Sign Language",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARCH",
+   "title": "Archaeology",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTD",
+   "title": "Art, Digital",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ART",
+   "title": "Art, Fine",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTS",
+   "title": "Arts, Noncredit",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend"
+  }
+ ],
+ "not_read": "Partial. The catalog's Courses page (Coursedog; its text comes from the vendor's catalogPages answer, app.coursedog.com/api/v1/ca/merced_colleague_ethos/catalogPages/QTM2GIg9kimBOfyC8Dbb/courses, runs 45623798209 and 45626064651) prints a code legend that stops at Automotive Technology (AUTO), then two empty list items. Every other code has only its Coursedog department name, a department label, so it is left out."
+}

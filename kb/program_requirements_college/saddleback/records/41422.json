@@ -61,20 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    17.5,
-    17.5
+    18.5,
+    18.5
    ],
    "stated": [
     18.5,
     18.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 17.5-17.5; the catalog states 18.5-18.5"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -177,7 +175,8 @@
       "units": 1,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      },
      {
       "code": "MUS 46",
@@ -238,5 +237,16 @@
    "No careers are named; the summary mentions only transfer to a Bachelor's in Music (Jazz Studies)."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "reconciled": [
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MUS 50": 2
+   },
+   "words": "The following course must be taken twice for a total of two units:\n2.0\nMUS 50"
+  }
+ ],
+ "read_run": "38843470509"
 }

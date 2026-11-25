@@ -1,0 +1,602 @@
+{
+ "college": "San Bernardino Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45626788039",
+ "plan": "kb/college_reads/subject_index_san_bernardino_valley.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.valleycollege.edu/courses/acct/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACR",
+   "title": "Automotive Collision and Repair",
+   "url": "https://catalog.valleycollege.edu/courses/acr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADJUS",
+   "title": "Administration of Justice",
+   "url": "https://catalog.valleycollege.edu/courses/adjus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AERO",
+   "title": "Aeronautics",
+   "url": "https://catalog.valleycollege.edu/courses/aero/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.valleycollege.edu/courses/anthro/",
+   "where": "catalog",
+   "method": "subject heading",
+   "address_code": "ANTHRO"
+  },
+  {
+   "code": "ARAB",
+   "title": "Arabic",
+   "url": "https://catalog.valleycollege.edu/courses/arab/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://catalog.valleycollege.edu/courses/arch/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.valleycollege.edu/courses/art/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.valleycollege.edu/courses/arth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.valleycollege.edu/courses/asl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.valleycollege.edu/courses/astron/",
+   "where": "catalog",
+   "method": "subject heading",
+   "address_code": "ASTRON"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.valleycollege.edu/courses/auto/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.valleycollege.edu/courses/biol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUSAD",
+   "title": "Business Administration",
+   "url": "https://catalog.valleycollege.edu/courses/busad/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://catalog.valleycollege.edu/courses/cd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "address_code": "CD"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.valleycollege.edu/courses/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese - Mandarin",
+   "url": "https://catalog.valleycollege.edu/courses/chin/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIT",
+   "title": "Computer Information Technology",
+   "url": "https://catalog.valleycollege.edu/courses/cit/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.valleycollege.edu/courses/commst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "address_code": "COMMST"
+  },
+  {
+   "code": "CONST",
+   "title": "Construction Technology",
+   "url": "https://catalog.valleycollege.edu/courses/const/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://catalog.valleycollege.edu/courses/cs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CULART",
+   "title": "Culinary Arts",
+   "url": "https://catalog.valleycollege.edu/courses/culart/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://catalog.valleycollege.edu/courses/dance/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.valleycollege.edu/courses/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.valleycollege.edu/courses/educ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELEC",
+   "title": "Electricity",
+   "url": "https://catalog.valleycollege.edu/courses/elec/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELECTR",
+   "title": "Electronics",
+   "url": "https://catalog.valleycollege.edu/courses/electr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.valleycollege.edu/courses/engl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.valleycollege.edu/courses/engr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVSCI",
+   "title": "Environmental Science",
+   "url": "https://catalog.valleycollege.edu/courses/envsci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.valleycollege.edu/courses/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.valleycollege.edu/courses/eths/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FN",
+   "title": "Foods and Nutrition",
+   "url": "https://catalog.valleycollege.edu/courses/fn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FRENCH",
+   "title": "French",
+   "url": "https://catalog.valleycollege.edu/courses/french/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FTVM",
+   "title": "Film, Television, and Media",
+   "url": "https://catalog.valleycollege.edu/courses/ftvm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.valleycollege.edu/courses/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.valleycollege.edu/courses/geol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GIS",
+   "title": "Geographic Information Systems",
+   "url": "https://catalog.valleycollege.edu/courses/gis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://catalog.valleycollege.edu/courses/glst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEALTH",
+   "title": "Health Education",
+   "url": "https://catalog.valleycollege.edu/courses/health/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.valleycollege.edu/courses/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HMDT",
+   "title": "Heavy/Medium Duty Truck",
+   "url": "https://catalog.valleycollege.edu/courses/hmdt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HOSP",
+   "title": "Hospitality Management",
+   "url": "https://catalog.valleycollege.edu/courses/hosp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMSV",
+   "title": "Human Services",
+   "url": "https://catalog.valleycollege.edu/courses/humsv/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HVAC/R",
+   "title": "Heating, Ventilation, Air Conditioning, and Refrigeration",
+   "url": "https://catalog.valleycollege.edu/courses/hvac_r/",
+   "where": "catalog",
+   "method": "subject heading",
+   "address_code": "HVAC_R"
+  },
+  {
+   "code": "INSPEC",
+   "title": "Inspection Technology",
+   "url": "https://catalog.valleycollege.edu/courses/inspec/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://catalog.valleycollege.edu/courses/kin/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINA",
+   "title": "Kinesiology - Adapted",
+   "url": "https://catalog.valleycollege.edu/courses/kina/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINCO",
+   "title": "Kinesiology - Coaching",
+   "url": "https://catalog.valleycollege.edu/courses/kinco/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINF",
+   "title": "Kinesiology - Fitness",
+   "url": "https://catalog.valleycollege.edu/courses/kinf/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINS",
+   "title": "Kinesiology - Team",
+   "url": "https://catalog.valleycollege.edu/courses/kins/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINX",
+   "title": "Kinesiology - Athletics",
+   "url": "https://catalog.valleycollege.edu/courses/kinx/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIB",
+   "title": "Library Technology",
+   "url": "https://catalog.valleycollege.edu/courses/lib/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LPPS",
+   "title": "Law, Public Policy, and Society",
+   "url": "https://catalog.valleycollege.edu/courses/lpps/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LST",
+   "title": "Learning Skills and Tutoring",
+   "url": "https://catalog.valleycollege.edu/courses/lst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MACH",
+   "title": "Machinist Technology",
+   "url": "https://catalog.valleycollege.edu/courses/mach/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.valleycollege.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_heading": "Mathematics (MATH) and Statistics (STAT)"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.valleycollege.edu/courses/mus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.valleycollege.edu/courses/nurs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEAN",
+   "title": "Oceanography",
+   "url": "https://catalog.valleycollege.edu/courses/ocean/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OSHA",
+   "title": "Occupational Safety and Health Administration",
+   "url": "https://catalog.valleycollege.edu/courses/osha/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDF",
+   "title": "Download Page",
+   "url": "https://catalog.valleycollege.edu/courses/courses.pdf",
+   "where": "catalog",
+   "method": "subject heading",
+   "address_code": "COURSES.PDF"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.valleycollege.edu/courses/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHT",
+   "title": "Pharmacy Technology",
+   "url": "https://catalog.valleycollege.edu/courses/pht/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYSIC",
+   "title": "Physics",
+   "url": "https://catalog.valleycollege.edu/courses/physic/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLICE",
+   "title": "Police Science",
+   "url": "https://catalog.valleycollege.edu/courses/police/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.valleycollege.edu/courses/polit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "address_code": "POLIT"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.valleycollege.edu/courses/psych/",
+   "where": "catalog",
+   "method": "subject heading",
+   "address_code": "PSYCH"
+  },
+  {
+   "code": "PSYTCH",
+   "title": "Psychiatric Technology",
+   "url": "https://catalog.valleycollege.edu/courses/psytch/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "READ",
+   "title": "Reading and Literacy",
+   "url": "https://catalog.valleycollege.edu/courses/read/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REALST",
+   "title": "Real Estate",
+   "url": "https://catalog.valleycollege.edu/courses/realst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RELIG",
+   "title": "Religious Studies",
+   "url": "https://catalog.valleycollege.edu/courses/relig/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SDEV",
+   "title": "Student Development",
+   "url": "https://catalog.valleycollege.edu/courses/sdev/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://catalog.valleycollege.edu/courses/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "address_code": "SOC"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.valleycollege.edu/courses/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.valleycollege.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_heading": "Mathematics (MATH) and Statistics (STAT)",
+   "address_code": "MATH"
+  },
+  {
+   "code": "TECALC",
+   "title": "Technical Calculations",
+   "url": "https://catalog.valleycollege.edu/courses/tecalc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THART",
+   "title": "Theatre Arts",
+   "url": "https://catalog.valleycollege.edu/courses/thart/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VOCED",
+   "title": "Vocational Education",
+   "url": "https://catalog.valleycollege.edu/courses/voced/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding Technology",
+   "url": "https://catalog.valleycollege.edu/courses/weld/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WKEXP",
+   "title": "Work Experience",
+   "url": "https://catalog.valleycollege.edu/courses/wkexp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WRM",
+   "title": "Water Resources Management",
+   "url": "https://catalog.valleycollege.edu/courses/wrm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WST",
+   "title": "Water Supply Technology",
+   "url": "https://catalog.valleycollege.edu/courses/wst/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

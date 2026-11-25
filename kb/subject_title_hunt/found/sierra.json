@@ -1,0 +1,443 @@
+{
+ "college": "Sierra College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:30:00Z",
+ "run": "45623798209",
+ "plan": "kb/college_reads/subject_index_sierra.json",
+ "titles": [
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADVM",
+   "title": "Advanced Manufacturing",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGRI",
+   "title": "Agriculture",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ALH",
+   "title": "Allied Health",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AAD",
+   "title": "Applied Art and Design",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biological Sciences",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BI",
+   "title": "Building Industries",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DFST",
+   "title": "Deaf Studies",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESCI",
+   "title": "Earth Science",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDU",
+   "title": "Education",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESS",
+   "title": "Environmental Sciences and Sustainability",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GER",
+   "title": "German",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HED",
+   "title": "Health Education",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSCI",
+   "title": "Health Sciences",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HDEV",
+   "title": "Human Development and Family",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IT",
+   "title": "Information Technology",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JPN",
+   "title": "Japanese",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LGBT",
+   "title": "Lesbian, Gay, Bisexual and Transgender Studies",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MECH",
+   "title": "Mechatronics",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NRSA",
+   "title": "Nursing Assistant",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NRSR",
+   "title": "Nursing, Registered",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTF",
+   "title": "Nutrition and Food Science",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDEV",
+   "title": "Personal Development",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RECM",
+   "title": "Recreation Management",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RISE",
+   "title": "Rise",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SKDV",
+   "title": "Skill Development",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theatre Arts",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding Technology",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WMST",
+   "title": "Women and Gender Studies",
+   "url": "https://catalog.sierracollege.edu/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

@@ -1,0 +1,1599 @@
+{
+ "_what": "The subjects Chabot College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Chabot College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:07:33Z",
+ "run": "45630435823",
+ "source": [
+  "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+  "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524"
+ ],
+ "rows": [
+  {
+   "code": "ADMJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADMJ"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ADPE",
+   "heading": "Adapted Physical Education",
+   "heading_printed": "Adapted Physical Education",
+   "rule": "index",
+   "codes": [
+    "ADPE"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "APAC",
+   "heading": "Apprenticeship: Ac Transit",
+   "heading_printed": "Apprenticeship: AC Transit",
+   "rule": "index",
+   "codes": [
+    "APAC"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "APAU",
+   "heading": "Apprenticeship: Automotive",
+   "heading_printed": "Apprenticeship: Automotive",
+   "rule": "index",
+   "codes": [
+    "APAU"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "APEL",
+   "heading": "Apprenticeship: Electrical",
+   "heading_printed": "Apprenticeship: Electrical",
+   "rule": "index",
+   "codes": [
+    "APEL"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "APFL",
+   "heading": "Apprenticeship: Fire and Life Safety",
+   "heading_printed": "Apprenticeship: Fire and Life Safety",
+   "rule": "index",
+   "codes": [
+    "APFL"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "APHC",
+   "heading": "Apprenticeship: Health Coach",
+   "heading_printed": "Apprenticeship: Health Coach",
+   "rule": "index",
+   "codes": [
+    "APHC"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "APIT",
+   "heading": "Apprenticeship: IT Support Professional",
+   "heading_printed": "Apprenticeship: IT Support Professional",
+   "rule": "index",
+   "codes": [
+    "APIT"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "APPM",
+   "heading": "Apprenticeship: Precision Manufacturing",
+   "heading_printed": "Apprenticeship: Precision Manufacturing",
+   "rule": "index",
+   "codes": [
+    "APPM"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "APRO",
+   "heading": "Apprenticeship: Roofing",
+   "heading_printed": "Apprenticeship: Roofing",
+   "rule": "index",
+   "codes": [
+    "APRO"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "APSF",
+   "heading": "Apprenticeship: Sprinkler Fitter",
+   "heading_printed": "Apprenticeship: Sprinkler Fitter",
+   "rule": "index",
+   "codes": [
+    "APSF"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "APTE",
+   "heading": "Apprenticeship: Telecommunications",
+   "heading_printed": "Apprenticeship: Telecommunications",
+   "rule": "index",
+   "codes": [
+    "APTE"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ATEC",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "ATEC"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ATHL",
+   "heading": "Intercollegiate Athletics",
+   "heading_printed": "Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "ATHL"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "BIOS",
+   "heading": "Biological Sciences",
+   "heading_printed": "Biological Sciences",
+   "rule": "index",
+   "codes": [
+    "BIOS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "CAS",
+   "heading": "Computer Application Systems",
+   "heading_printed": "Computer Application Systems",
+   "rule": "index",
+   "codes": [
+    "CAS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "CEST",
+   "heading": "Apprenticeship: Construction System Electrical Low Voltage",
+   "heading_printed": "Apprenticeship: Construction System Electrical Low Voltage",
+   "rule": "index",
+   "codes": [
+    "CEST"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "CHM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHM"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "CMGT",
+   "heading": "Construction Management",
+   "heading_printed": "Construction Management",
+   "rule": "index",
+   "codes": [
+    "CMGT"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "DHYG",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "index",
+   "codes": [
+    "DHYG"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "DIGM",
+   "heading": "Digital Media",
+   "heading_printed": "Digital Media",
+   "rule": "index",
+   "codes": [
+    "DIGM"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ECAP",
+   "heading": "Apprenticeship: Early Childhood",
+   "heading_printed": "Apprenticeship: Early Childhood",
+   "rule": "index",
+   "codes": [
+    "ECAP"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ECD",
+   "heading": "Early Childhood Development",
+   "heading_printed": "Early Childhood Development",
+   "rule": "index",
+   "codes": [
+    "ECD"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ECN",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECN"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ELEC",
+   "heading": "Apprenticeship: Electrical Construction",
+   "heading_printed": "Apprenticeship: Electrical Construction",
+   "rule": "index",
+   "codes": [
+    "ELEC"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ENSC",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENSC"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ENST",
+   "heading": "Environmental Studies",
+   "heading_printed": "Environmental Studies",
+   "rule": "index",
+   "codes": [
+    "ENST"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ENTR",
+   "heading": "Entrepreneurship",
+   "heading_printed": "Entrepreneurship",
+   "rule": "index",
+   "codes": [
+    "ENTR"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ES",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ES"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English As A Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ESYS",
+   "heading": "Electronic Systems Technology",
+   "heading_printed": "Electronic Systems Technology",
+   "rule": "index",
+   "codes": [
+    "ESYS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "FRNC",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FRNC"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "FT",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FT"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "GEO",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEO"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "GEOS",
+   "heading": "Geological Sciences",
+   "heading_printed": "Geological Sciences",
+   "rule": "index",
+   "codes": [
+    "GEOS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "GNST",
+   "heading": "General Studies",
+   "heading_printed": "General Studies",
+   "rule": "index",
+   "codes": [
+    "GNST"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "HEAG",
+   "heading": "Healthy Aging Older Adults",
+   "heading_printed": "Healthy Aging Older Adults",
+   "rule": "index",
+   "codes": [
+    "HEAG"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "HIS",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "HIT",
+   "heading": "Health Information Management",
+   "heading_printed": "Health Information Management",
+   "rule": "index",
+   "codes": [
+    "HIT"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "HUMN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMN"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "ID",
+   "heading": "Interior Design",
+   "heading_printed": "Interior Design",
+   "rule": "index",
+   "codes": [
+    "ID"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "INDT",
+   "heading": "Industrial Technology",
+   "heading_printed": "Industrial Technology",
+   "rule": "index",
+   "codes": [
+    "INDT"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "KINE",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINE"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "LIBS",
+   "heading": "Library Studies",
+   "heading_printed": "Library Studies",
+   "rule": "index",
+   "codes": [
+    "LIBS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "LNSK",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LNSK"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "MCOM",
+   "heading": "Mass Communications",
+   "heading_printed": "Mass Communications",
+   "rule": "index",
+   "codes": [
+    "MCOM"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "MEDA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MEDA"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "MTH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MTH"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "MTT",
+   "heading": "Machine Tool Technology",
+   "heading_printed": "Machine Tool Technology",
+   "rule": "index",
+   "codes": [
+    "MTT"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "MURT",
+   "heading": "Music Recording Technology",
+   "heading_printed": "Music Recording Technology",
+   "rule": "index",
+   "codes": [
+    "MURT"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "MUSA",
+   "heading": "Music Applied",
+   "heading_printed": "Music Applied",
+   "rule": "index",
+   "codes": [
+    "MUSA"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "MUSL",
+   "heading": "Music Literature",
+   "heading_printed": "Music Literature",
+   "rule": "index",
+   "codes": [
+    "MUSL"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "MUSP",
+   "heading": "Music Performance",
+   "heading_printed": "Music Performance",
+   "rule": "index",
+   "codes": [
+    "MUSP"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "OPTN",
+   "heading": "Apprenticeship: Optical Technician Program",
+   "heading_printed": "Apprenticeship: Optical Technician Program",
+   "rule": "index",
+   "codes": [
+    "OPTN"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PEAC",
+   "heading": "Physical Education Activity",
+   "heading_printed": "Physical Education Activity",
+   "rule": "index",
+   "codes": [
+    "PEAC"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PLGL",
+   "heading": "Paralegal Studies",
+   "heading_printed": "Paralegal Studies",
+   "rule": "index",
+   "codes": [
+    "PLGL"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PLPF",
+   "heading": "Apprenticeship: Plumbing/Pipefitting",
+   "heading_printed": "Apprenticeship: Plumbing/Pipefitting",
+   "rule": "index",
+   "codes": [
+    "PLPF"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PMED",
+   "heading": "Paramedicine",
+   "heading_printed": "Paramedicine",
+   "rule": "index",
+   "codes": [
+    "PMED"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "POSC",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POSC"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PSCN",
+   "heading": "Psychology-Counseling",
+   "heading_printed": "Psychology-Counseling",
+   "rule": "index",
+   "codes": [
+    "PSCN"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "RELS",
+   "heading": "Religious Studies",
+   "heading_printed": "Religious Studies",
+   "rule": "index",
+   "codes": [
+    "RELS"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "REST",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "REST"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "SERV",
+   "heading": "Service Learning",
+   "heading_printed": "Service Learning",
+   "rule": "index",
+   "codes": [
+    "SERV"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "SHEE",
+   "heading": "Apprenticeship: Sheetmetal",
+   "heading_printed": "Apprenticeship: Sheetmetal",
+   "rule": "index",
+   "codes": [
+    "SHEE"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "SL",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "index",
+   "codes": [
+    "SL"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "SPA",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPA"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "STEM",
+   "heading": "Science, Technology, Engineering, and Mathematics",
+   "heading_printed": "Science, Technology, Engineering, and Mathematics",
+   "rule": "index",
+   "codes": [
+    "STEM"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "THTR",
+   "heading": "Theater Arts",
+   "heading_printed": "Theater Arts",
+   "rule": "index",
+   "codes": [
+    "THTR"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "TUTR",
+   "heading": "Tutoring",
+   "heading_printed": "Tutoring",
+   "rule": "index",
+   "codes": [
+    "TUTR"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  },
+  {
+   "code": "WEXP",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WEXP"
+   ],
+   "candidate": null,
+   "address": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630435823)",
+   "run": "45630435823"
+  }
+ ],
+ "subjects": 99,
+ "with_heading": 99
+}

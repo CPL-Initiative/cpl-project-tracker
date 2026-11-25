@@ -1,0 +1,1006 @@
+{
+ "_what": "The subjects Moreno Valley College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Moreno Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:14:17Z",
+ "run": "45631683919",
+ "source": [
+  "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098"
+ ],
+ "rows": [
+  {
+   "code": "ACC",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACC"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ADJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADJ"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ADM",
+   "heading": "Applied Digital Media",
+   "heading_printed": "Applied Digital Media",
+   "rule": "index",
+   "codes": [
+    "ADM"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ALR",
+   "heading": "Academic Literacy and Reading",
+   "heading_printed": "Academic Literacy and Reading",
+   "rule": "index",
+   "codes": [
+    "ALR"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ANT",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANT"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "APP",
+   "heading": "Apprenticeship",
+   "heading_printed": "Apprenticeship",
+   "rule": "index",
+   "codes": [
+    "APP"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "AST",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "AST"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "BIO",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "CAT",
+   "heading": "Computer Applications and Office Technology",
+   "heading_printed": "Computer Applications and Office Technology",
+   "rule": "index",
+   "codes": [
+    "CAT"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "CDL",
+   "heading": "Commercial Driver's License",
+   "heading_printed": "Commercial Driver's License",
+   "rule": "index",
+   "codes": [
+    "CDL"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "CHE",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHE"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "CMI",
+   "heading": "Community Interpretation",
+   "heading_printed": "Community Interpretation",
+   "rule": "index",
+   "codes": [
+    "CMI"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "DAN",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DAN"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "DEA",
+   "heading": "Dental Assistant",
+   "heading_printed": "Dental Assistant",
+   "rule": "index",
+   "codes": [
+    "DEA"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "DEH",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "index",
+   "codes": [
+    "DEH"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "EAR",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "EAR"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "EDU",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDU"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ENP",
+   "heading": "Entrepreneurship",
+   "heading_printed": "Entrepreneurship",
+   "rule": "index",
+   "codes": [
+    "ENP"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ETS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETS"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "FIT",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FIT"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "FST",
+   "heading": "Film Studies",
+   "heading_printed": "Film Studies",
+   "rule": "index",
+   "codes": [
+    "FST"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "GEG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEG"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "GUI",
+   "heading": "Guidance",
+   "heading_printed": "Guidance",
+   "rule": "index",
+   "codes": [
+    "GUI"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "HES",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HES"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "HET",
+   "heading": "Healthcare Technician",
+   "heading_printed": "Healthcare Technician",
+   "rule": "index",
+   "codes": [
+    "HET"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "HLS",
+   "heading": "Homeland Security",
+   "heading_printed": "Homeland Security",
+   "rule": "index",
+   "codes": [
+    "HLS"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "HMS",
+   "heading": "Social Work, Human Services & Counseling Practices",
+   "heading_printed": "Social Work, Human Services & Counseling Practices",
+   "rule": "index",
+   "codes": [
+    "HMS"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "IAT",
+   "heading": "Industrial Automation",
+   "heading_printed": "Industrial Automation",
+   "rule": "index",
+   "codes": [
+    "IAT"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "ILA",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "ILA"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "JOU",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOU"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "MAG",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "index",
+   "codes": [
+    "MAG"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "MDA",
+   "heading": "Medical Assistant",
+   "heading_printed": "Medical Assistant",
+   "rule": "index",
+   "codes": [
+    "MDA"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "MIS",
+   "heading": "Commercial Music (Music Industry Studies)",
+   "heading_printed": "Commercial Music (Music Industry Studies)",
+   "rule": "index",
+   "codes": [
+    "MIS"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "MKT",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MKT"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "PDS",
+   "heading": "Professional Development Studies",
+   "heading_printed": "Professional Development Studies",
+   "rule": "index",
+   "codes": [
+    "PDS"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "PHI",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHI"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "PHO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHO"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "PHY",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHY"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "PSF",
+   "heading": "Public Safety",
+   "heading_printed": "Public Safety",
+   "rule": "index",
+   "codes": [
+    "PSF"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "RLE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RLE"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "SPA",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPA"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "THE",
+   "heading": "Theater Arts",
+   "heading_printed": "Theater Arts",
+   "rule": "index",
+   "codes": [
+    "THE"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  },
+  {
+   "code": "WKX",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WKX"
+   ],
+   "candidate": null,
+   "address": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5098",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631683919)",
+   "run": "45631683919"
+  }
+ ],
+ "subjects": 62,
+ "with_heading": 62
+}

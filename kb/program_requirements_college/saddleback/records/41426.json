@@ -61,20 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    16.0,
-    16.0
+    17.0,
+    17.0
    ],
    "stated": [
     17.0,
     17.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 16.0-16.0; the catalog states 17.0-17.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -178,7 +176,8 @@
       "units": 1,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      },
      {
       "code": "MUS 81",
@@ -246,5 +245,16 @@
    "No careers are named; the summary mentions transfer into a Bachelors of Arts in Music in Vocal Studies only."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": 45606980427,
+ "reconciled": [
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MUS 50": 2
+   },
+   "words": "The following course must be taken twice for a total of two units:\n2.0\nMUS 50"
+  }
+ ],
+ "read_run": "38843470509"
 }

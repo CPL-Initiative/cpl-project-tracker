@@ -92,7 +92,7 @@
   "2026-11-22": 1.29,
   "2026-11-23": 0.17,
   "2026-11-24": 2.9,
-  "2026-11-25": 1.29
+  "2026-11-25": 4.4
  },
  "runner_runs": {
   "38322747831": {
@@ -1184,6 +1184,31 @@
    "college": "butte",
    "usd": 0.0,
    "day": "2026-11-25"
+  },
+  "45602612349": {
+   "college": "west_valley",
+   "usd": 0.15,
+   "day": "2026-11-25"
+  },
+  "45605429253": {
+   "college": "allan_hancock",
+   "usd": 0.08,
+   "day": "2026-11-25"
+  },
+  "45606980427": {
+   "college": "saddleback",
+   "usd": 0.0,
+   "day": "2026-11-25"
+  },
+  "45609110977": {
+   "college": "college_of_the_redwoods",
+   "usd": 0.12,
+   "day": "2026-11-25"
+  },
+  "45612549421": {
+   "college": "antelope_valley",
+   "usd": 2.76,
+   "day": "2026-11-25"
   }
  },
  "runner_since": "2026-11-17",
@@ -1214,9 +1239,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "curation": 136.0,
+    "collection": 256.0,
     "infrastructure": 109.9,
-    "collection": 256.0
+    "curation": 136.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0

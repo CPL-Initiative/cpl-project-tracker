@@ -1,0 +1,968 @@
+{
+ "college": "Sacramento City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:34:28Z",
+ "run": "45623883828",
+ "plan": "kb/college_reads/subject_index_sacramento_city.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AH",
+   "title": "Allied Health",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AMTP",
+   "title": "Aircraft Maintenance Technician Program",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ANIM",
+   "title": "Animation",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARABIC",
+   "title": "Arabic",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ATC",
+   "title": "Air Traffic Control",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ATCAD",
+   "title": "Air Traffic Control and Aircraft Dispatcher",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BAR",
+   "title": "Barbering",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIOLFS",
+   "title": "Biology Field Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CANT",
+   "title": "Cantonese",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHEMT",
+   "title": "Chemical Technology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISA",
+   "title": "Computer Information Sciences - Applications",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISC",
+   "title": "Computer Information Sciences - Core",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISD",
+   "title": "Computer Information Sciences - Data",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISM",
+   "title": "Computer Information Science - Maker",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISN",
+   "title": "Computer Information Sciences - Network",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISP",
+   "title": "Computer Information Sciences - Programming",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISS",
+   "title": "Computer Information Sciences - Security",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISW",
+   "title": "Computer Information Sciences - Web",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CNC",
+   "title": "Computer Numerical Control",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHW",
+   "title": "Community Healthcare Worker",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "COMDE",
+   "title": "Community Leadership Development",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "COSM",
+   "title": "Cosmetology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CSP",
+   "title": "Community Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CVT",
+   "title": "Cardiovascular Technologist",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DAST",
+   "title": "Dental Assisting",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DDSN",
+   "title": "Digital Design",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DEAF",
+   "title": "Deaf Culture and American Sign Language Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DHYG",
+   "title": "Dental Hygiene",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EDT",
+   "title": "Engineering Design Technology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGCW",
+   "title": "English - Creative Writing",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGED",
+   "title": "English - Education",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGLB",
+   "title": "English - Laboratory",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGLT",
+   "title": "English - Literature",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGRD",
+   "title": "English - Reading",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGWR",
+   "title": "English - Writing",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENVT",
+   "title": "Environmental Technology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENTR",
+   "title": "Entrepreneurship",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLG",
+   "title": "English as a Second Language - Grammar",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLL",
+   "title": "English as a Second Language - Listening",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLLAB",
+   "title": "English as a Second Language Lab",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLNC",
+   "title": "English as a Second Language Noncredit",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLP",
+   "title": "English as a Second Language - Pronunciation",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLR",
+   "title": "English as a Second Language - Reading",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLW",
+   "title": "English as a Second Language - Writing",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ET",
+   "title": "Electronics Technology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ETHNS",
+   "title": "Ethnic Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FASHN",
+   "title": "Fashion",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FCS",
+   "title": "Family and Consumer Science",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FITNS",
+   "title": "Fitness",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FLTEC",
+   "title": "Flight Technology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GAME",
+   "title": "Game Design",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GERON",
+   "title": "Gerontology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GREEK",
+   "title": "Greek",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HCD",
+   "title": "Human/Career Development",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HEED",
+   "title": "Health Education",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HSER",
+   "title": "Human Services",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HVAC",
+   "title": "Heating, Ventilation, and Air Conditioning",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "IMMT",
+   "title": "Industrial Maintenance Mechanic Technician",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "INDIS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "IS",
+   "title": "International Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "JAPAN",
+   "title": "Japanese",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "KINES",
+   "title": "Kinesiology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "KOREAN",
+   "title": "Korean",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LIBT",
+   "title": "Library and Information Technology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LTAT",
+   "title": "Learning, Tutoring, and Academic Technology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MAKR",
+   "title": "Modern Making",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MAND",
+   "title": "Mandarin",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATHS",
+   "title": "Mathemetics Support",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MET",
+   "title": "Mechanical-Electrical Technology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MKT",
+   "title": "Marketing",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MODL",
+   "title": "3D Modeling",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUFHL",
+   "title": "Music Fundamentals/History and Literature",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUIVI",
+   "title": "Music Instrumental/Voice Instruction",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUP",
+   "title": "Music Performance",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUSM",
+   "title": "Specializations in Music",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NURSE",
+   "title": "Nursing, Registered",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NUTRI",
+   "title": "Nutrition",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "OEHS",
+   "title": "Occupational and Environmental Health and Safety",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "OPT",
+   "title": "Optical Technology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "OTA",
+   "title": "Occupational Therapy Assistant",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PACT",
+   "title": "Personal Activity",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PRSIAN",
+   "title": "Persian",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PTA",
+   "title": "Physical Therapist Assistant",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PNJABI",
+   "title": "Punjabi",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RAILR",
+   "title": "Railroad Operations",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RECR",
+   "title": "Recreation",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RUSS",
+   "title": "Russian",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SGVT",
+   "title": "Student Government",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPORT",
+   "title": "Sports",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SURVY",
+   "title": "Surveying",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TAFILM",
+   "title": "Theatre Arts Film",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TAP",
+   "title": "Theatre Arts Performance",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TELA",
+   "title": "Tutor Education and Learning Assistance",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TGLG",
+   "title": "Tagalog",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TMACT",
+   "title": "Team Activity",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "VIET",
+   "title": "Vietnamese",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "VN",
+   "title": "Vocational Nursing",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WGS",
+   "title": "Women and Gender Studies",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WEXP",
+   "title": "Work Experience",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend"
+  }
+ ]
+}

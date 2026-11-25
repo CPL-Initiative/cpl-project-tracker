@@ -1,0 +1,683 @@
+{
+ "college": "Victor Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:40:25Z",
+ "run": "45625259489",
+ "plan": "kb/college_reads/subject_index_victor_valley.json",
+ "titles": [
+  {
+   "code": "AENG",
+   "title": "English as a Second Language Noncredit",
+   "url": "https://catalog.vvc.edu/course-descriptions/aeng/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGNR",
+   "title": "Agriculture and Natural Resources",
+   "url": "https://catalog.vvc.edu/course-descriptions/agnr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AHOM",
+   "title": "Adult Education Home Economics",
+   "url": "https://catalog.vvc.edu/course-descriptions/ahom/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ALDH",
+   "title": "Allied Health",
+   "url": "https://catalog.vvc.edu/course-descriptions/aldh/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AMUS",
+   "title": "Music Noncredit",
+   "url": "https://catalog.vvc.edu/course-descriptions/amus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANIM",
+   "title": "3D Animation",
+   "url": "https://catalog.vvc.edu/course-descriptions/anim/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.vvc.edu/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APE",
+   "title": "Adapted Physical Education",
+   "url": "https://catalog.vvc.edu/course-descriptions/ape/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://catalog.vvc.edu/course-descriptions/arch/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art and Design",
+   "url": "https://catalog.vvc.edu/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.vvc.edu/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.vvc.edu/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.vvc.edu/course-descriptions/astr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://catalog.vvc.edu/course-descriptions/athl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive",
+   "url": "https://catalog.vvc.edu/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AVA",
+   "title": "Aviation",
+   "url": "https://catalog.vvc.edu/course-descriptions/ava/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BADM",
+   "title": "Business Administration",
+   "url": "https://catalog.vvc.edu/course-descriptions/badm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BET",
+   "title": "Business Education Technologies",
+   "url": "https://catalog.vvc.edu/course-descriptions/bet/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biological Sciences",
+   "url": "https://catalog.vvc.edu/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BRE",
+   "title": "Business Real Estate",
+   "url": "https://catalog.vvc.edu/course-descriptions/bre/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BSKL",
+   "title": "Basic Skills",
+   "url": "https://catalog.vvc.edu/course-descriptions/bskl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BSRT",
+   "title": "Bachelor of Science Respiratory Therapy",
+   "url": "https://catalog.vvc.edu/course-descriptions/bsrt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CART",
+   "title": "Commercial Art",
+   "url": "https://catalog.vvc.edu/course-descriptions/cart/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDL",
+   "title": "Commercial Drivers License",
+   "url": "https://catalog.vvc.edu/course-descriptions/cdl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHDV",
+   "title": "Child Development",
+   "url": "https://catalog.vvc.edu/course-descriptions/chdv/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.vvc.edu/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Science",
+   "url": "https://catalog.vvc.edu/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CJ",
+   "title": "Criminal Justice",
+   "url": "https://catalog.vvc.edu/course-descriptions/cj/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CMST",
+   "title": "Communication Studies",
+   "url": "https://catalog.vvc.edu/course-descriptions/cmst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.vvc.edu/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CORT",
+   "title": "Court Reporting",
+   "url": "https://catalog.vvc.edu/course-descriptions/cort/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSM",
+   "title": "Cosmetology",
+   "url": "https://catalog.vvc.edu/course-descriptions/cosm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CT",
+   "title": "Construction Technology",
+   "url": "https://catalog.vvc.edu/course-descriptions/ct/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CTMF",
+   "title": "Construction Technology Manufacturing",
+   "url": "https://catalog.vvc.edu/course-descriptions/ctmf/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CTMT",
+   "title": "Construction Technology Maintenance",
+   "url": "https://catalog.vvc.edu/course-descriptions/ctmt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CTPW",
+   "title": "Construction Technology Public Works",
+   "url": "https://catalog.vvc.edu/course-descriptions/ctpw/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DVST",
+   "title": "Developmental Studies",
+   "url": "https://catalog.vvc.edu/course-descriptions/dvst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.vvc.edu/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.vvc.edu/course-descriptions/educ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELCT",
+   "title": "Electronics and Computer Technology",
+   "url": "https://catalog.vvc.edu/course-descriptions/elct/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMC",
+   "title": "Emergency Medical Certification",
+   "url": "https://catalog.vvc.edu/course-descriptions/emc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://catalog.vvc.edu/course-descriptions/ems/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGD",
+   "title": "Engineering Drafting",
+   "url": "https://catalog.vvc.edu/course-descriptions/engd/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.vvc.edu/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENTR",
+   "title": "Entrepreneurship",
+   "url": "https://catalog.vvc.edu/course-descriptions/entr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVT",
+   "title": "Environmental Technology",
+   "url": "https://catalog.vvc.edu/course-descriptions/envt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.vvc.edu/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETC",
+   "title": "Emergency Telecommunications",
+   "url": "https://catalog.vvc.edu/course-descriptions/etc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETH",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.vvc.edu/course-descriptions/eth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://catalog.vvc.edu/course-descriptions/fire/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.vvc.edu/course-descriptions/fren/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.vvc.edu/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geological Sciences",
+   "url": "https://catalog.vvc.edu/course-descriptions/geol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://catalog.vvc.edu/course-descriptions/glst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GUID",
+   "title": "Guidance",
+   "url": "https://catalog.vvc.edu/course-descriptions/guid/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.vvc.edu/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://catalog.vvc.edu/course-descriptions/hlth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HMSV",
+   "title": "Human Services",
+   "url": "https://catalog.vvc.edu/course-descriptions/hmsv/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://catalog.vvc.edu/course-descriptions/jour/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://catalog.vvc.edu/course-descriptions/kin/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIND",
+   "title": "Kinesiology Dance",
+   "url": "https://catalog.vvc.edu/course-descriptions/kind/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Science",
+   "url": "https://catalog.vvc.edu/course-descriptions/libr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.vvc.edu/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MNLO",
+   "title": "Manufacturing and Logistics",
+   "url": "https://catalog.vvc.edu/course-descriptions/mnlo/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSC",
+   "title": "Music",
+   "url": "https://catalog.vvc.edu/course-descriptions/musc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NOTR",
+   "title": "Notary Public",
+   "url": "https://catalog.vvc.edu/course-descriptions/notr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.vvc.edu/course-descriptions/nurs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEA",
+   "title": "Oceanography",
+   "url": "https://catalog.vvc.edu/course-descriptions/ocea/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PADM",
+   "title": "Public Administration",
+   "url": "https://catalog.vvc.edu/course-descriptions/padm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PAL",
+   "title": "Paralegal Studies",
+   "url": "https://catalog.vvc.edu/course-descriptions/pal/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDF",
+   "title": "Download Page",
+   "url": "https://catalog.vvc.edu/course-descriptions/course-descriptions.pdf",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.vvc.edu/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHLE",
+   "title": "Phlebotomy",
+   "url": "https://catalog.vvc.edu/course-descriptions/phle/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.vvc.edu/course-descriptions/phot/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHT",
+   "title": "Pharmacy Technician",
+   "url": "https://catalog.vvc.edu/course-descriptions/pht/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.vvc.edu/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.vvc.edu/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSCI",
+   "title": "Physical Sciences",
+   "url": "https://catalog.vvc.edu/course-descriptions/psci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.vvc.edu/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PTS",
+   "title": "Physical Therapy Services",
+   "url": "https://catalog.vvc.edu/course-descriptions/pts/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RLST",
+   "title": "Religious Studies",
+   "url": "https://catalog.vvc.edu/course-descriptions/rlst/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RMGT",
+   "title": "Restaurant Management",
+   "url": "https://catalog.vvc.edu/course-descriptions/rmgt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RSPT",
+   "title": "Respiratory Therapy",
+   "url": "https://catalog.vvc.edu/course-descriptions/rspt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.vvc.edu/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://catalog.vvc.edu/course-descriptions/soci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.vvc.edu/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.vvc.edu/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://catalog.vvc.edu/course-descriptions/ta/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TUTR",
+   "title": "Tutor",
+   "url": "https://catalog.vvc.edu/course-descriptions/tutr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WEE",
+   "title": "Work Experience Education",
+   "url": "https://catalog.vvc.edu/course-descriptions/wee/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://catalog.vvc.edu/course-descriptions/weld/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WKPR",
+   "title": "Work Force Preparation",
+   "url": "https://catalog.vvc.edu/course-descriptions/wkpr/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "not_listed": {
+  "codes": [
+   "ADPE",
+   "ANUR",
+   "ATH",
+   "ATHLTCS",
+   "BAD",
+   "CARDEV",
+   "CHEMH",
+   "CONTCH",
+   "CRDV",
+   "DEAC",
+   "ELEC",
+   "ELS",
+   "ETEC",
+   "FT",
+   "GERM",
+   "HISTH",
+   "HVAC",
+   "LATN",
+   "MERT",
+   "OH",
+   "PHYSIO",
+   "PSYCH",
+   "RESMGT",
+   "RESPIRATORY THERAPY",
+   "SPCH"
+  ],
+  "why": "The hunt list names these codes, and the index this read loaded prints no subject for them."
+ }
+}

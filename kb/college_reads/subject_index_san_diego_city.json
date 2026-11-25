@@ -1,0 +1,20 @@
+{
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 5: the link list (15523) under Course Descriptions that round 4 (run 45628443522) found, through the capture view; the one sdccd read in this commit. Catalog 69.",
+ "college": "San Diego City College",
+ "questions": {
+  "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
+ },
+ "keywords": [
+  "\"text\":"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cq_subjects"
+   ],
+   "url": "https://sdccd.curriqunet.com/catalog/_getNavigation?id=69&parentId=15523",
+   "capture_view": true
+  }
+ ],
+ "capture_lines": 2000
+}

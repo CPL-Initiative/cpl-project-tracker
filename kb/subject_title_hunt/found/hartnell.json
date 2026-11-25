@@ -1,0 +1,9 @@
+{
+ "college": "Hartnell College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:22Z",
+ "run": "45625259489,45626788039,45628362566",
+ "plan": "kb/college_reads/subject_index_hartnell.json",
+ "titles": [],
+ "not_read": "Three reads, no subject title printed. The Coursedog catalog lists courses (AAT100, Introduction to Automotive Repair) and departments (Advanced Automotive Technology) with no subject heading; the course-search filters offer departments, meta-majors and GE areas, and the course template's Subject code question (subjectCodeSelect) carries no names. A department is a weaker label and pairing one with a code would be inference. The catalog PDF the page links (coursedog-pdfs-public-prod on amazonaws.com) was not read."
+}

@@ -1,0 +1,1137 @@
+{
+ "_what": "The subjects Compton College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Compton College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:04:36Z",
+ "run": "45629430201",
+ "source": [
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=119",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=124",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=126",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=127",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=129",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=132",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=134",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=138",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=141",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=143",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=144",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=147",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=148",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=153",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=154",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=160",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=161",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=163",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=164",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=168",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=169",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=171",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=174",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=179",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=185",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=187",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=189",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=190",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=191",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=192",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=195",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=198",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=199",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=200",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=201",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=203",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=205",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=211",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=220",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=224",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=225",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=235",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=237",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=239",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=241",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=243",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=244",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=246",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=248",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=249",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=250",
+  "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=253"
+ ],
+ "rows": [
+  {
+   "code": "ACR",
+   "heading": "Air Conditioning and Refrigeration",
+   "heading_printed": "AIR CONDITIONING AND REFRIGERATION",
+   "rule": "index",
+   "codes": [
+    "ACR"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ACRP",
+   "heading": "Automotive Collision Repair/Painting",
+   "heading_printed": "AUTOMOTIVE COLLISION REPAIR/PAINTING",
+   "rule": "index",
+   "codes": [
+    "ACRP"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=134",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "ADMINISTRATION OF JUSTICE",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=119",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy",
+   "heading_printed": "ANATOMY",
+   "rule": "index",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=126",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "ANTHROPOLOGY",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=127",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "ART HISTORY",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=132",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AS",
+   "heading": "Academic Strategies",
+   "heading_printed": "ACADEMIC STRATEGIES",
+   "rule": "index",
+   "codes": [
+    "AS"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=119",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "ASTRONOMY",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=132",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ATEC",
+   "heading": "Automotive Technology",
+   "heading_printed": "AUTOMOTIVE TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "ATEC"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=138",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "BIOLOGY",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "BTEC",
+   "heading": "Biotechnology",
+   "heading_printed": "BIOTECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "BTEC"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "BUSINESS",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=144",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CA",
+   "heading": "Culinary Arts",
+   "heading_printed": "CULINARY ARTS",
+   "rule": "index",
+   "codes": [
+    "CA"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=163",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development",
+   "heading_printed": "CHILD DEVELOPMENT",
+   "rule": "index",
+   "codes": [
+    "CDEV"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=148",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CH",
+   "heading": "Contemporary Health",
+   "heading_printed": "CONTEMPORARY HEALTH",
+   "rule": "index",
+   "codes": [
+    "CH"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=161",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "CHEMISTRY",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=147",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "COMPUTER INFORMATION SYSTEMS",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=154",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "COMMUNICATION STUDIES",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "COMS",
+   "heading": "Communication Studies",
+   "heading_printed": "COMMUNICATION STUDIES",
+   "rule": "index",
+   "codes": [
+    "COMS"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "COSMETOLOGY",
+   "rule": "index",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=161",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "COMPUTER SCIENCE",
+   "rule": "index",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=160",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "DANCE",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=164",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "ECONOMICS",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=168",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "EDEV",
+   "heading": "Educational Development",
+   "heading_printed": "EDUCATIONAL DEVELOPMENT",
+   "rule": "index",
+   "codes": [
+    "EDEV"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=169",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "EDUCATION",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=169",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "ENGLISH",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=174",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "ENGINEERING",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=171",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=179",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ESTU",
+   "heading": "Ethnic Studies",
+   "heading_printed": "ETHNIC STUDIES",
+   "rule": "index",
+   "codes": [
+    "ESTU"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ETEC",
+   "heading": "Engineering Technology",
+   "heading_printed": "ENGINEERING TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "ETEC"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=171",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FAID",
+   "heading": "First Aid",
+   "heading_printed": "FIRST AID",
+   "rule": "index",
+   "codes": [
+    "FAID"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film/Video",
+   "heading_printed": "FILM/VIDEO",
+   "rule": "index",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=187",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FTEC",
+   "heading": "Fire and Emergency Technology",
+   "heading_printed": "FIRE AND EMERGENCY TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "FTEC"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=189",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "GEOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "GEOLOGY",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=191",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HDEV",
+   "heading": "Human Development",
+   "heading_printed": "HUMAN DEVELOPMENT",
+   "rule": "index",
+   "codes": [
+    "HDEV"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=198",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=195",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HSED",
+   "heading": "High School Education",
+   "heading_printed": "HIGH SCHOOL EDUCATION",
+   "rule": "index",
+   "codes": [
+    "HSED"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=192",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HUMA",
+   "heading": "Humanities",
+   "heading_printed": "HUMANITIES",
+   "rule": "index",
+   "codes": [
+    "HUMA"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "JAPA",
+   "heading": "Japanese",
+   "heading_printed": "JAPANESE",
+   "rule": "index",
+   "codes": [
+    "JAPA"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library Science",
+   "heading_printed": "LIBRARY SCIENCE",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=200",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "LOGI",
+   "heading": "Logistics",
+   "heading_printed": "LOGISTICS",
+   "rule": "index",
+   "codes": [
+    "LOGI"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=201",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "LSKL",
+   "heading": "Life Skills",
+   "heading_printed": "LIFE SKILLS",
+   "rule": "index",
+   "codes": [
+    "LSKL"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=200",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "MATHEMATICS",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=205",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MEDT",
+   "heading": "Medical Terminology",
+   "heading_printed": "MEDICAL TERMINOLOGY",
+   "rule": "index",
+   "codes": [
+    "MEDT"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=211",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MICR",
+   "heading": "Microbiology",
+   "heading_printed": "MICROBIOLOGY",
+   "rule": "index",
+   "codes": [
+    "MICR"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=211",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MTEC",
+   "heading": "Manufacturing Technology",
+   "heading_printed": "MANUFACTURING TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "MTEC"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=205",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MTT",
+   "heading": "Machine Tool Technology",
+   "heading_printed": "MACHINE TOOL TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "MTT"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=203",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MUSI",
+   "heading": "Music",
+   "heading_printed": "MUSIC",
+   "rule": "index",
+   "codes": [
+    "MUSI"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=211",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "NFOO",
+   "heading": "Nutrition and Foods",
+   "heading_printed": "NUTRITION AND FOODS",
+   "rule": "index",
+   "codes": [
+    "NFOO"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=224",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "NURSING",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=220",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "PHYSICAL EDUCATION",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=225",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "PHILOSOPHY",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=225",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PHYO",
+   "heading": "Physiology",
+   "heading_printed": "PHYSIOLOGY",
+   "rule": "index",
+   "codes": [
+    "PHYO"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "PHYSICS",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=235",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "POLI",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "POLI"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PSCI",
+   "heading": "Physical Sciences",
+   "heading_printed": "PHYSICAL SCIENCES",
+   "rule": "index",
+   "codes": [
+    "PSCI"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=235",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "PSYCHOLOGY",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=239",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "REAL ESTATE",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=241",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "SLAN",
+   "heading": "Sign Language",
+   "heading_printed": "SIGN LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "SLAN"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=243",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=244",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "SPANISH",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=246",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "STATISTICS",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=248",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theater",
+   "heading_printed": "THEATER",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=249",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "WELDING",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=250",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "WSTU",
+   "heading": "Women’s Studies",
+   "heading_printed": "WOMEN’S STUDIES",
+   "rule": "index",
+   "codes": [
+    "WSTU"
+   ],
+   "candidate": null,
+   "address": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=253",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  }
+ ],
+ "subjects": 67,
+ "with_heading": 67
+}

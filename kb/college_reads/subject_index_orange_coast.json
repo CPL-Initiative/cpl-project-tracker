@@ -1,0 +1,21 @@
+{
+ "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: round 1 (run 45625315991) followed COURSES A-Z to /orange-coast/course-descriptions/, which links Credit Courses and Noncredit Courses; the district's /courses/ answered 403 and is not read again. This read follows the two lists once. No model call.",
+ "college": "Orange Coast College",
+ "questions": {
+  "subjects": "Every subject heading the catalog's course index prints, with its code."
+ },
+ "keywords": [
+  "\\([A-Z&]{1,8}\\)"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "/orange-coast/course-descriptions/",
+   "links_cap": 60,
+   "follow": "^\\s*(Credit Courses|Noncredit Courses)\\s*$"
+  }
+ ]
+}

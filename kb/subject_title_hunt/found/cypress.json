@@ -1,0 +1,506 @@
+{
+ "college": "Cypress College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:31:55Z",
+ "run": "45624360178",
+ "plan": "kb/college_reads/subject_index_cypress.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AC/R",
+   "title": "Air Conditioning/Refrigeration",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACR",
+   "title": "Automotive Collision Repair",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AT",
+   "title": "Automotive Technology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATC",
+   "title": "Aviation and Travel Careers",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CE",
+   "title": "Career Education",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling and Guidance",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CTRP",
+   "title": "Court Reporting",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DA",
+   "title": "Dental Assistant",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DH",
+   "title": "Dental Hygiene",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMS",
+   "title": "Diagnostic Medical Sonography",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DSST",
+   "title": "Disability Studies",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDU",
+   "title": "Education",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EST",
+   "title": "Energy and Sustainable Tech",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGT",
+   "title": "Engineering Technology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HI",
+   "title": "Health Information Technology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HS",
+   "title": "Health Science",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HRC",
+   "title": "Hotel, Restaurant, Culinary Arts",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUSR",
+   "title": "Human Services",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIB",
+   "title": "Library Technology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LING",
+   "title": "Linguistics",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MAD",
+   "title": "Media Arts Design",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MORT",
+   "title": "Mortuary Science",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSA",
+   "title": "Music-Applied",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy and Religious Studies",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Sciences",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POSC",
+   "title": "Political Science",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PT",
+   "title": "Psychiatric Technology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHS",
+   "title": "Public Health Science",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RADT",
+   "title": "Radiologic Technology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REC",
+   "title": "Recreation",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOSC",
+   "title": "Social Sciences",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STSV",
+   "title": "Student Support Services",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theatre Arts",
+   "url": "https://catalog.nocccd.edu/cypress-college/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

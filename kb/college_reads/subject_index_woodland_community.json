@@ -1,0 +1,24 @@
+{
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 5: PE's first course printed no COURSES heading above it (run 45629430201); print its page. No model call.",
+ "college": "Woodland Community College",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "(?:^|\\n)PE10MR\\b"
+ ],
+ "pages": [
+  {
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf",
+   "answers": [
+    "subject_titles"
+   ]
+  }
+ ],
+ "pdf_span": [
+  200,
+  212
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
+}

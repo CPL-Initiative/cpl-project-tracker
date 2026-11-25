@@ -1,0 +1,2081 @@
+{
+ "_what": "The subjects Saddleback College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Saddleback College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:03:07Z",
+ "run": "45629512231",
+ "source": [
+  "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+  "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+  "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+  "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AEBE",
+   "heading": "Adult Education Basic Education (Noncredit)",
+   "heading_printed": "Adult Education Basic Education (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "AEBE"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AEBT",
+   "heading": "Adult Education Basic Technology (Noncredit)",
+   "heading_printed": "Adult Education Basic Technology (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "AEBT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AESL",
+   "heading": "Adult Education English as a Second Language (Noncredit)",
+   "heading_printed": "Adult Education English as a Second Language (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "AESL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AEWD",
+   "heading": "Adult Education with Disabilities (Noncredit)",
+   "heading_printed": "Adult Education with Disabilities (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "AEWD"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AEWP",
+   "heading": "Adult Education Workforce Preparation (Noncredit)",
+   "heading_printed": "Adult Education Workforce Preparation (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "AEWP"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ARAB",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "index",
+   "codes": [
+    "ARAB"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BIO",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CDE",
+   "heading": "Child Development and Education",
+   "heading_printed": "Child Development and Education",
+   "rule": "index",
+   "codes": [
+    "CDE"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development and Education",
+   "heading_printed": "Child Development and Education",
+   "rule": "index",
+   "codes": [
+    "CDEV"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CHI",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHI"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CIM",
+   "heading": "Computer and Information Management",
+   "heading_printed": "Computer and Information Management",
+   "rule": "index",
+   "codes": [
+    "CIM"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CIMA",
+   "heading": "Computer Info Management Applications",
+   "heading_printed": "Computer Info Management Applications",
+   "rule": "index",
+   "codes": [
+    "CIMA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CIMN",
+   "heading": "Computer Info Management Networking & Operating Systems",
+   "heading_printed": "Computer Info Management Networking & Operating Systems",
+   "rule": "index",
+   "codes": [
+    "CIMN"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CIMP",
+   "heading": "Computer Info Management Programming",
+   "heading_printed": "Computer Info Management Programming",
+   "rule": "index",
+   "codes": [
+    "CIMP"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CIMS",
+   "heading": "Computer Info Management Security",
+   "heading_printed": "Computer Info Management Security",
+   "rule": "index",
+   "codes": [
+    "CIMS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CIMW",
+   "heading": "Computer Info Management Web Development",
+   "heading_printed": "Computer Info Management Web Development",
+   "rule": "index",
+   "codes": [
+    "CIMW"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems (Noncredit)",
+   "heading_printed": "Computer Information Systems (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CMT",
+   "heading": "Computer Maintenance Technology",
+   "heading_printed": "Computer Maintenance Technology",
+   "rule": "index",
+   "codes": [
+    "CMT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CNA",
+   "heading": "Certified Nursing Assistant (Noncredit)",
+   "heading_printed": "Certified Nursing Assistant (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "CNA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "COS",
+   "heading": "Cosmetology (Noncredit)",
+   "heading_printed": "Cosmetology (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "COS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CTVR",
+   "heading": "Cinema, Television, Radio",
+   "heading_printed": "Cinema, Television, Radio",
+   "rule": "index",
+   "codes": [
+    "CTVR"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "CUL",
+   "heading": "Culinary",
+   "heading_printed": "Culinary",
+   "rule": "index",
+   "codes": [
+    "CUL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "DR",
+   "heading": "Drafting",
+   "heading_printed": "Drafting",
+   "rule": "index",
+   "codes": [
+    "DR"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EACT",
+   "heading": "Emeritus Accounting (Noncredit)",
+   "heading_printed": "Emeritus Accounting (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EACT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EART",
+   "heading": "Emeritus Art (Noncredit)",
+   "heading_printed": "Emeritus Art (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EART"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EBIO",
+   "heading": "Emeritus Biology (Noncredit)",
+   "heading_printed": "Emeritus Biology (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EBIO"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ECIM",
+   "heading": "Emeritus Computer Information & Management (Noncredit)",
+   "heading_printed": "Emeritus Computer Information & Management (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "ECIM"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ECOL",
+   "heading": "Ecological Restoration",
+   "heading_printed": "Ecological Restoration",
+   "rule": "index",
+   "codes": [
+    "ECOL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EECL",
+   "heading": "Emeritus Ecology (Noncredit)",
+   "heading_printed": "Emeritus Ecology (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EECL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EENG",
+   "heading": "Emeritus English (Noncredit)",
+   "heading_printed": "Emeritus English (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EENG"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EFRN",
+   "heading": "Emeritus French (Noncredit)",
+   "heading_printed": "Emeritus French (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EFRN"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EFSH",
+   "heading": "Emeritus Fashion (Noncredit)",
+   "heading_printed": "Emeritus Fashion (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EFSH"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EGRO",
+   "heading": "Emeritus Gerontology (Noncredit)",
+   "heading_printed": "Emeritus Gerontology (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EGRO"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EHEA",
+   "heading": "Emeritus Health (Noncredit)",
+   "heading_printed": "Emeritus Health (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EHEA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EHSC",
+   "heading": "Emeritus Health Science (Noncredit)",
+   "heading_printed": "Emeritus Health Science (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EHSC"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EHSR",
+   "heading": "Emeritus Human Services (Noncredit)",
+   "heading_printed": "Emeritus Human Services (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EHSR"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EHST",
+   "heading": "Emeritus History (Noncredit)",
+   "heading_printed": "Emeritus History (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EHST"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EHUM",
+   "heading": "Emeritus Humanities (Noncredit)",
+   "heading_printed": "Emeritus Humanities (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EHUM"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EITA",
+   "heading": "Emeritus Italian (Noncredit)",
+   "heading_printed": "Emeritus Italian (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EITA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technology",
+   "heading_printed": "Emergency Medical Technology",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EMUS",
+   "heading": "Emeritus Music (Noncredit)",
+   "heading_printed": "Emeritus Music (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EMUS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ENG",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENG"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ENV",
+   "heading": "Environmental Studies",
+   "heading_printed": "Environmental Studies",
+   "rule": "index",
+   "codes": [
+    "ENV"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EPHL",
+   "heading": "Emeritus Philosophy (Noncredit)",
+   "heading_printed": "Emeritus Philosophy (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EPHL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EPHO",
+   "heading": "Emeritus Photography (Noncredit)",
+   "heading_printed": "Emeritus Photography (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EPHO"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "EPOL",
+   "heading": "Emeritus Political Science (Noncredit)",
+   "heading_printed": "Emeritus Political Science (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "EPOL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ES",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ES"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ESPA",
+   "heading": "Emeritus Spanish (Noncredit)",
+   "heading_printed": "Emeritus Spanish (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "ESPA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ET",
+   "heading": "Electronic Technology",
+   "heading_printed": "Electronic Technology",
+   "rule": "index",
+   "codes": [
+    "ET"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ETHE",
+   "heading": "Emeritus Theatre Arts (Noncredit)",
+   "heading_printed": "Emeritus Theatre Arts (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "ETHE"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ETT",
+   "heading": "Entertainment and Theatre Technology",
+   "heading_printed": "Entertainment and Theatre Technology",
+   "rule": "index",
+   "codes": [
+    "ETT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "FA",
+   "heading": "Fine Arts",
+   "heading_printed": "Fine Arts",
+   "rule": "index",
+   "codes": [
+    "FA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "FASH",
+   "heading": "Fashion",
+   "heading_printed": "Fashion",
+   "rule": "index",
+   "codes": [
+    "FASH"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "FCS",
+   "heading": "Family and Consumer Sciences",
+   "heading_printed": "Family and Consumer Sciences",
+   "rule": "index",
+   "codes": [
+    "FCS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "FR",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FR"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GC",
+   "heading": "Graphic Communication",
+   "heading_printed": "Graphic Communication",
+   "rule": "index",
+   "codes": [
+    "GC"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GD",
+   "heading": "Graphic Design",
+   "heading_printed": "Graphic Design",
+   "rule": "index",
+   "codes": [
+    "GD"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GER",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GER"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GIS",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "index",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GLST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GLST"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "GSS",
+   "heading": "Gender and Sexuality Studies",
+   "heading_printed": "Gender and Sexuality Studies",
+   "rule": "index",
+   "codes": [
+    "GSS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HEBR",
+   "heading": "Hebrew",
+   "heading_printed": "Hebrew",
+   "rule": "index",
+   "codes": [
+    "HEBR"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HON",
+   "heading": "Honors",
+   "heading_printed": "Honors",
+   "rule": "index",
+   "codes": [
+    "HON"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "index",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HRM",
+   "heading": "Hospitality & Restaurant Management",
+   "heading_printed": "Hospitality & Restaurant Management",
+   "rule": "index",
+   "codes": [
+    "HRM"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HS",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HSC",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HSC"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "IA",
+   "heading": "Intercollegiate Athletics",
+   "heading_printed": "Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "IA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ID",
+   "heading": "Interior Design",
+   "heading_printed": "Interior Design",
+   "rule": "index",
+   "codes": [
+    "ID"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "INTS",
+   "heading": "Interdisciplinary",
+   "heading_printed": "Interdisciplinary",
+   "rule": "index",
+   "codes": [
+    "INTS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "ITA",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "JA",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "JRN",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JRN"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "KNEA",
+   "heading": "Kinesiology - Adapted",
+   "heading_printed": "Kinesiology - Adapted",
+   "rule": "index",
+   "codes": [
+    "KNEA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "KNES",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KNES"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "KOR",
+   "heading": "Korean",
+   "heading_printed": "Korean",
+   "rule": "index",
+   "codes": [
+    "KOR"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MFG",
+   "heading": "Manufacturing Technology",
+   "heading_printed": "Manufacturing Technology",
+   "rule": "index",
+   "codes": [
+    "MFG"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MLT",
+   "heading": "Medical Laboratory Technology",
+   "heading_printed": "Medical Laboratory Technology",
+   "rule": "index",
+   "codes": [
+    "MLT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MS",
+   "heading": "Marine Science",
+   "heading_printed": "Marine Science",
+   "rule": "index",
+   "codes": [
+    "MS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "N",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "N"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PH",
+   "heading": "Public Health",
+   "heading_printed": "Public Health",
+   "rule": "index",
+   "codes": [
+    "PH"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHIT",
+   "heading": "Public Health Informatics and Technology",
+   "heading_printed": "Public Health Informatics and Technology",
+   "rule": "index",
+   "codes": [
+    "PHIT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHLB",
+   "heading": "Phlebotomy",
+   "heading_printed": "Phlebotomy",
+   "rule": "index",
+   "codes": [
+    "PHLB"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PM",
+   "heading": "Paramedic",
+   "heading_printed": "Paramedic",
+   "rule": "index",
+   "codes": [
+    "PM"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PRSN",
+   "heading": "Persian",
+   "heading_printed": "Persian",
+   "rule": "index",
+   "codes": [
+    "PRSN"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "SL"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SPS",
+   "heading": "Special Services (Noncredit)",
+   "heading_printed": "Special Services (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "SPS"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "STAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "SURG",
+   "heading": "Surgical Technology",
+   "heading_printed": "Surgical Technology",
+   "rule": "index",
+   "codes": [
+    "SURG"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "TA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "TA"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "TOUR",
+   "heading": "Travel and Tourism",
+   "heading_printed": "Travel and Tourism",
+   "rule": "index",
+   "codes": [
+    "TOUR"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  },
+  {
+   "code": "TU",
+   "heading": "Tutoring (Noncredit)",
+   "heading_printed": "Tutoring (Noncredit)",
+   "rule": "index",
+   "codes": [
+    "TU"
+   ],
+   "candidate": null,
+   "address": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629512231)",
+   "run": "45629512231"
+  }
+ ],
+ "subjects": 129,
+ "with_heading": 129
+}

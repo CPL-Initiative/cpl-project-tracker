@@ -1,0 +1,24 @@
+{
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: the contents pages print in an unreadable font (run 45627807594) and pages 150 to 430 hold programs only; print the first pages after them that print a course line, if any. No model call.",
+ "college": "Solano Community College",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "(?:^|\\n)(?:ANTH|ACCT|ENGL|ART|BIO|HIST) ?C?\\d{1,4}[A-Z]? "
+ ],
+ "pages": [
+  {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
+   "answers": [
+    "subject_titles"
+   ]
+  }
+ ],
+ "pdf_span": [
+  430,
+  459
+ ],
+ "pdf_page_cap": 2,
+ "pdf_unfolded": true
+}

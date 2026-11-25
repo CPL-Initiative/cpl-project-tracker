@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T08:50:35Z",
+ "written_at": "2026-11-25T14:33:56Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15527,
+     "n": 15567,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 1829,
+     "n": 1791,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 2926,
+     "n": 2924,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,15 +63,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-25T08:36:01Z",
+    "at": "2026-11-25T12:19:48Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15527,
-    "failing": 1829,
-    "unread": 2926,
-    "records": 18962,
+    "complete": 15567,
+    "failing": 1791,
+    "unread": 2924,
+    "records": 18964,
     "colleges": 118,
     "outside_active": 1606,
     "confirmed": 32,
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-20T01:37:45-08:00",
+    "at": "2026-11-24T12:46:12-08:00",
     "every_hours": null
    },
    "facts": {
@@ -791,7 +791,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 1829,
+    "n": 1791,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -799,7 +799,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2926,
+    "n": 2924,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -835,7 +835,7 @@
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
-    "n": 2926,
+    "n": 2924,
     "was": 2829,
     "since": "2026-11-18",
     "words": "active programs with no record yet",

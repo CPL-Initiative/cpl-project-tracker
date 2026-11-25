@@ -24,7 +24,11 @@
    ],
    "candidate": null,
    "label": "Administration of Justice (ADMJ)",
-   "address": "https://catalog.mpc.edu/course-descriptions/admj/"
+   "address": "https://catalog.mpc.edu/course-descriptions/admj/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ADPE",
@@ -36,7 +40,11 @@
    ],
    "candidate": null,
    "label": "Adapted Physical Education (ADPE)",
-   "address": "https://catalog.mpc.edu/course-descriptions/adpe/"
+   "address": "https://catalog.mpc.edu/course-descriptions/adpe/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ANAT",
@@ -48,7 +56,11 @@
    ],
    "candidate": null,
    "label": "Anatomy (ANAT)",
-   "address": "https://catalog.mpc.edu/course-descriptions/anat/"
+   "address": "https://catalog.mpc.edu/course-descriptions/anat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ANTH",
@@ -60,7 +72,11 @@
    ],
    "candidate": null,
    "label": "Anthropology (ANTH)",
-   "address": "https://catalog.mpc.edu/course-descriptions/anth/"
+   "address": "https://catalog.mpc.edu/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARCE",
@@ -72,7 +88,11 @@
    ],
    "candidate": null,
    "label": "Art - Ceramic Technology (ARCE)",
-   "address": "https://catalog.mpc.edu/course-descriptions/arce/"
+   "address": "https://catalog.mpc.edu/course-descriptions/arce/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ART",
@@ -84,7 +104,11 @@
    ],
    "candidate": null,
    "label": "Art - Older Adult (ART)",
-   "address": "https://catalog.mpc.edu/course-descriptions/art/"
+   "address": "https://catalog.mpc.edu/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARTB",
@@ -96,7 +120,11 @@
    ],
    "candidate": null,
    "label": "Art - Basics (ARTB)",
-   "address": "https://catalog.mpc.edu/course-descriptions/artb/"
+   "address": "https://catalog.mpc.edu/course-descriptions/artb/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARTD",
@@ -108,7 +136,11 @@
    ],
    "candidate": null,
    "label": "Art - Dimensional (ARTD)",
-   "address": "https://catalog.mpc.edu/course-descriptions/artd/"
+   "address": "https://catalog.mpc.edu/course-descriptions/artd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARTG",
@@ -120,7 +152,11 @@
    ],
    "candidate": null,
    "label": "Art - Graphics (ARTG)",
-   "address": "https://catalog.mpc.edu/course-descriptions/artg/"
+   "address": "https://catalog.mpc.edu/course-descriptions/artg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARTH",
@@ -132,7 +168,11 @@
    ],
    "candidate": null,
    "label": "Art - History (ARTH)",
-   "address": "https://catalog.mpc.edu/course-descriptions/arth/"
+   "address": "https://catalog.mpc.edu/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARTP",
@@ -144,7 +184,11 @@
    ],
    "candidate": null,
    "label": "Art - Photography (ARTP)",
-   "address": "https://catalog.mpc.edu/course-descriptions/artp/"
+   "address": "https://catalog.mpc.edu/course-descriptions/artp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARTS",
@@ -156,7 +200,11 @@
    ],
    "candidate": null,
    "label": "Art - Studio (ARTS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/arts/"
+   "address": "https://catalog.mpc.edu/course-descriptions/arts/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARTV",
@@ -168,7 +216,11 @@
    ],
    "candidate": null,
    "label": "Art - Video (ARTV)",
-   "address": "https://catalog.mpc.edu/course-descriptions/artv/"
+   "address": "https://catalog.mpc.edu/course-descriptions/artv/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ASTR",
@@ -180,7 +232,11 @@
    ],
    "candidate": null,
    "label": "Astronomy (ASTR)",
-   "address": "https://catalog.mpc.edu/course-descriptions/astr/"
+   "address": "https://catalog.mpc.edu/course-descriptions/astr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ATHL",
@@ -192,7 +248,11 @@
    ],
    "candidate": null,
    "label": "Athletics (ATHL)",
-   "address": "https://catalog.mpc.edu/course-descriptions/athl/"
+   "address": "https://catalog.mpc.edu/course-descriptions/athl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AUTO",
@@ -204,7 +264,11 @@
    ],
    "candidate": null,
    "label": "Automotive Technology (AUTO)",
-   "address": "https://catalog.mpc.edu/course-descriptions/auto/"
+   "address": "https://catalog.mpc.edu/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BIOL",
@@ -216,7 +280,11 @@
    ],
    "candidate": null,
    "label": "Biology (BIOL)",
-   "address": "https://catalog.mpc.edu/course-descriptions/biol/"
+   "address": "https://catalog.mpc.edu/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BUSC",
@@ -228,7 +296,11 @@
    ],
    "candidate": null,
    "label": "Business Skills (BUSC)",
-   "address": "https://catalog.mpc.edu/course-descriptions/busc/"
+   "address": "https://catalog.mpc.edu/course-descriptions/busc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BUSI",
@@ -240,7 +312,11 @@
    ],
    "candidate": null,
    "label": "Business (BUSI)",
-   "address": "https://catalog.mpc.edu/course-descriptions/busi/"
+   "address": "https://catalog.mpc.edu/course-descriptions/busi/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CHEM",
@@ -252,7 +328,11 @@
    ],
    "candidate": null,
    "label": "Chemistry (CHEM)",
-   "address": "https://catalog.mpc.edu/course-descriptions/chem/"
+   "address": "https://catalog.mpc.edu/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COMM",
@@ -264,7 +344,11 @@
    ],
    "candidate": null,
    "label": "Communication Studies (COMM) and Speech Communications (SPCH)",
-   "address": "https://catalog.mpc.edu/course-descriptions/comm/"
+   "address": "https://catalog.mpc.edu/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COUN",
@@ -276,7 +360,11 @@
    ],
    "candidate": null,
    "label": "Counseling (COUN)",
-   "address": "https://catalog.mpc.edu/course-descriptions/coun/"
+   "address": "https://catalog.mpc.edu/course-descriptions/coun/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CSCI",
@@ -288,7 +376,11 @@
    ],
    "candidate": null,
    "label": "Computer Science (CSCI)",
-   "address": "https://catalog.mpc.edu/course-descriptions/csci/"
+   "address": "https://catalog.mpc.edu/course-descriptions/csci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CSIS",
@@ -300,7 +392,11 @@
    ],
    "candidate": null,
    "label": "Computer Security and Information Systems (CSIS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/csis/"
+   "address": "https://catalog.mpc.edu/course-descriptions/csis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DANC",
@@ -312,7 +408,11 @@
    ],
    "candidate": null,
    "label": "Dance (DANC)",
-   "address": "https://catalog.mpc.edu/course-descriptions/danc/"
+   "address": "https://catalog.mpc.edu/course-descriptions/danc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DNTL",
@@ -324,7 +424,11 @@
    ],
    "candidate": null,
    "label": "Dental Technology (DNTL)",
-   "address": "https://catalog.mpc.edu/course-descriptions/dntl/"
+   "address": "https://catalog.mpc.edu/course-descriptions/dntl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ECED",
@@ -336,7 +440,11 @@
    ],
    "candidate": null,
    "label": "Early Childhood Education (ECED)",
-   "address": "https://catalog.mpc.edu/course-descriptions/eced/"
+   "address": "https://catalog.mpc.edu/course-descriptions/eced/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ECON",
@@ -348,7 +456,11 @@
    ],
    "candidate": null,
    "label": "Economics (ECON)",
-   "address": "https://catalog.mpc.edu/course-descriptions/econ/"
+   "address": "https://catalog.mpc.edu/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EDUC",
@@ -360,7 +472,11 @@
    ],
    "candidate": null,
    "label": "Education (EDUC)",
-   "address": "https://catalog.mpc.edu/course-descriptions/educ/"
+   "address": "https://catalog.mpc.edu/course-descriptions/educ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EMMS",
@@ -372,7 +488,11 @@
    ],
    "candidate": null,
    "label": "Emergency Medical Services (EMMS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/emms/"
+   "address": "https://catalog.mpc.edu/course-descriptions/emms/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENGL",
@@ -384,7 +504,11 @@
    ],
    "candidate": null,
    "label": "English (ENGL)",
-   "address": "https://catalog.mpc.edu/course-descriptions/engl/"
+   "address": "https://catalog.mpc.edu/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENGR",
@@ -396,7 +520,11 @@
    ],
    "candidate": null,
    "label": "Engineering (ENGR)",
-   "address": "https://catalog.mpc.edu/course-descriptions/engr/"
+   "address": "https://catalog.mpc.edu/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENSL",
@@ -408,7 +536,11 @@
    ],
    "candidate": null,
    "label": "English as a Second Language (ENSL)",
-   "address": "https://catalog.mpc.edu/course-descriptions/ensl/"
+   "address": "https://catalog.mpc.edu/course-descriptions/ensl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ETNC",
@@ -420,7 +552,11 @@
    ],
    "candidate": null,
    "label": "Ethnic Studies (ETNC)",
-   "address": "https://catalog.mpc.edu/course-descriptions/etnc/"
+   "address": "https://catalog.mpc.edu/course-descriptions/etnc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FASH",
@@ -432,7 +568,11 @@
    ],
    "candidate": null,
    "label": "Fashion (FASH)",
-   "address": "https://catalog.mpc.edu/course-descriptions/fash/"
+   "address": "https://catalog.mpc.edu/course-descriptions/fash/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FPTC",
@@ -444,7 +584,11 @@
    ],
    "candidate": null,
    "label": "Fire Protection Technology (FPTC)",
-   "address": "https://catalog.mpc.edu/course-descriptions/fptc/"
+   "address": "https://catalog.mpc.edu/course-descriptions/fptc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FREN",
@@ -456,7 +600,11 @@
    ],
    "candidate": null,
    "label": "French (FREN)",
-   "address": "https://catalog.mpc.edu/course-descriptions/fren/"
+   "address": "https://catalog.mpc.edu/course-descriptions/fren/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GENT",
@@ -468,7 +616,11 @@
    ],
    "candidate": null,
    "label": "Gentrain (GENT)",
-   "address": "https://catalog.mpc.edu/course-descriptions/gent/"
+   "address": "https://catalog.mpc.edu/course-descriptions/gent/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GEOG",
@@ -480,7 +632,11 @@
    ],
    "candidate": null,
    "label": "Geography (GEOG)",
-   "address": "https://catalog.mpc.edu/course-descriptions/geog/"
+   "address": "https://catalog.mpc.edu/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GEOL",
@@ -492,7 +648,11 @@
    ],
    "candidate": null,
    "label": "Geology (GEOL)",
-   "address": "https://catalog.mpc.edu/course-descriptions/geol/"
+   "address": "https://catalog.mpc.edu/course-descriptions/geol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GLST",
@@ -504,7 +664,11 @@
    ],
    "candidate": null,
    "label": "Global Studies (GLST)",
-   "address": "https://catalog.mpc.edu/course-descriptions/glst/"
+   "address": "https://catalog.mpc.edu/course-descriptions/glst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GWOS",
@@ -516,7 +680,11 @@
    ],
    "candidate": null,
    "label": "Gender and Women's Studies (GWOS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/gwos/"
+   "address": "https://catalog.mpc.edu/course-descriptions/gwos/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HIST",
@@ -528,7 +696,11 @@
    ],
    "candidate": null,
    "label": "History (HIST)",
-   "address": "https://catalog.mpc.edu/course-descriptions/hist/"
+   "address": "https://catalog.mpc.edu/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HLTH",
@@ -540,7 +712,11 @@
    ],
    "candidate": null,
    "label": "Health Education (HLTH)",
-   "address": "https://catalog.mpc.edu/course-descriptions/hlth/"
+   "address": "https://catalog.mpc.edu/course-descriptions/hlth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HORT",
@@ -552,7 +728,11 @@
    ],
    "candidate": null,
    "label": "Horticulture (HORT)",
-   "address": "https://catalog.mpc.edu/course-descriptions/hort/"
+   "address": "https://catalog.mpc.edu/course-descriptions/hort/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HOSP",
@@ -564,7 +744,11 @@
    ],
    "candidate": null,
    "label": "Hospitality (HOSP)",
-   "address": "https://catalog.mpc.edu/course-descriptions/hosp/"
+   "address": "https://catalog.mpc.edu/course-descriptions/hosp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HUMA",
@@ -576,7 +760,11 @@
    ],
    "candidate": null,
    "label": "Humanities (HUMA)",
-   "address": "https://catalog.mpc.edu/course-descriptions/huma/"
+   "address": "https://catalog.mpc.edu/course-descriptions/huma/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HUMS",
@@ -588,7 +776,11 @@
    ],
    "candidate": null,
    "label": "Human Services (HUMS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/hums/"
+   "address": "https://catalog.mpc.edu/course-descriptions/hums/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "INDS",
@@ -600,7 +792,11 @@
    ],
    "candidate": null,
    "label": "Interdisciplinary Studies (INDS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/inds/"
+   "address": "https://catalog.mpc.edu/course-descriptions/inds/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "JOUR",
@@ -612,7 +808,11 @@
    ],
    "candidate": null,
    "label": "Journalism (JOUR)",
-   "address": "https://catalog.mpc.edu/course-descriptions/jour/"
+   "address": "https://catalog.mpc.edu/course-descriptions/jour/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "JPNS",
@@ -624,7 +824,11 @@
    ],
    "candidate": null,
    "label": "Japanese (JPNS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/jpns/"
+   "address": "https://catalog.mpc.edu/course-descriptions/jpns/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "KINS",
@@ -636,7 +840,11 @@
    ],
    "candidate": null,
    "label": "Kinesiology (KINS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/kins/"
+   "address": "https://catalog.mpc.edu/course-descriptions/kins/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LETP",
@@ -648,7 +856,11 @@
    ],
    "candidate": null,
    "label": "Law Enforcement Training Program (LETP)",
-   "address": "https://catalog.mpc.edu/course-descriptions/letp/"
+   "address": "https://catalog.mpc.edu/course-descriptions/letp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LIBR",
@@ -660,7 +872,11 @@
    ],
    "candidate": null,
    "label": "Library Science (LIBR)",
-   "address": "https://catalog.mpc.edu/course-descriptions/libr/"
+   "address": "https://catalog.mpc.edu/course-descriptions/libr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LING",
@@ -672,7 +888,11 @@
    ],
    "candidate": null,
    "label": "Linguistics (LING)",
-   "address": "https://catalog.mpc.edu/course-descriptions/ling/"
+   "address": "https://catalog.mpc.edu/course-descriptions/ling/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LNSK",
@@ -684,7 +904,11 @@
    ],
    "candidate": null,
    "label": "Learning Skills (LNSK)",
-   "address": "https://catalog.mpc.edu/course-descriptions/lnsk/"
+   "address": "https://catalog.mpc.edu/course-descriptions/lnsk/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MATH",
@@ -696,7 +920,11 @@
    ],
    "candidate": null,
    "label": "Mathematics (MATH) and Statistics (STAT)",
-   "address": "https://catalog.mpc.edu/course-descriptions/math/"
+   "address": "https://catalog.mpc.edu/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MEDA",
@@ -708,7 +936,11 @@
    ],
    "candidate": null,
    "label": "Medical Assisting (MEDA)",
-   "address": "https://catalog.mpc.edu/course-descriptions/meda/"
+   "address": "https://catalog.mpc.edu/course-descriptions/meda/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MUSC",
@@ -720,7 +952,11 @@
    ],
    "candidate": null,
    "label": "Commercial Music (MUSC)",
-   "address": "https://catalog.mpc.edu/course-descriptions/musc/"
+   "address": "https://catalog.mpc.edu/course-descriptions/musc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MUSI",
@@ -732,7 +968,11 @@
    ],
    "candidate": null,
    "label": "Music (MUSI)",
-   "address": "https://catalog.mpc.edu/course-descriptions/musi/"
+   "address": "https://catalog.mpc.edu/course-descriptions/musi/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "NURS",
@@ -744,7 +984,11 @@
    ],
    "candidate": null,
    "label": "Nursing (NURS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/nurs/"
+   "address": "https://catalog.mpc.edu/course-descriptions/nurs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "NUTF",
@@ -756,7 +1000,11 @@
    ],
    "candidate": null,
    "label": "Nutrition (NUTF)",
-   "address": "https://catalog.mpc.edu/course-descriptions/nutf/"
+   "address": "https://catalog.mpc.edu/course-descriptions/nutf/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "OCEN",
@@ -768,7 +1016,11 @@
    ],
    "candidate": null,
    "label": "Oceanography (OCEN)",
-   "address": "https://catalog.mpc.edu/course-descriptions/ocen/"
+   "address": "https://catalog.mpc.edu/course-descriptions/ocen/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PFIT",
@@ -780,7 +1032,11 @@
    ],
    "candidate": null,
    "label": "Physical Fitness (PFIT)",
-   "address": "https://catalog.mpc.edu/course-descriptions/pfit/"
+   "address": "https://catalog.mpc.edu/course-descriptions/pfit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHED",
@@ -792,7 +1048,11 @@
    ],
    "candidate": null,
    "label": "Physical Education (PHED)",
-   "address": "https://catalog.mpc.edu/course-descriptions/phed/"
+   "address": "https://catalog.mpc.edu/course-descriptions/phed/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHIL",
@@ -804,7 +1064,11 @@
    ],
    "candidate": null,
    "label": "Philosophy (PHIL)",
-   "address": "https://catalog.mpc.edu/course-descriptions/phil/"
+   "address": "https://catalog.mpc.edu/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHSO",
@@ -816,7 +1080,11 @@
    ],
    "candidate": null,
    "label": "Physiology (PHSO)",
-   "address": "https://catalog.mpc.edu/course-descriptions/phso/"
+   "address": "https://catalog.mpc.edu/course-descriptions/phso/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHYS",
@@ -828,7 +1096,11 @@
    ],
    "candidate": null,
    "label": "Physics (PHYS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/phys/"
+   "address": "https://catalog.mpc.edu/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "POLS",
@@ -840,7 +1112,11 @@
    ],
    "candidate": null,
    "label": "Political Science (POLS)",
-   "address": "https://catalog.mpc.edu/course-descriptions/pols/"
+   "address": "https://catalog.mpc.edu/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PSYC",
@@ -852,7 +1128,11 @@
    ],
    "candidate": null,
    "label": "Psychology (PSYC)",
-   "address": "https://catalog.mpc.edu/course-descriptions/psyc/"
+   "address": "https://catalog.mpc.edu/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "REAL",
@@ -864,7 +1144,11 @@
    ],
    "candidate": null,
    "label": "Real Estate (REAL)",
-   "address": "https://catalog.mpc.edu/course-descriptions/real/"
+   "address": "https://catalog.mpc.edu/course-descriptions/real/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SIGN",
@@ -876,7 +1160,11 @@
    ],
    "candidate": null,
    "label": "American Sign Language (SIGN)",
-   "address": "https://catalog.mpc.edu/course-descriptions/sign/"
+   "address": "https://catalog.mpc.edu/course-descriptions/sign/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SOCI",
@@ -888,7 +1176,11 @@
    ],
    "candidate": null,
    "label": "Sociology (SOCI)",
-   "address": "https://catalog.mpc.edu/course-descriptions/soci/"
+   "address": "https://catalog.mpc.edu/course-descriptions/soci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SPAN",
@@ -900,7 +1192,11 @@
    ],
    "candidate": null,
    "label": "Spanish (SPAN)",
-   "address": "https://catalog.mpc.edu/course-descriptions/span/"
+   "address": "https://catalog.mpc.edu/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SPCH",
@@ -912,7 +1208,11 @@
    ],
    "candidate": null,
    "label": "Communication Studies (COMM) and Speech Communications (SPCH)",
-   "address": "https://catalog.mpc.edu/course-descriptions/comm/"
+   "address": "https://catalog.mpc.edu/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SPCH",
@@ -924,7 +1224,11 @@
    ],
    "candidate": null,
    "label": "Speech Communications (SPCH)",
-   "address": "https://catalog.mpc.edu/course-descriptions/spch/"
+   "address": "https://catalog.mpc.edu/course-descriptions/spch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "STAT",
@@ -936,7 +1240,11 @@
    ],
    "candidate": null,
    "label": "Mathematics (MATH) and Statistics (STAT)",
-   "address": "https://catalog.mpc.edu/course-descriptions/math/"
+   "address": "https://catalog.mpc.edu/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "THEA",
@@ -948,7 +1256,11 @@
    ],
    "candidate": null,
    "label": "Theatre Arts (THEA)",
-   "address": "https://catalog.mpc.edu/course-descriptions/thea/"
+   "address": "https://catalog.mpc.edu/course-descriptions/thea/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "WORK",
@@ -960,7 +1272,11 @@
    ],
    "candidate": null,
    "label": "Work Experience (WORK)",
-   "address": "https://catalog.mpc.edu/course-descriptions/coop/"
+   "address": "https://catalog.mpc.edu/course-descriptions/coop/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "WRLD",
@@ -972,7 +1288,11 @@
    ],
    "candidate": null,
    "label": "World Civilizations (WRLD)",
-   "address": "https://catalog.mpc.edu/course-descriptions/wrld/"
+   "address": "https://catalog.mpc.edu/course-descriptions/wrld/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   }
  ]
 }

@@ -24,7 +24,11 @@
     "AMERICAN SIGN LANGUAGE – GLOBAL LANGUAGES",
     "AND SOCIETY"
    ],
-   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (CSU) – 4 UNITS"
+   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (CSU) – 4 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ACAD PR",
@@ -42,7 +46,11 @@
     "ACADEMIC PREPARATION – MATH, COMPUTER",
     "SCIENCE, AND ENGINEERING"
    ],
-   "first_course": "ACAD PR 003CE LANGUAGE ARTS: WRITING ESSAYS - 0 UNITS"
+   "first_course": "ACAD PR 003CE LANGUAGE ARTS: WRITING ESSAYS - 0 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ACCTG",
@@ -60,7 +68,11 @@
     "niques for functions.",
     "ACCOUNTING – BUSINESS AND LAW"
    ],
-   "first_course": "ACCTG 001 INTRODUCTORY ACCOUNTING I"
+   "first_course": "ACCTG 001 INTRODUCTORY ACCOUNTING I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ADM JUS",
@@ -78,7 +90,11 @@
     "ADMINISTRATION OF JUSTICE",
     "BUSINESS AND LAW"
    ],
-   "first_course": "ADM JUS 001 INTRODUCTION TO ADMINISTRATION OF JUSTICE"
+   "first_course": "ADM JUS 001 INTRODUCTION TO ADMINISTRATION OF JUSTICE",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ALD HTH",
@@ -114,7 +130,11 @@
     "COURSE DESCRIPTIONS",
     "ANIMATION – ARTS, MEDIA, AND PERFORMANCE"
    ],
-   "first_course": "ANIMATN 217 STORYBOARDS – (CSU) 3 UNITS"
+   "first_course": "ANIMATN 217 STORYBOARDS – (CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ANTHRO",
@@ -132,7 +152,11 @@
     "as learning camera control and lighting techniques.",
     "ANTHROPOLOGY – SOCIAL SCIENCES"
    ],
-   "first_course": "ANTHRO 101 HUMAN BIOLOGICAL EVOLUTION - (UC:CSU) 3 UNITS"
+   "first_course": "ANTHRO 101 HUMAN BIOLOGICAL EVOLUTION - (UC:CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ART",
@@ -150,7 +174,11 @@
     "ary perspective.",
     "ART – ARTS, MEDIA, AND PERFORMANCE"
    ],
-   "first_course": "ART 092 INTRODUCTION TO MUSEUM STUDIES – (CSU) 3 UNITS"
+   "first_course": "ART 092 INTRODUCTION TO MUSEUM STUDIES – (CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ARTHIST",
@@ -186,7 +214,11 @@
     "Globalism in the 1990s.",
     "ASTRONOMY – PHYSICAL SCIENCES"
    ],
-   "first_course": "ASTRON 001 ELEMENTARY ASTRONOMY – (UC:CSU) 3 UNITS"
+   "first_course": "ASTRON 001 ELEMENTARY ASTRONOMY – (UC:CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "BIOL",
@@ -222,7 +254,11 @@
     "information, and analyzing and synthesizing information.",
     "BIOLOGY – LIFE SCIENCES"
    ],
-   "first_course": "BIOLOGY 003 INTRODUCTION TO BIOLOGY – (UC:CSU) 4 UNITS"
+   "first_course": "BIOLOGY 003 INTRODUCTION TO BIOLOGY – (UC:CSU) 4 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "BIOTECH",
@@ -240,7 +276,11 @@
     "actions, and contraindications.",
     "BIOTECHNOLOGY – LIFE SCIENCES"
    ],
-   "first_course": "BIOTECH 002 BIOTECHNOLOGY I – (UC:CSU) 4 UNITS"
+   "first_course": "BIOTECH 002 BIOTECHNOLOGY I – (UC:CSU) 4 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "BSICSKL",
@@ -258,7 +298,11 @@
     "COURSE DESCRIPTIONS",
     "BASIC SKILLS – CAREER & CONTINUING EDUCATION"
    ],
-   "first_course": "BSICSKL 001CE READING AND MATHEMATICS BASIC SKILLS – 0 UNITS"
+   "first_course": "BSICSKL 001CE READING AND MATHEMATICS BASIC SKILLS – 0 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "BUS",
@@ -276,7 +320,11 @@
     "COURSE DESCRIPTIONS",
     "BUSINESS – BUSINESS AND LAW"
    ],
-   "first_course": "BUS 001 INTRODUCTION TO BUSINESS – (UC:CSU:C-ID BUS 110) 3 UNITS"
+   "first_course": "BUS 001 INTRODUCTION TO BUSINESS – (UC:CSU:C-ID BUS 110) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CAOT",
@@ -294,7 +342,11 @@
     "COMPUTER APPLICATIONS & OFFICE",
     "TECHNOLOGIES – BUSINESS AND LAW"
    ],
-   "first_course": "CAOT 032 BUSINESS COMMUNICATIONS"
+   "first_course": "CAOT 032 BUSINESS COMMUNICATIONS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CH DEV",
@@ -330,7 +382,11 @@
     "actual tax returns for residents in the community.",
     "CHEMISTRY – PHYSICAL SCIENCES"
    ],
-   "first_course": "CHEM 051 FUNDAMENTALS OF CHEMISTRY I"
+   "first_course": "CHEM 051 FUNDAMENTALS OF CHEMISTRY I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CHICANO",
@@ -366,7 +422,11 @@
     "academic and professional support systems.",
     "CINEMA – ARTS, MEDIA, AND PERFORMANCE"
    ],
-   "first_course": "CINEMA 003 HISTORY OF MOTION PICTURES - (UC:CSU) 3 UNITS"
+   "first_course": "CINEMA 003 HISTORY OF MOTION PICTURES - (UC:CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CIS",
@@ -384,7 +444,11 @@
     "108",
     "COURSE DESCRIPTIONS"
    ],
-   "first_course": "CIS 101 INTRODUCTION TO COMPUTERS AND THEIR USES"
+   "first_course": "CIS 101 INTRODUCTION TO COMPUTERS AND THEIR USES",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CLN ART",
@@ -402,7 +466,11 @@
     "COURSE DESCRIPTIONS",
     "CULINARY ARTS – CULINARY ARTS"
    ],
-   "first_course": "CLN ART 050 SANITATION AND SAFETY – (CSU:C-ID HOSP 110)"
+   "first_course": "CLN ART 050 SANITATION AND SAFETY – (CSU:C-ID HOSP 110)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "COMM",
@@ -420,7 +488,11 @@
     "COMM to COMM C",
     "Old Course New Course Title"
    ],
-   "first_course": "COMM 101 COMM C1000 Introduction to Public Speaking"
+   "first_course": "COMM 101 COMM C1000 Introduction to Public Speaking",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "COUNSEL",
@@ -438,7 +510,11 @@
     "stacks, queues, and trees in C++ object oriented programming.",
     "COUNSELING – COUNSELING"
    ],
-   "first_course": "COUNSEL 004 CAREER PLANNING – (CSU) 1 UNIT"
+   "first_course": "COUNSEL 004 CAREER PLANNING – (CSU) 1 UNIT",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CS",
@@ -456,7 +532,11 @@
     "COMPUTER SCIENCE – MATHEMATICS, COMPUTER",
     "SCIENCE, AND ENGINEERING"
    ],
-   "first_course": "CS 101 INTRODUCTION TO COMPUTER SCIENCE - (UC:CSU) 3 UNITS"
+   "first_course": "CS 101 INTRODUCTION TO COMPUTER SCIENCE - (UC:CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "DANCEST",
@@ -474,7 +554,11 @@
     "course offers preparation for local and regional competitions.",
     "DANCE STUDIES – HEALTH AND HUMAN PERFORMANCE"
    ],
-   "first_course": "DANCEST 185 DIRECTED STUDY – (CSU) 1 UNIT"
+   "first_course": "DANCEST 185 DIRECTED STUDY – (CSU) 1 UNIT",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "DANCETQ",
@@ -492,7 +576,11 @@
     "DANCE TECHNIQUES – HEALTH AND HUMAN",
     "PERFORMANCE"
    ],
-   "first_course": "DANCETQ 111 BALLET TECHNIQUES I – (UC:CSU) 1 UNIT"
+   "first_course": "DANCETQ 111 BALLET TECHNIQUES I – (UC:CSU) 1 UNIT",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "DNCESPC",
@@ -510,7 +598,11 @@
     "DANCE SPECIALTIES – HEALTH AND HUMAN",
     "PERFORMANCE"
    ],
-   "first_course": "DNCESPC 441 LATIN SOCIAL AND SALSA DANCE I – (UC:CSU) 1 UNIT"
+   "first_course": "DNCESPC 441 LATIN SOCIAL AND SALSA DANCE I – (UC:CSU) 1 UNIT",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "DRAFT",
@@ -528,7 +620,11 @@
     "DRAFTING – MATHEMATICS, COMPUTER SCIENCE, AND",
     "ENGINEERING"
    ],
-   "first_course": "DRAFT 016 BLUE PRINT READING I – (CSU) 2 UNITS"
+   "first_course": "DRAFT 016 BLUE PRINT READING I – (CSU) 2 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "E.S.L.",
@@ -564,7 +660,11 @@
     "stressed. A limited amount of drawing practices is included.",
     "EARTH SCIENCE – PHYSICAL SCIENCES"
    ],
-   "first_course": "EARTH 001 EARTH SCIENCE – (UC:CSU:C-ID GEOL 120) 3 UNITS"
+   "first_course": "EARTH 001 EARTH SCIENCE – (UC:CSU:C-ID GEOL 120) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ECON",
@@ -599,7 +699,11 @@
     "(see ECON C2002 Principles of Macroeconomics)",
     "EDUCATION – CHILD AND FAMILY STUDIES"
    ],
-   "first_course": "EDUC 001 INTRODUCTION TO TEACHING"
+   "first_course": "EDUC 001 INTRODUCTION TO TEACHING",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "EGD TEK",
@@ -707,7 +811,11 @@
     "ENVIRONMENTAL SCIENCE",
     "PHYSICAL SCIENCES"
    ],
-   "first_course": "ENV SCI 002 THE HUMAN ENVIRONMENT: BIOLOGICAL PROCESSES"
+   "first_course": "ENV SCI 002 THE HUMAN ENVIRONMENT: BIOLOGICAL PROCESSES",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ESL NC",
@@ -725,7 +833,11 @@
     "ENGLISH AS A SECOND LANGUAGE NONCREDIT",
     "GLOBAL LANGUAGES AND SOCIETY"
    ],
-   "first_course": "ESL NC 040CE CONVERSATION - FOUNDATIONAL – 0 UNITS"
+   "first_course": "ESL NC 040CE CONVERSATION - FOUNDATIONAL – 0 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "FAM &CS",
@@ -743,7 +855,11 @@
     "FAMILY & CONSUMER STUDIES",
     "CHILD AND FAMILY STUDIES"
    ],
-   "first_course": "FAM &CS 006 CHALLENGES OF AGING – (CSU) 3 UNITS"
+   "first_course": "FAM &CS 006 CHALLENGES OF AGING – (CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "FINANCE",
@@ -761,7 +877,11 @@
     "Student will complete 36 TBA hours as part of the class.",
     "FINANCE – BUSINESS AND LAW"
    ],
-   "first_course": "FINANCE 001 PRINCIPLES OF FINANCE – (UC:CSU) 3 UNITS"
+   "first_course": "FINANCE 001 PRINCIPLES OF FINANCE – (UC:CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "FIRETEK",
@@ -797,7 +917,11 @@
     "safety program in an emergency service organization.",
     "FRENCH – GLOBAL LANGUAGES AND SOCIETY"
    ],
-   "first_course": "FRENCH 001 ELEMENTARY FRENCH I – (UC:CSU) 5 UNITS"
+   "first_course": "FRENCH 001 ELEMENTARY FRENCH I – (UC:CSU) 5 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "GAD",
@@ -815,7 +939,11 @@
     "GAME ART AND DESIGN – ARTS, MEDIA, AND",
     "PERFORMANCE"
    ],
-   "first_course": "GAD 101 INTRODUCTION TO GAME DESIGN – (UC:CSU) 3 UNITS"
+   "first_course": "GAD 101 INTRODUCTION TO GAME DESIGN – (UC:CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "GEOG",
@@ -833,7 +961,11 @@
     "interactive content, and video games.",
     "GEOGRAPHY – PHYSICAL SCIENCES"
    ],
-   "first_course": "GEOG 001 PHYSICAL GEOGRAPHY – (UC:CSU:C-ID GEOG 110) 3 UNITS"
+   "first_course": "GEOG 001 PHYSICAL GEOGRAPHY – (UC:CSU:C-ID GEOG 110) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "GEOLOGY",
@@ -851,7 +983,11 @@
     "Internet maps).",
     "GEOLOGY – PHYSICAL SCIENCES"
    ],
-   "first_course": "GEOLOGY 001 PHYSICAL GEOLOGY – (UC:CSU:C-ID GEOL 100) 3 UNITS"
+   "first_course": "GEOLOGY 001 PHYSICAL GEOLOGY – (UC:CSU:C-ID GEOL 100) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HEALTH",
@@ -869,7 +1005,11 @@
     "eral resource exploitation and use.",
     "HEALTH – HEALTH AND HUMAN PERFORMANCE"
    ],
-   "first_course": "HEALTH 002 HEALTH AND FITNESS – (CSU) 3 UNITS"
+   "first_course": "HEALTH 002 HEALTH AND FITNESS – (CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HIST",
@@ -882,7 +1022,11 @@
    "candidate": null,
    "page": 126,
    "above": [],
-   "first_course": "HIST C1001 UNITED STATES HISTORY TO 1877 – (UC:CSU:C-ID HIST 130)"
+   "first_course": "HIST C1001 UNITED STATES HISTORY TO 1877 – (UC:CSU:C-ID HIST 130)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HISTORY",
@@ -900,7 +1044,11 @@
     "HISTORY to HIST C",
     "Old Course New Course Title"
    ],
-   "first_course": "HISTORY 011 HIST C1001 United States History to 1877"
+   "first_course": "HISTORY 011 HIST C1001 United States History to 1877",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HLTHOCC",
@@ -918,7 +1066,11 @@
     "improve population health will be developed.",
     "HEALTH OCCUPATIONS – LIFE SCIENCES"
    ],
-   "first_course": "HLTHOCC 062 SKILL SET FOR THE HEALTH CARE PROFESSIONAL –"
+   "first_course": "HLTHOCC 062 SKILL SET FOR THE HEALTH CARE PROFESSIONAL –",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HOSPT",
@@ -936,7 +1088,11 @@
     "Era, through the 16th Century.",
     "HOSPITALITY – CULINARY ARTS"
    ],
-   "first_course": "HOSPT 100 INTRODUCTION TO THE HOSPITALITY INDUSTRY"
+   "first_course": "HOSPT 100 INTRODUCTION TO THE HOSPITALITY INDUSTRY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HTHTEK",
@@ -972,7 +1128,11 @@
     "tions from becoming expensive problems.",
     "HUMANITIES – ARTS, MEDIA, AND PERFORMANCE"
    ],
-   "first_course": "HUMAN 001 CULTURAL PATTERNS OF WESTERN CIVILIZATION"
+   "first_course": "HUMAN 001 CULTURAL PATTERNS OF WESTERN CIVILIZATION",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "IND TEK",
@@ -1008,7 +1168,11 @@
     "tion of drafting concepts.",
     "INTERIOR DESIGN – ARTS, MEDIA, AND PERFORMANCE"
    ],
-   "first_course": "INTRDGN 101 INTERIOR DESIGN LABORATORY – (CSU) 1 UNIT"
+   "first_course": "INTRDGN 101 INTERIOR DESIGN LABORATORY – (CSU) 1 UNIT",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ITALIAN",
@@ -1026,7 +1190,11 @@
     "as CALGreen and ADA code compliance are reviewed.",
     "ITALIAN – GLOBAL LANGUAGES AND SOCIETY"
    ],
-   "first_course": "ITALIAN 001 ELEMENTARY ITALIAN I – (UC:CSU) 5 UNITS"
+   "first_course": "ITALIAN 001 ELEMENTARY ITALIAN I – (UC:CSU) 5 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "JOURNAL",
@@ -1044,7 +1212,11 @@
     "JOURNALISM – ENGLISH, COMMUNICATION STUDIES, AND",
     "JOURNALISM"
    ],
-   "first_course": "JOURNAL 043 PUBLIC RELATIONS TECHNIQUES (CSU) 3 UNITS"
+   "first_course": "JOURNAL 043 PUBLIC RELATIONS TECHNIQUES (CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "KIN",
@@ -1062,7 +1234,11 @@
     "KINESIOLOGY – HEALTH AND HUMAN PERFORMANCE",
     "See Dance Specialties, Dance Studies, and Dance Techniques."
    ],
-   "first_course": "KIN 035 ADAPTIVE ACTIVITIES – (UC:CSU) 1 UNIT"
+   "first_course": "KIN 035 ADAPTIVE ACTIVITIES – (UC:CSU) 1 UNIT",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "KIN ATH",
@@ -1080,7 +1256,11 @@
     "KINESIOLOGY ATHLETICS – HEALTH AND HUMAN",
     "PERFORMANCE"
    ],
-   "first_course": "KIN ATH 503 INTERCOLLEGIATE ATHELTICS – BASEBALL (UC:CSU)"
+   "first_course": "KIN ATH 503 INTERCOLLEGIATE ATHELTICS – BASEBALL (UC:CSU)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "KIN MAJ",
@@ -1098,7 +1278,11 @@
     "KINESIOLOGY MAJOR – HEALTH AND HUMAN",
     "PERFORMANCE"
    ],
-   "first_course": "KIN MAJ 100 INTRODUCTION TO KINESIOLOGY – (UC:CSU:C-ID KIN 100)"
+   "first_course": "KIN MAJ 100 INTRODUCTION TO KINESIOLOGY – (UC:CSU:C-ID KIN 100)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "LAW",
@@ -1116,7 +1300,11 @@
     "ership style, communication, and motivation.",
     "LAW – BUSINESS AND LAW"
    ],
-   "first_course": "LAW 001 BUSINESS LAW I – (UC:CSU) 3 UNITS"
+   "first_course": "LAW 001 BUSINESS LAW I – (UC:CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "LIB SCI",
@@ -1134,7 +1322,11 @@
     "various types of immigration applications.",
     "LIBRARY SCIENCE – LIBRARY"
    ],
-   "first_course": "LIB SCI 101 COLLEGE RESEARCH SKILLS – (UC:CSU) 1 UNIT"
+   "first_course": "LIB SCI 101 COLLEGE RESEARCH SKILLS – (UC:CSU) 1 UNIT",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "LING",
@@ -1152,7 +1344,11 @@
     "become stronger researchers and life-long learners.",
     "LINGUISTICS – GLOBAL LANGUAGES AND SOCIETY"
    ],
-   "first_course": "LING 001 INTRODUCTION TO LANGUAGE AND LINGUISTICS"
+   "first_course": "LING 001 INTRODUCTION TO LANGUAGE AND LINGUISTICS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MARKET",
@@ -1170,7 +1366,11 @@
     "transfer; discipline, motivation, and morale.",
     "MARKETING – BUSINESS AND LAW"
    ],
-   "first_course": "MARKET 021 PRINCIPLES OF MARKETING – (CSU) 3 UNITS"
+   "first_course": "MARKET 021 PRINCIPLES OF MARKETING – (CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MATH",
@@ -1206,7 +1406,11 @@
     "MATHEMATICS NONCREDIT – MATHEMATICS,",
     "COMPUTER SCIENCE, AND ENGINEERING"
    ],
-   "first_course": "MATH NC 001CE BASIC DIMENSIONAL ANALYSIS – 0 UNITS"
+   "first_course": "MATH NC 001CE BASIC DIMENSIONAL ANALYSIS – 0 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MEDIART",
@@ -1242,7 +1446,11 @@
     "COURSE DESCRIPTIONS",
     "MANAGEMENT – BUSINESS AND LAW"
    ],
-   "first_course": "MGMT 002 ORGANIZATION AND MANAGEMENT THEORY – (CSU) 3 UNITS"
+   "first_course": "MGMT 002 ORGANIZATION AND MANAGEMENT THEORY – (CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MICRO",
@@ -1260,7 +1468,11 @@
     "dents to post podcasts.",
     "MICROBIOLOGY – LIFE SCIENCES"
    ],
-   "first_course": "MICRO 020 GENERAL MICROBIOLOGY – (UC:CSU) 4 UNITS"
+   "first_course": "MICRO 020 GENERAL MICROBIOLOGY – (UC:CSU) 4 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MULTIMD",
@@ -1296,7 +1508,11 @@
     "video, special effects, and design of titling and motion graphics.",
     "MUSIC – ARTS, MEDIA, AND PERFORMANCE"
    ],
-   "first_course": "MUSIC 101 FUNDAMENTALS OF MUSIC – (UC:CSU) 3 UNITS"
+   "first_course": "MUSIC 101 FUNDAMENTALS OF MUSIC – (UC:CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "NRS-HCA",
@@ -1350,7 +1566,11 @@
     "dents for their state examination.",
     "NUTRITION – HEALTH AND HUMAN PERFORMANCE"
    ],
-   "first_course": "NUTRTN 001 CAREERS IN NUTRITION AND FOODS"
+   "first_course": "NUTRTN 001 CAREERS IN NUTRITION AND FOODS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "OCEANO",
@@ -1368,7 +1588,11 @@
     "food safety, cost, culture, health and sustainability.",
     "OCEANOGRAPHY – PHYSICAL SCIENCES"
    ],
-   "first_course": "OCEANO 001 INTRODUCTION TO OCEANOGRAPHY – (UC:CSU) 3 UNITS"
+   "first_course": "OCEANO 001 INTRODUCTION TO OCEANOGRAPHY – (UC:CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "OLD ADL",
@@ -1386,7 +1610,11 @@
     "marine ecosystem and the interactions with humans.",
     "OLDER ADULTS – HEALTH AND HUMAN PERFORMANCE"
    ],
-   "first_course": "OLD ADL 051CE FEELING FIT FOR SENIORS – 0 UNITS"
+   "first_course": "OLD ADL 051CE FEELING FIT FOR SENIORS – 0 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PARENT",
@@ -1404,7 +1632,11 @@
     "course is for beginners who have not exercised frequently.",
     "PARENTING – CHILD AND FAMILY STUDIES"
    ],
-   "first_course": "PARENT 007CE POSITIVE PARENTING – 0 UNITS"
+   "first_course": "PARENT 007CE POSITIVE PARENTING – 0 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PHILOS",
@@ -1422,7 +1654,11 @@
     "courses in a community or outpatient pharmacy.",
     "PHILOSOPHY – SOCIAL SCIENCES"
    ],
-   "first_course": "PHILOS 001 INTRODUCTION TO PHILOSOPHY"
+   "first_course": "PHILOS 001 INTRODUCTION TO PHILOSOPHY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PHOTO",
@@ -1440,7 +1676,11 @@
     "contemporary issues.",
     "PHOTOGRAPHY – ARTS, MEDIA, AND PERFORMANCE"
    ],
-   "first_course": "PHOTO 007 EXPLORING DIGITAL PHOTOGRAPHY – (UC:CSU) 3 UNITS"
+   "first_course": "PHOTO 007 EXPLORING DIGITAL PHOTOGRAPHY – (UC:CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PHRMCTK",
@@ -1512,7 +1752,11 @@
     "atomic and nuclear physics.",
     "PHYSIOLOGY – LIFE SCIENCES"
    ],
-   "first_course": "PHYSIOL 001 INTRODUCTION TO HUMAN PHYSIOLOGY"
+   "first_course": "PHYSIOL 001 INTRODUCTION TO HUMAN PHYSIOLOGY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "POL SCI",
@@ -1561,7 +1805,11 @@
     "PROFESSIONAL BAKING – CULINARY ARTS",
     "See CULINARY ARTS for additional courses"
    ],
-   "first_course": "PROFBKG 122 ARTISANAL BREADS, SPECIALTY BREADS – (CSU)"
+   "first_course": "PROFBKG 122 ARTISANAL BREADS, SPECIALTY BREADS – (CSU)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PSYC",
@@ -1574,7 +1822,11 @@
    "candidate": null,
    "page": 151,
    "above": [],
-   "first_course": "PSYC C1000 INTRODUCTION TO PSYCHOLOGY (UC:CSU:C-ID PSY 110)"
+   "first_course": "PSYC C1000 INTRODUCTION TO PSYCHOLOGY (UC:CSU:C-ID PSY 110)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PSYCH",
@@ -1592,7 +1844,11 @@
     "PSYCH to PSYC C",
     "Old Course New Course Title"
    ],
-   "first_course": "PSYCH 001 PSYC C1000 Introduction to Psychology"
+   "first_course": "PSYCH 001 PSYC C1000 Introduction to Psychology",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PUBSERV",
@@ -1628,7 +1884,11 @@
     "ment policy regarding the use of force.",
     "REAL ESTATE – BUSINESS AND LAW"
    ],
-   "first_course": "REAL ES 001 REAL ESTATE PRINCIPLES – (CSU) 3 UNITS"
+   "first_course": "REAL ES 001 REAL ESTATE PRINCIPLES – (CSU) 3 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "SOC",
@@ -1646,7 +1906,11 @@
     "elective for a real estate salesperson’s license.",
     "SOCIOLOGY – GLOBAL LANGUAGES AND SOCIETY"
    ],
-   "first_course": "SOC 001 INTRODUCTION TO SOCIOLOGY – (UC:CSU:C-ID SOCI 110)"
+   "first_course": "SOC 001 INTRODUCTION TO SOCIOLOGY – (UC:CSU:C-ID SOCI 110)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "SPANISH",
@@ -1664,7 +1928,11 @@
     "the direction of an instructor.",
     "SPANISH – GLOBAL LANGUAGES AND SOCIETY"
    ],
-   "first_course": "SPANISH 001 ELEMENTARY SPANISH I"
+   "first_course": "SPANISH 001 ELEMENTARY SPANISH I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "STAT",
@@ -1718,7 +1986,11 @@
     "ties, costume, lighting, sound, and running crews.",
     "THEATER – ARTS, MEDIA, AND PERFORMANCE"
    ],
-   "first_course": "THEATER 100 INTRODUCTION TO THE THEATER"
+   "first_course": "THEATER 100 INTRODUCTION TO THE THEATER",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "TUTOR",
@@ -1754,7 +2026,11 @@
     "VOCATIONAL EDUCATION",
     "CAREER & CONTINUING EDUCATION"
    ],
-   "first_course": "VOC ED 002CE IN-HOME SUPPORTIVE SERVICE PROVIDERS – 0 UNITS"
+   "first_course": "VOC ED 002CE IN-HOME SUPPORTIVE SERVICE PROVIDERS – 0 UNITS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   }
  ],
  "code_address_tried": [

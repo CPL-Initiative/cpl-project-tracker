@@ -113,8 +113,11 @@ check("S722: every candidate title is listed, most confident first, the first is
       cands and all([c["confidence"] for c in cs] == sorted([c["confidence"] for c in cs], reverse=True) for cs in cands)
       and all(r["title"]["title"] == r["title"]["candidates"][0]["title"] for r in recs.values() if r.get("title", {}).get("candidates")))
 mech = [r["title"] for (sl, cd), r in recs.items() if sl == "clovis_community" and cd == "MECH"]
-check("S722, Sam: a web search on the college's own site that found the title lifts it (Clovis MECH reads Mechatronics, not Law)",
-      mech and mech[0]["title"] == "Mechatronics/Industrial Automation" and mech[0]["candidates"][1]["title"] == "Law")
+# The runner-up is whatever the other sources say today (Law in S722; Business once S730's catalog reads joined more
+# courses): the guard is that the search's title leads over a source that reads differently.
+check("S722, Sam: a web search on the college's own site that found the title lifts it (Clovis MECH reads Mechatronics over a differing source)",
+      mech and mech[0]["title"] == "Mechatronics/Industrial Automation" and len(mech[0]["candidates"]) > 1
+      and mech[0]["candidates"][1]["title"] != mech[0]["candidates"][0]["title"] and "web_search" in mech[0]["candidates"][0]["from"])
 s30 = doc["common_code"]["sams_30"]
 check("Sam's 30 are all accounted for: agree, diverge or no recommendation",
       s30["agree"] + s30["diverge"] + len(s30["no_recommendation"]) == s30["decisions"] == 30)

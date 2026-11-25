@@ -1,0 +1,414 @@
+{
+ "college": "Barstow Community College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:55:08Z",
+ "run": "45627807594",
+ "runs": [
+  "45625006694",
+  "45626565022",
+  "45627807594",
+  "45629430201"
+ ],
+ "plan": "kb/college_reads/subject_index_barstow_community.json",
+ "source_pdf": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=127",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADJU",
+   "title": "Administration of Justice",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=127",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AHLT",
+   "title": "Allied Health",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=130",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=194",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Arts",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTS",
+   "title": "Arts",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "no heading of its own: its first course prints under the heading of ARTH's courses"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=179",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=179",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=130",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BADM",
+   "title": "Business Administration",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=132",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BCTT",
+   "title": "Building Construction Trade Technology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=132",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=181",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CBIS",
+   "title": "Computer and Business Information Systems",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=137",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=133",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=183",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHLD",
+   "title": "Child Development",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=137",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "no heading of its own: its first course prints under the heading of CDEV's courses"
+  },
+  {
+   "code": "COMM",
+   "title": "Communications",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSM",
+   "title": "Cosmetology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=138",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=194",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSIS",
+   "title": "Computer and Information Science",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=184",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CUST",
+   "title": "Customer Service",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=140",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DESL",
+   "title": "Diesel Technology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=140",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=194",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELCT",
+   "title": "Electrical Technology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=142",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=156",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENTR",
+   "title": "Entrepreneurship",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=142",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=158",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=165",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEAL",
+   "title": "Health",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=195",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMA",
+   "title": "Humanities",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=165",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IMEI",
+   "title": "Industrial Maintenance Electrical and Instrumentation",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IMMT",
+   "title": "Industrial Maintenance Mechanic Technology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=146",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINA",
+   "title": "Kinesiology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=186",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINL",
+   "title": "Kinesiology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=189",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "no heading of its own: its first course prints under the heading of KINA's courses"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=148",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSI",
+   "title": "Music",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=166",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEA",
+   "title": "Oceanography",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=193",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=149",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Science",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=193",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=193",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLI",
+   "title": "Political Science",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=197",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=197",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "no heading of its own: its first course prints under the heading of POLI's courses"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=198",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SDEV",
+   "title": "Student Development",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=201",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=192",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "no heading of its own: its first course prints under the heading of MATH's courses"
+  },
+  {
+   "code": "TART",
+   "title": "Theatre Arts",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WARE",
+   "title": "Warehousing & Logistics",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=150",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=151",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "not_printed": "BARB, HOSP, MAIN, MAKE and NUAS print no course line in the course descriptions (PDF pages 126 to 212, run 45629430201)."
+}

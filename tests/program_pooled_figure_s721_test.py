@@ -114,17 +114,20 @@ check(set(W.REVIEWED_S720J) == {cn for (c, cn), v in W.HELD_ANSWERS.items() if c
 # that the hand reading lacks, no record fired on without a hand answer, and the misses pinned.
 every = W.every_record()
 scan = W.live_scan(every)
-check(scan["read"] == len(W.POOLS_HELD) == 55 and scan["fired"] == 38,
-      "the scan reads the 55 hand-held records, 38 of them firing (%d, %d)" % (scan["read"], scan["fired"]))
-check(scan["right"] == 55 and not scan["wrong"], "the live recall: %d right, wrong %s" % (scan["right"], scan["wrong"]))
+# S731's reading (POOLED_S731, kb/_program_piles_s731_pooled.py) adds 18 hand-held records, every one firing.
+check(scan["read"] == len(W.POOLS_HELD) == 73 and scan["fired"] == 56,
+      "the scan reads the 73 hand-held records, 56 of them firing (%d, %d)" % (scan["read"], scan["fired"]))
+check(scan["right"] == 73 and not scan["wrong"], "the live recall: %d right, wrong %s" % (scan["right"], scan["wrong"]))
 check({tuple(m) for m in scan["missed"]} == W.POOLS_MISSED, "the misses are the four pinned: %s" % scan["missed"])
 flips = W.live_flips(every)
 with open(FIXTURE, encoding="utf-8") as fh:
     fx = json.load(fh)
 check(not flips.get("pass_to_fail"), "no pass-to-fail, live: %s" % flips.get("pass_to_fail"))
+with open(os.path.join(ROOT, "tests", "fixtures", "pooled_s731.json"), encoding="utf-8") as fh:
+    added = json.load(fh)["s721_fail_to_pass_added"]
 check([{"college": c, "control_number": cn} for c, cn in flips.get("fail_to_pass") or []]
-      == sorted(fx["fail_to_pass"], key=lambda m: (m["college"], m["control_number"])),
-      "the live fail-to-pass members are the fixture's 28 (%d)" % len(flips.get("fail_to_pass") or []))
+      == sorted(fx["fail_to_pass"] + added, key=lambda m: (m["college"], m["control_number"])),
+      "the live fail-to-pass members are the fixture's 28 and S731's 4 (%d)" % len(flips.get("fail_to_pass") or []))
 for c, cn in flips.get("fail_to_pass") or []:
     pools = S.pooled_figures(W.load(c, cn)["record"])
     check(pools and all(p["words"] and S._pool_figure(p["words"]) for p in pools),

@@ -1,0 +1,752 @@
+{
+ "college": "Orange Coast College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:53:02Z",
+ "run": "45627311665",
+ "plan": "kb/college_reads/subject_index_orange_coast.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARLN",
+   "title": "Airline and Travel Careers",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ALH",
+   "title": "Allied Health",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AMT",
+   "title": "Aviation Maintenance Tech",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APT",
+   "title": "Aviation Pilot Training",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BRCT",
+   "title": "Broadcasting",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CVT",
+   "title": "Cardiovascular Technology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDE",
+   "title": "Child Development & Education",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CMST",
+   "title": "Communication Studies",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CFT",
+   "title": "Composite and Fabrication Technology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHT",
+   "title": "Computer & High Technology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNST",
+   "title": "Construction Technology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COS",
+   "title": "Consumer Studies",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CA",
+   "title": "Culinary Arts",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DA",
+   "title": "Dental Assisting",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMS",
+   "title": "Diagnostic Medical Sonography",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMAD",
+   "title": "Digital Media Arts & Design",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELEC",
+   "title": "Electronics Technology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESEC",
+   "title": "Environmental Science/Ecology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FILM",
+   "title": "Film & Television",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FBM",
+   "title": "Food and Beverage Management",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FN",
+   "title": "Foods & Nutrition",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GNDR",
+   "title": "Gender Studies",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GRMN",
+   "title": "German",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HVAC",
+   "title": "Heating & Air Conditioning",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HORT",
+   "title": "Horticulture",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HTT",
+   "title": "Hospitality, Travel & Tourism",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IMVR",
+   "title": "Immersive Media Virtual Reality",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INHL",
+   "title": "Integrative Health",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ID",
+   "title": "Interior Design",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITRN",
+   "title": "Intern",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LEAD",
+   "title": "Leadership",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LRNG",
+   "title": "Learning",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MACH",
+   "title": "Machine Technology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MARA",
+   "title": "Marine Activities",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MRSC",
+   "title": "Marine Science",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MKTG",
+   "title": "Marketing",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MA",
+   "title": "Medical Assisting",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NS",
+   "title": "Natural Science",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NDT",
+   "title": "Neurodiagnostic Technology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NC",
+   "title": "Nutrition Care",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSCI",
+   "title": "Political Science",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSG",
+   "title": "Polysomnography",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PORT",
+   "title": "Portuguese",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PUBH",
+   "title": "Public Health",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RADT",
+   "title": "Radiologic Technology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RLST",
+   "title": "Religious Studies",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RSPC",
+   "title": "Respiratory Care",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SLPA",
+   "title": "Speech/Language Path Assist",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TECH",
+   "title": "Technology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theater Arts",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VIET",
+   "title": "Vietnamese",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding Technology",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELL",
+   "title": "English Language Learning",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/noncredit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADLT",
+   "title": "Older Adult/Emeritus",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/noncredit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHMT",
+   "title": "Pharmacy Technician",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/noncredit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TUTR",
+   "title": "Tutoring",
+   "url": "https://catalog.cccd.edu/orange-coast/course-descriptions/noncredit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "note": "The credit and noncredit course-description indexes, merged; a code both print under one title is filed once, with the credit page address. The credit page also prints a Subject Changes list naming former codes; those lines are left out."
+}

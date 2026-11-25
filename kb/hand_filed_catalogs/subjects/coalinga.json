@@ -1,0 +1,1104 @@
+{
+ "_what": "The subjects Coalinga College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Coalinga College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45626788039",
+ "source": [
+  "https://coalingacollege.edu/catalog/2026-2027/courses/aet/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/ag/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/agbus/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/aoj/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/art/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/arth/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/asci/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/asl/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/athl/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/bio/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/bus/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/cd/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/chem/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/cis/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/com/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/comm/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/crpsci/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/dmgr/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/dt/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/econ/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/educ/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/eng/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/engl/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/eqsci/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/es/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/esci/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/esl/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/flspn/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/fss/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/geog/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/geol/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/gs/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/he/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/hist/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/hrcm/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/hs/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/hum/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/hvac/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/hvyequi/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/imt/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/is/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/kines/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/ling/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/math/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/mus/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/nc/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/nut/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/pa/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/pe/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/pharm/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/phil/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/physci/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/physics/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/pols/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/polsci/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/psyc/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/psych/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/pt/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/slsci/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/soc/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/span/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/stat/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/studev/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/sw/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/vnpt/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/we/",
+  "https://coalingacollege.edu/catalog/2026-2027/courses/wt/"
+ ],
+ "rows": [
+  {
+   "code": "AET",
+   "heading": "Agriculture Engineering Tech",
+   "heading_printed": "Agriculture Engineering Tech",
+   "rule": "index",
+   "codes": [
+    "AET"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/aet/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AG",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "index",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/ag/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AGBUS",
+   "heading": "Agriculture Business",
+   "heading_printed": "Agriculture Business",
+   "rule": "index",
+   "codes": [
+    "AGBUS"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/agbus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AOJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AOJ"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/aoj/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ASCI",
+   "heading": "Animal Science",
+   "heading_printed": "Animal Science",
+   "rule": "index",
+   "codes": [
+    "ASCI"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/asci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/asl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ATHL",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATHL"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/athl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BIO",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/bio/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/bus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CD"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/cd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/cis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "COM",
+   "heading": "Communication",
+   "heading_printed": "Communication",
+   "rule": "index",
+   "codes": [
+    "COM"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/com/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication",
+   "heading_printed": "Communication",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CRPSCI",
+   "heading": "Crop Science",
+   "heading_printed": "Crop Science",
+   "rule": "index",
+   "codes": [
+    "CRPSCI"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/crpsci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "DMGR",
+   "heading": "Digital Media",
+   "heading_printed": "Digital Media",
+   "rule": "index",
+   "codes": [
+    "DMGR"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/dmgr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "DT",
+   "heading": "Diesel Technology",
+   "heading_printed": "Diesel Technology",
+   "rule": "index",
+   "codes": [
+    "DT"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/dt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/educ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENG",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENG"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/eng/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "EQSCI",
+   "heading": "Equine Science",
+   "heading_printed": "Equine Science",
+   "rule": "index",
+   "codes": [
+    "EQSCI"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/eqsci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ES",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ES"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/es/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ESCI",
+   "heading": "Earth Science",
+   "heading_printed": "Earth Science",
+   "rule": "index",
+   "codes": [
+    "ESCI"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/esci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English As a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "FLSPN",
+   "heading": "Foreign Language Spanish",
+   "heading_printed": "Foreign Language Spanish",
+   "rule": "index",
+   "codes": [
+    "FLSPN"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/flspn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "FSS",
+   "heading": "Food Science & Safety",
+   "heading_printed": "Food Science & Safety",
+   "rule": "index",
+   "codes": [
+    "FSS"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/fss/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/geol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GS",
+   "heading": "Guidance Studies",
+   "heading_printed": "Guidance Studies",
+   "rule": "index",
+   "codes": [
+    "GS"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/gs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HE",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HE"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/he/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HRCM",
+   "heading": "Hotel, Restaurant, Casino Mgmt",
+   "heading_printed": "Hotel, Restaurant, Casino Mgmt",
+   "rule": "index",
+   "codes": [
+    "HRCM"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/hrcm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HS",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/hs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/hum/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HVAC",
+   "heading": "Heating Ventilation & Air Cond",
+   "heading_printed": "Heating Ventilation & Air Cond",
+   "rule": "index",
+   "codes": [
+    "HVAC"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/hvac/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HVYEQUI",
+   "heading": "Heavy Equipment",
+   "heading_printed": "Heavy Equipment",
+   "rule": "index",
+   "codes": [
+    "HVYEQUI"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/hvyequi/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "IMT",
+   "heading": "Industrial Mechanics Tech",
+   "heading_printed": "Industrial Mechanics Tech",
+   "rule": "index",
+   "codes": [
+    "IMT"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/imt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "IS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "IS"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/is/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "KINES",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINES"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/kines/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/ling/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/mus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "NC",
+   "heading": "Non-Credit",
+   "heading_printed": "Non-Credit",
+   "rule": "index",
+   "codes": [
+    "NC"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/nc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "NUT",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUT"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/nut/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PA",
+   "heading": "Performing Arts",
+   "heading_printed": "Performing Arts",
+   "rule": "index",
+   "codes": [
+    "PA"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/pa/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/pe/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHARM",
+   "heading": "Pharmacology",
+   "heading_printed": "Pharmacology",
+   "rule": "index",
+   "codes": [
+    "PHARM"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/pharm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHYSCI",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHYSCI"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/physci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/pols/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "POLSCI",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLSCI"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/polsci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/psyc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/psych/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PT",
+   "heading": "Psychiatric Technician",
+   "heading_printed": "Psychiatric Technician",
+   "rule": "index",
+   "codes": [
+    "PT"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/pt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SLSCI",
+   "heading": "Soil Science",
+   "heading_printed": "Soil Science",
+   "rule": "index",
+   "codes": [
+    "SLSCI"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/slsci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/stat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "STUDEV",
+   "heading": "Student Development",
+   "heading_printed": "Student Development",
+   "rule": "index",
+   "codes": [
+    "STUDEV"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/studev/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SW",
+   "heading": "Social Work",
+   "heading_printed": "Social Work",
+   "rule": "index",
+   "codes": [
+    "SW"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/sw/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "VNPT",
+   "heading": "Vocational Nursing and Psych T",
+   "heading_printed": "Vocational Nursing and Psych T",
+   "rule": "index",
+   "codes": [
+    "VNPT"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/vnpt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WE",
+   "heading": "General Work Experience",
+   "heading_printed": "General Work Experience",
+   "rule": "index",
+   "codes": [
+    "WE"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/we/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WT",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WT"
+   ],
+   "candidate": null,
+   "address": "https://coalingacollege.edu/catalog/2026-2027/courses/wt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  }
+ ],
+ "subjects": 64,
+ "with_heading": 64
+}

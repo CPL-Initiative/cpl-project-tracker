@@ -1,0 +1,20 @@
+{
+ "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: round 1 (run 45623798209) followed COURSES to /courses/, whose text names no subject; its navigation lists the subject pages. This read prints that page's links to /courses/<subject>/. No model call.",
+ "college": "Napa Valley College",
+ "questions": {
+  "subjects": "Every subject heading the catalog's course index prints, with its code."
+ },
+ "keywords": [
+  "\\([A-Z&]{1,8}\\)"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.napavalley.edu/courses/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "/courses/[a-z0-9_-]+/$",
+   "links_cap": 300
+  }
+ ]
+}

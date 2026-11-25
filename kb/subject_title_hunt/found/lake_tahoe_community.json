@@ -1,0 +1,459 @@
+{
+ "college": "Lake Tahoe Community College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:17:40Z",
+ "run": "45631971415",
+ "plan": "kb/college_reads/subject_index_lake_tahoe_community.json",
+ "titles": [
+  {
+   "code": "ANT",
+   "title": "Anthropology",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/anthropology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/art",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ASL",
+   "title": "World Languages",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/world-languages",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/biology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "BOT",
+   "title": "Business",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/business",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "BSN",
+   "title": "Business",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/business",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "CHM",
+   "title": "Chemistry",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/chemistry",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/computer-information-systems",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "COM",
+   "title": "Communications",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/communications",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "COMM",
+   "title": "Communications",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/communications",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "COU",
+   "title": "Counseling Courses",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/counseling-courses",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "CRJ",
+   "title": "Criminal Justice",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/criminal-justice",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "CUL",
+   "title": "Culinary Arts",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/culinary-arts",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "DMA",
+   "title": "Art New Media",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/art-new-media",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/early-childhood-education",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/economics",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "EDU",
+   "title": "Education",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/education",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "ENG",
+   "title": "English",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/english",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/english",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ESL",
+   "title": "English As a Second Language",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/english-as-a-second-language",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "ETH",
+   "title": "Ethnic Studies",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/ethnic-studies",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "EVS",
+   "title": "Environmental Science & Tech",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/environmental-science-tech",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "FIR",
+   "title": "Fire Science",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/fire-science",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "FOR",
+   "title": "Forestry",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/forestry",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "GEG",
+   "title": "Geography",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/geography",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "GEL",
+   "title": "Geology",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/geology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "GES",
+   "title": "General Studies",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/general-studies",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HEA",
+   "title": "Allied Health",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/allied-health",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "HIS",
+   "title": "History",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/history",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HSP",
+   "title": "Hospitality Management",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/hospitality-management",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HTR",
+   "title": "Hospitality, Tourism & Rec",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/hospitality-tourism-rec",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/humanities",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "INT",
+   "title": "Interdisciplinary Studies",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/interdisciplinary-studies",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "JPN",
+   "title": "World Languages",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/world-languages",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "MAT",
+   "title": "Mathematics",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/mathematics",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "MOA",
+   "title": "Allied Health",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/allied-health",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "MUS",
+   "title": "Music/Commercial Music",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/music-commercial-music",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PEA",
+   "title": "Physical Education",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/physical-education",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PEF",
+   "title": "Physical Education",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/physical-education",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PEH",
+   "title": "Physical Education",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/physical-education",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PET",
+   "title": "Physical Education",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/physical-education",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "PHI",
+   "title": "Philosophy",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/philosophy",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PHS",
+   "title": "Physical Science",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/physical-science",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PHY",
+   "title": "Physics",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/physics",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "POL",
+   "title": "Political Science",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/political-science",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/political-science",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/psychology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/psychology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "REL",
+   "title": "Religion",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/religion",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "RES",
+   "title": "Real Estate",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/real-estate",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/sociology",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "SPA",
+   "title": "World Languages",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/world-languages",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Intensive Spanish Summer Institute"
+   ]
+  },
+  {
+   "code": "SPE",
+   "title": "Speech",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/speech",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/mathematics",
+   "where": "catalog",
+   "method": "department label"
+  },
+  {
+   "code": "THE",
+   "title": "Theatre Arts",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/theatre-arts",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  },
+  {
+   "code": "WLD",
+   "title": "Wilderness Education",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/wilderness-education",
+   "where": "catalog",
+   "method": "department label",
+   "also_listed_under": [
+    "Work Experience/Internship"
+   ]
+  }
+ ],
+ "note": "The catalog prints no subject heading and no prefix legend: its Courses menu links department pages named without codes, and each page lists its courses under that one name (World Languages lists ASL, JPN and SPA). Each code is filed under the department page that lists its courses (method department label, weaker than a subject heading). A code on two pages keeps the other in also_listed_under; SPA is filed under World Languages, where its 101 to 203 sequence sits. The Work Experience/Internship page lists one work-experience course from 22 codes and gives none of them its title. Read by run 45631971415 at 9c7d4767 (round 5 of the plan). Held out, listed only under a page that names no subject of its own: CAO, CNT, HRM, WKX."
+}

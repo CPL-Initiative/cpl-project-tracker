@@ -358,6 +358,11 @@ jobs:
       - name: Subject headings filer (kb/_file_subject_headings.py)
         if: matrix.shard == 2
         run: python3 tests/subject_headings_filer_test.py
+      # The title hunt's filer (S730): a catalog's subject index, read by a runner, filed straight into the headings
+      # record with its source, where, method, date and finder; the Subjects build lists such a college by its headings.
+      - name: Title hunt filer (kb/_file_found_subject_titles.py)
+        if: matrix.shard == 2
+        run: python3 tests/file_found_subject_titles_test.py
       # Noncredit by category (S698, #3655): a code's noncredit courses under the category the COCI export names,
       # apart from its credit courses; no band and no category is guessed. Pure stdlib (the build reads the export).
       - name: Noncredit categories (kb/_build_noncredit_categories.py)
@@ -668,6 +673,11 @@ jobs:
       - name: Program requirements lever pins (S727)
         if: matrix.shard == 4
         run: python3 tests/program_requirements_lever_pins_s727_test.py
+      # S730: Folsom Lake 38736's pdf_pages pin opens its window on p.176, where its heading and first three required
+      # courses print, so the read carries its whole list and its 36-unit total. Pure stdlib.
+      - name: Program requirements lever pins (S730)
+        if: matrix.shard == 4
+        run: python3 tests/program_requirements_lever_pins_s730_test.py
       # S727 plan s727v: Antelope Valley 43028 (a Cal-GETC degree whose page prints only CSU GE and IGETC figures),
       # collected with its gap named. Pure stdlib.
       - name: Program requirements GE figures of another pattern (S727 s727v)
@@ -678,6 +688,11 @@ jobs:
       - name: Program requirements eLumen sister awards (S727)
         if: matrix.shard == 4
         run: python3 tests/program_requirements_elumen_sister_award_s727_test.py
+      # S730: the eLumen follow-up's list (kb/_elumen_own_page_s730.py): no kept key and no person-settled row in the
+      # forced read's force list, the reread posts decided replaces alone, and Antelope Valley 43150's pin binds.
+      - name: Program requirements eLumen own-page follow-up (S730)
+        if: matrix.shard == 4
+        run: python3 tests/program_requirements_elumen_own_page_s730_test.py
       # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
       # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
       - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)
@@ -802,6 +817,11 @@ jobs:
       - name: Reconcile S727 at Butte (the elective line as fill)
         if: matrix.shard == 3
         run: python3 tests/program_reconcile_s727_butte_test.py
+      # S731 at Saddleback: two repeat steps with block_sum (a course the page says is taken twice), fired on the
+      # seven S730's plan s730b held on the reconcile lever and on no other record; keep-only's base checks.
+      - name: Reconcile S731 at Saddleback (the repeat steps fire on the seven alone)
+        if: matrix.shard == 3
+        run: python3 tests/program_reconcile_s731_saddleback_test.py
       # S720 at Fullerton: S714's 13 held, collected with four named gaps; the self-recall and the plan's 9 rows.
       - name: Cheap piles S720 at Fullerton (named gaps, the plan)
         if: matrix.shard == 1
@@ -842,6 +862,10 @@ jobs:
       - name: Pooled figures S727 (the rows, the holds, the plan)
         if: matrix.shard == 2
         run: python3 tests/program_piles_s727_pooled_test.py
+      # S731 lane 1: the pooled reading's next at four colleges; the scorer change POOLED_S731, its self-recall, the plan s731p.
+      - name: Pooled figures S731 (the reading, the self-recall, the rows, the holds, the plan)
+        if: matrix.shard == 3
+        run: python3 tests/program_piles_s731_pooled_test.py
       # S720 at Cabrillo: the census's 21 wording-rule records, 8 collected with named gaps; the plan.
       - name: Cheap piles S720 at Cabrillo (named gaps, the plan)
         if: matrix.shard == 4

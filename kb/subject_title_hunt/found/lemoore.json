@@ -1,0 +1,9 @@
+{
+ "college": "Lemoore College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:06:46Z",
+ "run": "45630168042",
+ "plan": "kb/college_reads/subject_index_lemoore.json",
+ "titles": [],
+ "not_read": "The 2026-2027 eLumen catalog prints no subject heading and no prefix legend. Its Courses view (westhillslemoore.elumenapp.com/catalog/26-27/courses, run 45624782074) lists every course as 'AG 011 - Agriculture Sales and Communication' in one alphabetical run with no heading between codes; the same view's publish call (run 45628601616) marks each course as a link with no subject name around it; the start page (run 45627200036) links no subject or department list; and the Course Numbering page (run 45630168042) explains number ranges and says only that 'Noncredit courses are indicated with the prefix NC'. Three reads, no title found; the catalog's PDF archive (lemoorecollege.edu/catalog/catalog-archive.php) is the next place to look."
+}

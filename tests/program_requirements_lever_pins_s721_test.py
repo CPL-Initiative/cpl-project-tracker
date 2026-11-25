@@ -62,6 +62,14 @@ LEVER = {
 }
 FORCED = {"MiraCosta College": {"07863"}}
 CAPTURED = {"Antelope Valley College": {"20184"}}   # capture 45133183717's would_extract reads it from its own page
+# Pins a later session added beside S721's, each tested where it was added: All Automotive Systems A.S. 43150 (S730,
+# tests/program_requirements_elumen_own_page_s730_test.py).
+LATER_PINS = {"Antelope Valley College": {"43150"}}
+
+
+def s721_pins(college):
+    pins = C.site_pin_entries(college)
+    return {cn: pin for cn, pin in pins.items() if cn not in LATER_PINS.get(college, set())}
 
 
 def page(url, h1, body):
@@ -87,7 +95,7 @@ check("site_pinned(programs, pages, site_pins)" in src, "1 the pins bind through
 # ── 2 and 3. each college's pins on its pages ───────────────────────────────────────────────────
 for college, want_sub in (("Antelope Valley College", set()), ("College of the Redwoods", {"01816", "42928"})):
     part = FIX["colleges"][college]
-    pins = C.site_pin_entries(college)
+    pins = s721_pins(college)
     pages = [page(u, p["h1"], p["text"]) for u, p in part["pages"].items()]
     progs = [prog(cn, p) for cn, p in part["programs"].items()]
     check(set(pins) == set(part["programs"]), "2 %s pins the fixture's %d programs (%s)" % (college, len(pins), sorted(pins)))
@@ -187,7 +195,7 @@ check({e["control_number"] for e in none} == {"13559", "30811", "33453"},
 # ── 6. the members: a pin, a named gap or a forced re-read, once ────────────────────────────────
 for college, (slug, members) in LEVER.items():
     members = set(members.split())
-    pins = set(C.site_pin_entries(college))
+    pins = set(s721_pins(college))
     path = os.path.join(ROOT, "kb", "program_requirements_college", slug, "named_gaps_s721.json")
     ng = json.load(open(path)) if os.path.exists(path) else {"programs": [], "reasons": {}}
     gaps = [g["control_number"] for g in ng["programs"]]

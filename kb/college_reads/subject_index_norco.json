@@ -1,0 +1,23 @@
+{
+ "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 5: round 4 (run 45631240986) found the Course Listing node holds one link list; this read lists its items whole. One JSON call, no model call, writes nothing.",
+ "college": "Norco College",
+ "questions": {
+  "cq_subjects": "Which navigation node lists the catalog's course subjects with their names."
+ },
+ "keywords": [
+  "[Cc]ourse [Dd]escriptions?",
+  "[Cc]ourses",
+  "[Ss]ubjects?",
+  "[Dd]isciplines?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cq_subjects"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=116&parentId=5623",
+   "capture_view": true
+  }
+ ],
+ "capture_lines": 4000
+}

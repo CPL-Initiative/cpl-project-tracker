@@ -1,0 +1,24 @@
+{
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 2: pass 1 (run 45625006694) found no course-description page by keyword; print the first two pages in the back of the catalog that print a course line, to learn how the catalog heads each subject. No model call.",
+ "college": "Calbright College Credit",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "\\b(?:BUS|IT|CIS)[ -]?\\d{2,4}\\b"
+ ],
+ "pdf_page_cap": 2,
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf",
+   "answers": [
+    "subject_titles"
+   ]
+  }
+ ],
+ "pdf_span": [
+  20,
+  102
+ ]
+}

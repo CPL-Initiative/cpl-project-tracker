@@ -1,0 +1,990 @@
+{
+ "_what": "The subjects Ohlone College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Ohlone College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:03Z",
+ "run": "45627438096",
+ "source": [
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5"
+ ],
+ "rows": [
+  {
+   "code": "AH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "index",
+   "codes": [
+    "AH"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ARBC",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "index",
+   "codes": [
+    "ARBC"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ATHL",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATHL"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "BA",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BA"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "BIOT",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "index",
+   "codes": [
+    "BIOT"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "BRDC",
+   "heading": "Broadcasting",
+   "heading_printed": "Broadcasting",
+   "rule": "index",
+   "codes": [
+    "BRDC"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "CAOT",
+   "heading": "Computer Applications and Occupational Technology",
+   "heading_printed": "Computer Applications and Occupational Technology",
+   "rule": "index",
+   "codes": [
+    "CAOT"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "CHS",
+   "heading": "Chicano/Latino Studies",
+   "heading_printed": "Chicano/Latino Studies",
+   "rule": "index",
+   "codes": [
+    "CHS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "CNET",
+   "heading": "Computers, Networks, and Emerging Technology",
+   "heading_printed": "Computers, Networks, and Emerging Technology",
+   "rule": "index",
+   "codes": [
+    "CNET"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "DAID",
+   "heading": "Digital Arts and Interactive Design",
+   "heading_printed": "Digital Arts and Interactive Design",
+   "rule": "index",
+   "codes": [
+    "DAID"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "DEAF",
+   "heading": "Deaf Preparatory Program",
+   "heading_printed": "Deaf Preparatory Program",
+   "rule": "index",
+   "codes": [
+    "DEAF"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ECS",
+   "heading": "Early Childhood Studies",
+   "heading_printed": "Early Childhood Studies",
+   "rule": "index",
+   "codes": [
+    "ECS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ENGI",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGI"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Studies",
+   "heading_printed": "Environmental Studies",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ESPTS",
+   "heading": "Esports",
+   "heading_printed": "Esports",
+   "rule": "index",
+   "codes": [
+    "ESPTS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ETEC",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "ETEC"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "FT",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FT"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "ID",
+   "heading": "Interior Design",
+   "heading_printed": "Interior Design",
+   "rule": "index",
+   "codes": [
+    "ID"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "INT",
+   "heading": "Deaf-Centered Interpreting Preparation Program",
+   "heading_printed": "Deaf-Centered Interpreting Preparation Program",
+   "rule": "index",
+   "codes": [
+    "INT"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "JPNS",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JPNS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "LE",
+   "heading": "Law Enforcement",
+   "heading_printed": "Law Enforcement",
+   "rule": "index",
+   "codes": [
+    "LE"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "LS",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "index",
+   "codes": [
+    "LS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "NUR",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NUR"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "PTA",
+   "heading": "Physical Therapist Assistant",
+   "heading_printed": "Physical Therapist Assistant",
+   "rule": "index",
+   "codes": [
+    "PTA"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "RT",
+   "heading": "Respiratory Therapist",
+   "heading_printed": "Respiratory Therapist",
+   "rule": "index",
+   "codes": [
+    "RT"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "TD",
+   "heading": "Theatre and Dance",
+   "heading_printed": "Theatre and Dance",
+   "rule": "index",
+   "codes": [
+    "TD"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "WEX",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WEX"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  },
+  {
+   "code": "WS",
+   "heading": "Gender and Women’s Studies",
+   "heading_printed": "Gender and Women’s Studies",
+   "rule": "index",
+   "codes": [
+    "WS"
+   ],
+   "candidate": null,
+   "address": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf#page=5",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45627438096)",
+   "run": "45627438096"
+  }
+ ],
+ "subjects": 61,
+ "with_heading": 61
+}

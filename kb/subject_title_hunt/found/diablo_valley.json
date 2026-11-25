@@ -1,0 +1,666 @@
+{
+ "college": "Diablo Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:58:07Z",
+ "run": "45626912350",
+ "plan": "kb/college_reads/subject_index_diablo_valley.json",
+ "titles": [
+  {
+   "code": "ADJUS",
+   "title": "Administration of Justice",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-administration-of-justice-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 28
+  },
+  {
+   "code": "ADS",
+   "title": "Addiction Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-addiction-studies-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 10
+  },
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-anthropology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 9
+  },
+  {
+   "code": "ARABC",
+   "title": "Arabic",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-arabic-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 4
+  },
+  {
+   "code": "ARCHI",
+   "title": "Architecture",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-architecture-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 22
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-photography-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 49
+  },
+  {
+   "code": "ARTDM",
+   "title": "Art Digital Media",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-digital-media-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 36
+  },
+  {
+   "code": "ARTHS",
+   "title": "Art History",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-history-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 9
+  },
+  {
+   "code": "ASTRO",
+   "title": "Astronomy",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-astronomy-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 7
+  },
+  {
+   "code": "BIOL",
+   "title": "Biological Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-biological-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 18
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 14
+  },
+  {
+   "code": "BUSAC",
+   "title": "Business Accounting",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-accounting-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 15
+  },
+  {
+   "code": "BUSEN",
+   "title": "Business Entrepreneurship",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-entrepreneurship-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 4
+  },
+  {
+   "code": "BUSMG",
+   "title": "Business Management",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-management-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 9
+  },
+  {
+   "code": "BUSMK",
+   "title": "Business Marketing",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-marketing-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 13
+  },
+  {
+   "code": "CARER",
+   "title": "Career Development",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-career-development-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 8
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-chemistry-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 10
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-chinese-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 7
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-information-systems-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 20
+  },
+  {
+   "code": "CNT",
+   "title": "Computer Network Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-network-technology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 14
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-communication-studies-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 13
+  },
+  {
+   "code": "COMSC",
+   "title": "Computer Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 21
+  },
+  {
+   "code": "CONST",
+   "title": "Construction",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-construction-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 24
+  },
+  {
+   "code": "COUNS",
+   "title": "Counseling",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-counseling-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 14
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dance-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 33
+  },
+  {
+   "code": "DENHY",
+   "title": "Dental Hygiene",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dental-hygiene-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 31
+  },
+  {
+   "code": "DENTL",
+   "title": "Dental Assisting",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dental-assisting-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 15
+  },
+  {
+   "code": "DRAMA",
+   "title": "Drama",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-drama-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 30
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-early-childhood-education-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 37
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-economics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 8
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-education-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 1
+  },
+  {
+   "code": "EDUSP",
+   "title": "Special Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-special-education-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 3
+  },
+  {
+   "code": "EET",
+   "title": "Electrical/Electronics Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-electrical-electronics-technology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 16
+  },
+  {
+   "code": "ENGIN",
+   "title": "Engineering",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-engineering-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 16
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-english-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 43
+  },
+  {
+   "code": "ENGTC",
+   "title": "Engineering Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-engineering-technology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 17
+  },
+  {
+   "code": "ENSYS",
+   "title": "Energy Systems",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-energy-systems-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 1
+  },
+  {
+   "code": "ENVSC",
+   "title": "Environmental Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-environmental-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 1
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-english-as-a-second-language-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 42
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-ethnic-studies-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 4
+  },
+  {
+   "code": "FRNCH",
+   "title": "French",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-french-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 9
+  },
+  {
+   "code": "FTVE",
+   "title": "Film, Television, and Electronic Media",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-film-television-electronic-media-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 22
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-geography-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 18
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-geology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 10
+  },
+  {
+   "code": "GRMAN",
+   "title": "German",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-german-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 8
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-history-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 23
+  },
+  {
+   "code": "HORT",
+   "title": "Horticulture",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-horticulture-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 24
+  },
+  {
+   "code": "HOSP",
+   "title": "Culinary Arts/Hospitality",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-culinary-arts-hosp-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 24
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-humanities-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 12
+  },
+  {
+   "code": "HVACR",
+   "title": "Heating, Ventilation, Air Conditioning, and Refrigeration",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-heating-ventilation-air-conditioning-refridg-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 1
+  },
+  {
+   "code": "IDSGN",
+   "title": "Industrial Design",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-industrial-design-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 7
+  },
+  {
+   "code": "INTD",
+   "title": "Interdisciplinary Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-interdisciplinary-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 7
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-italian-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 8
+  },
+  {
+   "code": "JAPAN",
+   "title": "Japanese",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-japanese-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 10
+  },
+  {
+   "code": "JRNAL",
+   "title": "Journalism",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-journalism-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 9
+  },
+  {
+   "code": "KINES",
+   "title": "Kinesiology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 34
+  },
+  {
+   "code": "KNACT",
+   "title": "Kinesiology Activity",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-activity-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 51
+  },
+  {
+   "code": "KNICA",
+   "title": "Kinesiology Intercollegiate Athletics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-inter-athletics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 24
+  },
+  {
+   "code": "LT",
+   "title": "Library Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-library-technology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 11
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-mathematics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 33,
+   "shared_heading": [
+    "MATH",
+    "STAT"
+   ]
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-music-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 48
+  },
+  {
+   "code": "MUSX",
+   "title": "Music Industry Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-music-industry-studies-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 21
+  },
+  {
+   "code": "NUTRI",
+   "title": "Nutrition",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-nutrition-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 8
+  },
+  {
+   "code": "OCEAN",
+   "title": "Oceanography",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-oceanography-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 4
+  },
+  {
+   "code": "PERSN",
+   "title": "Persian",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-persian-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 4
+  },
+  {
+   "code": "PH",
+   "title": "Public Health",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-public-health-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 23
+  },
+  {
+   "code": "PHILO",
+   "title": "Philosophy",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-philosophy-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 13
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-physics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 12
+  },
+  {
+   "code": "PHYSC",
+   "title": "Physical Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-physical-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 2
+  },
+  {
+   "code": "PLUMB",
+   "title": "Plumbing",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-plumbing-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 17
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-political-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 14
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-psychology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 19
+  },
+  {
+   "code": "RE",
+   "title": "Business Real Estate",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-real-estate-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 7
+  },
+  {
+   "code": "RUSS",
+   "title": "Russian",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-russian-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 6
+  },
+  {
+   "code": "SIGN",
+   "title": "Sign Language",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-sign-language-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 5
+  },
+  {
+   "code": "SOCIO",
+   "title": "Sociology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-sociology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 10
+  },
+  {
+   "code": "SOCSC",
+   "title": "Social Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-social-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 9
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-spanish-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 9
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-mathematics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 2,
+   "shared_heading": [
+    "MATH",
+    "STAT"
+   ]
+  },
+  {
+   "code": "STMFT",
+   "title": "Steamfitting",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-steamfitting-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 3
+  },
+  {
+   "code": "WRKX",
+   "title": "Work Experience",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-work-experience-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_listed": 1
+  }
+ ],
+ "note": "The Courses view (run 45625568851) lists every subject by name, each linking one subject page; each page's content call prints that name as its heading over its courses (80 pages). One page heads two codes: Mathematics lists MATH and two STAT courses (shared_heading). url is the content call the run read; the rendered page is https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/<the same dvc-...-course slug>."
+}

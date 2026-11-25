@@ -1,0 +1,28 @@
+{
+ "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3, the last: round 2 (run 45626310706) found no /moorpark/course-descriptions/ (404), and a department page (Accounting) heads its COURSES tab with the department's name, a department label. This read tries the district catalog's own course index, at /course-descriptions/ and /courses/. No model call.",
+ "college": "Moorpark College",
+ "questions": {
+  "subjects": "Every subject heading the district catalog's course index prints, with its code."
+ },
+ "keywords": [
+  "\\([A-Z&]{1,8}\\)"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.vcccd.edu/course-descriptions/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "/course-descriptions/[a-z0-9_-]+/$",
+   "links_cap": 300
+  },
+  {
+   "url": "https://catalog.vcccd.edu/courses/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "/courses/[a-z0-9_-]+/$",
+   "links_cap": 300
+  }
+ ]
+}

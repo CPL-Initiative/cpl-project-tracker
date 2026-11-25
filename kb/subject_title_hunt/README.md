@@ -1,7 +1,10 @@
 # Local subject titles to find
 
-`20261125_local_subject_codes_without_titles.csv` lists every college and local subject code in the state course list
-whose printed subject title (the catalog's heading) is not yet collected: one row per college and code, with one
+`20261125_local_subject_codes_without_titles_2.csv` is the LEFTOVERS: every college and local subject code in the state
+course list whose printed subject title the runners could not collect (version 2, S730). Runners first read every
+college's catalog subject index (`colleges.json`, `found/`), and `kb/_file_found_subject_titles.py` filed 8,147 titles
+straight into `kb/hand_filed_catalogs/subjects/`, the record the Subjects build reads, at 103 colleges. What is left is
+here: one row per college and code, with one
 sample course number and title. Sam asked for it on 2026-11-25 so COBIx can find the titles by web search. A
 title decides the code's common subject far better than the letters do (one code can mean two subjects at two
 colleges: Glendale's AT is Flight Attendant).
@@ -24,6 +27,11 @@ recommender (`kb/_build_local_subject_recommendations.py`) run for every college
 colleges or in the district, the courses that share an M-ID, C-ID or CCN with a titled code) were measured against the
 1,496 titles already collected, each left out of its own vote; the confidence is that measured share. High is 90% or
 better, Medium 60% or better. Course joins can mislead (Diablo Valley's FTVE reads Law): confirm against the catalog.
+
+`why_no_title` says why each row is left: the catalog was not read (the reason follows), the catalog read lists no
+heading for the code, or only a department label was found (`department_label_hint` and `hint_url`, which inform a title
+and never settle it). A title found here goes into the same record: add a found file under `found/` (the format the
+runners use, with each title's source) and run `python3 kb/_file_found_subject_titles.py`.
 
 Tiers, in order of the work each unblocks:
 

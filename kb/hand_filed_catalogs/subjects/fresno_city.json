@@ -1,0 +1,1534 @@
+{
+ "_what": "The subjects Fresno City College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Fresno City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:07Z",
+ "run": "45628443522",
+ "source": [
+  "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005"
+ ],
+ "rows": [
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ACRT",
+   "heading": "Automotive Collision Repair Technology",
+   "heading_printed": "Automotive Collision Repair Technology",
+   "rule": "index",
+   "codes": [
+    "ACRT"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "AEROST",
+   "heading": "Aerospace Studies",
+   "heading_printed": "Aerospace Studies",
+   "rule": "index",
+   "codes": [
+    "AEROST"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "AFRAM",
+   "heading": "African-American Studies",
+   "heading_printed": "African-American Studies",
+   "rule": "index",
+   "codes": [
+    "AFRAM"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "AG",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "index",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "AHLTH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "index",
+   "codes": [
+    "AHLTH"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "AMIND",
+   "heading": "American Indian Studies",
+   "heading_printed": "American Indian Studies",
+   "rule": "index",
+   "codes": [
+    "AMIND"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ARMEN",
+   "heading": "Armenian",
+   "heading_printed": "Armenian",
+   "rule": "index",
+   "codes": [
+    "ARMEN"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ASAMER",
+   "heading": "Asian American Studies",
+   "heading_printed": "Asian American Studies",
+   "rule": "index",
+   "codes": [
+    "ASAMER"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "AT",
+   "heading": "Applied Technology",
+   "heading_printed": "Applied Technology",
+   "rule": "index",
+   "codes": [
+    "AT"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ATGM",
+   "heading": "Automotive Technology: General Motors Asep Program",
+   "heading_printed": "Automotive Technology: General Motors ASEP Program",
+   "rule": "index",
+   "codes": [
+    "ATGM"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "AUTOT",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTOT"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "BA",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BA"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "BT",
+   "heading": "Business & Technology",
+   "heading_printed": "Business & Technology",
+   "rule": "index",
+   "codes": [
+    "BT"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "CADD",
+   "heading": "Computer Aided Drafting and Design",
+   "heading_printed": "Computer Aided Drafting and Design",
+   "rule": "index",
+   "codes": [
+    "CADD"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "CAM",
+   "heading": "Computer Aided Manufacturing",
+   "heading_printed": "Computer Aided Manufacturing",
+   "rule": "index",
+   "codes": [
+    "CAM"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CDEV"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "CIT",
+   "heading": "Computer Information Technology",
+   "heading_printed": "Computer Information Technology",
+   "rule": "index",
+   "codes": [
+    "CIT"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "CLS",
+   "heading": "Chicano-Latino Studies",
+   "heading_printed": "Chicano-Latino Studies",
+   "rule": "index",
+   "codes": [
+    "CLS"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "CONS",
+   "heading": "Construction",
+   "heading_printed": "Construction",
+   "rule": "index",
+   "codes": [
+    "CONS"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "CRIM",
+   "heading": "Criminology",
+   "heading_printed": "Criminology",
+   "rule": "index",
+   "codes": [
+    "CRIM"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "DA",
+   "heading": "Dental Assisting",
+   "heading_printed": "Dental Assisting",
+   "rule": "index",
+   "codes": [
+    "DA"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "DEVSER",
+   "heading": "Developmental Services",
+   "heading_printed": "Developmental Services",
+   "rule": "index",
+   "codes": [
+    "DEVSER"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "DH",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "index",
+   "codes": [
+    "DH"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "DRAFT",
+   "heading": "Drafting",
+   "heading_printed": "Drafting",
+   "rule": "index",
+   "codes": [
+    "DRAFT"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "DS",
+   "heading": "Decision Science",
+   "heading_printed": "Decision Science",
+   "rule": "index",
+   "codes": [
+    "DS"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "EMLS",
+   "heading": "English for Multi-Lingual Students",
+   "heading_printed": "English for Multi-Lingual Students",
+   "rule": "index",
+   "codes": [
+    "EMLS"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "EST",
+   "heading": "Electrical Systems Technology",
+   "heading_printed": "Electrical Systems Technology",
+   "rule": "index",
+   "codes": [
+    "EST"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ETHNST",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHNST"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "FIRET",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FIRET"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "FM",
+   "heading": "Fashion Merchandising",
+   "heading_printed": "Fashion Merchandising",
+   "rule": "index",
+   "codes": [
+    "FM"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "FN",
+   "heading": "Food and Nutrition",
+   "heading_printed": "Food and Nutrition",
+   "rule": "index",
+   "codes": [
+    "FN"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "FSM",
+   "heading": "Food Service Management",
+   "heading_printed": "Food Service Management",
+   "rule": "index",
+   "codes": [
+    "FSM"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "GRC",
+   "heading": "Graphic Communications",
+   "heading_printed": "Graphic Communications",
+   "rule": "index",
+   "codes": [
+    "GRC"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "HIT",
+   "heading": "Health Information Technology",
+   "heading_printed": "Health Information Technology",
+   "rule": "index",
+   "codes": [
+    "HIT"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "HS",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "HVAC",
+   "heading": "Heating, Ventilation, & Air Conditioning",
+   "heading_printed": "Heating, Ventilation, & Air Conditioning",
+   "rule": "index",
+   "codes": [
+    "HVAC"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "JAPAN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPAN"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "JOURN",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOURN"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "LA",
+   "heading": "Learning Assistance",
+   "heading_printed": "Learning Assistance",
+   "rule": "index",
+   "codes": [
+    "LA"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "LIBSKL",
+   "heading": "Library Skills",
+   "heading_printed": "Library Skills",
+   "rule": "index",
+   "codes": [
+    "LIBSKL"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "LITEC",
+   "heading": "Library Technology",
+   "heading_printed": "Library Technology",
+   "rule": "index",
+   "codes": [
+    "LITEC"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "MA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MA"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "MDHD",
+   "heading": "Medium-Duty/Heavy-Duty",
+   "heading_printed": "Medium-Duty/Heavy-Duty",
+   "rule": "index",
+   "codes": [
+    "MDHD"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "MILSC",
+   "heading": "Military Science",
+   "heading_printed": "Military Science",
+   "rule": "index",
+   "codes": [
+    "MILSC"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "MKTG",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MKTG"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "MM",
+   "heading": "Maintenance Mechanic",
+   "heading_printed": "Maintenance Mechanic",
+   "rule": "index",
+   "codes": [
+    "MM"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "NATSCI",
+   "heading": "Natural Science",
+   "heading_printed": "Natural Science",
+   "rule": "index",
+   "codes": [
+    "NATSCI"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "PHYSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHYSC"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "PLEGAL",
+   "heading": "Paralegal",
+   "heading_printed": "Paralegal",
+   "rule": "index",
+   "codes": [
+    "PLEGAL"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "PORT",
+   "heading": "Portuguese",
+   "heading_printed": "Portuguese",
+   "rule": "index",
+   "codes": [
+    "PORT"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "PREAPP",
+   "heading": "Pre-Apprenticeship",
+   "heading_printed": "Pre-Apprenticeship",
+   "rule": "index",
+   "codes": [
+    "PREAPP"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "RAD",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "index",
+   "codes": [
+    "RAD"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "RCARE",
+   "heading": "Respiratory Care",
+   "heading_printed": "Respiratory Care",
+   "rule": "index",
+   "codes": [
+    "RCARE"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "REC",
+   "heading": "Recreation",
+   "heading_printed": "Recreation",
+   "rule": "index",
+   "codes": [
+    "REC"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "RN",
+   "heading": "Nursing, Registered",
+   "heading_printed": "Nursing, Registered",
+   "rule": "index",
+   "codes": [
+    "RN"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "ST",
+   "heading": "Supervised Tutoring",
+   "heading_printed": "Supervised Tutoring",
+   "rule": "index",
+   "codes": [
+    "ST"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "TA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "TA"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "WKEXP",
+   "heading": "Work Experience, General",
+   "heading_printed": "Work Experience, General",
+   "rule": "index",
+   "codes": [
+    "WKEXP"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  },
+  {
+   "code": "WSTS",
+   "heading": "Women's Studies",
+   "heading_printed": "Women's Studies",
+   "rule": "index",
+   "codes": [
+    "WSTS"
+   ],
+   "candidate": null,
+   "address": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522)",
+   "run": "45628443522"
+  }
+ ],
+ "subjects": 95,
+ "with_heading": 95
+}

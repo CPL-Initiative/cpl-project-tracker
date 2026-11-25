@@ -1,0 +1,473 @@
+{
+ "college": "Copper Mountain College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:04:36Z",
+ "run": "45629430201",
+ "runs": [
+  "45625006694",
+  "45626565022",
+  "45627807594",
+  "45629430201"
+ ],
+ "plan": "kb/college_reads/subject_index_copper_mountain.json",
+ "source_pdf": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf",
+ "titles": [
+  {
+   "code": "ACC",
+   "title": "ACCESS",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AE",
+   "title": "Adult Education",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASC",
+   "title": "Academic Skills Center",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUAA",
+   "title": "Business – Administrative",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUAC",
+   "title": "Business – Accounting",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUMA",
+   "title": "Business – Management",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUWE",
+   "title": "Business – Work Experience",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CADD",
+   "title": "Computer Aided Drafting and Design",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CD",
+   "title": "Child Development",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CD-PAR",
+   "title": "Child Development – Parenting",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CH",
+   "title": "Chemistry",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CJ",
+   "title": "Criminal Justice",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CNST",
+   "title": "Construction",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CULN",
+   "title": "Culinary Arts",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CUWE",
+   "title": "Culinary – Work Experience",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EGSJ",
+   "title": "Ethnic, Gender, Social Justice",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EMR",
+   "title": "Emergency Medical Responder",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technician",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENV",
+   "title": "Environmental Science",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FIRE-WFT",
+   "title": "Fire – Wildland Fire Technology",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FIWE",
+   "title": "Fire – Work Experience",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "G",
+   "title": "Geology",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HHA",
+   "title": "Home Health Aide",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HOSP",
+   "title": "Hospitality",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HS",
+   "title": "Health Sciences",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "N",
+   "title": "Nursing, Registered",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NA",
+   "title": "Nurse Assistant",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PH",
+   "title": "Physics",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "REAL",
+   "title": "Real Estate",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SP",
+   "title": "SPEECH",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed as a cross reference: 'SPEECH (SP) see COMM'"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "STDV",
+   "title": "Student Development",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SW",
+   "title": "Social Work",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "VN",
+   "title": "Vocational Nursing",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WEG",
+   "title": "Work Experience – General",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WTEC",
+   "title": "Water Technology",
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf#page=61",
+   "where": "catalog",
+   "method": "prefix legend"
+  }
+ ],
+ "registry_url_stale": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf answered 404 on 2026-11-25 (run 45625006694); the college's catalog page (https://www.cmccd.edu/academic-catalogs/) links the 2026-11-18 revision read here."
+}

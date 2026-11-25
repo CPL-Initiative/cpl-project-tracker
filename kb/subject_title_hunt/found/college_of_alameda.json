@@ -1,0 +1,421 @@
+{
+ "college": "College of Alameda",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:48:57Z",
+ "run": "45627124597",
+ "plan": "kb/college_reads/subject_index_college_of_alameda.json",
+ "titles": [
+  {
+   "code": "ADAM",
+   "title": "Apparel Design & Merchandising",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47225
+  },
+  {
+   "code": "AFRAM",
+   "title": "African-American Studies",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47229
+  },
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47237
+  },
+  {
+   "code": "APPR",
+   "title": "Apprenticeship",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47241
+  },
+  {
+   "code": "ART",
+   "title": "ART",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47245
+  },
+  {
+   "code": "ASAME",
+   "title": "Asian & Asian-American Studies",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47249
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47253
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47261
+  },
+  {
+   "code": "ATECH",
+   "title": "Automotive Technology",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47257
+  },
+  {
+   "code": "AUTOB",
+   "title": "Auto Body & Paint",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47265
+  },
+  {
+   "code": "AMT",
+   "title": "Aviation Maintenance Tech",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47233
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47269
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47273
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47277
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47281
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47285
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47289
+  },
+  {
+   "code": "COPED",
+   "title": "Cooperative Education",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47293
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47297
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47301
+  },
+  {
+   "code": "DENTL",
+   "title": "Dental Assisting",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47305
+  },
+  {
+   "code": "DMECH",
+   "title": "Diesel Mechanics",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47309
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47313
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47317
+  },
+  {
+   "code": "ESOL",
+   "title": "English for Speakers of Other Languages",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47321
+  },
+  {
+   "code": "ETHST",
+   "title": "Ethnic Studies",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47325
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47329
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47333
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47337
+  },
+  {
+   "code": "HLTED",
+   "title": "Health Education",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47345
+  },
+  {
+   "code": "HLTOC",
+   "title": "Health Professions&Occupations",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47349
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47341
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47353
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47357
+  },
+  {
+   "code": "LRNRE",
+   "title": "Learning Resources",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47544
+  },
+  {
+   "code": "LIS",
+   "title": "Library Information Studies",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47361
+  },
+  {
+   "code": "MAKR",
+   "title": "Maker Space",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47369
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47373
+  },
+  {
+   "code": "M/LAT",
+   "title": "Mexican&Latin American Studies",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47365
+  },
+  {
+   "code": "MAKR",
+   "title": "Modern Making",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47545
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47377
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47381
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47385
+  },
+  {
+   "code": "POSCI",
+   "title": "Political Science",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47389
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47393
+  },
+  {
+   "code": "SOCSC",
+   "title": "Social Science",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47401
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47397
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47405
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 50616
+  },
+  {
+   "code": "VIET",
+   "title": "Vietnamese",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47407
+  },
+  {
+   "code": "VIO",
+   "title": "Violence Prevention",
+   "url": "https://coa.curriqunet.com/Catalog/_getNavigation?id=10507&parentId=47359",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 47596
+  }
+ ],
+ "skipped_items": [
+  "Cal-GETC",
+  "LIBART"
+ ]
+}

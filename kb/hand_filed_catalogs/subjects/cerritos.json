@@ -19,7 +19,11 @@
    ],
    "candidate": null,
    "label": "Anatomy And Physiology (A&P)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/a_p/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/a_p/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AB",
@@ -31,7 +35,11 @@
    ],
    "candidate": null,
    "label": "Automotive Collision Repair (AB)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ab/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ab/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ACCT",
@@ -43,7 +51,11 @@
    ],
    "candidate": null,
    "label": "Accounting (ACCT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/acct/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/acct/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ACLR",
@@ -55,7 +67,11 @@
    ],
    "candidate": null,
    "label": "Access Learning (ACLR)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aclr/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aclr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ADN",
@@ -67,7 +83,11 @@
    ],
    "candidate": null,
    "label": "Associates Degree in Nursing (ADN)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/adn/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/adn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AFRS",
@@ -79,7 +99,11 @@
    ],
    "candidate": null,
    "label": "Africana Studies (AFRS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/afrs/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/afrs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AJ",
@@ -91,7 +115,11 @@
    ],
    "candidate": null,
    "label": "Administration of Justice (AJ)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aj/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aj/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ANTH",
@@ -103,7 +131,11 @@
    ],
    "candidate": null,
    "label": "Anthropology (ANTH)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/anth/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARCH",
@@ -115,7 +147,11 @@
    ],
    "candidate": null,
    "label": "Architecture (ARCH)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/arch/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/arch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ART",
@@ -127,7 +163,11 @@
    ],
    "candidate": null,
    "label": "Art and Design (ART)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/art/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ARTH",
@@ -139,7 +179,11 @@
    ],
    "candidate": null,
    "label": "Art History (ARTH)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/arth/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ASAM",
@@ -151,7 +195,11 @@
    ],
    "candidate": null,
    "label": "Asian American Studies (ASAM)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/asam/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/asam/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ASL",
@@ -163,7 +211,11 @@
    ],
    "candidate": null,
    "label": "American Sign Language (ASL)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/asl/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ASTR",
@@ -175,7 +227,11 @@
    ],
    "candidate": null,
    "label": "Astronomy (ASTR)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/astr/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/astr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ATH",
@@ -187,7 +243,11 @@
    ],
    "candidate": null,
    "label": "Athletics (ATH)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ath/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ath/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "AUTO",
@@ -199,7 +259,11 @@
    ],
    "candidate": null,
    "label": "Automotive Technology (AUTO)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/auto/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BA",
@@ -211,7 +275,11 @@
    ],
    "candidate": null,
    "label": "Business Administration (BA)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ba/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ba/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BCOT",
@@ -223,7 +291,11 @@
    ],
    "candidate": null,
    "label": "Business Communications Office Technology (BCOT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/bcot/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/bcot/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BIOL",
@@ -235,7 +307,11 @@
    ],
    "candidate": null,
    "label": "Biology (BIOL)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/biol/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BOT",
@@ -247,7 +323,11 @@
    ],
    "candidate": null,
    "label": "Botany (BOT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/bot/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/bot/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "BTEC",
@@ -259,7 +339,11 @@
    ],
    "candidate": null,
    "label": "Biotechnology (BTEC)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/btec/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/btec/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CA",
@@ -271,7 +355,11 @@
    ],
    "candidate": null,
    "label": "Culinary Arts (CA)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ca/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ca/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CD",
@@ -284,7 +372,11 @@
    ],
    "candidate": null,
    "label": "Child Development (CD & CDEV)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cd/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CDEC",
@@ -296,7 +388,11 @@
    ],
    "candidate": null,
    "label": "Child Development/Early Childhood (CDEC)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdec/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdec/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CDEV",
@@ -309,7 +405,11 @@
    ],
    "candidate": null,
    "label": "Child Development (CD & CDEV)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cd/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CDIT",
@@ -321,7 +421,11 @@
    ],
    "candidate": null,
    "label": "Child Development/Infant Toddler (CDIT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdit/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CDSE",
@@ -333,7 +437,11 @@
    ],
    "candidate": null,
    "label": "Child Development/Special Education (CDSE)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdse/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdse/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CHEM",
@@ -345,7 +453,11 @@
    ],
    "candidate": null,
    "label": "Chemistry (CHEM)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/chem/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CHIN",
@@ -357,7 +469,11 @@
    ],
    "candidate": null,
    "label": "Chinese (CHIN)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/chin/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/chin/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CIS",
@@ -369,7 +485,11 @@
    ],
    "candidate": null,
    "label": "Computer And Information Sciences (CIS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cis/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COMM",
@@ -381,7 +501,11 @@
    ],
    "candidate": null,
    "label": "Communication Studies (COMM)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/comm/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COS",
@@ -393,7 +517,11 @@
    ],
    "candidate": null,
    "label": "Cosmetology (COS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cos/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cos/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "COUN",
@@ -405,7 +533,11 @@
    ],
    "candidate": null,
    "label": "Counseling (COUN)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/coun/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/coun/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "CS",
@@ -417,7 +549,11 @@
    ],
    "candidate": null,
    "label": "Chicano Studies (CS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cs/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DA",
@@ -429,7 +565,11 @@
    ],
    "candidate": null,
    "label": "Dental Assisting (DA)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/da/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/da/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DANC",
@@ -441,7 +581,11 @@
    ],
    "candidate": null,
    "label": "Dance (DANC)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/danc/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/danc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "DH",
@@ -453,7 +597,11 @@
    ],
    "candidate": null,
    "label": "Dental Hygiene (DH)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/dh/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/dh/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ECON",
@@ -465,7 +613,11 @@
    ],
    "candidate": null,
    "label": "Economics (ECON)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/econ/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EDEL",
@@ -477,7 +629,11 @@
    ],
    "candidate": null,
    "label": "Education (EDEL)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/edel/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/edel/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EDT",
@@ -489,7 +645,11 @@
    ],
    "candidate": null,
    "label": "Educational Technology (EDT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/edt/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/edt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ELAP",
@@ -501,7 +661,11 @@
    ],
    "candidate": null,
    "label": "Electrical Apprenticeship (ELAP)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/elap/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/elap/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "EMLS",
@@ -513,7 +677,11 @@
    ],
    "candidate": null,
    "label": "English for Multilingual Students (EMLS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/emls/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/emls/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENGL",
@@ -525,7 +693,11 @@
    ],
    "candidate": null,
    "label": "English (ENGL)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engl/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENGR",
@@ -537,7 +709,11 @@
    ],
    "candidate": null,
    "label": "Engineering (ENGR)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engr/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENGT",
@@ -549,7 +725,11 @@
    ],
    "candidate": null,
    "label": "Engineering Design Technology (ENGT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engt/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ENVS",
@@ -561,7 +741,11 @@
    ],
    "candidate": null,
    "label": "Environmental Policy (ENVS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/envs/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/envs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ESCI",
@@ -573,7 +757,11 @@
    ],
    "candidate": null,
    "label": "Earth Science (ESCI)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/esci/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/esci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ET",
@@ -585,7 +773,11 @@
    ],
    "candidate": null,
    "label": "Engineering Technology (ET)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/et/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/et/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ETHN",
@@ -597,7 +789,11 @@
    ],
    "candidate": null,
    "label": "Ethnic Studies (ETHN)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ethn/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ethn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FILM",
@@ -609,7 +805,11 @@
    ],
    "candidate": null,
    "label": "Film (FILM)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/film/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/film/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FIN",
@@ -621,7 +821,11 @@
    ],
    "candidate": null,
    "label": "Finance (FIN)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/fin/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/fin/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "FREN",
@@ -633,7 +837,11 @@
    ],
    "candidate": null,
    "label": "French (FREN)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/fren/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/fren/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GEOG",
@@ -645,7 +853,11 @@
    ],
    "candidate": null,
    "label": "Geography (GEOG)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/geog/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GEOL",
@@ -657,7 +869,11 @@
    ],
    "candidate": null,
    "label": "Geology (GEOL)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/geol/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/geol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "GERM",
@@ -669,7 +885,11 @@
    ],
    "candidate": null,
    "label": "German (GERM)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/germ/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/germ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HED",
@@ -681,7 +901,11 @@
    ],
    "candidate": null,
    "label": "Health Education (HED)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hed/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hed/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HIST",
@@ -693,7 +917,11 @@
    ],
    "candidate": null,
    "label": "History (HIST)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hist/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HO",
@@ -705,7 +933,11 @@
    ],
    "candidate": null,
    "label": "Health Occupations (HO)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ho/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ho/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "HUM",
@@ -717,7 +949,11 @@
    ],
    "candidate": null,
    "label": "Humanities (HUM)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hum/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hum/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "INST",
@@ -730,7 +966,11 @@
    "candidate": null,
    "label": "Interdisciplinary Studies (INST)",
    "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/inst/",
-   "run": "45275042093"
+   "run": "45275042093",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "IWAP",
@@ -742,7 +982,11 @@
    ],
    "candidate": null,
    "label": "Field Ironworkers (IWAP)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/iwap/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/iwap/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "JAMS",
@@ -754,7 +998,11 @@
    ],
    "candidate": null,
    "label": "Journalism and Multimedia Studies (JAMS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/jams/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/jams/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "JAPN",
@@ -766,7 +1014,11 @@
    ],
    "candidate": null,
    "label": "Japanese (JAPN)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/japn/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/japn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "KIN",
@@ -778,7 +1030,11 @@
    ],
    "candidate": null,
    "label": "Kinesiology (KIN)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/kin/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/kin/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "KOR",
@@ -790,7 +1046,11 @@
    ],
    "candidate": null,
    "label": "Korean (KOR)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/kor/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/kor/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LAW",
@@ -802,7 +1062,11 @@
    ],
    "candidate": null,
    "label": "Law (LAW)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/law/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/law/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "LIBR",
@@ -814,7 +1078,11 @@
    ],
    "candidate": null,
    "label": "Library (LIBR)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/libr/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/libr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MA",
@@ -826,7 +1094,11 @@
    ],
    "candidate": null,
    "label": "Medical Assistant (MA)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ma/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ma/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MATH",
@@ -839,7 +1111,11 @@
    ],
    "candidate": null,
    "label": "Mathematics (MATH & STAT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/math/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MICR",
@@ -851,7 +1127,11 @@
    ],
    "candidate": null,
    "label": "Microbiology (MICR)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/micr/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/micr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MTT",
@@ -863,7 +1143,11 @@
    ],
    "candidate": null,
    "label": "Machine Tool Technology (MTT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/mtt/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/mtt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "MUS",
@@ -875,7 +1159,11 @@
    ],
    "candidate": null,
    "label": "Music (MUS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/mus/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/mus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "NAIS",
@@ -887,7 +1175,11 @@
    ],
    "candidate": null,
    "label": "Native American and Indigenous Studies (NAIS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/nais/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/nais/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "NPD",
@@ -899,7 +1191,11 @@
    ],
    "candidate": null,
    "label": "New Product Development (NPD)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/npd/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/npd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "NRSG",
@@ -911,7 +1207,11 @@
    ],
    "candidate": null,
    "label": "Nursing (NRSG)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/nrsg/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/nrsg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PEX",
@@ -923,7 +1223,11 @@
    ],
    "candidate": null,
    "label": "Physical Education (PEX)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pex/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pex/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHAR",
@@ -935,7 +1239,11 @@
    ],
    "candidate": null,
    "label": "Pharmacy Technician (PHAR)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phar/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phar/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHIL",
@@ -947,7 +1255,11 @@
    ],
    "candidate": null,
    "label": "Philosophy (PHIL)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phil/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHOT",
@@ -959,7 +1271,11 @@
    ],
    "candidate": null,
    "label": "Photography (PHOT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phot/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phot/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PHYS",
@@ -971,7 +1287,11 @@
    ],
    "candidate": null,
    "label": "Physics (PHYS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phys/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "POLS",
@@ -983,7 +1303,11 @@
    ],
    "candidate": null,
    "label": "Political Science (POLS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pol/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PS",
@@ -995,7 +1319,11 @@
    ],
    "candidate": null,
    "label": "Physical Science (PS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ps/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PSYC",
@@ -1007,7 +1335,11 @@
    ],
    "candidate": null,
    "label": "Psychology (PSYC)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/psyc/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "PTA",
@@ -1019,7 +1351,11 @@
    ],
    "candidate": null,
    "label": "Physical Therapist Assistant (PTA)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pta/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pta/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "RE",
@@ -1031,7 +1367,11 @@
    ],
    "candidate": null,
    "label": "Real Estate (RE)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/re/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/re/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "READ",
@@ -1043,7 +1383,11 @@
    ],
    "candidate": null,
    "label": "Reading (READ)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/read/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/read/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SLP",
@@ -1055,7 +1399,11 @@
    ],
    "candidate": null,
    "label": "Speech-Language Pathology (SLP)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/slp/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/slp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SOC",
@@ -1068,7 +1416,11 @@
    ],
    "candidate": null,
    "label": "Sociology (SOC & SOCI)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/soc/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SOCI",
@@ -1081,7 +1433,11 @@
    ],
    "candidate": null,
    "label": "Sociology (SOC & SOCI)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/soc/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SPAN",
@@ -1093,7 +1449,11 @@
    ],
    "candidate": null,
    "label": "Spanish (SPAN)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/span/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "STAT",
@@ -1106,7 +1466,11 @@
    ],
    "candidate": null,
    "label": "Mathematics (MATH & STAT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/math/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "SWHS",
@@ -1118,7 +1482,11 @@
    ],
    "candidate": null,
    "label": "Social Work and Human Services (SWHS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/swhs/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/swhs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "TH",
@@ -1130,7 +1498,11 @@
    ],
    "candidate": null,
    "label": "Theatre Arts (TH)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/th/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/th/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "VCS",
@@ -1142,7 +1514,11 @@
    ],
    "candidate": null,
    "label": "Visual & Cultural Studies (VCS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/vcs/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/vcs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "WELD",
@@ -1154,7 +1530,11 @@
    ],
    "candidate": null,
    "label": "Welding Technology (WELD)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/weld/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/weld/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "WGS",
@@ -1166,7 +1546,11 @@
    ],
    "candidate": null,
    "label": "Women's and Gender Studies (WGS)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/wgs/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/wgs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "WMT",
@@ -1178,7 +1562,11 @@
    ],
    "candidate": null,
    "label": "Woodworking Manufacturing Technologies (WMT)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/wmt/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/wmt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   },
   {
    "code": "ZOOL",
@@ -1190,7 +1578,11 @@
    ],
    "candidate": null,
    "label": "Zoology (ZOOL)",
-   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/zool/"
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/zool/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948295544)"
   }
  ],
  "code_address_tried": [

@@ -1,0 +1,18 @@
+{
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3: the subject link lists round 2 named under the course section (run 45625223321), each one navigation call. Catalog 6.",
+ "college": "Madera College",
+ "questions": {
+  "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
+ },
+ "keywords": [
+  "\"text\":"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cq_subjects"
+   ],
+   "url": "https://madera.curriqunet.com/catalog/_getNavigation?id=6&parentId=1240"
+  }
+ ]
+}

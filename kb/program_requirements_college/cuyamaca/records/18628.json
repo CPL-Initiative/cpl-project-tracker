@@ -79,19 +79,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    6.0,
-    6.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 6.0-6.0; the catalog states 18.0-18.0"
+   "why": [],
+   "pooled": [
+    {
+     "blocks": "all",
+     "figure": [
+      18.0,
+      18.0
+     ],
+     "minimum": true,
+     "parts": [
+      6.0,
+      6.0
+     ],
+     "read": [
+      18.0,
+      18.0
+     ],
+     "words": "Rule: choose a minimum of 18 units total; at least 3 units from Communication and at least 3 units from Language Arts; the remaining 12 units may come from either list."
+    }
    ]
   },
   "repeated": {
@@ -119,7 +136,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

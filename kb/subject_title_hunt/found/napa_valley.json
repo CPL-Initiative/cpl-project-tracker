@@ -1,0 +1,520 @@
+{
+ "college": "Napa Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:42:29Z",
+ "run": "45626064651",
+ "plan": "kb/college_reads/subject_index_napa_valley.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.napavalley.edu/courses/acct/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADS",
+   "title": "Addiction Studies",
+   "url": "https://catalog.napavalley.edu/courses/ads/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.napavalley.edu/courses/admj/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.napavalley.edu/courses/asl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.napavalley.edu/courses/anth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.napavalley.edu/courses/arth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTS",
+   "title": "Arts",
+   "url": "https://catalog.napavalley.edu/courses/arts/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.napavalley.edu/courses/astr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.napavalley.edu/courses/biol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUSI",
+   "title": "Business",
+   "url": "https://catalog.napavalley.edu/courses/busi/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.napavalley.edu/courses/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CFS",
+   "title": "Child and Family Studies",
+   "url": "https://catalog.napavalley.edu/courses/cfs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://catalog.napavalley.edu/courses/cdev/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.napavalley.edu/courses/comm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMS",
+   "title": "Computer Science",
+   "url": "https://catalog.napavalley.edu/courses/coms/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.napavalley.edu/courses/coun/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANS",
+   "title": "Dance",
+   "url": "https://catalog.napavalley.edu/courses/dans/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DART",
+   "title": "Digital Art & Design",
+   "url": "https://catalog.napavalley.edu/courses/dart/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DDGT",
+   "title": "Digital Design Graphics Technology",
+   "url": "https://catalog.napavalley.edu/courses/ddgt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EART",
+   "title": "Earth Science",
+   "url": "https://catalog.napavalley.edu/courses/eart/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.napavalley.edu/courses/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.napavalley.edu/courses/educ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://catalog.napavalley.edu/courses/ems/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGI",
+   "title": "Engineering",
+   "url": "https://catalog.napavalley.edu/courses/engi/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.napavalley.edu/courses/engl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.napavalley.edu/courses/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Science",
+   "url": "https://catalog.napavalley.edu/courses/envs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.napavalley.edu/courses/eths/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FILM",
+   "title": "Film",
+   "url": "https://catalog.napavalley.edu/courses/film/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.napavalley.edu/courses/fren/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.napavalley.edu/courses/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.napavalley.edu/courses/geol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HELH",
+   "title": "Health",
+   "url": "https://catalog.napavalley.edu/courses/helh/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEOC",
+   "title": "Health Occupations",
+   "url": "https://catalog.napavalley.edu/courses/heoc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.napavalley.edu/courses/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HCTM",
+   "title": "Hospitality, Culinary and Tourism Management",
+   "url": "https://catalog.napavalley.edu/courses/hctm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSRV",
+   "title": "Human Services",
+   "url": "https://catalog.napavalley.edu/courses/hsrv/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMA",
+   "title": "Humanities",
+   "url": "https://catalog.napavalley.edu/courses/huma/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.napavalley.edu/courses/ital/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://catalog.napavalley.edu/courses/japn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology",
+   "url": "https://catalog.napavalley.edu/courses/kine/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LGBT",
+   "title": "Lesbian, Gay, Bisexual and Transgender Studies",
+   "url": "https://catalog.napavalley.edu/courses/lgbt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Research",
+   "url": "https://catalog.napavalley.edu/courses/libr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MACH",
+   "title": "Machine Tool Technology",
+   "url": "https://catalog.napavalley.edu/courses/mach/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.napavalley.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSI",
+   "title": "Music",
+   "url": "https://catalog.napavalley.edu/courses/musi/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.napavalley.edu/courses/nurs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.napavalley.edu/courses/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.napavalley.edu/courses/phot/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.napavalley.edu/courses/phys/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLI",
+   "title": "Political Science",
+   "url": "https://catalog.napavalley.edu/courses/poli/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.napavalley.edu/courses/pols/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PTEC",
+   "title": "Psychiatric Technician",
+   "url": "https://catalog.napavalley.edu/courses/ptec/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.napavalley.edu/courses/psyc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RESP",
+   "title": "Respiratory Therapy",
+   "url": "https://catalog.napavalley.edu/courses/resp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://catalog.napavalley.edu/courses/soci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.napavalley.edu/courses/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.napavalley.edu/courses/stat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TECH",
+   "title": "Technical Mathematics",
+   "url": "https://catalog.napavalley.edu/courses/tech/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theater Arts",
+   "url": "https://catalog.napavalley.edu/courses/thea/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VWT",
+   "title": "Vineyard and Winery Technology",
+   "url": "https://catalog.napavalley.edu/courses/vwt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://catalog.napavalley.edu/courses/weld/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WOEX",
+   "title": "Work Experience",
+   "url": "https://catalog.napavalley.edu/courses/woex/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTSNC",
+   "title": "Arts for Older Adults-Noncredit",
+   "url": "https://catalog.napavalley.edu/courses/artsnc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CULNC",
+   "title": "Culinary Noncredit",
+   "url": "https://catalog.napavalley.edu/courses/culnc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESLNC",
+   "title": "English as a Second Language-Noncredit",
+   "url": "https://catalog.napavalley.edu/courses/eslnc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGLNC",
+   "title": "English-Noncredit",
+   "url": "https://catalog.napavalley.edu/courses/englnc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LGBTNC",
+   "title": "Lesbian, Gay, Bisexual and Transgender Studies-Noncredit",
+   "url": "https://catalog.napavalley.edu/courses/lgbtnc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATHNC",
+   "title": "Mathematics Skills-Noncredit",
+   "url": "https://catalog.napavalley.edu/courses/mathnc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSINC",
+   "title": "Music For Older Adults-Noncredit",
+   "url": "https://catalog.napavalley.edu/courses/musinc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "YNVS",
+   "title": "Specialized Instruction-Noncredit",
+   "url": "https://catalog.napavalley.edu/courses/ynvs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEANC",
+   "title": "Theater Arts-Noncredit",
+   "url": "https://catalog.napavalley.edu/courses/theanc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WORKNC",
+   "title": "Work Skills Noncredit",
+   "url": "https://catalog.napavalley.edu/courses/worknc/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

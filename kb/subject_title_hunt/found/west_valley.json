@@ -1,0 +1,555 @@
+{
+ "college": "West Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:30:36Z",
+ "run": "45623798209",
+ "plan": "kb/college_reads/subject_index_west_valley.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCPE",
+   "title": "Adapted Physical Education",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCAA",
+   "title": "Aging Adults",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASLA",
+   "title": "American Sign Language",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTS",
+   "title": "Art",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AVIA",
+   "title": "Aviation",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCBU",
+   "title": "Business",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUSN",
+   "title": "Business Administration",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCWP",
+   "title": "Career Skills",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHST",
+   "title": "Child Studies",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GDES",
+   "title": "Communication Design",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIST",
+   "title": "Computer Science",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCCC",
+   "title": "Court Reporting and Captioning",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LRSV",
+   "title": "Disability and Educational Support Program",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCLS",
+   "title": "Disability and Educational Support Program (Tuition-Free)",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESLW",
+   "title": "ESL",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCEL",
+   "title": "ESL and Citizenship (Tuition-Free)",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELED",
+   "title": "Elementary Education",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FDAT",
+   "title": "Fashion Design and Apparel Technology",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FRNC",
+   "title": "French",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GIST",
+   "title": "Geospatial Technology",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCGO",
+   "title": "Google",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HTCH",
+   "title": "Health Care Technologies",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HONORS",
+   "title": "Honors University Transfer Program",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMN",
+   "title": "Humanities",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IDES",
+   "title": "Industrial Design",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INTD",
+   "title": "Interior Design",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JPNS",
+   "title": "Japanese",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINS",
+   "title": "Kinesiology",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINA",
+   "title": "Kinesiology - Athletics",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINT",
+   "title": "Kinesiology Theory",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics (Statistics)",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCMA",
+   "title": "Mathematics (Tuition-Free)",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSC",
+   "title": "Music",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition Studies",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEA",
+   "title": "Oceanography",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCAD",
+   "title": "Older Adult",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PARA",
+   "title": "Paralegal",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCPT",
+   "title": "Parenting",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PMGT",
+   "title": "Park Management",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCPM",
+   "title": "Park Management (Tuition-Free)",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSCI",
+   "title": "Physical Science",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSCI",
+   "title": "Public Health",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RLST",
+   "title": "Real Estate",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCRL",
+   "title": "Real Estate (Tuition-Free)",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SJST",
+   "title": "Social Justice Studies",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCSP",
+   "title": "Spanish (Tuition-Free)",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NCTU",
+   "title": "Student Success (Tuition-Free)",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theater Arts",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WGQS",
+   "title": "Women, Gender and Queer Studies",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WRKX",
+   "title": "Work Experience",
+   "url": "https://www.westvalley.edu/catalog/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

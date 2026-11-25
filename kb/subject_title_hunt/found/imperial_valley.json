@@ -1,0 +1,706 @@
+{
+ "college": "Imperial Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:06:37Z",
+ "run": "45630333350",
+ "plan": "kb/college_reads/subject_index_imperial_valley.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8594
+  },
+  {
+   "code": "ACR",
+   "title": "Air Conditioning and Refrigeration",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8353
+  },
+  {
+   "code": "ADS",
+   "title": "Addiction Disorder Studies",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8590
+  },
+  {
+   "code": "AG",
+   "title": "Agriculture",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8592
+  },
+  {
+   "code": "AHP",
+   "title": "Allied Health Professions",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8593
+  },
+  {
+   "code": "AIS",
+   "title": "American Indigenous Studies",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8354
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8355
+  },
+  {
+   "code": "AMSL",
+   "title": "American Sign Language",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8356
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8357
+  },
+  {
+   "code": "APEL",
+   "title": "Apprenticeship-Electrician",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8358
+  },
+  {
+   "code": "APGN",
+   "title": "Apprenticeship-Generation Mechanic",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8359
+  },
+  {
+   "code": "APHY",
+   "title": "Apprenticeship-Hydro Operator",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8360
+  },
+  {
+   "code": "APIN",
+   "title": "Apprenticeship-Instrument Technician",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8361
+  },
+  {
+   "code": "APLN",
+   "title": "Apprenticeship-Power Lineman",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8362
+  },
+  {
+   "code": "APMT",
+   "title": "Apprenticeship-Meter Technician",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8363
+  },
+  {
+   "code": "APPL",
+   "title": "Apprenticeship-Control Operator",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8364
+  },
+  {
+   "code": "APRL",
+   "title": "Apprenticeship-Relays Technician",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8365
+  },
+  {
+   "code": "APSB",
+   "title": "Apprenticeship-Substation-Electrician",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8366
+  },
+  {
+   "code": "APSC",
+   "title": "Apprenticeship-SCADA/Telecommunications Technician",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8367
+  },
+  {
+   "code": "APTL",
+   "title": "Apprenticeship-Telecommunications Technician",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8368
+  },
+  {
+   "code": "ARAB",
+   "title": "Arabic",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8369
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8370
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8688
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8371
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8373
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8372
+  },
+  {
+   "code": "BLDC",
+   "title": "Building Construction",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8376
+  },
+  {
+   "code": "BUS",
+   "title": "Business Administration",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8377
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8375
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8381
+  },
+  {
+   "code": "CHIC",
+   "title": "Chicana/o Studies",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8382
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8379
+  },
+  {
+   "code": "CITZ",
+   "title": "Citizenship",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8596
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8380
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8378
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8383
+  },
+  {
+   "code": "CSI",
+   "title": "Correctional Science",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8384
+  },
+  {
+   "code": "DSL",
+   "title": "Diesel",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8689
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8396
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8395
+  },
+  {
+   "code": "ELTR",
+   "title": "Electronics",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8394
+  },
+  {
+   "code": "ELTT",
+   "title": "Electrical Trades",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8393
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technician",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8392
+  },
+  {
+   "code": "EMTP",
+   "title": "Emergency Medical Technician-Paramedic",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8391
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8390
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8389
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Science",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8388
+  },
+  {
+   "code": "ES",
+   "title": "Exercise Science",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8386
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8387
+  },
+  {
+   "code": "EWIR",
+   "title": "Electrical Wiring",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8385
+  },
+  {
+   "code": "FILM",
+   "title": "Film Studies",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8402
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Science",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8401
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8400
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8399
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8398
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8397
+  },
+  {
+   "code": "HE",
+   "title": "Health Education",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8405
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8404
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8403
+  },
+  {
+   "code": "INST",
+   "title": "Instrumentation",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8658
+  },
+  {
+   "code": "LRNA",
+   "title": "Supervised Tutoring",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8406
+  },
+  {
+   "code": "MA",
+   "title": "Medical Assistant",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8410
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8409
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8408
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing: Associate Degree",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8407
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8417
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Science",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8416
+  },
+  {
+   "code": "PHT",
+   "title": "Pharmacy Technician",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8415
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8414
+  },
+  {
+   "code": "PLNT",
+   "title": "Plant Operator Technology",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8601
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8413
+  },
+  {
+   "code": "POST",
+   "title": "Peace Officer Standards and Training",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8412
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8411
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8657
+  },
+  {
+   "code": "READ",
+   "title": "Reading",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8418
+  },
+  {
+   "code": "RELS",
+   "title": "Religious Studies",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8422
+  },
+  {
+   "code": "RNEW",
+   "title": "Renewable Energy",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8421
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8420
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8419
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8656
+  },
+  {
+   "code": "SW",
+   "title": "Social Work",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8426
+  },
+  {
+   "code": "THEA",
+   "title": "Theatre Arts",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8425
+  },
+  {
+   "code": "VN",
+   "title": "Nursing: Vocational",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8424
+  },
+  {
+   "code": "WE",
+   "title": "Work Experience",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8423
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8428
+  },
+  {
+   "code": "WT",
+   "title": "Water Treatment Technology",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 8427
+  },
+  {
+   "code": "AUT",
+   "title": "Automotive Technology",
+   "url": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": null,
+   "note": "the catalog prints the heading 'AU T-Automotive Technology', the code with a space"
+  }
+ ]
+}
