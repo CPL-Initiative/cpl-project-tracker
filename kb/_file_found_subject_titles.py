@@ -81,7 +81,10 @@ def file_one(found, dry):
     for t in titles:
         # A title the catalog does not print over the code itself (a worker's "no heading of its own" note: the code's
         # first course sits under another code's heading) is an inference, left for a person under the rule on #3655.
-        if code_key(t.get("code")) in split or str(t.get("note") or "").lower().startswith("no heading of its own"):
+        # A department label informs a title and never settles one (p-subject-title-carries-its-source-sam-2026-11-25):
+        # it stays in the found file, for the leftovers list to show beside the code.
+        if (code_key(t.get("code")) in split or str(t.get("note") or "").lower().startswith("no heading of its own")
+                or str(t.get("method") or "").lower() == "department label"):
             skipped += 1
             continue
         code, printed = str(t.get("code") or "").strip(), str(t.get("title") or "").strip()
