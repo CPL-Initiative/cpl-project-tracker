@@ -666,6 +666,11 @@ jobs:
       - name: Program requirements eLumen sister awards (S727)
         if: matrix.shard == 4
         run: python3 tests/program_requirements_elumen_sister_award_s727_test.py
+      # S727 plan s727v: Antelope Valley 43028 (a Cal-GETC degree whose page prints only CSU GE and IGETC figures),
+      # collected with its gap named. Pure stdlib.
+      - name: Program requirements GE figures of another pattern (S727 s727v)
+        if: matrix.shard == 4
+        run: python3 tests/program_ge_other_pattern_s727v_test.py
       # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
       # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
       - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)
