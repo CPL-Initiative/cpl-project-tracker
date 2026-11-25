@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-25_s727v_prreq_ge_other_pattern_apply.sql",
+ "name": "s727v_prreq_ge_other_pattern_apply",
+ "version": "20261125082049",
+ "sha256": "99f14353e3dcf4dd8bb5bedf5ec57956f8ca0694f68b4f924ef870367aa5e640",
+ "run": "45575092684",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"returned\":{\"returned\":1,\"keys\":[1],\"skipped_checked\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
