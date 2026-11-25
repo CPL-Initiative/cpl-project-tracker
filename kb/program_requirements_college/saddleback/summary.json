@@ -2,27 +2,41 @@
  "college": "Saddleback College",
  "programs": 367,
  "with_closed_list": 353,
- "found": 321,
+ "found": 311,
  "extracted": 321,
  "errors": 0,
- "passed_machine_checks": 270,
+ "passed_machine_checks": 282,
  "failed": {
   "coverage": 10,
   "invented": 0,
-  "arithmetic": 51,
+  "arithmetic": 39,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 25.88,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 25.88,
  "cost_per_program": 0.0806,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "04054",
+   "title": "Retailing and Selling",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
   {
    "control_number": "04070",
    "title": "Marine Science Technician",
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "04093",
@@ -30,7 +44,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "04120",
@@ -56,7 +71,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "09851",
@@ -64,7 +80,74 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "12298",
+   "title": "Retail Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_mgmt_as",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.667,
+    "body": 0.667,
+    "content": 0.667,
+    "net": 10,
+    "listed": 15,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 24324,
+     "content": 24324,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "22844",
+   "title": "Retailing and Selling",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "22845",
+   "title": "Retail Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hm_ca",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6054,
+     "content": 6054,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "22877",
@@ -72,7 +155,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "22878",
@@ -80,7 +164,66 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "22895",
+   "title": "SCHOOL AGE CARE AND RECREATION",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "22896",
+   "title": "Early Childhood Master Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_early_teach_ca",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.743,
+    "body": 0.743,
+    "content": 0.743,
+    "net": 26,
+    "listed": 35,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 25517,
+     "content": 25517,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "22897",
+   "title": "Site Supervisor",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "22899",
+   "title": "Infant Toddler Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "22900",
@@ -88,7 +231,28 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "36224",
+   "title": "Business Information Worker I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36225",
+   "title": "Business Information Worker II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "38428",
@@ -114,7 +278,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "38429",
@@ -140,7 +305,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "38781",
@@ -166,7 +332,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38797",
@@ -192,7 +359,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43591",
@@ -200,7 +368,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43732",
@@ -208,8 +377,9 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38843470509"
+ "run": "45606980427"
 }

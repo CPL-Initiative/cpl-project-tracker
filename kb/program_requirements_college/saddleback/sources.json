@@ -406,7 +406,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer science - a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -498,7 +502,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "kinesiology - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 70,
@@ -526,7 +534,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering - a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -775,7 +787,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "studio arts - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 63,
@@ -1094,7 +1110,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "registered nurse - a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 25,
@@ -1153,7 +1173,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "04091",
@@ -1165,7 +1189,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "04093",
@@ -1261,7 +1289,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "english literature - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 22,
@@ -1322,7 +1354,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "mathematics - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -1400,7 +1436,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "physics - a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 6,
@@ -1508,7 +1548,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "04112",
@@ -1575,7 +1619,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "anthropology - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -1616,7 +1664,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "economics - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 19,
@@ -1669,7 +1721,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "history - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 31,
@@ -1713,7 +1769,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "geography - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 22,
@@ -1964,7 +2024,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biology - a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 26,
@@ -2439,7 +2503,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "09842",
@@ -2963,7 +3031,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "astronomy - a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -3359,7 +3431,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "13870",
@@ -3436,7 +3512,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "17934",
@@ -3448,7 +3528,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "17986",
@@ -3460,7 +3544,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "17990",
@@ -3516,7 +3604,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "health sciences - a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 38,
@@ -3532,7 +3624,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18210",
@@ -3679,7 +3775,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies - arts & humanities - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 129,
@@ -3761,7 +3861,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies - natural sciences - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 60,
@@ -3883,7 +3987,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies-social & behavioral sciences - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 100,
@@ -3937,7 +4045,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal studies - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 32,
@@ -3971,7 +4083,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre arts technical theatre - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -4019,7 +4135,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "theatre arts entertainment and theatre technology - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 26,
@@ -4091,7 +4211,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "medical laboratory technician - a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -5665,7 +5789,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "registered nurse - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 25,
@@ -5745,7 +5873,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "22889",
@@ -6159,7 +6291,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood teacher - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 32,
@@ -6531,7 +6667,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical laboratory technician - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -6595,7 +6735,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english as a second language - advanced level - certificate of competency (noncredit)",
+    "section_fit": 0.8,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -6936,7 +7080,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 20,
@@ -7051,7 +7199,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 8,
@@ -7090,7 +7242,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 25,
@@ -7121,7 +7277,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -7177,7 +7337,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 34,
@@ -7230,7 +7394,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 31,
@@ -7259,7 +7427,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -7339,7 +7511,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -7368,7 +7544,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -7406,7 +7586,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 16,
@@ -7450,7 +7634,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 23,
@@ -7495,7 +7683,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 23,
@@ -7576,7 +7768,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -7623,7 +7819,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 25,
@@ -7763,7 +7963,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 22,
@@ -7837,7 +8041,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 20,
@@ -7989,7 +8197,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biomedical illustration - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 9,
@@ -8021,7 +8233,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -8134,7 +8350,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "associate teacher level i - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 4,
@@ -8202,7 +8422,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business communications - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 22,
@@ -8286,7 +8510,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business communication skills - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -8589,7 +8817,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "global studies - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -8655,7 +8887,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child and adolescent development - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 19,
@@ -8865,7 +9101,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "38809",
@@ -8877,7 +9117,22 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "its page went to closed-list 43273 (Certified Nurse Assistant)",
+   "page": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_CNA",
+    "title": "CERTIFIED NURSE ASSISTANT - Certificate of Completion (Noncredit)",
+    "h1": "CERTIFIED NURSE ASSISTANT - Certificate of Completion (Noncredit)",
+    "awards": [
+     "noncredit"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "38811",
@@ -8936,7 +9191,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_home_health",
+    "title": "HOME HEALTH AIDE - Certificate of Completion (Noncredit)",
+    "h1": "HOME HEALTH AIDE - Certificate of Completion (Noncredit)",
+    "awards": [
+     "noncredit"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "38826",
@@ -9221,7 +9490,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "environmental science - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 22,
@@ -9344,7 +9617,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "creative writing - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 26,
@@ -9486,7 +9763,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "hospitality management - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,
@@ -9635,7 +9916,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "instrumental studies - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -9701,7 +9986,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "jazz studies - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -9740,7 +10029,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "keyboard studies - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 17,
@@ -9803,7 +10096,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "piano pedagogy - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 10,
@@ -9836,7 +10133,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "vocal studies - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -9886,7 +10187,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "banking and finance - a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 28,
@@ -9969,7 +10274,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration  2.0 - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -10047,7 +10356,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "associate teacher level ii: work experience - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 5,
@@ -10514,7 +10827,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies - interdisciplinary studies - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 50,
@@ -10726,7 +11043,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "library technician - certificate of achievement",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -10795,7 +11116,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 21,
@@ -10976,7 +11301,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "kinesiology - exercise science - a.a. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 11,
@@ -11244,7 +11573,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture plant science - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 14,
@@ -11419,7 +11752,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy, and society - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 47,
@@ -11642,7 +11979,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 13,
@@ -11731,7 +12072,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -11924,7 +12269,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social work and human services - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 32,
@@ -11940,7 +12289,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "44770",
@@ -12087,7 +12440,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "surgical technology - a.s. degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 12,
@@ -12269,7 +12626,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs - aa-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 18,
@@ -12298,7 +12659,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0 - as-t degree",
+    "section_fit": 1.0,
+    "exact": 0
    }
   },
   "listed": 7,

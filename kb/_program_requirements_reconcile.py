@@ -169,6 +169,19 @@ def held_by_step(st: dict, control_number, prog: dict) -> bool:
     return cn is not None and cn in {norm_control_number(k) for k in hold}
 
 
+def block_counts(block: dict, course: dict, n) -> bool:
+    """A repeat step's block_sum guard: the block is rule all, every course carries units and no count, and with the
+    course taken n times its courses add exactly to the block's stated low figure."""
+    if not n or n < 2 or block.get("rule") != "all":
+        return False
+    courses = block.get("courses") or []
+    if any(_num(c.get("units")) is None or c.get("times") is not None for c in courses):
+        return False
+    lo = _span_of(block.get("stated"))[0]
+    counted = sum(_num(c.get("units")) * (n if c is course else 1) for c in courses)
+    return lo is not None and abs(counted - lo) <= 1e-9
+
+
 def _span_of(v):
     if isinstance(v, dict):
         return (v.get("min"), v.get("max") if v.get("max") is not None else v.get("min"))
@@ -1248,6 +1261,13 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
                         for entry in [course] + [a for a in course.get("alternatives") or [] if isinstance(a, dict)]:
                             if each is not None and (_num(entry.get("units")) != each
                                                      or entry.get("units_max") not in (None, entry.get("units"))):
+                                continue
+                            # block_sum (Saddleback, S731): the pattern's course counts only as a listed course of
+                            # a rule-all block whose courses, with its count, add exactly to the block's stated
+                            # figure, the name_pattern reading's own guard. A page printing the same words over a
+                            # list the reading already counts at its figure (Commercial Music 41419's 'choose 2
+                            # units' of MUS 50) keeps its record.
+                            if st.get("block_sum") and not (entry is course and block_counts(block, course, n)):
                                 continue
                             if n and n > 1 and norm_code(entry.get("code")) == code and entry.get("times") is None:
                                 entry["times"] = n
