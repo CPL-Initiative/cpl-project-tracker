@@ -137,34 +137,59 @@ th{font-weight:700;font-size:.82rem;color:var(--heading);background:var(--surfac
 </style>
 <a class="skip" href="#tabs">Skip to the credentials</a>
 <div id="view">
-<!-- cpl-public-header:start (adapted from CPLBrain/04-projects/cpl-initiative/public-header/header.html for
-     the CPL Library and copied here for the adoption page: the look of Malone's page, Light unless the reader picks Dark, and no link to the
-     page itself, per Sam's markup of 2026-10-24; logos from ../sierra/) -->
+<section class="hero"><div class="hero-in">
+<div class="top" style="display:grid;gap:10px">
+<p class="eyebrow">CPL Initiative · Preliminary scan for the CDE Adult Education Office and LWDA · November 25, 2026</p>
+<h1>Turn adult education training into college credit</h1>
+<div class="title-accent" aria-hidden="true"></div>
+<p class="lede">We read the career programs adult schools, ROPs and county offices of education deliver through the California Adult Education Program against the credit colleges record in MAP. Most of the credentials they teach toward already carry college credit somewhere, and a college nearby can adopt it.</p>
+</div>
+<div class="facts">
+<div class="fact"><b>1,733</b><span>programs adult schools deliver themselves</span></div>
+<div class="fact"><b>190</b><span>schools in 72 consortia</span></div>
+<a class="fact" href="#adopt"><b>419</b><span>pairings of a credential with a college that gives credit or could adopt it</span></a><a class="fact" href="#browse"><b>18</b><span>credentials colleges already credit, taught at 146 schools</span></a>
+<a class="fact" href="#precedent"><b>6</b><span>credentials only one college gives credit for so far</span></a>
+<a class="fact" href="#build"><b>9</b><span>credentials no college gives credit for yet</span></a>
+</div>
+<div class="picker"><span class="pk"><label for="region">Pick a Strong Workforce region</label><select id="region"><option value="">All of California</option></select></span><span class="pk"><label for="sector">Pick an occupation group</label><select id="sector"><option value="">All occupation groups</option></select></span><span class="pk"><label for="site">Pick a training site</label><select id="site"><option value="">All training sites</option></select></span><span class="note" id="rnote"></span></div>
+</div></section>
+<!-- cpl-public-header:start (CPLBrain/04-projects/cpl-initiative/public-header; apply.py writes this block, edit here and re-apply) -->
 <style>
-.cplh { position: relative; z-index: 50; background: var(--surface); border-bottom: 1px solid var(--header-line); color: var(--ink); font-size: .95rem; line-height: 1.4; }
-.cplh-in { position: relative; min-height: 76px; padding-block: 10px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 32px; }
-.cplh-logo { display: inline-flex; min-height: 25px; }
-.cplh-logo img { display: block; height: 54px; width: auto; max-width: 100%; }
-.cplh-logo .cplh-dark { display: none; }
-:root[data-theme="dark"] .cplh-logo .cplh-light { display: none; }
-:root[data-theme="dark"] .cplh-logo .cplh-dark { display: block; }
-.cplh-end { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; }
-/* Links (Sam, 2026-10-26): one word opens the list, each link with a line in gray saying what it
-   is, "so new-to-CPL users will not be immediately lost in our acronyms". --muted on --surface:
-   5.75:1 light, 7.73:1 dark. */
-.cplh-links .word[aria-expanded="true"] { color: var(--heading); text-decoration-thickness: 2px; }
-.cplh-panel { position: absolute; top: 100%; right: var(--gutter-r); width: min(38rem, calc(100% - var(--gutter-l) - var(--gutter-r))); margin-top: 1px; padding: 6px 18px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 12px 30px var(--shadow); }
-.cplh-panel[hidden] { display: none; }
-.cplh-nav { margin: 0; padding: 0; list-style: none; }
-.cplh-nav li { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 2px 16px; align-items: baseline; padding: 9px 0; border-top: 1px solid var(--line); }
-.cplh-nav li:first-child { border-top: 0; }
-.cplh-nav a { display: inline-flex; align-items: center; min-height: 25px; color: var(--link); font-weight: 600; text-underline-offset: 3px; }
-.cplh-desc { color: var(--muted); font-size: .9rem; }
-.cplh-theme { display: flex; gap: .9rem; align-items: center; }
-.cplh-theme span { color: var(--muted); }
-.cplh-theme button { background: none; border: 0; padding: 0 2px; min-height: 25px; min-width: 25px; font: inherit; font-weight: 700; color: var(--link); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
-.cplh-theme button[aria-pressed="true"] { color: var(--heading); text-decoration-thickness: 2px; }
-@media (max-width: 560px) { .cplh-logo img { height: 40px; } .cplh-nav li { grid-template-columns: minmax(0, 1fr); } }
+/* The public header (Sam, 2026-10-21): the CPL Initiative logo to the Chancellor's
+   Office CPL page, the way out to the public CPL pages, and a light/dark control.
+   The links sit behind one word, Links, each with a line in gray saying what it is
+   (Sam, 2026-10-26: "so new-to-CPL users will not be immediately lost in our acronyms").
+   Its own tokens, so it reads the same on any host page; First Light values. The gray
+   (--cplh-muted) is First Light's muted text: 6.74:1 on the light ground, 7.52:1 on the dark. */
+:root{--cplh-bg:#FFFFFF;--cplh-line:#D9D5CB;--cplh-fg:#3A3A36;--cplh-muted:#5C5C55;--cplh-link:#0047AB;--cplh-strong:#1C1C1A;--cplh-shadow:rgba(28,28,26,.14)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-muted:#B4B1A8;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA;--cplh-shadow:rgba(0,0,0,.45)}}
+:root[data-theme="dark"]{--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-muted:#B4B1A8;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA;--cplh-shadow:rgba(0,0,0,.45)}
+.cplh{position:relative;z-index:50;background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:'Source Sans 3',Arial,sans-serif;font-size:.95rem;line-height:1.4}
+.cplh-in{position:relative;max-width:1080px;margin:0 auto;padding-block:.6rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem}
+.cplh-logo{display:inline-flex;min-height:25px}
+.cplh-logo img{display:block;height:40px;width:auto;max-width:100%}
+.cplh-logo .cplh-dark{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cplh-logo .cplh-light{display:none}:root:not([data-theme="light"]) .cplh-logo .cplh-dark{display:block}}
+:root[data-theme="dark"] .cplh-logo .cplh-light{display:none}
+:root[data-theme="dark"] .cplh-logo .cplh-dark{display:block}
+.cplh-end{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.6rem}
+.cplh a{color:var(--cplh-link)}
+/* 25px, one past the 24px floor (S641): a control sized at exactly 24 reads 23.9 at a browser zoom of 90% or 133%,
+   where layout rounds to the device pixel, and the CPL Library's check and WCAG 2.2 then count it short. */
+.cplh-word,.cplh-theme button{background:none;border:0;padding:0 2px;min-height:25px;min-width:25px;font:inherit;font-weight:600;color:var(--cplh-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cplh-word[aria-expanded="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
+.cplh-panel{box-sizing:border-box;position:absolute;top:100%;right:max(16px,env(safe-area-inset-right,0px));width:min(38rem,calc(100% - 32px));margin-top:1px;background:var(--cplh-bg);border:1px solid var(--cplh-line);box-shadow:0 10px 28px var(--cplh-shadow);padding:.35rem 1rem}
+.cplh-panel[hidden]{display:none}
+.cplh-nav{margin:0;padding:0;list-style:none}
+.cplh-nav li{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.1rem 1rem;align-items:baseline;padding:.5rem 0;border-top:1px solid var(--cplh-line)}
+.cplh-nav li:first-child{border-top:0}
+.cplh-nav a{display:inline-flex;align-items:center;min-height:25px;font-weight:600;text-underline-offset:3px}
+.cplh-desc{color:var(--cplh-muted);font-size:.9rem}
+.cplh-theme{display:flex;gap:.9rem;align-items:center}
+.cplh-theme span{color:var(--cplh-fg)}
+.cplh-theme button[aria-pressed="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
+.cplh a:focus-visible,.cplh button:focus-visible{outline:2px solid var(--cplh-link);outline-offset:2px}
+@media (max-width:560px){.cplh-logo img{height:32px}.cplh-end{margin-left:0}.cplh-nav li{grid-template-columns:minmax(0,1fr)}}
 </style>
 <header class="cplh" role="banner">
   <div class="cplh-in">
@@ -174,7 +199,7 @@ th{font-weight:700;font-size:.82rem;color:var(--heading);background:var(--surfac
     </a>
     <div class="cplh-end">
       <nav class="cplh-links" aria-label="CPL pages">
-        <button type="button" class="word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Links</button>
+        <button type="button" class="cplh-word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Links</button>
         <div class="cplh-panel" id="cplh-panel" hidden>
           <ul class="cplh-nav">
             <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/" target="_blank" rel="noopener" aria-describedby="cplh-d-about">The CPL Initiative</a><span class="cplh-desc" id="cplh-d-about">What the Chancellor&#x27;s Office CPL Initiative does, in one page</span></li>
@@ -183,14 +208,14 @@ th{font-weight:700;font-size:.82rem;color:var(--heading);background:var(--surfac
             <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener" aria-describedby="cplh-d-college">Find your college</a><span class="cplh-desc" id="cplh-d-college">Your college's credit for prior learning page and the person to contact</span></li>
             <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener" aria-describedby="cplh-d-dash">MAP dashboard</a><span class="cplh-desc" id="cplh-d-dash">Live statewide counts of students, units of credit and savings, by college</span></li>
             <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener" aria-describedby="cplh-d-cfby">Credit for Being You</a><span class="cplh-desc" id="cplh-d-cfby">The student portal: add what you have learned and request credit</span></li>
-                      <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/" target="_blank" rel="noopener" aria-describedby="cplh-d-lib">CPL Library</a><span class="cplh-desc" id="cplh-d-lib">Presentations, films and briefs from the CPL Initiative</span></li>
-            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/" target="_blank" rel="noopener" aria-describedby="cplh-d-cat">Credential Catalog</a><span class="cplh-desc" id="cplh-d-cat">Credentials colleges award credit for, and how to adopt one in MAP</span></li>
-</ul>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/" target="_blank" rel="noopener" aria-describedby="cplh-d-lib">CPL Library</a><span class="cplh-desc" id="cplh-d-lib">Presentations, films, visuals and briefs from the Credit for Prior Learning Initiative</span></li>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/" target="_blank" rel="noopener" aria-describedby="cplh-d-catalog">Credential Catalog</a><span class="cplh-desc" id="cplh-d-catalog">Credentials colleges award credit for, and how to adopt one in MAP</span></li>
+          </ul>
         </div>
       </nav>
       <div class="cplh-theme" role="group" aria-label="Theme">
         <span>Theme</span>
-        <button type="button" data-cplh-theme="light" aria-pressed="true">Light</button>
+        <button type="button" data-cplh-theme="light" aria-pressed="false">Light</button>
         <button type="button" data-cplh-theme="dark" aria-pressed="false">Dark</button>
       </div>
     </div>
@@ -200,24 +225,28 @@ th{font-weight:700;font-size:.82rem;color:var(--heading);background:var(--surfac
 (function () {
   var KEY = "cpl_theme", root = document.documentElement;
   function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
-  // Light unless the reader picks Dark here or in COBI; the device setting is never read.
-  function current() { return root.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+  function current() {
+    var t = root.getAttribute("data-theme");
+    if (t === "light" || t === "dark") return t;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
   function paint() {
     var t = current();
     Array.prototype.forEach.call(document.querySelectorAll("[data-cplh-theme]"), function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-cplh-theme") === t));
     });
   }
-  root.setAttribute("data-theme", read() === "dark" ? "dark" : "light");
+  var saved = read();
+  if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
   document.addEventListener("click", function (e) {
     var b = e.target.closest ? e.target.closest("[data-cplh-theme]") : null;
     if (!b) return;
-    var t = b.getAttribute("data-cplh-theme") === "dark" ? "dark" : "light";
+    var t = b.getAttribute("data-cplh-theme");
     root.setAttribute("data-theme", t);
     try { localStorage.setItem(KEY, t); } catch (err) { /* private window: the choice holds for this visit */ }
     paint();
   });
-  window.addEventListener("storage", function (e) { if (e && e.key === KEY) paint(); });
+  if (window.matchMedia) { try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint); } catch (e) {} }
   paint();
 
   // Links: one word opens the list. Escape, a click outside it, or Tab past its last
@@ -240,22 +269,6 @@ th{font-weight:700;font-size:.82rem;color:var(--heading);background:var(--surfac
 })();
 </script>
 <!-- cpl-public-header:end -->
-<section class="hero"><div class="hero-in">
-<div class="top" style="display:grid;gap:10px">
-<p class="eyebrow">CPL Initiative · Preliminary scan for the CDE Adult Education Office and LWDA · November 25, 2026</p>
-<h1>Turn adult education training into college credit</h1>
-<div class="title-accent" aria-hidden="true"></div>
-<p class="lede">We read the career programs adult schools, ROPs and county offices of education deliver through the California Adult Education Program against the credit colleges record in MAP. Most of the credentials they teach toward already carry college credit somewhere, and a college nearby can adopt it.</p>
-</div>
-<div class="facts">
-<div class="fact"><b>1,733</b><span>programs adult schools deliver themselves</span></div>
-<div class="fact"><b>190</b><span>schools in 72 consortia</span></div>
-<a class="fact" href="#adopt"><b>419</b><span>pairings of a credential with a college that gives credit or could adopt it</span></a><a class="fact" href="#browse"><b>18</b><span>credentials colleges already credit, taught at 146 schools</span></a>
-<a class="fact" href="#precedent"><b>6</b><span>credentials only one college gives credit for so far</span></a>
-<a class="fact" href="#build"><b>9</b><span>credentials no college gives credit for yet</span></a>
-</div>
-<div class="picker"><span class="pk"><label for="region">Pick a Strong Workforce region</label><select id="region"><option value="">All of California</option></select></span><span class="pk"><label for="sector">Pick an occupation group</label><select id="sector"><option value="">All occupation groups</option></select></span><span class="pk"><label for="site">Pick a training site</label><select id="site"><option value="">All training sites</option></select></span><span class="note" id="rnote"></span></div>
-</div></section>
 <main>
 <div id="tabs" role="tablist" aria-label="Sections"></div>
 <div id="panels"></div>
