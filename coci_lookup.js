@@ -153,6 +153,12 @@
     ".cplcoci-viewbtn { font-size:.82rem; font-weight:700; padding:6px 16px; background: var(--surface-opaque); color: var(--text-muted); border:0; cursor:pointer; }",
     ".cplcoci-viewbtn + .cplcoci-viewbtn { border-left:1px solid var(--border); }",
     ".cplcoci-viewbtn.on { background: var(--seal-blue); color:#fff; }",
+    // The Rows control (the anchor-page mock Sam approved, S725): which rows the Courses List holds.
+    ".cplcoci-rows { display:flex; flex-wrap:wrap; gap:4px 14px; align-items:center; margin:0 0 8px; font-size:.85rem; }",
+    ".cplcoci-rows .lbl { font-weight:700; color: var(--text-strong); }",
+    ".cplcoci-rowsb { font:inherit; background:none; border:0; border-bottom:3px solid transparent; padding:2px 0; color: var(--cobalt); cursor:pointer; min-height:24px; }",
+    ".cplcoci-rowsb[aria-checked=true] { color: var(--text-strong); font-weight:700; border-bottom-color: var(--cobalt); }",
+    ".cplcoci-rowsb:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
     ".cplcoci-xfer { text-align:center; white-space:nowrap; }",
     /* The read-only Side by side fold (S678, COBIx's item 7): one card beside every source behind it. */
     ".ccl-sbs { margin:8px 0; }",
@@ -1341,7 +1347,7 @@
       CC.code = m; ccRedraw();
     }, function () { /* names alone */ });
   }
-  function ccRedraw() { var api = listApi(); if (api && api.redraw) api.redraw(); }
+  function ccRedraw() { var api = state.grain === "common" ? CLIST.engine : listApi(); if (api && api.redraw) api.redraw(); }
   function ccLoad() {
     ccCodes();
     if (CC.byId || CC.loading || CC.failed) return;
@@ -2019,6 +2025,157 @@
     T.loadScript("unified_courses_members.js", "CPL_UC_MEMBERS", done);
   }
 
+  /* ── The Courses List, Rows: Common courses (the anchor page, step 2) ─────────────────────────────────────────
+     One row per common course of today's reference (unified_courses_data.js), on the List's own engine. The job
+     filters are the same filters the local rows carry, read off the common course itself (r.mids holds its own id),
+     so a count here is common courses, the Commons' unit. A row opens the bottom bar of tabs: its local courses (the
+     same tab a local row's Its common course shows, Accept and Move on each), its common subject (the card's rename
+     and set), and what has been decided about it. */
+  var CLIST = { engine: null, rows: null, sig: "" };
+  var COMMON_FILTERS = [["", "All"], ["C", "Credit"], ["N", "Noncredit"], ["E", "Noncredit enhanced"], ["one", "Holds one local course"]];
+  function commonState() { return state.cls || (state.cls = {}); }
+  function commonRows() {
+    var D = window.CPL_UNIFIED_COURSES, m = listBuild(), sig = (D && D.generated_at || "") + "|" + (m.X ? m.X.at : "") + "|" + m.rows.length + "|" + (CC.code ? "codes" : "");
+    if (!D || !D.rows) return [];
+    if (CLIST.rows && CLIST.sig === sig) return CLIST.rows;
+    var by = listByMid(m);
+    CLIST.rows = D.rows.filter(function (c) { return c && c.id; }).map(function (c) {
+      var mem = by.get(c.id) || [], col = {};
+      mem.forEach(function (x) { col[x.college] = 1; });
+      var cr = String(c.credit || ""), code = cr === "Credit" ? "C" : /enhanced/i.test(cr) ? "E" : /noncredit/i.test(cr) ? "N" : "";
+      var subj = ccName(c.disc);
+      return { ut: c.id, mid: c.id, mids: [c.id], title: c.title || "", disc: c.disc || "", subj: subj, credit: cr, code: code,
+        units: unitsWords(c), n: mem.length || c.members || 0, colleges: Object.keys(col).length,
+        hay: [c.id, c.title, subj, cr].join(" ").toLowerCase() };
+    });
+    CLIST.sig = sig;
+    return CLIST.rows;
+  }
+  function commonStatus(r) {
+    var R = JOBS.rulings && JOBS.rulings[r.mid];
+    if (R && R.v && R.v.ruling !== "unsure") return R.v.ruling === "move" ? "Common subject moved to " + (R.v.to || "") : R.v.ruling === "keep" ? "Common subject kept" : "Ruled";
+    if (JOBS.doubt && JOBS.doubt.map.has(r.mid)) return "Common subject in doubt";
+    return "";
+  }
+  var COMMON_COLS = null;
+  function commonCols() {
+    return COMMON_COLS || (COMMON_COLS = [
+      { h: "Title", w: 22, v: function (r) { return r.title; } },
+      { h: "Common course", w: 8, v: function (r) { return r.mid; } },
+      // Always labeled: a common subject is an MQ discipline with its code (Sam, 2026-11-24).
+      { h: "Common subject", w: 16, v: function (r) { return r.subj; } },
+      { h: "Units", w: 7, v: function (r) { return r.units; } },
+      { h: "Local courses", w: 6, n: true, v: function (r) { return r.n; } },
+      { h: "Colleges", w: 5, n: true, v: function (r) { return r.colleges; } },
+      { h: "Credit", w: 7, v: function (r) { return r.credit; } },
+      { h: "Status", w: 12, v: function (r) { return commonStatus(r); } }
+    ]);
+  }
+  function commonFilterPass(r, L) {
+    var f = L.f;
+    if (!f) return true;
+    if (isJob(f)) return jobPass(r, f);
+    if (f === "one") return r.n === 1;
+    return r.code === f;
+  }
+  function commonCounts() {
+    var rows = commonRows(), n = {};
+    COMMON_FILTERS.forEach(function (f) { n[f[0]] = 0; });
+    JOB_FILTERS.forEach(function (j) { if (jobReady(j[0])) n[j[0]] = 0; });
+    rows.forEach(function (r) {
+      n[""]++;
+      if (r.code) n[r.code]++;
+      if (r.n === 1) n.one++;
+      JOB_FILTERS.forEach(function (j) { if (n[j[0]] != null && jobPass(r, j[0])) n[j[0]]++; });
+    });
+    return n;
+  }
+  function commonHead(wrap) {
+    var rows = commonRows(), D = window.CPL_UNIFIED_COURSES || {};
+    wrap.appendChild(el("p", { "class": "cplcoci-lede" }, ["Every common course in the Common Course Reference, one row each: " + fmt(rows.length) +
+      ", from the reference built " + String(D.generated_at || "").slice(0, 10) + ". A row's local courses, its common subject and what has been decided about it open in the bar below the List."]));
+    var L = commonState();
+    if (isJob(L.f)) { loadJobs(); wrap.appendChild(jobNote(L.f)); }
+    return true;
+  }
+  function commonTabs() { return [["local", "Local courses"], ["subject", "Common subject"], ["history", "History"]]; }
+  function commonTab(r, id, h) {
+    if (id === "local") return ccTab({ mid: r.mid, ut: null }, h);
+    if (id === "subject") {
+      var out = [h.title(r.mid + ": its common subject")];
+      var card = JOBS.doubt && JOBS.doubt.map.get(r.mid), why = bandDoubtWhy(r.mid);
+      if (why) out.push(el("p", { "class": "cplcoci-meta" }, ["In doubt: " + why]));
+      if (card && !ruledCard(r.mid)) out.push(el("p", { "class": "cplcoci-meta" }, ["Rule on it from a local course's Course tab, under Rows: Local courses."]));
+      ccCard(r.mid, h).forEach(function (n) { out.push(n); });
+      out.push(el("p", { "class": "ccl-move-acts" }, [skyLink(r.mid, "Open " + r.mid + " in SkyView")]));
+      return out;
+    }
+    if (id === "history") {
+      var R = JOBS.rulings && JOBS.rulings[r.mid], rows = [];
+      if (R && R.v) rows.push({ at: R.at || "", what: R.v.ruling === "move" ? "Common subject moved to " + (R.v.to || "") : R.v.ruling === "keep" ? "Common subject kept as " + (R.v.discipline_was || "") : "Ruled: " + R.v.ruling, who: R.who || "a reviewer" });
+      var live = CC.live && CC.live[r.mid];
+      ccLive(r.mid);   // one read per common course, per visit; no email (S614)
+      ["discipline", "unified_title"].forEach(function (f) { var x = live && live[f]; if (x && x.value) rows.push({ at: String(x.reviewed_at || "").slice(0, 10), what: (f === "discipline" ? "Common subject set to " : "Title set to ") + x.value, who: "a reviewer" }); });
+      var o = [h.title("What has been decided about " + r.mid)];
+      if (!rows.length) o.push(el("p", { "class": "cplcoci-meta" }, ["Nothing saved yet for this common course since the reference was built."]));
+      else o.push(h.table({ id: "chist-" + idSafe(r.mid), label: "Decisions about " + r.mid, sort: { col: 0, dir: -1 },
+        cols: [["at", "Date"], ["what", "Decision"], ["who", "Who"]], rows: rows }));
+      return o;
+    }
+    return [];
+  }
+  function commonSpec() {
+    return {
+      prefix: "ccl-", frPrefix: "ccl-cfr-",
+      trail: { home: [["CPL Commons", "#commons"]], name: "Courses" },
+      noun: { many: "common courses", region: "Every common course in the Common Course Reference", keyHeader: "Common course",
+        file: "coci-common-courses-list", placeholder: "Find by title, M-ID or common subject", findLabel: "Find in the list" },
+      state: commonState, rows: commonRows, cols: commonCols,
+      key: function (r) { return r.ut; }, title: function (r) { return r.mid + ", " + r.title; }, render: mountCommon,
+      head: commonHead, filterPass: commonFilterPass, hay: function (r) { return r.hay; }, hayFolded: true, findWords: true,
+      fixedRows: true, findDelay: 160,
+      panel: { below: true, label: function (r) { return "Common course: " + r.mid + ", " + r.title; }, body: function (r, h) { return commonTab(r, "local", h); },
+        tabs: commonTabs, tab: commonTab },
+      titleLink: true,
+      filters: COMMON_FILTERS.concat(JOB_FILTERS.map(function (f) { return [f[0], f[1]]; })), counts: commonCounts,
+      filterGroups: [{ label: "To do", ids: ["doubt", "stray", "nodesc", "units", "seedless"] }, { label: "Browse", ids: ["", "C", "N", "E", "one"] }],
+      uncounted: function (id) { return isJob(id) && !jobReady(id); },
+      filterUnit: "Each count is common courses (one per M-ID), the Commons' unit. Rows: Local courses counts the same work in local courses.",
+      onFilter: function (id) { return isJob(id) ? loadJobs() : null; }
+    };
+  }
+  function mountCommon() {
+    var node = document.getElementById("cplcoci-list-mount");
+    if (!node) return;
+    clearNode(node);
+    ccLoad();
+    if (window.CPL_COMMONS_LIST && window.CPL_UC_MEMBERS && window.CPL_UNIFIED_COURSES) {
+      if (!CLIST.engine) CLIST.engine = window.CPL_COMMONS_LIST.create(commonSpec());
+      CLIST.engine.render(node);
+      return;
+    }
+    var T = window.CPL_TABS;
+    if (!T || typeof T.loadScript !== "function") {
+      node.appendChild(el("div", { "class": "cplcoci-empty", role: "alert" }, ["The common courses could not be loaded (no script loader). Reload the tab to try again."]));
+      return;
+    }
+    node.appendChild(el("div", { "class": "cplcoci-empty", role: "status" }, ["Loading the List and today's common courses…"]));
+    if (CLIST.loading) return;
+    CLIST.loading = true;
+    var left = 3;
+    function done() {
+      if (--left) return;
+      CLIST.loading = false;
+      if (state.view === "courses" && state.grain === "common") {
+        if (window.CPL_COMMONS_LIST && window.CPL_UC_MEMBERS && window.CPL_UNIFIED_COURSES) mountCommon();
+        else { clearNode(node); node.appendChild(el("div", { "class": "cplcoci-empty", role: "alert" }, ["The common courses could not be loaded. Reload the tab to try again."])); }
+      }
+    }
+    T.loadScript("commons_list.js", "CPL_COMMONS_LIST", done);
+    T.loadScript("unified_courses_members.js", "CPL_UC_MEMBERS", done);
+    T.loadScript("unified_courses_data.js", "CPL_UNIFIED_COURSES", done);
+  }
+
   // ── shell ─────────────────────────────────────────────────────────────────
   var _debounce = null;
 
@@ -2055,6 +2212,7 @@
       r.appendChild(el("div", { id: "cplcoci-table-wrap", "class": "cplcoci-wrap" }, []));
       renderProgramsView();
     } else {
+      r.appendChild(rowsControl());
       r.appendChild(el("div", { id: "cplcoci-list-mount" }, []));
       renderCoursesView();
     }
@@ -2136,8 +2294,33 @@
 
   // ── Courses view: the Courses List ────────────────────────────────────────
   function renderCoursesView() {
+    if (state.grain === "common") { setSub("the Catalog Commons' Courses List: the common courses, one row each"); mountCommon(); return; }
     setSub("the Catalog Commons' Courses List: COCI's " + fmt(state.data.rows.length) + " local courses, banded by M-ID");
     mountList();
+  }
+  /* Rows: Common courses, or Local courses under their common course (the anchor page, step 2; Sam on the mock
+     https://claude.ai/artifact/35uJsJ2ahLQ6XcrvfMS8YE, S725: "looks great, let's go with it"). Local stays the default;
+     the choice lasts the visit (tabs never remember a filter, Sam, 2026-10-21) and the address carries it. */
+  function rowsControl() {
+    var seg = el("div", { "class": "cplcoci-rows", role: "radiogroup", "aria-label": "Rows" }, [el("span", { "class": "lbl" }, ["Rows"])]);
+    [["common", "Common courses"], ["local", "Local courses, under their common course"]].forEach(function (g) {
+      var on = (state.grain === "common" ? "common" : "local") === g[0];
+      var b = el("button", { type: "button", role: "radio", "class": "cplcoci-rowsb", "aria-checked": on ? "true" : "false", tabindex: on ? "0" : "-1" }, [g[1]]);
+      b.addEventListener("click", function () { setGrain(g[0]); });
+      b.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft" || e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); setGrain(g[0] === "common" ? "local" : "common", true); }
+      });
+      seg.appendChild(b);
+    });
+    return seg;
+  }
+  function setGrain(g, focus) {
+    var to = g === "common" ? "common" : "local";
+    if ((state.grain || "local") === to) return;
+    state.grain = to;
+    try { history.replaceState(null, "", "#" + TAB + "/courses" + (to === "common" ? "/common" : "")); } catch (e) {}
+    renderShell();
+    if (focus) { var n = document.querySelector('.cplcoci-rowsb[aria-checked="true"]'); if (n) n.focus(); }
   }
 
   /* ── Progress: the Common Course Reference's opened page (S559) ─────────────
@@ -2482,6 +2665,7 @@
        opens on the Courses List. */
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     if (parts[0] === TAB && (parts[1] === "progress" || parts[1] === "courses" || parts[1] === "programs")) state.view = parts[1];
+    if (parts[0] === TAB && parts[1] === "courses") state.grain = parts[2] === "common" ? "common" : "local";
     if (parts[0] === TAB && /^gather(\?|$)/.test(parts[1] || "")) state.view = "gather";
     routeList();
     renderShell();
@@ -2493,7 +2677,7 @@
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     if (parts[0] === TAB && parts[1] === "list" && parts[2] && LIST_ALIAS[parts[2]]) parts[2] = LIST_ALIAS[parts[2]];
     if (parts[0] !== TAB || parts[1] !== "list" || !parts[2] || !LIST_FILTERS.some(function (f) { return f[0] === parts[2]; })) return false;
-    state.view = "courses";
+    state.view = "courses"; state.grain = "local";
     var L0 = listState(); L0.f = parts[2]; L0.q = ""; L0.limit = null; L0.panel = null;
     if (isJob(parts[2])) loadJobs();
     return true;
@@ -2509,6 +2693,7 @@
      what is on screen. Reads state.ls without listState(), so asking never creates or consumes List state. */
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
     var f = state.ls && state.ls.f;
+    if (state.view === "courses" && state.grain === "common") return TAB + "/courses/common";
     if (state.view === "courses" && f && LIST_FILTERS.some(function (x) { return x[0] === f; })) return TAB + "/list/" + f;
     if (state.view === "gather" && GATHER.api) return GATHER.api.address();
     return TAB + "/" + state.view;
@@ -2520,7 +2705,7 @@
     var t = e && e.detail && e.detail.tab;
     if (t !== TAB) { awayFromTab = true; return; }
     if (!awayFromTab || !_booted) return;
-    awayFromTab = false; state.ls = null;
+    awayFromTab = false; state.ls = null; state.cls = null; state.grain = "local";
     if (state.data && routeList()) { renderShell(); return; }
     if (state.data && state.view === "courses") mountList();
   });
@@ -2539,5 +2724,7 @@
     _skyHref: skyHref,
     _listBuild: function () { return listBuild(); },
     _list: function () { return LIST.engine; },
+    _common: function () { return CLIST.engine; },
+    _commonRows: function () { return commonRows(); },
   };
 })();
