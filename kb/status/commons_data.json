@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T11:28:08Z",
+ "written_at": "2026-11-25T12:14:55Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17370,
-  "gap": 4965,
+  "passing": 17372,
+  "gap": 4963,
   "with_gap": 118,
-  "cost_usd": 1341.08,
-  "passed_at_read": 16397,
+  "cost_usd": 1341.23,
+  "passed_at_read": 16399,
   "cost_receipts": 118,
   "spent_usd": 1239.91,
   "spent_runs": 212,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16864,
-  "gap": 4965,
+  "passing": 16866,
+  "gap": 4963,
   "collected_with_gaps": 506,
   "discontinued": 0
  },
@@ -12297,11 +12297,10 @@
    "harvested": true,
    "slug": "west_valley",
    "programs": 145,
-   "passing": 124,
-   "gap": 21,
+   "passing": 126,
+   "gap": 19,
    "causes": {
     "extraction_error": 1,
-    "found_not_extracted": 2,
     "no_closed_list": 3,
     "page_not_found": 6,
     "unknown_without_live": 9
@@ -12328,10 +12327,10 @@
    "outcomes_file": "kb/status/commons_data_programs/west_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-12T02:37:11Z",
+   "read_at": "2026-11-25T11:15:42Z",
    "read_kind": "capture",
-   "cost_usd": 11.19,
-   "passed_at_read": 120,
+   "cost_usd": 11.34,
+   "passed_at_read": 122,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -12341,7 +12340,7 @@
    },
    "listed_closed": 142,
    "found": 136,
-   "extracted": 134,
+   "extracted": 136,
    "errors": 1,
    "failed_checks": {
     "coverage": 0,
@@ -12356,27 +12355,27 @@
    "capture_root": "https://www.westvalley.edu/catalog/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 807.6,
-   "run": "43142245126",
+   "read_seconds": 801.9,
+   "run": "45602612349",
    "levers": {
     "reconcile_steps": 9,
     "reader_page_search": 6,
-    "paid_read": 3,
-    "program_course_file_check": 3
+    "program_course_file_check": 3,
+    "paid_read": 1
    },
    "collection": {
     "program_reader": {
-     "records": 134,
+     "records": 136,
      "models": {
-      "claude-opus-5-5": 134
+      "claude-opus-5-5": 136
      },
-     "run": "43142245126",
-     "at": "2026-11-12T02:37:11Z",
-     "cost_usd": 11.19,
+     "run": "45602612349",
+     "at": "2026-11-25T11:15:42Z",
+     "cost_usd": 11.34,
      "platform": "custom_html"
     },
     "slo_read": null,
-    "plo_programs": 133,
+    "plo_programs": 135,
     "ppm_member": {
      "host": "programmapper.westvalley.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
