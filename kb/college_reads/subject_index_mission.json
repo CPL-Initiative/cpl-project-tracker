@@ -1,7 +1,6 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 5. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 4 (run 45630168042): All Courses: Alphabetical List prints each course as 'ACC 001A - Title' with no subject heading, and Courses and Requisites holds no prefix legend. This read: one area page (Business, Education and Service Industries), whole, to see whether an area page names each subject with its code. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 6. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 5 (run 45631971415): the area page Business, Education and Service Industries lists its SUBJECTS by name (Accounting, Business, Child Development, Computer Applications, Hospitality Management), each a link. This read: the five area pages' links, so the next read opens each subject page. No model call, writes nothing.",
  "college": "Mission College",
- "capture_lines": 6000,
  "questions": {
   "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
  },
@@ -18,7 +17,40 @@
     "subject_index"
    ],
    "url": "https://mission.elumenapp.com/catalog/24-25/bes",
-   "capture_view": true
+   "links": "mission.elumenapp.com/catalog/24-25/",
+   "links_cap": 200
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/cac",
+   "links": "mission.elumenapp.com/catalog/24-25/",
+   "links_cap": 200
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/pcs",
+   "links": "mission.elumenapp.com/catalog/24-25/",
+   "links_cap": 200
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/phw",
+   "links": "mission.elumenapp.com/catalog/24-25/",
+   "links_cap": 200
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/stm",
+   "links": "mission.elumenapp.com/catalog/24-25/",
+   "links_cap": 200
   }
  ]
 }

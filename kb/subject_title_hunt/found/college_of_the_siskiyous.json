@@ -1,0 +1,389 @@
+{
+ "college": "College of the Siskiyous",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:16:13Z",
+ "run": "45631971415",
+ "plan": "kb/college_reads/subject_index_college_of_the_siskiyous.json",
+ "titles": [
+  {
+   "code": "ADHS",
+   "title": "Alcohol, Drug, and Human Services",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADJ",
+   "title": "Administration of Justice",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AG",
+   "title": "Agriculture",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Fine Arts and Art History",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "ART/ARTH - Fine Arts and Art History"
+  },
+  {
+   "code": "ARTH",
+   "title": "Fine Arts and Art History",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "ART/ARTH - Fine Arts and Art History"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BA",
+   "title": "Business Administration",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COLL",
+   "title": "College Preparation",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "COMM/COMS - Communication Studies"
+  },
+  {
+   "code": "COMS",
+   "title": "Communication Studies",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "COMM/COMS - Communication Studies"
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Science",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESCI",
+   "title": "Earth Science",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Science and Technology",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GUID",
+   "title": "Guidance",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEA",
+   "title": "Health",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Research and Information Literacy",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics and Statistics",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "MATH/STAT - Mathematics and Statistics"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics and Statistics",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "MATH/STAT - Mathematics and Statistics"
+  },
+  {
+   "code": "MFG",
+   "title": "Manufacturing",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PEFI",
+   "title": "Physical Education Fitness",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PEMA",
+   "title": "Physical Education Major/Athletics",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "PSY/PSYC - Psychology"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "shared_heading": "PSY/PSYC - Psychology"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theatre Arts",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WEE",
+   "title": "General Work Experience",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language: Non-Credit",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FCS",
+   "title": "Family and Consumer Science: Non-Credit",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HOSP",
+   "title": "Hospitality: Non-Credit",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OLAD",
+   "title": "Older Adults: Non-Credit",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RBT",
+   "title": "Registered Behavior Technician",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WORK",
+   "title": "Workforce Preparation: Non-Credit",
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "note": "Each title is a subject heading on the catalog's Credit Courses page, printed 'CODE - Name' and linked to the subject's page. A code that only the Non-Credit Courses page lists is filed from that page, its heading as printed (with ': Non-Credit'). Four credit headings carry two codes (ART/ARTH, COMM/COMS, MATH/STAT, PSY/PSYC); shared_heading keeps each as printed. Read by run 45631971415 at 9c7d4767 (round 5 of the plan)."
+}
