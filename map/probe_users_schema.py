@@ -209,6 +209,13 @@ GUESS_COLUMNS = [
     # student-facing contact ("CPL Assistant") exists in the Contacts report.
     # Probe the plausible spellings — Builder labels keep their SPACES (the
     # "VPAA Email" ✓ / "VPAAEmail" ✗ finding), so try both forms.
+    # ── 2026-11-25: the NC lead Pedro added to the College Contacts report (Sam, in session:
+    # "pedro added the nc lead and nc lead email to the college contacts report"). The Builder
+    # label's exact spelling is unconfirmed, so probe the plausible forms, spaced and not. ──
+    "NC Lead", "NC Lead Email", "NC lead", "NC lead Email", "NC Lead email",
+    "NC CPL Lead", "NC CPL Lead Email", "Noncredit CPL Lead", "Noncredit CPL Lead Email",
+    "Noncredit Lead", "Noncredit Lead Email", "Non-Credit Lead", "Non-Credit Lead Email",
+    "NCLead", "NCLeadEmail",
     "CPL Assistant", "CPL Assistant Email",
     "CPLAssistant", "CPLAssistantEmail",
     "CPL Assistant Contact", "CPL Assistant Contact Email",
