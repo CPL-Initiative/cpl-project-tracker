@@ -1,5 +1,5 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 4. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 3 (run 45628601616): the courses view's text holds no subject list and its sections did not open. This read: the courses view's links, all of them, to find the subject pages. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 5. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 4 (run 45630168042): the courses view is a hub linking Credit Courses and Non-Credit Courses. This read: those two pages, whole. No model call, writes nothing.",
  "college": "College of the Siskiyous",
  "capture_lines": 6000,
  "questions": {
@@ -17,10 +17,15 @@
    "answers": [
     "subject_index"
    ],
-   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/courses",
-   "capture_view": true,
-   "links": "cos26-27catalog/",
-   "links_cap": 400
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "capture_view": true
   }
  ]
 }

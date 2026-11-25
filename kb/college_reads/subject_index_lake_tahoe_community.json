@@ -1,5 +1,5 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 4. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 3 (run 45628601616): the menu's Courses section links departments by name only (department/<slug>), some covering several codes (World Languages). This read: two department pages, World Languages and Art, whole, to see how each names its subjects. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 5. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 4 (run 45630168042): the courses menu links 46 department pages by name only, and a department page (World Languages) lists ASL, JPN and SPA courses under its one name with no subject heading. This read: every department page in the courses menu, printing only the lines above each code's first course (subject_context), so each code is filed under the department page that lists it (a department label). No model call, writes nothing.",
  "college": "Lake Tahoe Community College",
  "capture_lines": 6000,
  "questions": {
@@ -17,7 +17,14 @@
    "answers": [
     "subject_index"
    ],
-   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/world-languages",
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/allied-health",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/anthropology",
    "capture_view": true
   },
   {
@@ -26,6 +33,311 @@
    ],
    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/art",
    "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/art-new-media",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/biology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/business",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/chemistry",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/communications",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/computer-information-systems",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/counseling-courses",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/criminal-justice",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/culinary-arts",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/early-childhood-education",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/economics",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/education",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/english",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/english-as-a-second-language",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/environmental-science-tech",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/ethnic-studies",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/fire-science",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/forestry",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/general-studies",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/geography",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/geology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/history",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/hospitality-management",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/hospitality-tourism-rec",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/humanities",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/intensive-spanish-summer-institute",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/interdisciplinary-studies",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/mathematics",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/music-commercial-music",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/philosophy",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/physical-education",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/physical-science",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/physics",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/political-science",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/psychology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/real-estate",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/religion",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/sociology",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/speech",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/theatre-arts",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/wilderness-education",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/work-experience-internship",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/department/world-languages",
+   "capture_view": true
   }
- ]
+ ],
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z][A-Z&]{0,7}) (?P<num>[A-Z]?\\d{1,4}[A-Z]{0,4}) [-\u2013] (?P<title>.+)$",
+  "before": 3
+ }
 }

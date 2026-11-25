@@ -1,5 +1,5 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 4. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 3 (run 45628601616): the catalog root opens 24-25/cataloghome, which holds the 2026-2027 catalog and links All Courses: Alphabetical List. This read: that list and Courses and Requisites, whole. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 5. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 4 (run 45630168042): All Courses: Alphabetical List prints each course as 'ACC 001A - Title' with no subject heading, and Courses and Requisites holds no prefix legend. This read: one area page (Business, Education and Service Industries), whole, to see whether an area page names each subject with its code. No model call, writes nothing.",
  "college": "Mission College",
  "capture_lines": 6000,
  "questions": {
@@ -17,16 +17,7 @@
    "answers": [
     "subject_index"
    ],
-   "url": "https://mission.elumenapp.com/catalog/24-25/allcourses",
-   "capture_view": true,
-   "links": "24-25/",
-   "links_cap": 60
-  },
-  {
-   "answers": [
-    "subject_index"
-   ],
-   "url": "https://mission.elumenapp.com/catalog/24-25/courses-requisites",
+   "url": "https://mission.elumenapp.com/catalog/24-25/bes",
    "capture_view": true
   }
  ]
