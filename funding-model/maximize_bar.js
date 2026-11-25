@@ -25,6 +25,12 @@
   var doc = document;
   var MIN_W = 320, VIEW_LEFT = 360, NARROW = 900;
   var OFFICE_HOURS = "https://map.rccd.edu/get-involved/";
+  // Sierra's mark, Mt Whitney's east-face ridge (sierra/whitney-mark.svg), as a blue ridgeline on the white panel
+  // (Sam, 2026-11-25: "use the sierra logo with white background and blue ridgeline"). The white snow patch of her
+  // navy version has nothing to show against white, so the line stands alone. A static string, never input.
+  var SIERRA_RIDGE = '<svg viewBox="0 0 120 34" aria-hidden="true" focusable="false"><path d="M2 30 L12 25 21 17 29 9 ' +
+    '35 4 40 1 43 6 46 4 49 9 52 7 55 11 59 15 63 19 66 22 70 18 73 20 76 15 79 13 82 16 85 20 90 24 97 27 105 29 118 30" ' +
+    'fill="none" stroke="var(--heading, #082B61)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/></svg>';
   var panel = null, body = null, title = null, opener = null, w = 460, curKey = null, curInfo = null;
 
   function outer() {
@@ -76,8 +82,7 @@
       ".mbar-links{display:flex; flex-wrap:wrap; align-items:center; gap:6px 18px; margin-top:22px}",
       ".mbar-sierra{display:inline-flex; align-items:center; gap:6px; font:inherit; color:var(--cobalt); background:none; border:0;",
       "  padding:0 2px; min-height:24px; text-decoration:underline; text-underline-offset:3px; cursor:pointer}",
-      // Her mark is drawn white for her navy chip, so it sits on a navy tile here too.
-      ".mbar-sierra img{flex:none; width:36px; height:auto; padding:4px 6px; border-radius:6px; background:var(--heading, #082B61)}",
+      ".mbar-sierra svg{flex:none; width:40px; height:12px; overflow:visible}",
       ".mbar-grip:focus-visible, .mbar-close:focus-visible, .mbar-links a:focus-visible, .mbar-sierra:focus-visible{outline:3px solid var(--focus-ring); outline-offset:-2px}",
       "body.mbar-on{padding-right:var(--mbar-w, 0px)}",
       "body.mbar-drag, body.mbar-drag *{cursor:col-resize !important; user-select:none}",
@@ -151,7 +156,7 @@
     var sierra = window.CPL_SIERRA_BAR && typeof window.CPL_SIERRA_BAR.ask === "function";
     out.push('<div class="mbar-links"><a href="' + OFFICE_HOURS + '" target="_blank" rel="noopener">Get Help in Office Hours</a>' +
       (doc.getElementById("outcomes") ? '<a href="#outcomes" class="mbar-strat">' + esc(stratLabel) + "</a>" : "") +
-      (sierra ? '<button type="button" class="mbar-sierra"><img src="../sierra/whitney-mark.svg" alt="" width="36" height="10">' +
+      (sierra ? '<button type="button" class="mbar-sierra">' + SIERRA_RIDGE +
         "Ask Sierra about this priority</button>" : "") + "</div>");
     return out.join("");
   }
