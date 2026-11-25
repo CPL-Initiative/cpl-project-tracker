@@ -60,20 +60,22 @@ members = W.census_members(CENSUS_AT_PLAN)
 check(set(members) == set(ROWS) | HELD and len(members) == 19 and not set(W.PERSON) & set(members),
       "the fixture gives the 19 keys")
 check(not OTHER_LEVER & set(members), "the reader_page_search records are another lever")
-# S731's plan s731p (tests/fixtures/pooled_s731.json) takes two of the rows forward under its pooled reading: 06773
-# and 30235 pass on their 18 over Groups I and II. Their files are s731p's, so this plan's rule no longer names
-# their gap (precision reads them "none", and they make no claim and no boundary reading); s731p's test checks them.
+# S731 (kb/_program_piles_s731_pooled.py): the scorer's POOLED_S731 reads Porterville's 18 over Groups I and II, so
+# this plan's rule is pinned under the reading it was written with (POOLED_S731 off). Plan s731p takes 30235 forward
+# (it passes; its file is s731p's, so this rule names no gap on it and its image is s731p's to check); 06773 keeps
+# this plan's gap (the conductor, d-porterville-06773-keeps-s721c-gap-s731).
+S.POOLED_S731 = False
 with open(os.path.join(ROOT, "tests", "fixtures", "pooled_s731.json"), encoding="utf-8") as fh:
     LATER = {r["control_number"] for r in json.load(fh)["rows"] if r["college"] == COLLEGE}
-check(LATER == {"06773", "30235"}, "s731p takes 06773 and 30235 forward (%s)" % sorted(LATER))
+check(LATER == {"30235"}, "s731p takes 30235 forward (%s)" % sorted(LATER))
 pr = W.precision(CENSUS_AT_PLAN)
 check(pr["read"] == 19 and pr["right"] == 19 - len(LATER)
       and sorted(pr["wrong"]) == sorted([cn, "pool_figure_not_read", "none"] for cn in LATER),
-      "precision 19 of 19, less the two s731p moved: %s" % pr["wrong"])
+      "precision 19 of 19, less the one s731p moved: %s" % pr["wrong"])
 check(pr["by_answer"].get("none") == 4 and pr["by_answer"].get(W.PASSES) == 1, "4 held, 1 passed")
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 15 - len(LATER)} and not cc["not_standing"], "13 claims stand: %s" % cc)
+check(cc["counts"] == {"stands": 15 - len(LATER)} and not cc["not_standing"], "14 claims stand: %s" % cc)
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2["40122"]["codes_found"] = [c for c in s2["40122"]["codes_found"] if c != "MUSCP108"]
@@ -140,8 +142,9 @@ check(W.renamed(other) is None, "the rename is 43554's alone (45517 lists CGRA P
 check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS if ROWS[cn] != W.PASSES and cn not in LATER),
       "the scorer passes none of the gap rows (#3753's MAJOR)")
 check(all(W.on_live_run(W._load(cn)) for cn in ROWS), "every row is on its live run")
-# Read as the receipts stood before this plan's own apply (its s721c receipts post its rows once migrated).
-before = W.posted_runs(skip=("s721c",))
+# Read as the receipts stood before this plan's own apply (its s721c receipts post its rows once migrated; s731p's
+# post 30235 once it is migrated).
+before = W.posted_runs(skip=("s721c", "s731p"))
 check(before.get("30235") == [("2026-11-19T14:34:06Z", "44477695238")]
       and before.get("36704") == [("2026-11-19T14:34:06Z", "44477695238")],
       "the reread's kept keys post 30235 and 36704 at its run")

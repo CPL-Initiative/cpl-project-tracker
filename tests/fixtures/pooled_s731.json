@@ -40,12 +40,6 @@
     },
     {
       "college": "Porterville College",
-      "control_number": "06773",
-      "moves_to": "passes",
-      "page": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=81"
-    },
-    {
-      "college": "Porterville College",
       "control_number": "30235",
       "moves_to": "passes",
       "page": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80"
@@ -107,6 +101,10 @@
     {
       "college": "Modesto Junior College",
       "control_number": "42664"
+    },
+    {
+      "college": "Porterville College",
+      "control_number": "06773"
     }
   ],
   "s721_fail_to_pass_added": [

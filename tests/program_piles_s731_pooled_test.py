@@ -123,8 +123,8 @@ with open(FIXTURE, encoding="utf-8") as fh:
     fx = json.load(fh)
 rows = {(r["college"], r["control_number"]): r for r in fx["rows"]}
 held = {(h["college"], h["control_number"]) for h in fx["held"]}
-check(set(M.REVIEWED) | set(M.GAP_ROWS) == set(rows) and len(rows) == 8, "the rows are the fixture's 8")
-check(set(M.HELD) == held and len(held) == 14 and not held & set(rows), "the holds are the fixture's 14")
+check(set(M.REVIEWED) | set(M.GAP_ROWS) == set(rows) and len(rows) == 7, "the rows are the fixture's 7")
+check(set(M.HELD) == held and len(held) == 15 and not held & set(rows), "the holds are the fixture's 15")
 check(set(M.LANE) == {M.MODESTO, M.ELC, M.CUY, M.POR}, "the four colleges")
 for key, hand in sorted(M.REVIEWED.items()):
     f = M.load(key)
@@ -151,6 +151,10 @@ for key, (gap, words) in sorted(M.GAP_ROWS.items()):
 for key in sorted(M.HELD):
     f = M.load(key)
     check(f is not None and not S.passes_live(f["score"]), "%s %s: held, and its live score does not pass" % key)
+f = M.load((M.POR, "06773"))
+check([g["gap"] for g in f["score"].get("gaps") or []] == ["pool_figure_not_read"]
+      and not f["score"]["arithmetic"].get("pooled"),
+      "Porterville 06773: held, it keeps s721c's gap (d-porterville-06773-keeps-s721c-gap-s731)")
 for cn in ("18634", "18635", "18636"):
     a = M.arithmetic(M.load((M.CUY, cn)))["on"]
     check((a.get("major") or {}).get("status") == "equal" and a.get("computed") == [52.0, 52.0]
@@ -160,17 +164,17 @@ for cn in ("18634", "18635", "18636"):
 with open(os.path.join(ROOT, fx["receipt"]), encoding="utf-8") as fh:
     rcpt = json.load(fh)
 got = {(r["college"], r["control_number"]): r["moves_to"] for r in rcpt["records"]}
-check(got == {k: r["moves_to"] for k, r in rows.items()} and rcpt["moved"] == 8, "the receipt names the fixture's 8")
-check({(h["college"], h["control_number"]) for h in rcpt["held"]} == held, "the receipt holds the fixture's 14")
+check(got == {k: r["moves_to"] for k, r in rows.items()} and rcpt["moved"] == 7, "the receipt names the fixture's 7")
+check({(h["college"], h["control_number"]) for h in rcpt["held"]} == held, "the receipt holds the fixture's 15")
 check(rcpt["self_recall"]["differ"] == fx["self_recall"]["differ"] and not rcpt["self_recall"]["moved_outside"],
       "the receipt carries the self-recall")
 for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         sql = fh.read()
     check(all("'%s'" % cn in sql for _, cn in rows) and not any("'%s'" % cn in sql for _, cn in held),
-          "%s names exactly the 8" % part)
+          "%s names exactly the 7" % part)
     if part == "apply":
-        check("confirm guard" in sql and "e(expect) as (values (8))" in sql, "the apply guards a confirm")
+        check("confirm guard" in sql and "e(expect) as (values (7))" in sql, "the apply guards a confirm")
 apply_marker = os.path.join(ROOT, "kb", "migrations", ".apply")
 check(not os.path.exists(apply_marker) or "s731p" not in open(apply_marker, encoding="utf-8").read(),
       "the plan does not write .apply (d-conductor-owns-applies-s720)")

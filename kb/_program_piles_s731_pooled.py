@@ -16,20 +16,15 @@ units"), "N combined units from" as words saying the groups complete the total, 
 ("LIST A - SELECT THREE") read as the heading beside it, a heading the page marks continued read with the heading
 before it, and no run of blocks inside one option group. THE SELF-RECALL (self_recall, over every committed record):
 the reading with and without POOLED_S731 differs on 18 records, every one a real pool by hand (S731_FIRES, the hand
-answers in kb/_program_pooled_s721.py POOLS_HELD); its verdict moves only the five passes rows below, all at these
-colleges; Grossmont 19608, 19822 and 19824 read their 18 and still fail (the degree adds to 52
+answers in kb/_program_pooled_s721.py POOLS_HELD); its verdict moves only the four passes rows below and Porterville
+06773 (held), all at these colleges; Grossmont 19608, 19822 and 19824 read their 18 and still fail (the degree adds to 52
 against 60), as Cuyamaca's do, and Canada's six and College of Marin 46243 passed already.
 
 THE ROWS (each by its hand reading, from the record's own notes):
   passes      Porterville 30235 (18 over Groups I and II); Modesto Junior 38869 (Elective Courses' 6 over the BUSAD
               list and its continued BIT list) and 43164 (List A's 9 over its two sub-lists); Cuyamaca 18628 (18 over
               Communication and Language Arts; a local A.A. with no degree total, so no fill). Each pass rests on no
-              electives fill: its score with an empty text, which refuses every fill, passes. Porterville 06773 (18
-              over Groups I and II, as 30235) passes too; its note says the read opens mid-section on page 81 with the
-              heading not printed. A gap naming the page (heading_not_in_text) cannot stand on a passing score: a
-              reconcile's rescore drops every gap from a score that passes (keep_named_gaps, guarded by
-              tests/reconcile_keeps_named_gaps_test.py), and s721c's pool_figure_not_read no longer holds. The
-              heading is the second reader's to weigh; striking the row leaves s721c's gap as it is.
+              electives fill: its score with an empty text, which refuses every fill, passes.
   option_lists_read_apart   Modesto 06655: three options of a required core and electives each (21, 19, 21), every
               block its own alternative in one option group, so the record reads 9-12 against 19-21.
   pool_figure_not_read      Modesto 08109 (its Career Courses "Total 5" over AG 115 and the CONT. sub-list; with it
@@ -39,7 +34,8 @@ THE ROWS (each by its hand reading, from the record's own notes):
 THE HOLDS (HELD, by key, each with its reason; the receipt lists them): El Camino 02513, 02515 and 02517 (a degree
 electives fill the page text must check: a free reconcile is the lever) and the census's four (19861, 19866, 38948,
 43993: a page read); Cuyamaca 18634, 18635 and 18636 (a Cuyamaca reconcile wording rule on "Complete 60 transferable
-units") and 18637 (Grossmont's page); Modesto 06683, 35127 and 42664 (no kind names their gap).
+units") and 18637 (Grossmont's page); Modesto 06683, 35127 and 42664 (no kind names their gap); Porterville 06773
+(its read opens mid-section with no heading, so it keeps s721c's gap: d-porterville-06773-keeps-s721c-gap-s731).
 
 Guards on every row (lessons S720 to S727): on_live_run (the record's run is the run a committed receipt posted to the
 live row); own page (p-own-page-guard-reads-read-pages-s727: the pages the records were read from, sources.json's
@@ -102,8 +98,6 @@ REVIEWED = {
     (MODESTO, "38869"): {"pools": (6,), "total": 18},
     (MODESTO, "43164"): {"pools": (9,), "total": 18},
     (CUY, "18628"): {"pools": (18,), "total": 18},
-    # Its read opens mid-section on page 81, the heading not printed (its note): the docstring says why it passes.
-    (POR, "06773"): {"pools": (18,), "total": 18},
 }
 # The gap rows: the kind, and the words of the record's own note that name it (the note is filed whole as the gap's
 # words).
@@ -135,6 +129,10 @@ HELD = {
     (CUY, "18637"): ("the reading takes its 18, and the record was read from Grossmont College's page (its note: the "
                      "source address is catalog.gcccd.edu/grossmont, its course list Grossmont's, coverage 64 of 92), "
                      "with no units printed beside any course: it is not the program's own page"),
+    (POR, "06773"): ("the reading takes its 18 over Groups I and II, but its read opens mid-section on page 81 and "
+                     "the program's heading is not in the text (its note), so the list is this program's by its title "
+                     "alone: it does not flip to passing, and it keeps the pool_figure_not_read s721c filed "
+                     "(the conductor, d-porterville-06773-keeps-s721c-gap-s731)"),
     (MODESTO, "06683"): ("its printed 75.5-77.5 includes a 15-unit general education block (MJC areas 1B, 2, 3, 6 and "
                          "7) the record leaves out (its note); with ge_units 15 the scorer's ge_included adds it to "
                          "exactly the printed total, a reconcile fill from the page's own words; no gap kind names it"),
@@ -458,8 +456,8 @@ def main(argv=None) -> int:
             "moved": len(rows), "by": by,
             "by_college": dict(sorted(collections.Counter(r["college"] for r in rows).items())),
             "held": res["held"], "records": rows, "shared_pages": shared,
-            "supersedes": ("none; s727p's holds Modesto 06655, 08109, 10602, 38869 and 43164 and s721c's gap rows "
-                           "Porterville 06773 and 30235 move here"),
+            "supersedes": ("none; s727p's holds Modesto 06655, 08109, 10602, 38869 and 43164 and s721c's gap row "
+                           "Porterville 30235 move here; 06773 keeps s721c's gap"),
             "representation": "checks.arithmetic, checks.gaps and checks.confidence as the load reads the rescored "
                               "score; coverage, invented and the record unchanged",
             "follow_verdict": P.FOLLOW_VERDICT,

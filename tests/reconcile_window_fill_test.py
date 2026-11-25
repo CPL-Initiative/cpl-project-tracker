@@ -237,7 +237,8 @@ WORDS_ELSEWHERE = {("East Los Angeles College", "33382"): "the printed program h
                    # The S720 second reader: a hedge, every listed course placed, so no row is missing behind it.
                    ("Cypress College", "37246"): "\"a 4-unit course may be missing from the list\", a hedge"}
 # S731 (kb/_program_piles_s731_pooled.py): the pooled reading takes Porterville 06773's 18 over Groups I and II, so
-# its major adds up with no fill and it leaves this population (plan s731p passes it).
+# its major adds up with no fill and it leaves this population (it keeps s721c's gap,
+# d-porterville-06773-keeps-s721c-gap-s731).
 NO_FILL_S731 = {("Porterville College", "06773")}
 seen = refused_n = kept = 0
 for path in sorted(glob.glob(os.path.join(COLLEGE_DIR, "*", "records", "*.json"))):
