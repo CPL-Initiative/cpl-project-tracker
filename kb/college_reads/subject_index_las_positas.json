@@ -1,0 +1,35 @@
+{
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 1: the host's catalog list and the start page's own navigation calls, to find the catalog id and the node that lists course subjects by name. No model call, writes nothing.",
+ "college": "Las Positas College",
+ "questions": {
+  "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
+ },
+ "keywords": [
+  "[Cc]ourse [Dd]escriptions?",
+  "[Cc]ourses",
+  "[Ss]ubjects?",
+  "[Dd]isciplines?",
+  "[Dd]epartments?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cq_subjects"
+   ],
+   "url": "https://laspositas.curriqunet.com/catalog/_getCatalogs"
+  },
+  {
+   "answers": [
+    "cq_subjects"
+   ],
+   "url": "https://laspositas.curriqunet.com/catalog/iq/881",
+   "network": true,
+   "network_find": [
+    "Course Descriptions",
+    "Courses",
+    "Subject",
+    "Discipline"
+   ]
+  }
+ ]
+}
