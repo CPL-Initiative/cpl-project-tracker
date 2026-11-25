@@ -100,7 +100,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "repeat_read_once",
+    "label": "The catalog prints a course the program takes more than once, and the record counts it once, so its units fall short of the printed total by the repeats.",
+    "words": "EH 290 (2-4 units) is printed twice in the Required Core, meaning it is completed twice (4-8 units total); recorded once per the one-entry rule. The printed Total Units 42.00-46.00 depends on counting it twice."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

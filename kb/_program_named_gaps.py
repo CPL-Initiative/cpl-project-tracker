@@ -229,6 +229,22 @@ GAPS.setdefault("degree_within_map_range",
                 "page prints as needed to graduate; the major adds up to its printed major total, and the degree's "
                 "units as read fall inside the map's range and match neither end.")
 ARITH_SCORE.setdefault("degree_within_map_range", 50)
+# S727 at Santa Barbara City (kb/_program_piles_s727_sbcc.py): Nursing 05924 prints a list it requires for graduation
+# under both entry paths and outside each path's printed total, and the record counts the list. No existing kind fits
+# (prerequisites_counted names prerequisites); its score is that kind's 70, since in both the printed total leaves out
+# a list the record counts and the courses add to the total without it.
+GAPS.setdefault("required_list_outside_total",
+                "The catalog prints a list the program requires apart from its printed total, and the record counts "
+                "that list; without it the courses add to the printed total.")
+ARITH_SCORE.setdefault("required_list_outside_total", 70)
+# S727 at Antelope Valley (kb/_program_ge_other_pattern_s727v.py): a Cal-GETC degree whose page prints general
+# education figures only for CSU GE and IGETC (43028, held out of ge_units_not_read by HELD_GE_FIGURE). Its score is
+# ge_units_not_read's 50: the major adds up, and the named pattern's units are all that is missing.
+GAPS.setdefault("ge_figures_other_pattern",
+                "The degree names one general education pattern, and the page prints general education figures only "
+                "for other patterns, so no units for the named pattern were read and the degree's units cannot be "
+                "added. Its major adds up to the printed major total.")
+ARITH_SCORE.setdefault("ge_figures_other_pattern", 50)
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
@@ -243,7 +259,7 @@ def may_continue(filed: dict) -> str | None:
 # A gap that says the page prints a degree's general education as None or N/A (Contra Costa's second reader, S720):
 # such a record read no GE, so its GE score is ge_units_not_read's 50, never 100. Kept here, inside confidence(),
 # because the reconcile's keep_named_gaps recomputes every kept gap's scores through this function (#3756).
-GE_NOT_PRINTED = frozenset({"degree_summary_ge_none"})
+GE_NOT_PRINTED = frozenset({"degree_summary_ge_none", "entry_path_range"})
 GE_NOT_PRINTED_CAP = 50
 
 
@@ -1173,6 +1189,19 @@ for _g, _s, _a in (
         ('prerequisites_counted',
          "The record counts the program's prerequisite courses, which the catalog's printed total leaves out; without them the courses add to the printed total.",
          70),  # College of the Sequoias' branch
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
+# S727 (kb/_program_piles_s727_persons.py, plan s727f): the records held for a person, collected with their gaps
+# named. One kind no existing sentence fits: a printed range whose low end is another entry path (entry_path_range),
+# scored as ge_units_not_read's 50; its GE score is capped at 50 (GE_NOT_PRINTED: Contra Costa 01417's unit summary
+# prints general education as None and N/A).
+for _g, _s, _a in (
+        ("entry_path_range",
+         "The page prints the major as a range over entry paths (a licensed student enters later in the sequence), "
+         "and the record holds the full path, which matches the range's top; which path a student takes is the "
+         "college's admission.", 50),
 ):
     GAPS.setdefault(_g, _s)
     ARITH_SCORE.setdefault(_g, _a)
