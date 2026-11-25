@@ -348,6 +348,11 @@ jobs:
       - name: Local subject titles (kb/_build_local_subject_titles.py)
         if: matrix.shard == 1
         run: python3 tests/local_subject_titles_test.py
+      # The post-apply chain's csr-seed step keeps every common subject the committed file carries (S733): the seeder
+      # once dropped the 99 the CSR assigned ahead of any M-ID, with the sync stamps. Runs the real seeder on a temp copy.
+      - name: csr-seed keeps assigned common subjects (kb/_seed_canonical_subj4.py)
+        if: matrix.shard == 1
+        run: python3 tests/csr_seed_keeps_codes_test.py
       # Sam's held Cerritos subject decisions, prepared as kb_curation rows (S701, #3655): 30 rows, 29 credit and AP
       # whole, ATH as KINE, every code canonical, INSERT only with a cohort rollback, identical reruns. Pure stdlib.
       - name: Subject decisions filing (kb/_file_subject_decisions.py)

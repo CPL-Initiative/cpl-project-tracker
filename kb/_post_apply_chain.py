@@ -17,7 +17,10 @@ this driver runs the NONE-SKIPPABLE downstream chain in order, fail-fast:
                   keys on retired ids.)
   2. csr-seed     python3 kb/_seed_canonical_subj4.py
                   (CSR re-seed — variants_observed collapses to canonical;
-                  curator-reviewed picks are preserved by the seeder)
+                  curator-reviewed picks are preserved by the seeder, and so
+                  are the CSR's assigned codes with no M-ID yet, the sync
+                  stamps and every key another writer owns — S733,
+                  tests/csr_seed_keeps_codes_test.py)
   2b. authority   python3 kb/_seed_authority_codes.py
                   (the C-ID / CCN chip fields + canonical_source — item 19 of
                   the 2026-09-03 rulings; the source flips when a fold lands)

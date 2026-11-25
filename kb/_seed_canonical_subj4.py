@@ -174,10 +174,12 @@ def main():
     # work. A "curator-touched" entry is one whose reviewed_at OR validated_at
     # is non-null (both stages count as work to preserve).
     existing_reviewed = {}
+    prev_doc = {}
     if os.path.exists(OUT):
         try:
             with open(OUT, "r", encoding="utf-8") as f:
                 prev = json.load(f)
+            prev_doc = prev
             for d, e in (prev.get("disciplines") or {}).items():
                 if ((e or {}).get("reviewed_at") or (e or {}).get("validated_at")
                         or (e or {}).get("canonical_source")):
@@ -307,12 +309,30 @@ def main():
                        "ccn_subject_code", "cid_subject_codes", "canonical_source",
                        "authority_chips", "authority_flag", "authority_note",
                        "is_umbrella", "umbrella_codes", "_umbrella_note",
-                       "umbrella_group", "fan_in_with", "_fan_in_note"):
+                       "umbrella_group", "fan_in_with", "_fan_in_note",
+                       # The CSR's assigned-code fields (kb/_csr_assign_codes.py, S717).
+                       "confidence", "confidence_level", "basis", "basis_words"):
                 if k in prev:
                     entry[k] = prev[k]
+            # Any key the seeder does not build belongs to another writer
+            # (the nightly sync's _notes_by / _notes_at, a future field): it
+            # rides along too, so a re-seed refreshes data and drops nothing.
+            for k, v in prev.items():
+                if k not in entry:
+                    entry[k] = v
             if prev.get("canonical_subj4"):
                 entry["needs_review"] = False
         disciplines[d] = entry
+
+    # A curator-touched entry with no M-ID rows behind it rides along whole. The
+    # CSR assigns a common subject before any M-ID is minted under it
+    # (kb/_csr_assign_codes.py, source `assigned`, canonical_source csr / c-id),
+    # and a curator may pick one ahead of the data. Enumerating only disciplines
+    # with rows dropped 99 such entries on a re-mint (S733), and the daily cron
+    # never re-runs the assigner, so the loss would have stuck.
+    for d, prev in existing_reviewed.items():
+        if d not in disciplines:
+            disciplines[d] = prev
 
     needs_review_count = sum(1 for e in disciplines.values() if e["needs_review"])
     multi_subj4 = sum(1 for d, cnt in per_disc_subj4.items() if len(cnt) > 1)
@@ -338,6 +358,16 @@ def main():
         },
         "disciplines": dict(sorted(disciplines.items())),
     }
+    if any(e.get("source") == "assigned" for e in disciplines.values()):
+        out["_counts"]["assigned_s717"] = sum(
+            1 for e in disciplines.values() if e.get("source") == "assigned")
+    # Top-level keys other writers own ride along: _authority_codes
+    # (kb/_seed_authority_codes.py) and the nightly sync's _synced_at /
+    # _synced_from stamps (kb/_apply_canonical_subj4.py). The seeder owns only
+    # the keys it builds above.
+    for k, v in prev_doc.items():
+        if k not in out:
+            out[k] = v
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
         f.write("\n")
