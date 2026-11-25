@@ -1,0 +1,478 @@
+{
+ "college": "Coalinga College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45626788039",
+ "plan": "kb/college_reads/subject_index_coalinga.json",
+ "titles": [
+  {
+   "code": "AET",
+   "title": "Agriculture Engineering Tech",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/aet/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AG",
+   "title": "Agriculture",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/ag/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGBUS",
+   "title": "Agriculture Business",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/agbus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AOJ",
+   "title": "Administration of Justice",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/aoj/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/art/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/arth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASCI",
+   "title": "Animal Science",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/asci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/asl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/athl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/bio/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/bus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CD",
+   "title": "Child Development",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/cd/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/cis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COM",
+   "title": "Communication",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/com/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/comm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CRPSCI",
+   "title": "Crop Science",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/crpsci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMGR",
+   "title": "Digital Media",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/dmgr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DT",
+   "title": "Diesel Technology",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/dt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/educ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENG",
+   "title": "English",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/eng/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/engl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EQSCI",
+   "title": "Equine Science",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/eqsci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ES",
+   "title": "Ethnic Studies",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/es/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESCI",
+   "title": "Earth Science",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/esci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English As a Second Language",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FLSPN",
+   "title": "Foreign Language Spanish",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/flspn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FSS",
+   "title": "Food Science & Safety",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/fss/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/geol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GS",
+   "title": "Guidance Studies",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/gs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HE",
+   "title": "Health Education",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/he/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HRCM",
+   "title": "Hotel, Restaurant, Casino Mgmt",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/hrcm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HS",
+   "title": "Health Science",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/hs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/hum/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HVAC",
+   "title": "Heating Ventilation & Air Cond",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/hvac/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HVYEQUI",
+   "title": "Heavy Equipment",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/hvyequi/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IMT",
+   "title": "Industrial Mechanics Tech",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/imt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/is/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINES",
+   "title": "Kinesiology",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/kines/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LING",
+   "title": "Linguistics",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/ling/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Math",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/mus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NC",
+   "title": "Non-Credit",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/nc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUT",
+   "title": "Nutrition",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/nut/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PA",
+   "title": "Performing Arts",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/pa/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/pe/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHARM",
+   "title": "Pharmacology",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/pharm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYSCI",
+   "title": "Physical Science",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/physci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYSICS",
+   "title": "Physics",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/physics/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/pols/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLSCI",
+   "title": "Political Science",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/polsci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/psyc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/psych/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PT",
+   "title": "Psychiatric Technician",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/pt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SLSCI",
+   "title": "Soil Science",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/slsci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/soc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/stat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STUDEV",
+   "title": "Student Development",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/studev/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SW",
+   "title": "Social Work",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/sw/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VNPT",
+   "title": "Vocational Nursing and Psych T",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/vnpt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WE",
+   "title": "General Work Experience",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/we/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WT",
+   "title": "Welding Technology",
+   "url": "https://coalingacollege.edu/catalog/2026-2027/courses/wt/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

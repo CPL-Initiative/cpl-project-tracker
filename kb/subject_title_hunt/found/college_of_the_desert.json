@@ -1,0 +1,693 @@
+{
+ "college": "College of the Desert",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45626788039",
+ "plan": "kb/college_reads/subject_index_college_of_the_desert.json",
+ "titles": [
+  {
+   "code": "A",
+   "title": "Astronomy",
+   "url": "https://catalog.collegeofthedesert.edu/courses/a/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ABE",
+   "title": "Adult Basic Education",
+   "url": "https://catalog.collegeofthedesert.edu/courses/abe/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACR",
+   "title": "Air Conditioning/HVAC",
+   "url": "https://catalog.collegeofthedesert.edu/courses/acr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACT",
+   "title": "Applied Construction Technology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/act/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGBU",
+   "title": "Agriculture/Business",
+   "url": "https://catalog.collegeofthedesert.edu/courses/agbu/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGEH",
+   "title": "Agriculture/Environmental Horticulture",
+   "url": "https://catalog.collegeofthedesert.edu/courses/ageh/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGPS",
+   "title": "Agriculture/Plant Science",
+   "url": "https://catalog.collegeofthedesert.edu/courses/agps/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AIS",
+   "title": "Applications & Information Systems",
+   "url": "https://catalog.collegeofthedesert.edu/courses/ais/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/anth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://catalog.collegeofthedesert.edu/courses/arch/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.collegeofthedesert.edu/courses/art/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.collegeofthedesert.edu/courses/arth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.collegeofthedesert.edu/courses/asl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/auto/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BCOT",
+   "title": "Basic Correctional Officer Training",
+   "url": "https://catalog.collegeofthedesert.edu/courses/bcot/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BFFA",
+   "title": "Basic Fire Fighter Academy",
+   "url": "https://catalog.collegeofthedesert.edu/courses/bffa/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BI",
+   "title": "Biology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/bi/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIT",
+   "title": "Building Inspection Technology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/bit/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BPOT",
+   "title": "Basic Peace Officer Training",
+   "url": "https://catalog.collegeofthedesert.edu/courses/bpot/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUAC",
+   "title": "Business/Accounting",
+   "url": "https://catalog.collegeofthedesert.edu/courses/buac/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUFI",
+   "title": "Business/Finance",
+   "url": "https://catalog.collegeofthedesert.edu/courses/bufi/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUHM",
+   "title": "Business/Hotel & Restaurant Management",
+   "url": "https://catalog.collegeofthedesert.edu/courses/buhm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUMA",
+   "title": "Business/Management",
+   "url": "https://catalog.collegeofthedesert.edu/courses/buma/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CART",
+   "title": "Culinary Arts",
+   "url": "https://catalog.collegeofthedesert.edu/courses/cart/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDE",
+   "title": "Child Development & Education",
+   "url": "https://catalog.collegeofthedesert.edu/courses/cde/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CH",
+   "title": "Chemistry",
+   "url": "https://catalog.collegeofthedesert.edu/courses/ch/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://catalog.collegeofthedesert.edu/courses/cis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CJ",
+   "title": "Criminal Justice",
+   "url": "https://catalog.collegeofthedesert.edu/courses/cj/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CM",
+   "title": "Construction Management",
+   "url": "https://catalog.collegeofthedesert.edu/courses/cm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COLL",
+   "title": "College",
+   "url": "https://catalog.collegeofthedesert.edu/courses/coll/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.collegeofthedesert.edu/courses/comm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.collegeofthedesert.edu/courses/coun/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://catalog.collegeofthedesert.edu/courses/cs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSFM",
+   "title": "California State Fire Marshal",
+   "url": "https://catalog.collegeofthedesert.edu/courses/csfm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.collegeofthedesert.edu/courses/danc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DDP",
+   "title": "Digital Design & Production",
+   "url": "https://catalog.collegeofthedesert.edu/courses/ddp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRA",
+   "title": "Drafting, General & CAD",
+   "url": "https://catalog.collegeofthedesert.edu/courses/dra/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DSPS",
+   "title": "Disabled Students",
+   "url": "https://catalog.collegeofthedesert.edu/courses/dsps/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.collegeofthedesert.edu/courses/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.collegeofthedesert.edu/courses/educ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMP",
+   "title": "Employability Skills",
+   "url": "https://catalog.collegeofthedesert.edu/courses/emp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMR",
+   "title": "Emergency Medical Responder",
+   "url": "https://catalog.collegeofthedesert.edu/courses/emr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/emt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMTP",
+   "title": "Emergency Medical Technician Paramedics",
+   "url": "https://catalog.collegeofthedesert.edu/courses/emtp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENG",
+   "title": "English",
+   "url": "https://catalog.collegeofthedesert.edu/courses/eng/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering, General",
+   "url": "https://catalog.collegeofthedesert.edu/courses/engr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGT",
+   "title": "Engineering Technology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/engt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENTR",
+   "title": "Entrepreneurship",
+   "url": "https://catalog.collegeofthedesert.edu/courses/entr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English As A Second Language",
+   "url": "https://catalog.collegeofthedesert.edu/courses/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESLN",
+   "title": "English As A Second Language Noncredit",
+   "url": "https://catalog.collegeofthedesert.edu/courses/esln/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESYS",
+   "title": "Energy Systems Technology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/esys/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.collegeofthedesert.edu/courses/ethn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FILM",
+   "title": "Film",
+   "url": "https://catalog.collegeofthedesert.edu/courses/film/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/fire/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FR",
+   "title": "French",
+   "url": "https://catalog.collegeofthedesert.edu/courses/fr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "G",
+   "title": "Geology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/g/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.collegeofthedesert.edu/courses/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GER",
+   "title": "German",
+   "url": "https://catalog.collegeofthedesert.edu/courses/ger/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GIS",
+   "title": "Geographic Information Systems",
+   "url": "https://catalog.collegeofthedesert.edu/courses/gis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GOLF",
+   "title": "Golf Management",
+   "url": "https://catalog.collegeofthedesert.edu/courses/golf/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GS",
+   "title": "Global Studies",
+   "url": "https://catalog.collegeofthedesert.edu/courses/gs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.collegeofthedesert.edu/courses/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HS",
+   "title": "Health Sciences",
+   "url": "https://catalog.collegeofthedesert.edu/courses/hs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSAD",
+   "title": "Human Services/Alcohol Drug",
+   "url": "https://catalog.collegeofthedesert.edu/courses/hsad/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ICS",
+   "title": "Fire Technology, Incident Command System",
+   "url": "https://catalog.collegeofthedesert.edu/courses/ics/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "J",
+   "title": "Journalism",
+   "url": "https://catalog.collegeofthedesert.edu/courses/j/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JPN",
+   "title": "Japanese",
+   "url": "https://catalog.collegeofthedesert.edu/courses/jpn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/kine/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIS",
+   "title": "Library & Information Studies",
+   "url": "https://catalog.collegeofthedesert.edu/courses/lis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MAKR",
+   "title": "Makerspace",
+   "url": "https://catalog.collegeofthedesert.edu/courses/makr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.collegeofthedesert.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MC",
+   "title": "Mass Communication",
+   "url": "https://catalog.collegeofthedesert.edu/courses/mc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MESA",
+   "title": "Mathematics, Engineering & Science Achievement",
+   "url": "https://catalog.collegeofthedesert.edu/courses/mesa/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.collegeofthedesert.edu/courses/mus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "N",
+   "title": "Nursing",
+   "url": "https://catalog.collegeofthedesert.edu/courses/n/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NNA",
+   "title": "Nursing Assistant",
+   "url": "https://catalog.collegeofthedesert.edu/courses/nna/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NR",
+   "title": "Natural Resources",
+   "url": "https://catalog.collegeofthedesert.edu/courses/nr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NVN",
+   "title": "Nursing, Vocational",
+   "url": "https://catalog.collegeofthedesert.edu/courses/nvn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PH",
+   "title": "Physics",
+   "url": "https://catalog.collegeofthedesert.edu/courses/ph/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.collegeofthedesert.edu/courses/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PS",
+   "title": "Political Science",
+   "url": "https://catalog.collegeofthedesert.edu/courses/ps/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/psy/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PTA",
+   "title": "Physical Therapy Assistant",
+   "url": "https://catalog.collegeofthedesert.edu/courses/pta/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RED",
+   "title": "Real Estate Development",
+   "url": "https://catalog.collegeofthedesert.edu/courses/red/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RTV",
+   "title": "Radio-Television",
+   "url": "https://catalog.collegeofthedesert.edu/courses/rtv/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://catalog.collegeofthedesert.edu/courses/sjs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.collegeofthedesert.edu/courses/soc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.collegeofthedesert.edu/courses/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.collegeofthedesert.edu/courses/stat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://catalog.collegeofthedesert.edu/courses/ta/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VSM",
+   "title": "Varsity Sports, Men",
+   "url": "https://catalog.collegeofthedesert.edu/courses/vsm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VSO",
+   "title": "Varsity Sports, Off-Season",
+   "url": "https://catalog.collegeofthedesert.edu/courses/vso/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VSW",
+   "title": "Varsity Sports, Women",
+   "url": "https://catalog.collegeofthedesert.edu/courses/vsw/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WEG",
+   "title": "Work Experience, General",
+   "url": "https://catalog.collegeofthedesert.edu/courses/weg/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://catalog.collegeofthedesert.edu/courses/weld/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "not_listed": {
+  "codes": [
+   "AJ",
+   "ASC",
+   "BUSINESS",
+   "CIS 023D",
+   "DPSP",
+   "ENGL",
+   "HEALTH SCIENCES",
+   "NRN",
+   "NURSING AND",
+   "POLS",
+   "PSYC",
+   "RDG",
+   "RE",
+   "VN"
+  ],
+  "why": "The hunt list names these codes, and the index this read loaded prints no subject for them."
+ }
+}

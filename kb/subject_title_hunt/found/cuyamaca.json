@@ -1,0 +1,457 @@
+{
+ "college": "Cuyamaca College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:40:25Z",
+ "run": "45625259489",
+ "plan": "kb/college_reads/subject_index_cuyamaca.json",
+ "titles": [
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARAM",
+   "title": "Aramaic",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/aram/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARBC",
+   "title": "Arabic",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/arbc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/astr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIO",
+   "title": "Biological Sciences",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/bio/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BOT",
+   "title": "Business Office Technology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/bot/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/bus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CADD",
+   "title": "CADD Technology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/cadd/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CD",
+   "title": "Child Development",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/cd/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/cdev/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer and Information Science",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/coun/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/cs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CWS",
+   "title": "Center for Water Studies",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/cws/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ED",
+   "title": "Education",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/ed/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EHSM",
+   "title": "Environmental Health and Safety Management",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/ehsm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ES",
+   "title": "Exercise Science",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/es/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ET",
+   "title": "Electronics Technology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/et/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/ethn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GD",
+   "title": "Graphic Design",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/gd/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEND",
+   "title": "Gender Studies",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/gend/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/geol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HED",
+   "title": "Health Education",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/hed/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/hum/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/is/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KUMY",
+   "title": "Kumeyaay Studies",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/kumy/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/mus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/nutr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEA",
+   "title": "Oceanography",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/ocea/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OH",
+   "title": "Ornamental Horticulture",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/oh/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PARA",
+   "title": "Paralegal Studies",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/para/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDF",
+   "title": "Download Page",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/course-descriptions.pdf",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDSS",
+   "title": "Personal Development-Success Services",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/pdss/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYC",
+   "title": "Physics",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/phyc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POSC",
+   "title": "Political Science",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/posc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/psy/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/re/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RELG",
+   "title": "Religious Studies",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/relg/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/soci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STEM",
+   "title": "STEM",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/stem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SURV",
+   "title": "Surveying",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/surv/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SW",
+   "title": "Social Work",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/sw/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THTR",
+   "title": "Theatre Arts",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/thtr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WEX",
+   "title": "Work Experience",
+   "url": "https://catalog.gcccd.edu/cuyamaca/course-descriptions/wex/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

@@ -1,0 +1,494 @@
+{
+ "college": "Evergreen Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45626788039",
+ "plan": "kb/college_reads/subject_index_evergreen_valley.json",
+ "titles": [
+  {
+   "code": "ACCTG",
+   "title": "Accounting",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/acctg/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AI",
+   "title": "Artificial Intelligence",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ai/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/aj/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTRO",
+   "title": "Astronomy",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/astro/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATH",
+   "title": "Athletics",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ath/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHM",
+   "title": "Athletics Intercollegiate Men",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/athm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHW",
+   "title": "Athletics Intercollegiate Women",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/athw/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIM",
+   "title": "Building Information Modeling",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/bim/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIS",
+   "title": "Business Information Systems",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/bis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/bus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CADD",
+   "title": "Computer Aided Design & Drafting",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/cadd/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIT",
+   "title": "Computer & Information Technology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/cit/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/coms/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "COMM/COMS"
+  },
+  {
+   "code": "COMS",
+   "title": "Communication Studies",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/coms/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "COMM/COMS"
+  },
+  {
+   "code": "COMSC",
+   "title": "Computer Science",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/comsc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUNS",
+   "title": "Counseling",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/couns/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/dance/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DLIT",
+   "title": "Digital Literacy",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/dlit/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDIT",
+   "title": "Educational Instructional Technology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/edit/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVIR",
+   "title": "Environmental Science",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/envir/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English As a Second Language",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETH",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/eth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FCS",
+   "title": "Family and Consumer Studies",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/fcs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FMT",
+   "title": "Facilities Management Technology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/fmt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HED",
+   "title": "Health Education",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/hed/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMNT",
+   "title": "Humanities",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/humnt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "II",
+   "title": "Individualized Instruction",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ii/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOURN",
+   "title": "Journalism",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/journ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINS",
+   "title": "Kinesiology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/kins/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LA",
+   "title": "Legal Assistant",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/la/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIB",
+   "title": "Library Studies",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/lib/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MFGT",
+   "title": "Manufacturing Technology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/mfgt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/music/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/nurs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEAN",
+   "title": "Oceanography",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ocean/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDF",
+   "title": "Download Page",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/course-descriptions.pdf",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PED",
+   "title": "Physical Education",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ped/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/photo/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYSC",
+   "title": "Physical Science",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/physc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/polsc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "POLS/POLSC"
+  },
+  {
+   "code": "POLSC",
+   "title": "Political Science",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/polsc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "POLS/POLSC"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/psych/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "PSYC/PSYCH"
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/psych/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "PSYC/PSYCH"
+  },
+  {
+   "code": "SL",
+   "title": "Sign Language",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/sl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEAT",
+   "title": "Theatre Arts",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/theat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TI",
+   "title": "Translation and Interpretation",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/ti/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VIET",
+   "title": "Vietnamese",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/viet/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WE",
+   "title": "Work Experience",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/we/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WOMS",
+   "title": "Women's Studies",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/woms/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WWT",
+   "title": "Water/Wastewater Technology",
+   "url": "https://catalog.evc.edu/course-descriptions-information/course-descriptions/wwt/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "not_listed": {
+  "codes": [
+   "DESGN",
+   "DISP",
+   "LE",
+   "SG",
+   "XENGL"
+  ],
+  "why": "The hunt list names these codes, and the index this read loaded prints no subject for them."
+ }
+}

@@ -1,5 +1,5 @@
 {
- "_readme": "S730 subject-title hunt (group html_c), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: run 45625259489 found an Acalog catalog whose front page links Courses Descriptions (navoid 94); this read loads it with its filter form's options printed. No model call.",
+ "_readme": "S730 subject-title hunt (group html_c), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3: run 45626788039 read page 1 of 5 of the Acalog course list, which prints each course under its subject heading (Accounting, then ACC 100); this read loads pages 2 to 5 the same way. No model call.",
  "college": "Palo Verde College",
  "questions": {
   "subjects": "Each subject the catalog's course index lists, with its printed title and code.",
@@ -11,14 +11,40 @@
  "capture_lines": 4000,
  "pages": [
   {
-   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
    "answers": [
     "subjects"
    ],
-   "links": "\\([A-Z][A-Za-z0-9/&. -]{0,12}\\)\\s*$|course|subject|prefix",
-   "links_cap": 400,
-   "capture_view": true,
-   "forms": true
+   "links": "cpage",
+   "links_cap": 20,
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "answers": [
+    "subjects"
+   ],
+   "links": "cpage",
+   "links_cap": 20,
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "answers": [
+    "subjects"
+   ],
+   "links": "cpage",
+   "links_cap": 20,
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=5",
+   "answers": [
+    "subjects"
+   ],
+   "links": "cpage",
+   "links_cap": 20,
+   "capture_view": true
   }
  ]
 }
