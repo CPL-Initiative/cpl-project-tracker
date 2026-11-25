@@ -77,6 +77,12 @@ bar), step 7 (the pipeline did not move).
 
 ## Open work, in order
 
+00. **COBIx's leftover titles (Sam, 2026-11-25, relayed from COBIx):** #3837 (batch 1: the 11 unread-catalog colleges,
+    657 of 785 rows) and #3838 (batch 2: department-label rows, 374 of 414) fill the leftovers CSV, 1,031 titles. Merge
+    #3837 before #3838 (batch 2 sits on batch 1) once each is green; SkyDunlin may already have. Then add a CSV import
+    to `kb/_file_found_subject_titles.py` (a filled row with a source URL becomes a found title; a `department label`
+    method stays a hint), file them, rebuild the subject family, and rerun the stray-code rescore.
+
 0. **The stray codes (common-subjects-reference lane):** the rescore is filed, `kb/subject_title_hunt/20261125_stray_code_rescore.csv`
    (116 local subjects, 247 courses): High 24 (53 courses, the title names the discipline), Medium 32 (76, a filed
    common subject with a title to check), Low 4 (6; two title-filing conflicts, San Diego City FJMP and Mendocino CSC),
