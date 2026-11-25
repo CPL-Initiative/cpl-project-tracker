@@ -1,0 +1,877 @@
+{
+ "_what": "The subjects Mission College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Mission College",
+ "catalog_year": null,
+ "read_at": null,
+ "run": null,
+ "source": [
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=172",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=176",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=178",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=179",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=190",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=191",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=195",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=204",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=209",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=210",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=216",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=221",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=225",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=227",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=233",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=237",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=238",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=240",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=246",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=250",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=253",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=260",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=270",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=282",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=289",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=290",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=298",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=301",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=302",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=303",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=327",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=330",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=336",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=338",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=343",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=349",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=351",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=353",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=355",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=358",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=360",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=364",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=368",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=369",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=374",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=376",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=377",
+  "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=387"
+ ],
+ "rows": [
+  {
+   "code": "ACC",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACC"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANT",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANT"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=176",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ARB",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "index",
+   "codes": [
+    "ARB"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=178",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AST",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "AST"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ATHL",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATHL"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=191",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BIO",
+   "heading": "Biological Sciences",
+   "heading_printed": "Biological Sciences",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=195",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=204",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CAP",
+   "heading": "Computer Applications",
+   "heading_printed": "Computer Applications",
+   "rule": "index",
+   "codes": [
+    "CAP"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=209",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CHD"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=210",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHI",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHI"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=216",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHM"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=216",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=221",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CIT",
+   "heading": "Computer Information Technology",
+   "heading_printed": "Computer Information Technology",
+   "rule": "index",
+   "codes": [
+    "CIT"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=225",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COM"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=227",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COU",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COU"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=233",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ECN",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECN"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "EGR"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=238",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENG",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENG"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=240",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English As A Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=246",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ETH",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETH"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=250",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FDR",
+   "heading": "Food Service and Restaurant Management",
+   "heading_printed": "Food Service and Restaurant Management",
+   "rule": "index",
+   "codes": [
+    "FDR"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=253",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FPT",
+   "heading": "Fire Protection Technology",
+   "heading_printed": "Fire Protection Technology",
+   "rule": "index",
+   "codes": [
+    "FPT"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=260",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GDS",
+   "heading": "Graphic Design and Multimedia",
+   "heading_printed": "Graphic Design and Multimedia",
+   "rule": "index",
+   "codes": [
+    "GDS"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=270",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEO",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEO"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=282",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HIS",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIS"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=282",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HMT",
+   "heading": "Hotel and Motel Management",
+   "heading_printed": "Hotel and Motel Management",
+   "rule": "index",
+   "codes": [
+    "HMT"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=289",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HOC",
+   "heading": "Health Occupation",
+   "heading_printed": "Health Occupation",
+   "rule": "index",
+   "codes": [
+    "HOC"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=290",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=298",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "INS",
+   "heading": "Instructional Support",
+   "heading_printed": "Instructional Support",
+   "rule": "index",
+   "codes": [
+    "INS"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=301",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "JPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JPN"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=302",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=303",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LIN",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LIN"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=327",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LSR",
+   "heading": "Learning Services",
+   "heading_printed": "Learning Services",
+   "rule": "index",
+   "codes": [
+    "LSR"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=327",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MAT"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=330",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MTT",
+   "heading": "Mechatronic Technology",
+   "heading_printed": "Mechatronic Technology",
+   "rule": "index",
+   "codes": [
+    "MTT"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=336",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=338",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NCE",
+   "heading": "Noncredit English as a Second Language",
+   "heading_printed": "Noncredit English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "NCE"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=343",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NCH",
+   "heading": "Noncredit Health Occupations",
+   "heading_printed": "Noncredit Health Occupations",
+   "rule": "index",
+   "codes": [
+    "NCH"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=349",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NTR",
+   "heading": "Nutritional Science",
+   "heading_printed": "Nutritional Science",
+   "rule": "index",
+   "codes": [
+    "NTR"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=349",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHI",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHI"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=351",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHT",
+   "heading": "Pharmacy Tech",
+   "heading_printed": "Pharmacy Tech",
+   "rule": "index",
+   "codes": [
+    "PHT"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=353",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHY",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHY"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=355",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "POL",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POL"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=358",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=360",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "REA",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "REA"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=364",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SJS",
+   "heading": "Social Justice Studies",
+   "heading_printed": "Social Justice Studies",
+   "rule": "index",
+   "codes": [
+    "SJS"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=368",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=369",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SPA",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPA"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=374",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "STAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=376",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "TRN",
+   "heading": "Transportation",
+   "heading_printed": "Transportation",
+   "rule": "index",
+   "codes": [
+    "TRN"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=377",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "WRK",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WRK"
+   ],
+   "candidate": null,
+   "address": "https://missioncollege.edu/office-of-instruction/academic-services/catalogs/2026-27-catalog.pdf#page=387",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  }
+ ],
+ "subjects": 51,
+ "with_heading": 51
+}

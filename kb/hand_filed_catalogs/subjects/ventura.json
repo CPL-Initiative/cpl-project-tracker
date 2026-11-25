@@ -1,0 +1,1205 @@
+{
+ "_what": "The subjects Ventura College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Ventura College",
+ "catalog_year": null,
+ "read_at": null,
+ "run": null,
+ "source": [
+  "https://catalog.vcccd.edu/ventura/programs-courses/accounting/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/american-sign-language/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/anatomy-physiology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/anatomy/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/anthropology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/applied-industrial-technology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/architecture/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/art/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/assistive-computer-technology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/biology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/business/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/chemistry/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/chicano-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/child-development/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/cognitively-diverse-learners/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/communication-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/counseling/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/dance/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/diesel-mechanics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/drafting/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/economics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/education/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/educational-assistance-center/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/emergency-medical-services/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/engineering/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/english-second-language/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/english/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/environmental-science-resource-management/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/ethnic-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/film/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/french/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/geographic-information-systems/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/geography/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/geology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/german/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/health-education/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/health-sciences/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/history/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/intercollegiate-athletics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/interdisciplinary-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/italian/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/japanese/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/kinesiology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/learning-skills/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/library-instruction/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/mathematics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/microbiology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/music/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/nursing-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/philosophy/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/photography/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/physical-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/physics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/physiology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/police-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/political-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/psychology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/social-work-human-services/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/sociology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/spanish/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/study-skills/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/theatre-arts/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/water-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/ventura/programs-courses/welding/#coursestextcontainer"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/accounting/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ACE",
+   "heading": "Automotive Career Education",
+   "heading_printed": "Automotive Career Education",
+   "rule": "index",
+   "codes": [
+    "ACE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ACT",
+   "heading": "Assistive Computer Technology",
+   "heading_printed": "Assistive Computer Technology",
+   "rule": "index",
+   "codes": [
+    "ACT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/assistive-computer-technology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AG",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "index",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AIT",
+   "heading": "Applied Industrial Technology",
+   "heading_printed": "Applied Industrial Technology",
+   "rule": "index",
+   "codes": [
+    "AIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/applied-industrial-technology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy",
+   "heading_printed": "Anatomy",
+   "rule": "index",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/anatomy/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANPH",
+   "heading": "Anatomy/Physiology",
+   "heading_printed": "Anatomy/Physiology",
+   "rule": "index",
+   "codes": [
+    "ANPH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/anatomy-physiology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/anthropology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/american-sign-language/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/biology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/business/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CDL",
+   "heading": "Cognitively Diverse Learners",
+   "heading_printed": "Cognitively Diverse Learners",
+   "rule": "index",
+   "codes": [
+    "CDL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/cognitively-diverse-learners/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/chemistry/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHST",
+   "heading": "Chicano Studies",
+   "heading_printed": "Chicano Studies",
+   "rule": "index",
+   "codes": [
+    "CHST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/chicano-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CJ",
+   "heading": "Criminal Justice",
+   "heading_printed": "Criminal Justice",
+   "rule": "index",
+   "codes": [
+    "CJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/communication-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/counseling/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CT",
+   "heading": "Construction Technology",
+   "heading_printed": "Construction Technology",
+   "rule": "index",
+   "codes": [
+    "CT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/dance/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DM",
+   "heading": "Diesel Mechanics",
+   "heading_printed": "Diesel Mechanics",
+   "rule": "index",
+   "codes": [
+    "DM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/diesel-mechanics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DRFT",
+   "heading": "Drafting",
+   "heading_printed": "Drafting",
+   "rule": "index",
+   "codes": [
+    "DRFT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EAC",
+   "heading": "Educational Assistance Center",
+   "heading_printed": "Educational Assistance Center",
+   "rule": "index",
+   "codes": [
+    "EAC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/educational-assistance-center/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/economics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EDU",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDU"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/education/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/emergency-medical-services/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/english/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENGM",
+   "heading": "English for Multilingual Students",
+   "heading_printed": "English for Multilingual Students",
+   "rule": "index",
+   "codes": [
+    "ENGM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/engineering/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/english-second-language/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ESRM",
+   "heading": "Environmental Science and Resource Management",
+   "heading_printed": "Environmental Science and Resource Management",
+   "rule": "index",
+   "codes": [
+    "ESRM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/environmental-science-resource-management/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ETHS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/ethnic-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/french/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/geography/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/geology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/german/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GIS",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "index",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/geographic-information-systems/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/health-education/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/history/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HS",
+   "heading": "Health Sciences",
+   "heading_printed": "Health Sciences",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/health-sciences/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ICA",
+   "heading": "Intercollegiate Athletics",
+   "heading_printed": "Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "ICA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/intercollegiate-athletics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "IDS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "IDS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/interdisciplinary-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/italian/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/japanese/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/kinesiology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LIB",
+   "heading": "Library Instruction",
+   "heading_printed": "Library Instruction",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/library-instruction/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/learning-skills/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/mathematics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MICR",
+   "heading": "Microbiology",
+   "heading_printed": "Microbiology",
+   "rule": "index",
+   "codes": [
+    "MICR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/microbiology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MT",
+   "heading": "Manufacturing Technology",
+   "heading_printed": "Manufacturing Technology",
+   "rule": "index",
+   "codes": [
+    "MT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/music/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NS",
+   "heading": "Nursing Science",
+   "heading_printed": "Nursing Science",
+   "rule": "index",
+   "codes": [
+    "NS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/nursing-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/philosophy/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/photography/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/physical-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHSO",
+   "heading": "Physiology",
+   "heading_printed": "Physiology",
+   "rule": "index",
+   "codes": [
+    "PHSO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/physiology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/physics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PM",
+   "heading": "Paramedic",
+   "heading_printed": "Paramedic",
+   "rule": "index",
+   "codes": [
+    "PM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/political-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "POSC",
+   "heading": "Police Science",
+   "heading_printed": "Police Science",
+   "rule": "index",
+   "codes": [
+    "POSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/psychology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/sociology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SS",
+   "heading": "Study Skills",
+   "heading_printed": "Study Skills",
+   "rule": "index",
+   "codes": [
+    "SS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/study-skills/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SWHS",
+   "heading": "Social Work/Human Services",
+   "heading_printed": "Social Work/Human Services",
+   "rule": "index",
+   "codes": [
+    "SWHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/social-work-human-services/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "THA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/theatre-arts/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "WEL",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WEL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/welding/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "WS",
+   "heading": "Water Science",
+   "heading_printed": "Water Science",
+   "rule": "index",
+   "codes": [
+    "WS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  }
+ ],
+ "subjects": 70,
+ "with_heading": 70
+}

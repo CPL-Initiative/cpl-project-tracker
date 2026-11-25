@@ -1,0 +1,1071 @@
+{
+ "_what": "The subjects Oxnard College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Oxnard College",
+ "catalog_year": null,
+ "read_at": null,
+ "run": null,
+ "source": [
+  "https://catalog.vcccd.edu/oxnard/programs-courses/accounting/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/air-conditioning-refrigeration/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/american-sign-language/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/anatomy/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/anthropology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/art-history/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/assistive-computer-technology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-body-fender-repair/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/biological-sciences/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/border-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/business/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/chicana-o-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/communication-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/computer-applications-office-technologies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/computer-information-systems/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/computer-networking-information-technology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/computer-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/counseling/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/dance/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/dental-assisting/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/dental-hygiene/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/early-childhood-education/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/economics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/education/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/emergency-medical-technology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/engineering/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/english-second-language/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/english/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/environmental-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/ethnic-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/filipino/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/film-television-electronic-media/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/geographic-information-systems/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/geography/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/geology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/global-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/health-education/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/history/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/intercollegiate-athletics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/interdisciplinary-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/kinesiology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/learning-skills/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/logistics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/marine-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/mathematics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/microbiology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/music/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/philosophy/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/physical-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/physics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/physiology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/political-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/psychology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/reading/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/social-justice-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/sociology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/spanish/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/theatre/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/tutoring/#coursestextcontainer",
+  "https://catalog.vcccd.edu/oxnard/programs-courses/urban-studies/#coursestextcontainer"
+ ],
+ "rows": [
+  {
+   "code": "AB",
+   "heading": "Automotive Body and Fender Repair",
+   "heading_printed": "Automotive Body and Fender Repair",
+   "rule": "index",
+   "codes": [
+    "AB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-body-fender-repair/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AC",
+   "heading": "Air Conditioning and Refrigeration",
+   "heading_printed": "Air Conditioning and Refrigeration",
+   "rule": "index",
+   "codes": [
+    "AC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/air-conditioning-refrigeration/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/accounting/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ACT",
+   "heading": "Assistive Computer Technology",
+   "heading_printed": "Assistive Computer Technology",
+   "rule": "index",
+   "codes": [
+    "ACT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/assistive-computer-technology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ADS",
+   "heading": "Addictive Disorders Studies",
+   "heading_printed": "Addictive Disorders Studies",
+   "rule": "index",
+   "codes": [
+    "ADS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/addictive-disorders-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy",
+   "heading_printed": "Anatomy",
+   "rule": "index",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/anatomy/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/anthropology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ART",
+   "heading": "Art + Design",
+   "heading_printed": "Art + Design",
+   "rule": "index",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/art-history/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language & Deaf Studies",
+   "heading_printed": "American Sign Language & Deaf Studies",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/american-sign-language/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AT",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/automotive-technology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BRS",
+   "heading": "Border Studies",
+   "heading_printed": "Border Studies",
+   "rule": "index",
+   "codes": [
+    "BRS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/border-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/business/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CAOT",
+   "heading": "Computer Applications & Office Technologies",
+   "heading_printed": "Computer Applications & Office Technologies",
+   "rule": "index",
+   "codes": [
+    "CAOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-applications-office-technologies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHST",
+   "heading": "Chicana/O Studies",
+   "heading_printed": "Chicana/o Studies",
+   "rule": "index",
+   "codes": [
+    "CHST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/chicana-o-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-information-systems/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CNIT",
+   "heading": "Computer Networking/Information Technology",
+   "heading_printed": "Computer Networking/Information Technology",
+   "rule": "index",
+   "codes": [
+    "CNIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-networking-information-technology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/communication-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/counseling/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CRM",
+   "heading": "Culinary Arts & Restaurant Management",
+   "heading_printed": "Culinary Arts & Restaurant Management",
+   "rule": "index",
+   "codes": [
+    "CRM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DA",
+   "heading": "Dental Assisting",
+   "heading_printed": "Dental Assisting",
+   "rule": "index",
+   "codes": [
+    "DA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/dental-assisting/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/dance/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DH",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "index",
+   "codes": [
+    "DH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/dental-hygiene/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/early-childhood-education/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/economics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EDU",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDU"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/education/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technology",
+   "heading_printed": "Emergency Medical Technology",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/emergency-medical-technology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/english/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/engineering/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/english-second-language/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ESRM",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ESRM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/environmental-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ETHS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/ethnic-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FILI",
+   "heading": "Filipino",
+   "heading_printed": "Filipino",
+   "rule": "index",
+   "codes": [
+    "FILI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/filipino/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FT",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FTVE",
+   "heading": "Film, Television, and Electronic Media",
+   "heading_printed": "Film, Television, and Electronic Media",
+   "rule": "index",
+   "codes": [
+    "FTVE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/film-television-electronic-media/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/geography/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/geology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GIS",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "index",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/geographic-information-systems/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GLST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GLST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/global-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/health-education/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/history/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ICA",
+   "heading": "Intercollegiate Athletics",
+   "heading_printed": "Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "ICA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/intercollegiate-athletics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "IDS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "IDS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/interdisciplinary-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/kinesiology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LAW",
+   "heading": "Paralegal Studies",
+   "heading_printed": "Paralegal Studies",
+   "rule": "index",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/paralegal-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LOGI",
+   "heading": "Logistics",
+   "heading_printed": "Logistics",
+   "rule": "index",
+   "codes": [
+    "LOGI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/logistics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/learning-skills/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MICR",
+   "heading": "Microbiology",
+   "heading_printed": "Microbiology",
+   "rule": "index",
+   "codes": [
+    "MICR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/microbiology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MST",
+   "heading": "Marine Studies",
+   "heading_printed": "Marine Studies",
+   "rule": "index",
+   "codes": [
+    "MST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/marine-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/music/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/philosophy/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/physical-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHSO",
+   "heading": "Physiology",
+   "heading_printed": "Physiology",
+   "rule": "index",
+   "codes": [
+    "PHSO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/physiology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/physics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/political-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "READ",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/reading/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SJS",
+   "heading": "Social Justice Studies",
+   "heading_printed": "Social Justice Studies",
+   "rule": "index",
+   "codes": [
+    "SJS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/social-justice-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/spanish/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "THTR",
+   "heading": "Theatre",
+   "heading_printed": "Theatre",
+   "rule": "index",
+   "codes": [
+    "THTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/theatre/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "TUTR",
+   "heading": "Tutoring",
+   "heading_printed": "Tutoring",
+   "rule": "index",
+   "codes": [
+    "TUTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/tutoring/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "URBS",
+   "heading": "Urban Studies",
+   "heading_printed": "Urban Studies",
+   "rule": "index",
+   "codes": [
+    "URBS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/oxnard/programs-courses/urban-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  }
+ ],
+ "subjects": 62,
+ "with_heading": 62
+}

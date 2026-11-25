@@ -1,0 +1,989 @@
+{
+ "_what": "The subjects Moorpark College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Moorpark College",
+ "catalog_year": null,
+ "read_at": null,
+ "run": null,
+ "source": [
+  "https://catalog.vcccd.edu/moorpark/programs-courses/accounting/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/anatomy/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/animal-care-and-training/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/animal-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/anthropology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/art-history/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/astronomy/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/biological-sciences/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/biotechnology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/botany/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/chemistry/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/child-development/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/chinese/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/college-strategies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/commercial-photography/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/computer-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/counseling/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/dance/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/design/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/economics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/education/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/emergency-medical-services/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/english-second-language/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/english/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/environmental-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/ethnic-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/french/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/game-design/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/geographic-information-systems/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/geography/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/geology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/german/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/health-education/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/health-sciences/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/history/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/hospitality/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/humanities/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/intercollegiate-athletics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/italian/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/japanese/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/learning-skills/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/makerspace/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/mathematics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/microbiology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/music/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/nursing-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/nutrition-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/paramedics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/philosophy/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/physical-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/physics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/political-science/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/psychology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/social-justice-studies/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/social-work-and-human-services/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/sociology/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/spanish/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/statistics/#coursestextcontainer",
+  "https://catalog.vcccd.edu/moorpark/programs-courses/theatre-arts/#coursestextcontainer"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/accounting/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy",
+   "heading_printed": "Anatomy",
+   "rule": "index",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/anatomy/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANCT",
+   "heading": "Animal Care and Training",
+   "heading_printed": "Animal Care and Training",
+   "rule": "index",
+   "codes": [
+    "ANCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/animal-care-and-training/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANSC",
+   "heading": "Animal Science",
+   "heading_printed": "Animal Science",
+   "rule": "index",
+   "codes": [
+    "ANSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/animal-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/anthropology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AST",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "AST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/astronomy/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BIOT",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "index",
+   "codes": [
+    "BIOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/biotechnology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BOT",
+   "heading": "Botany",
+   "heading_printed": "Botany",
+   "rule": "index",
+   "codes": [
+    "BOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/botany/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/child-development/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/chemistry/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/chinese/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CJ",
+   "heading": "Criminal Justice",
+   "heading_printed": "Criminal Justice",
+   "rule": "index",
+   "codes": [
+    "CJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COL",
+   "heading": "College Strategies",
+   "heading_printed": "College Strategies",
+   "rule": "index",
+   "codes": [
+    "COL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/college-strategies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/counseling/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/computer-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/dance/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DES",
+   "heading": "Design",
+   "heading_printed": "Design",
+   "rule": "index",
+   "codes": [
+    "DES"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/design/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/economics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EDU",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDU"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/education/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/emergency-medical-services/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/english/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENSC",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/environmental-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/english-second-language/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ETHS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/ethnic-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/french/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FTMA",
+   "heading": "Film Television Media Arts",
+   "heading_printed": "Film Television Media Arts",
+   "rule": "index",
+   "codes": [
+    "FTMA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GAME",
+   "heading": "Game Design",
+   "heading_printed": "Game Design",
+   "rule": "index",
+   "codes": [
+    "GAME"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/game-design/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/geography/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/geology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/german/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GIS",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "index",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/geographic-information-systems/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/health-education/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/history/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality",
+   "heading_printed": "Hospitality",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/hospitality/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HS",
+   "heading": "Health Sciences",
+   "heading_printed": "Health Sciences",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/health-sciences/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/humanities/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ICA",
+   "heading": "Intercollegiate Athletics",
+   "heading_printed": "Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "ICA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/intercollegiate-athletics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/italian/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/japanese/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/learning-skills/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MAKR",
+   "heading": "MakerSpace",
+   "heading_printed": "MakerSpace",
+   "rule": "index",
+   "codes": [
+    "MAKR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/makerspace/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/mathematics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MICR",
+   "heading": "Microbiology",
+   "heading_printed": "Microbiology",
+   "rule": "index",
+   "codes": [
+    "MICR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/microbiology/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/music/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NS",
+   "heading": "Nursing Science",
+   "heading_printed": "Nursing Science",
+   "rule": "index",
+   "codes": [
+    "NS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/nursing-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NTS",
+   "heading": "Nutrition Science",
+   "heading_printed": "Nutrition Science",
+   "rule": "index",
+   "codes": [
+    "NTS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/nutrition-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/philosophy/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/physical-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHTC",
+   "heading": "Commercial Photography",
+   "heading_printed": "Commercial Photography",
+   "rule": "index",
+   "codes": [
+    "PHTC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/commercial-photography/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/physics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PM",
+   "heading": "Paramedic",
+   "heading_printed": "Paramedic",
+   "rule": "index",
+   "codes": [
+    "PM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/paramedics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/political-science/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SJS",
+   "heading": "Social Justice Studies",
+   "heading_printed": "Social Justice Studies",
+   "rule": "index",
+   "codes": [
+    "SJS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/social-justice-studies/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/spanish/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/statistics/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SWHS",
+   "heading": "Social Work and Human Services",
+   "heading_printed": "Social Work and Human Services",
+   "rule": "index",
+   "codes": [
+    "SWHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.vcccd.edu/moorpark/programs-courses/social-work-and-human-services/#coursestextcontainer",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  }
+ ],
+ "subjects": 57,
+ "with_heading": 57
+}

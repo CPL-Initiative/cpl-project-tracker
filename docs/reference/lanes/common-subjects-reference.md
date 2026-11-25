@@ -144,9 +144,11 @@ AT is Flight Attendant, filed statewide as Automotive), so a statewide filing sh
 read otherwise. **LIVE (#3832): the runners' title hunt.** Every college's catalog subject index read on runners and filed straight
 into `kb/hand_filed_catalogs/subjects/` by `kb/_file_found_subject_titles.py` (the Subjects build lists a college by
 its headings alone): 103 colleges and 8,147 named codes, from 19 and 1,655. The CSV holds only the 2,500 leftovers for
-COBIx. **RULED** `r-collect-curate-connect-grow-automatic-sam-2026-11-25`. **The stray-code rescore (S730):** `kb/subject_title_hunt/20261125_stray_code_rescore.csv`, High 24, Medium 32,
-Low 4, None 56 of 116 local subjects. **NEXT:** the 60 Low and None to Sam as one list, then the dry-run re-mint of
-the High and Medium; file COBIx's leftover titles the same way.
+COBIx. **RULED** `r-collect-curate-connect-grow-automatic-sam-2026-11-25`. **The stray-code rescore (S730, rerun S733):** `kb/subject_title_hunt/20261125_stray_code_rescore.csv`, High 27,
+Medium 35, Low 9, None 45 of 116 local subjects, after COBIx's leftover titles (#3837, #3838) filed through
+`kb/_file_found_subject_titles.py --csv` (911 titles filed; 96 department labels kept as hints). The 54 Low and None
+are one list for a person: `kb/subject_title_hunt/20261125_stray_codes_a_person_picks.md`. **NEXT:** the dry-run
+re-mint of the High and Medium.
 
 ## NEXT
 

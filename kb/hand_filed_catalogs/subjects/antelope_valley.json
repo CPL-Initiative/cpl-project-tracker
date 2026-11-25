@@ -1,0 +1,1424 @@
+{
+ "_what": "The subjects Antelope Valley College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Antelope Valley College",
+ "catalog_year": null,
+ "read_at": null,
+ "run": null,
+ "source": [
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=103",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=107",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=108",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=113",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=116",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=121",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=130",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=134",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=138",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=147",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=153",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=155",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=163",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=169",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=173",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=178",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=180",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=186",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=191",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=193",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=195",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=198",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=201",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=205",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=211",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=215",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=221",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=226",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=230",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=236",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=238",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=240",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=243",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=245",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=247",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=248",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=250",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=253",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=254",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=256",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=258",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=264",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=265",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=269",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=271",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=274",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=280",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=281",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=283",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=286",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=290",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=291",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=298",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=304",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=313",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=318",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=320",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=323",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=326",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=327",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=331",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=337",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=341",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=344",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=346",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=348",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=351",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=356",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=359",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=363",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=371",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=372",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=374",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=67",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=71",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=77",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=80",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=82",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=83",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=87",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=90",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=94",
+  "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=98"
+ ],
+ "rows": [
+  {
+   "code": "ABDY",
+   "heading": "Auto Body",
+   "heading_printed": "Auto Body",
+   "rule": "index",
+   "codes": [
+    "ABDY"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=113",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=67",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ACRV",
+   "heading": "Air Conditioning and Refrigeration",
+   "heading_printed": "Air Conditioning and Refrigeration",
+   "rule": "index",
+   "codes": [
+    "ACRV"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=87",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AERO",
+   "heading": "Airframe and Powerplant",
+   "heading_printed": "Airframe and Powerplant",
+   "rule": "index",
+   "codes": [
+    "AERO"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=80",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AFAB",
+   "heading": "Aircraft Fabrication and Assembly",
+   "heading_printed": "Aircraft Fabrication and Assembly",
+   "rule": "index",
+   "codes": [
+    "AFAB"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=90",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AFMT",
+   "heading": "Airframe Manufacturing Technology",
+   "heading_printed": "Airframe Manufacturing Technology",
+   "rule": "index",
+   "codes": [
+    "AFMT"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=71",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ALM",
+   "heading": "Aerospace Leadership and Management",
+   "heading_printed": "Aerospace Leadership and Management",
+   "rule": "index",
+   "codes": [
+    "ALM"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=83",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AM",
+   "heading": "Advanced Manufacturing",
+   "heading_printed": "Advanced Manufacturing",
+   "rule": "index",
+   "codes": [
+    "AM"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=77",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANDI",
+   "heading": "Aeronautical Non-Destructive Inspection",
+   "heading_printed": "Aeronautical Non-Destructive Inspection",
+   "rule": "index",
+   "codes": [
+    "ANDI"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=82",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=98",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=107",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ATH",
+   "heading": "Athletic Training",
+   "heading_printed": "Athletic Training",
+   "rule": "index",
+   "codes": [
+    "ATH"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=108",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=116",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biological Sciences",
+   "heading_printed": "Biological Sciences",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=121",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BIP",
+   "heading": "Business Information Professional",
+   "heading_printed": "Business Information Professional",
+   "rule": "index",
+   "codes": [
+    "BIP"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=134",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=130",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CA",
+   "heading": "Computer Applications",
+   "heading_printed": "Computer Applications",
+   "rule": "index",
+   "codes": [
+    "CA"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=163",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CFE",
+   "heading": "Child and Family Education",
+   "heading_printed": "Child and Family Education",
+   "rule": "index",
+   "codes": [
+    "CFE"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=147",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=138",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=169",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DA",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DA"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=173",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DFST",
+   "heading": "Deaf Studies",
+   "heading_printed": "Deaf Studies",
+   "rule": "index",
+   "codes": [
+    "DFST"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=178",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DM",
+   "heading": "Digital Media",
+   "heading_printed": "Digital Media",
+   "rule": "index",
+   "codes": [
+    "DM"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=186",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=193",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ED",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "ED"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=195",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ELEC",
+   "heading": "Electrical Technology",
+   "heading_printed": "Electrical Technology",
+   "rule": "index",
+   "codes": [
+    "ELEC"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=198",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ELTE",
+   "heading": "Electronics Technology",
+   "heading_printed": "Electronics Technology",
+   "rule": "index",
+   "codes": [
+    "ELTE"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=201",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technology",
+   "heading_printed": "Emergency Medical Technology",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=205",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=215",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=211",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ERSC",
+   "heading": "Earth Science",
+   "heading_printed": "Earth Science",
+   "rule": "index",
+   "codes": [
+    "ERSC"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=191",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language Non Credit",
+   "heading_printed": "English As A Second Language Non Credit",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=221",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=226",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=240",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FTEC",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FTEC"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=236",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FTV",
+   "heading": "Film and Television",
+   "heading_printed": "Film and Television",
+   "rule": "index",
+   "codes": [
+    "FTV"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=230",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FTW",
+   "heading": "Wildland Fire Technology",
+   "heading_printed": "Wildland Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FTW"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=238",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=243",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=245",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GER",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GER"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=247",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HD",
+   "heading": "Human Development",
+   "heading_printed": "Human Development",
+   "rule": "index",
+   "codes": [
+    "HD"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=253",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HE",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HE"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=248",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=250",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "IATH",
+   "heading": "Intercollegiate Athletic",
+   "heading_printed": "Intercollegiate Athletic",
+   "rule": "index",
+   "codes": [
+    "IATH"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=265",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "IMTA",
+   "heading": "Industrial Manufacturing",
+   "heading_printed": "Industrial Manufacturing",
+   "rule": "index",
+   "codes": [
+    "IMTA"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=254",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "INT",
+   "heading": "Interpreter Training",
+   "heading_printed": "Interpreter Training",
+   "rule": "index",
+   "codes": [
+    "INT"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=180",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=256",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "KINF",
+   "heading": "Kinesiology–Fitness",
+   "heading_printed": "Kinesiology–Fitness",
+   "rule": "index",
+   "codes": [
+    "KINF"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=258",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "KINT",
+   "heading": "Kinesiology–Theory",
+   "heading_printed": "Kinesiology–Theory",
+   "rule": "index",
+   "codes": [
+    "KINT"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=264",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LAC",
+   "heading": "Learning Assistance Non Credit",
+   "heading_printed": "Learning Assistance Non Credit",
+   "rule": "index",
+   "codes": [
+    "LAC"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=271",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LATN",
+   "heading": "Latin",
+   "heading_printed": "Latin",
+   "rule": "index",
+   "codes": [
+    "LATN"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=269",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LIB",
+   "heading": "Library Studies",
+   "heading_printed": "Library Studies",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=280",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=286",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MGT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "index",
+   "codes": [
+    "MGT"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=281",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MKTG",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MKTG"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=283",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MOA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MOA"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=290",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MSAM",
+   "heading": "Metrology Sciences for Aerospace Manufacturing",
+   "heading_printed": "Metrology Sciences for Aerospace Manufacturing",
+   "rule": "index",
+   "codes": [
+    "MSAM"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=291",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=298",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MUSC",
+   "heading": "Commercial Music",
+   "heading_printed": "Commercial Music",
+   "rule": "index",
+   "codes": [
+    "MUSC"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=304",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NF",
+   "heading": "Nutrition and Foods",
+   "heading_printed": "Nutrition and Foods",
+   "rule": "index",
+   "codes": [
+    "NF"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=318",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NS",
+   "heading": "Nursing Science",
+   "heading_printed": "Nursing Science",
+   "rule": "index",
+   "codes": [
+    "NS"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=313",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PARL",
+   "heading": "Legal Assisting (Paralegal)",
+   "heading_printed": "Legal Assisting (Paralegal)",
+   "rule": "index",
+   "codes": [
+    "PARL"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=274",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=320",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=323",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHTC",
+   "heading": "Commercial Photography",
+   "heading_printed": "Commercial Photography",
+   "rule": "index",
+   "codes": [
+    "PHTC"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=323",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=327",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=331",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PSCI",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PSCI"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=326",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=337",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "RADT",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "index",
+   "codes": [
+    "RADT"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=341",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "RCP",
+   "heading": "Respiratory Care",
+   "heading_printed": "Respiratory Care",
+   "rule": "index",
+   "codes": [
+    "RCP"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=351",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=346",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "READ",
+   "heading": "Reading Non Credit",
+   "heading_printed": "Reading Non Credit",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=344",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "REC",
+   "heading": "Recreational Leadership",
+   "heading_printed": "Recreational Leadership",
+   "rule": "index",
+   "codes": [
+    "REC"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=348",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=356",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=359",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "THA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THA"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=363",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "VN",
+   "heading": "Vocational Nursing",
+   "heading_printed": "Vocational Nursing",
+   "rule": "index",
+   "codes": [
+    "VN"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=371",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "WDTO",
+   "heading": "Water Treatment",
+   "heading_printed": "Water Treatment",
+   "rule": "index",
+   "codes": [
+    "WDTO"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=372",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://www.avc.edu/sites/default/files/catalog/2526/2025-2026%20Catalog%20with%20cover.pdf#page=374",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  }
+ ],
+ "subjects": 83,
+ "with_heading": 83
+}

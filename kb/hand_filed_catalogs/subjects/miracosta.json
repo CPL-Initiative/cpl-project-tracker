@@ -1,0 +1,1169 @@
+{
+ "_what": "The subjects MiraCosta College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "MiraCosta College",
+ "catalog_year": null,
+ "read_at": null,
+ "run": null,
+ "source": [
+  "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/",
+  "https://catalog.miracosta.edu/continuingeducation/noncreditesl/",
+  "https://catalog.miracosta.edu/continuingeducation/shorttermvoc/",
+  "https://catalog.miracosta.edu/disciplines/accounting/",
+  "https://catalog.miracosta.edu/disciplines/administration/",
+  "https://catalog.miracosta.edu/disciplines/anthropology/",
+  "https://catalog.miracosta.edu/disciplines/art/",
+  "https://catalog.miracosta.edu/disciplines/astronomy/",
+  "https://catalog.miracosta.edu/disciplines/athletics/",
+  "https://catalog.miracosta.edu/disciplines/automotivetechnology/",
+  "https://catalog.miracosta.edu/disciplines/biology/",
+  "https://catalog.miracosta.edu/disciplines/biotechnology/",
+  "https://catalog.miracosta.edu/disciplines/blst/",
+  "https://catalog.miracosta.edu/disciplines/businessadministration/",
+  "https://catalog.miracosta.edu/disciplines/careerandlifeplanning/",
+  "https://catalog.miracosta.edu/disciplines/ccs/",
+  "https://catalog.miracosta.edu/disciplines/chemistry/",
+  "https://catalog.miracosta.edu/disciplines/communication/",
+  "https://catalog.miracosta.edu/disciplines/computerscience/",
+  "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+  "https://catalog.miracosta.edu/disciplines/counseling/",
+  "https://catalog.miracosta.edu/disciplines/dance/",
+  "https://catalog.miracosta.edu/disciplines/design/",
+  "https://catalog.miracosta.edu/disciplines/dramaticarts/",
+  "https://catalog.miracosta.edu/disciplines/earthsciences/",
+  "https://catalog.miracosta.edu/disciplines/economics/",
+  "https://catalog.miracosta.edu/disciplines/education/",
+  "https://catalog.miracosta.edu/disciplines/engineering/",
+  "https://catalog.miracosta.edu/disciplines/english/",
+  "https://catalog.miracosta.edu/disciplines/englishasa/",
+  "https://catalog.miracosta.edu/disciplines/ethn/",
+  "https://catalog.miracosta.edu/disciplines/film/",
+  "https://catalog.miracosta.edu/disciplines/french/",
+  "https://catalog.miracosta.edu/disciplines/geography/",
+  "https://catalog.miracosta.edu/disciplines/geology/",
+  "https://catalog.miracosta.edu/disciplines/german/",
+  "https://catalog.miracosta.edu/disciplines/gerontology/",
+  "https://catalog.miracosta.edu/disciplines/healtheducation/",
+  "https://catalog.miracosta.edu/disciplines/history/",
+  "https://catalog.miracosta.edu/disciplines/horticulture/",
+  "https://catalog.miracosta.edu/disciplines/hospitality/",
+  "https://catalog.miracosta.edu/disciplines/humanities/",
+  "https://catalog.miracosta.edu/disciplines/italian/",
+  "https://catalog.miracosta.edu/disciplines/japanese/",
+  "https://catalog.miracosta.edu/disciplines/kinesiology/",
+  "https://catalog.miracosta.edu/disciplines/library/",
+  "https://catalog.miracosta.edu/disciplines/linguistics/",
+  "https://catalog.miracosta.edu/disciplines/literature/",
+  "https://catalog.miracosta.edu/disciplines/mathematics/",
+  "https://catalog.miracosta.edu/disciplines/mediaarts/",
+  "https://catalog.miracosta.edu/disciplines/medicaladministrativeprofessional/",
+  "https://catalog.miracosta.edu/disciplines/music/",
+  "https://catalog.miracosta.edu/disciplines/musictechnology/",
+  "https://catalog.miracosta.edu/disciplines/nativeamericanindigenousstudies/",
+  "https://catalog.miracosta.edu/disciplines/nursing/",
+  "https://catalog.miracosta.edu/disciplines/nutrition/",
+  "https://catalog.miracosta.edu/disciplines/oceanography/",
+  "https://catalog.miracosta.edu/disciplines/philosophy/",
+  "https://catalog.miracosta.edu/disciplines/physicalscience/",
+  "https://catalog.miracosta.edu/disciplines/physics/",
+  "https://catalog.miracosta.edu/disciplines/politicalscience/",
+  "https://catalog.miracosta.edu/disciplines/psychology/",
+  "https://catalog.miracosta.edu/disciplines/reading/",
+  "https://catalog.miracosta.edu/disciplines/religiousstudies/",
+  "https://catalog.miracosta.edu/disciplines/spanish/",
+  "https://catalog.miracosta.edu/disciplines/specialeducation/",
+  "https://catalog.miracosta.edu/disciplines/swhs/",
+  "https://catalog.miracosta.edu/disciplines/workexperienceeducation/"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/accounting/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ADM",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/administration/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/anthropology/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/astronomy/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ATHL",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATHL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/athletics/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/automotivetechnology/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BIO",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/biology/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BLST",
+   "heading": "Black Studies",
+   "heading_printed": "Black Studies",
+   "rule": "index",
+   "codes": [
+    "BLST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/blst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BTEC",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "index",
+   "codes": [
+    "BTEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/biotechnology/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "BUS",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/businessadministration/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CCS",
+   "heading": "Chicano/Chicana Studies",
+   "heading_printed": "Chicano/Chicana Studies",
+   "rule": "index",
+   "codes": [
+    "CCS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/ccs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/chemistry/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/communication/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/counseling/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CRLP",
+   "heading": "Career & Life Planning",
+   "heading_printed": "Career & Life Planning",
+   "rule": "index",
+   "codes": [
+    "CRLP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/careerandlifeplanning/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/computerscience/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "CSIT",
+   "heading": "Computer Studies & Information Technology",
+   "heading_printed": "Computer Studies & Information Technology",
+   "rule": "index",
+   "codes": [
+    "CSIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DESN",
+   "heading": "Design",
+   "heading_printed": "Design",
+   "rule": "index",
+   "codes": [
+    "DESN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/design/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DNCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DNCE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/dance/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "DRAM",
+   "heading": "Dramatic Arts",
+   "heading_printed": "Dramatic Arts",
+   "rule": "index",
+   "codes": [
+    "DRAM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/dramaticarts/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EART",
+   "heading": "Earth Sciences",
+   "heading_printed": "Earth Sciences",
+   "rule": "index",
+   "codes": [
+    "EART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/earthsciences/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/economics/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/education/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/english/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/engineering/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/englishasa/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/ethn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/french/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/geography/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/geology/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GERO",
+   "heading": "Gerontology",
+   "heading_printed": "Gerontology",
+   "rule": "index",
+   "codes": [
+    "GERO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/gerontology/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "GRMN",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GRMN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/german/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HEAL",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HEAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/healtheducation/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/history/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "index",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/horticulture/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality",
+   "heading_printed": "Hospitality",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/hospitality/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "HUMN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/humanities/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/italian/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/japanese/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "KINE",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/kinesiology/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/library/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/linguistics/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LIT",
+   "heading": "Literature",
+   "heading_printed": "Literature",
+   "rule": "index",
+   "codes": [
+    "LIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/literature/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "LRNS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LRNS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/specialeducation/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MAP",
+   "heading": "Medical Administrative Professional",
+   "heading_printed": "Medical Administrative Professional",
+   "rule": "index",
+   "codes": [
+    "MAP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/medicaladministrativeprofessional/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MAT",
+   "heading": "Media Arts & Technologies",
+   "heading_printed": "Media Arts & Technologies",
+   "rule": "index",
+   "codes": [
+    "MAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/mediaarts/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/mathematics/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MTEC",
+   "heading": "Music Technology",
+   "heading_printed": "Music Technology",
+   "rule": "index",
+   "codes": [
+    "MTEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/musictechnology/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/music/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NAIS",
+   "heading": "Native American and Indigenous Studies",
+   "heading_printed": "Native American and Indigenous Studies",
+   "rule": "index",
+   "codes": [
+    "NAIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/nativeamericanindigenousstudies/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NCESL",
+   "heading": "Noncredit English as a Second Language",
+   "heading_printed": "Noncredit English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "NCESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/continuingeducation/noncreditesl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NCHLT",
+   "heading": "Noncredit Health & Safety Courses",
+   "heading_printed": "Noncredit Health & Safety Courses",
+   "rule": "index",
+   "codes": [
+    "NCHLT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NCSPC",
+   "heading": "Noncredit Special Education Courses",
+   "heading_printed": "Noncredit Special Education Courses",
+   "rule": "index",
+   "codes": [
+    "NCSPC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NCWFP",
+   "heading": "Noncredit Workforce Preparation Courses",
+   "heading_printed": "Noncredit Workforce Preparation Courses",
+   "rule": "index",
+   "codes": [
+    "NCWFP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/continuingeducation/shorttermvoc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/nursing/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/nutrition/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "OCEA",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "index",
+   "codes": [
+    "OCEA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/oceanography/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/philosophy/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHSN",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHSN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/physicalscience/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/physics/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/politicalscience/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/psychology/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "READ",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/reading/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "RELG",
+   "heading": "Religious Studies",
+   "heading_printed": "Religious Studies",
+   "rule": "index",
+   "codes": [
+    "RELG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/religiousstudies/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/spanish/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/mathematics/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "SWHS",
+   "heading": "Social Work and Human Services",
+   "heading_printed": "Social Work and Human Services",
+   "rule": "index",
+   "codes": [
+    "SWHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/swhs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  },
+  {
+   "code": "WKEX",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WKEX"
+   ],
+   "candidate": null,
+   "address": "https://catalog.miracosta.edu/disciplines/workexperienceeducation/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBIx",
+   "run": null
+  }
+ ],
+ "subjects": 68,
+ "with_heading": 68
+}

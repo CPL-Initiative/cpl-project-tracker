@@ -16,7 +16,10 @@ RULES.
   - `--backfill` adds where, method, found_on and found_by to the rows filed before S730, from the file's own run and
     rule, and changes nothing else.
 
-Usage:  python3 kb/_file_found_subject_titles.py [--dry-run] [--backfill]
+  - `--csv PATH` files a filled leftovers CSV instead of the finds (S733, for COBIx's rows on #3837 and #3838): a row
+    with a title and its source URL is a find for its college; a `department label` row stays a hint, as above.
+
+Usage:  python3 kb/_file_found_subject_titles.py [--dry-run] [--backfill] [--csv PATH]
 """
 import glob
 import json
@@ -56,6 +59,10 @@ def file_one(found, dry):
     slug = os.path.basename(found)[:-5]
     with open(found, encoding="utf-8") as f:
         d = json.load(f)
+    return file_doc(slug, d, dry)
+
+
+def file_doc(slug, d, dry):
     titles = d.get("titles") or []
     path = os.path.join(SUBJECTS, slug + ".json")
     doc = None
@@ -101,7 +108,8 @@ def file_one(found, dry):
             continue
         row = {"code": code, "heading": title_case(printed), "heading_printed": printed, "rule": "index", "codes": [code],
                "candidate": None, "address": t.get("url"), "where": t.get("where") or "catalog",
-               "method": t.get("method") or "subject heading", "found_on": (d.get("read_at") or "")[:10] or None,
+               "method": t.get("method") or "subject heading",
+               "found_on": t.get("found_on") or (d.get("read_at") or "")[:10] or None,
                "found_by": t.get("found_by") or "COBI, a runner read (run %s)" % d.get("run"), "run": d.get("run")}
         if old:
             old.update(row)
@@ -115,6 +123,52 @@ def file_one(found, dry):
     if added and not dry:
         dump(path, doc)
     return {"slug": slug, "added": added, "agree": agree, "differ": differ, "skipped": skipped, "not_read": d.get("not_read")}
+
+
+def college_slugs():
+    """College name (lower-cased) -> its slug, from the filed subjects, the finds and the printed catalogs' index."""
+    m = {}
+    paths = glob.glob(os.path.join(SUBJECTS, "*.json")) + glob.glob(os.path.join(FOUND, "*.json"))
+    for path in paths:
+        with open(path, encoding="utf-8") as f:
+            name = (json.load(f).get("college") or "").strip().lower()
+        if name:
+            m.setdefault(name, os.path.basename(path)[:-5])
+    index = os.path.join(ROOT, "kb", "hand_filed_catalogs", "courses", "index.json")
+    if os.path.exists(index):
+        with open(index, encoding="utf-8") as f:
+            for c in json.load(f).get("colleges") or []:
+                m.setdefault(str(c.get("college") or "").strip().lower(), c.get("slug"))
+    return m
+
+
+def read_csv_finds(path):
+    """The leftovers CSV, filled in by a person or COBIx, as one find per college (S733).
+
+    A row is a find only when it carries both a title and its source URL (p-subject-title-carries-its-source-sam-2026-11-25);
+    its where, method, searched_on and found_by ride along. A `department label` row passes through and file_doc keeps
+    it out of the record, as a hint. A college with no known slug is reported, never guessed."""
+    import csv
+    slugs = college_slugs()
+    finds, unknown = {}, set()
+    with open(path, encoding="utf-8", newline="") as f:
+        for r in csv.DictReader(f):
+            title, url = (r.get("local_subject_title") or "").strip(), (r.get("title_source_url") or "").strip()
+            if not title or not url:
+                continue
+            college = (r.get("college") or "").strip()
+            slug = slugs.get(college.lower())
+            if not slug:
+                unknown.add(college)
+                continue
+            d = finds.setdefault(slug, {"college": college, "catalog_year": None, "read_at": None, "run": None,
+                                        "csv": os.path.relpath(path, ROOT), "titles": []})
+            d["titles"].append({"code": r.get("local_subject_code"), "title": title, "url": url,
+                                "where": (r.get("title_where") or "").strip() or "catalog",
+                                "method": (r.get("title_method") or "").strip() or "subject heading",
+                                "found_on": (r.get("searched_on") or "").strip() or None,
+                                "found_by": (r.get("found_by") or "").strip() or None})
+    return finds, sorted(unknown)
 
 
 def committed_on(path):
@@ -151,8 +205,15 @@ def main(argv):
     if "--backfill" in argv:
         print("backfilled the source fields on %d filed headings%s" % (backfill(dry), " (dry run)" if dry else ""))
     tot = {"added": 0, "agree": 0, "differ": 0, "skipped": 0}
-    for found in sorted(glob.glob(os.path.join(FOUND, "*.json"))):
-        r = file_one(found, dry)
+    if "--csv" in argv:
+        finds, unknown = read_csv_finds(argv[argv.index("--csv") + 1])
+        jobs = [(lambda s=s, d=d: file_doc(s, d, dry)) for s, d in sorted(finds.items())]
+        for name in unknown:
+            print("no slug for college %r: its rows are not filed" % name)
+    else:
+        jobs = [(lambda p=p: file_one(p, dry)) for p in sorted(glob.glob(os.path.join(FOUND, "*.json")))]
+    for job in jobs:
+        r = job()
         for k in tot:
             tot[k] += r[k]
         print("%-36s added %4d  agree %3d  differ %3d  skipped %3d%s" % (r["slug"], r["added"], r["agree"], r["differ"], r["skipped"],
