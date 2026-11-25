@@ -242,7 +242,7 @@ and `land`.
 - **What worked:** one display build first, while no apply was in flight (#3808), then the census on `main`; a second
   reader on every plan (Opus on the plans that added a kind, Sonnet on the pooled and Shasta plans), a clean md5
   pre-read and the conductor's apply, `.apply` restored after each run; seven applied plans landed in two PRs (#3812,
-  #3816), and every substantive PR merged before sign-off (72 records collected and live); a
+  #3816), and every substantive PR merged before sign-off (81 records collected and live); a
   course-list cap where a list cannot be told from its page's others (`d-heading-not-in-text-cap-s727`); records a
   cheaper lever passes held, never gap-filed (American River 12191; Canyons 02277 and 15477); the two lanes kept off
   one college; no new worker once spend passed about $165 at 07:57Z (`d-no-new-workers-after-0757z-s727`); the
