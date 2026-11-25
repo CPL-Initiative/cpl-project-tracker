@@ -6,7 +6,18 @@ sample course number and title. Sam asked for it on 2026-11-25 so COBIx can find
 title decides the code's common subject far better than the letters do (one code can mean two subjects at two
 colleges: Glendale's AT is Flight Attendant).
 
-Fill `local_subject_title` with the heading as the catalog prints it. Leave every other column as it stands.
+Fill `local_subject_title` with the heading as the catalog prints it, and beside it record where and how it was found
+(the same facts `kb/reference/subject_web_searches.json` keeps, so the recommender reads them and weighs each find):
+
+- `title_source_url`: the page or PDF, with the page for a PDF (`...pdf#page=212`). Blank means not found; never a guess.
+- `title_where`: `catalog`, `college site` or `other`.
+- `title_method`: `subject heading` (the catalog's own heading for the code), `prefix legend` (a catalog table of
+  codes and names), `department label` (a department or program name, weaker) or `course pages`.
+- `searched_on`: the date, `YYYY-MM-DD`.
+- `found_by`: COBIx, a session, or a person's name.
+
+Only a catalog subject heading or prefix legend settles a title; a department label informs it. Leave every other
+column as it stands.
 
 `recommended_title`, `title_confidence`, `title_level` and `title_why` are a starting guess, never an answer: the Subjects
 recommender (`kb/_build_local_subject_recommendations.py`) run for every college. Its sources (the same code at other
