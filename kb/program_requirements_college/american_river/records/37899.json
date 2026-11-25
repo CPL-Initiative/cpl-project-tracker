@@ -140,7 +140,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The excerpt begins on page 645 mid-table: the AA-T heading, core requirements and the rule governing the Economics/Geography/Humanities lists are on page 644, which is not in the text. Blocks are recorded as choose_courses with minimum null because the selection rule is not visible; a reviewer should check page 644."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

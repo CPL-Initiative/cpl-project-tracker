@@ -122,7 +122,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The text starts mid-table on page 362; the A.S. in Automotive Analysis heading, description and the first rows of its Degree Requirements table are on page 361 and not in the text. The section heading is inferred from the degree paragraph ('The Automotive Analysis Associate in Science (A.S.) degree...'). The certificate version lists AT 100 or AT 103, AT 105, AT 180, AT 181 and AT 188 before AT 189, and the A.S. total (35) matches the certificate, suggesting the same courses, but they were not placed because the A.S. text shown does not print them."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": 50,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

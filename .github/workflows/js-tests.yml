@@ -845,6 +845,11 @@ jobs:
       - name: Cheap piles S721 at Gavilan (named gaps, the plan)
         if: matrix.shard == 4
         run: python3 tests/program_piles_s721_gavilan_test.py
+      # S727 at American River: the census's 19 wording-rule records, 14 collected with named gaps (one new kind,
+      # option_lists_read_apart), 5 held; the plan.
+      - name: Cheap piles S727 at American River (named gaps, the plan)
+        if: matrix.shard == 3
+        run: python3 tests/program_piles_s727_arc_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

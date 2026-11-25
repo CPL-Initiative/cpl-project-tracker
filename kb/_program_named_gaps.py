@@ -1771,6 +1771,18 @@ for _g, _s, _a in (
 del _g, _s, _a
 
 
+# S727 at American River (kb/_program_piles_s727_arc.py): concentrations of two lists each, which the reading keeps in
+# one option group with every list its own alternative (the schema cannot nest; the reader's notes say so), so the
+# scorer counts one list where a concentration takes two. No existing kind fits: pair_read_as_alternatives names two
+# courses, pool_figure_not_read a sum of parts. Its score is pool_figure_not_read's 40: in both, the page prints one
+# figure over lists taken together and the record does not read them as one.
+GAPS.setdefault("option_lists_read_apart",
+                "An option the catalog prints takes more than one list under the option's own printed figure, and the "
+                "record's one option group holds each list as an alternative of its own, so the program's units "
+                "cannot be checked against the printed figures.")
+ARITH_SCORE.setdefault("option_lists_read_apart", 40)
+
+
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     """The gap's own claim, that the figures add to the printed total while a list's courses pass its figure,
     measured on the records of its shape (_lists_shape; #3678 and #3679 second readers, finding 2) with keys the
