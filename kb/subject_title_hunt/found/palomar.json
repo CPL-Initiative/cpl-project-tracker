@@ -1,0 +1,1261 @@
+{
+ "college": "Palomar College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:14Z",
+ "run": "45628443522",
+ "plan": "kb/college_reads/subject_index_palomar.json",
+ "how": "The catalog's course section lists each subject as a node titled with its code and name; the run read those nodes through the catalog's own navigation JSON (_getNavigation), one call per subject list.",
+ "titles": [
+  {
+   "code": "AAS",
+   "title": "Asian American Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AAS-Asian American Studies",
+   "node": 33370
+  },
+  {
+   "code": "AB",
+   "title": "Auto Body",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AB-Auto Body",
+   "node": 32574
+  },
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ACCT-Accounting",
+   "node": 32575
+  },
+  {
+   "code": "ACR",
+   "title": "Air Conditioning/Heating/Refrigeration",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ACR-Air Conditioning/Heating/Refrigeration",
+   "node": 32576
+  },
+  {
+   "code": "ACS",
+   "title": "Athletics and Competitive Sports",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ACS-Athletics and Competitive Sports",
+   "node": 32577
+  },
+  {
+   "code": "AIS",
+   "title": "American Indian Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AIS-American Indian Studies",
+   "node": 32578
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AJ-Administration of Justice",
+   "node": 32579
+  },
+  {
+   "code": "AMS",
+   "title": "American Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AMS-American Studies",
+   "node": 32580
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ANTH-Anthropology",
+   "node": 32581
+  },
+  {
+   "code": "AODS",
+   "title": "Alcohol and Other Drug Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AODS-Alcohol and Other Drug Studies",
+   "node": 32582
+  },
+  {
+   "code": "AP AC",
+   "title": "AP Acoustical Installer",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AP AC-AP Acoustical Installer",
+   "node": 32583
+  },
+  {
+   "code": "AP C",
+   "title": "AP Carpentry",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AP C-AP Carpentry",
+   "node": 32584
+  },
+  {
+   "code": "AP DL",
+   "title": "AP Drywall/Lather",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AP DL-AP Drywall/Lather",
+   "node": 32585
+  },
+  {
+   "code": "AP IT",
+   "title": "AP Intelligent Transport",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AP IT-AP Intelligent Transport",
+   "node": 32586
+  },
+  {
+   "code": "AP IW",
+   "title": "AP Inside Wireman",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AP IW-AP Inside Wireman",
+   "node": 32587
+  },
+  {
+   "code": "AP PL",
+   "title": "AP Plasterer",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AP PL-AP Plasterer",
+   "node": 32588
+  },
+  {
+   "code": "AP SC",
+   "title": "AP Sound/Communication Systems Installer",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AP SC-AP Sound/Communication Systems Installer",
+   "node": 32589
+  },
+  {
+   "code": "AP SM",
+   "title": "AP Sheet Metal",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AP SM-AP Sheet Metal",
+   "node": 32590
+  },
+  {
+   "code": "AP WE",
+   "title": "AP Work Experience",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AP WE-AP Work Experience",
+   "node": 32591
+  },
+  {
+   "code": "ARAB",
+   "title": "Arabic",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARAB-Arabic",
+   "node": 32592
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARCH-Architecture",
+   "node": 32593
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ART-Art",
+   "node": 32594
+  },
+  {
+   "code": "ARTD",
+   "title": "Art-Design",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARTD-Art-Design",
+   "node": 32595
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARTH-Art History",
+   "node": 33482
+  },
+  {
+   "code": "ARTI",
+   "title": "Art-Illustration",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARTI-Art-Illustration",
+   "node": 32596
+  },
+  {
+   "code": "AS",
+   "title": "Africana Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AS-Africana Studies",
+   "node": 32597
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASL-American Sign Language",
+   "node": 32598
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASTR-Astronomy",
+   "node": 32599
+  },
+  {
+   "code": "AT",
+   "title": "Automotive Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AT-Automotive Technology",
+   "node": 32600
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BIOL-Biology",
+   "node": 32601
+  },
+  {
+   "code": "BMGT",
+   "title": "Business Management",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BMGT-Business Management",
+   "node": 32602
+  },
+  {
+   "code": "BPED",
+   "title": "Building Performance and Environmental Design",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BPED-Building Performance and Environmental Design",
+   "node": 33481
+  },
+  {
+   "code": "BUS",
+   "title": "Business Education",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUS-Business Education",
+   "node": 32603
+  },
+  {
+   "code": "CE",
+   "title": "Cooperative Education",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CE-Cooperative Education",
+   "node": 32604
+  },
+  {
+   "code": "CFT",
+   "title": "Cabinet and Furniture Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CFT-Cabinet and Furniture Technology",
+   "node": 32605
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CDEV-Child Development",
+   "node": 33483
+  },
+  {
+   "code": "CHDV",
+   "title": "Child Development",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHDV-Child Development",
+   "node": 32606
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHEM-Chemistry",
+   "node": 32607
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHIN-Chinese",
+   "node": 32608
+  },
+  {
+   "code": "CINE",
+   "title": "Cinema",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CINE-Cinema",
+   "node": 32609
+  },
+  {
+   "code": "CMPST",
+   "title": "Composites",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CMPST-Composites",
+   "node": 33399
+  },
+  {
+   "code": "COMM",
+   "title": "Communications",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMM-Communications",
+   "node": 32610
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COUN-Counseling",
+   "node": 32611
+  },
+  {
+   "code": "CS",
+   "title": "Chicano Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CS-Chicano Studies",
+   "node": 32612
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science and Information Technology - Computer Science",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CSCI-Computer Science and Information Technology - Computer Science",
+   "node": 32613
+  },
+  {
+   "code": "CSIT",
+   "title": "Computer Science and Information Technology - Information Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CSIT-Computer Science and Information Technology - Information Technology",
+   "node": 32614
+  },
+  {
+   "code": "CSNT",
+   "title": "Computer Science and Information Technology - Networking",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CSNT-Computer Science and Information Technology - Networking",
+   "node": 32615
+  },
+  {
+   "code": "DA",
+   "title": "Dental Assisting",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DA-Dental Assisting",
+   "node": 32617
+  },
+  {
+   "code": "DBA",
+   "title": "Digital Broadcast Arts",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DBA-Digital Broadcast Arts",
+   "node": 32618
+  },
+  {
+   "code": "DMT",
+   "title": "Diesel Mechanics Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DMT-Diesel Mechanics Technology",
+   "node": 32619
+  },
+  {
+   "code": "DNCE",
+   "title": "Dance",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DNCE-Dance",
+   "node": 32620
+  },
+  {
+   "code": "DT",
+   "title": "Drafting Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DT-Drafting Technology",
+   "node": 32621
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECON-Economics",
+   "node": 32622
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EDUC-Education",
+   "node": 33113
+  },
+  {
+   "code": "EME",
+   "title": "Emergency Medical Education",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EME-Emergency Medical Education",
+   "node": 32623
+  },
+  {
+   "code": "ENG",
+   "title": "English",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENG-English",
+   "node": 32624
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGL-English",
+   "node": 33433
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGR-Engineering",
+   "node": 32625
+  },
+  {
+   "code": "ES",
+   "title": "Earth Sciences",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ES-Earth Sciences",
+   "node": 32626
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ESL-English as a Second Language",
+   "node": 32627
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ETHN-Ethnic Studies",
+   "node": 33471
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FASH-Fashion",
+   "node": 32628
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FIRE-Fire Technology",
+   "node": 32629
+  },
+  {
+   "code": "FL",
+   "title": "Foreign Languages",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FL-Foreign Languages",
+   "node": 32630
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FREN-French",
+   "node": 32631
+  },
+  {
+   "code": "GBST",
+   "title": "Global Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GBST-Global Studies",
+   "node": 33112
+  },
+  {
+   "code": "GC",
+   "title": "Graphic Communications",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GC-Graphic Communications",
+   "node": 32632
+  },
+  {
+   "code": "GCIP",
+   "title": "Graphic Communications - Imaging and Publishing",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GCIP-Graphic Communications - Imaging and Publishing",
+   "node": 32633
+  },
+  {
+   "code": "GCMW",
+   "title": "Graphic Communications - Multimedia and Web",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GCMW-Graphic Communications - Multimedia and Web",
+   "node": 32634
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOG-Geography",
+   "node": 32635
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOL-Geology",
+   "node": 32636
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GERM-German",
+   "node": 32637
+  },
+  {
+   "code": "HE",
+   "title": "Health",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HE-Health",
+   "node": 32638
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIST-History",
+   "node": 32639
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUM-Humanities",
+   "node": 32640
+  },
+  {
+   "code": "IBUS",
+   "title": "International Business",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "IBUS-International Business",
+   "node": 32641
+  },
+  {
+   "code": "ID",
+   "title": "Interior Design",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ID-Interior Design",
+   "node": 32642
+  },
+  {
+   "code": "IT",
+   "title": "Industrial Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "IT-Industrial Technology",
+   "node": 32643
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ITAL-Italian",
+   "node": 32644
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "JAPN-Japanese",
+   "node": 32645
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "JOUR-Journalism",
+   "node": 32646
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "KINE-Kinesiology",
+   "node": 32647
+  },
+  {
+   "code": "LS",
+   "title": "Legal Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LS-Legal Studies",
+   "node": 32648
+  },
+  {
+   "code": "LT",
+   "title": "Library Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LT-Library Technology",
+   "node": 32649
+  },
+  {
+   "code": "MACH",
+   "title": "Machining Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MACH-Machining Technology",
+   "node": 32650
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MATH-Mathematics",
+   "node": 32651
+  },
+  {
+   "code": "MCS",
+   "title": "Multicultural Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MCS-Multicultural Studies",
+   "node": 32652
+  },
+  {
+   "code": "MIL",
+   "title": "Military Leadership",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MIL-Military Leadership",
+   "node": 32653
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUS-Music",
+   "node": 32654
+  },
+  {
+   "code": "N AB",
+   "title": "Noncredit Automotive Body Repair and Refinishing",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N AB-Noncredit Automotive Body Repair and Refinishing",
+   "node": 33480
+  },
+  {
+   "code": "N ABED",
+   "title": "Adult Basic Education",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N ABED-Adult Basic Education",
+   "node": 32655
+  },
+  {
+   "code": "N AEWP",
+   "title": "Adult Education Workforce Preparation",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N AEWP-Adult Education Workforce Preparation",
+   "node": 33432
+  },
+  {
+   "code": "N AP PRE",
+   "title": "Noncredit Pre-Apprenticeship",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N AP PRE-Noncredit Pre-Apprenticeship",
+   "node": 32656
+  },
+  {
+   "code": "N ART",
+   "title": "Noncredit Art",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N ART-Noncredit Art",
+   "node": 32657
+  },
+  {
+   "code": "N AT",
+   "title": "Noncredit Automotive Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N AT-Noncredit Automotive Technology",
+   "node": 33550
+  },
+  {
+   "code": "N BASC",
+   "title": "Basic Education",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N BASC-Basic Education",
+   "node": 32658
+  },
+  {
+   "code": "N BMGT",
+   "title": "Noncredit Business Management",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N BMGT-Noncredit Business Management",
+   "node": 32659
+  },
+  {
+   "code": "N BUS",
+   "title": "Noncredit Business",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N BUS-Noncredit Business",
+   "node": 32660
+  },
+  {
+   "code": "N CSIT",
+   "title": "Noncredit Computer Science Information Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N CSIT-Noncredit Computer Science Information Technology",
+   "node": 32661
+  },
+  {
+   "code": "N CTED",
+   "title": "Career and Technical Education",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N CTED-Career and Technical Education",
+   "node": 32662
+  },
+  {
+   "code": "N CTZN",
+   "title": "Citizenship",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N CTZN-Citizenship",
+   "node": 32663
+  },
+  {
+   "code": "N ESL",
+   "title": "English as a Second Language",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N ESL-English as a Second Language",
+   "node": 32664
+  },
+  {
+   "code": "N GCIP",
+   "title": "Noncredit Graphic Communications Imaging and Publishing",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N GCIP-Noncredit Graphic Communications Imaging and Publishing",
+   "node": 33472
+  },
+  {
+   "code": "N GEOG",
+   "title": "Noncredit Geography",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N GEOG-Noncredit Geography",
+   "node": 32665
+  },
+  {
+   "code": "N KINE",
+   "title": "Noncredit Kinesiology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N KINE-Noncredit Kinesiology",
+   "node": 32666
+  },
+  {
+   "code": "N MATH",
+   "title": "Noncredit Mathematics",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N MATH-Noncredit Mathematics",
+   "node": 32667
+  },
+  {
+   "code": "N MEDC",
+   "title": "Noncredit Medical",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N MEDC-Noncredit Medical",
+   "node": 32668
+  },
+  {
+   "code": "N MUS",
+   "title": "Noncredit Music",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N MUS-Noncredit Music",
+   "node": 32669
+  },
+  {
+   "code": "N NURS",
+   "title": "Noncredit Nursing",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N NURS-Noncredit Nursing",
+   "node": 33553
+  },
+  {
+   "code": "N NUTR",
+   "title": "Noncredit Nutrition",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N NUTR-Noncredit Nutrition",
+   "node": 33473
+  },
+  {
+   "code": "N PHOT",
+   "title": "Noncredit Photography",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N PHOT-Noncredit Photography",
+   "node": 32670
+  },
+  {
+   "code": "N READ",
+   "title": "Noncredit Reading",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N READ-Noncredit Reading",
+   "node": 32671
+  },
+  {
+   "code": "N SOC",
+   "title": "Noncredit Sociology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N SOC-Noncredit Sociology",
+   "node": 32672
+  },
+  {
+   "code": "N WELD",
+   "title": "Noncredit Welding",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "N WELD-Noncredit Welding",
+   "node": 33371
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing Education",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NURS-Nursing Education",
+   "node": 32673
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NUTR-Nutrition",
+   "node": 32674
+  },
+  {
+   "code": "OCN",
+   "title": "Oceanography",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "OCN-Oceanography",
+   "node": 32675
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHIL-Philosophy",
+   "node": 32676
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHOT-Photography",
+   "node": 32677
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Science",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHSC-Physical Science",
+   "node": 32678
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHYS-Physics",
+   "node": 32679
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POLS-Political Science",
+   "node": 33435
+  },
+  {
+   "code": "POSC",
+   "title": "Political Science",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POSC-Political Science",
+   "node": 32680
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSYC-Psychology",
+   "node": 32681
+  },
+  {
+   "code": "PWM",
+   "title": "Public Works Management",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PWM-Public Works Management",
+   "node": 32682
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "RE-Real Estate",
+   "node": 32683
+  },
+  {
+   "code": "READ",
+   "title": "Reading",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "READ-Reading",
+   "node": 32684
+  },
+  {
+   "code": "RS",
+   "title": "Religious Studies",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "RS-Religious Studies",
+   "node": 32685
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOC-Sociology",
+   "node": 32686
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOCI-Sociology",
+   "node": 33484
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SPAN-Spanish",
+   "node": 32687
+  },
+  {
+   "code": "SPCH",
+   "title": "Speech",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SPCH-Speech",
+   "node": 32688
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "STAT-Statistics",
+   "node": 33434
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work and Human Services",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SWHS-Social Work and Human Services",
+   "node": 32689
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "TA-Theatre Arts",
+   "node": 32690
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WELD-Welding",
+   "node": 32691
+  },
+  {
+   "code": "WTE",
+   "title": "Water Technology Education",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WTE-Water Technology Education",
+   "node": 32692
+  },
+  {
+   "code": "WWT",
+   "title": "Wastewater Technology Education",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WWT-Wastewater Technology Education",
+   "node": 32693
+  },
+  {
+   "code": "ZEVTEC",
+   "title": "Zero Emissions Vehicle Technology",
+   "url": "https://palomar.curriqunet.com/catalog/_getNavigation?id=27&parentId=33385",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ZEVTEC-Zero Emissions Vehicle Technology",
+   "node": 33398
+  }
+ ]
+}

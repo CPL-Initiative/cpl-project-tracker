@@ -1,0 +1,829 @@
+{
+ "college": "Las Positas College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:51:56Z",
+ "run": "45626743727",
+ "plan": "kb/college_reads/subject_index_las_positas.json",
+ "how": "The catalog's course section lists each subject as a node titled with its code and name; the run read those nodes through the catalog's own navigation JSON (_getNavigation), one call per subject list.",
+ "titles": [
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Administration of Justice (AJ)",
+   "node": 1126
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "American Sign Language (ASL)",
+   "node": 1133
+  },
+  {
+   "code": "ANTR",
+   "title": "Anthropology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Anthropology (ANTR)",
+   "node": 1127
+  },
+  {
+   "code": "APAG",
+   "title": "Apprenticeship Automotive Group",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Apprenticeship Automotive Group (APAG)",
+   "node": 2183
+  },
+  {
+   "code": "APCL",
+   "title": "Apprenticeship Construction Laborers",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Apprenticeship Construction Laborers (APCL)",
+   "node": 1128
+  },
+  {
+   "code": "APMT",
+   "title": "Apprenticeship Marine Technology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Apprenticeship Marine Technology (APMT)",
+   "node": 1129
+  },
+  {
+   "code": "APWX",
+   "title": "Apprenticeship Work Experience",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Apprenticeship Work Experience (APWX)",
+   "node": 1130
+  },
+  {
+   "code": "ARHS",
+   "title": "Art History",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art History (ARHS, ARTH)",
+   "node": 1132
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art History (ARHS, ARTH)",
+   "node": 1132
+  },
+  {
+   "code": "ARTS",
+   "title": "Arts",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Arts (ARTS)",
+   "node": 1131
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Astronomy (ASTR)",
+   "node": 1134
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Automotive Technology (AUTO)",
+   "node": 1135
+  },
+  {
+   "code": "AVI",
+   "title": "Aviation",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Aviation (AVI)",
+   "node": 1136
+  },
+  {
+   "code": "BIO",
+   "title": "Biological Sciences",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Biological Sciences (BIO)",
+   "node": 1137
+  },
+  {
+   "code": "BUSN",
+   "title": "Business",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Business (BUSN)",
+   "node": 1138
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Chemistry (CHEM)",
+   "node": 1139
+  },
+  {
+   "code": "CMST",
+   "title": "Communication Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Communication Studies (CMST, COMM)",
+   "node": 1140
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Communication Studies (CMST, COMM)",
+   "node": 1140
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Information Systems (CIS)",
+   "node": 1141
+  },
+  {
+   "code": "CNT",
+   "title": "Computer Networking Technology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Networking Technology (CNT)",
+   "node": 1142
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Science (CS)",
+   "node": 1143
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Dance (DANC)",
+   "node": 1144
+  },
+  {
+   "code": "ECE",
+   "title": "Early Care and Education",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Early Care and Education (ECE)",
+   "node": 1145
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Economics (ECON)",
+   "node": 1146
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emergency Medical Services (EMS)",
+   "node": 1147
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Engineering (ENGR)",
+   "node": 1148
+  },
+  {
+   "code": "ENG",
+   "title": "English",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English (ENG, ENGL)",
+   "node": 1149
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English (ENG, ENGL)",
+   "node": 1149
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English as a Second Language (ESL)",
+   "node": 1151
+  },
+  {
+   "code": "EVSC",
+   "title": "Environmental Science",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Environmental Science (EVSC)",
+   "node": 1153
+  },
+  {
+   "code": "EVST",
+   "title": "Environmental Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Environmental Studies (EVST)",
+   "node": 1154
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Ethnic Studies (ETHS)",
+   "node": 1152
+  },
+  {
+   "code": "FLMS",
+   "title": "Film Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Film Studies (FLMS)",
+   "node": 1155
+  },
+  {
+   "code": "FST",
+   "title": "Fire Service Technology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Fire Service Technology (FST)",
+   "node": 1156
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "French (FREN)",
+   "node": 1157
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geography (GEOG)",
+   "node": 1159
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geology (GEOL)",
+   "node": 1160
+  },
+  {
+   "code": "GS",
+   "title": "Global Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Global Studies (GS)",
+   "node": 1161
+  },
+  {
+   "code": "GDDM",
+   "title": "Graphic Design & Digital Media",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Graphic Design & Digital Media (GDDM)",
+   "node": 1158
+  },
+  {
+   "code": "HEA",
+   "title": "Health",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Health (HEA)",
+   "node": 1162
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "History (HIST)",
+   "node": 1163
+  },
+  {
+   "code": "HNRS",
+   "title": "Honors",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Honors (HNRS)",
+   "node": 1209
+  },
+  {
+   "code": "HORT",
+   "title": "Horticulture",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Horticulture (HORT)",
+   "node": 1164
+  },
+  {
+   "code": "HUMN",
+   "title": "Humanities",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Humanities (HUMN)",
+   "node": 1165
+  },
+  {
+   "code": "IDN",
+   "title": "Independent Study",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Independent Study (IDN)",
+   "node": 1166
+  },
+  {
+   "code": "INTD",
+   "title": "Interior Design",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Interior Design (INTD)",
+   "node": 1167
+  },
+  {
+   "code": "JAMS",
+   "title": "Journalism and Media Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Journalism and Media Studies (JAMS)",
+   "node": 1168
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Kinesiology (KIN)",
+   "node": 1169
+  },
+  {
+   "code": "LRNS",
+   "title": "Learning Skills",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Learning Skills (LRNS)",
+   "node": 1210
+  },
+  {
+   "code": "LGBT",
+   "title": "Lesbian, Gay, Bisexual, Transgender, and Queer Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Lesbian, Gay, Bisexual, Transgender, and Queer Studies (LGBT)",
+   "node": 1170
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Library Studies (LIBR)",
+   "node": 1171
+  },
+  {
+   "code": "MKTG",
+   "title": "Marketing",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Marketing (MKTG)",
+   "node": 1172
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mathematics (MATH)",
+   "node": 1173
+  },
+  {
+   "code": "MIND",
+   "title": "Mindfulness",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mindfulness (MIND)",
+   "node": 1174
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music (MUS)",
+   "node": 1175
+  },
+  {
+   "code": "NAJ",
+   "title": "Noncredit Administration of Justice",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Administration of Justice (NAJ)",
+   "node": 1212
+  },
+  {
+   "code": "NARH",
+   "title": "Noncredit Art History",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Art History (NARH)",
+   "node": 1213
+  },
+  {
+   "code": "NAUT",
+   "title": "Noncredit Automotive Technology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Automotive Technology (NAUT)",
+   "node": 1176
+  },
+  {
+   "code": "NAVI",
+   "title": "Noncredit Aviation",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Aviation (NAVI)",
+   "node": 1177
+  },
+  {
+   "code": "NBIO",
+   "title": "Noncredit Biology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Biology (NBIO)",
+   "node": 1178
+  },
+  {
+   "code": "NBUS",
+   "title": "Noncredit Business",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Business (NBUS)",
+   "node": 1179
+  },
+  {
+   "code": "NCIS",
+   "title": "Noncredit Computer Information Systems",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Computer Information Systems (NCIS)",
+   "node": 1180
+  },
+  {
+   "code": "NENG",
+   "title": "Noncredit English",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit English (NENG)",
+   "node": 1181
+  },
+  {
+   "code": "NESL",
+   "title": "Noncredit English as a Second Language",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit English as a Second Language (NESL)",
+   "node": 1182
+  },
+  {
+   "code": "NFRN",
+   "title": "Noncredit French",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit French (NFRN)",
+   "node": 1211
+  },
+  {
+   "code": "NKIN",
+   "title": "Noncredit Kinesiology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Kinesiology (NKIN)",
+   "node": 1183
+  },
+  {
+   "code": "NLIB",
+   "title": "Noncredit Library Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Library Studies (NLIB)",
+   "node": 1184
+  },
+  {
+   "code": "NMAT",
+   "title": "Noncredit Mathematics",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Mathematics (NMAT)",
+   "node": 1185
+  },
+  {
+   "code": "NMUS",
+   "title": "Noncredit Music",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Music (NMUS)",
+   "node": 2203
+  },
+  {
+   "code": "NPCN",
+   "title": "Noncredit Psychology-Counseling",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Psychology-Counseling (NPCN)",
+   "node": 1187
+  },
+  {
+   "code": "NTUT",
+   "title": "Noncredit Tutoring",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Noncredit Tutoring (NTUT)",
+   "node": 1188
+  },
+  {
+   "code": "NTRN",
+   "title": "Nutrition",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Nutrition (NTRN)",
+   "node": 1189
+  },
+  {
+   "code": "OSH",
+   "title": "Occupational Health and Safety",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Occupational Health and Safety (OSH)",
+   "node": 1190
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Philosophy (PHIL)",
+   "node": 1191
+  },
+  {
+   "code": "PHTO",
+   "title": "Photography",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Photography (PHTO)",
+   "node": 1192
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physics (PHYS)",
+   "node": 1193
+  },
+  {
+   "code": "POLI",
+   "title": "Political Science",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Political Science (POLI, POLS)",
+   "node": 1194
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Political Science (POLI, POLS)",
+   "node": 1194
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Psychology (PSYC)",
+   "node": 1195
+  },
+  {
+   "code": "PCN",
+   "title": "Psychology-Counseling",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Psychology-Counseling (PCN)",
+   "node": 1196
+  },
+  {
+   "code": "RADS",
+   "title": "Radiation Safety",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Radiation Safety (RADS)",
+   "node": 1197
+  },
+  {
+   "code": "RELS",
+   "title": "Religious Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Religious Studies (RELS)",
+   "node": 1198
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Sociology (SOC)",
+   "node": 1199
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Spanish (SPAN)",
+   "node": 1200
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Statistics (STAT)",
+   "node": 1201
+  },
+  {
+   "code": "THEA",
+   "title": "Theater Arts",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Theater Arts (THEA)",
+   "node": 1202
+  },
+  {
+   "code": "TUTR",
+   "title": "Tutoring",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Tutoring (TUTR)",
+   "node": 1203
+  },
+  {
+   "code": "VWT",
+   "title": "Viticulture and Winery Technology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Viticulture and Winery Technology (VWT)",
+   "node": 1204
+  },
+  {
+   "code": "WLDT",
+   "title": "Welding Technology",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Welding Technology (WLDT)",
+   "node": 1205
+  },
+  {
+   "code": "WMST",
+   "title": "Women's Studies",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Women's Studies (WMST)",
+   "node": 1206
+  },
+  {
+   "code": "WRKX",
+   "title": "Work Experience",
+   "url": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Work Experience (WRKX)",
+   "node": 1207
+  }
+ ]
+}

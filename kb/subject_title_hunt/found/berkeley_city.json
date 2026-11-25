@@ -1,0 +1,451 @@
+{
+ "college": "Berkeley City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:51:22Z",
+ "run": "45626743727",
+ "plan": "kb/college_reads/subject_index_berkeley_city.json",
+ "how": "The catalog's course section lists each subject as a node titled with its code and name; the run read those nodes through the catalog's own navigation JSON (_getNavigation), one call per subject list.",
+ "titles": [
+  {
+   "code": "AFRAM",
+   "title": "African American Studies",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AFRAM-African American Studies",
+   "node": 39666
+  },
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ANTHR-Anthropology",
+   "node": 39667
+  },
+  {
+   "code": "ART",
+   "title": "Art and Art History",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ART & ARTH-Art and Art History",
+   "node": 39668
+  },
+  {
+   "code": "ARTH",
+   "title": "Art and Art History",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ART & ARTH-Art and Art History",
+   "node": 39668
+  },
+  {
+   "code": "ASAME",
+   "title": "Asian & Asian American Studies",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASAME-Asian & Asian American Studies",
+   "node": 39669
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASL-American Sign Language",
+   "node": 39670
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASTR-Astronomy",
+   "node": 39671
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BIOL-Biology",
+   "node": 39672
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUS-Business",
+   "node": 39673
+  },
+  {
+   "code": "CHDEV",
+   "title": "Child Development",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHDEV-Child Development",
+   "node": 39674
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHEM-Chemistry",
+   "node": 39675
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CIS-Computer Information Systems",
+   "node": 39676
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMM-Communication Studies",
+   "node": 39677
+  },
+  {
+   "code": "COPED",
+   "title": "Cooperative Work Experience",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COPED-Cooperative Work Experience",
+   "node": 39678
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COUN-Counseling",
+   "node": 39679
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECON-Economics",
+   "node": 39680
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EDUC-Education",
+   "node": 39681
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGL-English",
+   "node": 39682
+  },
+  {
+   "code": "ESOL",
+   "title": "English for Speakers of Other Languages",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ESOL-English for Speakers of Other Languages",
+   "node": 39683
+  },
+  {
+   "code": "ETHST",
+   "title": "Ethnic Studies",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ETHST-Ethnic Studies",
+   "node": 39684
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FREN-French",
+   "node": 39685
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOG-Geography",
+   "node": 39686
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOL-Geology",
+   "node": 39687
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIST-History",
+   "node": 39688
+  },
+  {
+   "code": "HLTED",
+   "title": "Health Education",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HLTED-Health Education",
+   "node": 39689
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUMAN-Humanities",
+   "node": 39690
+  },
+  {
+   "code": "HUSV",
+   "title": "Human Services",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUSV-Human Services",
+   "node": 39691
+  },
+  {
+   "code": "LIS",
+   "title": "Library Information Studies",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LIS-Library Information Studies",
+   "node": 39692
+  },
+  {
+   "code": "LRNRE",
+   "title": "Learning Resources",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LRNRE-Learning Resources",
+   "node": 39693
+  },
+  {
+   "code": "M/LAT",
+   "title": "Mexican & Latin American Studies",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "M/LAT-Mexican & Latin American Studies",
+   "node": 39694
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MATH & STAT-Mathematics",
+   "node": 39695
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MATH & STAT-Mathematics",
+   "node": 39695
+  },
+  {
+   "code": "MM/AN",
+   "title": "Multimedia Arts Animation and Game Design",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MM/AN- Multimedia Arts Animation and Game Design",
+   "node": 39696
+  },
+  {
+   "code": "MM/DI",
+   "title": "Multimedia Arts Digital Imaging",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MM/DI- Multimedia Arts Digital Imaging",
+   "node": 39697
+  },
+  {
+   "code": "MM/MW",
+   "title": "Multimedia Arts Mobile and Web",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MM/MW- Multimedia Arts Mobile and Web",
+   "node": 39698
+  },
+  {
+   "code": "MM/VI",
+   "title": "Multimedia Arts Video",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MM/VI- Multimedia Arts Video",
+   "node": 39699
+  },
+  {
+   "code": "MMART",
+   "title": "Multimedia Arts",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MMART-Multimedia Arts",
+   "node": 39700
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUSIC-Music",
+   "node": 39701
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHIL-Philosophy",
+   "node": 39702
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHYS-Physics",
+   "node": 39703
+  },
+  {
+   "code": "PHYSC",
+   "title": "Physical Science",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHYSC-Physical Science",
+   "node": 39704
+  },
+  {
+   "code": "POSCI",
+   "title": "Political Science",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POSCI & POLS-Political Science",
+   "node": 39705
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POSCI & POLS-Political Science",
+   "node": 39705
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSYCH & PSYC-Psychology",
+   "node": 39706
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSYCH & PSYC-Psychology",
+   "node": 39706
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOC-Sociology",
+   "node": 39707
+  },
+  {
+   "code": "SOCSC",
+   "title": "Social Science",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOCSC-Social Science",
+   "node": 39708
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SPAN-Spanish",
+   "node": 39709
+  },
+  {
+   "code": "WS",
+   "title": "Women's Studies",
+   "url": "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&parentId=39964",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WS-Women's Studies",
+   "node": 39710
+  }
+ ]
+}
