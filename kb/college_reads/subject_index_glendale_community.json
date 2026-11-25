@@ -1,29 +1,18 @@
 {
- "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Glendale's online catalog is a Coursedog app; its PDF catalog prints each subject's heading above its first course description (pages 98 on, glendale_course_desc_*.json). This read lists the catalogs page's PDF links (shown, not followed) and prints only the lines above each subject's first course in the PDF, as el_camino_subject_headings.json does. Two loads, no model call.",
+ "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Glendale's online catalog is a Coursedog app; its PDF catalog prints each subject's heading above its first course description (pages 98 on, glendale_course_desc_*.json). This read lists the catalogs page's PDF links (shown, not followed) and prints only the lines above each subject's first course in the PDF, as el_camino_subject_headings.json does. Two loads, no model call. Second read: the first (run 45628459054) found the catalogs page lists the 2025-2026 catalog as the newest PDF (the 2026-2027 catalog is the Coursedog app alone), and the PDF load timed out at 180 s. Glendale's descriptions print the number and title above the units, and the description's first sentence opens with the code ('BIOL 140 is a general introduction', run 41007920360), so the heading pattern is that sentence and the lines kept above it reach back 12. One load, no model call.",
  "college": "Glendale Community College",
  "questions": {
-  "catalogs": "Which catalog PDFs the catalogs page links, so the newest is the one read.",
   "subject_headings": "The subject heading the catalog prints above each subject's first course."
  },
  "keywords": [
   "\\bUnits?\\b"
  ],
  "subject_context": {
-  "heading": "^(?P<subj>[A-Z][A-Z &.]{0,9}?) (?P<num>[A-Z]?\\d{1,4}[A-Z]{0,4}) (?P<title>.+)$",
-  "before": 4,
-  "start_page": 95,
-  "units": "\\bUnits?\\b",
-  "units_inline": "\\bUnits?\\b",
-  "within": 3
+  "heading": "^(?P<subj>[A-Z]{2,6}(?: S)?) (?P<num>C?\\d{3,4}[A-Z]{0,2}) (?P<title>[a-z].+)$",
+  "before": 12,
+  "start_page": 95
  },
  "pages": [
-  {
-   "url": "https://www.glendale.edu/academics/catalogs/index.html",
-   "answers": [
-    "catalogs"
-   ],
-   "links": "\\.pdf|catalog"
-  },
   {
    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
    "answers": [
