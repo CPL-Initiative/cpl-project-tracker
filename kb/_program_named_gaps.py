@@ -229,14 +229,6 @@ GAPS.setdefault("degree_within_map_range",
                 "page prints as needed to graduate; the major adds up to its printed major total, and the degree's "
                 "units as read fall inside the map's range and match neither end.")
 ARITH_SCORE.setdefault("degree_within_map_range", 50)
-# S727 at Antelope Valley (kb/_program_ge_other_pattern_s727v.py): a Cal-GETC degree whose page prints general
-# education figures only for CSU GE and IGETC (43028, held out of ge_units_not_read by HELD_GE_FIGURE). Its score is
-# ge_units_not_read's 50: the major adds up, and the named pattern's units are all that is missing.
-GAPS.setdefault("ge_figures_other_pattern",
-                "The degree names one general education pattern, and the page prints general education figures only "
-                "for other patterns, so no units for the named pattern were read and the degree's units cannot be "
-                "added. Its major adds up to the printed major total.")
-ARITH_SCORE.setdefault("ge_figures_other_pattern", 50)
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
