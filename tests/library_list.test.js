@@ -148,6 +148,21 @@ function load(hash, withList) {
   check("the List is commons_list.js, loaded on first use", /loadScript\("commons_list\.js", "CPL_COMMONS_LIST"/.test(SRC) && /CPL_COMMONS_LIST\.create\(listSpec\(\)\)/.test(SRC));
   check("its view reports its address for a sign-in link", /viewAddress\("library"/.test(SRC));
 
+  // The side panel matches the List (Sam, 2026-11-25: "the libraries sidebar should be same height as the listview and
+  // use same font type and size. height should be optimized to window hight"). jsdom has no layout, so these pin the
+  // rules; the edges were measured in Chromium at 1366x900 (PR #3865).
+  const css = Array.prototype.map.call(doc.querySelectorAll("style"), function (s) { return s.textContent; }).join("\n");
+  check("⭐ the List's rows and the panel's body take one type: the same font size and line height vars",
+    /#library-root \.libl-table\{font-size:var\(--lib-row-font\);line-height:var\(--lib-row-lh\);\}/.test(css) &&
+    /#library-root \.libl-panel \.libl-pbody\{font-family:inherit;font-size:var\(--lib-row-font\);line-height:var\(--lib-row-lh\);\}/.test(css) &&
+    /\.libl-panel \.libl-pbody :is\([^)]*\bp\b[^)]*\bdd\b[^)]*\)\{font-size:inherit;\}/.test(css));
+  check("⭐ beside each other, the List and the panel carry one height, sized to the window",
+    /@media \(min-width: 901px\)\{[^@]*#library-root \.libl-split > \.libl-wrap,#library-root \.libl-split > \.libl-panel\{box-sizing:border-box;height:var\(--lib-fill-h,calc\(100dvh - 160px\)\);max-height:var\(--lib-fill-h/.test(css));
+  check("the height is measured from where the List starts, and the panel's body keeps its own scroller",
+    /^\d+px$/.test(m.root.style.getPropertyValue("--lib-fill-h")) && /getBoundingClientRect\(\)\.top/.test(SRC) &&
+    /panel > \." \+ P \+ "pbody\{flex:1 1 auto;min-height:0;overflow-y:auto/.test(LIST), m.root.style.getPropertyValue("--lib-fill-h"));
+  check("under 900px the panel still covers the view", /@media \(max-width: 900px\)\{\." \+ P \+ "panel\{flex:1 1 100% !important/.test(LIST));
+
   let pass = 0;
   results.forEach(([n, ok, why]) => { if (ok) pass += 1; console.log((ok ? "ok   " : "FAIL ") + n + (ok || !why ? "" : "  — " + why)); });
   console.log("\nlibrary_list.test.js: " + pass + "/" + results.length + " checks passed");

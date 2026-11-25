@@ -403,6 +403,20 @@
     var R = "#" + ROOT_ID;
     var css = [
       R + "{text-align:left;color:var(--text-body);}",
+      // The List and its side panel share one height and one type (Sam, 2026-11-25: "the libraries sidebar should be
+      // same height as the listview and use same font type and size. height should be optimized to window hight").
+      // fitList() measures where the List starts and sets --lib-fill-h so both end at the window's foot; each scrolls
+      // inside itself. Below 900px the panel covers the view as before (commons_list.js), so the rule stops there.
+      R + "{--lib-row-font:.75rem;--lib-row-lh:1.3;}",
+      R + " .libl-table{font-size:var(--lib-row-font);line-height:var(--lib-row-lh);}",
+      R + " .libl-panel .libl-pbody{font-family:inherit;font-size:var(--lib-row-font);line-height:var(--lib-row-lh);}",
+      R + " .libl-panel .libl-pbody :is(p,li,dt,dd,span,a,b,button,label,input,textarea,select,code,td,th,summary){font-size:inherit;}",
+      "@media (min-width: 901px){" +
+        R + " .libl-wrap{max-height:var(--lib-fill-h,calc(100dvh - 160px));}" +
+        R + " .libl-split{align-items:stretch;}" +
+        R + " .libl-split > .libl-wrap," + R + " .libl-split > .libl-panel{box-sizing:border-box;height:var(--lib-fill-h,calc(100dvh - 160px));max-height:var(--lib-fill-h,calc(100dvh - 160px));}" +
+        R + " .libl-split > .libl-panel{position:relative;top:auto;}" +
+      "}",
       R + " .lib-lede{margin:0 0 14px;font-size:1.02rem;max-width:var(--cpl-measure,none);}",
       R + " .lib-views{display:flex;flex-wrap:wrap;gap:4px 18px;margin:0 0 14px;}",
       R + " .lib-views button{background:none;border:0;padding:0 2px;min-height:24px;font:inherit;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;cursor:pointer;}",
@@ -3983,13 +3997,22 @@
     var focusId = document.activeElement && document.activeElement.id;
     root.innerHTML = head + attention + controls + list + how;
     var lh = document.getElementById("lib-list"), E = lh && listEngine();
-    if (E) E.render(lh);
+    if (E) { E.render(lh); fitList(); }
     Object.keys(typed).forEach(function (id) {
       if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || false) return;
       var n = document.getElementById(id); if (n) n.value = typed[id];
     });
     painted = { form: !!state.form, formFor: state.formFor, edit: state.edit };
     if (focusId) { var again = document.getElementById(focusId); if (again && again.focus) again.focus(); }
+  }
+
+  // The List and its side panel fill the window below where the List starts (Sam, 2026-11-25). The height sits on the
+  // root, which the List's own redraws leave alone, so opening a row's panel keeps it.
+  function fitList() {
+    var root = document.getElementById(ROOT_ID), w = root && root.querySelector(".libl-wrap");
+    if (!w || !window.innerHeight) return;
+    var top = w.getBoundingClientRect().top + (window.pageYOffset || 0);
+    root.style.setProperty("--lib-fill-h", Math.max(240, Math.floor(window.innerHeight - top - 16)) + "px");
   }
 
   // ── events (delegated on the root, wired once) ──────────────────────────────
@@ -4521,6 +4544,9 @@
       else if ((v = b.getAttribute("data-unpub"))) setPublic(v, false);
       else if ((v = b.getAttribute("data-view"))) setView(v, true);
     });
+    window.addEventListener("resize", fitList);
+    // The box above the List folds open and shut without a render, and the List's top moves with it.
+    root.addEventListener("toggle", fitList, true);
     window.addEventListener("hashchange", function () {
       var v = viewFromHash();
       if (v !== state.view && document.getElementById(ROOT_ID)) setView(v, false);
