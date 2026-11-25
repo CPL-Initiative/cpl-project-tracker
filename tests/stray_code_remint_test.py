@@ -27,7 +27,7 @@ def check(name, cond):
     print(("PASS  " if cond else "FAIL  ") + name)
 
 
-FIELDS = ["college", "local_subject", "local_subject_title", "proposed_common_subject", "discipline", "level", "basis",
+FIELDS = ["college", "local_subject", "local_subject_title", "proposed_common_subject", "discipline", "confidence", "basis",
           "filed_common", "filed_by", "courses", "stray_mids", "sample_course_titles", "rescored"]
 
 
@@ -40,8 +40,8 @@ def write_csv(path, rows):
 
 
 def fixture(curation=None, decisions=None, articulations=None):
-    """Three colleges, one stray code STRY. M1001: one course at High X. M1002: a course at High X and one at Low Z
-    (mixed). M1003: a course at None Y only (out of scope). M1004 merges into M1001. M1005: one course at Medium W."""
+    """Three colleges, one stray code STRY. M1001: one course at X (95). M1002: a course at X and one at Z (89)
+    (mixed). M1003: a course at Y only (blank, out of scope). M1004 merges into M1001. M1005: one course at W (90)."""
     colleges = ["X College", "Y College", "Z College", "W College"]
     rows = [[0, "A", "STRY", "1", "Painting"], [0, "A2", "STRY", "2", "Drawing"], [2, "B", "STRY", "3", "Drawing"],
             [1, "C", "STRY", "4", "Sculpture"], [0, "D", "STRY", "5", "Etching"], [3, "E", "WSTR", "6", "Clay"]]
@@ -72,20 +72,21 @@ def fixture(curation=None, decisions=None, articulations=None):
 tmp = tempfile.mkdtemp(prefix="stray_remint_test_")
 csv_path = os.path.join(tmp, "rescore.csv")
 write_csv(csv_path, [
-    {"college": "X College", "local_subject": "STRY", "proposed_common_subject": "ARTS", "level": "High"},
-    {"college": "W College", "local_subject": "WSTR", "proposed_common_subject": "ARTS", "level": "Medium"},
-    {"college": "Z College", "local_subject": "STRY", "proposed_common_subject": "ARTS", "level": "Low"},
-    {"college": "Y College", "local_subject": "STRY", "proposed_common_subject": "", "level": "None"}])
+    {"college": "X College", "local_subject": "STRY", "proposed_common_subject": "ARTS", "confidence": "95"},
+    {"college": "W College", "local_subject": "WSTR", "proposed_common_subject": "ARTS", "confidence": "90"},
+    {"college": "Z College", "local_subject": "STRY", "proposed_common_subject": "ARTS", "confidence": "89"},
+    {"college": "Y College", "local_subject": "STRY", "proposed_common_subject": "", "confidence": ""}])
 scope, all_rows = sr.read_scope(csv_path)
 
-# 1. Only High and Medium are in scope.
-check("scope: High and Medium are in, Low and None are out",
+# 1. Only rows at or above the threshold (90 of 100) are in scope: 90 is in, 89 and a blank are out.
+check("scope: 95 and 90 are in, 89 and a blank are out",
       set(scope) == {("X College", "STRY"), ("W College", "WSTR")} and len(all_rows) == 4)
 real_scope, real_all = sr.read_scope(os.path.join(ROOT, sr.RESCORE))
-check("scope: the committed rescore gives 62 local subjects, every one High or Medium",
-      len(real_scope) == 62 and {r["level"] for r in real_scope.values()} == {"High", "Medium"})
-check("scope: no committed Low or None row is taken", all(r["level"] in ("High", "Medium") for r in real_scope.values())
-      and len([r for r in real_all.values() if r["level"] in ("Low", "None")]) == 54)
+check("scope: the committed rescore gives 66 local subjects, every one at 90 or more",
+      len(real_scope) == 66 and all(int(r["confidence"]) >= sr.THRESHOLD for r in real_scope.values()))
+check("scope: no committed row under 90 is taken, and the rescore carries no level column",
+      len([r for r in real_all.values() if int(r["confidence"] or 0) < sr.THRESHOLD]) == 50
+      and all("level" not in r for r in real_all.values()))
 
 plan = sr.compute_plan(fixture(), scope, all_rows, pins=None)
 check("plan: the all-in-scope id retires", "STRY M1001" in plan["retire"] and "WSTR M1005" in plan["retire"])
@@ -160,8 +161,15 @@ with open(os.path.join(out_dir, written[0].split(os.sep)[0], "retire.json"), enc
     receipt = json.load(f)
 check("dry run: the receipt says DRY RUN and carries no applied stamp",
       "DRY RUN" in receipt["_status"] and "_applied_at" not in receipt)
-check("dry run: the receipt retires no id outside the High and Medium subjects",
+check("dry run: the receipt retires no id outside the subjects at 90 or more",
       all((c["college"], c["subject"]) in real_scope for v in receipt["retire"].values() for c in v["courses"]))
+
+# 3b. The committed rescore and its picks list are what kb/_stray_code_rescore.py writes (no Low/Medium/High: a 0-100
+# confidence; r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25).
+import subprocess  # noqa: E402
+check("rescore: the committed CSV and picks list are current",
+      subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_stray_code_rescore.py"), "--check"],
+                     capture_output=True).returncode == 0)
 
 # 4. The apply refuses.
 for argv, why in ((["--apply"], "without --receipt and --fresh-read"),
