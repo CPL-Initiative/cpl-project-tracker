@@ -110,6 +110,6 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 - 07:27Z: Shasta's plan s727c applied after a clean md5 pre-read (migrate 45568232574, 4 live with named gaps);
   `.apply` restored (`66790a5d`). Santa Barbara City's plan s727d (13: 7 passing, 6 named gaps, a new kind
   `required_list_outside_total`) to an Opus reader; Butte's reconcile worker started.
-- 07:40Z: American River fixed at 12 rows (a second new kind, `noted_total_cut_off`, for 20130) to round 2 with its
+- 07:33Z: American River fixed at 12 rows (a second new kind, `noted_total_cut_off`, for 20130) to round 2 with its
   reader. Canyons fixed at 7 rows; the conductor asked for a course-list cap of 50 on `heading_not_in_text` before
   round 2, since 43388's list cannot be told from its page's other lists.
