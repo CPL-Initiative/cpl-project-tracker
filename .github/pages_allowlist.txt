@@ -68,6 +68,7 @@ withhold kb/*_dryrun
 withhold kb/*_fold
 withhold kb/*_out
 withhold kb/subj4_*
+withhold kb/subject_title_hunt
 # Audit provenance: only the slim latest.json summaries are served.
 withhold kb/exhibit_audit/*.md
 # The pair-keyed re-point list (S678, #3472): the reviewed apply reads it; no page does.
