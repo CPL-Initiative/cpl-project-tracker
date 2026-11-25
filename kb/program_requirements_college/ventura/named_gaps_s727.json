@@ -1,0 +1,19 @@
+{
+ "_readme": "S727 (plan s727f, lane 2): 1 program(s) of Ventura College held for a person, collected as named gaps with no record (COBIx's brief of 2026-11-25 on Sam's collect-with-gaps ruling). Each has no live row and a record that places none of its courses, or no record at all, so no load posts it; the reason names what the page leaves open. No model call, no Supabase write. Built by kb/_program_piles_s727_persons.py.",
+ "college": "Ventura College",
+ "written": "2026-11-25T07:53:31Z",
+ "capture": "44514835321",
+ "page_reads": [],
+ "reasons": {
+  "ge_pattern_certificate": "The program is a general education pattern certificate (Cal-GETC): the catalog prints it as a pattern of areas, never as a program section, and the state lists the pattern's courses, so a read places none of them."
+ },
+ "programs": [
+  {
+   "control_number": "45355",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "The re-read 44514835321 took the catalog's C-ID page (transfer-information/c-id/), and placed 0 of the 240 listed courses. The live row the load 38842159685 inserted at run 38756014587 stays as it is; main holds no record file at that run, so no image of it can be built here."
+  }
+ ]
+}

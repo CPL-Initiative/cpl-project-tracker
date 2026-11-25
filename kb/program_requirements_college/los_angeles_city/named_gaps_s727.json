@@ -1,0 +1,19 @@
+{
+ "_readme": "S727 (plan s727f, lane 2): 1 program(s) of Los Angeles City College held for a person, collected as named gaps with no record (COBIx's brief of 2026-11-25 on Sam's collect-with-gaps ruling). Each has no live row and a record that places none of its courses, or no record at all, so no load posts it; the reason names what the page leaves open. No model call, no Supabase write. Built by kb/_program_piles_s727_persons.py.",
+ "college": "Los Angeles City College",
+ "written": "2026-11-25T07:53:31Z",
+ "capture": "44511401763",
+ "page_reads": [],
+ "reasons": {
+  "page_not_found": "Today's capture finds no catalog page for the program (sources.json method not_found), and the committed files hold no record of it."
+ },
+ "programs": [
+  {
+   "control_number": "32832",
+   "title": "ART HISTORY",
+   "award": "A.A- T Degree",
+   "reason": "page_not_found",
+   "note": "The live row holds run 39006380342 (the lessons' S703 list); the reconcile 44511401763 dropped the record file, and today's capture lists the program with method not_found. The live row stays as it is: the conductor's read of its checks says whether it already carries a gap."
+  }
+ ]
+}

@@ -113,7 +113,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "upper_division_only",
+    "label": "A bachelor's degree: the record holds the upper-division major, which adds up to the page's printed major figure, and the page prints the lower division as unit figures with no course list, so the degree's units cannot be added.",
+    "words": "General B.S. requirements also describe 60 upper-division units, 90 lower-division units meeting associate degree requirements, and 30 additional lower-division units."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 50,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

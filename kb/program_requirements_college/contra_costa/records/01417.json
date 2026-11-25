@@ -119,7 +119,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "entry_path_range",
+    "label": "The page prints the major as a range over entry paths (a licensed student enters later in the sequence), and the record holds the full path, which matches the range's top; which path a student takes is the college's admission.",
+    "words": "LVN/LPN to RN transition students enter the second year and enroll in NURS-255 and NURS-256 only (plus 4th semester). LPT students enter the second semester. The 1st semester requirement may be met by LVN/LPN or LPT licensure and admission. This explains the major range of 24.3 / 48.9 units printed in the Unit Summary."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -1174,6 +1174,22 @@ for _g, _s, _a in (
     GAPS.setdefault(_g, _s)
     ARITH_SCORE.setdefault(_g, _a)
 del _g, _s, _a
+# S727 (kb/_program_piles_s727_persons.py, plan s727f): the records held for a person, collected with their gaps
+# named. Two kinds no existing sentence fits; each scores as ge_units_not_read's 50, a figure the page prints with no
+# course list under it (upper_division_only), or a printed range whose low end is another path (entry_path_range).
+for _g, _s, _a in (
+        ("upper_division_only",
+         "A bachelor's degree: the record holds the upper-division major, which adds up to the page's printed major "
+         "figure, and the page prints the lower division as unit figures with no course list, so the degree's units "
+         "cannot be added.", 50),
+        ("entry_path_range",
+         "The page prints the major as a range over entry paths (a licensed student enters later in the sequence), "
+         "and the record holds the full path, which matches the range's top; which path a student takes is the "
+         "college's admission.", 50),
+):
+    GAPS.setdefault(_g, _s)
+    ARITH_SCORE.setdefault(_g, _a)
+del _g, _s, _a
 
 
 def labels(base: str = COLLEGE_DIR, skip: tuple = ()) -> list[dict]:
