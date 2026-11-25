@@ -8,35 +8,31 @@ the hold needs a decision only the college can make, the gap says what the page 
 
 THE NINETEEN KEYS (HAND below, each a hand reading of the record's own notes and its earlier hold), at twelve colleges:
 
-  UPDATE, a live row's checks take the named gap (the guarded UPDATE of S721's plans; no record changes):
-    De Anza 45499            upper_division_only (new, 50): a 180-unit bachelor's; the record holds the 60 upper-division
-                             units the page prints as 'Major Required: 60 Credits', and the page prints its lower
-                             division as figures (90 units meeting associate degree requirements, 30 more) with no list.
+  UPDATE, a live row's checks take the named gap (the guarded UPDATE of S721's plans; no record changes), 5 rows:
+    De Anza 45499            unit_line_not_read (40): a 180-unit bachelor's; the record holds the 60 upper-division
+                             units ('Major Required: 60 Credits'), and the page prints its lower division as lines of
+                             units (90 meeting associate degree requirements, 30 more) with no course named:
+                             60 + 90 + 30 is the printed 180.
     Santa Monica 10345       noted_no_total (40): "No major total or degree total is printed for this award".
     Santa Monica 43765       lists_not_closed (30): the Salon Experience list prints 'Any combination of Salon classes
                              is acceptable' and no figure; COSM 11C printed for COSM 64 stays in its note.
-    Clovis 33501             lists_not_closed (30): 'List A and List B courses total a minimum of 6 units'.
-    Clovis 36326             lists_not_closed (30): List B also takes 'Any course from List A not already used'.
-    Clovis 39539             noted_section_cut_off (20): the text begins mid-section on page 145; page 144 is not
-                             among the capture's pages.
-    East Los Angeles 33013   pool_figure_not_read (40): the core's 9-10 over ANTHRO 101(+111), 102 and 103 together.
-                             The page's own figures (9-10, 3, 6, 3-4) add to 21-23 under its printed 22-24, which
-                             the receipt states for a person; the gap states only the pool figure the note quotes.
-    Contra Costa 01417       entry_path_range (new, 50): the page's 'Min/Max Units - Major 24.3 / 48.9' spans two
-                             entry paths (an LVN/LPN student enters the second year); the record holds the full path,
-                             which matches the printed top. Which path a student takes is the college's admission.
+    Clovis 33501             lists_not_closed (30): 'List A and List B courses total a minimum of 6 units', and the
+                             gap names its MATH 17 note too (with List B read it is 25 or 28 against 23, and closes
+                             only with MATH 17 counted once).
+    Contra Costa 01417       entry_path_range (new, 50; GE capped at 50 on the None/N/A summary): the page's 'Min/Max
+                             Units - Major 24.3 / 48.9' spans two entry paths; the record holds the full path, which
+                             matches the printed top. Which path a student takes is the college's admission.
 
-  NAMED GAP, NO RECORD (kb/program_requirements_college/<slug>/named_gaps_s727.json; no row, no write): the record
-  has no live row and places none of its courses, so a load would skip it.
-    West Los Angeles 46261, Napa Valley 19126, 31158, 36528, Los Angeles Harbor 44947, Ventura 45355, and Los Angeles
-    City 32832 (a live row at run 39006380342, and main holds no record file and today's capture finds no page).
+  NAMED GAP, NO RECORD (kb/program_requirements_college/<slug>/named_gaps_s727.json; no row, no write),
+  no_own_page_found: West Los Angeles 46261, Napa Valley 19126, 31158, 36528, Los Angeles Harbor 44947, Ventura 45355
+  (S456's older_build_removed plan deleted its live row).
 
-  ALREADY COLLECTED, no write: Cerritos 44984 (both committed reads pass; the live row holds an earlier run; which
-  passing run replaces it is a refinement, never a collection) and West Los Angeles 38677 (passes on its live run).
+  ALREADY COLLECTED, no write: West Los Angeles 38677 (passes; its load inserted it).
 
-  HELD (2), a gap collects only where coverage and invented pass (collected_with_gaps in kb/_harvest_gap_census.py):
-    Santa Monica 03281 (coverage 44%, the NURSING 6/6L/7/7L misprints) and Glendale 44488 (invented: ESL 156 and the
-    'MATH 102/102+' row against the file's one MATH 102).
+  HELD (7): Santa Monica 03281 and Glendale 44488 (coverage or invented fails, so no gap collects them); Clovis 36326
+  (the own-page guard); Clovis 39539 and East Los Angeles 33013 (their earlier reasons stand: the catalog's own
+  figures); Los Angeles City 32832 (a failing live row with no record file); Cerritos 44984 (an unequal live row; both
+  committed reads pass: a reload).
 
 STANDING GUARDS: scorer_passes (a record today's scorer passes is never gap-filed); on_live_run (the committed record's
 run is its live row's, by the committed receipts); the own-page guard keyed on the pages each record was read from
@@ -91,7 +87,7 @@ HELD_DIR = "held_for_person"
 
 REVIEWED = {
     ("De Anza College", "45499"): {
-        "gap": "upper_division_only", "computed": [60, 60], "stated": [180, 180],
+        "gap": "unit_line_not_read", "computed": [60, 60], "stated": [180, 180],
         "words": "General B.S. requirements also describe 60 upper-division units, 90 lower-division units meeting "
                  "associate degree requirements, and 30 additional lower-division units",
         "major": {"words": "The catalog prints 'Major Required: 60 Credits'", "units": 60, "upper": 60,
@@ -108,19 +104,14 @@ REVIEWED = {
     ("Clovis Community College", "33501"): {
         "gap": "lists_not_closed", "computed": [24, 24], "stated": [23, 23],
         "words": "List B minimum is a combined rule: List A and List B courses must total a minimum of 6 units",
-        "open": "LIST B: Select additional courses/ units so that List A and List B courses total a minimum of 6 units."},
+        "open": "LIST B: Select additional courses/ units so that List A and List B courses total a minimum of 6 units.",
+        # The second reader, round 1: with List B read the sum is still 25 or 28 against 23, and it closes only with
+        # MATH 17 counted once; the gap names that note too.
+        "also_words": "MATH 17 is printed both in Required Core Courses and as the only course in List A"},
     ("Clovis Community College", "36326"): {
         "gap": "lists_not_closed", "computed": [14, 20], "stated": [18, 21],
         "words": "List B also allows 'Any course from List A not already used' (3 units).",
         "also_takes": ["List B: Select two course (6 units)", "List A: Select two to three courses"]},
-    ("Clovis Community College", "39539"): {
-        "gap": "noted_section_cut_off", "computed": [66.5, 67.5], "stated": [69.5, 70.5],
-        "words": "The excerpt starts mid-section on page 145", "not_page": 144},
-    ("East Los Angeles College", "33013"): {
-        "gap": "pool_figure_not_read", "computed": [21, 24], "stated": [22, 24],
-        "words": "The catalog's core subtotal is 9-10 units for ANTHRO 101(+111), 102 and 103 together; not placed "
-                 "on any single block",
-        "courses": ["ANTHRO101", "ANTHRO111", "ANTHRO102", "ANTHRO103"]},
     ("Contra Costa College", "01417"): {
         "gap": "entry_path_range", "computed": [48.9, 48.9], "stated": [24.3, 48.9],
         "words": "LVN/LPN to RN transition students enter the second year and enroll in NURS-255 and NURS-256 only",
@@ -135,11 +126,6 @@ NAMED_REASONS = {
                           "a generic or another program's heading, and its read places none of the state's listed "
                           "courses. Which page holds the program, or whether the catalog prints it, is the college's "
                           "to say."),
-    "ge_pattern_certificate": ("The program is a general education pattern certificate (Cal-GETC): the catalog "
-                               "prints it as a pattern of areas, never as a program section, and the state lists "
-                               "the pattern's courses, so a read places none of them."),
-    "page_not_found": ("Today's capture finds no catalog page for the program (sources.json method not_found), and "
-                       "the committed files hold no record of it."),
 }
 NAMED = {
     ("West Los Angeles College", "46261"): {
@@ -160,30 +146,25 @@ NAMED = {
         "note": "The re-read 44739981651 took the general education page (getting-your-degree/), whose heading is "
                 "'2. HEALTH, WELLNESS AND SELF DEVLOPMENT', and placed 0 of the 15 listed courses."},
     ("Los Angeles Harbor College", "44947"): {
-        "reason": "ge_pattern_certificate",
+        "reason": "no_own_page_found",
         "title": "California General Education Transfer Curriculum (Cal-GETC)",
         "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
         "note": "The re-read 44687664966 took PDF p.119, which prints no heading, and placed 0 of the 195 listed "
                 "courses."},
     ("Ventura College", "45355"): {
-        "reason": "ge_pattern_certificate",
+        "reason": "no_own_page_found",
         "title": "California General Education Transfer Curriculum (Cal-GETC)",
         "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
         "note": "The re-read 44514835321 took the catalog's C-ID page (transfer-information/c-id/), and placed 0 of "
-                "the 240 listed courses. The live row the load 38842159685 inserted at run 38756014587 stays as it "
-                "is; main holds no record file at that run, so no image of it can be built here.",
-        "live_run": "38756014587"},
-    ("Los Angeles City College", "32832"): {
-        "reason": "page_not_found", "title": "ART HISTORY", "award": "A.A- T Degree",
-        "note": "The live row holds run 39006380342 (the lessons' S703 list); the reconcile 44511401763 dropped the "
-                "record file, and today's capture lists the program with method not_found. The live row stays as it "
-                "is: the conductor's read of its checks says whether it already carries a gap.",
-        "live_run": "39006380342"},
+                "the 240 listed courses. S456's older_build_removed plan deleted the live row the load 38842159685 "
+                "had inserted at run 38756014587, so no live row holds it.",
+        "deleted_by": "program_requirement_records_older_build_removed_2026-10-23_s456.sql"},
 }
 
 _HELD_CI = ("held: a gap collects only where coverage and invented pass (collected_with_gaps, "
             "kb/_harvest_gap_census.py); %s")
 HAND = {k: e["gap"] for k, e in REVIEWED.items() if k != ("Clovis Community College", "36326")}
+_RELOAD = "a reload of a passing committed read"
 HAND.update({k: "named: " + e["reason"] for k, e in NAMED.items()})
 HAND.update({
     ("Santa Monica College", "03281"): _HELD_CI % (
@@ -194,9 +175,23 @@ HAND.update({
         "invented fails on ESL 156 (not in the state's file) and MATH 102+, the page's 'MATH 102/102+' row against "
         "the file's one MATH 102 row titled 'Trigonometry with Support'; which course that row names is the "
         "college's to say in COCI, and the arithmetic already passes"),
-    ("Cerritos College", "44984"): ("collected: the live row holds run 37961137169; both committed reads pass "
-                                    "(records/ at 38064252862 and held_for_person/ at 44540824017), so no gap is "
-                                    "honest; which passing run replaces the live one is a refinement"),
+    ("Cerritos College", "44984"): ("held: the live row holds run 37961137169 and its arithmetic is unequal (the "
+                                    "conductor's live read); both committed reads pass (records/ at 38064252862 "
+                                    "and held_for_person/ at 44540824017), so no gap is honest: its lever is %s"
+                                    % _RELOAD),
+    ("Los Angeles City College", "32832"): ("held: a live row holds run 39006380342 and fails (incomplete, the "
+                                            "conductor's live read); the reconcile 44511401763 dropped its record "
+                                            "file and today's capture finds no page (method not_found), so no image "
+                                            "of its record can be built here"),
+    ("Clovis Community College", "39539"): ("held (S713c's reason): the prerequisite list adds to 22-23 against "
+                                            "its printed 26-27 and Year 1 Fall to 12 against 11; with the "
+                                            "prerequisites at 26-27 it still reads 70.5-71.5 against 69.5-70.5. "
+                                            "Its note names a missing heading, not missing requirements, so no "
+                                            "cut-off kind is honest: the catalog's own figures, for a reread"),
+    ("East Los Angeles College", "33013"): ("held (S720e's reason): the page's figures (9-10, 3, 6, 3-4) add to "
+                                            "21-23 under 'TOTAL UNITS FOR MAJOR: 22-24', and with the 9-10 pool on "
+                                            "one block the record still reads 21-24 against 22-24, so neither the "
+                                            "pool kind nor a figures kind's sentence holds"),
     ("West Los Angeles College", "38677"): ("collected: it passes, and the load 44545925357 inserted it (its two "
                                             "runs name none per key; the record's 44475503054 is the run that "
                                             "read it new)"),
@@ -205,7 +200,7 @@ HAND.update({
                                             "lists_not_closed (List B also takes 'Any course from List A not "
                                             "already used') stands once a read names it"),
 })
-ALREADY = {("Cerritos College", "44984"), ("West Los Angeles College", "38677")}
+ALREADY = {("West Los Angeles College", "38677")}
 
 
 def _dir(college: str) -> str:
@@ -270,9 +265,10 @@ def also_takes(filed: dict, e: dict) -> bool:
     return all(len(_blocks(filed, name)) == 1 for name in e["also_takes"])
 
 
-def upper_division_only(filed: dict, e: dict) -> bool:
-    """upper_division_only's figures: a bachelor's degree whose blocks add to the printed major figure, which is the
-    upper division's, and the degree total is the upper division plus the lower division's printed figures."""
+def lower_lines_close(filed: dict, e: dict) -> bool:
+    """unit_line_not_read's figures on a bachelor's degree: the blocks add to the printed major figure, which is the
+    upper division's, and the upper division plus the lower division's printed lines (90 and 30) is the printed
+    degree total (60 + 90 + 30 = 180)."""
     m = e["major"]
     rec = filed.get("record") or {}
     prog = rec.get("program") or {}
@@ -423,10 +419,15 @@ def gap_noted(filed: dict, reviewed: dict | None = None) -> tuple[str, str] | No
         return None
     if e.get("also_takes") and not also_takes(filed, e):
         return None
-    if e.get("major") and not upper_division_only(filed, e):
+    if e.get("major") and not lower_lines_close(filed, e):
         return None
     if e.get("range") and not entry_path_range(filed, e):
         return None
+    if e.get("also_words"):
+        more = next((n for n in _notes(filed) if e["also_words"] in n), None)
+        if not more:
+            return None
+        words = words + " " + more
     return e["gap"], words
 
 
@@ -460,24 +461,29 @@ def outcome(filed: dict, src: dict | None = None) -> tuple[str, str | None, str]
 
 
 def named_stands(college: str, cn: str) -> str:
-    """A named gap with no record stands where no live row is posted (32832 aside: its row stays, and it has no
-    record file) and the committed record, if any, places none of its courses."""
+    """A named gap with no record stands where no live row holds the key (a posted row a committed delete removed
+    counts as none) and the committed record places none of its courses."""
     e = NAMED.get((college, cn))
     if not e:
         return "not named"
     f = _load(college, cn)
-    if e["reason"] == "page_not_found":
-        s = _sources(college).get(cn) or {}
-        if e.get("live_run") not in [r for _, r in posted_runs(college).get(cn) or []]:
-            return "no live row is posted at its run"
-        return "stands" if f is None and s.get("method") == "not_found" else "the capture finds a page"
     if f is None:
         return "no record file"
-    posted = posted_runs(college).get(cn) or []
-    if posted and (not e.get("live_run") or max(posted)[1] != e["live_run"] or os.path.isfile(_path(college, cn))):
-        return "a live row is posted"
+    if os.path.isfile(_path(college, cn)):
+        return "a record file in records/"
+    if posted_runs(college).get(cn):
+        d = e.get("deleted_by")
+        if not d or not os.path.isfile(os.path.join(NG.RECEIPTS, d)):
+            return "a live row is posted"
+        with open(os.path.join(NG.RECEIPTS, d), encoding="utf-8") as fh:
+            if "(%s, '%s'," % (_lit(college), cn) not in fh.read():
+                return "a live row is posted"
     share = ((f.get("score") or {}).get("coverage") or {}).get("share")
     return "stands" if share in (0, 0.0) else "the record places courses"
+
+
+def _lit(v: str) -> str:
+    return "'" + str(v).replace("'", "''") + "'"
 
 
 def precision() -> dict:
@@ -540,6 +546,10 @@ def boundaries() -> dict:
         if e.get("also_takes"):
             moved = dict(e, also_takes=[e["also_takes"][0], "List Z"])
             tally("the other list gone", gap_noted(f, _with(key, moved)) is None, key)
+        if e.get("also_words"):
+            g = copy.deepcopy(f)
+            g["record"]["notes"] = [str(n).replace(e["also_words"], "") for n in g["record"].get("notes") or []]
+            tally("the second note gone", gap_noted(g) is None, key)
         if e.get("major"):
             moved = dict(e, major=dict(e["major"], units=e["major"]["units"] + 1))
             tally("the major one unit off", gap_noted(f, _with(key, moved)) is None, key)
@@ -554,8 +564,6 @@ def boundaries() -> dict:
             moved = dict(e, range="the range is a misprint")
             tally("no note names the paths", gap_noted(f, _with(key, moved)) is None, key)
     for key in NAMED:
-        if NAMED[key]["reason"] == "page_not_found":
-            continue
         f = _load(*key)
         g = copy.deepcopy(f)
         g["score"]["coverage"] = dict(g["score"]["coverage"], share=0.5)
@@ -686,8 +694,6 @@ def main(argv=None) -> int:
             "hand": {"%s %s" % k: v for k, v in HAND.items()},
             "named": {"files": named_paths, "programs": {"%s %s" % k: v["reason"] for k, v in NAMED.items()}},
             "for_a_person": {
-                "East Los Angeles College 33013": "the page's figures (9-10, 3, 6, 3-4) add to 21-23 under its "
-                                                  "printed 'TOTAL UNITS FOR MAJOR: 22-24'",
                 "Contra Costa College 01417": "which entry path the record counts is the college's admission rule",
                 "Santa Monica College 43765": "'COSM 11C, Salon Management (2)' in Level 4, likely COSM 64",
                 "Clovis Community College 33501": "MATH 17 printed in the core and as List A's one course"},

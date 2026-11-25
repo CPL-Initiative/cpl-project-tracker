@@ -106,21 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "lists_not_closed",
-    "label": "A choice list prints no unit figure of its own, one that depends on another choice, or also takes courses from another list, so the lists alone cannot add the program's units.",
-    "words": "Salon Experience Courses: the catalog says 'Any combination of Salon classes is acceptable' and states no minimum units; minimum left null. The listed required courses total 25.5 units, which would leave 1 unit of Salon Experience to reach 26.5, but this is not stated. Prerequisite: all Level 1 classes completed."
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 30,
-   "course_list_match": 88,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": false
  },
  "record": {
   "program": {

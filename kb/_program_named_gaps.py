@@ -243,7 +243,7 @@ def may_continue(filed: dict) -> str | None:
 # A gap that says the page prints a degree's general education as None or N/A (Contra Costa's second reader, S720):
 # such a record read no GE, so its GE score is ge_units_not_read's 50, never 100. Kept here, inside confidence(),
 # because the reconcile's keep_named_gaps recomputes every kept gap's scores through this function (#3756).
-GE_NOT_PRINTED = frozenset({"degree_summary_ge_none"})
+GE_NOT_PRINTED = frozenset({"degree_summary_ge_none", "entry_path_range"})
 GE_NOT_PRINTED_CAP = 50
 
 
@@ -1175,13 +1175,10 @@ for _g, _s, _a in (
     ARITH_SCORE.setdefault(_g, _a)
 del _g, _s, _a
 # S727 (kb/_program_piles_s727_persons.py, plan s727f): the records held for a person, collected with their gaps
-# named. Two kinds no existing sentence fits; each scores as ge_units_not_read's 50, a figure the page prints with no
-# course list under it (upper_division_only), or a printed range whose low end is another path (entry_path_range).
+# named. One kind no existing sentence fits: a printed range whose low end is another entry path (entry_path_range),
+# scored as ge_units_not_read's 50; its GE score is capped at 50 (GE_NOT_PRINTED: Contra Costa 01417's unit summary
+# prints general education as None and N/A).
 for _g, _s, _a in (
-        ("upper_division_only",
-         "A bachelor's degree: the record holds the upper-division major, which adds up to the page's printed major "
-         "figure, and the page prints the lower division as unit figures with no course list, so the degree's units "
-         "cannot be added.", 50),
         ("entry_path_range",
          "The page prints the major as a range over entry paths (a licensed student enters later in the sequence), "
          "and the record holds the full path, which matches the range's top; which path a student takes is the "
