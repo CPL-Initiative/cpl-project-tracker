@@ -4385,20 +4385,21 @@
    "CDEVC1000H"
   ],
   "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/",
-   "title": "Child Development | Academic Catalog",
-   "h1": "Child Development",
-   "text_from": "innerText+tabs",
+   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/early-childhood-education-ast-degree/",
+   "title": "Early Childhood Education Associate in Science for Transfer Degree | Academic Catalog",
+   "h1": "Early Childhood Education Associate in Science for Transfer Degree",
+   "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.0,
+    "award": 1,
+    "title": 1.0,
     "section": "adt",
     "section_line": "early childhood education associate in science for transfer degree",
     "section_fit": 1.0
-   }
+   },
+   "pinned": true
   },
   "listed": 11,
-  "text_chars": 16000
+  "text_chars": 5539
  },
  {
   "control_number": "32366",
