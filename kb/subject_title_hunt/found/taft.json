@@ -1,0 +1,408 @@
+{
+ "college": "Taft College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45626788039",
+ "plan": "kb/college_reads/subject_index_taft.json",
+ "titles": [
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/admj-administration-of-justice",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/art-art",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/arth-art-history",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/astr-astronomy",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/biol-biology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BSAD",
+   "title": "Business Administration",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/bsad-business-administration",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUSN",
+   "title": "Business",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/busn-business",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/chem-chemistry",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/cis-computer-information-systems",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/comm-communication",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSC",
+   "title": "Computer Science",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/cosc-computer-science",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CTRP",
+   "title": "Court Reporting",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/ctrp-court-reporting",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DNTL",
+   "title": "Dental Hygiene",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/dntl-dental-hygiene",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRAM",
+   "title": "Drama",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/dram-drama",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DS",
+   "title": "Disability Services",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/ds-disability-services",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECEF",
+   "title": "Early Care, Ed. and Fami Studi",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/ecef-early-care-ed-and-fami-studi",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/econ-economics",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDTC",
+   "title": "Educational Technology",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/edtc-educational-technology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/educ-education",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EHS",
+   "title": "Environmental Health & Safety",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/ehs-environmental-health-safety",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENER",
+   "title": "Energy",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/ener-energy",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/engl-english",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/engr-engineering",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESCI",
+   "title": "Earth Science",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/esci-earth-science",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/esl-english-as-a-second-language",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/ethn-ethnic-studies",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/geog-geography",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/geol-geology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/hist-history",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLED",
+   "title": "Health Education",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/hled-health-education",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/hum-humanities",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INTC",
+   "title": "Industrial Technology",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/intc-industrial-technology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/kine-kinesiology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/libr-library",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LRSK",
+   "title": "Learning Skills",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/lrsk-learning-skills",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/math-mathematics",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MEDA",
+   "title": "Medical Assisting",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/meda-medical-assisting",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/mgmt-management",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSC",
+   "title": "Music",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/musc-music",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OSH",
+   "title": "Occupational Safety and Health",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/osh-occupational-safety-and-health",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PETC",
+   "title": "Petroleum Technology",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/petc-petroleum-technology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHED",
+   "title": "Physical Education",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/phed-physical-education",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/phil-philosophy",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/phot-photography",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/phys-physics",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/pols-political-science",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POSC",
+   "title": "Political Science",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/posc-political-science",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSCI",
+   "title": "Physical Science",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/psci-physical-science",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/psyc-psychology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RECR",
+   "title": "Recreation",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/recr-recreation",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/soc-sociology",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/span-spanish",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/stat-statistics",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STSU",
+   "title": "Student Success",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/stsu-student-success",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TUTR",
+   "title": "Tutoring",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/tutr-tutoring",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "UDGE",
+   "title": "Upper Div General Education",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/udge-upper-div-general-education",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/course-description/weld-welding",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

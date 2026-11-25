@@ -1,0 +1,937 @@
+{
+ "college": "Fresno City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:07Z",
+ "run": "45628443522",
+ "plan": "kb/college_reads/subject_index_fresno_city.json",
+ "how": "The catalog's course section lists each subject as a node titled with its name and code; the run read those nodes through the catalog's own navigation JSON (_getNavigation), one call per subject list.",
+ "titles": [
+  {
+   "code": "ACCTG",
+   "title": "Accounting",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Accounting (ACCTG)",
+   "node": 6800
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Administration of Justice (AJ)",
+   "node": 6801
+  },
+  {
+   "code": "AEROST",
+   "title": "Aerospace Studies",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Aerospace Studies (AEROST)",
+   "node": 6802
+  },
+  {
+   "code": "AFRAM",
+   "title": "African-American Studies",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "African-American Studies (AFRAM)",
+   "node": 6803
+  },
+  {
+   "code": "AG",
+   "title": "Agriculture",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture (AG)",
+   "node": 7069
+  },
+  {
+   "code": "AHLTH",
+   "title": "Allied Health",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Allied Health (AHLTH)",
+   "node": 6804
+  },
+  {
+   "code": "AMIND",
+   "title": "American Indian Studies",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "American Indian Studies (AMIND)",
+   "node": 6805
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "American Sign Language (ASL)",
+   "node": 6846
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Anthropology (ANTH)",
+   "node": 6806
+  },
+  {
+   "code": "AT",
+   "title": "Applied Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Applied Technology (AT)",
+   "node": 6807
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Architecture (ARCH)",
+   "node": 6808
+  },
+  {
+   "code": "ARMEN",
+   "title": "Armenian",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Armenian (ARMEN)",
+   "node": 6847
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art (ART)",
+   "node": 6809
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art History (ARTH)",
+   "node": 7118
+  },
+  {
+   "code": "ASAMER",
+   "title": "Asian American Studies",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Asian American Studies (ASAMER)",
+   "node": 6810
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Astronomy (ASTR)",
+   "node": 6811
+  },
+  {
+   "code": "ACRT",
+   "title": "Automotive Collision Repair Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Automotive Collision Repair Technology (ACRT)",
+   "node": 6812
+  },
+  {
+   "code": "AUTOT",
+   "title": "Automotive Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Automotive Technology (AUTOT)",
+   "node": 6813
+  },
+  {
+   "code": "ATGM",
+   "title": "Automotive Technology: General Motors ASEP Program",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Automotive Technology: General Motors ASEP Program (ATGM)",
+   "node": 6814
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Biology (BIOL)",
+   "node": 6815
+  },
+  {
+   "code": "BA",
+   "title": "Business Administration",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Business Administration (BA)",
+   "node": 6816
+  },
+  {
+   "code": "BT",
+   "title": "Business & Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Business & Technology (BT)",
+   "node": 6817
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Chemistry (CHEM)",
+   "node": 6818
+  },
+  {
+   "code": "CLS",
+   "title": "Chicano-Latino Studies",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Chicano-Latino Studies (CLS)",
+   "node": 6819
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Child Development (CDEV)",
+   "node": 6820
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Chinese (CHIN)",
+   "node": 6848
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Communication Studies (COMM)",
+   "node": 6821
+  },
+  {
+   "code": "CADD",
+   "title": "Computer Aided Drafting and Design",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Aided Drafting and Design (CADD)",
+   "node": 6822
+  },
+  {
+   "code": "CAM",
+   "title": "Computer Aided Manufacturing",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Aided Manufacturing (CAM)",
+   "node": 6823
+  },
+  {
+   "code": "CIT",
+   "title": "Computer Information Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Information Technology (CIT)",
+   "node": 6824
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Science (CSCI)",
+   "node": 6825
+  },
+  {
+   "code": "CONS",
+   "title": "Construction",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Construction (CONS)",
+   "node": 6826
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Counseling (COUN)",
+   "node": 6827
+  },
+  {
+   "code": "CRIM",
+   "title": "Criminology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Criminology (CRIM)",
+   "node": 6828
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Dance (DANCE)",
+   "node": 6829
+  },
+  {
+   "code": "DS",
+   "title": "Decision Science",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Decision Science (DS)",
+   "node": 6830
+  },
+  {
+   "code": "DA",
+   "title": "Dental Assisting",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Dental Assisting (DA)",
+   "node": 6831
+  },
+  {
+   "code": "DH",
+   "title": "Dental Hygiene",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Dental Hygiene (DH)",
+   "node": 6832
+  },
+  {
+   "code": "DEVSER",
+   "title": "Developmental Services",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Developmental Services (DEVSER)",
+   "node": 6833
+  },
+  {
+   "code": "DRAFT",
+   "title": "Drafting",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Drafting (DRAFT)",
+   "node": 6834
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Economics (ECON)",
+   "node": 6835
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Education (EDUC)",
+   "node": 6836
+  },
+  {
+   "code": "EST",
+   "title": "Electrical Systems Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Electrical Systems Technology (EST)",
+   "node": 6837
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Engineering (ENGR)",
+   "node": 6838
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English (ENGL)",
+   "node": 6839
+  },
+  {
+   "code": "EMLS",
+   "title": "English for Multi-Lingual Students",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English for Multi-Lingual Students (EMLS)",
+   "node": 6840
+  },
+  {
+   "code": "ETHNST",
+   "title": "Ethnic Studies",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Ethnic Studies (ETHNST)",
+   "node": 7025
+  },
+  {
+   "code": "FM",
+   "title": "Fashion Merchandising",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Fashion Merchandising (FM)",
+   "node": 6841
+  },
+  {
+   "code": "FILM",
+   "title": "Film",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Film (FILM)",
+   "node": 6842
+  },
+  {
+   "code": "FIRET",
+   "title": "Fire Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Fire Technology (FIRET)",
+   "node": 6843
+  },
+  {
+   "code": "FN",
+   "title": "Food and Nutrition",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Food and Nutrition (FN)",
+   "node": 6844
+  },
+  {
+   "code": "FSM",
+   "title": "Food Service Management",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Food Service Management (FSM)",
+   "node": 6845
+  },
+  {
+   "code": "FRENCH",
+   "title": "French",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "French (FRENCH)",
+   "node": 6849
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geography (GEOG)",
+   "node": 6855
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geology (GEOL)",
+   "node": 6856
+  },
+  {
+   "code": "GERMAN",
+   "title": "German",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "German (GERMAN)",
+   "node": 6850
+  },
+  {
+   "code": "GRC",
+   "title": "Graphic Communications",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Graphic Communications (GRC)",
+   "node": 6858
+  },
+  {
+   "code": "HIT",
+   "title": "Health Information Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Health Information Technology (HIT)",
+   "node": 6859
+  },
+  {
+   "code": "HLTH",
+   "title": "Health Science",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Health Science (HLTH)",
+   "node": 6860
+  },
+  {
+   "code": "HVAC",
+   "title": "Heating, Ventilation, & Air Conditioning",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Heating, Ventilation, & Air Conditioning (HVAC)",
+   "node": 6861
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "History (HIST)",
+   "node": 6862
+  },
+  {
+   "code": "HMONG",
+   "title": "Hmong",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Hmong (HMONG)",
+   "node": 6851
+  },
+  {
+   "code": "HONORS",
+   "title": "Honors",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Honors (HONORS)",
+   "node": 6863
+  },
+  {
+   "code": "HS",
+   "title": "Human Services",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Human Services (HS)",
+   "node": 6864
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Humanities (HUMAN)",
+   "node": 6865
+  },
+  {
+   "code": "JAPAN",
+   "title": "Japanese",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Japanese (JAPAN)",
+   "node": 6852
+  },
+  {
+   "code": "JOURN",
+   "title": "Journalism",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Journalism (JOURN)",
+   "node": 6866
+  },
+  {
+   "code": "LA",
+   "title": "Learning Assistance",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Learning Assistance (LA)",
+   "node": 6867
+  },
+  {
+   "code": "LIBSKL",
+   "title": "Library Skills",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Library Skills (LIBSKL)",
+   "node": 6868
+  },
+  {
+   "code": "LITEC",
+   "title": "Library Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Library Technology (LITEC)",
+   "node": 6869
+  },
+  {
+   "code": "LING",
+   "title": "Linguistics",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Linguistics (LING)",
+   "node": 6870
+  },
+  {
+   "code": "MM",
+   "title": "Maintenance Mechanic",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Maintenance Mechanic (MM)",
+   "node": 6871
+  },
+  {
+   "code": "MKTG",
+   "title": "Marketing",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Marketing (MKTG)",
+   "node": 6872
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mathematics (MATH)",
+   "node": 6873
+  },
+  {
+   "code": "MA",
+   "title": "Medical Assisting",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Medical Assisting (MA)",
+   "node": 6874
+  },
+  {
+   "code": "MDHD",
+   "title": "Medium-Duty/Heavy-Duty",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Medium-Duty/Heavy-Duty (MDHD)",
+   "node": 7096
+  },
+  {
+   "code": "MILSC",
+   "title": "Military Science",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Military Science (MILSC)",
+   "node": 6875
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music (MUS)",
+   "node": 6876
+  },
+  {
+   "code": "NATSCI",
+   "title": "Natural Science",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Natural Science (NATSCI)",
+   "node": 6877
+  },
+  {
+   "code": "RN",
+   "title": "Nursing, Registered",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Nursing, Registered (RN)",
+   "node": 6878
+  },
+  {
+   "code": "PLEGAL",
+   "title": "Paralegal",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Paralegal (PLEGAL)",
+   "node": 6879
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Philosophy (PHIL)",
+   "node": 6880
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Photography (PHOTO)",
+   "node": 6881
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Education (PE)",
+   "node": 6882
+  },
+  {
+   "code": "PHYSC",
+   "title": "Physical Science",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Science (PHYSC)",
+   "node": 6883
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physics (PHYS)",
+   "node": 6884
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Political Science (POLS)",
+   "node": 6885
+  },
+  {
+   "code": "PORT",
+   "title": "Portuguese",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Portuguese (PORT)",
+   "node": 6853
+  },
+  {
+   "code": "PREAPP",
+   "title": "Pre-Apprenticeship",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Pre-Apprenticeship (PREAPP)",
+   "node": 7070
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Psychology (PSYC)",
+   "node": 6886
+  },
+  {
+   "code": "PUNJABI",
+   "title": "Punjabi",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Punjabi (PUNJABI)",
+   "node": 7026
+  },
+  {
+   "code": "RAD",
+   "title": "Radiologic Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Radiologic Technology (RAD)",
+   "node": 6887
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Real Estate (RE)",
+   "node": 6888
+  },
+  {
+   "code": "REC",
+   "title": "Recreation",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Recreation (REC)",
+   "node": 6889
+  },
+  {
+   "code": "RCARE",
+   "title": "Respiratory Care",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Respiratory Care (RCARE)",
+   "node": 6890
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Sociology (SOCI)",
+   "node": 6891
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Spanish (SPAN)",
+   "node": 6854
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Statistics (STAT)",
+   "node": 7097
+  },
+  {
+   "code": "ST",
+   "title": "Supervised Tutoring",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Supervised Tutoring (ST)",
+   "node": 6892
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Theatre Arts (TA)",
+   "node": 6893
+  },
+  {
+   "code": "WELD",
+   "title": "Welding Technology",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Welding Technology (WELD)",
+   "node": 6895
+  },
+  {
+   "code": "WSTS",
+   "title": "Women's Studies",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Women's Studies (WSTS)",
+   "node": 6896
+  },
+  {
+   "code": "WKEXP",
+   "title": "Work Experience, General",
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Work Experience, General (WKEXP)",
+   "node": 6897
+  }
+ ]
+}

@@ -1,0 +1,302 @@
+{
+ "_what": "The subjects Merced College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Merced College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:42:16Z",
+ "run": "45626064651",
+ "source": [
+  "https://catalog.mccd.edu/courses"
+ ],
+ "rows": [
+  {
+   "code": "ACTG",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACTG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "AGAB",
+   "heading": "Agriculture Business",
+   "heading_printed": "Agriculture Business",
+   "rule": "index",
+   "codes": [
+    "AGAB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "AGAS",
+   "heading": "Agriculture Animal Science",
+   "heading_printed": "Agriculture Animal Science",
+   "rule": "index",
+   "codes": [
+    "AGAS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "AGEH",
+   "heading": "Agriculture Environmental Science",
+   "heading_printed": "Agriculture Environmental Science",
+   "rule": "index",
+   "codes": [
+    "AGEH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "AGMA",
+   "heading": "Agriculture Mechanized Agriculture",
+   "heading_printed": "Agriculture Mechanized Agriculture",
+   "rule": "index",
+   "codes": [
+    "AGMA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "AGPS",
+   "heading": "Agriculture Plant Science",
+   "heading_printed": "Agriculture Plant Science",
+   "rule": "index",
+   "codes": [
+    "AGPS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "AGRI",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "index",
+   "codes": [
+    "AGRI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "ALLH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "index",
+   "codes": [
+    "ALLH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "AOM",
+   "heading": "Administrative Office Management",
+   "heading_printed": "Administrative Office Management",
+   "rule": "index",
+   "codes": [
+    "AOM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Archaeology",
+   "heading_printed": "Archaeology",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "ART",
+   "heading": "Art, Fine",
+   "heading_printed": "Art, Fine",
+   "rule": "index",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "ARTD",
+   "heading": "Art, Digital",
+   "heading_printed": "Art, Digital",
+   "rule": "index",
+   "codes": [
+    "ARTD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "ARTS",
+   "heading": "Arts, Noncredit",
+   "heading_printed": "Arts, Noncredit",
+   "rule": "index",
+   "codes": [
+    "ARTS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "ASLG",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASLG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "ATHL",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATHL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.mccd.edu/courses",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626064651)",
+   "run": "45626064651"
+  }
+ ],
+ "subjects": 18,
+ "with_heading": 18
+}

@@ -1,0 +1,465 @@
+{
+ "college": "Palo Verde College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:22Z",
+ "run": "45626788039,45628362566",
+ "plan": "kb/college_reads/subject_index_palo_verde.json",
+ "titles": [
+  {
+   "code": "ABE",
+   "title": "Non-Credit Courses",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 10
+  },
+  {
+   "code": "ACC",
+   "title": "Accounting",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "ADS",
+   "title": "Alcohol & Drug Studies",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 13
+  },
+  {
+   "code": "ANT",
+   "title": "Anthropology",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 7
+  },
+  {
+   "code": "ARTH",
+   "title": "Art CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 5
+  },
+  {
+   "code": "AST",
+   "title": "Astronomy",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "ATH",
+   "title": "Athletics",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 11
+  },
+  {
+   "code": "AUT",
+   "title": "Automotive Technology",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 11
+  },
+  {
+   "code": "BCT",
+   "title": "Building Construction Trade",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 12
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 5
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 11
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "CHD",
+   "title": "Child Development",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 24
+  },
+  {
+   "code": "CHE",
+   "title": "Chemistry",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 13
+  },
+  {
+   "code": "COMM",
+   "title": "Commnication CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "CRJ",
+   "title": "Criminal Justice",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 15
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "ENG",
+   "title": "English",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 5
+  },
+  {
+   "code": "ENGL",
+   "title": "English CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "ETH",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "FST",
+   "title": "Fire Science Technology",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 89
+  },
+  {
+   "code": "GED",
+   "title": "Non-Credit Basic Education",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "GEL",
+   "title": "Geology",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "GES",
+   "title": "General Studies",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "GGR",
+   "title": "Geography",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "HEA",
+   "title": "Health Education",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "HIS",
+   "title": "History",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 4
+  },
+  {
+   "code": "HIST",
+   "title": "History CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "MAN",
+   "title": "Management",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 5
+  },
+  {
+   "code": "MAT",
+   "title": "Mathematics",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "NBE",
+   "title": "Emergency Medical Services",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "NBE",
+   "title": "Non-Credit Basic Education",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 24
+  },
+  {
+   "code": "NSC",
+   "title": "Nursing Science Clinical",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "NUR",
+   "title": "Nursing",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 29
+  },
+  {
+   "code": "PHE",
+   "title": "Physical Education",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 11
+  },
+  {
+   "code": "PHI",
+   "title": "Philosophy",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 2
+  },
+  {
+   "code": "PHY",
+   "title": "Physics",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 14
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 6
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "SPA",
+   "title": "Spanish",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "SPE",
+   "title": "Speech",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 3
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics CCN",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=3",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "UMJ",
+   "title": "English",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=2",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 1
+  },
+  {
+   "code": "WEL",
+   "title": "Welding Technology",
+   "url": "https://catalog.paloverde.edu/content.php?catoid=2&catoid=2&navoid=94&filter%5Bitem_type%5D=3&filter%5Bonly_active%5D=1&filter%5B3%5D=1&filter%5Bcpage%5D=4",
+   "where": "catalog",
+   "method": "subject heading",
+   "courses_under_heading": 15
+  }
+ ],
+ "how": "Acalog's course list (Courses Descriptions, five pages of 100) prints each course under a subject heading; each title pairs that heading with the prefix of the courses printed under it. A code under two headings has a row for each (Anthropology and Anthropology CCN).",
+ "not_listed": {
+  "codes": [
+   "MUS",
+   "THA"
+  ],
+  "why": "The hunt list names these codes, and the course list prints no course under them."
+ }
+}

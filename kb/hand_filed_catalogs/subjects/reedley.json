@@ -1,0 +1,1262 @@
+{
+ "_what": "The subjects Reedley College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Reedley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:52:24Z",
+ "run": "45626743727",
+ "source": [
+  "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150"
+ ],
+ "rows": [
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AFRAM",
+   "heading": "African-American Studies",
+   "heading_printed": "African-American Studies",
+   "rule": "index",
+   "codes": [
+    "AFRAM"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AG",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "index",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AGBS",
+   "heading": "Agriculture Business",
+   "heading_printed": "Agriculture Business",
+   "rule": "index",
+   "codes": [
+    "AGBS"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AGED",
+   "heading": "Agriculture Education",
+   "heading_printed": "Agriculture Education",
+   "rule": "index",
+   "codes": [
+    "AGED"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AMIND",
+   "heading": "American Indian Studies",
+   "heading_printed": "American Indian Studies",
+   "rule": "index",
+   "codes": [
+    "AMIND"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AMT",
+   "heading": "Aviation Maintenance Technology",
+   "heading_printed": "Aviation Maintenance Technology",
+   "rule": "index",
+   "codes": [
+    "AMT"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ANTHR",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTHR"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AS",
+   "heading": "Animal Science",
+   "heading_printed": "Animal Science",
+   "rule": "index",
+   "codes": [
+    "AS"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ASAMER",
+   "heading": "Asian-American Studies",
+   "heading_printed": "Asian-American Studies",
+   "rule": "index",
+   "codes": [
+    "ASAMER"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AUTOT",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTOT"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "BA",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BA"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CELA",
+   "heading": "Continuing Education Learning Academy",
+   "heading_printed": "Continuing Education Learning Academy",
+   "rule": "index",
+   "codes": [
+    "CELA"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CLS",
+   "heading": "Chicano-Latino Studies",
+   "heading_printed": "Chicano-Latino Studies",
+   "rule": "index",
+   "codes": [
+    "CLS"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication",
+   "heading_printed": "Communication",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CRIM",
+   "heading": "Criminology",
+   "heading_printed": "Criminology",
+   "rule": "index",
+   "codes": [
+    "CRIM"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "DA",
+   "heading": "Dental Assisting",
+   "heading_printed": "Dental Assisting",
+   "rule": "index",
+   "codes": [
+    "DA"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "DEVSER",
+   "heading": "Developmental Services",
+   "heading_printed": "Developmental Services",
+   "rule": "index",
+   "codes": [
+    "DEVSER"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EH",
+   "heading": "Environmental Horticulture",
+   "heading_printed": "Environmental Horticulture",
+   "rule": "index",
+   "codes": [
+    "EH"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ETHNST",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHNST"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FAME",
+   "heading": "Advanced Manufacturing",
+   "heading_printed": "Advanced Manufacturing",
+   "rule": "index",
+   "codes": [
+    "FAME"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FLGHT",
+   "heading": "Flight Science",
+   "heading_printed": "Flight Science",
+   "rule": "index",
+   "codes": [
+    "FLGHT"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FN",
+   "heading": "Foods and Nutrition",
+   "heading_printed": "Foods and Nutrition",
+   "rule": "index",
+   "codes": [
+    "FN"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FOR",
+   "heading": "Forestry",
+   "heading_printed": "Forestry",
+   "rule": "index",
+   "codes": [
+    "FOR"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HCI",
+   "heading": "Health Care Interpreter",
+   "heading_printed": "Health Care Interpreter",
+   "rule": "index",
+   "codes": [
+    "HCI"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "INDST",
+   "heading": "Individual Study",
+   "heading_printed": "Individual Study",
+   "rule": "index",
+   "codes": [
+    "INDST"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "INTDS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "INTDS"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "IS",
+   "heading": "Information Systems",
+   "heading_printed": "Information Systems",
+   "rule": "index",
+   "codes": [
+    "IS"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "IT",
+   "heading": "Industrial Technology",
+   "heading_printed": "Industrial Technology",
+   "rule": "index",
+   "codes": [
+    "IT"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "JOURN",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOURN"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "KINES",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINES"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LIBSKL",
+   "heading": "Library Skills",
+   "heading_printed": "Library Skills",
+   "rule": "index",
+   "codes": [
+    "LIBSKL"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LITEC",
+   "heading": "Library Technology",
+   "heading_printed": "Library Technology",
+   "rule": "index",
+   "codes": [
+    "LITEC"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MAG",
+   "heading": "Mechanized Agriculture",
+   "heading_printed": "Mechanized Agriculture",
+   "rule": "index",
+   "codes": [
+    "MAG"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MFGT",
+   "heading": "Manufacturing Technology",
+   "heading_printed": "Manufacturing Technology",
+   "rule": "index",
+   "codes": [
+    "MFGT"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MKTG",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MKTG"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NAT",
+   "heading": "Nursing Assistant Training",
+   "heading_printed": "Nursing Assistant Training",
+   "rule": "index",
+   "codes": [
+    "NAT"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "OT",
+   "heading": "Office Technology",
+   "heading_printed": "Office Technology",
+   "rule": "index",
+   "codes": [
+    "OT"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PATH",
+   "heading": "Performing Arts and Theatre",
+   "heading_printed": "Performing Arts and Theatre",
+   "rule": "index",
+   "codes": [
+    "PATH"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PLS",
+   "heading": "Plant Science",
+   "heading_printed": "Plant Science",
+   "rule": "index",
+   "codes": [
+    "PLS"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PYSC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PYSC"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SCI",
+   "heading": "Science",
+   "heading_printed": "Science",
+   "rule": "index",
+   "codes": [
+    "SCI"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SERV",
+   "heading": "Service Learning",
+   "heading_printed": "Service Learning",
+   "rule": "index",
+   "codes": [
+    "SERV"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ST",
+   "heading": "Supervised Tutoring",
+   "heading_printed": "Supervised Tutoring",
+   "rule": "index",
+   "codes": [
+    "ST"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SURV",
+   "heading": "Surveying",
+   "heading_printed": "Surveying",
+   "rule": "index",
+   "codes": [
+    "SURV"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "VESL",
+   "heading": "Vocational English as a Second Language",
+   "heading_printed": "Vocational English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "VESL"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WGSS",
+   "heading": "Women's Gender & Sexuality Studies",
+   "heading_printed": "Women's Gender & Sexuality Studies",
+   "rule": "index",
+   "codes": [
+    "WGSS"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WKEXP",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WKEXP"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WLF",
+   "heading": "Wildland Fire",
+   "heading_printed": "Wildland Fire",
+   "rule": "index",
+   "codes": [
+    "WLF"
+   ],
+   "candidate": null,
+   "address": "https://reedley.curriqunet.com/catalog/_getNavigation?id=23&parentId=3150",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  }
+ ],
+ "subjects": 78,
+ "with_heading": 78
+}

@@ -1,0 +1,486 @@
+{
+ "_readme": "S730 title hunt (elumen group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (kb/subject_title_hunt/README.md, r-no-mid-on-a-stray-code-sam-2026-11-25). Rounds 1 and 2 (runs 45623983494, 45625568851): the catalog prints no code beside a subject name; its All Disciplines page and menu link one department page per discipline, each listing its courses. This read loads each of those pages through its light content call (publish/content, about 2 KB, the call the catalog's own menu makes; S380), one per page, so each heading prints with the codes of the courses under it. No model call, writes nothing.",
+ "college": "Antelope Valley College",
+ "questions": {
+  "subject_index": "The heading each page prints and the subject codes of the courses listed under it."
+ },
+ "keywords": [
+  " - [A-Z]{2,6}\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,accounting?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,administration-of-justice?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,advanced-manufacturing?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,aeronautical-aviation-technology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,aeronautical-non-destructive-inspection?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,aerospace-leadership-and-management?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,air-conditioning-refrigeration-ventilation?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,aircraft-fabrication-assembly?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,airframe-manufacturing-technologyv2?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,anthropology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,art?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,artificial-intelligence-education?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,astronomy?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,athletic-training?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,auto-body?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,automotive-technology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,biological-environmental-sciences?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,business?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,business-information-professional?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,chemistry?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,child-and-family-education?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,chinese?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,communication-studiesv2?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,computer-applications?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,computer-science?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,dance?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,deaf-studies?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,digital-media?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,earth-science?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,economics?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,education?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,electrical-technology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,electronics-technology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,emergency-medical-technology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,engineering?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,english?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,english-as-a-second-language?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,ethnic-studies?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,film-and-television?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,fire-technology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,french?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,geosciences?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,german?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,health-education?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,history?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,human-development?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,industrial-manufacturingv2?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,journalism?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,kinesiology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,latin?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,learning-assistance?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,legal-assisting-paralegal?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,library-studies?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,management?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,marketing?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,mathematics?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,medical-assistingv2?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,metrology-sciences-for-aerospace-manufacturing?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,music?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,music-commercial?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,nursing-science?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,nutrition-and-foods?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,philosophy?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,photography-commercial?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,physical-science?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,physics?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,political-sciences?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,psychology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,radiologic-technology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,reading?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,real-estate?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,recreational-leadership?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,respiratory-care?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,sociology?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,spanish?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,theatre-arts?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,vocational-nursing?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,water-treatment?tenant=avc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-27,department,welding?tenant=avc.elumenapp.com"
+  }
+ ]
+}

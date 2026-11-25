@@ -1,0 +1,422 @@
+{
+ "college": "Santiago Canyon College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:05:47Z",
+ "run": "45629589579",
+ "plan": "kb/college_reads/subject_index_santiago_canyon.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "ACCOUNTING",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=448",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACE",
+   "title": "AMERICAN COLLEGE ENGLISH",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=453",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "AMERICAN SIGN LANGUAGE",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=454",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "ANTHROPOLOGY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=456",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "ART",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=458",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "ASTRONOMY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=472",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "BUSINESS",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=493",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "CHEMISTRY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=499",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "CHILD DEVELOPMENT",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=503",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHNS",
+   "title": "CHINESE",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=525",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CINE",
+   "title": "CINEMA STUDIES",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=526",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "COMMUNICATION",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=531",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "COMPUTER INFORMATION SYSTEMS",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=539",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CMPR",
+   "title": "COMPUTER SCIENCE",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=543",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSM",
+   "title": "COSMETOLOGY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=550",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNSL",
+   "title": "COUNSLEING",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=552",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CJ",
+   "title": "CRIMINAL JUSTICE",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=560",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DNCE",
+   "title": "DANCE",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=565",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ERTH",
+   "title": "EARTH SCIENCE",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=571",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "EDUCATION",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=580",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELCT",
+   "title": "ELECTRICIAN",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=586",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETEC",
+   "title": "ELECTRONICS TECHNOLOGY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=595",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMTEC",
+   "title": "EMERGENCY MEDICAL TECHNICIAN",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=596",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "ENGINEERING",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=597",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "ETHNIC STUDIES",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=611",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "FRENCH",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=614",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEM",
+   "title": "GEMOLOGY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=617",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GSWS",
+   "title": "GENDER SEXUALITY WOMEN STUDIES",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=619",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "GEOGRAPHY AND THE ENVIRONMENT",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=621",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "HISTORY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=627",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INFO",
+   "title": "INFORMATION STUDIES",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=637",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IDS",
+   "title": "INTERDISCIPLINARY STUDIES",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=640",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "ITALIAN",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=640",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "KINESIOLOGY - HEALTH EDUCATION",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=643",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "MANAGEMENT",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=664",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MKTG",
+   "title": "MARKETING",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=666",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "MUSIC",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=687",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "NUTRITION AND FOOD",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=704",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "PHILOSOPHY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=705",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSC",
+   "title": "PHYSICAL SCIENCE",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=710",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "PHYSICS",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=710",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "PSYCHOLOGY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=719",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHLT",
+   "title": "PUBLIC AND ENVIRONMENTAL HEALTH",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=734",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNST",
+   "title": "PUBLIC WORKS",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=735",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "READ",
+   "title": "READING",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=750",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RE",
+   "title": "REAL ESTATE",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=756",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "SOCIOLOGY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=764",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "SPANISH",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=772",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SURV",
+   "title": "SURVEY/MAPPING SCIENCES",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=780",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "THEATRE ARTS",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=784",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WATR",
+   "title": "WATER AND WASTEWATER TECHNOLOGY",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=792",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACA",
+   "title": "CARPENTRY - APPRENTICESHIP",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=1032",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APCD",
+   "title": "CHILD DEVELOPMENT - APPRENTICESHIP",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=1107",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACS",
+   "title": "COSMETOLOGY - APPRENTICESHIP",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=1111",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AEL",
+   "title": "ELECTRICIAN- APPRENTICESHIP",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=1112",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AME",
+   "title": "MAINTENANCE MECHANIC - APPRENTICESHIP",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=1122",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AOE",
+   "title": "OPERATING ENGINEERS - APPRENTICESHIP",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=1128",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APL",
+   "title": "POWER LINEMAN - APPRENTICESHIP",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=1147",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASV",
+   "title": "SURVEYING - APPRENTICESHIP",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog_accessible.pdf#page=1151",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

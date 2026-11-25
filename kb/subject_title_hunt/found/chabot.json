@@ -1,0 +1,919 @@
+{
+ "college": "Chabot College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:07:33Z",
+ "run": "45630435823",
+ "plan": "kb/college_reads/subject_index_chabot.json",
+ "how": "The catalog's Course Listing lists each subject under Credit, Noncredit and Apprenticeship Courses as a node titled with its code and name; the run read those nodes through the catalog's own navigation JSON (_getNavigation), one call per list.",
+ "titles": [
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ADMJ - Administration of Justice",
+   "node": 7525
+  },
+  {
+   "code": "ADPE",
+   "title": "Adapted Physical Education",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ADPE - Adapted Physical Education",
+   "node": 7526
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ANTH - Anthropology",
+   "node": 7527
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARCH - Architecture",
+   "node": 7632
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ART - Art",
+   "node": 7633
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARTH - Art History",
+   "node": 7634
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASTR - Astronomy",
+   "node": 7635
+  },
+  {
+   "code": "ATEC",
+   "title": "Automotive Technology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ATEC - Automotive Technology",
+   "node": 7636
+  },
+  {
+   "code": "ATHL",
+   "title": "Intercollegiate Athletics",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ATHL - Intercollegiate Athletics",
+   "node": 7637
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BIOL - Biology",
+   "node": 7715
+  },
+  {
+   "code": "BIOS",
+   "title": "Biological Sciences",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BIOS - Biological Sciences",
+   "node": 7638
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUS - Business",
+   "node": 7639
+  },
+  {
+   "code": "CAS",
+   "title": "Computer Application Systems",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CAS - Computer Application Systems",
+   "node": 7640
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHEM - Chemistry",
+   "node": 7641
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHIN - Chinese",
+   "node": 7642
+  },
+  {
+   "code": "CHM",
+   "title": "Chemistry",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHM - Chemistry",
+   "node": 7711
+  },
+  {
+   "code": "CMGT",
+   "title": "Construction Management",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CMGT - Construction Management",
+   "node": 7643
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMM - Communication Studies",
+   "node": 7644
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CSCI - Computer Science",
+   "node": 7645
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DANC - Dance",
+   "node": 7646
+  },
+  {
+   "code": "DHYG",
+   "title": "Dental Hygiene",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DHYG - Dental Hygiene",
+   "node": 7647
+  },
+  {
+   "code": "DIGM",
+   "title": "Digital Media",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DIGM - Digital Media",
+   "node": 7648
+  },
+  {
+   "code": "ECD",
+   "title": "Early Childhood Development",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECD - Early Childhood Development",
+   "node": 7649
+  },
+  {
+   "code": "ECN",
+   "title": "Economics",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECN - Economics",
+   "node": 7650
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECON - Economics",
+   "node": 7651
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EMS - Emergency Medical Services",
+   "node": 7652
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGL - English",
+   "node": 7653
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGR - Engineering",
+   "node": 7654
+  },
+  {
+   "code": "ENSC",
+   "title": "Environmental Science",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENSC - Environmental Science",
+   "node": 7655
+  },
+  {
+   "code": "ENST",
+   "title": "Environmental Studies",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENST - Environmental Studies",
+   "node": 7656
+  },
+  {
+   "code": "ENTR",
+   "title": "Entrepreneurship",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENTR - Entrepreneurship",
+   "node": 7657
+  },
+  {
+   "code": "ES",
+   "title": "Ethnic Studies",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ES - Ethnic Studies",
+   "node": 7658
+  },
+  {
+   "code": "ESL",
+   "title": "English As A Second Language",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ESL - English As A Second Language",
+   "node": 7659
+  },
+  {
+   "code": "ESYS",
+   "title": "Electronic Systems Technology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ESYS - Electronic Systems Technology",
+   "node": 7660
+  },
+  {
+   "code": "FILM",
+   "title": "Film",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FILM - Film",
+   "node": 7661
+  },
+  {
+   "code": "FRNC",
+   "title": "French",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FRNC - French",
+   "node": 7662
+  },
+  {
+   "code": "FT",
+   "title": "Fire Technology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FT - Fire Technology",
+   "node": 7663
+  },
+  {
+   "code": "GEO",
+   "title": "Geography",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEO - Geography",
+   "node": 7664
+  },
+  {
+   "code": "GEOS",
+   "title": "Geological Sciences",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOS - Geological Sciences",
+   "node": 7665
+  },
+  {
+   "code": "GNST",
+   "title": "General Studies",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GNST - General Studies",
+   "node": 7666
+  },
+  {
+   "code": "HEAG",
+   "title": "Healthy Aging Older Adults",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HEAG - Healthy Aging Older Adults",
+   "node": 7667
+  },
+  {
+   "code": "HIS",
+   "title": "History",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIS - History",
+   "node": 7712
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIST - History",
+   "node": 7668
+  },
+  {
+   "code": "HIT",
+   "title": "Health Information Management",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIT - Health Information Management",
+   "node": 7669
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HLTH - Health",
+   "node": 7670
+  },
+  {
+   "code": "HUMN",
+   "title": "Humanities",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUMN - Humanities",
+   "node": 7671
+  },
+  {
+   "code": "ID",
+   "title": "Interior Design",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ID - Interior Design",
+   "node": 7672
+  },
+  {
+   "code": "INDT",
+   "title": "Industrial Technology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "INDT - Industrial Technology",
+   "node": 7673
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "JAPN - Japanese",
+   "node": 7674
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "KINE - Kinesiology",
+   "node": 7675
+  },
+  {
+   "code": "LIBS",
+   "title": "Library Studies",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LIBS - Library Studies",
+   "node": 7676
+  },
+  {
+   "code": "LNSK",
+   "title": "Learning Skills",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LNSK - Learning Skills",
+   "node": 7677
+  },
+  {
+   "code": "MCOM",
+   "title": "Mass Communications",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MCOM - Mass Communications",
+   "node": 7678
+  },
+  {
+   "code": "MEDA",
+   "title": "Medical Assisting",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MEDA - Medical Assisting",
+   "node": 7679
+  },
+  {
+   "code": "MTH",
+   "title": "Mathematics",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MTH - Mathematics",
+   "node": 7680
+  },
+  {
+   "code": "MTT",
+   "title": "Machine Tool Technology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MTT - Machine Tool Technology",
+   "node": 7681
+  },
+  {
+   "code": "MURT",
+   "title": "Music Recording Technology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MURT - Music Recording Technology",
+   "node": 7682
+  },
+  {
+   "code": "MUSA",
+   "title": "Music Applied",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUSA - Music Applied",
+   "node": 7683
+  },
+  {
+   "code": "MUSL",
+   "title": "Music Literature",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUSL - Music Literature",
+   "node": 7684
+  },
+  {
+   "code": "MUSP",
+   "title": "Music Performance",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUSP - Music Performance",
+   "node": 7685
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NURS - Nursing",
+   "node": 7686
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NUTR - Nutrition",
+   "node": 7687
+  },
+  {
+   "code": "PEAC",
+   "title": "Physical Education Activity",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PEAC - Physical Education Activity",
+   "node": 7688
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHIL - Philosophy",
+   "node": 7689
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHOT - Photography",
+   "node": 7690
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHYS - Physics",
+   "node": 7691
+  },
+  {
+   "code": "PLGL",
+   "title": "Paralegal Studies",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PLGL - Paralegal Studies",
+   "node": 7692
+  },
+  {
+   "code": "PMED",
+   "title": "Paramedicine",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PMED - Paramedicine",
+   "node": 7693
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POLS - Political Science",
+   "node": 7694
+  },
+  {
+   "code": "POSC",
+   "title": "Political Science",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POSC - Political Science",
+   "node": 7695
+  },
+  {
+   "code": "PSCN",
+   "title": "Psychology-Counseling",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSCN - Psychology-Counseling",
+   "node": 7696
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSY - Psychology",
+   "node": 7697
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSYC - Psychology",
+   "node": 7698
+  },
+  {
+   "code": "RELS",
+   "title": "Religious Studies",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "RELS - Religious Studies",
+   "node": 7699
+  },
+  {
+   "code": "REST",
+   "title": "Real Estate",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "REST - Real Estate",
+   "node": 7700
+  },
+  {
+   "code": "SERV",
+   "title": "Service Learning",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SERV - Service Learning",
+   "node": 7701
+  },
+  {
+   "code": "SL",
+   "title": "Sign Language",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SL - Sign Language",
+   "node": 7702
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOCI - Sociology",
+   "node": 7703
+  },
+  {
+   "code": "SPA",
+   "title": "Spanish",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SPA - Spanish",
+   "node": 7704
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "STAT - Statistics",
+   "node": 7705
+  },
+  {
+   "code": "STEM",
+   "title": "Science, Technology, Engineering, and Mathematics",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "STEM - Science, Technology, Engineering, and Mathematics",
+   "node": 7706
+  },
+  {
+   "code": "THTR",
+   "title": "Theater Arts",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "THTR - Theater Arts",
+   "node": 7707
+  },
+  {
+   "code": "TUTR",
+   "title": "Tutoring",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "TUTR - Tutoring",
+   "node": 7708
+  },
+  {
+   "code": "WELD",
+   "title": "Welding Technology",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WELD - Welding Technology",
+   "node": 7709
+  },
+  {
+   "code": "WEXP",
+   "title": "Work Experience",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7524",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WEXP - Work Experience",
+   "node": 7710
+  },
+  {
+   "code": "APAC",
+   "title": "Apprenticeship: AC Transit",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APAC - Apprenticeship: AC Transit",
+   "node": 7491
+  },
+  {
+   "code": "APAU",
+   "title": "Apprenticeship: Automotive",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APAU - Apprenticeship: Automotive",
+   "node": 7492
+  },
+  {
+   "code": "APEL",
+   "title": "Apprenticeship: Electrical",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APEL - Apprenticeship: Electrical",
+   "node": 7493
+  },
+  {
+   "code": "APFL",
+   "title": "Apprenticeship: Fire and Life Safety",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APFL - Apprenticeship:  Fire and Life Safety",
+   "node": 7494
+  },
+  {
+   "code": "APHC",
+   "title": "Apprenticeship: Health Coach",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APHC - Apprenticeship: Health Coach",
+   "node": 7495
+  },
+  {
+   "code": "APIT",
+   "title": "Apprenticeship: IT Support Professional",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APIT - Apprenticeship: IT Support Professional",
+   "node": 7496
+  },
+  {
+   "code": "APPM",
+   "title": "Apprenticeship: Precision Manufacturing",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APPM - Apprenticeship: Precision Manufacturing",
+   "node": 7497
+  },
+  {
+   "code": "APRO",
+   "title": "Apprenticeship: Roofing",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APRO - Apprenticeship:  Roofing",
+   "node": 7498
+  },
+  {
+   "code": "APSF",
+   "title": "Apprenticeship: Sprinkler Fitter",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APSF - Apprenticeship: Sprinkler Fitter",
+   "node": 7499
+  },
+  {
+   "code": "APTE",
+   "title": "Apprenticeship: Telecommunications",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "APTE - Apprenticeship:  Telecommunications",
+   "node": 7500
+  },
+  {
+   "code": "CEST",
+   "title": "Apprenticeship: Construction System Electrical Low Voltage",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CEST - Apprenticeship: Construction System Electrical Low Voltage",
+   "node": 7501
+  },
+  {
+   "code": "ECAP",
+   "title": "Apprenticeship: Early Childhood",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECAP - Apprenticeship: Early Childhood",
+   "node": 7502
+  },
+  {
+   "code": "ELEC",
+   "title": "Apprenticeship: Electrical Construction",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ELEC - Apprenticeship: Electrical Construction",
+   "node": 7503
+  },
+  {
+   "code": "OPTN",
+   "title": "Apprenticeship: Optical Technician Program",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "OPTN - Apprenticeship: Optical Technician Program",
+   "node": 7504
+  },
+  {
+   "code": "PLPF",
+   "title": "Apprenticeship: Plumbing/Pipefitting",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PLPF - Apprenticeship: Plumbing/Pipefitting",
+   "node": 7505
+  },
+  {
+   "code": "SHEE",
+   "title": "Apprenticeship: Sheetmetal",
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=7490",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SHEE - Apprenticeship: Sheetmetal",
+   "node": 7506
+  }
+ ]
+}

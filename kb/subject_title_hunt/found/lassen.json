@@ -1,0 +1,405 @@
+{
+ "college": "Lassen College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:04:36Z",
+ "run": "45629430201",
+ "runs": [
+  "45625006694",
+  "45626565022",
+  "45627807594",
+  "45629430201",
+  "45630937766"
+ ],
+ "plan": "kb/college_reads/subject_index_lassen.json",
+ "source_pdf": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf",
+ "titles": [
+  {
+   "code": "AERO",
+   "title": "AVIATION",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=120",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGR",
+   "title": "AGRICULTURE",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=112",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "ADMINISTRATION OF JUSTICE",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=103",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "ANTHROPOLOGY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=114",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "ART",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=103",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "ART HISTORY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=117",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "AMERICAN SIGN LANGUAGE",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=114",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "ASTRONOMY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AT",
+   "title": "AUTOMOTIVE",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=104",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "BIOLOGY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=120",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BS",
+   "title": "BASIC SKILLS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=104",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "BUSINESS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=105",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CA",
+   "title": "COMPUTER APPLICATIONS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=125",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CARS",
+   "title": "CAREERS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=105",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CD",
+   "title": "CHILD DEVELOPMENT",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=123",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDL",
+   "title": "COMMERCIAL DRIVER’S LICENSE",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=105",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CG",
+   "title": "COUNSELING & GUIDANCE",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "CHEMISTRY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=122",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "COMPUTER INFORMATION SYSTEMS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=125",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "COMMUNICATIONS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DA",
+   "title": "DENTAL ASSISTING",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=126",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DS",
+   "title": "DEVELOPMENTAL STUDIES",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "ECONOMICS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=128",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ED",
+   "title": "EDUCATION",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=129",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMT",
+   "title": "EMERGENCY MEDICAL TECHNICIAN or RESPONDER",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=129",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "ENGLISH",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ES",
+   "title": "ETHNIC STUDIES",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=130",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "ENGLISH AS A SECOND LANGUAGE",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FILM",
+   "title": "FILM",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=130",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FOR",
+   "title": "FORESTRY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=140",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FS",
+   "title": "FIRE TECHNOLOGY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "GEOGRAPHY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "GEOLOGY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GIS",
+   "title": "GEOGRAPHICAL INFORMATION SYSTEMS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "HISTORY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLTH",
+   "title": "HEALTH",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=142",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HO",
+   "title": "HEALTH OCCUPATIONS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=142",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "HUMANITIES",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUS",
+   "title": "HUMAN SERVICES",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IT",
+   "title": "INDUSTRIAL TECHNOLOGY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "MATHEMATICS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=107",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "MUSIC",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=145",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "NURSING",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=146",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed with the subhead 'Registered Nursing'"
+  },
+  {
+   "code": "PE",
+   "title": "PHYSICAL EDUCATION",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PEAC",
+   "title": "PHYSICAL EDUCATION ACTIVITIES COURSES",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "PHILOSOPHY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "PHYSICAL SCIENCE",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "PHYSICS",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "POLITICAL SCIENCE",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "PSYCHOLOGY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=156",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "SOCIOLOGY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=156",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TUTR",
+   "title": "TUTORING",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=157",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VN",
+   "title": "Licensed Vocational Nursing",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=151",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "a subhead under NURSING, as 'Registered Nursing' is for NURS"
+  },
+  {
+   "code": "WE",
+   "title": "WORK EXPERIENCE",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=160",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WT",
+   "title": "WELDING TECHNOLOGY",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=157",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "not_printed": "CMS, CORS, COT, CS, DRA, ENGR, FOLK, FREN, GS, GSS, HE, PGT, PLSC, READ, SOSC and SPAN print no course line in the course descriptions (PDF pages 102 to 162, run 45629430201)."
+}

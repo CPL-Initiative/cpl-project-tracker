@@ -24,7 +24,11 @@
     "CREDIT COURSES",
     "AMERICAN SIGN LANGUAGE (A S L)"
    ],
-   "first_course": "A S L 001 - AMERICAN SIGN LANGUAGE I"
+   "first_course": "A S L 001 - AMERICAN SIGN LANGUAGE I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ACAD PR",
@@ -42,7 +46,11 @@
     "NONCREDIT CLASSES ARE NOT SUBJECT TO REPEATABILITY RESTRICTIONS",
     "ACADEMIC PREPARATION (ACAD PR)"
    ],
-   "first_course": "ACAD PR 101CE - COLLEGE PREPARATORY SEMINAR"
+   "first_course": "ACAD PR 101CE - COLLEGE PREPARATORY SEMINAR",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ACCTG",
@@ -60,7 +68,11 @@
     "knowledge of American Sign Language is required.",
     "ACCOUNTING (ACCTG)"
    ],
-   "first_course": "ACCTG 001 - INTRODUCTORY ACCOUNTING I"
+   "first_course": "ACCTG 001 - INTRODUCTORY ACCOUNTING I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ADDICST",
@@ -78,7 +90,11 @@
     "subjects.",
     "ADDICTION STUDIES (ADDICST)"
    ],
-   "first_course": "ADDICST 001 - UNDERSTANDING ADDICTION AND"
+   "first_course": "ADDICST 001 - UNDERSTANDING ADDICTION AND",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ADM JUS",
@@ -96,7 +112,11 @@
     "ADMINISTRATION OF JUSTICE",
     "(ADM JUS)"
    ],
-   "first_course": "ADM JUS 001 - INTRODUCTION TO ADMINISTRATION OF"
+   "first_course": "ADM JUS 001 - INTRODUCTION TO ADMINISTRATION OF",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "AFRO AM",
@@ -114,7 +134,11 @@
     "AFRICAN AMERICAN STUDIES",
     "(AFRO AM)"
    ],
-   "first_course": "AFRO AM 004 - THE AFRICAN AMERICAN EXPERIENCE IN"
+   "first_course": "AFRO AM 004 - THE AFRICAN AMERICAN EXPERIENCE IN",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ANATOMY",
@@ -132,7 +156,11 @@
     "of social justice, agency and self affirmation.",
     "ANATOMY (ANATOMY)"
    ],
-   "first_course": "ANATOMY 001 - INTRODUCTION TO HUMAN ANATOMY"
+   "first_course": "ANATOMY 001 - INTRODUCTION TO HUMAN ANATOMY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ANIMATN",
@@ -150,7 +178,11 @@
     "tems, from cellular to organ system levels of organization.",
     "ANIMATION (ANIMATN)"
    ],
-   "first_course": "ANIMATN 118 - HISTORY OF ANIMATION"
+   "first_course": "ANIMATN 118 - HISTORY OF ANIMATION",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ANTHRO",
@@ -168,7 +200,11 @@
     "matic production.",
     "ANTHROPOLOGY (ANTHRO)"
    ],
-   "first_course": "ANTHRO 101 - HUMAN BIOLOGICAL EVOLUTION"
+   "first_course": "ANTHRO 101 - HUMAN BIOLOGICAL EVOLUTION",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ARABIC",
@@ -186,7 +222,11 @@
     "CREDIT COURSES",
     "ARABIC (ARABIC)"
    ],
-   "first_course": "ARABIC 001 - ELEMENTARY ARABIC I"
+   "first_course": "ARABIC 001 - ELEMENTARY ARABIC I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ARMEN",
@@ -204,7 +244,11 @@
     "sponds to the first two years of high school Arabic.",
     "ARMENIAN (ARMEN)"
    ],
-   "first_course": "ARMEN 001 - ELEMENTARY ARMENIAN I"
+   "first_course": "ARMEN 001 - ELEMENTARY ARMENIAN I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ART",
@@ -222,7 +266,11 @@
     "in selected readings.",
     "ART (ART)"
    ],
-   "first_course": "ART 100 - INTRODUCTION TO STUDIO ART FOR NON-ART"
+   "first_course": "ART 100 - INTRODUCTION TO STUDIO ART FOR NON-ART",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ARTH",
@@ -240,7 +288,11 @@
     "a semester either working in the gallery or at an outside internship.",
     "ART HISTORY (CCN) (ARTH)"
    ],
-   "first_course": "ARTH C1100 - SURVEY OF ART FROM PREHISTORY TO"
+   "first_course": "ARTH C1100 - SURVEY OF ART FROM PREHISTORY TO",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ARTHIST",
@@ -258,7 +310,11 @@
     "ing this region.",
     "ART HISTORY (ARTHIST)"
    ],
-   "first_course": "ARTHIST 103 - ART APPRECIATION I"
+   "first_course": "ARTHIST 103 - ART APPRECIATION I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ASIAN",
@@ -276,7 +332,11 @@
     "ASIAN STUDIES AMERICAN STUDIES",
     "(ASIAN)"
    ],
-   "first_course": "ASIAN 001 - ASIAN AMERICAN HISTORY"
+   "first_course": "ASIAN 001 - ASIAN AMERICAN HISTORY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ASTRON",
@@ -294,7 +354,11 @@
     "CREDIT COURSES",
     "ASTRONOMY (ASTRON)"
    ],
-   "first_course": "ASTRON 001 - ELEMENTARY ASTRONOMY"
+   "first_course": "ASTRON 001 - ELEMENTARY ASTRONOMY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "BIOLOGY",
@@ -312,7 +376,11 @@
     "trial life.",
     "BIOLOGY (BIOLOGY)"
    ],
-   "first_course": "BIOLOGY 003 - INTRODUCTION TO BIOLOGY"
+   "first_course": "BIOLOGY 003 - INTRODUCTION TO BIOLOGY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "BSICSKL",
@@ -330,7 +398,11 @@
     "sition to college.",
     "BASIC SKILLS (BSICSKL)"
    ],
-   "first_course": "BSICSKL 006CE - REVIEW OF BASIC ENGLISH"
+   "first_course": "BSICSKL 006CE - REVIEW OF BASIC ENGLISH",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "BUS",
@@ -348,7 +420,11 @@
     "preservation of the natural environment.",
     "BUSINESS (BUS)"
    ],
-   "first_course": "BUS 001 - INTRODUCTION TO BUSINESS"
+   "first_course": "BUS 001 - INTRODUCTION TO BUSINESS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CAOT",
@@ -366,7 +442,11 @@
     "promissory notes and compound interest.",
     "COMPUTER APPS OFFICE TECH (CAOT)"
    ],
-   "first_course": "CAOT 001 - COMPUTER KEYBOARDING AND DOCUMENT"
+   "first_course": "CAOT 001 - COMPUTER KEYBOARDING AND DOCUMENT",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CH DEV",
@@ -384,7 +464,11 @@
     "dialog boxes, and working with directories.",
     "CHILD DEVELOPMENT (CH DEV)"
    ],
-   "first_course": "CH DEV 001 - CHILD GROWTH AND DEVELOPMENT"
+   "first_course": "CH DEV 001 - CHILD GROWTH AND DEVELOPMENT",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CHEM",
@@ -402,7 +486,11 @@
     "CREDIT COURSES",
     "CHEMISTRY (CHEM)"
    ],
-   "first_course": "CHEM 060 - INTRODUCTION TO GENERAL CHEMISTRY"
+   "first_course": "CHEM 060 - INTRODUCTION TO GENERAL CHEMISTRY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CHICANO",
@@ -420,7 +508,11 @@
     "ature research are performed.",
     "CHICANO STUDIES (CHICANO)"
    ],
-   "first_course": "CHICANO 004 - INTRODUCTION TO CHICANA/O STUDIES"
+   "first_course": "CHICANO 004 - INTRODUCTION TO CHICANA/O STUDIES",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CHINESE",
@@ -438,7 +530,11 @@
     "selected Latina issues currently affecting Chicana women.",
     "CHINESE (CHINESE)"
    ],
-   "first_course": "CHINESE 001 - ELEMENTARY CHINESE I"
+   "first_course": "CHINESE 001 - ELEMENTARY CHINESE I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CINEMA",
@@ -456,7 +552,11 @@
     "civilization is examined.",
     "CINEMA (CINEMA)"
    ],
-   "first_course": "CINEMA 001 - INTRODUCTION TO MOTION PICTURE"
+   "first_course": "CINEMA 001 - INTRODUCTION TO MOTION PICTURE",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CIS",
@@ -474,7 +574,11 @@
     "COMPUTER INFORMATION SYSTEMS",
     "(CIS)"
    ],
-   "first_course": "CIS 101 - INTRODUCTION TO COMPUTERS AND THEIR"
+   "first_course": "CIS 101 - INTRODUCTION TO COMPUTERS AND THEIR",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CO TECH",
@@ -492,7 +596,11 @@
     "independent work.",
     "COMPUTER TECHNOLOGY (CO TECH)"
    ],
-   "first_course": "CO TECH 002 - INTRODUCTION TO ELECTRONICS"
+   "first_course": "CO TECH 002 - INTRODUCTION TO ELECTRONICS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "COLLEGE",
@@ -510,7 +618,11 @@
     "ware applications.",
     "COLLEGE STUDIES (COLLEGE)"
    ],
-   "first_course": "COLLEGE 101 - NAVIGATING YOUR PATH THROUGH"
+   "first_course": "COLLEGE 101 - NAVIGATING YOUR PATH THROUGH",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "COMM",
@@ -528,7 +640,11 @@
     "sition to college.",
     "COMMUNICATION STUDIES (COMM)"
    ],
-   "first_course": "COMM 100 - INTRODUCTION TO COMMUNICATION"
+   "first_course": "COMM 100 - INTRODUCTION TO COMMUNICATION",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "COOP ED",
@@ -546,7 +662,11 @@
     "CREDIT COURSES",
     "COOP ED (COOP ED)"
    ],
-   "first_course": "COOP ED 195 - WORK EXPERIENCE - GENERAL I"
+   "first_course": "COOP ED 195 - WORK EXPERIENCE - GENERAL I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CORR",
@@ -564,7 +684,11 @@
     "semester.",
     "CORRECTIONS (CORR)"
    ],
-   "first_course": "CORR 001 - INTRODUCTION TO CORRECTIONS"
+   "first_course": "CORR 001 - INTRODUCTION TO CORRECTIONS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "COUNSEL",
@@ -582,7 +706,11 @@
     "porary correctional issues.",
     "COUNSELING (COUNSEL)"
    ],
-   "first_course": "COUNSEL 020 - POST-SECONDARY EDUCATION: THE"
+   "first_course": "COUNSEL 020 - POST-SECONDARY EDUCATION: THE",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "CS",
@@ -600,7 +728,11 @@
     "CREDIT COURSES",
     "COMPUTER SCIENCE (CS)"
    ],
-   "first_course": "CS 101 - INTRODUCTION TO COMPUTER SCIENCE"
+   "first_course": "CS 101 - INTRODUCTION TO COMPUTER SCIENCE",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "DANCEST",
@@ -618,7 +750,11 @@
     "CREDIT COURSES",
     "DANCE STUDIES (DANCEST)"
    ],
-   "first_course": "DANCEST 185 - DIRECTED STUDY - DANCE"
+   "first_course": "DANCEST 185 - DIRECTED STUDY - DANCE",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "DANCETQ",
@@ -636,7 +772,11 @@
     "example).",
     "DANCE TECHNIQUES (DANCETQ)"
    ],
-   "first_course": "DANCETQ 111 - BALLET TECHNIQUES I"
+   "first_course": "DANCETQ 111 - BALLET TECHNIQUES I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "DEN TEK",
@@ -654,7 +794,11 @@
     "and other dance conditioning practices.",
     "DENTAL TECHNOLOGY (DEN TEK)"
    ],
-   "first_course": "DEN TEK 100 - INTRODUCTION TO THE DENTAL"
+   "first_course": "DEN TEK 100 - INTRODUCTION TO THE DENTAL",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "DNCESPC",
@@ -672,7 +816,11 @@
     "between function and esthetics is fully maximized.",
     "DANCE SPECIALTIES (DNCESPC)"
    ],
-   "first_course": "DNCESPC 311 - FLAMENCO AND SPANISH DANCE"
+   "first_course": "DNCESPC 311 - FLAMENCO AND SPANISH DANCE",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "E.S.L.",
@@ -690,7 +838,11 @@
     "ENGLISH AS A SECOND LANGUAGE 12",
     "(E.S.L.)"
    ],
-   "first_course": "E.S.L. 003A - COLLEGE ESL III: WRITING AND GRAMMAR"
+   "first_course": "E.S.L. 003A - COLLEGE ESL III: WRITING AND GRAMMAR",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "EARTH",
@@ -708,7 +860,11 @@
     "based on needs typical of second language learners.",
     "EARTH SCIENCE (EARTH)"
    ],
-   "first_course": "EARTH 001 - EARTH SCIENCE"
+   "first_course": "EARTH 001 - EARTH SCIENCE",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ECON",
@@ -726,7 +882,11 @@
     "and climate.",
     "ECONOMICS (ECON)"
    ],
-   "first_course": "ECON C2001 - PRINCIPLES OF MICROECONOMICS"
+   "first_course": "ECON C2001 - PRINCIPLES OF MICROECONOMICS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "EDUC",
@@ -744,7 +904,11 @@
     "monetary, fiscal, and other economic policies.",
     "EDUCATION (EDUC)"
    ],
-   "first_course": "EDUC 001 - INTRODUCTION TO TEACHING"
+   "first_course": "EDUC 001 - INTRODUCTION TO TEACHING",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "EGD TEK",
@@ -762,7 +926,11 @@
     "ENGINEERING GRAPHICS & DESIGN",
     "(EGD TEK)"
    ],
-   "first_course": "EGD TEK 101 - ENGINEERING GRAPHICS WITH CAD"
+   "first_course": "EGD TEK 101 - ENGINEERING GRAPHICS WITH CAD",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ENG ELC",
@@ -780,7 +948,11 @@
     "CAD software.",
     "ENGINEERING, ELECTRICAL (ENG ELC)"
    ],
-   "first_course": "ENG ELC 220 - ELECTRICAL CIRCUITS I"
+   "first_course": "ENG ELC 220 - ELECTRICAL CIRCUITS I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ENG GEN",
@@ -798,7 +970,11 @@
     "quency response analysis.",
     "ENGINEERING, GENERAL (ENG GEN)"
    ],
-   "first_course": "ENG GEN 101 - INTRODUCTION TO SCIENCE,"
+   "first_course": "ENG GEN 101 - INTRODUCTION TO SCIENCE,",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ENGL",
@@ -816,7 +992,11 @@
     "fracture, corrosion, and electrical and magnetic properties.",
     "ENGLISH (CCN) (ENGL)"
    ],
-   "first_course": "ENGL C1000 - ACADEMIC READING AND WRITING"
+   "first_course": "ENGL C1000 - ACADEMIC READING AND WRITING",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ENGLISH",
@@ -834,7 +1014,11 @@
     "year college writing course.",
     "ENGLISH (ENGLISH)"
    ],
-   "first_course": "ENGLISH 078 - WRITING MEMOIR"
+   "first_course": "ENGLISH 078 - WRITING MEMOIR",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ENV SCI",
@@ -852,7 +1036,11 @@
     "as fantasy and escape literature.",
     "ENVIRONMENTAL SCIENCE (ENV SCI)"
    ],
-   "first_course": "ENV SCI 001 - INTRODUCTION TO ENVIRONMENTAL"
+   "first_course": "ENV SCI 001 - INTRODUCTION TO ENVIRONMENTAL",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "ESL NC",
@@ -888,7 +1076,11 @@
     "ENGLISH AS A SECOND LANGUAGE",
     "CIVICS (ESLCVCS)"
    ],
-   "first_course": "ESLCVCS 010CE - ESL AND CIVICS I"
+   "first_course": "ESLCVCS 010CE - ESL AND CIVICS I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "FAM &CS",
@@ -924,7 +1116,11 @@
     "as a supervised member of the health care team.",
     "FINANCE (FINANCE)"
    ],
-   "first_course": "FINANCE 001 - PRINCIPLES OF FINANCE"
+   "first_course": "FINANCE 001 - PRINCIPLES OF FINANCE",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "FRENCH",
@@ -942,7 +1138,11 @@
     "the bank.",
     "FRENCH (FRENCH)"
    ],
-   "first_course": "FRENCH 001 - ELEMENTARY FRENCH I"
+   "first_course": "FRENCH 001 - ELEMENTARY FRENCH I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "GAD",
@@ -960,7 +1160,11 @@
     "world civilization is examined.",
     "GAME ART & DESIGN (GAD)"
    ],
-   "first_course": "GAD 101 - INTRODUCTION TO GAME DESIGN"
+   "first_course": "GAD 101 - INTRODUCTION TO GAME DESIGN",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "GEOG",
@@ -978,7 +1182,11 @@
     "interactive content, and video games.",
     "GEOGRAPHY (GEOG)"
    ],
-   "first_course": "GEOG 001 - PHYSICAL GEOGRAPHY"
+   "first_course": "GEOG 001 - PHYSICAL GEOGRAPHY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "GEOLOGY",
@@ -996,7 +1204,11 @@
     "CREDIT COURSES",
     "GEOLOGY (GEOLOGY)"
    ],
-   "first_course": "GEOLOGY 001 - PHYSICAL GEOLOGY"
+   "first_course": "GEOLOGY 001 - PHYSICAL GEOLOGY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "HEALTH",
@@ -1014,7 +1226,11 @@
     "sils. Field trips may be taken.",
     "HEALTH (HEALTH)"
    ],
-   "first_course": "HEALTH 002 - HEALTH AND FITNESS"
+   "first_course": "HEALTH 002 - HEALTH AND FITNESS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "HIST",
@@ -1032,7 +1248,11 @@
     "and community organizing approaches will be practiced.",
     "HISTORY (CCN) (HIST)"
    ],
-   "first_course": "HIST C1001 - UNITED STATES HISTORY TO 1877"
+   "first_course": "HIST C1001 - UNITED STATES HISTORY TO 1877",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "HISTORY",
@@ -1050,7 +1270,11 @@
     "CREDIT COURSES",
     "HISTORY (HISTORY)"
    ],
-   "first_course": "HISTORY 005 - HISTORY OF THE AMERICAS I"
+   "first_course": "HISTORY 005 - HISTORY OF THE AMERICAS I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "HUMAN",
@@ -1068,7 +1292,11 @@
     "take HIST 087 without taking HIST 086.",
     "HUMANITIES (HUMAN)"
    ],
-   "first_course": "HUMAN 001 - CULTURAL PATTERNS OF WESTERN"
+   "first_course": "HUMAN 001 - CULTURAL PATTERNS OF WESTERN",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "INTBUS",
@@ -1086,7 +1314,11 @@
     "use art to convey their values and ideas through comparison.",
     "INTERNATIONAL BUSINESS (INTBUS)"
    ],
-   "first_course": "INTBUS 001 - INTERNATIONAL TRADE"
+   "first_course": "INTBUS 001 - INTERNATIONAL TRADE",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "JAPAN",
@@ -1104,7 +1336,11 @@
     "ment structures, and international law.",
     "JAPANESE (JAPAN)"
    ],
-   "first_course": "JAPAN 001 - ELEMENTARY JAPANESE I"
+   "first_course": "JAPAN 001 - ELEMENTARY JAPANESE I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "JOURNAL",
@@ -1122,7 +1358,11 @@
     "dents. Course taught in English.",
     "JOURNALISM (JOURNAL)"
    ],
-   "first_course": "JOURNAL 101 - COLLECTING AND WRITING NEWS"
+   "first_course": "JOURNAL 101 - COLLECTING AND WRITING NEWS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "KIN",
@@ -1140,7 +1380,11 @@
     "Directed Study with the guidance of a supervising instructor.",
     "KINESIOLOGY (KIN)"
    ],
-   "first_course": "KIN 045 - ADAPTED FITNESS"
+   "first_course": "KIN 045 - ADAPTED FITNESS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "KIN ATH",
@@ -1158,7 +1402,11 @@
     "tioning through drills and competition.",
     "KINESIOLOGY ATHLETICS (KIN ATH)"
    ],
-   "first_course": "KIN ATH 504 - INTERCOLLEGIATE ATHLETICS-BASKETBALL"
+   "first_course": "KIN ATH 504 - INTERCOLLEGIATE ATHLETICS-BASKETBALL",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "KIN MAJ",
@@ -1176,7 +1424,11 @@
     "cises and basketball skills.",
     "KINESIOLOGY MAJOR (KIN MAJ)"
    ],
-   "first_course": "KIN MAJ 100 - INTRODUCTION TO KINESIOLOGY"
+   "first_course": "KIN MAJ 100 - INTRODUCTION TO KINESIOLOGY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "KOREAN",
@@ -1194,7 +1446,11 @@
     "(TSAC F) examination.",
     "KOREAN (KOREAN)"
    ],
-   "first_course": "KOREAN 001 - ELEMENTARY KOREAN I"
+   "first_course": "KOREAN 001 - ELEMENTARY KOREAN I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "LAW",
@@ -1212,7 +1468,11 @@
     "Open to all students. Course taught in English.",
     "LAW (LAW)"
    ],
-   "first_course": "LAW 001 - BUSINESS LAW I"
+   "first_course": "LAW 001 - BUSINESS LAW I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "LIB SCI",
@@ -1230,7 +1490,11 @@
     "gation support programs, and use documents at trial.",
     "LIBRARY SCIENCE (LIB SCI)"
    ],
-   "first_course": "LIB SCI 101 - COLLEGE RESEARCH SKILLS"
+   "first_course": "LIB SCI 101 - COLLEGE RESEARCH SKILLS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "LING",
@@ -1248,7 +1512,11 @@
     "strong researchers and life long learners.",
     "LINGUISTICS (LING)"
    ],
-   "first_course": "LING 001 - INTRODUCTION TO LANGUAGE AND"
+   "first_course": "LING 001 - INTRODUCTION TO LANGUAGE AND",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "LRNFDTN",
@@ -1266,7 +1534,11 @@
     "thought.",
     "LEARNING FOUNDATION (LRNFDTN)"
    ],
-   "first_course": "LRNFDTN 001 - ADAPTED KEYBOARDING"
+   "first_course": "LRNFDTN 001 - ADAPTED KEYBOARDING",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "MARKET",
@@ -1284,7 +1556,11 @@
     "are awarded on a Pass/No Pass basis.",
     "MARKETING (MARKET)"
    ],
-   "first_course": "MARKET 001 - PRINCIPLES OF SELLING"
+   "first_course": "MARKET 001 - PRINCIPLES OF SELLING",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "MATH",
@@ -1302,7 +1578,11 @@
     "buying, pricing, stock planning, and retail sales promotion.",
     "MATHEMATICS (MATH)"
    ],
-   "first_course": "MATH 120 - PLANE GEOMETRY"
+   "first_course": "MATH 120 - PLANE GEOMETRY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "MGMT",
@@ -1320,7 +1600,11 @@
     "projects using programming languages in Python and R.",
     "MANAGEMENT (MGMT)"
    ],
-   "first_course": "MGMT 002 - ORGANIZATION AND MANAGEMENT THEORY"
+   "first_course": "MGMT 002 - ORGANIZATION AND MANAGEMENT THEORY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "MICRO",
@@ -1338,7 +1622,11 @@
     "compensations, benefits, labor relations, and collective bargaining.",
     "MICROBIOLOGY (MICRO)"
    ],
-   "first_course": "MICRO 001 - INTRODUCTORY MICROBIOLOGY"
+   "first_course": "MICRO 001 - INTRODUCTORY MICROBIOLOGY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "MIT",
@@ -1356,7 +1644,11 @@
     "MANUFACTURING INDUSTRIAL TECH",
     "(MIT)"
    ],
-   "first_course": "MIT 220 - INTRODUCTION TO ROBOTICS"
+   "first_course": "MIT 220 - INTRODUCTION TO ROBOTICS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "MUSIC",
@@ -1374,7 +1666,11 @@
     "tion and presentation.",
     "MUSIC (MUSIC)"
    ],
-   "first_course": "MUSIC 101 - FUNDAMENTALS OF MUSIC"
+   "first_course": "MUSIC 101 - FUNDAMENTALS OF MUSIC",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "NRS HCA",
@@ -1392,7 +1688,11 @@
     "NURSING HEALTH CARE ANCILLARIES",
     "(NRS HCA)"
    ],
-   "first_course": "NRS HCA 399A - NURSE ASSISTANT TRAINING PROGRAM"
+   "first_course": "NRS HCA 399A - NURSE ASSISTANT TRAINING PROGRAM",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "OLD ADL",
@@ -1410,7 +1710,11 @@
     "ond of a two course sequence.",
     "OLDER ADULTS (OLD ADL)"
    ],
-   "first_course": "OLD ADL 042CE - CREATIVE ART FOR SENIORS"
+   "first_course": "OLD ADL 042CE - CREATIVE ART FOR SENIORS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PARENT",
@@ -1428,7 +1732,11 @@
     "examine how current events impact their lives.",
     "PARENTING (PARENT)"
    ],
-   "first_course": "PARENT 007CE - POSITIVE PARENTING"
+   "first_course": "PARENT 007CE - POSITIVE PARENTING",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PHILOS",
@@ -1446,7 +1754,11 @@
     "examination.",
     "PHILOSOPHY (PHILOS)"
    ],
-   "first_course": "PHILOS 001 - INTRODUCTION TO PHILOSOPHY"
+   "first_course": "PHILOS 001 - INTRODUCTION TO PHILOSOPHY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PHOTO",
@@ -1464,7 +1776,11 @@
     "minism, and moral dilemmas.",
     "PHOTOGRAPHY (PHOTO)"
    ],
-   "first_course": "PHOTO 007 - EXPLORING DIGITAL PHOTOGRAPHY"
+   "first_course": "PHOTO 007 - EXPLORING DIGITAL PHOTOGRAPHY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PHYS SC",
@@ -1482,7 +1798,11 @@
     "501 and CINEMA 501 cannot both be completed for credit.",
     "PHYSICAL SCIENCE (PHYS SC)"
    ],
-   "first_course": "PHYS SC 004 - PHYSICAL SCIENCE AND LABORATORY"
+   "first_course": "PHYS SC 004 - PHYSICAL SCIENCE AND LABORATORY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PHYSICS",
@@ -1500,7 +1820,11 @@
     "and realism.",
     "PHYSICS (PHYSICS)"
    ],
-   "first_course": "PHYSICS 006 - GENERAL PHYSICS I"
+   "first_course": "PHYSICS 006 - GENERAL PHYSICS I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PHYSIOL",
@@ -1518,7 +1842,11 @@
     "the direction of a supervising instructor.",
     "PHYSIOLOGY (PHYSIOL)"
    ],
-   "first_course": "PHYSIOL 001 - INTRODUCTION TO HUMAN PHYSIOLOGY"
+   "first_course": "PHYSIOL 001 - INTRODUCTION TO HUMAN PHYSIOLOGY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "POL SCI",
@@ -1536,7 +1864,11 @@
     "Allied Health, Kinesiology, and other health related majors.",
     "POLITICAL SCIENCE (POL SCI)"
    ],
-   "first_course": "POL SCI 002 - INTRODUCTION TO COMPARATIVE POLITICS"
+   "first_course": "POL SCI 002 - INTRODUCTION TO COMPARATIVE POLITICS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "POLS",
@@ -1554,7 +1886,11 @@
     "and religious groups.",
     "POLITICAL SCIENCE (CCN) (POLS)"
    ],
-   "first_course": "POLS C1000 - AMERICAN GOVERNMENT AND POLITICS"
+   "first_course": "POLS C1000 - AMERICAN GOVERNMENT AND POLITICS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PSYC",
@@ -1572,7 +1908,11 @@
     "using political science theory and methodology.",
     "PSYCHOLOGY (CCN) (PSYC)"
    ],
-   "first_course": "PSYC C1000 - INTRODUCTION TO PSYCHOLOGY"
+   "first_course": "PSYC C1000 - INTRODUCTION TO PSYCHOLOGY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PSYCH",
@@ -1590,7 +1930,11 @@
     "tural influences; their applications; and their research foundations.",
     "PSYCHOLOGY (PSYCH)"
    ],
-   "first_course": "PSYCH 002 - BIOLOGICAL PSYCHOLOGY"
+   "first_course": "PSYCH 002 - BIOLOGICAL PSYCHOLOGY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "PUB REL",
@@ -1608,7 +1952,11 @@
     "be completed during the semester of enrollment",
     "PUBLIC RELATIONS (PUB REL)"
    ],
-   "first_course": "PUB REL 001 - PRINCIPLES OF PUBLIC RELATIONS"
+   "first_course": "PUB REL 001 - PRINCIPLES OF PUBLIC RELATIONS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "RAD TEC",
@@ -1626,7 +1974,11 @@
     "relationships with such groups.",
     "RADIOLOGIC TECHNOLOGY (RAD TEC)"
    ],
-   "first_course": "RAD TEC 103 - RADIOGRAPHIC ANATOMY AND"
+   "first_course": "RAD TEC 103 - RADIOGRAPHIC ANATOMY AND",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "REAL ES",
@@ -1644,7 +1996,11 @@
     "will serve as a resource for hospital based preceptor experience.",
     "REAL ESTATE (REAL ES)"
    ],
-   "first_course": "REAL ES 001 - REAL ESTATE PRINCIPLES"
+   "first_course": "REAL ES 001 - REAL ESTATE PRINCIPLES",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "REGNRSG",
@@ -1662,7 +2018,11 @@
     "ing, planning, and fair housing legislation.",
     "NURSING, REGISTERED (REGNRSG)"
    ],
-   "first_course": "REGNRSG 103 - NURSING PHARMACOLOGY"
+   "first_course": "REGNRSG 103 - NURSING PHARMACOLOGY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "RUSSIAN",
@@ -1680,7 +2040,11 @@
     "CREDIT COURSES",
     "RUSSIAN (RUSSIAN)"
    ],
-   "first_course": "RUSSIAN 001 - ELEMENTARY RUSSIAN I"
+   "first_course": "RUSSIAN 001 - ELEMENTARY RUSSIAN I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "SOC",
@@ -1698,7 +2062,11 @@
     "tribution of Russia to world civilization is examined.",
     "SOCIOLOGY (SOC)"
    ],
-   "first_course": "SOC 001 - INTRODUCTION TO SOCIOLOGY"
+   "first_course": "SOC 001 - INTRODUCTION TO SOCIOLOGY",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "SPANISH",
@@ -1716,7 +2084,11 @@
     "the relevance of the statistical findings.",
     "SPANISH (SPANISH)"
    ],
-   "first_course": "SPANISH 001 - ELEMENTARY SPANISH I"
+   "first_course": "SPANISH 001 - ELEMENTARY SPANISH I",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "STAT",
@@ -1734,7 +2106,11 @@
     "ISH 001.",
     "STATISTICS (STAT)"
    ],
-   "first_course": "STAT C1000 - INTRODUCTION TO STATISTICS"
+   "first_course": "STAT C1000 - INTRODUCTION TO STATISTICS",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "SUPV",
@@ -1752,7 +2128,11 @@
     "range of disciplines. This course has embedded support.",
     "SUPERVISION (SUPV)"
    ],
-   "first_course": "SUPV 001 - ELEMENTS OF SUPERVISION"
+   "first_course": "SUPV 001 - ELEMENTS OF SUPERVISION",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "T V",
@@ -1770,7 +2150,11 @@
     "Marketing Management Certificate.",
     "TELEVISION (T V)"
    ],
-   "first_course": "T V 001 - EVOLUTION OF TELEVISION"
+   "first_course": "T V 001 - EVOLUTION OF TELEVISION",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "THEATER",
@@ -1788,7 +2172,11 @@
     "1 unit of credit.",
     "THEATER (THEATER)"
    ],
-   "first_course": "THEATER 100 - INTRODUCTION TO THE THEATER"
+   "first_course": "THEATER 100 - INTRODUCTION TO THE THEATER",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "TUTOR",
@@ -1806,7 +2194,11 @@
     "SUPERVISED LEARNING ASSISTANCE",
     "(TUTOR)"
    ],
-   "first_course": "TUTOR 001T - SUPERVISED TUTORING"
+   "first_course": "TUTOR 001T - SUPERVISED TUTORING",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   },
   {
    "code": "VOC ED",
@@ -1824,7 +2216,11 @@
     "success.",
     "VOCATIONAL EDUCATION (VOC ED)"
    ],
-   "first_course": "VOC ED 002CE - IN-HOME SUPPORTIVE SERVICE"
+   "first_course": "VOC ED 002CE - IN-HOME SUPPORTIVE SERVICE",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948529916)"
   }
  ],
  "code_address_tried": [

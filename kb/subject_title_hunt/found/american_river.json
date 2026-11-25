@@ -1,0 +1,891 @@
+{
+ "college": "American River College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:44:12Z",
+ "run": "45625671325",
+ "plan": "kb/college_reads/subject_index_american_river.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ACT",
+   "title": "Automotive Collision Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ADAPT",
+   "title": "Adapted Physical Education",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AH",
+   "title": "Allied Health",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTNM",
+   "title": "Art New Media",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ARTPH",
+   "title": "Art Photography",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "AT",
+   "title": "Automotive Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BIOT",
+   "title": "Biotechnology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BMET",
+   "title": "Biomedical Equipment Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "BUSTEC",
+   "title": "Business Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CALJA",
+   "title": "CAL-JACs Firefighter Apprenticeship",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CARPT",
+   "title": "Carpentry",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISA",
+   "title": "Computer Information Science – Applications",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISC",
+   "title": "Computer Information Science – Core",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISD",
+   "title": "Computer Information Sciences - Data",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISN",
+   "title": "Computer Information Science – Networking",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISP",
+   "title": "Computer Information Science – Programming",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISS",
+   "title": "Computer Information Science – Security",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "CISW",
+   "title": "Computer Information Science – Web",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DCDT",
+   "title": "Diesel/Clean Diesel Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DEAF",
+   "title": "Deaf Culture and American Sign Language Studies",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DESGN",
+   "title": "Design and Engineering Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "DRLTH",
+   "title": "Drywall/Lathers",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ELECT",
+   "title": "Electrical Apprenticeship",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ELEVA",
+   "title": "Elevator",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ELTRN",
+   "title": "Electrician Trainee",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENERGY",
+   "title": "Energy",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGCW",
+   "title": "English – Creative Writing",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGED",
+   "title": "Education/Teaching",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGLT",
+   "title": "English – Literature",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGRD",
+   "title": "English – Reading",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLG",
+   "title": "English as a Second Language – Grammar",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLL",
+   "title": "English as a Second Language – Listening",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLLAB",
+   "title": "English as a Second Language – Lab",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLR",
+   "title": "English as a Second Language – Reading",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ESLW",
+   "title": "English as a Second Language – Writing",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ET",
+   "title": "Electronics Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=124",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FASHN",
+   "title": "Fashion",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FFS",
+   "title": "Fire and Forestry Services",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FITNS",
+   "title": "Fitness",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FSE",
+   "title": "Funeral Service Education",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "FT",
+   "title": "Fire Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GENSCI",
+   "title": "General Science",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "GERON",
+   "title": "Gerontology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HCI",
+   "title": "Healthcare Interpreting",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HCD",
+   "title": "Human Career Development",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HEED",
+   "title": "Health Education",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HLACT",
+   "title": "Human Lactation",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HLS",
+   "title": "Homeland Security",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HM",
+   "title": "Hospitality Management",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HORT",
+   "title": "Horticulture",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "IDES",
+   "title": "Interior Design",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "INDIS",
+   "title": "Interdisciplinary Studies",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "INTRP",
+   "title": "ASL-English Interpreting",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "IS",
+   "title": "International Studies",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "IW",
+   "title": "Iron Workers",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "KINES",
+   "title": "Kinesiology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "LRC",
+   "title": "Learning Resource Center",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics and Statistics",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MATHS",
+   "title": "Mathematics Support",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MKT",
+   "title": "Marketing",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUFHL",
+   "title": "Music – Fundamentals, History, and Literature",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUIVI",
+   "title": "Music – Instrumental/Voice Instruction",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUP",
+   "title": "Music – Performance",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "MUSM",
+   "title": "Music – Specializations in Music",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NATR",
+   "title": "Natural Resources",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NURSE",
+   "title": "Nursing",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "NUTRI",
+   "title": "Nutrition",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "OE3",
+   "title": "Operating Engineers Apprenticeship",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=125",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PACT",
+   "title": "Personal Activity",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PLGL",
+   "title": "Paralegal Studies",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PLUMB",
+   "title": "Apprenticeship – Plumbing",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PMED",
+   "title": "Paramedic",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PREAP",
+   "title": "Pre-Apprenticeship",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PROPTX",
+   "title": "Property Tax",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PSTC",
+   "title": "Sacramento Regional Public Safety Training Center",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RC",
+   "title": "Respiratory Care",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RECR",
+   "title": "Recreation",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "RUSS",
+   "title": "Russian",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SHME",
+   "title": "Sheet Metal",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SLPA",
+   "title": "Speech-Language Pathology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SMTEC",
+   "title": "Sheet Metal Technology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SOCSC",
+   "title": "Social Science",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPORT",
+   "title": "Sports",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SPEECH",
+   "title": "Speech Communication",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "SWCD",
+   "title": "Social Work and Chemical Dependency",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TA",
+   "title": "Theatre Arts",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TAFILM",
+   "title": "Theatre Arts Film",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TAP",
+   "title": "Theatre Arts Performance",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "TMACT",
+   "title": "Team Activity",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  },
+  {
+   "code": "WEXP",
+   "title": "Work Experience",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=126",
+   "where": "catalog",
+   "method": "prefix legend"
+  }
+ ]
+}

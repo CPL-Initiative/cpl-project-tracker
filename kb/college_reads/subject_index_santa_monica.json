@@ -1,0 +1,83 @@
+{
+ "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3: round 2 (run 45626064651) printed the Course Finder's SUBJECT list (names only) and its ten pages; each page prints a subject's heading above its courses (Accounting, then ACCTG 1 ...). This read loads the ten pages as the capture reads them, line for line, so each heading is read beside its codes. No model call.",
+ "college": "Santa Monica College",
+ "questions": {
+  "subjects": "Every subject heading the catalog's course index prints, with its code."
+ },
+ "keywords": [
+  "\\b[A-Z]{2,8} \\d"
+ ],
+ "capture_lines": 20000,
+ "pages": [
+  {
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=1",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=2",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=3",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=4",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=5",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=6",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=7",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=8",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=9",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.smc.edu/current/courses/subject-finder.php?page=10",
+   "answers": [
+    "subjects"
+   ],
+   "capture_view": true
+  }
+ ]
+}

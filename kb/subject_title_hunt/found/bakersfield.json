@@ -1,0 +1,640 @@
+{
+ "college": "Bakersfield College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-23T11:33:29Z",
+ "run": "45166049971",
+ "plan": "kb/college_reads/s712_bakersfield_subject_list.json",
+ "titles": [
+  {
+   "code": "ACDV",
+   "title": "Academic Development",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACTC",
+   "title": "Academic Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGBS",
+   "title": "Agricultural Business",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGRI",
+   "title": "Agriculture",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANSC",
+   "title": "Animal Science",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APPR",
+   "title": "Apprenticeship",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BSAD",
+   "title": "Business Administration",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHDV",
+   "title": "Child Development",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMP",
+   "title": "Computer Science",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CNST",
+   "title": "Construction Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CADM",
+   "title": "Correctional Administration",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CRIM",
+   "title": "Criminology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CRPS",
+   "title": "Crop Science",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CULN",
+   "title": "Culinary Arts",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ERSC",
+   "title": "Earth Science",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELET",
+   "title": "Electronics Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMTC",
+   "title": "Emergency Medical Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENER",
+   "title": "Energy",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMLS",
+   "title": "English for Multilingual Students",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FDST",
+   "title": "Food Science Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FDSV",
+   "title": "Food Service",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FORE",
+   "title": "Forestry",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLED",
+   "title": "Health Education",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEIT",
+   "title": "Health Information Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSCI",
+   "title": "Health Science",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HVAC",
+   "title": "Heating Ventilation Air Conditioning",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HOSP",
+   "title": "Hospitality",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HMSV",
+   "title": "Human Services",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDA",
+   "title": "Industrial Automation",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDR",
+   "title": "Industrial Drawing",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDT",
+   "title": "Industrial Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JRNL",
+   "title": "Journalism",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINS",
+   "title": "Kinesiology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Sciences",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MFGT",
+   "title": "Manufacturing Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MCAG",
+   "title": "Mechanized Agriculture",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MEDS",
+   "title": "Medical Science",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSC",
+   "title": "Music",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NRES",
+   "title": "Natural Resources",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OSRM",
+   "title": "Occupational Safety Risk Mgmt",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OFFT",
+   "title": "Office Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ORNH",
+   "title": "Ornamental Horticulture",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Science",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHTA",
+   "title": "Physical Therapist Assistant",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLC",
+   "title": "Police Science",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PBHS",
+   "title": "Public Health Science",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSPA",
+   "title": "Public Safety Police Academy",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RADT",
+   "title": "Radiologic Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Registered Nursing",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RTEC",
+   "title": "Research Laboratory Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RSPT",
+   "title": "Respiratory Therapy",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STEM",
+   "title": "Science Technology Math and Engineering",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOIL",
+   "title": "Soils",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STDV",
+   "title": "Student Development",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TECM",
+   "title": "Technical Mathematics",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theatre",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VNRS",
+   "title": "Vocational Nursing",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WTRT",
+   "title": "Water Technology",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WOOD",
+   "title": "Woodworking",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "note": "Filed from the existing S712 read (runs 45161535251 and 45166049971, the same page twice, the same list), so the title hunt made no new load of the college's site. The catalog's Courses view prints every subject as 'Name - CODE' (one prints 'Education -EDUC'), the heading over that subject's courses in the menu."
+}

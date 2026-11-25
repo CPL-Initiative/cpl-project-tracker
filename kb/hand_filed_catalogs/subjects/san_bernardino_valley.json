@@ -1,0 +1,1375 @@
+{
+ "_what": "The subjects San Bernardino Valley College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "San Bernardino Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:49:04Z",
+ "run": "45626788039",
+ "source": [
+  "https://catalog.valleycollege.edu/courses/acct/",
+  "https://catalog.valleycollege.edu/courses/acr/",
+  "https://catalog.valleycollege.edu/courses/adjus/",
+  "https://catalog.valleycollege.edu/courses/aero/",
+  "https://catalog.valleycollege.edu/courses/anthro/",
+  "https://catalog.valleycollege.edu/courses/arab/",
+  "https://catalog.valleycollege.edu/courses/arch/",
+  "https://catalog.valleycollege.edu/courses/art/",
+  "https://catalog.valleycollege.edu/courses/arth/",
+  "https://catalog.valleycollege.edu/courses/asl/",
+  "https://catalog.valleycollege.edu/courses/astron/",
+  "https://catalog.valleycollege.edu/courses/auto/",
+  "https://catalog.valleycollege.edu/courses/biol/",
+  "https://catalog.valleycollege.edu/courses/busad/",
+  "https://catalog.valleycollege.edu/courses/cd/",
+  "https://catalog.valleycollege.edu/courses/chem/",
+  "https://catalog.valleycollege.edu/courses/chin/",
+  "https://catalog.valleycollege.edu/courses/cit/",
+  "https://catalog.valleycollege.edu/courses/commst/",
+  "https://catalog.valleycollege.edu/courses/const/",
+  "https://catalog.valleycollege.edu/courses/courses.pdf",
+  "https://catalog.valleycollege.edu/courses/cs/",
+  "https://catalog.valleycollege.edu/courses/culart/",
+  "https://catalog.valleycollege.edu/courses/dance/",
+  "https://catalog.valleycollege.edu/courses/econ/",
+  "https://catalog.valleycollege.edu/courses/educ/",
+  "https://catalog.valleycollege.edu/courses/elec/",
+  "https://catalog.valleycollege.edu/courses/electr/",
+  "https://catalog.valleycollege.edu/courses/engl/",
+  "https://catalog.valleycollege.edu/courses/engr/",
+  "https://catalog.valleycollege.edu/courses/envsci/",
+  "https://catalog.valleycollege.edu/courses/esl/",
+  "https://catalog.valleycollege.edu/courses/eths/",
+  "https://catalog.valleycollege.edu/courses/fn/",
+  "https://catalog.valleycollege.edu/courses/french/",
+  "https://catalog.valleycollege.edu/courses/ftvm/",
+  "https://catalog.valleycollege.edu/courses/geog/",
+  "https://catalog.valleycollege.edu/courses/geol/",
+  "https://catalog.valleycollege.edu/courses/gis/",
+  "https://catalog.valleycollege.edu/courses/glst/",
+  "https://catalog.valleycollege.edu/courses/health/",
+  "https://catalog.valleycollege.edu/courses/hist/",
+  "https://catalog.valleycollege.edu/courses/hmdt/",
+  "https://catalog.valleycollege.edu/courses/hosp/",
+  "https://catalog.valleycollege.edu/courses/humsv/",
+  "https://catalog.valleycollege.edu/courses/hvac_r/",
+  "https://catalog.valleycollege.edu/courses/inspec/",
+  "https://catalog.valleycollege.edu/courses/kin/",
+  "https://catalog.valleycollege.edu/courses/kina/",
+  "https://catalog.valleycollege.edu/courses/kinco/",
+  "https://catalog.valleycollege.edu/courses/kinf/",
+  "https://catalog.valleycollege.edu/courses/kins/",
+  "https://catalog.valleycollege.edu/courses/kinx/",
+  "https://catalog.valleycollege.edu/courses/lib/",
+  "https://catalog.valleycollege.edu/courses/lpps/",
+  "https://catalog.valleycollege.edu/courses/lst/",
+  "https://catalog.valleycollege.edu/courses/mach/",
+  "https://catalog.valleycollege.edu/courses/math/",
+  "https://catalog.valleycollege.edu/courses/mus/",
+  "https://catalog.valleycollege.edu/courses/nurs/",
+  "https://catalog.valleycollege.edu/courses/ocean/",
+  "https://catalog.valleycollege.edu/courses/osha/",
+  "https://catalog.valleycollege.edu/courses/phil/",
+  "https://catalog.valleycollege.edu/courses/pht/",
+  "https://catalog.valleycollege.edu/courses/physic/",
+  "https://catalog.valleycollege.edu/courses/police/",
+  "https://catalog.valleycollege.edu/courses/polit/",
+  "https://catalog.valleycollege.edu/courses/psych/",
+  "https://catalog.valleycollege.edu/courses/psytch/",
+  "https://catalog.valleycollege.edu/courses/read/",
+  "https://catalog.valleycollege.edu/courses/realst/",
+  "https://catalog.valleycollege.edu/courses/relig/",
+  "https://catalog.valleycollege.edu/courses/sdev/",
+  "https://catalog.valleycollege.edu/courses/soc/",
+  "https://catalog.valleycollege.edu/courses/span/",
+  "https://catalog.valleycollege.edu/courses/tecalc/",
+  "https://catalog.valleycollege.edu/courses/thart/",
+  "https://catalog.valleycollege.edu/courses/voced/",
+  "https://catalog.valleycollege.edu/courses/weld/",
+  "https://catalog.valleycollege.edu/courses/wkexp/",
+  "https://catalog.valleycollege.edu/courses/wrm/",
+  "https://catalog.valleycollege.edu/courses/wst/"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/acct/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ACR",
+   "heading": "Automotive Collision and Repair",
+   "heading_printed": "Automotive Collision and Repair",
+   "rule": "index",
+   "codes": [
+    "ACR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/acr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ADJUS",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADJUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/adjus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AERO",
+   "heading": "Aeronautics",
+   "heading_printed": "Aeronautics",
+   "rule": "index",
+   "codes": [
+    "AERO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/aero/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/anthro/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ARAB",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "index",
+   "codes": [
+    "ARAB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/arab/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/arch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/arth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/asl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/astron/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/auto/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/biol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "BUSAD",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BUSAD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/busad/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CDEV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/cd/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese - Mandarin",
+   "heading_printed": "Chinese - Mandarin",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/chin/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CIT",
+   "heading": "Computer Information Technology",
+   "heading_printed": "Computer Information Technology",
+   "rule": "index",
+   "codes": [
+    "CIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/cit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/commst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CONST",
+   "heading": "Construction Technology",
+   "heading_printed": "Construction Technology",
+   "rule": "index",
+   "codes": [
+    "CONST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/const/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/cs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "CULART",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CULART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/culart/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/educ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ELEC",
+   "heading": "Electricity",
+   "heading_printed": "Electricity",
+   "rule": "index",
+   "codes": [
+    "ELEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/elec/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ELECTR",
+   "heading": "Electronics",
+   "heading_printed": "Electronics",
+   "rule": "index",
+   "codes": [
+    "ELECTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/electr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/engr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ENVSCI",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENVSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/envsci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "ETHS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/eths/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "FN",
+   "heading": "Foods and Nutrition",
+   "heading_printed": "Foods and Nutrition",
+   "rule": "index",
+   "codes": [
+    "FN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/fn/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "FTVM",
+   "heading": "Film, Television, and Media",
+   "heading_printed": "Film, Television, and Media",
+   "rule": "index",
+   "codes": [
+    "FTVM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/ftvm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/geol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GIS",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "index",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/gis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "GLST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GLST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/glst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HEALTH",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HEALTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/health/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HMDT",
+   "heading": "Heavy/Medium Duty Truck",
+   "heading_printed": "Heavy/Medium Duty Truck",
+   "rule": "index",
+   "codes": [
+    "HMDT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/hmdt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality Management",
+   "heading_printed": "Hospitality Management",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/hosp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HUMSV",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HUMSV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/humsv/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "HVAC/R",
+   "heading": "Heating, Ventilation, Air Conditioning, and Refrigeration",
+   "heading_printed": "Heating, Ventilation, Air Conditioning, and Refrigeration",
+   "rule": "index",
+   "codes": [
+    "HVAC/R"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/hvac_r/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "INSPEC",
+   "heading": "Inspection Technology",
+   "heading_printed": "Inspection Technology",
+   "rule": "index",
+   "codes": [
+    "INSPEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/inspec/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/kin/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "KINA",
+   "heading": "Kinesiology - Adapted",
+   "heading_printed": "Kinesiology - Adapted",
+   "rule": "index",
+   "codes": [
+    "KINA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/kina/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "KINCO",
+   "heading": "Kinesiology - Coaching",
+   "heading_printed": "Kinesiology - Coaching",
+   "rule": "index",
+   "codes": [
+    "KINCO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/kinco/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "KINF",
+   "heading": "Kinesiology - Fitness",
+   "heading_printed": "Kinesiology - Fitness",
+   "rule": "index",
+   "codes": [
+    "KINF"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/kinf/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "KINS",
+   "heading": "Kinesiology - Team",
+   "heading_printed": "Kinesiology - Team",
+   "rule": "index",
+   "codes": [
+    "KINS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/kins/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "KINX",
+   "heading": "Kinesiology - Athletics",
+   "heading_printed": "Kinesiology - Athletics",
+   "rule": "index",
+   "codes": [
+    "KINX"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/kinx/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library Technology",
+   "heading_printed": "Library Technology",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/lib/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "LPPS",
+   "heading": "Law, Public Policy, and Society",
+   "heading_printed": "Law, Public Policy, and Society",
+   "rule": "index",
+   "codes": [
+    "LPPS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/lpps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "LST",
+   "heading": "Learning Skills and Tutoring",
+   "heading_printed": "Learning Skills and Tutoring",
+   "rule": "index",
+   "codes": [
+    "LST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/lst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MACH",
+   "heading": "Machinist Technology",
+   "heading_printed": "Machinist Technology",
+   "rule": "index",
+   "codes": [
+    "MACH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/mach/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/mus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/nurs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "OCEAN",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "index",
+   "codes": [
+    "OCEAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/ocean/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "OSHA",
+   "heading": "Occupational Safety and Health Administration",
+   "heading_printed": "Occupational Safety and Health Administration",
+   "rule": "index",
+   "codes": [
+    "OSHA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/osha/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PDF",
+   "heading": "Download Page",
+   "heading_printed": "Download Page",
+   "rule": "index",
+   "codes": [
+    "PDF"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/courses.pdf",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHT",
+   "heading": "Pharmacy Technology",
+   "heading_printed": "Pharmacy Technology",
+   "rule": "index",
+   "codes": [
+    "PHT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/pht/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PHYSIC",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYSIC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/physic/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "POLICE",
+   "heading": "Police Science",
+   "heading_printed": "Police Science",
+   "rule": "index",
+   "codes": [
+    "POLICE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/police/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/polit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/psych/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "PSYTCH",
+   "heading": "Psychiatric Technology",
+   "heading_printed": "Psychiatric Technology",
+   "rule": "index",
+   "codes": [
+    "PSYTCH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/psytch/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "READ",
+   "heading": "Reading and Literacy",
+   "heading_printed": "Reading and Literacy",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/read/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "REALST",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "REALST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/realst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "RELIG",
+   "heading": "Religious Studies",
+   "heading_printed": "Religious Studies",
+   "rule": "index",
+   "codes": [
+    "RELIG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/relig/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SDEV",
+   "heading": "Student Development",
+   "heading_printed": "Student Development",
+   "rule": "index",
+   "codes": [
+    "SDEV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/sdev/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/soc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "TECALC",
+   "heading": "Technical Calculations",
+   "heading_printed": "Technical Calculations",
+   "rule": "index",
+   "codes": [
+    "TECALC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/tecalc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "THART",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THART"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/thart/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "VOCED",
+   "heading": "Vocational Education",
+   "heading_printed": "Vocational Education",
+   "rule": "index",
+   "codes": [
+    "VOCED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/voced/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/weld/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WKEXP",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WKEXP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/wkexp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WRM",
+   "heading": "Water Resources Management",
+   "heading_printed": "Water Resources Management",
+   "rule": "index",
+   "codes": [
+    "WRM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/wrm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  },
+  {
+   "code": "WST",
+   "heading": "Water Supply Technology",
+   "heading_printed": "Water Supply Technology",
+   "rule": "index",
+   "codes": [
+    "WST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.valleycollege.edu/courses/wst/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626788039)",
+   "run": "45626788039"
+  }
+ ],
+ "subjects": 80,
+ "with_heading": 80
+}

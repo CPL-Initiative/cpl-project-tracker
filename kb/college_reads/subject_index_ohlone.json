@@ -1,0 +1,21 @@
+{
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 3 of this plan (pass 2 read run 45625671325): chapter 8, Announcement of Courses (pages 162 to 286), the address its catalog page names: the pages on how to read course listings and the academic divisions, and one sample course, to learn how it heads a subject. No model call.",
+ "college": "Ohlone College",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "Academic Divisions",
+  "How to Read Course Listings",
+  "\\bASL 101\\b"
+ ],
+ "pages": [
+  {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_8-announcement_of_courses.pdf",
+   "answers": [
+    "subject_titles"
+   ]
+  }
+ ],
+ "pdf_unfolded": true
+}

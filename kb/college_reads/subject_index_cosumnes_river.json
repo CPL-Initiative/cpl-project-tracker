@@ -1,0 +1,25 @@
+{
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 2 of this plan (pass 1 read run 45623555503): the Course Prefixes legend, pages 115 to 118; pass 1 printed 115 and 116 only. No model call.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "Prefix Subject Name"
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
+   "answers": [
+    "subject_titles"
+   ],
+   "hand_filed": true
+  }
+ ],
+ "pdf_span": [
+  115,
+  118
+ ]
+}

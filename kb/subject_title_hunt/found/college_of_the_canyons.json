@@ -1,0 +1,424 @@
+{
+ "college": "College of the Canyons",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:03Z",
+ "run": "45627438096",
+ "plan": "kb/college_reads/subject_index_college_of_the_canyons.json",
+ "titles": [
+  {
+   "code": "ADMJUS",
+   "title": "ADMINISTRATION OF JUSTICE",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=65",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTHRO",
+   "title": "ANTHROPOLOGY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=69",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTRON",
+   "title": "ASTRONOMY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=83",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTECH",
+   "title": "AUTOMOTIVE TECHNOLOGY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BEERST",
+   "title": "BEER STUDIES",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=87",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOSCI",
+   "title": "BIOLOGICAL SCIENCES",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=88",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "BUSINESS",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=92",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "CHEMISTRY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=97",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CINEMA",
+   "title": "CINEMA",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=99",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CCE",
+   "title": "CIVIC ENGAGEMENT AND COMMUNITY-BASED LEARNING",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=100",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CLS",
+   "title": "CLINICAL LABORATORY SCIENTIST",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=101",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CAWT",
+   "title": "COMPUTER APPLICATIONS AND WEB TECHNOLOGIES",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CMPSCI",
+   "title": "COMPUTER SCIENCE",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=113",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUNS",
+   "title": "COUNSELING",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=119",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CULARTS",
+   "title": "CULINARY ARTS",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=120",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CYBR",
+   "title": "CYBERSECURITY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=123",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANCE",
+   "title": "DANCE",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMS",
+   "title": "DIAGNOSTIC MEDICAL SONOGRAPHY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=126",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECE",
+   "title": "EARLY CHILDHOOD EDUCATION",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "EDUCATION",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=136",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESYST",
+   "title": "ELECTRONIC SYSTEMS TECHNOLOGY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=136",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "ENGLISH",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "ENGLISH AS A SECOND LANGUAGE",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=147",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHNST",
+   "title": "ETHNIC STUDIES",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=151",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GIS",
+   "title": "GEOGRAPHIC INFORMATION SYSTEMS",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=155",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOLOGY",
+   "title": "GEOLOGY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=158",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GLST",
+   "title": "GLOBAL STUDIES",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=160",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GMD",
+   "title": "GRAPHIC AND MULTIMEDIA DESIGN",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=162",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "HISTORY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=166",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMAN",
+   "title": "HUMANITIES",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ID",
+   "title": "INTERIOR DESIGN",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=173",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KPEA",
+   "title": "KINESIOLOGY - ACTIVITY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=180",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KPET",
+   "title": "KINESIOLOGY - THEORY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=188",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SURV",
+   "title": "LAND SURVEYING",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=189",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LETECH",
+   "title": "LAW ENFORCEMENT TECHNOLOGY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=191",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MFGT",
+   "title": "MANUFACTURING TECHNOLOGY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=196",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MEA",
+   "title": "MEDIA ENTERTAINMENT ARTS",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=202",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MLT",
+   "title": "MEDICAL LABORATORY TECHNICIAN",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=210",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LING",
+   "title": "LINGUISTICS",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=216",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSIC",
+   "title": "MUSIC",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=219",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NETECH",
+   "title": "NETWORK TECHNOLOGY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=229",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURSNG",
+   "title": "NURSING",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=231",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OTA",
+   "title": "OCCUPATIONAL THERAPY ASSISTANT",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEAN",
+   "title": "OCEANOGRAPHY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=241",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PARLGL",
+   "title": "PARALEGAL",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHRMTEC",
+   "title": "PHARMACY TECHNOLOGY",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=247",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYSCI",
+   "title": "PHYSICAL SCIENCE",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=253",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PTA",
+   "title": "PHYSICAL THERAPIST ASSISTANT",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=256",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYSIC",
+   "title": "PHYSICS",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=260",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRETL",
+   "title": "FIRE TECHNOLOGY ADVANCED TRAINING - LIFEGUARD",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=267",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LEPD",
+   "title": "LAW ENFORCEMENT, POLICE DEPARTMENT ADVANCED TRAINING",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=267",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LESD",
+   "title": "LAW ENFORCEMENT, SHERIFF DEPARTMENT ADVANCED TRAINING",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=279",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REAL",
+   "title": "REAL ESTATE",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=285",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REC",
+   "title": "RECREATION MANAGEMENT",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=286",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SIGN",
+   "title": "SIGN LANGUAGE",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=288",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SWHS",
+   "title": "SOCIAL WORK AND HUMAN SERVICES",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=292",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEATR",
+   "title": "THEATRE",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=297",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "WELDING",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=305",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WINEST",
+   "title": "WINE STUDIES",
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=310",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "note": "The catalog prints no prefix legend. Each department section of Program/Course Descriptions (pages 62 to 312) is headed by the department's name, repeated in capitals as a running header; a title here is that header, as printed, where the section holds one code's courses (headers from run 45625671325, each code's first course from run 45627438096). Left out: codes in a section shared with another code, codes whose section header the reads did not place, and every noncredit (NC.) code: the School of Personal and Professional Learning pages (313 on) head groups of NC courses with wrapped capital lines the reads could not tie to one code.",
+ "not_read": "noncredit codes (NC.*) and shared-section credit codes; see note"
+}

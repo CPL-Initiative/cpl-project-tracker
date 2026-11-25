@@ -1,0 +1,1871 @@
+{
+ "_what": "The subjects Rio Hondo College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Rio Hondo College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:02:40Z",
+ "run": "45628443522, 45629512231",
+ "source": [
+  "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+  "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ADN",
+   "heading": "Nursing-Associate Degree",
+   "heading_printed": "Nursing-Associate Degree",
+   "rule": "index",
+   "codes": [
+    "ADN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "AET",
+   "heading": "Alternative Energy",
+   "heading_printed": "Alternative Energy",
+   "rule": "index",
+   "codes": [
+    "AET"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ANIM",
+   "heading": "Animation",
+   "heading_printed": "Animation",
+   "rule": "index",
+   "codes": [
+    "ANIM"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ATMN",
+   "heading": "Automation",
+   "heading_printed": "Automation",
+   "rule": "index",
+   "codes": [
+    "ATMN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "BIOT",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "index",
+   "codes": [
+    "BIOT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "BUSL",
+   "heading": "Business Law",
+   "heading_printed": "Business Law",
+   "rule": "index",
+   "codes": [
+    "BUSL"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "CARP",
+   "heading": "Carpentry",
+   "heading_printed": "Carpentry",
+   "rule": "index",
+   "codes": [
+    "CARP"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "CD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CD"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CDEV"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "CHST",
+   "heading": "Chicanx and Latinx Studies",
+   "heading_printed": "Chicanx and Latinx Studies",
+   "rule": "index",
+   "codes": [
+    "CHST"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "CIT",
+   "heading": "Computer Information Technology",
+   "heading_printed": "Computer Information Technology",
+   "rule": "index",
+   "codes": [
+    "CIT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "CIV",
+   "heading": "Civil Design",
+   "heading_printed": "Civil Design",
+   "rule": "index",
+   "codes": [
+    "CIV"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communications",
+   "heading_printed": "Communications",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "CORR",
+   "heading": "Corrections",
+   "heading_printed": "Corrections",
+   "rule": "index",
+   "codes": [
+    "CORR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "DSCI",
+   "heading": "Data Science",
+   "heading_printed": "Data Science",
+   "rule": "index",
+   "codes": [
+    "DSCI"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ED",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "ED"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "EDEV",
+   "heading": "Educational Development",
+   "heading_printed": "Educational Development",
+   "rule": "index",
+   "codes": [
+    "EDEV"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "EGSS",
+   "heading": "Ethnic, Gender, and Sexuality Studies",
+   "heading_printed": "Ethnic, Gender, and Sexuality Studies",
+   "rule": "index",
+   "codes": [
+    "EGSS"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ELEC",
+   "heading": "Electronics",
+   "heading_printed": "Electronics",
+   "rule": "index",
+   "codes": [
+    "ELEC"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technician",
+   "heading_printed": "Emergency Medical Technician",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ENGT",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "ENGT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ET",
+   "heading": "Environmental Technology",
+   "heading_printed": "Environmental Technology",
+   "rule": "index",
+   "codes": [
+    "ET"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ETEC",
+   "heading": "Electrical Technology",
+   "heading_printed": "Electrical Technology",
+   "rule": "index",
+   "codes": [
+    "ETEC"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "FAC",
+   "heading": "Fire Academy",
+   "heading_printed": "Fire Academy",
+   "rule": "index",
+   "codes": [
+    "FAC"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "FIN",
+   "heading": "Finance",
+   "heading_printed": "Finance",
+   "rule": "index",
+   "codes": [
+    "FIN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "FR",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "FTEC",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FTEC"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "FTVE",
+   "heading": "Film, Television, and Electronic Media",
+   "heading_printed": "Film, Television, and Electronic Media",
+   "rule": "index",
+   "codes": [
+    "FTVE"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "GAD",
+   "heading": "Game Design",
+   "heading_printed": "Game Design",
+   "rule": "index",
+   "codes": [
+    "GAD"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "GDSN",
+   "heading": "Graphic Design",
+   "heading_printed": "Graphic Design",
+   "rule": "index",
+   "codes": [
+    "GDSN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "GIS",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "index",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "GLST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GLST"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "HEFR",
+   "heading": "Heat and Frost",
+   "heading_printed": "Heat and Frost",
+   "rule": "index",
+   "codes": [
+    "HEFR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "HET",
+   "heading": "Heavy Equipment Technology",
+   "heading_printed": "Heavy Equipment Technology",
+   "rule": "index",
+   "codes": [
+    "HET"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "HMLD",
+   "heading": "Homeland Security",
+   "heading_printed": "Homeland Security",
+   "rule": "index",
+   "codes": [
+    "HMLD"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "HOND",
+   "heading": "Honda/Acura",
+   "heading_printed": "Honda/Acura",
+   "rule": "index",
+   "codes": [
+    "HOND"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality",
+   "heading_printed": "Hospitality",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "HS",
+   "heading": "Health Sciences",
+   "heading_printed": "Health Sciences",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "HUSR",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HUSR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology Theory",
+   "heading_printed": "Kinesiology Theory",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "KINA",
+   "heading": "Kinesiology Activity",
+   "heading_printed": "Kinesiology Activity",
+   "rule": "index",
+   "codes": [
+    "KINA"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "LIT",
+   "heading": "Literature",
+   "heading_printed": "Literature",
+   "rule": "index",
+   "codes": [
+    "LIT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "LOG",
+   "heading": "Logistics",
+   "heading_printed": "Logistics",
+   "rule": "index",
+   "codes": [
+    "LOG"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "index",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "MRKT",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MRKT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "MSCM",
+   "heading": "Mass Communications",
+   "heading_printed": "Mass Communications",
+   "rule": "index",
+   "codes": [
+    "MSCM"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "MUST",
+   "heading": "Music and Integrated Technology",
+   "heading_printed": "Music and Integrated Technology",
+   "rule": "index",
+   "codes": [
+    "MUST"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NAJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "NAJ"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NART",
+   "heading": "Arts & Cultural Programs",
+   "heading_printed": "Arts & Cultural Programs",
+   "rule": "index",
+   "codes": [
+    "NART"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NBAS",
+   "heading": "Basic Skills",
+   "heading_printed": "Basic Skills",
+   "rule": "index",
+   "codes": [
+    "NBAS"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NBIZ",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "NBIZ"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NBSS",
+   "heading": "Behavioral Social Sciences",
+   "heading_printed": "Behavioral Social Sciences",
+   "rule": "index",
+   "codes": [
+    "NBSS"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NCHS",
+   "heading": "Health and Safety",
+   "heading_printed": "Health and Safety",
+   "rule": "index",
+   "codes": [
+    "NCHS"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NCIT",
+   "heading": "Citizenship",
+   "heading_printed": "Citizenship",
+   "rule": "index",
+   "codes": [
+    "NCIT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NCOA",
+   "heading": "Older Adults",
+   "heading_printed": "Older Adults",
+   "rule": "index",
+   "codes": [
+    "NCOA"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NCOM",
+   "heading": "Communications and Languages",
+   "heading_printed": "Communications and Languages",
+   "rule": "index",
+   "codes": [
+    "NCOM"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "NESL"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NFIR",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "NFIR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NGBD",
+   "heading": "Green Building",
+   "heading_printed": "Green Building",
+   "rule": "index",
+   "codes": [
+    "NGBD"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NHSL",
+   "heading": "Health Science Lab",
+   "heading_printed": "Health Science Lab",
+   "rule": "index",
+   "codes": [
+    "NHSL"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NHSN",
+   "heading": "Health Science and Nursing",
+   "heading_printed": "Health Science and Nursing",
+   "rule": "index",
+   "codes": [
+    "NHSN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NSCI",
+   "heading": "Science",
+   "heading_printed": "Science",
+   "rule": "index",
+   "codes": [
+    "NSCI"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NTTR",
+   "heading": "Commincations and Languages",
+   "heading_printed": "Commincations and Languages",
+   "rule": "index",
+   "codes": [
+    "NTTR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition Science",
+   "heading_printed": "Nutrition Science",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "NVOC",
+   "heading": "Vocational",
+   "heading_printed": "Vocational",
+   "rule": "index",
+   "codes": [
+    "NVOC"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "OENG",
+   "heading": "Operating Engineers",
+   "heading_printed": "Operating Engineers",
+   "rule": "index",
+   "codes": [
+    "OENG"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "ORTH",
+   "heading": "Orthopedic Technology",
+   "heading_printed": "Orthopedic Technology",
+   "rule": "index",
+   "codes": [
+    "ORTH"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "PAC",
+   "heading": "Police Academy",
+   "heading_printed": "Police Academy",
+   "rule": "index",
+   "codes": [
+    "PAC"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "PHTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHTO"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "PHY",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHY"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "PLMB",
+   "heading": "Plumbing",
+   "heading_printed": "Plumbing",
+   "rule": "index",
+   "codes": [
+    "PLMB"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "RDIO",
+   "heading": "Radio",
+   "heading_printed": "Radio",
+   "rule": "index",
+   "codes": [
+    "RDIO"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "READ",
+   "heading": "Reading and Study Skills",
+   "heading_printed": "Reading and Study Skills",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "SPCH",
+   "heading": "Speech",
+   "heading_printed": "Speech",
+   "rule": "index",
+   "codes": [
+    "SPCH"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "STEM",
+   "heading": "Science, Technology, Engineering, and Mathematics",
+   "heading_printed": "Science, Technology, Engineering, and Mathematics",
+   "rule": "index",
+   "codes": [
+    "STEM"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "TCED",
+   "heading": "Technical Education",
+   "heading_printed": "Technical Education",
+   "rule": "index",
+   "codes": [
+    "TCED"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "TESL",
+   "heading": "Tesla",
+   "heading_printed": "Tesla",
+   "rule": "index",
+   "codes": [
+    "TESL"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "THTR",
+   "heading": "Theatre",
+   "heading_printed": "Theatre",
+   "rule": "index",
+   "codes": [
+    "THTR"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "TV",
+   "heading": "Television",
+   "heading_printed": "Television",
+   "rule": "index",
+   "codes": [
+    "TV"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "VN",
+   "heading": "Nursing-Vocational",
+   "heading_printed": "Nursing-Vocational",
+   "rule": "index",
+   "codes": [
+    "VN"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "VOCB",
+   "heading": "Vocabulary",
+   "heading_printed": "Vocabulary",
+   "rule": "index",
+   "codes": [
+    "VOCB"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  },
+  {
+   "code": "WFT",
+   "heading": "Wildland Fire Technology",
+   "heading_printed": "Wildland Fire Technology",
+   "rule": "index",
+   "codes": [
+    "WFT"
+   ],
+   "candidate": null,
+   "address": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45628443522, 45629512231)",
+   "run": "45628443522, 45629512231"
+  }
+ ],
+ "subjects": 116,
+ "with_heading": 116
+}

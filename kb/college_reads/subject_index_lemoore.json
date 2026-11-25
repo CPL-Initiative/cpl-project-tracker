@@ -1,0 +1,24 @@
+{
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 4. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 3 (run 45628601616): the courses view's markup names no subject either; each course is a 'CODE NUM - Title' link. This read: the Course Numbering page, whole, in case it holds a prefix legend. No model call, writes nothing.",
+ "college": "Lemoore College",
+ "capture_lines": 6000,
+ "questions": {
+  "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
+ },
+ "keywords": [
+  " - [A-Z]{2,6}\\b",
+  "\\([A-Z]{2,6}\\)",
+  "[Ss]ubjects?",
+  "[Pp]refix",
+  "[Dd]epartment"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/course-numbering",
+   "capture_view": true
+  }
+ ]
+}

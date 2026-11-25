@@ -1,0 +1,23 @@
+{
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: the catalog heads each subject 'Anthropology (ANTH)' above its first course (run 45627807594, page 403); print each such heading line with the line above it. No model call.",
+ "college": "Santa Rosa Junior College",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "\\bANTH ?\\d"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
+   "answers": [
+    "subject_titles"
+   ]
+  }
+ ],
+ "subject_context": {
+  "heading": "^(?:.*\\S )?\\((?P<subj>[A-Z]{1,6})(?:\\s?[/,&]\\s?[A-Z]{1,6})*\\)$",
+  "before": 2,
+  "start_page": 300
+ }
+}

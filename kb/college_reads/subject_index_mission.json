@@ -1,0 +1,307 @@
+{
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 7. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 6 (run 45634178643): the five area pages list 41 SUBJECTS by name, each a department page (24-25/department/<code>). This read: every one of those pages, printing only the lines above each code's first course (subject_context), so each code is filed under the page that lists it. No model call, writes nothing.",
+ "college": "Mission College",
+ "questions": {
+  "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
+ },
+ "keywords": [
+  " - [A-Z]{2,6}\\b",
+  "\\([A-Z]{2,6}\\)",
+  "[Ss]ubjects?",
+  "[Pp]refix",
+  "[Dd]epartment"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/acc",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/bus",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/chd",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/cap",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/hmt",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/art",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/com",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/eng",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/gds",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/mus",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/adm-justice",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/ant",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/ecn",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/esl",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/eth",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/geo",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/his",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/hum",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/lin",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/spa",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/phil",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/pol",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/psy",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/sjs",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/soc",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/chw",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/fpt",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/kin",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/nur",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/pht",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/ast",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/bio",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/chm",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/cis",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/cit",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/egr",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/mat",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/mtt",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/ntr",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/phy",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://mission.elumenapp.com/catalog/24-25/department/pub",
+   "capture_view": true
+  }
+ ],
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z][A-Z&]{0,7}) (?P<num>[A-Z]?\\d{1,4}[A-Z]{0,4}) [-\u2013] (?P<title>.+)$",
+  "before": 3
+ }
+}

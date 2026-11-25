@@ -1,0 +1,472 @@
+{
+ "college": "College of Marin",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:06:10Z",
+ "run": "45630168042",
+ "plan": "kb/college_reads/subject_index_college_of_marin.json",
+ "titles": [
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACRT",
+   "title": "Automotive Collision Repair Technology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BEHS",
+   "title": "Behavioral Science",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BOAP",
+   "title": "Bus Operator Apprenticeship Program",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMP",
+   "title": "Computer Science",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUR",
+   "title": "Court Reporting",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DENT",
+   "title": "Dental Assisting: Registered",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRAM",
+   "title": "Drama/Theatre Arts",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELEC",
+   "title": "Electronics Technology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGG",
+   "title": "Engineering",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Science",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETST",
+   "title": "Ethnic Studies",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FILM",
+   "title": "Film/Video",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GDES",
+   "title": "Graphic Design",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HED",
+   "title": "Health Education",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HOSP",
+   "title": "Hospitality",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JPNS",
+   "title": "Japanese",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MACH",
+   "title": "Machine and Metals Technology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MEDA",
+   "title": "Medical Assisting",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MMST",
+   "title": "Multimedia Studies",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NE",
+   "title": "Nursing Education: Registered",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REAL",
+   "title": "Real Estate",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work and Human Services",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STSK",
+   "title": "Study Skills",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VOCC",
+   "title": "Vocational Construction",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WE",
+   "title": "Work Experience Education",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CPL",
+   "title": "Credit for Prior Learning",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CLEP",
+   "title": "College Level Examination Program",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IB",
+   "title": "International Baccalaureate",
+   "url": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "note": "Each title is a 'Name - CODE' entry under Program and Course Descriptions in the catalog's side menu, one entry per subject page (catalog/current/<code>). Two entries carry KIN (Kinesiology - KIN and Intercollegiate Athletic Program - KIN); the first is filed. ESL Foundational Skills and ESL Focused Skills print no code. Read by run 45630168042 at commit dfbb61eb (round 4 of the plan)."
+}

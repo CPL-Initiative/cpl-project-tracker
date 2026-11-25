@@ -1,0 +1,1454 @@
+{
+ "_what": "The subjects Las Positas College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Las Positas College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:51:56Z",
+ "run": "45626743727",
+ "source": [
+  "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125"
+ ],
+ "rows": [
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ANTR",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTR"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "APAG",
+   "heading": "Apprenticeship Automotive Group",
+   "heading_printed": "Apprenticeship Automotive Group",
+   "rule": "index",
+   "codes": [
+    "APAG"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "APCL",
+   "heading": "Apprenticeship Construction Laborers",
+   "heading_printed": "Apprenticeship Construction Laborers",
+   "rule": "index",
+   "codes": [
+    "APCL"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "APMT",
+   "heading": "Apprenticeship Marine Technology",
+   "heading_printed": "Apprenticeship Marine Technology",
+   "rule": "index",
+   "codes": [
+    "APMT"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "APWX",
+   "heading": "Apprenticeship Work Experience",
+   "heading_printed": "Apprenticeship Work Experience",
+   "rule": "index",
+   "codes": [
+    "APWX"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ARHS",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARHS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "AVI",
+   "heading": "Aviation",
+   "heading_printed": "Aviation",
+   "rule": "index",
+   "codes": [
+    "AVI"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "BIO",
+   "heading": "Biological Sciences",
+   "heading_printed": "Biological Sciences",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "BUSN",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUSN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CMST",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "CMST"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CNT",
+   "heading": "Computer Networking Technology",
+   "heading_printed": "Computer Networking Technology",
+   "rule": "index",
+   "codes": [
+    "CNT"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Care and Education",
+   "heading_printed": "Early Care and Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ENG",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENG"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "ETHS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EVSC",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "EVSC"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "EVST",
+   "heading": "Environmental Studies",
+   "heading_printed": "Environmental Studies",
+   "rule": "index",
+   "codes": [
+    "EVST"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FLMS",
+   "heading": "Film Studies",
+   "heading_printed": "Film Studies",
+   "rule": "index",
+   "codes": [
+    "FLMS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "FST",
+   "heading": "Fire Service Technology",
+   "heading_printed": "Fire Service Technology",
+   "rule": "index",
+   "codes": [
+    "FST"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GDDM",
+   "heading": "Graphic Design & Digital Media",
+   "heading_printed": "Graphic Design & Digital Media",
+   "rule": "index",
+   "codes": [
+    "GDDM"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "GS",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HEA",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HEA"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HNRS",
+   "heading": "Honors",
+   "heading_printed": "Honors",
+   "rule": "index",
+   "codes": [
+    "HNRS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "index",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "HUMN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "IDN",
+   "heading": "Independent Study",
+   "heading_printed": "Independent Study",
+   "rule": "index",
+   "codes": [
+    "IDN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "INTD",
+   "heading": "Interior Design",
+   "heading_printed": "Interior Design",
+   "rule": "index",
+   "codes": [
+    "INTD"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "JAMS",
+   "heading": "Journalism and Media Studies",
+   "heading_printed": "Journalism and Media Studies",
+   "rule": "index",
+   "codes": [
+    "JAMS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LGBT",
+   "heading": "Lesbian, Gay, Bisexual, Transgender, and Queer Studies",
+   "heading_printed": "Lesbian, Gay, Bisexual, Transgender, and Queer Studies",
+   "rule": "index",
+   "codes": [
+    "LGBT"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library Studies",
+   "heading_printed": "Library Studies",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "LRNS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LRNS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MIND",
+   "heading": "Mindfulness",
+   "heading_printed": "Mindfulness",
+   "rule": "index",
+   "codes": [
+    "MIND"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MKTG",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MKTG"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NAJ",
+   "heading": "Noncredit Administration of Justice",
+   "heading_printed": "Noncredit Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "NAJ"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NARH",
+   "heading": "Noncredit Art History",
+   "heading_printed": "Noncredit Art History",
+   "rule": "index",
+   "codes": [
+    "NARH"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NAUT",
+   "heading": "Noncredit Automotive Technology",
+   "heading_printed": "Noncredit Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "NAUT"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NAVI",
+   "heading": "Noncredit Aviation",
+   "heading_printed": "Noncredit Aviation",
+   "rule": "index",
+   "codes": [
+    "NAVI"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NBIO",
+   "heading": "Noncredit Biology",
+   "heading_printed": "Noncredit Biology",
+   "rule": "index",
+   "codes": [
+    "NBIO"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NBUS",
+   "heading": "Noncredit Business",
+   "heading_printed": "Noncredit Business",
+   "rule": "index",
+   "codes": [
+    "NBUS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NCIS",
+   "heading": "Noncredit Computer Information Systems",
+   "heading_printed": "Noncredit Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "NCIS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NENG",
+   "heading": "Noncredit English",
+   "heading_printed": "Noncredit English",
+   "rule": "index",
+   "codes": [
+    "NENG"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NESL",
+   "heading": "Noncredit English as a Second Language",
+   "heading_printed": "Noncredit English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "NESL"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NFRN",
+   "heading": "Noncredit French",
+   "heading_printed": "Noncredit French",
+   "rule": "index",
+   "codes": [
+    "NFRN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NKIN",
+   "heading": "Noncredit Kinesiology",
+   "heading_printed": "Noncredit Kinesiology",
+   "rule": "index",
+   "codes": [
+    "NKIN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NLIB",
+   "heading": "Noncredit Library Studies",
+   "heading_printed": "Noncredit Library Studies",
+   "rule": "index",
+   "codes": [
+    "NLIB"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NMAT",
+   "heading": "Noncredit Mathematics",
+   "heading_printed": "Noncredit Mathematics",
+   "rule": "index",
+   "codes": [
+    "NMAT"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NMUS",
+   "heading": "Noncredit Music",
+   "heading_printed": "Noncredit Music",
+   "rule": "index",
+   "codes": [
+    "NMUS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NPCN",
+   "heading": "Noncredit Psychology-Counseling",
+   "heading_printed": "Noncredit Psychology-Counseling",
+   "rule": "index",
+   "codes": [
+    "NPCN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NTRN",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NTRN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "NTUT",
+   "heading": "Noncredit Tutoring",
+   "heading_printed": "Noncredit Tutoring",
+   "rule": "index",
+   "codes": [
+    "NTUT"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "OSH",
+   "heading": "Occupational Health and Safety",
+   "heading_printed": "Occupational Health and Safety",
+   "rule": "index",
+   "codes": [
+    "OSH"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PCN",
+   "heading": "Psychology-Counseling",
+   "heading_printed": "Psychology-Counseling",
+   "rule": "index",
+   "codes": [
+    "PCN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHTO"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "POLI",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLI"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "RADS",
+   "heading": "Radiation Safety",
+   "heading_printed": "Radiation Safety",
+   "rule": "index",
+   "codes": [
+    "RADS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "RELS",
+   "heading": "Religious Studies",
+   "heading_printed": "Religious Studies",
+   "rule": "index",
+   "codes": [
+    "RELS"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theater Arts",
+   "heading_printed": "Theater Arts",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "TUTR",
+   "heading": "Tutoring",
+   "heading_printed": "Tutoring",
+   "rule": "index",
+   "codes": [
+    "TUTR"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "VWT",
+   "heading": "Viticulture and Winery Technology",
+   "heading_printed": "Viticulture and Winery Technology",
+   "rule": "index",
+   "codes": [
+    "VWT"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WLDT",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WLDT"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WMST",
+   "heading": "Women's Studies",
+   "heading_printed": "Women's Studies",
+   "rule": "index",
+   "codes": [
+    "WMST"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  },
+  {
+   "code": "WRKX",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WRKX"
+   ],
+   "candidate": null,
+   "address": "https://laspositas.curriqunet.com/catalog/_getNavigation?id=164&parentId=1125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626743727)",
+   "run": "45626743727"
+  }
+ ],
+ "subjects": 90,
+ "with_heading": 90
+}

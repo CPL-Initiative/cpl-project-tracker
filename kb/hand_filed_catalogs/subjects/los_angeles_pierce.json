@@ -24,7 +24,11 @@
     "Natural Resource Management . . . Plant Science 900-999",
     "American Sign Language (A S L)"
    ],
-   "first_course": "A S L 001 American Sign Language I (4) UC:CSU"
+   "first_course": "A S L 001 American Sign Language I (4) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "A S T",
@@ -42,7 +46,11 @@
     "basis under the direction of a supervising instructor.",
     "Automotive Service Technology (A S T)"
    ],
-   "first_course": "A S T 001 Automotive Engines (5) CSU"
+   "first_course": "A S T 001 Automotive Engines (5) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ACCTG",
@@ -60,7 +68,11 @@
     "2026-2027 GENERAL CATALOG",
     "Accounting (ACCTG)"
    ],
-   "first_course": "ACCTG 001 Introductor y Accounting I (5) UC:CSU"
+   "first_course": "ACCTG 001 Introductor y Accounting I (5) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ADDICST",
@@ -78,7 +90,11 @@
     "See course listings under Computer Applications and Office Technologies.",
     "Addiction Studies (ADDICST)"
    ],
-   "first_course": "ADDICST 001 Understanding Addiction and Counseling (3) UC:CSU"
+   "first_course": "ADDICST 001 Understanding Addiction and Counseling (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ADM JUS",
@@ -96,7 +112,11 @@
     "hours must be completed during the semester of enrollment.",
     "Administration of Justice (ADM JUS)"
    ],
-   "first_course": "ADM JUS 001 Introduction to Administration of Justice (3) UC:CSU"
+   "first_course": "ADM JUS 001 Introduction to Administration of Justice (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "AFRO AM",
@@ -132,7 +152,11 @@
     "Deaf culture on a contract basis under the direction of a supervising instructor.",
     "Anatomy"
    ],
-   "first_course": "ANATOMY 001 Introduction to Human Anatomy (4) UC:CSU"
+   "first_course": "ANATOMY 001 Introduction to Human Anatomy (4) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ANML SC",
@@ -168,7 +192,11 @@
     "tract basis under the direction of a supervising instructor.",
     "Anthropology (ANTHRO)"
    ],
-   "first_course": "ANTHRO 101 Human Biological Evolution (3) UC:CSU"
+   "first_course": "ANTHRO 101 Human Biological Evolution (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ARC",
@@ -186,7 +214,11 @@
     "tract basis under the direction of a supervising instructor.",
     "Architecture (ARC)"
    ],
-   "first_course": "ARC 110 Introduction to Architecture (1) UC:CSU"
+   "first_course": "ARC 110 Introduction to Architecture (1) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ART",
@@ -222,7 +254,11 @@
     "on a weekly basis to critique their work.",
     "Art History (ARTH)"
    ],
-   "first_course": "ARTH C1100 Survey of Art from Prehistory to the Medieval Era (3) UC:CSU"
+   "first_course": "ARTH C1100 Survey of Art from Prehistory to the Medieval Era (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ASTRON",
@@ -240,7 +276,11 @@
     "C-ID: ARTH 120",
     "Astronomy (ASTRON)"
    ],
-   "first_course": "ASTRON 001 Elementar y Astronomy (3) UC:CSU"
+   "first_course": "ASTRON 001 Elementar y Astronomy (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "BIOLOGY",
@@ -258,7 +298,11 @@
     "Biology",
     "See course listings under Anatomy, Microbiology, Oceanography, and Physiology."
    ],
-   "first_course": "BIOLOGY 003 Introduction to Biolog y (4) *UC:CSU"
+   "first_course": "BIOLOGY 003 Introduction to Biolog y (4) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "BIOTECH",
@@ -276,7 +320,11 @@
     "under the direction of a supervising instructor.",
     "Biotechnology (BIOTECH)"
    ],
-   "first_course": "BIOTECH 001 Fundamentals of Biotechnology (3) UC:CSU"
+   "first_course": "BIOTECH 001 Fundamentals of Biotechnology (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "BRDCSTG",
@@ -294,7 +342,11 @@
     "tract basis under the direction of a supervising instructor.",
     "Broadcasting (BRDCSTG)"
    ],
-   "first_course": "BRDCSTG 001 Introduction to Broadcasting and the Internet (3) UC:CSU"
+   "first_course": "BRDCSTG 001 Introduction to Broadcasting and the Internet (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "BSICSKL",
@@ -312,7 +364,11 @@
     "Technology on a contract basis under the direction of a supervising instructor.",
     "Basic Skills (BSICSKL)"
    ],
-   "first_course": "BSICSKL 023CE College and Scholastic Assessment Preparation (0) (NDA)"
+   "first_course": "BSICSKL 023CE College and Scholastic Assessment Preparation (0) (NDA)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "BUS",
@@ -330,7 +386,11 @@
     "GENERAL CATALOG 2026-2027",
     "Business (BUS)"
    ],
-   "first_course": "BUS 001 Introduction to Business (3) *UC:CSU"
+   "first_course": "BUS 001 Introduction to Business (3) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CAOT",
@@ -348,7 +408,11 @@
     "Computer Applications and Office",
     "Technologies (CAOT)"
    ],
-   "first_course": "CAOT 001 Computer Keyboarding and Document Applications I (3) CSU"
+   "first_course": "CAOT 001 Computer Keyboarding and Document Applications I (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CH DEV",
@@ -366,7 +430,11 @@
     "(Cal-GETC Area 4)",
     "Child Development (CH DEV)"
    ],
-   "first_course": "CH DEV 001 Child Growth and Development (3) UC:CSU"
+   "first_course": "CH DEV 001 Child Growth and Development (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CHEM",
@@ -402,7 +470,11 @@
     "GENERAL CATALOG 2026-2027",
     "Chicano Studies (CHICANO)"
    ],
-   "first_course": "CHICANO 002 The Me xican-American in Contemporary Society (3) UC:CSU"
+   "first_course": "CHICANO 002 The Me xican-American in Contemporary Society (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CINEMA",
@@ -420,7 +492,11 @@
     "resources available, as well as academic and professional support systems.",
     "Cinema"
    ],
-   "first_course": "CINEMA 003 Histor y of Motion Pictures (3) UC:CSU"
+   "first_course": "CINEMA 003 Histor y of Motion Pictures (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CIS",
@@ -438,7 +514,11 @@
     "2026-2027 GENERAL CATALOG",
     "Computer Information Systems (CIS)"
    ],
-   "first_course": "CIS 101 Introduction to Computers and Their Uses (3) UC:CSU"
+   "first_course": "CIS 101 Introduction to Computers and Their Uses (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "COMM",
@@ -456,7 +536,11 @@
     "cinema on a contract basis under the direction of a supervising instructor.",
     "Communication Studies (COMM)"
    ],
-   "first_course": "COMM 100 Introduction to Communication Studies (3) UC:CSU"
+   "first_course": "COMM 100 Introduction to Communication Studies (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "COUNSEL",
@@ -474,7 +558,11 @@
     "and permissions. Students will sign, publish and distribute developed applications.",
     "Counseling (COUNSEL)"
    ],
-   "first_course": "COUNSEL 001 Introduction to College (1) *UC:CSU"
+   "first_course": "COUNSEL 001 Introduction to College (1) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "CS",
@@ -492,7 +580,11 @@
     "Systems on a contract basis under the direction of a supervising instructor.",
     "Computer Science (CS)"
    ],
-   "first_course": "CS 111 Programming in Visual Basic (3) UC:CSU"
+   "first_course": "CS 111 Programming in Visual Basic (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "DANCEST",
@@ -564,7 +656,11 @@
     "2026-2027 GENERAL CATALOG",
     "English as a Second Language (E.S.L.)"
    ],
-   "first_course": "E.S.L. 003A College ESL III: Writing and Grammar (6) (NDA)"
+   "first_course": "E.S.L. 003A College ESL III: Writing and Grammar (6) (NDA)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "EARTH",
@@ -582,7 +678,11 @@
     "See course listings under Computer Applications Office Technology.",
     "Earth Science (EARTH)"
    ],
-   "first_course": "EARTH 003 Earth Science Lecture and Laborator y (4) UC:CSU"
+   "first_course": "EARTH 003 Earth Science Lecture and Laborator y (4) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ECON",
@@ -600,7 +700,11 @@
     "C-ID: GEOL 121",
     "Economics (ECON)"
    ],
-   "first_course": "ECON 010 Economic Histor y of the United States (3) UC:CSU"
+   "first_course": "ECON 010 Economic Histor y of the United States (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "EDUC",
@@ -618,7 +722,11 @@
     "basis under the direction of a supervising instructor.",
     "Education (EDUC)"
    ],
-   "first_course": "EDUC 001 Introduction to T eaching (3) *UC:CSU"
+   "first_course": "EDUC 001 Introduction to T eaching (3) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "EGD TEK",
@@ -636,7 +744,11 @@
     "Engineering Graphics and Design",
     "Technology (EGD TEK)"
    ],
-   "first_course": "EGD TEK 101 Engineering Graphics with C AD (3) *UC:CSU"
+   "first_course": "EGD TEK 101 Engineering Graphics with C AD (3) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ELECTRN",
@@ -654,7 +766,11 @@
     "(Cal-GETC Area 4)",
     "Electronics (ELECTRN)"
    ],
-   "first_course": "ELECTRN 004A Fundamentals of Electronics I (3) UC:CSU"
+   "first_course": "ELECTRN 004A Fundamentals of Electronics I (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ENG GEN",
@@ -672,7 +788,11 @@
     "counters/Timers Using the Rockwell software RSLogix 500.",
     "Engineering (ENG GEN)"
    ],
-   "first_course": "ENG GEN 101 Introduction to Science, Engineering and Technology (2)"
+   "first_course": "ENG GEN 101 Introduction to Science, Engineering and Technology (2)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ENGL",
@@ -690,7 +810,11 @@
     "GENERAL CATALOG 2026-2027",
     "English (ENGL)"
    ],
-   "first_course": "ENGL C1000 Academic Reading and Writing (3) UC:CSU"
+   "first_course": "ENGL C1000 Academic Reading and Writing (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ENGLISH",
@@ -708,7 +832,11 @@
     "For additional information, please contact the Welcome Center:",
     "www.lapc.edu/student-services/welcome-center"
    ],
-   "first_course": "ENGLISH 021 English Fundamentals (3) (ND A)"
+   "first_course": "ENGLISH 021 English Fundamentals (3) (ND A)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ENV",
@@ -726,7 +854,11 @@
     "tion, and appropriate language usage in everyday life and occupational settings.",
     "Environmental Design (ENV)"
    ],
-   "first_course": "ENV 101 Foundations of Design I (3) UC:CSU"
+   "first_course": "ENV 101 Foundations of Design I (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ENV SCI",
@@ -744,7 +876,11 @@
     "Naturalization Oral Test.",
     "Environmental Science (ENV SCI)"
    ],
-   "first_course": "ENV SCI 001 Introduction to Environmental Science (3) UC:CSU"
+   "first_course": "ENV SCI 001 Introduction to Environmental Science (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ESL NC",
@@ -762,7 +898,11 @@
     "English as a Second Language -",
     "Noncredit (ESL NC)"
    ],
-   "first_course": "ESL NC 001CE English as a Second Language - Beginning I (0) (NDA) -"
+   "first_course": "ESL NC 001CE English as a Second Language - Beginning I (0) (NDA) -",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ESLCVCS",
@@ -780,7 +920,11 @@
     "GENERAL CATALOG 2026-2027",
     "ESL Civics (ESLCVCS)"
    ],
-   "first_course": "ESLCVCS 010CE ESL and Civics I (0) (NDA) - RPT 9"
+   "first_course": "ESLCVCS 010CE ESL and Civics I (0) (NDA) - RPT 9",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "FAM &CS",
@@ -798,7 +942,11 @@
     "a contract basis under the direction of a supervising instructor.",
     "Family and Consumer Studies (FAM &CS)"
    ],
-   "first_course": "FAM &CS 034 Child Nutrition (3) CSU"
+   "first_course": "FAM &CS 034 Child Nutrition (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "FINANCE",
@@ -816,7 +964,11 @@
     "special populations.",
     "Finance"
    ],
-   "first_course": "FINANCE 001 Principles of Finance (3) UC:CSU"
+   "first_course": "FINANCE 001 Principles of Finance (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "FRENCH",
@@ -834,7 +986,11 @@
     "estate planning, are emphasized.",
     "French"
    ],
-   "first_course": "FRENCH 001 Elementar y French I (5) UC:CSU"
+   "first_course": "FRENCH 001 Elementar y French I (5) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "GEOG",
@@ -852,7 +1008,11 @@
     "ing interim reports, and presenting a project with professional-quality maps.",
     "Geography (GEOG)"
    ],
-   "first_course": "GEOG 001 Physical Geography (3) *UC:CSU"
+   "first_course": "GEOG 001 Physical Geography (3) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "GEOLOGY",
@@ -870,7 +1030,11 @@
     "Geology",
     "See also course listings under Environmental Science and Oceanography."
    ],
-   "first_course": "GEOLOGY 001 Physical Geolog y (3) UC:CSU"
+   "first_course": "GEOLOGY 001 Physical Geolog y (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "GIS",
@@ -888,7 +1052,11 @@
     "under the direction of a supervising instructor.",
     "Geographic Information Systems (GIS)"
    ],
-   "first_course": "GIS 025 Introduction to Geographic Information Systems and Laborator y"
+   "first_course": "GIS 025 Introduction to Geographic Information Systems and Laborator y",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "GLST",
@@ -906,7 +1074,11 @@
     "basis under the direction of a supervising instructor.",
     "Global Studies (GLST)"
    ],
-   "first_course": "GLST 101 Introduction to Global Studies (3) UC:CSU"
+   "first_course": "GLST 101 Introduction to Global Studies (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HEALTH",
@@ -924,7 +1096,11 @@
     "GENERAL CATALOG 2026-2027",
     "Health"
    ],
-   "first_course": "HEALTH 002 Health and Fitness (3) *UC:CSU"
+   "first_course": "HEALTH 002 Health and Fitness (3) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HIST",
@@ -942,7 +1118,11 @@
     "C-ID: PH 102",
     "History (HIST)"
    ],
-   "first_course": "HIST C1001 United States History to 1877 (3) UC:CSU"
+   "first_course": "HIST C1001 United States History to 1877 (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HISTORY",
@@ -960,7 +1140,11 @@
     "2026-2027 GENERAL CATALOG",
     "History"
    ],
-   "first_course": "HISTORY 001 Introduction to W estern Civilization I (3) UC:CSU"
+   "first_course": "HISTORY 001 Introduction to W estern Civilization I (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HOSPT",
@@ -978,7 +1162,11 @@
     "See course listings under Plant Science 700-899.",
     "Hospitality (HOSPT)"
    ],
-   "first_course": "HOSPT 100 Introduction to the Hospitality Industry (3) CSU"
+   "first_course": "HOSPT 100 Introduction to the Hospitality Industry (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "HUMAN",
@@ -996,7 +1184,11 @@
     "C-ID: HOSP 140",
     "Humanities (HUMAN)"
    ],
-   "first_course": "HUMAN 006 Great P eople, Great Ages (3) UC:CSU"
+   "first_course": "HUMAN 006 Great P eople, Great Ages (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "IND TEK",
@@ -1032,7 +1224,11 @@
     "GENERAL CATALOG 2026-2027",
     "Insurance (INSUR)"
    ],
-   "first_course": "INSUR 101 Principles of Property and Liability Insurance (3) CSU"
+   "first_course": "INSUR 101 Principles of Property and Liability Insurance (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "INTBUS",
@@ -1050,7 +1246,11 @@
     "and employers liability insurance, and other miscellaneous insurance.",
     "International Business (INTBUS)"
    ],
-   "first_course": "INTBUS 001 International T rade (3) *UC:CSU"
+   "first_course": "INTBUS 001 International T rade (3) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "ITALIAN",
@@ -1068,7 +1268,11 @@
     "issues are analyzed.",
     "Italian"
    ],
-   "first_course": "ITALIAN 001 Elementar y Italian I (5) UC:CSU"
+   "first_course": "ITALIAN 001 Elementar y Italian I (5) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "JAPAN",
@@ -1086,7 +1290,11 @@
     "or culture on a contract basic under the direction of a supervising instructor.",
     "Japanese (JAPAN)"
    ],
-   "first_course": "JAPAN 001 Elementar y Japanese I (5) UC:CSU"
+   "first_course": "JAPAN 001 Elementar y Japanese I (5) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "JOURNAL",
@@ -1104,7 +1312,11 @@
     "GENERAL CATALOG 2026-2027",
     "Journalism (JOURNAL)"
    ],
-   "first_course": "JOURNAL 100 Social V alues in Mass Communication (3) *UC:CSU"
+   "first_course": "JOURNAL 100 Social V alues in Mass Communication (3) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "KIN",
@@ -1140,7 +1352,11 @@
     "credit, 4 semester units.",
     "Kinesiology Athletics (KIN ATH)"
    ],
-   "first_course": "KIN ATH 503 Intercollegiate Athletics-Baseball (4) *UC:CSU - RPT 3"
+   "first_course": "KIN ATH 503 Intercollegiate Athletics-Baseball (4) *UC:CSU - RPT 3",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "KIN MAJ",
@@ -1158,7 +1374,11 @@
     "credit, 4 semester units.",
     "Kinesiology Major (KIN MAJ)"
    ],
-   "first_course": "KIN MAJ 100 Introduction to Kinesiolog y (3) *UC:CSU"
+   "first_course": "KIN MAJ 100 Introduction to Kinesiolog y (3) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "LIB SCI",
@@ -1176,7 +1396,11 @@
     "See course listings under Administration of Justice and Business Administration.",
     "Library Science (LIB SCI)"
    ],
-   "first_course": "LIB SCI 101 College Research Skills (1) UC:CSU"
+   "first_course": "LIB SCI 101 College Research Skills (1) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MARKET",
@@ -1194,7 +1418,11 @@
     "and morale.",
     "Marketing (MARKET)"
    ],
-   "first_course": "MARKET 001 Principles of Selling (3) CSU"
+   "first_course": "MARKET 001 Principles of Selling (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MATH",
@@ -1212,7 +1440,11 @@
     "Open to any regularly enrolled student in Los Angeles Pierce College. Mathematics",
     "tutoring is located in The Center for Academic Success."
    ],
-   "first_course": "MATH 103 How to Succeed at Math (1) (ND A)"
+   "first_course": "MATH 103 How to Succeed at Math (1) (ND A)",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MEDIART",
@@ -1230,7 +1462,11 @@
     "See also course listings under Broadcasting, Cinema, Journalism, Multimedia,",
     "Photography, and Public Relations."
    ],
-   "first_course": "MEDIART 100 The Entertainment Industry: Breaking In (3) CSU"
+   "first_course": "MEDIART 100 The Entertainment Industry: Breaking In (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "METEOR",
@@ -1248,7 +1484,11 @@
     "basis under the direction of a supervising instructor.",
     "Meteorology (METEOR)"
    ],
-   "first_course": "METEOR 003 Introduction to W eather and Climate (3) UC:CSU"
+   "first_course": "METEOR 003 Introduction to W eather and Climate (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MGMT",
@@ -1266,7 +1506,11 @@
     "See course listings under Industrial Technology - Machining/CNC.",
     "Management (MGMT)"
    ],
-   "first_course": "MGMT 002 Organization and Management Theor y (3) CSU"
+   "first_course": "MGMT 002 Organization and Management Theor y (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MICRO",
@@ -1284,7 +1528,11 @@
     "(Cal-GETC Area 5A)",
     "Microbiology (MICRO)"
    ],
-   "first_course": "MICRO 001 Introductor y Microbiology (5) *UC:CSU"
+   "first_course": "MICRO 001 Introductor y Microbiology (5) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MULTIMD",
@@ -1302,7 +1550,11 @@
     "Multimedia (MULTIMD)",
     "See also course listings under Media Arts."
    ],
-   "first_course": "MULTIMD 110 Visual Communication (3) UC:CSU"
+   "first_course": "MULTIMD 110 Visual Communication (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "MUSIC",
@@ -1338,7 +1590,11 @@
     "beginning of the semester. †UC credit may be granted by petition after transfer.",
     "Native American Studies (NATIVAM)"
    ],
-   "first_course": "NATIVAM 170 Introduction to American Indian Studies (3) UC:CSU"
+   "first_course": "NATIVAM 170 Introduction to American Indian Studies (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "NURSING",
@@ -1356,7 +1612,11 @@
     "See Associate of Science Degree in Nursing on page 143 for General Education",
     "Prerequisites."
    ],
-   "first_course": "NURSING 400 Adult Health Care I (5) CSU"
+   "first_course": "NURSING 400 Adult Health Care I (5) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "OCEANO",
@@ -1374,7 +1634,11 @@
     "Oceanography (OCEANO)",
     "See course listings under Biology for Marine Biology courses."
    ],
-   "first_course": "OCEANO 001 Introduction to Oceanography (3) UC:CSU"
+   "first_course": "OCEANO 001 Introduction to Oceanography (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "OLD ADL",
@@ -1392,7 +1656,11 @@
     "ENCORE is a Los Angeles Pierce College noncredit program that provides courses",
     "designed specifically for older adults."
    ],
-   "first_course": "OLD ADL 029CE Literature and the Human Experience (0) (ND A) - RPT 9"
+   "first_course": "OLD ADL 029CE Literature and the Human Experience (0) (ND A) - RPT 9",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PHILOS",
@@ -1410,7 +1678,11 @@
     "in public performances each semester.",
     "Philosophy (PHILOS)"
    ],
-   "first_course": "PHILOS 001 Introduction to Philosophy (3) UC:CSU"
+   "first_course": "PHILOS 001 Introduction to Philosophy (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PHOTO",
@@ -1428,7 +1700,11 @@
     "basis under the direction of a supervising instructor.",
     "Photography (PHOTO)"
    ],
-   "first_course": "PHOTO 009 Introduction to Cameras and Composition (3) UC:CSU"
+   "first_course": "PHOTO 009 Introduction to Cameras and Composition (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PHYS SC",
@@ -1446,7 +1722,11 @@
     "basis under the direction of a supervising instructor.",
     "Physical Science (PHYS SC)"
    ],
-   "first_course": "PHYS SC 004 Physical Science and Laborator y (4) UC:CSU"
+   "first_course": "PHYS SC 004 Physical Science and Laborator y (4) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PHYSICS",
@@ -1464,7 +1744,11 @@
     "tract basis under the direction of a supervising instructor.",
     "Physics"
    ],
-   "first_course": "PHYSICS 006 General Physics I (4) *UC:CSU"
+   "first_course": "PHYSICS 006 General Physics I (4) *UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PHYSIOL",
@@ -1482,7 +1766,11 @@
     "under the direction of a supervising instructor.",
     "Physiology (PHYSIOL)"
    ],
-   "first_course": "PHYSIOL 001 Introduction to Human Physiolog y (4) UC:CSU"
+   "first_course": "PHYSIOL 001 Introduction to Human Physiolog y (4) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PLNT SC",
@@ -1500,7 +1788,11 @@
     "Horticulture and Landscaping . . . . Plant Science 700-899",
     "Natural Resources Management . . Plant Science 900-999"
    ],
-   "first_course": "PLNT SC 103 Introduction to Soil Science (4) UC:CSU"
+   "first_course": "PLNT SC 103 Introduction to Soil Science (4) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "POL SCI",
@@ -1518,7 +1810,11 @@
     "POL SCI 001 The Government of the United States (Common Course",
     "Number change. See POLS C1000.)"
    ],
-   "first_course": "POL SCI 002 Introduction to Comparative P olitics (3) UC:CSU"
+   "first_course": "POL SCI 002 Introduction to Comparative P olitics (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "POLS",
@@ -1536,7 +1832,11 @@
     "tract basis under the direction of a supervising instructor.",
     "Political Science (POLS)"
    ],
-   "first_course": "POLS C1000 American Go vernment and Politics (3) UC:CSU"
+   "first_course": "POLS C1000 American Go vernment and Politics (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PSYC",
@@ -1554,7 +1854,11 @@
     "C-ID: POLS 110",
     "Psychology (PSYC)"
    ],
-   "first_course": "PSYC C1000 Introduction to Psycholog y (3) UC:CSU"
+   "first_course": "PSYC C1000 Introduction to Psycholog y (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PSYCH",
@@ -1572,7 +1876,11 @@
     "PSYCH 001 Introductory Psychology (Common Course Number change. See",
     "PSYC C1000.)"
    ],
-   "first_course": "PSYCH 002 Biological Psycholog y (3) UC:CSU"
+   "first_course": "PSYCH 002 Biological Psycholog y (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "PUB REL",
@@ -1590,7 +1898,11 @@
     "basis under the direction of a supervising instructor.",
     "Public Relations (PUB REL)"
    ],
-   "first_course": "PUB REL 001 Principles of Public Relations (3) CSU"
+   "first_course": "PUB REL 001 Principles of Public Relations (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "REAL ES",
@@ -1608,7 +1920,11 @@
     "See course listings under English.",
     "Real Estate (REAL ES)"
    ],
-   "first_course": "REAL ES 001 Real Estate Principles (3) CSU"
+   "first_course": "REAL ES 001 Real Estate Principles (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "SOC",
@@ -1626,7 +1942,11 @@
     "See course listings under American Sign Language.",
     "Sociology (SOC)"
    ],
-   "first_course": "SOC 001 Introduction to Sociolog y (3) UC:CSU"
+   "first_course": "SOC 001 Introduction to Sociolog y (3) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "SPANISH",
@@ -1644,7 +1964,11 @@
     "C-ID: SOCI 125",
     "Spanish"
    ],
-   "first_course": "SPANISH 001 Elementar y Spanish I (5) UC:CSU"
+   "first_course": "SPANISH 001 Elementar y Spanish I (5) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "STAT",
@@ -1662,7 +1986,11 @@
     "under the direction of a supervising instructor.",
     "Statistics (STAT)"
    ],
-   "first_course": "STAT 074 Statistics Laboratory for the Social Sciences (1) UC:CSU"
+   "first_course": "STAT 074 Statistics Laboratory for the Social Sciences (1) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "SUPV",
@@ -1680,7 +2008,11 @@
     "contract basis under the direction of a supervising instructor.",
     "Supervision (SUPV)"
    ],
-   "first_course": "SUPV 001 Elements of Super vision (3) CSU"
+   "first_course": "SUPV 001 Elements of Super vision (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "TECTHTR",
@@ -1698,7 +2030,11 @@
     "and management/employee relations.",
     "Technical Stage Production (TECTHTR)"
    ],
-   "first_course": "TECTHTR 342 Technical Stage Production (2) UC:CSU"
+   "first_course": "TECTHTR 342 Technical Stage Production (2) UC:CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "THEATER",
@@ -1734,7 +2070,11 @@
     "2026-2027 GENERAL CATALOG",
     "Tutor"
    ],
-   "first_course": "TUTOR 001T Supervised Tutoring (0) (NDA) - RPT 9"
+   "first_course": "TUTOR 001T Supervised Tutoring (0) (NDA) - RPT 9",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "VETTECH",
@@ -1752,7 +2092,11 @@
     "this non-credit, open-entry course.",
     "Veterinary Technology (VETTECH)"
    ],
-   "first_course": "VETTECH 180 Animal Care Experience (1) CSU"
+   "first_course": "VETTECH 180 Animal Care Experience (1) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "VOC ED",
@@ -1770,7 +2114,11 @@
     "time is devoted to board exam review, case studies and impromptu discussions.",
     "Vocational Education (VOC ED)"
    ],
-   "first_course": "VOC ED 060CE Custodial Technician Training (0) (NDA) - RPT 3"
+   "first_course": "VOC ED 060CE Custodial Technician Training (0) (NDA) - RPT 3",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   },
   {
    "code": "WELDING",
@@ -1788,7 +2136,11 @@
     "(NP).",
     "Welding"
    ],
-   "first_course": "WELDING 161 Oxy-Acetylene Welding I (3) CSU"
+   "first_course": "WELDING 161 Oxy-Acetylene Welding I (3) CSU",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 44948526227)"
   }
  ],
  "code_address_tried": [

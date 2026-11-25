@@ -1,0 +1,600 @@
+{
+ "college": "Fullerton College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:40:25Z",
+ "run": "45625259489",
+ "plan": "kb/college_reads/subject_index_fullerton.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/acct/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/aj/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANAT",
+   "title": "Anatomy and Physiology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/anat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/anth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/arch/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/art/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/arth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/asl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/auto/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/biol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business Management",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/bus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDES",
+   "title": "Child Development and Educational Studies",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cdes/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/chin/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CISG",
+   "title": "Computer Information Systems-Gaming",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cisg/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/comm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSM",
+   "title": "Cosmetology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cosm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling and Guidance",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/coun/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CRTV",
+   "title": "Cinema, Radio and Television",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/crtv/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/csci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSTR",
+   "title": "Construction Technology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cstr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CYBR",
+   "title": "Cybersecurity",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/cybr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/danc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DART",
+   "title": "Digital Arts",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/dart/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRAF",
+   "title": "Drafting Technology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/draf/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRON",
+   "title": "Drone",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/dron/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/engl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/engr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Sciences",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/envs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESC",
+   "title": "Earth Sciences",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/esc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/eths/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/fash/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FOOD",
+   "title": "Foods",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/food/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/fren/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/germ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GRFX",
+   "title": "Graphic Design",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/grfx/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HED",
+   "title": "Health Education",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hed/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HORT",
+   "title": "Horticulture",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hort/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/hum/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IDES",
+   "title": "Interior Design",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/ides/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/ital/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/japn/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/jour/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KOR",
+   "title": "Korean",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/kor/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIB",
+   "title": "Library Technology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/lib/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MACH",
+   "title": "Machine Technology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mach/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/math/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "METL",
+   "title": "Metallurgy",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/metl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MICR",
+   "title": "Microbiology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/micr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MIND",
+   "title": "Mindfulness",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mind/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MKT",
+   "title": "Marketing",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mkt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/mus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSA",
+   "title": "Music-Applied",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/musa/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition and Foods",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/nutr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDF",
+   "title": "Download Page",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/course-descriptions.pdf",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/pe/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy and Religious Studies",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/phot/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/phys/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PLEG",
+   "title": "Paralegal Studies",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/pleg/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/pols/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PORT",
+   "title": "Portuguese",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/port/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POSC",
+   "title": "Political Science",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/posc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PRNT",
+   "title": "Printing Technology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/prnt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/psy/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/psyc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/re/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "READ",
+   "title": "Reading",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/read/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/soc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOSC",
+   "title": "Social Sciences",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/sosc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/stat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TECH",
+   "title": "Technology-Related Courses",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/tech/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theatre Arts",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/thea/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/weld/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELL",
+   "title": "Wellness",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/well/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WKEX",
+   "title": "Work Experience",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/wkex/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WMNS",
+   "title": "Women's Studies",
+   "url": "https://catalog.nocccd.edu/fullerton-college/course-descriptions/wmns/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "not_listed": {
+  "codes": [
+   "F",
+   "GEOL",
+   "PHSC",
+   "SPCH",
+   "TUT"
+  ],
+  "why": "The hunt list names these codes, and the index this read loaded prints no subject for them."
+ }
+}

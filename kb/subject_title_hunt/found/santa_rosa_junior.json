@@ -1,0 +1,912 @@
+{
+ "college": "Santa Rosa Junior College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:04:36Z",
+ "run": "45629430201",
+ "runs": [
+  "45625006694",
+  "45626565022",
+  "45627807594",
+  "45629430201"
+ ],
+ "plan": "kb/college_reads/subject_index_santa_rosa_junior.json",
+ "source_pdf": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
+ "titles": [
+  {
+   "code": "ADED",
+   "title": "Adult Education",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=391",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGBU",
+   "title": "Agriculture Business",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=400",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGME",
+   "title": "Agriculture Mechanics",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=401",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGRI",
+   "title": "Agriculture",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=399",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=388",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANAT",
+   "title": "Anatomy",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=401",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANSC",
+   "title": "Animal Science",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=402",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=403",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APE",
+   "title": "Adapted Physical Education",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=387",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APED",
+   "title": "Apprenticeship Education",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=406",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "APTE",
+   "title": "Applied Technology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=404",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=409",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=410",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=413",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=401",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=414",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=415",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATL",
+   "title": "Advanced Transportation",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=397",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BAD",
+   "title": "Business Administration",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=420",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BBK",
+   "title": "Business Bookkeeping",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=422",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BEHS",
+   "title": "Behavioral Science",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=418",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BGN",
+   "title": "Business General",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=422",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=418",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BMG",
+   "title": "Business Management",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=423",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BMK",
+   "title": "Business Marketing",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=424",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BOT",
+   "title": "Business Office Technology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=425",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BTNY",
+   "title": "Botany",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=420",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CEST",
+   "title": "Civil & Surveying Technology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=431",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=425",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=430",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHLD",
+   "title": "Child Development",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=427",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=433",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CONS",
+   "title": "Construction Management Tech",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=443",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=443",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CS",
+   "title": "Computer Studies",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=435",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSKL",
+   "title": "College Skills",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=431",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CUL",
+   "title": "Culinary Arts",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=444",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DA",
+   "title": "Dental Education - Assisting",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=458",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=451",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DE",
+   "title": "Dental Edu (Assist & Hygiene)",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=458",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DH",
+   "title": "Dental Education - Hygiene",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=459",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DIET",
+   "title": "Dietetic Technology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=461",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRD",
+   "title": "Disability Resources Departmnt",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=462",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DSS",
+   "title": "Disability Studies",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=463",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=464",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDU",
+   "title": "Education",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=464",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=465",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELEC",
+   "title": "Electronic Technology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=465",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMC",
+   "title": "Emergency Medical Care",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=466",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMLS",
+   "title": "English for Multilingual Students",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=473",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=470",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=469",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENST",
+   "title": "Environmental Technology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=479",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Science",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=478",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EQSC",
+   "title": "Equine Science",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=479",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ERTH",
+   "title": "Earth and Space Science",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=463",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESHP",
+   "title": "Entrepreneurship",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=478",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=479",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FASH",
+   "title": "Fashion",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=480",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FDNT",
+   "title": "Foods and Nutrition",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=488",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=483",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FLOR",
+   "title": "Floristry",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=488",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FMA",
+   "title": "Film and Media Arts",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=481",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=489",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GD",
+   "title": "Graphic Design",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=492",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=490",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=490",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=491",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=494",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLC",
+   "title": "Health Care",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=493",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLE",
+   "title": "Health Education",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=493",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HORT",
+   "title": "Horticulture",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=496",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HOSP",
+   "title": "Hospitality",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=497",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HR",
+   "title": "Human Resources",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=498",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=499",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HVAC",
+   "title": "Heatng, Ventilatn, AC & Refrig",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=493",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDE",
+   "title": "Interior Design",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=500",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INTD",
+   "title": "Interdisciplinary Studies",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=500",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=501",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=502",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=502",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KFIT",
+   "title": "Kinesiology Fitness",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=509",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=503",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINA",
+   "title": "Kinesiology Aquatics",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=507",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINC",
+   "title": "Kinesiology Combative",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=508",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINI",
+   "title": "Kinesiology Individual Sports",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=513",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINT",
+   "title": "Kinesiology Team Sports",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=514",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIR",
+   "title": "Library & Information Resource",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LL",
+   "title": "Lifelong Learning",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=515",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MA",
+   "title": "Medical Assisting",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=519",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MACH",
+   "title": "Advanced Manufacturing Tech",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=396",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MICR",
+   "title": "Microbiology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=520",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MTER",
+   "title": "Meteorology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=520",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSC",
+   "title": "Music",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=521",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSP",
+   "title": "Music Practicum & Performance",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=524",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NR",
+   "title": "Nursing - RN",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=530",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NRA",
+   "title": "Nursing- Aide",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=531",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NRM",
+   "title": "Natural Resources",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=528",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=534",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "Physical Science",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=535",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHT",
+   "title": "Pharmacy Technician",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=533",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=535",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYZ",
+   "title": "Physiology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=536",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PLS",
+   "title": "Paralegal Studies",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=531",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=536",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=537",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RADT",
+   "title": "Radiologic Technology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=539",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=541",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REEN",
+   "title": "Renewable Energy",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=543",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RELS",
+   "title": "Religious Studies",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=542",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SE",
+   "title": "Special Education",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=547",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=545",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCS",
+   "title": "Social Science",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=544",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=546",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=547",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SUAG",
+   "title": "Sustainable Agriculture",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=548",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SURV",
+   "title": "Surveying",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=548",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work/Human Services",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=544",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THAR",
+   "title": "Theatre Arts",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=549",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VE",
+   "title": "Vocational Education",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=557",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VETT",
+   "title": "Veterinary Tech",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=554",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VIT",
+   "title": "Viticulture",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=555",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WEE",
+   "title": "Work Experience Education",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=561",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=558",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WEOC",
+   "title": "Work Experience - Occupational",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=562",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WINE",
+   "title": "Wine Studies",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=559",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WTR",
+   "title": "Water Treatment",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=558",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WWTR",
+   "title": "Waste Water Treatment",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=557",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

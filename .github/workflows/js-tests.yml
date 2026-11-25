@@ -358,6 +358,11 @@ jobs:
       - name: Subject headings filer (kb/_file_subject_headings.py)
         if: matrix.shard == 2
         run: python3 tests/subject_headings_filer_test.py
+      # The title hunt's filer (S730): a catalog's subject index, read by a runner, filed straight into the headings
+      # record with its source, where, method, date and finder; the Subjects build lists such a college by its headings.
+      - name: Title hunt filer (kb/_file_found_subject_titles.py)
+        if: matrix.shard == 2
+        run: python3 tests/file_found_subject_titles_test.py
       # Noncredit by category (S698, #3655): a code's noncredit courses under the category the COCI export names,
       # apart from its credit courses; no band and no category is guessed. Pure stdlib (the build reads the export).
       - name: Noncredit categories (kb/_build_noncredit_categories.py)

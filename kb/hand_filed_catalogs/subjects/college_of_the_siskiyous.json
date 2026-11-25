@@ -1,0 +1,863 @@
+{
+ "_what": "The subjects College of the Siskiyous's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "College of the Siskiyous",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:16:13Z",
+ "run": "45631971415",
+ "source": [
+  "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+  "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses"
+ ],
+ "rows": [
+  {
+   "code": "ADHS",
+   "heading": "Alcohol, Drug, and Human Services",
+   "heading_printed": "Alcohol, Drug, and Human Services",
+   "rule": "index",
+   "codes": [
+    "ADHS"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ADJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADJ"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "AG",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "index",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ART",
+   "heading": "Fine Arts and Art History",
+   "heading_printed": "Fine Arts and Art History",
+   "rule": "index",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Fine Arts and Art History",
+   "heading_printed": "Fine Arts and Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "BA",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BA"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "BIO",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "COLL",
+   "heading": "College Preparation",
+   "heading_printed": "College Preparation",
+   "rule": "index",
+   "codes": [
+    "COLL"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "COMS",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMS"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ESCI",
+   "heading": "Earth Science",
+   "heading_printed": "Earth Science",
+   "rule": "index",
+   "codes": [
+    "ESCI"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language: Non-Credit",
+   "heading_printed": "English as a Second Language: Non-Credit",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "FCS",
+   "heading": "Family and Consumer Science: Non-Credit",
+   "heading_printed": "Family and Consumer Science: Non-Credit",
+   "rule": "index",
+   "codes": [
+    "FCS"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Science and Technology",
+   "heading_printed": "Fire Science and Technology",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "GUID",
+   "heading": "Guidance",
+   "heading_printed": "Guidance",
+   "rule": "index",
+   "codes": [
+    "GUID"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "HEA",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HEA"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality: Non-Credit",
+   "heading_printed": "Hospitality: Non-Credit",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "KINE",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINE"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library Research and Information Literacy",
+   "heading_printed": "Library Research and Information Literacy",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics and Statistics",
+   "heading_printed": "Mathematics and Statistics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "MFG",
+   "heading": "Manufacturing",
+   "heading_printed": "Manufacturing",
+   "rule": "index",
+   "codes": [
+    "MFG"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "OLAD",
+   "heading": "Older Adults: Non-Credit",
+   "heading_printed": "Older Adults: Non-Credit",
+   "rule": "index",
+   "codes": [
+    "OLAD"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "PEFI",
+   "heading": "Physical Education Fitness",
+   "heading_printed": "Physical Education Fitness",
+   "rule": "index",
+   "codes": [
+    "PEFI"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "PEMA",
+   "heading": "Physical Education Major/Athletics",
+   "heading_printed": "Physical Education Major/Athletics",
+   "rule": "index",
+   "codes": [
+    "PEMA"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "RBT",
+   "heading": "Registered Behavior Technician",
+   "heading_printed": "Registered Behavior Technician",
+   "rule": "index",
+   "codes": [
+    "RBT"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "STAT",
+   "heading": "Mathematics and Statistics",
+   "heading_printed": "Mathematics and Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "WEE",
+   "heading": "General Work Experience",
+   "heading_printed": "General Work Experience",
+   "rule": "index",
+   "codes": [
+    "WEE"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  },
+  {
+   "code": "WORK",
+   "heading": "Workforce Preparation: Non-Credit",
+   "heading_printed": "Workforce Preparation: Non-Credit",
+   "rule": "index",
+   "codes": [
+    "WORK"
+   ],
+   "candidate": null,
+   "address": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/non-creditcourses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45631971415)",
+   "run": "45631971415"
+  }
+ ],
+ "subjects": 53,
+ "with_heading": 53
+}

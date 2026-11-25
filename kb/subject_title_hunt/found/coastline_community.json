@@ -1,0 +1,485 @@
+{
+ "college": "Coastline Community College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:53:32Z",
+ "run": "45627908005",
+ "plan": "kb/college_reads/subject_index_coastline_community.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGNG",
+   "title": "Aging Studies",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARAB",
+   "title": "Arabic",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BCI",
+   "title": "Building Codes Inspector",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BCT",
+   "title": "Building Codes Technology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BC",
+   "title": "Business Computing",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CMST",
+   "title": "Communication Studies",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CJ",
+   "title": "Criminal Justice",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CYBR",
+   "title": "Cybersecurity",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMC",
+   "title": "Digital Media Communications",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMD",
+   "title": "Digital Media Design",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECOL",
+   "title": "Ecology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMGT",
+   "title": "Emergency Management",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English as a Second Language",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Science",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FN",
+   "title": "Foods & Nutrition",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GERO",
+   "title": "Gerontology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLTH",
+   "title": "Health",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSVC",
+   "title": "Human Services",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ICS",
+   "title": "Information Computer Sciences",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IT",
+   "title": "Information Technology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LAW",
+   "title": "Law",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MS",
+   "title": "Management & Supervision",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MRSC",
+   "title": "Marine Science",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Photography",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSCI",
+   "title": "Political Science",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PTEC",
+   "title": "Process Technology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPED",
+   "title": "Special Education",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SM",
+   "title": "Supply Management",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "Theater Arts",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VIET",
+   "title": "Vietnamese",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELL",
+   "title": "English Language Learning",
+   "url": "https://catalog.cccd.edu/coastline/course-descriptions/noncredit-courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

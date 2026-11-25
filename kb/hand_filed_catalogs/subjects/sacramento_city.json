@@ -1,0 +1,2144 @@
+{
+ "_what": "The subjects Sacramento City College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Sacramento City College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:34:28Z",
+ "run": "45623883828",
+ "source": [
+  "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+  "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+  "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ADMJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADMJ"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "AH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "index",
+   "codes": [
+    "AH"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "AMTP",
+   "heading": "Aircraft Maintenance Technician Program",
+   "heading_printed": "Aircraft Maintenance Technician Program",
+   "rule": "index",
+   "codes": [
+    "AMTP"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ANIM",
+   "heading": "Animation",
+   "heading_printed": "Animation",
+   "rule": "index",
+   "codes": [
+    "ANIM"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ATC",
+   "heading": "Air Traffic Control",
+   "heading_printed": "Air Traffic Control",
+   "rule": "index",
+   "codes": [
+    "ATC"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ATCAD",
+   "heading": "Air Traffic Control and Aircraft Dispatcher",
+   "heading_printed": "Air Traffic Control and Aircraft Dispatcher",
+   "rule": "index",
+   "codes": [
+    "ATCAD"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "BAR",
+   "heading": "Barbering",
+   "heading_printed": "Barbering",
+   "rule": "index",
+   "codes": [
+    "BAR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "BIOLFS",
+   "heading": "Biology Field Studies",
+   "heading_printed": "Biology Field Studies",
+   "rule": "index",
+   "codes": [
+    "BIOLFS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CANT",
+   "heading": "Cantonese",
+   "heading_printed": "Cantonese",
+   "rule": "index",
+   "codes": [
+    "CANT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CHEMT",
+   "heading": "Chemical Technology",
+   "heading_printed": "Chemical Technology",
+   "rule": "index",
+   "codes": [
+    "CHEMT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CHW",
+   "heading": "Community Healthcare Worker",
+   "heading_printed": "Community Healthcare Worker",
+   "rule": "index",
+   "codes": [
+    "CHW"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CISA",
+   "heading": "Computer Information Sciences - Applications",
+   "heading_printed": "Computer Information Sciences - Applications",
+   "rule": "index",
+   "codes": [
+    "CISA"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CISC",
+   "heading": "Computer Information Sciences - Core",
+   "heading_printed": "Computer Information Sciences - Core",
+   "rule": "index",
+   "codes": [
+    "CISC"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CISD",
+   "heading": "Computer Information Sciences - Data",
+   "heading_printed": "Computer Information Sciences - Data",
+   "rule": "index",
+   "codes": [
+    "CISD"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CISM",
+   "heading": "Computer Information Science - Maker",
+   "heading_printed": "Computer Information Science - Maker",
+   "rule": "index",
+   "codes": [
+    "CISM"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CISN",
+   "heading": "Computer Information Sciences - Network",
+   "heading_printed": "Computer Information Sciences - Network",
+   "rule": "index",
+   "codes": [
+    "CISN"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CISP",
+   "heading": "Computer Information Sciences - Programming",
+   "heading_printed": "Computer Information Sciences - Programming",
+   "rule": "index",
+   "codes": [
+    "CISP"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CISS",
+   "heading": "Computer Information Sciences - Security",
+   "heading_printed": "Computer Information Sciences - Security",
+   "rule": "index",
+   "codes": [
+    "CISS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CISW",
+   "heading": "Computer Information Sciences - Web",
+   "heading_printed": "Computer Information Sciences - Web",
+   "rule": "index",
+   "codes": [
+    "CISW"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CNC",
+   "heading": "Computer Numerical Control",
+   "heading_printed": "Computer Numerical Control",
+   "rule": "index",
+   "codes": [
+    "CNC"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "COMDE",
+   "heading": "Community Leadership Development",
+   "heading_printed": "Community Leadership Development",
+   "rule": "index",
+   "codes": [
+    "COMDE"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "index",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CSP",
+   "heading": "Community Studies",
+   "heading_printed": "Community Studies",
+   "rule": "index",
+   "codes": [
+    "CSP"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "CVT",
+   "heading": "Cardiovascular Technologist",
+   "heading_printed": "Cardiovascular Technologist",
+   "rule": "index",
+   "codes": [
+    "CVT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "DAST",
+   "heading": "Dental Assisting",
+   "heading_printed": "Dental Assisting",
+   "rule": "index",
+   "codes": [
+    "DAST"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "DDSN",
+   "heading": "Digital Design",
+   "heading_printed": "Digital Design",
+   "rule": "index",
+   "codes": [
+    "DDSN"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "DEAF",
+   "heading": "Deaf Culture and American Sign Language Studies",
+   "heading_printed": "Deaf Culture and American Sign Language Studies",
+   "rule": "index",
+   "codes": [
+    "DEAF"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "DHYG",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "index",
+   "codes": [
+    "DHYG"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "EDT",
+   "heading": "Engineering Design Technology",
+   "heading_printed": "Engineering Design Technology",
+   "rule": "index",
+   "codes": [
+    "EDT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education Studies",
+   "heading_printed": "Education Studies",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ENGCW",
+   "heading": "English - Creative Writing",
+   "heading_printed": "English - Creative Writing",
+   "rule": "index",
+   "codes": [
+    "ENGCW"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ENGED",
+   "heading": "English - Education",
+   "heading_printed": "English - Education",
+   "rule": "index",
+   "codes": [
+    "ENGED"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ENGLB",
+   "heading": "English - Laboratory",
+   "heading_printed": "English - Laboratory",
+   "rule": "index",
+   "codes": [
+    "ENGLB"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ENGLT",
+   "heading": "English - Literature",
+   "heading_printed": "English - Literature",
+   "rule": "index",
+   "codes": [
+    "ENGLT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ENGRD",
+   "heading": "English - Reading",
+   "heading_printed": "English - Reading",
+   "rule": "index",
+   "codes": [
+    "ENGRD"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ENGWR",
+   "heading": "English - Writing",
+   "heading_printed": "English - Writing",
+   "rule": "index",
+   "codes": [
+    "ENGWR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ENTR",
+   "heading": "Entrepreneurship",
+   "heading_printed": "Entrepreneurship",
+   "rule": "index",
+   "codes": [
+    "ENTR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ENVT",
+   "heading": "Environmental Technology",
+   "heading_printed": "Environmental Technology",
+   "rule": "index",
+   "codes": [
+    "ENVT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ESLG",
+   "heading": "English as a Second Language - Grammar",
+   "heading_printed": "English as a Second Language - Grammar",
+   "rule": "index",
+   "codes": [
+    "ESLG"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ESLL",
+   "heading": "English as a Second Language - Listening",
+   "heading_printed": "English as a Second Language - Listening",
+   "rule": "index",
+   "codes": [
+    "ESLL"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ESLLAB",
+   "heading": "English as a Second Language Lab",
+   "heading_printed": "English as a Second Language Lab",
+   "rule": "index",
+   "codes": [
+    "ESLLAB"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ESLNC",
+   "heading": "English as a Second Language Noncredit",
+   "heading_printed": "English as a Second Language Noncredit",
+   "rule": "index",
+   "codes": [
+    "ESLNC"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ESLP",
+   "heading": "English as a Second Language - Pronunciation",
+   "heading_printed": "English as a Second Language - Pronunciation",
+   "rule": "index",
+   "codes": [
+    "ESLP"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ESLR",
+   "heading": "English as a Second Language - Reading",
+   "heading_printed": "English as a Second Language - Reading",
+   "rule": "index",
+   "codes": [
+    "ESLR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ESLW",
+   "heading": "English as a Second Language - Writing",
+   "heading_printed": "English as a Second Language - Writing",
+   "rule": "index",
+   "codes": [
+    "ESLW"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ET",
+   "heading": "Electronics Technology",
+   "heading_printed": "Electronics Technology",
+   "rule": "index",
+   "codes": [
+    "ET"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ETHNS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHNS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=111",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "FASHN",
+   "heading": "Fashion",
+   "heading_printed": "Fashion",
+   "rule": "index",
+   "codes": [
+    "FASHN"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "FCS",
+   "heading": "Family and Consumer Science",
+   "heading_printed": "Family and Consumer Science",
+   "rule": "index",
+   "codes": [
+    "FCS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "FITNS",
+   "heading": "Fitness",
+   "heading_printed": "Fitness",
+   "rule": "index",
+   "codes": [
+    "FITNS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "FLTEC",
+   "heading": "Flight Technology",
+   "heading_printed": "Flight Technology",
+   "rule": "index",
+   "codes": [
+    "FLTEC"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "GAME",
+   "heading": "Game Design",
+   "heading_printed": "Game Design",
+   "rule": "index",
+   "codes": [
+    "GAME"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "GERON",
+   "heading": "Gerontology",
+   "heading_printed": "Gerontology",
+   "rule": "index",
+   "codes": [
+    "GERON"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "GLST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GLST"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "HCD",
+   "heading": "Human/Career Development",
+   "heading_printed": "Human/Career Development",
+   "rule": "index",
+   "codes": [
+    "HCD"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "HEED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HEED"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "HSER",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HSER"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "HVAC",
+   "heading": "Heating, Ventilation, and Air Conditioning",
+   "heading_printed": "Heating, Ventilation, and Air Conditioning",
+   "rule": "index",
+   "codes": [
+    "HVAC"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "IMMT",
+   "heading": "Industrial Maintenance Mechanic Technician",
+   "heading_printed": "Industrial Maintenance Mechanic Technician",
+   "rule": "index",
+   "codes": [
+    "IMMT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "INDIS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "INDIS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "IS",
+   "heading": "International Studies",
+   "heading_printed": "International Studies",
+   "rule": "index",
+   "codes": [
+    "IS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "JAPAN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPAN"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "KINES",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINES"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "LIBT",
+   "heading": "Library and Information Technology",
+   "heading_printed": "Library and Information Technology",
+   "rule": "index",
+   "codes": [
+    "LIBT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "LTAT",
+   "heading": "Learning, Tutoring, and Academic Technology",
+   "heading_printed": "Learning, Tutoring, and Academic Technology",
+   "rule": "index",
+   "codes": [
+    "LTAT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MAKR",
+   "heading": "Modern Making",
+   "heading_printed": "Modern Making",
+   "rule": "index",
+   "codes": [
+    "MAKR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MAND",
+   "heading": "Mandarin",
+   "heading_printed": "Mandarin",
+   "rule": "index",
+   "codes": [
+    "MAND"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MATHS",
+   "heading": "Mathemetics Support",
+   "heading_printed": "Mathemetics Support",
+   "rule": "index",
+   "codes": [
+    "MATHS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MET",
+   "heading": "Mechanical-Electrical Technology",
+   "heading_printed": "Mechanical-Electrical Technology",
+   "rule": "index",
+   "codes": [
+    "MET"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "index",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MKT",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "index",
+   "codes": [
+    "MKT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MODL",
+   "heading": "3D Modeling",
+   "heading_printed": "3D Modeling",
+   "rule": "index",
+   "codes": [
+    "MODL"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MUFHL",
+   "heading": "Music Fundamentals/History and Literature",
+   "heading_printed": "Music Fundamentals/History and Literature",
+   "rule": "index",
+   "codes": [
+    "MUFHL"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MUIVI",
+   "heading": "Music Instrumental/Voice Instruction",
+   "heading_printed": "Music Instrumental/Voice Instruction",
+   "rule": "index",
+   "codes": [
+    "MUIVI"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MUP",
+   "heading": "Music Performance",
+   "heading_printed": "Music Performance",
+   "rule": "index",
+   "codes": [
+    "MUP"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "MUSM",
+   "heading": "Specializations in Music",
+   "heading_printed": "Specializations in Music",
+   "rule": "index",
+   "codes": [
+    "MUSM"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "NURSE",
+   "heading": "Nursing, Registered",
+   "heading_printed": "Nursing, Registered",
+   "rule": "index",
+   "codes": [
+    "NURSE"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "NUTRI",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTRI"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=112",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "OEHS",
+   "heading": "Occupational and Environmental Health and Safety",
+   "heading_printed": "Occupational and Environmental Health and Safety",
+   "rule": "index",
+   "codes": [
+    "OEHS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "OPT",
+   "heading": "Optical Technology",
+   "heading_printed": "Optical Technology",
+   "rule": "index",
+   "codes": [
+    "OPT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "OTA",
+   "heading": "Occupational Therapy Assistant",
+   "heading_printed": "Occupational Therapy Assistant",
+   "rule": "index",
+   "codes": [
+    "OTA"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "PACT",
+   "heading": "Personal Activity",
+   "heading_printed": "Personal Activity",
+   "rule": "index",
+   "codes": [
+    "PACT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "PNJABI",
+   "heading": "Punjabi",
+   "heading_printed": "Punjabi",
+   "rule": "index",
+   "codes": [
+    "PNJABI"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "PRSIAN",
+   "heading": "Persian",
+   "heading_printed": "Persian",
+   "rule": "index",
+   "codes": [
+    "PRSIAN"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "PTA",
+   "heading": "Physical Therapist Assistant",
+   "heading_printed": "Physical Therapist Assistant",
+   "rule": "index",
+   "codes": [
+    "PTA"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "RAILR",
+   "heading": "Railroad Operations",
+   "heading_printed": "Railroad Operations",
+   "rule": "index",
+   "codes": [
+    "RAILR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "RECR",
+   "heading": "Recreation",
+   "heading_printed": "Recreation",
+   "rule": "index",
+   "codes": [
+    "RECR"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "RUSS",
+   "heading": "Russian",
+   "heading_printed": "Russian",
+   "rule": "index",
+   "codes": [
+    "RUSS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "SGVT",
+   "heading": "Student Government",
+   "heading_printed": "Student Government",
+   "rule": "index",
+   "codes": [
+    "SGVT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "SJS",
+   "heading": "Social Justice Studies",
+   "heading_printed": "Social Justice Studies",
+   "rule": "index",
+   "codes": [
+    "SJS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "SPORT",
+   "heading": "Sports",
+   "heading_printed": "Sports",
+   "rule": "index",
+   "codes": [
+    "SPORT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "SURVY",
+   "heading": "Surveying",
+   "heading_printed": "Surveying",
+   "rule": "index",
+   "codes": [
+    "SURVY"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "TA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "TA"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "TAFILM",
+   "heading": "Theatre Arts Film",
+   "heading_printed": "Theatre Arts Film",
+   "rule": "index",
+   "codes": [
+    "TAFILM"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "TAP",
+   "heading": "Theatre Arts Performance",
+   "heading_printed": "Theatre Arts Performance",
+   "rule": "index",
+   "codes": [
+    "TAP"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "TELA",
+   "heading": "Tutor Education and Learning Assistance",
+   "heading_printed": "Tutor Education and Learning Assistance",
+   "rule": "index",
+   "codes": [
+    "TELA"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "TGLG",
+   "heading": "Tagalog",
+   "heading_printed": "Tagalog",
+   "rule": "index",
+   "codes": [
+    "TGLG"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "TMACT",
+   "heading": "Team Activity",
+   "heading_printed": "Team Activity",
+   "rule": "index",
+   "codes": [
+    "TMACT"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "VIET",
+   "heading": "Vietnamese",
+   "heading_printed": "Vietnamese",
+   "rule": "index",
+   "codes": [
+    "VIET"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "VN",
+   "heading": "Vocational Nursing",
+   "heading_printed": "Vocational Nursing",
+   "rule": "index",
+   "codes": [
+    "VN"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "WEXP",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WEXP"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  },
+  {
+   "code": "WGS",
+   "heading": "Women and Gender Studies",
+   "heading_printed": "Women and Gender Studies",
+   "rule": "index",
+   "codes": [
+    "WGS"
+   ],
+   "candidate": null,
+   "address": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=113",
+   "where": "catalog",
+   "method": "prefix legend",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623883828)",
+   "run": "45623883828"
+  }
+ ],
+ "subjects": 133,
+ "with_heading": 133
+}

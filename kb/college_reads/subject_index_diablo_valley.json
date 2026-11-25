@@ -1,0 +1,492 @@
+{
+ "_readme": "S730 title hunt (elumen group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (kb/subject_title_hunt/README.md, r-no-mid-on-a-stray-code-sam-2026-11-25). Rounds 1 and 2 (runs 45623983494, 45625568851): the Courses view lists each subject by name alone, each linking a subject page (dvc-<subject>-course). This read loads each of those pages through its light content call (publish/content, about 2 KB, the call the catalog's own menu makes; S380), one per page, so each heading prints with the codes of the courses under it. No model call, writes nothing.",
+ "college": "Diablo Valley College",
+ "questions": {
+  "subject_index": "The heading each page prints and the subject codes of the courses listed under it."
+ },
+ "keywords": [
+  " - [A-Z]{2,6}\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-addiction-studies-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-administration-of-justice-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-anthropology-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-arabic-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-architecture-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-digital-media-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-history-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-photography-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-astronomy-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-biological-science-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-accounting-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-entrepreneurship-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-management-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-marketing-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-real-estate-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-career-development-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-chemistry-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-chinese-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-communication-studies-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-information-systems-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-network-technology-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-science-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-construction-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-counseling-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-culinary-arts-hosp-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dance-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dental-assisting-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dental-hygiene-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-drama-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-early-childhood-education-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-economics-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-education-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-electrical-electronics-technology-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-energy-systems-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-engineering-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-engineering-technology-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-english-as-a-second-language-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-english-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-environmental-science-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-ethnic-studies-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-film-television-electronic-media-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-french-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-geography-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-geology-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-german-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-heating-ventilation-air-conditioning-refridg-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-history-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-horticulture-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-humanities-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-industrial-design-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-interdisciplinary-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-italian-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-japanese-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-journalism-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-activity-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-inter-athletics-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-library-technology-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-mathematics-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-music-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-music-industry-studies-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-nutrition-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-oceanography-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-persian-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-philosophy-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-physical-science-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-physics-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-plumbing-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-political-science-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-psychology-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-public-health-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-russian-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-sign-language-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-social-science-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-sociology-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-spanish-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-special-education-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-steamfitting-course?tenant=dvc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-work-experience-course?tenant=dvc.elumenapp.com"
+  }
+ ]
+}

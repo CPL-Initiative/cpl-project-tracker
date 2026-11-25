@@ -1,0 +1,1374 @@
+{
+ "_what": "The subjects College of the Sequoias's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "College of the Sequoias",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:30:48Z",
+ "run": "45624011924",
+ "source": [
+  "https://catalog.cos.edu/course-descriptions/"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "AG",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "index",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "AGMT",
+   "heading": "Agricultural Management",
+   "heading_printed": "Agricultural Management",
+   "rule": "index",
+   "codes": [
+    "AGMT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "AGTC",
+   "heading": "Agricultural Technology",
+   "heading_printed": "Agricultural Technology",
+   "rule": "index",
+   "codes": [
+    "AGTC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ASCI",
+   "heading": "Animal Science",
+   "heading_printed": "Animal Science",
+   "rule": "index",
+   "codes": [
+    "ASCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "CHLD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CHLD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "CINA",
+   "heading": "Cinema Arts",
+   "heading_printed": "Cinema Arts",
+   "rule": "index",
+   "codes": [
+    "CINA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication",
+   "heading_printed": "Communication",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "COMP",
+   "heading": "Computer",
+   "heading_printed": "Computer",
+   "rule": "index",
+   "codes": [
+    "COMP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "index",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "CT",
+   "heading": "Construction Technology",
+   "heading_printed": "Construction Technology",
+   "rule": "index",
+   "codes": [
+    "CT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "CULN",
+   "heading": "Culinary",
+   "heading_printed": "Culinary",
+   "rule": "index",
+   "codes": [
+    "CULN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "DRAM",
+   "heading": "Drama",
+   "heading_printed": "Drama",
+   "rule": "index",
+   "codes": [
+    "DRAM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "DRFT",
+   "heading": "Drafting",
+   "heading_printed": "Drafting",
+   "rule": "index",
+   "codes": [
+    "DRFT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ECT",
+   "heading": "Environment Control Technology",
+   "heading_printed": "Environment Control Technology",
+   "rule": "index",
+   "codes": [
+    "ECT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technician",
+   "heading_printed": "Emergency Medical Technician",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ESCI",
+   "heading": "Earth Science",
+   "heading_printed": "Earth Science",
+   "rule": "index",
+   "codes": [
+    "ESCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English As A Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ET",
+   "heading": "Electrician Training",
+   "heading_printed": "Electrician Training",
+   "rule": "index",
+   "codes": [
+    "ET"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "FASH",
+   "heading": "Fashion",
+   "heading_printed": "Fashion",
+   "rule": "index",
+   "codes": [
+    "FASH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "GD",
+   "heading": "Graphic Design",
+   "heading_printed": "Graphic Design",
+   "rule": "index",
+   "codes": [
+    "GD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "HDEV",
+   "heading": "Human Development",
+   "heading_printed": "Human Development",
+   "rule": "index",
+   "codes": [
+    "HDEV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "HSRV",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HSRV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "HW",
+   "heading": "Health and Wellness",
+   "heading_printed": "Health and Wellness",
+   "rule": "index",
+   "codes": [
+    "HW"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "IA",
+   "heading": "Intercollegiate Athletics",
+   "heading_printed": "Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "IA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ICT",
+   "heading": "Info/Communication Technology",
+   "heading_printed": "Info/Communication Technology",
+   "rule": "index",
+   "codes": [
+    "ICT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "IS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "IS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "ITEC",
+   "heading": "Industry and Technology",
+   "heading_printed": "Industry and Technology",
+   "rule": "index",
+   "codes": [
+    "ITEC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "KINE",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "LS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "NSCI",
+   "heading": "Natural Sciences",
+   "heading_printed": "Natural Sciences",
+   "rule": "index",
+   "codes": [
+    "NSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition/Foods",
+   "heading_printed": "Nutrition/Foods",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "OH",
+   "heading": "Ornamental Horticulture",
+   "heading_printed": "Ornamental Horticulture",
+   "rule": "index",
+   "codes": [
+    "OH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PARA",
+   "heading": "Paralegal",
+   "heading_printed": "Paralegal",
+   "rule": "index",
+   "codes": [
+    "PARA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PEAC",
+   "heading": "PE Activity",
+   "heading_printed": "PE Activity",
+   "rule": "index",
+   "codes": [
+    "PEAC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PHSC",
+   "heading": "Public Health Science",
+   "heading_printed": "Public Health Science",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PLSI",
+   "heading": "Plant Science",
+   "heading_printed": "Plant Science",
+   "rule": "index",
+   "codes": [
+    "PLSI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PM",
+   "heading": "Paramedicine",
+   "heading_printed": "Paramedicine",
+   "rule": "index",
+   "codes": [
+    "PM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PORT",
+   "heading": "Portuguese",
+   "heading_printed": "Portuguese",
+   "rule": "index",
+   "codes": [
+    "PORT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PS",
+   "heading": "Police Science",
+   "heading_printed": "Police Science",
+   "rule": "index",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PSCI",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PT",
+   "heading": "Pharmacy Technology",
+   "heading_printed": "Pharmacy Technology",
+   "rule": "index",
+   "codes": [
+    "PT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "PTA",
+   "heading": "Physical Therapy Assistant",
+   "heading_printed": "Physical Therapy Assistant",
+   "rule": "index",
+   "codes": [
+    "PTA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "REC",
+   "heading": "Recreation",
+   "heading_printed": "Recreation",
+   "rule": "index",
+   "codes": [
+    "REC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "SMED",
+   "heading": "Sports Medicine",
+   "heading_printed": "Sports Medicine",
+   "rule": "index",
+   "codes": [
+    "SMED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "SSCI",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SSCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "VT",
+   "heading": "Veterinary Technician",
+   "heading_printed": "Veterinary Technician",
+   "rule": "index",
+   "codes": [
+    "VT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  },
+  {
+   "code": "WEXP",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WEXP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.cos.edu/course-descriptions/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45624011924)",
+   "run": "45624011924"
+  }
+ ],
+ "subjects": 85,
+ "with_heading": 85
+}

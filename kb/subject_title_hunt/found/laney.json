@@ -1,0 +1,553 @@
+{
+ "college": "Laney College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:48:57Z",
+ "run": "45627124597",
+ "plan": "kb/college_reads/subject_index_laney.json",
+ "titles": [
+  {
+   "code": "AFRAM",
+   "title": "African American Studies",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44167
+  },
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44168
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44169
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44170
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44170
+  },
+  {
+   "code": "AI",
+   "title": "Artificial Intelligence",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44855
+  },
+  {
+   "code": "ASAME",
+   "title": "Asian & Asian American Studies",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44171
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44172
+  },
+  {
+   "code": "ATHL",
+   "title": "Athletics",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44173
+  },
+  {
+   "code": "BNK/F",
+   "title": "Banking & Finance",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44175
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44174
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44176
+  },
+  {
+   "code": "CARP",
+   "title": "Carpentry",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44177
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44178
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44179
+  },
+  {
+   "code": "MUSIC-CM",
+   "title": "Commercial Music",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44217
+  },
+  {
+   "code": "COMM",
+   "title": "Communication",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44181
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44180
+  },
+  {
+   "code": "CONMT",
+   "title": "Construction Management",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44182
+  },
+  {
+   "code": "COPED",
+   "title": "Cooperative Education",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44183
+  },
+  {
+   "code": "COSM",
+   "title": "Cosmetology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44184
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44185
+  },
+  {
+   "code": "CULIN",
+   "title": "Culinary Arts",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44186
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44187
+  },
+  {
+   "code": "DANCFOLK",
+   "title": "Dance Folk",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44188
+  },
+  {
+   "code": "DIGFAB",
+   "title": "Digital Fabrication",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44189
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44191
+  },
+  {
+   "code": "E/ET",
+   "title": "Electricity / Electronics Technology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44190
+  },
+  {
+   "code": "ENGIN",
+   "title": "Engineering",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44193
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44194
+  },
+  {
+   "code": "ESOL",
+   "title": "English for Speakers of Other Languages",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44195
+  },
+  {
+   "code": "ECT",
+   "title": "Environmental Control Technology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44192
+  },
+  {
+   "code": "ETHST",
+   "title": "Ethnic Studies",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44196
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44197
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44198
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44199
+  },
+  {
+   "code": "GRART",
+   "title": "Graphic Arts",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44200
+  },
+  {
+   "code": "HLTED",
+   "title": "Health Education",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44202
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44201
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44203
+  },
+  {
+   "code": "JAPAN",
+   "title": "Japanese",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44204
+  },
+  {
+   "code": "JOURN",
+   "title": "Journalism",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44205
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44206
+  },
+  {
+   "code": "LABST",
+   "title": "Labor Studies",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44207
+  },
+  {
+   "code": "LRNRE",
+   "title": "Learning Resources",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44210
+  },
+  {
+   "code": "LCI",
+   "title": "Legal and Community Interpreting",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44208
+  },
+  {
+   "code": "LIS",
+   "title": "Library and Information Studies",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44209
+  },
+  {
+   "code": "MACH",
+   "title": "Machine Technology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44213
+  },
+  {
+   "code": "M/SVN",
+   "title": "Management & Supervision",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44212
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44214
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44214
+  },
+  {
+   "code": "M/LAT",
+   "title": "Mexican & Latin American Studies",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44211
+  },
+  {
+   "code": "MUSIC",
+   "title": "Music",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44216
+  },
+  {
+   "code": "NATAM",
+   "title": "Native American Studies",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44218
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44219
+  },
+  {
+   "code": "PHOTO",
+   "title": "Photography",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44220
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44221
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44222
+  },
+  {
+   "code": "POSCI",
+   "title": "Political Science",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44222
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44223
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44223
+  },
+  {
+   "code": "SOCSC",
+   "title": "Social Science",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44225
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44224
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44226
+  },
+  {
+   "code": "SPFT",
+   "title": "Sports Fitness",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44227
+  },
+  {
+   "code": "THART",
+   "title": "Theatre Arts",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44228
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44230
+  },
+  {
+   "code": "WDTEC",
+   "title": "Wood Technology",
+   "url": "https://lan.curriqunet.com/Catalog/_getNavigation?id=10434&parentId=44231",
+   "where": "catalog",
+   "method": "subject heading",
+   "nav_id": 44229
+  }
+ ]
+}

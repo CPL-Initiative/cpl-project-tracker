@@ -1,0 +1,1066 @@
+{
+ "college": "Rio Hondo College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:02:40Z",
+ "run": "45628443522, 45629512231",
+ "plan": "kb/college_reads/subject_index_rio_hondo.json",
+ "how": "The catalog's Courses of Instruction and Noncredit Courses sections list each subject as a node titled with its code and name; the run read those nodes through the catalog's own navigation JSON (_getNavigation), one call per list.",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ACCT-Accounting",
+   "node": 24431
+  },
+  {
+   "code": "ADN",
+   "title": "Nursing-Associate Degree",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ADN-Nursing-Associate Degree",
+   "node": 24432
+  },
+  {
+   "code": "AET",
+   "title": "Alternative Energy",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AET-Alternative Energy",
+   "node": 23774
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AJ-Administration of Justice",
+   "node": 24433
+  },
+  {
+   "code": "ANIM",
+   "title": "Animation",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ANIM-Animation",
+   "node": 24434
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ANTH-Anthropology",
+   "node": 24435
+  },
+  {
+   "code": "ARCH",
+   "title": "Architecture",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARCH-Architecture",
+   "node": 24436
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ART-Art",
+   "node": 24437
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ARTH-Art History",
+   "node": 25555
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASL-American Sign Language",
+   "node": 24438
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ASTR-Astronomy",
+   "node": 24439
+  },
+  {
+   "code": "ATMN",
+   "title": "Automation",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ATMN-Automation",
+   "node": 24519
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "AUTO-Automotive Technology",
+   "node": 24440
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BIOL-Biology",
+   "node": 24441
+  },
+  {
+   "code": "BIOT",
+   "title": "Biotechnology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BIOT-Biotechnology",
+   "node": 24442
+  },
+  {
+   "code": "BUSL",
+   "title": "Business Law",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "BUSL-Business Law",
+   "node": 24443
+  },
+  {
+   "code": "CARP",
+   "title": "Carpentry",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CARP-Carpentry",
+   "node": 24444
+  },
+  {
+   "code": "CD",
+   "title": "Child Development",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CD-Child Development ",
+   "node": 24445
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CDEV-Child Development",
+   "node": 25609
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHEM-Chemistry",
+   "node": 24446
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHIN-Chinese",
+   "node": 24447
+  },
+  {
+   "code": "CHST",
+   "title": "Chicanx and Latinx Studies",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CHST-Chicanx and Latinx Studies",
+   "node": 24448
+  },
+  {
+   "code": "CIT",
+   "title": "Computer Information Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CIT-Computer Information Technology",
+   "node": 24449
+  },
+  {
+   "code": "CIV",
+   "title": "Civil Design",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CIV-Civil Design",
+   "node": 24450
+  },
+  {
+   "code": "COMM",
+   "title": "Communications",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COMM-Communications",
+   "node": 23768
+  },
+  {
+   "code": "CORR",
+   "title": "Corrections",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CORR-Corrections",
+   "node": 24451
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "COUN-Counseling",
+   "node": 24452
+  },
+  {
+   "code": "CS",
+   "title": "Computer Science",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "CS-Computer Science",
+   "node": 24453
+  },
+  {
+   "code": "DANC",
+   "title": "Dance",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DANC-Dance",
+   "node": 24454
+  },
+  {
+   "code": "DSCI",
+   "title": "Data Science",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "DSCI-Data Science",
+   "node": 23652
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ECON-Economics",
+   "node": 24455
+  },
+  {
+   "code": "ED",
+   "title": "Education",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ED-Education",
+   "node": 24456
+  },
+  {
+   "code": "EDEV",
+   "title": "Educational Development",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EDEV-Educational Development",
+   "node": 24457
+  },
+  {
+   "code": "EGSS",
+   "title": "Ethnic, Gender, and Sexuality Studies",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EGSS-Ethnic, Gender, and Sexuality Studies",
+   "node": 24458
+  },
+  {
+   "code": "ELEC",
+   "title": "Electronics",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ELEC-Electronics",
+   "node": 24459
+  },
+  {
+   "code": "EMT",
+   "title": "Emergency Medical Technician",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "EMT-Emergency Medical Technician",
+   "node": 24460
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGL-English",
+   "node": 24461
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGR-Engineering",
+   "node": 24462
+  },
+  {
+   "code": "ENGT",
+   "title": "Engineering Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ENGT-Engineering Technology",
+   "node": 24463
+  },
+  {
+   "code": "ET",
+   "title": "Environmental Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ET-Environmental Technology",
+   "node": 24464
+  },
+  {
+   "code": "ETEC",
+   "title": "Electrical Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ETEC-Electrical Technology",
+   "node": 24465
+  },
+  {
+   "code": "FAC",
+   "title": "Fire Academy",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FAC-Fire Academy",
+   "node": 24466
+  },
+  {
+   "code": "FIN",
+   "title": "Finance",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FIN-Finance",
+   "node": 24467
+  },
+  {
+   "code": "FR",
+   "title": "French",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FR-French",
+   "node": 24468
+  },
+  {
+   "code": "FTEC",
+   "title": "Fire Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FTEC-Fire Technology",
+   "node": 24469
+  },
+  {
+   "code": "FTVE",
+   "title": "Film, Television, and Electronic Media",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "FTVE-Film, Television, and Electronic Media",
+   "node": 24520
+  },
+  {
+   "code": "GAD",
+   "title": "Game Design",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GAD-Game Design",
+   "node": 23656
+  },
+  {
+   "code": "GDSN",
+   "title": "Graphic Design",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GDSN-Graphic Design",
+   "node": 24470
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOG-Geography",
+   "node": 24471
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GEOL-Geology",
+   "node": 23776
+  },
+  {
+   "code": "GIS",
+   "title": "Geographic Information Systems",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GIS-Geographic Information Systems",
+   "node": 24472
+  },
+  {
+   "code": "GLST",
+   "title": "Global Studies",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "GLST-Global Studies",
+   "node": 23788
+  },
+  {
+   "code": "HEFR",
+   "title": "Heat and Frost",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HEFR-Heat and Frost",
+   "node": 24473
+  },
+  {
+   "code": "HET",
+   "title": "Heavy Equipment Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HET-Heavy Equipment Technology",
+   "node": 24474
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HIST-History",
+   "node": 24475
+  },
+  {
+   "code": "HMLD",
+   "title": "Homeland Security",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HMLD-Homeland Security",
+   "node": 24476
+  },
+  {
+   "code": "HOND",
+   "title": "Honda/Acura",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HOND-Honda/Acura",
+   "node": 23654
+  },
+  {
+   "code": "HOSP",
+   "title": "Hospitality",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HOSP-Hospitality",
+   "node": 24477
+  },
+  {
+   "code": "HS",
+   "title": "Health Sciences",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HS-Health Sciences",
+   "node": 24478
+  },
+  {
+   "code": "HUM",
+   "title": "Humanities",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUM-Humanities",
+   "node": 24479
+  },
+  {
+   "code": "HUSR",
+   "title": "Human Services",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "HUSR-Human Services",
+   "node": 24480
+  },
+  {
+   "code": "JAPN",
+   "title": "Japanese",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "JAPN-Japanese",
+   "node": 24481
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "JOUR-Journalism",
+   "node": 24482
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology Theory",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "KIN-Kinesiology Theory",
+   "node": 24483
+  },
+  {
+   "code": "KINA",
+   "title": "Kinesiology Activity",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "KINA-Kinesiology Activity",
+   "node": 24484
+  },
+  {
+   "code": "LIT",
+   "title": "Literature",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LIT-Literature",
+   "node": 24485
+  },
+  {
+   "code": "LOG",
+   "title": "Logistics",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "LOG-Logistics",
+   "node": 24486
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MATH-Mathematics",
+   "node": 24487
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MGMT-Management",
+   "node": 24488
+  },
+  {
+   "code": "MRKT",
+   "title": "Marketing",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MRKT-Marketing",
+   "node": 24489
+  },
+  {
+   "code": "MSCM",
+   "title": "Mass Communications",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MSCM-Mass Communications",
+   "node": 24490
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUS-Music",
+   "node": 24491
+  },
+  {
+   "code": "MUST",
+   "title": "Music and Integrated Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "MUST-Music and Integrated Technology",
+   "node": 24492
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition Science",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NUTR-Nutrition Science",
+   "node": 24493
+  },
+  {
+   "code": "OENG",
+   "title": "Operating Engineers",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "OENG-Operating Engineers",
+   "node": 24494
+  },
+  {
+   "code": "ORTH",
+   "title": "Orthopedic Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "ORTH-Orthopedic Technology",
+   "node": 24495
+  },
+  {
+   "code": "PAC",
+   "title": "Police Academy",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PAC-Police Academy",
+   "node": 24496
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHIL-Philosophy",
+   "node": 24497
+  },
+  {
+   "code": "PHTO",
+   "title": "Photography",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHTO-Photography",
+   "node": 24498
+  },
+  {
+   "code": "PHY",
+   "title": "Physics",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PHY -Physics",
+   "node": 24499
+  },
+  {
+   "code": "PLMB",
+   "title": "Plumbing",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PLMB-Plumbing",
+   "node": 23766
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "POLS-Political Science",
+   "node": 24500
+  },
+  {
+   "code": "PSY",
+   "title": "Psychology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSY-Psychology",
+   "node": 24501
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "PSYC-Psychology",
+   "node": 23772
+  },
+  {
+   "code": "RDIO",
+   "title": "Radio",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "RDIO-Radio",
+   "node": 24502
+  },
+  {
+   "code": "READ",
+   "title": "Reading and Study Skills",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "READ-Reading and Study Skills",
+   "node": 24503
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOC-Sociology",
+   "node": 24504
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SOCI-Sociology",
+   "node": 25556
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SPAN-Spanish",
+   "node": 24505
+  },
+  {
+   "code": "SPCH",
+   "title": "Speech",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "SPCH-Speech",
+   "node": 24506
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "STAT-Statistics",
+   "node": 23770
+  },
+  {
+   "code": "STEM",
+   "title": "Science, Technology, Engineering, and Mathematics",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "STEM-Science, Technology, Engineering, and Mathematics",
+   "node": 24571
+  },
+  {
+   "code": "TCED",
+   "title": "Technical Education",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "TCED-Technical Education",
+   "node": 24507
+  },
+  {
+   "code": "TESL",
+   "title": "Tesla",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "TESL-Tesla",
+   "node": 24508
+  },
+  {
+   "code": "THTR",
+   "title": "Theatre",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "THTR-Theatre",
+   "node": 24509
+  },
+  {
+   "code": "TV",
+   "title": "Television",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "TV-Television",
+   "node": 24510
+  },
+  {
+   "code": "VN",
+   "title": "Nursing-Vocational",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "VN-Nursing-Vocational",
+   "node": 24511
+  },
+  {
+   "code": "VOCB",
+   "title": "Vocabulary",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "VOCB-Vocabulary",
+   "node": 24512
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WELD-Welding",
+   "node": 24513
+  },
+  {
+   "code": "WFT",
+   "title": "Wildland Fire Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "WFT-Wildland Fire Technology",
+   "node": 24514
+  },
+  {
+   "code": "NAJ",
+   "title": "Administration of Justice",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NAJ - Administration of Justice",
+   "node": 24019
+  },
+  {
+   "code": "NART",
+   "title": "Arts & Cultural Programs",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NART - Arts & Cultural Programs",
+   "node": 24020
+  },
+  {
+   "code": "NBAS",
+   "title": "Basic Skills",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NBAS - Basic Skills",
+   "node": 24021
+  },
+  {
+   "code": "NBIZ",
+   "title": "Business",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NBIZ - Business",
+   "node": 24022
+  },
+  {
+   "code": "NBSS",
+   "title": "Behavioral Social Sciences",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NBSS - Behavioral Social Sciences",
+   "node": 24023
+  },
+  {
+   "code": "NCHS",
+   "title": "Health and Safety",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NCHS - Health and Safety",
+   "node": 24024
+  },
+  {
+   "code": "NCIT",
+   "title": "Citizenship",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NCIT - Citizenship",
+   "node": 24025
+  },
+  {
+   "code": "NCOA",
+   "title": "Older Adults",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NCOA - Older Adults",
+   "node": 24026
+  },
+  {
+   "code": "NCOM",
+   "title": "Communications and Languages",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NCOM - Communications and Languages",
+   "node": 24027
+  },
+  {
+   "code": "NESL",
+   "title": "English as a Second Language",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NESL - English as a Second Language",
+   "node": 24028
+  },
+  {
+   "code": "NFIR",
+   "title": "Fire Technology",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NFIR - Fire Technology",
+   "node": 24029
+  },
+  {
+   "code": "NGBD",
+   "title": "Green Building",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NGBD - Green Building",
+   "node": 24030
+  },
+  {
+   "code": "NHSL",
+   "title": "Health Science Lab",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NHSL - Health Science Lab",
+   "node": 22581
+  },
+  {
+   "code": "NHSN",
+   "title": "Health Science and Nursing",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NHSN - Health Science and Nursing",
+   "node": 24031
+  },
+  {
+   "code": "NSCI",
+   "title": "Science",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NSCI - Science",
+   "node": 24032
+  },
+  {
+   "code": "NTTR",
+   "title": "Commincations and Languages",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NTTR - Commincations and Languages",
+   "node": 23782
+  },
+  {
+   "code": "NVOC",
+   "title": "Vocational",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "NVOC - Vocational",
+   "node": 24033
+  }
+ ],
+ "labels_not_a_subject": [
+  "NONCREDIT COURSES"
+ ]
+}

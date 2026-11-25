@@ -1,0 +1,956 @@
+{
+ "college": "Modesto Junior College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:31:33Z",
+ "run": "45623983494",
+ "plan": "kb/college_reads/subject_index_modesto_junior.json",
+ "titles": [
+  {
+   "code": "ADJU",
+   "title": "Administration of Justice",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Administration of Justice (ADJU)"
+  },
+  {
+   "code": "AG",
+   "title": "Agriculture",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture (AG, AGEC, AGGE, AGM)",
+   "shared_heading": true
+  },
+  {
+   "code": "AGEC",
+   "title": "Agriculture",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture (AG, AGEC, AGGE, AGM)",
+   "shared_heading": true
+  },
+  {
+   "code": "AGGE",
+   "title": "Agriculture",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture (AG, AGEC, AGGE, AGM)",
+   "shared_heading": true
+  },
+  {
+   "code": "AGM",
+   "title": "Agriculture",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Agriculture (AG, AGEC, AGGE, AGM)",
+   "shared_heading": true
+  },
+  {
+   "code": "CHEMT",
+   "title": "Analytical Chemistry Technician",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Analytical Chemistry Technician (CHEMT)",
+   "also_under": [
+    "Chemistry (CHEM and CHEMT)"
+   ]
+  },
+  {
+   "code": "ANAT",
+   "title": "Anatomy",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Anatomy (ANAT)"
+  },
+  {
+   "code": "AP",
+   "title": "Anatomy and Physiology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Anatomy and Physiology (AP)"
+  },
+  {
+   "code": "ANSC",
+   "title": "Animal Science",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Animal Science (ANSC and VETT)",
+   "shared_heading": true
+  },
+  {
+   "code": "VETT",
+   "title": "Veterinary Technician",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Veterinary Technician (VETT)",
+   "also_under": [
+    "Animal Science (ANSC and VETT)"
+   ]
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Anthropology (ANTH and ANTHR)",
+   "shared_heading": true
+  },
+  {
+   "code": "ANTHR",
+   "title": "Anthropology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Anthropology (ANTH and ANTHR)",
+   "shared_heading": true
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art (ART and ARTH)",
+   "shared_heading": true
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Art (ART and ARTH)",
+   "shared_heading": true
+  },
+  {
+   "code": "ASTRO",
+   "title": "Astronomy",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Astronomy (ASTRO)"
+  },
+  {
+   "code": "AUBDY",
+   "title": "Autobody",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Autobody (AUBDY)"
+  },
+  {
+   "code": "AUTEC",
+   "title": "Automotive Technology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Automotive Technology (AUTEC)"
+  },
+  {
+   "code": "BIO",
+   "title": "Biology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Biology (BIO)"
+  },
+  {
+   "code": "BOT",
+   "title": "Botany",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Botany (BOT)"
+  },
+  {
+   "code": "BUSAD",
+   "title": "Business Administration",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Business Administration (BUSAD)"
+  },
+  {
+   "code": "BIT",
+   "title": "Business Information Technology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Business Information Technology (BIT)"
+  },
+  {
+   "code": "CNA",
+   "title": "Certified Nurse Assistant",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Certified Nurse Assistant (CNA/Formerly Listed as NURSE)"
+  },
+  {
+   "code": "NURSE",
+   "title": "Nursing",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Nursing (NURSE, NURSK, NURWE, VOCNR)",
+   "shared_heading": true,
+   "also_under": [
+    "Certified Nurse Assistant (CNA/Formerly Listed as NURSE)"
+   ]
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Chemistry (CHEM and CHEMT)",
+   "shared_heading": true
+  },
+  {
+   "code": "CLDDV",
+   "title": "Child Development",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Child Development (CLDDV)"
+  },
+  {
+   "code": "COLSK",
+   "title": "College Skills",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "College Skills (COLSK)"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Communication Studies (COMM)"
+  },
+  {
+   "code": "CMPET",
+   "title": "Computer Electronics",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Electronics (CMPET)"
+  },
+  {
+   "code": "CMPGR",
+   "title": "Computer Graphics Applications",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Graphics Applications (CMPGR)"
+  },
+  {
+   "code": "CSCI",
+   "title": "Computer Science",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Computer Science (CSCI)"
+  },
+  {
+   "code": "CLART",
+   "title": "Culinary Arts",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Culinary Arts (CLART)"
+  },
+  {
+   "code": "DANCE",
+   "title": "Dance",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Dance (DANCE)"
+  },
+  {
+   "code": "EASCI",
+   "title": "Earth Science",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Earth Science (EASCI)"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Economics (ECON)"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Education (EDUC)"
+  },
+  {
+   "code": "ELTEC",
+   "title": "Electronics Technology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Electronics Technology (ELTEC)"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Services",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Emergency Medical Services (EMS)"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Engineering (ENGR)"
+  },
+  {
+   "code": "ENGTC",
+   "title": "Engineering Technology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Engineering Technology (ENGTC)"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English (ENGL)"
+  },
+  {
+   "code": "ELW",
+   "title": "English for Life and Work",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English for Life and Work (ELW)"
+  },
+  {
+   "code": "ELIC",
+   "title": "English Language Instruction for College",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "English Language Instruction for College (ELIC)"
+  },
+  {
+   "code": "EHS",
+   "title": "Environmental Horticulture Sciences",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Environmental Horticulture Sciences (EHS)"
+  },
+  {
+   "code": "ENSCI",
+   "title": "Environmental Sciences",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Environmental Sciences (ENSCI)"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Ethnic Studies (ETHS)"
+  },
+  {
+   "code": "FAMLF",
+   "title": "Family Life",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Family Life (FAMLF)"
+  },
+  {
+   "code": "FTVE",
+   "title": "Film, Television & Electronic Media",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Film, Television & Electronic Media (FTVE)"
+  },
+  {
+   "code": "FTECH",
+   "title": "Fire Technology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Fire Technology (FTECH)"
+  },
+  {
+   "code": "FDNTR",
+   "title": "Food and Nutrition",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Food and Nutrition (FDNTR)"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "French (FREN)"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geography (GEOG)"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Geology (GEOL)"
+  },
+  {
+   "code": "GERM",
+   "title": "German",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "German (GERM)"
+  },
+  {
+   "code": "GUIDE",
+   "title": "Guidance",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Guidance (GUIDE)"
+  },
+  {
+   "code": "HE",
+   "title": "Health Education",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Health Education (HE)"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "History (HIST)"
+  },
+  {
+   "code": "HUMAN",
+   "title": "Humanities",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Humanities (HUMAN)"
+  },
+  {
+   "code": "IIS",
+   "title": "Individualized Instruction and Services",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Individualized Instruction and Services (IIS)"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Italian (ITAL)"
+  },
+  {
+   "code": "KIN",
+   "title": "Kinesiology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Kinesiology (KIN)"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Studies",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Library Studies (LIBR)"
+  },
+  {
+   "code": "LOGST",
+   "title": "Logistics",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Logistics (LOGST)"
+  },
+  {
+   "code": "MACH",
+   "title": "Machine Tool Technology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Machine Tool Technology (MACH)"
+  },
+  {
+   "code": "MFGA",
+   "title": "Manufacturing",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Manufacturing (MFGA)"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mathematics (MATH and STAT)",
+   "shared_heading": true
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Mathematics (MATH and STAT)",
+   "shared_heading": true
+  },
+  {
+   "code": "MDAST",
+   "title": "Medical Assisting",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Medical Assisting (MDAST)"
+  },
+  {
+   "code": "MICRO",
+   "title": "Microbiology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Microbiology (MICRO)"
+  },
+  {
+   "code": "MUSA",
+   "title": "Music",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music (MUSA, MUSC, MUSE, MUSG, MUSP, MUST)",
+   "shared_heading": true
+  },
+  {
+   "code": "MUSC",
+   "title": "Music",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music (MUSA, MUSC, MUSE, MUSG, MUSP, MUST)",
+   "shared_heading": true
+  },
+  {
+   "code": "MUSE",
+   "title": "Music",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music (MUSA, MUSC, MUSE, MUSG, MUSP, MUST)",
+   "shared_heading": true
+  },
+  {
+   "code": "MUSG",
+   "title": "Music",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music (MUSA, MUSC, MUSE, MUSG, MUSP, MUST)",
+   "shared_heading": true
+  },
+  {
+   "code": "MUSP",
+   "title": "Music",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music (MUSA, MUSC, MUSE, MUSG, MUSP, MUST)",
+   "shared_heading": true
+  },
+  {
+   "code": "MUST",
+   "title": "Music",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Music (MUSA, MUSC, MUSE, MUSG, MUSP, MUST)",
+   "shared_heading": true
+  },
+  {
+   "code": "NR",
+   "title": "Natural Resources",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Natural Resources (NR)"
+  },
+  {
+   "code": "NURSK",
+   "title": "Nursing",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Nursing (NURSE, NURSK, NURWE, VOCNR)",
+   "shared_heading": true
+  },
+  {
+   "code": "NURWE",
+   "title": "Nursing",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Nursing (NURSE, NURSK, NURWE, VOCNR)",
+   "shared_heading": true
+  },
+  {
+   "code": "VOCNR",
+   "title": "Nursing",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Nursing (NURSE, NURSK, NURWE, VOCNR)",
+   "shared_heading": true
+  },
+  {
+   "code": "PHARM",
+   "title": "Pharmacy Technician",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Pharmacy Technician (PHARM)"
+  },
+  {
+   "code": "PHILO",
+   "title": "Philosophy",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Philosophy (PHILO)"
+  },
+  {
+   "code": "PEA",
+   "title": "Physical Education",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Education (PEA, PEC, PEM, PEVM, PEVW, PEW)",
+   "shared_heading": true
+  },
+  {
+   "code": "PEC",
+   "title": "Physical Education",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Education (PEA, PEC, PEM, PEVM, PEVW, PEW)",
+   "shared_heading": true
+  },
+  {
+   "code": "PEM",
+   "title": "Physical Education",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Education (PEA, PEC, PEM, PEVM, PEVW, PEW)",
+   "shared_heading": true
+  },
+  {
+   "code": "PEVM",
+   "title": "Physical Education",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Education (PEA, PEC, PEM, PEVM, PEVW, PEW)",
+   "shared_heading": true
+  },
+  {
+   "code": "PEVW",
+   "title": "Physical Education",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Education (PEA, PEC, PEM, PEVM, PEVW, PEW)",
+   "shared_heading": true
+  },
+  {
+   "code": "PEW",
+   "title": "Physical Education",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Education (PEA, PEC, PEM, PEVM, PEVW, PEW)",
+   "shared_heading": true
+  },
+  {
+   "code": "PHSCI",
+   "title": "Physical Science",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Science (PHSCI)"
+  },
+  {
+   "code": "PTA",
+   "title": "Physical Therapy Assistant",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physical Therapy Assistant (PTA)"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physics (PHYS)"
+  },
+  {
+   "code": "PHYSO",
+   "title": "Physiology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Physiology (PHYSO)"
+  },
+  {
+   "code": "PLSC",
+   "title": "Plant Science",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Plant Science (PLSC)"
+  },
+  {
+   "code": "POLSC",
+   "title": "Political Science",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Political Science (POLSC and POLS)",
+   "shared_heading": true
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Political Science (POLSC and POLS)",
+   "shared_heading": true
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Psychology (PSYCH and PSYC)",
+   "shared_heading": true
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Psychology (PSYCH and PSYC)",
+   "shared_heading": true
+  },
+  {
+   "code": "READ",
+   "title": "Reading",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Reading (READ)"
+  },
+  {
+   "code": "RLES",
+   "title": "Real Estate",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Real Estate (RLES)"
+  },
+  {
+   "code": "REC",
+   "title": "Recreation",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Recreation (REC)"
+  },
+  {
+   "code": "RSCR",
+   "title": "Respiratory Care",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Respiratory Care (RSCR)"
+  },
+  {
+   "code": "SM",
+   "title": "Sheet Metal",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Sheet Metal (SM)"
+  },
+  {
+   "code": "SIGN",
+   "title": "Sign Language",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Sign Language (SIGN)"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Social Justice Studies (SJS)"
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work and Human Services",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Social Work and Human Services (SWHS/Formerly Listed as HUMSR)"
+  },
+  {
+   "code": "HUMSR",
+   "title": "Social Work and Human Services",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Social Work and Human Services (SWHS/Formerly Listed as HUMSR)",
+   "formerly": true
+  },
+  {
+   "code": "SOCIO",
+   "title": "Sociology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Sociology (SOCIO)"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Spanish (SPAN)"
+  },
+  {
+   "code": "SPELL",
+   "title": "Spelling",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Spelling (SPELL)"
+  },
+  {
+   "code": "STSK",
+   "title": "Study Skills",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Study Skills (STSK)"
+  },
+  {
+   "code": "THETR",
+   "title": "Theatre",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Theatre (THETR)"
+  },
+  {
+   "code": "TUTOR",
+   "title": "Tutoring",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Tutoring (TUTOR)"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Welding (WELD)"
+  },
+  {
+   "code": "WKFSK",
+   "title": "Workforce Skills",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Workforce Skills (WKFSK)"
+  },
+  {
+   "code": "ZOOL",
+   "title": "Zoology",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed": "Zoology (ZOOL)"
+  }
+ ],
+ "note": "The Courses view prints each subject heading with its codes in parentheses, some headings naming several codes (Agriculture (AG, AGEC, AGGE, AGM)); each code gets its heading, marked shared_heading. A code under two headings keeps the one naming it alone (also_under keeps the other). Two headings name a former code (CNA/Formerly Listed as NURSE, SWHS/Formerly Listed as HUMSR): the former code is filed only where no other heading names it, marked formerly."
+}

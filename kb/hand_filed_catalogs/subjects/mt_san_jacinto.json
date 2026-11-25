@@ -1,0 +1,1302 @@
+{
+ "_what": "The subjects Mt. San Jacinto College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Mt. San Jacinto College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:40:25Z",
+ "run": "45625259489",
+ "source": [
+  "https://catalog.msjc.edu/courses/acct/",
+  "https://catalog.msjc.edu/courses/ah/",
+  "https://catalog.msjc.edu/courses/aj/",
+  "https://catalog.msjc.edu/courses/anat/",
+  "https://catalog.msjc.edu/courses/anth/",
+  "https://catalog.msjc.edu/courses/art/",
+  "https://catalog.msjc.edu/courses/asl/",
+  "https://catalog.msjc.edu/courses/astr/",
+  "https://catalog.msjc.edu/courses/aud/",
+  "https://catalog.msjc.edu/courses/aume/",
+  "https://catalog.msjc.edu/courses/badm/",
+  "https://catalog.msjc.edu/courses/biol/",
+  "https://catalog.msjc.edu/courses/capp/",
+  "https://catalog.msjc.edu/courses/cde/",
+  "https://catalog.msjc.edu/courses/chem/",
+  "https://catalog.msjc.edu/courses/comm/",
+  "https://catalog.msjc.edu/courses/corr/",
+  "https://catalog.msjc.edu/courses/courses.pdf",
+  "https://catalog.msjc.edu/courses/cscr/",
+  "https://catalog.msjc.edu/courses/csis/",
+  "https://catalog.msjc.edu/courses/cul/",
+  "https://catalog.msjc.edu/courses/cwe/",
+  "https://catalog.msjc.edu/courses/dan/",
+  "https://catalog.msjc.edu/courses/des/",
+  "https://catalog.msjc.edu/courses/dig/",
+  "https://catalog.msjc.edu/courses/dms/",
+  "https://catalog.msjc.edu/courses/econ/",
+  "https://catalog.msjc.edu/courses/ed/",
+  "https://catalog.msjc.edu/courses/ems/",
+  "https://catalog.msjc.edu/courses/engl/",
+  "https://catalog.msjc.edu/courses/engr/",
+  "https://catalog.msjc.edu/courses/envs/",
+  "https://catalog.msjc.edu/courses/esl/",
+  "https://catalog.msjc.edu/courses/eths/",
+  "https://catalog.msjc.edu/courses/fire/",
+  "https://catalog.msjc.edu/courses/fren/",
+  "https://catalog.msjc.edu/courses/geog/",
+  "https://catalog.msjc.edu/courses/geol/",
+  "https://catalog.msjc.edu/courses/gero/",
+  "https://catalog.msjc.edu/courses/gis/",
+  "https://catalog.msjc.edu/courses/guid/",
+  "https://catalog.msjc.edu/courses/hep/",
+  "https://catalog.msjc.edu/courses/hist/",
+  "https://catalog.msjc.edu/courses/hs/",
+  "https://catalog.msjc.edu/courses/jour/",
+  "https://catalog.msjc.edu/courses/lead/",
+  "https://catalog.msjc.edu/courses/leg/",
+  "https://catalog.msjc.edu/courses/lit/",
+  "https://catalog.msjc.edu/courses/ma/",
+  "https://catalog.msjc.edu/courses/math/",
+  "https://catalog.msjc.edu/courses/mgt/",
+  "https://catalog.msjc.edu/courses/mlt/",
+  "https://catalog.msjc.edu/courses/mus/",
+  "https://catalog.msjc.edu/courses/nurs/",
+  "https://catalog.msjc.edu/courses/nutr/",
+  "https://catalog.msjc.edu/courses/pals/",
+  "https://catalog.msjc.edu/courses/pe/",
+  "https://catalog.msjc.edu/courses/peic/",
+  "https://catalog.msjc.edu/courses/phil/",
+  "https://catalog.msjc.edu/courses/phot/",
+  "https://catalog.msjc.edu/courses/phy/",
+  "https://catalog.msjc.edu/courses/ps/",
+  "https://catalog.msjc.edu/courses/psyc/",
+  "https://catalog.msjc.edu/courses/rad/",
+  "https://catalog.msjc.edu/courses/re/",
+  "https://catalog.msjc.edu/courses/sjs/",
+  "https://catalog.msjc.edu/courses/soci/",
+  "https://catalog.msjc.edu/courses/span/",
+  "https://catalog.msjc.edu/courses/ta/",
+  "https://catalog.msjc.edu/courses/tha/",
+  "https://catalog.msjc.edu/courses/watr/",
+  "https://catalog.msjc.edu/courses/weld/",
+  "https://catalog.msjc.edu/courses/wine/"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting/Bookkeeping",
+   "heading_printed": "Accounting/Bookkeeping",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/acct/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "index",
+   "codes": [
+    "AH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/ah/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/aj/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy & Physiology",
+   "heading_printed": "Anatomy & Physiology",
+   "rule": "index",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/anat/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/anth/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/art/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/asl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/astr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AUD",
+   "heading": "Audio Production",
+   "heading_printed": "Audio Production",
+   "rule": "index",
+   "codes": [
+    "AUD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/aud/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "AUME",
+   "heading": "Automotive/Transportation Tech",
+   "heading_printed": "Automotive/Transportation Tech",
+   "rule": "index",
+   "codes": [
+    "AUME"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/aume/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "BADM",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BADM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/badm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/biol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CAPP",
+   "heading": "Computer Applications",
+   "heading_printed": "Computer Applications",
+   "rule": "index",
+   "codes": [
+    "CAPP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/capp/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CDE",
+   "heading": "Child Development & Education",
+   "heading_printed": "Child Development & Education",
+   "rule": "index",
+   "codes": [
+    "CDE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/cde/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development & Education",
+   "heading_printed": "Child Development & Education",
+   "rule": "index",
+   "codes": [
+    "CDEV"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/cde/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/chem/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/comm/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CORR",
+   "heading": "Correctional Science",
+   "heading_printed": "Correctional Science",
+   "rule": "index",
+   "codes": [
+    "CORR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/corr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CSCR",
+   "heading": "College Success & Career Readiness",
+   "heading_printed": "College Success & Career Readiness",
+   "rule": "index",
+   "codes": [
+    "CSCR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/cscr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CSIS",
+   "heading": "Computer Sci/Info Systems",
+   "heading_printed": "Computer Sci/Info Systems",
+   "rule": "index",
+   "codes": [
+    "CSIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/csis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CUL",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CUL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/cul/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "CWE",
+   "heading": "Cooperative Work Experience",
+   "heading_printed": "Cooperative Work Experience",
+   "rule": "index",
+   "codes": [
+    "CWE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/cwe/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "DAN",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/dan/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "DES",
+   "heading": "Design",
+   "heading_printed": "Design",
+   "rule": "index",
+   "codes": [
+    "DES"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/des/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "DIG",
+   "heading": "Digital Media",
+   "heading_printed": "Digital Media",
+   "rule": "index",
+   "codes": [
+    "DIG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/dig/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "DMS",
+   "heading": "Diagnostic Medical Sonography",
+   "heading_printed": "Diagnostic Medical Sonography",
+   "rule": "index",
+   "codes": [
+    "DMS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/dms/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/econ/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ED",
+   "heading": "Education/Teacher Preparation",
+   "heading_printed": "Education/Teacher Preparation",
+   "rule": "index",
+   "codes": [
+    "ED"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/ed/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "EMS",
+   "heading": "Emergency Medical Technician",
+   "heading_printed": "Emergency Medical Technician",
+   "rule": "index",
+   "codes": [
+    "EMS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/ems/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/engl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering Technologies",
+   "heading_printed": "Engineering Technologies",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/engr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Studies",
+   "heading_printed": "Environmental Studies",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/envs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English As a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/esl/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "ETHS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/eths/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/fire/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/fren/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/geog/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/geol/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GERO",
+   "heading": "Gerontology-Aging Studies",
+   "heading_printed": "Gerontology-Aging Studies",
+   "rule": "index",
+   "codes": [
+    "GERO"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/gero/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GIS",
+   "heading": "Geospatial Information Science",
+   "heading_printed": "Geospatial Information Science",
+   "rule": "index",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/gis/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "GUID",
+   "heading": "Guidance",
+   "heading_printed": "Guidance",
+   "rule": "index",
+   "codes": [
+    "GUID"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/guid/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "HEP",
+   "heading": "Honors Enrichment Program",
+   "heading_printed": "Honors Enrichment Program",
+   "rule": "index",
+   "codes": [
+    "HEP"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/hep/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/hist/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "HS",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/hs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/jour/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "LEAD",
+   "heading": "Leadership",
+   "heading_printed": "Leadership",
+   "rule": "index",
+   "codes": [
+    "LEAD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/lead/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "LEG",
+   "heading": "Legal Studies",
+   "heading_printed": "Legal Studies",
+   "rule": "index",
+   "codes": [
+    "LEG"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/leg/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "LIT",
+   "heading": "Literature",
+   "heading_printed": "Literature",
+   "rule": "index",
+   "codes": [
+    "LIT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/lit/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/ma/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MGT",
+   "heading": "Management/Supervision",
+   "heading_printed": "Management/Supervision",
+   "rule": "index",
+   "codes": [
+    "MGT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/mgt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MLT",
+   "heading": "Medical Laboratory Technician",
+   "heading_printed": "Medical Laboratory Technician",
+   "rule": "index",
+   "codes": [
+    "MLT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/mlt/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/mus/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/nurs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/nutr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PALS",
+   "heading": "Personalized Academic Learning Skills",
+   "heading_printed": "Personalized Academic Learning Skills",
+   "rule": "index",
+   "codes": [
+    "PALS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/pals/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PDF",
+   "heading": "Download Page",
+   "heading_printed": "Download Page",
+   "rule": "index",
+   "codes": [
+    "PDF"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/courses.pdf",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Ed",
+   "heading_printed": "Physical Ed",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/pe/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PEIC",
+   "heading": "Physical Ed/Intercollegiate",
+   "heading_printed": "Physical Ed/Intercollegiate",
+   "rule": "index",
+   "codes": [
+    "PEIC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/peic/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/phil/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Digital Photography",
+   "heading_printed": "Digital Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/phot/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PHY",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHY"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/phy/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/ps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/ps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/psyc/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "RAD",
+   "heading": "Radiologic Technology",
+   "heading_printed": "Radiologic Technology",
+   "rule": "index",
+   "codes": [
+    "RAD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/rad/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/re/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "SJS",
+   "heading": "Social Justice Studies",
+   "heading_printed": "Social Justice Studies",
+   "rule": "index",
+   "codes": [
+    "SJS"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/sjs/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/soci/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/span/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "STAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "TA",
+   "heading": "Teaching Assistant",
+   "heading_printed": "Teaching Assistant",
+   "rule": "index",
+   "codes": [
+    "TA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/ta/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "THA",
+   "heading": "Theater Arts",
+   "heading_printed": "Theater Arts",
+   "rule": "index",
+   "codes": [
+    "THA"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/tha/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "WATR",
+   "heading": "Water Technology",
+   "heading_printed": "Water Technology",
+   "rule": "index",
+   "codes": [
+    "WATR"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/watr/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/weld/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  },
+  {
+   "code": "WINE",
+   "heading": "Wine Industry and Technology",
+   "heading_printed": "Wine Industry and Technology",
+   "rule": "index",
+   "codes": [
+    "WINE"
+   ],
+   "candidate": null,
+   "address": "https://catalog.msjc.edu/courses/wine/",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45625259489)",
+   "run": "45625259489"
+  }
+ ],
+ "subjects": 76,
+ "with_heading": 76
+}

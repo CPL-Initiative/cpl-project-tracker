@@ -1,0 +1,1630 @@
+{
+ "_what": "The subjects Shasta College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Shasta College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:04:36Z",
+ "run": "45629430201",
+ "source": [
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=106",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=107",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=110",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=111",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=112",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=114",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=115",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=117",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=118",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=119",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=120",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=121",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=124",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=125",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=126",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=127",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=129",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=131",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=134",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=135",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=136",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=140",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=141",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=143",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=144",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=145",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=146",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=149",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=153",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=154",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=157",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=158",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=164",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=165",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=168",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=169",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=170",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=172",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=174",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=176",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=177",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=178",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=179",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=180",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=181",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=182",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=183",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=185",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=189",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=190",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=191",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=193",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=196",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=197",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=199",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=200",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=201",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=203",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=204",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=205",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=206",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=207",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=209",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=210",
+  "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=212"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "ACCOUNTING",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ADAP",
+   "heading": "Adaptive Studies",
+   "heading_printed": "ADAPTIVE STUDIES",
+   "rule": "index",
+   "codes": [
+    "ADAP"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=107",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ADJU",
+   "heading": "Administration of Justice",
+   "heading_printed": "ADMINISTRATION OF JUSTICE",
+   "rule": "index",
+   "codes": [
+    "ADJU"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=107",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ADS",
+   "heading": "Alcohol and Drug Studies",
+   "heading_printed": "ALCOHOL AND DRUG STUDIES",
+   "rule": "index",
+   "codes": [
+    "ADS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=110",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AG",
+   "heading": "Ag – General Agriculture",
+   "heading_printed": "AG – GENERAL AGRICULTURE",
+   "rule": "index",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=114",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGAB",
+   "heading": "Ag – Agriculture Business",
+   "heading_printed": "AG – AGRICULTURE BUSINESS",
+   "rule": "index",
+   "codes": [
+    "AGAB"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=111",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGAS",
+   "heading": "Ag – Animal Science",
+   "heading_printed": "AG – ANIMAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "AGAS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=111",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGEH",
+   "heading": "Ag – Environmental Horticulture",
+   "heading_printed": "AG – ENVIRONMENTAL HORTICULTURE",
+   "rule": "index",
+   "codes": [
+    "AGEH"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=112",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGEQ",
+   "heading": "Ag - Equine",
+   "heading_printed": "AG - EQUINE",
+   "rule": "index",
+   "codes": [
+    "AGEQ"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=114",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGMA",
+   "heading": "Ag – Mechanized Agriculture",
+   "heading_printed": "AG – MECHANIZED AGRICULTURE",
+   "rule": "index",
+   "codes": [
+    "AGMA"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=115",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGNR",
+   "heading": "Ag – Natural Resources",
+   "heading_printed": "AG – NATURAL RESOURCES",
+   "rule": "index",
+   "codes": [
+    "AGNR"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=115",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGPS",
+   "heading": "Ag – Plant Science",
+   "heading_printed": "AG – PLANT SCIENCE",
+   "rule": "index",
+   "codes": [
+    "AGPS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=117",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGRI",
+   "heading": "Agriculture",
+   "heading_printed": "AGRICULTURE",
+   "rule": "index",
+   "codes": [
+    "AGRI"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGSA",
+   "heading": "Ag – Sustainable Agriculture",
+   "heading_printed": "AG – SUSTAINABLE AGRICULTURE",
+   "rule": "index",
+   "codes": [
+    "AGSA"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AGVIT",
+   "heading": "Ag – Viticulture",
+   "heading_printed": "AG – VITICULTURE",
+   "rule": "index",
+   "codes": [
+    "AGVIT"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ALH",
+   "heading": "Allied Health",
+   "heading_printed": "ALLIED HEALTH",
+   "rule": "index",
+   "codes": [
+    "ALH"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy",
+   "heading_printed": "ANATOMY",
+   "rule": "index",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=119",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "ANTHROPOLOGY",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=120",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Archaeology",
+   "heading_printed": "ARCHAEOLOGY",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=120",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "ART HISTORY",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=119",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "ASTRONOMY",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "AUTOMOTIVE TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biological Sciences",
+   "heading_printed": "BIOLOGICAL SCIENCES",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=125",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "BOT",
+   "heading": "Botany",
+   "heading_printed": "BOTANY",
+   "rule": "index",
+   "codes": [
+    "BOT"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=126",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "BSOT",
+   "heading": "Business Systems and Office Technologies",
+   "heading_printed": "BUSINESS SYSTEMS AND OFFICE TECHNOLOGIES",
+   "rule": "index",
+   "codes": [
+    "BSOT"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=129",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "BUAD",
+   "heading": "Business Administration",
+   "heading_printed": "BUSINESS ADMINISTRATION",
+   "rule": "index",
+   "codes": [
+    "BUAD"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=127",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CALS",
+   "heading": "Career and Life Success",
+   "heading_printed": "CAREER AND LIFE SUCCESS",
+   "rule": "index",
+   "codes": [
+    "CALS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=131",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "CHEMISTRY",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=134",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "CHINESE",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=135",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer and Information Systems",
+   "heading_printed": "COMPUTER AND INFORMATION SYSTEMS",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=136",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "COMMUNICATION STUDIES",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=135",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CONS",
+   "heading": "Construction Technology",
+   "heading_printed": "CONSTRUCTION TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "CONS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=140",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "CULA",
+   "heading": "Culinary Arts",
+   "heading_printed": "CULINARY ARTS",
+   "rule": "index",
+   "codes": [
+    "CULA"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "DAN",
+   "heading": "Dance",
+   "heading_printed": "DANCE",
+   "rule": "index",
+   "codes": [
+    "DAN"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "DIES",
+   "heading": "Diesel Technology",
+   "heading_printed": "DIESEL TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "DIES"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=145",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "DNTL",
+   "heading": "Dental",
+   "heading_printed": "DENTAL",
+   "rule": "index",
+   "codes": [
+    "DNTL"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=144",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "EARLY CHILDHOOD EDUCATION",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=146",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "ECONOMICS",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "EDUCATION",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "ENGLISH",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=154",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "ENGINEERING",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ESCI",
+   "heading": "Earth Science",
+   "heading_printed": "EARTH SCIENCE",
+   "rule": "index",
+   "codes": [
+    "ESCI"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=149",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=157",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ETHS",
+   "heading": "Ethnic Studies",
+   "heading_printed": "ETHNIC STUDIES",
+   "rule": "index",
+   "codes": [
+    "ETHS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=157",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FAID",
+   "heading": "First Aid/CPR/EMT",
+   "heading_printed": "FIRST AID/CPR/EMT",
+   "rule": "index",
+   "codes": [
+    "FAID"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=169",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FIRS",
+   "heading": "Fire Technology",
+   "heading_printed": "FIRE TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "FIRS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=158",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "FRENCH",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FSS",
+   "heading": "Family Studies and Services",
+   "heading_printed": "FAMILY STUDIES AND SERVICES",
+   "rule": "index",
+   "codes": [
+    "FSS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=158",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FTWL",
+   "heading": "Fire Technology/Wildland Fire Technology Logistics",
+   "heading_printed": "FIRE TECHNOLOGY/WILDLAND FIRE TECHNOLOGY LOGISTICS",
+   "rule": "index",
+   "codes": [
+    "FTWL"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=164",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FTWO",
+   "heading": "Fire Technology/Wildland Fire Technology Operations",
+   "heading_printed": "FIRE TECHNOLOGY/WILDLAND FIRE TECHNOLOGY OPERATIONS",
+   "rule": "index",
+   "codes": [
+    "FTWO"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=165",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "FTWP",
+   "heading": "Fire Technology/Wildland Fire Technology Prevention",
+   "heading_printed": "FIRE TECHNOLOGY/WILDLAND FIRE TECHNOLOGY PREVENTION",
+   "rule": "index",
+   "codes": [
+    "FTWP"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=168",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography and Geospatial Technologies",
+   "heading_printed": "GEOGRAPHY AND GEOSPATIAL TECHNOLOGIES",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "GEOLOGY",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "GERMAN",
+   "rule": "index",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HEOC",
+   "heading": "Health Occupations",
+   "heading_printed": "HEALTH OCCUPATIONS",
+   "rule": "index",
+   "codes": [
+    "HEOC"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=176",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HIMS",
+   "heading": "Health Information Management",
+   "heading_printed": "HEALTH INFORMATION MANAGEMENT",
+   "rule": "index",
+   "codes": [
+    "HIMS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=176",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HIT",
+   "heading": "Health Information Technology",
+   "heading_printed": "HEALTH INFORMATION TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "HIT"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=174",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "HEALTH",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality",
+   "heading_printed": "HOSPITALITY",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=177",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "HUMANITIES",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=179",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "HUSV",
+   "heading": "Human Services",
+   "heading_printed": "HUMAN SERVICES",
+   "rule": "index",
+   "codes": [
+    "HUSV"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=178",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "INDE",
+   "heading": "Industrial Technology",
+   "heading_printed": "INDUSTRIAL TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "INDE"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=180",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "IS",
+   "heading": "Independent Study",
+   "heading_printed": "INDEPENDENT STUDY",
+   "rule": "index",
+   "codes": [
+    "IS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=180",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "JAPANESE",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=181",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "JOURNALISM",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=182",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "KINES",
+   "heading": "Kinesiology",
+   "heading_printed": "KINESIOLOGY",
+   "rule": "index",
+   "codes": [
+    "KINES"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=182",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "MATHEMATICS",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=183",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MICR",
+   "heading": "Microbiology",
+   "heading_printed": "MICROBIOLOGY",
+   "rule": "index",
+   "codes": [
+    "MICR"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "MUSIC",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "NHIS",
+   "heading": "Natural History",
+   "heading_printed": "NATURAL HISTORY",
+   "rule": "index",
+   "codes": [
+    "NHIS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=189",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "NUTRITION",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=189",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "OAS",
+   "heading": "Office Administration",
+   "heading_printed": "OFFICE ADMINISTRATION",
+   "rule": "index",
+   "codes": [
+    "OAS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "PHYSICAL EDUCATION",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=191",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PEAT",
+   "heading": "Physical Education – Athletics",
+   "heading_printed": "PHYSICAL EDUCATION – ATHLETICS",
+   "rule": "index",
+   "codes": [
+    "PEAT"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=193",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "PHILOSOPHY",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Science",
+   "heading_printed": "PHYSICAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=196",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PHY",
+   "heading": "Physiology",
+   "heading_printed": "PHYSIOLOGY",
+   "rule": "index",
+   "codes": [
+    "PHY"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "PHYSICS",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "PSYCHOLOGY",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=200",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "PTA",
+   "heading": "Physical Therapist Assistant",
+   "heading_printed": "PHYSICAL THERAPIST ASSISTANT",
+   "rule": "index",
+   "codes": [
+    "PTA"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=197",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "REGN",
+   "heading": "Registered Nursing",
+   "heading_printed": "REGISTERED NURSING",
+   "rule": "index",
+   "codes": [
+    "REGN"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=201",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "SDEV",
+   "heading": "Skills Development",
+   "heading_printed": "SKILLS DEVELOPMENT",
+   "rule": "index",
+   "codes": [
+    "SDEV"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=204",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "SL",
+   "heading": "Sign Language",
+   "heading_printed": "SIGN LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "SL"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=203",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=204",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=204",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "SPANISH",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=205",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "STATISTICS",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=206",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "STU",
+   "heading": "Student Development",
+   "heading_printed": "STUDENT DEVELOPMENT",
+   "rule": "index",
+   "codes": [
+    "STU"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=206",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "THTR",
+   "heading": "Theatre Arts",
+   "heading_printed": "THEATRE ARTS",
+   "rule": "index",
+   "codes": [
+    "THTR"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=207",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "UAS",
+   "heading": "Unmanned Aircraft Systems",
+   "heading_printed": "UNMANNED AIRCRAFT SYSTEMS",
+   "rule": "index",
+   "codes": [
+    "UAS"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=209",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "VOCN",
+   "heading": "Vocational Nursing",
+   "heading_printed": "VOCATIONAL NURSING",
+   "rule": "index",
+   "codes": [
+    "VOCN"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=209",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding Technology",
+   "heading_printed": "WELDING TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=210",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "WTT",
+   "heading": "Water Treatment Technology",
+   "heading_printed": "WATER TREATMENT TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "WTT"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=209",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  },
+  {
+   "code": "ZOOL",
+   "heading": "Zoology",
+   "heading_printed": "ZOOLOGY",
+   "rule": "index",
+   "codes": [
+    "ZOOL"
+   ],
+   "candidate": null,
+   "address": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=212",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45629430201)",
+   "run": "45629430201"
+  }
+ ],
+ "subjects": 97,
+ "with_heading": 97
+}

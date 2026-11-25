@@ -1,0 +1,1325 @@
+{
+ "_what": "The subjects Diablo Valley College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Diablo Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:58:07Z",
+ "run": "45626912350",
+ "source": [
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-addiction-studies-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-administration-of-justice-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-anthropology-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-arabic-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-architecture-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-digital-media-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-history-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-photography-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-astronomy-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-biological-science-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-accounting-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-entrepreneurship-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-management-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-marketing-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-real-estate-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-career-development-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-chemistry-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-chinese-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-communication-studies-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-information-systems-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-network-technology-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-science-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-construction-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-counseling-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-culinary-arts-hosp-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dance-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dental-assisting-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dental-hygiene-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-drama-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-early-childhood-education-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-economics-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-education-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-electrical-electronics-technology-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-energy-systems-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-engineering-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-engineering-technology-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-english-as-a-second-language-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-english-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-environmental-science-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-ethnic-studies-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-film-television-electronic-media-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-french-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-geography-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-geology-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-german-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-heating-ventilation-air-conditioning-refridg-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-history-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-horticulture-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-humanities-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-industrial-design-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-interdisciplinary-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-italian-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-japanese-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-journalism-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-activity-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-inter-athletics-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-library-technology-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-mathematics-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-music-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-music-industry-studies-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-nutrition-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-oceanography-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-persian-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-philosophy-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-physical-science-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-physics-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-plumbing-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-political-science-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-psychology-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-public-health-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-russian-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-sign-language-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-social-science-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-sociology-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-spanish-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-special-education-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-steamfitting-course?tenant=dvc.elumenapp.com",
+  "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-work-experience-course?tenant=dvc.elumenapp.com"
+ ],
+ "rows": [
+  {
+   "code": "ADJUS",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADJUS"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-administration-of-justice-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ADS",
+   "heading": "Addiction Studies",
+   "heading_printed": "Addiction Studies",
+   "rule": "index",
+   "codes": [
+    "ADS"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-addiction-studies-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ANTHR",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTHR"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-anthropology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ARABC",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "index",
+   "codes": [
+    "ARABC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-arabic-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ARCHI",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCHI"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-architecture-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ARTDM",
+   "heading": "Art Digital Media",
+   "heading_printed": "Art Digital Media",
+   "rule": "index",
+   "codes": [
+    "ARTDM"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-digital-media-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ARTHS",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTHS"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-art-history-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ASTRO",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTRO"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-astronomy-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biological Science",
+   "heading_printed": "Biological Science",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-biological-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "BUSAC",
+   "heading": "Business Accounting",
+   "heading_printed": "Business Accounting",
+   "rule": "index",
+   "codes": [
+    "BUSAC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-accounting-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "BUSEN",
+   "heading": "Business Entrepreneurship",
+   "heading_printed": "Business Entrepreneurship",
+   "rule": "index",
+   "codes": [
+    "BUSEN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-entrepreneurship-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "BUSMG",
+   "heading": "Business Management",
+   "heading_printed": "Business Management",
+   "rule": "index",
+   "codes": [
+    "BUSMG"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-management-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "BUSMK",
+   "heading": "Business Marketing",
+   "heading_printed": "Business Marketing",
+   "rule": "index",
+   "codes": [
+    "BUSMK"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-marketing-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "CARER",
+   "heading": "Career Development",
+   "heading_printed": "Career Development",
+   "rule": "index",
+   "codes": [
+    "CARER"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-career-development-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-chemistry-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-chinese-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-information-systems-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "CNT",
+   "heading": "Computer Network Technology",
+   "heading_printed": "Computer Network Technology",
+   "rule": "index",
+   "codes": [
+    "CNT"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-network-technology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-communication-studies-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "COMSC",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "COMSC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-computer-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "CONST",
+   "heading": "Construction",
+   "heading_printed": "Construction",
+   "rule": "index",
+   "codes": [
+    "CONST"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-construction-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "COUNS",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUNS"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-counseling-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "DENHY",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "index",
+   "codes": [
+    "DENHY"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dental-hygiene-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "DENTL",
+   "heading": "Dental Assisting",
+   "heading_printed": "Dental Assisting",
+   "rule": "index",
+   "codes": [
+    "DENTL"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-dental-assisting-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-early-childhood-education-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-economics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-education-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "EDUSP",
+   "heading": "Special Education",
+   "heading_printed": "Special Education",
+   "rule": "index",
+   "codes": [
+    "EDUSP"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-special-education-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "EET",
+   "heading": "Electrical/Electronics Technology",
+   "heading_printed": "Electrical/Electronics Technology",
+   "rule": "index",
+   "codes": [
+    "EET"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-electrical-electronics-technology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ENGIN",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGIN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-engineering-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-english-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ENGTC",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "ENGTC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-engineering-technology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ENSYS",
+   "heading": "Energy Systems",
+   "heading_printed": "Energy Systems",
+   "rule": "index",
+   "codes": [
+    "ENSYS"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-energy-systems-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ENVSC",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENVSC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-environmental-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-english-as-a-second-language-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-ethnic-studies-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "FRNCH",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FRNCH"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-french-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "FTVE",
+   "heading": "Film, Television, and Electronic Media",
+   "heading_printed": "Film, Television, and Electronic Media",
+   "rule": "index",
+   "codes": [
+    "FTVE"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-film-television-electronic-media-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-geography-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-geology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "GRMAN",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GRMAN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-german-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-history-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "index",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-horticulture-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "HOSP",
+   "heading": "Culinary Arts/Hospitality",
+   "heading_printed": "Culinary Arts/Hospitality",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-culinary-arts-hosp-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-humanities-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "HVACR",
+   "heading": "Heating, Ventilation, Air Conditioning, and Refrigeration",
+   "heading_printed": "Heating, Ventilation, Air Conditioning, and Refrigeration",
+   "rule": "index",
+   "codes": [
+    "HVACR"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-heating-ventilation-air-conditioning-refridg-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "IDSGN",
+   "heading": "Industrial Design",
+   "heading_printed": "Industrial Design",
+   "rule": "index",
+   "codes": [
+    "IDSGN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-industrial-design-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "INTD",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "INTD"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-interdisciplinary-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-italian-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "JAPAN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPAN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-japanese-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "JRNAL",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JRNAL"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-journalism-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "KINES",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINES"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "KNACT",
+   "heading": "Kinesiology Activity",
+   "heading_printed": "Kinesiology Activity",
+   "rule": "index",
+   "codes": [
+    "KNACT"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-activity-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "KNICA",
+   "heading": "Kinesiology Intercollegiate Athletics",
+   "heading_printed": "Kinesiology Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "KNICA"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-kinesiology-inter-athletics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "LT",
+   "heading": "Library Technology",
+   "heading_printed": "Library Technology",
+   "rule": "index",
+   "codes": [
+    "LT"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-library-technology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-mathematics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "MUSX",
+   "heading": "Music Industry Studies",
+   "heading_printed": "Music Industry Studies",
+   "rule": "index",
+   "codes": [
+    "MUSX"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-music-industry-studies-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "NUTRI",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTRI"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-nutrition-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "OCEAN",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "index",
+   "codes": [
+    "OCEAN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-oceanography-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "PERSN",
+   "heading": "Persian",
+   "heading_printed": "Persian",
+   "rule": "index",
+   "codes": [
+    "PERSN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-persian-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "PH",
+   "heading": "Public Health",
+   "heading_printed": "Public Health",
+   "rule": "index",
+   "codes": [
+    "PH"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-public-health-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "PHILO",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHILO"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-philosophy-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-physics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "PHYSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHYSC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-physical-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "PLUMB",
+   "heading": "Plumbing",
+   "heading_printed": "Plumbing",
+   "rule": "index",
+   "codes": [
+    "PLUMB"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-plumbing-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-political-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-psychology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "RE",
+   "heading": "Business Real Estate",
+   "heading_printed": "Business Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-business-real-estate-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "RUSS",
+   "heading": "Russian",
+   "heading_printed": "Russian",
+   "rule": "index",
+   "codes": [
+    "RUSS"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-russian-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "SIGN",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "index",
+   "codes": [
+    "SIGN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-sign-language-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "SOCIO",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCIO"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-sociology-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "SOCSC",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SOCSC"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-social-science-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-spanish-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "STAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-mathematics-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "STMFT",
+   "heading": "Steamfitting",
+   "heading_printed": "Steamfitting",
+   "rule": "index",
+   "codes": [
+    "STMFT"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-steamfitting-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  },
+  {
+   "code": "WRKX",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WRKX"
+   ],
+   "candidate": null,
+   "address": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-work-experience-course?tenant=dvc.elumenapp.com",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45626912350)",
+   "run": "45626912350"
+  }
+ ],
+ "subjects": 77,
+ "with_heading": 77
+}

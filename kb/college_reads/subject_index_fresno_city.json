@@ -1,0 +1,20 @@
+{
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 4: round 3 (run 45626743727) printed 25 of the subject list's items, its answer past the reader's whole-page size; this read prints the same call through the capture view, line for line. Catalog 1758.",
+ "college": "Fresno City College",
+ "questions": {
+  "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
+ },
+ "keywords": [
+  "\"text\":"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cq_subjects"
+   ],
+   "url": "https://fresno.curriqunet.com/catalog/_getNavigation?id=1758&parentId=7005",
+   "capture_view": true
+  }
+ ],
+ "capture_lines": 2000
+}

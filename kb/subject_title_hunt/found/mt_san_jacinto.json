@@ -1,0 +1,572 @@
+{
+ "college": "Mt. San Jacinto College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:40:25Z",
+ "run": "45625259489",
+ "plan": "kb/college_reads/subject_index_mt_san_jacinto.json",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "Accounting/Bookkeeping",
+   "url": "https://catalog.msjc.edu/courses/acct/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AH",
+   "title": "Allied Health",
+   "url": "https://catalog.msjc.edu/courses/ah/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.msjc.edu/courses/aj/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANAT",
+   "title": "Anatomy & Physiology",
+   "url": "https://catalog.msjc.edu/courses/anat/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.msjc.edu/courses/anth/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.msjc.edu/courses/art/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "ART, ARTH"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://catalog.msjc.edu/courses/art/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "ART, ARTH"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.msjc.edu/courses/asl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.msjc.edu/courses/astr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUD",
+   "title": "Audio Production",
+   "url": "https://catalog.msjc.edu/courses/aud/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUME",
+   "title": "Automotive/Transportation Tech",
+   "url": "https://catalog.msjc.edu/courses/aume/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BADM",
+   "title": "Business Administration",
+   "url": "https://catalog.msjc.edu/courses/badm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.msjc.edu/courses/biol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CAPP",
+   "title": "Computer Applications",
+   "url": "https://catalog.msjc.edu/courses/capp/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDE",
+   "title": "Child Development & Education",
+   "url": "https://catalog.msjc.edu/courses/cde/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "CDE, CDEV"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development & Education",
+   "url": "https://catalog.msjc.edu/courses/cde/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "CDE, CDEV"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.msjc.edu/courses/chem/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.msjc.edu/courses/comm/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CORR",
+   "title": "Correctional Science",
+   "url": "https://catalog.msjc.edu/courses/corr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSCR",
+   "title": "College Success & Career Readiness",
+   "url": "https://catalog.msjc.edu/courses/cscr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSIS",
+   "title": "Computer Sci/Info Systems",
+   "url": "https://catalog.msjc.edu/courses/csis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CUL",
+   "title": "Culinary Arts",
+   "url": "https://catalog.msjc.edu/courses/cul/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CWE",
+   "title": "Cooperative Work Experience",
+   "url": "https://catalog.msjc.edu/courses/cwe/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DAN",
+   "title": "Dance",
+   "url": "https://catalog.msjc.edu/courses/dan/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DES",
+   "title": "Design",
+   "url": "https://catalog.msjc.edu/courses/des/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DIG",
+   "title": "Digital Media",
+   "url": "https://catalog.msjc.edu/courses/dig/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMS",
+   "title": "Diagnostic Medical Sonography",
+   "url": "https://catalog.msjc.edu/courses/dms/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.msjc.edu/courses/econ/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ED",
+   "title": "Education/Teacher Preparation",
+   "url": "https://catalog.msjc.edu/courses/ed/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMS",
+   "title": "Emergency Medical Technician",
+   "url": "https://catalog.msjc.edu/courses/ems/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.msjc.edu/courses/engl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering Technologies",
+   "url": "https://catalog.msjc.edu/courses/engr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Studies",
+   "url": "https://catalog.msjc.edu/courses/envs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "English As a Second Language",
+   "url": "https://catalog.msjc.edu/courses/esl/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.msjc.edu/courses/eths/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRE",
+   "title": "Fire Technology",
+   "url": "https://catalog.msjc.edu/courses/fire/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "French",
+   "url": "https://catalog.msjc.edu/courses/fren/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.msjc.edu/courses/geog/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.msjc.edu/courses/geol/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GERO",
+   "title": "Gerontology-Aging Studies",
+   "url": "https://catalog.msjc.edu/courses/gero/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GIS",
+   "title": "Geospatial Information Science",
+   "url": "https://catalog.msjc.edu/courses/gis/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GUID",
+   "title": "Guidance",
+   "url": "https://catalog.msjc.edu/courses/guid/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEP",
+   "title": "Honors Enrichment Program",
+   "url": "https://catalog.msjc.edu/courses/hep/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.msjc.edu/courses/hist/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HS",
+   "title": "Health Science",
+   "url": "https://catalog.msjc.edu/courses/hs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://catalog.msjc.edu/courses/jour/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LEAD",
+   "title": "Leadership",
+   "url": "https://catalog.msjc.edu/courses/lead/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LEG",
+   "title": "Legal Studies",
+   "url": "https://catalog.msjc.edu/courses/leg/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIT",
+   "title": "Literature",
+   "url": "https://catalog.msjc.edu/courses/lit/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MA",
+   "title": "Medical Assisting",
+   "url": "https://catalog.msjc.edu/courses/ma/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.msjc.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "STAT, MATH"
+  },
+  {
+   "code": "MGT",
+   "title": "Management/Supervision",
+   "url": "https://catalog.msjc.edu/courses/mgt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MLT",
+   "title": "Medical Laboratory Technician",
+   "url": "https://catalog.msjc.edu/courses/mlt/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://catalog.msjc.edu/courses/mus/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://catalog.msjc.edu/courses/nurs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "Nutrition",
+   "url": "https://catalog.msjc.edu/courses/nutr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PALS",
+   "title": "Personalized Academic Learning Skills",
+   "url": "https://catalog.msjc.edu/courses/pals/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PDF",
+   "title": "Download Page",
+   "url": "https://catalog.msjc.edu/courses/courses.pdf",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "Physical Ed",
+   "url": "https://catalog.msjc.edu/courses/pe/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PEIC",
+   "title": "Physical Ed/Intercollegiate",
+   "url": "https://catalog.msjc.edu/courses/peic/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.msjc.edu/courses/phil/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHOT",
+   "title": "Digital Photography",
+   "url": "https://catalog.msjc.edu/courses/phot/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHY",
+   "title": "Physics",
+   "url": "https://catalog.msjc.edu/courses/phy/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.msjc.edu/courses/ps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "PS, POLS"
+  },
+  {
+   "code": "PS",
+   "title": "Political Science",
+   "url": "https://catalog.msjc.edu/courses/ps/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "PS, POLS"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.msjc.edu/courses/psyc/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RAD",
+   "title": "Radiologic Technology",
+   "url": "https://catalog.msjc.edu/courses/rad/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RE",
+   "title": "Real Estate",
+   "url": "https://catalog.msjc.edu/courses/re/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://catalog.msjc.edu/courses/sjs/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://catalog.msjc.edu/courses/soci/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.msjc.edu/courses/span/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://catalog.msjc.edu/courses/math/",
+   "where": "catalog",
+   "method": "subject heading",
+   "printed_code": "STAT, MATH"
+  },
+  {
+   "code": "TA",
+   "title": "Teaching Assistant",
+   "url": "https://catalog.msjc.edu/courses/ta/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THA",
+   "title": "Theater Arts",
+   "url": "https://catalog.msjc.edu/courses/tha/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WATR",
+   "title": "Water Technology",
+   "url": "https://catalog.msjc.edu/courses/watr/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "Welding Technology",
+   "url": "https://catalog.msjc.edu/courses/weld/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WINE",
+   "title": "Wine Industry and Technology",
+   "url": "https://catalog.msjc.edu/courses/wine/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ],
+ "not_listed": {
+  "codes": [
+   "ABE",
+   "AVIA",
+   "CEP",
+   "CTZN",
+   "GED",
+   "HORT",
+   "IPP",
+   "LL",
+   "LNSK",
+   "ORA",
+   "OTEC"
+  ],
+  "why": "The hunt list names these codes, and the index this read loaded prints no subject for them."
+ }
+}

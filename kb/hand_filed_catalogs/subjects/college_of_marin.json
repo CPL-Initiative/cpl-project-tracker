@@ -1,0 +1,1054 @@
+{
+ "_what": "The subjects College of Marin's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "College of Marin",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:06:10Z",
+ "run": "45630168042",
+ "source": [
+  "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions"
+ ],
+ "rows": [
+  {
+   "code": "ACRT",
+   "heading": "Automotive Collision Repair Technology",
+   "heading_printed": "Automotive Collision Repair Technology",
+   "rule": "index",
+   "codes": [
+    "ACRT"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "BEHS",
+   "heading": "Behavioral Science",
+   "heading_printed": "Behavioral Science",
+   "rule": "index",
+   "codes": [
+    "BEHS"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "BOAP",
+   "heading": "Bus Operator Apprenticeship Program",
+   "heading_printed": "Bus Operator Apprenticeship Program",
+   "rule": "index",
+   "codes": [
+    "BOAP"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "CLEP",
+   "heading": "College Level Examination Program",
+   "heading_printed": "College Level Examination Program",
+   "rule": "index",
+   "codes": [
+    "CLEP"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication",
+   "heading_printed": "Communication",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "COMP",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "COMP"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "COUR",
+   "heading": "Court Reporting",
+   "heading_printed": "Court Reporting",
+   "rule": "index",
+   "codes": [
+    "COUR"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "CPL",
+   "heading": "Credit for Prior Learning",
+   "heading_printed": "Credit for Prior Learning",
+   "rule": "index",
+   "codes": [
+    "CPL"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "DENT",
+   "heading": "Dental Assisting: Registered",
+   "heading_printed": "Dental Assisting: Registered",
+   "rule": "index",
+   "codes": [
+    "DENT"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "DRAM",
+   "heading": "Drama/Theatre Arts",
+   "heading_printed": "Drama/Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "DRAM"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ELEC",
+   "heading": "Electronics Technology",
+   "heading_printed": "Electronics Technology",
+   "rule": "index",
+   "codes": [
+    "ELEC"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ENGG",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGG"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ETST",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETST"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film/Video",
+   "heading_printed": "Film/Video",
+   "rule": "index",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Technology",
+   "heading_printed": "Fire Technology",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "GDES",
+   "heading": "Graphic Design",
+   "heading_printed": "Graphic Design",
+   "rule": "index",
+   "codes": [
+    "GDES"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "HED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HED"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality",
+   "heading_printed": "Hospitality",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "IB",
+   "heading": "International Baccalaureate",
+   "heading_printed": "International Baccalaureate",
+   "rule": "index",
+   "codes": [
+    "IB"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "JPNS",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JPNS"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "MACH",
+   "heading": "Machine and Metals Technology",
+   "heading_printed": "Machine and Metals Technology",
+   "rule": "index",
+   "codes": [
+    "MACH"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "MEDA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MEDA"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "MMST",
+   "heading": "Multimedia Studies",
+   "heading_printed": "Multimedia Studies",
+   "rule": "index",
+   "codes": [
+    "MMST"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "NE",
+   "heading": "Nursing Education: Registered",
+   "heading_printed": "Nursing Education: Registered",
+   "rule": "index",
+   "codes": [
+    "NE"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "REAL",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "REAL"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "STSK",
+   "heading": "Study Skills",
+   "heading_printed": "Study Skills",
+   "rule": "index",
+   "codes": [
+    "STSK"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "SWHS",
+   "heading": "Social Work and Human Services",
+   "heading_printed": "Social Work and Human Services",
+   "rule": "index",
+   "codes": [
+    "SWHS"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "VOCC",
+   "heading": "Vocational Construction",
+   "heading_printed": "Vocational Construction",
+   "rule": "index",
+   "codes": [
+    "VOCC"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "WE",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WE"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://marin.elumenapp.com/catalog/current/program-and-course-descriptions",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630168042)",
+   "run": "45630168042"
+  }
+ ],
+ "subjects": 65,
+ "with_heading": 65
+}

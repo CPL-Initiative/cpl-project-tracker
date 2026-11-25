@@ -1,0 +1,9 @@
+{
+ "college": "Oxnard College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:56:22Z",
+ "run": "45625259489,45626788039,45628362566",
+ "plan": "kb/college_reads/subject_index_oxnard.json",
+ "titles": [],
+ "not_read": "The district catalog (catalog.vcccd.edu) has no course-descriptions index and no prefix legend. Its Programs & Courses index names each subject page in words only (Accounting), and the code shows only on each page's Courses tab as course numbers (ACCT R101), under no heading that prints the code with a title. A page name is a department label, and pairing it with a code means reading every subject page (about 70 loads a college); this hunt read as little as possible and stopped. A follow-up read of the subject pages, if wanted, files department labels, never subject headings."
+}

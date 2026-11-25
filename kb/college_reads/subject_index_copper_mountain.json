@@ -1,0 +1,27 @@
+{
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 4: the prefix legend is on PDF page 61 (run 45627807594); the course descriptions head each subject 'ACADEMIC SKILLS CENTER (ASC)' from page 120, which also names the codes the legend leaves out; print each such heading line. No model call.",
+ "college": "Copper Mountain College",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  "course prefix",
+  "subject abbreviation",
+  "course abbreviation",
+  "prefix(?:es)? (?:and|&) (?:subject|discipline)",
+  "course descriptions"
+ ],
+ "pages": [
+  {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/11/Final-26-27-Catalog-11.18.26r1.pdf",
+   "answers": [
+    "subject_titles"
+   ]
+  }
+ ],
+ "subject_context": {
+  "heading": "^(?:.*\\S )?\\((?P<subj>[A-Z]{1,6})(?:\\s?[/,&]\\s?[A-Z]{1,6})*\\)$",
+  "before": 2,
+  "start_page": 120
+ }
+}

@@ -1,0 +1,1441 @@
+{
+ "_what": "The subjects De Anza College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "De Anza College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:30:56Z",
+ "run": "45623983494",
+ "source": [
+  "https://deanza.elumenapp.com/catalog/2026-2027/accounting-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/admj-administration-of-justice-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/afam-african-american-studies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/anth-anthropology-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/aprn-automotive-apprenticeship-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/arts-art-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/asam-asian-american-and-asian-studies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/astr-astronomy-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/atmg-auto-management-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/automotive-technology-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/biol-biology-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/bus-business-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/cd-child-development-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/ceth-comparative-ethnic-studies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/chem-chemistry-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/chlx-chicanx-latinx-studies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/cis-computer-science-and-information-systems-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/clp-career-life-planning-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/comm-communication-studies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/coun-counseling-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/cte-career-training-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/danc-dance-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/dmt-design-and-manufacturing-technologies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/econ-economics-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/edac-educational-access-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/educ-education-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/elit-english-literature-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/engl-english-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/engr-engineering-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/es-environmental-studies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/esci-environmental-science-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/esl-english-as-a-second-language-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/ewrt-english-writing-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/fren-french-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/ftv-film-and-television-production-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/geo-geography-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/geol-geology-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/germ-german-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/hist-history-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/hlth-health-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/hndi-hindi-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/htec-health-technologies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/huma-human-development-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/humi-humanities-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/ics-intercultural-studies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/intl-international-studies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/ital-italian-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/japn-japanese-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/jour-journalism-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/knes-kinesiology-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/kore-korean-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/lart-language-arts-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/lib-library-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/ling-linguistics-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/lrna-learning-assistance-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/ls-learning-strategies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/mand-mandarin-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/math-mathematics-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/met-meteorology-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/musi-music-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/nais-native-american-and-indigenous-studies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/nurs-nursing-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/nutr-nutrition-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/para-paralegal-studies-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/pe-physical-education-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/pea-physical-education-adapted-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/pers-persian-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/phil-philosophy-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/phtg-photography-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/phys-physics-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/poli-political-science-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/pols-political-science-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/psyc-psychology-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/read-reading-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/rest-real-estate-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/russ-russian-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/sign-sign-language-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/soc-sociology-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/sosc-social-science-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/span-spanish-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/stat-statistics-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/thea-theatre-arts-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/viet-vietnamese-language-courses",
+  "https://deanza.elumenapp.com/catalog/2026-2027/wmst-womens-studies-courses"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/accounting-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ADMJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADMJ"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/admj-administration-of-justice-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "AFAM",
+   "heading": "African American Studies",
+   "heading_printed": "African American Studies",
+   "rule": "index",
+   "codes": [
+    "AFAM"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/afam-african-american-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/anth-anthropology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "APRN",
+   "heading": "Automotive Apprenticeship",
+   "heading_printed": "Automotive Apprenticeship",
+   "rule": "index",
+   "codes": [
+    "APRN"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/aprn-automotive-apprenticeship-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ARTS",
+   "heading": "Visual Arts and Design",
+   "heading_printed": "Visual Arts and Design",
+   "rule": "index",
+   "codes": [
+    "ARTS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/arts-art-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ASAM",
+   "heading": "Asian American and Asian Studies",
+   "heading_printed": "Asian American and Asian Studies",
+   "rule": "index",
+   "codes": [
+    "ASAM"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/asam-asian-american-and-asian-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/astr-astronomy-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ATMG",
+   "heading": "Auto Management",
+   "heading_printed": "Auto Management",
+   "rule": "index",
+   "codes": [
+    "ATMG"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/atmg-auto-management-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/automotive-technology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/biol-biology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/bus-business-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "CD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CD"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/cd-child-development-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "CETH",
+   "heading": "Comparative Ethnic Studies",
+   "heading_printed": "Comparative Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "CETH"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/ceth-comparative-ethnic-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/chem-chemistry-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "CHLX",
+   "heading": "Chicanx/Latinx Studies",
+   "heading_printed": "Chicanx/Latinx Studies",
+   "rule": "index",
+   "codes": [
+    "CHLX"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/chlx-chicanx-latinx-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Science and Information Systems",
+   "heading_printed": "Computer Science and Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/cis-computer-science-and-information-systems-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "CLP",
+   "heading": "Career Life Planning",
+   "heading_printed": "Career Life Planning",
+   "rule": "index",
+   "codes": [
+    "CLP"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/clp-career-life-planning-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/comm-communication-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/coun-counseling-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "CTE",
+   "heading": "Career Training",
+   "heading_printed": "Career Training",
+   "rule": "index",
+   "codes": [
+    "CTE"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/cte-career-training-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/danc-dance-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "DMT",
+   "heading": "Design and Manufacturing Technologies",
+   "heading_printed": "Design and Manufacturing Technologies",
+   "rule": "index",
+   "codes": [
+    "DMT"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/dmt-design-and-manufacturing-technologies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/econ-economics-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "EDAC",
+   "heading": "Educational Access",
+   "heading_printed": "Educational Access",
+   "rule": "index",
+   "codes": [
+    "EDAC"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/edac-educational-access-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/educ-education-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ELIT",
+   "heading": "English Literature",
+   "heading_printed": "English Literature",
+   "rule": "index",
+   "codes": [
+    "ELIT"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/elit-english-literature-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/engl-english-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/engr-engineering-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ES",
+   "heading": "Environmental Studies",
+   "heading_printed": "Environmental Studies",
+   "rule": "index",
+   "codes": [
+    "ES"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/es-environmental-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ESCI",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ESCI"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/esci-environmental-science-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/esl-english-as-a-second-language-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "EWRT",
+   "heading": "English Writing",
+   "heading_printed": "English Writing",
+   "rule": "index",
+   "codes": [
+    "EWRT"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/ewrt-english-writing-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/fren-french-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "F/TV",
+   "heading": "Film and Television Production",
+   "heading_printed": "Film and Television Production",
+   "rule": "index",
+   "codes": [
+    "F/TV"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/ftv-film-and-television-production-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "GEO",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEO"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/geo-geography-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/geol-geology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/germ-german-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/hist-history-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/hlth-health-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "HNDI",
+   "heading": "Hindi",
+   "heading_printed": "Hindi",
+   "rule": "index",
+   "codes": [
+    "HNDI"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/hndi-hindi-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "HTEC",
+   "heading": "Health Technologies",
+   "heading_printed": "Health Technologies",
+   "rule": "index",
+   "codes": [
+    "HTEC"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/htec-health-technologies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "HUMA",
+   "heading": "Human Development",
+   "heading_printed": "Human Development",
+   "rule": "index",
+   "codes": [
+    "HUMA"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/huma-human-development-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "HUMI",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMI"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/humi-humanities-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ICS",
+   "heading": "Intercultural Studies",
+   "heading_printed": "Intercultural Studies",
+   "rule": "index",
+   "codes": [
+    "ICS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/ics-intercultural-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "INTL",
+   "heading": "International Studies",
+   "heading_printed": "International Studies",
+   "rule": "index",
+   "codes": [
+    "INTL"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/intl-international-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/ital-italian-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/japn-japanese-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/jour-journalism-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "KNES",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KNES"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/knes-kinesiology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "KORE",
+   "heading": "Korean",
+   "heading_printed": "Korean",
+   "rule": "index",
+   "codes": [
+    "KORE"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/kore-korean-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "LART",
+   "heading": "Language Arts",
+   "heading_printed": "Language Arts",
+   "rule": "index",
+   "codes": [
+    "LART"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/lart-language-arts-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/lib-library-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/ling-linguistics-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "LRNA",
+   "heading": "Learning Assistance",
+   "heading_printed": "Learning Assistance",
+   "rule": "index",
+   "codes": [
+    "LRNA"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/lrna-learning-assistance-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "LS",
+   "heading": "Learning Strategies",
+   "heading_printed": "Learning Strategies",
+   "rule": "index",
+   "codes": [
+    "LS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/ls-learning-strategies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "MAND",
+   "heading": "Mandarin",
+   "heading_printed": "Mandarin",
+   "rule": "index",
+   "codes": [
+    "MAND"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/mand-mandarin-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/math-mathematics-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "MET",
+   "heading": "Meteorology",
+   "heading_printed": "Meteorology",
+   "rule": "index",
+   "codes": [
+    "MET"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/met-meteorology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "MUSI",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUSI"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/musi-music-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "NAIS",
+   "heading": "Native American and Indigenous Studies",
+   "heading_printed": "Native American and Indigenous Studies",
+   "rule": "index",
+   "codes": [
+    "NAIS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/nais-native-american-and-indigenous-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/nurs-nursing-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/nutr-nutrition-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "PARA",
+   "heading": "Paralegal Studies",
+   "heading_printed": "Paralegal Studies",
+   "rule": "index",
+   "codes": [
+    "PARA"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/para-paralegal-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/pe-physical-education-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "PEA",
+   "heading": "Physical Education Adapted",
+   "heading_printed": "Physical Education Adapted",
+   "rule": "index",
+   "codes": [
+    "PEA"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/pea-physical-education-adapted-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "PERS",
+   "heading": "Persian",
+   "heading_printed": "Persian",
+   "rule": "index",
+   "codes": [
+    "PERS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/pers-persian-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/phil-philosophy-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "PHTG",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHTG"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/phtg-photography-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/phys-physics-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "POLI",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLI"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/poli-political-science-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/pols-political-science-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/psyc-psychology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "READ",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/read-reading-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "REST",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "REST"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/rest-real-estate-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "RUSS",
+   "heading": "Russian",
+   "heading_printed": "Russian",
+   "rule": "index",
+   "codes": [
+    "RUSS"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/russ-russian-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "SIGN",
+   "heading": "Sign Language",
+   "heading_printed": "Sign Language",
+   "rule": "index",
+   "codes": [
+    "SIGN"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/sign-sign-language-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/soc-sociology-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "SOSC",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SOSC"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/sosc-social-science-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/span-spanish-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/stat-statistics-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/thea-theatre-arts-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "VIET",
+   "heading": "Vietnamese Language",
+   "heading_printed": "Vietnamese Language",
+   "rule": "index",
+   "codes": [
+    "VIET"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/viet-vietnamese-language-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  },
+  {
+   "code": "WMST",
+   "heading": "Women's Studies",
+   "heading_printed": "Women's Studies",
+   "rule": "index",
+   "codes": [
+    "WMST"
+   ],
+   "candidate": null,
+   "address": "https://deanza.elumenapp.com/catalog/2026-2027/wmst-womens-studies-courses",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45623983494)",
+   "run": "45623983494"
+  }
+ ],
+ "subjects": 84,
+ "with_heading": 84
+}

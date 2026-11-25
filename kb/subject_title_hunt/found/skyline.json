@@ -1,0 +1,569 @@
+{
+ "college": "Skyline College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T13:30:20Z",
+ "run": "45623798209",
+ "plan": "kb/college_reads/subject_index_skyline.json",
+ "titles": [
+  {
+   "code": "ACTG",
+   "title": "Accounting",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADMJ",
+   "title": "Administration of Justice",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "American Sign Language",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARBC",
+   "title": "Arabic",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "Art History",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "Automotive Technology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BARB",
+   "title": "Barbering",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BTEC",
+   "title": "Biotechnology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS.",
+   "title": "Business",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BCM.",
+   "title": "Business Computer Systems and Management",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "Child Development",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CRER",
+   "title": "Career and Personal Development",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "Chinese",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Science",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSM",
+   "title": "Cosmetology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COUN",
+   "title": "Counseling",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DMAD",
+   "title": "Digital Media and Design",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DRAM",
+   "title": "Drama",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECE.",
+   "title": "Education/Child Development",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDAC",
+   "title": "Educational Access",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ELEC",
+   "title": "Electronics Technology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EMC.",
+   "title": "Emergency Medical Care",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESOL",
+   "title": "English for Speakers of Other Languages",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENVS",
+   "title": "Environmental Science and Technology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESTI",
+   "title": "Esthetics",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHN",
+   "title": "Ethnic Studies",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FILI",
+   "title": "Filipino",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FILM",
+   "title": "Film",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GBST",
+   "title": "Global Studies",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSCI",
+   "title": "Health Science",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HTM.",
+   "title": "Hospitality and Tourism Management",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IDST",
+   "title": "Interdisciplinary Studies",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ITAL",
+   "title": "Italian",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "Journalism",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADAP",
+   "title": "Kinesiology – Adaptive Physical Education",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMB",
+   "title": "Kinesiology – Combatives",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "Kinesiology – Dance",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FITN",
+   "title": "Kinesiology – Fitness",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDV",
+   "title": "Kinesiology - Individual Sports",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINE",
+   "title": "Kinesiology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "P.E.",
+   "title": "Kinesiology – Physical Education",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "TEAM",
+   "title": "Kinesiology - Team Sports",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VARS",
+   "title": "Kinesiology - Varsity Sports",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "Library Science",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LSKL",
+   "title": "Learning Skills",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIT.",
+   "title": "Literature",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MGMT",
+   "title": "Management",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MEDA",
+   "title": "Medical Assisting",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS.",
+   "title": "Music",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NETX",
+   "title": "Network Engineering Technologies",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OCEN",
+   "title": "Oceanography",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LEGL",
+   "title": "Paralegal Studies",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "R.E.",
+   "title": "Real Estate",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RPTH",
+   "title": "Respiratory Care",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SJS",
+   "title": "Social Justice Studies",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOSC",
+   "title": "Social Science",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "Statistics",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SURG",
+   "title": "Surgical Careers",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELL",
+   "title": "Wellness",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WORK",
+   "title": "Work Experience Education",
+   "url": "https://catalog.skylinecollege.edu/current/courses/",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

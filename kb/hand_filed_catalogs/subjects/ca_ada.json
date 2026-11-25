@@ -1,0 +1,803 @@
+{
+ "_what": "The subjects Cañada College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Cañada College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:07:42Z",
+ "run": "45630267572",
+ "source": [
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=244",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=245",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=248",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=250",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=251",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=255",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=259",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=260",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=262",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=272",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=282",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=283",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=284",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=290",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=292",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=297",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=303",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=304",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=305",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=307",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=308",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=310",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=316",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=317",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=319",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=323",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=326",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=329",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=331",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=333",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=335",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=336",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=337",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=342",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=343",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=346",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=352",
+  "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=354"
+ ],
+ "rows": [
+  {
+   "code": "ACTG",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACTG"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=244",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=244",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "AQUA",
+   "heading": "Aquatics",
+   "heading_printed": "Aquatics",
+   "rule": "index",
+   "codes": [
+    "AQUA"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=250",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=245",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=248",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=250",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biological Sciences",
+   "heading_printed": "Biological Sciences",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=251",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "CBOT",
+   "heading": "Computer Business Office Technology",
+   "heading_printed": "Computer Business Office Technology",
+   "rule": "index",
+   "codes": [
+    "CBOT"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=260",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=262",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=259",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "CRER",
+   "heading": "Career and Personal Development",
+   "heading_printed": "Career and Personal Development",
+   "rule": "index",
+   "codes": [
+    "CRER"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=255",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "DSKL",
+   "heading": "Developmental Learning Skills",
+   "heading_printed": "Developmental Learning Skills",
+   "rule": "index",
+   "codes": [
+    "DSKL"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=272",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=282",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=283",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=284",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Science & Technology",
+   "heading_printed": "Environmental Science & Technology",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=290",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=290",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "FASH",
+   "heading": "Fashion Design and Merchandising",
+   "heading_printed": "Fashion Design and Merchandising",
+   "rule": "index",
+   "codes": [
+    "FASH"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=292",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "FITN",
+   "heading": "Fitness",
+   "heading_printed": "Fitness",
+   "rule": "index",
+   "codes": [
+    "FITN"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=297",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "GBST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GBST"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=304",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=303",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=304",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=305",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "HMSV",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HMSV"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=307",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "HSCI",
+   "heading": "Health Science",
+   "heading_printed": "Health Science",
+   "rule": "index",
+   "codes": [
+    "HSCI"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=304",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "IDST",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "IDST"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=310",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "INDV",
+   "heading": "Individual Sports",
+   "heading_printed": "Individual Sports",
+   "rule": "index",
+   "codes": [
+    "INDV"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=308",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "INTD",
+   "heading": "Interior Design",
+   "heading_printed": "Interior Design",
+   "rule": "index",
+   "codes": [
+    "INTD"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=310",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "LEGL",
+   "heading": "Paralegal Studies",
+   "heading_printed": "Paralegal Studies",
+   "rule": "index",
+   "codes": [
+    "LEGL"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=329",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=316",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=317",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "MART",
+   "heading": "Digital Art and Animation",
+   "heading_printed": "Digital Art and Animation",
+   "rule": "index",
+   "codes": [
+    "MART"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=272",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "MEDA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MEDA"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=323",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "METE",
+   "heading": "Meteorology",
+   "heading_printed": "Meteorology",
+   "rule": "index",
+   "codes": [
+    "METE"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=326",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "index",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=319",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "PALT",
+   "heading": "Photonics and Laser Technology",
+   "heading_printed": "Photonics and Laser Technology",
+   "rule": "index",
+   "codes": [
+    "PALT"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=333",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=331",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=335",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=336",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=337",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=342",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "SOSC",
+   "heading": "Social Sciences",
+   "heading_printed": "Social Sciences",
+   "rule": "index",
+   "codes": [
+    "SOSC"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=342",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=343",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=346",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "TEAM",
+   "heading": "Team Sports",
+   "heading_printed": "Team Sports",
+   "rule": "index",
+   "codes": [
+    "TEAM"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=346",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "VARS",
+   "heading": "Varsity Sports",
+   "heading_printed": "Varsity Sports",
+   "rule": "index",
+   "codes": [
+    "VARS"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=352",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  },
+  {
+   "code": "WORK",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WORK"
+   ],
+   "candidate": null,
+   "address": "https://github.com/user-attachments/files/33613726/can-catalog2026-27-catalog-rights.pdf#page=354",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630267572)",
+   "run": "45630267572"
+  }
+ ],
+ "subjects": 47,
+ "with_heading": 47
+}

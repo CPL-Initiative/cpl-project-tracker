@@ -1,0 +1,26 @@
+{
+ "_readme": "S730 subject-title hunt (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject and unblock the 88 stray M-ID codes, r-no-mid-on-a-stray-code-sam-2026-11-25). Pass 3 of this plan (pass 2 read run 45625671325): the catalog heads each subject with a line 'CODE - Title' (TICU - Custodial, LERN - Learning Assistance, pass 2), and each course with 'CODE NUMBER - Title (units)'. This headings read prints each subject heading line once, with the line above it. No model call.",
+ "college": "City College of San Francisco",
+ "questions": {
+  "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
+ },
+ "keywords": [
+  " - "
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
+   "answers": [
+    "subject_titles"
+   ],
+   "hand_filed": true
+  }
+ ],
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z][A-Z/]*(?: [A-Z][A-Z/]*)?) - (?P<title>[A-Z][^()]*)$",
+  "before": 1,
+  "start_page": 1
+ }
+}
