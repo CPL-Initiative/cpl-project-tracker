@@ -1833,6 +1833,18 @@ GAPS.setdefault("heading_not_in_text",
                 "page read has confirmed it.")
 ARITH_SCORE.setdefault("heading_not_in_text", 20)
 OTHER_PAGE_GAPS = OTHER_PAGE_GAPS | {"heading_not_in_text"}
+# S730 at Saddleback (kb/_program_piles_s730_saddleback.py): a requirement the page prints at a range from zero, since
+# a student may meet it without the course (CUL 171 waived for a valid California ServSafe Certification; DR 100 for a
+# year of high school mechanical drafting), which the record counts at the course's units, so its sum matches the
+# printed range's top and not its low end. No existing kind fits: entry_path_range names an entry path a student is
+# admitted to, noted_unit_floor a minimum above the printed units, and the printed_total reconcile kind a test-out whose
+# units the page's own separate total counts. Its score is entry_path_range's 50: in both the page prints a range over
+# two paths and the record holds the full one.
+GAPS.setdefault("waived_course_counted",
+                "The page prints a requirement at a range from zero units, since a student may meet it without the "
+                "course (a certification, an exam or earlier coursework), and the record counts the course, so its "
+                "units match the top of the printed range and not its low end.")
+ARITH_SCORE.setdefault("waived_course_counted", 50)
 
 
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:

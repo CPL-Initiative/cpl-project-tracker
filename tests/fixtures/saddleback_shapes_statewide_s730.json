@@ -1,0 +1,1346 @@
+{
+ "_what": "S730 (lane 2, Saddleback): the statewide fires of kb/_program_piles_s730_saddleback.py's two shape checks and the one the waiver shape leaves out, their blocks' names, rules, option groups and figures, notes and arithmetic as filed at the plan, pinned so a later read never moves the test.",
+ "records": [
+  {
+   "college": "Los Angeles City College",
+   "control_number": "02746",
+   "record": {
+    "blocks": [
+     {
+      "name": "MAJOR CORE COURSES (19 UNITS)",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 19,
+       "max": 19
+      }
+     },
+     {
+      "name": "MAJOR ELECTIVE COURSES (SELECT 10 UNITS)",
+      "rule": "choose_units",
+      "option_group": null,
+      "stated": {
+       "min": 10,
+       "max": 10
+      }
+     }
+    ],
+    "notes": [
+     "Major units printed as 19-29; the range appears to reflect that JAPAN 001 and 002 (the 10-unit elective block) are prerequisites to JAPAN 003 and may be waived/already satisfied. Footnote: '*JAPAN 001 AND 002 ARE PREREQUISITES TO JAPAN 003.'",
+     "degree_total recorded from the award heading 'Total Units: Minimum of 60'; reviewer may judge whether this is a generic AA minimum rather than this award's own total.",
+     "No general education pattern or GE units are named in this section.",
+     "Careers taken from the discipline overview ('Whether you are in the field of business, engineering, manufacturing, research, economics, or politics'); the AA description itself only mentions 'a wide variety of career paths'.",
+     "The two Japanese Certificates of Achievement (Elementary and Intermediate Level) on the following page were not read for this record."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      29.0,
+      29.0
+     ],
+     "stated": [
+      19.0,
+      29.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "04069",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 30,
+       "max": 33
+      }
+     },
+     {
+      "name": "Restricted Electives: Select one course",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     }
+    ],
+    "notes": [
+     "Each 'Select one' pair in the Required Core (DR 23 or DR 100; DR 50 or ARCH 50; DR 51 or ARCH 51; DR 152 or ARCH 152) is recorded as one course entry with the other as an alternative.",
+     "The DR 23 / DR 100 'Select one' is printed as 0.0-3.0 units: students who completed one year of high school mechanical drafting, or equivalent, are exempt from DR 100; this explains the core range 30-33 and total 33-36.",
+     "The 'Complete a minimum of 60 units' sentence is the generic Associate of Science requirement, not a printed degree total for this award, so degree_total is null. The page notes 'Total units does not include all units required for the degree.'",
+     "GE: page refers to the Graduation Requirements or the Cal-GETC pattern; no GE units printed.",
+     "Career text also mentions 'entry-level employment in government and private enterprise' (sectors, not recorded as careers)."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      36.0,
+      36.0
+     ],
+     "stated": [
+      33.0,
+      36.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "04073",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 12,
+       "max": 20
+      }
+     },
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Ensemble Requirement: Complete four semesters from the following (including repeated classes)",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 4,
+       "max": 8
+      }
+     },
+     {
+      "name": "Restricted Electives: Select 4-6 units",
+      "rule": "choose_units",
+      "option_group": null,
+      "stated": {
+       "min": 4,
+       "max": 6
+      }
+     }
+    ],
+    "notes": [
+     "The four piano 'Select one' blocks (each 0.0-2.0 units) can each be satisfied by the course OR a proficiency exam; recorded as choose 1 with the course as the only listed option. These sit under the Required Core heading whose printed total is 12.0-20.0 units, which includes the piano units.",
+     "Within Restricted Electives, MUS 50 appears under a sub-line 'MUS 50 may be taken up to 4 times 1.0-4.0'; recorded once at 1 unit.",
+     "Ensemble requirement counts four semesters including repeated classes, so the minimum of 4 is semesters/enrollments rather than distinct courses.",
+     "Printed 'Total : 20.0- 34.0' with the note 'Total units does not include all units required for the degree' is recorded as the major total; the 60-unit sentence is a generic associate degree requirement, so degree_total is null.",
+     "GE: page refers to Graduation Requirements or the Cal-GETC pattern; no GE units printed.",
+     "Learning outcomes are printed in the A.A. Degree summary and recorded as printed.",
+     "Course list at the end of the text is cut off mid-entry (MUS 65); it does not affect the requirements."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      29.0,
+      34.0
+     ],
+     "stated": [
+      20.0,
+      34.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "04094",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core: Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 18,
+       "max": 20
+      }
+     },
+     {
+      "name": "Restricted Electives: Select 1-3 courses (3 units)",
+      "rule": "choose_units",
+      "option_group": null,
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     }
+    ],
+    "notes": [
+     "The page heading is 'INTRODUCTION TO CULINARY ARTS - A.S. Degree' but the requirements and summary subheadings read 'BASIC CULINARY ARTS - Saddleback - A.S. Degree'; treated as the same award.",
+     "The 'Select one' (0-2 units) choice is CUL 171 OR 'ServSafe Certification' (not a course); students with valid California ServSafe Certification may have this requirement waived. Recorded as its own block with CUL 171 only.",
+     "The Required Core stated total 18.0-20.0 covers both the 'Select one' block (0-2) and the six required courses (18 units); it is recorded on the main Required Core block.",
+     "Total 21.0-23.0 is recorded as total_units; the page states 'Total units does not include all units required for the degree.'",
+     "The sentence 'Complete a minimum of 60 units including the total number of units described above and the General Education requirements' is the generic A.S. requirement, not recorded as degree_total.",
+     "GE: page refers to the Graduation Requirements or to the Cal-GETC pattern; no GE units printed.",
+     "Course list text is cut off in the CUL 267 description; this does not affect requirements."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      23.0,
+      23.0
+     ],
+     "stated": [
+      21.0,
+      23.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "04119",
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 36,
+       "max": 38
+      }
+     },
+     {
+      "name": "Restricted Electives: Select one course (2-3 units)",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 2,
+       "max": 3
+      }
+     }
+    ],
+    "notes": [
+     "The 'Select one' block (0.0-2.0 units) is printed inside the Required Core: students take CUL 171 OR hold a valid California ServSafe Certification (not a course), which waives the requirement. The Required Core's printed 36.0-38.0 units includes this 0-2 unit choice; the 'all' block's courses alone sum to 36.",
+     "total_units 38-41 taken from 'Total : 38.0- 41.0', which the page says does not include all units required for the degree (major total).",
+     "degree_total left null: the page only gives the generic sentence 'Complete a minimum of 60 units including ... the General Education requirements' rather than a printed total for this award; no GE units printed.",
+     "GE pattern stated as 'Refer to the Graduation Requirements or to the Cal-GETC pattern'; recorded both options.",
+     "Catalog text is cut off mid-description of CUL 275 in the course list; the requirements section itself appears complete.",
+     "Learning outcomes printed under 'Learning Outcome(s):' in the A.S. section; the first outcome contains an asterisk after 'mise en place' as printed."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      40.0,
+      41.0
+     ],
+     "stated": [
+      38.0,
+      41.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "09869",
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 41,
+       "max": 43
+      }
+     }
+    ],
+    "notes": [
+     "The 'Select one' (0.0-2.0) choice is printed inside the Required Core: CUL 171 OR ServSafe Certification. ServSafe Certification is not a course, so it is not recorded as an alternative; students with valid California ServSafe Certification may have this requirement waived (0 units).",
+     "The Required Core stated total 41.0-43.0 includes the 0-2 units of the 'Select one' block; the 13 required courses sum to 41 units.",
+     "The page's 'Complete a minimum of 60 units' sentence is generic Associate of Science boilerplate, so degree_total is left null; no GE units are printed.",
+     "GE pattern: the page refers to the Graduation Requirements or the Cal-GETC pattern without printing units.",
+     "The careers phrase 'catering chefs and head cooks' was split into two entries."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      43.0,
+      43.0
+     ],
+     "stated": [
+      41.0,
+      43.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "22874",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 30,
+       "max": 33
+      }
+     },
+     {
+      "name": "Restricted Electives: Select one course",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     }
+    ],
+    "notes": [
+     "The Required Core prints several 'Select one' pairs (DR 23 or DR 100; DR 50 or ARCH 50; DR 51 or ARCH 51; DR 152 or ARCH 152); each is recorded as one entry with the other course as an alternative.",
+     "The 'Select one' for DR 23 / DR 100 is printed with 0.0-3.0 units; the page states students who completed one year of high school mechanical drafting, or equivalent, are exempt from DR 100. This explains the Required Core range 30.0-33.0 and the total 33.0-36.0.",
+     "DR 50/ARCH 50, DR 51/ARCH 51 and DR 152/ARCH 152 are cross-listed; credit given in either area, not both.",
+     "The page prints 'Total : 33.0- 36.0' for the certificate."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      36.0,
+      36.0
+     ],
+     "stated": [
+      33.0,
+      36.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "22902",
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     }
+    ],
+    "notes": [
+     "The 'Select one' choice (0.0-2.0) is printed inside the Required Core (Units: 41.0-43.0); it is recorded as its own block. The printed 41-43 total covers both blocks, so the 'all' block's stated is left null (its courses sum to 41).",
+     "The alternative to CUL 171 is 'ServSafe Certification', which is not a course; it is not recorded as an alternative. Footnote: students with valid California ServSafe Certification may have this core requirement waived.",
+     "Careers phrase 'catering chefs and head cooks' was split into two entries; a reviewer may prefer it as one."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      43.0,
+      43.0
+     ],
+     "stated": [
+      41.0,
+      43.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "22903",
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 36,
+       "max": 38
+      }
+     },
+     {
+      "name": "Restricted Electives: Select one course (2-3 units)",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 2,
+       "max": 3
+      }
+     }
+    ],
+    "notes": [
+     "The 'Select one' (0.0-2.0) choice sits inside the Required Core in the catalog: CUL 171 OR ServSafe Certification (not a course). Students with valid California ServSafe Certification may have CUL 171 waived; recorded as a separate block with CUL 171 only.",
+     "The Required Core's printed 36.0-38.0 units includes the 0-2 unit CUL 171/ServSafe choice; the listed required courses alone sum to 36.",
+     "Program total printed as 'Total : 38.0- 41.0'.",
+     "The asterisk in the first learning outcome ('mise en place*') is copied as printed."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      40.0,
+      41.0
+     ],
+     "stated": [
+      38.0,
+      41.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "22904",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core: Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Restricted Electives: Select 1-3 courses (3 units)",
+      "rule": "choose_units",
+      "option_group": null,
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     }
+    ],
+    "notes": [
+     "The requirements table and summary carry the sub-heading 'BASIC CULINARY ARTS - Saddleback - Certificate of Achievement' while the page title and summary text name the Introduction to Culinary Arts Certificate of Achievement; reviewer may wish to confirm this is the same award.",
+     "The 'Select one' choice (0.0-2.0 units) is CUL 171 OR ServSafe Certification; ServSafe is not a course, so only CUL 171 is recorded. A footnote says students with valid California ServSafe Certification may have this core requirement waived.",
+     "The catalog prints 'Required Core: Units: 18.0-20.0' for the whole core, which includes the 0-2 unit Select one choice plus the six required 3-unit courses (18 units); because the core was split into two blocks, the 18-20 figure is not recorded on either block's stated.",
+     "Program total printed as 'Total : 21.0- 23.0'.",
+     "Restricted Electives heading reads 'Select 1-3 courses (3 units)'; recorded as choose_units with minimum 3."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      23.0,
+      23.0
+     ],
+     "stated": [
+      21.0,
+      23.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "30206",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 6,
+       "max": 6
+      }
+     },
+     {
+      "name": "Cinema Specialty - Required Courses",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Cinema Specialty - Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     },
+     {
+      "name": "Television Specialty - Required Courses",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Television Specialty - Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     },
+     {
+      "name": "Radio Specialty - Required Courses",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Radio Specialty - Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     },
+     {
+      "name": "Post Production Specialty - Required Courses",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Post Production Specialty - Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     },
+     {
+      "name": "Screen Acting and Voice Performance Specialty - Required Courses",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Screen Acting and Voice Performance Specialty - Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     },
+     {
+      "name": "Critical Studies Specialty - Required Courses",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Critical Studies Specialty - Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     }
+    ],
+    "notes": [
+     "The student completes one specialty area (14-15 units, printed under 'Completion of One Specialty Area'). Each specialty is two blocks (Required Courses + Restricted Electives 8-9 units); all twelve specialty blocks share option_group 'Specialty Area', but a student completes both blocks of one specialty, not one block.",
+     "Each specialty heading prints 'Units:' figures (Cinema 52.0, Television 46.0, Radio 42.0, Post Production 41.0, Screen Acting 49.0, Critical Studies 35.0) that appear to be sums of all listed courses, not the requirement; not recorded as stated totals.",
+     "total_units taken from 'Total : 20.0- 21.0' (core 6 + specialty 14-15).",
+     "The 'Complete a minimum of 60 units including ... the General Education requirements' sentence reads as generic A.S. boilerplate, so degree_total left null; no GE unit figure printed.",
+     "GE pattern: page refers to the Graduation Requirements or the Cal-GETC pattern.",
+     "In Critical Studies, CTVR 2 is followed by an extra '3.0' line, likely a formatting artifact; recorded as 3 units.",
+     "Learning outcomes printed under the Summary for the program; recorded for this A.S. degree.",
+     "Course descriptions list is cut off at CTVR 129; does not affect requirements."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      12.0,
+      15.0
+     ],
+     "stated": [
+      20.0,
+      21.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "30207",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 6,
+       "max": 6
+      }
+     },
+     {
+      "name": "Cinema Specialty: Required Courses",
+      "rule": "all",
+      "option_group": "Specialty",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Cinema Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     },
+     {
+      "name": "Television Specialty: Required Courses",
+      "rule": "all",
+      "option_group": "Specialty",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Television Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     },
+     {
+      "name": "Radio Specialty: Required Courses",
+      "rule": "all",
+      "option_group": "Specialty",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Radio Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     },
+     {
+      "name": "Post Production Specialty: Required Courses",
+      "rule": "all",
+      "option_group": "Specialty",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Post Production Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     },
+     {
+      "name": "Screen Acting and Voice Performance Specialty: Required Courses",
+      "rule": "all",
+      "option_group": "Specialty",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Screen Acting and Voice Performance Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     },
+     {
+      "name": "Critical Studies Specialty: Required Courses",
+      "rule": "all",
+      "option_group": "Specialty",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Critical Studies Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty",
+      "stated": {
+       "min": 8,
+       "max": 9
+      }
+     }
+    ],
+    "notes": [
+     "Student completes one of six specialty areas ('Completion of One Specialty Area (14-15 units)'); each specialty is recorded as two blocks (Required Courses + Restricted Electives) sharing option_group 'Specialty'. A student completes both blocks of a single specialty, not one block from the group.",
+     "Each specialty heading prints a 'Units:' figure (Cinema 52.0, Television 46.0, Radio 42.0, Post Production 41.0, Screen Acting 49.0, Critical Studies 35.0) that appears to be the sum of all listed courses rather than a requirement; not recorded as stated. The specialty requirement is 14-15 units (6 required + 8-9 restricted electives).",
+     "CTVR 2 in Critical Studies has '3.0' printed twice; read as 3 units.",
+     "Total : 20.0- 21.0 recorded as total_units.",
+     "Outcomes are listed under 'Learning Outcome(s)' in the certificate's summary section."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      12.0,
+      15.0
+     ],
+     "stated": [
+      20.0,
+      21.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "36628",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     },
+     {
+      "name": "Cinema Specialty: Required Course",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Cinema Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 6,
+       "max": 8
+      }
+     },
+     {
+      "name": "Television Specialty: Required Course",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Television Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 6,
+       "max": 8
+      }
+     },
+     {
+      "name": "Radio Specialty: Required Course",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Radio Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 6,
+       "max": 8
+      }
+     },
+     {
+      "name": "Post Production Specialty: Required Course",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Post Production Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 6,
+       "max": 8
+      }
+     },
+     {
+      "name": "Screen Acting and Voice Performance Specialty: Required Course",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Screen Acting and Voice Performance Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 6,
+       "max": 8
+      }
+     },
+     {
+      "name": "Critical Studies Specialty: Required Course",
+      "rule": "all",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     },
+     {
+      "name": "Critical Studies Specialty: Restricted Electives",
+      "rule": "choose_units",
+      "option_group": "Specialty Area",
+      "stated": {
+       "min": 6,
+       "max": 8
+      }
+     }
+    ],
+    "notes": [
+     "The student completes one specialty area ('Completion of One Specialty Area (9-11 units)'). Each specialty is recorded as two blocks (Required Course + Restricted Electives) sharing option_group 'Specialty Area'; a student completes both blocks of one specialty, not one block from the group.",
+     "Each specialty prints 'Units: 20.0/18.0/17.0/23.0/26.0', which appears to be the sum of all listed courses in that specialty, not a requirement; not recorded as stated.",
+     "Total for the certificate printed as 'Total : 12.0- 14.0' (3-unit core + 9-11 unit specialty).",
+     "Critical Studies required course prints a stray '3.0' before CTVR 3 OR CTVR 3H; recorded as the block's stated 3 units.",
+     "Outcomes printed under 'Learning Outcome(s):' for this certificate.",
+     "Course list text is cut off at CTVR 290; course descriptions not used for requirements."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      6.0,
+      11.0
+     ],
+     "stated": [
+      12.0,
+      14.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "40322",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 13,
+       "max": 13
+      }
+     },
+     {
+      "name": "Pattern 1: Yoga and Aerobic Exercise Emphasis",
+      "rule": "all",
+      "option_group": "Restricted Electives pattern",
+      "stated": {
+       "min": 9,
+       "max": 9
+      }
+     },
+     {
+      "name": "Pattern 2: Fitness and Performance Emphasis",
+      "rule": "all",
+      "option_group": "Restricted Electives pattern",
+      "stated": {
+       "min": 8,
+       "max": 8
+      }
+     },
+     {
+      "name": "Pattern 3: General Health and Wellness Emphasis",
+      "rule": "all",
+      "option_group": "Restricted Electives pattern",
+      "stated": {
+       "min": 9,
+       "max": 9
+      }
+     },
+     {
+      "name": "Pattern 3: And Select 3 units from the following courses",
+      "rule": "choose_units",
+      "option_group": "Restricted Electives pattern",
+      "stated": {
+       "min": 3,
+       "max": 3
+      }
+     }
+    ],
+    "notes": [
+     "Restricted Electives (8.0-9.0 units): 'Select one pattern'. Pattern 3 is recorded as two blocks sharing the option_group: its required courses (NUTR 50 and PSYC 30 or SOC 30) and its nested 'Select 3 units' choice; together they make up the single Pattern 3 option (9 units).",
+     "Pattern 2's third course is a nested 3-unit choice of KNES 105 OR NUTR 164, recorded as one entry with an alternative.",
+     "Outcomes are copied as printed, including the typos 'though a holistic perspective' and 'a having'."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      16.0,
+      22.0
+     ],
+     "stated": [
+      21.0,
+      22.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "41673",
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 18,
+       "max": 20
+      }
+     }
+    ],
+    "notes": [
+     "The 'Select one' (0.0-2.0 units) choice sits inside the Required Core; its other option is 'ServSafe Certification', which is not a course and is not recorded as an alternative. Students with valid California ServSafe Certification may have CUL 171 waived, hence the 0-2 unit range.",
+     "The Required Core stated total 18.0-20.0 covers both the 'Select one' choice and the six required courses; it is recorded on the Required Core block and as total_units.",
+     "Careers recorded as printed; 'entry-level hotel, motel and restaurant managers' and 'event, banquet and catering professionals' are kept as single printed phrases."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      20.0,
+      20.0
+     ],
+     "stated": [
+      18.0,
+      20.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "41674",
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": 18,
+       "max": 20
+      }
+     }
+    ],
+    "notes": [
+     "The 'Select one' (0.0-2.0 units) choice is CUL 171 OR a valid California ServSafe Certification; ServSafe is not a course, so it is not recorded as an alternative. Footnote: students with valid California ServSafe Certification may have this requirement waived.",
+     "The printed 'Required Core: Units: 18.0-20.0' covers the whole core including the nested 'Select one' block; it is recorded as stated on the Required Core block and as total_units (Total: 18.0-20.0).",
+     "The page's 'Complete a minimum of 60 units ... to qualify for the Associate of Science degree' is a generic associate degree rule, not recorded as degree_total; no GE unit figure is printed.",
+     "The Learning Outcome(s) list appears in this A.S. section and is recorded as the program outcomes."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      20.0,
+      20.0
+     ],
+     "stated": [
+      18.0,
+      20.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "44664",
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     }
+    ],
+    "notes": [
+     "The 'Select one' choice (0.0-2.0 units) is CUL 171 OR ServSafe Certification; ServSafe Certification is not a course and is not recorded as an alternative. A footnote says students with valid California ServSafe Certification may have this requirement waived, which explains the 0-unit low end.",
+     "The 'Required Core' heading prints 'Units: 38.0- 40.0' for the whole core including the 'Select one' choice; that figure is recorded as total_units (matching 'Total : 38.0- 40.0'), and the all-required block's stated is left null. The required courses sum to 38 units, plus 0-2 for the choice.",
+     "The page says 'Complete a minimum of 60 units including the total number of units described above and the General Education requirements'; read as generic Associate of Science boilerplate, so degree_total is left null. No GE unit figure is printed.",
+     "GE pattern named as 'the Graduation Requirements or ... the Cal-GETC pattern'.",
+     "Careers recorded from the summary's 'midlevel career opportunities in bakeries, restaurants, catering, hotels, and other food service businesses'; these are workplace settings rather than job titles, reviewer may check."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      40.0,
+      40.0
+     ],
+     "stated": [
+      38.0,
+      40.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "44665",
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     }
+    ],
+    "notes": [
+     "The catalog prints 'Required Core: Units: 38.0- 40.0' and 'Total : 38.0- 40.0' over the whole list, including the nested 'Select one' (0.0-2.0). That total is recorded in total_units; the Required Core block's stated is left null so the nested block's 0-2 is not counted twice. The remaining required courses sum to 38 units.",
+     "The 'Select one' choice is CUL 171 (2 units) OR ServSafe Certification (not a course, 0 units). A footnote says students with valid California ServSafe Certification may have this core requirement waived.",
+     "Careers are read from 'midlevel career opportunities in bakeries, restaurants, catering, hotels, and other food service businesses'. These name workplaces or settings rather than job titles; a reviewer should confirm they belong in careers."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      40.0,
+      40.0
+     ],
+     "stated": [
+      38.0,
+      40.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "44666",
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one",
+      "rule": "choose_courses",
+      "option_group": null,
+      "stated": {
+       "min": 0,
+       "max": 2
+      }
+     },
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     }
+    ],
+    "notes": [
+     "The 'Select one' block (0.0-2.0 units) offers CUL 171 OR 'ServSafe Certification'; ServSafe is a certification, not a course, so it is not recorded as an alternative. Students with valid California ServSafe Certification may have this requirement waived (0 units).",
+     "The catalog prints 'Required Core: Units 18.0-20.0' and 'Total: 18.0-20.0' over the whole list, including the Select one choice; the remaining six courses (18 units) are recorded as a required block with no separate stated total.",
+     "Careers are read from the summary's 'entry-level career opportunities in bakeries, restaurants, catering, hotels, and other food service businesses'; these name workplaces/industry settings rather than job titles—reviewer may wish to confirm."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      20.0,
+      20.0
+     ],
+     "stated": [
+      18.0,
+      20.0
+     ]
+    }
+   }
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "22784",
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     },
+     {
+      "name": "Complete the following or place into a Transfer-Level MATH course:",
+      "rule": "all",
+      "option_group": null,
+      "stated": {
+       "min": null,
+       "max": null
+      }
+     }
+    ],
+    "notes": [
+     "Catalog prints zero-padded codes (AUTO 050, AUTO 052, AUTO 064, AUTO 084, HMDT 064, TECALC 087) that correspond to closed-list AUTO 50, AUTO 52, AUTO 64, AUTO 84, HMDT 64, TECALC 87; treated as the same courses, not catalog additions.",
+     "TECALC 087 can be waived by placing into a transfer-level MATH course, which explains the 16-20 total range.",
+     "HMDT 064 is printed as an alternative to AUTO 064 with no units beside it.",
+     "The Program Learning Outcomes tab appears to be the program's outcomes list; recorded for this certificate.",
+     "Page states this is a Gainful Employment Program."
+    ]
+   },
+   "score": {
+    "arithmetic": {
+     "status": "unequal",
+     "pass": false,
+     "computed": [
+      20.0,
+      20.0
+     ],
+     "stated": [
+      16.0,
+      20.0
+     ]
+    }
+   }
+  }
+ ]
+}
