@@ -1,5 +1,5 @@
 ---
-title: "Session 731 handoff (from SkyFrigatebird, S730, the CPL Queue routine's collection run of 2026-11-25, from 10:55Z)"
+title: "Session 732 handoff (from SkyFrigatebird, S731, the CPL Queue routine's collection run of 2026-11-25, from 10:55Z)"
 created: 2026-11-25
 updated: 2026-11-25
 tags: [handoff, session]
@@ -8,19 +8,18 @@ obsidian-folder: cpl-project-tracker/handoffs
 ---
 
 **Routing, both ways.** A CPL Queue routine firing follows this file. A plain session Sam opens follows the newest
-handoff his plain sessions write (730, S729 SkyCurlew's, merged in #3819), never this file. **Numbering.** Handoff 730
-names SkyDunlin for Sam's next plain session and tells it to take the next free number when it starts; no session has
-started under 730, so this run takes S730, the next free number, and writes 731, one above the highest on `main`
-(`d-routine-takes-next-free-number-s713`, as S720 did). Sam's next plain session takes the next free number, S731 or
-above, and writes the handoff one above the highest on `main`.
+handoff his plain sessions write (730, S729 SkyCurlew's, merged in #3819), never this file. **Numbering.** Handoff 730 named SkyDunlin for Sam's next plain session. This run declared S730 at 11:05Z (#3823),
+and SkyDunlin took S730 as its handoff named it (#3824 merged at 11:19Z as S730), so the declaration moved to S731 and
+writes 732, leaving 731 to SkyDunlin (`d-routine-takes-next-free-number-s713`, as S713's declaration moved;
+**DECIDED** `d-routine-yields-730-to-plain-s731`). Read `main`'s highest handoff before each merge of this file.
 
-# You are [[S730 FILL: next moniker]], the routine's next session
+# You are [[S731 FILL: next moniker]], the routine's next session
 
-From SkyFrigatebird (S730), the CPL Queue routine's 10:12Z firing of 2026-11-25, a conductor run for collection only
+From SkyFrigatebird (S731), the CPL Queue routine's 10:12Z firing of 2026-11-25, a conductor run for collection only
 under Sam's routine prompt of 2026-11-17 and the COBIx brief on #3358 (Tue Nov 24, written 6:45 PM PT). Handoff 728
 named SkyFrigatebird for the routine's next session, and no plain session holds the name.
 
-[[S730 FILL: checkpoint kind and skipped steps]]
+[[S731 FILL: checkpoint kind and skipped steps]]
 
 ## The start (10:12Z firing, 2026-11-25)
 
@@ -72,13 +71,26 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 
 - 11:05Z: the declaration, #3823. 11:08Z: `lever`, `elumen2` and the Los Angeles Trade-Technical (s730a) and
   Saddleback (s730b) piles started on Opus 5.5 at high effort, a fresh worker each. Long Beach City's piles and
-  `pooled` wait for a slot. **DECIDED** `d-lever-dispatches-paid-reads-in-words-s730`: `lever` may dispatch paid reads
+  `pooled` wait for a slot. **DECIDED** `d-lever-dispatches-paid-reads-in-words-s731`: `lever` may dispatch paid reads
   on its own branch with `only=`, at most $5 a college and $15 in all on the estimate, beside the free steps S727
   lifted in words (`d-workers-dispatch-loads-in-words-s727`), to save the conductor's context; applies stay the
   conductor's.
 - 11:12Z: display build `2c8507c058b1` (18,724 records, built on `main` `56c21b96` with Python 3.12) on
   `claude/s730-display`; the Glendale gate 45602360120 dispatched at 11:13Z.
 
-[[S730 FILL: the run's log]]
+- 11:16Z: the Glendale gate 45602360120 green: 242 rows at `2c8507c058b1`, nothing else moved, 12 rows with no display
+  (S727's new records). 11:17Z to 11:23Z: the whole build 45602989427: 18,723 rows at `2c8507c058b1`, the same 32 at
+  older builds, none without a display. #3825 opened for the merge; the census on `main` follows it.
+- 11:19Z: Sam's plain session SkyDunlin merged #3824 as S730, so this run moved to S731 and handoff 732
+  (`d-routine-yields-730-to-plain-s731`). One writer per file: it holds the Commons files, this run the harvest's.
+- 11:21Z: `elumen2` reported: read 45574354887 never extracted the 38 (`held_no_gain` at the read), so no run holds an
+  own-page record and a forced reread has nothing to post; the fix is a paid read with `force=`. Five live rows carry a
+  degree's total on a certificate (19460, 20175, 20179, 20181, 45151). All 40 live rows read `checked: false` (11:24Z);
+  43150 has no live row and takes a pin (`all-automotive-systems-as-fall-2026`). 11:25Z: the conductor dispatched
+  Antelope Valley's read on `claude/s730-elumen2` (`only=` the 38 and 43150, `force=` the 38, about $2.73 on the
+  estimate); it files to the branch only, and a Sonnet second reader gates the load and reread
+  (**DECIDED** `d-elumen-read-before-reader-s731`).
 
-Spend: [[S730 FILL]]
+[[S731 FILL: the run's log]]
+
+Spend: [[S731 FILL]]
