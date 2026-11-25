@@ -86,6 +86,9 @@ All verbatim in `docs/commons_lessons.md`, S724. **RULED:** `r-sidebar-narrow-bo
    rollback receipt first (Rule 10 a3). Only 14 of the 203 loose adapt courses carry outcomes today.
    Sam (mock v6): *"for courses with no description add the smae note and link with paste bar"*: *Add it* opens the
    same kind of bar to paste a catalog description with its source.
+   Sam: *"will need a link bar for those as well, so our procedure can refresh later via the link (assuming it isn't
+   blocked to the runner)"* (mock v7): a link alone is enough; it registers the page for the nightly collection to
+   read and refresh, and a blocked site shows on the course (see `docs/reference/blocked_sources.md`).
    Sam then: *"els will be a similar case of big mid consolidation into just a few"*: build Gather for both; read
    `docs/reference/lanes/esl-packaging.md` (the comprehensives and carve-outs) before designing it.
 1. **The anchor-page build, step 2:** the Common courses / Local courses toggle on the Courses List.
