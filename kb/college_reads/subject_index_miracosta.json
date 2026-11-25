@@ -1,5 +1,5 @@
 {
- "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: round 1 (run 45623798209) read the front page, which links Areas of Study & Courses (/disciplines/) and no course index by name. This read loads the CourseLeaf course index at /coursedescriptions/. No model call.",
+ "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3: round 2 (run 45626064651) found no /coursedescriptions/ (404). The front page links Areas of Study & Courses (/disciplines/); this read prints that index and its links. No model call.",
  "college": "MiraCosta College",
  "questions": {
   "subjects": "Every subject heading the catalog's course index prints, with its code."
@@ -9,11 +9,11 @@
  ],
  "pages": [
   {
-   "url": "https://catalog.miracosta.edu/coursedescriptions/",
+   "url": "https://catalog.miracosta.edu/disciplines/",
    "answers": [
     "subjects"
    ],
-   "links": "/coursedescriptions/[a-z0-9_-]+/$",
+   "links": "/disciplines/[a-z0-9_-]+/$",
    "links_cap": 300
   }
  ]
