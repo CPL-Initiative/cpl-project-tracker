@@ -1,4 +1,4 @@
-{"schema":1,"college":"Ventura College","slug":"ventura","basis":"live","census_at":"2026-11-24 14:26Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Ventura College","slug":"ventura","basis":"live","census_at":"2026-11-25 01:39Z","correction_rules":false,"programs":[
 {"cn":"45355","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.vcccd.edu/ventura/transfer-information/c-id/"},
 {"cn":"45741","title":"Chicana/o Studies","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"41990","title":"English as a Second Language - Level 1: Beginning","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
