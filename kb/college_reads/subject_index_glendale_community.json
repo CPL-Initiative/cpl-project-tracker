@@ -1,0 +1,34 @@
+{
+ "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Glendale's online catalog is a Coursedog app; its PDF catalog prints each subject's heading above its first course description (pages 98 on, glendale_course_desc_*.json). This read lists the catalogs page's PDF links (shown, not followed) and prints only the lines above each subject's first course in the PDF, as el_camino_subject_headings.json does. Two loads, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "catalogs": "Which catalog PDFs the catalogs page links, so the newest is the one read.",
+  "subject_headings": "The subject heading the catalog prints above each subject's first course."
+ },
+ "keywords": [
+  "\\bUnits?\\b"
+ ],
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z][A-Z &.]{0,9}?) (?P<num>[A-Z]?\\d{1,4}[A-Z]{0,4}) (?P<title>.+)$",
+  "before": 4,
+  "start_page": 95,
+  "units": "\\bUnits?\\b",
+  "units_inline": "\\bUnits?\\b",
+  "within": 3
+ },
+ "pages": [
+  {
+   "url": "https://www.glendale.edu/academics/catalogs/index.html",
+   "answers": [
+    "catalogs"
+   ],
+   "links": "\\.pdf|catalog"
+  },
+  {
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
+   "answers": [
+    "subject_headings"
+   ]
+  }
+ ]
+}
