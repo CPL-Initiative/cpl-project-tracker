@@ -1,14 +1,13 @@
 {
- "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 2: pass 1 (run 45625006694) found no course-description page by keyword; print the first two pages in the back of the catalog that print a course line, to learn how the catalog heads each subject. No model call.",
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 3: pass 2 (run 45626565022) found only program pages; print the table of contents to learn whether the catalog prints course descriptions or a prefix legend at all. No model call.",
  "college": "Woodland Community College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "\\bANTHR[ -]?\\d"
+  "contents",
+  "course descriptions"
  ],
- "pdf_page_cap": 2,
- "pdf_unfolded": true,
  "pages": [
   {
    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf",
@@ -18,7 +17,9 @@
   }
  ],
  "pdf_span": [
-  90,
-  238
- ]
+  1,
+  8
+ ],
+ "pdf_page_cap": 2,
+ "pdf_unfolded": true
 }

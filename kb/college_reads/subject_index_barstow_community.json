@@ -1,5 +1,5 @@
 {
- "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 2: the course descriptions start on PDF page 126 (pass 1, run 45625006694); print only the lines above each subject's first course, which hold the catalog's subject heading. No model call.",
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 3: the heading sits between a course's 'Offered:' line and the next subject's first course (run 45626565022); a course line now admits a C-number course (ECON C2002) and must carry its units. No model call.",
  "college": "Barstow Community College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
@@ -20,8 +20,8 @@
   }
  ],
  "subject_context": {
-  "heading": "^(?P<subj>[A-Z]{1,6})[ -]?\\d{1,4}[A-Z]{0,2}\\b",
-  "before": 4,
+  "heading": "^(?P<subj>[A-Z]{2,6}) C?\\d{1,4}[A-Z]{0,2} [\\d.]+(?:-[\\d.]+)? Units?\\b",
+  "before": 5,
   "start_page": 126
  }
 }

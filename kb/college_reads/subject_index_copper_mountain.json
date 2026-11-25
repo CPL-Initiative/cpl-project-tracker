@@ -1,19 +1,26 @@
 {
- "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 2: the registry's catalog PDF answered 404 (run 45625006694); read the college's catalog page for the current catalog's link. No model call.",
+ "_readme": "S730 subject-title hunt, second wave (Sam, 2026-11-25: the printed local subject titles decide each local code's common subject). Pass 3: the catalog page (run 45626565022) links '2026-2027 CMC Catalog'; follow that link and print the pages naming a prefix legend or course descriptions. No model call.",
  "college": "Copper Mountain College",
  "questions": {
   "subject_titles": "The catalog's printed heading (or prefix legend entry) for each course subject code."
  },
  "keywords": [
-  "catalog",
-  "\\.pdf"
+  "course prefix",
+  "subject abbreviation",
+  "course abbreviation",
+  "prefix(?:es)? (?:and|&) (?:subject|discipline)",
+  "course descriptions"
  ],
  "pages": [
   {
    "url": "https://www.cmccd.edu/academic-catalogs/",
    "answers": [
     "subject_titles"
-   ]
+   ],
+   "follow": "2026-2027 CMC Catalog",
+   "links": "catalog"
   }
- ]
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
 }
