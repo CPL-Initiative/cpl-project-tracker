@@ -98,14 +98,14 @@
   "pass": false,
   "gaps": [
    {
-    "gap": "noted_section_cut_off",
-    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "gap": "noted_total_cut_off",
+    "label": "The reader's note says the program's total line runs onto a page the read did not hold; every course is placed, so only the printed total is missing and its units cannot be checked against it.",
     "words": "The certificate requirements table ends at the bottom of page 830; the text provided stops there, so the certificate's total line (and any outcomes or career section that may follow on page 831) is cut off. total_units is left null. The A.S. section prints 'Total Units: 46' for the same four courses, but that total belongs to the degree section."
    }
   ],
   "confidence": {
-   "unit_arithmetic": 20,
-   "course_list_match": 50,
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
    "ge_pattern": null,
    "catalog_year": 100,
    "source": 80

@@ -1781,6 +1781,14 @@ GAPS.setdefault("option_lists_read_apart",
                 "record's one option group holds each list as an alternative of its own, so the program's units "
                 "cannot be checked against the printed figures.")
 ARITH_SCORE.setdefault("option_lists_read_apart", 40)
+# S727 at American River (the second reader's round 1): a certificate whose requirements table ends at a page's foot,
+# the read stopping there, so its total line is cut off while every course is placed (Paramedic 20130).
+# noted_section_cut_off says requirements are missing and noted_no_total that the catalog prints none; its score is
+# noted_no_total's 40 (in both, no total is read), with no course-list cap (every course is placed).
+GAPS.setdefault("noted_total_cut_off",
+                "The reader's note says the program's total line runs onto a page the read did not hold; every course "
+                "is placed, so only the printed total is missing and its units cannot be checked against it.")
+ARITH_SCORE.setdefault("noted_total_cut_off", 40)
 
 
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:

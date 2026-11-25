@@ -11,32 +11,38 @@ needs a scorer change. No reconcile runs here, so no record outside the plan is 
 (d-rios-reconcile-keeps-only-targets-s720); every other American River record stays as main holds it.
 
 THE REVIEWED LIST (REVIEWED below, a hand reading of each record's own notes), with the standing guards:
-scorer_passes, on_live_run (the committed record's run must be its live row's) and the own-section guard (a record on
-a page capture.json's shared_pages lists with another program stands only where a note of its own names its own
-section; the PDF form of #3753's guard, as at Palo Verde). The kinds:
+scorer_passes, on_live_run (the committed record's run must be its live row's) and the own-section guard (a record
+read from a page another program was read from stands only where a note of its own names its own section; the PDF
+form of #3753's guard, as at Palo Verde). The guard keys on the pages the records were read from (sources.json's
+source.url and each record's source_url), never capture.json's shared_pages: run 45353541681 built that from the
+re-paginated 2026-27 file, where every record here sits on another page (07206 429 to 437, 39341 211 to 168; the
+second reader's round 1, S727). The kinds:
 
-  noted_section_cut_off      (CCSF's, 20) nine records whose note says the text begins mid-table or ends before the
-                             total line, the rest of the section on a page the read did not hold: 07206, 12250, 20130,
-                             31390, 31466, 32643, 33273, 37899, 43381. Each record adds short of its stated total at
-                             the low end, or (20130) states none because the total line is the part cut off.
-  unit_line_not_read         (East Los Angeles's, 40) 12191, the Site Supervisor certificate: 'A minimum of 23 units
-                             from the following: 23' names no course (general education areas and any ECE course), the
-                             record leaves the line out, and its note adds 37 + 23 = 60, the printed total.
+  noted_section_cut_off      (CCSF's, 20) eight records whose note says the text begins mid-table, the rest of the
+                             section on a page the read did not hold: 07206, 12250, 31390, 31466, 32643, 33273,
+                             37899, 43381. Each record adds short of its stated total at the low end.
+  noted_total_cut_off        (new, 40) 20130, the Paramedic certificate: its note says the requirements table ends at
+                             the foot of p.830 and the text stops there, so the certificate's total line is cut off;
+                             all four of its courses are placed, so only the total is missing. No existing kind fits
+                             (noted_section_cut_off says requirements are missing, noted_no_total that the catalog
+                             prints none); its score is noted_no_total's 40, since in both no total is read.
   pair_read_as_alternatives  (CCSF's, 50) 30023 and 30024, Landscape Design Technology: DESGN 301 (3) or DESGN 303 (2)
                              and DESGN 304 (2) together, recorded as two alternatives of DESGN 301, so the low end
                              takes DESGN 303 alone and falls one unit short of the printed 31-32.
-  option_lists_read_apart    (new, 40) 12180 and 12238, CIS concentrations of two lists each (a concentration's
-                             required courses and its 'A minimum of N units' list) kept in one option group, every list
-                             its own alternative; the notes say the choice is between the concentrations, not among the
-                             lists. No existing kind fits (pair_read_as_alternatives names two courses,
+  option_lists_read_apart    (new, 40) 12180, the CIS: Computer Programming certificate's two concentrations of two
+                             lists each (a concentration's required courses and its 'A minimum of N units' list) kept
+                             in one option group, every list its own alternative; its note says the choice is between
+                             the two pairs, not among the four blocks. No existing kind fits (pair_read_as_alternatives names two courses,
                              pool_figure_not_read a sum of parts); its score is pool_figure_not_read's 40.
 
-Held (5): 07207 (option_lists_read_apart's shape, but its page is shared with 12237, CIS: Database Management, and no
-note of its own names its own section); 30595 (its record carries no note: its cut-off is said only in its section
-heading and first block's name, and its page is shared with 15519); 39341, 39731 and 39732 (the three Refrigeration
-Service Technician Apprenticeship awards read the same section text from p.211, a page shared_pages lists with all
-three and the A.S. 39448; 39731 and 39732's notes say the printed 48 does not fit their award: a page read pins each
-to its own section).
+Held (7): 07207 (option_lists_read_apart's shape, but its own note says the text does not say the student completes
+one concentration, so the one-option reading is the reader's); 12238 (the shape, but it was read from p.429 with
+07206 and no note of its own names its own section); 12191 (a cheaper lever passes it, p-gap-filing-leaves-census-
+lever-s721: an American River unit_line step keyed on 'A minimum of 23 units from the following: 23', the line its
+note quotes, adds a 23-unit block, and today's scorer then passes it at 60 = 60); 30595 (its record carries no note:
+its cut-off is said only in its section heading and first block's name, and it was read from p.852 with 19330);
+39341, 39731 and 39732 (the three Refrigeration Service Technician Apprenticeship awards were read from the same p.211
+text; 39731 and 39732's notes say the printed 48 does not fit their award: a page read pins each to its own section).
 
 OPTION_LISTS' STATEWIDE SELF-RECALL (STATEWIDE below): the shape check fires on 5 filed records at every college, each
 read by hand as the shape, an option group whose concentration names put two or more lists under one concentration:
@@ -47,7 +53,8 @@ files American River's census members alone; Chabot's is another college's worke
 THE CLAIM CHECK (p-claim-check-reads-current-capture-s713): every course an entry names is among the codes today's
 capture (sources.json) found. THE SELF-RECALL: HAND is the hand reading of the 19; precision runs the rule and the
 claim check over each; boundary readings: the note's words gone, the stated total one unit off, coverage failing, and
-for each kind's own check its figure moved (the unit line's figure, the pair's units, the concentration names).
+for each kind's own check its figure moved (all courses placed, the pair's units, the concentration names).
+The statewide fires' blocks are pinned in tests/fixtures/option_lists_statewide_s727.json for the test.
 
     python3 kb/_program_piles_s727_arc.py --dry-run
     python3 kb/_program_piles_s727_arc.py --tag s727b
@@ -90,7 +97,7 @@ REVIEWED = {
                   words="the A.S. in Automotive Analysis heading, description and the first rows of its Degree "
                         "Requirements table are on page 361 and not in the text",
                   own_section="('The Automotive Analysis Associate in Science (A.S.) degree...')"),
-    "20130": dict(_CUT, computed=[46, 46], stated=None,
+    "20130": dict(gap="noted_total_cut_off", total_cut=True, computed=[46, 46], stated=None,
                   words="so the certificate's total line (and any outcomes or career section that may follow on page "
                         "831) is cut off",
                   own_section="The certificate requirements table ends at the bottom of page 830"),
@@ -113,9 +120,6 @@ REVIEWED = {
                   words="the section heading and the first rows of the Green Vehicle Technology A.S. requirements "
                         "(likely on page 363) are missing",
                   own_section="the first rows of the Green Vehicle Technology A.S. requirements"),
-    "12191": {"gap": "unit_line_not_read", "computed": [37, 37], "stated": [60, 60], "line": 23,
-              "line_words": "'A minimum of 23 units from the following: 23'",
-              "words": "Required core courses sum to 37 units; 37 + 23 = 60, matching the printed Total Units: 60."},
     "30023": {"gap": "pair_read_as_alternatives", "computed": [30, 32], "stated": [31, 32],
               "pair": {"parent": "DESGN 301", "codes": ["DESGN 303", "DESGN 304"]},
               "courses": ["DESGN303", "DESGN304"],
@@ -127,25 +131,29 @@ REVIEWED = {
               "words": "both are recorded as alternatives of DESGN 301, but they must be taken together, not singly"},
     "12180": dict(_OPT, computed=[5, 20], stated=[18, 20],
                   words="the choice is between the two pairs, not among the four blocks"),
-    "12238": dict(_OPT, computed=[17, 31], stated=None,
-                  words="the student completes every block of a single concentration"),
 }
 HAND = {cn: e["gap"] for cn, e in REVIEWED.items()}
 HAND.update({
     "07207": "held: option_lists_read_apart's shape (the Java concentration's two lists in one option group with C++'s "
-             "list), but capture.json's shared_pages puts its page with 12237 (CIS: Database Management A.S.) and no "
-             "note of its own names its own section: a page read pins it",
+             "list), and its own read page (p.431) has no other program, but its own note says the text 'does not "
+             "explicitly say 'select one'', so the one-concentration reading is the reader's: a person or a page read",
+    "12238": "held: option_lists_read_apart's shape (three concentrations of two lists each), but it was read from p.429 "
+             "with 07206 (CIS: Microcomputer Applications A.A.) and no note of its own names its own section: a page "
+             "read pins it (the second reader's round 1, S727)",
+    "12191": "held: a cheaper lever passes it (p-gap-filing-leaves-census-lever-s721): an American River step of the "
+             "unit_line kind (Delta 22244's), keyed on the line its note quotes, 'A minimum of 23 units from the "
+             "following: 23', adds a 23-unit block, and today's scorer then passes it at 60 = 60; it stays on "
+             "reconcile_steps (the second reader's round 1, S727)",
     "30595": "held: its record carries no note, so its cut-off (the section heading 'heading on the page before 852, "
              "not in the text', the block 'Required Program (continued from previous page)') is not in a note of its "
-             "own, and shared_pages puts its page with 15519 (Psychology A.A.): a page read",
+             "own, and it was read from p.852 with 19330: a page read",
     "39341": "held: the three Refrigeration Service Technician Apprenticeship awards (39341, 39731, 39732) were read from "
-             "the same section text beginning mid-table on p.211, a page shared_pages lists with all three and the "
-             "A.S. 39448, and no note names its own section: a page read pins each award to its own section",
-    "39731": "held: read from the same p.211 section text as 39341 and 39732 (shared_pages lists all three and 39448); "
-             "its own note says the printed 48 does not fit its Level I award and the text may be the full "
-             "certificate's: a page read",
-    "39732": "held: read from the same p.211 section text as 39341 and 39731 (shared_pages lists all three and 39448); "
-             "its own note says the printed 48 does not fit its award: a page read",
+             "the same section text beginning mid-table on p.211, and no note names its own section: a page read pins "
+             "each award to its own section",
+    "39731": "held: read from the same p.211 section text as 39341 and 39732; its own note says the printed 48 does not "
+             "fit its Level I award and the text may be the full certificate's: a page read",
+    "39732": "held: read from the same p.211 section text as 39341 and 39731; its own note says the printed 48 does not "
+             "fit its award: a page read",
 })
 
 
@@ -193,12 +201,40 @@ def scorer_passes(filed: dict) -> bool:
     return a.get("status") == "equal"
 
 
+_READ_PAGES = None
+
+
+def read_pages() -> dict:
+    """{control number: {read page urls}}: the page each program was read from, sources.json's source.url and the
+    record file's source_url. capture.json's shared_pages is not read: run 45353541681 built it from the
+    re-paginated 2026-27 file, where the records here sit on other pages (the second reader's round 1, S727)."""
+    global _READ_PAGES
+    if _READ_PAGES is not None:
+        return _READ_PAGES
+    import glob
+    out: dict = collections.defaultdict(set)
+    for cn, s in _sources().items():
+        u = (s.get("source") or {}).get("url") if isinstance(s.get("source"), dict) else None
+        if u:
+            out[cn].add(u)
+    for path in glob.glob(os.path.join(NG.COLLEGE_DIR, SLUG, "records", "*.json")):
+        try:
+            with open(path, encoding="utf-8") as fh:
+                f = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        if isinstance(f, dict) and f.get("source_url"):
+            out[str(f.get("control_number"))].add(f["source_url"])
+    _READ_PAGES = dict(out)
+    return _READ_PAGES
+
+
 def shared_with(cn: str) -> list[str]:
-    """The other programs capture.json's shared_pages lists on the record's page (reported in the receipt; a PDF page
-    holds several sections, so a shared page holds a record only where no note names its own section)."""
-    with open(os.path.join(NG.COLLEGE_DIR, SLUG, "capture.json"), encoding="utf-8") as fh:
-        sp = json.load(fh).get("shared_pages") or {}
-    return sorted({str(m) for v in sp.values() if str(cn) in [str(x) for x in v] for m in v if str(m) != str(cn)})
+    """The other programs read from the record's own read page (reported in the receipt; a PDF page holds several
+    sections, so a shared page holds a record only where no note names its own section)."""
+    pages = read_pages()
+    mine = pages.get(str(cn)) or set()
+    return sorted(k for k, v in pages.items() if k != str(cn) and v & mine)
 
 
 _POSTED = None
@@ -316,21 +352,20 @@ def pair_closes(filed: dict, e: dict) -> bool:
     return abs(st[0] - comp[0] - (lo - min(units))) <= NG.FIG_EPS and abs(st[1] - comp[1]) <= NG.FIG_EPS
 
 
-def line_closes(filed: dict, e: dict) -> bool:
-    """unit_line_not_read's figures: a note of the record's own quotes the units line, and the record's sum plus the
-    line is the stated total at both ends."""
-    if not any(e["line_words"] in n for n in _notes(filed)):
-        return False
-    a = (filed.get("score") or {}).get("arithmetic") or {}
-    comp, st = _pair(a.get("computed")), _pair(a.get("stated"))
-    return all(abs(c + e["line"] - s) <= NG.FIG_EPS for c, s in zip(comp, st))
-
-
 def cut_short(filed: dict) -> bool:
     """noted_section_cut_off's figures: the record adds short of its stated total at the low end, or states none."""
     a = (filed.get("score") or {}).get("arithmetic") or {}
     comp, st = _pair(a.get("computed")), _pair(a.get("stated"))
     return st is None or (comp is not None and comp[0] + NG.FIG_EPS < st[0])
+
+
+def total_cut(filed: dict) -> bool:
+    """noted_total_cut_off's figures: the record states no total, and every course of the closed list is placed
+    (the courses are all there; only the total line is missing)."""
+    sc = filed.get("score") or {}
+    cov = sc.get("coverage") or {}
+    return (sc.get("arithmetic") or {}).get("stated") is None and bool(cov.get("listed")) and \
+        cov.get("placed") == cov.get("listed") and not cov.get("missing")
 
 
 def gap_noted(filed: dict, reviewed: dict | None = None, skip: tuple = ()) -> tuple[str, str] | None:
@@ -351,7 +386,7 @@ def gap_noted(filed: dict, reviewed: dict | None = None, skip: tuple = ()) -> tu
         return None
     if e.get("pair") and not pair_closes(filed, e):
         return None
-    if e.get("line") is not None and not line_closes(filed, e):
+    if e.get("total_cut") and not total_cut(filed):
         return None
     if e.get("option_lists") and not option_lists(filed):
         return None
@@ -462,11 +497,11 @@ def boundaries(census_path: str = CENSUS) -> dict:
                 a["computed"] = list(a["stated"])
                 e2 = dict(e, computed=a["stated"])
                 tally("the sum at the stated total", gap_noted(g, {cn: e2}) is None, cn)
-        if e.get("line") is not None:
+        if e.get("total_cut"):
             g = copy.deepcopy(f)
-            tally("the unit line one unit off", gap_noted(g, {cn: dict(e, line=e["line"] + 1)}) is None, cn)
-            g["record"]["notes"] = [str(n).replace(e["line_words"], "") for n in g["record"].get("notes") or []]
-            tally("the unit line's words gone", gap_noted(g) is None, cn)
+            g["score"]["coverage"] = dict(g["score"]["coverage"], placed=g["score"]["coverage"]["listed"] - 1,
+                                          missing=["PMED999"])
+            tally("a course not placed", gap_noted(g) is None, cn)
         if e.get("pair"):
             g = copy.deepcopy(f)
             c = _course(g, e["pair"]["parent"])
@@ -493,7 +528,7 @@ def boundaries(census_path: str = CENSUS) -> dict:
 
 
 # The shape option_lists_read_apart's entries check, by hand, over the census's 19: the three CIS concentration
-# records (07207 holds on the own-page guard).
+# records (07207 holds on its own note's words, 12238 on the own-page guard).
 SHAPE_HAND = {"option_lists_read_apart": frozenset({"07207", "12180", "12238"})}
 
 
@@ -518,6 +553,17 @@ def self_recall(census_path: str = CENSUS) -> dict:
 # option_lists' statewide fires, by college and control number: the S727 run, each read by hand as the shape.
 STATEWIDE = frozenset([(COLLEGE, "07207"), (COLLEGE, "12180"), (COLLEGE, "12238"), ("Chabot College", "19286"),
                        ("Santa Rosa Junior College", "44788")])
+
+
+STATEWIDE_FIXTURE = os.path.join(ROOT, "tests", "fixtures", "option_lists_statewide_s727.json")
+
+
+def fixture_fires(path: str = STATEWIDE_FIXTURE) -> set:
+    """option_lists on the pinned blocks of the statewide fires (the test's form: a later read at another college
+    never moves it)."""
+    with open(path, encoding="utf-8") as fh:
+        d = json.load(fh)
+    return {(r["college"], r["control_number"]) for r in d["records"] if option_lists(r)}
 
 
 def statewide_fires(base: str = NG.COLLEGE_DIR) -> set:
