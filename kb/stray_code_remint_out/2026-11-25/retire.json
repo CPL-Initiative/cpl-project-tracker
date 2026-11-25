@@ -1,0 +1,4640 @@
+{
+  "_status": "Stray-code re-mint retire list (receipt + rollback: each record restores its id) - DRY RUN, not applied",
+  "_at": "2026-11-25",
+  "_scope": "stray-codes-high-medium",
+  "_ruling": "Sam, 2026-11-25 (r-no-mid-on-a-stray-code-sam-2026-11-25): \"i should have never minted those 88 codes and left the courses in a holding pen\"; the stray codes go back to Needs an M-ID once their local subjects carry a common subject",
+  "_decided": "DECIDED (S733, 2026-11-25): retire each in-scope M-ID; its courses return to Needs an M-ID under the common subject the rescore proposes for their local subject. No id is re-keyed, so the receipt is a retire list and kb/alias_chain.py ALIAS_MAPS takes no new map.",
+  "_counts": {
+    "needs_mid_before": 1819,
+    "needs_mid_after": 1916,
+    "stray_courses_before": 247,
+    "stray_courses_after": 149,
+    "retiring_courses": 98,
+    "join_the_pile": 97,
+    "joined_from_elsewhere": 0
+  },
+  "_validation": {
+    "V0_pinned_set": {
+      "pass": true,
+      "problems": [],
+      "pinned": 89,
+      "retiring": 89
+    },
+    "V1_levels_in_scope": {
+      "pass": true
+    },
+    "V2_every_retired_id_on_a_stray_code": {
+      "pass": true
+    },
+    "V3_no_retired_id_has_an_out_of_scope_course": {
+      "pass": true
+    }
+  },
+  "retire": {
+    "ARTB M10AA": {
+      "title": "Basic Studio Arts",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000386076",
+          "college": "Mt. San Antonio College",
+          "subject": "ARTB",
+          "number": "14",
+          "title": "Basic Studio Arts",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTB M10AA",
+        "common_title": "Basic Studio Arts",
+        "subject": "ARTB",
+        "subject_4letter": "ARTB",
+        "course_number": "14",
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000386076",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1001.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTB 100",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTC M10AA": {
+      "title": "Contemporary Illustration",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000643471",
+          "college": "Mt. San Antonio College",
+          "subject": "ARTC",
+          "number": "169",
+          "title": "Contemporary Illustration",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTC M10AA",
+        "common_title": "Contemporary Illustration",
+        "subject": "ARTC",
+        "subject_4letter": "ARTC",
+        "course_number": "169",
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000643471",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTC 104",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTC M10AD": {
+      "title": "Digital Drawing for Commercial Art",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000656428",
+          "college": "Mt. San Antonio College",
+          "subject": "ARTC",
+          "number": "90",
+          "title": "Digital Drawing for Commercial Art",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTC M10AD",
+        "common_title": "Digital Drawing for Commercial Art",
+        "subject": "ARTC",
+        "subject_4letter": "ARTC",
+        "course_number": "90",
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000656428",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTC 116",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTC M10AE": {
+      "title": "Dynamic Sketching",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000646545",
+          "college": "Mt. San Antonio College",
+          "subject": "ARTC",
+          "number": "163",
+          "title": "Dynamic Sketching",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTC M10AE",
+        "common_title": "Dynamic Sketching",
+        "subject": "ARTC",
+        "subject_4letter": "ARTC",
+        "course_number": "163",
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000646545",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTC 122",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTG M10AQ": {
+      "title": "Shop Practices for Art Careers and Exhibitions",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000612801",
+          "college": "Mt. San Antonio College",
+          "subject": "ARTG",
+          "number": "24",
+          "title": "Shop Practices for Art Careers and Exhibitions",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTG M10AQ",
+        "common_title": "Shop Practices for Art Careers and Exhibitions",
+        "subject": "ARTG",
+        "subject_4letter": "ARTG",
+        "course_number": "24",
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000612801",
+        "credit_status": "Credit",
+        "typical_units": 1.5,
+        "top_code": "1099.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTG 140",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTG M10AT": {
+      "title": "Writing for Arts Careers",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000612800",
+          "college": "Mt. San Antonio College",
+          "subject": "ARTG",
+          "number": "23",
+          "title": "Writing for Arts Careers",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTG M10AT",
+        "common_title": "Writing for Arts Careers",
+        "subject": "ARTG",
+        "subject_4letter": "ARTG",
+        "course_number": "23",
+        "college": "Mt. San Antonio College",
+        "control_number": "CCC000612800",
+        "credit_status": "Credit",
+        "typical_units": 1.5,
+        "top_code": "1099.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTG 144",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTI M10AA": {
+      "title": "Concept Sketching",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000195330",
+          "college": "Palomar College",
+          "subject": "ARTI",
+          "number": "100",
+          "title": "CONCEPT SKETCHING",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTI M10AA",
+        "common_title": "Concept Sketching",
+        "subject": "ARTI",
+        "subject_4letter": "ARTI",
+        "course_number": "100",
+        "college": "Palomar College",
+        "control_number": "CCC000195330",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTI 100",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTI M10AB": {
+      "title": "Digital 3D Design and Animation",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000198167",
+          "college": "Palomar College",
+          "subject": "ARTI",
+          "number": "247",
+          "title": "DIGITAL 3D DESIGN AND ANIMATION",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTI M10AB",
+        "common_title": "Digital 3D Design and Animation",
+        "subject": "ARTI",
+        "subject_4letter": "ARTI",
+        "course_number": "247",
+        "college": "Palomar College",
+        "control_number": "CCC000198167",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1099.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTI 102",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTI M10AC": {
+      "title": "Digital 3D Design and Modeling",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000324725",
+          "college": "Palomar College",
+          "subject": "ARTI",
+          "number": "246",
+          "title": "DIGITAL 3D DESIGN AND MODELING",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTI M10AC",
+        "common_title": "Digital 3D Design and Modeling",
+        "subject": "ARTI",
+        "subject_4letter": "ARTI",
+        "course_number": "246",
+        "college": "Palomar College",
+        "control_number": "CCC000324725",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTI 104",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTI M10AD": {
+      "title": "Digital 3D Design and Sculpture",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000525463",
+          "college": "Palomar College",
+          "subject": "ARTI",
+          "number": "248",
+          "title": "DIGITAL 3D DESIGN AND SCULPTURE",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTI M10AD",
+        "common_title": "Digital 3D Design and Sculpture",
+        "subject": "ARTI",
+        "subject_4letter": "ARTI",
+        "course_number": "248",
+        "college": "Palomar College",
+        "control_number": "CCC000525463",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1002.20",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTI 106",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTI M10AF": {
+      "title": "Illustration 2, Digital Techniques",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000307421",
+          "college": "Palomar College",
+          "subject": "ARTI",
+          "number": "220",
+          "title": "ILLUSTRATION II, DIGITAL TECHNIQUES",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTI M10AF",
+        "common_title": "Illustration 2, Digital Techniques",
+        "subject": "ARTI",
+        "subject_4letter": "ARTI",
+        "course_number": "220",
+        "college": "Palomar College",
+        "control_number": "CCC000307421",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTI 110",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTN M1004": {
+      "title": "Digital Prepress",
+      "target": "ARTS",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000385390",
+          "college": "Golden West College",
+          "subject": "DART",
+          "number": "G179",
+          "title": "Digital Prepress",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        },
+        {
+          "cn": "CCC000530837",
+          "college": "American River College",
+          "subject": "ARTNM",
+          "number": "354",
+          "title": "Digital Prepress",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTN M1004",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "Digital Prepress",
+        "common_title_source": "local catalog (representative/modal)",
+        "description": "This course introduces digital prepress for graphic design using industry standard software, like Adobe InDesign. Areas of focus include desktop production for commercial offset printing, preparation of print-ready digital files, paper selection, and the language necessary to properly communicate with commercial printers. Field trips may be required. This course may be taken four times for credit on different software or software versions.",
+        "description_source": "local catalog (representative/modal)",
+        "subject": "ARTNM",
+        "subject_4letter": "ARTN",
+        "discipline": null,
+        "discipline_provisional": "ARTNM",
+        "typical_units": 3.0,
+        "confidence": 0.68,
+        "corroboration_members": 2,
+        "subject_spread": 2,
+        "source_college_count": 2,
+        "classified_at": "2026-05-20",
+        "classified_by": "claude-opus-4-7 (Phase B M-ID consolidation draft)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "modal subject 'ARTNM' not in discipline map; needs review.",
+        "credit_status": "Credit",
+        "credit_status_mixed": false,
+        "top_code": "0614.50",
+        "noncredit_category": null,
+        "top_code_mixed": false,
+        "top_code_distribution": null,
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTNM 104",
+        "cte": true
+      },
+      "memberships": [
+        {
+          "college": "American River College",
+          "control_number": "CCC000530837",
+          "subject": "ARTNM",
+          "course_number": "354",
+          "units": 3.0,
+          "credit_status": "Credit",
+          "top_code": "0614.50: Desktop Publishing"
+        },
+        {
+          "college": "Golden West College",
+          "control_number": "CCC000385390",
+          "subject": "DART",
+          "course_number": "G179",
+          "units": 3.0,
+          "credit_status": "Credit",
+          "top_code": "0614.50: Desktop Publishing"
+        }
+      ],
+      "curation": {},
+      "pointers_in": []
+    },
+    "ARTN M10AG": {
+      "title": "Comic Book Development and Structure",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000637114",
+          "college": "American River College",
+          "subject": "ARTNM",
+          "number": "371",
+          "title": "Comic Book Development and Structure",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ARTN M10AG",
+        "common_title": "Comic Book Development and Structure",
+        "subject": "ARTNM",
+        "subject_4letter": "ARTN",
+        "course_number": "371",
+        "college": "American River College",
+        "control_number": "CCC000637114",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ARTNM 120",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "BSAD M10AS": {
+      "title": "Principles of Organizational Communication",
+      "target": "BUSI",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000641804",
+          "college": "Bakersfield College",
+          "subject": "BSAD",
+          "number": "B65",
+          "title": "Principles of Organizational Communication",
+          "common_subject": "BUSI",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "BSAD M10AS",
+        "common_title": "Principles of Organizational Communication",
+        "subject": "BSAD",
+        "subject_4letter": "BSAD",
+        "course_number": "B65",
+        "college": "Bakersfield College",
+        "control_number": "CCC000641804",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "0607.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID BSAD 156",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "CGRA M10AE": {
+      "title": "Film Theory",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000649312",
+          "college": "Porterville College",
+          "subject": "CGRA",
+          "number": "P105",
+          "title": "Film Theory",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "CGRA M10AE",
+        "common_title": "Film Theory",
+        "subject": "CGRA",
+        "subject_4letter": "CGRA",
+        "course_number": "P105",
+        "college": "Porterville College",
+        "control_number": "CCC000649312",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "0612.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID CGRA 112",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "CTVR M10AL": {
+      "title": "History and Appreciation of Television Broadcasting",
+      "target": "FTVE",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000591491",
+          "college": "Saddleback College",
+          "subject": "CTVR",
+          "number": "2",
+          "title": "HISTORY AND APPRECIATION OF TELEVISION BROADCASTING",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "CTVR M10AL",
+        "common_title": "History and Appreciation of Television Broadcasting",
+        "subject": "CTVR",
+        "subject_4letter": "CTVR",
+        "course_number": "2",
+        "college": "Saddleback College",
+        "control_number": "CCC000591491",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "0612.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID CTVR 132",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "DANS M10AC": {
+      "title": "Barre Fitness",
+      "target": "DANC",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000511783",
+          "college": "Napa Valley College",
+          "subject": "DANS",
+          "number": "133",
+          "title": "Barre Fitness",
+          "common_subject": "DANC",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "DANS M10AC",
+        "common_title": "Barre Fitness",
+        "subject": "DANS",
+        "subject_4letter": "DANS",
+        "course_number": "133",
+        "college": "Napa Valley College",
+        "control_number": "CCC000511783",
+        "credit_status": "Credit",
+        "typical_units": 1.0,
+        "top_code": "1008.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID DANS 106",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "DESI M10AA": {
+      "title": "Art Studio Prog",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000408450",
+          "college": "Santa Monica College",
+          "subject": "DESIGN",
+          "number": "87S",
+          "title": "ART STUDIO PROG",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "DESI M10AA",
+        "common_title": "Art Studio Prog",
+        "subject": "DESIGN",
+        "subject_4letter": "DESI",
+        "course_number": "87S",
+        "college": "Santa Monica College",
+        "control_number": "CCC000408450",
+        "credit_status": "Credit",
+        "typical_units": 1.0,
+        "top_code": "1001.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID DESIGN 104",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "DGME M1001": {
+      "title": "Radio and Podcast Production Lab 2",
+      "target": "ARTS",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000580529",
+          "college": "College of San Mateo",
+          "subject": "DGME",
+          "number": "119",
+          "title": "Radio and Podcast Production Lab",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        },
+        {
+          "cn": "CCC000608561",
+          "college": "College of San Mateo",
+          "subject": "DGME",
+          "number": "133",
+          "title": "Radio and Podcast Production Lab II",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "DGME M1001",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "Radio and Podcast Production Lab 2",
+        "common_title_source": "curation unified_title (machine cluster)",
+        "description": null,
+        "description_source": null,
+        "subject": "DGME",
+        "subject_4letter": "DGME",
+        "discipline": null,
+        "discipline_provisional": null,
+        "typical_units": 3.0,
+        "confidence": null,
+        "corroboration_members": 2,
+        "subject_spread": 1,
+        "source_college_count": 1,
+        "classified_at": "2026-09-03",
+        "classified_by": "kb/_zband_retire_apply.py — machine cluster materialized as an M-ID record (item 20 of the 2026-09-03 rulings; readings card 12, Sam, 2026-09-03)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "Materialized from the curation overlay's machine cluster DGME Z1001. The members keep their own records and their merge_into pointers; this record carries the aggregate and has no membership entry of its own.",
+        "credit_status": "Credit",
+        "credit_status_mixed": false,
+        "top_code": "0604.10",
+        "top_code_mixed": false,
+        "top_code_distribution": {
+          "0604.10": 2
+        },
+        "noncredit_category": null,
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": {},
+        "cte": true,
+        "origin": "machine cluster",
+        "_zband_retired_from": "DGME Z1001",
+        "_machine_cluster_members": [
+          "DGME M10AH",
+          "DGME M10AI"
+        ]
+      },
+      "memberships": null,
+      "curation": {
+        "DGME M1001": {
+          "unified_title": "Radio and Podcast Production Lab 2",
+          "reviewed_by": "automerge-titlelane-v1@bot",
+          "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+        }
+      },
+      "pointers_in": [
+        "DGME M10AH",
+        "DGME M10AI"
+      ]
+    },
+    "DGME M10AH": {
+      "title": "Radio and Podcast Production Lab",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000580529",
+          "college": "College of San Mateo",
+          "subject": "DGME",
+          "number": "119",
+          "title": "Radio and Podcast Production Lab",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "DGME M10AH",
+        "common_title": "Radio and Podcast Production Lab",
+        "subject": "DGME",
+        "subject_4letter": "DGME",
+        "course_number": "119",
+        "college": "College of San Mateo",
+        "control_number": "CCC000580529",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "0604.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID DGME 122",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {
+        "DGME M10AH": {
+          "merge_into": "DGME M1001",
+          "reviewed_by": "automerge-titlelane-v1@bot",
+          "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+        }
+      },
+      "pointers_in": []
+    },
+    "DGME M10AI": {
+      "title": "Radio and Podcast Production Lab 2",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000608561",
+          "college": "College of San Mateo",
+          "subject": "DGME",
+          "number": "133",
+          "title": "Radio and Podcast Production Lab II",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "DGME M10AI",
+        "common_title": "Radio and Podcast Production Lab 2",
+        "subject": "DGME",
+        "subject_4letter": "DGME",
+        "course_number": "133",
+        "college": "College of San Mateo",
+        "control_number": "CCC000608561",
+        "credit_status": "Credit",
+        "typical_units": 2.0,
+        "top_code": "0604.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID DGME 124",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {
+        "DGME M10AI": {
+          "merge_into": "DGME M1001",
+          "reviewed_by": "automerge-titlelane-v1@bot",
+          "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+        }
+      },
+      "pointers_in": []
+    },
+    "DSGN M10AF": {
+      "title": "Digital Media 1",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000640093",
+          "college": "San Diego City College",
+          "subject": "DSGN",
+          "number": "102",
+          "title": "Digital Media I",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "DSGN M10AF",
+        "common_title": "Digital Media 1",
+        "subject": "DSGN",
+        "subject_4letter": "DSGN",
+        "course_number": "102",
+        "college": "San Diego City College",
+        "control_number": "CCC000640093",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID DSGN 122",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ESTI M1001": {
+      "title": "Esthetics Intermediate Concepts Ll",
+      "target": "COSM",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000646044",
+          "college": "Skyline College",
+          "subject": "ESTI",
+          "number": "702",
+          "title": "Esthetics Fundamentals ll",
+          "common_subject": "COSM",
+          "level": "Medium",
+          "filed": true
+        },
+        {
+          "cn": "CCC000646046",
+          "college": "Skyline College",
+          "subject": "ESTI",
+          "number": "704",
+          "title": "Esthetics Intermediate Concepts ll",
+          "common_subject": "COSM",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ESTI M1001",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "Esthetics Intermediate Concepts Ll",
+        "common_title_source": "curation unified_title (machine cluster)",
+        "description": null,
+        "description_source": null,
+        "subject": "ESTI",
+        "subject_4letter": "ESTI",
+        "discipline": null,
+        "discipline_provisional": null,
+        "typical_units": 6.0,
+        "confidence": null,
+        "corroboration_members": 2,
+        "subject_spread": 1,
+        "source_college_count": 1,
+        "classified_at": "2026-09-03",
+        "classified_by": "kb/_zband_retire_apply.py — machine cluster materialized as an M-ID record (item 20 of the 2026-09-03 rulings; readings card 12, Sam, 2026-09-03)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "Materialized from the curation overlay's machine cluster ESTI Z1001. The members keep their own records and their merge_into pointers; this record carries the aggregate and has no membership entry of its own.",
+        "credit_status": "Credit",
+        "credit_status_mixed": false,
+        "top_code": "3007.00",
+        "top_code_mixed": false,
+        "top_code_distribution": {
+          "3007.00": 2
+        },
+        "noncredit_category": null,
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": {},
+        "cte": true,
+        "origin": "machine cluster",
+        "_zband_retired_from": "ESTI Z1001",
+        "_machine_cluster_members": [
+          "ESTI M10AF",
+          "ESTI M10AH"
+        ]
+      },
+      "memberships": null,
+      "curation": {
+        "ESTI M1001": {
+          "unified_title": "Esthetics Intermediate Concepts Ll",
+          "reviewed_by": "automerge-titlelane-v1@bot",
+          "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+        }
+      },
+      "pointers_in": [
+        "ESTI M10AF",
+        "ESTI M10AH"
+      ]
+    },
+    "ESTI M10AF": {
+      "title": "Esthetics Fundamentals Ll",
+      "target": "COSM",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000646044",
+          "college": "Skyline College",
+          "subject": "ESTI",
+          "number": "702",
+          "title": "Esthetics Fundamentals ll",
+          "common_subject": "COSM",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ESTI M10AF",
+        "common_title": "Esthetics Fundamentals Ll",
+        "subject": "ESTI",
+        "subject_4letter": "ESTI",
+        "course_number": "702",
+        "college": "Skyline College",
+        "control_number": "CCC000646044",
+        "credit_status": "Credit",
+        "typical_units": 6.0,
+        "top_code": "3007.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ESTI 110",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {
+        "ESTI M10AF": {
+          "merge_into": "ESTI M1001",
+          "reviewed_by": "automerge-titlelane-v1@bot",
+          "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+        }
+      },
+      "pointers_in": []
+    },
+    "ESTI M10AG": {
+      "title": "Esthetics Intermediate Concepts L",
+      "target": "COSM",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000646045",
+          "college": "Skyline College",
+          "subject": "ESTI",
+          "number": "703",
+          "title": "Esthetics Intermediate Concepts l",
+          "common_subject": "COSM",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ESTI M10AG",
+        "common_title": "Esthetics Intermediate Concepts L",
+        "subject": "ESTI",
+        "subject_4letter": "ESTI",
+        "course_number": "703",
+        "college": "Skyline College",
+        "control_number": "CCC000646045",
+        "credit_status": "Credit",
+        "typical_units": 6.0,
+        "top_code": "3007.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ESTI 112",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "ESTI M10AH": {
+      "title": "Esthetics Intermediate Concepts Ll",
+      "target": "COSM",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000646046",
+          "college": "Skyline College",
+          "subject": "ESTI",
+          "number": "704",
+          "title": "Esthetics Intermediate Concepts ll",
+          "common_subject": "COSM",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ESTI M10AH",
+        "common_title": "Esthetics Intermediate Concepts Ll",
+        "subject": "ESTI",
+        "subject_4letter": "ESTI",
+        "course_number": "704",
+        "college": "Skyline College",
+        "control_number": "CCC000646046",
+        "credit_status": "Credit",
+        "typical_units": 6.0,
+        "top_code": "3007.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ESTI 114",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {
+        "ESTI M10AH": {
+          "merge_into": "ESTI M1001",
+          "reviewed_by": "automerge-titlelane-v1@bot",
+          "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+        }
+      },
+      "pointers_in": []
+    },
+    "ESTI M10AI": {
+      "title": "Esthetics Spa Workshop",
+      "target": "COSM",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000646047",
+          "college": "Skyline College",
+          "subject": "ESTI",
+          "number": "750",
+          "title": "Esthetics Spa Workshop",
+          "common_subject": "COSM",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "ESTI M10AI",
+        "common_title": "Esthetics Spa Workshop",
+        "subject": "ESTI",
+        "subject_4letter": "ESTI",
+        "course_number": "750",
+        "college": "Skyline College",
+        "control_number": "CCC000646047",
+        "credit_status": "Credit",
+        "typical_units": 1.0,
+        "top_code": "3007.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID ESTI 116",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "FLTE M10AF": {
+      "title": "Drone Inspections",
+      "target": "AVIA",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000653337",
+          "college": "Sacramento City College",
+          "subject": "FLTEC",
+          "number": "214",
+          "title": "Drone Inspections",
+          "common_subject": "AVIA",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "FLTE M10AF",
+        "common_title": "Drone Inspections",
+        "subject": "FLTEC",
+        "subject_4letter": "FLTE",
+        "course_number": "214",
+        "college": "Sacramento City College",
+        "control_number": "CCC000653337",
+        "credit_status": "Credit",
+        "typical_units": 1.0,
+        "top_code": "3020.20",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID FLTEC 114",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "FLTE M10AG": {
+      "title": "Experimental Offering in Flight Technology",
+      "target": "AVIA",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000592122",
+          "college": "Sacramento City College",
+          "subject": "FLTEC",
+          "number": "499",
+          "title": "Experimental Offering in Flight Technology",
+          "common_subject": "AVIA",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "FLTE M10AG",
+        "common_title": "Experimental Offering in Flight Technology",
+        "subject": "FLTEC",
+        "subject_4letter": "FLTE",
+        "course_number": "499",
+        "college": "Sacramento City College",
+        "control_number": "CCC000592122",
+        "credit_status": "Credit",
+        "typical_units": 0.5,
+        "top_code": "3020.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID FLTEC 116",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "FLTE M10AH": {
+      "title": "First Person View (FPV)",
+      "target": "AVIA",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000653338",
+          "college": "Sacramento City College",
+          "subject": "FLTEC",
+          "number": "216",
+          "title": "First Person View (FPV)",
+          "common_subject": "AVIA",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "FLTE M10AH",
+        "common_title": "First Person View (FPV)",
+        "subject": "FLTEC",
+        "subject_4letter": "FLTE",
+        "course_number": "216",
+        "college": "Sacramento City College",
+        "control_number": "CCC000653338",
+        "credit_status": "Credit",
+        "typical_units": 1.0,
+        "top_code": "3020.20",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID FLTEC 118",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "FLTE M10AX": {
+      "title": "Topics in Aeronautics, Flight Technology",
+      "target": "AVIA",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000653339",
+          "college": "Sacramento City College",
+          "subject": "FLTEC",
+          "number": "294",
+          "title": "Topics in Aeronautics, Flight Technology",
+          "common_subject": "AVIA",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "FLTE M10AX",
+        "common_title": "Topics in Aeronautics, Flight Technology",
+        "subject": "FLTEC",
+        "subject_4letter": "FLTE",
+        "course_number": "294",
+        "college": "Sacramento City College",
+        "control_number": "CCC000653339",
+        "credit_status": "Credit",
+        "typical_units": 0.5,
+        "top_code": "3020.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID FLTEC 150",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "FTMA M10AD": {
+      "title": "Directors and Genres",
+      "target": "FTVE",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000499605",
+          "college": "Moorpark College",
+          "subject": "FTMA",
+          "number": "M107",
+          "title": "Directors and Genres",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "FTMA M10AD",
+        "common_title": "Directors and Genres",
+        "subject": "FTMA",
+        "subject_4letter": "FTMA",
+        "course_number": "M107",
+        "college": "Moorpark College",
+        "control_number": "CCC000499605",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "0612.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID FTMA 118",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "FTVM M10AD": {
+      "title": "American Independent Film",
+      "target": "FTVE",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000640658",
+          "college": "Glendale Community College",
+          "subject": "FTVM",
+          "number": "104",
+          "title": "American Independent Film",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "FTVM M10AD",
+        "common_title": "American Independent Film",
+        "subject": "FTVM",
+        "subject_4letter": "FTVM",
+        "course_number": "104",
+        "college": "Glendale Community College",
+        "control_number": "CCC000640658",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "0612.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID FTVM 106",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "FTVM M10AF": {
+      "title": "Beyond Hollywood: Gender, Race and Sex in Movies",
+      "target": "FTVE",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000640660",
+          "college": "Glendale Community College",
+          "subject": "FTVM",
+          "number": "107",
+          "title": "Beyond Hollywood: Gender, Race and Sex in Movies",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "FTVM M10AF",
+        "common_title": "Beyond Hollywood: Gender, Race and Sex in Movies",
+        "subject": "FTVM",
+        "subject_4letter": "FTVM",
+        "course_number": "107",
+        "college": "Glendale Community College",
+        "control_number": "CCC000640660",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "0612.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID FTVM 110",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": [
+        "FTVM M10AS"
+      ]
+    },
+    "FTVM M10AS": {
+      "title": "Honors Beyond Hollywood: Gender, Race and Sex in Movies",
+      "target": "FTVE",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000658219",
+          "college": "Glendale Community College",
+          "subject": "FTVM",
+          "number": "107H",
+          "title": "Honors Beyond Hollywood: Gender, Race and Sex in Movies",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "FTVM M10AS",
+        "common_title": "Honors Beyond Hollywood: Gender, Race and Sex in Movies",
+        "subject": "FTVM",
+        "subject_4letter": "FTVM",
+        "course_number": "107H",
+        "college": "Glendale Community College",
+        "control_number": "CCC000658219",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "0612.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID FTVM 140",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {
+        "FTVM M10AS": {
+          "honors_of": "FTVM M10AF"
+        }
+      },
+      "pointers_in": []
+    },
+    "HUMN M1003": {
+      "title": "Honors Popular Culture & United States History",
+      "target": "FTVE+HUMA",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000640219",
+          "college": "Foothill College",
+          "subject": "HUMN",
+          "number": "012H",
+          "title": "HONORS POPULAR CULTURE & UNITED STATES HISTORY",
+          "common_subject": "HUMA",
+          "level": "High",
+          "filed": false
+        },
+        {
+          "cn": "CCC000640226",
+          "college": "Foothill College",
+          "subject": "MDIA",
+          "number": "012H",
+          "title": "HONORS POPULAR CULTURE & UNITED STATES HISTORY",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "HUMN M1003",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "Honors Popular Culture & United States History",
+        "common_title_source": "local catalog (representative/modal)",
+        "description": "Interdisciplinary overview of popular culture as a window for understanding American history and society. Theories and methods of analyzing the artifacts of popular culture. Overarching themes: 1) the interpretation of American history via popular culture media; 2) interaction between American historical events and trends, and popular culture._x000D_ _x000D_ Advisory: Demonstrated proficiency in English by placement via multiple measures OR through an equivalent placement process OR completion of ESLL 125 and ESLL 249; not open to students with credit in F A 2, HUMN 12, MDIA 12, or MDIA 12H.",
+        "description_source": "local catalog (representative/modal)",
+        "subject": "HUMN",
+        "subject_4letter": "HUMN",
+        "discipline": null,
+        "discipline_provisional": "HUMN",
+        "typical_units": 4.0,
+        "confidence": 0.68,
+        "corroboration_members": 2,
+        "subject_spread": 2,
+        "source_college_count": 1,
+        "classified_at": "2026-05-20",
+        "classified_by": "claude-opus-4-7 (Phase B M-ID consolidation draft)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "modal subject 'HUMN' not in discipline map; needs review.",
+        "credit_status": "Credit",
+        "credit_status_mixed": false,
+        "top_code": "1001.00",
+        "noncredit_category": null,
+        "top_code_mixed": false,
+        "top_code_distribution": null,
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID HUMN 104",
+        "cte": false
+      },
+      "memberships": [
+        {
+          "college": "Foothill College",
+          "control_number": "CCC000640219",
+          "subject": "HUMN",
+          "course_number": "012H",
+          "units": 4.0,
+          "credit_status": "Credit",
+          "top_code": "1001.00: Fine Arts, General"
+        },
+        {
+          "college": "Foothill College",
+          "control_number": "CCC000640226",
+          "subject": "MDIA",
+          "course_number": "012H",
+          "units": 4.0,
+          "credit_status": "Credit",
+          "top_code": "1001.00: Fine Arts, General"
+        }
+      ],
+      "curation": {
+        "HUMN M1003": {
+          "honors_of": "HUMN M1004"
+        }
+      },
+      "pointers_in": []
+    },
+    "HUMN M1004": {
+      "title": "Popular Culture & United States History",
+      "target": "FTVE+HUMA",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000532416",
+          "college": "Foothill College",
+          "subject": "MDIA",
+          "number": "12",
+          "title": "POPULAR CULTURE & UNITED STATES HISTORY",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        },
+        {
+          "cn": "CCC000628863",
+          "college": "Foothill College",
+          "subject": "HUMN",
+          "number": "12",
+          "title": "POPULAR CULTURE & UNITED STATES HISTORY",
+          "common_subject": "HUMA",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "HUMN M1004",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "Popular Culture & United States History",
+        "common_title_source": "local catalog (representative/modal)",
+        "description": "Interdisciplinary overview of popular culture as a window for understanding American history and society. Theories and methods of analyzing the artifacts of popular culture. Overarching themes: 1) the interpretation of American history via popular culture media; 2) interaction between American historical events and trends, and popular culture._x000D_ _x000D_ Advisory: Demonstrated proficiency in English by placement via multiple measures OR through an equivalent placement process OR completion of ESLL 125 and ESLL 249; not open to students with credit in F A 2, HUMN 12H, MDIA 12, or MDIA 12H.",
+        "description_source": "local catalog (representative/modal)",
+        "subject": "HUMN",
+        "subject_4letter": "HUMN",
+        "discipline": null,
+        "discipline_provisional": "HUMN",
+        "typical_units": 4.0,
+        "confidence": 0.68,
+        "corroboration_members": 2,
+        "subject_spread": 2,
+        "source_college_count": 1,
+        "classified_at": "2026-05-20",
+        "classified_by": "claude-opus-4-7 (Phase B M-ID consolidation draft)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "modal subject 'HUMN' not in discipline map; needs review.",
+        "credit_status": "Credit",
+        "credit_status_mixed": false,
+        "top_code": "1001.00",
+        "noncredit_category": null,
+        "top_code_mixed": false,
+        "top_code_distribution": {
+          "1001.00": 2,
+          "1599.00": 1
+        },
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID HUMN 106",
+        "cte": false
+      },
+      "memberships": [
+        {
+          "college": "Foothill College",
+          "control_number": "CCC000532416",
+          "subject": "MDIA",
+          "course_number": "12",
+          "units": 4.0,
+          "credit_status": "Credit",
+          "top_code": "1001.00: Fine Arts, General"
+        },
+        {
+          "college": "Foothill College",
+          "control_number": "CCC000628863",
+          "subject": "HUMN",
+          "course_number": "12",
+          "units": 4.0,
+          "credit_status": "Credit",
+          "top_code": "1001.00: Fine Arts, General"
+        }
+      ],
+      "curation": {},
+      "pointers_in": [
+        "HUMN M1003"
+      ]
+    },
+    "HUMN M10AK": {
+      "title": "Global Cinemas",
+      "target": "HUMA",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000646378",
+          "college": "Las Positas College",
+          "subject": "HUMN",
+          "number": "4",
+          "title": "Global Cinemas",
+          "common_subject": "HUMA",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "HUMN M10AK",
+        "common_title": "Global Cinemas",
+        "subject": "HUMN",
+        "subject_4letter": "HUMN",
+        "course_number": "4",
+        "college": "Las Positas College",
+        "control_number": "CCC000646378",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "0612.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID HUMN 130",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "IDSG M10AB": {
+      "title": "Color Visualization for Product Design",
+      "target": "INDD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000617791",
+          "college": "Diablo Valley College",
+          "subject": "IDSGN",
+          "number": "131",
+          "title": "Color Visualization for Product Design",
+          "common_subject": "INDD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "IDSG M10AB",
+        "common_title": "Color Visualization for Product Design",
+        "subject": "IDSGN",
+        "subject_4letter": "IDSG",
+        "course_number": "131",
+        "college": "Diablo Valley College",
+        "control_number": "CCC000617791",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1009.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID IDSGN 102",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "IDSG M10AE": {
+      "title": "Introduction to Industrial and Product Design",
+      "target": "INDD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000560967",
+          "college": "Diablo Valley College",
+          "subject": "IDSGN",
+          "number": "120",
+          "title": "Introduction to Industrial and Product Design",
+          "common_subject": "INDD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "IDSG M10AE",
+        "common_title": "Introduction to Industrial and Product Design",
+        "subject": "IDSGN",
+        "subject_4letter": "IDSG",
+        "course_number": "120",
+        "college": "Diablo Valley College",
+        "control_number": "CCC000560967",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1009.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID IDSGN 108",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "LIBS M1006": {
+      "title": "Library Research Methods",
+      "target": "LIBR",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000338401",
+          "college": "Los Angeles Southwest College",
+          "subject": "LIB SCI",
+          "number": "101",
+          "title": "LIBRARY RESEARCH METHODS",
+          "common_subject": "LIBR",
+          "level": "High",
+          "filed": false
+        },
+        {
+          "cn": "CCC000393531",
+          "college": "Santa Monica College",
+          "subject": "LIBR",
+          "number": "1",
+          "title": "Library Research Methods",
+          "common_subject": "LIBR",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "LIBS M1006",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "Library Research Methods",
+        "common_title_source": "local catalog (representative/modal)",
+        "description": "Students will develop skills to find, evaluate and cite resources available in an academic library. These skills will help students become stronger researchers and life-long learners.",
+        "description_source": "local catalog (representative/modal)",
+        "subject": "LIB SCI",
+        "subject_4letter": "LIBS",
+        "discipline": null,
+        "discipline_provisional": "LIB SCI",
+        "typical_units": 1.0,
+        "confidence": 0.68,
+        "corroboration_members": 2,
+        "subject_spread": 2,
+        "source_college_count": 2,
+        "classified_at": "2026-05-20",
+        "classified_by": "claude-opus-4-7 (Phase B M-ID consolidation draft)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "modal subject 'LIB SCI' not in discipline map; needs review.",
+        "credit_status": "Credit",
+        "credit_status_mixed": false,
+        "top_code": "1601.00",
+        "noncredit_category": null,
+        "top_code_mixed": false,
+        "top_code_distribution": null,
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID LIBSCI 104",
+        "cte": false
+      },
+      "memberships": [
+        {
+          "college": "Los Angeles Southwest College",
+          "control_number": "CCC000338401",
+          "subject": "LIB SCI",
+          "course_number": "101",
+          "units": 1.0,
+          "credit_status": "Credit",
+          "top_code": "1601.00: Library Science, General"
+        },
+        {
+          "college": "Santa Monica College",
+          "control_number": "CCC000393531",
+          "subject": "LIBR",
+          "course_number": "1",
+          "units": 1.0,
+          "credit_status": "Credit",
+          "top_code": "1601.00: Library Science, General"
+        }
+      ],
+      "curation": {},
+      "pointers_in": []
+    },
+    "LIBS M10AB": {
+      "title": "Basic Research Skills",
+      "target": "LIBR",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000454986",
+          "college": "Yuba College",
+          "subject": "LIBSC",
+          "number": "1",
+          "title": "Basic Research Skills",
+          "common_subject": "LIBR",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "LIBS M10AB",
+        "common_title": "Basic Research Skills",
+        "subject": "LIBSC",
+        "subject_4letter": "LIBS",
+        "course_number": "1",
+        "college": "Yuba College",
+        "control_number": "CCC000454986",
+        "credit_status": "Credit",
+        "typical_units": 1.0,
+        "top_code": "1601.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID LIBSC 100",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "LIBS M10AD": {
+      "title": "Finding Information on Line and in Print",
+      "target": "LIBR",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000141052",
+          "college": "Contra Costa College",
+          "subject": "LIBST",
+          "number": "100",
+          "title": "Finding Information on Line and in Print",
+          "common_subject": "LIBR",
+          "level": "Medium",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "LIBS M10AD",
+        "common_title": "Finding Information on Line and in Print",
+        "subject": "LIBST",
+        "subject_4letter": "LIBS",
+        "course_number": "100",
+        "college": "Contra Costa College",
+        "control_number": "CCC000141052",
+        "credit_status": "Credit",
+        "typical_units": 0.5,
+        "top_code": "1601.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID LIBST 100",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "LIBS M10AE": {
+      "title": "Information Literacy:Search Strategies, Tools, and Resources",
+      "target": "LIBR",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000141341",
+          "college": "West Los Angeles College",
+          "subject": "LIB SCI",
+          "number": "103",
+          "title": "INFORMATION LITERACY:SEARCH STRATEGIES, TOOLS, AND RESOURCES",
+          "common_subject": "LIBR",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "LIBS M10AE",
+        "common_title": "Information Literacy:Search Strategies, Tools, and Resources",
+        "subject": "LIB SCI",
+        "subject_4letter": "LIBS",
+        "course_number": "103",
+        "college": "West Los Angeles College",
+        "control_number": "CCC000141341",
+        "credit_status": "Credit",
+        "typical_units": 2.0,
+        "top_code": "1601.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID LIBSCI 108",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "LIBS M10AF": {
+      "title": "Internet Research Methods",
+      "target": "LIBR",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000046386",
+          "college": "Los Angeles Pierce College",
+          "subject": "LIB SCI",
+          "number": "102",
+          "title": "Internet Research Methods",
+          "common_subject": "LIBR",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "LIBS M10AF",
+        "common_title": "Internet Research Methods",
+        "subject": "LIB SCI",
+        "subject_4letter": "LIBS",
+        "course_number": "102",
+        "college": "Los Angeles Pierce College",
+        "control_number": "CCC000046386",
+        "credit_status": "Credit",
+        "typical_units": 1.0,
+        "top_code": "1601.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID LIBSCI 110",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "MMDI M90AA": {
+      "title": "Design Studio Practice",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000591970",
+          "college": "Berkeley City College",
+          "subject": "MM/DI",
+          "number": "550",
+          "title": "Design Studio Practice",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "MMDI M90AA",
+        "common_title": "Design Studio Practice",
+        "subject": "MM/DI",
+        "subject_4letter": "MMDI",
+        "course_number": "550",
+        "college": "Berkeley City College",
+        "control_number": "CCC000591970",
+        "credit_status": "Noncredit Enhanced",
+        "typical_units": 0.0,
+        "top_code": "0614.50",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID MM/DI 110",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "NCVO M90AA": {
+      "title": "Advanced Tools in Photoshop",
+      "target": "VOCE",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000606387",
+          "college": "College of the Canyons",
+          "subject": "NC.VOC",
+          "number": "021C",
+          "title": "Advanced Tools in Photoshop",
+          "common_subject": "VOCE",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "NCVO M90AA",
+        "common_title": "Advanced Tools in Photoshop",
+        "subject": "NC.VOC",
+        "subject_4letter": "NCVO",
+        "course_number": "021C",
+        "college": "College of the Canyons",
+        "control_number": "CCC000606387",
+        "credit_status": "Noncredit Enhanced",
+        "typical_units": 0.0,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID NC.VOC 100",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "NCVO M90AD": {
+      "title": "Building on Photoshop Basics",
+      "target": "VOCE",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000606386",
+          "college": "College of the Canyons",
+          "subject": "NC.VOC",
+          "number": "021B",
+          "title": "Building on Photoshop Basics",
+          "common_subject": "VOCE",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "NCVO M90AD",
+        "common_title": "Building on Photoshop Basics",
+        "subject": "NC.VOC",
+        "subject_4letter": "NCVO",
+        "course_number": "021B",
+        "college": "College of the Canyons",
+        "control_number": "CCC000606386",
+        "credit_status": "Noncredit Enhanced",
+        "typical_units": 0.0,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID NC.VOC 102",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDA M90AF": {
+      "title": "Life Drawing for Seniors",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000205202",
+          "college": "Los Angeles Pierce College",
+          "subject": "OLD ADL",
+          "number": "062CE",
+          "title": "Life Drawing for Seniors",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDA M90AF",
+        "common_title": "Life Drawing for Seniors",
+        "subject": "OLD ADL",
+        "subject_4letter": "OLDA",
+        "course_number": "062CE",
+        "college": "Los Angeles Pierce College",
+        "control_number": "CCC000205202",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1002.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDADL 124",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDA M90AI": {
+      "title": "Seeing and Understanding Art",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000096130",
+          "college": "Los Angeles Pierce College",
+          "subject": "OLD ADL",
+          "number": "056CE",
+          "title": "Seeing and Understanding Art",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDA M90AI",
+        "common_title": "Seeing and Understanding Art",
+        "subject": "OLD ADL",
+        "subject_4letter": "OLDA",
+        "course_number": "056CE",
+        "college": "Los Angeles Pierce College",
+        "control_number": "CCC000096130",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1001.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDADL 130",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDA M90AJ": {
+      "title": "Watercolor Painting for Seniors",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000028686",
+          "college": "Los Angeles Pierce College",
+          "subject": "OLD ADL",
+          "number": "063CE",
+          "title": "Watercolor Painting for Seniors",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDA M90AJ",
+        "common_title": "Watercolor Painting for Seniors",
+        "subject": "OLD ADL",
+        "subject_4letter": "OLDA",
+        "course_number": "063CE",
+        "college": "Los Angeles Pierce College",
+        "control_number": "CCC000028686",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1002.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDADL 132",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDR M9002": {
+      "title": "Painting in Oils and Acrylics",
+      "target": "OLAD",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000184902",
+          "college": "Allan Hancock College",
+          "subject": "OLDR",
+          "number": "7213A",
+          "title": "Painting in Oils and Acrylics",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        },
+        {
+          "cn": "CCC000623796",
+          "college": "Allan Hancock College",
+          "subject": "OLDR",
+          "number": "7213",
+          "title": "Painting in Oils and Acrylics",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDR M9002",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "Painting in Oils and Acrylics",
+        "common_title_source": "local catalog (representative/modal)",
+        "description": "Learn how to paint your favorite subjects. This class covers the basics of oil and acrylics, from the beginning drawing to the finished painting. Beginning through experienced painters who wish to work with oils and acrylic media are welcome.",
+        "description_source": "local catalog (representative/modal)",
+        "subject": "OLDR",
+        "subject_4letter": "OLDR",
+        "discipline": null,
+        "discipline_provisional": "OLDR",
+        "typical_units": 0.0,
+        "confidence": 0.68,
+        "corroboration_members": 2,
+        "subject_spread": 1,
+        "source_college_count": 1,
+        "classified_at": "2026-05-20",
+        "classified_by": "claude-opus-4-7 (Phase B M-ID consolidation draft)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "modal subject 'OLDR' not in discipline map; needs review.",
+        "credit_status": "Noncredit",
+        "credit_status_mixed": false,
+        "top_code": "1002.10",
+        "noncredit_category": null,
+        "top_code_mixed": false,
+        "top_code_distribution": null,
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDR 102",
+        "cte": null
+      },
+      "memberships": [
+        {
+          "college": "Allan Hancock College",
+          "control_number": "CCC000184902",
+          "subject": "OLDR",
+          "course_number": "7213A",
+          "units": 0.0,
+          "credit_status": "Noncredit",
+          "top_code": "1002.10: Painting and Drawing"
+        },
+        {
+          "college": "Allan Hancock College",
+          "control_number": "CCC000623796",
+          "subject": "OLDR",
+          "course_number": "7213",
+          "units": 0.0,
+          "credit_status": "Noncredit",
+          "top_code": "1002.10: Painting and Drawing"
+        }
+      ],
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDR M90AB": {
+      "title": "Art/Journaling",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000654968",
+          "college": "Allan Hancock College",
+          "subject": "OLDR",
+          "number": "7305",
+          "title": "Art/Journaling",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDR M90AB",
+        "common_title": "Art/Journaling",
+        "subject": "OLDR",
+        "subject_4letter": "OLDR",
+        "course_number": "7305",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000654968",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1002.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDR 108",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDR M90AF": {
+      "title": "Digital Camera Basics Level 2",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000522038",
+          "college": "Allan Hancock College",
+          "subject": "OLDR",
+          "number": "7301B",
+          "title": "Digital Camera Basics Level 2",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDR M90AF",
+        "common_title": "Digital Camera Basics Level 2",
+        "subject": "OLDR",
+        "subject_4letter": "OLDR",
+        "course_number": "7301B",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000522038",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1011.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDR 116",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDR M90AG": {
+      "title": "Expressions in Colored Pencil",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000522037",
+          "college": "Allan Hancock College",
+          "subject": "OLDR",
+          "number": "7202B",
+          "title": "Expressions in Colored Pencil",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDR M90AG",
+        "common_title": "Expressions in Colored Pencil",
+        "subject": "OLDR",
+        "subject_4letter": "OLDR",
+        "course_number": "7202B",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000522037",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1002.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDR 118",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDR M90AJ": {
+      "title": "Int. Watercolor Painting",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000623906",
+          "college": "Allan Hancock College",
+          "subject": "OLDR",
+          "number": "7200",
+          "title": "Int. Watercolor Painting",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDR M90AJ",
+        "common_title": "Int. Watercolor Painting",
+        "subject": "OLDR",
+        "subject_4letter": "OLDR",
+        "course_number": "7200",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000623906",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1002.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDR 124",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDR M90AQ": {
+      "title": "Silk Painting",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000522298",
+          "college": "Allan Hancock College",
+          "subject": "OLDR",
+          "number": "7207B",
+          "title": "Silk Painting",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDR M90AQ",
+        "common_title": "Silk Painting",
+        "subject": "OLDR",
+        "subject_4letter": "OLDR",
+        "course_number": "7207B",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000522298",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1002.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDR 138",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDR M90AR": {
+      "title": "Sketching for Painters",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000523871",
+          "college": "Allan Hancock College",
+          "subject": "OLDR",
+          "number": "7204B",
+          "title": "Sketching for Painters",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDR M90AR",
+        "common_title": "Sketching for Painters",
+        "subject": "OLDR",
+        "subject_4letter": "OLDR",
+        "course_number": "7204B",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000523871",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1002.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDR 140",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDR M90AS": {
+      "title": "The Joy of Drawing",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000623981",
+          "college": "Allan Hancock College",
+          "subject": "OLDR",
+          "number": "7211",
+          "title": "The Joy of Drawing",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDR M90AS",
+        "common_title": "The Joy of Drawing",
+        "subject": "OLDR",
+        "subject_4letter": "OLDR",
+        "course_number": "7211",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000623981",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1002.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDR 142",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "OLDR M90AU": {
+      "title": "Urban Sketching",
+      "target": "OLAD",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000654967",
+          "college": "Allan Hancock College",
+          "subject": "OLDR",
+          "number": "7300",
+          "title": "Urban Sketching",
+          "common_subject": "OLAD",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "OLDR M90AU",
+        "common_title": "Urban Sketching",
+        "subject": "OLDR",
+        "subject_4letter": "OLDR",
+        "course_number": "7300",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000654967",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1002.10",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID OLDR 146",
+        "cte": null
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTG M1002": {
+      "title": "Commercial Lighting 1",
+      "target": "PHOT",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000130458",
+          "college": "De Anza College",
+          "subject": "PHTG",
+          "number": "057A",
+          "title": "Commercial Lighting I",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": false
+        },
+        {
+          "cn": "CCC000624696",
+          "college": "De Anza College",
+          "subject": "PHTG",
+          "number": "357A",
+          "title": "Commercial Lighting I",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "PHTG M1002",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "Commercial Lighting 1",
+        "common_title_source": "local catalog (representative/modal)",
+        "description": "This course reviews basic lighting skills and provides an understanding of using artificial light sources and associated equipment in a studio environment. Students will learn controls of lighting ratios, contrast, texture and form, reflection, and exposure. Students will also produce photographic images relevant to the techniques and production methods covered.",
+        "description_source": "local catalog (representative/modal)",
+        "subject": "PHTG",
+        "subject_4letter": "PHTG",
+        "discipline": null,
+        "discipline_provisional": "PHTG",
+        "typical_units": 3.0,
+        "confidence": 0.68,
+        "corroboration_members": 2,
+        "subject_spread": 1,
+        "source_college_count": 1,
+        "classified_at": "2026-05-20",
+        "classified_by": "claude-opus-4-7 (Phase B M-ID consolidation draft)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "modal subject 'PHTG' not in discipline map; needs review.",
+        "credit_status": "Credit",
+        "credit_status_mixed": true,
+        "top_code": "1012.00",
+        "noncredit_category": "Workforce Preparation",
+        "top_code_mixed": false,
+        "top_code_distribution": null,
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTG 102",
+        "cte": true
+      },
+      "memberships": [
+        {
+          "college": "De Anza College",
+          "control_number": "CCC000130458",
+          "subject": "PHTG",
+          "course_number": "057A",
+          "units": 3.0,
+          "credit_status": "Credit",
+          "top_code": "1012.00: Applied Photography"
+        },
+        {
+          "college": "De Anza College",
+          "control_number": "CCC000624696",
+          "subject": "PHTG",
+          "course_number": "357A",
+          "units": 0.0,
+          "credit_status": "Noncredit Enhanced",
+          "top_code": "1012.00: Applied Photography"
+        }
+      ],
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTG M1003": {
+      "title": "Commercial Lighting 2",
+      "target": "PHOT",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000035016",
+          "college": "De Anza College",
+          "subject": "PHTG",
+          "number": "057B",
+          "title": "Commercial Lighting II",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": false
+        },
+        {
+          "cn": "CCC000646350",
+          "college": "De Anza College",
+          "subject": "PHTG",
+          "number": "357B",
+          "title": "Commercial Lighting II",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "PHTG M1003",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "Commercial Lighting 2",
+        "common_title_source": "local catalog (representative/modal)",
+        "description": "In this course, students will learn intermediate and advanced lighting skills along with complex lighting for reflective surfaces, commercial portraits, and exterior and interior architectural shooting. Students will produce photographic images relevant to the techniques and production methods covered. Students will gain an understanding of commercial studio organization and operation.",
+        "description_source": "local catalog (representative/modal)",
+        "subject": "PHTG",
+        "subject_4letter": "PHTG",
+        "discipline": null,
+        "discipline_provisional": "PHTG",
+        "typical_units": 3.0,
+        "confidence": 0.68,
+        "corroboration_members": 2,
+        "subject_spread": 1,
+        "source_college_count": 1,
+        "classified_at": "2026-05-20",
+        "classified_by": "claude-opus-4-7 (Phase B M-ID consolidation draft)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "modal subject 'PHTG' not in discipline map; needs review.",
+        "credit_status": "Credit",
+        "credit_status_mixed": true,
+        "top_code": "1012.00",
+        "noncredit_category": "Workforce Preparation",
+        "top_code_mixed": false,
+        "top_code_distribution": null,
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTG 104",
+        "cte": true
+      },
+      "memberships": [
+        {
+          "college": "De Anza College",
+          "control_number": "CCC000035016",
+          "subject": "PHTG",
+          "course_number": "057B",
+          "units": 3.0,
+          "credit_status": "Credit",
+          "top_code": "1012.00: Applied Photography"
+        },
+        {
+          "college": "De Anza College",
+          "control_number": "CCC000646350",
+          "subject": "PHTG",
+          "course_number": "357B",
+          "units": 0.0,
+          "credit_status": "Noncredit Enhanced",
+          "top_code": "1012.00: Applied Photography"
+        }
+      ],
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTG M10AA": {
+      "title": "Exploring Visual Expression",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000367655",
+          "college": "De Anza College",
+          "subject": "PHTG",
+          "number": "7",
+          "title": "Exploring Visual Expression",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "PHTG M10AA",
+        "common_title": "Exploring Visual Expression",
+        "subject": "PHTG",
+        "subject_4letter": "PHTG",
+        "course_number": "7",
+        "college": "De Anza College",
+        "control_number": "CCC000367655",
+        "credit_status": "Credit",
+        "typical_units": 4.0,
+        "top_code": "1011.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTG 112",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M10AD": {
+      "title": "Black and White Photo Lab 1",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000208739",
+          "college": "Allan Hancock College",
+          "subject": "PHTO",
+          "number": "380",
+          "title": "Black And White Photo Lab 1",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M10AD",
+        "common_title": "Black and White Photo Lab 1",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "380",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000208739",
+        "credit_status": "Credit",
+        "typical_units": 0.5,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 106",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M10AG": {
+      "title": "Color Photo Lab 1",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000105343",
+          "college": "Allan Hancock College",
+          "subject": "PHTO",
+          "number": "382",
+          "title": "Color Photo Lab 1",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M10AG",
+        "common_title": "Color Photo Lab 1",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "382",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000105343",
+        "credit_status": "Credit",
+        "typical_units": 0.5,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 112",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M10AH": {
+      "title": "Color Photo Lab 2",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000166220",
+          "college": "Allan Hancock College",
+          "subject": "PHTO",
+          "number": "383",
+          "title": "Color Photo Lab 2",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M10AH",
+        "common_title": "Color Photo Lab 2",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "383",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000166220",
+        "credit_status": "Credit",
+        "typical_units": 1.0,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 114",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M10AI": {
+      "title": "Digital Photo Lab 1",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000065741",
+          "college": "Allan Hancock College",
+          "subject": "PHTO",
+          "number": "384",
+          "title": "Digital Photo Lab 1",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M10AI",
+        "common_title": "Digital Photo Lab 1",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "384",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000065741",
+        "credit_status": "Credit",
+        "typical_units": 0.5,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 118",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M10AJ": {
+      "title": "Digital Photo Lab 2",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000126649",
+          "college": "Allan Hancock College",
+          "subject": "PHTO",
+          "number": "385",
+          "title": "Digital Photo Lab 2",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M10AJ",
+        "common_title": "Digital Photo Lab 2",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "385",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000126649",
+        "credit_status": "Credit",
+        "typical_units": 1.0,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 120",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M10AL": {
+      "title": "Individual Projects B",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000615860",
+          "college": "Las Positas College",
+          "subject": "PHTO",
+          "number": "51B",
+          "title": "Individual Projects B",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M10AL",
+        "common_title": "Individual Projects B",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "51B",
+        "college": "Las Positas College",
+        "control_number": "CCC000615860",
+        "credit_status": "Credit",
+        "typical_units": 1.5,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 128",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M10AR": {
+      "title": "Introduction to Lighting",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000624815",
+          "college": "Rio Hondo College",
+          "subject": "PHTO",
+          "number": "140",
+          "title": "Introduction to Lighting",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M10AR",
+        "common_title": "Introduction to Lighting",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "140",
+        "college": "Rio Hondo College",
+        "control_number": "CCC000624815",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 140",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M10AU": {
+      "title": "Materials and Processes Lab",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000195520",
+          "college": "Allan Hancock College",
+          "subject": "PHTO",
+          "number": "121",
+          "title": "Materials and Processes Lab",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M10AU",
+        "common_title": "Materials and Processes Lab",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "121",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000195520",
+        "credit_status": "Credit",
+        "typical_units": 1.0,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 146",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M10AX": {
+      "title": "Portraiture on Location",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000570078",
+          "college": "Citrus College",
+          "subject": "PHTO",
+          "number": "213",
+          "title": "Portraiture on Location",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M10AX",
+        "common_title": "Portraiture on Location",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "213",
+        "college": "Citrus College",
+        "control_number": "CCC000570078",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 156",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M90AA": {
+      "title": "Digital Photo Editing and Post-Processing",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000608222",
+          "college": "Allan Hancock College",
+          "subject": "PHTO",
+          "number": "7202B",
+          "title": "Digital Photo Editing and Post-Processing",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M90AA",
+        "common_title": "Digital Photo Editing and Post-Processing",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "7202B",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000608222",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 116",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M90AB": {
+      "title": "Digital Photos and the Computer",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000582454",
+          "college": "Allan Hancock College",
+          "subject": "PHTO",
+          "number": "7200",
+          "title": "Digital Photos and the Computer",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M90AB",
+        "common_title": "Digital Photos and the Computer",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "7200",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000582454",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 122",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "PHTO M90AD": {
+      "title": "Phonetography",
+      "target": "PHOT",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000588306",
+          "college": "Allan Hancock College",
+          "subject": "PHTO",
+          "number": "7204B",
+          "title": "Phonetography",
+          "common_subject": "PHOT",
+          "level": "High",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "PHTO M90AD",
+        "common_title": "Phonetography",
+        "subject": "PHTO",
+        "subject_4letter": "PHTO",
+        "course_number": "7204B",
+        "college": "Allan Hancock College",
+        "control_number": "CCC000588306",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "1012.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID PHTO 150",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "SGNG M10AA": {
+      "title": "Advance Computer & Design",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000189798",
+          "college": "Los Angeles Trade Technical College",
+          "subject": "SGNGRPH",
+          "number": "104",
+          "title": "ADVANCE COMPUTER & DESIGN",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "SGNG M10AA",
+        "common_title": "Advance Computer & Design",
+        "subject": "SGNGRPH",
+        "subject_4letter": "SGNG",
+        "course_number": "104",
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000189798",
+        "credit_status": "Credit",
+        "typical_units": 10.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID SGNGRPH 100",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "SGNG M10AC": {
+      "title": "Exterior Display Signs",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000104474",
+          "college": "Los Angeles Trade Technical College",
+          "subject": "SGNGRPH",
+          "number": "102",
+          "title": "EXTERIOR DISPLAY SIGNS",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "SGNG M10AC",
+        "common_title": "Exterior Display Signs",
+        "subject": "SGNGRPH",
+        "subject_4letter": "SGNG",
+        "course_number": "102",
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000104474",
+        "credit_status": "Credit",
+        "typical_units": 10.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID SGNGRPH 104",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "SGNG M10AE": {
+      "title": "Individual Lettering",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000577169",
+          "college": "Los Angeles Trade Technical College",
+          "subject": "SGNGRPH",
+          "number": "101",
+          "title": "Individual Lettering",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "SGNG M10AE",
+        "common_title": "Individual Lettering",
+        "subject": "SGNGRPH",
+        "subject_4letter": "SGNG",
+        "course_number": "101",
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000577169",
+        "credit_status": "Credit",
+        "typical_units": 10.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID SGNGRPH 108",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "SGNG M10AF": {
+      "title": "Sign Design and Layout",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000564328",
+          "college": "Los Angeles Trade Technical College",
+          "subject": "SGNGRPH",
+          "number": "212",
+          "title": "SIGN DESIGN AND LAYOUT",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "SGNG M10AF",
+        "common_title": "Sign Design and Layout",
+        "subject": "SGNGRPH",
+        "subject_4letter": "SGNG",
+        "course_number": "212",
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000564328",
+        "credit_status": "Credit",
+        "typical_units": 2.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID SGNGRPH 110",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "SGNG M10AG": {
+      "title": "Sign Installation and Fabrication",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000651234",
+          "college": "Los Angeles Trade Technical College",
+          "subject": "SGNGRPH",
+          "number": "213",
+          "title": "Sign Installation and Fabrication",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "SGNG M10AG",
+        "common_title": "Sign Installation and Fabrication",
+        "subject": "SGNGRPH",
+        "subject_4letter": "SGNG",
+        "course_number": "213",
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000651234",
+        "credit_status": "Credit",
+        "typical_units": 2.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID SGNGRPH 112",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "SGNG M10AI": {
+      "title": "Silk Screen Processing 1",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000502502",
+          "college": "Los Angeles Trade Technical College",
+          "subject": "SGNGRPH",
+          "number": "203",
+          "title": "SILK SCREEN PROCESSING 1",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "SGNG M10AI",
+        "common_title": "Silk Screen Processing 1",
+        "subject": "SGNGRPH",
+        "subject_4letter": "SGNG",
+        "course_number": "203",
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000502502",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID SGNGRPH 116",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "SGNG M10AJ": {
+      "title": "Window Signs",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000180074",
+          "college": "Los Angeles Trade Technical College",
+          "subject": "SGNGRPH",
+          "number": "103",
+          "title": "WINDOW SIGNS",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "SGNG M10AJ",
+        "common_title": "Window Signs",
+        "subject": "SGNGRPH",
+        "subject_4letter": "SGNG",
+        "course_number": "103",
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000180074",
+        "credit_status": "Credit",
+        "typical_units": 10.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID SGNGRPH 118",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "TAFI M1002": {
+      "title": "Diversity in American Film",
+      "target": "FTVE",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000558926",
+          "college": "Sacramento City College",
+          "subject": "TAFILM",
+          "number": "307",
+          "title": "Diversity in American Film",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        },
+        {
+          "cn": "CCC000572883",
+          "college": "American River College",
+          "subject": "TAFILM",
+          "number": "307",
+          "title": "Diversity in American Film",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        },
+        {
+          "cn": "CCC000644008",
+          "college": "Folsom Lake College",
+          "subject": "TAFILM",
+          "number": "307",
+          "title": "Diversity in American Film",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "TAFI M1002",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "Diversity in American Film",
+        "common_title_source": "local catalog (representative/modal)",
+        "description": "This course is an introduction to cultural diversity as it is expressed in American film. The course will focus on the cultures of Asian/Pacific Americans, Black/African Americans, Chicano/Latino/Hispanic Americans, Native Americans, and recent immigrant groups, as expressed in film narrative, production practices, and critical responses. Issues of class, gender, and sexuality will be examined and compared cross-culturally. Media stereotypes and their social, political, and cultural origins and the responses to these stereotypes by 20th and 21st century film makers will be examined through film viewings, lecture, and discussion. (This course was formerly known as TA 318.)",
+        "description_source": "local catalog (representative/modal)",
+        "subject": "TAFILM",
+        "subject_4letter": "TAFI",
+        "discipline": null,
+        "discipline_provisional": "TAFILM",
+        "typical_units": 3.0,
+        "confidence": 0.85,
+        "corroboration_members": 3,
+        "subject_spread": 1,
+        "source_college_count": 3,
+        "classified_at": "2026-05-20",
+        "classified_by": "claude-opus-4-7 (Phase B M-ID consolidation draft)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "modal subject 'TAFILM' not in discipline map; needs review.",
+        "credit_status": "Credit",
+        "credit_status_mixed": false,
+        "top_code": "0612.00",
+        "noncredit_category": null,
+        "top_code_mixed": true,
+        "top_code_distribution": {
+          "0612.00": 6,
+          "1007.00": 3
+        },
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID TAFILM 102",
+        "cte": false
+      },
+      "memberships": [
+        {
+          "college": "American River College",
+          "control_number": "CCC000572883",
+          "subject": "TAFILM",
+          "course_number": "307",
+          "units": 3.0,
+          "credit_status": "Credit",
+          "top_code": "1007.00: Dramatic Arts"
+        },
+        {
+          "college": "Folsom Lake College",
+          "control_number": "CCC000644008",
+          "subject": "TAFILM",
+          "course_number": "307",
+          "units": 3.0,
+          "credit_status": "Credit",
+          "top_code": "0612.00: Film Studies"
+        },
+        {
+          "college": "Sacramento City College",
+          "control_number": "CCC000558926",
+          "subject": "TAFILM",
+          "course_number": "307",
+          "units": 3.0,
+          "credit_status": "Credit",
+          "top_code": "0612.00: Film Studies"
+        }
+      ],
+      "curation": {},
+      "pointers_in": []
+    },
+    "TAFI M1006": {
+      "title": "History of Film: 1880's Through 1950's",
+      "target": "FTVE",
+      "source": "minted",
+      "courses": [
+        {
+          "cn": "CCC000559129",
+          "college": "Sacramento City College",
+          "subject": "TAFILM",
+          "number": "303",
+          "title": "History of Film: 1880's through 1950's",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        },
+        {
+          "cn": "CCC000574394",
+          "college": "American River College",
+          "subject": "TAFILM",
+          "number": "303",
+          "title": "History of Film, 1880's through 1950's",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        },
+        {
+          "cn": "CCC000602055",
+          "college": "Folsom Lake College",
+          "subject": "TAFILM",
+          "number": "303",
+          "title": "History of Film: 1880's through 1950's",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "TAFI M1006",
+        "id_system": "M-ID",
+        "ccn_id": null,
+        "c_id": null,
+        "common_title": "History of Film: 1880's Through 1950's",
+        "common_title_source": "local catalog (representative/modal)",
+        "description": "This course is an historical and critical survey of film as an art form. It emphasizes the evolution of artistic and technical facets of production in features, documentaries, and experimental films, concentrating on films from the 1880s through the 1950s. This course is formerly known as TA 314.",
+        "description_source": "local catalog (representative/modal)",
+        "subject": "TAFILM",
+        "subject_4letter": "TAFI",
+        "discipline": null,
+        "discipline_provisional": "TAFILM",
+        "typical_units": 3.0,
+        "confidence": 0.85,
+        "corroboration_members": 3,
+        "subject_spread": 1,
+        "source_college_count": 3,
+        "classified_at": "2026-05-20",
+        "classified_by": "claude-opus-4-7 (Phase B M-ID consolidation draft)",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "_notes": "modal subject 'TAFILM' not in discipline map; needs review.",
+        "credit_status": "Credit",
+        "credit_status_mixed": false,
+        "top_code": "0612.10",
+        "noncredit_category": null,
+        "top_code_mixed": false,
+        "top_code_distribution": null,
+        "noncredit_category_mixed": false,
+        "noncredit_category_distribution": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID TAFILM 110",
+        "cte": null
+      },
+      "memberships": [
+        {
+          "college": "American River College",
+          "control_number": "CCC000574394",
+          "subject": "TAFILM",
+          "course_number": "303",
+          "units": 3.0,
+          "credit_status": "Credit",
+          "top_code": "0612.10: Film History and Criticism"
+        },
+        {
+          "college": "Folsom Lake College",
+          "control_number": "CCC000602055",
+          "subject": "TAFILM",
+          "course_number": "303",
+          "units": 3.0,
+          "credit_status": "Credit",
+          "top_code": "0612.10: Film History and Criticism"
+        },
+        {
+          "college": "Sacramento City College",
+          "control_number": "CCC000559129",
+          "subject": "TAFILM",
+          "course_number": "303",
+          "units": 3.0,
+          "credit_status": "Credit",
+          "top_code": "0612.10: Film History and Criticism"
+        }
+      ],
+      "curation": {},
+      "pointers_in": []
+    },
+    "TAFI M10AH": {
+      "title": "From Stage to Screen: Production Design and Art Direction",
+      "target": "FTVE",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000558925",
+          "college": "Sacramento City College",
+          "subject": "TAFILM",
+          "number": "309",
+          "title": "From Stage to Screen: Production Design and Art Direction",
+          "common_subject": "FTVE",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "TAFI M10AH",
+        "common_title": "From Stage to Screen: Production Design and Art Direction",
+        "subject": "TAFILM",
+        "subject_4letter": "TAFI",
+        "course_number": "309",
+        "college": "Sacramento City College",
+        "control_number": "CCC000558925",
+        "credit_status": "Credit",
+        "typical_units": 3.0,
+        "top_code": "0612.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID TAFILM 128",
+        "cte": false
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "VISC M10AI": {
+      "title": "Digital Prepress 2",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000650968",
+          "college": "Los Angeles Trade Technical College",
+          "subject": "VISCOM",
+          "number": "112",
+          "title": "DIGITAL PREPRESS II",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "VISC M10AI",
+        "common_title": "Digital Prepress 2",
+        "subject": "VISCOM",
+        "subject_4letter": "VISC",
+        "course_number": "112",
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000650968",
+        "credit_status": "Credit",
+        "typical_units": 2.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID VISCOM 116",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "VISC M10AL": {
+      "title": "Flash Motion Graphics (Beginning Level)",
+      "target": "ARTS",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000343014",
+          "college": "Los Angeles Trade Technical College",
+          "subject": "VISCOM",
+          "number": "204",
+          "title": "FLASH MOTION GRAPHICS (BEGINNING LEVEL)",
+          "common_subject": "ARTS",
+          "level": "Medium",
+          "filed": true
+        }
+      ],
+      "record": {
+        "course_id": "VISC M10AL",
+        "common_title": "Flash Motion Graphics (Beginning Level)",
+        "subject": "VISCOM",
+        "subject_4letter": "VISC",
+        "course_number": "204",
+        "college": "Los Angeles Trade Technical College",
+        "control_number": "CCC000343014",
+        "credit_status": "Credit",
+        "typical_units": 2.0,
+        "top_code": "1013.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID VISCOM 122",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "WORK M90AN": {
+      "title": "Custodian: Basic Maintenance",
+      "target": "WEXP",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000566291",
+          "college": "College of the Redwoods",
+          "subject": "WORK",
+          "number": "252",
+          "title": "Custodian: Basic Maintenance",
+          "common_subject": "WEXP",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "WORK M90AN",
+        "common_title": "Custodian: Basic Maintenance",
+        "subject": "WORK",
+        "subject_4letter": "WORK",
+        "course_number": "252",
+        "college": "College of the Redwoods",
+        "control_number": "CCC000566291",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "3099.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID WORK 122",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    },
+    "WORK M90AO": {
+      "title": "Custodian Training",
+      "target": "WEXP",
+      "source": "singleton",
+      "courses": [
+        {
+          "cn": "CCC000563057",
+          "college": "College of the Redwoods",
+          "subject": "WORK",
+          "number": "250",
+          "title": "Custodian Training",
+          "common_subject": "WEXP",
+          "level": "High",
+          "filed": false
+        }
+      ],
+      "record": {
+        "course_id": "WORK M90AO",
+        "common_title": "Custodian Training",
+        "subject": "WORK",
+        "subject_4letter": "WORK",
+        "course_number": "250",
+        "college": "College of the Redwoods",
+        "control_number": "CCC000563057",
+        "credit_status": "Noncredit",
+        "typical_units": 0.0,
+        "top_code": "3099.00",
+        "discipline": null,
+        "discipline_source": null,
+        "discipline_confidence": null,
+        "discipline_inferred_at": null,
+        "_remint_from": "M-ID WORK 124",
+        "cte": true
+      },
+      "memberships": null,
+      "curation": {},
+      "pointers_in": []
+    }
+  },
+  "held": {
+    "ARTG M10AA": {
+      "reason": "merged into ARTS M1577, which stays: its courses already count there",
+      "title": "Art and Culture - Galleries, Museums, and Their Communities",
+      "in_pairs": [
+        [
+          "Mt. San Antonio College",
+          "ARTG"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "ARTG M10AB": {
+      "reason": "merged into ARTS M1577, which stays: its courses already count there",
+      "title": "Art Galleries and Museums - Professional Practices",
+      "in_pairs": [
+        [
+          "Mt. San Antonio College",
+          "ARTG"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "ARTG M10AH": {
+      "reason": "merged into ARTH M1039, which stays: its courses already count there",
+      "title": "Intermediate Exhibition Production",
+      "in_pairs": [
+        [
+          "Mt. San Antonio College",
+          "ARTG"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "ARTG M10AL": {
+      "reason": "merged into MART M1004, which stays: its courses already count there",
+      "title": "Page Layout and Typography",
+      "in_pairs": [
+        [
+          "Monterey Peninsula College",
+          "ARTG"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "ARTI M10AE": {
+      "reason": "merged into ARTS M1407, which stays: its courses already count there",
+      "title": "Illustration 1 - Rendering Techniques",
+      "in_pairs": [
+        [
+          "Palomar College",
+          "ARTI"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "ATXX M1001": {
+      "reason": "AT M10DL, which stays, points at it (merge_into)",
+      "title": "Introduction Flight Attendant Training",
+      "in_pairs": [
+        [
+          "Glendale Community College",
+          "AT"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "ATXX M1002": {
+      "reason": "AT M10AO, which stays, points at it (merge_into)",
+      "title": "Introduction to Travel Careers",
+      "in_pairs": [
+        [
+          "Cypress College",
+          "ATC"
+        ],
+        [
+          "Glendale Community College",
+          "AT"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "BUST M10AZ": {
+      "reason": "MAP articulations name it (1 in kb/coci_articulations.json)",
+      "title": "MS Publisher Comprehensive",
+      "in_pairs": [
+        [
+          "Chaffey College",
+          "BUSTEC"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "CMPE M10AO": {
+      "reason": "MAP articulations name it (1 in kb/coci_articulations.json)",
+      "title": "Remote Pilot (Drone) FAA Certification Prep",
+      "in_pairs": [
+        [
+          "Modesto Junior College",
+          "CMPET"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "CMRT M1001": {
+      "reason": "mixed scope: courses on Porterville College CMRT (in) and Porterville College CMRTP (out)",
+      "title": "Commercial Layout and Design",
+      "in_pairs": [
+        [
+          "Porterville College",
+          "CMRT"
+        ]
+      ],
+      "out_pairs": [
+        [
+          "Porterville College",
+          "CMRTP"
+        ]
+      ]
+    },
+    "CTVR M10AE": {
+      "reason": "merged into BRDC M1045, which stays: its courses already count there",
+      "title": "Cinematic Storytelling",
+      "in_pairs": [
+        [
+          "Saddleback College",
+          "CTVR"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "DBAX M1001": {
+      "reason": "DBA M10AC, which stays, points at it (merge_into)",
+      "title": "Beginning Radio Station Operations",
+      "in_pairs": [
+        [
+          "Palomar College",
+          "DBA"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "ESTI M10AE": {
+      "reason": "merged into COSM M1003, which stays: its courses already count there",
+      "title": "Esthetics Fundamentals 1",
+      "in_pairs": [
+        [
+          "Skyline College",
+          "ESTI"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "FLTE M1002": {
+      "reason": "mixed scope: courses on Sacramento City College FLTEC (in) and Sacramento City College SURVY (out)",
+      "title": "Photogrammetry",
+      "in_pairs": [
+        [
+          "Sacramento City College",
+          "FLTEC"
+        ]
+      ],
+      "out_pairs": [
+        [
+          "Sacramento City College",
+          "SURVY"
+        ]
+      ]
+    },
+    "FLTE M10AE": {
+      "reason": "merged into AVIA M1051, which stays: its courses already count there",
+      "title": "Commercial Pilot-Helicopter Flight Techniques",
+      "in_pairs": [
+        [
+          "Sacramento City College",
+          "FLTEC"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "FTMA M10AO": {
+      "reason": "merged into FTVE M1067, which stays: its courses already count there",
+      "title": "Introduction to Documentary Studies",
+      "in_pairs": [
+        [
+          "Moorpark College",
+          "FTMA"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "FTVM M10AJ": {
+      "reason": "merged into BRDC M1062, which stays: its courses already count there",
+      "title": "Documentary Film Aesthetics",
+      "in_pairs": [
+        [
+          "Glendale Community College",
+          "FTVM"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "FTVM M10AT": {
+      "reason": "the honors twin of BRDC M1062, which stays",
+      "title": "Honors Documentary Film Aesthetics",
+      "in_pairs": [
+        [
+          "Glendale Community College",
+          "FTVM"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "FTVM M10AU": {
+      "reason": "the honors twin of FTVE M1074, which stays",
+      "title": "Honors Film Genres",
+      "in_pairs": [
+        [
+          "Glendale Community College",
+          "FTVM"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "HOSM M9003": {
+      "reason": "mixed scope: courses on Cypress College ATC (in) and North Orange Continuing Education HOSM, North Orange Continuing Education Credit HOSM (out)",
+      "title": "Customer Care: Airline/Travel",
+      "in_pairs": [
+        [
+          "Cypress College",
+          "ATC"
+        ]
+      ],
+      "out_pairs": [
+        [
+          "North Orange Continuing Education",
+          "HOSM"
+        ],
+        [
+          "North Orange Continuing Education Credit",
+          "HOSM"
+        ]
+      ]
+    },
+    "HUMN M1002": {
+      "reason": "the honors twin of COMM M1067, which stays",
+      "title": "Honors Introduction to Popular Culture",
+      "in_pairs": [
+        [
+          "Foothill College",
+          "HUMN"
+        ],
+        [
+          "Foothill College",
+          "MDIA"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "HUMN M1005": {
+      "reason": "MUSI M10RW, which stays, points at it (merge_into)",
+      "title": "Video Games & Popular Culture",
+      "in_pairs": [
+        [
+          "Cerritos College",
+          "MUS"
+        ],
+        [
+          "De Anza College",
+          "MUSI"
+        ],
+        [
+          "Foothill College",
+          "HUMN"
+        ],
+        [
+          "Foothill College",
+          "MDIA"
+        ],
+        [
+          "Fresno City College",
+          "MUS"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "HUMN M10BG": {
+      "reason": "SOCS M10CQ, which stays, points at it (honors_of)",
+      "title": "Trauma & the Arts",
+      "in_pairs": [
+        [
+          "Foothill College",
+          "HUMN"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "INFO M1003": {
+      "reason": "mixed scope: courses on Golden West College LIBR (in) and Santa Ana College INFO, Santiago Canyon College INFO (out)",
+      "title": "Researching in the Digital Age",
+      "in_pairs": [
+        [
+          "Golden West College",
+          "LIBR"
+        ]
+      ],
+      "out_pairs": [
+        [
+          "Santa Ana College",
+          "INFO"
+        ],
+        [
+          "Santiago Canyon College",
+          "INFO"
+        ]
+      ]
+    },
+    "LIBS M1002": {
+      "reason": "mixed scope: courses on Fresno City College LITEC (in) and Madera College LIBSKL, Reedley College LIBSKL (out)",
+      "title": "Information and Computer Literacy",
+      "in_pairs": [
+        [
+          "Fresno City College",
+          "LITEC"
+        ]
+      ],
+      "out_pairs": [
+        [
+          "Madera College",
+          "LIBSKL"
+        ],
+        [
+          "Reedley College",
+          "LIBSKL"
+        ]
+      ]
+    },
+    "LIBS M1004": {
+      "reason": "mixed scope: courses on Diablo Valley College LT, San Diego City College LIBS, San Diego Mesa College LIBS, San Diego Miramar College LIBS (in) and Sierra College SKDV (out)",
+      "title": "Information Literacy and Research Skills",
+      "in_pairs": [
+        [
+          "Diablo Valley College",
+          "LT"
+        ],
+        [
+          "San Diego City College",
+          "LIBS"
+        ],
+        [
+          "San Diego Mesa College",
+          "LIBS"
+        ],
+        [
+          "San Diego Miramar College",
+          "LIBS"
+        ]
+      ],
+      "out_pairs": [
+        [
+          "Sierra College",
+          "SKDV"
+        ]
+      ]
+    },
+    "LIBS M10AG": {
+      "reason": "merged into LIBR M1019, which stays: its courses already count there",
+      "title": "Library and Information Research Skills",
+      "in_pairs": [
+        [
+          "Contra Costa College",
+          "LIBST"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "MART M1004": {
+      "reason": "mixed scope: courses on CaÃ±ada College MART, Los Angeles Trade Technical College VISCOM, Monterey Peninsula College ARTG (in) and Palomar College GCIP, Palomar College GCMW (out)",
+      "title": "Digital Page Layout",
+      "in_pairs": [
+        [
+          "CaÃ±ada College",
+          "MART"
+        ],
+        [
+          "Los Angeles Trade Technical College",
+          "VISCOM"
+        ],
+        [
+          "Monterey Peninsula College",
+          "ARTG"
+        ]
+      ],
+      "out_pairs": [
+        [
+          "Palomar College",
+          "GCIP"
+        ],
+        [
+          "Palomar College",
+          "GCMW"
+        ]
+      ]
+    },
+    "NCTH M9001": {
+      "reason": "mixed scope: courses on Las Positas College THEA (in) and College of the Canyons NC.THTR (out)",
+      "title": "Business of Acting",
+      "in_pairs": [
+        [
+          "Las Positas College",
+          "THEA"
+        ]
+      ],
+      "out_pairs": [
+        [
+          "College of the Canyons",
+          "NC.THTR"
+        ]
+      ]
+    },
+    "OLDR M90AA": {
+      "reason": "merged into OLAD M9047, which stays: its courses already count there",
+      "title": "Art: Botanical Illustration",
+      "in_pairs": [
+        [
+          "Allan Hancock College",
+          "OLDR"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "OLDR M90AD": {
+      "reason": "merged into OLAD M9047, which stays: its courses already count there",
+      "title": "Botanical Illustration",
+      "in_pairs": [
+        [
+          "Allan Hancock College",
+          "OLDR"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "OLDR M90AO": {
+      "reason": "merged into ARTS M9036, which stays: its courses already count there",
+      "title": "Painting with Pastels",
+      "in_pairs": [
+        [
+          "Allan Hancock College",
+          "OLDR"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "PHTO M10AB": {
+      "reason": "merged into PHOT M1111, which stays: its courses already count there",
+      "title": "Art of Video for Photographers",
+      "in_pairs": [
+        [
+          "Rio Hondo College",
+          "PHTO"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "PHTO M10AE": {
+      "reason": "merged into PHOT M1121, which stays: its courses already count there",
+      "title": "Black and White Photo Lab 2",
+      "in_pairs": [
+        [
+          "Allan Hancock College",
+          "PHTO"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "PHTO M10AK": {
+      "reason": "merged into MACH M1046, which stays: its courses already count there",
+      "title": "Individual Projects A",
+      "in_pairs": [
+        [
+          "Las Positas College",
+          "PHTO"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "PHTO M10AM": {
+      "reason": "merged into PHOT M1111, which stays: its courses already count there",
+      "title": "Intermediate Video for Photographers",
+      "in_pairs": [
+        [
+          "Citrus College",
+          "PHTO"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "PHTO M10AQ": {
+      "reason": "merged into PHOT M1134, which stays: its courses already count there",
+      "title": "Introduction to Drone Piloting and Imaging",
+      "in_pairs": [
+        [
+          "Allan Hancock College",
+          "PHTO"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "PHTO M10AT": {
+      "reason": "merged into PHOT M1133, which stays: its courses already count there",
+      "title": "Introduction to View Camera",
+      "in_pairs": [
+        [
+          "Allan Hancock College",
+          "PHTO"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "SGNG M10AB": {
+      "reason": "merged into ARTS M1456, which stays: its courses already count there",
+      "title": "Computer Techniques for Screen Printing",
+      "in_pairs": [
+        [
+          "Los Angeles Trade Technical College",
+          "SGNGRPH"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "SGNG M10AD": {
+      "reason": "merged into ARTS M1488, which stays: its courses already count there",
+      "title": "Fundamentals of Mural Painting",
+      "in_pairs": [
+        [
+          "Los Angeles Trade Technical College",
+          "SGNGRPH"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "SGNG M10AH": {
+      "reason": "merged into ARTS M1661, which stays: its courses already count there",
+      "title": "Silk Screen 2",
+      "in_pairs": [
+        [
+          "Los Angeles Trade Technical College",
+          "SGNGRPH"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "TAFI M1007": {
+      "reason": "FTVE M10AT, which stays, points at it (merge_into)",
+      "title": "History of Film: 1950's to Present",
+      "in_pairs": [
+        [
+          "American River College",
+          "TAFILM"
+        ],
+        [
+          "Antelope Valley College",
+          "FTV"
+        ],
+        [
+          "Diablo Valley College",
+          "FTVE"
+        ],
+        [
+          "Folsom Lake College",
+          "TAFILM"
+        ],
+        [
+          "Sacramento City College",
+          "TAFILM"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "TAFI M10AI": {
+      "reason": "merged into FTVE M1078, which stays: its courses already count there",
+      "title": "Honors Introduction to Film",
+      "in_pairs": [
+        [
+          "Folsom Lake College",
+          "TAFILM"
+        ]
+      ],
+      "out_pairs": []
+    },
+    "TOUR M1002": {
+      "reason": "mixed scope: courses on Cypress College ATC (in) and Saddleback College TOUR, Southwestern College T&T (out)",
+      "title": "Travel Destinations: Europe, Africa, and the Middle East",
+      "in_pairs": [
+        [
+          "Cypress College",
+          "ATC"
+        ]
+      ],
+      "out_pairs": [
+        [
+          "Saddleback College",
+          "TOUR"
+        ],
+        [
+          "Southwestern College",
+          "T&T"
+        ]
+      ]
+    },
+    "TOUR M1003": {
+      "reason": "mixed scope: courses on Cypress College ATC (in) and Saddleback College TOUR (out)",
+      "title": "Destinations- Americas and Europe",
+      "in_pairs": [
+        [
+          "Cypress College",
+          "ATC"
+        ]
+      ],
+      "out_pairs": [
+        [
+          "Saddleback College",
+          "TOUR"
+        ]
+      ]
+    }
+  }
+}
