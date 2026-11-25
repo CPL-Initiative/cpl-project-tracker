@@ -7,8 +7,13 @@
 // sits beside the form, so its press showed.
 //
 // Guards the failure mode on both surfaces (the List's side panel and the Cards): pressing the top Publish to Public
-// Library draws the form, and focus lands inside it, on the Public summary when the check passed, else on the form's
-// first button.
+// Library draws the form, and focus lands inside it, on the Public summary.
+//
+// Every publish form carries that summary, certified or not, prefilled from the internal one (Sam, 2026-11-25: "can you
+// have library auto add a summary I can edit so if I forget and click publish, we'll still have a summary?"). Before,
+// the not-yet-certified form had none, so a press saved publish_target 'public' with public_summary null, and the check
+// run (scripts/library_check.py) lists a passing piece only when it holds a summary. Submitting with the field emptied
+// sends the internal summary, through cpl_library_set_public with p_listed false.
 //
 // Run from repo root: `npm test` (or `node tests/library_pubtop.test.js`).
 const fs = require("fs");
@@ -41,20 +46,20 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
 function load(hash) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="library-root"></div></body></html>',
     { url: "https://example.org/" + hash, runScripts: "dangerously" });
-  const w = dom.window;
+  const w = dom.window, calls = [];
   w.localStorage.setItem("cpl_team_pass", "p");
   w.localStorage.setItem("cpl_library_author", "Sam");
   w.HTMLElement.prototype.scrollIntoView = function () {};
   w.fetch = function (url, init) {
     url = String(url);
-    if (init && init.method && init.method !== "GET") return response(200, [{}]);
+    if (init && init.method && init.method !== "GET") { calls.push({ url: url, method: init.method, body: JSON.parse(init.body || "{}") }); return response(200, [{}]); }
     if (/cpl_library_checks/.test(url)) return response(200, [PASS]);
     if (/cpl_library_drafts|cpl_library_division_settings|\/rpc\//.test(url)) return response(200, []);
     return response(200, ROWS);
   };
   const l = w.document.createElement("script"); l.textContent = LIST; w.document.body.appendChild(l);
   const s = w.document.createElement("script"); s.textContent = SRC; w.document.body.appendChild(s);
-  return { w: w, doc: w.document, M: w.CPL_LIBRARY, root: w.document.getElementById("library-root") };
+  return { w: w, doc: w.document, calls: calls, M: w.CPL_LIBRARY, root: w.document.getElementById("library-root") };
 }
 
 // Open the piece's card on the surface, press its top Publish to Public Library, and report what the press drew.
@@ -75,7 +80,7 @@ async function pressTop(hash, r) {
   await settle();
   const form = m.root.querySelector('form[data-pubform="' + r.id + '"]');
   const at = m.doc.activeElement;
-  return { top: !!top, form: form, at: at, inForm: !!(form && at && form.contains(at)),
+  return { m: m, top: !!top, form: form, at: at, inForm: !!(form && at && form.contains(at)),
     why: at ? at.outerHTML.slice(0, 120) : "nothing focused" };
 }
 
@@ -87,8 +92,22 @@ async function pressTop(hash, r) {
       !!a.form && a.inForm && a.at.id === "lp-sum", a.why);
     const b = await pressTop(hash, ROWS[1]);
     check(where + " offers it for a piece not yet certified too", b.top);
-    check("⭐ " + where + ": for a piece not yet certified the press draws the form and lands inside it",
-      !!b.form && b.inForm && /Not yet certified/.test(b.form.textContent), b.why);
+    check("⭐ " + where + ": for a piece not yet certified the press draws the form and focuses its Public summary",
+      !!b.form && b.inForm && b.at.id === "lp-sum" && /Not yet certified/.test(b.form.textContent), b.why);
+    check("⭐ " + where + ": that summary starts from the internal one, to edit", !!b.at && b.at.value === ROWS[1].summary, b.at && b.at.value);
+  }
+  // A forgotten summary still lands: the field emptied, the press saves the internal summary, and lists nothing.
+  {
+    const b = await pressTop("#library/cards", ROWS[1]);
+    b.at.value = "";
+    b.form.dispatchEvent(new b.m.w.Event("submit", { bubbles: true, cancelable: true }));
+    await settle(); await settle();
+    const patch = b.m.calls.filter(function (c) { return c.method === "PATCH" && /\/cpl_library\?/.test(c.url); })[0];
+    const rpc = b.m.calls.filter(function (c) { return /rpc\/cpl_library_set_public$/.test(c.url); });
+    check("the press keeps the choice to publish (publish_target public)", !!patch && patch.body.publish_target === "public" && !("public_summary" in patch.body));
+    check("⭐ an emptied summary saves the internal summary in its place, unlisted until the check passes",
+      rpc.length === 1 && rpc[0].body.p_listed === false && rpc[0].body.p_summary === ROWS[1].summary && rpc[0].body.p_slug === "brief",
+      JSON.stringify(rpc.map(function (c) { return c.body; })));
   }
 
   let fail = 0;

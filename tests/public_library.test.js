@@ -279,13 +279,18 @@ block("(3e)", function () {
   const m = loadLib({ token: "t", checks: [] });
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     openConfirm(m);
-    check("(3e) ⭐ with no check record the confirmation says Not yet certified and asks for no summary",
-      /Not yet certified\. The Public Library lists it once its accessibility check passes\./.test(m.root.textContent) && !m.root.querySelector("#lp-sum"));
+    // Every publish form carries the Public summary, prefilled from the internal one (Sam, 2026-11-25: "can you have
+    // library auto add a summary I can edit so if I forget and click publish, we'll still have a summary?").
+    check("(3e) ⭐ with no check record the confirmation says Not yet certified and offers the summary, prefilled",
+      /Not yet certified\. The Public Library lists it once its accessibility check passes\./.test(m.root.textContent) &&
+      !!m.root.querySelector("#lp-sum") && m.root.querySelector("#lp-sum").value === "Internal summary");
     m.root.querySelector('[data-pubform="r1"]').dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
     return settle();
   }).then(function () {
     const c = pubCalls(m);
-    check("(3e) ⭐ Public never lists without a passing record: no call to the listing function", c.rpc.length === 0);
+    const rb = c.rpc[0] ? JSON.parse(c.rpc[0].init.body) : {};
+    check("(3e) ⭐ Public never lists without a passing record: the one call saves the summary with p_listed false",
+      c.rpc.length === 1 && rb.p_listed === false && rb.p_summary === "Internal summary", JSON.stringify(rb));
     const b = c.patch[0] ? JSON.parse(c.patch[0].init.body) : {};
     check("(3e) the record keeps the choice (publish_target public) and nothing else", c.patch.length === 1 && b.publish_target === "public" && !("public_listed" in b));
   });
@@ -295,7 +300,7 @@ block("(3e2)", function () {
   const m = loadLib({ token: "t", checks: [PASS, FAIL] });
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     openConfirm(m);
-    check("(3e2) the latest check decides: a later failing check blocks the listing", /did not pass/.test(m.root.textContent) && !m.root.querySelector("#lp-sum"));
+    check("(3e2) the latest check decides: a later failing check blocks the listing", /did not pass/.test(m.root.textContent) && !/The Public Library shows the title/.test(m.root.textContent));
   });
 });
 block("(3e3)", function () {
@@ -303,14 +308,14 @@ block("(3e3)", function () {
   const m = loadLib({ token: "t", checks: [OTHER] });
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     openConfirm(m);
-    check("(3e3) a passing check of another version does not count", /Not yet certified/.test(m.root.textContent) && !m.root.querySelector("#lp-sum"));
+    check("(3e3) a passing check of another version does not count", /Not yet certified/.test(m.root.textContent) && !/The Public Library shows the title/.test(m.root.textContent));
   });
 });
 block("(3e4)", function () {
   const m = loadLib({ token: "t", row: Object.assign({}, ROW, { remediation: "in_remediation" }) });
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     openConfirm(m);
-    check("(3e4) In remediation stays blocked, whatever the check says", /It is in remediation/.test(m.root.textContent) && !m.root.querySelector("#lp-sum"));
+    check("(3e4) In remediation stays blocked, whatever the check says", /It is in remediation/.test(m.root.textContent) && !/The Public Library shows the title/.test(m.root.textContent));
   });
 });
 block("(3e5)", function () {

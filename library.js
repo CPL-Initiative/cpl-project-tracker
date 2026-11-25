@@ -988,18 +988,33 @@
     if (gate.absent) return head + '<p class="lib-pubwarn">' + esc(gate.why) + '</p><div class="lib-actions-row">' + cancel + "</div></form>";
     if (!gate.ok) {
       return head + '<p class="lib-pubwarn">' + esc(gate.why) + " It stays in the Internal Library until then.</p>" +
+        '<div class="lib-grid">' + pubFields(r) + "</div>" +
         '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Publish to Public Library</button>" + cancel + "</div></form>";
     }
     var claude = r.home === "web" && /^https:\/\/claude\.ai\//i.test(r.url);
     var reach = publicReach(r);
     return head + "<p>The Public Library shows the title, occasion, date, the summary below, its topics and the link, and Sierra can link it. Nothing else leaves COBI.</p>" +
       (reach ? '<p class="lib-pubwarn">' + esc(reach) + "</p>" : "") +
-      '<div class="lib-grid">' +
-      '<div class="lib-field wide"><label for="lp-sum">Public summary</label><textarea id="lp-sum" rows="3" maxlength="600" required>' + esc(r.public_summary || r.summary || "") + "</textarea></div>" +
-      '<div class="lib-field wide"><label for="lp-topics">Topics Sierra matches, separated by commas</label><input id="lp-topics" type="text" value="' + esc((r.public_topics || []).join(", ")) + '" placeholder="DSP training, developmental disabilities"></div>' +
+      '<div class="lib-grid">' + pubFields(r) +
       (claude ? '<div class="lib-field wide"><label class="lib-check"><input type="checkbox" id="lp-shared" required> I set its claude.ai link to public in the Share menu</label></div>' : "") +
       "</div>" +
       '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Publish to Public Library</button>" + cancel + "</div></form>";
+  }
+  // Every publish form carries the Public summary and its topics, certified or not (Sam, 2026-11-25: "can you have
+  // library auto add a summary I can edit so if I forget and click publish, we'll still have a summary?"). The summary
+  // starts from the internal one; left empty, the form saves the internal summary in its place, so a press never
+  // leaves a piece waiting on a summary nobody wrote.
+  function pubFields(r) {
+    var hint = String(r.summary || "").trim() ? '<p class="lib-hint">Left empty, it takes the internal summary. You can change it on the card later.</p>' : "";
+    return '<div class="lib-field wide"><label for="lp-sum">Public summary</label><textarea id="lp-sum" rows="3" maxlength="600">' + esc(String(r.public_summary || r.summary || "").slice(0, 600)) + "</textarea>" + hint + "</div>" +
+      '<div class="lib-field wide"><label for="lp-topics">Topics Sierra matches, separated by commas</label><input id="lp-topics" type="text" value="' + esc((r.public_topics || []).join(", ")) + '" placeholder="DSP training, developmental disabilities"></div>';
+  }
+  // What the form says: the summary typed, else the internal one (600 characters at most, the table's limit), and the topics.
+  function readPubFields(r) {
+    var sum = ((document.getElementById("lp-sum") || {}).value || "").trim() || String(r.summary || "").trim();
+    var topics = ((document.getElementById("lp-topics") || {}).value || "").split(",")
+      .map(function (t) { return t.trim(); }).filter(Boolean).slice(0, 12);
+    return { sum: sum.slice(0, 600), topics: topics };
   }
   // The Public confirmation on a ready draft's card, inside its publish form (so the name and the pictures box stay).
   function draftPublicConfirm(r) {
@@ -2454,9 +2469,8 @@
   // A card's Revise or Edit opens the box at the top of the tab, far from the card (Sam, 2026-11-05: "nothing
   // seemed to happen"): land with the box's heading and the piece's name in view, then the field focused.
   // Both Publish to Public Library buttons land in the form they open (Sam, 2026-11-25: the card's top one "did
-  // nothing"). The form sits in Details, below the card's face, and carries the Public summary only once the piece's
-  // check passes, so focus goes to the summary when the form has one, else to its first button, and the form scrolls
-  // into view either way.
+  // nothing"). The form sits in Details, below the card's face: focus goes to its Public summary, or to its first
+  // button where the check record is absent and the form holds only Cancel, and the form scrolls into view.
   function landOnPubForm(id) {
     var f = document.querySelector('form[data-pubform="' + id + '"]');
     var n = f && (f.querySelector("#lp-sum") || f.querySelector("button"));
@@ -4171,8 +4185,21 @@
     var gate = publicGate(r);
     if (gate.absent) { say(gate.why, true); render(); return; }
     if (gate.ok) { setPublic(id, true); return; }
-    var by = storedAuthor() || null;
+    var by = storedAuthor() || null, pf = readPubFields(r), token = reviewerToken();
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { publish_target: "public", updated_by: by } }).then(function () {
+      // The summary and topics change only inside cpl_library_set_public() (cpl_library_guard_public refuses a PATCH).
+      // Called with p_listed false it needs no check record and leaves the piece unlisted; the check run lists it with
+      // this summary once its check passes.
+      if (!pf.sum || (!token && !teamPhrase())) return;
+      return window.fetch(SET_PUBLIC_URL, {
+        method: "POST",
+        headers: token ? { apikey: SUPABASE_ANON, Authorization: "Bearer " + token, "Content-Type": "application/json" }
+                       : headers({ "Content-Type": "application/json" }),
+        body: JSON.stringify({ p_slug: r.slug, p_listed: false, p_summary: pf.sum, p_topics: pf.topics, p_by: by })
+      }).then(function (res) {
+        if (!res.ok) return res.text().then(function (t) { throw new Error("It waits for its check, but the public summary was refused (" + res.status + "). " + String(t || "").slice(0, 200)); });
+      });
+    }).then(function () {
       say("Saved. It stays in the Internal Library, and the Public Library lists it once its accessibility check passes.");
       state.pub = null;
       return load();
@@ -4186,9 +4213,7 @@
     if (!token && !teamPhrase()) { say("Listing in the public library needs the team phrase or your reviewer sign-in. Enter the phrase, or sign in from About in the header, then try again.", true); render(); return; }
     var body = { p_slug: r.slug, p_listed: listed, p_by: storedAuthor() || null };
     if (listed) {
-      var sum = ((document.getElementById("lp-sum") || {}).value || "").trim();
-      var topics = ((document.getElementById("lp-topics") || {}).value || "").split(",")
-        .map(function (t) { return t.trim(); }).filter(Boolean).slice(0, 12);
+      var pf = readPubFields(r), sum = pf.sum, topics = pf.topics;
       var shared = document.getElementById("lp-shared");
       if (!sum) { say("Add a public summary. It is what the public page and Sierra show.", true); render(); return; }
       if (shared && !shared.checked) { say("Set the claude.ai link to public first, then tick the box.", true); render(); return; }
