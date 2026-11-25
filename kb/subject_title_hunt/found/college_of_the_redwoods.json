@@ -1,0 +1,673 @@
+{
+ "college": "College of the Redwoods",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:24:01Z",
+ "run": "45631553482",
+ "plan": "kb/college_reads/subject_index_college_of_the_redwoods.json",
+ "titles": [
+  {
+   "code": "ADCT",
+   "title": "Addiction Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,addiction-studies?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 10
+  },
+  {
+   "code": "AFAM",
+   "title": "Ethnic Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,ethnic-studies?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3,
+   "shared_heading": [
+    "AFAM",
+    "ASAM",
+    "LCAM"
+   ]
+  },
+  {
+   "code": "AG",
+   "title": "Agriculture",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,agriculture?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 21
+  },
+  {
+   "code": "AJ",
+   "title": "Administration of Justice",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,administration-of-justice?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 20
+  },
+  {
+   "code": "ANTH",
+   "title": "Anthropology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,anthropology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 9
+  },
+  {
+   "code": "AQUA",
+   "title": "Aquaculture",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,aquaculture?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "ART",
+   "title": "Art",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,art?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 23,
+   "shared_heading": [
+    "ART",
+    "ARTH"
+   ]
+  },
+  {
+   "code": "ARTH",
+   "title": "Art",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,art?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2,
+   "shared_heading": [
+    "ART",
+    "ARTH"
+   ]
+  },
+  {
+   "code": "ASAM",
+   "title": "Ethnic Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,ethnic-studies?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2,
+   "shared_heading": [
+    "AFAM",
+    "ASAM",
+    "LCAM"
+   ]
+  },
+  {
+   "code": "ASTR",
+   "title": "Astronomy",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,astronomy?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "AT",
+   "title": "Automotive Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,automotive-technology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 10
+  },
+  {
+   "code": "BIOL",
+   "title": "Biology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,biology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 16
+  },
+  {
+   "code": "BUS",
+   "title": "Business",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,business?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 14
+  },
+  {
+   "code": "CE",
+   "title": "Cooperative Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,cooperative-education?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "CET",
+   "title": "Computers & Electronics Tech",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,computers-electronics-tech?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "CHEM",
+   "title": "Chemistry",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,chemistry?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "CINE",
+   "title": "Cinema",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,cinema?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "CIS",
+   "title": "Computer Information Systems",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,computer-information-systems?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 11
+  },
+  {
+   "code": "COMM",
+   "title": "Communication Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,communication-studies?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 8
+  },
+  {
+   "code": "CT",
+   "title": "Construction Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,construction-technology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 40
+  },
+  {
+   "code": "DA",
+   "title": "Dental Assisting",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,dental-assisting?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 11
+  },
+  {
+   "code": "DRAMA",
+   "title": "Drama",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,drama?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "DT",
+   "title": "Drafting Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,drafting-technology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "ECE",
+   "title": "Early Childhood Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,early-childhood-education?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 16
+  },
+  {
+   "code": "ECON",
+   "title": "Economics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,economics?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "EDUC",
+   "title": "Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,education?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 7
+  },
+  {
+   "code": "ENGL",
+   "title": "English",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,english?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 14
+  },
+  {
+   "code": "ENGR",
+   "title": "Engineering",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,engineering?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1
+  },
+  {
+   "code": "ENVSC",
+   "title": "Environmental Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,environmental-science?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "ESL",
+   "title": "English As Second Language",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,english-as-second-language?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 12
+  },
+  {
+   "code": "FNR",
+   "title": "Forestry & Natural Resources",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,forestry-natural-resources?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 20
+  },
+  {
+   "code": "FRNC",
+   "title": "French",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,french?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "FT",
+   "title": "Fire Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,fire-technology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 13
+  },
+  {
+   "code": "GEOG",
+   "title": "Geography",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,geography?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "GEOL",
+   "title": "Geology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,geology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "GS",
+   "title": "General Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,general-studies?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "GUID",
+   "title": "Guidance",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,guidance?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 29
+  },
+  {
+   "code": "HE",
+   "title": "Health Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,health-education?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "HIST",
+   "title": "History",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,history?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 10
+  },
+  {
+   "code": "HLTH",
+   "title": "Health Occupations",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,health-occupations?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "HLTH",
+    "HO"
+   ]
+  },
+  {
+   "code": "HO",
+   "title": "Health Occupations",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,health-occupations?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 10,
+   "shared_heading": [
+    "HLTH",
+    "HO"
+   ]
+  },
+  {
+   "code": "HUPA",
+   "title": "Hupa",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,hupa?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "IT",
+   "title": "Industrial Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,industrial-technology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "KINS",
+   "title": "Kinesiology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,kinesiology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 7
+  },
+  {
+   "code": "LCAM",
+   "title": "Ethnic Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,ethnic-studies?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "AFAM",
+    "ASAM",
+    "LCAM"
+   ]
+  },
+  {
+   "code": "LIBR",
+   "title": "Library",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,library?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1
+  },
+  {
+   "code": "MA",
+   "title": "Medical Assistant",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,medical-assistant?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "MATH",
+   "title": "Mathematics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,mathematics?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 16,
+   "shared_heading": [
+    "MATH",
+    "STAT"
+   ]
+  },
+  {
+   "code": "MUS",
+   "title": "Music",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,music?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 25
+  },
+  {
+   "code": "NAS",
+   "title": "Native American Studies",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,native-american-studies?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "NURS",
+   "title": "Nursing",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,nursing?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "OCEAN",
+   "title": "Oceanography",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,oceanography?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "PE",
+   "title": "Physical Education",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,physical-education?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 43
+  },
+  {
+   "code": "PHIL",
+   "title": "Philosophy",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,philosophy?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 9
+  },
+  {
+   "code": "PHYS",
+   "title": "Physics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,physics?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 6
+  },
+  {
+   "code": "POLS",
+   "title": "Political Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,political-science?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "POLS",
+    "POLSC"
+   ]
+  },
+  {
+   "code": "POLSC",
+   "title": "Political Science",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,political-science?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 6,
+   "shared_heading": [
+    "POLS",
+    "POLSC"
+   ]
+  },
+  {
+   "code": "PSYC",
+   "title": "Psychology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,psychology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "PSYC",
+    "PSYCH"
+   ]
+  },
+  {
+   "code": "PSYCH",
+   "title": "Psychology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,psychology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 7,
+   "shared_heading": [
+    "PSYC",
+    "PSYCH"
+   ]
+  },
+  {
+   "code": "PTEC",
+   "title": "Psychiatric Technician",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,psychiatric-technician?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "READ",
+   "title": "Reading",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,reading?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "REC",
+   "title": "Recreation",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,recreation?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "SNLAN",
+   "title": "Sign Language",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,sign-language?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 4
+  },
+  {
+   "code": "SOC",
+   "title": "Sociology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,sociology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 6,
+   "shared_heading": [
+    "SOC",
+    "SOCI"
+   ]
+  },
+  {
+   "code": "SOCI",
+   "title": "Sociology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,sociology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1,
+   "shared_heading": [
+    "SOC",
+    "SOCI"
+   ]
+  },
+  {
+   "code": "SPAN",
+   "title": "Spanish",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,spanish?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 5
+  },
+  {
+   "code": "SR",
+   "title": "Senior",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,senior?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "STAT",
+   "title": "Mathematics",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,mathematics?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2,
+   "shared_heading": [
+    "MATH",
+    "STAT"
+   ]
+  },
+  {
+   "code": "SWHS",
+   "title": "Social Work & Human Services",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,social-work-human-services?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "TOLD",
+   "title": "Tolowa Dee-ni'",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,tolowa-dee-ni?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1
+  },
+  {
+   "code": "VNC",
+   "title": "Licensed Vocational Nursing",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,licensed-vocational-nursing?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 3
+  },
+  {
+   "code": "VOC",
+   "title": "Vocational Training",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,vocational-training?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 2
+  },
+  {
+   "code": "WORK",
+   "title": "Work Experience/Workability",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,work-experience-workability?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 19
+  },
+  {
+   "code": "WT",
+   "title": "Welding Technology",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,welding-technology?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 13
+  },
+  {
+   "code": "YUR",
+   "title": "Yurok",
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,yurok?tenant=redwoods.elumenapp.com",
+   "where": "catalog",
+   "method": "department label",
+   "courses_listed": 1
+  }
+ ],
+ "note": "The catalog prints no code beside a subject name (runs 45623983494, 45625568851: the Courses view lists courses alone, View All Departments lists names alone). Each title is the heading of the department page that lists the code's courses (69 pages read through their content calls), so method is department label, the README's weaker tier. Seven pages head more than one code (shared_heading): Art (ART, ARTH), Ethnic Studies (AFAM, ASAM, LCAM), Health Occupations (HLTH, HO), Mathematics (MATH, STAT), Political Science (POLS, POLSC), Psychology (PSYC, PSYCH), Sociology (SOC, SOCI). Liberal Arts and Noncredit list no course."
+}
