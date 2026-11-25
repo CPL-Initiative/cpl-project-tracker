@@ -8,6 +8,7 @@
 //       gets focus back.
 //   B5  the grip resizes within 160px and the window, by keys.
 //   B6  a non-https address reaches the frame.
+//   B7  the As of / Ver. label shows to a reader who is not signed in (Sam, 2026-11-25: hide it on the public view).
 //
 // Run from repo root: `npm test` (or `node tests/funding_college_bar.test.js`).
 const fs = require("fs");
@@ -82,6 +83,8 @@ const rowOf = (doc, name) => Array.from(doc.querySelectorAll("#cplFundTable tr.c
   check("B6: a non-https address never becomes a link (Butte keeps its toggle)", !!butte && !butte.querySelector(".cf-lpname") &&
     butte.querySelector(".cplfund-caret").getAttribute("aria-expanded") === "false" && !butte.querySelector("button.cf-chev"));
   check("B6b: the bar refuses a non-https address", B.open("javascript:alert(1)", "X") === false);
+  const ver = doc.querySelector(".cplh-end > .ver");
+  check("B7: signed out, the As of / Ver. label is hidden", !!ver && ver.hidden === true);
 }
 {
   const { window } = H.freshDom();

@@ -34,8 +34,43 @@
   }
   var bar = null, frame = null, title = null, openLink = null, opener = null, h = 0;
 
-  function clampH(v) { return Math.max(MIN_H, Math.min(window.innerHeight || 900, Math.round(v))); }
-  function defaultH() { return clampH((window.innerHeight || 900) * 0.62); }
+  // THE PAGE IN COBI'S FRAME (Sam, 2026-11-25: "clicking the college name in signed in view is not opening the bottom
+  // bar"). The funding tab's Public page view shows this page in a frame stretched to the page's whole height, so a
+  // bar fixed to this window's bottom sat thousands of pixels below the screen. Framed by a page of the same origin,
+  // the bar sits at the bottom of the part of the frame the reader can see, and follows the outer page's scroll.
+  function outer() {
+    try {
+      var fe = window.frameElement;
+      if (fe && window.parent && window.parent !== window && window.parent.document) return { fe: fe, win: window.parent };
+    } catch (e) { /* another origin: treat the window as the screen */ }
+    return null;
+  }
+  // The visible band of this document, in its own coordinates.
+  function view() {
+    var o = outer();
+    var sy = window.scrollY || window.pageYOffset || 0;
+    if (!o) return { framed: false, top: sy, height: window.innerHeight || 900 };
+    var r = o.fe.getBoundingClientRect(), pvh = o.win.innerHeight || 900;
+    var visTop = Math.max(0, -r.top), visBottom = Math.min(r.height, pvh - r.top);
+    return { framed: true, top: sy + visTop, height: Math.max(MIN_H, visBottom - visTop) };
+  }
+  function clampH(v) { return Math.max(MIN_H, Math.min(view().height, Math.round(v))); }
+  function defaultH() { return clampH(view().height * 0.62); }
+  function place() {
+    if (!bar || bar.hidden) return;
+    var v = view();
+    if (h > v.height) h = clampH(h);
+    if (v.framed) {
+      bar.style.position = "absolute";
+      bar.style.bottom = "auto";
+      bar.style.top = Math.round(v.top + v.height - h) + "px";
+    } else {
+      bar.style.position = "";
+      bar.style.bottom = "";
+      bar.style.top = "";
+    }
+    bar.style.height = h + "px";
+  }
 
   function ensureCss() {
     if (doc.getElementById("cbar-css")) return;
@@ -68,8 +103,9 @@
   function setH(v) {
     h = clampH(v);
     if (!bar) return;
-    bar.style.height = h + "px";
-    doc.body.style.setProperty("--cbar-h", h + "px");
+    place();
+    // Framed, the frame is as tall as the page, so the foot needs no room: the outer page scrolls.
+    doc.body.style.setProperty("--cbar-h", (view().framed ? 0 : h) + "px");
     var g = bar.querySelector(".cbar-grip");
     if (g) g.setAttribute("aria-valuenow", String(h));
   }
@@ -118,6 +154,12 @@
       window.addEventListener("pointercancel", up);
     });
     window.addEventListener("resize", function () { if (bar && !bar.hidden) setH(h); });
+    var o = outer();
+    if (o) {
+      // Capture: COBI may scroll an inner container rather than its window.
+      o.win.addEventListener("scroll", place, true);
+      o.win.addEventListener("resize", function () { if (bar && !bar.hidden) setH(h); });
+    }
   }
 
   // MAP's field is typed by hand: only an https address reaches the frame (cpl_funding.js httpsUrl checks it too).
@@ -139,8 +181,14 @@
     try { title.focus({ preventScroll: true }); } catch (e) { title.focus(); }
     // Keep the clicked row in sight above the bar.
     if (from && typeof from.getBoundingClientRect === "function") {
-      var r = from.getBoundingClientRect(), room = (window.innerHeight || 900) - h;
-      if (r.bottom > room - 8 && typeof window.scrollBy === "function") window.scrollBy(0, r.bottom - room + 48);
+      var v = view(), fr = from.getBoundingClientRect(), sy = window.scrollY || window.pageYOffset || 0;
+      var rowBottom = fr.bottom + sy, room = v.top + v.height - h;
+      if (rowBottom > room - 8) {
+        if (v.framed) {
+          try { from.scrollIntoView({ block: "start" }); } catch (e) { from.scrollIntoView(true); }
+          place();
+        } else if (typeof window.scrollBy === "function") window.scrollBy(0, rowBottom - room + 48);
+      }
     }
     return true;
   }
