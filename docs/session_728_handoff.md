@@ -72,4 +72,18 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
 
 ## Split changes during the run
 
-(Filled in as the run goes.)
+- 06:24Z: the declaration, #3807. 06:26Z: `pooled`, `elumen`, `lever` and the College of the Canyons and American River
+  piles started on Opus 5.5 at high effort, a fresh worker each.
+- 06:31Z to 06:40Z: display build `f4b48370bc11` (#3808; 18,712 records, built on `main` `d4a7899a` after the daily
+  run 45559142493): the Glendale gate 45561297276 (242 rows), then the whole build 45561786292; live after it, 18,711
+  rows at the build, the same 32 at older builds and none without a display.
+- 06:32Z: San Bernardino Valley 32317's paid read 45561301147 on `claude/s727-lever` (`only=32317`, about $0.07).
+- 06:45Z: `test` on #3808 failed on `tests/statewide_subject_codes_test.py` check (5): the daily build reads LAWEN as
+  settled by a person's statewide filing (CRIM), which outranks the named-code rule the check pinned. Fixed on #3808
+  (`46a3d804`), since it failed every PR from `d4a7899a`.
+- 06:55Z: American River's plan s727b (14 collected with named gaps, one new kind, `option_lists_read_apart`; 5
+  held) to an Opus reader; the pooled plan s727p (11 to passing: Modesto Junior 5, Rio Hondo 3, Cuyamaca 2, Golden
+  West 1; El Camino's three held) to a Sonnet reader; Shasta's piles started.
+- 06:58Z: College of the Canyons's plan s727a (9 collected with named gaps, 43388 inserted, a new kind
+  `heading_not_in_text`; 12 held) to an Opus reader; Santa Barbara City's piles started. `lever`'s Orange Coast work
+  (#3811: 3 pins, 5 named gaps, a reader change to `site_heading_names`) to an Opus reader before its paid read.
