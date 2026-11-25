@@ -1,16 +1,15 @@
 {
- "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: round 1 (run 45625052392) read the front page, whose links name department pages under /programs-courses/ and no course index. This read tries the CourseLeaf course index at the college's /course-descriptions/ and loads one department page (Accounting) to see how it heads its courses. No model call.",
+ "_readme": "Subject-title hunt, group html_b (S730 worker, 2026-11-25, Sam's ask of 2026-11-25 in session S730: the catalog's printed heading for each local subject code, for the 88 stray M-ID codes, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3, the last: round 2 (run 45626310706) found no /moorpark/course-descriptions/ (404), and a department page (Accounting) heads its COURSES tab with the department's name, a department label. This read tries the district catalog's own course index, at /course-descriptions/ and /courses/. No model call.",
  "college": "Moorpark College",
  "questions": {
-  "subjects": "Every subject heading the catalog's course index prints, with its code."
+  "subjects": "Every subject heading the district catalog's course index prints, with its code."
  },
  "keywords": [
-  "\\([A-Z&]{1,8}\\)",
-  "ACCT ?M"
+  "\\([A-Z&]{1,8}\\)"
  ],
  "pages": [
   {
-   "url": "https://catalog.vcccd.edu/moorpark/course-descriptions/",
+   "url": "https://catalog.vcccd.edu/course-descriptions/",
    "answers": [
     "subjects"
    ],
@@ -18,11 +17,12 @@
    "links_cap": 300
   },
   {
-   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/accounting/",
+   "url": "https://catalog.vcccd.edu/courses/",
    "answers": [
     "subjects"
    ],
-   "capture_view": true
+   "links": "/courses/[a-z0-9_-]+/$",
+   "links_cap": 300
   }
  ]
 }
