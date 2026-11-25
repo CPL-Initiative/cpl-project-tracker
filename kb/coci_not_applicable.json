@@ -25,11 +25,11 @@
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"0ab1f936fb8a660e4745f857d8eef4c30e37b13222efe7fae5d01a43bdfdef82"
+"sha256":"a915f9f1a27e197674d00ed8b07481670f719a070fcf3dc64d200c8664a062cc"
 },
 "list_members":{
 "path":"unified_courses_members.js",
-"sha256":"49dae4dfdfd943f68b81bda0c25935135cb519de3c8065f543015845ab9000ec"
+"sha256":"777d3969a31e7d648edc2043cc3475088d8e364c8ae0e03841483c0d49660c78"
 },
 "one_course_cards":{
 "path":"kb/coci_minted_singletons.json",
@@ -1161,14 +1161,14 @@
 "independent":59,
 "internship":11
 },
-"courses":6284,
+"courses":6281,
 "courses_by_kind":{
 "code_only":1475,
-"independent":3428,
+"independent":3426,
 "internship":797,
-"topics":584
+"topics":583
 },
-"courses_with_no_card":8139,
+"courses_with_no_card":8136,
 "real_gaps":1855,
 "topics_left_with_identity_or_curated":0
 },
@@ -6257,10 +6257,6 @@
 "independent",
 "Independent Studies in Accounting"
 ],
-"American River College|CCC000497826":[
-"independent",
-"Independent Studies in Adapted Physical Education"
-],
 "American River College|CCC000497839":[
 "independent",
 "Independent Studies in Astronomy"
@@ -9800,10 +9796,6 @@
 "Cosumnes River College|CCC000078130":[
 "independent",
 "Independent Studies in Statistics"
-],
-"Cosumnes River College|CCC000087807":[
-"independent",
-"Independent Studies in Adapted Physical Education"
 ],
 "Cosumnes River College|CCC000103035":[
 "independent",
@@ -18132,10 +18124,6 @@
 "Monterey Peninsula College|CCC000622700":[
 "independent",
 "Independent Study"
-],
-"Monterey Peninsula College|CCC000654393":[
-"topics",
-"Special Topics - Adapted Dance"
 ],
 "Moorpark College|CCC000426826":[
 "independent",

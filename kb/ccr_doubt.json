@@ -13,8 +13,8 @@
      0.1588
     ],
     [
-     "Kinesiology",
-     0.156
+     "Child Development/Early Childhood Education",
+     0.1537
     ]
    ],
    "desc_kind": "desc_differs_close",
@@ -64,26 +64,27 @@
    "colleges": 2,
    "desc": [
     [
-     "Addiction Paraprofessional Training",
-     0.1608
+     "Physical Education Disabled Students",
+     0.3857
     ],
     [
      "Kinesiology",
-     0.1506
+     0.2848
     ],
     [
-     "Health Information Technology",
-     0.1479
+     "Health and Safety: Noncredit",
+     0.2539
     ]
    ],
-   "desc_kind": "desc_differs_thin",
+   "desc_kind": "desc_differs_clear",
    "discipline": "Kinesiology",
-   "id": "KINE M1656",
+   "id": "KINE M1568",
    "members": 2,
-   "title": "Healthful Living",
+   "title": "Low Impact Fitness",
    "verdict": "for_a_curator",
    "votes": {
-    "Health": 2
+    "Kinesiology": 1,
+    "Physical Education Disabled Students": 1
    },
    "why": [
     "description",
@@ -99,11 +100,11 @@
     ],
     [
      "Interdisciplinary-Basic Skills: Noncredit",
-     0.0812
+     0.0813
     ],
     [
      "Learning Assistance or Learning Skills",
-     0.0782
+     0.0783
     ]
    ],
    "desc_kind": "desc_differs_clear",
@@ -118,30 +119,33 @@
    ]
   },
   {
-   "colleges": 1,
+   "colleges": 2,
    "desc": [
     [
-     "Older Adults: Noncredit",
-     0.1122
+     "Physical Education Disabled Students",
+     0.2088
     ],
     [
-     "Physics/Astronomy",
-     0.0494
+     "Kinesiology",
+     0.2064
     ],
     [
-     "Office Technologies",
-     0.0493
+     "History",
+     0.1551
     ]
    ],
-   "desc_kind": "desc_differs_clear",
+   "desc_kind": "desc_differs_thin",
    "discipline": "Kinesiology",
-   "id": "KINE M1697",
+   "id": "KINE M1952",
    "members": 2,
-   "title": "Elements of Swim Technique- Beginner Intermediate",
+   "title": "Heart Healthy Exercise",
    "verdict": "for_a_curator",
-   "votes": {},
+   "votes": {
+    "Physical Education Disabled Students": 2
+   },
    "why": [
-    "description"
+    "description",
+    "top"
    ]
   },
   {
@@ -149,15 +153,15 @@
    "desc": [
     [
      "Kinesiology",
-     0.2683
+     0.2628
     ],
     [
      "Counseling",
-     0.2387
+     0.2388
     ],
     [
      "Health and Safety: Noncredit",
-     0.222
+     0.2219
     ]
    ],
    "desc_kind": "desc_agrees_close",
@@ -180,15 +184,15 @@
    "desc": [
     [
      "Kinesiology",
-     0.2352
+     0.236
     ],
     [
      "Counseling",
-     0.198
+     0.1981
     ],
     [
      "Nutritional Science/Dietetics",
-     0.1924
+     0.1918
     ]
    ],
    "desc_kind": "desc_agrees_close",
@@ -210,18 +214,18 @@
    "desc": [
     [
      "Kinesiology",
-     0.17
+     0.1856
     ],
     [
      "Nutritional Science/Dietetics",
-     0.1311
+     0.1297
     ],
     [
      "Gerontology",
-     0.1043
+     0.1047
     ]
    ],
-   "desc_kind": "desc_agrees_close",
+   "desc_kind": "desc_agrees_clear",
    "discipline": "Kinesiology",
    "id": "KINE M1524",
    "members": 3,
@@ -239,56 +243,25 @@
    "desc": [
     [
      "Kinesiology",
-     0.3017
+     0.1691
     ],
     [
-     "Health and Safety: Noncredit",
-     0.2225
+     "Addiction Paraprofessional Training",
+     0.1612
     ],
     [
-     "Learning Assistance or Learning Skills",
-     0.1079
-    ]
-   ],
-   "desc_kind": "desc_agrees_clear",
-   "discipline": "Kinesiology",
-   "id": "KINE M1267",
-   "members": 2,
-   "title": "Adapted: Beginning Stretching and Stress Reduction",
-   "verdict": "unsettled",
-   "votes": {
-    "Kinesiology": 1,
-    "Physical Education Disabled Students": 1
-   },
-   "why": [
-    "top"
-   ]
-  },
-  {
-   "colleges": 2,
-   "desc": [
-    [
-     "Kinesiology",
-     0.1907
-    ],
-    [
-     "Environmental Technologies",
-     0.1845
-    ],
-    [
-     "Multimedia",
-     0.0905
+     "Health Information Technology",
+     0.1484
     ]
    ],
    "desc_kind": "desc_agrees_thin",
    "discipline": "Kinesiology",
-   "id": "KINE M1481",
+   "id": "KINE M1656",
    "members": 2,
-   "title": "Intermediate Aquatic Calisthenics",
+   "title": "Healthful Living",
    "verdict": "unsettled",
    "votes": {
-    "Kinesiology": 1,
-    "Physical Education Disabled Students": 1
+    "Health": 2
    },
    "why": [
     "top"
@@ -299,74 +272,15 @@
    "desc": [
     [
      "Kinesiology",
-     0.2655
-    ],
-    [
-     "Health and Safety: Noncredit",
-     0.2533
+     0.2722
     ],
     [
      "Nutritional Science/Dietetics",
-     0.1056
-    ]
-   ],
-   "desc_kind": "desc_agrees_thin",
-   "discipline": "Kinesiology",
-   "id": "KINE M1568",
-   "members": 2,
-   "title": "Low Impact Fitness",
-   "verdict": "unsettled",
-   "votes": {
-    "Kinesiology": 1,
-    "Physical Education Disabled Students": 1
-   },
-   "why": [
-    "top"
-   ]
-  },
-  {
-   "colleges": 2,
-   "desc": [
-    [
-     "Kinesiology",
-     0.1861
+     0.1969
     ],
     [
-     "History",
-     0.1545
-    ],
-    [
-     "Learning Assistance or Learning Skills",
-     0.1316
-    ]
-   ],
-   "desc_kind": "desc_agrees_close",
-   "discipline": "Kinesiology",
-   "id": "KINE M1952",
-   "members": 2,
-   "title": "Heart Healthy Exercise",
-   "verdict": "unsettled",
-   "votes": {
-    "Physical Education Disabled Students": 2
-   },
-   "why": [
-    "top"
-   ]
-  },
-  {
-   "colleges": 2,
-   "desc": [
-    [
-     "Kinesiology",
-     0.2592
-    ],
-    [
-     "Nutritional Science/Dietetics",
-     0.1983
-    ],
-    [
-     "Gerontology",
-     0.1654
+     "Physical Education Disabled Students",
+     0.187
     ]
    ],
    "desc_kind": "desc_agrees_clear",
@@ -388,45 +302,15 @@
    "desc": [
     [
      "Kinesiology",
-     0.2556
+     0.2085
+    ],
+    [
+     "Physical Education Disabled Students",
+     0.1529
     ],
     [
      "Health and Safety: Noncredit",
-     0.1754
-    ],
-    [
-     "Mathematics",
-     0.1017
-    ]
-   ],
-   "desc_kind": "desc_agrees_clear",
-   "discipline": "Kinesiology",
-   "id": "KINE M1933",
-   "members": 2,
-   "title": "Core Strengthening and Flexibility",
-   "verdict": "unsettled",
-   "votes": {
-    "Kinesiology": 1,
-    "Physical Education Disabled Students": 1
-   },
-   "why": [
-    "top"
-   ]
-  },
-  {
-   "colleges": 1,
-   "desc": [
-    [
-     "Kinesiology",
-     0.2064
-    ],
-    [
-     "Health and Safety: Noncredit",
-     0.1362
-    ],
-    [
-     "Nutritional Science/Dietetics",
-     0.0782
+     0.1351
     ]
    ],
    "desc_kind": "desc_agrees_clear",
@@ -445,7 +329,7 @@
  ],
  "counts": {
   "description": 5,
-  "top_only": 10
+  "top_only": 6
  },
  "discipline": "Kinesiology",
  "schema": 1

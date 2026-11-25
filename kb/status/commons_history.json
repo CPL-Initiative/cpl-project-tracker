@@ -113,6 +113,12 @@
    "exhibit|#exhibits/list/nosubj|credentials with no Common SUBJ (# exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist": 597,
    "requirements|#program-requirements/list/fail|active programs whose record fails a check": 1841,
    "requirements|#program-requirements/list/unread|active programs with no record yet": 2927
+  },
+  "2026-11-25": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5305,
+   "exhibit|#exhibits/list/nosubj|credentials with no Common SUBJ (# exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist": 597,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 1841,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 2927
   }
  },
  "pairs": {
@@ -1129,6 +1135,33 @@
    "exhibit": [
     3222,
     6254,
+    1582
+   ],
+   "requirements": [
+    15514,
+    20282,
+    32
+   ],
+   "subjects": [
+    151,
+    246,
+    137
+   ]
+  },
+  "2026-11-25": {
+   "course": [
+    4004,
+    15876,
+    292
+   ],
+   "cr": [
+    491,
+    2344,
+    139
+   ],
+   "exhibit": [
+    3222,
+    6256,
     1582
    ],
    "requirements": [
