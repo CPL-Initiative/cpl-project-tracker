@@ -133,6 +133,20 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   dispatched Antelope Valley's read again on `claude/s730-elumen2` at `977e3cf3`, with the pin (about $3.90).
 - 12:19Z: `land` started: s730a, s730b (with its test fix `c9d3341c`) and s731c as one PR, `claude/s731-land`.
 
+- 12:35Z: #3830 opened (`claude/s731-land` `02bf74de`): s730a, s730b and s731c, each applied and live, `.apply` equal to
+  `main`'s. 12:41Z: `lints (4)` failed on S703's `tests/program_lists_past_figure_s703_test.py`, which pins LATTC 08479 as
+  held by hand; s730a collected it with `noted_figures_differ`. `land` fixes the test to accept either state
+  (`p-test-asserts-other-pr-absent-s721`).
+- 12:38Z: `pooled` (s731p, `claude/s731-pooled` `5f9d346d`) changed the shared scorer behind a `POOLED_S731` flag (four
+  new pooled phrasings, LIST and CONTINUED headings joined, no pooling inside an option group); self-recall over all
+  18,962 records: 18 read differently, all real pools, none from pass to fail, 5 verdicts moved, all this plan's rows.
+  **DECIDED** `d-porterville-06773-keeps-s721c-gap-s731`: 06773's read starts mid-page with no heading, so it stays
+  collected with s721c's gap and leaves the plan (7 rows). An Opus reader reads the scorer change before any apply.
+- 12:47Z: `elumen2` finished. Antelope Valley's read 45612549421 ($2.76) read the 38 and 43150 from their own pages;
+  `decide` replaced 37 and kept 16468 (its own-page record adds to 59 to 61 against a stated 60); load 45616752363
+  inserted 43150 (passing); reread 45616970396 replaced exactly the 37. With Redwoods' 2, the eLumen follow-up collected
+  40 records (1 new, 39 read again from their own pages) for $2.88 of paid reads; head `a2af6cf1`.
+
 [[S731 FILL: the run's log]]
 
 Spend: [[S731 FILL]]
