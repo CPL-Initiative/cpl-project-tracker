@@ -231,6 +231,10 @@
       "border-bottom: 2px solid var(--cobalt, #0D5BC6); transform: rotate(-45deg); transition: transform .15s; }",
     "tr.cplfund-open .cf-chev::before { transform: rotate(45deg); }",
     ".cf-chev.cf-chev-empty::before { content: none; }",
+    "button.cf-chev { border: 0; background: none; padding: 0; margin: 0; cursor: pointer; min-width: 24px; min-height: 28px; }",
+    "button.cf-chev:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; border-radius: 3px; }",
+    ".cplfund-table .cf-lpname { text-decoration: underline; text-decoration-style: solid; text-underline-offset: 3px; color: var(--cobalt, #0D5BC6); }",
+    ".cplfund-table .cf-lpname:hover { text-decoration-thickness: 2px; }",
     "@media (prefers-reduced-motion: reduce) { .cf-chev::before { transition: none; } }",
     "@media print { .cf-chev { display: none; } }",
     ".cf-starslot { display: inline-block; width: 20px; margin-left: 4px; text-align: center; }",
@@ -13898,14 +13902,43 @@
   // star, each in a fixed slot so the names line up. Both sit OUTSIDE the
   // name's button: the print copy flattens that button to its text, and its
   // accessible name stays the name.
-  function leadHtml(c) {
-    return '<span class="cf-lead">' + chevHtml(false) + '<span class="cf-elig">' + eligGlyph(c.college) + "</span>" +
+  function leadHtml(c, id) {
+    return '<span class="cf-lead">' + chevHtml(false, lpUrlOf(c.college) ? { id: id, name: dispName(c.college) } : null) +
+      '<span class="cf-elig">' + eligGlyph(c.college) + "</span>" +
       '<span class="cf-starslot">' + vetStarHtml(c) + "</span></span>";
   }
   // The row's caret, on the public page alone (the drawing is CSS, .cf-chev above). An empty slot on a row that does
   // not open keeps the names in line.
-  function chevHtml(empty) {
-    return publicMode() ? '<span class="cf-chev' + (empty ? " cf-chev-empty" : "") + '" aria-hidden="true"></span>' : "";
+  // Where the name opens the landing page (toggle given), the caret becomes the row's toggle button: the one control
+  // left that says, and changes, whether the detail is open.
+  function chevHtml(empty, toggle) {
+    if (!publicMode()) return "";
+    if (toggle) {
+      return '<button type="button" class="cf-chev" aria-expanded="' + (state.open[toggle.id] ? "true" : "false") +
+        '" aria-label="' + esc(toggle.name + ", per-priority detail") + '"></button>';
+    }
+    return '<span class="cf-chev' + (empty ? " cf-chev-empty" : "") + '" aria-hidden="true"></span>';
+  }
+  // THE NAME OPENS THE COLLEGE'S CPL LANDING PAGE (Sam, 2026-11-25, on the approved mock: "have it be a bottom bar
+  // that could span the width and be as tall as it needs to be"). On the public page, a college whose landing page
+  // is on file (the published mirror, ELIG.contact) gets a name that opens that page in the bar along the window's
+  // bottom (funding-model/college_bar.js); the caret before the pie opens the row's detail. Without a page on file,
+  // or in COBI's tab, the name stays the row's toggle as before.
+  function lpUrlOf(college) {
+    if (!publicMode()) return "";
+    var k = ELIG.contact && ELIG.contact[college];
+    return (k && k.url) || "";
+  }
+  function nameButtonHtml(c, id) {
+    var name = dispName(c.college), url = lpUrlOf(c.college);
+    if (url) {
+      return '<button type="button" class="cplfund-caret cf-lpname" data-lp-url="' + esc(url) + '" data-lp-name="' +
+        esc(name) + '" title="Click to see the College Landing page below." aria-label="' + esc(name + ": open its CPL landing page") +
+        '"><span class="cplfund-instname">' +
+        esc(name) + "</span></button>";
+    }
+    return '<button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
+      '" aria-label="' + esc(name + ", per-priority detail") + '"><span class="cplfund-instname">' + esc(name) + "</span></button>";
   }
   function collegeRowHtml(c, idx) {
     var id = "c:" + c.college;
@@ -13916,8 +13949,7 @@
       "<td>" + (idx + 1) + "</td>" +
       // The NAME is the toggle (every control is a word): a real <button> for
       // keyboard users, aria-expanded for the state, no caret glyph.
-      '<td class="t cf-inst">' + leadHtml(c) + '<button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
-      '" aria-label="' + esc(dispName(c.college) + ", per-priority detail") + '"><span class="cplfund-instname">' + esc(dispName(c.college)) + "</span></button>" + rowChips(c) + "</td>" +
+      '<td class="t cf-inst">' + leadHtml(c, id) + nameButtonHtml(c, id) + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td class="c" title="' + esc(sizeCellTitle(c)) + '">' + fmtInt(c.cr_ftes) + "</td>" +
       '<td class="c" title="' + esc((c.nco
@@ -17689,6 +17721,11 @@
     var el = holder.ownerDocument.activeElement;
     if (!el || !holder.contains(el)) return null;
     if (el.getAttribute && el.getAttribute("data-sort")) return { kind: "th", key: el.getAttribute("data-sort") };
+    if (el.className && String(el.className).indexOf("cf-chev") !== -1) {
+      var trc = el.parentNode;
+      while (trc && trc.tagName !== "TR") trc = trc.parentNode;
+      if (trc) return { kind: "chev", id: trc.getAttribute("data-id") };
+    }
     if (el.className && String(el.className).indexOf("cplfund-caret") !== -1) {
       var tr = el.parentNode;
       while (tr && tr.tagName !== "TR") tr = tr.parentNode;
@@ -17705,6 +17742,9 @@
     } else if (f.kind === "caret") {
       var trs = holder.querySelectorAll("tr.cplfund-row");
       for (i = 0; i < trs.length; i++) if (trs[i].getAttribute("data-id") === f.id) { target = trs[i].querySelector(".cplfund-caret"); break; }
+    } else if (f.kind === "chev") {
+      var trs2 = holder.querySelectorAll("tr.cplfund-row");
+      for (i = 0; i < trs2.length; i++) if (trs2[i].getAttribute("data-id") === f.id) { target = trs2[i].querySelector("button.cf-chev"); break; }
     }
     if (target) { try { target.focus(); } catch (e) {} }
   }
@@ -17791,7 +17831,8 @@
     // row — while .cplfund-row carries the separate meaning "is an institution",
     // which the statewide row is not. One handler, still; no class borrowed.
     holder.querySelectorAll("tbody tr[data-id]").forEach(function (tr) {
-      tr.addEventListener("click", function () {
+      tr.addEventListener("click", function (e) {
+        if (e && e.target && e.target.closest && e.target.closest(".cf-lpname")) return;
         var id = tr.getAttribute("data-id");
         if (state.open[id]) delete state.open[id];
         else state.open[id] = true;
