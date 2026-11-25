@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 4: the Credit, Noncredit, Adult Education and Emeritus course nodes that round 3 (run 45626743727) found. Catalog 4420.",
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 5: the link lists under the Credit, Noncredit, Adult Education and Emeritus course nodes that round 4 (run 45628443522) found, through the capture view. Catalog 4420.",
  "college": "Saddleback College",
  "questions": {
   "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
@@ -12,25 +12,29 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45465"
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45481",
+   "capture_view": true
   },
   {
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45469"
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45513",
+   "capture_view": true
   },
   {
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45473"
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45811",
+   "capture_view": true
   },
   {
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45477"
+   "url": "https://saddleback.curriqunet.com/catalog/_getNavigation?id=4420&parentId=45517",
+   "capture_view": true
   }
  ],
  "capture_lines": 2000

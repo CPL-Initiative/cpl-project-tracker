@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 4: round 3 (run 45626743727) printed 100 of the credit subject list's items, its answer past the reader's whole-page size; this read prints the same call through the capture view, and lists the Noncredit Courses node (23988). Catalog 16.",
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 5: the link list (25455) under Noncredit Courses that round 4 (run 45628443522) found, through the capture view. Catalog 16.",
  "college": "Rio Hondo College",
  "questions": {
   "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
@@ -12,14 +12,8 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453",
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25455",
    "capture_view": true
-  },
-  {
-   "answers": [
-    "cq_subjects"
-   ],
-   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=23988"
   }
  ],
  "capture_lines": 2000
