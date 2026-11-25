@@ -1,0 +1,702 @@
+{
+ "college": "Shasta College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:04:36Z",
+ "run": "45629430201",
+ "runs": [
+  "45625006694",
+  "45626565022",
+  "45627807594",
+  "45629430201"
+ ],
+ "plan": "kb/college_reads/subject_index_shasta.json",
+ "source_pdf": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
+ "titles": [
+  {
+   "code": "ACCT",
+   "title": "ACCOUNTING",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=106",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADAP",
+   "title": "ADAPTIVE STUDIES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=107",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADJU",
+   "title": "ADMINISTRATION OF JUSTICE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=107",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ADS",
+   "title": "ALCOHOL AND DRUG STUDIES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=110",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AG",
+   "title": "AG – GENERAL AGRICULTURE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=114",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGAB",
+   "title": "AG – AGRICULTURE BUSINESS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=111",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGAS",
+   "title": "AG – ANIMAL SCIENCE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=111",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGEH",
+   "title": "AG – ENVIRONMENTAL HORTICULTURE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=112",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGEQ",
+   "title": "AG - EQUINE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=114",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGMA",
+   "title": "AG – MECHANIZED AGRICULTURE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=115",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGNR",
+   "title": "AG – NATURAL RESOURCES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=115",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGPS",
+   "title": "AG – PLANT SCIENCE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=117",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGRI",
+   "title": "AGRICULTURE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGSA",
+   "title": "AG – SUSTAINABLE AGRICULTURE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AGVIT",
+   "title": "AG – VITICULTURE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ALH",
+   "title": "ALLIED HEALTH",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=118",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANAT",
+   "title": "ANATOMY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=119",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "ANTHROPOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=120",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARCH",
+   "title": "ARCHAEOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=120",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "ART",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=121",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "ART HISTORY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASL",
+   "title": "AMERICAN SIGN LANGUAGE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=119",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "ASTRONOMY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AUTO",
+   "title": "AUTOMOTIVE TECHNOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "BIOLOGICAL SCIENCES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=125",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BOT",
+   "title": "BOTANY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=126",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BSOT",
+   "title": "BUSINESS SYSTEMS AND OFFICE TECHNOLOGIES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=129",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUAD",
+   "title": "BUSINESS ADMINISTRATION",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=127",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CALS",
+   "title": "CAREER AND LIFE SUCCESS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=131",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "CHEMISTRY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=134",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHIN",
+   "title": "CHINESE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=135",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "COMPUTER AND INFORMATION SYSTEMS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=136",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "COMMUNICATION STUDIES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=135",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CONS",
+   "title": "CONSTRUCTION TECHNOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=140",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CULA",
+   "title": "CULINARY ARTS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DAN",
+   "title": "DANCE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DIES",
+   "title": "DIESEL TECHNOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=145",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DNTL",
+   "title": "DENTAL",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=144",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECE",
+   "title": "EARLY CHILDHOOD EDUCATION",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=146",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "ECONOMICS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "EDUCATION",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "ENGLISH",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=154",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "ENGINEERING",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESCI",
+   "title": "EARTH SCIENCE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=149",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "ENGLISH AS A SECOND LANGUAGE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=157",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETHS",
+   "title": "ETHNIC STUDIES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=157",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FAID",
+   "title": "FIRST AID/CPR/EMT",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=169",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FIRS",
+   "title": "FIRE TECHNOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=158",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FREN",
+   "title": "FRENCH",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FSS",
+   "title": "FAMILY STUDIES AND SERVICES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=158",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FTWL",
+   "title": "FIRE TECHNOLOGY/WILDLAND FIRE TECHNOLOGY LOGISTICS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=164",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FTWO",
+   "title": "FIRE TECHNOLOGY/WILDLAND FIRE TECHNOLOGY OPERATIONS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=165",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FTWP",
+   "title": "FIRE TECHNOLOGY/WILDLAND FIRE TECHNOLOGY PREVENTION",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=168",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "GEOGRAPHY AND GEOSPATIAL TECHNOLOGIES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=170",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "GEOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GERM",
+   "title": "GERMAN",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HEOC",
+   "title": "HEALTH OCCUPATIONS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=176",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIMS",
+   "title": "HEALTH INFORMATION MANAGEMENT",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "HISTORY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=176",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIT",
+   "title": "HEALTH INFORMATION TECHNOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=174",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HLTH",
+   "title": "HEALTH",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=172",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HOSP",
+   "title": "HOSPITALITY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=177",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUM",
+   "title": "HUMANITIES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=179",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUSV",
+   "title": "HUMAN SERVICES",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=178",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "INDE",
+   "title": "INDUSTRIAL TECHNOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=180",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "IS",
+   "title": "INDEPENDENT STUDY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=180",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPN",
+   "title": "JAPANESE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=181",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JOUR",
+   "title": "JOURNALISM",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=182",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "KINES",
+   "title": "KINESIOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=182",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "MATHEMATICS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=183",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MICR",
+   "title": "MICROBIOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUS",
+   "title": "MUSIC",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NHIS",
+   "title": "NATURAL HISTORY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=189",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NUTR",
+   "title": "NUTRITION",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=189",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "OAS",
+   "title": "OFFICE ADMINISTRATION",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "PHYSICAL EDUCATION",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=191",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PEAT",
+   "title": "PHYSICAL EDUCATION – ATHLETICS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=193",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "PHILOSOPHY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHSC",
+   "title": "PHYSICAL SCIENCE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=196",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHY",
+   "title": "PHYSIOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "PHYSICS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "POLITICAL SCIENCE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "PSYCHOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=200",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PTA",
+   "title": "PHYSICAL THERAPIST ASSISTANT",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=197",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "REGN",
+   "title": "REGISTERED NURSING",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=201",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SDEV",
+   "title": "SKILLS DEVELOPMENT",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=204",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SL",
+   "title": "SIGN LANGUAGE",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=203",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOC",
+   "title": "SOCIOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=204",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "SOCIOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=204",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "SPANISH",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=205",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "STATISTICS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=206",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STU",
+   "title": "STUDENT DEVELOPMENT",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=206",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THTR",
+   "title": "THEATRE ARTS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=207",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "UAS",
+   "title": "UNMANNED AIRCRAFT SYSTEMS",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=209",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "VOCN",
+   "title": "VOCATIONAL NURSING",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=209",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "WELDING TECHNOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=210",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WTT",
+   "title": "WATER TREATMENT TECHNOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=209",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ZOOL",
+   "title": "ZOOLOGY",
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=212",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}

@@ -1,0 +1,501 @@
+{
+ "college": "Compton College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:04:36Z",
+ "run": "45629430201",
+ "runs": [
+  "45625006694",
+  "45626565022",
+  "45627807594",
+  "45629430201",
+  "45630937766"
+ ],
+ "plan": "kb/college_reads/subject_index_compton.json",
+ "source_pdf": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf",
+ "titles": [
+  {
+   "code": "ACR",
+   "title": "AIR CONDITIONING AND REFRIGERATION",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=124",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ACRP",
+   "title": "AUTOMOTIVE COLLISION REPAIR/PAINTING",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=134",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AJ",
+   "title": "ADMINISTRATION OF JUSTICE",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=119",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANAT",
+   "title": "ANATOMY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=126",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ANTH",
+   "title": "ANTHROPOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=127",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ART",
+   "title": "ART",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=129",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ARTH",
+   "title": "ART HISTORY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=132",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "AS",
+   "title": "ACADEMIC STRATEGIES",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=119",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ASTR",
+   "title": "ASTRONOMY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=132",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ATEC",
+   "title": "AUTOMOTIVE TECHNOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=138",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BIOL",
+   "title": "BIOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=141",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BTEC",
+   "title": "BIOTECHNOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=143",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "BUS",
+   "title": "BUSINESS",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=144",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CA",
+   "title": "CULINARY ARTS",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=163",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CDEV",
+   "title": "CHILD DEVELOPMENT",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=148",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CH",
+   "title": "CONTEMPORARY HEALTH",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=161",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CHEM",
+   "title": "CHEMISTRY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=147",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CIS",
+   "title": "COMPUTER INFORMATION SYSTEMS",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=154",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMM",
+   "title": "COMMUNICATION STUDIES",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COMS",
+   "title": "COMMUNICATION STUDIES",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=153",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "COSM",
+   "title": "COSMETOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=161",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "CSCI",
+   "title": "COMPUTER SCIENCE",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=160",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "DANC",
+   "title": "DANCE",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=164",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ECON",
+   "title": "ECONOMICS",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=168",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDEV",
+   "title": "EDUCATIONAL DEVELOPMENT",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=169",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "EDUC",
+   "title": "EDUCATION",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=169",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGL",
+   "title": "ENGLISH",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=174",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ENGR",
+   "title": "ENGINEERING",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=171",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESL",
+   "title": "ENGLISH AS A SECOND LANGUAGE",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=179",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ESTU",
+   "title": "ETHNIC STUDIES",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=185",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "ETEC",
+   "title": "ENGINEERING TECHNOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=171",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FAID",
+   "title": "FIRST AID",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FILM",
+   "title": "FILM/VIDEO",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=187",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "FTEC",
+   "title": "FIRE AND EMERGENCY TECHNOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=189",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOG",
+   "title": "GEOGRAPHY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=190",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "GEOL",
+   "title": "GEOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=191",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HDEV",
+   "title": "HUMAN DEVELOPMENT",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=198",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HIST",
+   "title": "HISTORY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=195",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HSED",
+   "title": "HIGH SCHOOL EDUCATION",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=192",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "HUMA",
+   "title": "HUMANITIES",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "JAPA",
+   "title": "JAPANESE",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=199",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LAW",
+   "title": "LAW",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=200",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LIBR",
+   "title": "LIBRARY SCIENCE",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=200",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LOGI",
+   "title": "LOGISTICS",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=201",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "LSKL",
+   "title": "LIFE SKILLS",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=200",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MATH",
+   "title": "MATHEMATICS",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=205",
+   "where": "catalog",
+   "method": "subject heading",
+   "note": "printed on one line with its subhead: 'MATHEMATICS (MATH) Math Placement'"
+  },
+  {
+   "code": "MEDT",
+   "title": "MEDICAL TERMINOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=211",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MICR",
+   "title": "MICROBIOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=211",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MTEC",
+   "title": "MANUFACTURING TECHNOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=205",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MTT",
+   "title": "MACHINE TOOL TECHNOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=203",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "MUSI",
+   "title": "MUSIC",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=211",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NFOO",
+   "title": "NUTRITION AND FOODS",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=224",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "NURS",
+   "title": "NURSING",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=220",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PE",
+   "title": "PHYSICAL EDUCATION",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=225",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHIL",
+   "title": "PHILOSOPHY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=225",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYO",
+   "title": "PHYSIOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PHYS",
+   "title": "PHYSICS",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=235",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLI",
+   "title": "POLITICAL SCIENCE",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "POLS",
+   "title": "POLITICAL SCIENCE",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=237",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSCI",
+   "title": "PHYSICAL SCIENCES",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=235",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "PSYC",
+   "title": "PSYCHOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=239",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "RE",
+   "title": "REAL ESTATE",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=241",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SLAN",
+   "title": "SIGN LANGUAGE",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=243",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SOCI",
+   "title": "SOCIOLOGY",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=244",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "SPAN",
+   "title": "SPANISH",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=246",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "STAT",
+   "title": "STATISTICS",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=248",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "THEA",
+   "title": "THEATER",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=249",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WELD",
+   "title": "WELDING",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=250",
+   "where": "catalog",
+   "method": "subject heading"
+  },
+  {
+   "code": "WSTU",
+   "title": "WOMEN’S STUDIES",
+   "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=253",
+   "where": "catalog",
+   "method": "subject heading"
+  }
+ ]
+}
