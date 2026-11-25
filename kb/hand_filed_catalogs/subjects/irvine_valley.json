@@ -1,0 +1,1134 @@
+{
+ "_what": "The subjects Irvine Valley College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Irvine Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:06:37Z",
+ "run": "45630333350",
+ "source": [
+  "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "AESL",
+   "heading": "Adult ESL",
+   "heading_printed": "Adult ESL",
+   "rule": "index",
+   "codes": [
+    "AESL"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "BIO",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "BIOT",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "index",
+   "codes": [
+    "BIOT"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CHI",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHI"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CIM",
+   "heading": "Computer Information Management",
+   "heading_printed": "Computer Information Management",
+   "rule": "index",
+   "codes": [
+    "CIM"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "DMA",
+   "heading": "Digital Media Art",
+   "heading_printed": "Digital Media Art",
+   "rule": "index",
+   "codes": [
+    "DMA"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "DMP",
+   "heading": "Design Model Making",
+   "heading_printed": "Design Model Making",
+   "rule": "index",
+   "codes": [
+    "DMP"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "DNCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DNCE"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "DR",
+   "heading": "Drafting",
+   "heading_printed": "Drafting",
+   "rule": "index",
+   "codes": [
+    "DR"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ELEC",
+   "heading": "Electrical Technology",
+   "heading_printed": "Electrical Technology",
+   "rule": "index",
+   "codes": [
+    "ELEC"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ENTR",
+   "heading": "Entrepreneurship",
+   "heading_printed": "Entrepreneurship",
+   "rule": "index",
+   "codes": [
+    "ENTR"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ENV",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENV"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ERTH",
+   "heading": "Earth Science",
+   "heading_printed": "Earth Science",
+   "rule": "index",
+   "codes": [
+    "ERTH"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ET",
+   "heading": "Electronic Technology",
+   "heading_printed": "Electronic Technology",
+   "rule": "index",
+   "codes": [
+    "ET"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "FN",
+   "heading": "Food and Nutrition",
+   "heading_printed": "Food and Nutrition",
+   "rule": "index",
+   "codes": [
+    "FN"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "FR",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FR"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "GLBL",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GLBL"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "GS",
+   "heading": "Gender Studies",
+   "heading_printed": "Gender Studies",
+   "rule": "index",
+   "codes": [
+    "GS"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "HD",
+   "heading": "Human Development",
+   "heading_printed": "Human Development",
+   "rule": "index",
+   "codes": [
+    "HD"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "IA",
+   "heading": "Intercollegiate Athletics",
+   "heading_printed": "Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "IA"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "IMA",
+   "heading": "Interactive Media Art",
+   "heading_printed": "Interactive Media Art",
+   "rule": "index",
+   "codes": [
+    "IMA"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "JA",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JA"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "JRNL",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JRNL"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "KNEA",
+   "heading": "Adapted Kinesiology",
+   "heading_printed": "Adapted Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KNEA"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "KNES",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KNES"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "LANG",
+   "heading": "Language",
+   "heading_printed": "Language",
+   "rule": "index",
+   "codes": [
+    "LANG"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "LGL",
+   "heading": "Legal",
+   "heading_printed": "Legal",
+   "rule": "index",
+   "codes": [
+    "LGL"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "LIT",
+   "heading": "Literature",
+   "heading_printed": "Literature",
+   "rule": "index",
+   "codes": [
+    "LIT"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "MEDA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MEDA"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "MGT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "index",
+   "codes": [
+    "MGT"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "MS",
+   "heading": "Marine Science",
+   "heading_printed": "Marine Science",
+   "rule": "index",
+   "codes": [
+    "MS"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "MSS",
+   "heading": "Math: Special Services",
+   "heading_printed": "Math: Special Services",
+   "rule": "index",
+   "codes": [
+    "MSS"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "NUT",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUT"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "SRM",
+   "heading": "Sustainable Resource Management",
+   "heading_printed": "Sustainable Resource Management",
+   "rule": "index",
+   "codes": [
+    "SRM"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "TA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "TA"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "TU",
+   "heading": "Tutoring",
+   "heading_printed": "Tutoring",
+   "rule": "index",
+   "codes": [
+    "TU"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "WEE",
+   "heading": "Work Experience Education",
+   "heading_printed": "Work Experience Education",
+   "rule": "index",
+   "codes": [
+    "WEE"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "WR",
+   "heading": "Writing",
+   "heading_printed": "Writing",
+   "rule": "index",
+   "codes": [
+    "WR"
+   ],
+   "candidate": null,
+   "address": "https://irvine.curriqunet.com/Catalog/_getNavigation?id=4690&parentId=49041",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  }
+ ],
+ "subjects": 70,
+ "with_heading": 70
+}

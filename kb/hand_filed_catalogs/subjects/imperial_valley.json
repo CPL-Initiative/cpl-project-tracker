@@ -1,0 +1,1390 @@
+{
+ "_what": "The subjects Imperial Valley College's catalog prints: each code with its heading as the catalog's subject index or prefix legend prints it, and where it was read (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_found_subject_titles.py from the title hunt (S730); each row carries its source (`address`), where, method, found_on and found_by (p-subject-title-carries-its-source-sam-2026-11-25).",
+ "college": "Imperial Valley College",
+ "catalog_year": "2026-2027",
+ "read_at": "2026-11-25T14:06:37Z",
+ "run": "45630333350",
+ "source": [
+  "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589"
+ ],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ACR",
+   "heading": "Air Conditioning and Refrigeration",
+   "heading_printed": "Air Conditioning and Refrigeration",
+   "rule": "index",
+   "codes": [
+    "ACR"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ADS",
+   "heading": "Addiction Disorder Studies",
+   "heading_printed": "Addiction Disorder Studies",
+   "rule": "index",
+   "codes": [
+    "ADS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "AG",
+   "heading": "Agriculture",
+   "heading_printed": "Agriculture",
+   "rule": "index",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "AHP",
+   "heading": "Allied Health Professions",
+   "heading_printed": "Allied Health Professions",
+   "rule": "index",
+   "codes": [
+    "AHP"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "AIS",
+   "heading": "American Indigenous Studies",
+   "heading_printed": "American Indigenous Studies",
+   "rule": "index",
+   "codes": [
+    "AIS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "AMSL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "AMSL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APEL",
+   "heading": "Apprenticeship-Electrician",
+   "heading_printed": "Apprenticeship-Electrician",
+   "rule": "index",
+   "codes": [
+    "APEL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APGN",
+   "heading": "Apprenticeship-Generation Mechanic",
+   "heading_printed": "Apprenticeship-Generation Mechanic",
+   "rule": "index",
+   "codes": [
+    "APGN"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APHY",
+   "heading": "Apprenticeship-Hydro Operator",
+   "heading_printed": "Apprenticeship-Hydro Operator",
+   "rule": "index",
+   "codes": [
+    "APHY"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APIN",
+   "heading": "Apprenticeship-Instrument Technician",
+   "heading_printed": "Apprenticeship-Instrument Technician",
+   "rule": "index",
+   "codes": [
+    "APIN"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APLN",
+   "heading": "Apprenticeship-Power Lineman",
+   "heading_printed": "Apprenticeship-Power Lineman",
+   "rule": "index",
+   "codes": [
+    "APLN"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APMT",
+   "heading": "Apprenticeship-Meter Technician",
+   "heading_printed": "Apprenticeship-Meter Technician",
+   "rule": "index",
+   "codes": [
+    "APMT"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APPL",
+   "heading": "Apprenticeship-Control Operator",
+   "heading_printed": "Apprenticeship-Control Operator",
+   "rule": "index",
+   "codes": [
+    "APPL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APRL",
+   "heading": "Apprenticeship-Relays Technician",
+   "heading_printed": "Apprenticeship-Relays Technician",
+   "rule": "index",
+   "codes": [
+    "APRL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APSB",
+   "heading": "Apprenticeship-Substation-Electrician",
+   "heading_printed": "Apprenticeship-Substation-Electrician",
+   "rule": "index",
+   "codes": [
+    "APSB"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APSC",
+   "heading": "Apprenticeship-Scada/Telecommunications Technician",
+   "heading_printed": "Apprenticeship-SCADA/Telecommunications Technician",
+   "rule": "index",
+   "codes": [
+    "APSC"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "APTL",
+   "heading": "Apprenticeship-Telecommunications Technician",
+   "heading_printed": "Apprenticeship-Telecommunications Technician",
+   "rule": "index",
+   "codes": [
+    "APTL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ARAB",
+   "heading": "Arabic",
+   "heading_printed": "Arabic",
+   "rule": "index",
+   "codes": [
+    "ARAB"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ATHL",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATHL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "AUT",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUT"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "BLDC",
+   "heading": "Building Construction",
+   "heading_printed": "Building Construction",
+   "rule": "index",
+   "codes": [
+    "BLDC"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CDEV"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CHIC",
+   "heading": "Chicana/O Studies",
+   "heading_printed": "Chicana/o Studies",
+   "rule": "index",
+   "codes": [
+    "CHIC"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CITZ",
+   "heading": "Citizenship",
+   "heading_printed": "Citizenship",
+   "rule": "index",
+   "codes": [
+    "CITZ"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "CSI",
+   "heading": "Correctional Science",
+   "heading_printed": "Correctional Science",
+   "rule": "index",
+   "codes": [
+    "CSI"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "DSL",
+   "heading": "Diesel",
+   "heading_printed": "Diesel",
+   "rule": "index",
+   "codes": [
+    "DSL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ELTR",
+   "heading": "Electronics",
+   "heading_printed": "Electronics",
+   "rule": "index",
+   "codes": [
+    "ELTR"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ELTT",
+   "heading": "Electrical Trades",
+   "heading_printed": "Electrical Trades",
+   "rule": "index",
+   "codes": [
+    "ELTT"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technician",
+   "heading_printed": "Emergency Medical Technician",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "EMTP",
+   "heading": "Emergency Medical Technician-Paramedic",
+   "heading_printed": "Emergency Medical Technician-Paramedic",
+   "rule": "index",
+   "codes": [
+    "EMTP"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ES",
+   "heading": "Exercise Science",
+   "heading_printed": "Exercise Science",
+   "rule": "index",
+   "codes": [
+    "ES"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "EWIR",
+   "heading": "Electrical Wiring",
+   "heading_printed": "Electrical Wiring",
+   "rule": "index",
+   "codes": [
+    "EWIR"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film Studies",
+   "heading_printed": "Film Studies",
+   "rule": "index",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Science",
+   "heading_printed": "Fire Science",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "GLST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GLST"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "HE",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HE"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "INST",
+   "heading": "Instrumentation",
+   "heading_printed": "Instrumentation",
+   "rule": "index",
+   "codes": [
+    "INST"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "LRNA",
+   "heading": "Supervised Tutoring",
+   "heading_printed": "Supervised Tutoring",
+   "rule": "index",
+   "codes": [
+    "LRNA"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "MA",
+   "heading": "Medical Assistant",
+   "heading_printed": "Medical Assistant",
+   "rule": "index",
+   "codes": [
+    "MA"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing: Associate Degree",
+   "heading_printed": "Nursing: Associate Degree",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PHSC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHSC"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PHT",
+   "heading": "Pharmacy Technician",
+   "heading_printed": "Pharmacy Technician",
+   "rule": "index",
+   "codes": [
+    "PHT"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PLNT",
+   "heading": "Plant Operator Technology",
+   "heading_printed": "Plant Operator Technology",
+   "rule": "index",
+   "codes": [
+    "PLNT"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "POST",
+   "heading": "Peace Officer Standards and Training",
+   "heading_printed": "Peace Officer Standards and Training",
+   "rule": "index",
+   "codes": [
+    "POST"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PSY",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSY"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "READ",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "RELS",
+   "heading": "Religious Studies",
+   "heading_printed": "Religious Studies",
+   "rule": "index",
+   "codes": [
+    "RELS"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "RNEW",
+   "heading": "Renewable Energy",
+   "heading_printed": "Renewable Energy",
+   "rule": "index",
+   "codes": [
+    "RNEW"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "SW",
+   "heading": "Social Work",
+   "heading_printed": "Social Work",
+   "rule": "index",
+   "codes": [
+    "SW"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "VN",
+   "heading": "Nursing: Vocational",
+   "heading_printed": "Nursing: Vocational",
+   "rule": "index",
+   "codes": [
+    "VN"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "WE",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WE"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  },
+  {
+   "code": "WT",
+   "heading": "Water Treatment Technology",
+   "heading_printed": "Water Treatment Technology",
+   "rule": "index",
+   "codes": [
+    "WT"
+   ],
+   "candidate": null,
+   "address": "https://imperial.curriqunet.com/Catalog/_getNavigation?id=15&parentId=8589",
+   "where": "catalog",
+   "method": "subject heading",
+   "found_on": "2026-11-25",
+   "found_by": "COBI, a runner read (run 45630333350)",
+   "run": "45630333350"
+  }
+ ],
+ "subjects": 86,
+ "with_heading": 86
+}
