@@ -34,13 +34,35 @@ Stored ids in those files are resolved through kb/alias_chain.py before they are
 PINS. Every id the dry run retires is pinned below by id, title and target common subject(s), frozen 2026-11-25. A run
 whose live set no longer matches the pins fails V0 and says which.
 
+THE APPLY (S733, 2026-11-25; Sam saw the dry run: "merge the dry run and keep rolling"). It recomputes the plan
+(apply == spec), refuses unless V0-V3 pass, the plan matches the reviewed dry-run receipt (P1), the receipt was not
+applied already (P0), and the fresh read of kb_curation (P3) matches the committed overlay on every row it touches
+and holds no person's row (a reviewer_email `_flags.is_person` reads as a person: anything not ending `@bot`/`.bot`).
+Then, carrying out the conductor's two calls:
+  - RETIRE each in-scope id whose local subjects all carry a filed common subject: its record, memberships and
+    overlay rows leave kb/coci_minted_courses.json, coci_minted_singletons.json, coci_minted_memberships.json and
+    kb/coci_curation.json.
+  - HOLD (DECIDED_UNFILED) every id, retiring or shell, with a course on a local subject that carries only the
+    rescore's proposal; a pointer between a retiring id and a held one holds the retiring side too.
+  - ALIAS (DECIDED_MERGED) each merged shell to its merge target: the shell leaves the identity file, its course joins
+    the target's memberships (the join the generator's C-ID holds make, excel_to_dashboard.py `CID_HOLDS`), so the
+    course keeps the M-ID it is listed under today, and the map is registered in kb/alias_chain.py ALIAS_MAPS.
+The receipt (`<receipt dir>/applied/`) holds every removed entry at its index, every changed entry's before-value,
+each file's headers and its sha256 before and after: `--rollback` restores the files byte for byte and refuses when a
+file changed since the apply. The live kb_curation rows on the retired and aliased ids are the conductor's to delete
+with the SQL in the same folder (bot cohorts only, full row images to re-insert).
+
 Run:
   python3 kb/_stray_code_remint.py              # dry run -> kb/stray_code_remint_out/<date>/ (report.md, retire.json)
-There is no apply yet. `--apply` refuses unless it has both `--receipt` and `--fresh-read`, and then refuses anyway:
-the apply is a later, reviewed step.
+  python3 kb/_stray_code_remint.py --fresh-read-sql --receipt <dir>/retire.json      # writes <dir>/fresh_read.sql
+  python3 kb/_stray_code_remint.py --apply --receipt <dir>/retire.json --fresh-read <live.json>
+  python3 kb/_stray_code_remint.py --supabase-plan --receipt <dir>/applied/retire_applied.json --fresh-read <live.json>
+  python3 kb/_stray_code_remint.py --rollback --receipt <dir>/applied/retire_applied.json
+After the apply: register <dir>/applied/alias_map.json in kb/alias_chain.py ALIAS_MAPS, run kb/_post_apply_chain.py.
 """
 import argparse
 import csv
+import hashlib
 import json
 import os
 import sys
@@ -55,6 +77,7 @@ import _flags as F  # noqa: E402  (is_person, loadjs, course_key, final_target)
 import _build_not_applicable as NA  # noqa: E402  (the List's kept-not-counted rule, rebuilt for the after count)
 import alias_chain as ac  # noqa: E402  (the one chain: imported, never restated)
 from curation_pointers import POINTER_FIELDS  # noqa: E402
+from _apply_curation import FIELDS as OVERLAY_FIELDS  # noqa: E402  (the sync's own fields: P3 compares these)
 
 OUT_ROOT = os.environ.get("STRAY_CODE_REMINT_OUT") or os.path.join(HERE, "stray_code_remint_out")
 RESCORE = "kb/subject_title_hunt/20261125_stray_code_rescore.csv"
@@ -493,19 +516,526 @@ def render_report(plan, before, after, moved_rows, today, rel_out):
     return "\n".join(L)
 
 
+# ── the apply ──────────────────────────────────────────────────────────────────
+APPLIED = "applied"
+DOC_MAPS = (("courses", "courses"), ("singletons", "courses"), ("memberships", "memberships"),
+            ("curation", "curations"))
+DECIDED_JOIN = ("DECIDED (S733 worker, under DECIDED_MERGED): an aliased shell leaves the identity file and its course "
+                "joins its target's memberships, the join excel_to_dashboard.py makes for a C-ID hold (CID_HOLDS), so "
+                "the course stays under the M-ID the List shows it under today; the shell's own bot rows go with it.")
+
+
+def pointer_values(v):
+    """The ids a live row's value names: a plain id, or a JSON string or list of them."""
+    if isinstance(v, str):
+        s = v.strip()
+        if s[:1] in '["':
+            try:
+                return pointer_ids(json.loads(s))
+            except ValueError:
+                pass
+        return [s] if s else []
+    return pointer_ids(v)
+
+
+def apply_set(plan, scope, curation):
+    """(retire, alias, held): the dry run's plan narrowed by the conductor's two calls (DECIDED_UNFILED,
+    DECIDED_MERGED), with the pointer fixpoint run again over what is left."""
+    unfiled = {p for p, r in scope.items() if not str(r.get("filed_common") or "").strip()}
+    retire, alias, held = set(), {}, {}
+
+    def unfiled_reason(pairs):
+        return ("a course on " + "; ".join("%s %s" % p for p in pairs) +
+                ", which carries only the rescore's proposal (DECIDED_UNFILED)")
+
+    for k, v in plan["retire"].items():
+        bad = sorted({(c["college"], c["subject"]) for c in v["courses"]} & unfiled)
+        if bad:
+            held[k] = unfiled_reason(bad)
+        else:
+            retire.add(k)
+    for k, v in plan["held"].items():
+        if not v["reason"].startswith("merged into"):
+            continue
+        bad = sorted({tuple(p) for p in v["in_pairs"]} & unfiled)
+        t = current(None, (curation.get(k) or {}).get("merge_into") or "")
+        if bad:
+            held[k] = unfiled_reason(bad)
+        elif not t or t in plan["retire"] or plan["held"].get(t, {}).get("reason", "").startswith("merged into"):
+            held[k] = "its merge target %s is not an M-ID that stays" % (t or "(none)")
+        else:
+            alias[k] = t
+    edges = []
+    for src, e in curation.items():
+        if isinstance(e, dict) and not src.startswith("CN:"):
+            for f in POINTER_FIELDS:
+                edges.extend((src, f, current(None, t)) for t in pointer_ids(e.get(f)))
+    changed = True
+    while changed:
+        changed = False
+        for src, f, t in edges:
+            if src in alias and f == "merge_into" and t == alias[src]:
+                continue                                   # the shell's own merge: the alias carries it
+            for k, other in ((src, t), (t, src)):
+                if k in alias:
+                    del alias[k]
+                    held[k] = "a pointer joins it to %s (%s), so it is not a plain shell" % (other, f)
+                    changed = True
+                elif k in retire and other not in retire:
+                    retire.discard(k)
+                    held[k] = "a pointer joins it to %s (%s), which stays" % (other, f)
+                    changed = True
+    return retire, alias, held
+
+
+def overlay_rows(curation, ids):
+    """kb_curation rows as the fresh read returns them, rebuilt from the committed overlay (kb/coci_curation.json is
+    synced from the live table): every row on an id in `ids`, and every pointer row naming one."""
+    rows = []
+    for k, e in curation.items():
+        if not isinstance(e, dict):
+            continue
+        who = {"reviewer_email": e.get("reviewed_by"), "reviewed_at": e.get("reviewed_at")}
+        if k in ids:
+            rows += [dict(course_id=k, field=f, value=v, **who) for f, v in e.items()
+                     if not f.startswith(("reviewed", "validated"))]
+        else:
+            rows += [dict(course_id=k, field=f, value=e[f], **who) for f in POINTER_FIELDS
+                     if set(pointer_ids(e.get(f))) & ids]
+    return rows
+
+
+def read_live(path):
+    """The fresh read: a JSON list of rows, or the one-value result of fresh_read.sql wrapped by the SQL runner."""
+    with open(path, encoding="utf-8") as f:
+        v = json.load(f)
+    while True:
+        if isinstance(v, dict) and len(v) == 1:
+            v = next(iter(v.values()))
+        elif isinstance(v, list) and len(v) == 1 and isinstance(v[0], dict) and len(v[0]) == 1:
+            v = next(iter(v[0].values()))
+        elif isinstance(v, str):
+            v = json.loads(v)
+        else:
+            break
+    if not isinstance(v, list) or not all(isinstance(r, dict) and "course_id" in r and "field" in r for r in v):
+        raise SystemExit("--fresh-read: not a list of kb_curation rows (course_id, field, value, reviewer_email)")
+    return v
+
+
+def fresh_read_gate(live_rows, curation, touched):
+    """P3. The live rows the apply touches (every row on a retired or aliased id, and every pointer row naming one)
+    hold no person's row, and on the sync's own fields they rebuild the committed overlay (_eths_remint's check)."""
+    rel = [r for r in live_rows if r.get("course_id") in touched
+           or (r.get("field") in POINTER_FIELDS and set(pointer_values(r.get("value"))) & touched)]
+    persons = sorted({"%s %s (%s)" % (r["course_id"], r["field"], r.get("reviewer_email")) for r in rel
+                      if F.is_person(r.get("reviewer_email"))})
+    synced = [r for r in rel if r.get("field") in OVERLAY_FIELDS]
+    fr = er.fresh_read_check(synced, curation, {"alias": {k: k for k in touched}})
+    fr.update(rows=len(rel), persons=persons[:20])
+    fr["pass"] = bool(fr["pass"]) and not persons
+    return fr, rel
+
+
+def receipt_gate(receipt, plan):
+    """P1: the plan recomputed today is the plan the reviewed dry-run receipt froze."""
+    probs = []
+    if receipt.get("_scope") != SCOPE:
+        probs.append("scope %r is not %r" % (receipt.get("_scope"), SCOPE))
+    if "DRY RUN" not in str(receipt.get("_status") or "") or receipt.get("_applied_at"):
+        probs.append("the receipt is not an unapplied dry run")
+    for part in ("retire", "held"):
+        a, b = set(receipt.get(part) or {}), set(plan[part])
+        if a != b:
+            probs.append("%s differs: receipt only %s, live only %s" % (part, sorted(a - b)[:5], sorted(b - a)[:5]))
+    for k, v in plan["retire"].items():
+        if k in (receipt.get("retire") or {}) and receipt["retire"][k].get("record") != v["record"]:
+            probs.append("%s: its record changed since the dry run" % k)
+    return {"pass": not probs, "problems": probs[:20]}
+
+
+def apply_docs(docs, retire, alias):
+    """Pure. (new docs, rollback, counts). The rollback holds each removed entry at its index, each changed entry's
+    before-value, each created key and every header, so rollback_docs rebuilds the documents exactly."""
+    gone = set(retire) | set(alias)
+    out = {n: dict(d) for n, d in docs.items()}
+    rb = {"headers": {}, "removed": {}, "changed": {"memberships": []}, "created": {"memberships": []}}
+    counts = Counter()
+    for name, mk in DOC_MAPS:
+        d = docs[name]
+        rb["headers"][name] = {"order": list(d), "values": {k: v for k, v in d.items() if k != mk}}
+        kept, removed = {}, []
+        for i, (k, v) in enumerate(d[mk].items()):
+            if k in gone:
+                removed.append([i, k, v])
+            else:
+                kept[k] = v
+        rb["removed"][name] = removed
+        out[name][mk] = kept
+        counts[name + "_removed"] = len(removed)
+    singles, before_mem = docs["singletons"]["courses"], docs["memberships"]["memberships"]
+    mem = out["memberships"]["memberships"]
+    norm = lambda c: " ".join(str(c or "").split()).upper()  # noqa: E731
+    for k in sorted(alias):
+        t = alias[k]
+        if k in singles:
+            s = singles[k]
+            joins = [{"college": s.get("college"), "control_number": s.get("control_number"), "subject": s.get("subject"),
+                      "course_number": s.get("course_number"), "units": s.get("typical_units"),
+                      "credit_status": s.get("credit_status"), "top_code": s.get("top_code") or ""}]
+        else:
+            joins = list(before_mem.get(k) or [])
+        have = {norm(p.get("control_number")) for p in mem.get(t) or []}
+        add = [j for j in joins if norm(j.get("control_number")) and norm(j.get("control_number")) not in have]
+        if not add:
+            continue
+        if t in before_mem:
+            if t not in {x[0] for x in rb["changed"]["memberships"]}:
+                rb["changed"]["memberships"].append([t, before_mem[t]])
+            mem[t] = list(mem[t]) + add
+        else:
+            if t not in rb["created"]["memberships"]:
+                rb["created"]["memberships"].append(t)
+            mem[t] = list(mem.get(t) or []) + add
+        counts["memberships_joined"] += len(add)
+    for name, mk in DOC_MAPS:
+        if "count" in out[name]:
+            out[name]["count"] = out[name]["count"] - len(rb["removed"][name]) + (
+                len(rb["created"]["memberships"]) if name == "memberships" else 0)
+    if "member_courses_total" in out["memberships"]:
+        out["memberships"]["member_courses_total"] += counts["memberships_joined"] - sum(
+            len(v or []) for _, _, v in rb["removed"]["memberships"])
+    return out, rb, counts
+
+
+def rollback_docs(docs, rb):
+    """Pure. The documents as they stood before apply_docs."""
+    out = {}
+    for name, mk in DOC_MAPS:
+        m = dict(docs[name][mk])
+        if name == "memberships":
+            for t in rb["created"]["memberships"]:
+                m.pop(t, None)
+            for t, before in rb["changed"]["memberships"]:
+                m[t] = before
+        items = list(m.items())
+        for i, k, v in rb["removed"][name]:                 # ascending index: each lands where it stood
+            items.insert(i, (k, v))
+        h = rb["headers"][name]
+        out[name] = {k: (dict(items) if k == mk else h["values"][k]) for k in h["order"]}
+    return out
+
+
+def apply_post_gates(before, after, retire, alias, held_ids, articulations):
+    gone = set(retire) | set(alias)
+    left = sorted(set().union(*(gone & set(after[n][mk]) for n, mk in DOC_MAPS)))
+    ptr = sorted({t for e in after["curation"]["curations"].values() if isinstance(e, dict)
+                  for f in POINTER_FIELDS for t in pointer_ids(e.get(f))} & gone)
+    mem_b, mem_a = before["memberships"]["memberships"], after["memberships"]["memberships"]
+    cons = all(len(after[n][mk]) == len(before[n][mk]) - len(set(before[n][mk]) & gone)
+               + (len(set(mem_a) - set(mem_b)) if n == "memberships" else 0) for n, mk in DOC_MAPS)
+    cat = set(after["courses"]["courses"]) | set(after["singletons"]["courses"])
+    norm = lambda c: " ".join(str(c or "").split()).upper()  # noqa: E731
+    sg = before["singletons"]["courses"]
+    joined = all(t in cat and (k not in sg or norm(sg[k].get("control_number")) in
+                               {norm(p.get("control_number")) for p in mem_a.get(t) or []})
+                 for k, t in alias.items())
+    targets = set(alias.values())       # a held id can be a shell's target: its memberships take the shell's course
+    held_same = all(before[n][mk].get(k) == after[n][mk].get(k) for n, mk in DOC_MAPS for k in held_ids
+                    if not (n == "memberships" and k in targets))
+    untouched = all(after[n][mk][k] is before[n][mk][k] for n, mk in DOC_MAPS for k in after[n][mk]
+                    if not (n == "memberships" and k in targets))
+    arts = sorted({a.get("course_id") for a in articulations.get("articulations") or []} & gone)
+    return {"G1_nothing_left_on_a_retired_or_aliased_id": {"pass": not left and not ptr, "keys": left[:10],
+                                                           "pointers": ptr[:10]},
+            "G2_conservation": {"pass": cons},
+            "G3_each_shell_course_joins_its_target": {"pass": joined},
+            "G4_held_ids_untouched": {"pass": held_same, "held": len(held_ids)},
+            "G5_every_other_entry_untouched": {"pass": untouched},
+            "G6_no_articulation_names_one": {"pass": not arts, "ids": arts[:10]}}
+
+
+def apply_core(inp, scope, plan, receipt, live_rows):
+    """Pure on its inputs. {gates, ok, retire, alias, held, docs, rollback, counts, live}; `docs` only when ok."""
+    gates = {k: v for k, v in plan["validation"].items()}
+    gates["P1_matches_receipt"] = receipt_gate(receipt, plan)
+    cur = inp["docs"]["curation"]["curations"]
+    retire, alias, held = apply_set(plan, scope, cur)
+    fr, rel = fresh_read_gate(live_rows, cur, retire | set(alias))
+    gates["P3_fresh_read"] = fr
+    res = {"gates": gates, "retire": retire, "alias": alias, "held": held, "live": rel}
+    if not all(v.get("pass") for v in gates.values()):
+        return dict(res, ok=False)
+    new, rb, counts = apply_docs(inp["docs"], retire, alias)
+    still_held = (set(plan["held"]) - set(alias)) | set(held)
+    gates.update(apply_post_gates(inp["docs"], new, retire, alias, still_held, inp["docs"]["articulations"]))
+    ok = all(v.get("pass") for v in gates.values())
+    return dict(res, ok=ok, docs=new if ok else None, rollback=rb, counts=counts)
+
+
+def sha_file(path):
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
+
+
+def write_docs(kb_dir, docs):
+    """Each document through _eths_remint.dump to a temp file beside it, then into place: {file: sha256}."""
+    shas = {}
+    for name, _ in DOC_MAPS:
+        path = os.path.join(kb_dir, er.FILES[name])
+        er.dump(path + ".tmp", docs[name])
+        shas[er.FILES[name]] = sha_file(path + ".tmp")
+        os.replace(path + ".tmp", path)
+    return shas
+
+
+def sql_literal(s):
+    return "'" + str(s).replace("'", "''") + "'"
+
+
+def fresh_read_sql(ids):
+    arr = ",\n    ".join(sql_literal(i) for i in sorted(ids))
+    return ("-- Stray-code re-mint (S733), the fresh read P3 needs: every kb_curation row on an M-ID the dry run\n"
+            "-- retires or holds as a merged shell, and every pointer row (merge_into, honors_of; CN: rows included)\n"
+            "-- naming one. One SELECT, one JSON value; the WHERE bounds it, so no Range paging. Save the value as\n"
+            "-- live.json and pass it as --fresh-read.\n"
+            "with ids(id) as (select unnest(array[\n    " + arr + "\n]::text[]))\n"
+            "select coalesce(json_agg(to_jsonb(k) order by k.course_id, k.field), '[]'::json) as rows\n"
+            "from public.kb_curation k\n"
+            "where k.course_id in (select id from ids)\n"
+            "   or (k.field in ('merge_into', 'honors_of')\n"
+            "       and exists (select 1 from ids\n"
+            "                   where k.value::text in (ids.id, '\"' || ids.id || '\"')\n"
+            "                      or k.value::text like '%\"' || ids.id || '\"%'));\n")
+
+
+def supabase_plan(rows, touched, at):
+    """(receipt, delete SQL, restore SQL) for the bot-cohort rows on the retired and aliased ids."""
+    rows = sorted((r for r in rows if r.get("course_id") in touched), key=lambda r: (r["course_id"], r["field"]))
+    n = len(rows)
+    vals = ",\n    ".join("(%s, %s)" % (sql_literal(r["course_id"]), sql_literal(r["field"])) for r in rows)
+    bot = ("(k.reviewer_email is null or k.reviewer_email = '' or lower(k.reviewer_email) like '%@bot' "
+           "or lower(k.reviewer_email) like '%.bot')")
+    head = ("-- Stray-code re-mint (S733): delete the %d bot-cohort kb_curation rows on the retired and aliased M-IDs.\n"
+            "-- Run after the PR merges, before the next cron's curation sync. Before-values (full row images):\n"
+            "-- kb_curation_delete.json; kb_curation_restore.sql re-inserts them. Raises, and deletes nothing, when\n"
+            "-- the count is not %d (a person's row is never matched: the guard keeps bot cohorts only).\n" % (n, n))
+    body = ("  delete from public.kb_curation k\n  using (values\n    " + vals + "\n  ) as d(course_id, field)\n"
+            "  where k.course_id = d.course_id and k.field = d.field\n    and " + bot + ";\n"
+            "  get diagnostics n = row_count;\n") if n else ""
+    delete = (head + "do $$\ndeclare n int := 0;\nbegin\n" + body +
+              "  if n <> %d then raise exception 'stray-code re-mint: expected %d rows, matched %%', n; end if;\n"
+              "end $$;\n" % (n, n))
+    images = json.dumps(rows, ensure_ascii=False)
+    restore = ("-- Stray-code re-mint (S733) rollback: re-insert the %d rows kb_curation_delete.sql deleted, from their\n"
+               "-- full row images. ON CONFLICT DO NOTHING: a row a person or the sync wrote since stays as written.\n"
+               "insert into public.kb_curation\nselect * from jsonb_populate_recordset(null::public.kb_curation, "
+               "$rows$%s$rows$::jsonb)\non conflict do nothing;\n" % (n, images))
+    receipt = {"_status": "Stray-code re-mint: kb_curation rows to DELETE (the conductor runs kb_curation_delete.sql)",
+               "_at": at, "_count": n, "_rollback": "kb_curation_restore.sql (INSERT the row images, ON CONFLICT DO NOTHING)",
+               "rows": rows}
+    return receipt, delete, restore
+
+
+def applied_receipt_path(receipt_path):
+    return os.path.join(os.path.dirname(os.path.abspath(receipt_path)), APPLIED, "retire_applied.json")
+
+
+def is_applied(path):
+    if not os.path.exists(path):
+        return False
+    with open(path, encoding="utf-8") as f:
+        r = json.load(f)
+    return bool(r.get("_applied_at")) and not r.get("_rolled_back_at")
+
+
+def render_apply_report(res, plan, before, after, at, rel):
+    R, A, H = sorted(res["retire"]), res["alias"], res["held"]
+    L = [f"# The stray-code re-mint, confidence {THRESHOLD} or more: APPLIED {at}", "",
+         f"The ruling: {RULING}. The dry run: {rel}/retire.json (reviewed; Sam: \"merge the dry run and keep "
+         "rolling\").", "", f"**{DECIDED}**", "", f"**{DECIDED_UNFILED}**", "", f"**{DECIDED_MERGED}**", "",
+         f"**{DECIDED_JOIN}**", "",
+         f"{len(R)} M-IDs retire, {len(A)} merged shells take an alias to their merge target, and {len(H)} are held "
+         f"at the apply; the dry run's other {len(set(plan['held']) - set(A) - set(H))} holds stand. "
+         "The Courses List's Needs an M-ID reads "
+         f"{before['nomid']:,} today and {after['nomid']:,} after the next daily build ({after['nomid'] - before['nomid']:+,}).",
+         "", "## Gates", ""]
+    L += [f"- {k}: {'pass' if v.get('pass') else 'FAIL'}" for k, v in res["gates"].items()]
+    L += ["", f"## Retired ({len(R)})", "", "| M-ID | Title | Common subject |", "|---|---|---|"]
+    L += [f"| {k} | {plan['retire'][k]['title']} | {plan['retire'][k]['target']} |" for k in R]
+    L += ["", f"## Aliased to the merge target ({len(A)})", "", "| Shell | Target |", "|---|---|"]
+    L += [f"| {k} | {t} |" for k, t in sorted(A.items())]
+    L += ["", f"## Held at the apply ({len(H)})", "", "| M-ID | Why |", "|---|---|"]
+    L += [f"| {k} | {v} |" for k, v in sorted(H.items())]
+    L += ["", "## Next", "",
+          "1. kb/alias_chain.py ALIAS_MAPS registers alias_map.json; kb/_post_apply_chain.py runs (both in this commit).",
+          "2. The conductor runs ../fresh_read.sql, saves the value as live.json, and runs "
+          f"`python3 kb/_stray_code_remint.py --supabase-plan --receipt {rel}/{APPLIED}/retire_applied.json "
+          "--fresh-read live.json`; it refuses on a person's row or drift (then `--rollback`), else rewrites "
+          "kb_curation_delete.json/.sql and kb_curation_restore.sql from the live row images.",
+          "3. After the merge, before the next cron: kb_curation_delete.sql, then dispatch the daily build.", ""]
+    return "\n".join(L)
+
+
+def run_apply(args, today):
+    root = args.root
+    kb_dir = os.path.join(root, "kb")
+    with open(args.receipt, encoding="utf-8") as f:
+        receipt = json.load(f)
+    ap_path = applied_receipt_path(args.receipt)
+    if is_applied(ap_path):
+        sys.exit(f"APPLY REFUSED - P0: {os.path.relpath(ap_path, root)} says this re-mint is applied")
+    live = read_live(args.fresh_read)
+    inp = load_inputs(root, kb_dir)
+    scope, all_rows = read_scope(os.path.join(root, RESCORE))
+    plan = compute_plan(inp, scope, all_rows, PINS)
+    res = apply_core(inp, scope, plan, receipt, live)
+    for k, v in res["gates"].items():
+        print(f"  {k}: {'ok' if v.get('pass') else 'FAIL'}")
+    if not res["ok"]:
+        bad = {k: v for k, v in res["gates"].items() if not v.get("pass")}
+        sys.exit("APPLY REFUSED - " + ", ".join(bad) + ": " + json.dumps(bad, ensure_ascii=False)[:800])
+    cur = inp["docs"]["curation"]["curations"]
+    before, _ = list_counts(inp["coci"], inp["members"], inp["not_applicable"], stray_codes=inp["stray_codes"])
+    after, _ = list_counts(inp["coci"], inp["members"], inp["not_applicable"], frozenset(res["retire"]), cur,
+                           stray_codes=inp["stray_codes"])
+    shas = {er.FILES[n]: {"before": sha_file(os.path.join(kb_dir, er.FILES[n]))} for n, _ in DOC_MAPS}
+    for f, s in write_docs(kb_dir, res["docs"]).items():
+        shas[f]["after"] = s
+    out = os.path.dirname(ap_path)
+    os.makedirs(out, exist_ok=True)
+    rel = os.path.relpath(os.path.dirname(os.path.abspath(args.receipt)), root)
+    touched = res["retire"] | set(res["alias"])
+    sp, delete, restore = supabase_plan(res["live"], touched, today)
+    er.dump(os.path.join(out, "kb_curation_delete.json"), sp)
+    for name, text in (("kb_curation_delete.sql", delete), ("kb_curation_restore.sql", restore)):
+        with open(os.path.join(out, name), "w", encoding="utf-8") as f:
+            f.write(text)
+    er.dump(os.path.join(out, "alias_map.json"), {
+        "_status": "Stray-code re-mint: merged shells -> their merge target (alias receipt) - APPLIED",
+        "_applied_at": today, "_scope": SCOPE, "_ruling": RULING, "_decided": DECIDED_MERGED, "_count": len(res["alias"]),
+        "aliases": {k: {"new_id": t, "fate": "merged shell joins its merge target"} for k, t in sorted(res["alias"].items())}})
+    counts = dict(res["counts"], retired=len(res["retire"]), aliased=len(res["alias"]), held_at_apply=len(res["held"]),
+                  needs_mid_before=before["nomid"], needs_mid_after=after["nomid"], kb_curation_rows_to_delete=sp["_count"])
+    er.dump(ap_path, {
+        "_status": "Stray-code re-mint retire receipt - APPLIED (rollback: --rollback --receipt this file)",
+        "_applied_at": today, "_scope": SCOPE, "_ruling": RULING,
+        "_decided": [DECIDED, DECIDED_UNFILED, DECIDED_MERGED, DECIDED_JOIN],
+        "_from_receipt": os.path.relpath(os.path.abspath(args.receipt), root),
+        "_fresh_read": os.path.relpath(os.path.abspath(args.fresh_read), root), "_counts": counts,
+        "_gates": {k: v.get("pass") for k, v in res["gates"].items()}, "sha256": shas,
+        "retired": {k: {"title": plan["retire"][k]["title"], "target": plan["retire"][k]["target"],
+                        "source": plan["retire"][k]["source"]} for k in sorted(res["retire"])},
+        "aliased": dict(sorted(res["alias"].items())), "held_at_apply": dict(sorted(res["held"].items())),
+        "rollback": res["rollback"]})
+    with open(os.path.join(out, "report.md"), "w", encoding="utf-8") as f:
+        f.write(render_apply_report(res, plan, before, after, today, rel))
+    print(f"APPLIED - {counts}. Wrote {os.path.relpath(out, root)}/. Next: register alias_map.json in "
+          "kb/alias_chain.py ALIAS_MAPS and run kb/_post_apply_chain.py.")
+    return 0
+
+
+def run_supabase_plan(args, today):
+    """After the apply: P3 again on the live read, then the delete and restore SQL from its full row images."""
+    with open(args.receipt, encoding="utf-8") as f:
+        rec = json.load(f)
+    if not rec.get("_applied_at") or rec.get("_rolled_back_at"):
+        sys.exit("--supabase-plan reads an APPLIED retire_applied.json")
+    touched = set(rec["retired"]) | set(rec["aliased"])
+    removed = {k: v for _, k, v in rec["rollback"]["removed"]["curation"]}
+    fr, rel = fresh_read_gate(read_live(args.fresh_read), removed, touched)
+    print(f"  P3_fresh_read: {'ok' if fr['pass'] else 'FAIL'}")
+    if not fr["pass"]:
+        sys.exit("SUPABASE PLAN REFUSED - " + json.dumps(fr, ensure_ascii=False)[:800] +
+                 " (roll the apply back: --rollback --receipt this file)")
+    out = os.path.dirname(os.path.abspath(args.receipt))
+    sp, delete, restore = supabase_plan(rel, touched, today)
+    er.dump(os.path.join(out, "kb_curation_delete.json"), sp)
+    for name, text in (("kb_curation_delete.sql", delete), ("kb_curation_restore.sql", restore)):
+        with open(os.path.join(out, name), "w", encoding="utf-8") as f:
+            f.write(text)
+    print(f"wrote {sp['_count']} rows to kb_curation_delete.json/.sql and kb_curation_restore.sql")
+    return 0
+
+
+def run_rollback(args, today):
+    """Restore the four documents byte for byte from an applied receipt; refuse when one changed since the apply."""
+    with open(args.receipt, encoding="utf-8") as f:
+        rec = json.load(f)
+    if not rec.get("_applied_at") or rec.get("_rolled_back_at"):
+        sys.exit("ROLLBACK REFUSED - the receipt is not an applied, unrolled-back retire_applied.json")
+    kb_dir = os.path.join(args.root, "kb")
+    for name, _ in DOC_MAPS:
+        f = er.FILES[name]
+        if sha_file(os.path.join(kb_dir, f)) != rec["sha256"][f]["after"]:
+            sys.exit(f"ROLLBACK REFUSED - kb/{f} changed since the apply; use git revert")
+    docs = {}
+    for name, _ in DOC_MAPS:
+        with open(os.path.join(kb_dir, er.FILES[name]), encoding="utf-8") as f:
+            docs[name] = json.load(f)
+    restored = rollback_docs(docs, rec["rollback"])
+    tmp = os.path.join(kb_dir, ".stray_rollback_check")
+    for name, _ in DOC_MAPS:
+        er.dump(tmp, restored[name])
+        ok = sha_file(tmp) == rec["sha256"][er.FILES[name]]["before"]
+        os.remove(tmp)
+        if not ok:
+            sys.exit(f"ROLLBACK REFUSED - kb/{er.FILES[name]} would not restore byte for byte; nothing written")
+    write_docs(kb_dir, restored)
+    rec["_rolled_back_at"] = today
+    rec["_status"] = rec["_status"].replace("APPLIED", "ROLLED BACK")
+    er.dump(args.receipt, rec)
+    print("ROLLED BACK - the four documents match their pre-apply sha256. Remove the alias map from ALIAS_MAPS.")
+    return 0
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--apply", action="store_true", help="not built yet; refuses")
-    ap.add_argument("--receipt")
-    ap.add_argument("--fresh-read")
+    ap.add_argument("--apply", action="store_true", help="carry out the reviewed dry run (needs both below)")
+    ap.add_argument("--receipt", help="the dry run's retire.json (apply), or applied/retire_applied.json")
+    ap.add_argument("--fresh-read", help="live kb_curation rows: the JSON value fresh_read.sql returns")
+    ap.add_argument("--rollback", action="store_true", help="restore the documents from an applied receipt")
+    ap.add_argument("--supabase-plan", action="store_true", help="the delete and restore SQL from a live read")
+    ap.add_argument("--fresh-read-sql", action="store_true", help="write fresh_read.sql beside --receipt")
+    ap.add_argument("--fresh-read-from-overlay", help=argparse.SUPPRESS)
     ap.add_argument("--root", default=ROOT, help=argparse.SUPPRESS)
     ap.add_argument("--freeze", action="store_true", help=argparse.SUPPRESS)
     args = ap.parse_args(argv)
-    if args.apply:
-        if not (args.receipt and args.fresh_read):
-            sys.exit("--apply needs --receipt and --fresh-read")
-        sys.exit("the apply is not built: this re-mint is a dry run for review (S733)")
     today = date.today().isoformat()
+    if args.apply or args.rollback or args.supabase_plan or args.fresh_read_sql or args.fresh_read_from_overlay:
+        if not args.receipt:
+            sys.exit("needs --receipt")
+        if not os.path.exists(args.receipt):
+            sys.exit(f"--receipt {args.receipt} does not exist")
+    if args.apply:
+        if not args.fresh_read:
+            sys.exit("--apply needs --receipt and --fresh-read")
+        if not os.path.exists(args.fresh_read):
+            sys.exit(f"--fresh-read {args.fresh_read} does not exist")
+        return run_apply(args, today)
+    if args.rollback:
+        return run_rollback(args, today)
+    if args.supabase_plan:
+        if not (args.fresh_read and os.path.exists(args.fresh_read)):
+            sys.exit("--supabase-plan needs --fresh-read")
+        return run_supabase_plan(args, today)
+    if args.fresh_read_sql or args.fresh_read_from_overlay:
+        with open(args.receipt, encoding="utf-8") as f:
+            rec = json.load(f)
+        ids = set(rec["retire"]) | {k for k, v in rec["held"].items() if v["reason"].startswith("merged into")}
+        if args.fresh_read_sql:
+            path = os.path.join(os.path.dirname(os.path.abspath(args.receipt)), "fresh_read.sql")
+            with open(path, "w", encoding="utf-8") as f:
+                f.write(fresh_read_sql(ids))
+            print(f"wrote {os.path.relpath(path, args.root)} ({len(ids)} ids)")
+        if args.fresh_read_from_overlay:
+            cur = er.load_docs(os.path.join(args.root, "kb"))["curation"]["curations"]
+            er.dump(args.fresh_read_from_overlay, overlay_rows(cur, ids))
+            print(f"wrote {args.fresh_read_from_overlay} from kb/coci_curation.json")
+        return 0
+    out_dir = os.path.join(OUT_ROOT, today)
+    if is_applied(os.path.join(out_dir, APPLIED, "retire_applied.json")):
+        sys.exit(f"{out_dir} holds an applied receipt; a dry run never overwrites it")
     inp = load_inputs(args.root)
     scope, all_rows = read_scope(os.path.join(args.root, RESCORE))
     plan = compute_plan(inp, scope, all_rows, None if args.freeze else PINS)

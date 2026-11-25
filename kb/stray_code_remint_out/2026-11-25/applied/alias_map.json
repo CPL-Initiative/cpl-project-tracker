@@ -1,0 +1,90 @@
+{
+  "_status": "Stray-code re-mint: merged shells -> their merge target (alias receipt) - APPLIED",
+  "_applied_at": "2026-11-25",
+  "_scope": "stray-codes-confidence-90",
+  "_ruling": "Sam, 2026-11-25 (r-no-mid-on-a-stray-code-sam-2026-11-25): \"i should have never minted those 88 codes and left the courses in a holding pen\"; the stray codes go back to Needs an M-ID once their local subjects carry a common subject",
+  "_decided": "DECIDED (S733 conductor): an id held as merged into an M-ID that stays takes an alias to its merge target at the apply (fate a, a map registered in kb/alias_chain.py ALIAS_MAPS), since its courses already sit under a common-subject M-ID and have no Needs an M-ID to return to.",
+  "_count": 20,
+  "aliases": {
+    "ARTG M10AA": {
+      "new_id": "ARTS M1577",
+      "fate": "merged shell joins its merge target"
+    },
+    "ARTG M10AB": {
+      "new_id": "ARTS M1577",
+      "fate": "merged shell joins its merge target"
+    },
+    "ARTG M10AH": {
+      "new_id": "ARTH M1039",
+      "fate": "merged shell joins its merge target"
+    },
+    "ARTG M10AL": {
+      "new_id": "MART M1004",
+      "fate": "merged shell joins its merge target"
+    },
+    "ARTI M10AE": {
+      "new_id": "ARTS M1407",
+      "fate": "merged shell joins its merge target"
+    },
+    "CTVR M10AE": {
+      "new_id": "BRDC M1045",
+      "fate": "merged shell joins its merge target"
+    },
+    "ESTI M10AE": {
+      "new_id": "COSM M1003",
+      "fate": "merged shell joins its merge target"
+    },
+    "FLTE M10AE": {
+      "new_id": "AVIA M1051",
+      "fate": "merged shell joins its merge target"
+    },
+    "FTMA M10AO": {
+      "new_id": "FTVE M1067",
+      "fate": "merged shell joins its merge target"
+    },
+    "FTVM M10AJ": {
+      "new_id": "BRDC M1062",
+      "fate": "merged shell joins its merge target"
+    },
+    "PHTO M10AB": {
+      "new_id": "PHOT M1111",
+      "fate": "merged shell joins its merge target"
+    },
+    "PHTO M10AE": {
+      "new_id": "PHOT M1121",
+      "fate": "merged shell joins its merge target"
+    },
+    "PHTO M10AK": {
+      "new_id": "MACH M1046",
+      "fate": "merged shell joins its merge target"
+    },
+    "PHTO M10AM": {
+      "new_id": "PHOT M1111",
+      "fate": "merged shell joins its merge target"
+    },
+    "PHTO M10AQ": {
+      "new_id": "PHOT M1134",
+      "fate": "merged shell joins its merge target"
+    },
+    "PHTO M10AT": {
+      "new_id": "PHOT M1133",
+      "fate": "merged shell joins its merge target"
+    },
+    "SGNG M10AB": {
+      "new_id": "ARTS M1456",
+      "fate": "merged shell joins its merge target"
+    },
+    "SGNG M10AD": {
+      "new_id": "ARTS M1488",
+      "fate": "merged shell joins its merge target"
+    },
+    "SGNG M10AH": {
+      "new_id": "ARTS M1661",
+      "fate": "merged shell joins its merge target"
+    },
+    "TAFI M10AI": {
+      "new_id": "FTVE M1078",
+      "fate": "merged shell joins its merge target"
+    }
+  }
+}

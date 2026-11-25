@@ -1,6 +1,6 @@
 {
 "_about":"Retired shared courses (the version 5 rule), kept for the record and out of every count, waiting pile, to-do and fetch plan (Sam, 2026-11-17). Built by kb/_build_retired_cards.py; read through kb/_flags.py. not_seen_this_term lists cards that stay counted and carry the Fall 2025 note.",
-"_ids_current_through":"kb/anchor_rekey_out/2026-11-08/alias_map.json",
+"_ids_current_through":"kb/stray_code_remint_out/2026-11-25/applied/alias_map.json",
 "_inputs":{
 "coci_courses":{
 "path":"coci_lookup_data.js",
@@ -8,7 +8,7 @@
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"a915f9f1a27e197674d00ed8b07481670f719a070fcf3dc64d200c8664a062cc"
+"sha256":"c3a7558bed92ff21be1c696ab4a5b460a8e10cb73c62577be0c93b9d5878035a"
 },
 "fall_2025":{
 "path":"kb/reference/cb_course_basic_fall2025.csv",
@@ -16,7 +16,7 @@
 },
 "memberships":{
 "path":"kb/coci_minted_memberships.json",
-"sha256":"86da3eb5a258ee51e24c03dc381511cecd571b774af6e495a29f0b1cf61e3b8b"
+"sha256":"7bc2e478a1d3a260e5a9abd56a8eefdf532402d43da005103fc761f788668f3b"
 },
 "status":{
 "path":"kb/reference/coci_program_course_file.csv.gz",
@@ -186,6 +186,7 @@
 "ARTH M1008",
 "ARTH M1015",
 "ARTH M1025",
+"ARTH M1039",
 "ARTS M1007",
 "ARTS M1031",
 "ARTS M1071",
@@ -649,7 +650,6 @@
 "COMP M9070",
 "COMP M9072",
 "COMP M9073",
-"COSM M1003",
 "COSM M1016",
 "COSM M1017",
 "COSM M1018",
@@ -1215,7 +1215,6 @@
 "FTVE M1037",
 "FTVE M1043",
 "FTVE M1045",
-"FTVE M1067",
 "FTVE M1086",
 "FTVE M1089",
 "FTVE M1100",

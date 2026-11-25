@@ -13,10 +13,10 @@
   "candidate_mids": 549,
   "skipped": {
    "not an M-ID": 564,
-   "not CTE": 40416,
+   "not CTE": 40419,
    "not credit": 1325,
    "shell title": 14,
-   "few districts": 5936,
+   "few districts": 5933,
    "already comparable": 635
   }
  },

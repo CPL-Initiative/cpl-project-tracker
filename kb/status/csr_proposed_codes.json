@@ -9,7 +9,12 @@
  },
  "changed_by_a_person": [],
  "count": 95,
- "problems": [],
+ "problems": [
+  "no proposal for Citizenship: Noncredit",
+  "no proposal for Health and Safety: Noncredit",
+  "no proposal for Home Economics: Noncredit",
+  "no proposal for Specialized Instruction (Disabled Student Programs and Services): Noncredit"
+ ],
  "rows": [
   {
    "assign": true,
