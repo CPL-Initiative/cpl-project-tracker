@@ -847,3 +847,11 @@ to Needs an M-ID once their local subjects carry a common subject. **Procedure:*
   source (Diablo Valley's FTVE read Law).
 - Count Needs an M-ID through the List's own sources (`unified_courses_members.js`, `kb/coci_not_applicable.json`);
   the state list's July M-ID column gives 19,267, and leaving out the kept courses gives 8,101 against the List's 1,819.
+
+**The runners' title hunt (S730, #3832):** nine workers read 99 colleges' catalog subject indexes in about 75 minutes
+(eLumen and CurriQunet through their navigation JSON, CourseLeaf and Acalog indexes, PDF legends and headings). Lessons:
+the machine filled 6,492 titles that a hand search would have taken days to find; a department label is not a subject
+heading and stays a hint; a worker that joins wrapped headings or infers a code's title must mark it, and the filer
+leaves an inferred title out; read plans go in their own commit before the data, since a push re-reads the plans its
+last commit changes; and a list keyed on college names needs a folded name (Trade Technical against Trade-Technical,
+the Credit siblings).
