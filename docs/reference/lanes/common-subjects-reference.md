@@ -141,8 +141,11 @@ pages), date and finder; only a catalog heading or prefix legend settles a title
 `kb/subject_title_hunt/` (8,786 college and code pairs with no title, tiered, each with a recommended title at its
 measured confidence), handed to COBIx. **FINDING:** one local code can mean two subjects at two colleges (Glendale's
 AT is Flight Attendant, filed statewide as Automotive), so a statewide filing should stop where a college's titles
-read otherwise. **NEXT:** load COBIx's titles into the Subjects titles, rescore the stray codes' local subjects with the
-title leading, then the dry-run re-mint for Sam.
+read otherwise. **LIVE (#3832): the runners' title hunt.** Every college's catalog subject index read on runners and filed straight
+into `kb/hand_filed_catalogs/subjects/` by `kb/_file_found_subject_titles.py` (the Subjects build lists a college by
+its headings alone): 103 colleges and 8,147 named codes, from 19 and 1,655. The CSV holds only the 2,500 leftovers for
+COBIx. **RULED** `r-collect-curate-connect-grow-automatic-sam-2026-11-25`. **NEXT:** rescore the stray codes' local
+subjects with the title leading, then the dry-run re-mint for Sam; file COBIx's leftover titles the same way.
 
 ## NEXT
 

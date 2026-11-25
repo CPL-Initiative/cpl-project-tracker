@@ -1,5 +1,5 @@
 ---
-title: "Session 731 handoff (from SkyDunlin, S730, Sam's plain session of 2026-11-25: Needs you folds to its card, the doubt count live, the fold measured, the stray codes and the title hunt)"
+title: "Session 731 handoff (from SkyDunlin, S730, Sam's plain session of 2026-11-25: Needs you folds to its card, the doubt count live, the fold measured, the stray codes, and the subject titles of 103 colleges read by runners)"
 created: 2026-11-25
 updated: 2026-11-25
 tags: [handoff, session]
@@ -8,12 +8,13 @@ obsidian-folder: cpl-project-tracker/handoffs
 ---
 
 **Routing.** This handoff is for Sam's next plain session. Handoff 728 is the CPL Queue routine's (S727, merged as
-#3807); a routine firing follows that file, never this one. Take the next free session number when you start and say so
-in your handoff.
+#3807); a routine firing follows that file, never this one. The routine's S731 (SkyFrigatebird) took the number 731
+and wrote handoff 732 for the routine. A plain session follows this file: take the next free session number when you
+start (733 or above) and say so in your handoff; the moniker below stays yours.
 
-# You are Session 731, SkyGodwit
+# You are SkyGodwit, Sam's next plain session
 
-From SkyDunlin (S730), Sam's plain session of 2026-11-25 (~10:52Z to ~13:20Z). A **light checkpoint**, refreshed after
+From SkyDunlin (S730), Sam's plain session of 2026-11-25 (~10:52Z to ~15:10Z). A **light checkpoint**, refreshed after
 Sam came back: the commons and common-subjects lanes moved inside their PRs, and four `cpl_memory` rows were written; no Roadmap row moved, no re-mint or Rule 10 data write,
 no tab joined or left the nav. Skipped: step 2 (no KB structure change), step 3 (README), step 5 (no kb-note crossed the
 bar), step 7 (the pipeline did not move).
@@ -57,6 +58,16 @@ bar), step 7 (the pipeline did not move).
   `p-subject-title-carries-its-source-sam-2026-11-25`: every collected title records its source URL, where, method,
   date and finder; only a catalog heading or prefix legend settles it. Sam has the COBIx instructions to paste.
 
+- **#3832** (squash `128102a6`): Sam's go, *"start with the 68 colleges"*, then the rest. Nine workers read each
+  catalog's subject index on runners (`kb/subject_title_hunt/colleges.json`, `found/`, plans
+  `kb/college_reads/subject_index_*.json`). `kb/_file_found_subject_titles.py` files them straight into
+  `kb/hand_filed_catalogs/subjects/` with each title's source, where, method, date and finder; the Subjects build
+  lists a college by its headings alone (`headings_only`). The record went from 19 colleges and 1,655 named codes to
+  103 and 8,147. A department label, a heading borrowed from another code, or a code under two headings is never filed.
+  The CSV is now the leftovers, `kb/subject_title_hunt/20261125_local_subject_codes_without_titles_2.csv`: 2,500 pairs,
+  each with `why_no_title`; Sam has the message for COBIx. **RULED** `r-collect-curate-connect-grow-automatic-sam-2026-11-25`
+  (*"we want our collect, curate, and connect procedures to be increasingly automatic"*).
+
 ## Read in order
 
 1. `docs/reference/lanes/commons.md`: the anchor-page build (steps 2 to 4) inside the S723 to S726 pointer.
@@ -65,10 +76,12 @@ bar), step 7 (the pipeline did not move).
 
 ## Open work, in order
 
-0. **The title hunt (common-subjects-reference lane, Sam's ask):** when COBIx's PRs with titles land, load them into the
-   Subjects titles (`kb/status/local_subject_titles.json` and `kb/reference/subject_web_searches.json`, the method
-   weighing each), rescore the stray codes' local subjects with the title leading, then the dry-run re-mint that sends
-   the 88 codes' courses back to Needs an M-ID under their common subject, for Sam to see before it applies.
+0. **The stray codes (common-subjects-reference lane):** the titles are in. Rescore the 88 stray codes' local subjects
+   with the title leading (the statewide codes and recommender already read them after the nightly build), then the
+   dry-run re-mint that sends their 247 courses back to Needs an M-ID under their common subject, for Sam to see
+   before it applies (`r-no-mid-on-a-stray-code-sam-2026-11-25`). When COBIx's PRs with leftover titles land, write
+   each as a found file and run `python3 kb/_file_found_subject_titles.py`, then the subject family in order
+   (`scripts/check_generated.sh` names it).
 
 From the commons lane's NEXT:
 
@@ -104,6 +117,8 @@ codes, Sam's refile in Local subjects; the re-point of folded local codes); **im
   #3825, someone else's; it then unsubscribed. The handoff before warned of this.
 - Never mutation-check while a background suite reads the same file.
 - `git checkout -B <branch> origin/main` right after a merge needs a fresh `git fetch`, or it lands on the old main.
+- A worker's plan in a commit re-reads the college on push: commit plans before the data, in their own commit.
+- Copper Mountain's registry `catalog_url` answers 404 (the found file names the current PDF); the registry needs it.
 - A statewide subject filing is keyed on the letters alone; check a college's own titles before applying one.
 - The state list's M-ID column dates from July: count Needs an M-ID through `unified_courses_members.js` and
   `kb/coci_not_applicable.json`, as the List does (1,819).
@@ -117,9 +132,9 @@ codes, Sam's refile in Local subjects; the re-point of folded local codes); **im
 
 ## Let go
 
-At sign-off: no PR watch remains (#3824, #3826, #3828 and #3831 merged and unsubscribed; #3825 unsubscribed); no check-ins; no
+At sign-off: no PR watch remains (#3824, #3826, #3828 and #3831 and #3832 merged and unsubscribed; nine workers done; #3825 unsubscribed); no check-ins; no
 artifact watch; no COBIx watcher.
 
-Spend: not available; 2026-11-25T10:52Z to 2026-11-25T13:20Z.
+Spend: not available; 2026-11-25T10:52Z to 2026-11-25T15:10Z.
 
-Opening line: *Greetings, you are SkyGodwit (Session 731), see SkyDunlin's handoff — `docs/session_731_handoff.md` — let's keep rolling with our queue.*
+Opening line: *Greetings, you are SkyGodwit (Session 733), see SkyDunlin's handoff — `docs/session_731_handoff.md` — let's keep rolling with our queue.*
