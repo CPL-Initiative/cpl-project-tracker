@@ -5503,9 +5503,6 @@ def _page_key(url: str | None) -> str:
     return "%s://%s%s%s" % (u.scheme, (u.hostname or "").lower(), u.path.rstrip("/"), "?" + u.query if u.query else "")
 
 
-SITE_NAME_CUT = re.compile(r"\s*\||\s+<\s+")   # where a page title's site name starts (site_heading_names)
-
-
 def site_heading_names(pg: dict, program: dict) -> tuple[bool, str]:
     """(whether the page's own heading prints the program's title with its award, the heading tested). The heading
     is the page's h1 as the capture holds it, which drop_banner_h1() blanks where the catalog prints one banner on
@@ -5513,10 +5510,11 @@ def site_heading_names(pg: dict, program: dict) -> tuple[bool, str]:
     S381). Each is tested alone with the reader's rule A (RC.heading_line), so one never lends the other its award.
     The site's name follows a bar ("Accounting Certificate of Achievement | Academic Catalog") or, on Orange Coast's
     CourseLeaf pages, an angle bracket ("Geology, Associate in Science Degree for Transfer (AS-T) < Orange Coast
-    College", S727), and rule A's length slack refuses a short title with the name left on.
-    Self-recall on San Bernardino Valley's filed sources: tests/program_requirements_site_pins_s720_test.py."""
+    College", S727), and rule A's length slack refuses a short title with the name left on; TITLE_SPLIT cuts both.
+    Self-recall on San Bernardino Valley's filed sources: tests/program_requirements_site_pins_s720_test.py; on
+    Orange Coast's: tests/program_requirements_lever_pins_s727_test.py."""
     h1 = pg.get("h1") if "h1" in pg else (pg.get("got") or {}).get("h1")
-    title0 = SITE_NAME_CUT.split(pg.get("title") or (pg.get("got") or {}).get("title") or "", 1)[0].strip()
+    title0 = TITLE_SPLIT.split(pg.get("title") or (pg.get("got") or {}).get("title") or "", 1)[0].strip()
     heads = [x for x in ((h1 or "").strip(), title0) if x]
     named = any(RC.heading_line([x], program.get("title"), program.get("award")) >= 0 for x in heads)
     if not named:
