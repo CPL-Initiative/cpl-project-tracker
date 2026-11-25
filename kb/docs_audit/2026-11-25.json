@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1593,
-    "bytes": 17591869,
+    "files": 1595,
+    "bytes": 17669542,
     "over_budget": 6,
-    "handoff_max": 731,
+    "handoff_max": 732,
     "always_loaded_files": 1,
     "always_loaded_bytes": 65348,
     "superseded_files": 0,
@@ -25,33 +25,33 @@
         "over": 1
       },
       "other": {
-        "files": 167,
-        "bytes": 5925503,
+        "files": 168,
+        "bytes": 5953628,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 12020,
+        "bytes": 11034,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2879038,
+        "bytes": 2881578,
         "over": 2
       },
       "kb_note": {
         "files": 607,
-        "bytes": 2967192,
+        "bytes": 2968628,
         "over": 0
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 549862,
+        "bytes": 550523,
         "over": 2
       },
       "handoff": {
-        "files": 686,
-        "bytes": 5192906,
+        "files": 687,
+        "bytes": 5238803,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 81
     },
     "vault": {
-      "files": 30444,
-      "bytes": 1629272041,
-      "heavy_bytes": 1238817149,
+      "files": 30448,
+      "bytes": 1629341486,
+      "heavy_bytes": 1238821010,
       "heavy_share": 0.76,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -265,10 +265,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 84721870,
+        "bytes": 84722345,
         "kind": "dir"
       },
-      "message": "directory totals 84,721,870 B inside the vault"
+      "message": "directory totals 84,722,345 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -355,20 +355,20 @@
       "fixable": false,
       "path": "kb/migrations",
       "detail": {
-        "bytes": 12078689,
+        "bytes": 12094158,
         "kind": "dir"
       },
-      "message": "directory totals 12,078,689 B inside the vault"
+      "message": "directory totals 12,094,158 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/status/commons_data_programs",
       "detail": {
-        "bytes": 10213221,
+        "bytes": 10201138,
         "kind": "dir"
       },
-      "message": "directory totals 10,213,221 B inside the vault"
+      "message": "directory totals 10,201,138 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

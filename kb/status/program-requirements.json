@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-25T11:50:45Z",
-  "session": 727,
-  "moniker": "SkyTropicbird",
+  "written_at": "2026-11-25T15:10:00Z",
+  "session": 731,
+  "moniker": "SkyFrigatebird",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_728_handoff.md",
+  "handoff": "docs/session_732_handoff.md",
   "next_step": {
-    "title": "Land tonight's open work, then the display build and the census",
-    "text": "Merge the eLumen reader fix, the lever and the second land pull request once their reads and loads are live, then build the display page carrying tonight's records, gate one college, apply the whole build and run the census on main. Then West Valley's empty load, the census's next wave and the next wording-rule piles."
+    "title": "Build the display page carrying tonight's records, then the census",
+    "text": "Build the display page carrying tonight's 83 records, apply it at Glendale first and then whole, and run the census on main. Then lane 1's remainders, the fix Saddleback's repeat steps need before its next read, the next wording-rule piles and the night's one follow-up."
   },
   "calls": [
     {
@@ -337,6 +337,54 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-25T11:23:00Z",
+      "text": "The display page now carries every filed record: 18,723 programs at build 2c8507c058b1, after a first apply at Glendale."
+    },
+    {
+      "at": "2026-11-25T11:32:00Z",
+      "text": "West Valley: 2 programs read again from their own pages and loaded, both passing. The earlier read had reused a capture made before page counting and filed nothing."
+    },
+    {
+      "at": "2026-11-25T11:32:30Z",
+      "text": "Los Angeles Trade-Technical: 6 programs collected with their gaps named."
+    },
+    {
+      "at": "2026-11-25T11:49:00Z",
+      "text": "The census on main after the display build: 15,562 of 20,282 active programs pass, 4,210 have no passing record and 510 are collected with a named gap."
+    },
+    {
+      "at": "2026-11-25T11:57:00Z",
+      "text": "Saddleback: 8 programs collected with their gaps named, under one new gap kind: a course the page waives that the printed total still counts."
+    },
+    {
+      "at": "2026-11-25T12:15:00Z",
+      "text": "College of the Redwoods: 2 programs read again from their own pages and replaced."
+    },
+    {
+      "at": "2026-11-25T12:16:00Z",
+      "text": "Long Beach City: 12 programs collected, 3 passing and 9 with their gaps named."
+    },
+    {
+      "at": "2026-11-25T12:47:00Z",
+      "text": "Antelope Valley: 38 programs read again from their own pages: 37 records replaced and 1 new record, passing."
+    },
+    {
+      "at": "2026-11-25T13:36:00Z",
+      "text": "Allan Hancock: 1 program read from its own page and loaded, passing. At Allan Hancock and East Los Angeles, 3 programs with no record have their gaps named."
+    },
+    {
+      "at": "2026-11-25T13:51:00Z",
+      "text": "The pooled reading collects 7 more programs: 4 passing at Porterville, Modesto Junior and Cuyamaca, and 3 at Modesto Junior with their gaps named."
+    },
+    {
+      "at": "2026-11-25T14:19:00Z",
+      "text": "Saddleback: 7 programs read again with a new repeat step, each now its printed total and passing."
+    },
+    {
+      "at": "2026-11-25T15:06:00Z",
+      "text": "The closing census on main: 15,577 of 20,282 active programs have complete requirements (15,551 at this run's start), 4,176 have no passing record and 529 are collected with their gaps named."
+    },
     {
       "at": "2026-11-25T06:40:00Z",
       "text": "The display page now carries every filed record: 18,711 programs at build f4b48370bc11, after a first apply at Glendale."
@@ -1058,14 +1106,14 @@
     {
       "day": "2026-11-25",
       "active": 20282,
-      "complete": 15562,
+      "complete": 15577,
       "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-25T12:12:00Z"
+    "at": "2026-11-25T16:12:00Z"
   },
   "harvest": {
     "day": "2026-11-25",

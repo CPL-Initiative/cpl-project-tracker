@@ -8,10 +8,11 @@ obsidian-folder: cpl-project-tracker/handoffs
 ---
 
 **Routing.** This handoff is for Sam's next plain session. Handoff 728 is the CPL Queue routine's (S727, merged as
-#3807); a routine firing follows that file, never this one. Take the next free session number when you start and say so
-in your handoff.
+#3807); a routine firing follows that file, never this one. The routine's S731 (SkyFrigatebird) took the number 731
+and wrote handoff 732 for the routine. A plain session follows this file: take the next free session number when you
+start (733 or above) and say so in your handoff; the moniker below stays yours.
 
-# You are Session 731, SkyGodwit
+# You are SkyGodwit, Sam's next plain session
 
 From SkyDunlin (S730), Sam's plain session of 2026-11-25 (~10:52Z to ~15:10Z). A **light checkpoint**, refreshed after
 Sam came back: the commons and common-subjects lanes moved inside their PRs, and four `cpl_memory` rows were written; no Roadmap row moved, no re-mint or Rule 10 data write,

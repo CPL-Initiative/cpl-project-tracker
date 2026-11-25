@@ -4273,7 +4273,7 @@
      ],
      "title": "A self-check must see what the rule writes",
      "type": "methodology",
-     "updated": "2026-11-18"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-06-02",
@@ -14344,7 +14344,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 110,
+   "count": 111,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15605,6 +15605,21 @@
       "catalog-harvest"
      ],
      "title": "Program requirements harvest lessons \u2014 archive 8 (S687 onward)",
+     "type": null,
+     "updated": "2026-11-25"
+    },
+    {
+     "created": "2026-11-25",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_9.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 9 (S714 onward)",
      "type": null,
      "updated": "2026-11-25"
     },
@@ -17558,8 +17573,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 686,
+   "count": 687,
    "docs": [
+    {
+     "created": "2026-11-25",
+     "governs": [],
+     "n": 732,
+     "path": "docs/session_732_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 732 handoff (from SkyFrigatebird, S731, the CPL Queue routine's collection run of 2026-11-25, from 10:55Z)",
+     "type": null,
+     "updated": "2026-11-25"
+    },
     {
      "created": "2026-11-25",
      "governs": [],
@@ -28936,5 +28965,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1579
+ "total": 1581
 }
