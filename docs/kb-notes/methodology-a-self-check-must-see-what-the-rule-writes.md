@@ -1,7 +1,7 @@
 ---
 title: A self-check must see what the rule writes
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-25
 tags: [methodology, self-check, data-quality, rule-10, program-requirements-harvest]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -68,10 +68,31 @@ the values written to them. A total is enough only when the total is the field t
 must be one the rule did not read to produce its answer, or the check is circular (the second reader's finding on
 #3508's pair call scored against its own rule).
 
+## S731: a recall that counted verdicts, and a run that reported success
+
+Two more gates read something other than what the rule wrote, on 2026-11-25.
+
+The pooled reading's change (plan s731p, behind `POOLED_S731`) joins a list heading to the list it continues, as in
+"LIST A" and "LIST B CONTINUED". Its self-recall over all 18,962 filed records counted readings and verdicts: 18
+records read differently and none moved from passing to failing. The second reader counted the joins: 26, of which 4
+were right and 22 joined headings by position alone. The recall's figures had no place to show a wrong join. The join
+now needs the first stem word to match, and a "LIST B CONTINUED" after "LIST A" still joins, a finding for the next fix.
+
+At West Valley a read ended green and filed only its preview. Its price step held a capture restaged from before page
+counting as partial and skipped extraction; the load after it re-posted 133 rows already live. "The run succeeded" is
+the process state this note's claim names, and it said nothing about what the read filed. A fresh read put the two
+records live.
+
+The practice gains one line: a recall counts each thing the rule does (here, each join) beside the verdicts, and a
+run's result is read from what it filed.
+
+Source: `docs/program_requirements_harvest_lessons.md`, *S731*; `cpl_memory` `p-pooled-change-opus-reader-recall-s731`
+and `f-green-read-files-only-preview-s731`.
+
 ## See also
 
 - `[[docs/kb-notes/methodology-a-new-matcher-is-gated-by-a-self-recall-test]]`: the sibling rule for matchers
-- `[[docs/program_requirements_harvest_lessons]]`, *S681*
+- `[[docs/program_requirements_harvest_lessons]]`, *S681* and *S731*
 - PRs `#3508` (A4), `#3492` (Chabot's reader fix and rollback), `#3509` (the wave)
 
 ---
