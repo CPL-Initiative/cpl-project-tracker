@@ -1,0 +1,32 @@
+{
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). S712 (run 45166049971) found an eLumen catalog's courses view prints every subject as 'Name - CODE'. This read loads this catalog's courses view, rendered, and prints it line for line with the links that name a course or catalog, so a session files the headings without reading every course. One page load, no model call, writes nothing.",
+ "college": "Cabrillo College",
+ "capture_lines": 3000,
+ "questions": {
+  "subject_index": "Where the catalog prints each course subject code with its name (the courses view's subject list), and the names as printed."
+ },
+ "keywords": [
+  " - [A-Z]{2,6}\\b",
+  "\\([A-Z]{2,6}\\)",
+  "[Ss]ubjects?",
+  "[Cc]ourses"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/courses",
+   "network": true,
+   "network_hosts": [
+    "api-prod.elumenapp.com"
+   ],
+   "capture_view": true,
+   "links": "course|subject|department|catalog",
+   "links_cap": 200
+  }
+ ],
+ "outside_hosts": {
+  "api-prod.elumenapp.com": "eLumen's own API host: the catalog's scripts fetch every view from it (kb/_program_requirements_college.py, the eLumen note; S380)."
+ }
+}
