@@ -3,9 +3,9 @@
  "programs": 145,
  "with_closed_list": 142,
  "found": 136,
- "extracted": 134,
+ "extracted": 136,
  "errors": 1,
- "passed_machine_checks": 120,
+ "passed_machine_checks": 122,
  "failed": {
   "coverage": 0,
   "invented": 0,
@@ -13,8 +13,11 @@
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 11.19,
- "cost_per_program": 0.0835,
+ "cost_usd_run": 0.15,
+ "cost_usd_filed": 11.34,
+ "cost_per_program": 0.0834,
+ "extract_calls": 2,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "40773",
@@ -22,7 +25,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44070",
@@ -30,7 +34,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44126",
@@ -38,8 +43,9 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "43142245126"
+ "run": "45602612349"
 }

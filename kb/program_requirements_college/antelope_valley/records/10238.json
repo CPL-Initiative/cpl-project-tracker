@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Automotive Collision Repair and Refinishing Specialist",
  "award": "A.S. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-cert-fall-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-as-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8455,
+  "input_tokens": 8972,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8455,
-    "output_tokens": 1749,
+    "input_tokens": 8972,
+    "output_tokens": 2642,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1749,
+  "output_tokens": 2642,
   "output_tokens_details": {
-   "thinking_tokens": 441
+   "thinking_tokens": 1181
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0688,
- "ms": 15770,
- "seconds": 16.2,
+ "cost_usd": 0.08873,
+ "ms": 21720,
+ "seconds": 23.5,
  "parts": null,
  "error": null,
  "score": {
@@ -72,16 +72,38 @@
     40.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     62.0
+    ],
+    "stated": [
+     62.0,
+     62.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     0.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 2,
    "courses": 0,
-   "count": 1,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -89,21 +111,18 @@
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Automotive Collision Repair and Refinishing Specialist Cert",
+   "section_heading": "Automotive Collision Repair and Refinishing Specialist AS",
    "measure": "units",
    "total_units": {
     "min": 40,
@@ -114,21 +133,27 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "AVC GE (local general education)",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 62,
+    "max": 62
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 22,
+    "max": 22
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
-    "Analyze, evaluate, and apply critical aspects of the collision repair industry related to safe work practices, standards and tolerances, standard employer practices. Proper use of tools power equipment, hazardous materials and personal protective equipment."
+    "Analyze, evaluate, and apply critical aspects of the collision repair industry related to safe work practices, standards and tolerances, standard employer practices. Proper use of tools power equipment, hazardous materials and personal protective equipment",
+    "Use oxyacetylene, MIG (metal inert gas) and plasma arc welding/cutting equipment to join automotive sheet metal/structural panels in a variety of joints/configurations common"
    ],
    "careers": [
-    "Automotive collision repair"
+    "auto collision industry",
+    "cost estimator",
+    "insurance adjustor",
+    "shop supervisor",
+    "Auto body trade",
+    "Aero space industry"
    ]
   },
   "blocks": [
@@ -143,28 +168,28 @@
     },
     "courses": [
      {
-      "code": "ABDY115",
+      "code": "ABDY 115",
       "units": 10,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ABDY125",
+      "code": "ABDY 125",
       "units": 10,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ABDY215",
+      "code": "ABDY 215",
       "units": 10,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ABDY225",
+      "code": "ABDY 225",
       "units": 10,
       "units_max": null,
       "alternatives": [],
@@ -183,56 +208,56 @@
     },
     "courses": [
      {
-      "code": "ABDY112",
+      "code": "ABDY 112",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ABDY113",
+      "code": "ABDY 113",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ABDY122",
+      "code": "ABDY 122",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ABDY123",
+      "code": "ABDY 123",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ABDY212",
+      "code": "ABDY 212",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ABDY213",
+      "code": "ABDY 213",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ABDY222",
+      "code": "ABDY 222",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ABDY223",
+      "code": "ABDY 223",
       "units": 5,
       "units_max": null,
       "alternatives": [],
@@ -244,12 +269,29 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The source page is the certificate (\"Automotive Collision Repair and Refinishing Specialist Cert\"); no separate A.S. Degree section is printed. The page states the associate degree may be satisfied by completing the certificate requirements plus the associate degree requirements, so the certificate's 40-unit major is recorded for the A.S. award. No GE pattern, GE units or degree total is printed.",
-   "The page appears to include an eLumen proposal form (Program Goals, a second requirements table, checklist, workflow agreement). In that second table ABDY 125 is titled \"Advanced Aircraft Sheetmetal & Composite Structures\" and ABDY 212 \"Advanced Auto Collision Repair\", which conflicts with the main requirements list; the main Program Requirements list was used.",
-   "Program outcomes are printed under the certificate heading \"Automotive Collision Repair & Refinishing Specialist Cert\"; the A.S. is assumed to share them. The text is cut off in the middle of outcome 2 (\"Use oxyacetylene, MIG (metal inert gas) and plasma arc welding/cutting equipment to join automotive shee...\"), so only outcome 1 is recorded; further outcomes may exist.",
-   "Day/Night recommended pathways repeat the Option 1/Option 2 courses and are not separate requirements."
+   "The Program Requirements section prints codes without a space (e.g. 'ABDY115'); a later proposal-style table prints them with a space ('ABDY 115'). Recorded with the space to match the closed list.",
+   "Parent heading 'Required Courses - Choose Option 1 or Option 2' (Total 40); each option block prints Total 40. Program total 40 recorded as total_units (major).",
+   "degree_total 62 comes from a proposal-style 'Requirements' table ('Total Units 62 units'), which also states 'Completion of General Education requirements, plus electives as needed to reach 60 units. 22 units'. The 22 units combine GE and electives, so ge_units left null; the 62 vs 60 inconsistency should be reviewed.",
+   "The proposal table lists ABDY 125 with the title 'Advanced Aircraft Sheetmetal & Composite Structures' and ABDY 212 as 'Advanced Auto Collision Repair' (no 'I'), differing from the Program Requirements section; likely editing errors.",
+   "GE courses in the recommended pathway (ENGLC1000 and 'Any AVC GE Area' items) are not placed in blocks.",
+   "Program Outcomes list is cut off mid-sentence in outcome 2 ('...configurations common'); recorded as printed and further outcomes may be missing.",
+   "Page contains curriculum workflow/checklist text (proposal form content) that may not be part of the published catalog."
   ]
  },
- "extracted_run": "38979725726",
- "catalog_year": "2026-2027"
+ "extracted_run": "45612549421",
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 22,
+    "max": 22
+   },
+   "words": "Completion of General Education requirements, plus electives as needed to reach 60 units.\n22"
+  }
+ ]
 }

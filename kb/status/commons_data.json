@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T12:25:01Z",
+ "written_at": "2026-11-25T13:56:27Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17396,
-  "gap": 4939,
+  "passing": 17406,
+  "gap": 4929,
   "with_gap": 118,
-  "cost_usd": 1341.08,
-  "passed_at_read": 16397,
+  "cost_usd": 1341.14,
+  "passed_at_read": 16402,
   "cost_receipts": 118,
   "spent_usd": 1240.39,
   "spent_runs": 218,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16867,
-  "gap": 4939,
-  "collected_with_gaps": 529,
+  "passing": 16875,
+  "gap": 4929,
+  "collected_with_gaps": 531,
   "discontinued": 0
  },
  "census_live": {
@@ -212,12 +212,12 @@
    "harvested": true,
    "slug": "allan_hancock",
    "programs": 226,
-   "passing": 138,
-   "gap": 88,
+   "passing": 139,
+   "gap": 87,
    "causes": {
     "no_closed_list": 47,
     "page_not_found": 23,
-    "places_none": 3,
+    "places_none": 2,
     "unknown_without_live": 15
    },
    "census_causes": {
@@ -245,10 +245,10 @@
     "curriqunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-10-16T03:03:09Z",
+   "read_at": "2026-11-25T11:33:57Z",
    "read_kind": "capture",
-   "cost_usd": 12.41,
-   "passed_at_read": 136,
+   "cost_usd": 12.42,
+   "passed_at_read": 139,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -257,13 +257,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 179,
-   "found": 156,
+   "found": 157,
    "extracted": 156,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
+    "coverage": 2,
     "invented": 0,
-    "arithmetic": 20,
+    "arithmetic": 17,
     "repeated": 0,
     "outcomes": 0
    },
@@ -273,13 +273,13 @@
    "capture_root": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 6807.4,
-   "run": "38843474519",
+   "read_seconds": 6918.7,
+   "run": "45605429253",
    "levers": {
     "program_course_file_check": 47,
     "reader_page_search": 23,
     "reconcile_steps": 12,
-    "reader_page_assignment": 3,
+    "reader_page_assignment": 2,
     "scorer_noncredit_hours": 2,
     "ge_units_steps": 1
    },
@@ -289,9 +289,9 @@
      "models": {
       "claude-opus-5-5": 156
      },
-     "run": "38843474519",
-     "at": "2026-10-16T03:03:09Z",
-     "cost_usd": 12.41,
+     "run": "45605429253",
+     "at": "2026-11-25T11:33:57Z",
+     "cost_usd": 12.42,
      "platform": "curriqunet"
     },
     "slo_read": {
@@ -301,7 +301,7 @@
      "source_kind": "course_outline",
      "file": "kb/course_outcomes/hancockcollege/read_44252776105_p3of3.json"
     },
-    "plo_programs": 149,
+    "plo_programs": 150,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -428,12 +428,12 @@
    "harvested": true,
    "slug": "antelope_valley",
    "programs": 199,
-   "passing": 180,
-   "gap": 19,
+   "passing": 181,
+   "gap": 18,
    "causes": {
     "no_closed_list": 2,
     "page_not_found": 2,
-    "places_none": 2,
+    "places_none": 1,
     "unknown_without_live": 13
    },
    "census_causes": {
@@ -457,9 +457,9 @@
    "outcomes_file": "kb/status/commons_data_programs/antelope_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-25T08:14:53Z",
+   "read_at": "2026-11-25T12:19:48Z",
    "read_kind": "capture",
-   "cost_usd": 14.2,
+   "cost_usd": 14.11,
    "passed_at_read": 179,
    "slo_queue": {
     "state": "held",
@@ -473,11 +473,11 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 197,
-   "found": 193,
+   "found": 194,
    "extracted": 195,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
+    "coverage": 1,
     "invented": 0,
     "arithmetic": 16,
     "repeated": 0,
@@ -489,14 +489,14 @@
    "capture_root": "https://avc.elumenapp.com/catalog/2026-27/welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1169.0,
-   "run": "45574354887",
+   "read_seconds": 1168.5,
+   "run": "45612549421",
    "levers": {
     "reconcile_steps": 10,
     "ge_units_steps": 2,
     "program_course_file_check": 2,
-    "reader_page_assignment": 2,
     "reader_page_search": 2,
+    "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
    },
    "collection": {
@@ -505,13 +505,13 @@
      "models": {
       "claude-opus-5-5": 195
      },
-     "run": "45574354887",
-     "at": "2026-11-25T08:14:53Z",
-     "cost_usd": 14.2,
+     "run": "45612549421",
+     "at": "2026-11-25T12:19:48Z",
+     "cost_usd": 14.11,
      "platform": "elumen"
     },
     "slo_read": null,
-    "plo_programs": 130,
+    "plo_programs": 131,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -2775,9 +2775,9 @@
     "elumen"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-25T08:36:01Z",
+   "read_at": "2026-11-25T12:00:55Z",
    "read_kind": "capture",
-   "cost_usd": 5.43,
+   "cost_usd": 5.42,
    "passed_at_read": 64,
    "slo_queue": null,
    "scout": null,
@@ -2803,8 +2803,8 @@
    "capture_root": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 648.0,
-   "run": "45574359765",
+   "read_seconds": 639.8,
+   "run": "45609110977",
    "levers": {
     "reconcile_steps": 5,
     "program_course_file_check": 3,
@@ -2818,9 +2818,9 @@
      "models": {
       "claude-opus-5-5": 73
      },
-     "run": "45574359765",
-     "at": "2026-11-25T08:36:01Z",
-     "cost_usd": 5.43,
+     "run": "45609110977",
+     "at": "2026-11-25T12:00:55Z",
+     "cost_usd": 5.42,
      "platform": "elumen"
     },
     "slo_read": {
@@ -3796,12 +3796,12 @@
    "harvested": true,
    "slug": "cuyamaca",
    "programs": 186,
-   "passing": 168,
-   "gap": 18,
+   "passing": 169,
+   "gap": 17,
    "causes": {
     "page_not_found": 6,
     "places_none": 1,
-    "unknown_without_live": 11
+    "unknown_without_live": 10
    },
    "census_causes": {
     "page_not_found": 3,
@@ -3852,7 +3852,7 @@
    "read_seconds": 1100.0,
    "run": "44752892297",
    "levers": {
-    "reconcile_steps": 11,
+    "reconcile_steps": 10,
     "reader_page_search": 6,
     "reader_page_assignment": 1
    },
@@ -7845,13 +7845,13 @@
    "harvested": true,
    "slug": "modesto_junior",
    "programs": 199,
-   "passing": 178,
-   "gap": 21,
+   "passing": 183,
+   "gap": 16,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 8,
     "places_none": 1,
-    "unknown_without_live": 9
+    "unknown_without_live": 4
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -7907,8 +7907,8 @@
    "read_seconds": 899.9,
    "run": "44540818388",
    "levers": {
-    "reconcile_steps": 9,
     "reader_page_search": 8,
+    "reconcile_steps": 4,
     "program_course_file_check": 3,
     "reader_page_assignment": 1
    },
@@ -12297,11 +12297,10 @@
    "harvested": true,
    "slug": "west_valley",
    "programs": 145,
-   "passing": 124,
-   "gap": 21,
+   "passing": 126,
+   "gap": 19,
    "causes": {
     "extraction_error": 1,
-    "found_not_extracted": 2,
     "no_closed_list": 3,
     "page_not_found": 6,
     "unknown_without_live": 9
@@ -12327,10 +12326,10 @@
    "outcomes_file": "kb/status/commons_data_programs/west_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-12T02:37:11Z",
+   "read_at": "2026-11-25T11:15:42Z",
    "read_kind": "capture",
-   "cost_usd": 11.19,
-   "passed_at_read": 120,
+   "cost_usd": 11.34,
+   "passed_at_read": 122,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -12340,7 +12339,7 @@
    },
    "listed_closed": 142,
    "found": 136,
-   "extracted": 134,
+   "extracted": 136,
    "errors": 1,
    "failed_checks": {
     "coverage": 0,
@@ -12355,27 +12354,27 @@
    "capture_root": "https://www.westvalley.edu/catalog/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 807.6,
-   "run": "43142245126",
+   "read_seconds": 801.9,
+   "run": "45602612349",
    "levers": {
     "reconcile_steps": 9,
     "reader_page_search": 6,
-    "paid_read": 3,
-    "program_course_file_check": 3
+    "program_course_file_check": 3,
+    "paid_read": 1
    },
    "collection": {
     "program_reader": {
-     "records": 134,
+     "records": 136,
      "models": {
-      "claude-opus-5-5": 134
+      "claude-opus-5-5": 136
      },
-     "run": "43142245126",
-     "at": "2026-11-12T02:37:11Z",
-     "cost_usd": 11.19,
+     "run": "45602612349",
+     "at": "2026-11-25T11:15:42Z",
+     "cost_usd": 11.34,
      "platform": "custom_html"
     },
     "slo_read": null,
-    "plo_programs": 133,
+    "plo_programs": 135,
     "ppm_member": {
      "host": "programmapper.westvalley.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"

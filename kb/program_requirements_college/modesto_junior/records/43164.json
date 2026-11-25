@@ -60,18 +60,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
-    21.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
-   "why": [
-    "the blocks sum to 15.0-21.0; the catalog states 18.0-18.0"
+   "against": "program",
+   "why": [],
+   "pooled": [
+    {
+     "blocks": [
+      "LIST A - SELECT THREE",
+      "LIST A"
+     ],
+     "figure": [
+      9.0,
+      9.0
+     ],
+     "minimum": false,
+     "parts": [
+      6.0,
+      12.0
+     ],
+     "read": [
+      9.0,
+      9.0
+     ],
+     "words": "LIST A is printed as a parent group totaling 9 units ('Complete the following number of credits: 9') containing two sub-lists: 'LIST A - SELECT THREE' (0-3 units, COMM 104/COMM 107) and a second 'LIST A' (6-9 units)."
+    }
    ]
   },
   "repeated": {
@@ -93,7 +114,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

@@ -7877,9 +7877,16 @@ def keep_named_gaps(cn, filed_score: dict | None, fresh: dict, scored: dict) -> 
     record's gap again (an hours sum that now reads unequal is hours_total_differs, never no_hours_read)."""
     if not isinstance(fresh, dict) or not (filed_score or {}).get("gaps"):
         return fresh
+    import _program_named_gaps as NG
+    # A decision keeps the gap on the record whatever the fresh score (NG.GAP_HELD, S731: Porterville 06773).
+    held = NG.held_gaps(dict(scored or {}, control_number=cn), filed_score)
+    if held:
+        out = dict(fresh, gaps=held)
+        if (filed_score or {}).get("confidence"):
+            out["confidence"] = filed_score["confidence"]
+        return out
     if pass_grade(fresh):
         return fresh
-    import _program_named_gaps as NG
     now = dict(scored, score=fresh)
     kept = []
     for g in filed_score["gaps"]:

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Paramedic",
  "award": "A.S. Degree",
- "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-cert-spring-2026",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-as-spring-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8548,
+  "input_tokens": 8846,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8548,
-    "output_tokens": 2100,
+    "input_tokens": 8846,
+    "output_tokens": 2380,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2100,
+  "output_tokens": 2380,
   "output_tokens_details": {
-   "thinking_tokens": 697
+   "thinking_tokens": 989
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07619,
- "ms": 17230,
- "seconds": 17.5,
+ "cost_usd": 0.08298,
+ "ms": 20479,
+ "seconds": 20.7,
  "parts": null,
  "error": null,
  "score": {
@@ -72,7 +72,25 @@
     47.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     69.0,
+     69.0
+    ],
+    "stated": [
+     69.0,
+     69.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -94,16 +112,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Paramedic Cert",
+   "section_heading": "Paramedic AS",
    "measure": "units",
    "total_units": {
     "min": 47,
@@ -114,14 +129,14 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "AVC GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 69,
+    "max": 69
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 22,
+    "max": 22
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -136,7 +151,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core Courses",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -216,7 +231,7 @@
       "catalog_addition": false
      },
      {
-      "code": "EMT 130B",
+      "code": "EMT130B",
       "units": 11,
       "units_max": null,
       "alternatives": [],
@@ -228,14 +243,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The award requested is the A.S. Degree, but the source page (URL 'paramedic-cert-spring-2026') is titled 'Paramedic Cert' and prints only the certificate's requirements. No A.S. degree section, general education pattern or degree total appears in the text. The 47-unit major recorded here is the certificate's; a reviewer should confirm that the A.S. degree uses the same major and find the degree's GE and total.",
-   "The page prints the requirements twice: as 'Required Courses (Total 47)' with codes without spaces (EMT121), and as 'Required Core Courses (47 units)' with spaced codes (EMT 121) and 'Required Major Total 47'. Both lists agree on courses and units. Codes are recorded in the spaced form; the closed list stores 'EMT130B' without a space, and the catalog prints the same course as 'EMT 130B'.",
-   "The second list titles EMT 130A 'Paramedic Clinical Education' rather than 'Paramedic Clinical Practicum'. EMT 130B is printed at 11 units; the closed list stores no units for it.",
-   "Outcomes are taken from the 'Learning Outcomes' section. A second 'Program Outcomes' list for 'Paramedic Cert' repeats them, writes 'interprofessional' instead of 'inter professional', and is cut off mid-word in outcome 4. These outcomes are the certificate's; whether the A.S. shares them is not stated.",
-   "The proposed sequence table labels Summer as 'Year 2', while the requirements table labels it 'Year 1, Summer'.",
-   "The description names employers (fire department, private ambulance service, third service, hospital), not occupations; these were not recorded as careers. It also mentions exit points at the AEMT, EMT and EMR levels."
+   "The page prints the required courses twice (as 'EMT121' and as 'EMT 121'); both lists agree on 47 units. EMT130B is written as in the closed list; the catalog prints both 'EMT130B' and 'EMT 130B' and gives it 11 units (closed list stores no units).",
+   "The requirements table titles EMT 130A 'Paramedic Clinical Education' while the course list and closed list say 'Paramedic Clinical Practicum'.",
+   "Degree total 69 is printed as 'TOTAL Units 69' (Required Major Total 47 + 'Additional GE & electives 22'). The 22 units are printed as GE and electives combined; the recommended pathway's pre-program block lists only AVC GE areas totaling 22, so ge_units is recorded as 22. No separate elective units are printed.",
+   "GE pattern inferred from pathway wording 'Any AVC GE Area' (Antelope Valley College local GE); the pathway also suggests ENGLC1000, COMMC1000, SOC101, BIOL201 as GE courses, not placed in blocks.",
+   "Outcomes taken from the 'Learning Outcomes' list; a second 'Program Outcomes' list for Paramedic AS repeats them but is cut off mid-word in outcome 4.",
+   "Page includes internal eLumen workflow/checklist text (Workflow Agreement, CTE checklist) that is not catalog content.",
+   "Careers: the text names the licensed paramedic role and employers (fire department, private ambulance service, third service, hospital), which are employers rather than careers, and exit levels (AEMT, EMT, EMR) as certification levels; only 'licensed paramedic' recorded."
   ]
  },
- "extracted_run": "38979725726",
+ "extracted_run": "45612549421",
  "catalog_year": "2026-2027"
 }
