@@ -1,0 +1,36 @@
+{
+ "_readme": "S727 (lane 2, plan s727c): Shasta College's programs with no record, collected as named gaps with their confidence scores (Sam, 2026-11-17, sam-collect-with-gaps-2026-11-17; COBIx's brief of 2026-11-25: a record held for a person is collected with its gap named). The held record stays in held_for_person/ (the load skips a record that places none, and no live row holds it). No model call, no Supabase write.",
+ "college": "Shasta College",
+ "capture": "44513230805",
+ "catalog_year": "2026-2027",
+ "reasons": {
+  "pages_hold_other_programs": "The pages the capture handed the read print other programs' sections and none headed by this program's title; the record places none of the state's listed courses, and no read has found the program's own section."
+ },
+ "programs": [
+  {
+   "control_number": "18153",
+   "title": "General Studies: Food & Beverage & Lodging Management",
+   "award": "A.S. Degree",
+   "reason": "pages_hold_other_programs",
+   "note": "The capture handed the read pages 61 to 64, which print the Business Administration degrees and certificates (09478, 13196, 18143, 38138 and 39683 are bound to them); the read found no section headed by the program's title, and the pages print none of the 15 Culinary Arts courses the state lists for it.",
+   "pages": [
+    61,
+    62,
+    63,
+    64
+   ],
+   "listed": 54,
+   "placed": 0,
+   "cula_listed": 15,
+   "confidence": {
+    "unit_arithmetic": 0,
+    "course_list_match": 0,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "record": "kb/program_requirements_college/shasta/held_for_person/18153.json"
+  }
+ ],
+ "written": "2026-11-25T07:10:51Z"
+}

@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 110 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 682 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1575** | |
+| Session handoffs | 683 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1576** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-25 (S726 SkyAvocet, Sam's plain session, full checkpoint): #3802 (Gather's saved filters, gather_filters, DR-36), #3805 (Rows on the Courses List: Common courses or Local courses), #3806 (the adapt gather into PEDS M1029, 167 receipted rows), #3813 (a Commons card's title opens its own list). Handoff 727.
 - 2026-11-25 (S725 SkyPlover, Sam's plain session, light checkpoint): #3799 (Gather, the first slice: the Gather view of Courses and Programs; words, subjects and target in its address; insert-only merge_into saves with Take it back). Handoff 726.
 - 2026-11-24 (S724 SkySandpiper, Sam's plain session, full checkpoint): #3790 (a why line on each band in doubt; Cabrillo KIN 38A to KINE M1344, one receipted row), #3792 (Blocked on COBI), #3793 (tick courses or the M-ID, move them with MQ notes, descriptions and units), #3794 and #3796 (sidebar for narrow work, bottom bar for wide work; tabs act as well as inform), #3797 (the Courses List's tabbed bottom bar; panel tables sort, filter and resize). Six mocks; the anchor-page build approved. Handoff 725.
 - 2026-11-24 (S723 SkyBooby, Sam's plain session, light checkpoint): #3778 (the Commons top section: two ETA columns, Needs you as links only, links land highlighted on card links), #3781 (Rulings to find, the doubt list in Needs you, COBIx never rendered), #3784 (no cost bars; the way back survives a tab's redraw), #3785 (Common subject in doubt: full lists with codes, Accept on the band, Local subject column). Two CLAUDE.md naming rules. Handoff 724.
