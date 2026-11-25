@@ -120,6 +120,19 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   three runs, so the worker proved each row's run from its record file's history on `main`
   (`d-multi-run-load-history-proves-run-s731c`); to a Sonnet reader.
 
+- 11:49Z: the census after the display build, 45606909979 on `main` (`d731f9b8`): 15,562 of 20,282 pass, 4,210 have no
+  passing record, 510 are collected with a named gap.
+- 12:05Z: s731c's reader, round 1: FIX THEN APPLY: 42970 used `no_units_printed`, a kind switched off since its
+  self-recall failed. **DECIDED** `d-lbcc-42970-no-units-read-or-hold-s731`: `no_units_read`'s own check refused it, so
+  42970 is held with S681's reason. Round 2 (12:14Z): APPLY. 12:16Z: clean md5 pre-read (12 of 12); migrate 45612147342
+  returned 12 (3 passing, 9 named gaps); `.apply` restored (`d8076ba6`).
+- 12:15Z: `elumen2`: read 45603949086 had stopped at its price step, before any extraction and with nothing spent
+  (`only= refused: 43150 has no text in the capture`, since it ran without the pin). Redwoods: read 45609110977 ($0.12)
+  read 45557 and 45595 from their own pages, all courses placed and the arithmetic equal; reread 45612300989 replaced
+  both live. The reader's MAJOR is fixed: 43150 is inserted only if it passes `passes_live`. 12:21Z: the conductor
+  dispatched Antelope Valley's read again on `claude/s730-elumen2` at `977e3cf3`, with the pin (about $3.90).
+- 12:19Z: `land` started: s730a, s730b (with its test fix `c9d3341c`) and s731c as one PR, `claude/s731-land`.
+
 [[S731 FILL: the run's log]]
 
 Spend: [[S731 FILL]]
