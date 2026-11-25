@@ -2,7 +2,7 @@
 -- checkpoint. DRAFTED by the checkpoint-docs worker, NOT applied and NOT pointed at by kb/migrations/.apply: the
 -- conductor applies it with one execute_sql call. INSERT ... ON CONFLICT (slug) DO NOTHING; 22 rows, all
 -- proposed: Sam gave this run no ruling. One row per conductor decision, pitfall and finding in the night's ledger,
--- and the milestone (its final count is the conductor's [[S727 FILL]], kept at 400 characters or fewer).
+-- and the milestone (its final count filled by the conductor at 09:45Z, 400 characters or fewer).
 -- Supersedes nothing.
 -- No person's name from any outline page, and no contact detail, in any row.
 -- ROLLBACK (removes the 22 rows and their log rows):
@@ -30,7 +30,7 @@ insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verifi
 ('f-mission-binds-move-s727','fact','Mission College''s binds move at its next capture','S727: #3810''s eLumen reading moves binds at three colleges and nowhere else: Antelope Valley, College of the Redwoods and Mission College, 8 at Mission. Mission''s move lands at its next capture, after #3810 is on main.',array['program-requirements','elumen','mission','reader'],'proposed','#3810',null,null,'SkyTropicbird (S727)','2026-11-25'),
 ('f-cuyamaca-18635-wording-rule-s727','fact','Cuyamaca 18635 waits on a wording rule','S727: the pooled plan s727p held Cuyamaca 18635: the reading reads the major''s 18, and the degree adds to 52 against the printed 60. Its note says the page prints no electives line, and a Cuyamaca reconcile wording rule may pass it, so it is not gap-filed (p-gap-filing-leaves-census-lever-s721).',array['program-requirements','cuyamaca','pooled','held'],'proposed','#3812 (plan s727p)',null,null,'SkyTropicbird (S727)','2026-11-25'),
 ('f-porterville-cuyamaca-real-pools-refused-s727','fact','The pooled reading refuses five real pools','S727: the pooled reading refuses five records whose pages print a real pool: Porterville 06773 and 30235, Cuyamaca 18634, 18636 and 18637. They stay as filed until the reading takes them; the pooled reading''s next.',array['program-requirements','pooled','porterville','cuyamaca'],'proposed','#3812 (plan s727p)',null,null,'SkyTropicbird (S727)','2026-11-25'),
-('m-collection-s727','milestone','S727''s collection: 52 records by 08:25Z','S727 (2026-11-25): by 08:25Z, 52 program records collected and live: the pooled reading''s 11 to passing; lane 2''s piles, Shasta 4, American River 12, College of the Canyons 7 and Santa Barbara City 12; Antelope Valley 43028; 5 passing on own pages (#3811). 12 named gaps for programs with no record. [[S727 FILL: the final count]]',array['program-requirements','collection','milestone'],'proposed','#3808; #3812; #3811; docs/session_728_handoff.md',null,null,'SkyTropicbird (S727)','2026-11-25')
+('m-collection-s727','milestone','S727''s collection: 69 records live by 09:40Z','S727 (2026-11-25): 69 records collected and live: pooled 11 to passing; piles Shasta 4, American River 12, Canyons 7, Santa Barbara City 12; persons 5; AVC 43028; 5 on own pages (#3811 loads); eLumen 3 new and 9 reread. 18 named gaps, no record. Census 15,551 pass, 4,227 without. Paid reads about $1.41.',array['program-requirements','collection','milestone'],'proposed','#3808; #3812; #3811; docs/session_728_handoff.md',null,null,'SkyTropicbird (S727)','2026-11-25')
 on conflict (slug) do nothing;
 
 insert into public.cpl_memory_log (memory_id, actor, action, note, after)
