@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 3: round 2 (run 45626303957) found the Courses node holds one link list; this read lists that list's items, the subjects, whole (capture_view, so the JSON prints uncut). One JSON call, no model call, writes nothing.",
+ "_readme": "Subject title hunt, group curriqunet_2 (S730 worker, 2026-11-25; Sam's ask of 2026-11-25). Round 4: round 3 (run 45627124597) found the Courses list holds a Course Listing node (5015); this read lists that node's children. One JSON call, no model call, writes nothing.",
  "college": "Moreno Valley College",
  "questions": {
   "cq_subjects": "Which navigation node lists the catalog's course subjects with their names."
@@ -15,7 +15,7 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5083",
+   "url": "https://rccd.curriqunet.com/Catalog/_getNavigation?id=115&parentId=5015",
    "capture_view": true
   }
  ],
