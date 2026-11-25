@@ -42,7 +42,7 @@ were written before any worker started.
 2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
-3. **Merge order at sign-off:** every substantive PR of tonight's has merged (#3808, #3812, #3810, #3816, #3811, #3821 [[S727 FILL: Butte sha]]).
+3. **Merge order at sign-off:** every substantive PR of tonight's has merged (#3808, #3812, #3810, #3816, #3811, #3821 `0168a7a2`).
    This checkpoint, #3807, merges at sign-off, with one update from `main` right before its merge. Open PRs at
    sign-off: #3807 and dependabot's #3383, which waits.
 
@@ -192,7 +192,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   from `main`, which had moved only by #3817, touching none of its files (`d-lever-merged-without-main-update-s727`).
 - 10:01Z: Butte's reconcile run 45576373568 filed; keep-only (base `745f6940`) kept the nine and restored 13 others
   (`722d428f`); reread 45591372831 replaced exactly the nine, all live and passing with the fill named; `main`
-  `a079e472` merged in (`c98aa513`). 10:07Z: #3821 opened; it merged on a green `test` before sign-off ([[S727 FILL: Butte sha]]).
+  `a079e472` merged in (`c98aa513`). 10:07Z: #3821 opened; it merged on a green `test` before sign-off (`0168a7a2`).
 
 ## What shipped
 
@@ -229,7 +229,7 @@ Two lanes, never on one college at the same time, one writer per college (`d-lan
   programs with no record: Orange Coast 5 (03970 and 22389 `list_printed_as_range`; 42115 and 42117 `list_by_reference`;
   32235 `successor_printed`), North Orange Continuing Education 4 and Moorpark 2 (12383, 45352). Held: Pasadena City
   31599; Southwestern 32693 and 36634; Allan Hancock 42208, 42210 and 43770; West Valley 35588, 06276 and 32021.
-- **#3821 [[S727 FILL: Butte sha]], Butte's reconcile** (`claude/s727-butte`): `clear_conditional` reads the map's line "Only necessary if the 60
+- **#3821 `0168a7a2`, Butte's reconcile** (`claude/s727-butte`): `clear_conditional` reads the map's line "Only necessary if the 60
   units needed to graduate have not been completed" as electives that fill the degree, for S721's nine (01362, 07269,
   11136, 31042, 31941, 32469, 33199, 40923, 43453); reconcile run 45576373568, keep-only (`722d428f`: the nine kept, 13
   others restored), reread 45591372831: all nine live and passing with the fill named.
@@ -407,7 +407,7 @@ checkpoint. Sam's plain sessions S725 and S726 ran earlier on this UTC day, unme
 | #3810 (`claude/s727-elumen`) | merged `0da3b19a` (09:05Z); 3 new and 9 reread live | the eLumen follow-up (lane 1) |
 | #3816 (`claude/s727-land2`) | merged `c8e04d10` (09:24Z): s727d, s727f and s727v, all applied and live | none |
 | #3811 (`claude/s727-lever`) | merged `a079e472` (09:57Z); 8 live, all passing | West Valley's follow-up, then lane 1's holds |
-| #3821 (`claude/s727-butte`) | merged [[S727 FILL: Butte sha]]; the nine live and passing (reread 45591372831) | none |
+| #3821 (`claude/s727-butte`) | merged `0168a7a2`; the nine live and passing (reread 45591372831) | none |
 | `claude/s727-pooled`, `-piles-shasta`, `-piles-arc`, `-piles-canyons`, `-piles-sbcc`, `-persons`, `-avc43028` | landed in #3812 and #3816 | none |
 | Harvest gap census on `main` | run 45565884062 (07:13Z): 15,536 pass, 4,277 without; the closing run 45586922147 (09:39Z): 15,551 pass, 4,227 without | the next after tonight's display build |
 | #3813, #3815, #3817 | Sam's plain session's, merged `77e9903a` (08:24Z), `e335cd9c` (08:42Z), `023f21f7` (09:48Z) | none |

@@ -1,0 +1,1531 @@
+{
+ "college": "Butte College",
+ "reread_run": "45591372831",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "45576373568",
+ "at": "2026-11-25T10:04:44Z",
+ "posted": 9,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 9,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "01362",
+  "07269",
+  "11136",
+  "31042",
+  "31941",
+  "32469",
+  "33199",
+  "40923",
+  "43453"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 9,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Butte College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 45576373568;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FSC 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FSC 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FSC 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FSC 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FSC 14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select 9 units",
+      "rule": "choose_units",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "FSC 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FSC 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FSC 16",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FSC 18",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 9,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "fire science",
+      "firefighting",
+      "building inspection",
+      "fire prevention"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Analyze the causes of fire, determine extinguishing agents and methods of extinguishment, differentiate the stages of fire, and compare methods of heat transfer.",
+      "Identify and comprehend laws, regulations, codes and standards that influence fire department operations, and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and firefighter health and safety."
+     ],
+     "ge_overlap": true,
+     "ge_pattern": "Butte Local",
+     "total_units": {
+      "max": 27,
+      "min": 27
+     },
+     "degree_total": {
+      "max": 66,
+      "min": 60
+     },
+     "section_heading": "AS Degree in Fire Technology",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 13,
+      "min": 13
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 27,
+   "total_min": 27,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28301",
+   "catalog_year": "2026-2027",
+   "extracted_run": 42973457189,
+   "program_title": "Fire Technology",
+   "control_number": "01362"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 12,
+    "placed": 12,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": 33,
+       "min": 33
+      },
+      "courses": [
+       {
+        "code": "AJ 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 3",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 13",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 99",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "law enforcement",
+      "corrections",
+      "probation",
+      "fish and wildlife"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Explain the historical development and philosophy of law.",
+      "Perform legal research independently and interpret, analyze and defend appellate court decisions.",
+      "Communicate effectively in a variety of situations and prepare acceptable investigative reports.",
+      "Identify and describe modus operandi, basic crime scene investigation, proper identification and collection of evidence.",
+      "Describe interview and lawful interrogation techniques."
+     ],
+     "ge_overlap": true,
+     "ge_pattern": "Butte Local, Cal-GETC",
+     "total_units": {
+      "max": 33,
+      "min": 33
+     },
+     "degree_total": {
+      "max": 66,
+      "min": 60
+     },
+     "section_heading": "AS Degree in Administration of Justice",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 7,
+      "min": 7
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 33,
+   "total_min": 33,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28204",
+   "catalog_year": "2026-2027",
+   "extracted_run": 42973457189,
+   "program_title": "Administration of Justice",
+   "control_number": "07269"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ACCT 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 3",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POS 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 1
+      },
+      "courses": [
+       {
+        "code": "AJ 99",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BCIS 59",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BCIS 60",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1000E",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "pre-law",
+      "court personnel",
+      "paralegal",
+      "law enforcement",
+      "public administration",
+      "social welfare",
+      "probation"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Demonstrate an understanding of complex laws, court decisions, the court system and legal process and their impact on government, business and society.",
+      "Demonstrate effective critical thinking, analytical and problem-solving skills.",
+      "Effectively interpret, integrate, synthesize and apply complex information from multiple sources."
+     ],
+     "ge_overlap": true,
+     "ge_pattern": "Butte Local",
+     "total_units": {
+      "max": 39,
+      "min": 37
+     },
+     "degree_total": {
+      "max": 68,
+      "min": 61
+     },
+     "section_heading": "AS Degree in Court Personnel/Pre-law",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 7,
+      "min": 7
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 39,
+   "total_min": 37,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28210",
+   "catalog_year": "2026-2027",
+   "extracted_run": 42973457189,
+   "program_title": "Court Personnel/Pre-law",
+   "control_number": "11136"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 11,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "AJ 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A (Select two)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AJ 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List B (Select two or any course from List A not already used)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 7,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000E",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Explain the historical development and philosophy of law.",
+      "Perform legal research independently and interpret, analyze and defend appellate court decisions.",
+      "Demonstrate an understanding of the characteristics of crime and criminality, and the criminal justice system in the United States."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 69,
+      "min": 60
+     },
+     "section_heading": "AS-T Degree in Administration of Justice",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 9,
+      "min": 9
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28206",
+   "catalog_year": "2026-2027",
+   "extracted_run": 42973457189,
+   "program_title": "Administration of Justice",
+   "control_number": "31042"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": 24,
+       "min": 24
+      },
+      "courses": [
+       {
+        "code": "CDF 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDF 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDF 48",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDF 57",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDF 63",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDF 78",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDF 80",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDEV C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Synthesize research-based theories including principles and practices of child development and learning.",
+      "Incorporate strategies for building respectful, reciprocal family and community relationships in order to engage society in the development and learning of children.",
+      "Exhibit the ability to use an assessment system encompassing a variety of strategies that provide information about program effectiveness and children's development, learning, interests, strengths and needs.",
+      "Apply principles of child development and positive guidance for planning inclusive, culturally relevant and appropriate curriculum and learning environments while integrating all developmental domains.",
+      "Identify and conduct themselves as Early Childhood professionals and commit to using the National Association for the Education of Young Children Code of Ethical Conduct and other professional standards while engaging in reflective practices as collaborative learners."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": 68,
+      "min": 60
+     },
+     "section_heading": "AS-T Degree in Early Childhood Education",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 6,
+      "min": 6
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28252",
+   "catalog_year": "2026-2027",
+   "extracted_run": 42973457189,
+   "program_title": "Early Childhood Education",
+   "control_number": "31941"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 17,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MUS 80",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 82",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 84",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 88",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select four",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5.5,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "MUS 60",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 61",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 63",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 64",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 65",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 68",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 69",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 70",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     },
+     {
+      "name": "List A (Select 3-4 units)",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MUS 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 40",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 41",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 42",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 86",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "music",
+      "music-related fields"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Play their chosen instrument or sing at an advanced level.",
+      "Demonstrate the ability to either play or sing new music at sight.",
+      "Analyze a given piece of music in terms of chords and chord structure, modulation, cadences, and form.",
+      "Articulate the principles of playing in an ensemble.",
+      "Describe effective practice techniques.",
+      "Listen to a piece of music and identify its genre."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 23.5,
+      "min": 21
+     },
+     "degree_total": {
+      "max": 71,
+      "min": 60
+     },
+     "section_heading": "AA-T Degree in Music",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 6,
+      "min": 6
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 23.5,
+   "total_min": 21,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28315",
+   "catalog_year": "2026-2027",
+   "extracted_run": 42973457189,
+   "program_title": "Music",
+   "control_number": "32469"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 13,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "JOUR 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JOUR 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A (Select one)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "JOUR 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B (Select two)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 7,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "CMST 14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHO 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POS 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2002",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000E",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Write simple and complex/long form news articles using the inverted pyramid and other formats.",
+      "Build a portfolio of completed projects for student media that demonstrates a range of storytelling formats/styles and effective design/layout.",
+      "Demonstrate leadership and management skills as an editor."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 70,
+      "min": 60
+     },
+     "section_heading": "AA-T Degree in Journalism",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 12,
+      "min": 12
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28140/28307",
+   "catalog_year": "2026-2027",
+   "extracted_run": 42973457189,
+   "program_title": "Journalism",
+   "control_number": "33199"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PHIL 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A (Select one)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PHIL 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B (Select two or any course from List A not already used)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "PHIL 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 18",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List C (Select one or any course from List A or List B not already used)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PHIL 16",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "law",
+      "management"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Analyze and evaluate arguments from philosophical and non-philosophical sources.",
+      "Identify philosophical principles and concepts as they developed in the history of philosophy.",
+      "Discuss and evaluate claims and arguments from the main branches of philosophy, including logic, metaphysics, epistemology, and ethics.",
+      "Formulate and defend philosophical positions in response to the diverse assumptions and viewpoints shaping human lives."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 67,
+      "min": 60
+     },
+     "section_heading": "AA-T Degree in Philosophy",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 12,
+      "min": 12
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28402/27536",
+   "catalog_year": "2026-2027",
+   "extracted_run": 42973457189,
+   "program_title": "Philosophy",
+   "control_number": "40923"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A (Select three)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "CMST 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 9",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 13",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RTVF 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List B (Select one or any List A course not already used)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "JOUR 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Demonstrate communication skills to connect, work, and play well with others.",
+      "Communicate ethically.",
+      "Research, organize, and create messages using appropriate resources.",
+      "Effectively present formal and informal communication adapted to a variety of audiences and contexts.",
+      "Demonstrate critical thinking."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 68,
+      "min": 60
+     },
+     "section_heading": "AA-T Degree in Communication Studies 2.0",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 12,
+      "min": 12
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28257",
+   "catalog_year": "2026-2027",
+   "extracted_run": 42973457189,
+   "program_title": "Communication Studies 2.0",
+   "control_number": "43453"
+  }
+ ]
+}

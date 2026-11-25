@@ -1464,4 +1464,107 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             notes.append({"field": field, "was": prog.get(field), "now": {"min": None, "max": None},
                           "words": m.group(0).strip()})
             prog[field] = {"min": None, "max": None}
+        elif st["kind"] == "clear_conditional":
+            # A figure the reader took from a line the page prints as needed only when the degree's units fall
+            # short (Butte, S727: the sample term map's elective line, "Only necessary if the 60 units needed to
+            # graduate have not been completed") is no requirement: the electives fill the degree. The page's text
+            # prints the line (the pattern), the record reads electives_fill_degree and a degree total, and one of
+            # the record's own notes names the field, its figure and the line's words (conditional_note), so the
+            # figure cleared is the one that line printed and no other. And the line is needed, as its words say:
+            # the major and general education at their least come short of the degree total's low end
+            # (conditional_short). Where they reach it the line asks for nothing, and a cleared figure would leave
+            # a sum inside the map's range, which the scorer fails by design (Butte 07264, 31930, 32721 pass today
+            # on the overlap reading of a sum past the range's top; S727's self-recall).
+            # And the figure is one the electives can fill (conditional_fits): no less than the degree's low end less
+            # the major and general education at their most, no more than its top less them at their least (S727's
+            # second reader: 43186 prints 21.5 against a fill of 9.5-12.5, 43185 14 against 2-5).
+            if _empty(prog.get(field)) or prog.get("electives_fill_degree") is not True \
+                    or _empty(prog.get("degree_total")) or held_by_step(st, control_number, prog) \
+                    or not conditional_short(prog) or not conditional_fits(prog, field):
+                continue
+            said = conditional_note(out, field, st["note_words"])
+            if not said:
+                continue
+            notes.append({"field": field, "was": prog.get(field), "now": {"min": None, "max": None},
+                          "words": "%s (the reader's note: %s)" % (m.group(0).strip(), said[:240])})
+            prog[field] = {"min": None, "max": None}
     return (out, notes) if notes else (record, [])
+
+
+def _fig_text(figure) -> str | None:
+    f = _num(figure)
+    if f is None:
+        return None
+    return re.escape(("%d" % f) if float(f).is_integer() else ("%g" % f)) + r"(?:\.0+)?"
+
+
+# Neither a digit, a decimal point, a letter (C1000) nor a range's hyphen before the figure.
+_FIG_BEFORE = r"(?<![\w.\-\u2013])"
+# Neither a digit, a decimal's digits, nor a range after it ("numbered 1-199"); "13-unit" stays a figure.
+_FIG_AFTER = r"(?![\d]|\.\d|\s*[-\u2013]\s*\d)"
+
+
+def _figure_in(figure, note: str, hi=None) -> bool:
+    """Whether a note prints a figure as the record holds it: 13 as '13', '13.00' or '13-unit', never inside '113',
+    '13.5', 'C1300' or a range such as 'numbered 1-199'; a range (hi) as '6-8' or '6 to 8'. The caller takes the
+    line's own words out first, so the 60 of 'the 60 units needed to graduate' is never the field's figure."""
+    a = _fig_text(figure)
+    if a is None:
+        return False
+    if hi is not None and _num(hi) != _num(figure):
+        b = _fig_text(hi)
+        if b is None:
+            return False
+        rx = r"%s%s\s*(?:[-\u2013]|to)\s*%s(?![\d]|\.\d)" % (_FIG_BEFORE, a, b)
+    else:
+        rx = _FIG_BEFORE + a + _FIG_AFTER
+    return re.search(rx, note) is not None
+
+
+def conditional_fits(prog: dict, field: str) -> bool:
+    """Whether a field's figure lies inside the fill (clear_conditional, S727): at least the degree total's low end
+    less the major, open electives and general education at their most, and at most its top less them at their
+    least. False where a figure it needs is not read."""
+    flo, fhi = _span_of(prog.get(field))
+    tlo, thi = _span_of(prog.get("total_units"))
+    glo, ghi = _span_of(prog.get("ge_units"))
+    dlo, dhi = _span_of(prog.get("degree_total"))
+    if None in (flo, tlo, thi, glo, ghi, dlo):
+        return False
+    oe = prog.get("open_elective_units")
+    olo, ohi = _span_of(oe) if isinstance(oe, dict) else (oe, oe)
+    olo, ohi = float(olo or 0), float(ohi or 0)
+    dhi = dlo if dhi is None else dhi
+    fhi = flo if fhi is None else fhi
+    need = float(dlo) - (float(thi) + float(ghi) + ohi)
+    room = float(dhi) - (float(tlo) + float(glo) + olo)
+    return need - 0.01 <= float(flo) and float(fhi) <= room + 0.01
+
+
+def conditional_short(prog: dict) -> bool:
+    """Whether the major (total_units), its open electives and the general education units, each at its least, come
+    short of the degree total's low end (clear_conditional, S727): the units a conditional elective line says it is
+    needed for. False where any of the three figures it needs is not read."""
+    tlo = _span_of(prog.get("total_units"))[0]
+    glo = _span_of(prog.get("ge_units"))[0]
+    dlo = _span_of(prog.get("degree_total"))[0]
+    if tlo is None or glo is None or dlo is None:
+        return False
+    oe = _num(prog.get("open_elective_units")) if not isinstance(prog.get("open_elective_units"), dict) \
+        else _span_of(prog.get("open_elective_units"))[0]
+    return float(tlo) + float(glo) + float(oe or 0) < float(dlo) - 0.01
+
+
+def conditional_note(record: dict, field: str, words: str) -> str | None:
+    """The record's own note that ties a field's figure to the page's conditional line (clear_conditional, S727): one
+    note naming the field, printing the field's figure (both ends of a range) and quoting the line's words (words,
+    a regex, letter case aside). None where no note does."""
+    lo, hi = _span_of(((record or {}).get("program") or {}).get(field))
+    if lo is None:
+        return None
+    rx = re.compile(words, re.I)
+    for n in (record or {}).get("notes") or []:
+        n = str(n)
+        if field in n and rx.search(n) and _figure_in(lo, rx.sub(" ", n), hi):
+            return n
+    return None

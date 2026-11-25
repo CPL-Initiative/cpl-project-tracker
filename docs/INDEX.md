@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 110 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 684 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1577** | |
+| Session handoffs | 685 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1578** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-25 (S729 SkyCurlew, Sam's plain session, full checkpoint): #3817 (the Commons fold in place: a card's title folds the page to a trail and that card at `#commons/card/<key>`, with Open the full list); the adapt gather landed (PEDS M1029 holds 293 local courses); the commons lane compacted under 20 KB. Handoff 730.
 - 2026-11-25 (S727 SkyTropicbird, the CPL Queue routine's collection run, conductor, full checkpoint): #3808 (display build `f4b48370bc11`, 18,711 rows live; the subject-codes test accepts a code a person's statewide filing settles), #3812 (the land PR: the pooled reading's 11 to passing, Shasta 4, American River 12 and College of the Canyons 7 with named gaps, three new gap kinds); applied and loaded on open branches: #3811 (San Bernardino Valley, Orange Coast 3 and Southwestern, all passing), Santa Barbara City 12, Antelope Valley 43028; #3810 (the eLumen fix, scoped to its road) in flight. KB note `methodology-a-reader-fix-moves-rows-it-was-not-aimed-at` gained an S727 section. Handoff 728.
 - 2026-11-25 (S726 SkyAvocet, Sam's plain session, full checkpoint): #3802 (Gather's saved filters, gather_filters, DR-36), #3805 (Rows on the Courses List: Common courses or Local courses), #3806 (the adapt gather into PEDS M1029, 167 receipted rows), #3813 (a Commons card's title opens its own list). Handoff 727.
 - 2026-11-25 (S725 SkyPlover, Sam's plain session, light checkpoint): #3799 (Gather, the first slice: the Gather view of Courses and Programs; words, subjects and target in its address; insert-only merge_into saves with Take it back). Handoff 726.

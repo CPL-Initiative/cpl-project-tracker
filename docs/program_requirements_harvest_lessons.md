@@ -728,7 +728,7 @@ reread from their own pages), 18 named gaps for programs with no record, no outl
   disjoint rows (`d-loads-beside-applies-disjoint-s727`), a recorded departure from one write per table at a time.
 
 **Merged last.**
-- **#3821 ([[S727 FILL: Butte sha]]), Butte's reconcile (`claude/s727-butte`, head `c98aa513`, `main` `a079e472` merged in):** a new
+- **#3821 (`0168a7a2`), Butte's reconcile (`claude/s727-butte`, head `c98aa513`, `main` `a079e472` merged in):** a new
   reconcile kind, `clear_conditional`, clears the elective figure where the page prints the map's line "Only necessary if
   the 60 units needed to graduate have not been completed" and the record's own notes name it, for S721's nine (01362,
   07269, 11136, 31042, 31941, 32469, 33199, 40923, 43453). Self-recall over 18,961 records: 0 wrong, no other college

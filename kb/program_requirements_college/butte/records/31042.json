@@ -61,38 +61,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    61.0,
-    62.0
+    18.0,
+    19.0
    ],
    "stated": [
-    60.0,
-    69.0
+    18.0,
+    19.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education come to 61.0-62.0, past the 60.0-69.0 the catalog prints for the degree"
-   ],
-   "fill": null,
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     19.0
+     52.0,
+     53.0
     ],
     "stated": [
-     18.0,
-     19.0
+     60.0,
+     69.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     17.0
+    ]
    }
   },
   "repeated": {
@@ -117,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -129,8 +130,8 @@
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": 9,
-    "max": 9
+    "min": null,
+    "max": null
    },
    "ge_pattern": "Cal-GETC",
    "degree_total": {
@@ -276,26 +277,20 @@
    "Map also recommends HIST 18, HIST 26 or HIST C1001 and POLS C1000 for CSU US-1/US-2/US-3 graduation requirements; these are GE advice, not program requirements."
   ]
  },
- "extracted_run": 42973457189,
+ "extracted_run": 45576373568,
  "reconciled": [
   {
-   "field": "ge_units",
+   "field": "degree_elective_units",
    "was": {
+    "min": 9,
+    "max": 9
+   },
+   "now": {
     "min": null,
     "max": null
    },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "GE Pattern(s): Cal-GETC (https://butte.curriqunet.com/catalog/iq/25389/28399/27604: Butte AA-T and AS-T pages: 'GE Pattern(s): Cal-GETC' above 'Map (Cal-GETC)' (History AA-T 31000; college page read 42957477366); Butte College Cal-GETC Requirements: 'Complete a minimum of 34 semester units of general education from the approved list according to the following pattern' (college page read 42961405888))"
-  },
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+   "words": "Only necessary if the 60 units needed to graduate have not been completed (the reader's note: degree_elective_units 9 comes from the map's 'Elective (any course numbered 1-99 or C1000-C2999) 9.00', described as only necessary if the 60 units needed to graduate have not been completed.)"
   }
  ],
- "read_run": "38981247046"
+ "read_run": 42973457189
 }

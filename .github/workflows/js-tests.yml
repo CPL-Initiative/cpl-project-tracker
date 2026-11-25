@@ -797,6 +797,11 @@ jobs:
       - name: Cheap piles S721 at Butte (named gaps, the plan)
         if: matrix.shard == 3
         run: python3 tests/program_piles_s721_butte_test.py
+      # S727 at Butte: the map's elective line read as electives that fill the degree (clear_conditional); the
+      # self-recall over every committed record and the nine's reconcile, before and after its run.
+      - name: Reconcile S727 at Butte (the elective line as fill)
+        if: matrix.shard == 3
+        run: python3 tests/program_reconcile_s727_butte_test.py
       # S720 at Fullerton: S714's 13 held, collected with four named gaps; the self-recall and the plan's 9 rows.
       - name: Cheap piles S720 at Fullerton (named gaps, the plan)
         if: matrix.shard == 1
