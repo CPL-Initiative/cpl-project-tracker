@@ -387,8 +387,10 @@
         var auth = { apikey: D.anon, Authorization: "Bearer " + sess.access_token };
         var keys = rows.map(function (r) { return r.course_id; });
         // The rows that stand for these keys are read first and left alone: a save never replaces one.
+        // Who saved a standing row is asked for only with the reviewer's token (tests/kb_curation_no_anon_email.test.js).
+        var sel = "select=course_id,value" + (sess.access_token ? ",reviewer_email" : "");
         return Promise.all(chunks(keys, 80).map(function (part) {
-          return fetch(D.rest + "/kb_curation?select=course_id,value,reviewer_email&field=eq.merge_into&course_id=" + inList(part), { headers: auth })
+          return fetch(D.rest + "/kb_curation?" + sel + "&field=eq.merge_into&course_id=" + inList(part), { headers: auth })
             .then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); });
         })).then(function (parts) {
           var stands = {};
