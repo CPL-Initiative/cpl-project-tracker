@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-25_s727v_prreq_ge_other_pattern_apply.sql
-name=s727v_prreq_ge_other_pattern_apply
+file=kb/migrations/2026-11-25_gather_filters.sql
+name=gather_filters
