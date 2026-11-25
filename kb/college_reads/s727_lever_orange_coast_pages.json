@@ -1,0 +1,114 @@
+{
+ "_readme": "S727 lever (the gap census's reader_page_assignment lever, census of 2026-11-25 01:39Z): Orange Coast College's 8 programs whose filed record places none of the state's listed courses (capture 44747523200). Five were handed a department page (Kinesiology for 03970 and 22389, Child Development and Education for 42115 and 42117, Mathematics for 32235) and Powerplant certificate 22394 the Airframe & Powerplant certificate's page, which capture.json's shared_pages lists with 22392. Respiratory Care A.S. 04007 and Geology A.S.-T 33569 were read from their own pages by an older extraction (run 43136182950) whose text held no Requirements tab. This plan reads the two own pages and four guessed own addresses as the capture reads them (capture_view: innerText with the tab panels appended), then each department page's links under it, following up to five award pages, so a session sees which programs have a page of their own and what the capture reads there, and a test pins it. No model call, nothing written.",
+ "college": "Orange Coast College",
+ "questions": {
+  "own_page": "What the capture reads on the program's own page: its heading, its award, its course list and its total, on the visible text or a tab panel.",
+  "department": "Which pages the department page links under it, and which is each program's own (its heading with its award and its requirement list)."
+ },
+ "keywords": [
+  "certificate of achievement[^\\n]{0,80}",
+  "associate (?:of|in) (?:arts|science)[^\\n]{0,80}",
+  "total[^\\n]{0,40}units?",
+  "required courses?"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "04007 Respiratory Care A.S., its own page: does the capture's text now carry the Requirements tab?",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/respiratory-care/respiratory-care-associate-science-degree/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "33569 Geology A.S.-T, its own page: does the capture's text now carry the Requirements tab?",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/geology/geology-associate-science-degree-transfer-ast/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "42115 Child Development Lead Teacher certificate, a guessed address (the department's -coa pattern)",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-lead-teacher-coa/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "42117 Child Development Lead Teacher A.S., a guessed address (the department's -as pattern)",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/child-development-lead-teacher-as/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "32235 Mathematics A.S.-T, a guessed address (Geology's -associate-science-degree-transfer-ast pattern)",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/mathematics/mathematics-associate-science-degree-transfer-ast/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "why": "22394 Powerplant certificate, a guessed address (Airframe's -certificate-achievement pattern)",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/powerplant-certificate-achievement/",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "department"
+   ],
+   "why": "03970 Fitness Specialist A.S., 22389 Fitness Specialist certificate: the Kinesiology department page the capture handed 03970",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/",
+   "links": "orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/.",
+   "links_cap": 60,
+   "follow": "orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/kinesiology/[a-z0-9-]*(?:fitness|trainer)"
+  },
+  {
+   "answers": [
+    "department"
+   ],
+   "why": "22389 Fitness Specialist certificate: the Kinesiology page under Teaching and Education the capture handed it",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/kinesiology/",
+   "links": "orange-coast/pathways/teaching-education/kinesiology/.",
+   "links_cap": 60,
+   "follow": "orange-coast/pathways/teaching-education/kinesiology/[a-z0-9-]*(?:fitness|trainer)"
+  },
+  {
+   "answers": [
+    "department"
+   ],
+   "why": "42115 Child Development Lead Teacher certificate, 42117 Child Development Lead Teacher A.S.: the department page the capture handed both",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/",
+   "links": "orange-coast/pathways/teaching-education/child-development-education/.",
+   "links_cap": 60,
+   "follow": "orange-coast/pathways/teaching-education/child-development-education/[a-z0-9-]*(?:lead-teacher)"
+  },
+  {
+   "answers": [
+    "department"
+   ],
+   "why": "32235 Mathematics A.S.-T: the department page the capture handed it",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/mathematics/",
+   "links": "orange-coast/pathways/math-science-engineering/mathematics/.",
+   "links_cap": 60,
+   "follow": "orange-coast/pathways/math-science-engineering/mathematics/[a-z0-9-]*(?:mathematics-a|-ast)"
+  },
+  {
+   "answers": [
+    "department"
+   ],
+   "why": "22394 Powerplant certificate: the department page (the capture handed it the Airframe & Powerplant certificate's page, shared with 22392)",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/",
+   "links": "orange-coast/pathways/industrial-technology/aviation-maintenance-technology/.",
+   "links_cap": 60,
+   "follow": "orange-coast/pathways/industrial-technology/aviation-maintenance-technology/[a-z0-9-]*(?:powerplant)"
+  }
+ ]
+}
