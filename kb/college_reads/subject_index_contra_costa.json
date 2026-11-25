@@ -1,31 +1,330 @@
 {
- "_readme": "S730 title hunt (elumen group), 2026-11-25, round 2. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code; kb/subject_title_hunt/README.md, r-no-mid-on-a-stray-code-sam-2026-11-25). Round 1 (run 45623983494): the menu names departments and the Courses view is unpublished; this read loads Programs and Courses and one department page, to see whether either prints a department's codes. No model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen group), 2026-11-25, round 3. Sam asked on 2026-11-25 for each college's printed local subject titles (kb/subject_title_hunt/README.md, r-no-mid-on-a-stray-code-sam-2026-11-25). Rounds 1 and 2 (runs 45623983494, 45625568851): the catalog prints no code beside a subject name; Chapter 4's menu links one page per department, each listing its courses (Administration of Justice lists ADJUS). This read loads each of those pages through its light content call (publish/content, about 2 KB, the call the catalog's own menu makes; S380), one per page, so each heading prints with the codes of the courses under it. No model call, writes nothing.",
  "college": "Contra Costa College",
  "questions": {
-  "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
+  "subject_index": "The heading each page prints and the subject codes of the courses listed under it."
  },
  "keywords": [
-  " - [A-Z]{2,6}\\b",
-  "\\([A-Z]{2,6}\\)",
-  "[Ss]ubjects?",
-  "[Dd]isciplines?",
-  "[Pp]refix",
-  "[Dd]epartments?"
+  " - [A-Z]{2,6}\\b"
  ],
  "pages": [
   {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/programs-courses",
-   "links": "department|course|subject",
-   "links_cap": 400,
    "answers": [
     "subject_index"
-   ]
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,administration-justice?tenant=ccc.elumenapp.com"
   },
   {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/department/administration-justice",
    "answers": [
     "subject_index"
-   ]
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,african-american-studies?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,anthropology?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,art?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,astronomy-1?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,automotive-services?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,biological-science?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,business?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,business-office-technology?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,chemistry?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,chinese?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,comm-studies-speech?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,computer-and-communications-technology?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,computer-information-systems?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,computer-science?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,counseling?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,culinary-arts?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,dance?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,dramatic-arts?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,early-childhood-education?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,economics?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,emergency-medical-sciences?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,engineering?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,english?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,english-as-a-second-language?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,ethnic-studies?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,geography?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,health-and-human-services?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,health-education?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,history?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,humanities?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,industrial-technology?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,interdisciplinary-studies?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,japanese?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,journalism?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,la-raza-studies?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,liberal-arts?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,library-studies?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,mathematics?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,media?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,medical-assisting?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,music?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,nursing?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,philosophy?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,physical-education-kinesiology?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,physics?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,political-science?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,psychology?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,real-estate?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,sociology?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,spanish?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,tutoring?tenant=ccc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "subject_index"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/ccc-2026-27,department,work-experience?tenant=ccc.elumenapp.com"
   }
  ]
 }
