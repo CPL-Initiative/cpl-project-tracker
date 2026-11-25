@@ -77,8 +77,8 @@
     "pass": true,
     "status": "equal",
     "computed": [
-     50.0,
-     53.0
+     58.0,
+     61.0
     ],
     "stated": [
      60.0,
@@ -91,8 +91,8 @@
     ],
     "why": [],
     "fill": [
-     7.0,
-     16.0
+     0.0,
+     8.0
     ]
    }
   },
@@ -130,8 +130,8 @@
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 8,
+    "max": 8
    },
    "ge_pattern": "Butte Local",
    "degree_total": {
@@ -305,20 +305,26 @@
    "The third outcome is printed with a '3.' list number, which was removed; the others are unnumbered."
   ]
  },
- "extracted_run": 45576373568,
+ "extracted_run": 42973457189,
  "reconciled": [
   {
-   "field": "degree_elective_units",
+   "field": "ge_units",
    "was": {
-    "min": 8,
-    "max": 8
-   },
-   "now": {
     "min": null,
     "max": null
    },
-   "words": "Only necessary if the 60 units needed to graduate have not been completed (the reader's note: degree_elective_units 8 sums the two map electives (3 units in Term 3 and 5 units in Term 4, 'any course numbered 1-199 or C1000-C2999'); the map says they are 'Only necessary if the 60 units needed to graduate have not been completed', so )"
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "GE Pattern(s): Butte Local (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
   }
  ],
- "read_run": 42973457189
+ "read_run": "38981247046"
 }
