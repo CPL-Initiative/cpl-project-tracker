@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "option_lists_read_apart",
+    "label": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
+    "words": "Restricted Electives (8.0-9.0 units): 'Select one pattern'. Pattern 3 is recorded as two blocks sharing the option_group: its required courses (NUTR 50 and PSYC 30 or SOC 30) and its nested 'Select 3 units' choice; together they make up the single Pattern 3 option (9 units)."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

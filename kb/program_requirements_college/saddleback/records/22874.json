@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "waived_course_counted",
+    "label": "The page prints a requirement at a range from zero units, since a student may meet it without the course (a certification, an exam or earlier coursework), and the record counts the course, so its units match the top of the printed range and not its low end.",
+    "words": "The 'Select one' for DR 23 / DR 100 is printed with 0.0-3.0 units; the page states students who completed one year of high school mechanical drafting, or equivalent, are exempt from DR 100. This explains the Required Core range 30.0-33.0 and the total 33.0-36.0."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
