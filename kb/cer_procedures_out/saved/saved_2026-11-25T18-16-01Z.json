@@ -1,0 +1,46 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-25T18-16-01Z",
+ "run_id": "45672630058",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "75e72fb99f8c",
+ "cohorts": [
+  "cer-procedure-classifier@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::CCNA Certification",
+   "field": "unified_title_assignment",
+   "value": "Cisco Certified Network Associate (CCNA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CCNA Certification",
+   "field": "issuing_agency_assignment",
+   "value": "Cisco",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::CCNA Certification",
+   "field": "unified_title_assignment",
+   "value": "Cisco Certified Network Associate (CCNA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CCNA Certification",
+   "field": "issuing_agency_assignment",
+   "value": "Cisco",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

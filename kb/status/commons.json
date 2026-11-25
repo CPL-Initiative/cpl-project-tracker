@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T14:33:56Z",
+ "written_at": "2026-11-25T18:16:15Z",
  "rows": [
   {
    "key": "requirements",
@@ -118,9 +118,9 @@
    ],
    "issues": [
     {
-     "n": 2,
+     "n": 3,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier's title has a course code left in 1, the classifier is unsure 1)",
+     "owner": "a curator (the classifier is unsure 2, the classifier's title has a course code left in 1)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
@@ -166,7 +166,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-23T06:19:46Z",
+    "at": "2026-11-25T18:16:01Z",
     "every_hours": 24
    },
    "facts": {
@@ -179,7 +179,7 @@
     "confirmed": 1582,
     "records": 3344,
     "records_stamped": 2574,
-    "saved_at": "2026-11-21T15:42:56Z",
+    "saved_at": "2026-11-25T18:16:01Z",
     "fold_at": "2026-11-23T06:19:46Z",
     "map_titles": 5444,
     "unclassified": 4,
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-24T12:46:12-08:00",
+    "at": "2026-11-19T06:22:43Z",
     "every_hours": null
    },
    "facts": {
@@ -721,9 +721,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 2,
+      "n": 3,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier's title has a course code left in 1, the classifier is unsure 1)",
+      "owner": "a curator (the classifier is unsure 2, the classifier's title has a course code left in 1)",
       "open": "#exhibits/held"
      },
      {
@@ -823,15 +823,6 @@
   ],
   "stalled": [
    {
-    "ref": "exhibit",
-    "title": "Common Exhibit Reference",
-    "kind": "stopped",
-    "what": "the saving run and the fold",
-    "since": "2026-11-23T06:19:46Z",
-    "every_hours": 24,
-    "open": "#exhibits"
-   },
-   {
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
@@ -862,13 +853,13 @@
    "procedures": [
     {
      "name": "classifier",
-     "placed": 979,
+     "placed": 980,
      "untouched": 902,
      "kept": 4,
      "renamed": 54,
      "moved": 0,
      "by_procedure": 19,
-     "left": 0,
+     "left": 1,
      "looked": 58
     },
     {
@@ -950,13 +941,13 @@
     }
    ],
    "total": {
-    "placed": 1507,
+    "placed": 1508,
     "untouched": 1369,
     "kept": 23,
     "renamed": 91,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 1,
     "looked": 114
    }
   },

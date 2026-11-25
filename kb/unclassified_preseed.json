@@ -1,14 +1,42 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-24T19:09:54Z",
- "_queue_count": 2,
+ "_generated_at": "2026-11-25T18:16:00Z",
+ "_queue_count": 4,
  "_counts": {
-  "staged": 1,
-  "needs_you": 2,
+  "staged": 3,
+  "needs_you": 3,
   "not_yet_asked": 0
  },
  "_residual": [],
  "staged": {
+  "ACE CR - Network Fundamentals": {
+   "title": "Networking Fundamentals",
+   "issuer": "American Council on Education (ACE)",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "ACE credit recommendation (military CPL type) for a network fundamentals course; joined to the existing house family 'Networking Fundamentals' (ACE issuer). The branch is unknown, so the trainer is the generic U.S. Armed Forces.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 6",
+    "Rule 7"
+   ],
+   "trainer": "U.S. Armed Forces"
+  },
+  "CCNA Certification": {
+   "title": "Cisco Certified Network Associate (CCNA)",
+   "issuer": "Cisco",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "Hint mended: the title joins the house family 'Cisco Certified Network Associate (CCNA)', and the issuer uses the house spelling 'Cisco' rather than 'Cisco Systems, Inc.'.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 6",
+    "Rule 7"
+   ]
+  },
   "Community Health Worker Certificate-Code Tenderloin": {
    "title": "Community Health Worker Certificate",
    "issuer": "Code Tenderloin",
