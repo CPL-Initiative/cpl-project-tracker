@@ -3628,7 +3628,7 @@
      ],
      "title": "A reader fix moves rows it was not aimed at, so compare each full read row by row",
      "type": "methodology",
-     "updated": "2026-10-03"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-11-12",
@@ -15606,7 +15606,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 8 (S687 onward)",
      "type": null,
-     "updated": "2026-11-24"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-11-12",
@@ -16890,7 +16890,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-24"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-08-28",
@@ -17145,7 +17145,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-24"
+     "updated": "2026-11-25"
     },
     {
      "created": "2026-08-29",

@@ -113,3 +113,7 @@ The Subjects paragraph's S722 state, verbatim:
 ## INDEX update history, moved (S725 checkpoint)
 
 - 2026-11-23 (S717 SkyGannet, Sam's plain session, full checkpoint): #3724 (the Subjects tab's Colleges by source: all 118 colleges by way to look, from a new attempts register), #3725 (the course panel's move rows, Collapse all, the credit-then-noncredit picker), #3726 open (the 20th-edition MQ handbook read with its three list types and Title 5 provisions, the MQ view's data, and a Common SUBJ for the 95 MQ disciplines that had none), #3727 open (a sidebar opens beside the view); Sam's rulings on settled codes, the TOP vocational flag and the MQ view; KB note `methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached`; handoff 718.
+
+## INDEX update history, moved (S727 checkpoint)
+
+- 2026-11-24 (S718 SkyPetrel, Sam's plain session, full checkpoint): #3730 (Estimating's common code reads ESTG), #3732 (the Subjects view by confidence: a Needs attention column after College, Act on it at the top of the panel, the card's quick links with its sections folded), #3733 and #3734 (a code the index omits read at its code's address, and the pages a filed search found read: Cerritos INST, Long Beach City CART), #3737 open (`check_generated.sh` covers every status file, with a guard). 1 new KB note (methodology-a-hand-listed-checklist-drifts-a-guard-on-the-unlisted-item-does-not). Handoff 719 (SkyShearwater).

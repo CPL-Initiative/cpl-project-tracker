@@ -2,14 +2,14 @@
   "schema": 1,
   "project": "program-requirements",
   "written_at": "2026-11-25T01:42:12Z",
-  "session": 725,
-  "moniker": "SkyPlover",
-  "run": "Sam's session",
+  "session": 727,
+  "moniker": "SkyTropicbird",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_726_handoff.md",
+  "handoff": "docs/session_728_handoff.md",
   "next_step": {
-    "title": "The display build for tonight's records, then the census",
-    "text": "Build the display page carrying the 65 records collected tonight once the pooled reading's pull request merges, gate one college, apply the whole build, then run the census on main. Then the pooled reading's next records, the eLumen sister-award reader fix and the census's next piles."
+    "title": "Land tonight's open work, then the display build and the census",
+    "text": "Merge the eLumen reader fix, the lever and the second land pull request once their reads and loads are live, then build the display page carrying tonight's records, gate one college, apply the whole build and run the census on main. Then West Valley's empty load, the census's next wave and the next wording-rule piles."
   },
   "calls": [
     {
@@ -337,6 +337,46 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-25T06:40:00Z",
+      "text": "The display page now carries every filed record: 18,711 programs at build f4b48370bc11, after a first apply at Glendale."
+    },
+    {
+      "at": "2026-11-25T07:03:00Z",
+      "text": "The pooled reading moves 11 more programs to passing: 5 at Modesto Junior, 3 at Rio Hondo, 2 at Cuyamaca and 1 at Golden West."
+    },
+    {
+      "at": "2026-11-25T07:05:00Z",
+      "text": "San Bernardino Valley: 1 program read from its own page and loaded, passing."
+    },
+    {
+      "at": "2026-11-25T07:28:00Z",
+      "text": "Shasta: 4 programs collected with their gaps named."
+    },
+    {
+      "at": "2026-11-25T07:38:00Z",
+      "text": "American River: 12 programs collected with their gaps named, under two new gap kinds."
+    },
+    {
+      "at": "2026-11-25T07:42:00Z",
+      "text": "College of the Canyons: 7 programs collected with their gaps named, one of them a noncredit program filed for the first time, under a new gap kind."
+    },
+    {
+      "at": "2026-11-25T08:05:00Z",
+      "text": "Orange Coast: 3 programs read from their own pages and loaded, all passing; 5 programs with no record have their gaps named."
+    },
+    {
+      "at": "2026-11-25T08:13:00Z",
+      "text": "Southwestern: 1 program read from its own page and loaded, passing."
+    },
+    {
+      "at": "2026-11-25T08:14:00Z",
+      "text": "Santa Barbara City: 12 programs collected, 6 passing and 6 with their gaps named, one under a new gap kind."
+    },
+    {
+      "at": "2026-11-25T08:20:00Z",
+      "text": "Antelope Valley: 1 program collected with its gap named, under a new gap kind."
+    },
     {
       "at": "2026-11-24T11:01:00Z",
       "text": "The display page now carries every filed record: 18,699 programs at build 6de40ebdf2fd, after a first apply at Glendale."

@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-24
+updated: 2026-11-25
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -212,6 +212,40 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S727, and what worked
+
+The CPL Queue routine's 06:12Z collection run of 2026-11-25 (SkyTropicbird). Sam's plain session S726 had merged three
+PRs without writing handoff 727, so the run took S727 and wrote 728 (`d-routine-leaves-plain-handoff-number-s727`);
+his plain session's #3813 merged beside it at 08:24Z, one writer per file. No `list_sessions` or `get_trigger` in this
+session. Lane 1 ran `display`, `pooled`, `elumen` and `lever`; lane 2 ran the piles at College of the Canyons, American
+River, Shasta and Santa Barbara City, a fresh worker per college, then Butte's reconcile, the records held for a person
+and `land`.
+
+- **A red check that failed every PR** (`d-subject-codes-test-person-filing-s727`): `tests/statewide_subject_codes_test.py`
+  check (5) pinned the named-code rule, while the daily build read LAWEN as settled by a person's statewide filing,
+  which outranks it. It was fixed on the display PR #3808, since it failed every PR from `d4a7899a`.
+- **An own-page guard read a capture another run had made** (`p-own-page-guard-reads-read-pages-s727`): American
+  River's guard took `capture.json`'s `shared_pages`, built from the re-paginated 2026-27 file, where its 19 sit on
+  other pages. Round 1 caught it; the guard now keys on the pages the records were read from.
+- **An insert's rollback that could not run** (`p-insert-rollback-leaves-touched-row-s727`): Canyons's rollback would
+  have failed on a verdict's foreign key on the inserted 43388. Round 1 caught it before the apply.
+- **A reader fix moved rows off its road** (`p-reader-fix-scoped-to-its-road-s727`): #3810's eLumen change would have
+  cost El Camino's ten certificates their pages on the Acalog road. It now applies on `elumenapp.com` alone, checked
+  over every other road's filed pages.
+- **A load that inserted nothing** (`d-west-valley-no-blind-rerun-s727`): West Valley's read 45574056664 filed only
+  `capture_preview.json`, and its load 45575119022 inserted nothing. It goes to a follow-up, never a blind rerun.
+- **Two departures, recorded:** Southwestern's and West Valley's one-college loads ran beside s727d's and s727v's
+  applies at other colleges, on disjoint rows (`d-loads-beside-applies-disjoint-s727`); the conductor lifted the
+  workers' dispatch limit in words for loads, rereads and js-tests on #3810's and #3811's branches, to save its own
+  context (`d-workers-dispatch-loads-in-words-s727`).
+- **What worked:** one display build first, while no apply was in flight (#3808), then the census on `main`; a second
+  reader on every plan (Opus on the plans that added a kind, Sonnet on the pooled and Shasta plans), a clean md5
+  pre-read and the conductor's apply, `.apply` restored after each run; four applied plans landed as one PR (#3812); a
+  course-list cap where a list cannot be told from its page's others (`d-heading-not-in-text-cap-s727`); records a
+  cheaper lever passes held, never gap-filed (American River 12191; Canyons 02277 and 15477); the two lanes kept off
+  one college; no new worker once spend passed about $165 at 07:57Z (`d-no-new-workers-after-0757z-s727`); the
+  credential harvest held, as in every conductor run since 2026-11-17.
 
 ## What went wrong in S721, and what worked
 

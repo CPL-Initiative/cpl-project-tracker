@@ -1,7 +1,7 @@
 ---
 title: A reader fix moves rows it was not aimed at, so compare each full read row by row
 created: 2026-10-03
-updated: 2026-10-03
+updated: 2026-11-25
 tags: [methodology, census, scraping, verification]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -73,9 +73,25 @@ titles. It matters most where one rule changes what the next rule sees
 (candidates, hops, thresholds). A pure function scored row by row in isolation
 still benefits, but its regressions stay inside the rows the change targets.
 
+## S727: a fix for one catalog road moved binds on two others
+
+The eLumen fix in #3810 changed how `label_score()` reads a page's heading, so that each award binds its own page at
+Antelope Valley and College of the Redwoods. Its self-recall at 15 eLumen colleges read 1,043 programs right and none
+wrong. The second reader's round 1 still found binds moved on the Acalog and curriQunet roads: on El Camino's Acalog
+page a heading's closing abbreviation ("Marketing, AS") took certificate 19861's award away, and ten certificates read
+no page. The fix kept its rule and narrowed its reach. The heading readings apply on `elumenapp.com` addresses alone,
+and a check over every other road's 13,939 committed filed pages reads 18,377 labels and changes none. The self-recall
+then bound 2,086 of 2,086 in both orders.
+
+The practice gains one step. A fix aimed at one family of sources (here, one catalog vendor) names that family as a
+guard in its code, and its test compares every other family's committed rows before and after the change, so a
+regression outside the target fails a check instead of waiting for a reader to find it.
+
+Source: `docs/program_requirements_harvest_lessons.md`, *S727*; `cpl_memory` `p-reader-fix-scoped-to-its-road-s727`.
+
 ## See also
 
-- `[[docs/program_requirements_harvest_lessons]]`: items 12 to 15
+- `[[docs/program_requirements_harvest_lessons]]`: items 12 to 15, and *S727*
 - `[[methodology-the-measuring-browser-can-hide-the-defect]]`: the
   browser-side counterpart
 - PR #1839, the four reads above
