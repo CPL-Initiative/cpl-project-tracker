@@ -70,6 +70,7 @@
     26.5,
     35.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 17.5-33.5; the catalog states 26.5-35.0"
    ]
@@ -93,7 +94,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "option_lists_read_apart",
+    "label": "An option the catalog prints takes more than one list under the option's own printed figure, and the record's one option group holds each list as an alternative of its own, so the program's units cannot be checked against the printed figures.",
+    "words": "The student completes ONE Area of Emphasis (subtotal 15-23). The Health Science Emphasis is a single option made of two choose_units blocks (9-14 units plus 6-9 units; emphasis subtotal 15-23); both blocks share option_group 'Area of Emphasis' with Marine Science and Terrestrial and Sustainability, but together they form one option, not two."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

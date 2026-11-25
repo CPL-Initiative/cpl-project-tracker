@@ -101,7 +101,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "waived_course_counted",
+    "label": "The page prints a requirement at a range from zero units, since a student may meet it without the course (a certification, an exam or earlier coursework), and the record counts the course, so its units match the top of the printed range and not its low end.",
+    "words": "The 'Select one' (0.0-2.0 units) choice is CUL 171 OR a valid California ServSafe Certification; ServSafe is not a course, so it is not recorded as an alternative. Footnote: students with valid California ServSafe Certification may have this requirement waived."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

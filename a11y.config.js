@@ -1221,6 +1221,14 @@ async function seedCommonsFrontOpen(page, theme) {
   await page.waitForTimeout(200);
 }
 
+// The CPL Commons folded to one card (S729, S730): reached by its address, as a reload or a Needs you link lands.
+async function seedCommonsFold(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "commons/card/courses") location.hash = "commons/card/courses"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#cmf-foldview:not([hidden]) .cmf-card[data-key='courses']", { state: "attached", timeout: 60000 });
+  await page.waitForTimeout(300);
+}
+
 // The CPL Commons' Subjects list (S694): opened by its address, as the Subjects card links to it.
 async function seedCommonsSubjects(page, theme) {
   await page.evaluate(() => { if (!/^commons\/subjects/.test(location.hash.replace(/^#/, ""))) location.hash = "commons/subjects/cerritos"; });
@@ -3873,6 +3881,24 @@ module.exports = {
     routes: [{ hash: "commons", name: "front-stages-open-dark" }],
     widths: [390, 1280],
     seed: (page) => seedCommonsFrontOpen(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* The fold in place (S729) and Needs you's landing on it (S730): the page folded to one card at #commons/card/<key>,
+     its trail and Open the full list, measured on the card Needs you's doubt link folds to. */
+  "commons-fold": {
+    file: "index.html",
+    title: "CPL Commons: the page folded to one card",
+    routes: [{ hash: "commons/card/courses", name: "fold-courses" }],
+    widths: [390, 1280],
+    seed: (page) => seedCommonsFold(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-fold-dark": {
+    file: "index.html",
+    title: "CPL Commons: the page folded to one card, dark",
+    routes: [{ hash: "commons/card/courses", name: "fold-courses-dark" }],
+    widths: [390, 1280],
+    seed: (page) => seedCommonsFold(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── The Commons data dashboard, slice 1 (#3215): the statewide figures and the college list ──

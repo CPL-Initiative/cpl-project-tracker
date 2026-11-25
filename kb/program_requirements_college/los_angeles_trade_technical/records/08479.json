@@ -105,7 +105,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_figures_differ",
+    "label": "The reader's notes quote two figures from the catalog page that disagree, and the record's units add to one and state the other; no page read has settled which the program requires.",
+    "words": "The required courses printed sum to 43 units (including CRPNTRY 401 at 9 units), while the text says 40 units of Required Courses; the semester plan's 'Elective' placeholders (2 + 3 = 5 units) give 48 total, versus the stated 8 units of Major Electives. Reviewer should check this discrepancy."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 93,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

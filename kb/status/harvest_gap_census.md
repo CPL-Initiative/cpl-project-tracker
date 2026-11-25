@@ -1,12 +1,12 @@
 # Harvest gap census
 
-Written by `kb/_harvest_gap_census.py` (2026-11-25 09:39Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
+Written by `kb/_harvest_gap_census.py` (2026-11-25 11:47Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
 
-Universe 20282 · passing 15551 · without a passing record 4227.
+Universe 20282 · passing 15562 · without a passing record 4210.
 
 Of the passing, 54 counts as passing on the tab; the scorer's own test fails (listed in the JSON, not counted as gaps).
 
-Collected with a named gap, out of the gap: 504 (catalog_figures_differ 20, degree_electives_not_printed 2, degree_summary_ge_none 14, degree_within_map_range 4, double_count_noted 1, entry_path_range 1, figure_within_variable_units 12, ge_figures_other_pattern 1, ge_units_not_read 131, heading_not_in_text 1, hours_total_differs 11, hours_total_not_read 32, hours_within_printed_range 7, lists_not_closed 24, lists_past_their_figure 17, nested_award_not_read 3, no_hours_read 51, no_own_page_total 1, no_units_read 23, noted_figures_differ 26, noted_no_total 12, noted_section_cut_off 14, noted_total_cut_off 1, noted_unit_floor 1, one_option_of_shared_page 6, option_lists_read_apart 1, pair_read_as_alternatives 11, pool_figure_not_read 16, prerequisites_counted 3, repeat_read_once 9, required_list_outside_total 1, section_cut_off 20, total_differs 12, total_not_printed 7, unit_line_not_read 8).
+Collected with a named gap, out of the gap: 510 (catalog_figures_differ 20, degree_electives_not_printed 2, degree_summary_ge_none 14, degree_within_map_range 4, double_count_noted 1, entry_path_range 1, figure_within_variable_units 12, ge_figures_other_pattern 1, ge_units_not_read 131, heading_not_in_text 1, hours_total_differs 11, hours_total_not_read 32, hours_within_printed_range 7, lists_not_closed 25, lists_past_their_figure 17, nested_award_not_read 3, no_hours_read 51, no_own_page_total 1, no_units_read 23, noted_figures_differ 29, noted_no_total 12, noted_section_cut_off 16, noted_total_cut_off 1, noted_unit_floor 1, one_option_of_shared_page 6, option_lists_read_apart 1, pair_read_as_alternatives 11, pool_figure_not_read 16, prerequisites_counted 3, repeat_read_once 9, required_list_outside_total 1, section_cut_off 20, total_differs 12, total_not_printed 7, unit_line_not_read 8).
 
 Read by the harvest but outside the universe: Active - Teachout Only 630, Approved 1423.
 
@@ -21,14 +21,14 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | parked college | 94 |
 | no closed list in the Program Course File | 1747 |
 | page not found | 1097 |
-| page found, never extracted | 17 |
+| page found, never extracted | 15 |
 | extracted, places none of its courses | 142 |
 | extracted, not loaded | 1 |
 | extracted, no score (an error) | 4 |
 | live, coverage fails | 155 |
 | live, a course added | 3 |
-| live, units unequal | 713 |
-| live, units incomplete | 254 |
+| live, units unequal | 700 |
+| live, units incomplete | 252 |
 
 ## Top levers
 
@@ -78,9 +78,9 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | East Los Angeles College | elac.edu | 3 | $0.23 | yes |
 | Napa Valley College | catalog.napavalley.edu | 3 | $0.19 | yes |
 | Santiago Canyon College | sccollege.edu | 3 | $0.22 | yes |
-| West Valley College | westvalley.edu | 3 | $0.25 | yes |
 | Bakersfield College | bakersfield.elumenapp.com | 2 | $0.12 | yes |
 | Citrus College | catalog.citruscollege.edu | 2 | $0.13 | yes |
 | College of the Canyons | canyons.edu | 2 | $0.15 | yes |
 | College of the Redwoods | redwoods.elumenapp.com | 2 | $0.15 | yes |
 | Copper Mountain College | cmccd.edu | 2 | $0.16 | yes |
+| Cuesta College | cuesta.curriqunet.com | 2 | $0.12 | yes |
