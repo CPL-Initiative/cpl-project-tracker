@@ -28,5 +28,8 @@
    "links": "viticulture|winemaking|agricultur|28545/28876/",
    "links_cap": 200
   }
- ]
+ ],
+ "outside_hosts": {
+  "curriqunet.com": "Allan Hancock College's own 2026-2027 catalog (hancockcollege.curriqunet.com), served on its catalog vendor's domain, whose navigation calls the page's own scripts fetch hold the program entries"
+ }
 }
