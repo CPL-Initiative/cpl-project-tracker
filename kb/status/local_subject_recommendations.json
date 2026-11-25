@@ -203,8 +203,8 @@
   },
   "rows_the_subject_map_settles": {
    "own_courses": {
-    "right": 139,
-    "asked": 142
+    "right": 137,
+    "asked": 140
    },
    "same_code_statewide": {
     "right": 16,
@@ -212,17 +212,17 @@
    },
    "title": {
     "right": 188,
-    "asked": 193
+    "asked": 195
    }
   }
  },
  "web_searches_filed": 313,
  "totals": {
-  "common_high": 927,
+  "common_high": 951,
   "common_low": 545,
-  "common_medium": 254,
+  "common_medium": 244,
   "common_no_code_yet": 100,
-  "common_none": 669,
+  "common_none": 655,
   "no_common": 2495,
   "no_title": 1511,
   "noncredit_common": 501,
@@ -527,7 +527,7 @@
       "code": "ELET",
       "discipline": "Electronics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Electronics."
      }
@@ -914,12 +914,12 @@
       ]
      },
      "common": {
-      "code": "HLTH",
-      "discipline": "Health",
-      "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HLTH."
+      "code": "HLSN",
+      "discipline": "Health and Safety: Noncredit",
+      "level": "Medium",
+      "confidence": 0.692,
+      "from": "title",
+      "why": "The title names the discipline Health and Safety: Noncredit."
      }
     },
     {
@@ -1491,7 +1491,7 @@
       "code": "EDTC",
       "discipline": "Instructional Design/Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Instructional Design/Technology."
      }
@@ -1886,7 +1886,7 @@
       "code": "GERO",
       "discipline": "Gerontology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Gerontology."
      }
@@ -1979,7 +1979,7 @@
       "code": "INTD",
       "discipline": "Interior Design",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interior Design."
      }
@@ -2232,12 +2232,12 @@
     {
      "code": "SHME",
      "common": {
-      "code": "WELD",
-      "discipline": "Welding",
+      "code": "SHME",
+      "discipline": "Sheet Metal",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 3 of its courses with an M-ID sit under WELD."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Sheet Metal."
      }
     },
     {
@@ -2371,7 +2371,7 @@
       "code": "EDUC",
       "discipline": "Education",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Education."
      }
@@ -2393,7 +2393,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -2578,7 +2578,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -2611,7 +2611,7 @@
       "code": "INDT",
       "discipline": "Industrial Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Industrial Technology."
      }
@@ -2622,7 +2622,7 @@
       "code": "JOUR",
       "discipline": "Journalism",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Journalism."
      }
@@ -2644,7 +2644,7 @@
       "code": "ENVR",
       "discipline": "Forestry/Natural Resources",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Forestry/Natural Resources."
      }
@@ -3081,7 +3081,7 @@
       "code": "COUN",
       "discipline": "Counseling",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Counseling."
      }
@@ -3125,7 +3125,7 @@
       "code": "INDT",
       "discipline": "Industrial Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Industrial Technology."
      }
@@ -3526,12 +3526,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "48 of 61 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -3836,7 +3836,7 @@
       "code": "ENGT",
       "discipline": "Engineering Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering Technology."
      }
@@ -3954,7 +3954,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -4451,7 +4451,7 @@
       "code": "ENVR",
       "discipline": "Forestry/Natural Resources",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Forestry/Natural Resources."
      }
@@ -4651,7 +4651,7 @@
       "code": "MACH",
       "discipline": "Machine Tool Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Machine Tool Technology."
      }
@@ -5138,7 +5138,7 @@
       "code": "CNSM",
       "discipline": "Construction Management",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Construction Management."
      }
@@ -5171,7 +5171,7 @@
       "code": "ECON",
       "discipline": "Economics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Economics."
      }
@@ -5285,7 +5285,7 @@
       "code": "HUMA",
       "discipline": "Humanities",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Humanities."
      }
@@ -5296,7 +5296,7 @@
       "code": "INDT",
       "discipline": "Industrial Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Industrial Technology."
      }
@@ -5315,12 +5315,12 @@
     {
      "code": "MCOM",
      "common": {
-      "code": "JOUR",
-      "discipline": "Journalism",
+      "code": "MCOM",
+      "discipline": "Mass Communication",
       "level": "High",
       "confidence": 0.955,
       "from": "own_courses",
-      "why": "4 of 4 of its courses with an M-ID sit under JOUR."
+      "why": "16 of 20 of its courses with an M-ID sit under MCOM."
      }
     },
     {
@@ -5546,12 +5546,12 @@
     {
      "code": "RELS",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "RLST",
+      "discipline": "Religious Studies",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -5582,7 +5582,7 @@
       "code": "EDTC",
       "discipline": "Instructional Design/Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Instructional Design/Technology."
      }
@@ -5804,7 +5804,7 @@
       "code": "COMP",
       "discipline": "Computer Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Computer Science."
      }
@@ -5815,7 +5815,7 @@
       "code": "COMM",
       "discipline": "Communication Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Communication Studies."
      }
@@ -5879,7 +5879,7 @@
       "code": "DRAF",
       "discipline": "Drafting/CADD",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Drafting/CADD."
      }
@@ -5890,7 +5890,7 @@
       "code": "EDUC",
       "discipline": "Education",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Education."
      }
@@ -5901,7 +5901,7 @@
       "code": "ENGT",
       "discipline": "Engineering Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering Technology."
      }
@@ -5923,7 +5923,7 @@
       "code": "GERO",
       "discipline": "Gerontology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Gerontology."
      }
@@ -6035,7 +6035,7 @@
       "code": "SOCS",
       "discipline": "Social Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Social Science."
      }
@@ -6170,7 +6170,7 @@
       "code": "CNSM",
       "discipline": "Construction Management",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Construction Management."
      }
@@ -6304,7 +6304,7 @@
       "code": "EDTC",
       "discipline": "Instructional Design/Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Instructional Design/Technology."
      }
@@ -6420,12 +6420,23 @@
      }
     },
     {
+     "code": "CLAS",
+     "common": {
+      "code": "CLAS",
+      "discipline": "Classics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Classics."
+     }
+    },
+    {
      "code": "CM",
      "common": {
       "code": "CNSM",
       "discipline": "Construction Management",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Construction Management."
      }
@@ -6935,7 +6946,7 @@
       "code": "HTEC",
       "discipline": "Health Care Ancillaries",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Health Care Ancillaries."
      }
@@ -6957,7 +6968,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -6965,12 +6976,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -7023,7 +7034,7 @@
       "code": "MUSC",
       "discipline": "Commercial Music",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Commercial Music."
      }
@@ -7172,7 +7183,7 @@
       "code": "AGEQ",
       "discipline": "Equine Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Equine Science."
      }
@@ -7235,12 +7246,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "48 of 62 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -7408,6 +7419,17 @@
      }
     },
     {
+     "code": "ECOL",
+     "common": {
+      "code": "ECOL",
+      "discipline": "Ecology",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Ecology."
+     }
+    },
+    {
      "code": "ELL",
      "common": {
       "code": "ESLN",
@@ -7512,12 +7534,12 @@
       ]
      },
      "common": {
-      "code": "JOUR",
-      "discipline": "Journalism",
+      "code": "MCOM",
+      "discipline": "Mass Communication",
       "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "10 of 11 courses under this code statewide sit under JOUR."
+      "confidence": 0.872,
+      "from": "title",
+      "why": "The title names the discipline Mass Communication."
      }
     },
     {
@@ -7526,7 +7548,7 @@
       "code": "POLS",
       "discipline": "Political Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Political Science."
      }
@@ -7933,7 +7955,7 @@
       "code": "CTRP",
       "discipline": "Court Reporting",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Court Reporting."
      }
@@ -7944,7 +7966,7 @@
       "code": "ENGR",
       "discipline": "Engineering",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering."
      }
@@ -8563,7 +8585,7 @@
       "code": "COMP",
       "discipline": "Computer Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Computer Science."
      }
@@ -8714,7 +8736,7 @@
       "code": "GEOG",
       "discipline": "Geography",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Geography."
      }
@@ -8824,12 +8846,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "48 of 61 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -9378,7 +9400,7 @@
       "code": "PHMT",
       "discipline": "Pharmacy Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Pharmacy Technology."
      }
@@ -9389,7 +9411,7 @@
       "code": "PHYS",
       "discipline": "Physics/Astronomy",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Physics/Astronomy."
      }
@@ -9563,7 +9585,7 @@
       "code": "AGRI",
       "discipline": "Agriculture",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Agriculture."
      }
@@ -9668,7 +9690,7 @@
       "code": "BUSI",
       "discipline": "Business",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Business."
      }
@@ -9679,7 +9701,7 @@
       "code": "CHEM",
       "discipline": "Chemistry",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Chemistry."
      }
@@ -9690,7 +9712,7 @@
       "code": "CNSM",
       "discipline": "Construction Management",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Construction Management."
      }
@@ -9712,7 +9734,7 @@
       "code": "DRAF",
       "discipline": "Drafting/CADD",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Drafting/CADD."
      }
@@ -9828,7 +9850,7 @@
       "code": "FIRE",
       "discipline": "Fire Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Fire Technology."
      }
@@ -9836,12 +9858,12 @@
     {
      "code": "MC",
      "common": {
-      "code": "COMM",
-      "discipline": "Communication Studies",
+      "code": "MCOM",
+      "discipline": "Mass Communication",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 3 of its courses with an M-ID sit under COMM."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Mass Communication."
      }
     },
     {
@@ -9850,7 +9872,7 @@
       "code": "MATH",
       "discipline": "Mathematics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Mathematics."
      }
@@ -9909,7 +9931,7 @@
       "code": "PHYS",
       "discipline": "Physics/Astronomy",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Physics/Astronomy."
      }
@@ -10298,7 +10320,7 @@
       "code": "VNRS",
       "discipline": "Licensed Vocational Nursing",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Licensed Vocational Nursing."
      }
@@ -10358,12 +10380,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "47 of 61 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -10416,7 +10438,7 @@
       "code": "SOCS",
       "discipline": "Social Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Social Science."
      }
@@ -10748,7 +10770,7 @@
       "code": "PHYS",
       "discipline": "Physics/Astronomy",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Physics/Astronomy."
      }
@@ -10946,7 +10968,7 @@
       "code": "MANU",
       "discipline": "Manufacturing Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Manufacturing Technology."
      }
@@ -10957,7 +10979,7 @@
       "code": "PHSC",
       "discipline": "Physical Sciences",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Physical Sciences."
      }
@@ -10998,7 +11020,7 @@
       "code": "WMST",
       "discipline": "Women’s Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Women’s Studies."
      }
@@ -11139,7 +11161,7 @@
       "code": "INDT",
       "discipline": "Industrial Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Industrial Technology."
      }
@@ -11150,7 +11172,7 @@
       "code": "JOUR",
       "discipline": "Journalism",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Journalism."
      }
@@ -11401,7 +11423,7 @@
       "code": "CHEM",
       "discipline": "Chemistry",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Chemistry."
      }
@@ -11482,7 +11504,7 @@
       "code": "PHYS",
       "discipline": "Physics/Astronomy",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Physics/Astronomy."
      }
@@ -11829,7 +11851,7 @@
       "code": "PHMT",
       "discipline": "Pharmacy Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Pharmacy Technology."
      }
@@ -11874,7 +11896,7 @@
       "code": "SURG",
       "discipline": "Surgical Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Surgical Technology."
      }
@@ -12199,7 +12221,7 @@
       "code": "MULT",
       "discipline": "Multimedia",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Multimedia."
      }
@@ -12245,7 +12267,7 @@
       "code": "PHYS",
       "discipline": "Physics/Astronomy",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Physics/Astronomy."
      }
@@ -12282,6 +12304,17 @@
       "from": "noncredit_category",
       "category": "Elementary and Secondary Basic Skills",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "RELIG",
+     "common": {
+      "code": "RLST",
+      "discipline": "Religious Studies",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -12501,7 +12534,7 @@
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Drama/Theater Arts."
      }
@@ -12589,7 +12622,7 @@
       "code": "RECR",
       "discipline": "Recreation Administration",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Recreation Administration."
      }
@@ -12662,7 +12695,7 @@
       "code": "EDUC",
       "discipline": "Education",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Education."
      }
@@ -12703,12 +12736,12 @@
     {
      "code": "RELG",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "RLST",
+      "discipline": "Religious Studies",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "3 of 4 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -12912,7 +12945,7 @@
       "code": "HEIT",
       "discipline": "Health Information Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Health Information Technology."
      }
@@ -12923,7 +12956,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -12942,12 +12975,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -12967,7 +13000,7 @@
       "code": "MORT",
       "discipline": "Mortuary Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Mortuary Science."
      }
@@ -13158,7 +13191,7 @@
       "code": "HUMA",
       "discipline": "Humanities",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Humanities."
      }
@@ -13224,12 +13257,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "48 of 61 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -13274,7 +13307,7 @@
       "code": "PHOT",
       "discipline": "Photography",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Photography."
      }
@@ -13346,7 +13379,7 @@
       "code": "ARTH",
       "discipline": "Art History",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Art History."
      }
@@ -13505,12 +13538,23 @@
      }
     },
     {
+     "code": "IDSGN",
+     "common": {
+      "code": "INDD",
+      "discipline": "Industrial Design",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Industrial Design."
+     }
+    },
+    {
      "code": "JRNAL",
      "common": {
       "code": "JOUR",
       "discipline": "Journalism",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Journalism."
      }
@@ -13543,7 +13587,7 @@
       "code": "LIBT",
       "discipline": "Library Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Technology."
      }
@@ -13611,7 +13655,7 @@
       "code": "STMF",
       "discipline": "Steamfitting",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Steamfitting."
      }
@@ -13826,7 +13870,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -13834,12 +13878,12 @@
     {
      "code": "ENG SUP",
      "common": {
-      "code": "INDT",
-      "discipline": "Industrial Technology",
+      "code": "ENSP",
+      "discipline": "Engineering Support",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "7 of 9 of its courses with an M-ID sit under INDT."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Engineering Support."
      }
     },
     {
@@ -13891,7 +13935,7 @@
       "code": "FCSH",
       "discipline": "Family and Consumer Studies/ Home Economics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Family and Consumer Studies/ Home Economics."
      }
@@ -13935,7 +13979,7 @@
       "code": "HEIT",
       "discipline": "Health Information Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Health Information Technology."
      }
@@ -13977,7 +14021,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -13985,12 +14029,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -14043,7 +14087,7 @@
       "code": "EDTC",
       "discipline": "Instructional Design/Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Instructional Design/Technology."
      }
@@ -14125,12 +14169,23 @@
      }
     },
     {
+     "code": "PUB REL",
+     "common": {
+      "code": "PREL",
+      "discipline": "Public Relations",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Public Relations."
+     }
+    },
+    {
      "code": "READING",
      "common": {
       "code": "READ",
       "discipline": "Reading",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Reading."
      }
@@ -14723,12 +14778,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -14748,7 +14803,7 @@
       "code": "MANU",
       "discipline": "Manufacturing Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Manufacturing Technology."
      }
@@ -14876,7 +14931,7 @@
       "code": "ROBO",
       "discipline": "Robotics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Robotics."
      }
@@ -14963,7 +15018,7 @@
       "code": "SOCS",
       "discipline": "Social Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Social Science."
      }
@@ -15143,7 +15198,7 @@
       "code": "WMST",
       "discipline": "Women’s Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Women’s Studies."
      }
@@ -15273,7 +15328,7 @@
       "code": "FCSH",
       "discipline": "Family and Consumer Studies/ Home Economics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Family and Consumer Studies/ Home Economics."
      }
@@ -15295,7 +15350,7 @@
       "code": "HUMA",
       "discipline": "Humanities",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Humanities."
      }
@@ -15388,7 +15443,7 @@
       "code": "WMST",
       "discipline": "Women’s Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Women’s Studies."
      }
@@ -15577,7 +15632,7 @@
       "code": "HUMA",
       "discipline": "Humanities",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Humanities."
      }
@@ -15975,12 +16030,12 @@
     {
      "code": "APRT",
      "common": {
-      "code": "HVAC",
-      "discipline": "Air Conditioning, Refrigeration, Heating",
+      "code": "SHME",
+      "discipline": "Sheet Metal",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "4 of 4 of its courses with an M-ID sit under HVAC."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Sheet Metal."
      }
     },
     {
@@ -16057,7 +16112,7 @@
       "code": "HUMA",
       "discipline": "Humanities",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Humanities."
      }
@@ -16068,7 +16123,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -16079,7 +16134,7 @@
       "code": "JOUR",
       "discipline": "Journalism",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Journalism."
      }
@@ -16123,7 +16178,7 @@
       "code": "PHMT",
       "discipline": "Pharmacy Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Pharmacy Technology."
      }
@@ -16156,7 +16211,7 @@
       "code": "WMST",
       "discipline": "Women’s Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Women’s Studies."
      }
@@ -16169,12 +16224,12 @@
     {
      "code": "AEROST",
      "common": {
-      "code": "AVIA",
-      "discipline": "Aviation",
+      "code": "AERO",
+      "discipline": "Aeronautics",
       "level": "High",
       "confidence": 0.955,
       "from": "own_courses",
-      "why": "8 of 8 of its courses with an M-ID sit under AVIA."
+      "why": "8 of 8 of its courses with an M-ID sit under AERO."
      }
     },
     {
@@ -16298,7 +16353,7 @@
       "code": "DRAF",
       "discipline": "Drafting/CADD",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Drafting/CADD."
      }
@@ -16504,12 +16559,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -16518,9 +16573,20 @@
       "code": "LIBT",
       "discipline": "Library Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Technology."
+     }
+    },
+    {
+     "code": "MILSC",
+     "common": {
+      "code": "MILS",
+      "discipline": "Military Studies",
+      "level": "High",
+      "confidence": 0.955,
+      "from": "own_courses",
+      "why": "8 of 8 of its courses with an M-ID sit under MILS."
      }
     },
     {
@@ -16562,7 +16628,7 @@
       "code": "WMST",
       "discipline": "Women’s Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Women’s Studies."
      }
@@ -16669,7 +16735,7 @@
       "code": "INTD",
       "discipline": "Interior Design",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interior Design."
      }
@@ -16721,12 +16787,12 @@
     {
      "code": "PRNT",
      "common": {
-      "code": "INDT",
-      "discipline": "Industrial Technology",
+      "code": "PRNT",
+      "discipline": "Printing Technology",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "25 of 29 of its courses with an M-ID sit under INDT."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Printing Technology."
      }
     },
     {
@@ -16804,7 +16870,7 @@
       "code": "WMST",
       "discipline": "Women’s Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Women’s Studies."
      }
@@ -16856,7 +16922,7 @@
       "code": "CNSM",
       "discipline": "Construction Management",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Construction Management."
      }
@@ -16867,7 +16933,7 @@
       "code": "COMM",
       "discipline": "Communication Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Communication Studies."
      }
@@ -16929,6 +16995,17 @@
         "why": "program titles: 2 of 4 programs (several agree, right 64% of the time)."
        }
       ]
+     }
+    },
+    {
+     "code": "ECOL",
+     "common": {
+      "code": "ECOL",
+      "discipline": "Ecology",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Ecology."
      }
     },
     {
@@ -17542,12 +17619,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "8 of 9 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -17934,7 +18011,7 @@
       "code": "SOCS",
       "discipline": "Social Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Social Science."
      }
@@ -18359,7 +18436,7 @@
       "code": "POLS",
       "discipline": "Political Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Political Science."
      }
@@ -18522,12 +18599,12 @@
     {
      "code": "CVTE",
      "common": {
-      "code": "HLTH",
-      "discipline": "Health",
+      "code": "CVTC",
+      "discipline": "Cardiovascular Technology",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "12 of 20 of its courses with an M-ID sit under HLTH."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Cardiovascular Technology."
      }
     },
     {
@@ -18573,7 +18650,7 @@
       "code": "EDUC",
       "discipline": "Education",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Education."
      }
@@ -18682,12 +18759,12 @@
     {
      "code": "MCOM",
      "common": {
-      "code": "JOUR",
-      "discipline": "Journalism",
-      "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under JOUR."
+      "code": "MCOM",
+      "discipline": "Mass Communication",
+      "level": "Medium",
+      "confidence": 0.8,
+      "from": "same_code_statewide",
+      "why": "20 of 29 courses under this code statewide sit under MCOM."
      }
     },
     {
@@ -18826,12 +18903,12 @@
     {
      "code": "RELG",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "RLST",
+      "discipline": "Religious Studies",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "8 of 9 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -19064,7 +19141,7 @@
       "code": "ELET",
       "discipline": "Electronics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Electronics."
      }
@@ -19138,12 +19215,12 @@
     {
      "code": "RELS",
      "common": {
-      "code": "PHIL",
-      "discipline": "Philosophy",
+      "code": "RLST",
+      "discipline": "Religious Studies",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under PHIL."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -19363,7 +19440,7 @@
       "code": "JOUR",
       "discipline": "Journalism",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Journalism."
      }
@@ -19510,7 +19587,7 @@
       "code": "CHEM",
       "discipline": "Chemistry",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Chemistry."
      }
@@ -19569,7 +19646,7 @@
       "code": "ECON",
       "discipline": "Economics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Economics."
      }
@@ -19825,12 +19902,12 @@
     {
      "code": "BNK/F",
      "common": {
-      "code": "BUSI",
-      "discipline": "Business",
+      "code": "FINA",
+      "discipline": "Banking and Finance",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "3 of 4 of its courses with an M-ID sit under BUSI."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Banking and Finance."
      }
     },
     {
@@ -20068,7 +20145,7 @@
       "code": "ARTH",
       "discipline": "Art History",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Art History."
      }
@@ -20103,7 +20180,7 @@
       "code": "HUMA",
       "discipline": "Humanities",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Humanities."
      }
@@ -20276,12 +20353,12 @@
     {
      "code": "RELS",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "RLST",
+      "discipline": "Religious Studies",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -20490,7 +20567,7 @@
       "code": "EDUC",
       "discipline": "Education",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Education."
      }
@@ -21207,12 +21284,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "48 of 62 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -21524,7 +21601,7 @@
       "code": "BUSI",
       "discipline": "Business",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Business."
      }
@@ -21609,7 +21686,7 @@
       "code": "ENGL",
       "discipline": "English",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline English."
      }
@@ -21769,12 +21846,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 3 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -21794,7 +21871,7 @@
       "code": "GEOG",
       "discipline": "Geography",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Geography."
      }
@@ -21979,7 +22056,7 @@
       "code": "DENT",
       "discipline": "Dental Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Dental Technology."
      }
@@ -22034,7 +22111,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -22045,7 +22122,7 @@
       "code": "ENGR",
       "discipline": "Engineering",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering."
      }
@@ -22164,7 +22241,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -22172,12 +22249,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -22244,6 +22321,17 @@
       "confidence": 0.8,
       "from": "same_code_statewide",
       "why": "5 of 5 courses under this code statewide sit under BIOL."
+     }
+    },
+    {
+     "code": "PUB REL",
+     "common": {
+      "code": "PREL",
+      "discipline": "Public Relations",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Public Relations."
      }
     },
     {
@@ -22495,7 +22583,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -22658,6 +22746,17 @@
       "confidence": 0.8,
       "from": "same_code_statewide",
       "why": "5 of 5 courses under this code statewide sit under BIOL."
+     }
+    },
+    {
+     "code": "PUB REL",
+     "common": {
+      "code": "PREL",
+      "discipline": "Public Relations",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Public Relations."
      }
     },
     {
@@ -23068,7 +23167,7 @@
       "code": "DRAF",
       "discipline": "Drafting/CADD",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Drafting/CADD."
      }
@@ -23109,7 +23208,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -23235,12 +23334,12 @@
       }
      },
      "common": {
-      "code": "INDT",
-      "discipline": "Industrial Technology",
+      "code": "ENSP",
+      "discipline": "Engineering Support",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "4 of 6 of its courses with an M-ID sit under INDT."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Engineering Support."
      }
     },
     {
@@ -23321,7 +23420,7 @@
       "code": "FCSH",
       "discipline": "Family and Consumer Studies/ Home Economics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Family and Consumer Studies/ Home Economics."
      }
@@ -23437,7 +23536,7 @@
       "code": "HEIT",
       "discipline": "Health Information Technology",
       "level": "Medium",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Health Information Technology."
      }
@@ -23491,7 +23590,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -23499,12 +23598,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -24381,7 +24480,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -24425,7 +24524,7 @@
       "code": "FCSH",
       "discipline": "Family and Consumer Studies/ Home Economics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Family and Consumer Studies/ Home Economics."
      }
@@ -24510,12 +24609,12 @@
     {
      "code": "INSUR",
      "common": {
-      "code": "BUSI",
-      "discipline": "Business",
+      "code": "INSR",
+      "discipline": "Insurance",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under BUSI."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Insurance."
      }
     },
     {
@@ -24556,7 +24655,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -24712,6 +24811,17 @@
       "confidence": 0.8,
       "from": "same_code_statewide",
       "why": "4 of 4 courses under this code statewide sit under BIOL."
+     }
+    },
+    {
+     "code": "PUB REL",
+     "common": {
+      "code": "PREL",
+      "discipline": "Public Relations",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Public Relations."
      }
     },
     {
@@ -25136,7 +25246,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -25361,7 +25471,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -25413,7 +25523,7 @@
       "code": "EDTC",
       "discipline": "Instructional Design/Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Instructional Design/Technology."
      }
@@ -25706,7 +25816,7 @@
       "code": "READ",
       "discipline": "Reading",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Reading."
      }
@@ -25951,7 +26061,7 @@
       "code": "BARB",
       "discipline": "Barbering",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Barbering."
      }
@@ -26437,7 +26547,7 @@
       "code": "DRAF",
       "discipline": "Drafting/CADD",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Drafting/CADD."
      }
@@ -26448,7 +26558,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -26889,7 +26999,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -27146,7 +27256,7 @@
       "code": "PLMB",
       "discipline": "Plumbing",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Plumbing."
      }
@@ -27413,7 +27523,7 @@
       "code": "RMGT",
       "discipline": "Restaurant Management",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Restaurant Management."
      }
@@ -28350,7 +28460,7 @@
       "code": "EDTC",
       "discipline": "Instructional Design/Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Instructional Design/Technology."
      }
@@ -28661,7 +28771,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -28669,12 +28779,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "47 of 61 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -29604,7 +29714,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -29642,12 +29752,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -29880,7 +29990,7 @@
       "code": "CHEM",
       "discipline": "Chemistry",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Chemistry."
      }
@@ -29937,7 +30047,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -30541,7 +30651,7 @@
       "code": "INDT",
       "discipline": "Industrial Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Industrial Technology."
      }
@@ -31176,7 +31286,7 @@
       "code": "GERO",
       "discipline": "Gerontology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Gerontology."
      }
@@ -31285,7 +31395,7 @@
       "code": "HUMA",
       "discipline": "Humanities",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Humanities."
      }
@@ -31323,12 +31433,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "47 of 61 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -31521,12 +31631,12 @@
     {
      "code": "RELG",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "12 of 16 courses under this code statewide sit under HUMA."
+      "code": "RLST",
+      "discipline": "Religious Studies",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -31596,7 +31706,7 @@
       "code": "CHEM",
       "discipline": "Chemistry",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Chemistry."
      }
@@ -31607,7 +31717,7 @@
       "code": "COMM",
       "discipline": "Communication Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Communication Studies."
      }
@@ -31642,7 +31752,7 @@
       "code": "ECON",
       "discipline": "Economics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Economics."
      }
@@ -31653,7 +31763,7 @@
       "code": "ENGR",
       "discipline": "Engineering",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering."
      }
@@ -31758,6 +31868,17 @@
      }
     },
     {
+     "code": "LIN",
+     "common": {
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
+     }
+    },
+    {
      "code": "NCB",
      "common": {
       "code": "BSKL",
@@ -31807,7 +31928,7 @@
       "code": "NUTR",
       "discipline": "Dietetics/Nutritional Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Dietetics/Nutritional Science."
      }
@@ -31877,7 +31998,7 @@
       "code": "NRSR",
       "discipline": "Nursing",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Nursing."
      }
@@ -31915,7 +32036,7 @@
       "code": "AGRI",
       "discipline": "Agriculture",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Agriculture."
      }
@@ -31926,7 +32047,7 @@
       "code": "AGRI",
       "discipline": "Agriculture",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Agriculture."
      }
@@ -32017,7 +32138,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -32105,7 +32226,7 @@
       "code": "NRSR",
       "discipline": "Nursing",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Nursing."
      }
@@ -32135,12 +32256,12 @@
     {
      "code": "SM",
      "common": {
-      "code": "INDT",
-      "discipline": "Industrial Technology",
+      "code": "SHME",
+      "discipline": "Sheet Metal",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under INDT."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Sheet Metal."
      }
     },
     {
@@ -32187,7 +32308,7 @@
       "code": "ESOL",
       "discipline": "English as a Second Language",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline English as a Second Language."
      }
@@ -32239,12 +32360,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "43 of 53 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -32857,6 +32978,14 @@
         "why": "other colleges: 1 of 2 other colleges (mixed, right 87% of the time)."
        }
       ]
+     },
+     "common": {
+      "code": "RBTC",
+      "discipline": "Registered Behavior Technician",
+      "level": "Medium",
+      "confidence": 0.872,
+      "from": "title",
+      "why": "The title names the discipline Registered Behavior Technician."
      }
     },
     {
@@ -33069,7 +33198,7 @@
       "code": "CHEM",
       "discipline": "Chemistry",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Chemistry."
      }
@@ -33218,7 +33347,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -33229,7 +33358,7 @@
       "code": "JOUR",
       "discipline": "Journalism",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Journalism."
      }
@@ -33477,7 +33606,7 @@
       "code": "CNSM",
       "discipline": "Construction Management",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Construction Management."
      }
@@ -33621,7 +33750,7 @@
       "code": "FCSH",
       "discipline": "Family and Consumer Studies/ Home Economics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Family and Consumer Studies/ Home Economics."
      }
@@ -33722,12 +33851,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "6 of 6 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -33821,7 +33950,7 @@
       "code": "EDTC",
       "discipline": "Instructional Design/Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Instructional Design/Technology."
      }
@@ -34006,7 +34135,7 @@
       "code": "EDUC",
       "discipline": "Education",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Education."
      }
@@ -34246,7 +34375,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -34257,7 +34386,7 @@
       "code": "ENGR",
       "discipline": "Engineering",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering."
      }
@@ -34326,7 +34455,7 @@
       "code": "HLTH",
       "discipline": "Health",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Health."
      }
@@ -34403,7 +34532,7 @@
       "code": "NURP",
       "discipline": "Psychiatric Technician",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Psychiatric Technician."
      }
@@ -34507,7 +34636,7 @@
       "code": "READ",
       "discipline": "Reading",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Reading."
      }
@@ -34553,7 +34682,7 @@
       "code": "CHEM",
       "discipline": "Chemistry",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Chemistry."
      }
@@ -34596,7 +34725,7 @@
       "code": "MULT",
       "discipline": "Multimedia",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Multimedia."
      }
@@ -34631,7 +34760,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -34642,7 +34771,7 @@
       "code": "JOUR",
       "discipline": "Journalism",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Journalism."
      }
@@ -34653,7 +34782,7 @@
       "code": "MANU",
       "discipline": "Manufacturing Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Manufacturing Technology."
      }
@@ -35107,7 +35236,7 @@
       "code": "ENGR",
       "discipline": "Engineering",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering."
      }
@@ -35187,7 +35316,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -35381,12 +35510,12 @@
     {
      "code": "CVT",
      "common": {
-      "code": "HLTH",
-      "discipline": "Health",
+      "code": "CVTC",
+      "discipline": "Cardiovascular Technology",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "11 of 15 of its courses with an M-ID sit under HLTH."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Cardiovascular Technology."
      }
     },
     {
@@ -35425,12 +35554,12 @@
     {
      "code": "ESEC",
      "common": {
-      "code": "BIOL",
-      "discipline": "Biological Sciences",
+      "code": "ECOL",
+      "discipline": "Ecology",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under BIOL."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Ecology."
      }
     },
     {
@@ -35618,7 +35747,7 @@
       "code": "POLS",
       "discipline": "Political Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Political Science."
      }
@@ -35806,7 +35935,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -36138,7 +36267,7 @@
       "code": "CHEM",
       "discipline": "Chemistry",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Chemistry."
      }
@@ -36149,7 +36278,7 @@
       "code": "GEOG",
       "discipline": "Geography",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Geography."
      }
@@ -36160,7 +36289,7 @@
       "code": "MGMT",
       "discipline": "Management",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Management."
      }
@@ -36348,7 +36477,7 @@
       "code": "FLNG",
       "discipline": "Foreign Languages",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Foreign Languages."
      }
@@ -36381,7 +36510,7 @@
       "code": "LIBT",
       "discipline": "Library Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Technology."
      }
@@ -36653,12 +36782,12 @@
     {
      "code": "RS",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "RLST",
+      "discipline": "Religious Studies",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "3 of 5 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -36765,7 +36894,7 @@
       "code": "ELET",
       "discipline": "Electronics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Electronics."
      }
@@ -36787,7 +36916,7 @@
       "code": "GERO",
       "discipline": "Gerontology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Gerontology."
      }
@@ -36883,12 +37012,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "44 of 55 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -36960,12 +37089,12 @@
     {
      "code": "RELG",
      "common": {
-      "code": "PHIL",
-      "discipline": "Philosophy",
+      "code": "RLST",
+      "discipline": "Religious Studies",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 3 of its courses with an M-ID sit under PHIL."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -37094,7 +37223,7 @@
       "code": "ARTD",
       "discipline": "Commercial Art",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Commercial Art."
      }
@@ -37136,7 +37265,7 @@
       "code": "MUSC",
       "discipline": "Commercial Music",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Commercial Music."
      }
@@ -37169,7 +37298,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -37243,7 +37372,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -37251,12 +37380,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "48 of 61 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -37518,7 +37647,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -37526,12 +37655,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "LING",
+      "discipline": "Linguistics",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -37540,7 +37669,7 @@
       "code": "LIBT",
       "discipline": "Library Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Technology."
      }
@@ -37741,7 +37870,7 @@
       "code": "EDUC",
       "discipline": "Education",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Education."
      }
@@ -37994,7 +38123,7 @@
       "code": "EDTC",
       "discipline": "Instructional Design/Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Instructional Design/Technology."
      }
@@ -38108,7 +38237,7 @@
       "code": "CHEM",
       "discipline": "Chemistry",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Chemistry."
      }
@@ -38222,7 +38351,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -38233,7 +38362,7 @@
       "code": "JOUR",
       "discipline": "Journalism",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Journalism."
      }
@@ -38398,7 +38527,7 @@
       "code": "BARB",
       "discipline": "Barbering",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Barbering."
      }
@@ -38486,7 +38615,7 @@
       "code": "GERO",
       "discipline": "Gerontology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Gerontology."
      }
@@ -39242,7 +39371,7 @@
       "code": "JOUR",
       "discipline": "Journalism",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Journalism."
      }
@@ -39386,7 +39515,7 @@
       "code": "SURG",
       "discipline": "Surgical Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Surgical Technology."
      }
@@ -39572,7 +39701,7 @@
       "code": "ELET",
       "discipline": "Electronics",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Electronics."
      }
@@ -39616,7 +39745,7 @@
       "code": "LEGL",
       "discipline": "Law",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Law."
      }
@@ -39649,7 +39778,7 @@
       "code": "PHMT",
       "discipline": "Pharmacy Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Pharmacy Technology."
      }
@@ -39660,7 +39789,7 @@
       "code": "PHYS",
       "discipline": "Physics/Astronomy",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Physics/Astronomy."
      }
@@ -39674,6 +39803,17 @@
       "confidence": 0.955,
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under NURP."
+     }
+    },
+    {
+     "code": "RELIG",
+     "common": {
+      "code": "RLST",
+      "discipline": "Religious Studies",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -39887,7 +40027,7 @@
       "code": "ENGR",
       "discipline": "Engineering",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering."
      }
@@ -39988,7 +40128,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -40147,7 +40287,7 @@
       "code": "SOCI",
       "discipline": "Sociology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Sociology."
      }
@@ -40230,7 +40370,7 @@
       "code": "CNSM",
       "discipline": "Construction Management",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Construction Management."
      }
@@ -40241,7 +40381,7 @@
       "code": "ENGR",
       "discipline": "Engineering",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering."
      }
@@ -40263,7 +40403,7 @@
       "code": "INTD",
       "discipline": "Interior Design",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interior Design."
      }
@@ -40274,7 +40414,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -40340,7 +40480,7 @@
       "code": "SOCI",
       "discipline": "Sociology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Sociology."
      }
@@ -40373,7 +40513,7 @@
       "code": "WMST",
       "discipline": "Women’s Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Women’s Studies."
      }
@@ -40430,12 +40570,12 @@
     {
      "code": "BANK",
      "common": {
-      "code": "BUSI",
-      "discipline": "Business",
+      "code": "FINA",
+      "discipline": "Banking and Finance",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "4 of 4 of its courses with an M-ID sit under BUSI."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Banking and Finance."
      }
     },
     {
@@ -40467,7 +40607,7 @@
       "code": "ENGR",
       "discipline": "Engineering",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering."
      }
@@ -40478,7 +40618,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -40544,7 +40684,7 @@
       "code": "SOCI",
       "discipline": "Sociology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Sociology."
      }
@@ -41315,7 +41455,7 @@
       "code": "ENGT",
       "discipline": "Engineering Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Engineering Technology."
      }
@@ -41443,12 +41583,12 @@
     {
      "code": "MCOM",
      "common": {
-      "code": "JOUR",
-      "discipline": "Journalism",
+      "code": "MCOM",
+      "discipline": "Mass Communication",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "3 of 4 of its courses with an M-ID sit under JOUR."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Mass Communication."
      }
     },
     {
@@ -41553,7 +41693,7 @@
       "code": "PHYS",
       "discipline": "Physics/Astronomy",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Physics/Astronomy."
      }
@@ -43689,7 +43829,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -43777,7 +43917,7 @@
       "code": "PHMT",
       "discipline": "Pharmacy Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Pharmacy Technology."
      }
@@ -43788,7 +43928,7 @@
       "code": "POLS",
       "discipline": "Political Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Political Science."
      }
@@ -44021,7 +44161,7 @@
       "code": "WMST",
       "discipline": "Women’s Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Women’s Studies."
      }
@@ -44207,7 +44347,7 @@
       "code": "COSM",
       "discipline": "Cosmetology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Cosmetology."
      }
@@ -44240,7 +44380,7 @@
       "code": "EDUC",
       "discipline": "Education",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Education."
      }
@@ -44685,7 +44825,7 @@
       "code": "SOCS",
       "discipline": "Social Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Social Science."
      }
@@ -44696,7 +44836,7 @@
       "code": "EDTC",
       "discipline": "Instructional Design/Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Instructional Design/Technology."
      }
@@ -44756,7 +44896,7 @@
       "code": "BIOL",
       "discipline": "Biological Sciences",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Biological Sciences."
      }
@@ -44870,7 +45010,7 @@
       "code": "BIOL",
       "discipline": "Biological Sciences",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Biological Sciences."
      }
@@ -45330,12 +45470,12 @@
     {
      "code": "LING",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
-      "level": "Medium",
-      "confidence": 0.8,
-      "from": "same_code_statewide",
-      "why": "48 of 61 courses under this code statewide sit under HUMA."
+      "code": "LING",
+      "discipline": "Linguistics",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Linguistics."
      }
     },
     {
@@ -45344,7 +45484,7 @@
       "code": "BIOL",
       "discipline": "Biological Sciences",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Biological Sciences."
      }
@@ -45543,7 +45683,7 @@
       "code": "PHYS",
       "discipline": "Physics/Astronomy",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Physics/Astronomy."
      }
@@ -45574,12 +45714,12 @@
     {
      "code": "REL ST",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "RLST",
+      "discipline": "Religious Studies",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -45610,7 +45750,7 @@
       "code": "BIOL",
       "discipline": "Biological Sciences",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Biological Sciences."
      }
@@ -45763,7 +45903,7 @@
       "code": "AGEQ",
       "discipline": "Equine Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Equine Science."
      }
@@ -45863,7 +46003,7 @@
       "code": "INTD",
       "discipline": "Interior Design",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interior Design."
      }
@@ -46017,12 +46157,12 @@
     {
      "code": "RELS",
      "common": {
-      "code": "HUMA",
-      "discipline": "Humanities",
+      "code": "RLST",
+      "discipline": "Religious Studies",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "7 of 10 of its courses with an M-ID sit under HUMA."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Religious Studies."
      }
     },
     {
@@ -46042,7 +46182,7 @@
       "code": "SOCS",
       "discipline": "Social Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Social Science."
      }
@@ -46532,7 +46672,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -46898,7 +47038,7 @@
       "code": "INDT",
       "discipline": "Industrial Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Industrial Technology."
      }
@@ -47691,7 +47831,7 @@
       "code": "HUMA",
       "discipline": "Humanities",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Humanities."
      }
@@ -47941,7 +48081,7 @@
       "code": "EDUC",
       "discipline": "Education",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Education."
      }
@@ -48037,12 +48177,12 @@
     {
      "code": "INS",
      "common": {
-      "code": "BUSI",
-      "discipline": "Business",
+      "code": "INSR",
+      "discipline": "Insurance",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "4 of 4 of its courses with an M-ID sit under BUSI."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Insurance."
      }
     },
     {
@@ -48088,12 +48228,12 @@
     {
      "code": "NC",
      "common": {
-      "code": "ESLN",
-      "discipline": "English as a Second Language (ESL): Noncredit",
+      "code": "CTZN",
+      "discipline": "Citizenship: Noncredit",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
-      "why": "The title names the discipline English as a Second Language (ESL): Noncredit."
+      "why": "The title names the discipline Citizenship: Noncredit."
      }
     },
     {
@@ -48204,7 +48344,7 @@
       "code": "READ",
       "discipline": "Reading",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Reading."
      }
@@ -48309,7 +48449,7 @@
       "code": "SURG",
       "discipline": "Surgical Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Surgical Technology."
      }
@@ -48374,7 +48514,7 @@
       "code": "COMP",
       "discipline": "Computer Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Computer Science."
      }
@@ -48385,7 +48525,7 @@
       "code": "INDT",
       "discipline": "Industrial Technology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Industrial Technology."
      }
@@ -48526,7 +48666,7 @@
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Interdisciplinary Studies."
      }
@@ -48758,7 +48898,7 @@
       "code": "AVIA",
       "discipline": "Aviation",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Aviation."
      }
@@ -49313,7 +49453,7 @@
       "code": "PHSC",
       "discipline": "Physical Sciences",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Physical Sciences."
      }
@@ -49888,7 +50028,7 @@
       "code": "GEOL",
       "discipline": "Earth Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Earth Science."
      }
@@ -50013,7 +50153,7 @@
       "code": "FCSH",
       "discipline": "Family and Consumer Studies/ Home Economics",
       "level": "Medium",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Family and Consumer Studies/ Home Economics."
      }
@@ -50189,7 +50329,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -50389,7 +50529,7 @@
       "code": "COMP",
       "discipline": "Computer Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Computer Science."
      }
@@ -50411,7 +50551,7 @@
       "code": "HUMA",
       "discipline": "Humanities",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Humanities."
      }
@@ -50419,12 +50559,12 @@
     {
      "code": "IDES",
      "common": {
-      "code": "INTD",
-      "discipline": "Interior Design",
+      "code": "INDD",
+      "discipline": "Industrial Design",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "5 of 5 of its courses with an M-ID sit under INTD."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Industrial Design."
      }
     },
     {
@@ -50700,6 +50840,17 @@
      }
     },
     {
+     "code": "ECOL",
+     "common": {
+      "code": "ECOL",
+      "discipline": "Ecology",
+      "level": "High",
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Ecology."
+     }
+    },
+    {
      "code": "LEARN",
      "common": {
       "code": "BSKL",
@@ -50716,7 +50867,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -50761,7 +50912,7 @@
       "code": "SOCI",
       "discipline": "Sociology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Sociology."
      }
@@ -50916,7 +51067,7 @@
       "code": "DRAF",
       "discipline": "Drafting/CADD",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Drafting/CADD."
      }
@@ -50924,12 +51075,12 @@
     {
      "code": "ECOL",
      "common": {
-      "code": "BIOL",
-      "discipline": "Biological Sciences",
+      "code": "ECOL",
+      "discipline": "Ecology",
       "level": "High",
-      "confidence": 0.955,
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under BIOL."
+      "confidence": 0.966,
+      "from": "title",
+      "why": "The title names the discipline Ecology."
      }
     },
     {
@@ -51019,7 +51170,7 @@
       "code": "LIBR",
       "discipline": "Library Science",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Library Science."
      }
@@ -51090,7 +51241,7 @@
       "code": "ENVR",
       "discipline": "Forestry/Natural Resources",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Forestry/Natural Resources."
      }
@@ -51307,7 +51458,7 @@
       "code": "SOCI",
       "discipline": "Sociology",
       "level": "High",
-      "confidence": 0.975,
+      "confidence": 0.966,
       "from": "title",
       "why": "The title names the discipline Sociology."
      }
