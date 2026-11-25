@@ -269,7 +269,10 @@ def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok:
     clm = None if share is None else int(round(float(share) * 100))
     # S720 (#3755's reader): noted_section_cut_off, section_cut_off's reviewed-list form, takes the same cap here, so
     # a recompute through confidence() (fill's keep_named_gaps, #3756) keeps the plan's filed score.
-    if clm is not None and (may_continue(filed) or gap in ("section_cut_off", "noted_section_cut_off")):
+    # S727 (the second reader): heading_not_in_text takes it too, since a list read without the program's own
+    # heading cannot be confirmed as the program's list (p-cap-lives-in-confidence-s720).
+    if clm is not None and (may_continue(filed)
+                            or gap in ("section_cut_off", "noted_section_cut_off", "heading_not_in_text")):
         # A record whose section runs past the read (S713) places the courses it read, not the program's list.
         clm = min(clm, MAY_CONTINUE_CAP)
     return {"unit_arithmetic": 100 if a.get("pass") else ARITH_SCORE.get(gap, 0),
@@ -1789,6 +1792,18 @@ GAPS.setdefault("noted_total_cut_off",
                 "The reader's note says the program's total line runs onto a page the read did not hold; every course "
                 "is placed, so only the printed total is missing and its units cannot be checked against it.")
 ARITH_SCORE.setdefault("noted_total_cut_off", 40)
+# S727 at College of the Canyons (kb/_program_piles_s727_canyons.py): 43388, held for a person since S691 because its
+# read's heading shares no word with its title, collected with its gap named (COBIx's brief of 2026-11-24: a record
+# held for a person is collected with its gap named and a lower confidence). The page the read held prints a
+# requirements list and not the program's own heading. Unit arithmetic takes noted_section_cut_off's 20 (a required
+# course carries no hours and no total was read); the source takes OTHER_PAGE_SOURCE's cap of 50 in confidence(), as
+# the kinds read from another award's page do, since the page is not shown to be the program's own.
+GAPS.setdefault("heading_not_in_text",
+                "The page the read held prints a requirements list but not the program's own heading, which sits on a "
+                "page the read did not hold; the record takes the list as this program's by its title alone, and no "
+                "page read has confirmed it.")
+ARITH_SCORE.setdefault("heading_not_in_text", 20)
+OTHER_PAGE_GAPS = OTHER_PAGE_GAPS | {"heading_not_in_text"}
 
 
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:

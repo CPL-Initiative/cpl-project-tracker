@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T07:51:26Z",
+ "written_at": "2026-11-25T07:53:21Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17318,
-  "gap": 5017,
+  "passing": 17325,
+  "gap": 5010,
   "with_gap": 118,
   "cost_usd": 1341.14,
   "passed_at_read": 16371,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16831,
-  "gap": 5017,
-  "collected_with_gaps": 487,
+  "gap": 5010,
+  "collected_with_gaps": 494,
   "discontinued": 0
  },
  "census_live": {
@@ -2514,14 +2514,14 @@
    "harvested": true,
    "slug": "college_of_the_canyons",
    "programs": 283,
-   "passing": 222,
-   "gap": 61,
+   "passing": 229,
+   "gap": 54,
    "causes": {
-    "found_not_extracted": 2,
+    "found_not_extracted": 1,
     "no_closed_list": 19,
     "page_not_found": 15,
     "places_none": 1,
-    "unknown_without_live": 24
+    "unknown_without_live": 18
    },
    "census_causes": {
     "coverage_fails": 7,
@@ -2587,18 +2587,18 @@
    "read_seconds": 187.9,
    "run": "44887850515",
    "levers": {
-    "reconcile_steps": 20,
     "program_course_file_check": 19,
     "reader_page_search": 15,
+    "reconcile_steps": 14,
     "scorer_noncredit_hours": 4,
-    "paid_read": 2,
+    "paid_read": 1,
     "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
-     "records": 247,
+     "records": 248,
      "models": {
-      "claude-opus-5-5": 247
+      "claude-opus-5-5": 248
      },
      "run": "44887850515",
      "at": "2026-11-21T09:05:44Z",
