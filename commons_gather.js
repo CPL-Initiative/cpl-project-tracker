@@ -83,6 +83,8 @@
     ".cg-d { display:block; font-size:.76rem; color: var(--text-muted); }",
     ".cg-outs { margin-top:4px; padding:4px 8px; border:1px solid var(--border); border-radius:4px; font-size:.78rem; }",
     ".cg-outs ul { margin:2px 0 4px; padding-left:1.1rem; }",
+    ".cg-flist { margin:0; padding-left:1.1rem; display:grid; gap:6px; }",
+    ".cg-flist li.cg-fon { list-style:square; }",
     ".cg-sum ul { margin:0; padding-left:1.2rem; display:grid; gap:4px; }",
     "@media (max-width:560px) { .cg-wrap { max-height:none; } .cg-table { table-layout:auto; } }",
     "@media (prefers-reduced-motion: reduce) { .cg * { transition:none !important; } }"
@@ -118,18 +120,20 @@
   /* ── the address ───────────────────────────────────────────────────────────── */
   var LOOK = [["title", "Title"], ["desc", "Description"], ["both", "Title and description"]];
   function readAddress(hash) {
-    var h = String(hash || "").replace(/^#/, ""), i = h.indexOf("?"), out = { w: "", look: "title", cs: "", ls: "", to: "" };
+    var h = String(hash || "").replace(/^#/, ""), i = h.indexOf("?"), out = { w: "", look: "title", cs: "", ls: "", to: "", f: "" };
     if (i < 0) return out;
     h.slice(i + 1).split("&").forEach(function (kv) {
       var j = kv.indexOf("="), k = j < 0 ? kv : kv.slice(0, j), v = j < 0 ? "" : kv.slice(j + 1);
       try { v = decodeURIComponent(v.replace(/\+/g, " ")); } catch (e) { return; }
       if (k === "w") out.w = v; else if (k === "in" && LOOK.some(function (x) { return x[0] === v; })) out.look = v;
       else if (k === "cs") out.cs = v; else if (k === "ls") out.ls = v; else if (k === "to") out.to = v;
+      else if (k === "f" && /^[a-z0-9-]{1,60}$/.test(v)) out.f = v;
     });
     return out;
   }
   function address(tab, q) {
     var parts = [];
+    if (q.f) parts.push("f=" + encodeURIComponent(q.f));
     if (q.w) parts.push("w=" + encodeURIComponent(q.w));
     if (q.look && q.look !== "title") parts.push("in=" + q.look);
     if (q.cs) parts.push("cs=" + encodeURIComponent(q.cs));
@@ -157,7 +161,8 @@
     var Q = readAddress(D.hash ? D.hash() : (typeof location !== "undefined" ? location.hash : ""));
     var S = { q: Q, ticks: {}, lticks: {}, sort: { m: [6, -1], l: [7, -1] }, /* Check, Z to A: the rows to look at first */ filt: { m: {}, l: {} }, wd: { m: {}, l: {} },
       showDesc: false, descs: { m: {}, l: {} }, descLoading: 0, open: {}, outs: {}, title: null, busy: false, said: "",
-      saved: null, standing: null, decisions: null, decSig: "", node: null };
+      saved: null, standing: null, decisions: null, decSig: "", node: null,
+      filters: null, fload: false, fApplied: false, fsaid: "", fname: "", fnote: "", fbusy: false };
 
     function el(tag, a, kids) {
       var e = document.createElement(tag);
@@ -223,6 +228,8 @@
     /* ── drawing ── */
     function setQ(k, v, keepFocus) {
       S.q[k] = v; S.said = ""; S.saved = null; S.standing = null;
+      // A changed field is no longer the saved filter the address named.
+      if (k !== "f") S.q.f = "";
       if (k === "to") { S.ticks = {}; S.lticks = {}; S.title = null; }
       if (D.onAddress) D.onAddress(address(D.tab || "coci-lookup", S.q));
       draw(keepFocus);
@@ -442,6 +449,124 @@
       }).catch(function (e) { S.busy = false; S.said = "It was not taken back (" + String(e && e.message || e) + "). The saves stand."; draw(); });
     }
 
+    /* ── saved filters (gather_filters, S726): a named query the team opens from #<tab>/gather?f=<slug> ── */
+    function filterQuery() {
+      return { w: S.q.w || "", look: S.q.look || "title", cs: S.q.cs || "", ls: S.q.ls || "", to: S.q.to || "" };
+    }
+    function callRpc(name, body) {
+      return Promise.resolve(D.fresh()).then(function (sess) {
+        if (!sess) throw new Error("your sign-in has ended; sign in again");
+        return fetch(D.rest + "/rpc/" + name, { method: "POST",
+          headers: { apikey: D.anon, Authorization: "Bearer " + sess.access_token, "Content-Type": "application/json" },
+          body: JSON.stringify(body) }).then(function (res) {
+          return res.json().catch(function () { return null; }).then(function (j) {
+            if (!res.ok) throw new Error(String((j && j.message) || ("the service answered " + res.status)).replace(/^gather_filter_\w+: /, ""));
+            return j;
+          });
+        });
+      });
+    }
+    function loadFilters(force) {
+      if (S.fload || (S.filters && !force) || !(D.session && D.session())) return;
+      S.fload = true;
+      Promise.resolve(D.fresh()).then(function (sess) {
+        if (!sess) throw new Error("your sign-in has ended");
+        return fetch(D.rest + "/gather_filters?select=slug,name,query,note,saved_by,saved_at,changed_at&retired_at=is.null&order=name.asc",
+          { headers: { apikey: D.anon, Authorization: "Bearer " + sess.access_token } })
+          .then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); });
+      }).then(function (rows) { S.fload = false; S.filters = rows || []; applyAddressFilter(); draw(); },
+        function (e) { S.fload = false; S.filters = { failed: String(e && e.message || e) }; draw(); });
+    }
+    function applyAddressFilter() {
+      // Only the address the view opened on names a filter to open; a later read (after a save) opens nothing.
+      if (S.fApplied || !Array.isArray(S.filters)) return;
+      S.fApplied = true;
+      if (!S.q.f) return;
+      var row = S.filters.filter(function (r) { return r.slug === S.q.f; })[0];
+      if (row) openFilter(row, true);
+      else S.fsaid = "No saved filter is named " + S.q.f + " now; it may have been retired.";
+    }
+    function openFilter(row, quiet) {
+      var q = row.query || {};
+      S.q = { w: q.w || "", look: q.look === "desc" || q.look === "both" ? q.look : "title", cs: q.cs || "", ls: q.ls || "", to: q.to || "", f: row.slug };
+      S.ticks = {}; S.lticks = {}; S.title = null; S.said = ""; S.saved = null; S.standing = null;
+      S.fname = row.name; S.fnote = row.note || "";
+      S.fsaid = quiet ? "" : "Opened " + row.name + ".";
+      if (D.onAddress) D.onAddress(address(D.tab || "coci-lookup", S.q));
+      if (!quiet) draw({ id: "cg-fname" });
+    }
+    function saveFilter() {
+      var name = String(S.fname || "").trim();
+      if (S.fbusy) return;
+      if (!name) { S.fsaid = "Name the filter first."; draw({ id: "cg-fname" }); return; }
+      S.fbusy = true; S.fsaid = "Saving the filter…"; draw();
+      callRpc("gather_filter_save", { p: { name: name, note: String(S.fnote || "").trim(), query: filterQuery() } }).then(function (j) {
+        S.fbusy = false; S.q.f = j.slug;
+        if (D.onAddress) D.onAddress(address(D.tab || "coci-lookup", S.q));
+        S.fsaid = (j.saved === "changed" ? "Your filter " + name + " now holds this query." : "Saved as " + name + ".") + " The team opens it at #" + (D.tab || "coci-lookup") + "/gather?f=" + j.slug + ".";
+        loadFilters(true);
+      }, function (e) { S.fbusy = false; S.fsaid = "The filter was not saved (" + String(e && e.message || e) + ")."; draw(); });
+    }
+    function retireFilter(row) {
+      if (S.fbusy) return;
+      S.fbusy = true; S.fsaid = "Retiring " + row.name + "…"; draw();
+      callRpc("gather_filter_retire", { p_slug: row.slug }).then(function () {
+        S.fbusy = false; S.fsaid = row.name + " left the list. Saving it again brings it back.";
+        if (S.q.f === row.slug) { S.q.f = ""; if (D.onAddress) D.onAddress(address(D.tab || "coci-lookup", S.q)); }
+        loadFilters(true);
+      }, function (e) { S.fbusy = false; S.fsaid = row.name + " was not retired (" + String(e && e.message || e) + ")."; draw(); });
+    }
+    function copyAddress(row) {
+      var a = "#" + (D.tab || "coci-lookup") + "/gather?f=" + row.slug;
+      var full = (typeof location !== "undefined" ? location.origin + location.pathname : "") + a;
+      var done = function () { S.fsaid = "Copied the address of " + row.name + ": " + a; draw(); };
+      try { navigator.clipboard.writeText(full).then(done, function () { S.fsaid = "Its address: " + full; draw(); }); }
+      catch (e) { S.fsaid = "Its address: " + full; draw(); }
+    }
+    function filtersCard() {
+      var signed = D.session ? D.session() : null;
+      var card = el("section", { cls: "cg-card", "aria-labelledby": "cg-h0" }, [el("h3", { id: "cg-h0", text: "Saved filters" })]);
+      if (!signed) {
+        card.appendChild(el("p", { cls: "cg-muted cg-small", text: (S.q.f ? "The address names the saved filter " + S.q.f + ". " : "") +
+          "Reviewers sign in to see the team's saved filters and to save this one." }));
+        var mount = el("div");
+        var fold = el("details", null, [el("summary", { text: "Reviewers: sign in" }), mount]);
+        fold.addEventListener("toggle", function () { if (fold.open && !mount.childNodes.length && D.signIn) D.signIn(mount); });
+        card.appendChild(fold);
+        return card;
+      }
+      loadFilters(false);
+      var me = String(signed.email || "").toLowerCase();
+      if (S.filters == null) card.appendChild(el("p", { cls: "cg-muted cg-small", role: "status", text: "Reading the team's saved filters…" }));
+      else if (S.filters.failed) card.appendChild(el("p", { cls: "cg-muted cg-small", role: "alert", text: "The saved filters could not be read (" + S.filters.failed + ")." }));
+      else if (!S.filters.length) card.appendChild(el("p", { cls: "cg-muted cg-small", text: "No filter is saved yet. Name the words below, then save them here." }));
+      else card.appendChild(el("ul", { cls: "cg-flist" }, S.filters.map(function (r) {
+        var q = r.query || {}, on = r.slug === S.q.f;
+        var what = "Words: " + (q.w || "") + (q.look && q.look !== "title" ? ", in " + (q.look === "desc" ? "the description" : "title and description") : "") +
+          (q.cs ? ", common subject " + q.cs : "") + (q.ls ? ", local subjects " + q.ls : "") + (q.to ? ", into " + q.to : "") + ".";
+        return el("li", { cls: on ? "cg-fon" : null }, [
+          on ? el("span", { cls: "cg-t", text: r.name + " (open)" }) : word(r.name, function () { openFilter(r); }, { "aria-label": "Open the saved filter " + r.name }),
+          el("span", { cls: "cg-d", text: what + (r.note ? " " + r.note : "") + " Saved by " + r.saved_by + ", " + String(r.changed_at || r.saved_at || "").slice(0, 10) + "." }),
+          el("span", { cls: "cg-acts" }, [word("Copy its address", function () { copyAddress(r); }, { "aria-label": "Copy the address of " + r.name }),
+            String(r.saved_by || "").toLowerCase() === me ? word("Retire", function () { retireFilter(r); }, { "aria-label": "Retire " + r.name, disabled: S.fbusy ? true : null }) : null])]);
+      })));
+      if (!parse(S.q.w).empty) {
+        var nm = el("input", { type: "text", id: "cg-fname", maxlength: "80", autocomplete: "off", placeholder: "Adapted physical education" });
+        nm.value = S.fname || "";
+        nm.addEventListener("input", function () { S.fname = nm.value; });
+        var nt = el("input", { type: "text", id: "cg-fnote", maxlength: "500", autocomplete: "off" });
+        nt.value = S.fnote || "";
+        nt.addEventListener("input", function () { S.fnote = nt.value; });
+        card.appendChild(el("div", { cls: "cg-ctrls" }, [
+          el("label", { "for": "cg-fname", cls: "cg-field" }, [el("span", { text: "Name this filter" }), nm]),
+          el("label", { "for": "cg-fnote", cls: "cg-field grow" }, [el("span", { text: "A note for the team (optional)" }), nt])]));
+        card.appendChild(el("div", { cls: "cg-acts" }, [word("Save this filter", saveFilter, { cls: "cg-w strong", disabled: S.fbusy ? true : null }),
+          el("span", { cls: "cg-muted cg-small", text: "It saves the words, Look in, the common subject, the local subjects and the target. It saves no merge." })]));
+      }
+      if (S.fsaid) card.appendChild(el("p", { cls: "cg-muted cg-small", role: "status", text: S.fsaid }));
+      return card;
+    }
+
     function draw(focus) {
       var node = S.node;
       if (!node) return;
@@ -450,6 +575,7 @@
       var found = matches(), T = found.T, box = el("div", { cls: "cg" });
       box.appendChild(el("h2", { text: "Gather: courses whose words match, into one common course" }));
       box.appendChild(el("p", { cls: "cg-muted cg-small", text: "Name the words, pick the common course to keep, untick what does not belong, then gather. Every save is one row under your name, and Take it back removes what this visit saved." }));
+      box.appendChild(filtersCard());
 
       // The words and where they look.
       box.appendChild(el("div", { cls: "cg-ctrls" }, [textIn("cg-w", "Words to look for", S.q.w, "w", "adapt -dance", "grow"),

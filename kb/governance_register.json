@@ -347,6 +347,15 @@
       "maintained_in": "public.commons_handover via commons_handover_add() from commons_handover.js (the CPL Commons front page's course panel and College Data Collection's college pane); files in the private Storage bucket commons-handover; answered by commons_handover_mark() from kb/_handover_pickup.py (commons-handover-pickup.yml, nightly and on the page's Try the link through the handover-try-link function); the public reads commons_handover_summary(). Schema: kb/migrations/2026-11-20_commons_handover.sql.",
       "owner": null,
       "when_empty": "A hand-over nobody carries forward sits at 'reads' or 'waiting': the person did their part and the course still shows no outline. The Commons shows each hand-over's standing beside its college in Needs you, and the lane names the steps that carry one into its dataset; until those steps exist a session files each by hand, so an unowned queue here reads to the person as a drop box that goes nowhere."
+    },
+    {
+      "id": "DR-36",
+      "element": "Gather's saved filters (gather_filters)",
+      "drives": "A named Gather query (the words, Look in, common subject, local subject codes and target) the team opens from its own address, #coci-lookup/gather?f=<slug>, so a gather can be rerun as new courses arrive; later, a nightly run may gather new matches above a confidence score from these rows.",
+      "decides": "Sky's call, Sam's to revise (cpl_memory d-gather-saved-filters-s726), on Sam's words of 2026-11-24 on the Gather mock: saved filters \"might come in handy for auto combining\". Acceptance: only a signed-in reviewer saves a filter, under their own name, never the team phrase; a filter saves no decision, the merges it leads to are kb_curation rows under the reviewer's name; a reviewer changes or retires only their own filter; nothing deletes a row; a rollback keeps the rows.",
+      "maintained_in": "public.gather_filters via gather_filter_save() and gather_filter_retire() from commons_gather.js (the Gather view of Courses and Programs). Schema: kb/migrations/2026-11-25_gather_filters.sql.",
+      "owner": null,
+      "when_empty": "With no saved filter, a gather is rebuilt by hand from its address each time; nothing is lost, and the nightly auto combining has nothing to read."
     }
   ],
   "acceptance_standards": [
