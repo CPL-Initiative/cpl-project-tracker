@@ -22,11 +22,14 @@ Fill `local_subject_title` with the heading as the catalog prints it, and beside
 Only a catalog subject heading or prefix legend settles a title; a department label informs it. Leave every other
 column as it stands.
 
-`recommended_title`, `title_confidence`, `title_level` and `title_why` are a starting guess, never an answer: the Subjects
+`recommended_title`, `title_confidence` and `title_why` are a starting guess, never an answer: the Subjects
 recommender (`kb/_build_local_subject_recommendations.py`) run for every college. Its sources (the same code at other
 colleges or in the district, the courses that share an M-ID, C-ID or CCN with a titled code) were measured against the
-1,496 titles already collected, each left out of its own vote; the confidence is that measured share. High is 90% or
-better, Medium 60% or better. Course joins can mislead (Diablo Valley's FTVE reads Law): confirm against the catalog.
+1,496 titles already collected, each left out of its own vote; the confidence is that measured share as a whole number
+from 0 to 100, the recommender's `confidence` copied as it stands (Sam, 2026-11-25: "confidence bars 0-100 rather than
+low, med, high throughout all commons procedures"). A new file carries no `title_level` column; the dated files already
+committed keep theirs, and their 0-1 `title_confidence`, as records. Course joins can mislead (Diablo Valley's FTVE
+reads Law): confirm against the catalog.
 
 `why_no_title` says why each row is left: the catalog was not read (the reason follows), the catalog read lists no
 heading for the code, or only a department label was found (`department_label_hint` and `hint_url`, which inform a title
@@ -37,7 +40,7 @@ Tiers, in order of the work each unblocks:
 
 1. The code carries courses on one of the 88 stray M-ID codes, which wait to go back to the holding pen
    (`r-no-mid-on-a-stray-code-sam-2026-11-25`).
-2. The code has courses under Needs an M-ID, and its common subject is below 0.9 confidence.
+2. The code has courses under Needs an M-ID, and its common subject scores below 90 of 100.
 3. The code has courses under Needs an M-ID, and its common subject is already confident.
 4. The common subject is below 0.9 confidence; its courses already have M-IDs, which the title would check.
 5. The rest.

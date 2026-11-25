@@ -10,6 +10,7 @@
 //       whose catalog prints no names reads TBA (in its row and in each code's title);
 //   (5) a press on a college moves the address, and the view reports it (every view has an address);
 //   (6) the tables carry th scope, a labeled scrolling region, and the view stores nothing;
+//   (8b) ⭐ Sam, 2026-11-25: a recommendation draws CPL_COMMONS.confBar from its 0-100 confidence, never a level word;
 //   (12) S718 (Sam, 2026-11-23: "add a short bulleted set of quick links to prioritized action needed ... we can default
 //       display the cards collapsed all but the tops sections"): ⭐ the card's top section carries the quick links, each
 //       with its live count and a target that exists; Collect, Curate and Connect start folded behind a button with
@@ -46,8 +47,8 @@ const FILES = {
     codes: { MATH: [["1", "Algebra", "C", "Both", 4, "MATH 151", "", "MATH M1001"], ["2", "Statistics", "C", "COCI", 4, "", "STAT C1000", ""],
       ["300", "Math Lab", "N", "COCI", 0, "", "", ""], ["9", "Topics", "", "Catalog", "1", "", "", ""]], "ES/A": [["5", "Yoga", "C", "Both", 1, "", "", ""]] } },
   "kb/status/local_subject_recommendations.json": { colleges: [{ slug: "alpha", rows: [{ code: "MATH",
-    title: { title: "Mathematics", level: "High", from: "other_colleges", why: "other colleges: 3 of 3 other colleges (all agree).", also: [{ title: "Math Lab", from: "program_titles" }] },
-    common: { code: "MATH", discipline: "Mathematics", level: "Medium", from: "own_courses", why: "4 of 4 of its courses with an M-ID sit under MATH." } }] }] }
+    title: { title: "Mathematics", confidence: 70, from: "other_colleges", why: "other colleges: 3 of 3 other colleges (all agree).", also: [{ title: "Math Lab", from: "program_titles" }] },
+    common: { code: "MATH", discipline: "Mathematics", confidence: 80, from: "own_courses", why: "4 of 4 of its courses with an M-ID sit under MATH." } }] }] }
 };
 
 function load(hash, files) {
@@ -156,6 +157,17 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(8) ⭐ S722: the row has an Accept beside Edit", !!math.querySelector('button[data-csb-accept="row"]') && /Accept Mathematics/.test(math.querySelector('button[data-csb-accept="row"]').getAttribute("aria-label")));
   check("(8) a titled row with a common code carries no recommendation", !d.querySelector('.csb-codes tr[data-code="ENGL"] .csb-rec'));
   check("(8) a row the file does not name carries none", !zzz.querySelector(".csb-rec"));
+  /* (8b) Sam, 2026-11-25 (r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25): "confidence bars 0-100 rather
+     than low, med, high throughout all commons procedures". The file writes 0-100; the panel draws CPL_COMMONS.confBar
+     with that number beside it, and no level word anywhere on the row. */
+  const tbar = math.children[2].querySelector(".csb-cands li .cmn-cbar"), cbar = mcom && mcom.querySelector(".cmn-cbar");
+  check("(8b) ⭐ the recommended title draws a 0-100 confidence bar with its number (70 in the file reads 70, never 7000 or 1)",
+    tbar && tbar.getAttribute("data-conf") === "70" && txt(tbar.querySelector(".cmn-cbar-n")) === "70" && /confidence 70 of 100/.test(tbar.getAttribute("aria-label")));
+  check("(8b) ⭐ the recommended common code draws a bar too (80)", cbar && cbar.getAttribute("data-conf") === "80");
+  check("(8b) ⭐ no High, Medium or Low reads on the row, and no data-level attribute is left",
+    !/\b(High|Medium|Low)\b/.test(txt(math)) && !math.querySelector("[data-level]"));
+  check("(8b) a recommendation with no number draws no bar and no level word", math.children[2].querySelectorAll(".csb-cands li")[1]
+    && !math.children[2].querySelectorAll(".csb-cands li")[1].querySelector(".cmn-cbar"));
   /* (9) the course panel (S700, #3655 item 3): a local code opens its courses, credit and noncredit apart */
   let z = load("#commons/subjects/alpha");
   await z.M.boot(); await settle();
@@ -260,7 +272,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
       r[ci.indexOf("categories")] = [["Parenting", 1]]; }
   }));
   NC.noncredit_mq = { "Parenting": { mq_discipline: "Parent Education: Noncredit", common_code: "PARN" }, "Workforce Preparation": { mq_discipline: null, common_code: null } };
-  const NCREC = { colleges: [{ slug: "beta", rows: [{ code: "WELD", common: { code: null, discipline: null, level: null, from: "noncredit_category", category: "Workforce Preparation",
+  const NCREC = { colleges: [{ slug: "beta", rows: [{ code: "WELD", common: { code: null, discipline: null, confidence: null, from: "noncredit_category", category: "Workforce Preparation",
     why: "The category has no common subject code yet: its dominant COCI noncredit category, Workforce Preparation (5 of 7 noncredit courses, 71%)." } }] }] };
   x = load("#commons/subjects/disagree", { "kb/status/local_subject_titles.json": NC, "kb/status/local_subject_recommendations.json": NCREC });
   await x.M.boot(); await settle();

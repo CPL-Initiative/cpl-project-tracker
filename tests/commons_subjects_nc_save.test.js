@@ -57,7 +57,7 @@ const FILES = {
   "kb/status/local_subject_titles.json": FIX,
   "kb/status/subject_courses/alpha.json": { college: "Alpha College", slug: "alpha", columns: ["number", "title", "band", "listed", "units", "cid", "ccn", "mid"], codes: {} },
   "kb/status/local_subject_recommendations.json": { colleges: [{ slug: "alpha", rows: [{ code: "AED",
-    title: { title: "Electrical Apprenticeship", level: "Medium", from: "noncredit_list", why: "noncredit list." } }] }] }
+    title: { title: "Electrical Apprenticeship", confidence: 70, from: "noncredit_list", why: "noncredit list." } }] }] }
 };
 const REST = "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/kb_curation";
 const ME = { email: "a@rccd.edu", access_token: "tok.en.x", refresh_token: "r" };

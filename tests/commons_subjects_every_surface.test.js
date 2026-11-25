@@ -160,7 +160,7 @@ const press = (w, el) => el.dispatchEvent(new w.Event("click", { bubbles: true }
     recommend: { common: code, discipline: { MATH: "Mathematics", WELD: "Welding" }[code] || "English", confidence: conf, why: "peers agree" } });
   const SW9 = { "kb/status/statewide_subject_codes.json": { totals: { codes: 3, colleges: 2, pairs: 4, courses: 28, one_college: 2 }, common_codes: [["ENGL", "English"], ["MATH", "Mathematics"], ["WELD", "Welding"]],
       self_recall: [], codes: [swc("ENGL", [["Alpha College", 11]], 0.95), swc("MATH", [["Alpha College", 4]], 0.8), swc("WELD", [["Alpha College", 6], ["Beta-College", 7]], 0.6)] },
-    "kb/status/local_subject_recommendations.json": { colleges: [{ slug: "alpha", rows: [{ code: "MATH", title: { title: "Mathematics", level: "Medium", why: "other colleges.",
+    "kb/status/local_subject_recommendations.json": { colleges: [{ slug: "alpha", rows: [{ code: "MATH", title: { title: "Mathematics", confidence: 70, why: "other colleges.",
       search: { query: "Alpha College MATH", searched_on: "2026-11-21", result_title: "Mathematics Course Descriptions", result_url: "https://alpha.example.edu/math/", where: "college site" } } }] }] } };
   x = load("#commons/subjects", SW9);
   await x.X.boot(x.root, ""); await settle();

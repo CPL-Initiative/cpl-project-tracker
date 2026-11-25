@@ -2,9 +2,12 @@
 """kb/_build_local_subject_recommendations.py (S700, #3655; Sam, 2026-11-21: a recommendation beside every row
 with no catalog title, its confidence measured before it shows).
 
-Failure modes: a titled code's own heading counted in its own vote (every source would read 100%); a level that is
-not the one its source measured; program titles reading High (Sam: they inform, never set); a row left on the
-noncredit hold after it lifted (S701), or a noncredit title guessed from a category name; a noncredit level claimed
+Failure modes: a titled code's own heading counted in its own vote (every source would read 100%); a score that is
+not the one its source measured; program titles reaching 90 (Sam: they inform, never set); a Low, Medium or High level
+left anywhere in the file after Sam's ruling of 2026-11-25 (r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25:
+"confidence bars 0-100 rather than low, med, high throughout all commons procedures"); a confidence written on the old
+0-1 scale; a row left on the
+noncredit hold after it lifted (S701), or a noncredit title guessed from a category name; a noncredit score claimed
 above its measured share; a category with no common code given one; a differing source left out of sight; the subject map or Sam's 30 decisions read as a
 source; a committed file that the daily build would rewrite.
 
@@ -12,6 +15,7 @@ Run from repo root: python3 tests/local_subject_recommendations_test.py
 """
 import json
 import os
+import re
 import sys
 from collections import Counter
 
@@ -48,24 +52,47 @@ doc = R.build(ROOT)
 table = doc["measured_on_titled_codes"]
 for s, conds in table.items():
     for c, m in conds.items():
-        want = "High" if m["share"] >= 0.9 else ("Medium" if m["share"] >= 0.6 else "Low")
+        want = int(round(100 * m["right"] / m["asked"] + 1e-9))
         if m["asked"] < 20:
-            want = "Low"
-        if s == "program_titles" and want == "High":
-            want = "Medium"
-        check("%s, %s: %d of %d right reads %s" % (s, c, m["right"], m["asked"], want), m["level"] == want)
-check("program titles never read High", all(m["level"] != "High" for m in table.get("program_titles", {}).values()))
+            want = min(want, 59)
+        if s == "program_titles":
+            want = min(want, 89)
+        check("%s, %s: %d of %d right scores %d" % (s, c, m["right"], m["asked"], want), m["score"] == want)
+check("program titles never score 90 or more", all(m["score"] < 90 for m in table.get("program_titles", {}).values()))
+check("a cell measured on fewer than 20 codes scores under 60 (sibling same letters, 2 of 2)",
+      all(m["score"] <= R.THIN_CAP for conds in table.values() for m in conds.values() if m["asked"] < 20))
+
+
+def walk(x, path=""):
+    if isinstance(x, dict):
+        for k, v in x.items():
+            yield from walk(v, path + "/" + k)
+            yield path + "/" + k, k, v
+    elif isinstance(x, list):
+        for i, v in enumerate(x):
+            yield from walk(v, path + "[%d]" % i)
+
+
+text = R.dump(doc)
+leaks = [p for p, k, v in walk(doc) if k == "level" or k.endswith("_level") or k == "levels"
+         or (isinstance(v, str) and v in ("Low", "Medium", "High"))]
+check("⭐ Sam, 2026-11-25: no Commons recommendation output carries a Low, Medium or High level %s" % leaks[:3], not leaks)
+check("⭐ no totals key is named by a level (title_high, common_medium, ...)",
+      not [k for k in doc["totals"] if re.search(r"_(high|medium|low)$", k)])
+confs = [v for p, k, v in walk(doc) if k == "confidence" and v is not None]
+check("⭐ every confidence is a whole number from 0 to 100, never the old 0-1 share",
+      confs and all(isinstance(v, int) and 0 <= v <= 100 for v in confs) and any(v > 1 for v in confs))
 
 recs = {(c["slug"], r["code"]): r for c in doc["colleges"] for r in c["rows"]}
 # ── S701: the hold lifted (r-noncredit-title-list-go-sam-2026-11-22) ──
 check("no row is left on the noncredit hold", not [r for r in data.rows if r["title_state"] == "noncredit_hold"])
 nct, ncc = doc["noncredit"]["title_from_the_list"], doc["noncredit"]["common_code_from_the_category"]
 for c, m in sorted(nct.items()) + [("common code", ncc)]:
-    want = "High" if m["share"] >= 0.9 else ("Medium" if m["share"] >= 0.6 else "Low")
+    want = int(round(100 * m["right"] / m["asked"] + 1e-9)) if m["asked"] else 0
     if m["asked"] < 20:
-        want = "Low"
-    check("noncredit %s: %d right, %d wrong of %d reads %s, never above its measured share" % (c, m["right"], m["wrong"], m["asked"], want),
-          m["level"] == want and m["right"] + m["wrong"] == m["asked"])
+        want = min(want, 59)
+    check("noncredit %s: %d right, %d wrong of %d scores %d, never above its measured share" % (c, m["right"], m["wrong"], m["asked"], want),
+          m["score"] == want and m["right"] + m["wrong"] == m["asked"])
 nc_only = [r for r in data.rows if r["noncredit_courses"] and not r["credit_courses"]]
 listed = {t["title"]: t for t in data.nc_titles}
 ok = True
@@ -88,7 +115,7 @@ check("all four conditions stay measured in the file, the two guesses marked unu
       set(nct) == {"same code", "letters, one title", "letters, several titles", "courses match"}
       and not nct["letters, several titles"]["used"] and not nct["courses match"]["used"])
 check("the common code's note names the subject map as its answer key, which reads a code without its band",
-      "subject map" in doc["noncredit"]["note"] and "without its credit or noncredit band" in doc["noncredit"]["note"] and ncc["level"] == "Low")
+      "subject map" in doc["noncredit"]["note"] and "without its credit or noncredit band" in doc["noncredit"]["note"] and ncc["score"] < 60)
 nocode = [(r, recs[(r["slug"], r["code"])]["common"]) for r in nc_only if (r["slug"], r["code"]) in recs
           and recs[(r["slug"], r["code"])].get("common", {}).get("code", "x") is None]
 check("⭐ a noncredit-only code under a category with no common code names the category and recommends no code",
@@ -106,8 +133,13 @@ check("a row that already holds a common code is never given one",
       all("common" not in recs[(r["slug"], r["code"])] for r in data.rows
           if r["common"] and (r["slug"], r["code"]) in recs))
 differs = [r["title"] for r in recs.values() if r.get("title", {}).get("also")]
-check("where sources differ the row is never High and shows the other title (S722: each candidate carries its own bar)",
-      differs and all(t["level"] != "High" and len(t["candidates"]) == len(t["also"]) + 1 for t in differs))
+check("where sources differ every candidate scores 89 at most and the other title shows (S722: each candidate carries its own bar)",
+      differs and all(t["confidence"] <= R.DISAGREE_CAP and all(c["confidence"] <= R.DISAGREE_CAP for c in t["candidates"])
+                      and len(t["candidates"]) == len(t["also"]) + 1 for t in differs))
+agree = [r["title"] for r in recs.values() if len((r.get("title", {}).get("candidates") or [{}])[0].get("from") or []) > 1
+         and len(r["title"]["candidates"]) == 1]
+check("sources that agree join at 1 - the product of their misses, 99 at most, never below the strongest alone",
+      agree and all(t["confidence"] <= R.JOIN_CAP for t in agree))
 cands = [r["title"]["candidates"] for r in recs.values() if r.get("title", {}).get("candidates")]
 check("S722: every candidate title is listed, most confident first, the first is the recommendation",
       cands and all([c["confidence"] for c in cs] == sorted([c["confidence"] for c in cs], reverse=True) for cs in cands)
@@ -132,15 +164,17 @@ check("every filed search names its query, its date and where its result sits",
 check("a title or a label is recorded only from the college's own site", all(x["where"] != "none" for x in sr if x.get("title") or x.get("label")))
 alone = [r["title"] for r in recs.values() if (r.get("title", {}).get("candidates") or [{}])[0].get("from") == ["web_search"]]
 # Sam, 2026-11-24 (S722), updating his 2026-11-21 word that a search "lifts or lowers": "If you did a web search and found
-# a match ... your confidence bar should get higher". A title from the college's own site reads at WEB_SHARE["title"]
-# (Medium), a label at WEB_SHARE["label"] (Low); neither reaches High alone.
-check("a search by itself reads Medium for a title and Low for a label, never High (Sam, S722)", alone and all(
-    t["level"] != "High" and t["confidence"] in (R.WEB_SHARE["title"], R.WEB_SHARE["label"]) for t in alone))
+# a match ... your confidence bar should get higher". A title from the college's own site reads at WEB_SCORE["title"]
+# (80), a label at WEB_SCORE["label"] (55); neither reaches 90 alone.
+check("a search by itself scores 80 for a title and 55 for a label, never 90 (Sam, S722)", alone and all(
+    t["confidence"] < 90 and t["confidence"] in (R.WEB_SCORE["title"], R.WEB_SCORE["label"]) for t in alone))
 labeled = {(x["college"], x["local_code"]) for x in sr if x.get("label") and not x.get("title")}
 check("a department label is kept and read: a row it alone names says it is a label",
       labeled and all("label" in recs[k]["title"]["why"] for k in labeled if k in recs and recs[k].get("title", {}).get("from") == "web_search"))
 T = doc["totals"]
-check("the totals add up", T["no_title"] == sum(T.get(k, 0) for k in ("title_high", "title_medium", "title_low", "title_none")))
+check("the totals add up", T["no_title"] == sum(T.get(k, 0) for k in ("title_90_plus", "title_60_to_89", "title_under_60", "title_none")))
+check("the title bands count the scores they name", T.get("title_90_plus", 0) == sum(
+    1 for r in recs.values() if r.get("title") and r["title"]["confidence"] >= 90))
 
 print("%d/%d checks passed" % (sum(results), len(results)))
 sys.exit(0 if all(results) else 1)
