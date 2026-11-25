@@ -64,18 +64,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
-    21.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
-   "why": [
-    "the blocks sum to 15.0-21.0; the catalog states 18.0-18.0"
+   "against": "program",
+   "why": [],
+   "pooled": [
+    {
+     "blocks": [
+      "ELECTIVE COURSES",
+      "ELECTIVES CONTINUED - CHOOSE 3"
+     ],
+     "figure": [
+      6.0,
+      6.0
+     ],
+     "minimum": false,
+     "parts": [
+      3.0,
+      9.0
+     ],
+     "read": [
+      6.0,
+      6.0
+     ],
+     "words": "The two elective blocks sit under a parent group 'ELECTIVE COURSES - COMPLETE 6 UNITS' (Total 6): students complete 6 elective units combined, with 3-6 units from the BUSAD elective list and 0-3 units from the BIT list."
+    }
    ]
   },
   "repeated": {
@@ -97,7 +118,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

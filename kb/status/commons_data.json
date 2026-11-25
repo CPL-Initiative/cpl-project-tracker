@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T10:05:48Z",
+ "written_at": "2026-11-25T12:40:06Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17370,
-  "gap": 4965,
+  "passing": 17376,
+  "gap": 4959,
   "with_gap": 118,
   "cost_usd": 1341.08,
   "passed_at_read": 16397,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16864,
-  "gap": 4965,
-  "collected_with_gaps": 506,
+  "passing": 16869,
+  "gap": 4959,
+  "collected_with_gaps": 507,
   "discontinued": 0
  },
  "census_live": {
@@ -3796,12 +3796,12 @@
    "harvested": true,
    "slug": "cuyamaca",
    "programs": 186,
-   "passing": 168,
-   "gap": 18,
+   "passing": 169,
+   "gap": 17,
    "causes": {
     "page_not_found": 6,
     "places_none": 1,
-    "unknown_without_live": 11
+    "unknown_without_live": 10
    },
    "census_causes": {
     "page_not_found": 3,
@@ -3852,7 +3852,7 @@
    "read_seconds": 1100.0,
    "run": "44752892297",
    "levers": {
-    "reconcile_steps": 11,
+    "reconcile_steps": 10,
     "reader_page_search": 6,
     "reader_page_assignment": 1
    },
@@ -7845,13 +7845,13 @@
    "harvested": true,
    "slug": "modesto_junior",
    "programs": 199,
-   "passing": 178,
-   "gap": 21,
+   "passing": 183,
+   "gap": 16,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 8,
     "places_none": 1,
-    "unknown_without_live": 9
+    "unknown_without_live": 4
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -7907,8 +7907,8 @@
    "read_seconds": 899.9,
    "run": "44540818388",
    "levers": {
-    "reconcile_steps": 9,
     "reader_page_search": 8,
+    "reconcile_steps": 4,
     "program_course_file_check": 3,
     "reader_page_assignment": 1
    },

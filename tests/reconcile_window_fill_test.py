@@ -236,7 +236,10 @@ WORDS_ELSEWHERE = {("East Los Angeles College", "33382"): "the printed program h
                    ("Porterville College", "06773"): "the section heading is not printed (text begins mid-section)",
                    # The S720 second reader: a hedge, every listed course placed, so no row is missing behind it.
                    ("Cypress College", "37246"): "\"a 4-unit course may be missing from the list\", a hedge"}
-seen = refused_n = 0
+# S731 (kb/_program_piles_s731_pooled.py): the pooled reading takes Porterville 06773's 18 over Groups I and II, so
+# its major adds up with no fill and it leaves this population (plan s731p passes it).
+NO_FILL_S731 = {("Porterville College", "06773")}
+seen = refused_n = kept = 0
 for path in sorted(glob.glob(os.path.join(COLLEGE_DIR, "*", "records", "*.json"))):
     with open(path, encoding="utf-8") as fh:
         f = json.load(fh)
@@ -253,15 +256,17 @@ for path in sorted(glob.glob(os.path.join(COLLEGE_DIR, "*", "records", "*.json")
         continue
     seen += 1
     key = (f.get("college"), str(f.get("control_number")))
+    check(key not in NO_FILL_S731, "%s %s: the pooled reading adds it up with no fill" % key)
+    kept += key in WORDS_ELSEWHERE
     on = arith(f)
     if refused(on) and not on.get("pass"):
         refused_n += 1
     elif key not in WORDS_ELSEWHERE:
         check(False, "%s %s: a rescore passes it through a fill while its notes name a cut (%s)"
               % (key + (next(w for w in words if INDEPENDENT.search(w))[:120],)))
-check(seen >= 19 and refused_n == seen - len(WORDS_ELSEWHERE),
+check(seen >= 18 and kept == len(WORDS_ELSEWHERE) - len(NO_FILL_S731) and refused_n == seen - kept,
       "every college: of %d records a rescore passes through a fill whose words name a cut, the scorer refuses %d "
-      "and the %d read by hand keep their pass" % (seen, refused_n, len(WORDS_ELSEWHERE)))
+      "and the %d read by hand keep their pass" % (seen, refused_n, kept))
 
 # ── 5. Every college, filed ───────────────────────────────────────────────────────────────────────
 HELD_FOR_PLAN = {("American River College", "04544")}

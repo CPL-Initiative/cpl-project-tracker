@@ -760,6 +760,8 @@ def _stem(name) -> str:
     prev = None
     while s and s != prev:
         prev, s = s, _STEM_TAIL.sub("", s).strip(" -–:")
+        if POOLED_S731:
+            s = _STEM_TAIL_S731.sub("", s).strip(" -–:")
     return s
 
 
@@ -797,12 +799,30 @@ POOL_COMPLETES = re.compile(
 # A figure belongs to the letters or the heading it is printed beside: within this many characters of them.
 POOL_NEAR = 60
 POOL_NEAR_HEADING = 40
+# S731 (lane 1, plan s731p): the real pools the reading refused at Porterville, Cuyamaca and Modesto Junior
+# (f-porterville-cuyamaca-real-pools-refused-s727), each a reader's sentence in a shape the figures above lack:
+# "at least 18 combined units from Groups I and II" and "a minimum of 18 combined units" (Porterville 06773, 30235),
+# "choose a minimum of 18 units total" (Cuyamaca 18634), "requires 'a minimum of 18 units'" with the page's quote mark
+# (Cuyamaca 18636), and "a parent group totaling 9 units" (Modesto 43164). "18 combined units from Groups I and II"
+# says the groups complete the total (POOL_COMPLETES_S731). A list's heading that closes on its count ("LIST A -
+# SELECT THREE") is the same heading as the list beside it ("LIST A"), and a heading the page marks continued
+# ("ELECTIVES CONTINUED - CHOOSE 3", "... CONT.") goes on the heading before it (Modesto 38869). POOLED_S731 lets the
+# self-recall (kb/_program_piles_s731_pooled.py) measure the reading without these.
+POOLED_S731 = True
+FIGURE_OVER_S731 = [(re.compile(p, re.I), least, fill) for p, least, fill in (
+    (r"\b(?:at\s+least|a\s+minimum\s+of)\s+" + _FIG + r"\s+combined\s+units?\b", True, False),
+    (r"\bchoose\s+a\s+minimum\s+of\s+" + _FIG + r"\s+units\b", True, False),
+    (r"\brequires?\s+['\"‘“]a\s+minimum\s+of\s+" + _FIG + r"\s+units\b", True, False),
+    (r"\btotall?ing\s+" + _FIG + r"\s+units\b", False, False))]
+POOL_COMPLETES_S731 = re.compile(r"\b\d+(?:\.\d+)?\s+combined\s+units?\s+from\b", re.I)
+_STEM_TAIL_S731 = re.compile(r"\s*[-–]\s*(?:SELECT|CHOOSE)\b.*$", re.I)
+CONTINUED_HEADING = re.compile(r"\bCONT(?:INUED\b|\.)", re.I)
 
 
 def _pool_figures(sentence: str) -> list[tuple]:
     """Every figure the sentence prints, as (start, end, lo, hi, minimum, fill, words), in order."""
     out = []
-    for rx, least, fill in FIGURE_OVER:
+    for rx, least, fill in FIGURE_OVER + (FIGURE_OVER_S731 if POOLED_S731 else []):
         for m in rx.finditer(sentence):
             n = float(m.group("n"))
             top = _num(m.groupdict().get("m")) or n
@@ -855,9 +875,13 @@ def pooled_figures(record: dict) -> list[dict]:
     while i < len(blocks):
         j = i
         st = _stem(blocks[i].get("name"))
-        while j + 1 < len(blocks) and st and _stem(blocks[j + 1].get("name")) == st:
+        while j + 1 < len(blocks) and st and (
+                _stem(blocks[j + 1].get("name")) == st
+                or (POOLED_S731 and CONTINUED_HEADING.search(str(blocks[j + 1].get("name") or "")))):
             j += 1
-        if j > i:
+        # S731: a run whose blocks sit in an option group is a choice among them, never a pool (pools_read refuses
+        # it too; College of Marin 46068's two Biology series, one heading once its "- select one series" tail goes).
+        if j > i and not (POOLED_S731 and any(blocks[k].get("option_group") for k in range(i, j + 1))):
             runs.append((list(range(i, j + 1)), st))
         i = j + 1
 
@@ -874,7 +898,8 @@ def pooled_figures(record: dict) -> list[dict]:
             tot = next((f for f in figs if is_total(f)), None)
             if tot is not None:
                 # The program's own total: the lists complete it, where the sentence names them and says so.
-                if (pooled or tot[5]) and POOL_PARTS.search(sent) and POOL_COMPLETES.search(sent):
+                if (pooled or tot[5]) and POOL_PARTS.search(sent) and (
+                        POOL_COMPLETES.search(sent) or (POOLED_S731 and POOL_COMPLETES_S731.search(sent))):
                     found.setdefault("all", set()).add(((tot[2], tot[3]), tot[4], sent))
                 continue
             if not pooled or len({(f[2], f[3]) for f in figs}) > 1:

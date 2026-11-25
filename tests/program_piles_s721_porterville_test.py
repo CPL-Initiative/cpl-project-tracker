@@ -60,12 +60,20 @@ members = W.census_members(CENSUS_AT_PLAN)
 check(set(members) == set(ROWS) | HELD and len(members) == 19 and not set(W.PERSON) & set(members),
       "the fixture gives the 19 keys")
 check(not OTHER_LEVER & set(members), "the reader_page_search records are another lever")
+# S731's plan s731p (tests/fixtures/pooled_s731.json) takes two of the rows forward under its pooled reading: 06773
+# and 30235 pass on their 18 over Groups I and II. Their files are s731p's, so this plan's rule no longer names
+# their gap (precision reads them "none", and they make no claim and no boundary reading); s731p's test checks them.
+with open(os.path.join(ROOT, "tests", "fixtures", "pooled_s731.json"), encoding="utf-8") as fh:
+    LATER = {r["control_number"] for r in json.load(fh)["rows"] if r["college"] == COLLEGE}
+check(LATER == {"06773", "30235"}, "s731p takes 06773 and 30235 forward (%s)" % sorted(LATER))
 pr = W.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 19 and pr["right"] == 19 and not pr["wrong"], "precision 19 of 19: %s" % pr["wrong"])
+check(pr["read"] == 19 and pr["right"] == 19 - len(LATER)
+      and sorted(pr["wrong"]) == sorted([cn, "pool_figure_not_read", "none"] for cn in LATER),
+      "precision 19 of 19, less the two s731p moved: %s" % pr["wrong"])
 check(pr["by_answer"].get("none") == 4 and pr["by_answer"].get(W.PASSES) == 1, "4 held, 1 passed")
 
 cc = W.claim_checks(CENSUS_AT_PLAN)
-check(cc["counts"] == {"stands": 15} and not cc["not_standing"], "15 claims stand: %s" % cc)
+check(cc["counts"] == {"stands": 15 - len(LATER)} and not cc["not_standing"], "13 claims stand: %s" % cc)
 src = W._sources()
 s2 = copy.deepcopy(src)
 s2["40122"]["codes_found"] = [c for c in s2["40122"]["codes_found"] if c != "MUSCP108"]
@@ -80,7 +88,8 @@ check(W.claim(W._load("43554"), s2) == "the capture found the listed code on the
       "a capture that found CGRA P152 itself holds the rename")
 
 bd = W.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and sum(bd["counts"].values()) == 14 * 3 + 1 + 3, "every boundary reading names no gap: %s" % bd)
+check(not bd["wrong"] and sum(bd["counts"].values()) == (14 - len(LATER)) * 3 + 1 + 3,
+      "every boundary reading names no gap: %s" % bd)
 
 with open(RECEIPT, encoding="utf-8") as fh:
     rec = json.load(fh)
@@ -98,6 +107,8 @@ for part in ("apply", "preread", "preread_md5", "rollback"):
 check(W.plan(write=False, census_path=CENSUS_AT_PLAN)["rows"] == [], "a second run plans none")
 images = NG._load_images({COLLEGE})
 for r in rec["records"]:
+    if r["control_number"] in LATER:
+        continue
     img = images[(COLLEGE, r["control_number"])]
     want = [] if r["moves_to"] == W.PASSES else [r["moves_to"]]
     check(img["checks"] == r["after_image"]["checks"], "%s: the load posts the receipt's after-image" % r["control_number"])
@@ -126,7 +137,7 @@ check(W.renamed(unscored, {"43554": dict(W.RENAMED["43554"], listed="CGRAP153")}
 other = dict(unscored, control_number="45517")
 check(W.renamed(other) is None, "the rename is 43554's alone (45517 lists CGRA P152 too)")
 
-check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS if ROWS[cn] != W.PASSES),
+check(not any(W.scorer_passes(W._load(cn)) for cn in ROWS if ROWS[cn] != W.PASSES and cn not in LATER),
       "the scorer passes none of the gap rows (#3753's MAJOR)")
 check(all(W.on_live_run(W._load(cn)) for cn in ROWS), "every row is on its live run")
 # Read as the receipts stood before this plan's own apply (its s721c receipts post its rows once migrated).
