@@ -82,26 +82,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    4.5,
-    10.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 4.5-10.0; the catalog states 18.0-18.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     28.5,
-     44.0
+     42.0,
+     52.0
     ],
     "stated": [
      60.0,
@@ -114,10 +112,29 @@
     ],
     "why": [],
     "fill": [
-     16.0,
-     31.5
+     8.0,
+     18.0
     ]
-   }
+   },
+   "pooled": [
+    {
+     "blocks": "all",
+     "figure": [
+      18.0,
+      18.0
+     ],
+     "minimum": false,
+     "parts": [
+      4.5,
+      10.0
+     ],
+     "read": [
+      18.0,
+      18.0
+     ],
+     "words": "Overall rule: select at least one course from each of categories A, B and C, then additional courses from A, B and/or C to total 18 units (Major Total 18), with no more than six units of activity courses."
+    }
+   ]
   },
   "repeated": {
    "codes": [],
@@ -141,7 +158,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

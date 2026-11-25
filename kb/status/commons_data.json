@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-25T01:40:30Z",
+ "written_at": "2026-11-25T06:47:43Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17291,
-  "gap": 5044,
+  "passing": 17302,
+  "gap": 5033,
   "with_gap": 118,
   "cost_usd": 1341.14,
   "passed_at_read": 16371,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16820,
-  "gap": 5044,
+  "passing": 16831,
+  "gap": 5033,
   "collected_with_gaps": 471,
   "discontinued": 0
  },
@@ -3797,12 +3797,12 @@
    "harvested": true,
    "slug": "cuyamaca",
    "programs": 186,
-   "passing": 166,
-   "gap": 20,
+   "passing": 168,
+   "gap": 18,
    "causes": {
     "page_not_found": 6,
     "places_none": 1,
-    "unknown_without_live": 13
+    "unknown_without_live": 11
    },
    "census_causes": {
     "page_not_found": 3,
@@ -3853,7 +3853,7 @@
    "read_seconds": 1100.0,
    "run": "44752892297",
    "levers": {
-    "reconcile_steps": 13,
+    "reconcile_steps": 11,
     "reader_page_search": 6,
     "reader_page_assignment": 1
    },
@@ -5256,13 +5256,13 @@
    "harvested": true,
    "slug": "golden_west",
    "programs": 181,
-   "passing": 113,
-   "gap": 68,
+   "passing": 114,
+   "gap": 67,
    "causes": {
     "no_closed_list": 29,
     "page_not_found": 17,
     "places_none": 6,
-    "unknown_without_live": 16
+    "unknown_without_live": 15
    },
    "census_causes": {
     "no_closed_list": 29,
@@ -5320,7 +5320,7 @@
    "levers": {
     "program_course_file_check": 29,
     "reader_page_search": 17,
-    "reconcile_steps": 16,
+    "reconcile_steps": 15,
     "reader_page_assignment": 6
    },
    "collection": {
@@ -7848,13 +7848,13 @@
    "harvested": true,
    "slug": "modesto_junior",
    "programs": 199,
-   "passing": 173,
-   "gap": 26,
+   "passing": 178,
+   "gap": 21,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 8,
     "places_none": 1,
-    "unknown_without_live": 14
+    "unknown_without_live": 9
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -7910,7 +7910,7 @@
    "read_seconds": 899.9,
    "run": "44540818388",
    "levers": {
-    "reconcile_steps": 14,
+    "reconcile_steps": 9,
     "reader_page_search": 8,
     "program_course_file_check": 3,
     "reader_page_assignment": 1
@@ -9601,12 +9601,12 @@
    "harvested": true,
    "slug": "rio_hondo",
    "programs": 321,
-   "passing": 279,
-   "gap": 42,
+   "passing": 282,
+   "gap": 39,
    "causes": {
     "no_closed_list": 20,
     "page_not_found": 13,
-    "unknown_without_live": 9
+    "unknown_without_live": 6
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -9662,7 +9662,7 @@
    "levers": {
     "program_course_file_check": 20,
     "reader_page_search": 13,
-    "reconcile_steps": 9
+    "reconcile_steps": 6
    },
    "collection": {
     "program_reader": {
