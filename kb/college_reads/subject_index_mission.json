@@ -1,29 +1,28 @@
 {
- "_readme": "S730 title hunt (elumen_2 group), 2026-11-25. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). S712 (run 45166049971) found an eLumen catalog's courses view prints every subject as 'Name - CODE'. This read loads this catalog's courses view, rendered, and prints it line for line with the links that name a course or catalog, so a session files the headings without reading every course. One page load, no model call, writes nothing.",
+ "_readme": "S730 title hunt (elumen_2 group), 2026-11-25, round 2. Sam asked on 2026-11-25 for each college's printed local subject titles (the catalog's heading for each course subject code), which decide a local code's common subject (kb/subject_title_hunt/README.md). Round 1 (run 45624782074) loaded each courses view whole; its log ran past what a session reads back. This read prints only what names a subject: the catalog's current edition (round 1 found the registry's 24-25 catalog is not published). No model call, writes nothing.",
  "college": "Mission College",
- "capture_lines": 3000,
  "questions": {
-  "subject_index": "Where the catalog prints each course subject code with its name (the courses view's subject list), and the names as printed."
+  "subject_index": "Where the catalog prints each course subject code with its name, and the names as printed."
  },
  "keywords": [
   " - [A-Z]{2,6}\\b",
   "\\([A-Z]{2,6}\\)",
   "[Ss]ubjects?",
-  "[Cc]ourses"
+  "[Pp]refix",
+  "[Aa]bbreviation"
  ],
  "pages": [
   {
    "answers": [
     "subject_index"
    ],
-   "url": "https://mission.elumenapp.com/catalog/24-25/courses",
+   "url": "https://mission.elumenapp.com/catalog/current/home",
    "network": true,
    "network_hosts": [
     "api-prod.elumenapp.com"
    ],
-   "capture_view": true,
-   "links": "course|subject|department|catalog",
-   "links_cap": 200
+   "links": "prefix|abbrev|subject|descript|disciplin|department|catalog|course",
+   "links_cap": 120
   }
  ],
  "outside_hosts": {
