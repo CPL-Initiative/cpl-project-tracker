@@ -56,8 +56,8 @@
       // The package replaces the gold rule under the title with the cards.
       "body.sv-pkg .title-accent{display:none}",
       // The switch: the header row's center, its own line on a phone.
-      ".sv-center:not([hidden]){flex:1 1 auto; display:flex; justify-content:center}",
-      "@media (max-width:760px){ .sv-center:not([hidden]){order:3; flex-basis:100%; justify-content:flex-start} }",
+      ".sv-center:not([hidden]){flex:1 1 auto; display:flex; flex-direction:column; align-items:center; justify-content:center}",
+      "@media (max-width:760px){ .sv-center:not([hidden]){order:3; flex-basis:100%; align-items:flex-start} }",
       "#simpleBtn{display:inline-flex; align-items:center; gap:12px; min-height:48px; padding:6px 18px 6px 10px;",
       "  border:2px solid var(--seal-blue); border-radius:999px; background:var(--surface-opaque); color:var(--seal-blue);",
       "  font:inherit; font-size:clamp(1.1rem,2.2vw,1.3rem); font-weight:700; cursor:pointer}",
@@ -71,8 +71,8 @@
       "#simpleBtn[aria-pressed=\"true\"] .sv-track{background:var(--surface-opaque); border-color:var(--surface-opaque)}",
       "#simpleBtn[aria-pressed=\"true\"] .sv-knob{left:22px}",
       "@media (prefers-reduced-motion: reduce){ #simpleBtn .sv-knob{transition:none} }",
-      // The line under the header.
-      ".sv-line:not([hidden]){display:block; margin:8px auto 0; text-align:center; font-size:.95rem; font-style:italic; color:var(--seal-blue)}",
+      // The line under the switch, in the header.
+      ".sv-line:not([hidden]){display:block; margin:4px 0 0; text-align:center; font-size:.9rem; font-style:italic; color:var(--seal-blue)}",
       // The cards: 5, then 3, 2 and 1 across.
       ".sv-cards:not([hidden]){display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; margin:14px 0 12px}",
       "@media (max-width:1000px){ .sv-cards:not([hidden]){grid-template-columns:repeat(3,minmax(0,1fr))} }",

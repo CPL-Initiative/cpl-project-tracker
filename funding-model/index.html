@@ -155,7 +155,8 @@ a:hover{text-decoration-thickness:2px}
    audit, 2026-09-30). */
 .head{padding-block:clamp(22px,3.6vw,38px) clamp(14px,2vw,20px)}
 .mh-text{min-width:0}
-.masthead h1{font-size:clamp(2rem,1.4rem + 2.4vw,3.2rem); color:var(--title); line-height:1.04; letter-spacing:-.03em; text-wrap:pretty}
+.masthead h1{font-size:clamp(2rem,1.4rem + 2.4vw,3.2rem); color:var(--title); line-height:1.04; letter-spacing:-.03em; text-wrap:pretty;
+  text-align:center}  /* centered (Sam, 2026-11-25: "center main dash label") */
 .title-accent{width:66px; height:4px; margin:16px 0 14px; background:var(--mustard-fill)}
 .ver{margin:0; font-size:.8rem; color:var(--text-muted); white-space:nowrap; font-variant-numeric:tabular-nums}
 .ver abbr{text-decoration:none}
@@ -495,6 +496,9 @@ section[hidden], #contents[hidden]{display:none}
          public page setting is on. On by default; never remembered. -->
     <div class="sv-center" id="svCenter" hidden>
       <button type="button" id="simpleBtn" aria-pressed="true"><span class="sv-track" aria-hidden="true"><span class="sv-knob"></span></span>Simple view <span class="sv-onoff" id="simpleOnOff">On</span></button>
+      <!-- The line under the switch, in the header (Sam, 2026-11-25: "move simple view note up below the toggle in
+           header (not masthead)"). -->
+      <p class="sv-line" id="simpleLine" hidden>For more details, turn Simple view off.</p>
     </div>
     <div class="cplh-end">
       <!-- The version (Sam, 2026-10-21: "As of: 10/21/2026 Ver. 3"), the last
@@ -562,7 +566,6 @@ section[hidden], #contents[hidden]{display:none}
     </div>
   </div>
 </section>
-<p class="wrap sv-line" id="simpleLine" hidden>For more details, turn Simple view off.</p>
 
 <!-- STEP 1: CHOOSE YOUR COLLEGE (Sam, 2026-10-15: "Make the College selector
      more prominent so folks see that it is an important first step"). The
@@ -1101,10 +1104,10 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // the scenario this page shows. Before the live config loads, or offline,
   // the date falls back to the model's version date.
   (function () {
-    // A reader who is not signed in sees no As of date or Ver. label, in either view (Sam, 2026-11-25: "hide the As
-    // of date and ver label in the masthead on public view (both simple and full)"). The team, signed in, keeps it.
-    var TR = window.CPL_FUNDING_TAB, verEl = document.querySelector(".cplh-end > .ver");
-    if (verEl) verEl.hidden = !(TR && typeof TR._reviewing === "function" && TR._reviewing());
+    // No As of date or Ver. label on the page, for any reader (Sam, 2026-11-25: "hide the As of date and ver label in
+    // the masthead on public view (both simple and full)", then, signed in, "As of lables needs to be hidden").
+    var verEl = document.querySelector(".cplh-end > .ver");
+    if (verEl) verEl.hidden = true;
     var asOf = "";
     var t = D.saved_at ? new Date(D.saved_at) : null;
     if (t && !isNaN(t.getTime())) {
