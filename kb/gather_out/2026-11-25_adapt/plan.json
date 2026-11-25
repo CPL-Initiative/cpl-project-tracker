@@ -1,0 +1,1028 @@
+{
+ "what": "Gather: adapt into PEDS M1029 (Adaptive Physical Education), the view's starting ticks",
+ "asked": "Sam, 2026-11-24 (cpl_memory w-gather-adapt-courses-into-one-mid-sam-2026-11-24): merge every M-ID with adapt in its title into one, Adaptive Physical Education, and move the local courses with adapt in the title into it. Sam, 2026-11-25, in session: \"Go ahead and move forward without the test\"; then \"Retry it\".",
+ "address": "#coci-lookup/gather?w=adapt&to=PEDS%20M1029",
+ "built_by": "commons_gather.js on today's data (coci_lookup_data.js, unified_courses_data.js, unified_courses_members.js), its plan captured before any send",
+ "starting_ticks": "the target's common subject and the local subjects carrying it; TOP never ticks; rows in another common subject start unticked and are not in this plan",
+ "units_note": "the gathered courses run 0 to 4 units; units never split an identity (Sam, 2026-09-27), so the common course shows the range",
+ "cohort_reviewer_email": "gather-adapt-s726@bot",
+ "counts": {
+  "merge_mids": 34,
+  "move_local": 133,
+  "rows": 167
+ },
+ "write_time_read_2026-11-25": {
+  "standing_merge_into_on_these_keys": 0,
+  "target_merged_away": 0,
+  "pending_unified_title_merge_confirm": 0,
+  "mid_member_confirm_on_merging_mids": 0,
+  "machine_title_saves_on_merging_mids": 8,
+  "older_machine_merges_into_merging_mids": 23,
+  "chains": "excel_to_dashboard.py flatten_merge_chains follows merge_into to the end of the chain, so the 23 land in PEDS M1029"
+ },
+ "rollback": "delete from kb_curation where reviewer_email = 'gather-adapt-s726@bot' and field = 'merge_into' and value = 'PEDS M1029'; (insert-only, ON CONFLICT DO NOTHING: no row existed on any key, so nothing is restored)",
+ "rows": [
+  {
+   "course_id": "PEDS M1021",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1030",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1033",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1004",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1032",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M9003",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M9004",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M9005",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1041",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1031",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1026",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1012",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1017",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1024",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1001",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M9002",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1011",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1019",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1014",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1027",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1028",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1013",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1023",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1016",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1002",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1036",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1010",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1020",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1022",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1034",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1037",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1038",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1039",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "PEDS M1040",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000081600",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000457394",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000319548",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000497826",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000348013",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000373821",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000459150",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000525109",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000588395",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000551242",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000588396",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000551240",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000581707",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000605293",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000572525",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000605294",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000573716",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000605295",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000526093",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000526091",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000149801",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000627845",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000627846",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000501611",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000627962",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000627963",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000594432",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000038984",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000005358",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000338321",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000292698",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000290880",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000647236",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000368078",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000263468",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000087807",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000403278",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000198234",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000577074",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000577073",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000081045",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000515398",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000533359",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000551452",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000556350",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000316581",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000615110",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000508312",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000508316",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000575746",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000575742",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000576228",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000187474",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000443726",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000110734",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000103069",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000451799",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000154200",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000650519",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000407984",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000658670",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000591280",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000459339",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000637790",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000647167",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000190613",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000161364",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000569153",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000279243",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000571814",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000654393",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000172206",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000288594",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000507704",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000314272",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000118589",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000528826",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000637936",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000391553",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000225166",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000279611",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000647203",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000544960",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000416710",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000657074",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000582369",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000552019",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000552018",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000621907",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000621908",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000621909",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000553965",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000552017",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000552230",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000621910",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000621911",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000621912",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000376643",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000588202",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000574934",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000575005",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000574933",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000581542",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000581925",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000581541",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000581539",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000581538",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000572871",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000438286",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000580010",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000592448",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000367528",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000339115",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000201693",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000268188",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000600914",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000335930",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000292082",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000564979",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000549823",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000549514",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000549513",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000549512",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000515259",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000549508",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000549509",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000556465",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000556464",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000575424",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000566627",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000568106",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000611977",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  },
+  {
+   "course_id": "CN:CCC000582904",
+   "field": "merge_into",
+   "value": "PEDS M1029",
+   "reviewer_email": "dry@bot"
+  }
+ ]
+}
