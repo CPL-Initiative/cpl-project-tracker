@@ -1,0 +1,122 @@
+{
+ "why": "S727 plan s727p's members and pages, pinned at the plan (p-test-pins-census-members-s714), never the live census or the plan's receipt",
+ "receipt": "kb/receipts/program_requirement_records_piles_s727_pooled_2026-11-25_s727p.json",
+ "rows": [
+  {
+   "college": "Cuyamaca College",
+   "control_number": "18629",
+   "moves_to": "passes",
+   "page": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/culture-people-ideas/general-studies-humanities-fine-arts/"
+  },
+  {
+   "college": "Cuyamaca College",
+   "control_number": "18631",
+   "moves_to": "passes",
+   "page": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/general-studies-social-behavioral-sciences/"
+  },
+  {
+   "college": "Golden West College",
+   "control_number": "19461",
+   "moves_to": "passes",
+   "page": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/liberal-arts/emphasis-hum-behav-self-dev-aa/"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08104",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/fruit-science-mjc-summer-2020"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08111",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/dairy-science-mjc-fall-2023"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "33944",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-technology-mjc-summer-2020"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "37300",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-science-mjc-summer-2020"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "38067",
+   "moves_to": "passes",
+   "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/equine-science-mjc-summer-2020"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "19274",
+   "moves_to": "passes",
+   "page": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24250"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "19275",
+   "moves_to": "passes",
+   "page": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24251"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "19276",
+   "moves_to": "passes",
+   "page": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24252"
+  }
+ ],
+ "held": [
+  {
+   "college": "Cuyamaca College",
+   "control_number": "18635"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02513"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02515"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "02517"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "06655"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "06683"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08109"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "10602"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "35127"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "38869"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "42664"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "43164"
+  }
+ ]
+}

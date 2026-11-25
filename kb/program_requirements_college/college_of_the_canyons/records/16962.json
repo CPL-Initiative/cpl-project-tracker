@@ -108,7 +108,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "noted_section_cut_off",
+    "label": "The reader's note says the program's section runs onto a page the read did not hold, so part of its requirements is missing from the record.",
+    "words": "The catalog text begins mid-section on page 84: the Automotive Technology A.S. Degree heading, description, outcomes, units required and the first part of its course list are on page 83, which is not in the text. Only the tail of the list (AUTECH-185, one of AUTECH-120/130, and WE-186AUTO) is visible; reviewer should check page 83."
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 31,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
