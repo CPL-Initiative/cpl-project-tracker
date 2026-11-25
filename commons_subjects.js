@@ -5,7 +5,7 @@
 // the common subject code; Step b, the local subject title; Step c, the M-ID. Under his delegation the same day
 // (d-step-b-owner-courses-bot-2026-11-20) the Courses bot drafts each local subject title from the catalog's subject
 // heading. Since Sam's ruling of 2026-11-23 (r-confidence-not-person-settled-sam-2026-11-23) a code is settled when its
-// common subject code is Confident (90% or more), whether the data or a person's confirm or save put it there; the
+// common subject code scores 90 or better on the 0-100 scale, whether the data or a person's confirm or save put it there; the
 // college table counts the codes below that, or with no title, as Needs attention (S718).
 //
 // What it reads: kb/status/local_subject_titles.json, built by kb/_build_local_subject_titles.py from
@@ -115,6 +115,13 @@
     var C = window.CPL_COMMONS;
     if (v == null || isNaN(v) || !C || typeof C.confBar !== "function") return null;
     return C.confBar(Number(v) / 100, about);
+  }
+  /* A 0-to-1 confidence (the statewide list's recommend.confidence, mq_view.json's confidence) drawn as the same bar;
+     without commons.js the number stands alone, "82 of 100", so the value is never lost and no level word stands in. */
+  function of100(v) { var n = Math.round((v || 0) * 100); return n < 1 && v > 0 ? "under 1" : String(n); }
+  function bar01(v, about) {
+    if (v == null || isNaN(v)) return null;
+    return bar(Number(v) * 100, about) || el("span", { cls: "cmn-cbar-n", "data-conf": String(Math.round(Number(v) * 100)), text: of100(v) + " of 100" });
   }
   function recNote(kind, what, x) {
     if (kind === "common" && !x.code) return el("span", { cls: "csb-sub csb-rec", "data-rec": "common-none" }, [
@@ -940,7 +947,7 @@
   var SW_FILTERS = [
     /* S719: the local codes under one common code, at statewide/code/<COMMON>; its chip shows only while it is on. */
     ["code", "Under one common code", function (c, V, W) { return !!(V && V.common) && commonOf(c, W) === V.common; }],
-    ["top", "Calls at 90% or better", function (c) { return canFile(c) && !filedOf(c) && c.recommend.confidence >= 0.9; }],
+    ["top", "Calls at 90 or better", function (c) { return canFile(c) && !filedOf(c) && c.recommend.confidence >= 0.9; }],
     ["all", "All", function () { return true; }],
     ["confirm", "Draft and peers agree", function (c) { return c["class"] === "confirm"; }],
     ["draft_differs", "Draft differs from peers", function (c) { return c["class"] === "draft_differs"; }],
@@ -985,13 +992,17 @@
     if (live) return live;
     return c.filing ? { discipline: c.filing.discipline, by: c.filing.who || "a reviewer", at: c.filing.at } : null;
   }
-  /* The four levels Sam's ruling measures by (r-confidence-not-person-settled-sam-2026-11-23): a call is settled when it
-     is Confident, whether the data took it there or a person's confirm did. */
-  function levelOf(v) { return v >= 0.9 ? "Confident" : v >= 0.75 ? "Likely" : v >= 0.5 ? "Leaning" : "Unsure"; }
-  /* The levels by college-and-code pair, by course and by code, with the live filings and saves on top: one count for
-     the statewide view and the Commons card. A pair is Confident when a person filed the code statewide or saved a
-     common subject code at that college, so a Confirm or a college's Save moves it at once. */
-  var LEVELS = ["Confident", "Likely", "Leaning", "Unsure"];
+  /* The bands a 0-100 confidence counts in (Sam, 2026-11-25: "confidence bars 0-100 rather than low, med, high throughout
+     all commons procedures", r-confidence-0-100-in-all-commons-procedures-sam-2026-11-25). Each band is keyed by its
+     threshold; 90 is the action line (r-confidence-not-person-settled-sam-2026-11-23): a call is settled at 90 or
+     better, whether the data took it there or a person's confirm did. */
+  var CONF_BANDS = [["90", "90 to 100", 0.9], ["75", "75 to 89", 0.75], ["50", "50 to 74", 0.5], ["0", "under 50", 0]];
+  var SETTLED_BAND = "90";
+  function confBandOf(v) { for (var i = 0; i < CONF_BANDS.length - 1; i++) if (v >= CONF_BANDS[i][2]) return CONF_BANDS[i][0]; return CONF_BANDS[CONF_BANDS.length - 1][0]; }
+  /* The bands by college-and-code pair, by course and by code, with the live filings and saves on top: one count for
+     the statewide view and the Commons card. A pair is settled (band 90) when a person filed the code statewide or saved
+     a common subject code at that college, so a Confirm or a college's Save moves it at once. */
+  var LEVELS = CONF_BANDS.map(function (b) { return b[0]; });
   /* One college-name match for levels() and the college table (S719): a name is matched exactly, then with its
      punctuation and spacing set aside, so "Trade-Technical" and "Trade Technical" are one college. Two matchers of one
      name drift apart (S718: the card's 83% left out Los Angeles Trade-Technical while the table counted it). */
@@ -1004,25 +1015,24 @@
   function slugFor(slugs, name) { return slugs[name] || slugs["~" + normName(name)]; }
   function levels(W, M) {
     M = M || VIEW.M;
-    var L = { pairs: {}, courses: {}, codes: {}, totalPairs: 0, totalCourses: 0 };
+    var L = { pairs: {}, courses: {}, codes: {}, totalPairs: 0, totalCourses: 0, bands: CONF_BANDS, settled: SETTLED_BAND };
     LEVELS.forEach(function (k) { L.pairs[k] = 0; L.courses[k] = 0; L.codes[k] = 0; });
     var saves = commonSaves(M, false), slugs = slugMap(M);
     ((W && W.codes) || []).forEach(function (c) {
-      var base = filedOf(c) ? "Confident" : levelOf((c.recommend || {}).confidence || 0);
+      var base = filedOf(c) ? SETTLED_BAND : confBandOf((c.recommend || {}).confidence || 0);
       L.codes[base]++;
       (c.colleges || []).forEach(function (x) {
-        var k = base === "Confident" || savedAt(saves, slugFor(slugs, x[0]), c) ? "Confident" : base, n = x[1] || 0;
+        var k = base === SETTLED_BAND || savedAt(saves, slugFor(slugs, x[0]), c) ? SETTLED_BAND : base, n = x[1] || 0;
         L.pairs[k]++; L.courses[k] += n; L.totalPairs++; L.totalCourses += n;
       });
     });
     return L;
   }
-  function confWords(v) { var n = Math.round((v || 0) * 100); return (n < 1 ? "under 1" : String(n)) + "% " + levelOf(v || 0); }
   /* Needs attention (S718; Sam, 2026-11-23: "For the college table, the most important thing to see on the list is a
      column to indicate the number of subjects that our confidence score indicates need attention"). Decided by the
-     conductor: a local code at a college needs attention when its common subject code is below Confident, by the
-     per-pair rule of levels() (the statewide code's confidence, lifted to Confident by a statewide filing or a college
-     save), or when it has no local title, no saved title and no High recommended title. A code the statewide list does
+     conductor: a local code at a college needs attention when its common subject code is below 90, by the
+     per-pair rule of levels() (the statewide code's confidence, lifted to 90 or better by a statewide filing or a college
+     save), or when it has no local title, no saved title and no recommended title at 90 or better. A code the statewide list does
      not name at that college (a catalog-only code, mostly) needs attention only when it has no common subject code.
      Codes are counted, not courses. A college's name is matched by slugFor(), the one match levels() uses too. */
   var SW_IX = null, SW_IX_W = null, SW_IX_M = null;
@@ -1041,12 +1051,12 @@
   }
   function swOf(r) { return VIEW.W && VIEW.M && r ? swIndex(VIEW.W, VIEW.M)[r.slug + "|" + String(r.code).toUpperCase()] || null : null; }
   function attention(r) {
-    var sv = savedOf(r), c = swOf(r), rec = recOf(r), A = { sw: c, level: "Confident", conf: null, code: false, title: false };
+    var sv = savedOf(r), c = swOf(r), rec = recOf(r), A = { sw: c, level: SETTLED_BAND, conf: null, code: false, title: false };
     if (!(sv && sv.common) && r.common_source !== "statewide_filing") {
-      if (c && !filedOf(c)) { A.conf = (c.recommend || {}).confidence || 0; A.level = levelOf(A.conf); }
+      if (c && !filedOf(c)) { A.conf = (c.recommend || {}).confidence || 0; A.level = confBandOf(A.conf); }
       else if (!c && !r.common) A.level = "";
     }
-    A.code = A.level !== "Confident";
+    A.code = A.level !== SETTLED_BAND;
     A.title = untitledNow(r) && !(rec.title && rec.title.confidence != null && rec.title.confidence >= SETTLED);
     A.needs = A.code || A.title;
     return A;
@@ -1060,7 +1070,7 @@
   /* Why a code needs attention, in a sentence. */
   function attentionWords(r, A) {
     var parts = [], call = A.sw && A.sw.recommend, rec = recOf(r);
-    if (A.code) parts.push(A.level && call && call.common ? "COBI’s call for its common subject code, " + call.common + (call.discipline ? " " + call.discipline : "") + ", is " + confWords(A.conf) + ", below Confident."
+    if (A.code) parts.push(A.level && call && call.common ? "COBI’s call for its common subject code, " + call.common + (call.discipline ? " " + call.discipline : "") + ", has confidence " + of100(A.conf) + " of 100, below 90."
       : "It has no common subject code yet, and no confidence is measured for it.");
     if (A.title) parts.push(rec.title && rec.title.title ? "It has no local title; COBI recommends " + rec.title.title + (rec.title.confidence != null ? ", confidence " + Math.round(rec.title.confidence) + " of 100." : ".") : "It has no local title, and COBI has no recommendation for one yet.");
     return parts.join(" ");
@@ -1216,15 +1226,15 @@
       box.appendChild(el("p", { cls: "csb-note", id: "csw-sum" }, [el("strong", { text: fmt(T.codes) }), " local subject codes at ", el("strong", { text: fmt(T.colleges) }),
         " colleges (" + fmt(T.pairs) + " college-and-code pairs, " + fmt(T.courses) + " COCI courses); " + fmt(T.one_college) + " are used at one college. "
         + "Every code carries a call and a confidence from the evidence the list names: the subject map’s draft, the M-IDs its courses joined at three or more colleges, its course titles, and a noncredit code’s COCI category. "
-        + (top.tried ? "On " + fmt(top.tried) + " codes whose peers already agree, calls at 90% or better were right " + Math.round((top.accuracy || 0) * 100) + "% of the time. " : "")
+        + (top.tried ? "On " + fmt(top.tried) + " codes whose peers already agree, calls at 90 or better were right " + Math.round((top.accuracy || 0) * 100) + "% of the time. " : "")
         + "A confirm is your statewide filing for the code; the daily build carries it to every college that uses it."]));
     }
     if (SWS.readErr) box.appendChild(el("p", { cls: "csb-note", role: "status", text: "The filings people made could not be read live (" + SWS.readErr + "); the list shows the filings the daily build carried." }));
     if (!side) {
       var lv = levels(W).pairs;
-      box.appendChild(el("p", { cls: "csb-note", id: "csw-levels" }, ["College-and-code pairs by level: ",
-        ["Confident", "Likely", "Leaning", "Unsure"].map(function (k) { return k + " " + fmt(lv[k]); }).join(" · "),
-        ". Confident is 90% or more, Likely 75 to 90%, Leaning 50 to 75%, Unsure under 50%. A confirm raises a call to Confident."]));
+      box.appendChild(el("p", { cls: "csb-note", id: "csw-levels" }, ["College-and-code pairs by confidence, from 0 to 100: ",
+        CONF_BANDS.map(function (b) { return b[1] + ": " + fmt(lv[b[0]]); }).join(" · "),
+        ". A call at 90 or better is settled; a confirm settles a call at once."]));
       var chips = el("p", { cls: "csw-chips", role: "group", "aria-label": "Show" }, SW_FILTERS.filter(function (f) { return f[0] !== "code" || (V.filter === "code" && V.common); }).map(function (f) {
         var n = W.codes.filter(function (c) { return f[2](c, V, W); }).length;
         var b = el("button", { type: "button", cls: "csb-word", "data-csw-filter": f[0], "aria-pressed": V.filter === f[0] ? "true" : "false",
@@ -1244,7 +1254,7 @@
       var filed = 0, conf = 0, cols = 0;
       rows.forEach(function (c) { if (filedOf(c)) filed++; else if (((c.recommend || {}).confidence || 0) >= 0.9) conf++; cols += (c.colleges || []).length; });
       box.appendChild(el("p", { cls: "csb-note", id: "csw-side-sum" }, [el("strong", { text: fmt(rows.length) }), (rows.length === 1 ? " local code" : " local codes") + " statewide take " + V.common
-        + " as their common code: " + fmt(filed) + " filed by a person, " + fmt(conf) + " called at 90% or better, " + fmt(rows.length - filed - conf) + " below that; "
+        + " as their common code: " + fmt(filed) + " filed by a person, " + fmt(conf) + " called at 90 or better, " + fmt(rows.length - filed - conf) + " below that; "
         + fmt(cols) + " college-and-code pairs. A count opens what it counts beside this list. ",
         go("#commons/subjects/" + SW + "/code/" + encodeURIComponent(V.common), "Open this list on its own page"), "."]));
     }
@@ -1256,7 +1266,7 @@
     if (!signed) box.appendChild(el("p", { cls: "csb-note", text: "Sign in as a reviewer to confirm a call or file another code." }));
     else if (bulkable.length) {
       if (!V.bulk) {
-        var bulk = el("button", { type: "button", cls: "csb-word", id: "csw-bulk", disabled: SWS.busy ? "" : null, text: "Confirm the " + fmt(bulkable.length) + " calls shown at 90% or better" });
+        var bulk = el("button", { type: "button", cls: "csb-word", id: "csw-bulk", disabled: SWS.busy ? "" : null, text: "Confirm the " + fmt(bulkable.length) + " calls shown at 90 or better" });
         bulk.addEventListener("click", function () { V.bulk = true; swRedraw("csw-bulk-yes"); });
         box.appendChild(el("p", null, [bulk]));
       } else {
@@ -1291,8 +1301,9 @@
             : [second("colleges", c, cols.length, "The " + fmt(cols.length) + " colleges that use " + c.code + ". Show them.")]),
           el("td", { "data-sort": String(c.courses || 0) }, [second("courses", c, c.courses || 0, "The " + fmt(c.courses || 0) + (c.courses === 1 ? " course" : " courses") + " under " + c.code + " in COCI. Show them.")]),
           el("td", null, [c.recommend.common || "", el("span", { cls: "csb-sub", text: c.recommend.discipline || "" })]),
-          el("td", { text: filedOf(c) && filedOf(c).discipline === c.recommend.discipline ? "Filed" : confWords(c.recommend.confidence) }),
-          el("td", { text: nx ? nx.common + " " + Math.max(0, Math.round(nx.confidence * 100)) + "%" : "" }),
+          el("td", { "data-sort": String(Math.round((c.recommend.confidence || 0) * 100)) }, filedOf(c) && filedOf(c).discipline === c.recommend.discipline ? ["Filed"]
+            : [bar01(c.recommend.confidence || 0, c.code + ", " + (c.recommend.common || "its call"))]),
+          el("td", { text: nx ? nx.common + " " + Math.max(0, Math.round(nx.confidence * 100)) + " of 100" : "" }),
           el("td", { cls: "csb-ev", text: c.recommend.why ? c.recommend.why.charAt(0).toUpperCase() + c.recommend.why.slice(1) + "." : "" }),
           el("td", null, swActions(W, c, signed))]);
       }) : [el("tr", null, [el("td", { colspan: "8", text: "No code matches." })])])]);
@@ -1325,7 +1336,7 @@
     ["appr", "Apprenticeship", function (r) { return hasProv(r, "apprenticeship_53413"); }],
     ["dsps", "DSPS", function (r) { return hasProv(r, "dsps_53414"); }],
     ["assigned", "Assigned codes", function (r) { return r.code_source === "assigned"; }],
-    ["lower", "Codes below Likely", function (r) { return r.confidence != null && r.confidence < 0.75; }],
+    ["lower", "Codes below 90", function (r) { return r.confidence != null && r.confidence < 0.9; }],
     ["voc", "MQ type and TOP disagree", function (r) { return (r.gaps || []).some(function (g) { return /vocational TOP code/.test(g); }); }],
     ["gaps", "Something to look at", function (r) { return (r.gaps || []).length > 0; }]];
   function mqPick(k) { return MQ_PICKS.filter(function (p) { return p[0] === k; })[0] || MQ_PICKS[0]; }
@@ -1348,12 +1359,15 @@
       return [r.name, r.areas, r.code, r.our_name, r.type_words, (r.provisions || []).map(provWords).join(" "), (r.noncredit_categories || []).join(" ")].join(" ").toLowerCase().indexOf(q) >= 0;
     });
   }
-  /* The code's level in words beside it, so a number is never the only signal. */
+  /* The code's confidence as the one 0-100 bar with its number beside it (r-confidence-0-100-in-all-commons-procedures-
+     sam-2026-11-25), never a level word; a person's pick says so in words. */
   function mqLevel(r) {
     if (r.confidence == null) return null;
-    return el("span", { cls: "csb-sub", title: r.code_source === "assigned" ? r.code_note || "" : null,
-      text: (r.level || levelOf(r.confidence)) + " " + Math.round(r.confidence * 100) + "%" + (r.code_source === "assigned" ? "" : ", a person’s pick") });
+    return el("span", { cls: "csb-sub csb-mq-conf", title: r.code_source === "assigned" ? noteWords(r.code_note) : null },
+      [bar01(r.confidence, r.code + ", common code of " + r.name), r.code_source === "assigned" ? null : ", a person’s pick"]);
   }
+  /* The builder's note reads "Assigned at Likely (82%)" (kb/_csr_assign_codes.py); the page reads it as the number. */
+  function noteWords(s) { return String(s || "").replace(/(?:Confident|Likely|Leaning|Unsure) \((\d+)%\)/g, "$1 of 100"); }
   /* A name's words with a break allowed after each slash and comma, so a column wraps there before it breaks a word. */
   function breakAfter(s) {
     var out = [];
@@ -1390,7 +1404,7 @@
           el("td", { "data-sort": String((r.mids_credit || 0) + (r.mids_noncredit || 0)) }, r.code ? [fmt(r.mids_credit || 0) + " credit, " + fmt(r.mids_noncredit || 0) + " noncredit",
             r.vocational_share == null ? null : el("span", { cls: "csb-sub csb-mq-voc", text: pct(r.vocational_share) + " with a vocational TOP code" })] : []),
           el("td", { "data-sort": String(nLoc) }, lc && r.code ? [mqCodeWord(r.code, fmt(nLoc) + " local codes take " + r.code + " as their common code. Show them.", fmt(nLoc) + (nLoc === 1 ? " code" : " codes"), { "data-mq-count": "yes" }),
-            el("span", { cls: "csb-sub", text: fmt(lc.filed || 0) + " filed, " + fmt(lc.confident || 0) + " Confident" })] : []),
+            el("span", { cls: "csb-sub", text: fmt(lc.filed || 0) + " filed, " + fmt(lc.confident || 0) + " at 90 or better" })] : []),
           el("td", { "data-sort": String(gaps.length) }, gaps.length ? [el("ul", { cls: "csb-mq-gaps" }, gaps.map(function (g) {
             return el("li", { cls: /vocational TOP|No common/.test(g) ? "csb-mq-act" : null, text: g });
           }))] : [el("span", { cls: "csb-tba", text: "Nothing" })])]);
@@ -1473,7 +1487,7 @@
       var prov = (r.provisions || []).map(function (k) { return provWords(k) + (Q.provisions[k] && Q.provisions[k].section ? " (" + Q.provisions[k].section + ")" : ""); }).join("; ");
       var facts = [["MQ discipline", r.name + (r.areas ? " (" + r.areas + ")" : "")], ["MQ type", (r.type_words || "") + (r.noncredit ? ", noncredit" : "")], ["Provisions", prov || "None"],
         ["Common code", code + (r.our_name && r.our_name !== r.name ? ", our name " + r.our_name : "")],
-        ["How the code was set", r.code_source === "assigned" ? r.code_note || "Assigned." : "A person’s pick" + (r.confidence != null ? ", " + confWords(r.confidence) : "") + "."],
+        ["How the code was set", r.code_source === "assigned" ? noteWords(r.code_note) || "Assigned." : "A person’s pick" + (r.confidence != null ? ", confidence " + of100(r.confidence) + " of 100" : "") + "."],
         ["M-IDs", fmt(r.mids_credit || 0) + " credit, " + fmt(r.mids_noncredit || 0) + " noncredit"],
         ["Vocational TOP share", r.vocational_share == null ? "Not measured" : pct(r.vocational_share) + " of its credit M-IDs"],
         ["COCI noncredit categories", (r.noncredit_categories || []).join(", ") || "None"]];
@@ -2467,7 +2481,7 @@
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
       el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject titles to check" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : S.view === SRC ? "Subjects: colleges by source" : S.view === MQ ? "Minimum Qualifications disciplines" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
-      el("p", { cls: "cmn-lede", text: S.view === MQ ? MQ_LEDE : "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading, and COBI scores each code’s common subject code. A code is settled once that score is Confident, 90% or more, from the evidence or from a person’s confirm or save. Needs attention counts each college’s codes below Confident or with no title." })
+      el("p", { cls: "cmn-lede", text: S.view === MQ ? MQ_LEDE : "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading, and COBI scores each code’s common subject code. A code is settled once that score is 90 or better on the 0-100 bar, from the evidence or from a person’s confirm or save. Needs attention counts each college’s codes below 90 or with no title." })
     ]));
     if (S.view !== MQ) wrap.appendChild(el("p", { cls: "csb-stamp" }, [
       count(F.named, "", "titled", fmt(F.named) + " codes with a local title. Show them."), " local titles at ", el("strong", { text: fmt(F.collegesNamed) + " of " + fmt(F.colleges) }),
