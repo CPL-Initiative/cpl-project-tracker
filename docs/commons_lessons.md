@@ -707,6 +707,14 @@ COBI on owed fixes. Then the Back link lost on Courses and Programs, and the dou
 - A panel's helper defined inside another helper (`focusId` inside `panelHelp`) is not in scope where the bar draws its tabs; the test caught it only once it clicked a tab.
 - The KINE M1267 PEDS ruling moved the whole card; a course in it that is not adapted (Cabrillo KIN 38A) needed its own move afterward. A card-level ruling can leave one misfit behind.
 
+## S726 (SkyAvocet, Sam's plain session, 2026-11-25): Gather's saved filters
+
+**Shipped:** `gather_filters` and its two functions (DR-36), and the Saved filters card at the top of Gather: the team's live filters, Open, Copy its address, Retire on your own, and Save this filter with a name and a note; `#coci-lookup/gather?f=<slug>` opens one. A filter saves no merge. **DECIDED** `d-gather-saved-filters-s726`.
+
+**Lessons:**
+- A view built once (`GATHER.api` in `coci_lookup.js`) reads its address only at create: an in-page link to another address of the same view would leave its state behind, so a saved filter opens from a word control, and its address is copied, never linked.
+- A read that applies the address's filter must run once: after a save, the reload found no row for the new slug and overwrote the result line. The test caught it.
+
 ## S725 (SkyPlover, Sam's plain session, 2026-11-25): Gather, the first slice (#3799)
 
 **Shipped:** `commons_gather.js`, the Gather view of Courses and Programs (`#coci-lookup/gather?w=&in=&cs=&ls=&to=`): the mock's words syntax, Look in Title or Description, the common subject, local subject codes and target in the address; starting ticks from the target's common subject and the local subjects carrying it (TOP never ticks); insert-only `kb_curation` `merge_into` rows, an optional title rename, Take it back; the saved decisions a merge ends. On real data, `adapt` into PEDS M1029 lists 55 common courses (35 ticked) and 254 local courses outside them (133 ticked). **DECIDED** `d-gather-first-slice-s725`. No save was made from it this run: the adapt gather is Sam's to run and untick.

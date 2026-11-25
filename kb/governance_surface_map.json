@@ -124,6 +124,9 @@
   "rpc:commons_handover_summary": "DR-35",
   "bucket:commons-handover": "DR-35",
   "function:handover-try-link": "DR-35",
+  "table:gather_filters": "DR-36",
+  "rpc:gather_filter_save": "DR-36",
+  "rpc:gather_filter_retire": "DR-36",
   "workflow:commons-handover-pickup.yml": "DR-35"
  },
  "dismissed": {

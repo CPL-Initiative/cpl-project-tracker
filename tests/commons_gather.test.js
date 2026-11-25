@@ -98,7 +98,7 @@ function setInput(doc, id, v) { const n = doc.getElementById(id); n.value = v; n
   // (2) the address
   {
     const { w } = boot(null);
-    const G = w.CPL_COMMONS_GATHER, q = { w: 'adapt -dance, "adaptive swim"', look: "both", cs: "PEDS", ls: "PE, ADAPT", to: "PEDS M1029" };
+    const G = w.CPL_COMMONS_GATHER, q = { w: 'adapt -dance, "adaptive swim"', look: "both", cs: "PEDS", ls: "PE, ADAPT", to: "PEDS M1029", f: "" };
     const a = G.address("coci-lookup", q), back = G.readAddress("#" + a);
     check("(2) the address round-trips", JSON.stringify(back) === JSON.stringify(q), a + " -> " + JSON.stringify(back));
     check("(2) a bare gather address reads as empty", G.readAddress("#coci-lookup/gather").w === "" && G.readAddress("#coci-lookup/gather").look === "title", "defaults");
