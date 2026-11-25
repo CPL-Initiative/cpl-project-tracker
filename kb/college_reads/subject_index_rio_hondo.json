@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: the course section's navigation children and its page, read as JSON (the keyword \"text\" keeps a long answer whole in its excerpts). Catalog 16, nodes 22181, 22175, named by round 1.",
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3: the subject link lists round 2 named under the course section (run 45625223321), each one navigation call. Catalog 16.",
  "college": "Rio Hondo College",
  "questions": {
   "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
@@ -12,25 +12,13 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=22181"
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25453"
   },
   {
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://riohondo.curriqunet.com/Catalog/_getPage?catalogId=16&id=22181"
-  },
-  {
-   "answers": [
-    "cq_subjects"
-   ],
-   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=22175"
-  },
-  {
-   "answers": [
-    "cq_subjects"
-   ],
-   "url": "https://riohondo.curriqunet.com/Catalog/_getPage?catalogId=16&id=22175"
+   "url": "https://riohondo.curriqunet.com/catalog/_getNavigation?id=16&parentId=25326"
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 2: the course section's navigation children and its page, read as JSON (the keyword \"text\" keeps a long answer whole in its excerpts). Catalog 2114, nodes None, named by round 1.",
+ "_readme": "Subject title hunt, group curriqunet (S730 worker, 2026-11-25; Sam's ask of 2026-11-25, ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Round 3: the Course Listing node (3973) round 2 named in the top navigation (run 45625223321): its children and its page. Catalog 2114.",
  "college": "Chabot College",
  "questions": {
   "cq_subjects": "Which catalog id is the current catalog, and which navigation node lists the course subjects with their names."
@@ -12,7 +12,13 @@
    "answers": [
     "cq_subjects"
    ],
-   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&navigationtypeId=1"
+   "url": "https://chabot.curriqunet.com/catalog/_getNavigation?id=2114&parentId=3973"
+  },
+  {
+   "answers": [
+    "cq_subjects"
+   ],
+   "url": "https://chabot.curriqunet.com/Catalog/_getPage?catalogId=2114&id=3973"
   }
  ]
 }
