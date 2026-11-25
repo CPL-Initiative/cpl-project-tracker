@@ -1,5 +1,5 @@
 {
- "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Cañada's robots.txt refuses /current/ to readers, so this reads the hand-filed copy of the 2026-2027 catalog (kb/hand_filed_catalogs/ca_ada.json, Sam's download of 2026-10-17) and prints only the lines above each subject's first course, as el_camino_subject_headings.json does. One load of the copy, no model call.",
+ "_readme": "S730 subject-title hunt (group html_a), 2026-11-25, under Sam's ask in session S730: the catalog's printed heading for each course subject code, for the local subject titles that decide each code's common subject (ruling r-no-mid-on-a-stray-code-sam-2026-11-25). Cañada's robots.txt refuses /current/ to readers, so this reads the hand-filed copy of the 2026-2027 catalog (kb/hand_filed_catalogs/ca_ada.json, Sam's download of 2026-10-17) and prints only the lines above each subject's first course, as el_camino_subject_headings.json does. One load of the copy, no model call. Second read: the first (run 45626678601) took each code's first course from the program pages, which end by page 232, so this one starts at page 233.",
  "college": "Cañada College",
  "questions": {
   "subject_headings": "The subject heading the catalog prints above each subject's first course."
@@ -10,7 +10,7 @@
  "subject_context": {
   "heading": "^(?P<subj>[A-Z]{2,5}) (?P<num>\\d{1,3}(?:\\.\\d{1,2})?[A-Z]{0,2}) (?P<title>.+)$",
   "before": 4,
-  "start_page": 1,
+  "start_page": 233,
   "units": "\\b[Uu]nits?\\b",
   "units_inline": "\\b[Uu]nits?\\b",
   "within": 3
