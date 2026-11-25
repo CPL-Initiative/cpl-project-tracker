@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-24T19:13:06Z",
-  "session": 723,
-  "moniker": "SkyBooby",
+  "written_at": "2026-11-24T23:34:59Z",
+  "session": 724,
+  "moniker": "SkySandpiper",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_724_handoff.md",
+  "handoff": "docs/session_725_handoff.md",
   "next_step": {
     "title": "The display build for tonight's records, then the census",
     "text": "Build the display page carrying the 65 records collected tonight once the pooled reading's pull request merges, gate one college, apply the whole build, then run the census on main. Then the pooled reading's next records, the eLumen sister-award reader fix and the census's next piles."

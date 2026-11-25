@@ -97,3 +97,15 @@ The *Subjects, by confidence* paragraph as it stood after #3771, verbatim:
 ## Moved from docs/INDEX.md update history (S722 checkpoint)
 
 - 2026-11-22 (S709 SkyMurrelet, Sam's plain session, light checkpoint): #3697, the re-mint readiness count by the draft gate (`kb/status/mid_readiness.json`, nightly): the AED scope is 127 M-IDs (120 ELEC) on the live members file, 34 ready; the outcomes compare reran on 45,673 rows and gzips past the 5 MB limit; four memory rows; handoff 710.
+
+
+## Moved from lanes/commons.md (S724 checkpoint)
+
+The Subjects paragraph's S722 state, verbatim:
+
+**LIVE (S722):** a Courses count reads `kb/status/statewide_code_courses/<first character>.json` (#3768); a resize stops where 360px of the view is left and a pair narrows its second sidebar (#3771, withdrawing #3770's cover rule); **Titles to check** (`#commons/subjects/disagree`): a title COBI rates 80 or more stands as a *Derived title* with its 0-100 bar (`skyTitle`, `STANDS`), and the list keeps the rest (about 100 of 301), each row with Accept (first title and recommended code, the Edit save) and every candidate title with its bar and Accept; the recommender ranks a web search on the college's own site (`WEB_SHARE`, set not measured) so Clovis MECH reads Mechatronics/Industrial Automation; a Commons quick link lands on its check's highlighted action link; the Commons names COBI, never Sky.
+
+
+## INDEX update history, moved (S724 checkpoint)
+
+- 2026-11-23 (S715 SkyAlbatross, Sam's plain session, light checkpoint): #3717 (every Subjects figure counts the rows with the live saves on top, so a save moves it at once; the held line corrected: a decision releases only ordinary-title credit courses), #3718 (the Subjects card from the mock: 83% of courses under a Confident code, four checks with Where to act); two memory rows; handoff 717.
