@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1230,
+  "file_datasets": 1231,
   "external_services": 200,
   "consumers": 681,
   "workflows": 77,
@@ -995,6 +995,16 @@
      "line": 1154,
      "tabs": [
       "canonical-subj4"
+     ]
+    },
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1963,
+     "tabs": [
+      "coci-lookup"
      ]
     },
     {
@@ -3462,7 +3472,10 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 0
+     "line": 0,
+     "tabs": [
+      "coci-lookup"
+     ]
     }
    ],
    "main_committers": []
@@ -6387,7 +6400,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 194,
+     "line": 227,
      "tabs": [
       "coci-lookup"
      ]
@@ -6498,7 +6511,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1802,
+     "line": 2485,
      "tabs": [
       "coci-lookup"
      ]
@@ -6992,6 +7005,22 @@
    "served": true,
    "main_committers": []
   },
+  "file:commons_gather.js": {
+   "consumers": [
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2290,
+     "tabs": [
+      "coci-lookup"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:commons_handover.js": {
    "consumers": [
     {
@@ -7025,7 +7054,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1590,
+     "line": 2024,
      "tabs": [
       "coci-lookup"
      ]
@@ -7128,7 +7157,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1678,
+     "line": 2361,
      "tabs": [
       "coci-lookup"
      ]
@@ -8505,7 +8534,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1137
+     "line": 1139
     }
    ],
    "served": false,
@@ -12906,7 +12935,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 321,
+     "line": 370,
      "tabs": [
       "coci-lookup"
      ]
@@ -15034,7 +15063,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 303,
+     "line": 352,
      "tabs": [
       "coci-lookup"
      ]
@@ -16863,6 +16892,16 @@
      "line": 229,
      "tabs": [
       "canonical-subj4"
+     ]
+    },
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1344,
+     "tabs": [
+      "coci-lookup"
      ]
     },
     {
@@ -21997,7 +22036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1191,
+     "line": 1606,
      "tabs": [
       "coci-lookup"
      ]
@@ -22150,7 +22189,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1632,
+     "line": 1731,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -22631,6 +22670,16 @@
   },
   "file:kb/status/mq_view.json": {
    "consumers": [
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 947,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
     {
      "id": "script:kb/_csr_propose_codes.py",
      "kind": "script",
@@ -32362,7 +32411,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 949,
+     "line": 1364,
      "tabs": [
       "coci-lookup"
      ]
@@ -32546,6 +32595,16 @@
   },
   "file:unified_courses_details.js": {
    "consumers": [
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 971,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
     {
      "id": "module:unified_courses.js",
      "kind": "module",
@@ -32806,7 +32865,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1591,
+     "line": 2025,
      "tabs": [
       "coci-lookup"
      ]
@@ -35198,7 +35257,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 223,
+     "line": 272,
      "tabs": [
       "coci-lookup"
      ]
@@ -36512,7 +36571,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 384,
+     "line": 433,
      "tabs": [
       "coci-lookup"
      ]
@@ -36522,7 +36581,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 429,
+     "line": 478,
      "tabs": [
       "coci-lookup"
      ]
@@ -38689,6 +38748,9 @@
   "commons_data.js": [
    "commons"
   ],
+  "commons_gather.js": [
+   "coci-lookup"
+  ],
   "commons_list.js": [
    "canonical-subj4",
    "coci-lookup",
@@ -38855,6 +38917,9 @@
   ],
   "unified_courses.js": [
    "unified-courses"
+  ],
+  "unified_courses_details.js": [
+   "coci-lookup"
   ],
   "workplan_goals.js": [
    "workplan-goals"
@@ -41017,6 +41082,7 @@
  "unresolved": [
   "chatbox/sync_program_courses.py",
   "commons_ase.js",
+  "commons_gather.js",
   "cpl_session.js",
   "cr_progress.js",
   "exhibit_progress.js",
